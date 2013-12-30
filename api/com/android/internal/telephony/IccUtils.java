@@ -26,8 +26,9 @@ public class IccUtils {
      *
      * Stops on invalid BCD value, returning string so far
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.900 -0500", hash_original_method = "4C0E39B4D7F909F8A60D019D87E845EA", hash_generated_method = "93AC6FE7BD345972FD5C90793A5EB9C7")
-    public static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.019 -0500", hash_original_method = "4C0E39B4D7F909F8A60D019D87E845EA", hash_generated_method = "93AC6FE7BD345972FD5C90793A5EB9C7")
+    
+public static String
     bcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length*2);
 
@@ -52,8 +53,9 @@ public class IccUtils {
     /**
      * Decode cdma byte into String.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.901 -0500", hash_original_method = "BEE01A65F8C60BA60426262AE9228EF3", hash_generated_method = "62F162BDAC42E41A72B1AB1A48D56246")
-    public static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.022 -0500", hash_original_method = "BEE01A65F8C60BA60426262AE9228EF3", hash_generated_method = "62F162BDAC42E41A72B1AB1A48D56246")
+    
+public static String
     cdmaBcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length);
 
@@ -88,8 +90,9 @@ public class IccUtils {
      * assume the digit is set to 0 but shall store the entire field
      * exactly as received"
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.902 -0500", hash_original_method = "DC790BB84150038067F2702354A483B9", hash_generated_method = "A4E2E3C8ACAED1C4B3F2370CA6F94C70")
-    public static int
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.025 -0500", hash_original_method = "DC790BB84150038067F2702354A483B9", hash_generated_method = "A4E2E3C8ACAED1C4B3F2370CA6F94C70")
+    
+public static int
     gsmBcdByteToInt(byte b) {
         int ret = 0;
 
@@ -111,8 +114,9 @@ public class IccUtils {
      * is in the least significant nibble and the most significant
      * is in the most significant nibble.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.903 -0500", hash_original_method = "585BFBEE26823BCE3868E89B57F43CD3", hash_generated_method = "FCBEAA763275A9FB3CE6DCF3BB5E6945")
-    public static int
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.027 -0500", hash_original_method = "585BFBEE26823BCE3868E89B57F43CD3", hash_generated_method = "FCBEAA763275A9FB3CE6DCF3BB5E6945")
+    
+public static int
     cdmaBcdByteToInt(byte b) {
         int ret = 0;
 
@@ -163,8 +167,9 @@ public class IccUtils {
      *          contain a 16 bit number which defines the complete 16 bit
      *          base pointer to a "half page" in the UCS2 code space...
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.904 -0500", hash_original_method = "8530804EF89502A199885F8B13B3D156", hash_generated_method = "D974982D59EF5C700DD07374998DAD9A")
-    public static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.031 -0500", hash_original_method = "8530804EF89502A199885F8B13B3D156", hash_generated_method = "D974982D59EF5C700DD07374998DAD9A")
+    
+public static String
     adnStringFieldToString(byte[] data, int offset, int length) {
         if (length == 0) {
             return "";
@@ -255,8 +260,9 @@ public class IccUtils {
         return GsmAlphabet.gsm8BitUnpackedToString(data, offset, length, defaultCharset.trim());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.905 -0500", hash_original_method = "B5552B011965C0257468E60FC2B05CAC", hash_generated_method = "DEDDAD89FB6278CB2FFEABF65DB62C31")
-    static int
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.034 -0500", hash_original_method = "B5552B011965C0257468E60FC2B05CAC", hash_generated_method = "DEDDAD89FB6278CB2FFEABF65DB62C31")
+    
+static int
     hexCharToInt(char c) {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
@@ -275,8 +281,9 @@ public class IccUtils {
      *
      * @throws RuntimeException on invalid format
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.906 -0500", hash_original_method = "5CA794846447D2C6B22D76C82E64F776", hash_generated_method = "38419854DDD9759FDC9FBB9E51521BEE")
-    public static byte[]
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.036 -0500", hash_original_method = "5CA794846447D2C6B22D76C82E64F776", hash_generated_method = "38419854DDD9759FDC9FBB9E51521BEE")
+    
+public static byte[]
     hexStringToBytes(String s) {
         byte[] ret;
 
@@ -302,8 +309,9 @@ public class IccUtils {
      *
      * @return hex string representation of bytes array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.907 -0500", hash_original_method = "1739217E9A1947F1CFB7C279AA20D847", hash_generated_method = "370CDD77A726AB43F9E87328F1C24D07")
-    public static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.039 -0500", hash_original_method = "1739217E9A1947F1CFB7C279AA20D847", hash_generated_method = "370CDD77A726AB43F9E87328F1C24D07")
+    
+public static String
     bytesToHexString(byte[] bytes) {
         if (bytes == null) return null;
 
@@ -330,8 +338,9 @@ public class IccUtils {
      * "offset" points to "octet 3", the coding scheme byte
      * empty string returned on decode error
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.908 -0500", hash_original_method = "7187443C675B66DFB3EB6766D8B9C986", hash_generated_method = "2D8D3DFF14460E3CCB73FB9EE0D4DACF")
-    public static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.043 -0500", hash_original_method = "7187443C675B66DFB3EB6766D8B9C986", hash_generated_method = "2D8D3DFF14460E3CCB73FB9EE0D4DACF")
+    
+public static String
     networkNameToString(byte[] data, int offset, int length) {
         String ret;
 
@@ -382,8 +391,9 @@ public class IccUtils {
      * @param length The length of image body
      * @return The bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.909 -0500", hash_original_method = "9890A8A6F25E4747FAE9BE4A49E40888", hash_generated_method = "967A2AA9C5B7A76C59928E83829106FB")
-    public static Bitmap parseToBnW(byte[] data, int length){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.046 -0500", hash_original_method = "9890A8A6F25E4747FAE9BE4A49E40888", hash_generated_method = "967A2AA9C5B7A76C59928E83829106FB")
+    
+public static Bitmap parseToBnW(byte[] data, int length){
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
         int height = data[valueIndex++] & 0xFF;
@@ -409,8 +419,9 @@ public class IccUtils {
         return Bitmap.createBitmap(pixels, width, height, Bitmap.Config.ARGB_8888);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.911 -0500", hash_original_method = "3BFC17C9B856533CDDF27D55AA357ECD", hash_generated_method = "41AC174765BFEDEF03F426DE9B864C51")
-    private static int bitToRGB(int bit){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.049 -0500", hash_original_method = "3BFC17C9B856533CDDF27D55AA357ECD", hash_generated_method = "41AC174765BFEDEF03F426DE9B864C51")
+    
+private static int bitToRGB(int bit){
         if(bit == 1){
             return Color.WHITE;
         } else {
@@ -426,8 +437,9 @@ public class IccUtils {
      * @param transparency with or without transparency
      * @return The color bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.912 -0500", hash_original_method = "B2B9C2CAFA68DE31B1652169B991D7C7", hash_generated_method = "4DCCD9846A398E942F29E613D3E79B18")
-    public static Bitmap parseToRGB(byte[] data, int length,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.052 -0500", hash_original_method = "B2B9C2CAFA68DE31B1652169B991D7C7", hash_generated_method = "4DCCD9846A398E942F29E613D3E79B18")
+    
+public static Bitmap parseToRGB(byte[] data, int length,
             boolean transparency) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
@@ -455,8 +467,9 @@ public class IccUtils {
                 Bitmap.Config.RGB_565);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.913 -0500", hash_original_method = "B75B5DFDBFDCB10E296435FA5AE5BFD1", hash_generated_method = "FA6F194F05B81D58D148884C611CA05B")
-    private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.055 -0500", hash_original_method = "B75B5DFDBFDCB10E296435FA5AE5BFD1", hash_generated_method = "FA6F194F05B81D58D148884C611CA05B")
+    
+private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 != (8 % bits)) {
             Log.e(LOG_TAG, "not event number of color");
@@ -494,8 +507,9 @@ public class IccUtils {
         return resultArray;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.914 -0500", hash_original_method = "73828A21F4726D6F4A0F2B43DF9C37BA", hash_generated_method = "C04E7297289248979DC634FF62511B4B")
-    private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.057 -0500", hash_original_method = "73828A21F4726D6F4A0F2B43DF9C37BA", hash_generated_method = "C04E7297289248979DC634FF62511B4B")
+    
+private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 == (8 % bits)) {
             Log.e(LOG_TAG, "not odd number of color");
@@ -508,8 +522,9 @@ public class IccUtils {
         return resultArray;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.915 -0500", hash_original_method = "958CF8860B17626CFA5A6D34DF0F7F83", hash_generated_method = "2E6E44F1E2B239E952041B80F0AF8D3E")
-    private static int[] getCLUT(byte[] rawData, int offset, int number) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.060 -0500", hash_original_method = "958CF8860B17626CFA5A6D34DF0F7F83", hash_generated_method = "2E6E44F1E2B239E952041B80F0AF8D3E")
+    
+private static int[] getCLUT(byte[] rawData, int offset, int number) {
         if (null == rawData) {
             return null;
         }
@@ -527,7 +542,7 @@ public class IccUtils {
         } while (valueIndex < endIndex);
         return result;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.899 -0500", hash_original_field = "215EDBB4F8FBB119E6C215EEBF8ACD69", hash_generated_field = "853E0573FD2EF23B87C9F780C40EC2A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.016 -0500", hash_original_field = "215EDBB4F8FBB119E6C215EEBF8ACD69", hash_generated_field = "853E0573FD2EF23B87C9F780C40EC2A4")
 
     static final String LOG_TAG="IccUtils";
     

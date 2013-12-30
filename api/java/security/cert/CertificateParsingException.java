@@ -8,7 +8,7 @@ import droidsafe.annotations.*;
 
 
 public class CertificateParsingException extends CertificateException {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.568 -0500", hash_original_field = "E4DA89334FFCB7B948A51D02C208306F", hash_generated_field = "9FB65A3F56B8D84968FA0A283A775A80")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.113 -0500", hash_original_field = "E4DA89334FFCB7B948A51D02C208306F", hash_generated_field = "9FB65A3F56B8D84968FA0A283A775A80")
 
 
     private static final long serialVersionUID = -7989222416793322029L;
@@ -20,16 +20,18 @@ public class CertificateParsingException extends CertificateException {
      * @param msg
      *            the detail message for the exception.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.569 -0500", hash_original_method = "52C1CA38DD038BC33FD4ADF2F8CE17BE", hash_generated_method = "A245E685ED65819D19415A8A5D1C01EC")
-    public CertificateParsingException(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.115 -0500", hash_original_method = "52C1CA38DD038BC33FD4ADF2F8CE17BE", hash_generated_method = "A245E685ED65819D19415A8A5D1C01EC")
+    
+public CertificateParsingException(String msg) {
         super(msg);
     }
 
     /**
      * Creates a new {@code CertificateParsingException}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.570 -0500", hash_original_method = "8DA8B534EA167A5C50442E9F25486020", hash_generated_method = "7AFB4234C7D14EE73B98DB173DF0ADEA")
-    public CertificateParsingException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.118 -0500", hash_original_method = "8DA8B534EA167A5C50442E9F25486020", hash_generated_method = "7AFB4234C7D14EE73B98DB173DF0ADEA")
+    
+public CertificateParsingException() {
     }
 
     /**
@@ -41,8 +43,9 @@ public class CertificateParsingException extends CertificateException {
      * @param cause
      *            the exception's source.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.571 -0500", hash_original_method = "7DFD64EF17D16B3CA905ED3004EA7773", hash_generated_method = "53E21438479EB7D5BF3DA52BEEA6C314")
-    public CertificateParsingException(String message, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.120 -0500", hash_original_method = "7DFD64EF17D16B3CA905ED3004EA7773", hash_generated_method = "53E21438479EB7D5BF3DA52BEEA6C314")
+    
+public CertificateParsingException(String message, Throwable cause) {
         super(message, cause);
     }
 
@@ -53,8 +56,9 @@ public class CertificateParsingException extends CertificateException {
      * @param cause
      *            the exception's source.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.572 -0500", hash_original_method = "655AB0A50E551680E7DF5C232C5D908E", hash_generated_method = "06D11561C966AC7F165D89B92CFF2346")
-    public CertificateParsingException(Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.123 -0500", hash_original_method = "655AB0A50E551680E7DF5C232C5D908E", hash_generated_method = "06D11561C966AC7F165D89B92CFF2346")
+    
+public CertificateParsingException(Throwable cause) {
         super(cause);
     }
 }

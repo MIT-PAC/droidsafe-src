@@ -21,8 +21,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      * @throws IllegalArgumentException
      *             if {@code capacity} is less than zero.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.293 -0500", hash_original_method = "8705AFB5C37A38E8556AB4BF7EE2EBD2", hash_generated_method = "17359EE43527564D54CEDB763700A7D9")
-    public static DoubleBuffer allocate(int capacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.476 -0500", hash_original_method = "8705AFB5C37A38E8556AB4BF7EE2EBD2", hash_generated_method = "17359EE43527564D54CEDB763700A7D9")
+    
+public static DoubleBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -39,8 +40,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      *            the double array which the new buffer will be based on.
      * @return the created double buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.294 -0500", hash_original_method = "C8CC9781A388E0CB6C7BA02CBEA33636", hash_generated_method = "BC01358C0A1FA425E8584B6C829F4084")
-    public static DoubleBuffer wrap(double[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.479 -0500", hash_original_method = "C8CC9781A388E0CB6C7BA02CBEA33636", hash_generated_method = "BC01358C0A1FA425E8584B6C829F4084")
+    
+public static DoubleBuffer wrap(double[] array) {
         return wrap(array, 0, array.length);
     }
 
@@ -62,8 +64,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      * @exception IndexOutOfBoundsException
      *                if either {@code start} or {@code doubleCount} is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.295 -0500", hash_original_method = "1630A46B23D7E07EE618F29BEE62BADD", hash_generated_method = "701B8B350E5A0892D9C9522E1DC521AA")
-    public static DoubleBuffer wrap(double[] array, int start, int doubleCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.482 -0500", hash_original_method = "1630A46B23D7E07EE618F29BEE62BADD", hash_generated_method = "701B8B350E5A0892D9C9522E1DC521AA")
+    
+public static DoubleBuffer wrap(double[] array, int start, int doubleCount) {
         Arrays.checkOffsetAndCount(array.length, start, doubleCount);
         DoubleBuffer buf = new ReadWriteDoubleArrayBuffer(array);
         buf.position = start;
@@ -71,18 +74,21 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
         return buf;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.296 -0500", hash_original_method = "0AF8846C39B4C946E7DEA048FA516A89", hash_generated_method = "0AF8846C39B4C946E7DEA048FA516A89")
-    DoubleBuffer(int capacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.485 -0500", hash_original_method = "0AF8846C39B4C946E7DEA048FA516A89", hash_generated_method = "0AF8846C39B4C946E7DEA048FA516A89")
+    
+DoubleBuffer(int capacity) {
         super(3, capacity, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.297 -0500", hash_original_method = "A99B5F03AD18580EAA75CC7BA40FC0CE", hash_generated_method = "247E849ED78FF8066C268E0F8468AB4D")
-    public final double[] array() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.488 -0500", hash_original_method = "A99B5F03AD18580EAA75CC7BA40FC0CE", hash_generated_method = "247E849ED78FF8066C268E0F8468AB4D")
+    
+public final double[] array() {
         return protectedArray();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.298 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
-    public final int arrayOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.490 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
+    
+public final int arrayOffset() {
         return protectedArrayOffset();
     }
 
@@ -99,8 +105,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      *
      * @return a read-only version of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.299 -0500", hash_original_method = "2996A979A5716E23EE7031EA0434A8A0", hash_generated_method = "93D395317BFB18A9570C50EB29903EC8")
-    public abstract DoubleBuffer asReadOnlyBuffer();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.492 -0500", hash_original_method = "2996A979A5716E23EE7031EA0434A8A0", hash_generated_method = "93D395317BFB18A9570C50EB29903EC8")
+    
+public abstract DoubleBuffer asReadOnlyBuffer();
 
     /**
      * Compacts this double buffer.
@@ -113,8 +120,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.299 -0500", hash_original_method = "5043B711725CD9D2E916986208C437D3", hash_generated_method = "66EBDB25A24171CBACA0C8BB86DE2DDE")
-    public abstract DoubleBuffer compact();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.494 -0500", hash_original_method = "5043B711725CD9D2E916986208C437D3", hash_generated_method = "66EBDB25A24171CBACA0C8BB86DE2DDE")
+    
+public abstract DoubleBuffer compact();
 
     /**
      * Compare the remaining doubles of this buffer to another double buffer's
@@ -128,8 +136,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      * @exception ClassCastException
      *                if {@code other} is not a double buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.300 -0500", hash_original_method = "A9C47546143A1E2A817B74D1052E5DC9", hash_generated_method = "9E80DB9DA9386DCD90EA39CFF14B66EC")
-    public int compareTo(DoubleBuffer otherBuffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.497 -0500", hash_original_method = "A9C47546143A1E2A817B74D1052E5DC9", hash_generated_method = "9E80DB9DA9386DCD90EA39CFF14B66EC")
+    
+public int compareTo(DoubleBuffer otherBuffer) {
         int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 : otherBuffer.remaining();
         int thisPos = position;
@@ -163,8 +172,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      *
      * @return a duplicated buffer that shares its content with this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.301 -0500", hash_original_method = "BE74DB03EFC9DDBAB8ADF6C6A34C3321", hash_generated_method = "2179A62EFF99EE7867A1A432E0A5EF00")
-    public abstract DoubleBuffer duplicate();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.500 -0500", hash_original_method = "BE74DB03EFC9DDBAB8ADF6C6A34C3321", hash_generated_method = "2179A62EFF99EE7867A1A432E0A5EF00")
+    
+public abstract DoubleBuffer duplicate();
 
     /**
      * Checks whether this double buffer is equal to another object. If {@code
@@ -183,9 +193,10 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
      * @return {@code true} if this double buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.302 -0500", hash_original_method = "80D65346F74BD859AA9774E55290B1E1", hash_generated_method = "102FD7DB2A5779E73C016EEB090B84D0")
-    @Override
-public boolean equals(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.503 -0500", hash_original_method = "80D65346F74BD859AA9774E55290B1E1", hash_generated_method = "102FD7DB2A5779E73C016EEB090B84D0")
+    
+@Override
+    public boolean equals(Object other) {
         if (!(other instanceof DoubleBuffer)) {
             return false;
         }
@@ -215,8 +226,9 @@ public boolean equals(Object other) {
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.303 -0500", hash_original_method = "7B91F8C48D472EDDE3E7E19AB4EA9792", hash_generated_method = "889ACFF9EFCF93B8782B2974FC4C8A68")
-    public abstract double get();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.506 -0500", hash_original_method = "7B91F8C48D472EDDE3E7E19AB4EA9792", hash_generated_method = "889ACFF9EFCF93B8782B2974FC4C8A68")
+    
+public abstract double get();
 
     /**
      * Reads doubles from the current position into the specified double array
@@ -231,8 +243,9 @@ public boolean equals(Object other) {
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.304 -0500", hash_original_method = "9BEB92FAE64B1253EE6CA9009E99F3B4", hash_generated_method = "B2C1AFE0F8659736164D0D822A275DAE")
-    public DoubleBuffer get(double[] dst) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.509 -0500", hash_original_method = "9BEB92FAE64B1253EE6CA9009E99F3B4", hash_generated_method = "B2C1AFE0F8659736164D0D822A275DAE")
+    
+public DoubleBuffer get(double[] dst) {
         return get(dst, 0, dst.length);
     }
 
@@ -255,8 +268,9 @@ public boolean equals(Object other) {
      * @exception BufferUnderflowException
      *                if {@code doubleCount} is greater than {@code remaining()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.305 -0500", hash_original_method = "38134BA6A99F502238B51F3879F810C3", hash_generated_method = "EAC8151AE9324153277E4F151BA8F7BE")
-    public DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.512 -0500", hash_original_method = "38134BA6A99F502238B51F3879F810C3", hash_generated_method = "EAC8151AE9324153277E4F151BA8F7BE")
+    
+public DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {
         Arrays.checkOffsetAndCount(dst.length, dstOffset, doubleCount);
         if (doubleCount > remaining()) {
             throw new BufferUnderflowException();
@@ -276,11 +290,13 @@ public boolean equals(Object other) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.306 -0500", hash_original_method = "7290F82235CCB3FE6BC33C45B069AD65", hash_generated_method = "448C75914A10D7B3AD8F4293CA72E646")
-    public abstract double get(int index);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.514 -0500", hash_original_method = "7290F82235CCB3FE6BC33C45B069AD65", hash_generated_method = "448C75914A10D7B3AD8F4293CA72E646")
+    
+public abstract double get(int index);
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.307 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
-    public final boolean hasArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.517 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
+    
+public final boolean hasArray() {
         return protectedHasArray();
     }
 
@@ -290,9 +306,10 @@ public boolean equals(Object other) {
      *
      * @return the hash code calculated from the remaining chars.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.308 -0500", hash_original_method = "BF88872009B539EF877B1EA5B03706BA", hash_generated_method = "5943EB7BD659C5FC2B0BB3B0313FB053")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.519 -0500", hash_original_method = "BF88872009B539EF877B1EA5B03706BA", hash_generated_method = "5943EB7BD659C5FC2B0BB3B0313FB053")
+    
+@Override
+    public int hashCode() {
         int myPosition = position;
         int hash = 0;
         long l;
@@ -313,8 +330,9 @@ public int hashCode() {
      *
      * @return {@code true} if this buffer is direct, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.309 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
-    public abstract boolean isDirect();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.522 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
+    
+public abstract boolean isDirect();
 
     /**
      * Returns the byte order used by this buffer when converting doubles
@@ -326,32 +344,36 @@ public int hashCode() {
      * @return the byte order used by this buffer when converting doubles
      *         from/to bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.310 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
-    public abstract ByteOrder order();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.524 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
+    
+public abstract ByteOrder order();
 
     /**
      * Child class implements this method to realize {@code array()}.
      *
      * @see #array()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.310 -0500", hash_original_method = "05186557823E0B28309E4FCD9E9DC118", hash_generated_method = "2DB88162F6826E8682859A2F8B550312")
-    abstract double[] protectedArray();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.527 -0500", hash_original_method = "05186557823E0B28309E4FCD9E9DC118", hash_generated_method = "2DB88162F6826E8682859A2F8B550312")
+    
+abstract double[] protectedArray();
 
     /**
      * Child class implements this method to realize {@code arrayOffset()}.
      *
      * @see #arrayOffset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.311 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
-    abstract int protectedArrayOffset();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.529 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
+    
+abstract int protectedArrayOffset();
 
     /**
      * Child class implements this method to realize {@code hasArray()}.
      *
      * @see #hasArray()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.312 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
-    abstract boolean protectedHasArray();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.532 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
+    
+abstract boolean protectedHasArray();
 
     /**
      * Writes the given double to the current position and increases the
@@ -365,8 +387,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.313 -0500", hash_original_method = "6E5D9E716104CE1312BE9B8492AD9715", hash_generated_method = "0E56ACB0C2D9601A7CDB7EDCA63EEE43")
-    public abstract DoubleBuffer put(double d);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.534 -0500", hash_original_method = "6E5D9E716104CE1312BE9B8492AD9715", hash_generated_method = "0E56ACB0C2D9601A7CDB7EDCA63EEE43")
+    
+public abstract DoubleBuffer put(double d);
 
     /**
      * Writes doubles from the given double array to the current position and
@@ -383,8 +406,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.314 -0500", hash_original_method = "93B6D9B754146968969402F4C9473429", hash_generated_method = "9086CA4F187C6C341ABF44AECEF0BE47")
-    public final DoubleBuffer put(double[] src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.537 -0500", hash_original_method = "93B6D9B754146968969402F4C9473429", hash_generated_method = "9086CA4F187C6C341ABF44AECEF0BE47")
+    
+public final DoubleBuffer put(double[] src) {
         return put(src, 0, src.length);
     }
 
@@ -409,8 +433,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.315 -0500", hash_original_method = "3E73039BF6DB142176253DE2263B83AD", hash_generated_method = "4F015A29746EB1C0C69EB5D48214782E")
-    public DoubleBuffer put(double[] src, int srcOffset, int doubleCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.539 -0500", hash_original_method = "3E73039BF6DB142176253DE2263B83AD", hash_generated_method = "4F015A29746EB1C0C69EB5D48214782E")
+    
+public DoubleBuffer put(double[] src, int srcOffset, int doubleCount) {
         Arrays.checkOffsetAndCount(src.length, srcOffset, doubleCount);
         if (doubleCount > remaining()) {
             throw new BufferOverflowException();
@@ -437,8 +462,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.315 -0500", hash_original_method = "C52ECDE4782921BA374F433E41853287", hash_generated_method = "95737D85E66B3030D7731AABF243BE8B")
-    public DoubleBuffer put(DoubleBuffer src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.542 -0500", hash_original_method = "C52ECDE4782921BA374F433E41853287", hash_generated_method = "95737D85E66B3030D7731AABF243BE8B")
+    
+public DoubleBuffer put(DoubleBuffer src) {
         if (src == this) {
             throw new IllegalArgumentException();
         }
@@ -465,8 +491,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.316 -0500", hash_original_method = "FC1229DDC34A77EC4BA7A954517E40A4", hash_generated_method = "D2EAEEF2A722DC0BF5CB5A7204366CD4")
-    public abstract DoubleBuffer put(int index, double d);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.544 -0500", hash_original_method = "FC1229DDC34A77EC4BA7A954517E40A4", hash_generated_method = "D2EAEEF2A722DC0BF5CB5A7204366CD4")
+    
+public abstract DoubleBuffer put(int index, double d);
 
     /**
      * Returns a sliced buffer that shares its content with this buffer.
@@ -483,8 +510,9 @@ public int hashCode() {
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.317 -0500", hash_original_method = "77285C0B11D6FAF3123027CAFA126E55", hash_generated_method = "FFE5DDEBAB752CC87926AAAD15D2E4AA")
-    public abstract DoubleBuffer slice();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.547 -0500", hash_original_method = "77285C0B11D6FAF3123027CAFA126E55", hash_generated_method = "FFE5DDEBAB752CC87926AAAD15D2E4AA")
+    
+public abstract DoubleBuffer slice();
 
     
 }

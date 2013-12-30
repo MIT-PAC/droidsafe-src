@@ -13,24 +13,25 @@ import java.io.IOException;
 
 
 public class DERExternal extends ASN1Object {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.204 -0500", hash_original_field = "6D2BDBA72520295A7C15B183E0D9C569", hash_generated_field = "8B451B3DBA24F8A6DD2DAC687FC92958")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.796 -0500", hash_original_field = "6D2BDBA72520295A7C15B183E0D9C569", hash_generated_field = "8B451B3DBA24F8A6DD2DAC687FC92958")
 
     private DERObjectIdentifier directReference;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.204 -0500", hash_original_field = "2706744C03E9CE7CD043CB09D0DB3E56", hash_generated_field = "4BDDE807B370ABCD06D1D8B56EE5C7C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.798 -0500", hash_original_field = "2706744C03E9CE7CD043CB09D0DB3E56", hash_generated_field = "4BDDE807B370ABCD06D1D8B56EE5C7C4")
 
     private DERInteger indirectReference;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.205 -0500", hash_original_field = "6E0492DF5D2E32AF5B232A66187FCC27", hash_generated_field = "A8803A57E0AB1FAD59A5878D307FCE93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.801 -0500", hash_original_field = "6E0492DF5D2E32AF5B232A66187FCC27", hash_generated_field = "A8803A57E0AB1FAD59A5878D307FCE93")
 
     private ASN1Object dataValueDescriptor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.206 -0500", hash_original_field = "39D1C9E1C270FCBF267B46BFEA8420E2", hash_generated_field = "E77A569AB1DC34BFC03164971297EE8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.803 -0500", hash_original_field = "39D1C9E1C270FCBF267B46BFEA8420E2", hash_generated_field = "E77A569AB1DC34BFC03164971297EE8D")
 
     private int encoding;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.207 -0500", hash_original_field = "83C54432A38192D55E4EDA3FC93939BE", hash_generated_field = "8CF4A9E6D02D0338F11DF53BC2A4E23F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.806 -0500", hash_original_field = "83C54432A38192D55E4EDA3FC93939BE", hash_generated_field = "8CF4A9E6D02D0338F11DF53BC2A4E23F")
 
     private DERObject externalContent;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.208 -0500", hash_original_method = "5B6E321D0FF0F6E358DB9222EA98BCB7", hash_generated_method = "7728BB12B8EE48190D28CA18979AEC82")
-    public DERExternal(ASN1EncodableVector vector)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.809 -0500", hash_original_method = "5B6E321D0FF0F6E358DB9222EA98BCB7", hash_generated_method = "7728BB12B8EE48190D28CA18979AEC82")
+    
+public DERExternal(ASN1EncodableVector vector)
     {
         int offset = 0;
 
@@ -75,8 +76,9 @@ public class DERExternal extends ASN1Object {
      * @param dataValueDescriptor The data value descriptor or <code>null</code> if not set.
      * @param externalData The external data in its encoded form.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.210 -0500", hash_original_method = "3E78E5A9498D2FA8094C2F6169A192AD", hash_generated_method = "8C83FF4C61A9DB1335C855AB0D226F3A")
-    public DERExternal(DERObjectIdentifier directReference, DERInteger indirectReference, ASN1Object dataValueDescriptor, DERTaggedObject externalData)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.814 -0500", hash_original_method = "3E78E5A9498D2FA8094C2F6169A192AD", hash_generated_method = "8C83FF4C61A9DB1335C855AB0D226F3A")
+    
+public DERExternal(DERObjectIdentifier directReference, DERInteger indirectReference, ASN1Object dataValueDescriptor, DERTaggedObject externalData)
     {
         this(directReference, indirectReference, dataValueDescriptor, externalData.getTagNo(), externalData.getDERObject());
     }
@@ -90,8 +92,9 @@ public class DERExternal extends ASN1Object {
      * @param encoding The encoding to be used for the external data
      * @param externalData The external data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.211 -0500", hash_original_method = "865736B8E6D41CC27E8C4571B72736D6", hash_generated_method = "2FBFF2774EBE1C709D4520ED4335CEEE")
-    public DERExternal(DERObjectIdentifier directReference, DERInteger indirectReference, ASN1Object dataValueDescriptor, int encoding, DERObject externalData)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.817 -0500", hash_original_method = "865736B8E6D41CC27E8C4571B72736D6", hash_generated_method = "2FBFF2774EBE1C709D4520ED4335CEEE")
+    
+public DERExternal(DERObjectIdentifier directReference, DERInteger indirectReference, ASN1Object dataValueDescriptor, int encoding, DERObject externalData)
     {
         setDirectReference(directReference);
         setIndirectReference(indirectReference);
@@ -100,8 +103,9 @@ public class DERExternal extends ASN1Object {
         setExternalContent(externalData.getDERObject());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.209 -0500", hash_original_method = "B967C566758213AD266FDB24FA14151A", hash_generated_method = "AE6FE7C100D471CEA69C459B25610E4F")
-    private DERObject getObjFromVector(ASN1EncodableVector v, int index)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.811 -0500", hash_original_method = "B967C566758213AD266FDB24FA14151A", hash_generated_method = "AE6FE7C100D471CEA69C459B25610E4F")
+    
+private DERObject getObjFromVector(ASN1EncodableVector v, int index)
     {
         if (v.size() <= index)
         {
@@ -114,8 +118,9 @@ public class DERExternal extends ASN1Object {
     /* (non-Javadoc)
      * @see java.lang.Object#hashCode()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.212 -0500", hash_original_method = "E789B91521559DD1093D7E9087176FAE", hash_generated_method = "328CE02F6EDF9C2A733D326777F84E3D")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.820 -0500", hash_original_method = "E789B91521559DD1093D7E9087176FAE", hash_generated_method = "328CE02F6EDF9C2A733D326777F84E3D")
+    
+public int hashCode()
     {
         int ret = 0;
         if (directReference != null)
@@ -137,8 +142,9 @@ public class DERExternal extends ASN1Object {
     /* (non-Javadoc)
      * @see org.bouncycastle.asn1.DERObject#encode(org.bouncycastle.asn1.DEROutputStream)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.213 -0500", hash_original_method = "95E5CCE7002362171E5372628ECC5970", hash_generated_method = "95E5CCE7002362171E5372628ECC5970")
-    void encode(DEROutputStream out)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.823 -0500", hash_original_method = "95E5CCE7002362171E5372628ECC5970", hash_generated_method = "95E5CCE7002362171E5372628ECC5970")
+    
+void encode(DEROutputStream out)
         throws IOException
     {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -162,8 +168,9 @@ public class DERExternal extends ASN1Object {
     /* (non-Javadoc)
      * @see org.bouncycastle.asn1.ASN1Object#asn1Equals(org.bouncycastle.asn1.DERObject)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.214 -0500", hash_original_method = "B6A4F973EBC78A6793C4703762E4E562", hash_generated_method = "B6A4F973EBC78A6793C4703762E4E562")
-    boolean asn1Equals(DERObject o)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.827 -0500", hash_original_method = "B6A4F973EBC78A6793C4703762E4E562", hash_generated_method = "B6A4F973EBC78A6793C4703762E4E562")
+    
+boolean asn1Equals(DERObject o)
     {
         if (!(o instanceof DERExternal))
         {
@@ -202,8 +209,9 @@ public class DERExternal extends ASN1Object {
      * Returns the data value descriptor
      * @return The descriptor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.214 -0500", hash_original_method = "0B6DEA5056C96F68CB576A145B8163A4", hash_generated_method = "5BE064B6780DCA66F3DF81BD238BADF7")
-    public ASN1Object getDataValueDescriptor()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.830 -0500", hash_original_method = "0B6DEA5056C96F68CB576A145B8163A4", hash_generated_method = "5BE064B6780DCA66F3DF81BD238BADF7")
+    
+public ASN1Object getDataValueDescriptor()
     {
         return dataValueDescriptor;
     }
@@ -212,8 +220,9 @@ public class DERExternal extends ASN1Object {
      * Returns the direct reference of the external element
      * @return The reference
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.216 -0500", hash_original_method = "5D19E791BF0146D74AAC703832ECF7B9", hash_generated_method = "8644DACE81C95FF3786E6E3F267D627F")
-    public DERObjectIdentifier getDirectReference()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.832 -0500", hash_original_method = "5D19E791BF0146D74AAC703832ECF7B9", hash_generated_method = "8644DACE81C95FF3786E6E3F267D627F")
+    
+public DERObjectIdentifier getDirectReference()
     {
         return directReference;
     }
@@ -227,8 +236,9 @@ public class DERExternal extends ASN1Object {
      * </ul>
      * @return The encoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.216 -0500", hash_original_method = "20B2CEB64A03B59C5CB213FEC1AC33C9", hash_generated_method = "6D73038C04B33A6E25C9669C77EB73A4")
-    public int getEncoding()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.835 -0500", hash_original_method = "20B2CEB64A03B59C5CB213FEC1AC33C9", hash_generated_method = "6D73038C04B33A6E25C9669C77EB73A4")
+    
+public int getEncoding()
     {
         return encoding;
     }
@@ -237,8 +247,9 @@ public class DERExternal extends ASN1Object {
      * Returns the content of this element
      * @return The content
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.217 -0500", hash_original_method = "A31A01A5BEAE5C1C675F68CA7DEBC312", hash_generated_method = "BC4F5A67533FEFDD0C9D6DED00CDF132")
-    public DERObject getExternalContent()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.837 -0500", hash_original_method = "A31A01A5BEAE5C1C675F68CA7DEBC312", hash_generated_method = "BC4F5A67533FEFDD0C9D6DED00CDF132")
+    
+public DERObject getExternalContent()
     {
         return externalContent;
     }
@@ -247,8 +258,9 @@ public class DERExternal extends ASN1Object {
      * Returns the indirect reference of this element
      * @return The reference
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.218 -0500", hash_original_method = "A48170CD86EA456F3F5BDA9638D90BB1", hash_generated_method = "195BA8FFE19ACF28C661887D7E7EBF53")
-    public DERInteger getIndirectReference()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.840 -0500", hash_original_method = "A48170CD86EA456F3F5BDA9638D90BB1", hash_generated_method = "195BA8FFE19ACF28C661887D7E7EBF53")
+    
+public DERInteger getIndirectReference()
     {
         return indirectReference;
     }
@@ -257,8 +269,9 @@ public class DERExternal extends ASN1Object {
      * Sets the data value descriptor
      * @param dataValueDescriptor The descriptor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.218 -0500", hash_original_method = "0BD65C140FCC2077661040D20B226912", hash_generated_method = "A8B65273DA2E679E635CBC93ACDFB1FE")
-    private void setDataValueDescriptor(ASN1Object dataValueDescriptor)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.843 -0500", hash_original_method = "0BD65C140FCC2077661040D20B226912", hash_generated_method = "A8B65273DA2E679E635CBC93ACDFB1FE")
+    
+private void setDataValueDescriptor(ASN1Object dataValueDescriptor)
     {
         this.dataValueDescriptor = dataValueDescriptor;
     }
@@ -267,8 +280,9 @@ public class DERExternal extends ASN1Object {
      * Sets the direct reference of the external element
      * @param directReferemce The reference
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.219 -0500", hash_original_method = "A83523D5E22547A02A231238C93C9842", hash_generated_method = "77F970611B4E55BB9C3550410A2F0B04")
-    private void setDirectReference(DERObjectIdentifier directReferemce)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.846 -0500", hash_original_method = "A83523D5E22547A02A231238C93C9842", hash_generated_method = "77F970611B4E55BB9C3550410A2F0B04")
+    
+private void setDirectReference(DERObjectIdentifier directReferemce)
     {
         this.directReference = directReferemce;
     }
@@ -282,8 +296,9 @@ public class DERExternal extends ASN1Object {
      * </ul>
      * @param encoding The encoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.220 -0500", hash_original_method = "D6EB4173694568A37E5CF8BEC224CE9C", hash_generated_method = "39FE93F559C112B4809D9178EAA6F995")
-    private void setEncoding(int encoding)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.849 -0500", hash_original_method = "D6EB4173694568A37E5CF8BEC224CE9C", hash_generated_method = "39FE93F559C112B4809D9178EAA6F995")
+    
+private void setEncoding(int encoding)
     {
         if (encoding < 0 || encoding > 2)
         {
@@ -296,8 +311,9 @@ public class DERExternal extends ASN1Object {
      * Sets the content of this element
      * @param externalContent The content
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.221 -0500", hash_original_method = "DE6F2795286824746E38E92F0B41BA33", hash_generated_method = "82C51007B051D24EC707A5180654B8C9")
-    private void setExternalContent(DERObject externalContent)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.852 -0500", hash_original_method = "DE6F2795286824746E38E92F0B41BA33", hash_generated_method = "82C51007B051D24EC707A5180654B8C9")
+    
+private void setExternalContent(DERObject externalContent)
     {
         this.externalContent = externalContent;
     }
@@ -306,8 +322,9 @@ public class DERExternal extends ASN1Object {
      * Sets the indirect reference of this element
      * @param indirectReference The reference
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.221 -0500", hash_original_method = "0014F60DB99B68C720B34F07B78773E4", hash_generated_method = "69C3211E041A1D148A3AD1FC8D11B5CF")
-    private void setIndirectReference(DERInteger indirectReference)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.854 -0500", hash_original_method = "0014F60DB99B68C720B34F07B78773E4", hash_generated_method = "69C3211E041A1D148A3AD1FC8D11B5CF")
+    
+private void setIndirectReference(DERInteger indirectReference)
     {
         this.indirectReference = indirectReference;
     }

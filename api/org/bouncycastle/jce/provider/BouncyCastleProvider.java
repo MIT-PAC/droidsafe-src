@@ -22,21 +22,21 @@ import org.bouncycastle.jce.interfaces.ConfigurableProvider;
 
 
 public final class BouncyCastleProvider extends Provider implements ConfigurableProvider {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.748 -0500", hash_original_field = "FCF20FF015ECD1405721C29088E4DE31", hash_generated_field = "C9727C0638F2013F7B780A7BE1307CFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.115 -0500", hash_original_field = "FCF20FF015ECD1405721C29088E4DE31", hash_generated_field = "C9727C0638F2013F7B780A7BE1307CFA")
 
     private static String info = "BouncyCastle Security Provider v1.46";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.749 -0500", hash_original_field = "B355B645C2D678E21D43E093C09A192E", hash_generated_field = "FCA92C763E0E8F4A5243B90555C59A84")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.117 -0500", hash_original_field = "B355B645C2D678E21D43E093C09A192E", hash_generated_field = "FCA92C763E0E8F4A5243B90555C59A84")
 
     //     this constant should be final
     public static final String PROVIDER_NAME = "BC";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.749 -0500", hash_original_field = "6AFE32B77084FC7CC5DB9AED5D3D3AEF", hash_generated_field = "96EF51D9176435A4A949DF4BC3624453")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.120 -0500", hash_original_field = "6AFE32B77084FC7CC5DB9AED5D3D3AEF", hash_generated_field = "96EF51D9176435A4A949DF4BC3624453")
 
 
     /*
      * Configurable symmetric ciphers
      */
     private static final String SYMMETRIC_CIPHER_PACKAGE = "org.bouncycastle.jce.provider.symmetric.";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.750 -0500", hash_original_field = "E32C48828299F4D32714C10B848C1510", hash_generated_field = "7AE81A85D149D23A29C2E5EABD4CD19C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.123 -0500", hash_original_field = "E32C48828299F4D32714C10B848C1510", hash_generated_field = "7AE81A85D149D23A29C2E5EABD4CD19C")
 
     private static final String[] SYMMETRIC_CIPHERS =
     {
@@ -49,10 +49,10 @@ public final class BouncyCastleProvider extends Provider implements Configurable
         // END android-added
 
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.751 -0500", hash_original_field = "1720BB045F3BC4C3A6A6F04F074CAB4E", hash_generated_field = "30A48E7B93E404115A86D1135E5F52C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.125 -0500", hash_original_field = "1720BB045F3BC4C3A6A6F04F074CAB4E", hash_generated_field = "30A48E7B93E404115A86D1135E5F52C1")
 
     private static final String ASYMMETRIC_CIPHER_PACKAGE = "org.bouncycastle.jce.provider.asymmetric.";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.752 -0500", hash_original_field = "540BFAC708F7CD95235F861B636DD2C2", hash_generated_field = "B6CD2954F790C650C1566977B7063BED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.128 -0500", hash_original_field = "540BFAC708F7CD95235F861B636DD2C2", hash_generated_field = "B6CD2954F790C650C1566977B7063BED")
 
     private static final String[] ASYMMETRIC_CIPHERS =
     {
@@ -64,8 +64,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
      * using runtime registration of the provider using the
      * <code>Security.addProvider()</code> mechanism.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.754 -0500", hash_original_method = "A959A465DC8BCFFC9B23D0D2C15418FF", hash_generated_method = "83263833380411A00F94F79786397F7A")
-    public BouncyCastleProvider()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.133 -0500", hash_original_method = "A959A465DC8BCFFC9B23D0D2C15418FF", hash_generated_method = "83263833380411A00F94F79786397F7A")
+    
+public BouncyCastleProvider()
     {
         super(PROVIDER_NAME, 1.46, info);
 
@@ -79,8 +80,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
         });
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.759 -0500", hash_original_method = "B0B8FDB1DF484505E991BFEF0E81F7AB", hash_generated_method = "753047AC83C01E8531C46D85518D63BA")
-    private void setup()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.151 -0500", hash_original_method = "B0B8FDB1DF484505E991BFEF0E81F7AB", hash_generated_method = "753047AC83C01E8531C46D85518D63BA")
+    
+private void setup()
     {
         loadAlgorithms(SYMMETRIC_CIPHER_PACKAGE, SYMMETRIC_CIPHERS);
         loadAlgorithms(ASYMMETRIC_CIPHER_PACKAGE, ASYMMETRIC_CIPHERS);
@@ -621,8 +623,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
         // END android-removed
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.761 -0500", hash_original_method = "686C79C0163D29E08379E22D5F4091D3", hash_generated_method = "02C3F3C487931441DA0EBB9E68C09D6F")
-    private void loadAlgorithms(String packageName, String[] names)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.154 -0500", hash_original_method = "686C79C0163D29E08379E22D5F4091D3", hash_generated_method = "02C3F3C487931441DA0EBB9E68C09D6F")
+    
+private void loadAlgorithms(String packageName, String[] names)
     {
         for (int i = 0; i != names.length; i++)
         {
@@ -660,8 +663,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.762 -0500", hash_original_method = "5007A2B2A77D22A1FFE2768D1D69CD26", hash_generated_method = "8C9B0958A6EA3788D9FF8221246989CF")
-    private void addMappings(Map mappings)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.157 -0500", hash_original_method = "5007A2B2A77D22A1FFE2768D1D69CD26", hash_generated_method = "8C9B0958A6EA3788D9FF8221246989CF")
+    
+private void addMappings(Map mappings)
     {
         // can't use putAll due to JDK 1.1
         for (Iterator it = mappings.keySet().iterator(); it.hasNext();)
@@ -679,8 +683,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
     //
     // macs
     //
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.763 -0500", hash_original_method = "BF810DB148D6F4B76C3D9477121B375F", hash_generated_method = "24512609174D25296C0AE935218C277E")
-    private void addMacAlgorithms()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.160 -0500", hash_original_method = "BF810DB148D6F4B76C3D9477121B375F", hash_generated_method = "24512609174D25296C0AE935218C277E")
+    
+private void addMacAlgorithms()
     {
         // BEGIN android-removed
         // put("Mac.DESMAC", "org.bouncycastle.jce.provider.JCEMac$DES");
@@ -746,8 +751,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
         put("Alg.Alias.Mac.1.3.14.3.2.26", "PBEWITHHMACSHA");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.764 -0500", hash_original_method = "92FD2A26DA15B4D69904AC037AAE7782", hash_generated_method = "7E68A49C5E6B70148B8A3C7B7430B06E")
-    private void addHMACAlgorithm(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.162 -0500", hash_original_method = "92FD2A26DA15B4D69904AC037AAE7782", hash_generated_method = "7E68A49C5E6B70148B8A3C7B7430B06E")
+    
+private void addHMACAlgorithm(
         String algorithm,
         String algorithmClassName,
         String keyGeneratorClassName)
@@ -762,8 +768,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
         put("Alg.Alias.KeyGenerator.HMAC/" + algorithm, mainName);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.764 -0500", hash_original_method = "D71084920D31BEC8673D5601F90CF345", hash_generated_method = "F356194CE0CBEA34DC3CE2B3DC1313B8")
-    private void addHMACAlias(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.164 -0500", hash_original_method = "D71084920D31BEC8673D5601F90CF345", hash_generated_method = "F356194CE0CBEA34DC3CE2B3DC1313B8")
+    
+private void addHMACAlias(
         String              algorithm,
         DERObjectIdentifier oid)
     {
@@ -776,8 +783,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
     //
     // message digests
     //
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.766 -0500", hash_original_method = "D1811F612B066C9B05A7CE06AED0A036", hash_generated_method = "6923C48A2FA6515FBAD586A55443BE9B")
-    private void addMessageDigestAlgorithms()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.168 -0500", hash_original_method = "D1811F612B066C9B05A7CE06AED0A036", hash_generated_method = "6923C48A2FA6515FBAD586A55443BE9B")
+    
+private void addMessageDigestAlgorithms()
     {
         put("MessageDigest.SHA-1", "org.bouncycastle.jce.provider.JDKMessageDigest$SHA1");
         put("Alg.Alias.MessageDigest.SHA1", "SHA-1");
@@ -828,8 +836,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
     //
     // signature algorithms.
     //
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.770 -0500", hash_original_method = "7420A66ACC92234B394212961D34DE13", hash_generated_method = "6A0A569F3F65C21DF8973058772089AE")
-    private void addSignatureAlgorithms()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.173 -0500", hash_original_method = "7420A66ACC92234B394212961D34DE13", hash_generated_method = "6A0A569F3F65C21DF8973058772089AE")
+    
+private void addSignatureAlgorithms()
     {
         // BEGIN android-removed
         // Dropping MD2
@@ -1046,8 +1055,9 @@ public final class BouncyCastleProvider extends Provider implements Configurable
     // }
     // END android-removed
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.771 -0500", hash_original_method = "393A7CD364AF31C5A55C410D9408BF1B", hash_generated_method = "C457D365072D6C724410858C49E71599")
-    public void setParameter(String parameterName, Object parameter)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.176 -0500", hash_original_method = "393A7CD364AF31C5A55C410D9408BF1B", hash_generated_method = "C457D365072D6C724410858C49E71599")
+    
+public void setParameter(String parameterName, Object parameter)
     {
         ProviderUtil.setParameter(parameterName, parameter);
     }

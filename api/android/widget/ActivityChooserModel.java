@@ -65,8 +65,9 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @return The model.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.991 -0500", hash_original_method = "0D01D180802F00CC7597C044D40D73D9", hash_generated_method = "7ED2145194E106168FE2AECBB4D19FC3")
-    public static ActivityChooserModel get(Context context, String historyFileName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.074 -0500", hash_original_method = "0D01D180802F00CC7597C044D40D73D9", hash_generated_method = "7ED2145194E106168FE2AECBB4D19FC3")
+    
+public static ActivityChooserModel get(Context context, String historyFileName) {
         synchronized (sRegistryLock) {
             ActivityChooserModel dataModel = sDataModelRegistry.get(historyFileName);
             if (dataModel == null) {
@@ -77,93 +78,93 @@ public class ActivityChooserModel extends DataSetObservable {
             return dataModel;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.967 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.004 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.967 -0500", hash_original_field = "E037CBE0BE3FBA8A7961920B44AD080F", hash_generated_field = "C0E6428FC538C3E98CD4F3F3FD104AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.007 -0500", hash_original_field = "E037CBE0BE3FBA8A7961920B44AD080F", hash_generated_field = "C0E6428FC538C3E98CD4F3F3FD104AD3")
 
     private static final String LOG_TAG = ActivityChooserModel.class.getSimpleName();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.968 -0500", hash_original_field = "E20593E22FC31D904E7E5B3A71EE8318", hash_generated_field = "2F78BC6BF3EA40EEBFAAF4062888B202")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.009 -0500", hash_original_field = "E20593E22FC31D904E7E5B3A71EE8318", hash_generated_field = "2F78BC6BF3EA40EEBFAAF4062888B202")
 
     private static final String TAG_HISTORICAL_RECORDS = "historical-records";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.969 -0500", hash_original_field = "5F967947C66B27389D126D99E03528B1", hash_generated_field = "B57E7DC30CE2B7036D338B99DE1C8F4A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.012 -0500", hash_original_field = "5F967947C66B27389D126D99E03528B1", hash_generated_field = "B57E7DC30CE2B7036D338B99DE1C8F4A")
 
     private static final String TAG_HISTORICAL_RECORD = "historical-record";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.971 -0500", hash_original_field = "56AFAE4CDEC4680C8609FCB3EDBC717D", hash_generated_field = "4F997BDD322ABDE394E143C88BE19902")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.014 -0500", hash_original_field = "56AFAE4CDEC4680C8609FCB3EDBC717D", hash_generated_field = "4F997BDD322ABDE394E143C88BE19902")
 
     private static final String ATTRIBUTE_ACTIVITY = "activity";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.972 -0500", hash_original_field = "40ADE1807AC7E1E341C80E5BC4D9CE29", hash_generated_field = "4657BA7339C2DB58947DE9CCAAA8BCAF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.017 -0500", hash_original_field = "40ADE1807AC7E1E341C80E5BC4D9CE29", hash_generated_field = "4657BA7339C2DB58947DE9CCAAA8BCAF")
 
     private static final String ATTRIBUTE_TIME = "time";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.972 -0500", hash_original_field = "77BBD3343B372696409C101C8F9C60BF", hash_generated_field = "8399470D08376E2A59EAC9C79DB79A9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.020 -0500", hash_original_field = "77BBD3343B372696409C101C8F9C60BF", hash_generated_field = "8399470D08376E2A59EAC9C79DB79A9E")
 
     private static final String ATTRIBUTE_WEIGHT = "weight";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.973 -0500", hash_original_field = "8B8F9583173AB764EC9F9A025F38F1E5", hash_generated_field = "C17F091D6E1676968D87EC382F2A60E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.022 -0500", hash_original_field = "8B8F9583173AB764EC9F9A025F38F1E5", hash_generated_field = "C17F091D6E1676968D87EC382F2A60E4")
 
     public static final String DEFAULT_HISTORY_FILE_NAME =
         "activity_choser_model_history.xml";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.974 -0500", hash_original_field = "815CFEE32450A538972A8F43519898CD", hash_generated_field = "51D1ECB43E515D53A9B4473F163B06AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.025 -0500", hash_original_field = "815CFEE32450A538972A8F43519898CD", hash_generated_field = "51D1ECB43E515D53A9B4473F163B06AD")
 
     public static final int DEFAULT_HISTORY_MAX_LENGTH = 50;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.975 -0500", hash_original_field = "2AA93006CF4F51E2D3A52871199C92F7", hash_generated_field = "450784023A27CD5EC5CEF077D5E372FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.027 -0500", hash_original_field = "2AA93006CF4F51E2D3A52871199C92F7", hash_generated_field = "450784023A27CD5EC5CEF077D5E372FC")
 
     private static final int DEFAULT_ACTIVITY_INFLATION = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.976 -0500", hash_original_field = "3296A6C22BF2803ACD276A7DC849A5FF", hash_generated_field = "48D4985B801C29FF4FB9AF6C46ABE846")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.030 -0500", hash_original_field = "3296A6C22BF2803ACD276A7DC849A5FF", hash_generated_field = "48D4985B801C29FF4FB9AF6C46ABE846")
 
     private static final float DEFAULT_HISTORICAL_RECORD_WEIGHT = 1.0f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.977 -0500", hash_original_field = "B25DE5464F3B2FB0F1678D1D64A7BC0C", hash_generated_field = "5BDD81AF45C2360A5D0488EF180F0B0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.033 -0500", hash_original_field = "B25DE5464F3B2FB0F1678D1D64A7BC0C", hash_generated_field = "5BDD81AF45C2360A5D0488EF180F0B0E")
 
     private static final String HISTORY_FILE_EXTENSION = ".xml";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.978 -0500", hash_original_field = "79922DB043510C9A19B5CA2602F88574", hash_generated_field = "19F556E730E88DC545CC4ADD400592D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.035 -0500", hash_original_field = "79922DB043510C9A19B5CA2602F88574", hash_generated_field = "19F556E730E88DC545CC4ADD400592D6")
 
     private static final int INVALID_INDEX = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.979 -0500", hash_original_field = "2A85441306B6DA10925576EDB0829DE9", hash_generated_field = "922B32A26FF0AAB23FEB7772C78F88BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.037 -0500", hash_original_field = "2A85441306B6DA10925576EDB0829DE9", hash_generated_field = "922B32A26FF0AAB23FEB7772C78F88BB")
 
     private static final Object sRegistryLock = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.979 -0500", hash_original_field = "D12002D66861D7C4CD7306DAE98689EB", hash_generated_field = "BB4344C9185B0C58F3786BE4083DEBFE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.040 -0500", hash_original_field = "D12002D66861D7C4CD7306DAE98689EB", hash_generated_field = "BB4344C9185B0C58F3786BE4083DEBFE")
 
     private static final Map<String, ActivityChooserModel> sDataModelRegistry =
         new HashMap<String, ActivityChooserModel>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.980 -0500", hash_original_field = "C1EC34416CA5919EC9DC169918854311", hash_generated_field = "6392F8242B4A9D3DC6E2F079ACDCEA46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.042 -0500", hash_original_field = "C1EC34416CA5919EC9DC169918854311", hash_generated_field = "6392F8242B4A9D3DC6E2F079ACDCEA46")
 
     private final Object mInstanceLock = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.981 -0500", hash_original_field = "851D03B9AF2BF2C54308D4FA4876FCCB", hash_generated_field = "A383B170605041BAE9B92E5ABD19A2C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.045 -0500", hash_original_field = "851D03B9AF2BF2C54308D4FA4876FCCB", hash_generated_field = "A383B170605041BAE9B92E5ABD19A2C0")
 
     private final List<ActivityResolveInfo> mActivites = new ArrayList<ActivityResolveInfo>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.982 -0500", hash_original_field = "3AC8F7346660D77AD24249C0102BEBB2", hash_generated_field = "CD99824E96948584D748917073F44E2A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.047 -0500", hash_original_field = "3AC8F7346660D77AD24249C0102BEBB2", hash_generated_field = "CD99824E96948584D748917073F44E2A")
 
     private final List<HistoricalRecord> mHistoricalRecords = new ArrayList<HistoricalRecord>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.983 -0500", hash_original_field = "89F8153148C52753FEADBC127391782E", hash_generated_field = "DD3DAD2906BF0D253EBD93D8930F9D13")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.049 -0500", hash_original_field = "89F8153148C52753FEADBC127391782E", hash_generated_field = "DD3DAD2906BF0D253EBD93D8930F9D13")
 
     private final PackageMonitor mPackageMonitor = new DataModelPackageMonitor();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.983 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.052 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.984 -0500", hash_original_field = "460D23C5FE834DF5E670AC904F537CE8", hash_generated_field = "357B9AB2EB9473252BE7FAC7D1E15CF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.054 -0500", hash_original_field = "460D23C5FE834DF5E670AC904F537CE8", hash_generated_field = "357B9AB2EB9473252BE7FAC7D1E15CF3")
 
     private  String mHistoryFileName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.985 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.056 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
 
     private Intent mIntent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.986 -0500", hash_original_field = "CDFE9562459CF682CD5791AE8590AE22", hash_generated_field = "972A273635E03BCAAB877E2B3CA36A43")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.058 -0500", hash_original_field = "CDFE9562459CF682CD5791AE8590AE22", hash_generated_field = "972A273635E03BCAAB877E2B3CA36A43")
 
     private ActivitySorter mActivitySorter = new DefaultSorter();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.987 -0500", hash_original_field = "9E260D706DA037E28705F134F95A2D17", hash_generated_field = "EDEDBBB721F293D506B0D4333D55AA26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.061 -0500", hash_original_field = "9E260D706DA037E28705F134F95A2D17", hash_generated_field = "EDEDBBB721F293D506B0D4333D55AA26")
 
     private int mHistoryMaxSize = DEFAULT_HISTORY_MAX_LENGTH;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.987 -0500", hash_original_field = "8A47E82C5B6544A76C54534A1159111E", hash_generated_field = "2CA5D5746328370D849F634661FCCB3C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.063 -0500", hash_original_field = "8A47E82C5B6544A76C54534A1159111E", hash_generated_field = "2CA5D5746328370D849F634661FCCB3C")
 
     private boolean mCanReadHistoricalData = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.988 -0500", hash_original_field = "AFD63AFE6577D9D6820D1BD49F835A0F", hash_generated_field = "A0038BE823A55BDB17A2EB5E4620EF9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.065 -0500", hash_original_field = "AFD63AFE6577D9D6820D1BD49F835A0F", hash_generated_field = "A0038BE823A55BDB17A2EB5E4620EF9F")
 
     private boolean mReadShareHistoryCalled = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.989 -0500", hash_original_field = "B9DA8B44212AE5FF74D5FDCB48DCA951", hash_generated_field = "4EFA8B1A885AF19B054DFCDA0E6D3607")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.067 -0500", hash_original_field = "B9DA8B44212AE5FF74D5FDCB48DCA951", hash_generated_field = "4EFA8B1A885AF19B054DFCDA0E6D3607")
 
     private boolean mHistoricalRecordsChanged = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.990 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2C33E5889A8CDA732A297DBE7101DB89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.069 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2C33E5889A8CDA732A297DBE7101DB89")
 
     private final Handler mHandler = new Handler();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.990 -0500", hash_original_field = "B556ED2FBA0B414787FE1A89D6F15079", hash_generated_field = "84BCBE36C424794EB40EAAE6D9BDAEAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.071 -0500", hash_original_field = "B556ED2FBA0B414787FE1A89D6F15079", hash_generated_field = "84BCBE36C424794EB40EAAE6D9BDAEAE")
 
     private OnChooseActivityListener mActivityChoserModelPolicy;
 
@@ -173,8 +174,9 @@ public class ActivityChooserModel extends DataSetObservable {
      * @param context Context for loading resources.
      * @param historyFileName The history XML file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.992 -0500", hash_original_method = "807F9125D161268ACCBF934F5F44F95B", hash_generated_method = "4CC55F0D537F3401E12EDEB6D58A8114")
-    private ActivityChooserModel(Context context, String historyFileName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.076 -0500", hash_original_method = "807F9125D161268ACCBF934F5F44F95B", hash_generated_method = "4CC55F0D537F3401E12EDEB6D58A8114")
+    
+private ActivityChooserModel(Context context, String historyFileName) {
         mContext = context.getApplicationContext();
         if (!TextUtils.isEmpty(historyFileName)
                 && !historyFileName.endsWith(HISTORY_FILE_EXTENSION)) {
@@ -194,8 +196,9 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @param intent The intent.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.993 -0500", hash_original_method = "E9FF7BF71184D5918A5528B39387C05B", hash_generated_method = "91C5D66A53589765471AC9BE9C5BFCA3")
-    public void setIntent(Intent intent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.079 -0500", hash_original_method = "E9FF7BF71184D5918A5528B39387C05B", hash_generated_method = "91C5D66A53589765471AC9BE9C5BFCA3")
+    
+public void setIntent(Intent intent) {
         synchronized (mInstanceLock) {
             if (mIntent == intent) {
                 return;
@@ -210,8 +213,9 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @return The intent.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.994 -0500", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "932C480F63E4BDC434E715C77D01BFED")
-    public Intent getIntent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.081 -0500", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "932C480F63E4BDC434E715C77D01BFED")
+    
+public Intent getIntent() {
         synchronized (mInstanceLock) {
             return mIntent;
         }
@@ -224,8 +228,9 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @see #setIntent(Intent)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.995 -0500", hash_original_method = "D90428775A0762F0AD6636514EC58022", hash_generated_method = "C8E98811FE0D02D590564D80187E3373")
-    public int getActivityCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.084 -0500", hash_original_method = "D90428775A0762F0AD6636514EC58022", hash_generated_method = "C8E98811FE0D02D590564D80187E3373")
+    
+public int getActivityCount() {
         synchronized (mInstanceLock) {
             return mActivites.size();
         }
@@ -239,8 +244,9 @@ public class ActivityChooserModel extends DataSetObservable {
      * @see ActivityResolveInfo
      * @see #setIntent(Intent)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.996 -0500", hash_original_method = "032146065CC1BA2D79ECD4CB63DFEC7F", hash_generated_method = "D66592B3152CE0A00F052A67217D4190")
-    public ResolveInfo getActivity(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.086 -0500", hash_original_method = "032146065CC1BA2D79ECD4CB63DFEC7F", hash_generated_method = "D66592B3152CE0A00F052A67217D4190")
+    
+public ResolveInfo getActivity(int index) {
         synchronized (mInstanceLock) {
             return mActivites.get(index).resolveInfo;
         }
@@ -253,8 +259,9 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @return The index if found, -1 otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.996 -0500", hash_original_method = "1C6D65F5A71D312AA7F7882C56EDED0B", hash_generated_method = "B36B5CE7AFCADB83D2A6AD0AD42303BC")
-    public int getActivityIndex(ResolveInfo activity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.088 -0500", hash_original_method = "1C6D65F5A71D312AA7F7882C56EDED0B", hash_generated_method = "B36B5CE7AFCADB83D2A6AD0AD42303BC")
+    
+public int getActivityIndex(ResolveInfo activity) {
         List<ActivityResolveInfo> activities = mActivites;
         final int activityCount = activities.size();
         for (int i = 0; i < activityCount; i++) {
@@ -283,8 +290,9 @@ public class ActivityChooserModel extends DataSetObservable {
      * @see HistoricalRecord
      * @see OnChooseActivityListener
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.997 -0500", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "F99960AA35438CC484296F5D7EE4AB95")
-    public Intent chooseActivity(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.091 -0500", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "F99960AA35438CC484296F5D7EE4AB95")
+    
+public Intent chooseActivity(int index) {
         ActivityResolveInfo chosenActivity = mActivites.get(index);
 
         ComponentName chosenName = new ComponentName(
@@ -313,13 +321,13 @@ public class ActivityChooserModel extends DataSetObservable {
 
     
     public final static class HistoricalRecord {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.012 -0500", hash_original_field = "349BDCF162FD3E438C6A758EBB153707", hash_generated_field = "E9F78AFB95D47915FCC3FF74E33CC6C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.129 -0500", hash_original_field = "349BDCF162FD3E438C6A758EBB153707", hash_generated_field = "E9F78AFB95D47915FCC3FF74E33CC6C3")
 
         public  ComponentName activity;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.013 -0500", hash_original_field = "FB68C26D0BB5DD6577F61578B9AE66A8", hash_generated_field = "5A44367B7C554CE37EA61A01D45FAC73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.132 -0500", hash_original_field = "FB68C26D0BB5DD6577F61578B9AE66A8", hash_generated_field = "5A44367B7C554CE37EA61A01D45FAC73")
 
         public  long time;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.014 -0500", hash_original_field = "ED32AE0265E055EF357B36A061633A65", hash_generated_field = "5E0BED1FCBFF5A96E07202027E15BAE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.135 -0500", hash_original_field = "ED32AE0265E055EF357B36A061633A65", hash_generated_field = "5E0BED1FCBFF5A96E07202027E15BAE7")
 
         public  float weight;
 
@@ -330,8 +338,9 @@ public class ActivityChooserModel extends DataSetObservable {
          * @param time The time the activity was chosen.
          * @param weight The weight of the record.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.016 -0500", hash_original_method = "1C86724BE7B708067898B3EC6CC9E920", hash_generated_method = "931B707B3369EE5B34B031F4EEEEFDE2")
-        public HistoricalRecord(String activityName, long time, float weight) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.138 -0500", hash_original_method = "1C86724BE7B708067898B3EC6CC9E920", hash_generated_method = "931B707B3369EE5B34B031F4EEEEFDE2")
+        
+public HistoricalRecord(String activityName, long time, float weight) {
             this(ComponentName.unflattenFromString(activityName), time, weight);
         }
 
@@ -342,16 +351,18 @@ public class ActivityChooserModel extends DataSetObservable {
          * @param time The time the activity was chosen.
          * @param weight The weight of the record.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.017 -0500", hash_original_method = "15F3A03D01E02908C99E8CDDD520EB93", hash_generated_method = "B117B1C7AD39008C7B37FC7FFAB23423")
-        public HistoricalRecord(ComponentName activityName, long time, float weight) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.141 -0500", hash_original_method = "15F3A03D01E02908C99E8CDDD520EB93", hash_generated_method = "B117B1C7AD39008C7B37FC7FFAB23423")
+        
+public HistoricalRecord(ComponentName activityName, long time, float weight) {
             this.activity = activityName;
             this.time = time;
             this.weight = weight;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.018 -0500", hash_original_method = "4E1A48E49166529A0B7FC03866764063", hash_generated_method = "352078E7B322AA289CCF6775E22D1ADB")
-        @Override
-public int hashCode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.143 -0500", hash_original_method = "4E1A48E49166529A0B7FC03866764063", hash_generated_method = "352078E7B322AA289CCF6775E22D1ADB")
+        
+@Override
+        public int hashCode() {
             final int prime = 31;
             int result = 1;
             result = prime * result + ((activity == null) ? 0 : activity.hashCode());
@@ -360,9 +371,10 @@ public int hashCode() {
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.019 -0500", hash_original_method = "B85F0FF6FF50850EA2189DB29FD09D21", hash_generated_method = "925EC01A17EFCF4C15E96773246D4FC3")
-        @Override
-public boolean equals(Object obj) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.146 -0500", hash_original_method = "B85F0FF6FF50850EA2189DB29FD09D21", hash_generated_method = "925EC01A17EFCF4C15E96773246D4FC3")
+        
+@Override
+        public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
@@ -389,9 +401,10 @@ public boolean equals(Object obj) {
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.020 -0500", hash_original_method = "DE8206875FA4E924E296C5ACB6D7F3F2", hash_generated_method = "9BB09691C87ABA3B5C765EB27953B0B3")
-        @Override
-public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.148 -0500", hash_original_method = "DE8206875FA4E924E296C5ACB6D7F3F2", hash_generated_method = "9BB09691C87ABA3B5C765EB27953B0B3")
+        
+@Override
+        public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append("[");
             builder.append("; activity:").append(activity);
@@ -407,10 +420,10 @@ public String toString() {
 
     
     public final class ActivityResolveInfo implements Comparable<ActivityResolveInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.022 -0500", hash_original_field = "388E10A296BB39658E74C632FC6834F9", hash_generated_field = "42ACA7D028AD018D3FE2BFC3E32F6A75")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.154 -0500", hash_original_field = "388E10A296BB39658E74C632FC6834F9", hash_generated_field = "42ACA7D028AD018D3FE2BFC3E32F6A75")
 
         public  ResolveInfo resolveInfo;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.023 -0500", hash_original_field = "ED32AE0265E055EF357B36A061633A65", hash_generated_field = "5E0BED1FCBFF5A96E07202027E15BAE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.156 -0500", hash_original_field = "ED32AE0265E055EF357B36A061633A65", hash_generated_field = "5E0BED1FCBFF5A96E07202027E15BAE7")
 
         public float weight;
 
@@ -419,20 +432,23 @@ public String toString() {
          *
          * @param resolveInfo activity {@link ResolveInfo}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.024 -0500", hash_original_method = "FE163077B7530186AE819FA48AA47F8E", hash_generated_method = "88816EE6F3022CF85C492F00D6ACDA7E")
-        public ActivityResolveInfo(ResolveInfo resolveInfo) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.159 -0500", hash_original_method = "FE163077B7530186AE819FA48AA47F8E", hash_generated_method = "88816EE6F3022CF85C492F00D6ACDA7E")
+        
+public ActivityResolveInfo(ResolveInfo resolveInfo) {
             this.resolveInfo = resolveInfo;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.025 -0500", hash_original_method = "F192571EE56F5C4051616CB9861F74E4", hash_generated_method = "13AB84BC74D8FAD5F7035FEF73FC4060")
-        @Override
-public int hashCode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.161 -0500", hash_original_method = "F192571EE56F5C4051616CB9861F74E4", hash_generated_method = "13AB84BC74D8FAD5F7035FEF73FC4060")
+        
+@Override
+        public int hashCode() {
             return 31 + Float.floatToIntBits(weight);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.026 -0500", hash_original_method = "FF799F5AAE6D6CF88DAF4502D583A290", hash_generated_method = "22E769B1C84475BBCF7353D36CFABAAF")
-        @Override
-public boolean equals(Object obj) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.164 -0500", hash_original_method = "FF799F5AAE6D6CF88DAF4502D583A290", hash_generated_method = "22E769B1C84475BBCF7353D36CFABAAF")
+        
+@Override
+        public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
@@ -449,14 +465,16 @@ public boolean equals(Object obj) {
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.027 -0500", hash_original_method = "05EB01A51A0727988F01FD1C25038E23", hash_generated_method = "D7A9D7785F9F6C86346A0B0F5FE3E9EF")
-        public int compareTo(ActivityResolveInfo another) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.166 -0500", hash_original_method = "05EB01A51A0727988F01FD1C25038E23", hash_generated_method = "D7A9D7785F9F6C86346A0B0F5FE3E9EF")
+        
+public int compareTo(ActivityResolveInfo another) {
              return  Float.floatToIntBits(another.weight) - Float.floatToIntBits(weight);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.028 -0500", hash_original_method = "6B7079774B733597AE380820B7605540", hash_generated_method = "FCB473823D3E65A9CED590AB9A5E1E65")
-        @Override
-public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.168 -0500", hash_original_method = "6B7079774B733597AE380820B7605540", hash_generated_method = "FCB473823D3E65A9CED590AB9A5E1E65")
+        
+@Override
+        public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append("[");
             builder.append("resolveInfo:").append(resolveInfo.toString());
@@ -471,10 +489,10 @@ public String toString() {
 
     
     private final class DefaultSorter implements ActivitySorter {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.030 -0500", hash_original_field = "291DD62C8381C760FAE106954F174503", hash_generated_field = "80DD4E6EDFEAE82BDC0A595B5F72F371")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.173 -0500", hash_original_field = "291DD62C8381C760FAE106954F174503", hash_generated_field = "80DD4E6EDFEAE82BDC0A595B5F72F371")
 
         private static final float WEIGHT_DECAY_COEFFICIENT = 0.95f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.031 -0500", hash_original_field = "4E416A09671288BBCB5BA49D39FD40A0", hash_generated_field = "36A2609728A36E5BA82D7C988AE5AE60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.176 -0500", hash_original_field = "4E416A09671288BBCB5BA49D39FD40A0", hash_generated_field = "36A2609728A36E5BA82D7C988AE5AE60")
 
 
         private final Map<String, ActivityResolveInfo> mPackageNameToActivityMap =
@@ -486,8 +504,9 @@ public String toString() {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.032 -0500", hash_original_method = "1983622E810CF2F16D5FB85B8E79AAA7", hash_generated_method = "756C3AA0FD463B9CB639C740513E9A8A")
-        public void sort(Intent intent, List<ActivityResolveInfo> activities,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.180 -0500", hash_original_method = "1983622E810CF2F16D5FB85B8E79AAA7", hash_generated_method = "756C3AA0FD463B9CB639C740513E9A8A")
+        
+public void sort(Intent intent, List<ActivityResolveInfo> activities,
                 List<HistoricalRecord> historicalRecords) {
             Map<String, ActivityResolveInfo> packageNameToActivityMap =
                 mPackageNameToActivityMap;
@@ -533,8 +552,9 @@ public String toString() {
             //Synthesized constructor
         }
 
-       @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.037 -0500", hash_original_method = "C7992FBC3712621E8BB422FE384E294B", hash_generated_method = "F36BC393F0C978E8C08BA80782762A25")
-        public void run() {
+       @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.189 -0500", hash_original_method = "C7992FBC3712621E8BB422FE384E294B", hash_generated_method = "F36BC393F0C978E8C08BA80782762A25")
+        
+public void run() {
             FileInputStream fis = null;
             try {
                 fis = mContext.openFileInput(mHistoryFileName);
@@ -655,8 +675,9 @@ public String toString() {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.040 -0500", hash_original_method = "56491CDA5DB122242C8DDE4A7A87359C", hash_generated_method = "0E634B72781F99144EF2F4B3330B50E6")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.197 -0500", hash_original_method = "56491CDA5DB122242C8DDE4A7A87359C", hash_generated_method = "0E634B72781F99144EF2F4B3330B50E6")
+        
+public void run() {
             FileOutputStream fos = null;
             List<HistoricalRecord> records = null;
 
@@ -727,34 +748,38 @@ public String toString() {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.042 -0500", hash_original_method = "C89F5C92B68E48D5DAFC93C690A3926A", hash_generated_method = "F1568DF8BFCBB0E57801D31AD8C49B5E")
-        @Override
-public void onPackageAdded(String packageName, int uid) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.203 -0500", hash_original_method = "C89F5C92B68E48D5DAFC93C690A3926A", hash_generated_method = "F1568DF8BFCBB0E57801D31AD8C49B5E")
+        
+@Override
+        public void onPackageAdded(String packageName, int uid) {
             synchronized (mInstanceLock) {
                 loadActivitiesLocked();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.043 -0500", hash_original_method = "E08DC591D228402C0DBF164DF68C0AF4", hash_generated_method = "00871590302F7329D553334B8F7A09FA")
-        @Override
-public void onPackageAppeared(String packageName, int reason) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.206 -0500", hash_original_method = "E08DC591D228402C0DBF164DF68C0AF4", hash_generated_method = "00871590302F7329D553334B8F7A09FA")
+        
+@Override
+        public void onPackageAppeared(String packageName, int reason) {
             synchronized (mInstanceLock) {
                 loadActivitiesLocked();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.044 -0500", hash_original_method = "A7BE115B10A66075A04B7082DDA7D411", hash_generated_method = "9E8C6BD9FB134B0FF0C485D19E17173E")
-        @Override
-public void onPackageRemoved(String packageName, int uid) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.208 -0500", hash_original_method = "A7BE115B10A66075A04B7082DDA7D411", hash_generated_method = "9E8C6BD9FB134B0FF0C485D19E17173E")
+        
+@Override
+        public void onPackageRemoved(String packageName, int uid) {
             synchronized (mInstanceLock) {
                 pruneHistoricalRecordsForPackageLocked(packageName);
                 loadActivitiesLocked();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.045 -0500", hash_original_method = "31BBEB936625AC985495016944655B18", hash_generated_method = "8B5056331EE59F3F708E54C259458A25")
-        @Override
-public void onPackageDisappeared(String packageName, int reason) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.210 -0500", hash_original_method = "31BBEB936625AC985495016944655B18", hash_generated_method = "8B5056331EE59F3F708E54C259458A25")
+        
+@Override
+        public void onPackageDisappeared(String packageName, int reason) {
             synchronized (mInstanceLock) {
                 pruneHistoricalRecordsForPackageLocked(packageName);
                 loadActivitiesLocked();
@@ -792,8 +817,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @param listener The listener.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.998 -0500", hash_original_method = "56E3863DC4DFDE24EBD2068470DB48E1", hash_generated_method = "945308B1F8D38F595083588F81B721CD")
-    public void setOnChooseActivityListener(OnChooseActivityListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.093 -0500", hash_original_method = "56E3863DC4DFDE24EBD2068470DB48E1", hash_generated_method = "945308B1F8D38F595083588F81B721CD")
+    
+public void setOnChooseActivityListener(OnChooseActivityListener listener) {
         mActivityChoserModelPolicy = listener;
     }
 
@@ -806,8 +832,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @see #getActivity(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.999 -0500", hash_original_method = "8C412D794940DE98F4AAE841092A3BC7", hash_generated_method = "859CC40CECCD9B28B10704F18902B672")
-    public ResolveInfo getDefaultActivity() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.095 -0500", hash_original_method = "8C412D794940DE98F4AAE841092A3BC7", hash_generated_method = "859CC40CECCD9B28B10704F18902B672")
+    
+public ResolveInfo getDefaultActivity() {
         synchronized (mInstanceLock) {
             if (!mActivites.isEmpty()) {
                 return mActivites.get(0).resolveInfo;
@@ -826,8 +853,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @param index The index of the activity to set as default.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.000 -0500", hash_original_method = "6293689B582FC8E5AF147BEE230A1B37", hash_generated_method = "E2FB95F92E3F33CB38D9AFC1C9D3C591")
-    public void setDefaultActivity(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.098 -0500", hash_original_method = "6293689B582FC8E5AF147BEE230A1B37", hash_generated_method = "E2FB95F92E3F33CB38D9AFC1C9D3C591")
+    
+public void setDefaultActivity(int index) {
         ActivityResolveInfo newDefaultActivity = mActivites.get(index);
         ActivityResolveInfo oldDefaultActivity = mActivites.get(0);
 
@@ -859,8 +887,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *       data is read until this method is invoked.
      * <p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.001 -0500", hash_original_method = "79A1B7D3C52D92BAB878ED8275782ED6", hash_generated_method = "FBF069AAA9C160930BF6F2545425DB0D")
-    private void readHistoricalData() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.100 -0500", hash_original_method = "79A1B7D3C52D92BAB878ED8275782ED6", hash_generated_method = "FBF069AAA9C160930BF6F2545425DB0D")
+    
+private void readHistoricalData() {
         synchronized (mInstanceLock) {
             if (!mCanReadHistoricalData || !mHistoricalRecordsChanged) {
                 return;
@@ -882,8 +911,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      * @throws IllegalStateException If this method is called before a call to
      *         {@link #readHistoricalData()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.002 -0500", hash_original_method = "50EE1C88911FEE4E5E828FE89316C1B7", hash_generated_method = "F2A2234770B767080FFE4C421AD30B9D")
-    private void persistHistoricalData() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.102 -0500", hash_original_method = "50EE1C88911FEE4E5E828FE89316C1B7", hash_generated_method = "F2A2234770B767080FFE4C421AD30B9D")
+    
+private void persistHistoricalData() {
         synchronized (mInstanceLock) {
             if (!mReadShareHistoryCalled) {
                 throw new IllegalStateException("No preceding call to #readHistoricalData");
@@ -906,8 +936,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @see ActivitySorter
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.003 -0500", hash_original_method = "4FD548D8FB7638BF40234ABBB5D78544", hash_generated_method = "DD80FCF01AE7E0BA9A1D8A695062C69A")
-    public void setActivitySorter(ActivitySorter activitySorter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.104 -0500", hash_original_method = "4FD548D8FB7638BF40234ABBB5D78544", hash_generated_method = "DD80FCF01AE7E0BA9A1D8A695062C69A")
+    
+public void setActivitySorter(ActivitySorter activitySorter) {
         synchronized (mInstanceLock) {
             if (mActivitySorter == activitySorter) {
                 return;
@@ -923,8 +954,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @see #setActivitySorter(ActivitySorter)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.004 -0500", hash_original_method = "B440CA3B13B34DB5E9312802F4C1443D", hash_generated_method = "343228E589EF52FEFBDD6415F0B1CDAE")
-    private void sortActivities() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.108 -0500", hash_original_method = "B440CA3B13B34DB5E9312802F4C1443D", hash_generated_method = "343228E589EF52FEFBDD6415F0B1CDAE")
+    
+private void sortActivities() {
         synchronized (mInstanceLock) {
             if (mActivitySorter != null && !mActivites.isEmpty()) {
                 mActivitySorter.sort(mIntent, mActivites,
@@ -947,8 +979,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @param historyMaxSize The max history size.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.004 -0500", hash_original_method = "1F530ED27C984DBDEEC1EB526F5DD126", hash_generated_method = "C2D50153FAE17B99702BDC7B8D6D63A2")
-    public void setHistoryMaxSize(int historyMaxSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.110 -0500", hash_original_method = "1F530ED27C984DBDEEC1EB526F5DD126", hash_generated_method = "C2D50153FAE17B99702BDC7B8D6D63A2")
+    
+public void setHistoryMaxSize(int historyMaxSize) {
         synchronized (mInstanceLock) {
             if (mHistoryMaxSize == historyMaxSize) {
                 return;
@@ -964,8 +997,9 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @return The history max size.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.005 -0500", hash_original_method = "EBCBD4C754CE0391425067ED25453667", hash_generated_method = "2801A2704E59069A32759C53A4F30CA7")
-    public int getHistoryMaxSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.112 -0500", hash_original_method = "EBCBD4C754CE0391425067ED25453667", hash_generated_method = "2801A2704E59069A32759C53A4F30CA7")
+    
+public int getHistoryMaxSize() {
         synchronized (mInstanceLock) {
             return mHistoryMaxSize;
         }
@@ -976,16 +1010,18 @@ public void onPackageDisappeared(String packageName, int reason) {
      *
      * @return The history size.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.006 -0500", hash_original_method = "9F4BBC1AE7ECE6B5427CA6E0430F86F9", hash_generated_method = "D4A939CE607C80DAD95FC7EE090209EA")
-    public int getHistorySize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.114 -0500", hash_original_method = "9F4BBC1AE7ECE6B5427CA6E0430F86F9", hash_generated_method = "D4A939CE607C80DAD95FC7EE090209EA")
+    
+public int getHistorySize() {
         synchronized (mInstanceLock) {
             return mHistoricalRecords.size();
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.007 -0500", hash_original_method = "37F72BEA9084083CB35C7BD83368023D", hash_generated_method = "248FD8D7CA66D4A764B53D560B63E87E")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.117 -0500", hash_original_method = "37F72BEA9084083CB35C7BD83368023D", hash_generated_method = "248FD8D7CA66D4A764B53D560B63E87E")
+    
+@Override
+    protected void finalize() throws Throwable {
         super.finalize();
         mPackageMonitor.unregister();
     }
@@ -996,8 +1032,9 @@ protected void finalize() throws Throwable {
      * @param historicalRecord The record to add.
      * @return True if the record was added.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.008 -0500", hash_original_method = "50B8FA4A00A0FC54414B26FDB0055015", hash_generated_method = "1F1AD402AF9EF6252BAF181BAA9D537D")
-    private boolean addHisoricalRecord(HistoricalRecord historicalRecord) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.119 -0500", hash_original_method = "50B8FA4A00A0FC54414B26FDB0055015", hash_generated_method = "1F1AD402AF9EF6252BAF181BAA9D537D")
+    
+private boolean addHisoricalRecord(HistoricalRecord historicalRecord) {
         synchronized (mInstanceLock) {
             final boolean added = mHistoricalRecords.add(historicalRecord);
             if (added) {
@@ -1013,8 +1050,9 @@ protected void finalize() throws Throwable {
     /**
      * Prunes older excessive records to guarantee {@link #mHistoryMaxSize}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.009 -0500", hash_original_method = "84DEA752877B716573664E1E2DB7F950", hash_generated_method = "87E0749EC6EB8C064C1EC8153137CC1C")
-    private void pruneExcessiveHistoricalRecordsLocked() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.121 -0500", hash_original_method = "84DEA752877B716573664E1E2DB7F950", hash_generated_method = "87E0749EC6EB8C064C1EC8153137CC1C")
+    
+private void pruneExcessiveHistoricalRecordsLocked() {
         List<HistoricalRecord> choiceRecords = mHistoricalRecords;
         final int pruneCount = choiceRecords.size() - mHistoryMaxSize;
         if (pruneCount <= 0) {
@@ -1032,8 +1070,9 @@ protected void finalize() throws Throwable {
     /**
      * Loads the activities.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.010 -0500", hash_original_method = "CE097995E3DDE01957F3BEF111DCC08A", hash_generated_method = "B58F04823BB23908BF298601986A7658")
-    private void loadActivitiesLocked() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.124 -0500", hash_original_method = "CE097995E3DDE01957F3BEF111DCC08A", hash_generated_method = "B58F04823BB23908BF298601986A7658")
+    
+private void loadActivitiesLocked() {
         mActivites.clear();
         if (mIntent != null) {
             List<ResolveInfo> resolveInfos =
@@ -1054,8 +1093,9 @@ protected void finalize() throws Throwable {
      *
      * @param packageName The name of the package that goes away.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.011 -0500", hash_original_method = "A58F8162E2D66FE48738B2459230A97A", hash_generated_method = "44AA757C179E2890376F71A67063914D")
-    private void pruneHistoricalRecordsForPackageLocked(String packageName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.126 -0500", hash_original_method = "A58F8162E2D66FE48738B2459230A97A", hash_generated_method = "44AA757C179E2890376F71A67063914D")
+    
+private void pruneHistoricalRecordsForPackageLocked(String packageName) {
         boolean recordsRemoved = false;
 
         List<HistoricalRecord> historicalRecords = mHistoricalRecords;

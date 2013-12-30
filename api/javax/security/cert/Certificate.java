@@ -20,8 +20,9 @@ public abstract class Certificate {
     /**
      * Creates a new {@code Certificate}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.443 -0500", hash_original_method = "EF3B6A1B9C3991494D57A734B30AC9EA", hash_generated_method = "20DF396713DAA02310F7328ADDA40AD2")
-    public Certificate() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.704 -0500", hash_original_method = "EF3B6A1B9C3991494D57A734B30AC9EA", hash_generated_method = "20DF396713DAA02310F7328ADDA40AD2")
+    
+public Certificate() {}
 
     /**
      * Compares the argument to this Certificate. If both have the same bytes
@@ -33,8 +34,9 @@ public abstract class Certificate {
      *         {@code Certificate}, <code>false</code> otherwise
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.444 -0500", hash_original_method = "7638A14848B991538FCB5E98A2110811", hash_generated_method = "2236536B45A96F8C521CF0A7F03F6670")
-    public boolean equals(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.707 -0500", hash_original_method = "7638A14848B991538FCB5E98A2110811", hash_generated_method = "2236536B45A96F8C521CF0A7F03F6670")
+    
+public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
@@ -57,8 +59,9 @@ public abstract class Certificate {
      * @return the receiver's hash
      * @see #equals
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.445 -0500", hash_original_method = "694012085EC68335A49724253FE100EC", hash_generated_method = "ABB931EA2622BE63EC57C620C12C47F6")
-    public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.709 -0500", hash_original_method = "694012085EC68335A49724253FE100EC", hash_generated_method = "ABB931EA2622BE63EC57C620C12C47F6")
+    
+public int hashCode() {
         int res = 0;
         try {
             byte[] array = getEncoded();
@@ -77,8 +80,9 @@ public abstract class Certificate {
      * @throws CertificateEncodingException
      *             if encoding fails.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.445 -0500", hash_original_method = "97985BC010DD1187CA9D18F27C6321CC", hash_generated_method = "967CA908BE3445AA84C7FF1C69EFF907")
-    public abstract byte[] getEncoded()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.711 -0500", hash_original_method = "97985BC010DD1187CA9D18F27C6321CC", hash_generated_method = "967CA908BE3445AA84C7FF1C69EFF907")
+    
+public abstract byte[] getEncoded()
             throws CertificateEncodingException;
 
     /**
@@ -97,8 +101,9 @@ public abstract class Certificate {
      * @throws SignatureException
      *             if signature errors are detected
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.446 -0500", hash_original_method = "B83CE65D5C6D1244820061871FC42D24", hash_generated_method = "25F475487B3388B4A59788D7DA6ADFA1")
-    public abstract void verify(PublicKey key)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.714 -0500", hash_original_method = "B83CE65D5C6D1244820061871FC42D24", hash_generated_method = "25F475487B3388B4A59788D7DA6ADFA1")
+    
+public abstract void verify(PublicKey key)
             throws CertificateException, NoSuchAlgorithmException,
                    InvalidKeyException, NoSuchProviderException,
                    SignatureException;
@@ -122,8 +127,9 @@ public abstract class Certificate {
      * @exception SignatureException
      *                if signature errors are detected
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.447 -0500", hash_original_method = "206D0A21D5BAE0F83A1719C1D14A7E35", hash_generated_method = "D17B985B54E602C77696D4D138B8890E")
-    public abstract void verify(PublicKey key, String sigProvider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.716 -0500", hash_original_method = "206D0A21D5BAE0F83A1719C1D14A7E35", hash_generated_method = "D17B985B54E602C77696D4D138B8890E")
+    
+public abstract void verify(PublicKey key, String sigProvider)
             throws CertificateException, NoSuchAlgorithmException,
                    InvalidKeyException, NoSuchProviderException,
                    SignatureException;
@@ -134,16 +140,18 @@ public abstract class Certificate {
      *
      * @return a printable representation for the receiver.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.448 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "7EA90E50E51652C3FF11C3BD32031D10")
-    public abstract String toString();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.718 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "7EA90E50E51652C3FF11C3BD32031D10")
+    
+public abstract String toString();
 
     /**
      * Returns the public key corresponding to this certificate.
      *
      * @return the public key corresponding to this certificate.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.449 -0500", hash_original_method = "F2C717FDFBF8A1EA046A033A3AA9C5CC", hash_generated_method = "D544FA3197F301F074C9140DD12C3EA0")
-    public abstract PublicKey getPublicKey();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.721 -0500", hash_original_method = "F2C717FDFBF8A1EA046A033A3AA9C5CC", hash_generated_method = "D544FA3197F301F074C9140DD12C3EA0")
+    
+public abstract PublicKey getPublicKey();
 
     
 }

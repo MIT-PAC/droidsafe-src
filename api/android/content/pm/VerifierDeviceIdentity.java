@@ -22,8 +22,9 @@ public class VerifierDeviceIdentity implements Parcelable {
      *
      * @return random uniformly-distributed device identity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.808 -0500", hash_original_method = "C4B44017F6EDBED8E8D2629BE0073616", hash_generated_method = "8AC9D8AE721AB8AA18DE7A3074F45273")
-    public static VerifierDeviceIdentity generate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.266 -0500", hash_original_method = "C4B44017F6EDBED8E8D2629BE0073616", hash_generated_method = "8AC9D8AE721AB8AA18DE7A3074F45273")
+    
+public static VerifierDeviceIdentity generate() {
         final SecureRandom sr = new SecureRandom();
         return generate(sr);
     }
@@ -36,14 +37,16 @@ public class VerifierDeviceIdentity implements Parcelable {
      * @return verifier device identity based on the input from the provided
      *         random number generator
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.808 -0500", hash_original_method = "D6D944AADFC67B4BD42C933C55928E5B", hash_generated_method = "F6BDA7C6CF6CB05237F22F1D1A010B33")
-    static VerifierDeviceIdentity generate(Random rng) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.268 -0500", hash_original_method = "D6D944AADFC67B4BD42C933C55928E5B", hash_generated_method = "F6BDA7C6CF6CB05237F22F1D1A010B33")
+    
+static VerifierDeviceIdentity generate(Random rng) {
         long identity = rng.nextLong();
         return new VerifierDeviceIdentity(identity);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.811 -0500", hash_original_method = "0014F878462E6AB7B3A39DD713651CE2", hash_generated_method = "D1885278B7FEFFEE8CB7FF91673E9D18")
-    private static final String encodeBase32(long input) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.276 -0500", hash_original_method = "0014F878462E6AB7B3A39DD713651CE2", hash_generated_method = "D1885278B7FEFFEE8CB7FF91673E9D18")
+    
+private static final String encodeBase32(long input) {
         final char[] alphabet = ENCODE;
 
         /*
@@ -77,8 +80,9 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     // TODO move this out to its own class (android.util.Base32)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.812 -0500", hash_original_method = "67756D280C9AED60DD12C4FC81EE50DF", hash_generated_method = "444EFF4D618771059A5D2938B9F360A4")
-    private static final long decodeBase32(byte[] input) throws IllegalArgumentException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.279 -0500", hash_original_method = "67756D280C9AED60DD12C4FC81EE50DF", hash_generated_method = "444EFF4D618771059A5D2938B9F360A4")
+    
+private static final long decodeBase32(byte[] input) throws IllegalArgumentException {
         long output = 0L;
         int numParsed = 0;
 
@@ -129,8 +133,9 @@ public class VerifierDeviceIdentity implements Parcelable {
         return output;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.816 -0500", hash_original_method = "0CF285BB5A0F181276C01C8423A1EAF5", hash_generated_method = "04BCABD61BEDC681C225F79F9070AD72")
-    public static VerifierDeviceIdentity parse(String deviceIdentity)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.288 -0500", hash_original_method = "0CF285BB5A0F181276C01C8423A1EAF5", hash_generated_method = "04BCABD61BEDC681C225F79F9070AD72")
+    
+public static VerifierDeviceIdentity parse(String deviceIdentity)
             throws IllegalArgumentException {
         final byte[] input;
         try {
@@ -141,13 +146,13 @@ public class VerifierDeviceIdentity implements Parcelable {
 
         return new VerifierDeviceIdentity(decodeBase32(input));
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.802 -0500", hash_original_field = "393557AB25A20492A27AE09DAE140BCF", hash_generated_field = "7E38ED9569F38626C4A028FD8A2B8485")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.251 -0500", hash_original_field = "393557AB25A20492A27AE09DAE140BCF", hash_generated_field = "7E38ED9569F38626C4A028FD8A2B8485")
 
     private static final int LONG_SIZE = 13;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.803 -0500", hash_original_field = "3A20339031AAF8A9E59332C3AF82EC39", hash_generated_field = "7A01EEFF778BCF3738D765B30759018C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.254 -0500", hash_original_field = "3A20339031AAF8A9E59332C3AF82EC39", hash_generated_field = "7A01EEFF778BCF3738D765B30759018C")
 
     private static final int GROUP_SIZE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.809 -0500", hash_original_field = "75833F281B694B8CD3EC4A9C17B09CC1", hash_generated_field = "20D44E9FEF188B57242BE5C99167ADCE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.271 -0500", hash_original_field = "75833F281B694B8CD3EC4A9C17B09CC1", hash_generated_field = "20D44E9FEF188B57242BE5C99167ADCE")
 
 
     private static final char ENCODE[] = {
@@ -156,7 +161,7 @@ public class VerifierDeviceIdentity implements Parcelable {
         'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
         'Y', 'Z', '2', '3', '4', '5', '6', '7',
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.810 -0500", hash_original_field = "A3C2DE947E21D26C1577F395B426F934", hash_generated_field = "1700CA6C584107CCD7EC123C22C80E8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.273 -0500", hash_original_field = "A3C2DE947E21D26C1577F395B426F934", hash_generated_field = "1700CA6C584107CCD7EC123C22C80E8A")
 
 
     private static final char SEPARATOR = '-';
@@ -164,21 +169,23 @@ public class VerifierDeviceIdentity implements Parcelable {
 
     public static final Parcelable.Creator<VerifierDeviceIdentity> CREATOR
             = new Parcelable.Creator<VerifierDeviceIdentity>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.818 -0500", hash_original_method = "99DD28BEE7AB4272AC90CC3853107043", hash_generated_method = "CB7F11B01B5E9F7B1F70E0E46EB55613")
-        public VerifierDeviceIdentity createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.296 -0500", hash_original_method = "99DD28BEE7AB4272AC90CC3853107043", hash_generated_method = "CB7F11B01B5E9F7B1F70E0E46EB55613")
+        
+public VerifierDeviceIdentity createFromParcel(Parcel source) {
             return new VerifierDeviceIdentity(source);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.820 -0500", hash_original_method = "014F73E1B6F7F4E2290AEA380B8CCE84", hash_generated_method = "92560B600CB1D25AB1B2F0602EC3A8FF")
-        public VerifierDeviceIdentity[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.298 -0500", hash_original_method = "014F73E1B6F7F4E2290AEA380B8CCE84", hash_generated_method = "92560B600CB1D25AB1B2F0602EC3A8FF")
+        
+public VerifierDeviceIdentity[] newArray(int size) {
             return new VerifierDeviceIdentity[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.803 -0500", hash_original_field = "F7C6E4AF32F5AF287AD04BA4BC64B135", hash_generated_field = "C881F5DFD1BC7D567E596FEF17B3CE41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.256 -0500", hash_original_field = "F7C6E4AF32F5AF287AD04BA4BC64B135", hash_generated_field = "C881F5DFD1BC7D567E596FEF17B3CE41")
 
 
     private  long mIdentity;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.804 -0500", hash_original_field = "5CA1432964717A942B99C303AF57A60F", hash_generated_field = "2E79569F54EEBC27B02253CAB547B720")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.258 -0500", hash_original_field = "5CA1432964717A942B99C303AF57A60F", hash_generated_field = "2E79569F54EEBC27B02253CAB547B720")
 
 
     private  String mIdentityString;
@@ -189,29 +196,33 @@ public class VerifierDeviceIdentity implements Parcelable {
      * @param identity device identity in a 64-bit integer.
      * @throws
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.806 -0500", hash_original_method = "E059465E7DB8A2431674A21301113B59", hash_generated_method = "1A707BAEF53A6874C071D1ABA4CECFE1")
-    public VerifierDeviceIdentity(long identity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.261 -0500", hash_original_method = "E059465E7DB8A2431674A21301113B59", hash_generated_method = "1A707BAEF53A6874C071D1ABA4CECFE1")
+    
+public VerifierDeviceIdentity(long identity) {
         mIdentity = identity;
         mIdentityString = encodeBase32(identity);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.807 -0500", hash_original_method = "C7AE44830E0FC5E69D8DADD2D1F4EE49", hash_generated_method = "43B8624D78594E3A043D0F331A7711FC")
-    private VerifierDeviceIdentity(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.263 -0500", hash_original_method = "C7AE44830E0FC5E69D8DADD2D1F4EE49", hash_generated_method = "43B8624D78594E3A043D0F331A7711FC")
+    
+private VerifierDeviceIdentity(Parcel source) {
         final long identity = source.readLong();
 
         mIdentity = identity;
         mIdentityString = encodeBase32(identity);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.813 -0500", hash_original_method = "A24AB6F6393E3B1D0D15482B7A9B6B3D", hash_generated_method = "75A0F641DEED391E9C73ABF86D6CF76B")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.281 -0500", hash_original_method = "A24AB6F6393E3B1D0D15482B7A9B6B3D", hash_generated_method = "75A0F641DEED391E9C73ABF86D6CF76B")
+    
+@Override
+    public int hashCode() {
         return (int) mIdentity;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.814 -0500", hash_original_method = "C98AD9093350C34D0EE60C856A2859EF", hash_generated_method = "8B5A81F4BB84A602E9EE5396544674BF")
-    @Override
-public boolean equals(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.283 -0500", hash_original_method = "C98AD9093350C34D0EE60C856A2859EF", hash_generated_method = "8B5A81F4BB84A602E9EE5396544674BF")
+    
+@Override
+    public boolean equals(Object other) {
         if (!(other instanceof VerifierDeviceIdentity)) {
             return false;
         }
@@ -220,21 +231,24 @@ public boolean equals(Object other) {
         return mIdentity == o.mIdentity;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.815 -0500", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "08E30F2EC0373C28DD87D94073A647CC")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.286 -0500", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "08E30F2EC0373C28DD87D94073A647CC")
+    
+@Override
+    public String toString() {
         return mIdentityString;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.816 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
-    @Override
-public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.290 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
+    
+@Override
+    public int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.817 -0500", hash_original_method = "74CC0770FB4A8F3105F468C0A6751DF9", hash_generated_method = "512AE2A823FE454BD71B54875643FE11")
-    @Override
-public void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.293 -0500", hash_original_method = "74CC0770FB4A8F3105F468C0A6751DF9", hash_generated_method = "512AE2A823FE454BD71B54875643FE11")
+    
+@Override
+    public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(mIdentity);
     }
     // orphaned legacy method

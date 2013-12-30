@@ -22,25 +22,26 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
      * This method was extracted to encourage VM to inline callers.
      * TODO: when we have a VM that can actually inline, move the test in here too!
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.737 -0500", hash_original_method = "9B7D3F2F980E3EB6087A253589224152", hash_generated_method = "241DB74A7C1A3F403B28B3142CB5207F")
-    private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int index, int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.112 -0500", hash_original_method = "9B7D3F2F980E3EB6087A253589224152", hash_generated_method = "241DB74A7C1A3F403B28B3142CB5207F")
+    
+private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int index, int size) {
         throw new ArrayIndexOutOfBoundsException(size, index);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.690 -0500", hash_original_field = "5935DD24AA8693898A933569EC7C6CB5", hash_generated_field = "39DE62F55D74BDCEA57CB029AC7D9C53")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.977 -0500", hash_original_field = "5935DD24AA8693898A933569EC7C6CB5", hash_generated_field = "39DE62F55D74BDCEA57CB029AC7D9C53")
 
 
     private static final long serialVersionUID = -2767605614048989439L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.694 -0500", hash_original_field = "6C149789F0A7E32E47B3C38C0FFD610C", hash_generated_field = "F9EDE767CC2D62732638F03DE92C8707")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.986 -0500", hash_original_field = "6C149789F0A7E32E47B3C38C0FFD610C", hash_generated_field = "F9EDE767CC2D62732638F03DE92C8707")
 
 
     private static final int DEFAULT_SIZE = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.691 -0500", hash_original_field = "BF84735BCD9327FC2D1CC927ED35945D", hash_generated_field = "499A2D73243CED99A42E214D64505A6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.979 -0500", hash_original_field = "BF84735BCD9327FC2D1CC927ED35945D", hash_generated_field = "499A2D73243CED99A42E214D64505A6C")
 
     protected int elementCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.692 -0500", hash_original_field = "67BBD4B95E990052FBB9600D15E343A4", hash_generated_field = "0B3F426A5758654DA42168DCEAA2747C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.981 -0500", hash_original_field = "67BBD4B95E990052FBB9600D15E343A4", hash_generated_field = "0B3F426A5758654DA42168DCEAA2747C")
 
     protected Object[] elementData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.693 -0500", hash_original_field = "889865FA0F0C3F87B19387BF7C2B7B95", hash_generated_field = "C57732C85DED3048B8128B9506ED7293")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.983 -0500", hash_original_field = "889865FA0F0C3F87B19387BF7C2B7B95", hash_generated_field = "C57732C85DED3048B8128B9506ED7293")
 
     protected int capacityIncrement;
     
@@ -257,9 +258,10 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
      * @return the receiver's hash.
      * @see #equals
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.720 -0500", hash_original_method = "20A64E7812064C08C37EDD86F8A561DF", hash_generated_method = "E03AFB35E1AB6EEEE84CD19F72F0EB38")
-    @Override
-public synchronized int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.064 -0500", hash_original_method = "20A64E7812064C08C37EDD86F8A561DF", hash_generated_method = "E03AFB35E1AB6EEEE84CD19F72F0EB38")
+    
+@Override
+    public synchronized int hashCode() {
         int result = 1;
         for (int i = 0; i < elementCount; i++) {
             result = (31 * result)
@@ -413,9 +415,10 @@ public synchronized int hashCode() {
      * @return {@code true} if this vector is modified, {@code false} otherwise.
      * @see #remove(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.733 -0500", hash_original_method = "3D3F7D0269EE9A4A0E6B970CD7AB0599", hash_generated_method = "50571D3BC1ED74E3C9E79E72C232E208")
-    @Override
-public synchronized boolean retainAll(Collection<?> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.104 -0500", hash_original_method = "3D3F7D0269EE9A4A0E6B970CD7AB0599", hash_generated_method = "50571D3BC1ED74E3C9E79E72C232E208")
+    
+@Override
+    public synchronized boolean retainAll(Collection<?> collection) {
         return super.retainAll(collection);
     }
 
@@ -523,8 +526,9 @@ String varD03843288D33B9E1D3062E25339ECF6D_693101289 =         buffer.toString()
         //}
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.744 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "D143AA14F535C1E7B75B98ADCA9EA642")
-    private synchronized void writeObject(ObjectOutputStream stream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.133 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "D143AA14F535C1E7B75B98ADCA9EA642")
+    
+private synchronized void writeObject(ObjectOutputStream stream)
             throws IOException {
         stream.defaultWriteObject();
     }

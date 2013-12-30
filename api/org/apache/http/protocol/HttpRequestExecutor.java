@@ -24,8 +24,9 @@ public class HttpRequestExecutor {
     /**
      * Create a new request executor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.158 -0500", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "FCD633531AD55B8EC2ADF8EE06DBC285")
-    public HttpRequestExecutor() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.065 -0500", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "FCD633531AD55B8EC2ADF8EE06DBC285")
+    
+public HttpRequestExecutor() {
         super();
     }
 
@@ -41,8 +42,9 @@ public class HttpRequestExecutor {
      * @param request   the request, to obtain the executed method
      * @param response  the response, to obtain the status code
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.159 -0500", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "207D2E135165673D977230B8DEEA32C8")
-    protected boolean canResponseHaveBody(final HttpRequest request,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.068 -0500", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "207D2E135165673D977230B8DEEA32C8")
+    
+protected boolean canResponseHaveBody(final HttpRequest request,
                                           final HttpResponse response) {
 
         if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {
@@ -66,8 +68,9 @@ public class HttpRequestExecutor {
      * @throws HttpException      in case of a protocol or processing problem
      * @throws IOException        in case of an I/O problem
      */    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.161 -0500", hash_original_method = "119B944BAA4C5EE6E8AB8C1C74A61B19", hash_generated_method = "A8E9502B09A98175D880412D3ACED0A2")
-    public HttpResponse execute(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.071 -0500", hash_original_method = "119B944BAA4C5EE6E8AB8C1C74A61B19", hash_generated_method = "A8E9502B09A98175D880412D3ACED0A2")
+    
+public HttpResponse execute(
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) 
@@ -110,8 +113,9 @@ public class HttpRequestExecutor {
      * @throws HttpException      in case of a protocol or processing problem
      * @throws IOException        in case of an I/O problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.161 -0500", hash_original_method = "83559981E73A0A11E2E39D8FF1D4E53C", hash_generated_method = "351C03041EC146E740980031705F280D")
-    public void preProcess(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.073 -0500", hash_original_method = "83559981E73A0A11E2E39D8FF1D4E53C", hash_generated_method = "351C03041EC146E740980031705F280D")
+    
+public void preProcess(
             final HttpRequest request,
             final HttpProcessor processor,
             final HttpContext context)
@@ -148,8 +152,9 @@ public class HttpRequestExecutor {
      * @throws HttpException      in case of a protocol or processing problem
      * @throws IOException        in case of an I/O problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.163 -0500", hash_original_method = "3A0BDE86F44AAAE489AB1403F9B488D7", hash_generated_method = "A33312CA1EC96ADA3F27F09206D257AA")
-    protected HttpResponse doSendRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.077 -0500", hash_original_method = "3A0BDE86F44AAAE489AB1403F9B488D7", hash_generated_method = "A33312CA1EC96ADA3F27F09206D257AA")
+    
+protected HttpResponse doSendRequest(
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context)
@@ -225,8 +230,9 @@ public class HttpRequestExecutor {
      * @throws HttpException      in case of a protocol or processing problem
      * @throws IOException        in case of an I/O problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.164 -0500", hash_original_method = "ACD44B1A55AB2BB7AB7058E66F36FB4A", hash_generated_method = "6B7A5B5AAB4EAC371C836C89930F94EF")
-    protected HttpResponse doReceiveResponse(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.080 -0500", hash_original_method = "ACD44B1A55AB2BB7AB7058E66F36FB4A", hash_generated_method = "6B7A5B5AAB4EAC371C836C89930F94EF")
+    
+protected HttpResponse doReceiveResponse(
             final HttpRequest          request,
             final HttpClientConnection conn,
             final HttpContext          context)
@@ -272,8 +278,9 @@ public class HttpRequestExecutor {
      * @throws HttpException      in case of a protocol or processing problem
      * @throws IOException        in case of an I/O problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.165 -0500", hash_original_method = "64184DC5B382438058CC5473730574C6", hash_generated_method = "5A6E1628CDDCFD728C0DA065C4D778FE")
-    public void postProcess(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.083 -0500", hash_original_method = "64184DC5B382438058CC5473730574C6", hash_generated_method = "5A6E1628CDDCFD728C0DA065C4D778FE")
+    
+public void postProcess(
             final HttpResponse response,
             final HttpProcessor processor,
             final HttpContext context)

@@ -33,25 +33,27 @@ import javax.sip.message.Request;
 
 
 public class DefaultRouter implements Router {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.778 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.132 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
 
     private SipStackImpl sipStack;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.779 -0500", hash_original_field = "F732783B6547E2F4AE4819E261C89621", hash_generated_field = "EB3744EEB0666E12CFAB5865A55F554C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.134 -0500", hash_original_field = "F732783B6547E2F4AE4819E261C89621", hash_generated_field = "EB3744EEB0666E12CFAB5865A55F554C")
 
 
     private Hop defaultRoute;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.780 -0500", hash_original_method = "1E8D5551C1C844D291A6EDC5BD70E069", hash_generated_method = "76740CD8F7CB8A612911FE9CCA9CE730")
-    private DefaultRouter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.137 -0500", hash_original_method = "1E8D5551C1C844D291A6EDC5BD70E069", hash_generated_method = "76740CD8F7CB8A612911FE9CCA9CE730")
+    
+private DefaultRouter() {
 
     }
 
     /**
      * Constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.781 -0500", hash_original_method = "0186412A42AE3A0076B8DB4250031F53", hash_generated_method = "E1819CBFE819C754DAEC9A44444CE3AA")
-    public DefaultRouter(SipStack sipStack, String defaultRoute) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.140 -0500", hash_original_method = "0186412A42AE3A0076B8DB4250031F53", hash_generated_method = "E1819CBFE819C754DAEC9A44444CE3AA")
+    
+public DefaultRouter(SipStack sipStack, String defaultRoute) {
         this.sipStack = (SipStackImpl) sipStack;
         if (defaultRoute != null) {
             try {
@@ -100,8 +102,9 @@ public class DefaultRouter implements Router {
      *            is the sip request to route.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.782 -0500", hash_original_method = "5920A86ACDD933EC7CFC2B95A34FE620", hash_generated_method = "D3DAE52BFAEF18F6BBC76B854B4C5773")
-    public Hop getNextHop(Request request) throws SipException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.144 -0500", hash_original_method = "5920A86ACDD933EC7CFC2B95A34FE620", hash_generated_method = "D3DAE52BFAEF18F6BBC76B854B4C5773")
+    
+public Hop getNextHop(Request request) throws SipException {
 
         SIPRequest sipRequest = (SIPRequest) request;
 
@@ -202,8 +205,9 @@ public class DefaultRouter implements Router {
      * pre: top route header in request has no 'lr' parameter in URI post:
      * request-URI added as last route header, new req-URI = top-route-URI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.783 -0500", hash_original_method = "F98ABD2EA2392557384972BDB7FAD5AD", hash_generated_method = "79CB2E4E46BC8B45741840D877F07864")
-    public void fixStrictRouting(SIPRequest req) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.147 -0500", hash_original_method = "F98ABD2EA2392557384972BDB7FAD5AD", hash_generated_method = "79CB2E4E46BC8B45741840D877F07864")
+    
+public void fixStrictRouting(SIPRequest req) {
 
         RouteList routes = req.getRouteHeaders();
         Route first = (Route) routes.getFirst();
@@ -230,8 +234,9 @@ public class DefaultRouter implements Router {
      */
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.785 -0500", hash_original_method = "1A8C9A0DF77761777787B14E70DB6165", hash_generated_method = "3A7A70F4AA7EA0B40E7A88DF9227401C")
-    private final Hop createHop(SipURI sipUri, Request request) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.150 -0500", hash_original_method = "1A8C9A0DF77761777787B14E70DB6165", hash_generated_method = "3A7A70F4AA7EA0B40E7A88DF9227401C")
+    
+private final Hop createHop(SipURI sipUri, Request request) {
         // always use TLS when secure
         String transport = sipUri.isSecure() ? SIPConstants.TLS : sipUri
                 .getTransportParam();
@@ -268,8 +273,9 @@ public class DefaultRouter implements Router {
      *         this.getNextHops((SIPRequest)request); }
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.786 -0500", hash_original_method = "4C71B768C5A06ACD6891DA2692157012", hash_generated_method = "D4FA1AE20F412895E9950D7AAD4B0640")
-    public javax.sip.address.Hop getOutboundProxy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.153 -0500", hash_original_method = "4C71B768C5A06ACD6891DA2692157012", hash_generated_method = "D4FA1AE20F412895E9950D7AAD4B0640")
+    
+public javax.sip.address.Hop getOutboundProxy() {
         return this.defaultRoute;
     }
 
@@ -278,8 +284,9 @@ public class DefaultRouter implements Router {
      *
      * @see javax.sip.address.Router#getNextHop(javax.sip.message.Request)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.787 -0500", hash_original_method = "C9341668DF04FCD8B03458AAEB056098", hash_generated_method = "A4BD2AA04B9A90D6BF97BA1652C80190")
-    public ListIterator getNextHops(Request request) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.156 -0500", hash_original_method = "C9341668DF04FCD8B03458AAEB056098", hash_generated_method = "A4BD2AA04B9A90D6BF97BA1652C80190")
+    
+public ListIterator getNextHops(Request request) {
         try {
             LinkedList llist = new LinkedList();
             llist.add(this.getNextHop(request));

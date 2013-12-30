@@ -39,8 +39,9 @@ public class RFC2965Spec extends RFC2109Spec {
      * @param origin origin where cookie is received from or being sent to.
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.856 -0500", hash_original_method = "DB86B1A78C8282F0076D098AB19F02D7", hash_generated_method = "6476808AA0B23A874519A7923EE0CE15")
-    private static CookieOrigin adjustEffectiveHost(final CookieOrigin origin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.721 -0500", hash_original_method = "DB86B1A78C8282F0076D098AB19F02D7", hash_generated_method = "6476808AA0B23A874519A7923EE0CE15")
+    
+private static CookieOrigin adjustEffectiveHost(final CookieOrigin origin) {
         String host = origin.getHost();
         
         // Test if the host name appears to be a fully qualified DNS name, 
@@ -69,13 +70,15 @@ public class RFC2965Spec extends RFC2109Spec {
      * Default constructor 
      * 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.848 -0500", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "77B409F61B87ACCB7BC9C1AE9C45590A")
-    public RFC2965Spec() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.698 -0500", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "77B409F61B87ACCB7BC9C1AE9C45590A")
+    
+public RFC2965Spec() {
         this(null, false);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.849 -0500", hash_original_method = "ACE780060B747E0E2CD86A0260ED3969", hash_generated_method = "5705BC418EDC76844B3B98D00E16C553")
-    public RFC2965Spec(final String[] datepatterns, boolean oneHeader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.702 -0500", hash_original_method = "ACE780060B747E0E2CD86A0260ED3969", hash_generated_method = "5705BC418EDC76844B3B98D00E16C553")
+    
+public RFC2965Spec(final String[] datepatterns, boolean oneHeader) {
         super(datepatterns, oneHeader);
         registerAttribHandler(ClientCookie.DOMAIN_ATTR, new RFC2965DomainAttributeHandler());
         registerAttribHandler(ClientCookie.PORT_ATTR, new RFC2965PortAttributeHandler());
@@ -84,8 +87,9 @@ public class RFC2965Spec extends RFC2109Spec {
         registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2965VersionAttributeHandler());
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.850 -0500", hash_original_method = "4409F0FE45DA6FEDE61567597482D361", hash_generated_method = "90ED7C13FE191C3EAC4530E1C9666B5A")
-    private BasicClientCookie createCookie(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.705 -0500", hash_original_method = "4409F0FE45DA6FEDE61567597482D361", hash_generated_method = "90ED7C13FE191C3EAC4530E1C9666B5A")
+    
+private BasicClientCookie createCookie(
             final String name, final String value, final CookieOrigin origin) {
         BasicClientCookie cookie = new BasicClientCookie(name, value);
         cookie.setPath(getDefaultPath(origin));
@@ -93,8 +97,9 @@ public class RFC2965Spec extends RFC2109Spec {
         return cookie;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.851 -0500", hash_original_method = "C203D6CC66BEDFCF9DF77F8143966D25", hash_generated_method = "3BDA8DA111D6D107567D3498343E3009")
-    private BasicClientCookie createCookie2(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.707 -0500", hash_original_method = "C203D6CC66BEDFCF9DF77F8143966D25", hash_generated_method = "3BDA8DA111D6D107567D3498343E3009")
+    
+private BasicClientCookie createCookie2(
             final String name, final String value, final CookieOrigin origin) {
         BasicClientCookie2 cookie = new BasicClientCookie2(name, value);
         cookie.setPath(getDefaultPath(origin));
@@ -103,9 +108,10 @@ public class RFC2965Spec extends RFC2109Spec {
         return cookie;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.852 -0500", hash_original_method = "63E6AFA36A40CA79A5C09930028E525A", hash_generated_method = "3B26B2909A47A143EE887412D3CACAA2")
-    @Override
-public List<Cookie> parse(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.711 -0500", hash_original_method = "63E6AFA36A40CA79A5C09930028E525A", hash_generated_method = "3B26B2909A47A143EE887412D3CACAA2")
+    
+@Override
+    public List<Cookie> parse(
             final Header header, 
             CookieOrigin origin) throws MalformedCookieException {
         if (header == null) {
@@ -161,9 +167,10 @@ public List<Cookie> parse(
         return cookies;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.853 -0500", hash_original_method = "67EA3E91E653DB3E455D1CE08BD1E58C", hash_generated_method = "C04F7CEC1287050F43EE014FAEB75585")
-    @Override
-public void validate(final Cookie cookie, CookieOrigin origin)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.713 -0500", hash_original_method = "67EA3E91E653DB3E455D1CE08BD1E58C", hash_generated_method = "C04F7CEC1287050F43EE014FAEB75585")
+    
+@Override
+    public void validate(final Cookie cookie, CookieOrigin origin)
             throws MalformedCookieException {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
@@ -175,9 +182,10 @@ public void validate(final Cookie cookie, CookieOrigin origin)
         super.validate(cookie, origin);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.854 -0500", hash_original_method = "6825BB2CF6533B26EC949D0ED0CB3EFF", hash_generated_method = "777D9CF1281F93BE049C3E5D62D5C817")
-    @Override
-public boolean match(final Cookie cookie, CookieOrigin origin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.715 -0500", hash_original_method = "6825BB2CF6533B26EC949D0ED0CB3EFF", hash_generated_method = "777D9CF1281F93BE049C3E5D62D5C817")
+    
+@Override
+    public boolean match(final Cookie cookie, CookieOrigin origin) {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
         }
@@ -191,9 +199,10 @@ public boolean match(final Cookie cookie, CookieOrigin origin) {
     /**
      * Adds valid Port attribute value, e.g. "8000,8001,8002"
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.855 -0500", hash_original_method = "BB37CE4D8DBA00C0591EE6D75240E9EE", hash_generated_method = "1F8E7E903F1CF9C0B2E747D36CDD4F31")
-    @Override
-protected void formatCookieAsVer(final CharArrayBuffer buffer, 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.718 -0500", hash_original_method = "BB37CE4D8DBA00C0591EE6D75240E9EE", hash_generated_method = "1F8E7E903F1CF9C0B2E747D36CDD4F31")
+    
+@Override
+    protected void formatCookieAsVer(final CharArrayBuffer buffer, 
             final Cookie cookie, int version) {
         super.formatCookieAsVer(buffer, cookie, version);
         // format port attribute
@@ -219,15 +228,17 @@ protected void formatCookieAsVer(final CharArrayBuffer buffer,
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.856 -0500", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "4F0E8706C8A06A3327B55CCC84507458")
-    @Override
-public int getVersion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.723 -0500", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "4F0E8706C8A06A3327B55CCC84507458")
+    
+@Override
+    public int getVersion() {
         return 1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.857 -0500", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "A91FA22343ED136291772C1DEBFBC1C3")
-    @Override
-public Header getVersionHeader() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.726 -0500", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "A91FA22343ED136291772C1DEBFBC1C3")
+    
+@Override
+    public Header getVersionHeader() {
         CharArrayBuffer buffer = new CharArrayBuffer(40);
         buffer.append(SM.COOKIE2);
         buffer.append(": ");

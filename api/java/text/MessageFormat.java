@@ -35,8 +35,9 @@ public class MessageFormat extends Format {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.825 -0500", hash_original_method = "028A0A610E31197643C52E1AA7424EFD", hash_generated_method = "1A432DCE8A1D9FDC87F89E0825D717EC")
-    public static String format(String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.056 -0500", hash_original_method = "028A0A610E31197643C52E1AA7424EFD", hash_generated_method = "1A432DCE8A1D9FDC87F89E0825D717EC")
+    
+public static String format(String format, Object... args) {
         if (args != null) {
             for (int i = 0; i < args.length; i++) {
                 if (args[i] == null) {
@@ -46,11 +47,11 @@ public class MessageFormat extends Format {
         }
         return new MessageFormat(format).format(args);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.803 -0500", hash_original_field = "85F1E124B97D00A90D3E87E898848851", hash_generated_field = "DDAF9963C56DC8D3CC72243FA6D60F41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.994 -0500", hash_original_field = "85F1E124B97D00A90D3E87E898848851", hash_generated_field = "DDAF9963C56DC8D3CC72243FA6D60F41")
 
 
     private static final long serialVersionUID = 6479157306784022952L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.844 -0500", hash_original_field = "C160E54DEE9507CFBF7E5C8074ABADA4", hash_generated_field = "F3984ED43D46FE3C3FFDBA430A29142D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.146 -0500", hash_original_field = "C160E54DEE9507CFBF7E5C8074ABADA4", hash_generated_field = "F3984ED43D46FE3C3FFDBA430A29142D")
 
 
     private static final ObjectStreamField[] serialPersistentFields = {
@@ -61,27 +62,27 @@ public class MessageFormat extends Format {
         new ObjectStreamField("offsets", int[].class),
         new ObjectStreamField("pattern", String.class),
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.804 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.996 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
 
     private Locale locale;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.805 -0500", hash_original_field = "7EC9F198E5C9DB627479076AA671E13C", hash_generated_field = "44BD3039B18FC631AF3469BBAABEF8A6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.999 -0500", hash_original_field = "7EC9F198E5C9DB627479076AA671E13C", hash_generated_field = "44BD3039B18FC631AF3469BBAABEF8A6")
 
 
     transient private String[] strings;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.806 -0500", hash_original_field = "464C7E4860BE692CF9902BB4BA8A342C", hash_generated_field = "0CC8F912A4CE816F33718A9E926CC5E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.001 -0500", hash_original_field = "464C7E4860BE692CF9902BB4BA8A342C", hash_generated_field = "0CC8F912A4CE816F33718A9E926CC5E3")
 
 
     private int[] argumentNumbers;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.807 -0500", hash_original_field = "487548212267DE48557B9CCE14AB5577", hash_generated_field = "4840DFEFCC78103675C456B661F97552")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.004 -0500", hash_original_field = "487548212267DE48557B9CCE14AB5577", hash_generated_field = "4840DFEFCC78103675C456B661F97552")
 
 
     private Format[] formats;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.807 -0500", hash_original_field = "B77A978D018717DE754B211259BC526D", hash_generated_field = "8E5941FA03E4EAD10C76316C2B10EB9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.006 -0500", hash_original_field = "B77A978D018717DE754B211259BC526D", hash_generated_field = "8E5941FA03E4EAD10C76316C2B10EB9E")
 
 
     private int maxOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.808 -0500", hash_original_field = "A02BC4DC53512ED88E55A9A6CFBF2C5B", hash_generated_field = "D0A8CB4E81B16C7EDB6C78624EE723CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.008 -0500", hash_original_field = "A02BC4DC53512ED88E55A9A6CFBF2C5B", hash_generated_field = "D0A8CB4E81B16C7EDB6C78624EE723CF")
 
 
     transient private int maxArgumentIndex;
@@ -96,8 +97,9 @@ public class MessageFormat extends Format {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.809 -0500", hash_original_method = "DF99A7D88BE30484426F461C5ED2222D", hash_generated_method = "5C72D6FD9844B81FF2D91678F28F001B")
-    public MessageFormat(String template, Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.011 -0500", hash_original_method = "DF99A7D88BE30484426F461C5ED2222D", hash_generated_method = "5C72D6FD9844B81FF2D91678F28F001B")
+    
+public MessageFormat(String template, Locale locale) {
         this.locale = locale;
         applyPattern(template);
     }
@@ -112,8 +114,9 @@ public class MessageFormat extends Format {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.810 -0500", hash_original_method = "BAA918AD1B6BB7758E580E5A4864BDBA", hash_generated_method = "4E40857C718EFBC3ADDFDFD00CC1B9D9")
-    public MessageFormat(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.013 -0500", hash_original_method = "BAA918AD1B6BB7758E580E5A4864BDBA", hash_generated_method = "4E40857C718EFBC3ADDFDFD00CC1B9D9")
+    
+public MessageFormat(String template) {
         this(template, Locale.getDefault());
     }
 
@@ -125,8 +128,9 @@ public class MessageFormat extends Format {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.811 -0500", hash_original_method = "20F481C3B4FB7D239D889AD1AE3136D7", hash_generated_method = "BD92F01FABE93B475B84627EAB102842")
-    public void applyPattern(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.018 -0500", hash_original_method = "20F481C3B4FB7D239D889AD1AE3136D7", hash_generated_method = "BD92F01FABE93B475B84627EAB102842")
+    
+public void applyPattern(String template) {
         int length = template.length();
         StringBuffer buffer = new StringBuffer();
         ParsePosition position = new ParsePosition(0);
@@ -185,9 +189,10 @@ public class MessageFormat extends Format {
      * @return a shallow copy of this {@code MessageFormat}.
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.812 -0500", hash_original_method = "B53A9961D24B646CE17498A2E8FD8A6F", hash_generated_method = "BE9C143266B7735695443EF07FD6A8D8")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.021 -0500", hash_original_method = "B53A9961D24B646CE17498A2E8FD8A6F", hash_generated_method = "BE9C143266B7735695443EF07FD6A8D8")
+    
+@Override
+    public Object clone() {
         MessageFormat clone = (MessageFormat) super.clone();
         Format[] array = new Format[formats.length];
         for (int i = formats.length; --i >= 0;) {
@@ -210,9 +215,10 @@ public Object clone() {
      *         {@code MessageFormat}; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.813 -0500", hash_original_method = "2E70B47400B10858E99F75E16A06D539", hash_generated_method = "72FD03440AA98A2EBBBBE6A2972227C4")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.024 -0500", hash_original_method = "2E70B47400B10858E99F75E16A06D539", hash_generated_method = "72FD03440AA98A2EBBBBE6A2972227C4")
+    
+@Override
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }
@@ -249,9 +255,10 @@ public boolean equals(Object object) {
      *            if the arguments in the object array cannot be formatted
      *            by this message format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.814 -0500", hash_original_method = "2F36A5BCF5EDBC18FDC7136A6298BFC9", hash_generated_method = "CDFF5F0C66FBFAF4CD44AA0CF0CCCC67")
-    @Override
-public AttributedCharacterIterator formatToCharacterIterator(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.027 -0500", hash_original_method = "2F36A5BCF5EDBC18FDC7136A6298BFC9", hash_generated_method = "CDFF5F0C66FBFAF4CD44AA0CF0CCCC67")
+    
+@Override
+    public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         if (object == null) {
             throw new NullPointerException();
         }
@@ -292,14 +299,16 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      *            of the alignment field in the formatted text.
      * @return the string buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.815 -0500", hash_original_method = "A9B03AC07F14FDC18F9B212B66591284", hash_generated_method = "C954A19EC965760787C56DC99EEC2864")
-    public final StringBuffer format(Object[] objects, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.029 -0500", hash_original_method = "A9B03AC07F14FDC18F9B212B66591284", hash_generated_method = "C954A19EC965760787C56DC99EEC2864")
+    
+public final StringBuffer format(Object[] objects, StringBuffer buffer,
             FieldPosition field) {
         return formatImpl(objects, buffer, field, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.816 -0500", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "7897DDC60620BE71C92184A47C283A6E")
-    private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.033 -0500", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "7897DDC60620BE71C92184A47C283A6E")
+    
+private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
             FieldPosition position, List<FieldContainer> fields) {
         FieldPosition passedField = new FieldPosition(0);
         for (int i = 0; i <= maxOffset; i++) {
@@ -352,8 +361,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * position's begin and end index if it has MessageFormat.Field.ARGUMENT as
      * its field attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.817 -0500", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "92BB0A2A02A372271A864A9F99200768")
-    private void handleArgumentField(int begin, int end, int argIndex,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.035 -0500", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "92BB0A2A02A372271A864A9F99200768")
+    
+private void handleArgumentField(int begin, int end, int argIndex,
             FieldPosition position, List<FieldContainer> fields) {
         if (fields != null) {
             fields.add(new FieldContainer(begin, end, Field.ARGUMENT, Integer.valueOf(argIndex)));
@@ -378,8 +388,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * @param begin
      *            the index where the string this format has formatted begins
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.823 -0500", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "F2295C7377E10FA5920FF277B65858FC")
-    private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.051 -0500", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "F2295C7377E10FA5920FF277B65858FC")
+    
+private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
         if (fields == null) {
             return;
         }
@@ -427,9 +438,10 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * @throws ClassCastException
      *             if {@code object} is not an array of {@code Object}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.824 -0500", hash_original_method = "86D79FEBC73D19AFFF1CE089D06D0A2E", hash_generated_method = "5177FD74747F715BDF1462BB61283E0F")
-    @Override
-public final StringBuffer format(Object object, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.053 -0500", hash_original_method = "86D79FEBC73D19AFFF1CE089D06D0A2E", hash_generated_method = "5177FD74747F715BDF1462BB61283E0F")
+    
+@Override
+    public final StringBuffer format(Object object, StringBuffer buffer,
             FieldPosition field) {
         return format((Object[]) object, buffer, field);
     }
@@ -439,8 +451,9 @@ public final StringBuffer format(Object object, StringBuffer buffer,
      *
      * @return an array of {@code Format} instances.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.826 -0500", hash_original_method = "7EB79515AF02A4588C0D82DEFC2945FA", hash_generated_method = "7EFEE9D91FE14B594D203FA10FB1BCC1")
-    public Format[] getFormats() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.058 -0500", hash_original_method = "7EB79515AF02A4588C0D82DEFC2945FA", hash_generated_method = "7EFEE9D91FE14B594D203FA10FB1BCC1")
+    
+public Format[] getFormats() {
         return formats.clone();
     }
 
@@ -451,8 +464,9 @@ public final StringBuffer format(Object object, StringBuffer buffer,
      *
      * @return an array of formats, ordered by argument index.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.827 -0500", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "7256C96823D4554EB8A201ECE2978ADC")
-    public Format[] getFormatsByArgumentIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.061 -0500", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "7256C96823D4554EB8A201ECE2978ADC")
+    
+public Format[] getFormatsByArgumentIndex() {
         Format[] answer = new Format[maxArgumentIndex + 1];
         for (int i = 0; i < maxOffset + 1; i++) {
             answer[argumentNumbers[i]] = formats[i];
@@ -469,8 +483,9 @@ public final StringBuffer format(Object object, StringBuffer buffer,
      * @param format
      *            the format that will be set at index {@code argIndex}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.827 -0500", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "BFFBE18BA64F9C4CA5AC6433624C3006")
-    public void setFormatByArgumentIndex(int argIndex, Format format) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.064 -0500", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "BFFBE18BA64F9C4CA5AC6433624C3006")
+    
+public void setFormatByArgumentIndex(int argIndex, Format format) {
         for (int i = 0; i < maxOffset + 1; i++) {
             if (argumentNumbers[i] == argIndex) {
                 formats[i] = format;
@@ -485,8 +500,9 @@ public final StringBuffer format(Object object, StringBuffer buffer,
      * @param formats
      *            the formats in an array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.828 -0500", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "FA410B89D84CEDA94F1AB0CCDADC3C2F")
-    public void setFormatsByArgumentIndex(Format[] formats) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.076 -0500", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "FA410B89D84CEDA94F1AB0CCDADC3C2F")
+    
+public void setFormatsByArgumentIndex(Format[] formats) {
         for (int j = 0; j < formats.length; j++) {
             for (int i = 0; i < maxOffset + 1; i++) {
                 if (argumentNumbers[i] == j) {
@@ -501,14 +517,16 @@ public final StringBuffer format(Object object, StringBuffer buffer,
      *
      * @return the locale used to create formats.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.829 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
-    public Locale getLocale() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.080 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
+    
+public Locale getLocale() {
         return locale;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.830 -0500", hash_original_method = "C3648461AA348ABE73C14E89998C9B55", hash_generated_method = "42842E44531261FB5273C00ABBA16DEA")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.085 -0500", hash_original_method = "C3648461AA348ABE73C14E89998C9B55", hash_generated_method = "42842E44531261FB5273C00ABBA16DEA")
+    
+@Override
+    public int hashCode() {
         int hashCode = 0;
         for (int i = 0; i <= maxOffset; i++) {
             hashCode += argumentNumbers[i] + strings[i].hashCode();
@@ -535,8 +553,9 @@ public int hashCode() {
      * @throws ParseException
      *            if an error occurs during parsing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.831 -0500", hash_original_method = "EC21A725ACD65B59B44C587C03791CB0", hash_generated_method = "1E6275FC145A23B549543A655868D2B3")
-    public Object[] parse(String string) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.091 -0500", hash_original_method = "EC21A725ACD65B59B44C587C03791CB0", hash_generated_method = "1E6275FC145A23B549543A655868D2B3")
+    
+public Object[] parse(String string) throws ParseException {
         ParsePosition position = new ParsePosition(0);
         Object[] result = parse(string, position);
         if (position.getIndex() == 0) {
@@ -564,8 +583,9 @@ public int hashCode() {
      * @return the array of objects resulting from the parse, or {@code null} if
      *         there is an error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.832 -0500", hash_original_method = "D7228DDFC0E7ACF8FDCF2D792E0983E6", hash_generated_method = "A2B9D3FBF818C01E8D5B2503E2B4BBFD")
-    public Object[] parse(String string, ParsePosition position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.097 -0500", hash_original_method = "D7228DDFC0E7ACF8FDCF2D792E0983E6", hash_generated_method = "A2B9D3FBF818C01E8D5B2503E2B4BBFD")
+    
+public Object[] parse(String string, ParsePosition position) {
         if (string == null) {
             return EmptyArray.OBJECT;
         }
@@ -636,14 +656,16 @@ public int hashCode() {
      * @return the array of objects resulting from the parse, or {@code null} if
      *         there is an error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.833 -0500", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "63216C42E69B7A23B760025E3A8B8D9B")
-    @Override
-public Object parseObject(String string, ParsePosition position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.101 -0500", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "63216C42E69B7A23B760025E3A8B8D9B")
+    
+@Override
+    public Object parseObject(String string, ParsePosition position) {
         return parse(string, position);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.834 -0500", hash_original_method = "F0EBB1D410262325E53A6EB4F51F6A54", hash_generated_method = "2DE98B380D6132E3EB063D2F69DC49F7")
-    private int match(String string, ParsePosition position, boolean last,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.107 -0500", hash_original_method = "F0EBB1D410262325E53A6EB4F51F6A54", hash_generated_method = "2DE98B380D6132E3EB063D2F69DC49F7")
+    
+private int match(String string, ParsePosition position, boolean last,
             String[] tokens) {
         int length = string.length(), offset = position.getIndex(), token = -1;
         while (offset < length && Character.isWhitespace(string.charAt(offset))) {
@@ -672,8 +694,9 @@ public Object parseObject(String string, ParsePosition position) {
         return -1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.835 -0500", hash_original_method = "C959BA9FF5D67B6099707C942E630082", hash_generated_method = "AB480404738039F21DDCBF37C62E644B")
-    private Format parseVariable(String string, ParsePosition position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.113 -0500", hash_original_method = "C959BA9FF5D67B6099707C942E630082", hash_generated_method = "AB480404738039F21DDCBF37C62E644B")
+    
+private Format parseVariable(String string, ParsePosition position) {
         int length = string.length(), offset = position.getIndex();
         char ch;
         if (offset >= length || ((ch = string.charAt(offset++)) != '}' && ch != ',')) {
@@ -757,8 +780,9 @@ public Object parseObject(String string, ParsePosition position) {
      * @param format
      *            the {@code Format} that replaces the old format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.836 -0500", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "D72E7BA9462DF346425955850537E9C6")
-    public void setFormat(int offset, Format format) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.118 -0500", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "D72E7BA9462DF346425955850537E9C6")
+    
+public void setFormat(int offset, Format format) {
         formats[offset] = format;
     }
 
@@ -768,8 +792,9 @@ public Object parseObject(String string, ParsePosition position) {
      * @param formats
      *            an array of {@code Format}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.837 -0500", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "FD117B80C69E8A4F820A18E6F08B47EA")
-    public void setFormats(Format[] formats) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.123 -0500", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "FD117B80C69E8A4F820A18E6F08B47EA")
+    
+public void setFormats(Format[] formats) {
         int min = this.formats.length;
         if (formats.length < min) {
             min = formats.length;
@@ -787,8 +812,9 @@ public Object parseObject(String string, ParsePosition position) {
      * @param locale
      *            the new locale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.838 -0500", hash_original_method = "2EE5DAE8254A09BA3EE14891BDB8B487", hash_generated_method = "11A2FAE11FC1A5D597923FE104A96F38")
-    public void setLocale(Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.128 -0500", hash_original_method = "2EE5DAE8254A09BA3EE14891BDB8B487", hash_generated_method = "11A2FAE11FC1A5D597923FE104A96F38")
+    
+public void setLocale(Locale locale) {
         this.locale = locale;
         for (int i = 0; i <= maxOffset; i++) {
             Format format = formats[i];
@@ -812,8 +838,9 @@ public Object parseObject(String string, ParsePosition position) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.839 -0500", hash_original_method = "BE681D9EC5F601D03AA4D2DED505610A", hash_generated_method = "2C86DA88F5AEBCB45B6AD2C00721CD90")
-    private String decodeDecimalFormat(StringBuffer buffer, Format format) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.132 -0500", hash_original_method = "BE681D9EC5F601D03AA4D2DED505610A", hash_generated_method = "2C86DA88F5AEBCB45B6AD2C00721CD90")
+    
+private String decodeDecimalFormat(StringBuffer buffer, Format format) {
         buffer.append(",number");
         if (format.equals(NumberFormat.getNumberInstance(locale))) {
             // Empty block
@@ -830,8 +857,9 @@ public Object parseObject(String string, ParsePosition position) {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.840 -0500", hash_original_method = "4C7466ADB5C592A5046867709A03D0C4", hash_generated_method = "BBDE23B5D43A7B9999261B473823AB28")
-    private String decodeSimpleDateFormat(StringBuffer buffer, Format format) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.137 -0500", hash_original_method = "4C7466ADB5C592A5046867709A03D0C4", hash_generated_method = "BBDE23B5D43A7B9999261B473823AB28")
+    
+private String decodeSimpleDateFormat(StringBuffer buffer, Format format) {
         if (format.equals(DateFormat.getTimeInstance(DateFormat.DEFAULT, locale))) {
             buffer.append(",time");
         } else if (format.equals(DateFormat.getDateInstance(DateFormat.DEFAULT,
@@ -867,8 +895,9 @@ public Object parseObject(String string, ParsePosition position) {
      *
      * @return the pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.842 -0500", hash_original_method = "0A7E6003101ED48A94DA0D4F2E79183E", hash_generated_method = "5A29D53EB005C97126A1E9F2282E7B30")
-    public String toPattern() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.140 -0500", hash_original_method = "0A7E6003101ED48A94DA0D4F2E79183E", hash_generated_method = "5A29D53EB005C97126A1E9F2282E7B30")
+    
+public String toPattern() {
         StringBuffer buffer = new StringBuffer();
         for (int i = 0; i <= maxOffset; i++) {
             appendQuoted(buffer, strings[i]);
@@ -918,8 +947,9 @@ public Object parseObject(String string, ParsePosition position) {
         return buffer.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.843 -0500", hash_original_method = "6D428A023D401981380713AD4CDA7F82", hash_generated_method = "2C1000AF8EA055B09AE9790989767646")
-    private void appendQuoted(StringBuffer buffer, String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.143 -0500", hash_original_method = "6D428A023D401981380713AD4CDA7F82", hash_generated_method = "2C1000AF8EA055B09AE9790989767646")
+    
+private void appendQuoted(StringBuffer buffer, String string) {
         int length = string.length();
         for (int i = 0; i < length; i++) {
             char ch = string.charAt(i);
@@ -941,17 +971,18 @@ public Object parseObject(String string, ParsePosition position) {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "302E5A3147803830441A79AED31F4022")
 
         int end;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.819 -0500", hash_original_field = "3C510FC4DA58A78E7F390C1B8DF1DA17", hash_generated_field = "3C510FC4DA58A78E7F390C1B8DF1DA17")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.041 -0500", hash_original_field = "3C510FC4DA58A78E7F390C1B8DF1DA17", hash_generated_field = "3C510FC4DA58A78E7F390C1B8DF1DA17")
 
 
         AttributedCharacterIterator.Attribute attribute;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.820 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.043 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
 
 
         Object value;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.821 -0500", hash_original_method = "79F81C9DE3A6ED731ECF4F86681A281A", hash_generated_method = "155E4C8EC62888044A6C19A3E266ED36")
-        public FieldContainer(int start, int end,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.046 -0500", hash_original_method = "79F81C9DE3A6ED731ECF4F86681A281A", hash_generated_method = "155E4C8EC62888044A6C19A3E266ED36")
+        
+public FieldContainer(int start, int end,
                 AttributedCharacterIterator.Attribute attribute, Object value) {
             this.start = start;
             this.end = end;
@@ -965,11 +996,11 @@ public Object parseObject(String string, ParsePosition position) {
 
     
     public static class Field extends Format.Field {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.847 -0500", hash_original_field = "5C42A4FC0D53FB69002D928FD16AB64B", hash_generated_field = "82B93A1D640327089FF038CC1C876D1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.155 -0500", hash_original_field = "5C42A4FC0D53FB69002D928FD16AB64B", hash_generated_field = "82B93A1D640327089FF038CC1C876D1A")
 
 
         private static final long serialVersionUID = 7899943957617360810L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.848 -0500", hash_original_field = "9F48ECB84499A13E88DB0AEA48EA998A", hash_generated_field = "BDDCF15FC3001123F8D4DF824E83B022")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.158 -0500", hash_original_field = "9F48ECB84499A13E88DB0AEA48EA998A", hash_generated_field = "BDDCF15FC3001123F8D4DF824E83B022")
 
         public static final Field ARGUMENT = new Field("message argument field");
 
@@ -980,14 +1011,16 @@ public Object parseObject(String string, ParsePosition position) {
          * @param fieldName
          *            the field name.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.849 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
-        protected Field(String fieldName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.161 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
+        
+protected Field(String fieldName) {
             super(fieldName);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.845 -0500", hash_original_method = "9DFEE475D15759FEAAC0AFBD81E7E5BF", hash_generated_method = "9D0446B89AD916C03E682E9C7948B6D9")
-    private void writeObject(ObjectOutputStream stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.148 -0500", hash_original_method = "9DFEE475D15759FEAAC0AFBD81E7E5BF", hash_generated_method = "9D0446B89AD916C03E682E9C7948B6D9")
+    
+private void writeObject(ObjectOutputStream stream) throws IOException {
         ObjectOutputStream.PutField fields = stream.putFields();
         fields.put("argumentNumbers", argumentNumbers);
         Format[] compatibleFormats = formats;
@@ -1011,8 +1044,9 @@ public Object parseObject(String string, ParsePosition position) {
         stream.writeFields();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.846 -0500", hash_original_method = "A9ED7844547D5D70718F3EA12242A430", hash_generated_method = "B81107E9FD03D52517BB8A93C941EE90")
-    private void readObject(ObjectInputStream stream) throws IOException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.152 -0500", hash_original_method = "A9ED7844547D5D70718F3EA12242A430", hash_generated_method = "B81107E9FD03D52517BB8A93C941EE90")
+    
+private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
         ObjectInputStream.GetField fields = stream.readFields();
         argumentNumbers = (int[]) fields.get("argumentNumbers", null);

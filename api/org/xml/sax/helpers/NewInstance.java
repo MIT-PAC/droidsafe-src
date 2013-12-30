@@ -18,8 +18,9 @@ class NewInstance {
      *
      * Package private so this code is not exposed at the API level.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.369 -0500", hash_original_method = "E369FF088FB91F5BEAD9EC65B9119630", hash_generated_method = "61BEE3B61F78F6F1FCC670D4CBF72211")
-    static Object newInstance (ClassLoader classLoader, String className)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.125 -0500", hash_original_method = "E369FF088FB91F5BEAD9EC65B9119630", hash_generated_method = "61BEE3B61F78F6F1FCC670D4CBF72211")
+    
+static Object newInstance (ClassLoader classLoader, String className)
         throws ClassNotFoundException, IllegalAccessException,
             InstantiationException
     {
@@ -36,8 +37,9 @@ class NewInstance {
      * Figure out which ClassLoader to use.  For JDK 1.2 and later use
      * the context ClassLoader.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.370 -0500", hash_original_method = "2CFACACB756B4314AD1F2CA20DF63100", hash_generated_method = "11C0FACD4CD318CFF0EE0DC9788E26E7")
-    static ClassLoader getClassLoader ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.128 -0500", hash_original_method = "2CFACACB756B4314AD1F2CA20DF63100", hash_generated_method = "11C0FACD4CD318CFF0EE0DC9788E26E7")
+    
+static ClassLoader getClassLoader ()
     {
         Method m = null;
 

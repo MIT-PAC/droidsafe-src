@@ -10,7 +10,7 @@ import droidsafe.annotations.*;
 
 
 public class NoSuchMethodError extends IncompatibleClassChangeError {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.726 -0500", hash_original_field = "81A4755C531FE5ED98A75CBE713FDD1C", hash_generated_field = "635C9A9BFCFFDA068A7F59FA9CD17FE1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.034 -0500", hash_original_field = "81A4755C531FE5ED98A75CBE713FDD1C", hash_generated_field = "635C9A9BFCFFDA068A7F59FA9CD17FE1")
 
 
     private static final long serialVersionUID = -3765521442372831335L;
@@ -19,8 +19,9 @@ public class NoSuchMethodError extends IncompatibleClassChangeError {
      * Constructs a new {@code NoSuchMethodError} that includes the current
      * stack trace.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.727 -0500", hash_original_method = "80EBD198F916FEE348D274437586B5BC", hash_generated_method = "EC63043FE8F0B7C4581CFB28CF8CFFDF")
-    public NoSuchMethodError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.036 -0500", hash_original_method = "80EBD198F916FEE348D274437586B5BC", hash_generated_method = "EC63043FE8F0B7C4581CFB28CF8CFFDF")
+    
+public NoSuchMethodError() {
     }
 
     /**
@@ -30,8 +31,9 @@ public class NoSuchMethodError extends IncompatibleClassChangeError {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.728 -0500", hash_original_method = "4CC31AAD9CD08413E75D886E5A5CF2D3", hash_generated_method = "5852B1E75AD6B6BC2CB675208087B9ED")
-    public NoSuchMethodError(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.039 -0500", hash_original_method = "4CC31AAD9CD08413E75D886E5A5CF2D3", hash_generated_method = "5852B1E75AD6B6BC2CB675208087B9ED")
+    
+public NoSuchMethodError(String detailMessage) {
         super(detailMessage);
     }
 }

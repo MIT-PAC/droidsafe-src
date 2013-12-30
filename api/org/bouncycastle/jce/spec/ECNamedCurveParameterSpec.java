@@ -15,12 +15,13 @@ import org.bouncycastle.math.ec.ECPoint;
 
 
 public class ECNamedCurveParameterSpec extends ECParameterSpec {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.626 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.781 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private String  name;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.627 -0500", hash_original_method = "26C644EB7C653DDD4CB6B37A75A99655", hash_generated_method = "203FF8697A5562557423017A7FC1C141")
-    public ECNamedCurveParameterSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.783 -0500", hash_original_method = "26C644EB7C653DDD4CB6B37A75A99655", hash_generated_method = "203FF8697A5562557423017A7FC1C141")
+    
+public ECNamedCurveParameterSpec(
         String      name,
         ECCurve     curve,
         ECPoint     G,
@@ -31,8 +32,9 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         this.name = name;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.628 -0500", hash_original_method = "6202179398236C8F6061917C30684FB7", hash_generated_method = "F5A7956101ED1E68F1969EE24A3211BF")
-    public ECNamedCurveParameterSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.786 -0500", hash_original_method = "6202179398236C8F6061917C30684FB7", hash_generated_method = "F5A7956101ED1E68F1969EE24A3211BF")
+    
+public ECNamedCurveParameterSpec(
         String      name,
         ECCurve     curve,
         ECPoint     G,
@@ -44,8 +46,9 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         this.name = name;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.629 -0500", hash_original_method = "8EFB3A2E9C5B967CAF71EC98D8241ACE", hash_generated_method = "1035EB5F2E0113C27A99CDA7CA116AAA")
-    public ECNamedCurveParameterSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.789 -0500", hash_original_method = "8EFB3A2E9C5B967CAF71EC98D8241ACE", hash_generated_method = "1035EB5F2E0113C27A99CDA7CA116AAA")
+    
+public ECNamedCurveParameterSpec(
         String      name,
         ECCurve     curve,
         ECPoint     G,
@@ -61,8 +64,9 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
     /**
      * return the name of the curve the EC domain parameters belong to.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.630 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
-    public String getName()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.791 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
+    
+public String getName()
     {
         return name;
     }

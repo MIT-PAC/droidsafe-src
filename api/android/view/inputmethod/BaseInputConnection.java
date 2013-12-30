@@ -42,8 +42,9 @@ class ComposingText implements NoCopySpan {
 
 public class BaseInputConnection implements InputConnection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.601 -0500", hash_original_method = "62C66E7D51985E873C93BC6EE5B2664E", hash_generated_method = "E27089B8FDBBB72B63EBBED497B30100")
-    public static final void removeComposingSpans(Spannable text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.429 -0500", hash_original_method = "62C66E7D51985E873C93BC6EE5B2664E", hash_generated_method = "E27089B8FDBBB72B63EBBED497B30100")
+    
+public static final void removeComposingSpans(Spannable text) {
         text.removeSpan(COMPOSING);
         Object[] sps = text.getSpans(0, text.length(), Object.class);
         if (sps != null) {
@@ -56,14 +57,16 @@ public class BaseInputConnection implements InputConnection {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.601 -0500", hash_original_method = "149B8DCE1DD4AF251EAA1316EAECD41B", hash_generated_method = "A22A4EEC36BB24573500BE9B042D8909")
-    public static void setComposingSpans(Spannable text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.432 -0500", hash_original_method = "149B8DCE1DD4AF251EAA1316EAECD41B", hash_generated_method = "A22A4EEC36BB24573500BE9B042D8909")
+    
+public static void setComposingSpans(Spannable text) {
         setComposingSpans(text, 0, text.length());
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.602 -0500", hash_original_method = "56739913A56341656B894EC8F37C96AC", hash_generated_method = "C226A8F329451972B7ADC82661373BFD")
-    public static void setComposingSpans(Spannable text, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.435 -0500", hash_original_method = "56739913A56341656B894EC8F37C96AC", hash_generated_method = "C226A8F329451972B7ADC82661373BFD")
+    
+public static void setComposingSpans(Spannable text, int start, int end) {
         final Object[] sps = text.getSpans(start, end, Object.class);
         if (sps != null) {
             for (int i=sps.length-1; i>=0; i--) {
@@ -88,54 +91,58 @@ public class BaseInputConnection implements InputConnection {
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE | Spanned.SPAN_COMPOSING);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.603 -0500", hash_original_method = "5FB16EEB4B23553D26A4F5C8F80AB33C", hash_generated_method = "96CF70701AA7C42D3F0E282A7C1DD24C")
-    public static int getComposingSpanStart(Spannable text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.437 -0500", hash_original_method = "5FB16EEB4B23553D26A4F5C8F80AB33C", hash_generated_method = "96CF70701AA7C42D3F0E282A7C1DD24C")
+    
+public static int getComposingSpanStart(Spannable text) {
         return text.getSpanStart(COMPOSING);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.604 -0500", hash_original_method = "7902CE0D5E0A3F946465422AB1EC8829", hash_generated_method = "6DB0E84CAEC5FD9B7584F2C3300AD05D")
-    public static int getComposingSpanEnd(Spannable text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.440 -0500", hash_original_method = "7902CE0D5E0A3F946465422AB1EC8829", hash_generated_method = "6DB0E84CAEC5FD9B7584F2C3300AD05D")
+    
+public static int getComposingSpanEnd(Spannable text) {
         return text.getSpanEnd(COMPOSING);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.591 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.402 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.592 -0500", hash_original_field = "A6B44994F2FB4DC69E9C0DCAF8AA2888", hash_generated_field = "53A6B0F8E8ED4C9CDAAB0EB974BB44EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.405 -0500", hash_original_field = "A6B44994F2FB4DC69E9C0DCAF8AA2888", hash_generated_field = "53A6B0F8E8ED4C9CDAAB0EB974BB44EF")
 
     private static final String TAG = "BaseInputConnection";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.593 -0500", hash_original_field = "7E8A677659B56D17DDCB20A097BE501D", hash_generated_field = "8705A035FE559B3B54E215D6480E2AFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.407 -0500", hash_original_field = "7E8A677659B56D17DDCB20A097BE501D", hash_generated_field = "8705A035FE559B3B54E215D6480E2AFA")
 
     static final Object COMPOSING = new ComposingText();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.594 -0500", hash_original_field = "8A2D3AB4FFBC1A36EA3A9C7EBC8E2D9A", hash_generated_field = "141F0EFC0D8976518F576600E5590698")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.409 -0500", hash_original_field = "8A2D3AB4FFBC1A36EA3A9C7EBC8E2D9A", hash_generated_field = "141F0EFC0D8976518F576600E5590698")
 
     protected  InputMethodManager mIMM;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.595 -0500", hash_original_field = "97ACD18EF4B48BDC424981A4C6E55C66", hash_generated_field = "97ACD18EF4B48BDC424981A4C6E55C66")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.412 -0500", hash_original_field = "97ACD18EF4B48BDC424981A4C6E55C66", hash_generated_field = "97ACD18EF4B48BDC424981A4C6E55C66")
 
      View mTargetView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.596 -0500", hash_original_field = "B578BC86523A8ED06C11106F457EA3A1", hash_generated_field = "B578BC86523A8ED06C11106F457EA3A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.414 -0500", hash_original_field = "B578BC86523A8ED06C11106F457EA3A1", hash_generated_field = "B578BC86523A8ED06C11106F457EA3A1")
 
      boolean mDummyMode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.597 -0500", hash_original_field = "262A329882BEE88213C74B3FDC4E1748", hash_generated_field = "252704B80FDD4D9B6E86ECF1CBD2B09A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.416 -0500", hash_original_field = "262A329882BEE88213C74B3FDC4E1748", hash_generated_field = "252704B80FDD4D9B6E86ECF1CBD2B09A")
 
     
     private Object[] mDefaultComposingSpans;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.597 -0500", hash_original_field = "BC747A06F00EC3CB73FDE2D30B84DC2D", hash_generated_field = "BC747A06F00EC3CB73FDE2D30B84DC2D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.418 -0500", hash_original_field = "BC747A06F00EC3CB73FDE2D30B84DC2D", hash_generated_field = "BC747A06F00EC3CB73FDE2D30B84DC2D")
 
     
     Editable mEditable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.598 -0500", hash_original_field = "5553093AC34FB198BC290668CD3A4BD4", hash_generated_field = "5553093AC34FB198BC290668CD3A4BD4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.420 -0500", hash_original_field = "5553093AC34FB198BC290668CD3A4BD4", hash_generated_field = "5553093AC34FB198BC290668CD3A4BD4")
 
     KeyCharacterMap mKeyCharacterMap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.599 -0500", hash_original_method = "1A943D99EC75638EA04879F1FF8F4BB3", hash_generated_method = "1A943D99EC75638EA04879F1FF8F4BB3")
-    BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.423 -0500", hash_original_method = "1A943D99EC75638EA04879F1FF8F4BB3", hash_generated_method = "1A943D99EC75638EA04879F1FF8F4BB3")
+    
+BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
         mIMM = mgr;
         mTargetView = null;
         mDummyMode = !fullEditor;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.600 -0500", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "37CA8E5AF2E9549F228E0744CAF992B7")
-    public BaseInputConnection(View targetView, boolean fullEditor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.426 -0500", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "37CA8E5AF2E9549F228E0744CAF992B7")
+    
+public BaseInputConnection(View targetView, boolean fullEditor) {
         mIMM = (InputMethodManager)targetView.getContext().getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         mTargetView = targetView;
@@ -148,8 +155,9 @@ public class BaseInputConnection implements InputConnection {
      * subclasses that are real text editors should override this and
      * supply their own.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.605 -0500", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "B9CC82C92617709D43E0C972CF5E0C75")
-    public Editable getEditable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.442 -0500", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "B9CC82C92617709D43E0C972CF5E0C75")
+    
+public Editable getEditable() {
         if (mEditable == null) {
             mEditable = Editable.Factory.getInstance().newEditable("");
             Selection.setSelection(mEditable, 0);
@@ -160,16 +168,18 @@ public class BaseInputConnection implements InputConnection {
     /**
      * Default implementation does nothing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.605 -0500", hash_original_method = "E28DA299470AFBBB55E3F0E22CB4A567", hash_generated_method = "A036F6419751AB9510A8B349F63C59A9")
-    public boolean beginBatchEdit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.444 -0500", hash_original_method = "E28DA299470AFBBB55E3F0E22CB4A567", hash_generated_method = "A036F6419751AB9510A8B349F63C59A9")
+    
+public boolean beginBatchEdit() {
         return false;
     }
 
     /**
      * Default implementation does nothing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.606 -0500", hash_original_method = "68C20202F4C35ADB2F9CDE7850BF84CC", hash_generated_method = "86CC35C50127CAC1253F81E3702F1634")
-    public boolean endBatchEdit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.447 -0500", hash_original_method = "68C20202F4C35ADB2F9CDE7850BF84CC", hash_generated_method = "86CC35C50127CAC1253F81E3702F1634")
+    
+public boolean endBatchEdit() {
         return false;
     }
 
@@ -178,8 +188,9 @@ public class BaseInputConnection implements InputConnection {
      * {@link MetaKeyKeyListener#clearMetaKeyState(long, int)
      * MetaKeyKeyListener.clearMetaKeyState(long, int)} to clear the state.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.607 -0500", hash_original_method = "BC6513316EC80C5373FB6263D33C3F52", hash_generated_method = "98D7A72A061F3E9B3F076E33F071F9DB")
-    public boolean clearMetaKeyStates(int states) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.449 -0500", hash_original_method = "BC6513316EC80C5373FB6263D33C3F52", hash_generated_method = "98D7A72A061F3E9B3F076E33F071F9DB")
+    
+public boolean clearMetaKeyStates(int states) {
         final Editable content = getEditable();
         if (content == null) return false;
         MetaKeyKeyListener.clearMetaKeyState(content, states);
@@ -189,16 +200,18 @@ public class BaseInputConnection implements InputConnection {
     /**
      * Default implementation does nothing and returns false.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.608 -0500", hash_original_method = "AA7244FCF81F32F7DEF3D51FAE032B7D", hash_generated_method = "E94CE4BFF5CEED1491FA622961AF3AF5")
-    public boolean commitCompletion(CompletionInfo text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.451 -0500", hash_original_method = "AA7244FCF81F32F7DEF3D51FAE032B7D", hash_generated_method = "E94CE4BFF5CEED1491FA622961AF3AF5")
+    
+public boolean commitCompletion(CompletionInfo text) {
         return false;
     }
 
     /**
      * Default implementation does nothing and returns false.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.608 -0500", hash_original_method = "8ECFF7D6DBED10855DA2C653047584D7", hash_generated_method = "026A77FBF5B5886FDF2CB0009853C72D")
-    public boolean commitCorrection(CorrectionInfo correctionInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.453 -0500", hash_original_method = "8ECFF7D6DBED10855DA2C653047584D7", hash_generated_method = "026A77FBF5B5886FDF2CB0009853C72D")
+    
+public boolean commitCorrection(CorrectionInfo correctionInfo) {
         return false;
     }
 
@@ -207,8 +220,9 @@ public class BaseInputConnection implements InputConnection {
      * the given text.  In addition, only if dummy mode, a key event is
      * sent for the new text and the current editable buffer cleared.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.609 -0500", hash_original_method = "25125C99E3204B3B6C4C8BDE15E97EE8", hash_generated_method = "2EE0FCFE80BDFE6EE86FDD4F643952E8")
-    public boolean commitText(CharSequence text, int newCursorPosition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.456 -0500", hash_original_method = "25125C99E3204B3B6C4C8BDE15E97EE8", hash_generated_method = "2EE0FCFE80BDFE6EE86FDD4F643952E8")
+    
+public boolean commitText(CharSequence text, int newCursorPosition) {
         if (DEBUG) Log.v(TAG, "commitText " + text);
         replaceText(text, newCursorPosition, false);
         sendCurrentText();
@@ -219,8 +233,9 @@ public class BaseInputConnection implements InputConnection {
      * The default implementation performs the deletion around the current
      * selection position of the editable text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.611 -0500", hash_original_method = "74B12EE6F294A949F3B11979331384E6", hash_generated_method = "0D81FC045ACCD1B8D12A1541C1C020DA")
-    public boolean deleteSurroundingText(int leftLength, int rightLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.459 -0500", hash_original_method = "74B12EE6F294A949F3B11979331384E6", hash_generated_method = "0D81FC045ACCD1B8D12A1541C1C020DA")
+    
+public boolean deleteSurroundingText(int leftLength, int rightLength) {
         if (DEBUG) Log.v(TAG, "deleteSurroundingText " + leftLength
                 + " / " + rightLength);
         final Editable content = getEditable();
@@ -278,8 +293,9 @@ public class BaseInputConnection implements InputConnection {
      * current editable text.  In addition, only if dummy mode, a key event is
      * sent for the new text and the current editable buffer cleared.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.612 -0500", hash_original_method = "1CCB9955A4205D39AC8709BDCAB9AF4C", hash_generated_method = "79B56BBE563CEA74B327E5525D4FFE73")
-    public boolean finishComposingText() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.461 -0500", hash_original_method = "1CCB9955A4205D39AC8709BDCAB9AF4C", hash_generated_method = "79B56BBE563CEA74B327E5525D4FFE73")
+    
+public boolean finishComposingText() {
         if (DEBUG) Log.v(TAG, "finishComposingText");
         final Editable content = getEditable();
         if (content != null) {
@@ -296,8 +312,9 @@ public class BaseInputConnection implements InputConnection {
      * cursor caps mode for the current selection position in the editable
      * text, unless in dummy mode in which case 0 is always returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.613 -0500", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "28DA2DF10A711F52B85FC424358C926F")
-    public int getCursorCapsMode(int reqModes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.464 -0500", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "28DA2DF10A711F52B85FC424358C926F")
+    
+public int getCursorCapsMode(int reqModes) {
         if (mDummyMode) return 0;
         
         final Editable content = getEditable();
@@ -318,8 +335,9 @@ public class BaseInputConnection implements InputConnection {
     /**
      * The default implementation always returns null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.614 -0500", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "8936794892555B759A66108240A3AB9A")
-    public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.466 -0500", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "8936794892555B759A66108240A3AB9A")
+    
+public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
         return null;
     }
 
@@ -327,8 +345,9 @@ public class BaseInputConnection implements InputConnection {
      * The default implementation returns the given amount of text from the
      * current cursor position in the buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.615 -0500", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "F628D16938A07EC3C2781BED6C630F56")
-    public CharSequence getTextBeforeCursor(int length, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.468 -0500", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "F628D16938A07EC3C2781BED6C630F56")
+    
+public CharSequence getTextBeforeCursor(int length, int flags) {
         final Editable content = getEditable();
         if (content == null) return null;
 
@@ -359,8 +378,9 @@ public class BaseInputConnection implements InputConnection {
      * The default implementation returns the text currently selected, or null if none is
      * selected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.615 -0500", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "583DA0B7B71E8D58AB532743D3867F50")
-    public CharSequence getSelectedText(int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.471 -0500", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "583DA0B7B71E8D58AB532743D3867F50")
+    
+public CharSequence getSelectedText(int flags) {
         final Editable content = getEditable();
         if (content == null) return null;
 
@@ -385,8 +405,9 @@ public class BaseInputConnection implements InputConnection {
      * The default implementation returns the given amount of text from the
      * current cursor position in the buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.616 -0500", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "E93C8508EF64179E6A7155EB519D1CAB")
-    public CharSequence getTextAfterCursor(int length, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.474 -0500", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "E93C8508EF64179E6A7155EB519D1CAB")
+    
+public CharSequence getTextAfterCursor(int length, int flags) {
         final Editable content = getEditable();
         if (content == null) return null;
 
@@ -418,8 +439,9 @@ public class BaseInputConnection implements InputConnection {
     /**
      * The default implementation turns this into the enter key.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.617 -0500", hash_original_method = "F533043312AA12AABEB855D393677CB5", hash_generated_method = "AF6C93F953B0F20CBCE3F7AEC88E7E4D")
-    public boolean performEditorAction(int actionCode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.477 -0500", hash_original_method = "F533043312AA12AABEB855D393677CB5", hash_generated_method = "AF6C93F953B0F20CBCE3F7AEC88E7E4D")
+    
+public boolean performEditorAction(int actionCode) {
         long eventTime = SystemClock.uptimeMillis();
         sendKeyEvent(new KeyEvent(eventTime, eventTime,
                 KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER, 0, 0,
@@ -437,16 +459,18 @@ public class BaseInputConnection implements InputConnection {
     /**
      * The default implementation does nothing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.618 -0500", hash_original_method = "CC9943DA76C04BDA8199AB8562F111EF", hash_generated_method = "C949E2510FB874197211F90E55CF99B1")
-    public boolean performContextMenuAction(int id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.480 -0500", hash_original_method = "CC9943DA76C04BDA8199AB8562F111EF", hash_generated_method = "C949E2510FB874197211F90E55CF99B1")
+    
+public boolean performContextMenuAction(int id) {
         return false;
     }
 
     /**
      * The default implementation does nothing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.619 -0500", hash_original_method = "E554B360562612AFCC9A87837C58FB1E", hash_generated_method = "F5B0D13605B258FFB70028ABB9557250")
-    public boolean performPrivateCommand(String action, Bundle data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.482 -0500", hash_original_method = "E554B360562612AFCC9A87837C58FB1E", hash_generated_method = "F5B0D13605B258FFB70028ABB9557250")
+    
+public boolean performPrivateCommand(String action, Bundle data) {
         return false;
     }
 
@@ -455,15 +479,17 @@ public class BaseInputConnection implements InputConnection {
      * replacing any existing composing text.  The new text is marked as
      * in a composing state with the composing style.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.620 -0500", hash_original_method = "9F64937BB19F72531BAD6E029A24112C", hash_generated_method = "FD6CB23B30363E9F1C526C952D30A824")
-    public boolean setComposingText(CharSequence text, int newCursorPosition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.484 -0500", hash_original_method = "9F64937BB19F72531BAD6E029A24112C", hash_generated_method = "FD6CB23B30363E9F1C526C952D30A824")
+    
+public boolean setComposingText(CharSequence text, int newCursorPosition) {
         if (DEBUG) Log.v(TAG, "setComposingText " + text);
         replaceText(text, newCursorPosition, true);
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.621 -0500", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "67636B152BB6AA30875B1B52F7C79368")
-    public boolean setComposingRegion(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.487 -0500", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "67636B152BB6AA30875B1B52F7C79368")
+    
+public boolean setComposingRegion(int start, int end) {
         final Editable content = getEditable();
         if (content != null) {
             beginBatchEdit();
@@ -503,8 +529,9 @@ public class BaseInputConnection implements InputConnection {
      * The default implementation changes the selection position in the
      * current editable text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.622 -0500", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "FC8D5B5B840DE79CFC20DD26643C979E")
-    public boolean setSelection(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.490 -0500", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "FC8D5B5B840DE79CFC20DD26643C979E")
+    
+public boolean setSelection(int start, int end) {
         if (DEBUG) Log.v(TAG, "setSelection " + start + ", " + end);
         final Editable content = getEditable();
         if (content == null) return false;
@@ -531,8 +558,9 @@ public class BaseInputConnection implements InputConnection {
      * Provides standard implementation for sending a key event to the window
      * attached to the input connection's view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.623 -0500", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "EFC70E180FE8A4B13933F470F54EF0F3")
-    public boolean sendKeyEvent(KeyEvent event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.492 -0500", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "EFC70E180FE8A4B13933F470F54EF0F3")
+    
+public boolean sendKeyEvent(KeyEvent event) {
         synchronized (mIMM.mH) {
             Handler h = mTargetView != null ? mTargetView.getHandler() : null;
             if (h == null) {
@@ -551,14 +579,16 @@ public class BaseInputConnection implements InputConnection {
     /**
      * Updates InputMethodManager with the current fullscreen mode.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.624 -0500", hash_original_method = "FA18FCA0F08D3E4AC2B0D49617508B22", hash_generated_method = "FE2BE72850B9AB32DECB3FE94671B44D")
-    public boolean reportFullscreenMode(boolean enabled) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.495 -0500", hash_original_method = "FA18FCA0F08D3E4AC2B0D49617508B22", hash_generated_method = "FE2BE72850B9AB32DECB3FE94671B44D")
+    
+public boolean reportFullscreenMode(boolean enabled) {
         mIMM.setFullscreenMode(enabled);
         return true;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.625 -0500", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "7906A3F46BB0899F790A91D7AE62D8D7")
-    private void sendCurrentText() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.498 -0500", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "7906A3F46BB0899F790A91D7AE62D8D7")
+    
+private void sendCurrentText() {
         if (!mDummyMode) {
             return;
         }
@@ -597,8 +627,9 @@ public class BaseInputConnection implements InputConnection {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.626 -0500", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "7EBC729A206C85E02F3FD0BAEB161A12")
-    private void ensureDefaultComposingSpans() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.501 -0500", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "7EBC729A206C85E02F3FD0BAEB161A12")
+    
+private void ensureDefaultComposingSpans() {
         if (mDefaultComposingSpans == null) {
             Context context;
             if (mTargetView != null) {
@@ -623,8 +654,9 @@ public class BaseInputConnection implements InputConnection {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.627 -0500", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "C7369B4386C41968A7FE480161A021B3")
-    private void replaceText(CharSequence text, int newCursorPosition,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.504 -0500", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "C7369B4386C41968A7FE480161A021B3")
+    
+private void replaceText(CharSequence text, int newCursorPosition,
             boolean composing) {
         final Editable content = getEditable();
         if (content == null) {

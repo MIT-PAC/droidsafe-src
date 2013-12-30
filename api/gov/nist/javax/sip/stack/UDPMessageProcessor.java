@@ -23,31 +23,31 @@ import java.util.LinkedList;
 
 
 public class UDPMessageProcessor extends MessageProcessor {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.295 -0500", hash_original_field = "31666E6E3E5C4C26BFC0A376D4995E68", hash_generated_field = "174D18645F1F98D2E6C01C2210EC5A14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.805 -0500", hash_original_field = "31666E6E3E5C4C26BFC0A376D4995E68", hash_generated_field = "174D18645F1F98D2E6C01C2210EC5A14")
 
     
     private static final int HIGHWAT=5000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.296 -0500", hash_original_field = "E9A642E1E18EC1B098FBB67D335F80A1", hash_generated_field = "A95D179CF5D63D2E6F42DEFD017C99EB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.807 -0500", hash_original_field = "E9A642E1E18EC1B098FBB67D335F80A1", hash_generated_field = "A95D179CF5D63D2E6F42DEFD017C99EB")
 
     
     private static final int LOWAT=2500;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.289 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.788 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
 
     private int port;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.290 -0500", hash_original_field = "899066B5154C46A0CE38623F49497FA5", hash_generated_field = "C93CF307E97B9E62367601E63458BFCC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.790 -0500", hash_original_field = "899066B5154C46A0CE38623F49497FA5", hash_generated_field = "C93CF307E97B9E62367601E63458BFCC")
 
     protected LinkedList messageQueue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.291 -0500", hash_original_field = "666F47260F88D884F01B285E3DC87045", hash_generated_field = "6AE79C808B860BF3147A11B4D0A7A4B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.793 -0500", hash_original_field = "666F47260F88D884F01B285E3DC87045", hash_generated_field = "6AE79C808B860BF3147A11B4D0A7A4B0")
 
     protected LinkedList messageChannels;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.292 -0500", hash_original_field = "51874B13F0416651AA3D217A8A15B428", hash_generated_field = "C7EB24484DBA63450BB85C2FA7FA489F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.796 -0500", hash_original_field = "51874B13F0416651AA3D217A8A15B428", hash_generated_field = "C7EB24484DBA63450BB85C2FA7FA489F")
 
     protected int threadPoolSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.293 -0500", hash_original_field = "570524509F5F5D66C6CE0605580E6777", hash_generated_field = "43E95EAF82890431E324C86C2CA01A7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.799 -0500", hash_original_field = "570524509F5F5D66C6CE0605580E6777", hash_generated_field = "43E95EAF82890431E324C86C2CA01A7C")
 
 
     protected DatagramSocket sock;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.294 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "911E18F9BE05473489F5F21C894DF579")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.802 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "911E18F9BE05473489F5F21C894DF579")
 
     protected boolean isRunning;
 
@@ -57,8 +57,9 @@ public class UDPMessageProcessor extends MessageProcessor {
      * @param sipStack
      *            pointer to the stack.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.298 -0500", hash_original_method = "B90AB6AB06537F29C47617DE501651D0", hash_generated_method = "9764C9C9E0408BF9C54778E5EB734420")
-    protected UDPMessageProcessor(InetAddress ipAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.811 -0500", hash_original_method = "B90AB6AB06537F29C47617DE501651D0", hash_generated_method = "9764C9C9E0408BF9C54778E5EB734420")
+    
+protected UDPMessageProcessor(InetAddress ipAddress,
             SIPTransactionStack sipStack, int port) throws IOException {
         super(ipAddress, port, "udp",sipStack);
 
@@ -102,16 +103,18 @@ public class UDPMessageProcessor extends MessageProcessor {
      *
      * @return port on which I am listening.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.299 -0500", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "2827709310D4A6354CC4E0B95B5C1D5F")
-    public int getPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.813 -0500", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "2827709310D4A6354CC4E0B95B5C1D5F")
+    
+public int getPort() {
         return this.port;
     }
 
     /**
      * Start our processor thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.300 -0500", hash_original_method = "5E3073F0FEC53FA8E5673A840E14FE8B", hash_generated_method = "E9579E9C6D35736EB98E8A83BB7E0C9E")
-    public void start() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.817 -0500", hash_original_method = "5E3073F0FEC53FA8E5673A840E14FE8B", hash_generated_method = "E9579E9C6D35736EB98E8A83BB7E0C9E")
+    
+public void start() throws IOException {
 
 
         this.isRunning = true;
@@ -127,8 +130,9 @@ public class UDPMessageProcessor extends MessageProcessor {
     /**
      * Thread main routine.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.302 -0500", hash_original_method = "5BA484CD985BE2E9792A2B4863AB23E2", hash_generated_method = "106D90FA668A6BA44AF7F4BC54AA527C")
-    public void run() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.823 -0500", hash_original_method = "5BA484CD985BE2E9792A2B4863AB23E2", hash_generated_method = "106D90FA668A6BA44AF7F4BC54AA527C")
+    
+public void run() {
         // Check for running flag.
         this.messageChannels = new LinkedList();
         // start all our messageChannels (unless the thread pool size is
@@ -242,8 +246,9 @@ public class UDPMessageProcessor extends MessageProcessor {
      * Shut down the message processor. Close the socket for recieving incoming
      * messages.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.303 -0500", hash_original_method = "98470A6BD6E1C018549BCC7706D1DEF2", hash_generated_method = "54487B663FB40F0AC0F04BC7B3F08FC1")
-    public void stop() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.826 -0500", hash_original_method = "98470A6BD6E1C018549BCC7706D1DEF2", hash_generated_method = "54487B663FB40F0AC0F04BC7B3F08FC1")
+    
+public void stop() {
         synchronized (this.messageQueue) {
             this.isRunning = false;
             this.messageQueue.notifyAll();
@@ -258,8 +263,9 @@ public class UDPMessageProcessor extends MessageProcessor {
      *
      * @return the transport string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.304 -0500", hash_original_method = "026D790579A301E1D49F85E52A57E43F", hash_generated_method = "CD9CE3D74F8F4DF958703CD9EEEFCC32")
-    public String getTransport() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.828 -0500", hash_original_method = "026D790579A301E1D49F85E52A57E43F", hash_generated_method = "CD9CE3D74F8F4DF958703CD9EEEFCC32")
+    
+public String getTransport() {
         return "udp";
     }
 
@@ -268,23 +274,26 @@ public class UDPMessageProcessor extends MessageProcessor {
      *
      * @return my sip stack.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.305 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
-    public SIPTransactionStack getSIPStack() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.831 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
+    
+public SIPTransactionStack getSIPStack() {
         return sipStack;
     }
 
     /**
      * Create and return new TCPMessageChannel for the given host/port.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.306 -0500", hash_original_method = "886709B501C0AFC116858EC5EEF3AF72", hash_generated_method = "FF7142E40F3C67BB9E9DD08AA3829490")
-    public MessageChannel createMessageChannel(HostPort targetHostPort)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.834 -0500", hash_original_method = "886709B501C0AFC116858EC5EEF3AF72", hash_generated_method = "FF7142E40F3C67BB9E9DD08AA3829490")
+    
+public MessageChannel createMessageChannel(HostPort targetHostPort)
             throws UnknownHostException {
         return new UDPMessageChannel(targetHostPort.getInetAddress(),
                 targetHostPort.getPort(), sipStack, this);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.307 -0500", hash_original_method = "3D05557B9B28DB0617B949ABC7CCF983", hash_generated_method = "3953ABF7DDBDFD643B2FB6E831F38326")
-    public MessageChannel createMessageChannel(InetAddress host, int port)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.837 -0500", hash_original_method = "3D05557B9B28DB0617B949ABC7CCF983", hash_generated_method = "3953ABF7DDBDFD643B2FB6E831F38326")
+    
+public MessageChannel createMessageChannel(InetAddress host, int port)
             throws IOException {
         return new UDPMessageChannel(host, port, sipStack, this);
     }
@@ -292,32 +301,36 @@ public class UDPMessageProcessor extends MessageProcessor {
     /**
      * Default target port for UDP
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.308 -0500", hash_original_method = "549BD73BE1E8477C39668DF3AD0A0CF5", hash_generated_method = "A974BC08491FBE134376CBCCEE27369D")
-    public int getDefaultTargetPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.839 -0500", hash_original_method = "549BD73BE1E8477C39668DF3AD0A0CF5", hash_generated_method = "A974BC08491FBE134376CBCCEE27369D")
+    
+public int getDefaultTargetPort() {
         return 5060;
     }
 
     /**
      * UDP is not a secure protocol.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.309 -0500", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "49E6B3D175AEB85C0CC035D6E473FA9A")
-    public boolean isSecure() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.842 -0500", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "49E6B3D175AEB85C0CC035D6E473FA9A")
+    
+public boolean isSecure() {
         return false;
     }
 
     /**
      * UDP can handle a message as large as the MAX_DATAGRAM_SIZE.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.310 -0500", hash_original_method = "DB826EFA52B3A7F2C697730E780269B9", hash_generated_method = "BE8008A8AE67B0186FA945333D8EF3B1")
-    public int getMaximumMessageSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.845 -0500", hash_original_method = "DB826EFA52B3A7F2C697730E780269B9", hash_generated_method = "BE8008A8AE67B0186FA945333D8EF3B1")
+    
+public int getMaximumMessageSize() {
         return 8*1024;
     }
 
     /**
      * Return true if there are any messages in use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.311 -0500", hash_original_method = "08919BACEEB275448156EA2ACF7B3D6A", hash_generated_method = "43830782CE56377739CB711511AC20E1")
-    public boolean inUse() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.848 -0500", hash_original_method = "08919BACEEB275448156EA2ACF7B3D6A", hash_generated_method = "43830782CE56377739CB711511AC20E1")
+    
+public boolean inUse() {
         synchronized (messageQueue) {
             return messageQueue.size() != 0;
         }

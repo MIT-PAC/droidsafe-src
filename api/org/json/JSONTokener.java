@@ -18,8 +18,9 @@ public class JSONTokener {
      * @param hex a character in the ranges [0-9], [A-F] or [a-f]. Any other
      *     character will yield a -1 result.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.554 -0500", hash_original_method = "C49A07C43A7B951DB1FE6415A49FA28D", hash_generated_method = "F44AF192845D160080012C2E7CDCA275")
-    public static int dehexchar(char hex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.662 -0500", hash_original_method = "C49A07C43A7B951DB1FE6415A49FA28D", hash_generated_method = "F44AF192845D160080012C2E7CDCA275")
+    
+public static int dehexchar(char hex) {
         if (hex >= '0' && hex <= '9') {
             return hex - '0';
         } else if (hex >= 'A' && hex <= 'F') {
@@ -30,10 +31,10 @@ public class JSONTokener {
             return -1;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.532 -0500", hash_original_field = "BA93529D831303861763326966A95648", hash_generated_field = "955F96F6D73BCB070D987B819612F71F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.578 -0500", hash_original_field = "BA93529D831303861763326966A95648", hash_generated_field = "955F96F6D73BCB070D987B819612F71F")
 
     private  String in;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.533 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.582 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
     private int pos;
 
@@ -42,8 +43,9 @@ public class JSONTokener {
      *     tokener that throws {@code NullPointerExceptions} when methods are
      *     called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.534 -0500", hash_original_method = "F6CFC64A950C47985AB98A953B97554C", hash_generated_method = "768A98DE2468BF4F644FD74A4A929925")
-    public JSONTokener(String in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.587 -0500", hash_original_method = "F6CFC64A950C47985AB98A953B97554C", hash_generated_method = "768A98DE2468BF4F644FD74A4A929925")
+    
+public JSONTokener(String in) {
         // consume an optional byte order mark (BOM) if it exists
         if (in != null && in.startsWith("\ufeff")) {
             in = in.substring(1);
@@ -58,8 +60,9 @@ public class JSONTokener {
      *     Integer, Long, Double or {@link JSONObject#NULL}.
      * @throws JSONException if the input is malformed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.535 -0500", hash_original_method = "B349C062BB24F17BF02BDCB43C03970C", hash_generated_method = "E5AAAA462ED94F752AE89B378C3DDB02")
-    public Object nextValue() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.590 -0500", hash_original_method = "B349C062BB24F17BF02BDCB43C03970C", hash_generated_method = "E5AAAA462ED94F752AE89B378C3DDB02")
+    
+public Object nextValue() throws JSONException {
         int c = nextCleanInternal();
         switch (c) {
             case -1:
@@ -81,8 +84,9 @@ public class JSONTokener {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.536 -0500", hash_original_method = "1C1094F3B0EBF3FC35F6CA7F4976DC54", hash_generated_method = "957C5E349030E3D16ECB3AD1E414E518")
-    private int nextCleanInternal() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.594 -0500", hash_original_method = "1C1094F3B0EBF3FC35F6CA7F4976DC54", hash_generated_method = "957C5E349030E3D16ECB3AD1E414E518")
+    
+private int nextCleanInternal() throws JSONException {
         while (pos < in.length()) {
             int c = in.charAt(pos++);
             switch (c) {
@@ -141,8 +145,9 @@ public class JSONTokener {
      * is terminated by "\r\n", the '\n' must be consumed as whitespace by the
      * caller.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.537 -0500", hash_original_method = "A96A54ECB7E0243FC9401A9259237DF7", hash_generated_method = "B0DFF07F1CCB9ED8CBD3B522463021AE")
-    private void skipToEndOfLine() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.597 -0500", hash_original_method = "A96A54ECB7E0243FC9401A9259237DF7", hash_generated_method = "B0DFF07F1CCB9ED8CBD3B522463021AE")
+    
+private void skipToEndOfLine() {
         for (; pos < in.length(); pos++) {
             char c = in.charAt(pos);
             if (c == '\r' || c == '\n') {
@@ -162,8 +167,9 @@ public class JSONTokener {
      * @throws NumberFormatException if any unicode escape sequences are
      *     malformed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.538 -0500", hash_original_method = "7B01D454BE0369CA1502DDC9AB2083EB", hash_generated_method = "63AFC60416B80DD6344C5708E7202C08")
-    public String nextString(char quote) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.601 -0500", hash_original_method = "7B01D454BE0369CA1502DDC9AB2083EB", hash_generated_method = "63AFC60416B80DD6344C5708E7202C08")
+    
+public String nextString(char quote) throws JSONException {
         /*
          * For strings that are free of escape sequences, we can just extract
          * the result as a substring of the input. But if we encounter an escape
@@ -211,8 +217,9 @@ public class JSONTokener {
      * @throws NumberFormatException if any unicode escape sequences are
      *     malformed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.539 -0500", hash_original_method = "A0F5694EA3978EBF3A8A4E5207628E80", hash_generated_method = "A46B49E033C2A2CEFAE583A4DD53B3CE")
-    private char readEscapeCharacter() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.604 -0500", hash_original_method = "A0F5694EA3978EBF3A8A4E5207628E80", hash_generated_method = "A46B49E033C2A2CEFAE583A4DD53B3CE")
+    
+private char readEscapeCharacter() throws JSONException {
         char escaped = in.charAt(pos++);
         switch (escaped) {
             case 'u':
@@ -251,8 +258,9 @@ public class JSONTokener {
      * values will be returned as an Integer, Long, or Double, in that order of
      * preference.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.540 -0500", hash_original_method = "921E97B7A015080CE0A01C361479BF49", hash_generated_method = "E90500B5A498AD228C58A5454954722F")
-    private Object readLiteral() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.608 -0500", hash_original_method = "921E97B7A015080CE0A01C361479BF49", hash_generated_method = "E90500B5A498AD228C58A5454954722F")
+    
+private Object readLiteral() throws JSONException {
         String literal = nextToInternal("{}[]/\\:,=;# \t\f");
 
         if (literal.length() == 0) {
@@ -306,8 +314,9 @@ public class JSONTokener {
      * Returns the string up to but not including any of the given characters or
      * a newline character. This does not consume the excluded character.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.541 -0500", hash_original_method = "593B1F2EF0668764A615A5DB85CFDCCD", hash_generated_method = "96B0B2272C559422F2F421A9F89F6A66")
-    private String nextToInternal(String excluded) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.610 -0500", hash_original_method = "593B1F2EF0668764A615A5DB85CFDCCD", hash_generated_method = "96B0B2272C559422F2F421A9F89F6A66")
+    
+private String nextToInternal(String excluded) {
         int start = pos;
         for (; pos < in.length(); pos++) {
             char c = in.charAt(pos);
@@ -322,8 +331,9 @@ public class JSONTokener {
      * Reads a sequence of key/value pairs and the trailing closing brace '}' of
      * an object. The opening brace '{' should have already been read.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.542 -0500", hash_original_method = "D694401380EAF5A76DF87137C67448EA", hash_generated_method = "EB427EC91A987E882813E4C55FB0CDE1")
-    private JSONObject readObject() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.614 -0500", hash_original_method = "D694401380EAF5A76DF87137C67448EA", hash_generated_method = "EB427EC91A987E882813E4C55FB0CDE1")
+    
+private JSONObject readObject() throws JSONException {
         JSONObject result = new JSONObject();
 
         /* Peek to see if this is the empty object. */
@@ -378,8 +388,9 @@ public class JSONTokener {
      * "[]" yields an empty array, but "[,]" returns a two-element array
      * equivalent to "[null,null]".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.543 -0500", hash_original_method = "E76B205E92636F1E7B3FC6B2B934FE47", hash_generated_method = "CB336D3608CC6D764C4BDC3C24CB76A2")
-    private JSONArray readArray() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.618 -0500", hash_original_method = "E76B205E92636F1E7B3FC6B2B934FE47", hash_generated_method = "CB336D3608CC6D764C4BDC3C24CB76A2")
+    
+private JSONArray readArray() throws JSONException {
         JSONArray result = new JSONArray();
 
         /* to cover input that ends with ",]". */
@@ -423,17 +434,18 @@ public class JSONTokener {
      * Returns an exception containing the given message plus the current
      * position and the entire input string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.544 -0500", hash_original_method = "33F4C16D40F1C908E16B89E59A552BE8", hash_generated_method = "7DC58D320C8632A43365B81E8CE70546")
-    public JSONException syntaxError(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.622 -0500", hash_original_method = "33F4C16D40F1C908E16B89E59A552BE8", hash_generated_method = "7DC58D320C8632A43365B81E8CE70546")
+    
+public JSONException syntaxError(String message) {
         return new JSONException(message + this);
     }
 
     /**
      * Returns the current position and the entire input string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.545 -0500", hash_original_method = "D61A5D8B8E38C1530E1AB8F6DB368DAC", hash_generated_method = "4285F17E6EE9ADBD6970C3F9D9BCE520")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.625 -0500", hash_original_method = "D61A5D8B8E38C1530E1AB8F6DB368DAC", hash_generated_method = "4285F17E6EE9ADBD6970C3F9D9BCE520")
+    
+@Override public String toString() {
         // consistent with the original implementation
         return " at character " + pos + " of " + in;
     }
@@ -449,8 +461,9 @@ public String toString() {
     /**
      * Returns true until the input has been exhausted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.545 -0500", hash_original_method = "6281E295952C34947D74AA92CC697B16", hash_generated_method = "0BFF8C9EE4FB80415F134AE778E04B54")
-    public boolean more() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.627 -0500", hash_original_method = "6281E295952C34947D74AA92CC697B16", hash_generated_method = "0BFF8C9EE4FB80415F134AE778E04B54")
+    
+public boolean more() {
         return pos < in.length();
     }
 
@@ -459,8 +472,9 @@ public String toString() {
      * input has been exhausted. The return value of this method is ambiguous
      * for JSON strings that contain the character '\0'.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.546 -0500", hash_original_method = "213D34FB491711CFF086DB4B25220A73", hash_generated_method = "DE80E8A4A362E5C8FE3D32DB67B0C882")
-    public char next() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.631 -0500", hash_original_method = "213D34FB491711CFF086DB4B25220A73", hash_generated_method = "DE80E8A4A362E5C8FE3D32DB67B0C882")
+    
+public char next() {
         return pos < in.length() ? in.charAt(pos++) : '\0';
     }
 
@@ -468,8 +482,9 @@ public String toString() {
      * Returns the next available character if it equals {@code c}. Otherwise an
      * exception is thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.547 -0500", hash_original_method = "95912FB15799A75254D0EFB27A4965DA", hash_generated_method = "4EC75861281F7E0AF46C93821B302432")
-    public char next(char c) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.633 -0500", hash_original_method = "95912FB15799A75254D0EFB27A4965DA", hash_generated_method = "4EC75861281F7E0AF46C93821B302432")
+    
+public char next(char c) throws JSONException {
         char result = next();
         if (result != c) {
             throw syntaxError("Expected " + c + " but was " + result);
@@ -483,8 +498,9 @@ public String toString() {
      * found, the null character '\0' is returned. The return value of this
      * method is ambiguous for JSON strings that contain the character '\0'.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.548 -0500", hash_original_method = "8888AACA46E7314FC33FB1B59D843324", hash_generated_method = "64A07152E1DD1B44B78BA36B11FFD423")
-    public char nextClean() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.637 -0500", hash_original_method = "8888AACA46E7314FC33FB1B59D843324", hash_generated_method = "64A07152E1DD1B44B78BA36B11FFD423")
+    
+public char nextClean() throws JSONException {
         int nextCleanInt = nextCleanInternal();
         return nextCleanInt == -1 ? '\0' : (char) nextCleanInt;
     }
@@ -500,8 +516,9 @@ public String toString() {
      * @throws JSONException if the remaining input is not long enough to
      *     satisfy this request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.549 -0500", hash_original_method = "9816A4D386531BCA80B95E34249E012D", hash_generated_method = "785D9EDB1A4CFFA6CC34B5511FD235B9")
-    public String next(int length) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.639 -0500", hash_original_method = "9816A4D386531BCA80B95E34249E012D", hash_generated_method = "785D9EDB1A4CFFA6CC34B5511FD235B9")
+    
+public String next(int length) throws JSONException {
         if (pos + length > in.length()) {
             throw syntaxError(length + " is out of bounds");
         }
@@ -526,8 +543,9 @@ public String toString() {
      *
      * @return a possibly-empty string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.550 -0500", hash_original_method = "EA130CCB3E2CFC0C10CD8E8D4F88F4FA", hash_generated_method = "F3DB63DBA9EC2D3D72DD01DF1381FC0E")
-    public String nextTo(String excluded) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.647 -0500", hash_original_method = "EA130CCB3E2CFC0C10CD8E8D4F88F4FA", hash_generated_method = "F3DB63DBA9EC2D3D72DD01DF1381FC0E")
+    
+public String nextTo(String excluded) {
         if (excluded == null) {
             throw new NullPointerException();
         }
@@ -537,8 +555,9 @@ public String toString() {
     /**
      * Equivalent to {@code nextTo(String.valueOf(excluded))}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.550 -0500", hash_original_method = "9F2D4FCC02E225188C000422795F1B2D", hash_generated_method = "582B776FCA49CEEB1273FA9778716FA7")
-    public String nextTo(char excluded) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.650 -0500", hash_original_method = "9F2D4FCC02E225188C000422795F1B2D", hash_generated_method = "582B776FCA49CEEB1273FA9778716FA7")
+    
+public String nextTo(char excluded) {
         return nextToInternal(String.valueOf(excluded)).trim();
     }
 
@@ -547,8 +566,9 @@ public String toString() {
      * {@code thru}. If the remaining input doesn't contain {@code thru}, the
      * input is exhausted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.551 -0500", hash_original_method = "705EE299D0C421425210CB39FE7F29B9", hash_generated_method = "F2C99825F760FF74F7753A5E58455290")
-    public void skipPast(String thru) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.653 -0500", hash_original_method = "705EE299D0C421425210CB39FE7F29B9", hash_generated_method = "F2C99825F760FF74F7753A5E58455290")
+    
+public void skipPast(String thru) {
         int thruStart = in.indexOf(thru, pos);
         pos = thruStart == -1 ? in.length() : (thruStart + thru.length());
     }
@@ -558,8 +578,9 @@ public String toString() {
      * {@code to}. If the remaining input doesn't contain {@code to}, the input
      * is unchanged.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.552 -0500", hash_original_method = "A067EA373EE4201A369E9BCAA7E25460", hash_generated_method = "CDE3FAE9CD27BFCD1A901CF86E355ECB")
-    public char skipTo(char to) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.656 -0500", hash_original_method = "A067EA373EE4201A369E9BCAA7E25460", hash_generated_method = "CDE3FAE9CD27BFCD1A901CF86E355ECB")
+    
+public char skipTo(char to) {
         int index = in.indexOf(to, pos);
         if (index != -1) {
             pos = index;
@@ -573,8 +594,9 @@ public String toString() {
      * Unreads the most recent character of input. If no input characters have
      * been read, the input is unchanged.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.553 -0500", hash_original_method = "8E6F2519C4EF5016C5BDFABD97F81370", hash_generated_method = "4ECDE48F6CDDB5198636F8451EC49FCF")
-    public void back() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.659 -0500", hash_original_method = "8E6F2519C4EF5016C5BDFABD97F81370", hash_generated_method = "4ECDE48F6CDDB5198636F8451EC49FCF")
+    
+public void back() {
         if (--pos == -1) {
             pos = 0;
         }

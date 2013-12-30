@@ -25,8 +25,9 @@ public abstract class MessageDigestSpi {
      *
      * @return the digest length in bytes, or {@code 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.261 -0500", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "9280EABD96E85C7D2D946820656DD1C5")
-    protected int engineGetDigestLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.049 -0500", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "9280EABD96E85C7D2D946820656DD1C5")
+    
+protected int engineGetDigestLength() {
         return 0;
     }
 
@@ -37,8 +38,9 @@ public abstract class MessageDigestSpi {
      *            the {@code byte} to update this {@code MessageDigestSpi} with.
      * @see #engineReset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.262 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
-    protected abstract void engineUpdate(byte input);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.052 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
+    
+protected abstract void engineUpdate(byte input);
 
     /**
      * Updates this {@code MessageDigestSpi} using the given {@code byte[]}.
@@ -53,8 +55,9 @@ public abstract class MessageDigestSpi {
      *             if {@code offset} or {@code len} are not valid in respect to
      *             {@code input}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.263 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
-    protected abstract void engineUpdate(byte[] input, int offset, int len);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.055 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
+    
+protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     /**
      * Updates this {@code MessageDigestSpi} using the given {@code input}.
@@ -62,8 +65,9 @@ public abstract class MessageDigestSpi {
      * @param input
      *            the {@code ByteBuffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.264 -0500", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "72BCF8FFC66FE144EE5910CA31FB222A")
-    protected void engineUpdate(ByteBuffer input) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.058 -0500", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "72BCF8FFC66FE144EE5910CA31FB222A")
+    
+protected void engineUpdate(ByteBuffer input) {
         if (!input.hasRemaining()) {
             return;
         }
@@ -90,8 +94,9 @@ public abstract class MessageDigestSpi {
      * @return the computed one way hash value.
      * @see #engineReset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.265 -0500", hash_original_method = "CEA88A783175745149D390015100AA3F", hash_generated_method = "DCE83104DFD81C1C8822D10C2908CFEA")
-    protected abstract byte[] engineDigest();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.060 -0500", hash_original_method = "CEA88A783175745149D390015100AA3F", hash_generated_method = "DCE83104DFD81C1C8822D10C2908CFEA")
+    
+protected abstract byte[] engineDigest();
 
     /**
      * Computes and stores the final hash value for this
@@ -112,8 +117,9 @@ public abstract class MessageDigestSpi {
      *             {@code buf}.
      * @see #engineReset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.266 -0500", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "BACEEF056C2325DE520EE38A3DF2C3BA")
-    protected int engineDigest(byte[] buf, int offset, int len) throws DigestException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.063 -0500", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "BACEEF056C2325DE520EE38A3DF2C3BA")
+    
+protected int engineDigest(byte[] buf, int offset, int len) throws DigestException {
         if (len < engineGetDigestLength()) {
             engineReset();
             throw new DigestException("The value of len parameter is less than the actual digest length");
@@ -138,12 +144,14 @@ public abstract class MessageDigestSpi {
      * Puts this {@code MessageDigestSpi} back in an initial state, such that it
      * is ready to compute a one way hash value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.267 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
-    protected abstract void engineReset();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.066 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
+    
+protected abstract void engineReset();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.268 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
-    @Override
-public Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.068 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
+    
+@Override
+    public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 

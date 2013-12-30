@@ -24,20 +24,23 @@ import java.text.ParseException;
 
 public class SecurityAgreeParser extends HeaderParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.271 -0500", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "693ED6A66AE8EFF88C187F7207BB7AEA")
-    public SecurityAgreeParser(String security) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.958 -0500", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "693ED6A66AE8EFF88C187F7207BB7AEA")
+    
+public SecurityAgreeParser(String security) {
         super(security);
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.272 -0500", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "2DF8CC0EB1F18964A2541DC051B69355")
-    protected SecurityAgreeParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.960 -0500", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "2DF8CC0EB1F18964A2541DC051B69355")
+    
+protected SecurityAgreeParser(Lexer lexer) {
         super(lexer);
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.273 -0500", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "90EC3697B8B82B1EEDFD6B77A91DF932")
-    protected void parseParameter(SecurityAgree header)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.963 -0500", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "90EC3697B8B82B1EEDFD6B77A91DF932")
+    
+protected void parseParameter(SecurityAgree header)
         throws ParseException
     {
         if (debug)
@@ -52,8 +55,9 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.276 -0500", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "31C5AD713B3B0B11C9ECBCE0EC0E27A4")
-    public SIPHeaderList parse(SecurityAgree header) throws ParseException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.967 -0500", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "31C5AD713B3B0B11C9ECBCE0EC0E27A4")
+    
+public SIPHeaderList parse(SecurityAgree header) throws ParseException
     {
 
         SIPHeaderList list;

@@ -19,8 +19,9 @@ import libcore.io.SizeOf;
 
 public class BitSet implements Serializable, Cloneable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.125 -0500", hash_original_method = "1111A64C23DDCF149E99F7B137B1F799", hash_generated_method = "4E8F03DCF07A0DF56E510F9082D72E34")
-    private static long[] arrayForBits(int bitCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.872 -0500", hash_original_method = "1111A64C23DDCF149E99F7B137B1F799", hash_generated_method = "4E8F03DCF07A0DF56E510F9082D72E34")
+    
+private static long[] arrayForBits(int bitCount) {
         return new long[(bitCount + 63)/ 64];
     }
 
@@ -30,8 +31,9 @@ public class BitSet implements Serializable, Cloneable {
      * to the internal representation.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.154 -0500", hash_original_method = "C8159A78BE8562D2D9F1DF0DDA2620DD", hash_generated_method = "790027A2935AAD7FDAC9B4945DEA0804")
-    public static BitSet valueOf(long[] longs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.954 -0500", hash_original_method = "C8159A78BE8562D2D9F1DF0DDA2620DD", hash_generated_method = "790027A2935AAD7FDAC9B4945DEA0804")
+    
+public static BitSet valueOf(long[] longs) {
         return new BitSet(longs.clone());
     }
 
@@ -40,8 +42,9 @@ public class BitSet implements Serializable, Cloneable {
      * sequence of bits. This method does not alter the {@code LongBuffer}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.155 -0500", hash_original_method = "DD569DFB6205EB853157686A9EE36FCB", hash_generated_method = "894D7B624061B6C353A51DB71BD036CE")
-    public static BitSet valueOf(LongBuffer longBuffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.963 -0500", hash_original_method = "DD569DFB6205EB853157686A9EE36FCB", hash_generated_method = "894D7B624061B6C353A51DB71BD036CE")
+    
+public static BitSet valueOf(LongBuffer longBuffer) {
         // The bulk get would mutate LongBuffer (even if we reset position later), and it's not
         // clear that's allowed. My assumption is that it's the long[] variant that's the common
         // case anyway, so copy the buffer into a long[].
@@ -56,8 +59,9 @@ public class BitSet implements Serializable, Cloneable {
      * Equivalent to {@code BitSet.valueOf(ByteBuffer.wrap(bytes))}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.156 -0500", hash_original_method = "DC3F0689BFE4E765667AB4AD073F9341", hash_generated_method = "7F61F6426C7F17D90DB69476D461D980")
-    public static BitSet valueOf(byte[] bytes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.965 -0500", hash_original_method = "DC3F0689BFE4E765667AB4AD073F9341", hash_generated_method = "7F61F6426C7F17D90DB69476D461D980")
+    
+public static BitSet valueOf(byte[] bytes) {
         return BitSet.valueOf(ByteBuffer.wrap(bytes));
     }
 
@@ -66,8 +70,9 @@ public class BitSet implements Serializable, Cloneable {
      * sequence of bits. This method does not alter the {@code ByteBuffer}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.157 -0500", hash_original_method = "5ACB02A28D6F82C45314227EF9456C0E", hash_generated_method = "E2D0FD93A8E61FA9A599886183C1C711")
-    public static BitSet valueOf(ByteBuffer byteBuffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.968 -0500", hash_original_method = "5ACB02A28D6F82C45314227EF9456C0E", hash_generated_method = "E2D0FD93A8E61FA9A599886183C1C711")
+    
+public static BitSet valueOf(ByteBuffer byteBuffer) {
         byteBuffer = byteBuffer.slice().order(ByteOrder.LITTLE_ENDIAN);
         long[] longs = arrayForBits(byteBuffer.remaining() * 8);
         int i = 0;
@@ -79,25 +84,26 @@ public class BitSet implements Serializable, Cloneable {
         }
         return BitSet.valueOf(longs);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.118 -0500", hash_original_field = "E9AD6054FBF64C1F5CBC9A3ECFD47A0F", hash_generated_field = "975BBBA7B21A6881F86AABFE03BF689A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.852 -0500", hash_original_field = "E9AD6054FBF64C1F5CBC9A3ECFD47A0F", hash_generated_field = "975BBBA7B21A6881F86AABFE03BF689A")
 
     private static final long serialVersionUID = 7997698588986878753L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.119 -0500", hash_original_field = "DEEECB9191B71C4C2B4B619251057097", hash_generated_field = "BC830E41BA8334B8E98728347067D4B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.854 -0500", hash_original_field = "DEEECB9191B71C4C2B4B619251057097", hash_generated_field = "BC830E41BA8334B8E98728347067D4B9")
 
 
     private static final long ALL_ONES = ~0L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.120 -0500", hash_original_field = "92F775DED5CE5142CEEF7075890CCFCE", hash_generated_field = "487233F7143B18DBA481DB90C8ACD8D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.857 -0500", hash_original_field = "92F775DED5CE5142CEEF7075890CCFCE", hash_generated_field = "487233F7143B18DBA481DB90C8ACD8D3")
 
     private long[] bits;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.121 -0500", hash_original_field = "4AD87862C652F89C878D30BE61E5EA20", hash_generated_field = "DC80EF19CD932E16185FEB519D23D494")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.859 -0500", hash_original_field = "4AD87862C652F89C878D30BE61E5EA20", hash_generated_field = "DC80EF19CD932E16185FEB519D23D494")
 
     private transient int longCount;
 
     /**
      * Creates a new {@code BitSet} with size equal to 64 bits.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.122 -0500", hash_original_method = "36F48153593A7027DE7089606CF225FB", hash_generated_method = "B8AA473D2470532DC2D2F7EE24947AC2")
-    public BitSet() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.864 -0500", hash_original_method = "36F48153593A7027DE7089606CF225FB", hash_generated_method = "B8AA473D2470532DC2D2F7EE24947AC2")
+    
+public BitSet() {
         this(new long[1]);
     }
 
@@ -107,8 +113,9 @@ public class BitSet implements Serializable, Cloneable {
      *
      * @throws NegativeArraySizeException if {@code bitCount < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.123 -0500", hash_original_method = "12ED281EDA73627C34F706B1E8393C0F", hash_generated_method = "CCA75D20C978B5242794FB978FDBC8AB")
-    public BitSet(int bitCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.866 -0500", hash_original_method = "12ED281EDA73627C34F706B1E8393C0F", hash_generated_method = "CCA75D20C978B5242794FB978FDBC8AB")
+    
+public BitSet(int bitCount) {
         if (bitCount < 0) {
             throw new NegativeArraySizeException();
         }
@@ -116,8 +123,9 @@ public class BitSet implements Serializable, Cloneable {
         this.longCount = 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.124 -0500", hash_original_method = "F5397E49D432953D65E6CB2ED1150384", hash_generated_method = "A2CD9155732F355E87209AA42010DC75")
-    private BitSet(long[] bits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.869 -0500", hash_original_method = "F5397E49D432953D65E6CB2ED1150384", hash_generated_method = "A2CD9155732F355E87209AA42010DC75")
+    
+private BitSet(long[] bits) {
         this.bits = bits;
         this.longCount = bits.length;
         shrinkSize();
@@ -131,8 +139,9 @@ public class BitSet implements Serializable, Cloneable {
      * made a new highest set bit. In that case, you'd need to set 'longCount' to a conservative
      * estimate before calling this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.122 -0500", hash_original_method = "2E0FE194508C45AD5184DCF0A152D7A0", hash_generated_method = "C9D76E5C4B47FC1953B85F362C2958F2")
-    private void shrinkSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.861 -0500", hash_original_method = "2E0FE194508C45AD5184DCF0A152D7A0", hash_generated_method = "C9D76E5C4B47FC1953B85F362C2958F2")
+    
+private void shrinkSize() {
         int i = longCount - 1;
         while (i >= 0 && bits[i] == 0) {
             --i;
@@ -140,9 +149,9 @@ public class BitSet implements Serializable, Cloneable {
         this.longCount = i + 1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.126 -0500", hash_original_method = "C5612661FC3C49DB4DB071789CF210EF", hash_generated_method = "590C4E443B620BE6282321651CBBA4E4")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.875 -0500", hash_original_method = "C5612661FC3C49DB4DB071789CF210EF", hash_generated_method = "590C4E443B620BE6282321651CBBA4E4")
+    
+@Override public Object clone() {
         try {
             BitSet clone = (BitSet) super.clone();
             clone.bits = bits.clone();
@@ -153,9 +162,9 @@ public Object clone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.127 -0500", hash_original_method = "82791B0EBFB6ED23064857D8180EA65E", hash_generated_method = "098F5947404DE24CCAE785B9D16E13F4")
-    @Override
-public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.878 -0500", hash_original_method = "82791B0EBFB6ED23064857D8180EA65E", hash_generated_method = "098F5947404DE24CCAE785B9D16E13F4")
+    
+@Override public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -177,8 +186,9 @@ public boolean equals(Object o) {
     /**
      * Ensures that our long[] can hold at least 64 * desiredLongCount bits.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.128 -0500", hash_original_method = "FD70AAE85AF9795828FE994C30CD34E8", hash_generated_method = "935D764AA3BFBA7DB148A96DB36F16D9")
-    private void ensureCapacity(int desiredLongCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.881 -0500", hash_original_method = "FD70AAE85AF9795828FE994C30CD34E8", hash_generated_method = "935D764AA3BFBA7DB148A96DB36F16D9")
+    
+private void ensureCapacity(int desiredLongCount) {
         if (desiredLongCount <= bits.length) {
             return;
         }
@@ -190,9 +200,9 @@ public boolean equals(Object o) {
         // but you're not yet using any more of it.
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.128 -0500", hash_original_method = "4E772724E1A92C93EB62C933BC27FE7C", hash_generated_method = "4CBF6F9EA2E60EED0FE74C1AE63E714A")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.883 -0500", hash_original_method = "4E772724E1A92C93EB62C933BC27FE7C", hash_generated_method = "4CBF6F9EA2E60EED0FE74C1AE63E714A")
+    
+@Override public int hashCode() {
         // The RI doesn't use Arrays.hashCode, and explicitly specifies this algorithm.
         long x = 1234;
         for (int i = 0; i < longCount; ++i) {
@@ -206,8 +216,9 @@ public int hashCode() {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.129 -0500", hash_original_method = "95B4B3127159370AD2A9AF3A9CB73F00", hash_generated_method = "0C9AC5C908057F8168D7843E21A6DF08")
-    public boolean get(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.885 -0500", hash_original_method = "95B4B3127159370AD2A9AF3A9CB73F00", hash_generated_method = "0C9AC5C908057F8168D7843E21A6DF08")
+    
+public boolean get(int index) {
         if (index < 0) { // TODO: until we have an inlining JIT.
             checkIndex(index);
         }
@@ -223,8 +234,9 @@ public int hashCode() {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.131 -0500", hash_original_method = "3D2EC51930163E4AB4304E4F9059CB5F", hash_generated_method = "8185EA4AEDBA7BDE7BA26A57910FD132")
-    public void set(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.888 -0500", hash_original_method = "3D2EC51930163E4AB4304E4F9059CB5F", hash_generated_method = "8185EA4AEDBA7BDE7BA26A57910FD132")
+    
+public void set(int index) {
         if (index < 0) { // TODO: until we have an inlining JIT.
             checkIndex(index);
         }
@@ -241,8 +253,9 @@ public int hashCode() {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.132 -0500", hash_original_method = "D4755629803CE3870851808B06FB6C2C", hash_generated_method = "E4EF3C3547190AAB68250E8985CC28B6")
-    public void clear(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.890 -0500", hash_original_method = "D4755629803CE3870851808B06FB6C2C", hash_generated_method = "E4EF3C3547190AAB68250E8985CC28B6")
+    
+public void clear(int index) {
         if (index < 0) { // TODO: until we have an inlining JIT.
             checkIndex(index);
         }
@@ -259,8 +272,9 @@ public int hashCode() {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.133 -0500", hash_original_method = "BA9F6F086346AF8289CA95B11E39C3E4", hash_generated_method = "CBF708E1A1C1C1A7979EA13B1DE13E6D")
-    public void flip(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.893 -0500", hash_original_method = "BA9F6F086346AF8289CA95B11E39C3E4", hash_generated_method = "CBF708E1A1C1C1A7979EA13B1DE13E6D")
+    
+public void flip(int index) {
         if (index < 0) { // TODO: until we have an inlining JIT.
             checkIndex(index);
         }
@@ -273,15 +287,17 @@ public int hashCode() {
         shrinkSize();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.133 -0500", hash_original_method = "71550A783E2339080C93A6660DB93338", hash_generated_method = "C2654B8AA28FA43925B6F6B20C02FB6B")
-    private void checkIndex(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.895 -0500", hash_original_method = "71550A783E2339080C93A6660DB93338", hash_generated_method = "C2654B8AA28FA43925B6F6B20C02FB6B")
+    
+private void checkIndex(int index) {
         if (index < 0) {
             throw new IndexOutOfBoundsException("index < 0: " + index);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.134 -0500", hash_original_method = "87A456FF76D283B2A0EA4C0CB9963D07", hash_generated_method = "013A5A64FF0CBDCE4B0D551CF9B9626D")
-    private void checkRange(int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.898 -0500", hash_original_method = "87A456FF76D283B2A0EA4C0CB9963D07", hash_generated_method = "013A5A64FF0CBDCE4B0D551CF9B9626D")
+    
+private void checkRange(int fromIndex, int toIndex) {
         if ((fromIndex | toIndex) < 0 || toIndex < fromIndex) {
             throw new IndexOutOfBoundsException("fromIndex=" + fromIndex + " toIndex=" + toIndex);
         }
@@ -296,8 +312,9 @@ public int hashCode() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.135 -0500", hash_original_method = "5C76FE7FFACA682F8E2DA192826E5D27", hash_generated_method = "BE536BDE2E3E2A89FF121B98ADC0FD25")
-    public BitSet get(int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.901 -0500", hash_original_method = "5C76FE7FFACA682F8E2DA192826E5D27", hash_generated_method = "BE536BDE2E3E2A89FF121B98ADC0FD25")
+    
+public BitSet get(int fromIndex, int toIndex) {
         checkRange(fromIndex, toIndex);
 
         int last = 64 * longCount;
@@ -359,8 +376,9 @@ public int hashCode() {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.136 -0500", hash_original_method = "74386BE28B96B2445F889AFAD9F88AFA", hash_generated_method = "5075AF5A9DA1126BC989D385BF14419D")
-    public void set(int index, boolean state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.903 -0500", hash_original_method = "74386BE28B96B2445F889AFAD9F88AFA", hash_generated_method = "5075AF5A9DA1126BC989D385BF14419D")
+    
+public void set(int index, boolean state) {
         if (state) {
             set(index);
         } else {
@@ -375,8 +393,9 @@ public int hashCode() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.137 -0500", hash_original_method = "9EFB812AD22830556B4E1C754018229D", hash_generated_method = "C684743A61A6FE7B85D098BB851F13D6")
-    public void set(int fromIndex, int toIndex, boolean state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.905 -0500", hash_original_method = "9EFB812AD22830556B4E1C754018229D", hash_generated_method = "C684743A61A6FE7B85D098BB851F13D6")
+    
+public void set(int fromIndex, int toIndex, boolean state) {
         if (state) {
             set(fromIndex, toIndex);
         } else {
@@ -389,8 +408,9 @@ public int hashCode() {
      * Use {@code clear} if you want to reuse this {@code BitSet} with the same capacity, but
      * create a new {@code BitSet} if you're trying to potentially reclaim memory.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.138 -0500", hash_original_method = "8EA7A389047D1FB0971FCD5F7482B28A", hash_generated_method = "1F75C74EF9ED9056BC657885E3A90A4D")
-    public void clear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.908 -0500", hash_original_method = "8EA7A389047D1FB0971FCD5F7482B28A", hash_generated_method = "1F75C74EF9ED9056BC657885E3A90A4D")
+    
+public void clear() {
         Arrays.fill(bits, 0, longCount, 0L);
         longCount = 0;
     }
@@ -402,8 +422,9 @@ public int hashCode() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.139 -0500", hash_original_method = "A26503DA159C46EB79782AEABE473F9D", hash_generated_method = "31C8795A099AF909AD3221B0BD5FAA64")
-    public void set(int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.911 -0500", hash_original_method = "A26503DA159C46EB79782AEABE473F9D", hash_generated_method = "31C8795A099AF909AD3221B0BD5FAA64")
+    
+public void set(int fromIndex, int toIndex) {
         checkRange(fromIndex, toIndex);
         if (fromIndex == toIndex) {
             return;
@@ -436,8 +457,9 @@ public int hashCode() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.140 -0500", hash_original_method = "C97E5F07F0FAAF9942FBF154783DA0BB", hash_generated_method = "834ED009CA61DD9344A1FC53C9C8FBD1")
-    public void clear(int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.914 -0500", hash_original_method = "C97E5F07F0FAAF9942FBF154783DA0BB", hash_generated_method = "834ED009CA61DD9344A1FC53C9C8FBD1")
+    
+public void clear(int fromIndex, int toIndex) {
         checkRange(fromIndex, toIndex);
         if (fromIndex == toIndex || longCount == 0) {
             return;
@@ -474,8 +496,9 @@ public int hashCode() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.141 -0500", hash_original_method = "AF219115F487DC5279F51F56FAD6576B", hash_generated_method = "5244D7C85548360E5DE79E6B229A8F07")
-    public void flip(int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.917 -0500", hash_original_method = "AF219115F487DC5279F51F56FAD6576B", hash_generated_method = "5244D7C85548360E5DE79E6B229A8F07")
+    
+public void flip(int fromIndex, int toIndex) {
         checkRange(fromIndex, toIndex);
         if (fromIndex == toIndex) {
             return;
@@ -505,8 +528,9 @@ public int hashCode() {
     /**
      * Returns true if {@code this.and(bs)} is non-empty, but may be faster than computing that.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.142 -0500", hash_original_method = "F6E914263E6B2AC21BC763D068DFC9F2", hash_generated_method = "906442D4B1AFE9389AD1461F9D961E7E")
-    public boolean intersects(BitSet bs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.919 -0500", hash_original_method = "F6E914263E6B2AC21BC763D068DFC9F2", hash_generated_method = "906442D4B1AFE9389AD1461F9D961E7E")
+    
+public boolean intersects(BitSet bs) {
         long[] bsBits = bs.bits;
         int length = Math.min(this.longCount, bs.longCount);
         for (int i = 0; i < length; ++i) {
@@ -520,8 +544,9 @@ public int hashCode() {
     /**
      * Logically ands the bits of this {@code BitSet} with {@code bs}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.143 -0500", hash_original_method = "83F89EEE7E2D54034E7D4AA2FF619E80", hash_generated_method = "01DEA52140EAB11F467F27664E3D4B3B")
-    public void and(BitSet bs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.922 -0500", hash_original_method = "83F89EEE7E2D54034E7D4AA2FF619E80", hash_generated_method = "01DEA52140EAB11F467F27664E3D4B3B")
+    
+public void and(BitSet bs) {
         int minSize = Math.min(this.longCount, bs.longCount);
         for (int i = 0; i < minSize; ++i) {
             bits[i] &= bs.bits[i];
@@ -533,8 +558,9 @@ public int hashCode() {
     /**
      * Clears all bits in this {@code BitSet} which are also set in {@code bs}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.144 -0500", hash_original_method = "6AEA541E74DD35C186C561500AE782A6", hash_generated_method = "FC8A10E7477CF74A1FCB28AC26EF8501")
-    public void andNot(BitSet bs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.924 -0500", hash_original_method = "6AEA541E74DD35C186C561500AE782A6", hash_generated_method = "FC8A10E7477CF74A1FCB28AC26EF8501")
+    
+public void andNot(BitSet bs) {
         int minSize = Math.min(this.longCount, bs.longCount);
         for (int i = 0; i < minSize; ++i) {
             bits[i] &= ~bs.bits[i];
@@ -545,8 +571,9 @@ public int hashCode() {
     /**
      * Logically ors the bits of this {@code BitSet} with {@code bs}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.144 -0500", hash_original_method = "BEA444ABE4A457608A295CEBFA17C48D", hash_generated_method = "24F5C73F5339141EEA015851EF14A7AB")
-    public void or(BitSet bs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.927 -0500", hash_original_method = "BEA444ABE4A457608A295CEBFA17C48D", hash_generated_method = "24F5C73F5339141EEA015851EF14A7AB")
+    
+public void or(BitSet bs) {
         int minSize = Math.min(this.longCount, bs.longCount);
         int maxSize = Math.max(this.longCount, bs.longCount);
         ensureCapacity(maxSize);
@@ -562,8 +589,9 @@ public int hashCode() {
     /**
      * Logically xors the bits of this {@code BitSet} with {@code bs}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.145 -0500", hash_original_method = "E1F10E844B44799F9E6FF97093185186", hash_generated_method = "F5429E772A6CEA41116922E365498C29")
-    public void xor(BitSet bs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.929 -0500", hash_original_method = "E1F10E844B44799F9E6FF97093185186", hash_generated_method = "F5429E772A6CEA41116922E365498C29")
+    
+public void xor(BitSet bs) {
         int minSize = Math.min(this.longCount, bs.longCount);
         int maxSize = Math.max(this.longCount, bs.longCount);
         ensureCapacity(maxSize);
@@ -582,8 +610,9 @@ public int hashCode() {
      * unrelated to the length of the {@code BitSet}, and not generally useful.
      * Use {@link #nextSetBit} to iterate, or {@link #length} to find the highest set bit.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.146 -0500", hash_original_method = "F33E07354BDEEAA3CDE5DA5EA8779C95", hash_generated_method = "68F75C1103E4801917F2C9C997F00A32")
-    public int size() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.932 -0500", hash_original_method = "F33E07354BDEEAA3CDE5DA5EA8779C95", hash_generated_method = "68F75C1103E4801917F2C9C997F00A32")
+    
+public int size() {
         return bits.length * 64;
     }
 
@@ -591,8 +620,9 @@ public int hashCode() {
      * Returns the number of bits up to and including the highest bit set. This is unrelated to
      * the {@link #size} of the {@code BitSet}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.147 -0500", hash_original_method = "6F3396C6D4F506441C95587742A4BBC3", hash_generated_method = "554038216182ED28D763275A8FC1C890")
-    public int length() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.934 -0500", hash_original_method = "6F3396C6D4F506441C95587742A4BBC3", hash_generated_method = "554038216182ED28D763275A8FC1C890")
+    
+public int length() {
         if (longCount == 0) {
             return 0;
         }
@@ -604,9 +634,9 @@ public int hashCode() {
      * receiver: a comma-delimited list of the indexes of all set bits.
      * For example: {@code "{0,1,8}"}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.148 -0500", hash_original_method = "A54CE267AEC3D3118A3C3A52C928D20A", hash_generated_method = "8E2F86D5ADB18E72C5366992FFD4F3E2")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.937 -0500", hash_original_method = "A54CE267AEC3D3118A3C3A52C928D20A", hash_generated_method = "8E2F86D5ADB18E72C5366992FFD4F3E2")
+    
+@Override public String toString() {
         //System.err.println("BitSet[longCount=" + longCount + ",bits=" + Arrays.toString(bits) + "]");
         StringBuilder sb = new StringBuilder(longCount / 2);
         sb.append('{');
@@ -634,8 +664,9 @@ public String toString() {
      * if no higher bits are set.
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.149 -0500", hash_original_method = "9B70742E631D0FF7E36300CA25C790B5", hash_generated_method = "5C274020D0532A2AF22F681E173C8CB0")
-    public int nextSetBit(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.940 -0500", hash_original_method = "9B70742E631D0FF7E36300CA25C790B5", hash_generated_method = "5C274020D0532A2AF22F681E173C8CB0")
+    
+public int nextSetBit(int index) {
         checkIndex(index);
         int arrayIndex = index / 64;
         if (arrayIndex >= longCount) {
@@ -658,8 +689,9 @@ public String toString() {
      * Since all bits past the end are implicitly clear, this never returns -1.
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.150 -0500", hash_original_method = "B6E36E70EF447F6B993A99CF808640C0", hash_generated_method = "9ABEA64DE2AF5FBA46B9353AE490B318")
-    public int nextClearBit(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.943 -0500", hash_original_method = "B6E36E70EF447F6B993A99CF808640C0", hash_generated_method = "9ABEA64DE2AF5FBA46B9353AE490B318")
+    
+public int nextClearBit(int index) {
         checkIndex(index);
         int arrayIndex = index / 64;
         if (arrayIndex >= longCount) {
@@ -683,8 +715,9 @@ public String toString() {
      * @throws IndexOutOfBoundsException if {@code index < -1}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.151 -0500", hash_original_method = "BDE3A7C277C6F771330A08D119C9767D", hash_generated_method = "8DB7F33DCFA3187134647D41E6E80C1C")
-    public int previousSetBit(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.945 -0500", hash_original_method = "BDE3A7C277C6F771330A08D119C9767D", hash_generated_method = "8DB7F33DCFA3187134647D41E6E80C1C")
+    
+public int previousSetBit(int index) {
         if (index == -1) {
             return -1;
         }
@@ -704,8 +737,9 @@ public String toString() {
      * @throws IndexOutOfBoundsException if {@code index < -1}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.152 -0500", hash_original_method = "4D910DE065D256451DE439F25B5A6A08", hash_generated_method = "0A376BD5286D566B082596287C190E5D")
-    public int previousClearBit(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.948 -0500", hash_original_method = "4D910DE065D256451DE439F25B5A6A08", hash_generated_method = "0A376BD5286D566B082596287C190E5D")
+    
+public int previousClearBit(int index) {
         if (index == -1) {
             return -1;
         }
@@ -722,16 +756,18 @@ public String toString() {
     /**
      * Returns true if all the bits in this {@code BitSet} are set to false, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.152 -0500", hash_original_method = "F34A10F6A3FF7AEAC6E09DDBD9741E2B", hash_generated_method = "7155D76E515931672786B8CA9752FA19")
-    public boolean isEmpty() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.950 -0500", hash_original_method = "F34A10F6A3FF7AEAC6E09DDBD9741E2B", hash_generated_method = "7155D76E515931672786B8CA9752FA19")
+    
+public boolean isEmpty() {
         return (longCount == 0);
     }
 
     /**
      * Returns the number of bits that are {@code true} in this {@code BitSet}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.153 -0500", hash_original_method = "5D3E782DB55862032A3B0CF1D30A4050", hash_generated_method = "32A32E7B2DC50E8F023DE83299F1D9FD")
-    public int cardinality() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.952 -0500", hash_original_method = "5D3E782DB55862032A3B0CF1D30A4050", hash_generated_method = "32A32E7B2DC50E8F023DE83299F1D9FD")
+    
+public int cardinality() {
         int result = 0;
         for (int i = 0; i < longCount; ++i) {
             result += Long.bitCount(bits[i]);
@@ -745,8 +781,9 @@ public String toString() {
      * this {@code BitSet}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.157 -0500", hash_original_method = "87C10E36682237AA1B22F77F460E655A", hash_generated_method = "8414CBD25EFE7E0B2432E58F20AD2989")
-    public long[] toLongArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.970 -0500", hash_original_method = "87C10E36682237AA1B22F77F460E655A", hash_generated_method = "8414CBD25EFE7E0B2432E58F20AD2989")
+    
+public long[] toLongArray() {
         return Arrays.copyOf(bits, longCount);
     }
 
@@ -756,8 +793,9 @@ public String toString() {
      * this {@code BitSet}.
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.158 -0500", hash_original_method = "BCE80AE7073A25796C80405F8FB14636", hash_generated_method = "F8B61DA0FCB0C79B27726A5133092BC9")
-    public byte[] toByteArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.972 -0500", hash_original_method = "BCE80AE7073A25796C80405F8FB14636", hash_generated_method = "F8B61DA0FCB0C79B27726A5133092BC9")
+    
+public byte[] toByteArray() {
         int bitCount = length();
         byte[] result = new byte[(bitCount + 7)/ 8];
         for (int i = 0; i < result.length; ++i) {
@@ -768,8 +806,9 @@ public String toString() {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.159 -0500", hash_original_method = "928646C6EBB028EB87EF1072BE151B53", hash_generated_method = "05C2E4053D2A8B44000E20510FE6C453")
-    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.975 -0500", hash_original_method = "928646C6EBB028EB87EF1072BE151B53", hash_generated_method = "05C2E4053D2A8B44000E20510FE6C453")
+    
+private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
         // The serialized form doesn't include a 'longCount' field, so we'll have to scan the array.
         this.longCount = this.bits.length;

@@ -11,14 +11,16 @@ import droidsafe.annotations.*;
 
 public class HexDump {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.616 -0500", hash_original_method = "7FA399DA453396F4D2EEE2775C9F35FF", hash_generated_method = "E23151A364951C4396F43DB5E2BA25CD")
-    public static String dumpHexString(byte[] array)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.078 -0500", hash_original_method = "7FA399DA453396F4D2EEE2775C9F35FF", hash_generated_method = "E23151A364951C4396F43DB5E2BA25CD")
+    
+public static String dumpHexString(byte[] array)
     {
         return dumpHexString(array, 0, array.length);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.617 -0500", hash_original_method = "6D001C7E00C3CE7619E8E874960F2D9E", hash_generated_method = "AC8D0CFA06752AA14BBB162F26494447")
-    public static String dumpHexString(byte[] array, int offset, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.081 -0500", hash_original_method = "6D001C7E00C3CE7619E8E874960F2D9E", hash_generated_method = "AC8D0CFA06752AA14BBB162F26494447")
+    
+public static String dumpHexString(byte[] array, int offset, int length)
     {
         StringBuilder result = new StringBuilder();
         
@@ -84,20 +86,23 @@ public class HexDump {
         return result.toString();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.618 -0500", hash_original_method = "BA869BF39EB1A5D9EFA5B926AFA6E3ED", hash_generated_method = "D55E178621593D7590AB7C5F0410BA00")
-    public static String toHexString(byte b)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.083 -0500", hash_original_method = "BA869BF39EB1A5D9EFA5B926AFA6E3ED", hash_generated_method = "D55E178621593D7590AB7C5F0410BA00")
+    
+public static String toHexString(byte b)
     {
         return toHexString(toByteArray(b));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.619 -0500", hash_original_method = "2B461C41F59F4BBEB103C84DAFFF95E4", hash_generated_method = "6CA119F2FAAD5EE7576244BBA8DBC96C")
-    public static String toHexString(byte[] array)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.086 -0500", hash_original_method = "2B461C41F59F4BBEB103C84DAFFF95E4", hash_generated_method = "6CA119F2FAAD5EE7576244BBA8DBC96C")
+    
+public static String toHexString(byte[] array)
     {
         return toHexString(array, 0, array.length);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.620 -0500", hash_original_method = "FDE867589E5B51F6209F598560A4738D", hash_generated_method = "68B0C1FA9F122D6516D7E83EC4EBBAF4")
-    public static String toHexString(byte[] array, int offset, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.088 -0500", hash_original_method = "FDE867589E5B51F6209F598560A4738D", hash_generated_method = "68B0C1FA9F122D6516D7E83EC4EBBAF4")
+    
+public static String toHexString(byte[] array, int offset, int length)
     {
         char[] buf = new char[length * 2];
 
@@ -112,22 +117,25 @@ public class HexDump {
         return new String(buf);        
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.621 -0500", hash_original_method = "B157F4A1E101F1E60BB7F2E01FC9F6DA", hash_generated_method = "1E2044860E09E3C0402A19F40C6C7C41")
-    public static String toHexString(int i)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.090 -0500", hash_original_method = "B157F4A1E101F1E60BB7F2E01FC9F6DA", hash_generated_method = "1E2044860E09E3C0402A19F40C6C7C41")
+    
+public static String toHexString(int i)
     {
         return toHexString(toByteArray(i));
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.622 -0500", hash_original_method = "F35514D23B7EC0201304108EB7846BA0", hash_generated_method = "2EE5C81556239D2CC5D0289FADE21656")
-    public static byte[] toByteArray(byte b)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.093 -0500", hash_original_method = "F35514D23B7EC0201304108EB7846BA0", hash_generated_method = "2EE5C81556239D2CC5D0289FADE21656")
+    
+public static byte[] toByteArray(byte b)
     {
         byte[] array = new byte[1];
         array[0] = b;
         return array;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.623 -0500", hash_original_method = "9500957DFE8BAA9DAE04444E360591E5", hash_generated_method = "1973A6D615C066176559D7F29F8FDE00")
-    public static byte[] toByteArray(int i)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.096 -0500", hash_original_method = "9500957DFE8BAA9DAE04444E360591E5", hash_generated_method = "1973A6D615C066176559D7F29F8FDE00")
+    
+public static byte[] toByteArray(int i)
     {
         byte[] array = new byte[4];
         
@@ -139,8 +147,9 @@ public class HexDump {
         return array;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.624 -0500", hash_original_method = "5A3669A0F97ABE322D99A6FE1918D1AA", hash_generated_method = "01A101033B4AC0A655225EFED6798AF4")
-    private static int toByte(char c)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.098 -0500", hash_original_method = "5A3669A0F97ABE322D99A6FE1918D1AA", hash_generated_method = "01A101033B4AC0A655225EFED6798AF4")
+    
+private static int toByte(char c)
     {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
@@ -149,8 +158,9 @@ public class HexDump {
         throw new RuntimeException ("Invalid hex char '" + c + "'");
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.624 -0500", hash_original_method = "E285E1106C0B9E132A4F1F1878A6B1BC", hash_generated_method = "CDF4A7049CEE4795139933F5DC6F5B01")
-    public static byte[] hexStringToByteArray(String hexString)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.101 -0500", hash_original_method = "E285E1106C0B9E132A4F1F1878A6B1BC", hash_generated_method = "CDF4A7049CEE4795139933F5DC6F5B01")
+    
+public static byte[] hexStringToByteArray(String hexString)
     {
         int length = hexString.length();
         byte[] buffer = new byte[length / 2];
@@ -162,7 +172,7 @@ public class HexDump {
         
         return buffer;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.615 -0500", hash_original_field = "3D1F00D92E68E7AF7131B9257AA44523", hash_generated_field = "13725BDB05CFF8B147726B2CE8E01291")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.076 -0500", hash_original_field = "3D1F00D92E68E7AF7131B9257AA44523", hash_generated_field = "13725BDB05CFF8B147726B2CE8E01291")
 
     private final static char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
     

@@ -17,27 +17,27 @@ import dalvik.system.BlockGuard;
 
 
 public class SQLiteStatement extends SQLiteProgram {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.891 -0500", hash_original_field = "5D559E29F3B7D0D51AE5C73FE3F2D3F0", hash_generated_field = "B25F6A4CB29F6325E49F04F66EE5886C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.342 -0500", hash_original_field = "5D559E29F3B7D0D51AE5C73FE3F2D3F0", hash_generated_field = "B25F6A4CB29F6325E49F04F66EE5886C")
 
     private static final String TAG = "SQLiteStatement";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.892 -0500", hash_original_field = "E63805B0E924F8ED616216BEB6CB6005", hash_generated_field = "DF1BFFA8AE77C9EB2467DB4A53480D19")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.345 -0500", hash_original_field = "E63805B0E924F8ED616216BEB6CB6005", hash_generated_field = "DF1BFFA8AE77C9EB2467DB4A53480D19")
 
 
     private static final boolean READ = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.893 -0500", hash_original_field = "FBD12BAEA28977523A9EA4EA7C38D0D0", hash_generated_field = "4E20ADB74C14AC29719A4662B74CC6FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.348 -0500", hash_original_field = "FBD12BAEA28977523A9EA4EA7C38D0D0", hash_generated_field = "4E20ADB74C14AC29719A4662B74CC6FA")
 
     private static final boolean WRITE = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.896 -0500", hash_original_field = "7C3FC1FC837C724A2D92EB1DEE1FF582", hash_generated_field = "51E8612B8DBE387C00FDA982510BC3C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.356 -0500", hash_original_field = "7C3FC1FC837C724A2D92EB1DEE1FF582", hash_generated_field = "51E8612B8DBE387C00FDA982510BC3C4")
 
     private static final int TRANS_STARTED = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.896 -0500", hash_original_field = "4ED2C00F9BF8DE47B9B586DFB9282DD5", hash_generated_field = "8F182F697D081190134825A0E369736C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.359 -0500", hash_original_field = "4ED2C00F9BF8DE47B9B586DFB9282DD5", hash_generated_field = "8F182F697D081190134825A0E369736C")
 
     private static final int LOCK_ACQUIRED = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.894 -0500", hash_original_field = "F226644BA47AF122E4485EA17FD2B3BB", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.350 -0500", hash_original_field = "F226644BA47AF122E4485EA17FD2B3BB", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
 
 
     private SQLiteDatabase mOrigDb;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.895 -0500", hash_original_field = "7BB479D2050B776CF48FB8B4E674911B", hash_generated_field = "19B55F2750B971E6310D64ADB9B2D0CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.352 -0500", hash_original_field = "7BB479D2050B776CF48FB8B4E674911B", hash_generated_field = "19B55F2750B971E6310D64ADB9B2D0CF")
 
     private int mState;
 
@@ -47,8 +47,9 @@ public class SQLiteStatement extends SQLiteProgram {
      * @param db
      * @param sql
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.897 -0500", hash_original_method = "5DDFF8C2B7E2F1702052BA1709F992B7", hash_generated_method = "B9E4508E756E5A8384F3CA53B674C040")
-    SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.363 -0500", hash_original_method = "5DDFF8C2B7E2F1702052BA1709F992B7", hash_generated_method = "B9E4508E756E5A8384F3CA53B674C040")
+    
+SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
         super(db, sql, bindArgs, false /* don't compile sql statement */);
     }
 
@@ -59,8 +60,9 @@ public class SQLiteStatement extends SQLiteProgram {
      * @throws android.database.SQLException If the SQL string is invalid for
      *         some reason
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.898 -0500", hash_original_method = "AF1FDD5D94DA5350C3682852D1772235", hash_generated_method = "A885B32B2E08E78A2AC63B81A3B37E4B")
-    public void execute() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.366 -0500", hash_original_method = "AF1FDD5D94DA5350C3682852D1772235", hash_generated_method = "A885B32B2E08E78A2AC63B81A3B37E4B")
+    
+public void execute() {
         executeUpdateDelete();
     }
 
@@ -72,8 +74,9 @@ public class SQLiteStatement extends SQLiteProgram {
      * @throws android.database.SQLException If the SQL string is invalid for
      *         some reason
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.899 -0500", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "268D0D68A247442B9D4A5C3F6F9FBAF9")
-    public int executeUpdateDelete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.369 -0500", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "268D0D68A247442B9D4A5C3F6F9FBAF9")
+    
+public int executeUpdateDelete() {
         try {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
@@ -101,8 +104,9 @@ public class SQLiteStatement extends SQLiteProgram {
      * @throws android.database.SQLException If the SQL string is invalid for
      *         some reason
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.900 -0500", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "2A4D5BD1B81B68465454108E8B5D9953")
-    public long executeInsert() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.373 -0500", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "2A4D5BD1B81B68465454108E8B5D9953")
+    
+public long executeInsert() {
         try {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
@@ -112,8 +116,9 @@ public class SQLiteStatement extends SQLiteProgram {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.901 -0500", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "3A989A9BAE3E3173B88012F0004E7441")
-    private void saveSqlAsLastSqlStatement() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.376 -0500", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "3A989A9BAE3E3173B88012F0004E7441")
+    
+private void saveSqlAsLastSqlStatement() {
         if (((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
                 DatabaseUtils.STATEMENT_UPDATE) ||
                 (mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
@@ -129,8 +134,9 @@ public class SQLiteStatement extends SQLiteProgram {
      *
      * @throws android.database.sqlite.SQLiteDoneException if the query returns zero rows
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.902 -0500", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "704999B0017ADF597420BBE86A43C1B6")
-    public long simpleQueryForLong() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.378 -0500", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "704999B0017ADF597420BBE86A43C1B6")
+    
+public long simpleQueryForLong() {
         try {
             long timeStart = acquireAndLock(READ);
             long retValue = native_1x1_long();
@@ -153,8 +159,9 @@ public class SQLiteStatement extends SQLiteProgram {
      *
      * @throws android.database.sqlite.SQLiteDoneException if the query returns zero rows
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.902 -0500", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "F0BBF8BAAA27EEAEBE61BE18BA557A10")
-    public String simpleQueryForString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.381 -0500", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "F0BBF8BAAA27EEAEBE61BE18BA557A10")
+    
+public String simpleQueryForString() {
         try {
             long timeStart = acquireAndLock(READ);
             String retValue = native_1x1_string();
@@ -177,8 +184,9 @@ public class SQLiteStatement extends SQLiteProgram {
      *
      * @throws android.database.sqlite.SQLiteDoneException if the query returns zero rows
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.903 -0500", hash_original_method = "6321C559FCE18D31DAAE4496BAD49A23", hash_generated_method = "26025A6DDCA536D8F17C08E177E19F12")
-    public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.385 -0500", hash_original_method = "6321C559FCE18D31DAAE4496BAD49A23", hash_generated_method = "26025A6DDCA536D8F17C08E177E19F12")
+    
+public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
         try {
             long timeStart = acquireAndLock(READ);
             ParcelFileDescriptor retValue = native_1x1_blob_ashmem();
@@ -212,8 +220,9 @@ public class SQLiteStatement extends SQLiteProgram {
      * This method removes the duplicate code from the other public
      * methods in this class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.905 -0500", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "31DF08AA7DB680B5B797A6320AA8C336")
-    private long acquireAndLock(boolean rwFlag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.389 -0500", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "31DF08AA7DB680B5B797A6320AA8C336")
+    
+private long acquireAndLock(boolean rwFlag) {
         mState = 0;
         // use pooled database connection handles for SELECT SQL statements
         mDatabase.verifyDbIsOpen();
@@ -265,8 +274,9 @@ public class SQLiteStatement extends SQLiteProgram {
     /**
      * this method releases locks and references acquired in {@link #acquireAndLock(boolean)}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.906 -0500", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "46E7D271BFA3A6DF8E46090A8915A023")
-    private void releaseAndUnlock() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.392 -0500", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "46E7D271BFA3A6DF8E46090A8915A023")
+    
+private void releaseAndUnlock() {
         releaseReference();
         if (mState == TRANS_STARTED) {
             try {
@@ -292,12 +302,27 @@ public class SQLiteStatement extends SQLiteProgram {
         setNativeHandle(mDatabase.mNativeHandle);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.349 -0500", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "DC5161720DAB8EB47E5EA4047FBF472A")
-    private final native int native_execute();
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.351 -0500", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "9F284F813ADAB367EF93E398BBFD5E94")
-    private final native long native_executeInsert();
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.352 -0500", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "109B3F1E1771FF600B0FC63E1CA1E863")
-    private final native long native_1x1_long();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.396 -0500", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "DC5161720DAB8EB47E5EA4047FBF472A")
+    
+    private final int native_execute(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.401 -0500", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "9F284F813ADAB367EF93E398BBFD5E94")
+    
+    private final long native_executeInsert(){
+    	//Formerly a native method
+    	return getTaintLong();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.405 -0500", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "109B3F1E1771FF600B0FC63E1CA1E863")
+    
+    private final long native_1x1_long(){
+    	//Formerly a native method
+    	return getTaintLong();
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -313,7 +338,12 @@ public class SQLiteStatement extends SQLiteProgram {
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
     	return new ParcelFileDescriptor();
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.357 -0500", hash_original_method = "BD9AF961A0959F9D5CBC2D8FDDD3B169", hash_generated_method = "80B7D2E3456BEDA8261A1E0B72D02043")
-    private final native void native_executeSql(String sql);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.418 -0500", hash_original_method = "BD9AF961A0959F9D5CBC2D8FDDD3B169", hash_generated_method = "80B7D2E3456BEDA8261A1E0B72D02043")
+    
+    private final void native_executeSql(String sql){
+    	//Formerly a native method
+    	addTaint(sql.getTaint());
+    }
+
 }
 

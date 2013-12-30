@@ -13,21 +13,22 @@ import java.io.InputStream;
 
 
 public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.383 -0500", hash_original_field = "4F1C26654B974974351F1EDCF6C06339", hash_generated_field = "FF4CF5F81862B8524694C4DB9DDE635D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.283 -0500", hash_original_field = "4F1C26654B974974351F1EDCF6C06339", hash_generated_field = "FF4CF5F81862B8524694C4DB9DDE635D")
 
     private boolean _constructed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.384 -0500", hash_original_field = "9981A9A2614293E8212A81751DA506A0", hash_generated_field = "62F1DF151C857CACD0771E182D275DC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.285 -0500", hash_original_field = "9981A9A2614293E8212A81751DA506A0", hash_generated_field = "62F1DF151C857CACD0771E182D275DC9")
 
     private int _tagNumber;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.384 -0500", hash_original_field = "8EE68094F784B2C8EC928CABAEA021F0", hash_generated_field = "76949B28A5103E4F545C65F9E6322200")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.287 -0500", hash_original_field = "8EE68094F784B2C8EC928CABAEA021F0", hash_generated_field = "76949B28A5103E4F545C65F9E6322200")
 
     private ASN1StreamParser _parser;
 
     /**
      * @deprecated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.386 -0500", hash_original_method = "CEDFC0E6C0BD9B3FF1D771A70B508D94", hash_generated_method = "804464B19848CD6A6E25EFF6A8B39B5B")
-    protected BERTaggedObjectParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.290 -0500", hash_original_method = "CEDFC0E6C0BD9B3FF1D771A70B508D94", hash_generated_method = "804464B19848CD6A6E25EFF6A8B39B5B")
+    
+protected BERTaggedObjectParser(
         int         baseTag,
         int         tagNumber,
         InputStream contentStream)
@@ -35,8 +36,9 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
         this((baseTag & DERTags.CONSTRUCTED) != 0, tagNumber, new ASN1StreamParser(contentStream));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.387 -0500", hash_original_method = "641FC71F34D5E5D1E36A069067B2FFCA", hash_generated_method = "641FC71F34D5E5D1E36A069067B2FFCA")
-    BERTaggedObjectParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.292 -0500", hash_original_method = "641FC71F34D5E5D1E36A069067B2FFCA", hash_generated_method = "641FC71F34D5E5D1E36A069067B2FFCA")
+    
+BERTaggedObjectParser(
         boolean             constructed,
         int                 tagNumber,
         ASN1StreamParser    parser)
@@ -46,20 +48,23 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
         _parser = parser;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.387 -0500", hash_original_method = "E640F7F01BC858A63ED48B7251E0457D", hash_generated_method = "75AEA0A69C14109A7C0185E302BBB520")
-    public boolean isConstructed()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.295 -0500", hash_original_method = "E640F7F01BC858A63ED48B7251E0457D", hash_generated_method = "75AEA0A69C14109A7C0185E302BBB520")
+    
+public boolean isConstructed()
     {
         return _constructed;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.388 -0500", hash_original_method = "B35ABF3B77036668E0072FBBE52EC3E8", hash_generated_method = "2B25292ABF411168D6C66CC102953E29")
-    public int getTagNo()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.297 -0500", hash_original_method = "B35ABF3B77036668E0072FBBE52EC3E8", hash_generated_method = "2B25292ABF411168D6C66CC102953E29")
+    
+public int getTagNo()
     {
         return _tagNumber;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.389 -0500", hash_original_method = "4AD739EA93AB775B40026E215844A8E7", hash_generated_method = "203FFE5285123EE6D9388923892AD264")
-    public DEREncodable getObjectParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.299 -0500", hash_original_method = "4AD739EA93AB775B40026E215844A8E7", hash_generated_method = "203FFE5285123EE6D9388923892AD264")
+    
+public DEREncodable getObjectParser(
         int     tag,
         boolean isExplicit)
         throws IOException
@@ -76,15 +81,17 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
         return _parser.readImplicit(_constructed, tag);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.390 -0500", hash_original_method = "966C66B264046D402E2F3ED8541B4BF3", hash_generated_method = "F7339538B23916162D3B7B2F41690A46")
-    public DERObject getLoadedObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.302 -0500", hash_original_method = "966C66B264046D402E2F3ED8541B4BF3", hash_generated_method = "F7339538B23916162D3B7B2F41690A46")
+    
+public DERObject getLoadedObject()
         throws IOException
     {
         return _parser.readTaggedObject(_constructed, _tagNumber);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.391 -0500", hash_original_method = "8993E91076953DCCDD0896DB0B3E91BE", hash_generated_method = "5682154552862BB526909198AA97FE3B")
-    public DERObject getDERObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.305 -0500", hash_original_method = "8993E91076953DCCDD0896DB0B3E91BE", hash_generated_method = "5682154552862BB526909198AA97FE3B")
+    
+public DERObject getDERObject()
     {
         try
         {

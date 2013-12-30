@@ -13,7 +13,7 @@ import android.os.RemoteException;
 public interface IMountServiceListener extends IInterface {
     
     public static abstract class Stub extends Binder implements IMountServiceListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.215 -0500", hash_original_field = "73CC64718B9BE72F9002572142E9FA4E", hash_generated_field = "0A9D01B14D46CBF45ED509FCA30C00A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.672 -0500", hash_original_field = "73CC64718B9BE72F9002572142E9FA4E", hash_generated_field = "0A9D01B14D46CBF45ED509FCA30C00A1")
 
         private static final String DESCRIPTOR = "IMountServiceListener";
 
@@ -21,8 +21,9 @@ public interface IMountServiceListener extends IInterface {
          * Cast an IBinder object into an IMountServiceListener interface,
          * generating a proxy if needed.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.217 -0500", hash_original_method = "D5F58F01DDBB445E7F554C00D02A8637", hash_generated_method = "F16F27CC328EC1D2369B1A9D4197AFA3")
-        public static IMountServiceListener asInterface(IBinder obj) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.677 -0500", hash_original_method = "D5F58F01DDBB445E7F554C00D02A8637", hash_generated_method = "F16F27CC328EC1D2369B1A9D4197AFA3")
+        
+public static IMountServiceListener asInterface(IBinder obj) {
             if ((obj == null)) {
                 return null;
             }
@@ -32,38 +33,42 @@ public interface IMountServiceListener extends IInterface {
             }
             return new IMountServiceListener.Stub.Proxy(obj);
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.226 -0500", hash_original_field = "079AAB84EC132B5F469E490AFE5009EC", hash_generated_field = "455F90DA2DF35AD2740FCBDC8F824EF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.703 -0500", hash_original_field = "079AAB84EC132B5F469E490AFE5009EC", hash_generated_field = "455F90DA2DF35AD2740FCBDC8F824EF3")
 
 
         static final int TRANSACTION_onUsbMassStorageConnectionChanged = (IBinder.FIRST_CALL_TRANSACTION + 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.227 -0500", hash_original_field = "317AE559BB7FE082ADE3BECC6920D55F", hash_generated_field = "4BBA30AB1DD0FF7A055CBE89BF595DA2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.705 -0500", hash_original_field = "317AE559BB7FE082ADE3BECC6920D55F", hash_generated_field = "4BBA30AB1DD0FF7A055CBE89BF595DA2")
 
 
         static final int TRANSACTION_onStorageStateChanged = (IBinder.FIRST_CALL_TRANSACTION + 1);
 
         /** Construct the stub at attach it to the interface. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.216 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
-        public Stub() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.674 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        
+public Stub() {
             this.attachInterface(this, DESCRIPTOR);
         }
 
         private static class Proxy implements IMountServiceListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.220 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.686 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
 
             private IBinder mRemote;
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.221 -0500", hash_original_method = "1053F00877073A7D16C7E910C4B2EDC8", hash_generated_method = "1053F00877073A7D16C7E910C4B2EDC8")
-            Proxy(IBinder remote) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.688 -0500", hash_original_method = "1053F00877073A7D16C7E910C4B2EDC8", hash_generated_method = "1053F00877073A7D16C7E910C4B2EDC8")
+            
+Proxy(IBinder remote) {
                 mRemote = remote;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.222 -0500", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "4DCC3A1AD60EC3BEEFB87DCA83743448")
-            public IBinder asBinder() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.691 -0500", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "4DCC3A1AD60EC3BEEFB87DCA83743448")
+            
+public IBinder asBinder() {
                 return mRemote;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.222 -0500", hash_original_method = "93FCABDFBB24901E6298DD02204BB971", hash_generated_method = "CF508C7C95AE462F1450A60346FD4C18")
-            public String getInterfaceDescriptor() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.693 -0500", hash_original_method = "93FCABDFBB24901E6298DD02204BB971", hash_generated_method = "CF508C7C95AE462F1450A60346FD4C18")
+            
+public String getInterfaceDescriptor() {
                 return DESCRIPTOR;
             }
 
@@ -72,8 +77,9 @@ public interface IMountServiceListener extends IInterface {
              * 
              * @param available true if a UMS host is connected.
              */
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.223 -0500", hash_original_method = "CA31660626429B1FC154BFCAB52FCEB5", hash_generated_method = "1A8AE6F223EA38456A72AD0C056AD9C2")
-            public void onUsbMassStorageConnectionChanged(boolean connected) throws RemoteException {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.696 -0500", hash_original_method = "CA31660626429B1FC154BFCAB52FCEB5", hash_generated_method = "1A8AE6F223EA38456A72AD0C056AD9C2")
+            
+public void onUsbMassStorageConnectionChanged(boolean connected) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
                 try {
@@ -97,8 +103,9 @@ public interface IMountServiceListener extends IInterface {
              *            of the values returned by
              *            Environment.getExternalStorageState()
              */
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.224 -0500", hash_original_method = "CD00AB00D1A83361B186C7E93BBCCA09", hash_generated_method = "DCA2DD7C0CA9EAE17499F050A7939D80")
-            public void onStorageStateChanged(String path, String oldState, String newState)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.698 -0500", hash_original_method = "CD00AB00D1A83361B186C7E93BBCCA09", hash_generated_method = "DCA2DD7C0CA9EAE17499F050A7939D80")
+            
+public void onStorageStateChanged(String path, String oldState, String newState)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -116,14 +123,16 @@ public interface IMountServiceListener extends IInterface {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.218 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
-        public IBinder asBinder() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.679 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
+        
+public IBinder asBinder() {
             return this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.219 -0500", hash_original_method = "4B5CB1439FE22B8015736A798B59DE9B", hash_generated_method = "3ECC4B67388844E26088744A22D40A0B")
-        @Override
-public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.682 -0500", hash_original_method = "4B5CB1439FE22B8015736A798B59DE9B", hash_generated_method = "3ECC4B67388844E26088744A22D40A0B")
+        
+@Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
                 throws RemoteException {
             switch (code) {
                 case INTERFACE_TRANSACTION: {

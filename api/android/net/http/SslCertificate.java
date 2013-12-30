@@ -38,8 +38,9 @@ public class SslCertificate {
      * @param certificate The SSL certificate to store
      * @return A bundle with the certificate stored in it or null if fails
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.274 -0500", hash_original_method = "880873CE7B63CF2F24561F719FB04003", hash_generated_method = "C0608A76EC65887A30B994AFF34FBFF5")
-    public static Bundle saveState(SslCertificate certificate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.438 -0500", hash_original_method = "880873CE7B63CF2F24561F719FB04003", hash_generated_method = "C0608A76EC65887A30B994AFF34FBFF5")
+    
+public static Bundle saveState(SslCertificate certificate) {
         if (certificate == null) {
             return null;
         }
@@ -63,8 +64,9 @@ public class SslCertificate {
      * @param bundle The bundle with the certificate state stored in it
      * @return The SSL certificate stored in the bundle or null if fails
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.275 -0500", hash_original_method = "8A489CB2A393053F8EB365921E8E5602", hash_generated_method = "D822D24219EEE37C20EBA54E6F6E3402")
-    public static SslCertificate restoreState(Bundle bundle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.441 -0500", hash_original_method = "8A489CB2A393053F8EB365921E8E5602", hash_generated_method = "D822D24219EEE37C20EBA54E6F6E3402")
+    
+public static SslCertificate restoreState(Bundle bundle) {
         if (bundle == null) {
             return null;
         }
@@ -91,8 +93,9 @@ public class SslCertificate {
     /**
      * Convenience for UI presentation, not intended as public API.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.285 -0500", hash_original_method = "F4854410C533ABCAFE3E1FF72047B328", hash_generated_method = "DA3146E2C36FF4265B9905515FBC3F07")
-    private static String getSerialNumber(X509Certificate x509Certificate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.467 -0500", hash_original_method = "F4854410C533ABCAFE3E1FF72047B328", hash_generated_method = "DA3146E2C36FF4265B9905515FBC3F07")
+    
+private static String getSerialNumber(X509Certificate x509Certificate) {
         if (x509Certificate == null) {
             return "";
         }
@@ -106,8 +109,9 @@ public class SslCertificate {
     /**
      * Convenience for UI presentation, not intended as public API.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.286 -0500", hash_original_method = "BB04971521798A4AB8A6BF219B43860B", hash_generated_method = "4E7893166AF4B5CC778CD2AEB13E54AF")
-    private static String getDigest(X509Certificate x509Certificate, String algorithm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.470 -0500", hash_original_method = "BB04971521798A4AB8A6BF219B43860B", hash_generated_method = "4E7893166AF4B5CC778CD2AEB13E54AF")
+    
+private static String getDigest(X509Certificate x509Certificate, String algorithm) {
         if (x509Certificate == null) {
             return "";
         }
@@ -123,8 +127,9 @@ public class SslCertificate {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.287 -0500", hash_original_method = "4FD92B21057EB8E2D86E0A29786F7A27", hash_generated_method = "B76B5A4B6D6CF46D1637D9A6AB60D36D")
-    private static final String fingerprint(byte[] bytes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.472 -0500", hash_original_method = "4FD92B21057EB8E2D86E0A29786F7A27", hash_generated_method = "B76B5A4B6D6CF46D1637D9A6AB60D36D")
+    
+private static final String fingerprint(byte[] bytes) {
         if (bytes == null) {
             return "";
         }
@@ -142,8 +147,9 @@ public class SslCertificate {
     /**
      * Parse an ISO 8601 date converting ParseExceptions to a null result;
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.289 -0500", hash_original_method = "580FA0F575468574C9336A7B61DF15D7", hash_generated_method = "83E62F628230CD0C38EF31224B3A998E")
-    private static Date parseDate(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.476 -0500", hash_original_method = "580FA0F575468574C9336A7B61DF15D7", hash_generated_method = "83E62F628230CD0C38EF31224B3A998E")
+    
+private static Date parseDate(String string) {
         try {
             return new SimpleDateFormat(ISO_8601_DATE_FORMAT).parse(string);
         } catch (ParseException e) {
@@ -154,8 +160,9 @@ public class SslCertificate {
     /**
      * Format a date as an ISO 8601 string, return "" for a null date
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.290 -0500", hash_original_method = "5B5085E306AF53459A7AE9C0247F607B", hash_generated_method = "70ECBC4221D6F322FDFBB4F7F717F9B3")
-    private static String formatDate(Date date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.478 -0500", hash_original_method = "5B5085E306AF53459A7AE9C0247F607B", hash_generated_method = "70ECBC4221D6F322FDFBB4F7F717F9B3")
+    
+private static String formatDate(Date date) {
         if (date == null) {
             return "";
         }
@@ -165,44 +172,45 @@ public class SslCertificate {
     /**
      * Clone a possibly null Date
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.292 -0500", hash_original_method = "601D82D104A095ABBA912C73F2E0F835", hash_generated_method = "A56786C9EEC3E634CDD3B76C435F31F8")
-    private static Date cloneDate(Date date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.481 -0500", hash_original_method = "601D82D104A095ABBA912C73F2E0F835", hash_generated_method = "A56786C9EEC3E634CDD3B76C435F31F8")
+    
+private static Date cloneDate(Date date) {
         if (date == null) {
             return null;
         }
         return (Date) date.clone();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.265 -0500", hash_original_field = "3A03BD11558931F3C8C2427DA6F56E85", hash_generated_field = "796221E87930E845E5EA421C8E86DFF6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.412 -0500", hash_original_field = "3A03BD11558931F3C8C2427DA6F56E85", hash_generated_field = "796221E87930E845E5EA421C8E86DFF6")
 
     private static String ISO_8601_DATE_FORMAT = "yyyy-MM-dd HH:mm:ssZ";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.270 -0500", hash_original_field = "8213CD9AD53DB34E9FD857488C5F77E4", hash_generated_field = "1FA9058DFCEB0C71DF564270AF5B6408")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.426 -0500", hash_original_field = "8213CD9AD53DB34E9FD857488C5F77E4", hash_generated_field = "1FA9058DFCEB0C71DF564270AF5B6408")
 
     private static final String ISSUED_TO = "issued-to";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.271 -0500", hash_original_field = "B76AE029169D753C8F279713C3F0225D", hash_generated_field = "450A14773231679E30D473C0C7417E49")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.428 -0500", hash_original_field = "B76AE029169D753C8F279713C3F0225D", hash_generated_field = "450A14773231679E30D473C0C7417E49")
 
     private static final String ISSUED_BY = "issued-by";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.272 -0500", hash_original_field = "9C995B1DCB9453A29E3C184DE5A773C6", hash_generated_field = "FA241E5FEC8DD303C71111D6A40A9996")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.430 -0500", hash_original_field = "9C995B1DCB9453A29E3C184DE5A773C6", hash_generated_field = "FA241E5FEC8DD303C71111D6A40A9996")
 
     private static final String VALID_NOT_BEFORE = "valid-not-before";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.272 -0500", hash_original_field = "525C6F836675CC7A0AFCA552C3E74A84", hash_generated_field = "E334FB13549F22C81A060A785A190C49")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.433 -0500", hash_original_field = "525C6F836675CC7A0AFCA552C3E74A84", hash_generated_field = "E334FB13549F22C81A060A785A190C49")
 
     private static final String VALID_NOT_AFTER = "valid-not-after";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.273 -0500", hash_original_field = "625FDA23CC623824BE81F8294AE316F8", hash_generated_field = "F4AFCD170B64578A035371E0CFCC64E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.436 -0500", hash_original_field = "625FDA23CC623824BE81F8294AE316F8", hash_generated_field = "F4AFCD170B64578A035371E0CFCC64E2")
 
     private static final String X509_CERTIFICATE = "x509-certificate";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.266 -0500", hash_original_field = "B90BAFE9C066D7D59C27FE4D2F86B742", hash_generated_field = "3A0F95171EDB19B88E8BBB2C224E603F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.414 -0500", hash_original_field = "B90BAFE9C066D7D59C27FE4D2F86B742", hash_generated_field = "3A0F95171EDB19B88E8BBB2C224E603F")
 
     private  DName mIssuedTo;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.267 -0500", hash_original_field = "7276D3406C1924D0DCAF9CE1477114E6", hash_generated_field = "B9F29B14DA0374C383549135A8B1A6E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.416 -0500", hash_original_field = "7276D3406C1924D0DCAF9CE1477114E6", hash_generated_field = "B9F29B14DA0374C383549135A8B1A6E9")
 
     private  DName mIssuedBy;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.267 -0500", hash_original_field = "03A97BEFCF5B61973DDB2E10D4FB0D24", hash_generated_field = "790C1877C241C6BC4E21841CE6B9480E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.419 -0500", hash_original_field = "03A97BEFCF5B61973DDB2E10D4FB0D24", hash_generated_field = "790C1877C241C6BC4E21841CE6B9480E")
 
     private  Date mValidNotBefore;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.268 -0500", hash_original_field = "A22296AC60A8E2C5B5E68B78FE579B64", hash_generated_field = "F2FF1888752CADA242EFC5AEF50063B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.421 -0500", hash_original_field = "A22296AC60A8E2C5B5E68B78FE579B64", hash_generated_field = "F2FF1888752CADA242EFC5AEF50063B0")
 
     private  Date mValidNotAfter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.269 -0500", hash_original_field = "90D7868B32A2EB1E0860ABF51F6643DF", hash_generated_field = "537A6CC67DC1E04E8C3F9E6F30614000")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.424 -0500", hash_original_field = "90D7868B32A2EB1E0860ABF51F6643DF", hash_generated_field = "537A6CC67DC1E04E8C3F9E6F30614000")
 
     private  X509Certificate mX509Certificate;
 
@@ -216,9 +224,10 @@ public class SslCertificate {
      *     validity period in ISO 8601 format
      * @deprecated Use {@link #SslCertificate(X509Certificate)}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.276 -0500", hash_original_method = "C9600F8F1BB8A8C873CC4C3FEC87FEF5", hash_generated_method = "5678E8178F7A23A79FE55C21B97D7D2C")
-    @Deprecated
-public SslCertificate(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.444 -0500", hash_original_method = "C9600F8F1BB8A8C873CC4C3FEC87FEF5", hash_generated_method = "5678E8178F7A23A79FE55C21B97D7D2C")
+    
+@Deprecated
+    public SslCertificate(
             String issuedTo, String issuedBy, String validNotBefore, String validNotAfter) {
         this(issuedTo, issuedBy, parseDate(validNotBefore), parseDate(validNotAfter), null);
     }
@@ -231,9 +240,10 @@ public SslCertificate(
      * @param validNotAfter The not-after date from the certificate validity period
      * @deprecated Use {@link #SslCertificate(X509Certificate)}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.277 -0500", hash_original_method = "D87F049394C2BF8E430D24ECC769A568", hash_generated_method = "61AF8612D360F90362D60222BA9E9E82")
-    @Deprecated
-public SslCertificate(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.446 -0500", hash_original_method = "D87F049394C2BF8E430D24ECC769A568", hash_generated_method = "61AF8612D360F90362D60222BA9E9E82")
+    
+@Deprecated
+    public SslCertificate(
             String issuedTo, String issuedBy, Date validNotBefore, Date validNotAfter) {
         this(issuedTo, issuedBy, validNotBefore, validNotAfter, null);
     }
@@ -242,8 +252,9 @@ public SslCertificate(
      * Creates a new SSL certificate object from an X509 certificate
      * @param certificate X509 certificate
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.278 -0500", hash_original_method = "44DDC0F9828E23A0D6B9681282E4B5EC", hash_generated_method = "AE6DFFDB6AA401EAA4F30704D5CBB4A7")
-    public SslCertificate(X509Certificate certificate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.449 -0500", hash_original_method = "44DDC0F9828E23A0D6B9681282E4B5EC", hash_generated_method = "AE6DFFDB6AA401EAA4F30704D5CBB4A7")
+    
+public SslCertificate(X509Certificate certificate) {
         this(certificate.getSubjectDN().getName(),
              certificate.getIssuerDN().getName(),
              certificate.getNotBefore(),
@@ -251,8 +262,9 @@ public SslCertificate(
              certificate);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.279 -0500", hash_original_method = "EBF5C56E3FBE1E8BC5B0F01C28F68A19", hash_generated_method = "908E7D0B7E70B6EB951D6E0B3C81E092")
-    private SslCertificate(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.451 -0500", hash_original_method = "EBF5C56E3FBE1E8BC5B0F01C28F68A19", hash_generated_method = "908E7D0B7E70B6EB951D6E0B3C81E092")
+    
+private SslCertificate(
             String issuedTo, String issuedBy,
             Date validNotBefore, Date validNotAfter,
             X509Certificate x509Certificate) {
@@ -267,8 +279,9 @@ public SslCertificate(
      * @return Not-before date from the certificate validity period or
      * "" if none has been set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.280 -0500", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "6B745589B48C817901A3E984E81A2750")
-    public Date getValidNotBeforeDate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.453 -0500", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "6B745589B48C817901A3E984E81A2750")
+    
+public Date getValidNotBeforeDate() {
         return cloneDate(mValidNotBefore);
     }
 
@@ -278,9 +291,10 @@ public SslCertificate(
      *
      * @deprecated Use {@link #getValidNotBeforeDate()}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.281 -0500", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "906469760EC9FF7EC54CC2F5572802B4")
-    @Deprecated
-public String getValidNotBefore() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.456 -0500", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "906469760EC9FF7EC54CC2F5572802B4")
+    
+@Deprecated
+    public String getValidNotBefore() {
         return formatDate(mValidNotBefore);
     }
 
@@ -288,23 +302,24 @@ public String getValidNotBefore() {
      * @return Not-after date from the certificate validity period or
      * "" if none has been set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.282 -0500", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "C93E018667540B41F134F29638AC0187")
-    public Date getValidNotAfterDate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.458 -0500", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "C93E018667540B41F134F29638AC0187")
+    
+public Date getValidNotAfterDate() {
         return cloneDate(mValidNotAfter);
     }
 
     
     public class DName {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.292 -0500", hash_original_field = "0A1AE598F4DE402F5AB1E2786E227934", hash_generated_field = "3BD097ADC1AABD13C2B47840D547843E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.484 -0500", hash_original_field = "0A1AE598F4DE402F5AB1E2786E227934", hash_generated_field = "3BD097ADC1AABD13C2B47840D547843E")
 
         private String mDName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.293 -0500", hash_original_field = "C527F77D690D42AEBC8FE07AA4F17617", hash_generated_field = "C87DD36180CC90C09336CD9600FB7BD5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.486 -0500", hash_original_field = "C527F77D690D42AEBC8FE07AA4F17617", hash_generated_field = "C87DD36180CC90C09336CD9600FB7BD5")
 
         private String mCName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.294 -0500", hash_original_field = "883E238D9313B55D073A4ECE1D256E39", hash_generated_field = "626F524368BB49A1B4C2CC3A1865A29C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.488 -0500", hash_original_field = "883E238D9313B55D073A4ECE1D256E39", hash_generated_field = "626F524368BB49A1B4C2CC3A1865A29C")
 
         private String mOName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.295 -0500", hash_original_field = "E1BB5771432A611607D86ED6102603C8", hash_generated_field = "B3038D70C29815EB8360E3A3B8924901")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.490 -0500", hash_original_field = "E1BB5771432A611607D86ED6102603C8", hash_generated_field = "B3038D70C29815EB8360E3A3B8924901")
 
         private String mUName;
 
@@ -312,8 +327,9 @@ public String getValidNotBefore() {
          * Creates a new distinguished name
          * @param dName The distinguished name
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.296 -0500", hash_original_method = "E1EC1A01B7E978D9F78C671CC9D0E725", hash_generated_method = "DE63C5442C0359B728ECA78D386297FA")
-        public DName(String dName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.494 -0500", hash_original_method = "E1EC1A01B7E978D9F78C671CC9D0E725", hash_generated_method = "DE63C5442C0359B728ECA78D386297FA")
+        
+public DName(String dName) {
             if (dName != null) {
                 mDName = dName;
                 try {
@@ -347,32 +363,36 @@ public String getValidNotBefore() {
         /**
          * @return The distinguished name (normally includes CN, O, and OU names)
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.297 -0500", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "608CAB9EC6484E5B39AD95AC3D10630E")
-        public String getDName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.496 -0500", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "608CAB9EC6484E5B39AD95AC3D10630E")
+        
+public String getDName() {
             return mDName != null ? mDName : "";
         }
 
         /**
          * @return The Common-name (CN) component of this name
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.297 -0500", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "992C984B3D4EDE2D411418A1EBF2206A")
-        public String getCName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.498 -0500", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "992C984B3D4EDE2D411418A1EBF2206A")
+        
+public String getCName() {
             return mCName != null ? mCName : "";
         }
 
         /**
          * @return The Organization (O) component of this name
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.298 -0500", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "5ECD8CC7AC40046231E5BBD69A55A303")
-        public String getOName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.500 -0500", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "5ECD8CC7AC40046231E5BBD69A55A303")
+        
+public String getOName() {
             return mOName != null ? mOName : "";
         }
 
         /**
          * @return The Organizational Unit (OU) component of this name
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.299 -0500", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "522403B9925D9707FF9DEAFA8F56DC47")
-        public String getUName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.502 -0500", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "522403B9925D9707FF9DEAFA8F56DC47")
+        
+public String getUName() {
             return mUName != null ? mUName : "";
         }
 
@@ -385,33 +405,37 @@ public String getValidNotBefore() {
      *
      * @deprecated Use {@link #getValidNotAfterDate()}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.283 -0500", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "1A425A9CBA12924BA92645C35800760F")
-    @Deprecated
-public String getValidNotAfter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.460 -0500", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "1A425A9CBA12924BA92645C35800760F")
+    
+@Deprecated
+    public String getValidNotAfter() {
         return formatDate(mValidNotAfter);
     }
 
     /**
      * @return Issued-to distinguished name or null if none has been set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.283 -0500", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "1BF26945FDDA44EA2BDEF45FC202106C")
-    public DName getIssuedTo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.462 -0500", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "1BF26945FDDA44EA2BDEF45FC202106C")
+    
+public DName getIssuedTo() {
         return mIssuedTo;
     }
 
     /**
      * @return Issued-by distinguished name or null if none has been set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.284 -0500", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "B435466601289B58F6AC680736130DAD")
-    public DName getIssuedBy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.464 -0500", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "B435466601289B58F6AC680736130DAD")
+    
+public DName getIssuedBy() {
         return mIssuedBy;
     }
 
     /**
      * @return A string representation of this certificate for debugging
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.288 -0500", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "F210421EBD3B1173ECF5FC877FC82B3E")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.474 -0500", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "F210421EBD3B1173ECF5FC877FC82B3E")
+    
+public String toString() {
         return ("Issued to: " + mIssuedTo.getDName() + ";\n"
                 + "Issued by: " + mIssuedBy.getDName() + ";\n");
     }
@@ -423,8 +447,9 @@ public String getValidNotAfter() {
      *
      * @hide Used by Browser and Settings
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.301 -0500", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "BEF78A8054F61184E0951917CE78475B")
-    public View inflateCertificateView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.508 -0500", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "BEF78A8054F61184E0951917CE78475B")
+    
+public View inflateCertificateView(Context context) {
         LayoutInflater factory = LayoutInflater.from(context);
 
         View certificateView = factory.inflate(
@@ -479,8 +504,9 @@ public String getValidNotAfter() {
      * @return Properly localized version of the certificate date string and
      * the "" if it fails to localize.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.302 -0500", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "A6CDB5BE793C81EFAEC5214801083006")
-    private String formatCertificateDate(Context context, Date certificateDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.511 -0500", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "A6CDB5BE793C81EFAEC5214801083006")
+    
+private String formatCertificateDate(Context context, Date certificateDate) {
         if (certificateDate == null) {
             return "";
         }

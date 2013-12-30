@@ -12,13 +12,14 @@ import java.util.HashMap;
 
 class HistoricalCharsetNames {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.845 -0500", hash_original_method = "3DD9E53B9F7169D056A1C449CA37D450", hash_generated_method = "4F3655C646BD68275AA8A57825079C7D")
-    public static String get(Charset charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.087 -0500", hash_original_method = "3DD9E53B9F7169D056A1C449CA37D450", hash_generated_method = "4F3655C646BD68275AA8A57825079C7D")
+    
+public static String get(Charset charset) {
         String modernName = charset.name();
         String result = historicalNames.get(modernName);
         return (result != null) ? result : modernName;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.843 -0500", hash_original_field = "EF462E491147C348AC78B30C418ED138", hash_generated_field = "A0C5A9379054FCFA9A110671A96EC39A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.083 -0500", hash_original_field = "EF462E491147C348AC78B30C418ED138", hash_generated_field = "A0C5A9379054FCFA9A110671A96EC39A")
 
     private static final HashMap<String, String> historicalNames = new HashMap<String, String>();
     

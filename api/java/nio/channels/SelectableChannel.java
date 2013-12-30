@@ -17,8 +17,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
     /**
      * Constructs a new {@code SelectableChannel}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.120 -0500", hash_original_method = "134796BB126CC075543A5858F980D0FB", hash_generated_method = "BC0C1F6680988B6C0F8648856F2CE483")
-    protected SelectableChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.058 -0500", hash_original_method = "134796BB126CC075543A5858F980D0FB", hash_generated_method = "BC0C1F6680988B6C0F8648856F2CE483")
+    
+protected SelectableChannel() {
     }
 
     /**
@@ -27,8 +28,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      *
      * @return the blocking object as lock.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.121 -0500", hash_original_method = "2E192193615D7EEFA25C6422BFD6D26E", hash_generated_method = "24811C6B2D8CCA17562F0EF8B81873FA")
-    public abstract Object blockingLock();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.061 -0500", hash_original_method = "2E192193615D7EEFA25C6422BFD6D26E", hash_generated_method = "24811C6B2D8CCA17562F0EF8B81873FA")
+    
+public abstract Object blockingLock();
 
     /**
      * Sets the blocking mode of this channel. A call to this method blocks if
@@ -50,8 +52,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.122 -0500", hash_original_method = "21DB17E6C51E37682F8EA397C436E96E", hash_generated_method = "BA37478B634729C2D7E0A5B08FB466F0")
-    public abstract SelectableChannel configureBlocking(boolean block)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.063 -0500", hash_original_method = "21DB17E6C51E37682F8EA397C436E96E", hash_generated_method = "BA37478B634729C2D7E0A5B08FB466F0")
+    
+public abstract SelectableChannel configureBlocking(boolean block)
             throws IOException;
 
     /**
@@ -60,8 +63,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      * @return {@code true} if this channel is blocking, undefined if this
      *         channel is closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.122 -0500", hash_original_method = "7E9BC8041DAE305D9005BF04D0F90DF9", hash_generated_method = "19A54000AD0D6086A655B0B2C02272D6")
-    public abstract boolean isBlocking();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.066 -0500", hash_original_method = "7E9BC8041DAE305D9005BF04D0F90DF9", hash_generated_method = "19A54000AD0D6086A655B0B2C02272D6")
+    
+public abstract boolean isBlocking();
 
     /**
      * Indicates whether this channel is registered with at least one selector.
@@ -69,8 +73,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      * @return {@code true} if this channel is registered, {@code false}
      *         otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.123 -0500", hash_original_method = "B09F725F9534BF401052EB6B0DDF05E6", hash_generated_method = "6304460E41687883CFEC11BCA89CBC0B")
-    public abstract boolean isRegistered();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.068 -0500", hash_original_method = "B09F725F9534BF401052EB6B0DDF05E6", hash_generated_method = "6304460E41687883CFEC11BCA89CBC0B")
+    
+public abstract boolean isRegistered();
 
     /**
      * Gets this channel's selection key for the specified selector.
@@ -80,16 +85,18 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      * @return the selection key for the channel or {@code null} if this channel
      *         has not been registered with {@code sel}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.124 -0500", hash_original_method = "E142EAADB6D6B83087D91F829F1AAF88", hash_generated_method = "04C1D3917ABB4610130E622046B2E5E0")
-    public abstract SelectionKey keyFor(Selector sel);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.071 -0500", hash_original_method = "E142EAADB6D6B83087D91F829F1AAF88", hash_generated_method = "04C1D3917ABB4610130E622046B2E5E0")
+    
+public abstract SelectionKey keyFor(Selector sel);
 
     /**
      * Gets the provider of this channel.
      *
      * @return the provider of this channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.125 -0500", hash_original_method = "16691AB71F358568043BE374C6495F90", hash_generated_method = "98718A80D4D5481D996D395828ED0646")
-    public abstract SelectorProvider provider();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.073 -0500", hash_original_method = "16691AB71F358568043BE374C6495F90", hash_generated_method = "98718A80D4D5481D996D395828ED0646")
+    
+public abstract SelectorProvider provider();
 
     /**
      * Registers this channel with the specified selector for the specified
@@ -125,8 +132,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      * @throws IllegalArgumentException
      *             if the operation given is not supported by this channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.126 -0500", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "1C9A11BE9729A3914363B7EB05FAC26C")
-    public final SelectionKey register(Selector selector, int operations)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.075 -0500", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "1C9A11BE9729A3914363B7EB05FAC26C")
+    
+public final SelectionKey register(Selector selector, int operations)
             throws ClosedChannelException {
         return register(selector, operations, null);
     }
@@ -164,8 +172,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      * @throws CancelledKeyException
      *             if this channel is registered but its key has been canceled.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.127 -0500", hash_original_method = "779FC9C1152041835F6C6467E1F8DA69", hash_generated_method = "80731282758076702486D2DCEAF1F1C8")
-    public abstract SelectionKey register(Selector sel, int ops, Object att)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.078 -0500", hash_original_method = "779FC9C1152041835F6C6467E1F8DA69", hash_generated_method = "80731282758076702486D2DCEAF1F1C8")
+    
+public abstract SelectionKey register(Selector sel, int ops, Object att)
             throws ClosedChannelException;
 
     /**
@@ -174,8 +183,9 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
      *
      * @return the set of operations that this channel supports.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.128 -0500", hash_original_method = "33B79DBFF75C6C01F6D678C6A0E94BA6", hash_generated_method = "2ACF24C06FF02F12A8656ACBE4F244F6")
-    public abstract int validOps();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.081 -0500", hash_original_method = "33B79DBFF75C6C01F6D678C6A0E94BA6", hash_generated_method = "2ACF24C06FF02F12A8656ACBE4F244F6")
+    
+public abstract int validOps();
 
     
 }

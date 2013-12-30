@@ -14,13 +14,15 @@ import libcore.util.EmptyArray;
 
 public final class Base64 {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.268 -0500", hash_original_method = "8535EDDE1B82B493909B7A5D7029E7BE", hash_generated_method = "6A8FCF4552AAB657EB72B7C62E120750")
-    public static byte[] decode(byte[] in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.154 -0500", hash_original_method = "8535EDDE1B82B493909B7A5D7029E7BE", hash_generated_method = "6A8FCF4552AAB657EB72B7C62E120750")
+    
+public static byte[] decode(byte[] in) {
         return decode(in, in.length);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.270 -0500", hash_original_method = "C6A868DEF1696F686F485C4F95484204", hash_generated_method = "BB0A9EA117B311C37A5055FCC0BB6D2B")
-    public static byte[] decode(byte[] in, int len) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.157 -0500", hash_original_method = "C6A868DEF1696F686F485C4F95484204", hash_generated_method = "BB0A9EA117B311C37A5055FCC0BB6D2B")
+    
+public static byte[] decode(byte[] in, int len) {
         // approximate output length
         int length = len / 4 * 3;
         // return an empty array on empty or short input without padding
@@ -109,8 +111,9 @@ public final class Base64 {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.273 -0500", hash_original_method = "3951A54D7E58E025CF9BE59B6C0BF589", hash_generated_method = "FE53652097EBC8DA4AE52F4B93D33BD1")
-    public static String encode(byte[] in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.163 -0500", hash_original_method = "3951A54D7E58E025CF9BE59B6C0BF589", hash_generated_method = "FE53652097EBC8DA4AE52F4B93D33BD1")
+    
+public static String encode(byte[] in) {
         int length = (in.length + 2) * 4 / 3;
         byte[] out = new byte[length];
         int index = 0, end = in.length - in.length % 3;
@@ -136,7 +139,7 @@ public final class Base64 {
         }
         return new String(out, 0, index, Charsets.US_ASCII);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.271 -0500", hash_original_field = "3063CAA3327D5F99524D47E8A719D4E8", hash_generated_field = "82F1210628F15E92912F89A88C162707")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.160 -0500", hash_original_field = "3063CAA3327D5F99524D47E8A719D4E8", hash_generated_field = "82F1210628F15E92912F89A88C162707")
 
 
     private static final byte[] map = new byte[]
@@ -145,8 +148,9 @@ public final class Base64 {
          'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
          'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3',
          '4', '5', '6', '7', '8', '9', '+', '/'};
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.268 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
-    private Base64() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.151 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
+    
+private Base64() {
     }
 }
 

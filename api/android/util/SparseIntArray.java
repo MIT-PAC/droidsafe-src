@@ -14,8 +14,9 @@ import com.android.internal.util.ArrayUtils;
 
 public class SparseIntArray implements Cloneable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.862 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
-    private static int binarySearch(int[] a, int start, int len, int key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.195 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
+    
+private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
 
         while (high - low > 1) {
@@ -34,22 +35,23 @@ public class SparseIntArray implements Cloneable {
         else
             return ~high;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.846 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.152 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
 
 
     private int[] mKeys;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.847 -0500", hash_original_field = "AF95716C8E1CC9A8A1F58D24EE9BA3AC", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.154 -0500", hash_original_field = "AF95716C8E1CC9A8A1F58D24EE9BA3AC", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
 
     private int[] mValues;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.848 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.156 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
 
     private int mSize;
 
     /**
      * Creates a new SparseIntArray containing no mappings.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.849 -0500", hash_original_method = "3CB703BA4BBEFDD58F8198A538C651FA", hash_generated_method = "CF855BD0B8B8C8AFFCD8B68DE31A2318")
-    public SparseIntArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.158 -0500", hash_original_method = "3CB703BA4BBEFDD58F8198A538C651FA", hash_generated_method = "CF855BD0B8B8C8AFFCD8B68DE31A2318")
+    
+public SparseIntArray() {
         this(10);
     }
 
@@ -58,8 +60,9 @@ public class SparseIntArray implements Cloneable {
      * require any additional memory allocation to store the specified
      * number of mappings.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.850 -0500", hash_original_method = "4F3979691C622EA5D57CC5639ACF4BFA", hash_generated_method = "8010346A9A49BD37949A5284CA6889FD")
-    public SparseIntArray(int initialCapacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.161 -0500", hash_original_method = "4F3979691C622EA5D57CC5639ACF4BFA", hash_generated_method = "8010346A9A49BD37949A5284CA6889FD")
+    
+public SparseIntArray(int initialCapacity) {
         initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
 
         mKeys = new int[initialCapacity];
@@ -67,9 +70,10 @@ public class SparseIntArray implements Cloneable {
         mSize = 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.850 -0500", hash_original_method = "A8A0500EAB2E651EC2684F9205BC101D", hash_generated_method = "76C30F43338B73786E1C376EB56F38D2")
-    @Override
-public SparseIntArray clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.163 -0500", hash_original_method = "A8A0500EAB2E651EC2684F9205BC101D", hash_generated_method = "76C30F43338B73786E1C376EB56F38D2")
+    
+@Override
+    public SparseIntArray clone() {
         SparseIntArray clone = null;
         try {
             clone = (SparseIntArray) super.clone();
@@ -85,8 +89,9 @@ public SparseIntArray clone() {
      * Gets the int mapped from the specified key, or <code>0</code>
      * if no such mapping has been made.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.851 -0500", hash_original_method = "31C2EB74F838DC49D6A7CCB91DEC9730", hash_generated_method = "0009355E1DCADF1D2A0438880AEE0DD0")
-    public int get(int key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.166 -0500", hash_original_method = "31C2EB74F838DC49D6A7CCB91DEC9730", hash_generated_method = "0009355E1DCADF1D2A0438880AEE0DD0")
+    
+public int get(int key) {
         return get(key, 0);
     }
 
@@ -94,8 +99,9 @@ public SparseIntArray clone() {
      * Gets the int mapped from the specified key, or the specified value
      * if no such mapping has been made.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.852 -0500", hash_original_method = "F09A11123BBC4B0EABD4FD786A922B87", hash_generated_method = "CB5A811FBDE1C43FEE04881EC2F4929F")
-    public int get(int key, int valueIfKeyNotFound) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.169 -0500", hash_original_method = "F09A11123BBC4B0EABD4FD786A922B87", hash_generated_method = "CB5A811FBDE1C43FEE04881EC2F4929F")
+    
+public int get(int key, int valueIfKeyNotFound) {
         int i = binarySearch(mKeys, 0, mSize, key);
 
         if (i < 0) {
@@ -108,8 +114,9 @@ public SparseIntArray clone() {
     /**
      * Removes the mapping from the specified key, if there was any.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.853 -0500", hash_original_method = "8400B64AA446E0EFD1887423DF561D32", hash_generated_method = "7048CD8EA0479E36CDE1D456E0B31B7C")
-    public void delete(int key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.171 -0500", hash_original_method = "8400B64AA446E0EFD1887423DF561D32", hash_generated_method = "7048CD8EA0479E36CDE1D456E0B31B7C")
+    
+public void delete(int key) {
         int i = binarySearch(mKeys, 0, mSize, key);
 
         if (i >= 0) {
@@ -120,8 +127,9 @@ public SparseIntArray clone() {
     /**
      * Removes the mapping at the given index.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.854 -0500", hash_original_method = "95F6538276A47A94F5635C5979B3D205", hash_generated_method = "03BB1EBBF2B16CB4908B188086726A47")
-    public void removeAt(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.173 -0500", hash_original_method = "95F6538276A47A94F5635C5979B3D205", hash_generated_method = "03BB1EBBF2B16CB4908B188086726A47")
+    
+public void removeAt(int index) {
         System.arraycopy(mKeys, index + 1, mKeys, index, mSize - (index + 1));
         System.arraycopy(mValues, index + 1, mValues, index, mSize - (index + 1));
         mSize--;
@@ -132,8 +140,9 @@ public SparseIntArray clone() {
      * replacing the previous mapping from the specified key if there
      * was one.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.855 -0500", hash_original_method = "22FC701C5FD198EE89684FFAA296E5FF", hash_generated_method = "B59F71D87B2619681721145E061AD10B")
-    public void put(int key, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.176 -0500", hash_original_method = "22FC701C5FD198EE89684FFAA296E5FF", hash_generated_method = "B59F71D87B2619681721145E061AD10B")
+    
+public void put(int key, int value) {
         int i = binarySearch(mKeys, 0, mSize, key);
 
         if (i >= 0) {
@@ -171,8 +180,9 @@ public SparseIntArray clone() {
      * Returns the number of key-value mappings that this SparseIntArray
      * currently stores.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.855 -0500", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "D1146B99C52208B28E4F9EC1242180A7")
-    public int size() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.178 -0500", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "D1146B99C52208B28E4F9EC1242180A7")
+    
+public int size() {
         return mSize;
     }
 
@@ -181,8 +191,9 @@ public SparseIntArray clone() {
      * the key from the <code>index</code>th key-value mapping that this
      * SparseIntArray stores.  
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.856 -0500", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "C622C575F82B87F3E28E2B38FD9B52B9")
-    public int keyAt(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.180 -0500", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "C622C575F82B87F3E28E2B38FD9B52B9")
+    
+public int keyAt(int index) {
         return mKeys[index];
     }
     
@@ -191,8 +202,9 @@ public SparseIntArray clone() {
      * the value from the <code>index</code>th key-value mapping that this
      * SparseIntArray stores.  
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.857 -0500", hash_original_method = "C4C41F7CADA2DF58870780D8F849030A", hash_generated_method = "3FC899A81DEB4320CE19F932A798DED6")
-    public int valueAt(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.182 -0500", hash_original_method = "C4C41F7CADA2DF58870780D8F849030A", hash_generated_method = "3FC899A81DEB4320CE19F932A798DED6")
+    
+public int valueAt(int index) {
         return mValues[index];
     }
 
@@ -201,8 +213,9 @@ public SparseIntArray clone() {
      * specified key, or a negative number if the specified
      * key is not mapped.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.858 -0500", hash_original_method = "AE2F6996EFD9E2EE7383268F20118C3E", hash_generated_method = "C2B1CDA3A0B5386EDD134874FAB8A401")
-    public int indexOfKey(int key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.184 -0500", hash_original_method = "AE2F6996EFD9E2EE7383268F20118C3E", hash_generated_method = "C2B1CDA3A0B5386EDD134874FAB8A401")
+    
+public int indexOfKey(int key) {
         return binarySearch(mKeys, 0, mSize, key);
     }
 
@@ -214,8 +227,9 @@ public SparseIntArray clone() {
      * and that multiple keys can map to the same value and this will
      * find only one of them.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.858 -0500", hash_original_method = "951F96E1F188074D8F08952A6EB559DF", hash_generated_method = "0FE311139B9721BCD7BAD4B1E6642AB7")
-    public int indexOfValue(int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.187 -0500", hash_original_method = "951F96E1F188074D8F08952A6EB559DF", hash_generated_method = "0FE311139B9721BCD7BAD4B1E6642AB7")
+    
+public int indexOfValue(int value) {
         for (int i = 0; i < mSize; i++)
             if (mValues[i] == value)
                 return i;
@@ -226,8 +240,9 @@ public SparseIntArray clone() {
     /**
      * Removes all key-value mappings from this SparseIntArray.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.859 -0500", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "079CB038114B3C01EA312AE5CCEF3330")
-    public void clear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.189 -0500", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "079CB038114B3C01EA312AE5CCEF3330")
+    
+public void clear() {
         mSize = 0;
     }
 
@@ -235,8 +250,9 @@ public SparseIntArray clone() {
      * Puts a key/value pair into the array, optimizing for the case where
      * the key is greater than all existing keys in the array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:35.861 -0500", hash_original_method = "582360498D222FA3AC7FD1DD315CF583", hash_generated_method = "4075642C1E9904B5D7C576D7607FAE56")
-    public void append(int key, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.191 -0500", hash_original_method = "582360498D222FA3AC7FD1DD315CF583", hash_generated_method = "4075642C1E9904B5D7C576D7607FAE56")
+    
+public void append(int key, int value) {
         if (mSize != 0 && key <= mKeys[mSize - 1]) {
             put(key, value);
             return;

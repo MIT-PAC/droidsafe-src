@@ -21,8 +21,9 @@ public class ContentDispositionParser extends ParametersParser {
      * Creates a new instance of ContentDispositionParser
      * @param contentDisposition the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.464 -0500", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "1F99FB9C48EE9EEFAE67593C4664A6F1")
-    public ContentDispositionParser(String contentDisposition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.284 -0500", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "1F99FB9C48EE9EEFAE67593C4664A6F1")
+    
+public ContentDispositionParser(String contentDisposition) {
         super(contentDisposition);
     }
 
@@ -30,8 +31,9 @@ public class ContentDispositionParser extends ParametersParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.464 -0500", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "AD65E80CA37E68032C8E9C98D5A3DE29")
-    protected ContentDispositionParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.288 -0500", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "AD65E80CA37E68032C8E9C98D5A3DE29")
+    
+protected ContentDispositionParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -40,8 +42,9 @@ public class ContentDispositionParser extends ParametersParser {
      * @return SIPHeader (ContentDispositionList object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.467 -0500", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "AD0F03654918E48BE3984210F2815FEB")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.290 -0500", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "AD0F03654918E48BE3984210F2815FEB")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("ContentDispositionParser.parse");

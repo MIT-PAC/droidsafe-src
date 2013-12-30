@@ -16,20 +16,21 @@ import javax.sip.address.URI;
 
 
 public final class AlertInfo extends ParametersHeader implements javax.sip.header.AlertInfoHeader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.047 -0500", hash_original_field = "1F6F5F8CFA970F2BE3A0A49C9F0A19C2", hash_generated_field = "837DE0F76A5BA789D54E73518AECF665")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.653 -0500", hash_original_field = "1F6F5F8CFA970F2BE3A0A49C9F0A19C2", hash_generated_field = "837DE0F76A5BA789D54E73518AECF665")
 
     private static final long serialVersionUID = 4159657362051508719L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.048 -0500", hash_original_field = "301DE89A58C4FF637054844336681A92", hash_generated_field = "D17BDF81091C1074F22AD5D363A1EFEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.656 -0500", hash_original_field = "301DE89A58C4FF637054844336681A92", hash_generated_field = "D17BDF81091C1074F22AD5D363A1EFEF")
 
     protected GenericURI uri;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.049 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "0515D9B755A4065CCD98BBCCA2A45812")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.658 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "0515D9B755A4065CCD98BBCCA2A45812")
 
     protected String string;
 
     /** Constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.050 -0500", hash_original_method = "573DE3A32F61321788993C5785A09259", hash_generated_method = "05A7F92A5AB73275159FE69FD9E5483B")
-    public AlertInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.661 -0500", hash_original_method = "573DE3A32F61321788993C5785A09259", hash_generated_method = "05A7F92A5AB73275159FE69FD9E5483B")
+    
+public AlertInfo() {
         super(NAME);
     }
 
@@ -37,8 +38,9 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
      * Return value encoding in canonical form.
      * @return The value of the header in canonical encoding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.051 -0500", hash_original_method = "9B65437FA923D12CE9D4363AF11C8369", hash_generated_method = "36C0011C3F6F96837C4E739DA193138A")
-    protected String encodeBody() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.664 -0500", hash_original_method = "9B65437FA923D12CE9D4363AF11C8369", hash_generated_method = "36C0011C3F6F96837C4E739DA193138A")
+    
+protected String encodeBody() {
         StringBuffer encoding = new StringBuffer();
         if (uri != null) {
             encoding.append(LESS_THAN).append(uri.encode()).append(GREATER_THAN);
@@ -55,8 +57,9 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
      * Set the uri member
      * @param uri URI to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.052 -0500", hash_original_method = "9100B3E97C317A9574634DF51E7BF148", hash_generated_method = "D3796A99E50AFFB90EE2F19BC2689C74")
-    public void setAlertInfo(URI uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.668 -0500", hash_original_method = "9100B3E97C317A9574634DF51E7BF148", hash_generated_method = "D3796A99E50AFFB90EE2F19BC2689C74")
+    
+public void setAlertInfo(URI uri) {
         this.uri = (GenericURI) uri;
     }
 
@@ -64,8 +67,9 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
      * Set the string member
      * @param string String to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.053 -0500", hash_original_method = "70582DF127DE5708E4C226DA4F1719D4", hash_generated_method = "4E7C6F6E6E0E6D95722E08A5BD841A0D")
-    public void setAlertInfo(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.671 -0500", hash_original_method = "70582DF127DE5708E4C226DA4F1719D4", hash_generated_method = "4E7C6F6E6E0E6D95722E08A5BD841A0D")
+    
+public void setAlertInfo(String string) {
         this.string = string;
     }
 
@@ -73,8 +77,9 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
      * Returns the AlertInfo value of this AlertInfoHeader.
      * @return the URI representing the AlertInfo.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.054 -0500", hash_original_method = "93EE3BCFF83F692256BB0B6CBD3B0531", hash_generated_method = "86B2B9C9E6BD7076302C64C37D62828F")
-    public URI getAlertInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.674 -0500", hash_original_method = "93EE3BCFF83F692256BB0B6CBD3B0531", hash_generated_method = "86B2B9C9E6BD7076302C64C37D62828F")
+    
+public URI getAlertInfo() {
         URI alertInfoUri = null;
 
         if (this.uri != null) {
@@ -90,8 +95,9 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
         return alertInfoUri;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.055 -0500", hash_original_method = "1467211F1910FD2BE16563F269CB9AF0", hash_generated_method = "4EF7F7ED3C3686C4A2C99E6B354F282C")
-    public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.677 -0500", hash_original_method = "1467211F1910FD2BE16563F269CB9AF0", hash_generated_method = "4EF7F7ED3C3686C4A2C99E6B354F282C")
+    
+public Object clone() {
         AlertInfo retval = (AlertInfo) super.clone();
         if (this.uri != null) {
             retval.uri = (GenericURI) this.uri.clone();

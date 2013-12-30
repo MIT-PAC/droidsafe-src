@@ -33,8 +33,9 @@ public class IntentFilter implements Parcelable {
     // These functions are the start of more optimized code for managing
     // the string sets...  not yet implemented.
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.925 -0500", hash_original_method = "DA21299454DC334FA5FD853D1BFD2D91", hash_generated_method = "0931E9784E87BD4E6C0385E8116E742F")
-    private static int findStringInSet(String[] set, String string,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.751 -0500", hash_original_method = "DA21299454DC334FA5FD853D1BFD2D91", hash_generated_method = "0931E9784E87BD4E6C0385E8116E742F")
+    
+private static int findStringInSet(String[] set, String string,
             int[] lengths, int lenPos) {
         if (set == null) return -1;
         final int N = lengths[lenPos];
@@ -44,8 +45,9 @@ public class IntentFilter implements Parcelable {
         return -1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.926 -0500", hash_original_method = "77C7ED281F73E32FAEAB4043A75B2222", hash_generated_method = "6E55CE27038C83CA2C9F4EF6BA6D0080")
-    private static String[] addStringToSet(String[] set, String string,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.753 -0500", hash_original_method = "77C7ED281F73E32FAEAB4043A75B2222", hash_generated_method = "6E55CE27038C83CA2C9F4EF6BA6D0080")
+    
+private static String[] addStringToSet(String[] set, String string,
             int[] lengths, int lenPos) {
         if (findStringInSet(set, string, lengths, lenPos) >= 0) return set;
         if (set == null) {
@@ -69,8 +71,9 @@ public class IntentFilter implements Parcelable {
         return set;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.927 -0500", hash_original_method = "5DADFEE73D89E7689BB0B9FCBD7E5BBE", hash_generated_method = "3C1DD4EDF5A37BB60FCA2D86C2F478E6")
-    private static String[] removeStringFromSet(String[] set, String string,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.756 -0500", hash_original_method = "5DADFEE73D89E7689BB0B9FCBD7E5BBE", hash_generated_method = "3C1DD4EDF5A37BB60FCA2D86C2F478E6")
+    
+private static String[] removeStringFromSet(String[] set, String string,
             int[] lengths, int lenPos) {
         int pos = findStringInSet(set, string, lengths, lenPos);
         if (pos < 0) return set;
@@ -104,140 +107,144 @@ public class IntentFilter implements Parcelable {
      *
      * @see #IntentFilter(String, String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.931 -0500", hash_original_method = "A1D1078D79ADBFCB876B04A67BE8587A", hash_generated_method = "64624900F48215366B67C691CCF1AFBA")
-    public static IntentFilter create(String action, String dataType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.766 -0500", hash_original_method = "A1D1078D79ADBFCB876B04A67BE8587A", hash_generated_method = "64624900F48215366B67C691CCF1AFBA")
+    
+public static IntentFilter create(String action, String dataType) {
         try {
             return new IntentFilter(action, dataType);
         } catch (MalformedMimeTypeException e) {
             throw new RuntimeException("Bad MIME type", e);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.896 -0500", hash_original_field = "E55682C9C7FDAE9334A4C2C5AD3CD442", hash_generated_field = "C4BAA85D0E2D827D81D6FD077E15ADAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.667 -0500", hash_original_field = "E55682C9C7FDAE9334A4C2C5AD3CD442", hash_generated_field = "C4BAA85D0E2D827D81D6FD077E15ADAB")
 
     private static final String SGLOB_STR = "sglob";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.897 -0500", hash_original_field = "4A4D165EEA212D2A7BB9F0F1C917DE49", hash_generated_field = "3FD2C7D31E487D70A6AA6204637B2899")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.669 -0500", hash_original_field = "4A4D165EEA212D2A7BB9F0F1C917DE49", hash_generated_field = "3FD2C7D31E487D70A6AA6204637B2899")
 
     private static final String PREFIX_STR = "prefix";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.898 -0500", hash_original_field = "BA5B28F042DADBD770D5F586A8C333ED", hash_generated_field = "6210DECFA06880B6974267C6646EE816")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.671 -0500", hash_original_field = "BA5B28F042DADBD770D5F586A8C333ED", hash_generated_field = "6210DECFA06880B6974267C6646EE816")
 
     private static final String LITERAL_STR = "literal";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.899 -0500", hash_original_field = "708F1A574DCD2C63A43690A711A7ED78", hash_generated_field = "AE2B2A8BA02A502564CB5583944A3146")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.674 -0500", hash_original_field = "708F1A574DCD2C63A43690A711A7ED78", hash_generated_field = "AE2B2A8BA02A502564CB5583944A3146")
 
     private static final String PATH_STR = "path";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.900 -0500", hash_original_field = "DDA6B5B9AB486686E2C5FAAB4E8116A9", hash_generated_field = "013F1A4753121A357F8D4078614DB5E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.676 -0500", hash_original_field = "DDA6B5B9AB486686E2C5FAAB4E8116A9", hash_generated_field = "013F1A4753121A357F8D4078614DB5E9")
 
     private static final String PORT_STR = "port";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.900 -0500", hash_original_field = "7191E92A7D7A31CAE2EA6B3EB1696D1A", hash_generated_field = "D18646C1A58B5E7B6FA605CC5A4DC7F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.679 -0500", hash_original_field = "7191E92A7D7A31CAE2EA6B3EB1696D1A", hash_generated_field = "D18646C1A58B5E7B6FA605CC5A4DC7F3")
 
     private static final String HOST_STR = "host";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.901 -0500", hash_original_field = "6C8808830D27DEA3D943ACFEB6760BDC", hash_generated_field = "1F480DB7C369FC6CBAE0E8C3FA3BF415")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.681 -0500", hash_original_field = "6C8808830D27DEA3D943ACFEB6760BDC", hash_generated_field = "1F480DB7C369FC6CBAE0E8C3FA3BF415")
 
     private static final String AUTH_STR = "auth";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.902 -0500", hash_original_field = "D6705445FD69B0E43ED6C4EE68CE19B6", hash_generated_field = "EA900D1EEAE42F3BD549A09336FAB017")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.683 -0500", hash_original_field = "D6705445FD69B0E43ED6C4EE68CE19B6", hash_generated_field = "EA900D1EEAE42F3BD549A09336FAB017")
 
     private static final String SCHEME_STR = "scheme";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.903 -0500", hash_original_field = "E3A88F24BA754B6385E7C641901D52E3", hash_generated_field = "4B774CE7E444A55B1B5AD2184D9A15CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.685 -0500", hash_original_field = "E3A88F24BA754B6385E7C641901D52E3", hash_generated_field = "4B774CE7E444A55B1B5AD2184D9A15CA")
 
     private static final String TYPE_STR = "type";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.904 -0500", hash_original_field = "770E9914CC2DCAE43087CDA95DB531E5", hash_generated_field = "C2ADBD80B18293A0640432B18AE1AF15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.688 -0500", hash_original_field = "770E9914CC2DCAE43087CDA95DB531E5", hash_generated_field = "C2ADBD80B18293A0640432B18AE1AF15")
 
     private static final String CAT_STR = "cat";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.905 -0500", hash_original_field = "D54E209A0D983CD7137E5FDAAB92AAC2", hash_generated_field = "21D10217770299F078A52DD982CBB332")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.691 -0500", hash_original_field = "D54E209A0D983CD7137E5FDAAB92AAC2", hash_generated_field = "21D10217770299F078A52DD982CBB332")
 
     private static final String NAME_STR = "name";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.905 -0500", hash_original_field = "0CCE088BF52CED45B6CD503F877D1590", hash_generated_field = "35EF60995ACCB10C97AD2C3A5730D090")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.694 -0500", hash_original_field = "0CCE088BF52CED45B6CD503F877D1590", hash_generated_field = "35EF60995ACCB10C97AD2C3A5730D090")
 
     private static final String ACTION_STR = "action";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.906 -0500", hash_original_field = "2D220FB47666DD5B57700A3D18B133EE", hash_generated_field = "6027B3B34EF275EF0258CDA7F6C44B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.696 -0500", hash_original_field = "2D220FB47666DD5B57700A3D18B133EE", hash_generated_field = "6027B3B34EF275EF0258CDA7F6C44B06")
 
     public static final int SYSTEM_HIGH_PRIORITY = 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.907 -0500", hash_original_field = "A9A0BE979219D5175C8DABD4805245FB", hash_generated_field = "0B01181E7D37C91380237FEC68D6D2D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.699 -0500", hash_original_field = "A9A0BE979219D5175C8DABD4805245FB", hash_generated_field = "0B01181E7D37C91380237FEC68D6D2D3")
 
     public static final int SYSTEM_LOW_PRIORITY = -1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.908 -0500", hash_original_field = "28E44CED487A34B53C221C78B38E8D82", hash_generated_field = "29606CB5EA802A3FC60CBE3892A8C231")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.701 -0500", hash_original_field = "28E44CED487A34B53C221C78B38E8D82", hash_generated_field = "29606CB5EA802A3FC60CBE3892A8C231")
 
     public static final int MATCH_CATEGORY_MASK = 0xfff0000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.909 -0500", hash_original_field = "4F80A630752E52D0BAA88094250C3C4D", hash_generated_field = "B34195AB6941F69DE5EAC54045013E42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.703 -0500", hash_original_field = "4F80A630752E52D0BAA88094250C3C4D", hash_generated_field = "B34195AB6941F69DE5EAC54045013E42")
 
     public static final int MATCH_ADJUSTMENT_MASK = 0x000ffff;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.910 -0500", hash_original_field = "5AEC1E044F6F67CAFADEDFD963F0885B", hash_generated_field = "C9832C97F6DA3DADA2A2565BDBACE888")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.706 -0500", hash_original_field = "5AEC1E044F6F67CAFADEDFD963F0885B", hash_generated_field = "C9832C97F6DA3DADA2A2565BDBACE888")
 
     public static final int MATCH_ADJUSTMENT_NORMAL = 0x8000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.911 -0500", hash_original_field = "2E511E7FB16D9BE2B50A1C3B36F88654", hash_generated_field = "A1B64111ED1BB3921E4D97B9744154C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.708 -0500", hash_original_field = "2E511E7FB16D9BE2B50A1C3B36F88654", hash_generated_field = "A1B64111ED1BB3921E4D97B9744154C1")
 
     public static final int MATCH_CATEGORY_EMPTY = 0x0100000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.911 -0500", hash_original_field = "85153B36EB85C3348A87A9615B647A91", hash_generated_field = "C12E4AC6561BC99691B6248231FD861A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.710 -0500", hash_original_field = "85153B36EB85C3348A87A9615B647A91", hash_generated_field = "C12E4AC6561BC99691B6248231FD861A")
 
     public static final int MATCH_CATEGORY_SCHEME = 0x0200000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.912 -0500", hash_original_field = "8B9E08894B2E4C4CC941103832175B81", hash_generated_field = "FE262DE457FD58C71A1505F0420E15FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.713 -0500", hash_original_field = "8B9E08894B2E4C4CC941103832175B81", hash_generated_field = "FE262DE457FD58C71A1505F0420E15FE")
 
     public static final int MATCH_CATEGORY_HOST = 0x0300000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.913 -0500", hash_original_field = "BD512053D4FCA7DDC92237FA6E88F225", hash_generated_field = "D10A1DB2D1A22224D638E95D16CE16B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.715 -0500", hash_original_field = "BD512053D4FCA7DDC92237FA6E88F225", hash_generated_field = "D10A1DB2D1A22224D638E95D16CE16B9")
 
     public static final int MATCH_CATEGORY_PORT = 0x0400000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.914 -0500", hash_original_field = "3CBC8C4615A73A8165B1484E82142A5E", hash_generated_field = "733A5B911AC6A408B5E5529505EC7DCE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.718 -0500", hash_original_field = "3CBC8C4615A73A8165B1484E82142A5E", hash_generated_field = "733A5B911AC6A408B5E5529505EC7DCE")
 
     public static final int MATCH_CATEGORY_PATH = 0x0500000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.915 -0500", hash_original_field = "82768DA9020CD35C1A7FECD580AC3338", hash_generated_field = "EF521D11C4B126106700F8F59796E3EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.720 -0500", hash_original_field = "82768DA9020CD35C1A7FECD580AC3338", hash_generated_field = "EF521D11C4B126106700F8F59796E3EC")
 
     public static final int MATCH_CATEGORY_TYPE = 0x0600000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.916 -0500", hash_original_field = "96A2264AB9CA90D609F1B40EF0492817", hash_generated_field = "77C0C8B7C43E88DB2627254044127D30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.723 -0500", hash_original_field = "96A2264AB9CA90D609F1B40EF0492817", hash_generated_field = "77C0C8B7C43E88DB2627254044127D30")
 
     public static final int NO_MATCH_TYPE = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.917 -0500", hash_original_field = "DC62F17710055D42F83B4CF67B82E9B4", hash_generated_field = "994792ED93AAD5E31FA521805925B110")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.725 -0500", hash_original_field = "DC62F17710055D42F83B4CF67B82E9B4", hash_generated_field = "994792ED93AAD5E31FA521805925B110")
 
     public static final int NO_MATCH_DATA = -2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.917 -0500", hash_original_field = "1E05EE6794BA303BF7F30727BF2EE8BB", hash_generated_field = "E5BEBE595B019031029BE6CBC65E803A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.728 -0500", hash_original_field = "1E05EE6794BA303BF7F30727BF2EE8BB", hash_generated_field = "E5BEBE595B019031029BE6CBC65E803A")
 
     public static final int NO_MATCH_ACTION = -3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.918 -0500", hash_original_field = "0DBBFA907CAF845CD798E2BE1DBB963D", hash_generated_field = "5B8788CD30AACDBD788AC513C1CD39AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.730 -0500", hash_original_field = "0DBBFA907CAF845CD798E2BE1DBB963D", hash_generated_field = "5B8788CD30AACDBD788AC513C1CD39AE")
 
     public static final int NO_MATCH_CATEGORY = -4;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.564 -0400", hash_original_field = "DCD9426D45070A28AEA2BF645CBE4999", hash_generated_field = "665198F8F263BBC69C46C9D3C09D5B07")
 
     public static final Parcelable.Creator<IntentFilter> CREATOR
             = new Parcelable.Creator<IntentFilter>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.984 -0500", hash_original_method = "6AFABEC7B0F2CE7FB89EA092702B6037", hash_generated_method = "A4E611978E149742988D9CAA7F3D195D")
-        public IntentFilter createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.909 -0500", hash_original_method = "6AFABEC7B0F2CE7FB89EA092702B6037", hash_generated_method = "A4E611978E149742988D9CAA7F3D195D")
+        
+public IntentFilter createFromParcel(Parcel source) {
             return new IntentFilter(source);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.985 -0500", hash_original_method = "DE4837E283E52263DB6E87C79DDB9140", hash_generated_method = "AA90E990A64CA3A2F9CFB6D67737D299")
-        public IntentFilter[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.912 -0500", hash_original_method = "DE4837E283E52263DB6E87C79DDB9140", hash_generated_method = "AA90E990A64CA3A2F9CFB6D67737D299")
+        
+public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.919 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.732 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
 
 
     private int mPriority;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.920 -0500", hash_original_field = "1C01DCF3CAD6F1F8B4C99696F3E8A2C8", hash_generated_field = "B7B787904E751334D4C6C5E9190CBECB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.734 -0500", hash_original_field = "1C01DCF3CAD6F1F8B4C99696F3E8A2C8", hash_generated_field = "B7B787904E751334D4C6C5E9190CBECB")
 
     private  ArrayList<String> mActions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.921 -0500", hash_original_field = "3FA8ABFF8F3A29D5E46D1842F4E37CCD", hash_generated_field = "DF1B13D35CEEB5232DEB8422E072E169")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.737 -0500", hash_original_field = "3FA8ABFF8F3A29D5E46D1842F4E37CCD", hash_generated_field = "DF1B13D35CEEB5232DEB8422E072E169")
 
     private ArrayList<String> mCategories = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.922 -0500", hash_original_field = "C86BC44BB7486732DFCE4230CAE0D3E5", hash_generated_field = "D6C69DEDF341F4A4196AEA26E81D24A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.739 -0500", hash_original_field = "C86BC44BB7486732DFCE4230CAE0D3E5", hash_generated_field = "D6C69DEDF341F4A4196AEA26E81D24A7")
 
     private ArrayList<String> mDataSchemes = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.922 -0500", hash_original_field = "49B33C9415691552BCB1FCE6D3901D6B", hash_generated_field = "C318D366A8228836F69A6B4BDDBFB506")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.741 -0500", hash_original_field = "49B33C9415691552BCB1FCE6D3901D6B", hash_generated_field = "C318D366A8228836F69A6B4BDDBFB506")
 
     private ArrayList<AuthorityEntry> mDataAuthorities = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.923 -0500", hash_original_field = "ED5161411B31CEB4187B897C71E9F686", hash_generated_field = "2207044C23DD28F016FBFC7451C9D66A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.744 -0500", hash_original_field = "ED5161411B31CEB4187B897C71E9F686", hash_generated_field = "2207044C23DD28F016FBFC7451C9D66A")
 
     private ArrayList<PatternMatcher> mDataPaths = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.924 -0500", hash_original_field = "85E613F84E208E29787CF516CB1D2553", hash_generated_field = "06256A3E596C9EB087048F541BEAB278")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.746 -0500", hash_original_field = "85E613F84E208E29787CF516CB1D2553", hash_generated_field = "06256A3E596C9EB087048F541BEAB278")
 
     private ArrayList<String> mDataTypes = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.925 -0500", hash_original_field = "4E9BB20DDD719BB7B01F0A2592C02543", hash_generated_field = "A768E3466CCFB1BF3BC36D8E0C71D999")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.748 -0500", hash_original_field = "4E9BB20DDD719BB7B01F0A2592C02543", hash_generated_field = "A768E3466CCFB1BF3BC36D8E0C71D999")
 
     private boolean mHasPartialTypes = false;
 
     /**
      * New empty IntentFilter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.932 -0500", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "873E5D48980AE16EC4645A8878C78F5B")
-    public IntentFilter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.768 -0500", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "873E5D48980AE16EC4645A8878C78F5B")
+    
+public IntentFilter() {
         mPriority = 0;
         mActions = new ArrayList<String>();
     }
@@ -249,8 +256,9 @@ public class IntentFilter implements Parcelable {
      *
      * @param action The action to match, i.e. Intent.ACTION_MAIN.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.933 -0500", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "9D26B14C7A6A2DAA4F9CFE07029C4107")
-    public IntentFilter(String action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.771 -0500", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "9D26B14C7A6A2DAA4F9CFE07029C4107")
+    
+public IntentFilter(String action) {
         mPriority = 0;
         mActions = new ArrayList<String>();
         addAction(action);
@@ -272,8 +280,9 @@ public class IntentFilter implements Parcelable {
      * @param dataType The type to match, i.e. "vnd.android.cursor.dir/person".
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.933 -0500", hash_original_method = "6F03ACB8C3DEEE507BC72687512BE15B", hash_generated_method = "91B753132D963E5C5F3D2E690A4320DD")
-    public IntentFilter(String action, String dataType)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.773 -0500", hash_original_method = "6F03ACB8C3DEEE507BC72687512BE15B", hash_generated_method = "91B753132D963E5C5F3D2E690A4320DD")
+    
+public IntentFilter(String action, String dataType)
         throws MalformedMimeTypeException {
         mPriority = 0;
         mActions = new ArrayList<String>();
@@ -286,8 +295,9 @@ public class IntentFilter implements Parcelable {
      *
      * @param o The original filter to copy.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.936 -0500", hash_original_method = "1836401D6B82BE6CCBD088E7B5026D41", hash_generated_method = "1E198A53AE5B2BE3C2A90D8BCF0759DF")
-    public IntentFilter(IntentFilter o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.776 -0500", hash_original_method = "1836401D6B82BE6CCBD088E7B5026D41", hash_generated_method = "1E198A53AE5B2BE3C2A90D8BCF0759DF")
+    
+public IntentFilter(IntentFilter o) {
         mPriority = o.mPriority;
         mActions = new ArrayList<String>(o.mActions);
         if (o.mCategories != null) {
@@ -308,8 +318,9 @@ public class IntentFilter implements Parcelable {
         mHasPartialTypes = o.mHasPartialTypes;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.990 -0500", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "6EE529B66EC18E565826F7115C1F962E")
-    private IntentFilter(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.924 -0500", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "6EE529B66EC18E565826F7115C1F962E")
+    
+private IntentFilter(Parcel source) {
         mActions = new ArrayList<String>();
         source.readStringList(mActions);
         if (source.readInt() != 0) {
@@ -355,8 +366,9 @@ public class IntentFilter implements Parcelable {
      * @see #SYSTEM_LOW_PRIORITY
      * @see #SYSTEM_HIGH_PRIORITY
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.937 -0500", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "F821DA72088707AF3D4A2AB2E00A960A")
-    public final void setPriority(int priority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.779 -0500", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "F821DA72088707AF3D4A2AB2E00A960A")
+    
+public final void setPriority(int priority) {
         mPriority = priority;
     }
 
@@ -367,8 +379,9 @@ public class IntentFilter implements Parcelable {
      *
      * @see #setPriority
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.937 -0500", hash_original_method = "4CF75B39A2F3F4074ED78E7B55CDB45C", hash_generated_method = "617FE6A07A964A96153B897AEDF65E42")
-    public final int getPriority() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.781 -0500", hash_original_method = "4CF75B39A2F3F4074ED78E7B55CDB45C", hash_generated_method = "617FE6A07A964A96153B897AEDF65E42")
+    
+public final int getPriority() {
         return mPriority;
     }
 
@@ -379,8 +392,9 @@ public class IntentFilter implements Parcelable {
      *
      * @param action Name of the action to match, i.e. Intent.ACTION_VIEW.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.938 -0500", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "3CBB35A7E6A8533169E7E4AFDAFF741D")
-    public final void addAction(String action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.784 -0500", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "3CBB35A7E6A8533169E7E4AFDAFF741D")
+    
+public final void addAction(String action) {
         if (!mActions.contains(action)) {
             mActions.add(action.intern());
         }
@@ -389,16 +403,18 @@ public class IntentFilter implements Parcelable {
     /**
      * Return the number of actions in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.939 -0500", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "0D6591890E76CE60B3E65B000F6BC744")
-    public final int countActions() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.786 -0500", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "0D6591890E76CE60B3E65B000F6BC744")
+    
+public final int countActions() {
         return mActions.size();
     }
 
     /**
      * Return an action in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.940 -0500", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "CCCD1EB514435FFA0F2B8D27E682ABE9")
-    public final String getAction(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.788 -0500", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "CCCD1EB514435FFA0F2B8D27E682ABE9")
+    
+public final String getAction(int index) {
         return mActions.get(index);
     }
 
@@ -410,8 +426,9 @@ public class IntentFilter implements Parcelable {
      *
      * @return True if the action is explicitly mentioned in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.941 -0500", hash_original_method = "9D48CC1056269867443B9FC005D01764", hash_generated_method = "E11D4D17B078E86A23C0ADE548B9A036")
-    public final boolean hasAction(String action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.790 -0500", hash_original_method = "9D48CC1056269867443B9FC005D01764", hash_generated_method = "E11D4D17B078E86A23C0ADE548B9A036")
+    
+public final boolean hasAction(String action) {
         return action != null && mActions.contains(action);
     }
 
@@ -423,8 +440,9 @@ public class IntentFilter implements Parcelable {
      *
      * @return True if the action is listed in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.942 -0500", hash_original_method = "984560EB63068E6413989919BB90D187", hash_generated_method = "00E0F0DA4A4EC476E43189431359F691")
-    public final boolean matchAction(String action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.792 -0500", hash_original_method = "984560EB63068E6413989919BB90D187", hash_generated_method = "00E0F0DA4A4EC476E43189431359F691")
+    
+public final boolean matchAction(String action) {
         return hasAction(action);
     }
 
@@ -432,8 +450,9 @@ public class IntentFilter implements Parcelable {
      * Return an iterator over the filter's actions.  If there are no actions,
      * returns null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.942 -0500", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "C97A7DCA62EDED3DB3829661D6065AF8")
-    public final Iterator<String> actionsIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.795 -0500", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "C97A7DCA62EDED3DB3829661D6065AF8")
+    
+public final Iterator<String> actionsIterator() {
         return mActions != null ? mActions.iterator() : null;
     }
 
@@ -456,8 +475,9 @@ public class IntentFilter implements Parcelable {
      *
      * @see #matchData
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.943 -0500", hash_original_method = "B72DE1FACB480BB8E2AD802A23898A2F", hash_generated_method = "F9B59F41521F6B52295E07D850A64989")
-    public final void addDataType(String type)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.798 -0500", hash_original_method = "B72DE1FACB480BB8E2AD802A23898A2F", hash_generated_method = "F9B59F41521F6B52295E07D850A64989")
+    
+public final void addDataType(String type)
         throws MalformedMimeTypeException {
         final int slashpos = type.indexOf('/');
         final int typelen = type.length();
@@ -488,32 +508,36 @@ public class IntentFilter implements Parcelable {
      *
      * @return True if the type is explicitly mentioned in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.944 -0500", hash_original_method = "9AF334B8B7AF494EC1E65710EFD1F300", hash_generated_method = "20811D01627BCC2F4CB093CF77E0D3FB")
-    public final boolean hasDataType(String type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.800 -0500", hash_original_method = "9AF334B8B7AF494EC1E65710EFD1F300", hash_generated_method = "20811D01627BCC2F4CB093CF77E0D3FB")
+    
+public final boolean hasDataType(String type) {
         return mDataTypes != null && findMimeType(type);
     }
 
     /**
      * Return the number of data types in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.945 -0500", hash_original_method = "9C43102AEBDE030DD3A73C704DCFC758", hash_generated_method = "ED738DDC5DCEE837AA72AA1B9C5B8A26")
-    public final int countDataTypes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.802 -0500", hash_original_method = "9C43102AEBDE030DD3A73C704DCFC758", hash_generated_method = "ED738DDC5DCEE837AA72AA1B9C5B8A26")
+    
+public final int countDataTypes() {
         return mDataTypes != null ? mDataTypes.size() : 0;
     }
 
     /**
      * Return a data type in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.946 -0500", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "AEB722B002E6D0EA415047FB37870532")
-    public final String getDataType(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.804 -0500", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "AEB722B002E6D0EA415047FB37870532")
+    
+public final String getDataType(int index) {
         return mDataTypes.get(index);
     }
 
     /**
      * Return an iterator over the filter's data types.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.947 -0500", hash_original_method = "E14DF72F5869874CC38AD67447F5264E", hash_generated_method = "127365361841BB38033FE96228DFD635")
-    public final Iterator<String> typesIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.806 -0500", hash_original_method = "E14DF72F5869874CC38AD67447F5264E", hash_generated_method = "127365361841BB38033FE96228DFD635")
+    
+public final Iterator<String> typesIterator() {
         return mDataTypes != null ? mDataTypes.iterator() : null;
     }
 
@@ -533,8 +557,9 @@ public class IntentFilter implements Parcelable {
      *
      * @see #matchData
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.948 -0500", hash_original_method = "5610D5819C8C8974F702B3F76798B195", hash_generated_method = "1F9003E68C7D13469DB1AA0AEBE99964")
-    public final void addDataScheme(String scheme) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.808 -0500", hash_original_method = "5610D5819C8C8974F702B3F76798B195", hash_generated_method = "1F9003E68C7D13469DB1AA0AEBE99964")
+    
+public final void addDataScheme(String scheme) {
         if (mDataSchemes == null) mDataSchemes = new ArrayList<String>();
         if (!mDataSchemes.contains(scheme)) {
             mDataSchemes.add(scheme.intern());
@@ -544,16 +569,18 @@ public class IntentFilter implements Parcelable {
     /**
      * Return the number of data schemes in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.948 -0500", hash_original_method = "23DC2F7DC5C53386402D5B95D046A59E", hash_generated_method = "7F8E015CCB62475EF679AD9556264DF4")
-    public final int countDataSchemes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.811 -0500", hash_original_method = "23DC2F7DC5C53386402D5B95D046A59E", hash_generated_method = "7F8E015CCB62475EF679AD9556264DF4")
+    
+public final int countDataSchemes() {
         return mDataSchemes != null ? mDataSchemes.size() : 0;
     }
 
     /**
      * Return a data scheme in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.949 -0500", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "0C095C026EADCB33101C551367EFC85D")
-    public final String getDataScheme(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.813 -0500", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "0C095C026EADCB33101C551367EFC85D")
+    
+public final String getDataScheme(int index) {
         return mDataSchemes.get(index);
     }
 
@@ -566,19 +593,22 @@ public class IntentFilter implements Parcelable {
      *
      * @return True if the scheme is explicitly mentioned in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.950 -0500", hash_original_method = "6D8F15A80747973FB96EA7F310404F85", hash_generated_method = "49AF324792395883FF96E46A0C77B49B")
-    public final boolean hasDataScheme(String scheme) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.816 -0500", hash_original_method = "6D8F15A80747973FB96EA7F310404F85", hash_generated_method = "49AF324792395883FF96E46A0C77B49B")
+    
+public final boolean hasDataScheme(String scheme) {
         return mDataSchemes != null && mDataSchemes.contains(scheme);
     }
 
     
     public static class MalformedMimeTypeException extends AndroidException {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.928 -0500", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "3EC5ABD340A3F165372D697F56D65E01")
-        public MalformedMimeTypeException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.759 -0500", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "3EC5ABD340A3F165372D697F56D65E01")
+        
+public MalformedMimeTypeException() {
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.929 -0500", hash_original_method = "E06B6BA43D42AE50E4C9A14EEBF56FAC", hash_generated_method = "CD5BFD771B660603FE97A9CDE715BD08")
-        public MalformedMimeTypeException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.761 -0500", hash_original_method = "E06B6BA43D42AE50E4C9A14EEBF56FAC", hash_generated_method = "CD5BFD771B660603FE97A9CDE715BD08")
+        
+public MalformedMimeTypeException(String name) {
             super(name);
         }
 
@@ -588,50 +618,55 @@ public class IntentFilter implements Parcelable {
 
     
     public final static class AuthorityEntry {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.952 -0500", hash_original_field = "32DD8703A5318DFB0F5E91580364D0C6", hash_generated_field = "0C08F8EAA89B66A92AA182AAF7101D01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.822 -0500", hash_original_field = "32DD8703A5318DFB0F5E91580364D0C6", hash_generated_field = "0C08F8EAA89B66A92AA182AAF7101D01")
 
         private  String mOrigHost;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.953 -0500", hash_original_field = "608081BE7A68D9B383C7D78BD9FDC0E8", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.824 -0500", hash_original_field = "608081BE7A68D9B383C7D78BD9FDC0E8", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
 
         private  String mHost;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.954 -0500", hash_original_field = "D663BFB24DCD93A5CE79A54831D212E5", hash_generated_field = "4775283DB55281CD651400D583AD7181")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.826 -0500", hash_original_field = "D663BFB24DCD93A5CE79A54831D212E5", hash_generated_field = "4775283DB55281CD651400D583AD7181")
 
         private  boolean mWild;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.955 -0500", hash_original_field = "AAAF8A3C293EA5711E38C28140852BDE", hash_generated_field = "A2873EA11C139FA2F790281AB4EEDB4E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.829 -0500", hash_original_field = "AAAF8A3C293EA5711E38C28140852BDE", hash_generated_field = "A2873EA11C139FA2F790281AB4EEDB4E")
 
         private  int mPort;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.956 -0500", hash_original_method = "FAC1F38311ACA5CF1D84B9DFACCAD236", hash_generated_method = "9FBC64376477B30D865D376ED012A292")
-        public AuthorityEntry(String host, String port) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.832 -0500", hash_original_method = "FAC1F38311ACA5CF1D84B9DFACCAD236", hash_generated_method = "9FBC64376477B30D865D376ED012A292")
+        
+public AuthorityEntry(String host, String port) {
             mOrigHost = host;
             mWild = host.length() > 0 && host.charAt(0) == '*';
             mHost = mWild ? host.substring(1).intern() : host;
             mPort = port != null ? Integer.parseInt(port) : -1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.956 -0500", hash_original_method = "9AA41EA6C96E16AD56B52F388CEAC244", hash_generated_method = "9AA41EA6C96E16AD56B52F388CEAC244")
-        AuthorityEntry(Parcel src) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.834 -0500", hash_original_method = "9AA41EA6C96E16AD56B52F388CEAC244", hash_generated_method = "9AA41EA6C96E16AD56B52F388CEAC244")
+        
+AuthorityEntry(Parcel src) {
             mOrigHost = src.readString();
             mHost = src.readString();
             mWild = src.readInt() != 0;
             mPort = src.readInt();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.957 -0500", hash_original_method = "3FD27104A5CDDCA498D8F62DC306DFFB", hash_generated_method = "3FD27104A5CDDCA498D8F62DC306DFFB")
-        void writeToParcel(Parcel dest) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.836 -0500", hash_original_method = "3FD27104A5CDDCA498D8F62DC306DFFB", hash_generated_method = "3FD27104A5CDDCA498D8F62DC306DFFB")
+        
+void writeToParcel(Parcel dest) {
             dest.writeString(mOrigHost);
             dest.writeString(mHost);
             dest.writeInt(mWild ? 1 : 0);
             dest.writeInt(mPort);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.958 -0500", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "E3F78F3C1EFF67D365EA4D5381C38F05")
-        public String getHost() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.838 -0500", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "E3F78F3C1EFF67D365EA4D5381C38F05")
+        
+public String getHost() {
             return mOrigHost;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.959 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
-        public int getPort() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.841 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
+        
+public int getPort() {
             return mPort;
         }
 
@@ -645,8 +680,9 @@ public class IntentFilter implements Parcelable {
          * {@link IntentFilter#MATCH_CATEGORY_PORT}, or
          * {@link IntentFilter#MATCH_CATEGORY_HOST}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.960 -0500", hash_original_method = "FC31CC7FA89B702CE4ED1283F0D70C24", hash_generated_method = "462576926F46335C8BC9D3C56B690F44")
-        public int match(Uri data) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.843 -0500", hash_original_method = "FC31CC7FA89B702CE4ED1283F0D70C24", hash_generated_method = "462576926F46335C8BC9D3C56B690F44")
+        
+public int match(Uri data) {
             String host = data.getHost();
             if (host == null) {
                 return NO_MATCH_DATA;
@@ -677,8 +713,9 @@ public class IntentFilter implements Parcelable {
     /**
      * Return an iterator over the filter's data schemes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.951 -0500", hash_original_method = "B57BF7E15AE8E364684A85B4AA7D0368", hash_generated_method = "C8D831E247FC418CD7C5BC57D1431AF9")
-    public final Iterator<String> schemesIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.819 -0500", hash_original_method = "B57BF7E15AE8E364684A85B4AA7D0368", hash_generated_method = "C8D831E247FC418CD7C5BC57D1431AF9")
+    
+public final Iterator<String> schemesIterator() {
         return mDataSchemes != null ? mDataSchemes.iterator() : null;
     }
 
@@ -703,8 +740,9 @@ public class IntentFilter implements Parcelable {
      * @see #matchData
      * @see #addDataScheme
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.961 -0500", hash_original_method = "617831DFB49DD0B093CE5F322F324A18", hash_generated_method = "2C370B2480BD212E79C7ACBDA1068CB6")
-    public final void addDataAuthority(String host, String port) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.848 -0500", hash_original_method = "617831DFB49DD0B093CE5F322F324A18", hash_generated_method = "2C370B2480BD212E79C7ACBDA1068CB6")
+    
+public final void addDataAuthority(String host, String port) {
         if (mDataAuthorities == null) mDataAuthorities =
                 new ArrayList<AuthorityEntry>();
         if (port != null) port = port.intern();
@@ -714,16 +752,18 @@ public class IntentFilter implements Parcelable {
     /**
      * Return the number of data authorities in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.962 -0500", hash_original_method = "B59B7F6BD479782A00EECCEFFFB6C78B", hash_generated_method = "ACBF3CE7C2065A833780F667868D8FA6")
-    public final int countDataAuthorities() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.850 -0500", hash_original_method = "B59B7F6BD479782A00EECCEFFFB6C78B", hash_generated_method = "ACBF3CE7C2065A833780F667868D8FA6")
+    
+public final int countDataAuthorities() {
         return mDataAuthorities != null ? mDataAuthorities.size() : 0;
     }
 
     /**
      * Return a data authority in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.963 -0500", hash_original_method = "5C821D7ECF8B0A79E64F1031BF4C37BB", hash_generated_method = "E5B3C6C568EFD60A7DC37318E765CF23")
-    public final AuthorityEntry getDataAuthority(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.852 -0500", hash_original_method = "5C821D7ECF8B0A79E64F1031BF4C37BB", hash_generated_method = "E5B3C6C568EFD60A7DC37318E765CF23")
+    
+public final AuthorityEntry getDataAuthority(int index) {
         return mDataAuthorities.get(index);
     }
 
@@ -737,16 +777,18 @@ public class IntentFilter implements Parcelable {
      * @return Returns true if the data string matches an authority listed in the
      *         filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.964 -0500", hash_original_method = "04C5A3803469FEAEE8E315143FC0F6BE", hash_generated_method = "482341E6171E37182C148839FF0D7626")
-    public final boolean hasDataAuthority(Uri data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.854 -0500", hash_original_method = "04C5A3803469FEAEE8E315143FC0F6BE", hash_generated_method = "482341E6171E37182C148839FF0D7626")
+    
+public final boolean hasDataAuthority(Uri data) {
         return matchDataAuthority(data) >= 0;
     }
 
     /**
      * Return an iterator over the filter's data authorities.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.965 -0500", hash_original_method = "104889BB491104C94E7C1142A3F4BAAD", hash_generated_method = "EF0F2A8C9CCE210ADFD5AE4DB7B49EE8")
-    public final Iterator<AuthorityEntry> authoritiesIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.857 -0500", hash_original_method = "104889BB491104C94E7C1142A3F4BAAD", hash_generated_method = "EF0F2A8C9CCE210ADFD5AE4DB7B49EE8")
+    
+public final Iterator<AuthorityEntry> authoritiesIterator() {
         return mDataAuthorities != null ? mDataAuthorities.iterator() : null;
     }
 
@@ -776,8 +818,9 @@ public class IntentFilter implements Parcelable {
      * @see #addDataScheme
      * @see #addDataAuthority
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.966 -0500", hash_original_method = "F30E00ACF0BA9FCEBC6CDD2BDA55B075", hash_generated_method = "003139D535B527A214FE25676DB3DE3D")
-    public final void addDataPath(String path, int type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.859 -0500", hash_original_method = "F30E00ACF0BA9FCEBC6CDD2BDA55B075", hash_generated_method = "003139D535B527A214FE25676DB3DE3D")
+    
+public final void addDataPath(String path, int type) {
         if (mDataPaths == null) mDataPaths = new ArrayList<PatternMatcher>();
         mDataPaths.add(new PatternMatcher(path.intern(), type));
     }
@@ -785,16 +828,18 @@ public class IntentFilter implements Parcelable {
     /**
      * Return the number of data paths in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.967 -0500", hash_original_method = "60FAB9592DF6A1D398A3997EC9565FA6", hash_generated_method = "FAE26D84A1A415F192AC1D3B16BA7F0C")
-    public final int countDataPaths() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.862 -0500", hash_original_method = "60FAB9592DF6A1D398A3997EC9565FA6", hash_generated_method = "FAE26D84A1A415F192AC1D3B16BA7F0C")
+    
+public final int countDataPaths() {
         return mDataPaths != null ? mDataPaths.size() : 0;
     }
 
     /**
      * Return a data path in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.968 -0500", hash_original_method = "C7BC21A1B57BD5F3F08A1F8B8EBDB051", hash_generated_method = "9A44E84570673F2642B98CEA85FAB34B")
-    public final PatternMatcher getDataPath(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.864 -0500", hash_original_method = "C7BC21A1B57BD5F3F08A1F8B8EBDB051", hash_generated_method = "9A44E84570673F2642B98CEA85FAB34B")
+    
+public final PatternMatcher getDataPath(int index) {
         return mDataPaths.get(index);
     }
 
@@ -809,8 +854,9 @@ public class IntentFilter implements Parcelable {
      * @return True if the data string matches a path listed in the
      *         filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.968 -0500", hash_original_method = "8A8BB0EA1E4D89E1A8E627888FCA29D4", hash_generated_method = "3CE6EFFEB5226F9323C3D89F04BAE13E")
-    public final boolean hasDataPath(String data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.866 -0500", hash_original_method = "8A8BB0EA1E4D89E1A8E627888FCA29D4", hash_generated_method = "3CE6EFFEB5226F9323C3D89F04BAE13E")
+    
+public final boolean hasDataPath(String data) {
         if (mDataPaths == null) {
             return false;
         }
@@ -827,8 +873,9 @@ public class IntentFilter implements Parcelable {
     /**
      * Return an iterator over the filter's data paths.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.969 -0500", hash_original_method = "DFBFAEBB83F5AF41A1E2404555B650EF", hash_generated_method = "1F8065DFF7079B0FB9B0EBE12A159F62")
-    public final Iterator<PatternMatcher> pathsIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.869 -0500", hash_original_method = "DFBFAEBB83F5AF41A1E2404555B650EF", hash_generated_method = "1F8065DFF7079B0FB9B0EBE12A159F62")
+    
+public final Iterator<PatternMatcher> pathsIterator() {
         return mDataPaths != null ? mDataPaths.iterator() : null;
     }
 
@@ -842,8 +889,9 @@ public class IntentFilter implements Parcelable {
      * @return Returns either {@link #MATCH_CATEGORY_HOST},
      * {@link #MATCH_CATEGORY_PORT}, {@link #NO_MATCH_DATA}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.970 -0500", hash_original_method = "BBE034684833DCE31C3A8387BD50FAB0", hash_generated_method = "31951D09B247C552CCCBD41930B9B729")
-    public final int matchDataAuthority(Uri data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.871 -0500", hash_original_method = "BBE034684833DCE31C3A8387BD50FAB0", hash_generated_method = "31951D09B247C552CCCBD41930B9B729")
+    
+public final int matchDataAuthority(Uri data) {
         if (mDataAuthorities == null) {
             return NO_MATCH_DATA;
         }
@@ -892,8 +940,9 @@ public class IntentFilter implements Parcelable {
      *
      * @see #match
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.971 -0500", hash_original_method = "6458C2A82CD5BFA5489DF067AE915D84", hash_generated_method = "61FDB7FB1F0A162C276160E6FF54B255")
-    public final int matchData(String type, String scheme, Uri data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.874 -0500", hash_original_method = "6458C2A82CD5BFA5489DF067AE915D84", hash_generated_method = "61FDB7FB1F0A162C276160E6FF54B255")
+    
+public final int matchData(String type, String scheme, Uri data) {
         final ArrayList<String> types = mDataTypes;
         final ArrayList<String> schemes = mDataSchemes;
         final ArrayList<AuthorityEntry> authorities = mDataAuthorities;
@@ -967,8 +1016,9 @@ public class IntentFilter implements Parcelable {
      *
      * @param category Name of category to match, i.e. Intent.CATEGORY_EMBED.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.972 -0500", hash_original_method = "740A58E186A747CF3BBDAB4A3568B004", hash_generated_method = "D6155558240F18D428AF03627444830B")
-    public final void addCategory(String category) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.877 -0500", hash_original_method = "740A58E186A747CF3BBDAB4A3568B004", hash_generated_method = "D6155558240F18D428AF03627444830B")
+    
+public final void addCategory(String category) {
         if (mCategories == null) mCategories = new ArrayList<String>();
         if (!mCategories.contains(category)) {
             mCategories.add(category.intern());
@@ -978,16 +1028,18 @@ public class IntentFilter implements Parcelable {
     /**
      * Return the number of categories in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.973 -0500", hash_original_method = "D5AF5503C90FCC35F15F05FB572F3FAB", hash_generated_method = "134E4FBB2BB202128B0067BCEDC4F6B5")
-    public final int countCategories() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.880 -0500", hash_original_method = "D5AF5503C90FCC35F15F05FB572F3FAB", hash_generated_method = "134E4FBB2BB202128B0067BCEDC4F6B5")
+    
+public final int countCategories() {
         return mCategories != null ? mCategories.size() : 0;
     }
 
     /**
      * Return a category in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.974 -0500", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "EF4B1E71A6ECADCDD9F9EFFA609D8B9E")
-    public final String getCategory(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.882 -0500", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "EF4B1E71A6ECADCDD9F9EFFA609D8B9E")
+    
+public final String getCategory(int index) {
         return mCategories.get(index);
     }
 
@@ -998,8 +1050,9 @@ public class IntentFilter implements Parcelable {
      *
      * @return True if the category is explicitly mentioned in the filter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.974 -0500", hash_original_method = "3612221F73372432993CCD6954A20D1D", hash_generated_method = "83DCDFD75F880CF8148E4913B2FEBDD5")
-    public final boolean hasCategory(String category) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.884 -0500", hash_original_method = "3612221F73372432993CCD6954A20D1D", hash_generated_method = "83DCDFD75F880CF8148E4913B2FEBDD5")
+    
+public final boolean hasCategory(String category) {
         return mCategories != null && mCategories.contains(category);
     }
 
@@ -1008,8 +1061,9 @@ public class IntentFilter implements Parcelable {
      *
      * @return Iterator if this filter has categories or {@code null} if none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.975 -0500", hash_original_method = "A1CBC473D8947BEFDC4AD1E1869906E2", hash_generated_method = "DE07BE4A3EDC9BA8DE2984613851382F")
-    public final Iterator<String> categoriesIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.887 -0500", hash_original_method = "A1CBC473D8947BEFDC4AD1E1869906E2", hash_generated_method = "DE07BE4A3EDC9BA8DE2984613851382F")
+    
+public final Iterator<String> categoriesIterator() {
         return mCategories != null ? mCategories.iterator() : null;
     }
 
@@ -1024,8 +1078,9 @@ public class IntentFilter implements Parcelable {
      * @return If all categories match (success), null; else the name of the
      *         first category that didn't match.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.976 -0500", hash_original_method = "64ACE3DFA3E244FA74278C4A66D2BC47", hash_generated_method = "57E1DC3A4D7705403B090790BEF7E5E8")
-    public final String matchCategories(Set<String> categories) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.889 -0500", hash_original_method = "64ACE3DFA3E244FA74278C4A66D2BC47", hash_generated_method = "57E1DC3A4D7705403B090790BEF7E5E8")
+    
+public final String matchCategories(Set<String> categories) {
         if (categories == null) {
             return null;
         }
@@ -1068,8 +1123,9 @@ public class IntentFilter implements Parcelable {
      *
      * @see #match(String, String, String, android.net.Uri , Set, String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.977 -0500", hash_original_method = "4ACC3B62E54BFBE055D3653A9CF49AD3", hash_generated_method = "63E7295D71AB9F4404861D24D95AEA79")
-    public final int match(ContentResolver resolver, Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.891 -0500", hash_original_method = "4ACC3B62E54BFBE055D3653A9CF49AD3", hash_generated_method = "63E7295D71AB9F4404861D24D95AEA79")
+    
+public final int match(ContentResolver resolver, Intent intent,
             boolean resolve, String logTag) {
         String type = resolve ? intent.resolveType(resolver) : intent.getType();
         return match(intent.getAction(), type, intent.getScheme(),
@@ -1104,8 +1160,9 @@ public class IntentFilter implements Parcelable {
      * @see Intent#getData
      * @see Intent#getCategories
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.978 -0500", hash_original_method = "80E2BB7D6EA3B343C7B82810FBA9B369", hash_generated_method = "8C8258AC41C91D5DE5470DD30A2BC4DD")
-    public final int match(String action, String type, String scheme,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.894 -0500", hash_original_method = "80E2BB7D6EA3B343C7B82810FBA9B369", hash_generated_method = "8C8258AC41C91D5DE5470DD30A2BC4DD")
+    
+public final int match(String action, String type, String scheme,
             Uri data, Set<String> categories, String logTag) {
         if (action != null && !matchAction(action)) {
             if (false) Log.v(
@@ -1150,8 +1207,9 @@ public class IntentFilter implements Parcelable {
     /**
      * Write the contents of the IntentFilter as an XML stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.980 -0500", hash_original_method = "B6C33F6C9AFBFD4465A32F9300C74AFB", hash_generated_method = "5E9890F60800B6FE556CD91BC5206B40")
-    public void writeToXml(XmlSerializer serializer) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.898 -0500", hash_original_method = "B6C33F6C9AFBFD4465A32F9300C74AFB", hash_generated_method = "5E9890F60800B6FE556CD91BC5206B40")
+    
+public void writeToXml(XmlSerializer serializer) throws IOException {
         int N = countActions();
         for (int i=0; i<N; i++) {
             serializer.startTag(null, ACTION_STR);
@@ -1207,8 +1265,9 @@ public class IntentFilter implements Parcelable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.981 -0500", hash_original_method = "276CC8B213E249CE42650F70E7C4B53B", hash_generated_method = "80103C4131885BEE320DF26879194C9B")
-    public void readFromXml(XmlPullParser parser) throws XmlPullParserException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.902 -0500", hash_original_method = "276CC8B213E249CE42650F70E7C4B53B", hash_generated_method = "80103C4131885BEE320DF26879194C9B")
+    
+public void readFromXml(XmlPullParser parser) throws XmlPullParserException,
             IOException {
         int outerDepth = parser.getDepth();
         int type;
@@ -1266,8 +1325,9 @@ public class IntentFilter implements Parcelable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.983 -0500", hash_original_method = "75FFB292CCD000E47FA0C7D0BE596A36", hash_generated_method = "A9A40E6BE71C566E4C8623C0F2D8F9A8")
-    public void dump(Printer du, String prefix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.905 -0500", hash_original_method = "75FFB292CCD000E47FA0C7D0BE596A36", hash_generated_method = "A9A40E6BE71C566E4C8623C0F2D8F9A8")
+    
+public void dump(Printer du, String prefix) {
         StringBuilder sb = new StringBuilder(256);
         if (mActions.size() > 0) {
             Iterator<String> it = mActions.iterator();
@@ -1335,13 +1395,15 @@ public class IntentFilter implements Parcelable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.987 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7F5A2F80DDBC16C1ED277027A32E4DE5")
-    public final int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.916 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7F5A2F80DDBC16C1ED277027A32E4DE5")
+    
+public final int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.988 -0500", hash_original_method = "2C734948869786E017228B90D172BE24", hash_generated_method = "4F147E1D1C84E2F200DCFB5C2C125F60")
-    public final void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.919 -0500", hash_original_method = "2C734948869786E017228B90D172BE24", hash_generated_method = "4F147E1D1C84E2F200DCFB5C2C125F60")
+    
+public final void writeToParcel(Parcel dest, int flags) {
         dest.writeStringList(mActions);
         if (mCategories != null) {
             dest.writeInt(1);
@@ -1389,8 +1451,9 @@ public class IntentFilter implements Parcelable {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.988 -0500", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "9948192199B3A8A0964F819E3E060935")
-    public boolean debugCheck() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.921 -0500", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "9948192199B3A8A0964F819E3E060935")
+    
+public boolean debugCheck() {
         return true;
 
         // This code looks for intent filters that do not specify data.
@@ -1410,8 +1473,9 @@ public class IntentFilter implements Parcelable {
         */
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.991 -0500", hash_original_method = "742383A5720F36FAAE26E247984D38D1", hash_generated_method = "7602D17575FA8737C2A348002BCBA396")
-    private final boolean findMimeType(String type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.927 -0500", hash_original_method = "742383A5720F36FAAE26E247984D38D1", hash_generated_method = "7602D17575FA8737C2A348002BCBA396")
+    
+private final boolean findMimeType(String type) {
         final ArrayList<String> t = mDataTypes;
 
         if (type == null) {

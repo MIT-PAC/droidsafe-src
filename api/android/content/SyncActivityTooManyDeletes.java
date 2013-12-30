@@ -22,17 +22,17 @@ import com.android.internal.R;
 
 
 public class SyncActivityTooManyDeletes extends Activity implements AdapterView.OnItemClickListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.878 -0500", hash_original_field = "8767D22D0CC33D20371C3E004058DD78", hash_generated_field = "86D230D989C0289FA38126BD15162121")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.902 -0500", hash_original_field = "8767D22D0CC33D20371C3E004058DD78", hash_generated_field = "86D230D989C0289FA38126BD15162121")
 
 
     private long mNumDeletes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.879 -0500", hash_original_field = "77E70EE964F6B49E35EDB9210610AC8E", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.904 -0500", hash_original_field = "77E70EE964F6B49E35EDB9210610AC8E", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
 
     private Account mAccount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.880 -0500", hash_original_field = "BC4522E788A053F96319766AEE95ACCB", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.906 -0500", hash_original_field = "BC4522E788A053F96319766AEE95ACCB", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
 
     private String mAuthority;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.881 -0500", hash_original_field = "91E507DC461800B2755826CF50C3CFFF", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.908 -0500", hash_original_field = "91E507DC461800B2755826CF50C3CFFF", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
 
     private String mProvider;
     
@@ -42,9 +42,10 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.882 -0500", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "9C321ACB0A6CFD8B64CE048840CF0262")
-    @Override
-protected void onCreate(Bundle savedInstanceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.911 -0500", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "9C321ACB0A6CFD8B64CE048840CF0262")
+    
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
@@ -106,16 +107,18 @@ protected void onCreate(Bundle savedInstanceState) {
         setContentView(ll);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.883 -0500", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "F4A4C31FC566753A19B35BB739E03C5E")
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.913 -0500", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "F4A4C31FC566753A19B35BB739E03C5E")
+    
+public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // the constants for position correspond to the items options array in onCreate()
         if (position == 0) startSyncReallyDelete();
         else if (position == 1) startSyncUndoDeletes();
         finish();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.884 -0500", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "7A50F5BF6B553B57A60C5B28B009277B")
-    private void startSyncReallyDelete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.916 -0500", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "7A50F5BF6B553B57A60C5B28B009277B")
+    
+private void startSyncReallyDelete() {
         Bundle extras = new Bundle();
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS, true);
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
@@ -124,8 +127,9 @@ protected void onCreate(Bundle savedInstanceState) {
         ContentResolver.requestSync(mAccount, mAuthority, extras);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.885 -0500", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "37D3C13826B9713FFEEFD1B75D1CF62C")
-    private void startSyncUndoDeletes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.918 -0500", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "37D3C13826B9713FFEEFD1B75D1CF62C")
+    
+private void startSyncUndoDeletes() {
         Bundle extras = new Bundle();
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS, true);
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);

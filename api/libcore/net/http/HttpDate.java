@@ -22,8 +22,9 @@ public final class HttpDate {
      * Returns the date for {@code value}. Returns null if the value couldn't be
      * parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:41.021 -0500", hash_original_method = "4E4294A231C025C52A332D4C9E438EF3", hash_generated_method = "26D4025E49970D7630B2DC56E7555674")
-    public static Date parse(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.094 -0500", hash_original_method = "4E4294A231C025C52A332D4C9E438EF3", hash_generated_method = "26D4025E49970D7630B2DC56E7555674")
+    
+public static Date parse(String value) {
         try {
             return STANDARD_DATE_FORMAT.get().parse(value);
         } catch (ParseException ignore) {
@@ -40,8 +41,9 @@ public final class HttpDate {
     /**
      * Returns the string for {@code value}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:41.022 -0500", hash_original_method = "EA7DEE8E3C730970C4001E63A088D685", hash_generated_method = "E81B2DAF7930C84C4E2B73F1855BB57C")
-    public static String format(Date value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.096 -0500", hash_original_method = "EA7DEE8E3C730970C4001E63A088D685", hash_generated_method = "E81B2DAF7930C84C4E2B73F1855BB57C")
+    
+public static String format(Date value) {
         return STANDARD_DATE_FORMAT.get().format(value);
     }
 
@@ -67,7 +69,7 @@ public final class HttpDate {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:41.020 -0500", hash_original_field = "1C8CEDAF61B9471A928C540FEDF2383A", hash_generated_field = "75790BD0D521D57ABCF72CD45F74CCDF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.091 -0500", hash_original_field = "1C8CEDAF61B9471A928C540FEDF2383A", hash_generated_field = "75790BD0D521D57ABCF72CD45F74CCDF")
 
     private static final String[] BROWSER_COMPATIBLE_DATE_FORMATS = new String[] {
             /* This list comes from  {@code org.apache.http.impl.cookie.BrowserCompatSpec}. */

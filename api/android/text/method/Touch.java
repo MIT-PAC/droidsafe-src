@@ -25,8 +25,9 @@ public class Touch {
      * the text that will be visible after scrolling to the specified
      * Y position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.283 -0500", hash_original_method = "0A63E049EA1E17346730D259CF4DA78F", hash_generated_method = "3923F6F8F48610B9EE0B46389A341951")
-    public static void scrollTo(TextView widget, Layout layout, int x, int y) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.240 -0500", hash_original_method = "0A63E049EA1E17346730D259CF4DA78F", hash_generated_method = "3923F6F8F48610B9EE0B46389A341951")
+    
+public static void scrollTo(TextView widget, Layout layout, int x, int y) {
         final int horizontalPadding = widget.getTotalPaddingLeft() + widget.getTotalPaddingRight();
         final int availableWidth = widget.getWidth() - horizontalPadding;
 
@@ -75,8 +76,9 @@ public class Touch {
      * Handles touch events for dragging.  You may want to do other actions
      * like moving the cursor on touch as well.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.285 -0500", hash_original_method = "7FDDE82DCC606FA9E5D06171C4D7A283", hash_generated_method = "2DCD092639F2BFD0DFB3E894AE55E7E2")
-    public static boolean onTouchEvent(TextView widget, Spannable buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.246 -0500", hash_original_method = "7FDDE82DCC606FA9E5D06171C4D7A283", hash_generated_method = "2DCD092639F2BFD0DFB3E894AE55E7E2")
+    
+public static boolean onTouchEvent(TextView widget, Spannable buffer,
                                        MotionEvent event) {
         DragState[] ds;
 
@@ -171,8 +173,9 @@ public class Touch {
      * @param widget The text view.
      * @param buffer The text buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.286 -0500", hash_original_method = "21A6B0AF92D8F3153406023AEF6A8E5C", hash_generated_method = "38BBC942F6E38D4DAD65AAA76E1BB6FD")
-    public static int getInitialScrollX(TextView widget, Spannable buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.249 -0500", hash_original_method = "21A6B0AF92D8F3153406023AEF6A8E5C", hash_generated_method = "38BBC942F6E38D4DAD65AAA76E1BB6FD")
+    
+public static int getInitialScrollX(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollX : -1;
     }
@@ -181,37 +184,40 @@ public class Touch {
      * @param widget The text view.
      * @param buffer The text buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.287 -0500", hash_original_method = "B84AB2EF8D3990EF6883032B7F14AD49", hash_generated_method = "2A017FF43FB8FC7FA2D6AFC9762F0C6F")
-    public static int getInitialScrollY(TextView widget, Spannable buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.252 -0500", hash_original_method = "B84AB2EF8D3990EF6883032B7F14AD49", hash_generated_method = "2A017FF43FB8FC7FA2D6AFC9762F0C6F")
+    
+public static int getInitialScrollY(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollY : -1;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.282 -0500", hash_original_method = "FF7FAE7578041B972B60FFE115691062", hash_generated_method = "D97CEA10EC28BE39D0E9D5E928FAA2FF")
-    private Touch() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.236 -0500", hash_original_method = "FF7FAE7578041B972B60FFE115691062", hash_generated_method = "D97CEA10EC28BE39D0E9D5E928FAA2FF")
+    
+private Touch() { }
 
     
     private static class DragState implements NoCopySpan {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.288 -0500", hash_original_field = "8174733DF249E326666A04F4BE58CCC8", hash_generated_field = "73D3ED258D648D8615BEDE47CCF51A6E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.256 -0500", hash_original_field = "8174733DF249E326666A04F4BE58CCC8", hash_generated_field = "73D3ED258D648D8615BEDE47CCF51A6E")
 
         public float mX;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.289 -0500", hash_original_field = "5EA984BC6FFFB7EE5487B162E48C8CE7", hash_generated_field = "82E0FF02E5426368A20A882CAD772A45")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.259 -0500", hash_original_field = "5EA984BC6FFFB7EE5487B162E48C8CE7", hash_generated_field = "82E0FF02E5426368A20A882CAD772A45")
 
         public float mY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.289 -0500", hash_original_field = "E9A45ED540F0B589A497E7AFE99EBA3D", hash_generated_field = "334399BC6C2646CA411F73DCD7584319")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.262 -0500", hash_original_field = "E9A45ED540F0B589A497E7AFE99EBA3D", hash_generated_field = "334399BC6C2646CA411F73DCD7584319")
 
         public int mScrollX;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.290 -0500", hash_original_field = "EC6AD52CC705AA3985B25CDB13E68426", hash_generated_field = "B0FBEC94797846D4137FCD20C30BEBBA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.264 -0500", hash_original_field = "EC6AD52CC705AA3985B25CDB13E68426", hash_generated_field = "B0FBEC94797846D4137FCD20C30BEBBA")
 
         public int mScrollY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.291 -0500", hash_original_field = "0AC0A684082022F1AD7A3A10AC56DE1D", hash_generated_field = "015AF77BCBA0A7F3F5707D8E3E4CDCC7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.267 -0500", hash_original_field = "0AC0A684082022F1AD7A3A10AC56DE1D", hash_generated_field = "015AF77BCBA0A7F3F5707D8E3E4CDCC7")
 
         public boolean mFarEnough;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.292 -0500", hash_original_field = "A11366C6A1103779F891579A3BB65D95", hash_generated_field = "B49B60FA806B53FF031F3B4A7FA9E23E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.271 -0500", hash_original_field = "A11366C6A1103779F891579A3BB65D95", hash_generated_field = "B49B60FA806B53FF031F3B4A7FA9E23E")
 
         public boolean mUsed;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.293 -0500", hash_original_method = "08E421E9322E778CECBC733D54E45544", hash_generated_method = "CBDDFCF144597B69D6952C3A10B53A3D")
-        public DragState(float x, float y, int scrollX, int scrollY) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.274 -0500", hash_original_method = "08E421E9322E778CECBC733D54E45544", hash_generated_method = "CBDDFCF144597B69D6952C3A10B53A3D")
+        
+public DragState(float x, float y, int scrollX, int scrollY) {
             mX = x;
             mY = y;
             mScrollX = scrollX;

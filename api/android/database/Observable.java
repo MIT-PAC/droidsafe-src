@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public abstract class Observable<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.230 -0500", hash_original_field = "111F340D3667EAAF312D756E4DC51E42", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.562 -0500", hash_original_field = "111F340D3667EAAF312D756E4DC51E42", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")
 
     protected final ArrayList<T> mObservers = new ArrayList<T>();
     
@@ -28,8 +28,9 @@ public abstract class Observable<T> {
      * @throws IllegalArgumentException the observer is null
      * @throws IllegalStateException the observer is already registered
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.231 -0500", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "64961E9417B447273F7D503CADBD57C5")
-    public void registerObserver(T observer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.564 -0500", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "64961E9417B447273F7D503CADBD57C5")
+    
+public void registerObserver(T observer) {
         if (observer == null) {
             throw new IllegalArgumentException("The observer is null.");
         }
@@ -48,8 +49,9 @@ public abstract class Observable<T> {
      * @throws IllegalArgumentException the observer is null
      * @throws IllegalStateException the observer is not yet registered
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.232 -0500", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "110CF4BDE569CD145CF9EAC2D3053CD0")
-    public void unregisterObserver(T observer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.567 -0500", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "110CF4BDE569CD145CF9EAC2D3053CD0")
+    
+public void unregisterObserver(T observer) {
         if (observer == null) {
             throw new IllegalArgumentException("The observer is null.");
         }
@@ -65,8 +67,9 @@ public abstract class Observable<T> {
     /**
      * Remove all registered observer
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.233 -0500", hash_original_method = "68DB825828DE5D87C3617DBC5932D86C", hash_generated_method = "FD3C3179A18A690F4B8C089C764C35E4")
-    public void unregisterAll() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.569 -0500", hash_original_method = "68DB825828DE5D87C3617DBC5932D86C", hash_generated_method = "FD3C3179A18A690F4B8C089C764C35E4")
+    
+public void unregisterAll() {
         synchronized(mObservers) {
             mObservers.clear();
         }        

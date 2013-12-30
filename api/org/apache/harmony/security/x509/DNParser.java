@@ -17,38 +17,40 @@ import org.apache.harmony.security.x501.AttributeValue;
 
 
 public final class DNParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.219 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.059 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
     private int pos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.220 -0500", hash_original_field = "2A98354EEE0CC0C0E9C78DAE42E0EFE7", hash_generated_field = "281969654EB14E15446253F1D771C5B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.062 -0500", hash_original_field = "2A98354EEE0CC0C0E9C78DAE42E0EFE7", hash_generated_field = "281969654EB14E15446253F1D771C5B0")
 
     private int beg;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.221 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.064 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
 
     private int end;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.221 -0500", hash_original_field = "BABA8C00F9965D74411919B77DB127E3", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.066 -0500", hash_original_field = "BABA8C00F9965D74411919B77DB127E3", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
 
     private  char[] chars;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.222 -0500", hash_original_field = "60A47098D83F88DA9997B0BA3591E851", hash_generated_field = "790BB9C226E70D863513D01FB9E5249C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.069 -0500", hash_original_field = "60A47098D83F88DA9997B0BA3591E851", hash_generated_field = "790BB9C226E70D863513D01FB9E5249C")
 
     private boolean hasQE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.223 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "ED95B2E967E3B561D98D41FC80663441")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.071 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "ED95B2E967E3B561D98D41FC80663441")
 
     private byte[] encoded;
 
     /**
      * @param dn - distinguished name string to be parsed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.224 -0500", hash_original_method = "66B2F9736FABC0973929FB105735B82E", hash_generated_method = "F90446B44064D82158374C2B18511920")
-    public DNParser(String dn) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.073 -0500", hash_original_method = "66B2F9736FABC0973929FB105735B82E", hash_generated_method = "F90446B44064D82158374C2B18511920")
+    
+public DNParser(String dn) throws IOException {
         chars = dn.toCharArray();
     }
 
     /**
      * Returns the next attribute type: (ALPHA 1*keychar) / oid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.225 -0500", hash_original_method = "7D5C37EF81BA8B102CA672C27E3E2647", hash_generated_method = "D580D2B6997CA0AD3EA3DA28A6D39DD5")
-    private String nextAT() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.076 -0500", hash_original_method = "7D5C37EF81BA8B102CA672C27E3E2647", hash_generated_method = "D580D2B6997CA0AD3EA3DA28A6D39DD5")
+    
+private String nextAT() throws IOException {
         hasQE = false; // reset
 
         // skip preceding space chars, they can present after
@@ -110,8 +112,9 @@ public final class DNParser {
     /**
      * Returns a quoted attribute value: QUOTATION *( quotechar / pair ) QUOTATION
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.226 -0500", hash_original_method = "5F9B58135FF863A8E24F4B2AD9DF48BE", hash_generated_method = "E3DD63383478888733F50795F38A2121")
-    private String quotedAV() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.080 -0500", hash_original_method = "5F9B58135FF863A8E24F4B2AD9DF48BE", hash_generated_method = "E3DD63383478888733F50795F38A2121")
+    
+private String quotedAV() throws IOException {
         pos++;
         beg = pos;
         end = beg;
@@ -146,8 +149,9 @@ public final class DNParser {
     /**
      * Returns a hex string attribute value: "#" hexstring
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.227 -0500", hash_original_method = "59E635302CD6807B36C1A45A26BE591E", hash_generated_method = "E777F4D20A3E452EC8A82B9D572FAC41")
-    private String hexAV() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.083 -0500", hash_original_method = "59E635302CD6807B36C1A45A26BE591E", hash_generated_method = "E777F4D20A3E452EC8A82B9D572FAC41")
+    
+private String hexAV() throws IOException {
         if (pos + 4 >= chars.length) {
             // encoded byte array  must be not less then 4 c
             throw new IOException("Invalid distinguished name string");
@@ -198,8 +202,9 @@ public final class DNParser {
     /**
      * Returns a string attribute value: *( stringchar / pair ).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.228 -0500", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "91DA17AAED4411BDAFC72B3BC9DDFF89")
-    private String escapedAV() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.085 -0500", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "91DA17AAED4411BDAFC72B3BC9DDFF89")
+    
+private String escapedAV() throws IOException {
         beg = pos;
         end = pos;
         while (true) {
@@ -246,8 +251,9 @@ public final class DNParser {
     /**
      * Returns an escaped char
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.229 -0500", hash_original_method = "1A89A1602A29634CB35E16E135F5FE74", hash_generated_method = "968F3EFAE4329412C847E640E9C94692")
-    private char getEscaped() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.088 -0500", hash_original_method = "1A89A1602A29634CB35E16E135F5FE74", hash_generated_method = "968F3EFAE4329412C847E640E9C94692")
+    
+private char getEscaped() throws IOException {
         pos++;
         if (pos == chars.length) {
             throw new IOException("Invalid distinguished name string");
@@ -282,8 +288,9 @@ public final class DNParser {
     /**
      * Decodes a UTF-8 char.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.230 -0500", hash_original_method = "12C3774F0261E7D12FCB54FD470B78E6", hash_generated_method = "588B076DFA49A30C4009835A440F9A60")
-    protected char getUTF8() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.091 -0500", hash_original_method = "12C3774F0261E7D12FCB54FD470B78E6", hash_generated_method = "588B076DFA49A30C4009835A440F9A60")
+    
+protected char getUTF8() throws IOException {
         int res = getByte(pos);
         pos++; //FIXME tmp
 
@@ -333,8 +340,9 @@ public final class DNParser {
      * hexchar    = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
      *                     / "a" / "b" / "c" / "d" / "e" / "f"
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.231 -0500", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "738B429D26797DFD36B981BBB0BD184C")
-    private int getByte(int position) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.094 -0500", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "738B429D26797DFD36B981BBB0BD184C")
+    
+private int getByte(int position) throws IOException {
         if ((position + 1) >= chars.length) {
             // to avoid ArrayIndexOutOfBoundsException
             throw new IOException("Invalid distinguished name string");
@@ -371,8 +379,9 @@ public final class DNParser {
      * @return a list of Relative Distinguished Names(RND),
      *         each RDN is represented as a list of AttributeTypeAndValue objects
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:07.232 -0500", hash_original_method = "17512CE00D4450F012CF195B2D29239B", hash_generated_method = "0D8D59A4B9A117C6EE0DA6D251D5C754")
-    public List<List<AttributeTypeAndValue>> parse() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.097 -0500", hash_original_method = "17512CE00D4450F012CF195B2D29239B", hash_generated_method = "0D8D59A4B9A117C6EE0DA6D251D5C754")
+    
+public List<List<AttributeTypeAndValue>> parse() throws IOException {
         List<List<AttributeTypeAndValue>> list = new ArrayList<List<AttributeTypeAndValue>>();
 
         String attType = nextAT();

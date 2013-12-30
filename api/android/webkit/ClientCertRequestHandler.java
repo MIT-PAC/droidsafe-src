@@ -14,21 +14,22 @@ import org.apache.harmony.xnet.provider.jsse.NativeCrypto;
 
 
 public final class ClientCertRequestHandler {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.605 -0500", hash_original_field = "3FC88C05AF84F1DA5801895C1A5E2AA9", hash_generated_field = "076F5BF2A47D119E2704BFAF413B4749")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.613 -0500", hash_original_field = "3FC88C05AF84F1DA5801895C1A5E2AA9", hash_generated_field = "076F5BF2A47D119E2704BFAF413B4749")
 
 
     private  BrowserFrame mBrowserFrame;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.606 -0500", hash_original_field = "BE4FBA339B8964B0ABF1E6F625B8029F", hash_generated_field = "24C6DFC54244C0ECB3E13AC2BDE66375")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.615 -0500", hash_original_field = "BE4FBA339B8964B0ABF1E6F625B8029F", hash_generated_field = "24C6DFC54244C0ECB3E13AC2BDE66375")
 
     private  int mHandle;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.607 -0500", hash_original_field = "30FDD9F1C15A7F7AF107048EC31A5B17", hash_generated_field = "906B3EAB5ED48B1D91170F5670978988")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.617 -0500", hash_original_field = "30FDD9F1C15A7F7AF107048EC31A5B17", hash_generated_field = "906B3EAB5ED48B1D91170F5670978988")
 
     private  String mHostAndPort;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.608 -0500", hash_original_field = "98449DF5F308CC416E08C87F002F786A", hash_generated_field = "CEA12ECAAA37536F06C699DA1C7C1084")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.620 -0500", hash_original_field = "98449DF5F308CC416E08C87F002F786A", hash_generated_field = "CEA12ECAAA37536F06C699DA1C7C1084")
 
     private  SslClientCertLookupTable mTable;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.609 -0500", hash_original_method = "AEE151B717737CBCB7A587EF1854CBAA", hash_generated_method = "AEE151B717737CBCB7A587EF1854CBAA")
-    ClientCertRequestHandler(BrowserFrame browserFrame,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.623 -0500", hash_original_method = "AEE151B717737CBCB7A587EF1854CBAA", hash_generated_method = "AEE151B717737CBCB7A587EF1854CBAA")
+    
+ClientCertRequestHandler(BrowserFrame browserFrame,
                              int handle,
                              String host_and_port,
                              SslClientCertLookupTable table) {
@@ -41,8 +42,9 @@ public final class ClientCertRequestHandler {
     /**
      * Proceed with the specified private key and client certificate chain.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.610 -0500", hash_original_method = "FD9D9C54290793DEF25EE96780FA43D9", hash_generated_method = "0D823BB8817086852D9CC56BB148DF51")
-    public void proceed(PrivateKey privateKey, X509Certificate[] chain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.625 -0500", hash_original_method = "FD9D9C54290793DEF25EE96780FA43D9", hash_generated_method = "0D823BB8817086852D9CC56BB148DF51")
+    
+public void proceed(PrivateKey privateKey, X509Certificate[] chain) {
         byte[] privateKeyBytes = privateKey.getEncoded();
         byte[][] chainBytes;
         try {
@@ -58,16 +60,18 @@ public final class ClientCertRequestHandler {
     /**
      * Igore the request for now, the user may be prompted again.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.611 -0500", hash_original_method = "FA404A4E1A97322F22CB23ECA9545548", hash_generated_method = "3AADC2C31F442BC0C036CF279DEA7EC9")
-    public void ignore() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.628 -0500", hash_original_method = "FA404A4E1A97322F22CB23ECA9545548", hash_generated_method = "3AADC2C31F442BC0C036CF279DEA7EC9")
+    
+public void ignore() {
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
     }
 
     /**
      * Cancel this request, remember the users negative choice.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:21.612 -0500", hash_original_method = "E250E51CEC55FC558312A1D8553D2784", hash_generated_method = "16E4B6B0FCD735FE4AE16227A8A11C24")
-    public void cancel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.630 -0500", hash_original_method = "E250E51CEC55FC558312A1D8553D2784", hash_generated_method = "16E4B6B0FCD735FE4AE16227A8A11C24")
+    
+public void cancel() {
         mTable.Deny(mHostAndPort);
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
     }

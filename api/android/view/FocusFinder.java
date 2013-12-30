@@ -19,8 +19,9 @@ public class FocusFinder {
     /**
      * Get the focus finder for this thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.036 -0500", hash_original_method = "0A266F2F30A26FB4FFDB8BE1FD52ABAB", hash_generated_method = "794ADD475B07C31945BF5DC360FCCB11")
-    public static FocusFinder getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.077 -0500", hash_original_method = "0A266F2F30A26FB4FFDB8BE1FD52ABAB", hash_generated_method = "794ADD475B07C31945BF5DC360FCCB11")
+    
+public static FocusFinder getInstance() {
         return tlFocusFinder.get();
     }
 
@@ -29,13 +30,15 @@ public class FocusFinder {
      *   of source to the edge nearest in the given direction of dest.  If the
      *   dest is not in the direction from source, return 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.050 -0500", hash_original_method = "FEC197AB260A70050BA79E019D41C702", hash_generated_method = "C41FBCF71DE6926C60C36D0FCE75C3DA")
-    static int majorAxisDistance(int direction, Rect source, Rect dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.116 -0500", hash_original_method = "FEC197AB260A70050BA79E019D41C702", hash_generated_method = "C41FBCF71DE6926C60C36D0FCE75C3DA")
+    
+static int majorAxisDistance(int direction, Rect source, Rect dest) {
         return Math.max(0, majorAxisDistanceRaw(direction, source, dest));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.051 -0500", hash_original_method = "ABB1C6898E503A151891B7A9ABFAD773", hash_generated_method = "9A2D243C90DD6E103172E274629951BB")
-    static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.119 -0500", hash_original_method = "ABB1C6898E503A151891B7A9ABFAD773", hash_generated_method = "9A2D243C90DD6E103172E274629951BB")
+    
+static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return source.left - dest.right;
@@ -56,13 +59,15 @@ public class FocusFinder {
      *   dest is not in the direction from source, return 1 (to break ties with
      *   {@link #majorAxisDistance}).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.051 -0500", hash_original_method = "CA98CAB2ECA74F2E2804BE867DBDF9E9", hash_generated_method = "394269CEE78DD20496BCFEA85A6D86B4")
-    static int majorAxisDistanceToFarEdge(int direction, Rect source, Rect dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.122 -0500", hash_original_method = "CA98CAB2ECA74F2E2804BE867DBDF9E9", hash_generated_method = "394269CEE78DD20496BCFEA85A6D86B4")
+    
+static int majorAxisDistanceToFarEdge(int direction, Rect source, Rect dest) {
         return Math.max(1, majorAxisDistanceToFarEdgeRaw(direction, source, dest));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.052 -0500", hash_original_method = "AC771A545341D8B57AB42CBFAC5A4EC8", hash_generated_method = "18B58AC0903F0B603C49979735EDB163")
-    static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.124 -0500", hash_original_method = "AC771A545341D8B57AB42CBFAC5A4EC8", hash_generated_method = "18B58AC0903F0B603C49979735EDB163")
+    
+static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return source.left - dest.left;
@@ -85,8 +90,9 @@ public class FocusFinder {
      * @param dest The destination rect.
      * @return The distance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.053 -0500", hash_original_method = "05A50C3C0DAB95FFDE6EA8B241A55A35", hash_generated_method = "520632667D7E86F01831D49C034CAE08")
-    static int minorAxisDistance(int direction, Rect source, Rect dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.127 -0500", hash_original_method = "05A50C3C0DAB95FFDE6EA8B241A55A35", hash_generated_method = "520632667D7E86F01831D49C034CAE08")
+    
+static int minorAxisDistance(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
             case View.FOCUS_RIGHT:
@@ -122,23 +128,24 @@ public class FocusFinder {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.037 -0500", hash_original_field = "AA91269DE4CB12CC630B33741200666D", hash_generated_field = "AA91269DE4CB12CC630B33741200666D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.079 -0500", hash_original_field = "AA91269DE4CB12CC630B33741200666D", hash_generated_field = "AA91269DE4CB12CC630B33741200666D")
 
 
     Rect mFocusedRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.038 -0500", hash_original_field = "A979E31795050A5EFD05BD971CC12AFB", hash_generated_field = "A979E31795050A5EFD05BD971CC12AFB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.081 -0500", hash_original_field = "A979E31795050A5EFD05BD971CC12AFB", hash_generated_field = "A979E31795050A5EFD05BD971CC12AFB")
 
     Rect mOtherRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.038 -0500", hash_original_field = "73C7F1C53FFF4FE5714FB238D4A42A74", hash_generated_field = "73C7F1C53FFF4FE5714FB238D4A42A74")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.084 -0500", hash_original_field = "73C7F1C53FFF4FE5714FB238D4A42A74", hash_generated_field = "73C7F1C53FFF4FE5714FB238D4A42A74")
 
     Rect mBestCandidateRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.039 -0500", hash_original_field = "401485DC01C0558BEA3A0859AF94C141", hash_generated_field = "401485DC01C0558BEA3A0859AF94C141")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.086 -0500", hash_original_field = "401485DC01C0558BEA3A0859AF94C141", hash_generated_field = "401485DC01C0558BEA3A0859AF94C141")
 
     SequentialFocusComparator mSequentialFocusComparator = new SequentialFocusComparator();
 
     // enforce thread local access
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.040 -0500", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "FC6BD4E28BCC84AAF77BDCFB9C14804F")
-    private FocusFinder() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.089 -0500", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "FC6BD4E28BCC84AAF77BDCFB9C14804F")
+    
+private FocusFinder() {}
 
     /**
      * Find the next view to take focus in root's descendants, starting from the view
@@ -148,8 +155,9 @@ public class FocusFinder {
      * @param direction Direction to look.
      * @return The next focusable view, or null if none exists.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.041 -0500", hash_original_method = "948D7F222DFBCB81359D4FABF0EA65D3", hash_generated_method = "1C053AFF23B801FEADA0180380E9AC2B")
-    public final View findNextFocus(ViewGroup root, View focused, int direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.092 -0500", hash_original_method = "948D7F222DFBCB81359D4FABF0EA65D3", hash_generated_method = "1C053AFF23B801FEADA0180380E9AC2B")
+    
+public final View findNextFocus(ViewGroup root, View focused, int direction) {
 
         if (focused != null) {
             // check for user specified next focus
@@ -196,13 +204,15 @@ public class FocusFinder {
      * @param direction Direction to look.
      * @return The next focusable view, or null if none exists.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.042 -0500", hash_original_method = "56193535E50A3F40F9A982269CAB09AB", hash_generated_method = "C1C767320A8926BE0D8A6C4125075685")
-    public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.094 -0500", hash_original_method = "56193535E50A3F40F9A982269CAB09AB", hash_generated_method = "C1C767320A8926BE0D8A6C4125075685")
+    
+public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int direction) {
         return findNextFocus(root, null, focusedRect, direction);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.043 -0500", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "5BDBEC81898759143FCA102B1921FA63")
-    private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.098 -0500", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "5BDBEC81898759143FCA102B1921FA63")
+    
+private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
         ArrayList<View> focusables = root.getFocusables(direction);
         if (focusables.isEmpty()) {
             // The focus cannot change.
@@ -295,8 +305,9 @@ public class FocusFinder {
      * @param rect2 The current best candidate.
      * @return Whether the candidate is the new best.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.044 -0500", hash_original_method = "1A554E4FCE47CCCA17DD555DAEE432BA", hash_generated_method = "3BC6E3E02B5FDA6E0E22C4C7D76E833D")
-    boolean isBetterCandidate(int direction, Rect source, Rect rect1, Rect rect2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.101 -0500", hash_original_method = "1A554E4FCE47CCCA17DD555DAEE432BA", hash_generated_method = "3BC6E3E02B5FDA6E0E22C4C7D76E833D")
+    
+boolean isBetterCandidate(int direction, Rect source, Rect rect1, Rect rect2) {
 
         // to be a better candidate, need to at least be a candidate in the first
         // place :)
@@ -335,8 +346,9 @@ public class FocusFinder {
      * @return Whether rect1 is a better candidate than rect2 by virtue of it being in src's
      *      beam
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.045 -0500", hash_original_method = "F8F20EF16F95C5B1E0CE2264EC877518", hash_generated_method = "A69A351A96146DBA41FCC8B3649180A7")
-    boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.104 -0500", hash_original_method = "F8F20EF16F95C5B1E0CE2264EC877518", hash_generated_method = "A69A351A96146DBA41FCC8B3649180A7")
+    
+boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
         final boolean rect1InSrcBeam = beamsOverlap(direction, source, rect1);
         final boolean rect2InSrcBeam = beamsOverlap(direction, source, rect2);
 
@@ -373,8 +385,9 @@ public class FocusFinder {
      * axis distances.  Warning: this fudge factor is finely tuned, be sure to
      * run all focus tests if you dare tweak it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.046 -0500", hash_original_method = "1AC6C27686DF7285B59CAB56ADBB9696", hash_generated_method = "1AC6C27686DF7285B59CAB56ADBB9696")
-    int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.107 -0500", hash_original_method = "1AC6C27686DF7285B59CAB56ADBB9696", hash_generated_method = "1AC6C27686DF7285B59CAB56ADBB9696")
+    
+int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {
         return 13 * majorAxisDistance * majorAxisDistance
                 + minorAxisDistance * minorAxisDistance;
     }
@@ -387,8 +400,9 @@ public class FocusFinder {
      * Includes an edge case for an empty rect (which is used in some cases when
      * searching from a point on the screen).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.047 -0500", hash_original_method = "10315B5B788523AD56571BFBE30F6A43", hash_generated_method = "10315B5B788523AD56571BFBE30F6A43")
-    boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.109 -0500", hash_original_method = "10315B5B788523AD56571BFBE30F6A43", hash_generated_method = "10315B5B788523AD56571BFBE30F6A43")
+    
+boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return (srcRect.right > destRect.right || srcRect.left >= destRect.right) 
@@ -415,8 +429,9 @@ public class FocusFinder {
      * @param rect2 The second rectangle
      * @return whether the beams overlap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.048 -0500", hash_original_method = "CDB9DCB11C27A9CD8A1036801B813613", hash_generated_method = "CDB9DCB11C27A9CD8A1036801B813613")
-    boolean beamsOverlap(int direction, Rect rect1, Rect rect2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.112 -0500", hash_original_method = "CDB9DCB11C27A9CD8A1036801B813613", hash_generated_method = "CDB9DCB11C27A9CD8A1036801B813613")
+    
+boolean beamsOverlap(int direction, Rect rect1, Rect rect2) {
         switch (direction) {
             case View.FOCUS_LEFT:
             case View.FOCUS_RIGHT:
@@ -432,8 +447,9 @@ public class FocusFinder {
     /**
      * e.g for left, is 'to left of'
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.049 -0500", hash_original_method = "0F816E844CC5CD74396FEF014D25737B", hash_generated_method = "0F816E844CC5CD74396FEF014D25737B")
-    boolean isToDirectionOf(int direction, Rect src, Rect dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.114 -0500", hash_original_method = "0F816E844CC5CD74396FEF014D25737B", hash_generated_method = "0F816E844CC5CD74396FEF014D25737B")
+    
+boolean isToDirectionOf(int direction, Rect src, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return src.left >= dest.right;
@@ -459,8 +475,9 @@ public class FocusFinder {
      *        may already be populated with values.
      * @return The nearest touchable view, or null if none exists.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.054 -0500", hash_original_method = "720FA5A94E3C004CE3F70B83E46D48C3", hash_generated_method = "2FEE2CEB69723C8302E4C3B639633353")
-    public View findNearestTouchable(ViewGroup root, int x, int y, int direction, int[] deltas) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.130 -0500", hash_original_method = "720FA5A94E3C004CE3F70B83E46D48C3", hash_generated_method = "2FEE2CEB69723C8302E4C3B639633353")
+    
+public View findNearestTouchable(ViewGroup root, int x, int y, int direction, int[] deltas) {
         ArrayList<View> touchables = root.getTouchables();
         int minDistance = Integer.MAX_VALUE;
         View closest = null;
@@ -531,13 +548,13 @@ public class FocusFinder {
 
     
     private static final class SequentialFocusComparator implements Comparator<View> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.057 -0500", hash_original_field = "3B9A53D9A8D875334A2863D2219637ED", hash_generated_field = "9FC57DB4EBB3F9FD7BA1F2105DC0E4CE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.136 -0500", hash_original_field = "3B9A53D9A8D875334A2863D2219637ED", hash_generated_field = "9FC57DB4EBB3F9FD7BA1F2105DC0E4CE")
 
         private final Rect mFirstRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.058 -0500", hash_original_field = "7A0DF4E7697A3B9A2C73B4065F24CFD3", hash_generated_field = "6D37B6E76C0CCCF04F4EB2D92ECC6756")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.138 -0500", hash_original_field = "7A0DF4E7697A3B9A2C73B4065F24CFD3", hash_generated_field = "6D37B6E76C0CCCF04F4EB2D92ECC6756")
 
         private final Rect mSecondRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.058 -0500", hash_original_field = "6708D892AB5394234BF4CBCDF78F311F", hash_generated_field = "ED9210798784460350FD46FC78F11ACF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.140 -0500", hash_original_field = "6708D892AB5394234BF4CBCDF78F311F", hash_generated_field = "ED9210798784460350FD46FC78F11ACF")
 
         private ViewGroup mRoot;
         
@@ -548,18 +565,21 @@ public class FocusFinder {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.059 -0500", hash_original_method = "AE2DFC878449B0C9A87D974F16153CE8", hash_generated_method = "CCB3F2B10DB6785DAFEE246FED12BD4F")
-        public void recycle() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.143 -0500", hash_original_method = "AE2DFC878449B0C9A87D974F16153CE8", hash_generated_method = "CCB3F2B10DB6785DAFEE246FED12BD4F")
+        
+public void recycle() {
             mRoot = null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.060 -0500", hash_original_method = "0BE2F634C0DBDBECCB40B3CDEBC39607", hash_generated_method = "9CCB6E319465EF38936FF10F40DDC9BC")
-        public void setRoot(ViewGroup root) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.146 -0500", hash_original_method = "0BE2F634C0DBDBECCB40B3CDEBC39607", hash_generated_method = "9CCB6E319465EF38936FF10F40DDC9BC")
+        
+public void setRoot(ViewGroup root) {
             mRoot = root;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.061 -0500", hash_original_method = "088E9436455361AF149A244BD433F4AF", hash_generated_method = "A15C8F6DF0D5DDF654E998AFAE0BA3A9")
-        public int compare(View first, View second) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.149 -0500", hash_original_method = "088E9436455361AF149A244BD433F4AF", hash_generated_method = "A15C8F6DF0D5DDF654E998AFAE0BA3A9")
+        
+public int compare(View first, View second) {
             if (first == second) {
                 return 0;
             }
@@ -591,8 +611,9 @@ public class FocusFinder {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.062 -0500", hash_original_method = "CE5638677B07104C355FE3EB975CEDE8", hash_generated_method = "A75C51D7CEE240C36DDD927E32FC3BA0")
-        private void getRect(View view, Rect rect) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.151 -0500", hash_original_method = "CE5638677B07104C355FE3EB975CEDE8", hash_generated_method = "A75C51D7CEE240C36DDD927E32FC3BA0")
+        
+private void getRect(View view, Rect rect) {
             view.getDrawingRect(rect);
             mRoot.offsetDescendantRectToMyCoords(view, rect);
         }
@@ -604,8 +625,9 @@ public class FocusFinder {
     /**
      * Is destRect a candidate for the next touch given the direction?
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.056 -0500", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "47998B70C2658DBDED4D069DD5945833")
-    private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.133 -0500", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "47998B70C2658DBDED4D069DD5945833")
+    
+private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return destRect.left <= x && destRect.top <= y && y <= destRect.bottom;

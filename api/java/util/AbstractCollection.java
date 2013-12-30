@@ -19,8 +19,9 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     /**
      * Constructs a new instance of this AbstractCollection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.011 -0500", hash_original_method = "2CD999E5665A4C31F4601D44982C7C04", hash_generated_method = "B9D20D5CAAC3B1D2299D4DA211653336")
-    protected AbstractCollection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.257 -0500", hash_original_method = "2CD999E5665A4C31F4601D44982C7C04", hash_generated_method = "B9D20D5CAAC3B1D2299D4DA211653336")
+    
+protected AbstractCollection() {
     }
         
     @DSModeled(DSC.BAN)
@@ -115,8 +116,9 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      *
      * @return an iterator for accessing the {@code Collection} contents.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.017 -0500", hash_original_method = "38DA4AD00F2312AF1AD3CD50855F4F5F", hash_generated_method = "04D077BF385AFE862B82A3802F213294")
-    public abstract Iterator<E> iterator();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.278 -0500", hash_original_method = "38DA4AD00F2312AF1AD3CD50855F4F5F", hash_generated_method = "04D077BF385AFE862B82A3802F213294")
+    
+public abstract Iterator<E> iterator();
 
     
         @DSModeled(DSC.SAFE)

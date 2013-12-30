@@ -24,126 +24,126 @@ import android.view.ViewParent;
 
 
 public class ListPopupWindow {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.278 -0500", hash_original_field = "9B22868DBB778B77630F608FF41CCE95", hash_generated_field = "0887B70F50539FED12873EB1C34B6CEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.914 -0500", hash_original_field = "9B22868DBB778B77630F608FF41CCE95", hash_generated_field = "0887B70F50539FED12873EB1C34B6CEE")
 
     private static final String TAG = "ListPopupWindow";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.279 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.917 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.280 -0500", hash_original_field = "63E31023FAF651A8B13F7E116CC0E635", hash_generated_field = "F8D801998654223FA4FA41D41E9F5E7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.919 -0500", hash_original_field = "63E31023FAF651A8B13F7E116CC0E635", hash_generated_field = "F8D801998654223FA4FA41D41E9F5E7A")
 
     private static final int EXPAND_LIST_TIMEOUT = 250;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.302 -0500", hash_original_field = "5D4DDA54BDBCC4B2BCCBA859119EDD58", hash_generated_field = "513C25DC2079D3E3F448C17AD7E45103")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.980 -0500", hash_original_field = "5D4DDA54BDBCC4B2BCCBA859119EDD58", hash_generated_field = "513C25DC2079D3E3F448C17AD7E45103")
 
     public static final int POSITION_PROMPT_ABOVE = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.303 -0500", hash_original_field = "22C7D2938BD863FDD9C2E4B7EB8903FA", hash_generated_field = "0DC2E01EB82FA75DF06F7820DDC407FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.982 -0500", hash_original_field = "22C7D2938BD863FDD9C2E4B7EB8903FA", hash_generated_field = "0DC2E01EB82FA75DF06F7820DDC407FC")
 
     public static final int POSITION_PROMPT_BELOW = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.304 -0500", hash_original_field = "187C676C2EF71799F06128D964F264AE", hash_generated_field = "66FD18D4009B660D801EA24128E20B3A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.985 -0500", hash_original_field = "187C676C2EF71799F06128D964F264AE", hash_generated_field = "66FD18D4009B660D801EA24128E20B3A")
 
     public static final int MATCH_PARENT = ViewGroup.LayoutParams.MATCH_PARENT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.305 -0500", hash_original_field = "966C6C7D7E8915D4E16EB7C44380872C", hash_generated_field = "09891BB8998BC15D0579567ED28F8125")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.987 -0500", hash_original_field = "966C6C7D7E8915D4E16EB7C44380872C", hash_generated_field = "09891BB8998BC15D0579567ED28F8125")
 
     public static final int WRAP_CONTENT = ViewGroup.LayoutParams.WRAP_CONTENT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.305 -0500", hash_original_field = "51C805E580F4804E6EB846E2806A998C", hash_generated_field = "25DC4C7F5035D071A009268061A8DECC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.989 -0500", hash_original_field = "51C805E580F4804E6EB846E2806A998C", hash_generated_field = "25DC4C7F5035D071A009268061A8DECC")
 
     public static final int INPUT_METHOD_FROM_FOCUSABLE = PopupWindow.INPUT_METHOD_FROM_FOCUSABLE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.306 -0500", hash_original_field = "5234FA127C35862ABEA72AA56D02CE31", hash_generated_field = "BC380AA3102B060D07B4A59A29280852")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.992 -0500", hash_original_field = "5234FA127C35862ABEA72AA56D02CE31", hash_generated_field = "BC380AA3102B060D07B4A59A29280852")
 
     public static final int INPUT_METHOD_NEEDED = PopupWindow.INPUT_METHOD_NEEDED;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.307 -0500", hash_original_field = "6E80BB3A1EABC6287A401C3AB04C3CE7", hash_generated_field = "B45F005145864928FF3B5CE220951262")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.995 -0500", hash_original_field = "6E80BB3A1EABC6287A401C3AB04C3CE7", hash_generated_field = "B45F005145864928FF3B5CE220951262")
 
     public static final int INPUT_METHOD_NOT_NEEDED = PopupWindow.INPUT_METHOD_NOT_NEEDED;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.280 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.921 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.281 -0500", hash_original_field = "7E4C7D8A72122A6640DF0AA884C2245D", hash_generated_field = "DD5B28EB4059D1AC7E72BAEDE50FACDF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.924 -0500", hash_original_field = "7E4C7D8A72122A6640DF0AA884C2245D", hash_generated_field = "DD5B28EB4059D1AC7E72BAEDE50FACDF")
 
     private PopupWindow mPopup;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.282 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "90F29768206AB431EA361CD94838716F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.926 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "90F29768206AB431EA361CD94838716F")
 
     private ListAdapter mAdapter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.283 -0500", hash_original_field = "D2EA713CFF74C79305B1A85CAA4758A3", hash_generated_field = "680F69659AC661E81526EC1B57AD0760")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.928 -0500", hash_original_field = "D2EA713CFF74C79305B1A85CAA4758A3", hash_generated_field = "680F69659AC661E81526EC1B57AD0760")
 
     private DropDownListView mDropDownList;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.283 -0500", hash_original_field = "47629D9301A11E5A90DB7FD16C630178", hash_generated_field = "95C5FD2B2227A2419A547D55212619CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.930 -0500", hash_original_field = "47629D9301A11E5A90DB7FD16C630178", hash_generated_field = "95C5FD2B2227A2419A547D55212619CB")
 
 
     private int mDropDownHeight = ViewGroup.LayoutParams.WRAP_CONTENT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.284 -0500", hash_original_field = "1FBF54D200826BE24A98634613FB66C2", hash_generated_field = "DE8B8CD76D1AB415FF96E39AF3C5D34E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.932 -0500", hash_original_field = "1FBF54D200826BE24A98634613FB66C2", hash_generated_field = "DE8B8CD76D1AB415FF96E39AF3C5D34E")
 
     private int mDropDownWidth = ViewGroup.LayoutParams.WRAP_CONTENT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.285 -0500", hash_original_field = "F488E81DEDCF27807554F505CB261AEB", hash_generated_field = "E0B55CC77CB214A3579F9BF96330095D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.934 -0500", hash_original_field = "F488E81DEDCF27807554F505CB261AEB", hash_generated_field = "E0B55CC77CB214A3579F9BF96330095D")
 
     private int mDropDownHorizontalOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.286 -0500", hash_original_field = "34094FADF72E1CFF7A6E4691913199A5", hash_generated_field = "3B23099D02FB8FF58FFC662868C0BB03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.936 -0500", hash_original_field = "34094FADF72E1CFF7A6E4691913199A5", hash_generated_field = "3B23099D02FB8FF58FFC662868C0BB03")
 
     private int mDropDownVerticalOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.287 -0500", hash_original_field = "B50C09E974CBAB52C3A2CAAC73824C09", hash_generated_field = "EF2837EA9E1F32EA5B98F304DCD2B02D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.938 -0500", hash_original_field = "B50C09E974CBAB52C3A2CAAC73824C09", hash_generated_field = "EF2837EA9E1F32EA5B98F304DCD2B02D")
 
     private boolean mDropDownVerticalOffsetSet;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.287 -0500", hash_original_field = "E408A4A94243B7CFBFDDDE18659D6637", hash_generated_field = "A2A88CD1765159B88DD7DB6DD2826AA7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.940 -0500", hash_original_field = "E408A4A94243B7CFBFDDDE18659D6637", hash_generated_field = "A2A88CD1765159B88DD7DB6DD2826AA7")
 
 
     private boolean mDropDownAlwaysVisible = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.288 -0500", hash_original_field = "38CCFB5B729C0D1016E8CD1FEEC6A290", hash_generated_field = "D1BD29312DE39A83C4D6D5BDC2010A61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.943 -0500", hash_original_field = "38CCFB5B729C0D1016E8CD1FEEC6A290", hash_generated_field = "D1BD29312DE39A83C4D6D5BDC2010A61")
 
     private boolean mForceIgnoreOutsideTouch = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.289 -0500", hash_original_field = "B5EDBF08EC87E5E419CCBD4768539463", hash_generated_field = "B5EDBF08EC87E5E419CCBD4768539463")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.945 -0500", hash_original_field = "B5EDBF08EC87E5E419CCBD4768539463", hash_generated_field = "B5EDBF08EC87E5E419CCBD4768539463")
 
     int mListItemExpandMaximum = Integer.MAX_VALUE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.290 -0500", hash_original_field = "5449FEC726829211DD8244A31A4FD026", hash_generated_field = "5F49A121459BF7DF82F93F51F66D9AFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.947 -0500", hash_original_field = "5449FEC726829211DD8244A31A4FD026", hash_generated_field = "5F49A121459BF7DF82F93F51F66D9AFA")
 
 
     private View mPromptView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.291 -0500", hash_original_field = "CC2799DFE9A02CE4FAA05B620FA5203C", hash_generated_field = "D0EDBCF4B24F722A68C83DBD4FA7D38D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.949 -0500", hash_original_field = "CC2799DFE9A02CE4FAA05B620FA5203C", hash_generated_field = "D0EDBCF4B24F722A68C83DBD4FA7D38D")
 
     private int mPromptPosition = POSITION_PROMPT_ABOVE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.291 -0500", hash_original_field = "7F4E88E932CA04F746195B78340FAF19", hash_generated_field = "3BA4BCC5F225A10F755FE4D117871D40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.952 -0500", hash_original_field = "7F4E88E932CA04F746195B78340FAF19", hash_generated_field = "3BA4BCC5F225A10F755FE4D117871D40")
 
 
     private DataSetObserver mObserver;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.292 -0500", hash_original_field = "9E0D6B2D2C41BFB970F7F40314CA67CA", hash_generated_field = "0AD13AB5208CE821A0A2BF31AEC73CB4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.954 -0500", hash_original_field = "9E0D6B2D2C41BFB970F7F40314CA67CA", hash_generated_field = "0AD13AB5208CE821A0A2BF31AEC73CB4")
 
 
     private View mDropDownAnchorView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.293 -0500", hash_original_field = "CF26749AC69E503F0E6CEE9E8D3F679D", hash_generated_field = "D7FBC36DD90F3884476AF7A145F7D085")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.956 -0500", hash_original_field = "CF26749AC69E503F0E6CEE9E8D3F679D", hash_generated_field = "D7FBC36DD90F3884476AF7A145F7D085")
 
 
     private Drawable mDropDownListHighlight;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.294 -0500", hash_original_field = "C3BCFE8177AEF338D4004A6DD4D2D8EF", hash_generated_field = "91F251C39E992AB6E9A1F97E1DB2D65A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.957 -0500", hash_original_field = "C3BCFE8177AEF338D4004A6DD4D2D8EF", hash_generated_field = "91F251C39E992AB6E9A1F97E1DB2D65A")
 
 
     private AdapterView.OnItemClickListener mItemClickListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.294 -0500", hash_original_field = "95D49B221C26B1A3334D3BD6A6E6E61A", hash_generated_field = "B20A14E839638431419A27C6FA2EB183")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.959 -0500", hash_original_field = "95D49B221C26B1A3334D3BD6A6E6E61A", hash_generated_field = "B20A14E839638431419A27C6FA2EB183")
 
     private AdapterView.OnItemSelectedListener mItemSelectedListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.295 -0500", hash_original_field = "870EB41A3AD8AF770D57D2B2C2386419", hash_generated_field = "821F70C70BBBE64322F054DCBDCBD65D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.961 -0500", hash_original_field = "870EB41A3AD8AF770D57D2B2C2386419", hash_generated_field = "821F70C70BBBE64322F054DCBDCBD65D")
 
 
     private final ResizePopupRunnable mResizePopupRunnable = new ResizePopupRunnable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.296 -0500", hash_original_field = "9EC385C13CED9DB47D8864C0559278A1", hash_generated_field = "C2DF6DA91E71FE1B73AF2F99DA491C65")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.964 -0500", hash_original_field = "9EC385C13CED9DB47D8864C0559278A1", hash_generated_field = "C2DF6DA91E71FE1B73AF2F99DA491C65")
 
     private final PopupTouchInterceptor mTouchInterceptor = new PopupTouchInterceptor();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.297 -0500", hash_original_field = "3770B47A24DD321648564621CF0B3704", hash_generated_field = "7119F706A3F3F75D0AB9F70CFDF2D458")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.966 -0500", hash_original_field = "3770B47A24DD321648564621CF0B3704", hash_generated_field = "7119F706A3F3F75D0AB9F70CFDF2D458")
 
     private final PopupScrollListener mScrollListener = new PopupScrollListener();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.298 -0500", hash_original_field = "E2D3F2C921CE1BBE9E4E348336B0A9D5", hash_generated_field = "368F7081BBFDFED86D539FFD5855A591")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.969 -0500", hash_original_field = "E2D3F2C921CE1BBE9E4E348336B0A9D5", hash_generated_field = "368F7081BBFDFED86D539FFD5855A591")
 
     private final ListSelectorHider mHideSelector = new ListSelectorHider();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.298 -0500", hash_original_field = "AF08E013791944040F11EFFF718596A9", hash_generated_field = "61A25C839F09B3FC31C414DE40E67DB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.971 -0500", hash_original_field = "AF08E013791944040F11EFFF718596A9", hash_generated_field = "61A25C839F09B3FC31C414DE40E67DB5")
 
     private Runnable mShowDropDownRunnable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.299 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.973 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
 
 
     private Handler mHandler = new Handler();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.300 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.975 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
 
 
     private Rect mTempRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.301 -0500", hash_original_field = "35472579238A24390A4D232395567A7B", hash_generated_field = "2CBF8E91F49F039C5D23189C3E7CE590")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.977 -0500", hash_original_field = "35472579238A24390A4D232395567A7B", hash_generated_field = "2CBF8E91F49F039C5D23189C3E7CE590")
 
 
     private boolean mModal;
@@ -154,8 +154,9 @@ public class ListPopupWindow {
      * 
      * @param context Context used for contained views.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.308 -0500", hash_original_method = "EE0C6E46788D5D6F0175B90B5CCF0B4A", hash_generated_method = "535CA03881CAD22B0A89513673AF3B8F")
-    public ListPopupWindow(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.998 -0500", hash_original_method = "EE0C6E46788D5D6F0175B90B5CCF0B4A", hash_generated_method = "535CA03881CAD22B0A89513673AF3B8F")
+    
+public ListPopupWindow(Context context) {
         this(context, null, com.android.internal.R.attr.listPopupWindowStyle, 0);
     }
 
@@ -166,8 +167,9 @@ public class ListPopupWindow {
      * @param context Context used for contained views.
      * @param attrs Attributes from inflating parent views used to style the popup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.309 -0500", hash_original_method = "C9E1E41EEB8F4220F08A0D28BC21C4EB", hash_generated_method = "C90B7B3E3C36EA2768CA911D5D6C683C")
-    public ListPopupWindow(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.000 -0500", hash_original_method = "C9E1E41EEB8F4220F08A0D28BC21C4EB", hash_generated_method = "C90B7B3E3C36EA2768CA911D5D6C683C")
+    
+public ListPopupWindow(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.listPopupWindowStyle, 0);
     }
 
@@ -179,8 +181,9 @@ public class ListPopupWindow {
      * @param attrs Attributes from inflating parent views used to style the popup.
      * @param defStyleAttr Default style attribute to use for popup content.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.310 -0500", hash_original_method = "449FC27C9387B8AAB93C584A7B8B7579", hash_generated_method = "EFE43904AE9BD6D7C666FED663E7B3AC")
-    public ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.002 -0500", hash_original_method = "449FC27C9387B8AAB93C584A7B8B7579", hash_generated_method = "EFE43904AE9BD6D7C666FED663E7B3AC")
+    
+public ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
     }
 
@@ -193,8 +196,9 @@ public class ListPopupWindow {
      * @param defStyleAttr Style attribute to read for default styling of popup content.
      * @param defStyleRes Style resource ID to use for default styling of popup content.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.310 -0500", hash_original_method = "F8B1DB93A85ECDB9C2D2CE8639D222AE", hash_generated_method = "F9BE63A12D428EA88A5D5BC27912D4D7")
-    public ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.005 -0500", hash_original_method = "F8B1DB93A85ECDB9C2D2CE8639D222AE", hash_generated_method = "F9BE63A12D428EA88A5D5BC27912D4D7")
+    
+public ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         mContext = context;
         mPopup = new PopupWindow(context, attrs, defStyleAttr, defStyleRes);
         mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
@@ -206,8 +210,9 @@ public class ListPopupWindow {
      *
      * @param adapter The adapter to use to create this window's content.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.311 -0500", hash_original_method = "B55D1F7EE07C2CDF60B7B314069C1E48", hash_generated_method = "B764CB836CA397C20E9F89EB820E1329")
-    public void setAdapter(ListAdapter adapter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.007 -0500", hash_original_method = "B55D1F7EE07C2CDF60B7B314069C1E48", hash_generated_method = "B764CB836CA397C20E9F89EB820E1329")
+    
+public void setAdapter(ListAdapter adapter) {
         if (mObserver == null) {
             mObserver = new PopupDataSetObserver();
         } else if (mAdapter != null) {
@@ -232,8 +237,9 @@ public class ListPopupWindow {
      * @see #POSITION_PROMPT_ABOVE
      * @see #POSITION_PROMPT_BELOW
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.312 -0500", hash_original_method = "7CC61A3797371517F86E3D676D22847C", hash_generated_method = "F9B7E352B31FDFA171B19567C2207FC5")
-    public void setPromptPosition(int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.009 -0500", hash_original_method = "7CC61A3797371517F86E3D676D22847C", hash_generated_method = "F9B7E352B31FDFA171B19567C2207FC5")
+    
+public void setPromptPosition(int position) {
         mPromptPosition = position;
     }
 
@@ -243,8 +249,9 @@ public class ListPopupWindow {
      * @see #POSITION_PROMPT_ABOVE
      * @see #POSITION_PROMPT_BELOW
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.313 -0500", hash_original_method = "DF9D97B46096A1E4CCF9033CE8B43A47", hash_generated_method = "ED70513AB0BFFA1311B014B32D36D7DC")
-    public int getPromptPosition() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.012 -0500", hash_original_method = "DF9D97B46096A1E4CCF9033CE8B43A47", hash_generated_method = "ED70513AB0BFFA1311B014B32D36D7DC")
+    
+public int getPromptPosition() {
         return mPromptPosition;
     }
 
@@ -257,8 +264,9 @@ public class ListPopupWindow {
      * 
      * @param modal {@code true} if the popup window should be modal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.314 -0500", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "6C2C1410866D1D61A1A62A8C0391C92E")
-    public void setModal(boolean modal) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.014 -0500", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "6C2C1410866D1D61A1A62A8C0391C92E")
+    
+public void setModal(boolean modal) {
         mModal = true;
         mPopup.setFocusable(modal);
     }
@@ -268,8 +276,9 @@ public class ListPopupWindow {
      * 
      * @return {@code true} if the popup window will be modal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.315 -0500", hash_original_method = "195244B0122E9C532D039816F791192C", hash_generated_method = "E010DC4AD1AE58BC0D2925422A5D303B")
-    public boolean isModal() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.016 -0500", hash_original_method = "195244B0122E9C532D039816F791192C", hash_generated_method = "E010DC4AD1AE58BC0D2925422A5D303B")
+    
+public boolean isModal() {
         return mModal;
     }
 
@@ -280,8 +289,9 @@ public class ListPopupWindow {
      * 
      * @hide Used only by AutoCompleteTextView to handle some internal special cases.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.316 -0500", hash_original_method = "B51F6D3B2B582EB2529861E286FFBDAA", hash_generated_method = "3174FFB3813C26E1F0A01179B54B8139")
-    public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.018 -0500", hash_original_method = "B51F6D3B2B582EB2529861E286FFBDAA", hash_generated_method = "3174FFB3813C26E1F0A01179B54B8139")
+    
+public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         mForceIgnoreOutsideTouch = forceIgnoreOutsideTouch;
     }
 
@@ -296,8 +306,9 @@ public class ListPopupWindow {
      *
      * @hide Only used by AutoCompleteTextView under special conditions.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.317 -0500", hash_original_method = "0D7558B683A811B4FB459E3A92DCFACB", hash_generated_method = "CF697164CB7A979E67CC23BB02F0C16F")
-    public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.020 -0500", hash_original_method = "0D7558B683A811B4FB459E3A92DCFACB", hash_generated_method = "CF697164CB7A979E67CC23BB02F0C16F")
+    
+public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         mDropDownAlwaysVisible = dropDownAlwaysVisible;
     }
 
@@ -306,8 +317,9 @@ public class ListPopupWindow {
      *
      * @hide Only used by AutoCompleteTextView under special conditions.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.318 -0500", hash_original_method = "452BC62A357E5A143092E81C66B09D6A", hash_generated_method = "D16C0015621EAF41B3CE3173EE0781BF")
-    public boolean isDropDownAlwaysVisible() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.022 -0500", hash_original_method = "452BC62A357E5A143092E81C66B09D6A", hash_generated_method = "D16C0015621EAF41B3CE3173EE0781BF")
+    
+public boolean isDropDownAlwaysVisible() {
         return mDropDownAlwaysVisible;
     }
 
@@ -321,8 +333,9 @@ public class ListPopupWindow {
      * @see android.view.WindowManager.LayoutParams#softInputMode
      * @see #getSoftInputMode()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.319 -0500", hash_original_method = "E80B835CA17A4D3E815EC079FA1EE953", hash_generated_method = "6F33DB8F703DFF6D3352DF67AA4D9723")
-    public void setSoftInputMode(int mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.024 -0500", hash_original_method = "E80B835CA17A4D3E815EC079FA1EE953", hash_generated_method = "6F33DB8F703DFF6D3352DF67AA4D9723")
+    
+public void setSoftInputMode(int mode) {
         mPopup.setSoftInputMode(mode);
     }
 
@@ -332,8 +345,9 @@ public class ListPopupWindow {
      * @see #setSoftInputMode(int)
      * @see android.view.WindowManager.LayoutParams#softInputMode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.319 -0500", hash_original_method = "EF5235E70AE7C9521CFD0F4410B9073C", hash_generated_method = "34F28FB52B6DAFF7E76E087895AE72A9")
-    public int getSoftInputMode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.026 -0500", hash_original_method = "EF5235E70AE7C9521CFD0F4410B9073C", hash_generated_method = "34F28FB52B6DAFF7E76E087895AE72A9")
+    
+public int getSoftInputMode() {
         return mPopup.getSoftInputMode();
     }
 
@@ -342,16 +356,18 @@ public class ListPopupWindow {
      * 
      * @param selector List selector drawable to use in the popup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.320 -0500", hash_original_method = "00D6E099D8DC922D12B17B03F893B884", hash_generated_method = "383695E39099FD03667C952B7D41FE4A")
-    public void setListSelector(Drawable selector) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.029 -0500", hash_original_method = "00D6E099D8DC922D12B17B03F893B884", hash_generated_method = "383695E39099FD03667C952B7D41FE4A")
+    
+public void setListSelector(Drawable selector) {
         mDropDownListHighlight = selector;
     }
 
     /**
      * @return The background drawable for the popup window.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.321 -0500", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "8361F633C9EE2A209A5F0E8043587AC9")
-    public Drawable getBackground() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.031 -0500", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "8361F633C9EE2A209A5F0E8043587AC9")
+    
+public Drawable getBackground() {
         return mPopup.getBackground();
     }
 
@@ -360,8 +376,9 @@ public class ListPopupWindow {
      * 
      * @param d A drawable to set as the background.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.322 -0500", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "3F2D5FAE7B7F15768348E05BF53B40CD")
-    public void setBackgroundDrawable(Drawable d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.033 -0500", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "3F2D5FAE7B7F15768348E05BF53B40CD")
+    
+public void setBackgroundDrawable(Drawable d) {
         mPopup.setBackgroundDrawable(d);
     }
 
@@ -370,8 +387,9 @@ public class ListPopupWindow {
      * 
      * @param animationStyle Animation style to use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.323 -0500", hash_original_method = "CF4F09D135A7A5849055A447382D076E", hash_generated_method = "51C2A0238784BAF4CD2E35C1C31D1F1C")
-    public void setAnimationStyle(int animationStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.035 -0500", hash_original_method = "CF4F09D135A7A5849055A447382D076E", hash_generated_method = "51C2A0238784BAF4CD2E35C1C31D1F1C")
+    
+public void setAnimationStyle(int animationStyle) {
         mPopup.setAnimationStyle(animationStyle);
     }
 
@@ -381,8 +399,9 @@ public class ListPopupWindow {
      * 
      * @return Animation style that will be used.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.323 -0500", hash_original_method = "A53F654A1BF514C432C9F43DB9ED5E7B", hash_generated_method = "1306DC89DF94081356E55A19EE8661CD")
-    public int getAnimationStyle() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.037 -0500", hash_original_method = "A53F654A1BF514C432C9F43DB9ED5E7B", hash_generated_method = "1306DC89DF94081356E55A19EE8661CD")
+    
+public int getAnimationStyle() {
         return mPopup.getAnimationStyle();
     }
 
@@ -391,8 +410,9 @@ public class ListPopupWindow {
      * 
      * @return The popup's anchor view
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.324 -0500", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "018CCB43785B73150669A8D96162E023")
-    public View getAnchorView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.040 -0500", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "018CCB43785B73150669A8D96162E023")
+    
+public View getAnchorView() {
         return mDropDownAnchorView;
     }
 
@@ -402,16 +422,18 @@ public class ListPopupWindow {
      * 
      * @param anchor The view to use as an anchor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.325 -0500", hash_original_method = "91753F7FEC6E3180927B7B9D55B8E090", hash_generated_method = "05957B93E91DF796FD2FC16581760FF3")
-    public void setAnchorView(View anchor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.042 -0500", hash_original_method = "91753F7FEC6E3180927B7B9D55B8E090", hash_generated_method = "05957B93E91DF796FD2FC16581760FF3")
+    
+public void setAnchorView(View anchor) {
         mDropDownAnchorView = anchor;
     }
 
     /**
      * @return The horizontal offset of the popup from its anchor in pixels.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.326 -0500", hash_original_method = "2C5F7D64A15BDC64E0A7D1677E996184", hash_generated_method = "13EFA9158560F614588B8F5CF120A6A9")
-    public int getHorizontalOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.044 -0500", hash_original_method = "2C5F7D64A15BDC64E0A7D1677E996184", hash_generated_method = "13EFA9158560F614588B8F5CF120A6A9")
+    
+public int getHorizontalOffset() {
         return mDropDownHorizontalOffset;
     }
 
@@ -420,16 +442,18 @@ public class ListPopupWindow {
      * 
      * @param offset The horizontal offset of the popup from its anchor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.327 -0500", hash_original_method = "37914D7AC2B7A80AA5FE528B058A9DBC", hash_generated_method = "9895E3FFBA6000436D485FAD8DC69D5D")
-    public void setHorizontalOffset(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.046 -0500", hash_original_method = "37914D7AC2B7A80AA5FE528B058A9DBC", hash_generated_method = "9895E3FFBA6000436D485FAD8DC69D5D")
+    
+public void setHorizontalOffset(int offset) {
         mDropDownHorizontalOffset = offset;
     }
 
     /**
      * @return The vertical offset of the popup from its anchor in pixels.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.328 -0500", hash_original_method = "06BDE5646BE562A7D86252C676418C82", hash_generated_method = "DA7FAA8E025244FD39561BA6F341391F")
-    public int getVerticalOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.048 -0500", hash_original_method = "06BDE5646BE562A7D86252C676418C82", hash_generated_method = "DA7FAA8E025244FD39561BA6F341391F")
+    
+public int getVerticalOffset() {
         if (!mDropDownVerticalOffsetSet) {
             return 0;
         }
@@ -441,8 +465,9 @@ public class ListPopupWindow {
      * 
      * @param offset The vertical offset of the popup from its anchor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.328 -0500", hash_original_method = "F61671411958DBF85FB58F84EEE162C4", hash_generated_method = "F2E0C247361B54640FD6BE9AB2AD3808")
-    public void setVerticalOffset(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.050 -0500", hash_original_method = "F61671411958DBF85FB58F84EEE162C4", hash_generated_method = "F2E0C247361B54640FD6BE9AB2AD3808")
+    
+public void setVerticalOffset(int offset) {
         mDropDownVerticalOffset = offset;
         mDropDownVerticalOffsetSet = true;
     }
@@ -450,8 +475,9 @@ public class ListPopupWindow {
     /**
      * @return The width of the popup window in pixels.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.329 -0500", hash_original_method = "6205F90E667ADE4444482E9AC195FB48", hash_generated_method = "52ADB8330CF1D99BDB9100B431908C2D")
-    public int getWidth() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.052 -0500", hash_original_method = "6205F90E667ADE4444482E9AC195FB48", hash_generated_method = "52ADB8330CF1D99BDB9100B431908C2D")
+    
+public int getWidth() {
         return mDropDownWidth;
     }
 
@@ -461,8 +487,9 @@ public class ListPopupWindow {
      * 
      * @param width Width of the popup window.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.330 -0500", hash_original_method = "1FDBBF009B47D57DAE1EE309EAA8DA19", hash_generated_method = "8822955A1449CC5CD1B2A22976B7B662")
-    public void setWidth(int width) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.054 -0500", hash_original_method = "1FDBBF009B47D57DAE1EE309EAA8DA19", hash_generated_method = "8822955A1449CC5CD1B2A22976B7B662")
+    
+public void setWidth(int width) {
         mDropDownWidth = width;
     }
 
@@ -472,8 +499,9 @@ public class ListPopupWindow {
      *
      * @param width Desired width of content in pixels.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.331 -0500", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "B7561C3A7CA7F311BEEA8084196A7B42")
-    public void setContentWidth(int width) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.057 -0500", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "B7561C3A7CA7F311BEEA8084196A7B42")
+    
+public void setContentWidth(int width) {
         Drawable popupBackground = mPopup.getBackground();
         if (popupBackground != null) {
             popupBackground.getPadding(mTempRect);
@@ -486,8 +514,9 @@ public class ListPopupWindow {
     /**
      * @return The height of the popup window in pixels.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.332 -0500", hash_original_method = "2B0617362C23A2A1F29E0E83641579F9", hash_generated_method = "D37B95D83D167F9C4FBCCC7EF8DB8E0F")
-    public int getHeight() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.059 -0500", hash_original_method = "2B0617362C23A2A1F29E0E83641579F9", hash_generated_method = "D37B95D83D167F9C4FBCCC7EF8DB8E0F")
+    
+public int getHeight() {
         return mDropDownHeight;
     }
 
@@ -496,8 +525,9 @@ public class ListPopupWindow {
      * 
      * @param height Height of the popup window.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.332 -0500", hash_original_method = "CAA84DCA25312E828BE740B15493FB25", hash_generated_method = "1307ECD2360B8192F17D2690E76D1BD3")
-    public void setHeight(int height) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.062 -0500", hash_original_method = "CAA84DCA25312E828BE740B15493FB25", hash_generated_method = "1307ECD2360B8192F17D2690E76D1BD3")
+    
+public void setHeight(int height) {
         mDropDownHeight = height;
     }
 
@@ -508,8 +538,9 @@ public class ListPopupWindow {
      * 
      * @see ListView#setOnItemClickListener(android.widget.AdapterView.OnItemClickListener)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.333 -0500", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "4F93B27CDA566E1947C562DDACAB23C1")
-    public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.064 -0500", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "4F93B27CDA566E1947C562DDACAB23C1")
+    
+public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
         mItemClickListener = clickListener;
     }
 
@@ -520,8 +551,9 @@ public class ListPopupWindow {
      * 
      * @see ListView#setOnItemSelectedListener(android.widget.AdapterView.OnItemSelectedListener)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.334 -0500", hash_original_method = "77C1F384A6316C978289202E5719DEEE", hash_generated_method = "080AB42266AF6BB9870333E8AD2B5DFF")
-    public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener selectedListener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.066 -0500", hash_original_method = "77C1F384A6316C978289202E5719DEEE", hash_generated_method = "080AB42266AF6BB9870333E8AD2B5DFF")
+    
+public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener selectedListener) {
         mItemSelectedListener = selectedListener;
     }
 
@@ -531,8 +563,9 @@ public class ListPopupWindow {
      * 
      * @param prompt View to use as an informational prompt.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.335 -0500", hash_original_method = "F870D6C36930B52993EA962C5CEE4741", hash_generated_method = "9316FBCE25514633177B4C3FB50BD709")
-    public void setPromptView(View prompt) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.068 -0500", hash_original_method = "F870D6C36930B52993EA962C5CEE4741", hash_generated_method = "9316FBCE25514633177B4C3FB50BD709")
+    
+public void setPromptView(View prompt) {
         boolean showing = isShowing();
         if (showing) {
             removePromptView();
@@ -546,8 +579,9 @@ public class ListPopupWindow {
     /**
      * Post a {@link #show()} call to the UI thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.336 -0500", hash_original_method = "6F8BB8AB5CFBCAF655CCF7F8C4D42CCD", hash_generated_method = "348EE165671531E3C9C5D9CD3C8DCFB4")
-    public void postShow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.070 -0500", hash_original_method = "6F8BB8AB5CFBCAF655CCF7F8C4D42CCD", hash_generated_method = "348EE165671531E3C9C5D9CD3C8DCFB4")
+    
+public void postShow() {
         mHandler.post(mShowDropDownRunnable);
     }
 
@@ -555,8 +589,9 @@ public class ListPopupWindow {
      * Show the popup list. If the list is already showing, this method
      * will recalculate the popup's size and position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.337 -0500", hash_original_method = "B0532D10D967B708828191A62293AA30", hash_generated_method = "782FFA21521B093AB9681D590628F82A")
-    public void show() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.074 -0500", hash_original_method = "B0532D10D967B708828191A62293AA30", hash_generated_method = "782FFA21521B093AB9681D590628F82A")
+    
+public void show() {
         int height = buildDropDown();
 
         int widthSpec = 0;
@@ -644,8 +679,9 @@ public class ListPopupWindow {
     /**
      * Dismiss the popup window.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.338 -0500", hash_original_method = "B4B1B4676A26C0E0D07AD81974E2090B", hash_generated_method = "50D7A428D0408225B9A85847B875AC8B")
-    public void dismiss() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.076 -0500", hash_original_method = "B4B1B4676A26C0E0D07AD81974E2090B", hash_generated_method = "50D7A428D0408225B9A85847B875AC8B")
+    
+public void dismiss() {
         mPopup.dismiss();
         removePromptView();
         mPopup.setContentView(null);
@@ -658,13 +694,15 @@ public class ListPopupWindow {
      *
      * @param listener Listener that will be notified when the popup is dismissed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.339 -0500", hash_original_method = "C7BE29500BF4339E2FDC892E2A139524", hash_generated_method = "5C97EF6AB530266F013AE5B9157C4053")
-    public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.078 -0500", hash_original_method = "C7BE29500BF4339E2FDC892E2A139524", hash_generated_method = "5C97EF6AB530266F013AE5B9157C4053")
+    
+public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mPopup.setOnDismissListener(listener);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.340 -0500", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "3AA7D4B2D9BCE578A6C1E3296F0D706C")
-    private void removePromptView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.080 -0500", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "3AA7D4B2D9BCE578A6C1E3296F0D706C")
+    
+private void removePromptView() {
         if (mPromptView != null) {
             final ViewParent parent = mPromptView.getParent();
             if (parent instanceof ViewGroup) {
@@ -686,8 +724,9 @@ public class ListPopupWindow {
      * @see #getInputMethodMode()
      * @see #show()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.341 -0500", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "664404492444FE4EDB8C9EF235897445")
-    public void setInputMethodMode(int mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.082 -0500", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "664404492444FE4EDB8C9EF235897445")
+    
+public void setInputMethodMode(int mode) {
         mPopup.setInputMethodMode(mode);
     }
 
@@ -696,8 +735,9 @@ public class ListPopupWindow {
      * 
      * @see #setInputMethodMode(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.341 -0500", hash_original_method = "341CBB053B214C5E0FB1B54637325DA3", hash_generated_method = "E24A5236B5374EA3523D770364798036")
-    public int getInputMethodMode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.085 -0500", hash_original_method = "341CBB053B214C5E0FB1B54637325DA3", hash_generated_method = "E24A5236B5374EA3523D770364798036")
+    
+public int getInputMethodMode() {
         return mPopup.getInputMethodMode();
     }
 
@@ -707,8 +747,9 @@ public class ListPopupWindow {
      * 
      * @param position List position to set as selected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.342 -0500", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "3B3BC52D181D5841E7CE1A55B23BB93A")
-    public void setSelection(int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.087 -0500", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "3B3BC52D181D5841E7CE1A55B23BB93A")
+    
+public void setSelection(int position) {
         DropDownListView list = mDropDownList;
         if (isShowing() && list != null) {
             list.mListSelectionHidden = false;
@@ -723,8 +764,9 @@ public class ListPopupWindow {
      * Clear any current list selection.
      * Only valid when {@link #isShowing()} == {@code true}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.343 -0500", hash_original_method = "5E25633D1BEAE372BF50698DAAA66CA7", hash_generated_method = "13576BB7F7329A5DDF2A41719C2C05F4")
-    public void clearListSelection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.089 -0500", hash_original_method = "5E25633D1BEAE372BF50698DAAA66CA7", hash_generated_method = "13576BB7F7329A5DDF2A41719C2C05F4")
+    
+public void clearListSelection() {
         final DropDownListView list = mDropDownList;
         if (list != null) {
             // WARNING: Please read the comment where mListSelectionHidden is declared
@@ -737,8 +779,9 @@ public class ListPopupWindow {
     /**
      * @return {@code true} if the popup is currently showing, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.344 -0500", hash_original_method = "CA9C4C0CD645F38E1AAA797FE00ECFCE", hash_generated_method = "A74A360685D68080E9B081E8BB4886F7")
-    public boolean isShowing() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.092 -0500", hash_original_method = "CA9C4C0CD645F38E1AAA797FE00ECFCE", hash_generated_method = "A74A360685D68080E9B081E8BB4886F7")
+    
+public boolean isShowing() {
         return mPopup.isShowing();
     }
 
@@ -746,8 +789,9 @@ public class ListPopupWindow {
      * @return {@code true} if this popup is configured to assume the user does not need
      * to interact with the IME while it is showing, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.345 -0500", hash_original_method = "C5EEC00F4CE1C916DAF561B7CF397229", hash_generated_method = "304924423F1B5B5A901202A22B2D39F6")
-    public boolean isInputMethodNotNeeded() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.094 -0500", hash_original_method = "C5EEC00F4CE1C916DAF561B7CF397229", hash_generated_method = "304924423F1B5B5A901202A22B2D39F6")
+    
+public boolean isInputMethodNotNeeded() {
         return mPopup.getInputMethodMode() == INPUT_METHOD_NOT_NEEDED;
     }
 
@@ -758,8 +802,9 @@ public class ListPopupWindow {
      * @return true if the click action could be performed, false if not.
      *         (e.g. if the popup was not showing, this method would return false.)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.346 -0500", hash_original_method = "5D56F9149CAA09C31AB36A31C90B128D", hash_generated_method = "AE20ADFEF2EF4BCDBDC5219F11D53EF7")
-    public boolean performItemClick(int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.096 -0500", hash_original_method = "5D56F9149CAA09C31AB36A31C90B128D", hash_generated_method = "AE20ADFEF2EF4BCDBDC5219F11D53EF7")
+    
+public boolean performItemClick(int position) {
         if (isShowing()) {
             if (mItemClickListener != null) {
                 final DropDownListView list = mDropDownList;
@@ -774,13 +819,13 @@ public class ListPopupWindow {
 
     
     private static class DropDownListView extends ListView {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.360 -0500", hash_original_field = "D20F3A87D43862A7B37B125A3FEE7F98", hash_generated_field = "23928DA4DE83E1135FB8A9793C3625F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.135 -0500", hash_original_field = "D20F3A87D43862A7B37B125A3FEE7F98", hash_generated_field = "23928DA4DE83E1135FB8A9793C3625F7")
 
         private static final String TAG = ListPopupWindow.TAG + ".DropDownListView";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.361 -0500", hash_original_field = "9E91D73F2D56D01A7B3EAC2472AE2C6F", hash_generated_field = "3F3C05952474F71A545A45E3C3CCA4F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.137 -0500", hash_original_field = "9E91D73F2D56D01A7B3EAC2472AE2C6F", hash_generated_field = "3F3C05952474F71A545A45E3C3CCA4F6")
 
         private boolean mListSelectionHidden;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.362 -0500", hash_original_field = "0471724893E35540EA0391951CEF0974", hash_generated_field = "527E1B04AF4AD8C6C618A0336B748CF0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.139 -0500", hash_original_field = "0471724893E35540EA0391951CEF0974", hash_generated_field = "527E1B04AF4AD8C6C618A0336B748CF0")
 
         private boolean mHijackFocus;
 
@@ -789,8 +834,9 @@ public class ListPopupWindow {
          *
          * @param context this view's context
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.363 -0500", hash_original_method = "BBC42F17FDBB7B5F7851EFDC7F6F1B4C", hash_generated_method = "8ACB45F234E9095A9AEF51B97D5E5D8A")
-        public DropDownListView(Context context, boolean hijackFocus) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.142 -0500", hash_original_method = "BBC42F17FDBB7B5F7851EFDC7F6F1B4C", hash_generated_method = "8ACB45F234E9095A9AEF51B97D5E5D8A")
+        
+public DropDownListView(Context context, boolean hijackFocus) {
             super(context, null, com.android.internal.R.attr.dropDownListViewStyle);
             mHijackFocus = hijackFocus;
             // TODO: Add an API to control this
@@ -804,9 +850,10 @@ public class ListPopupWindow {
          * @param position the item index in the list to get a view for
          * @return the view for the specified item
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.364 -0500", hash_original_method = "3F1E6A7533EB0FC6DBDDA209BB95D590", hash_generated_method = "5B1E71941BEC4631C343B211F7143977")
-        @Override
-View obtainView(int position, boolean[] isScrap) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.144 -0500", hash_original_method = "3F1E6A7533EB0FC6DBDDA209BB95D590", hash_generated_method = "5B1E71941BEC4631C343B211F7143977")
+        
+@Override
+        View obtainView(int position, boolean[] isScrap) {
             View view = super.obtainView(position, isScrap);
 
             if (view instanceof TextView) {
@@ -816,9 +863,10 @@ View obtainView(int position, boolean[] isScrap) {
             return view;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.365 -0500", hash_original_method = "4691130934AB8C0281F78748C377FD01", hash_generated_method = "5635BEFC456639E758A346DB28420B77")
-        @Override
-public boolean isInTouchMode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.147 -0500", hash_original_method = "4691130934AB8C0281F78748C377FD01", hash_generated_method = "5635BEFC456639E758A346DB28420B77")
+        
+@Override
+        public boolean isInTouchMode() {
             // WARNING: Please read the comment where mListSelectionHidden is declared
             return (mHijackFocus && mListSelectionHidden) || super.isInTouchMode();
         }
@@ -828,9 +876,10 @@ public boolean isInTouchMode() {
          *
          * @return true always if hijacking focus
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.366 -0500", hash_original_method = "561EA8BFAB26A78C0A50D34CA2B435FA", hash_generated_method = "468FFE45110A504986317139157A6B4F")
-        @Override
-public boolean hasWindowFocus() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.150 -0500", hash_original_method = "561EA8BFAB26A78C0A50D34CA2B435FA", hash_generated_method = "468FFE45110A504986317139157A6B4F")
+        
+@Override
+        public boolean hasWindowFocus() {
             return mHijackFocus || super.hasWindowFocus();
         }
 
@@ -839,9 +888,10 @@ public boolean hasWindowFocus() {
          *
          * @return true always if hijacking focus
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.366 -0500", hash_original_method = "C2BF4E069A702887BC745C139DC71739", hash_generated_method = "AD9FA9DCAB55E98576D3E8A5D1496AF0")
-        @Override
-public boolean isFocused() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.152 -0500", hash_original_method = "C2BF4E069A702887BC745C139DC71739", hash_generated_method = "AD9FA9DCAB55E98576D3E8A5D1496AF0")
+        
+@Override
+        public boolean isFocused() {
             return mHijackFocus || super.isFocused();
         }
 
@@ -850,9 +900,10 @@ public boolean isFocused() {
          *
          * @return true always if hijacking focus
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.367 -0500", hash_original_method = "1102992DDCFDFABDAA31FDFA580154D8", hash_generated_method = "41F703DC5FE9C3F800A12C7C5F5E495F")
-        @Override
-public boolean hasFocus() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.154 -0500", hash_original_method = "1102992DDCFDFABDAA31FDFA580154D8", hash_generated_method = "41F703DC5FE9C3F800A12C7C5F5E495F")
+        
+@Override
+        public boolean hasFocus() {
             return mHijackFocus || super.hasFocus();
         }
     }
@@ -866,18 +917,20 @@ public boolean hasFocus() {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.369 -0500", hash_original_method = "6E4DA5A5D077D6C0AA24FD2BF6BDF53A", hash_generated_method = "43AD078EA30F732A83D9ACE08BA25F54")
-        @Override
-public void onChanged() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.159 -0500", hash_original_method = "6E4DA5A5D077D6C0AA24FD2BF6BDF53A", hash_generated_method = "43AD078EA30F732A83D9ACE08BA25F54")
+        
+@Override
+        public void onChanged() {
             if (isShowing()) {
                 // Resize the popup to fit new content
                 show();
             }
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.370 -0500", hash_original_method = "BEB5883597D4F7E6EC69D5E4B00F4808", hash_generated_method = "F3E9793446B00E60EB5817FCD52182CB")
-        @Override
-public void onInvalidated() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.162 -0500", hash_original_method = "BEB5883597D4F7E6EC69D5E4B00F4808", hash_generated_method = "F3E9793446B00E60EB5817FCD52182CB")
+        
+@Override
+        public void onInvalidated() {
             dismiss();
         }
 
@@ -893,8 +946,9 @@ public void onInvalidated() {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.372 -0500", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "E9D4DFD4407D27ED24BD11596FAD7F2A")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.167 -0500", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "E9D4DFD4407D27ED24BD11596FAD7F2A")
+        
+public void run() {
             clearListSelection();
         }
 
@@ -910,8 +964,9 @@ public void onInvalidated() {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.374 -0500", hash_original_method = "A0D6625363C0412112380631C620D963", hash_generated_method = "CB17003C1F1C5E3D173A611277EC7873")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.171 -0500", hash_original_method = "A0D6625363C0412112380631C620D963", hash_generated_method = "CB17003C1F1C5E3D173A611277EC7873")
+        
+public void run() {
             if (mDropDownList != null && mDropDownList.getCount() > mDropDownList.getChildCount() &&
                     mDropDownList.getChildCount() <= mListItemExpandMaximum) {
                 mPopup.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
@@ -931,8 +986,9 @@ public void onInvalidated() {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.376 -0500", hash_original_method = "6DB51D562B35DA9065539F31B98AD12D", hash_generated_method = "07FE7217A9FF3612E69859A75A5A6814")
-        public boolean onTouch(View v, MotionEvent event) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.176 -0500", hash_original_method = "6DB51D562B35DA9065539F31B98AD12D", hash_generated_method = "07FE7217A9FF3612E69859A75A5A6814")
+        
+public boolean onTouch(View v, MotionEvent event) {
             final int action = event.getAction();
             final int x = (int) event.getX();
             final int y = (int) event.getY();
@@ -959,14 +1015,16 @@ public void onInvalidated() {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.377 -0500", hash_original_method = "6B5691236DBDB14CA060F218338C51C6", hash_generated_method = "D742074EAAE849F36F748D2264C0E286")
-        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.181 -0500", hash_original_method = "6B5691236DBDB14CA060F218338C51C6", hash_generated_method = "D742074EAAE849F36F748D2264C0E286")
+        
+public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                 int totalItemCount) {
 
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.378 -0500", hash_original_method = "50D93865D772C2EF3B15BE53BF421FFA", hash_generated_method = "350F65FA0861D884A92684E69D7810E9")
-        public void onScrollStateChanged(AbsListView view, int scrollState) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.183 -0500", hash_original_method = "50D93865D772C2EF3B15BE53BF421FFA", hash_generated_method = "350F65FA0861D884A92684E69D7810E9")
+        
+public void onScrollStateChanged(AbsListView view, int scrollState) {
             if (scrollState == SCROLL_STATE_TOUCH_SCROLL &&
                     !isInputMethodNotNeeded() && mPopup.getContentView() != null) {
                 mHandler.removeCallbacks(mResizePopupRunnable);
@@ -980,8 +1038,9 @@ public void onInvalidated() {
     /**
      * @return The currently selected item or null if the popup is not showing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.347 -0500", hash_original_method = "E481FD4B78A135BB1B6DC4E83167B196", hash_generated_method = "6A17B03FB9691569A1AE097B83BBAA4F")
-    public Object getSelectedItem() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.098 -0500", hash_original_method = "E481FD4B78A135BB1B6DC4E83167B196", hash_generated_method = "6A17B03FB9691569A1AE097B83BBAA4F")
+    
+public Object getSelectedItem() {
         if (!isShowing()) {
             return null;
         }
@@ -994,8 +1053,9 @@ public void onInvalidated() {
      * 
      * @see ListView#getSelectedItemPosition()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.347 -0500", hash_original_method = "055DCA84E8C7B3F34F7D7819C2CD5AC3", hash_generated_method = "8A3175CA69A3FA68DA6E161E8C3CEDF4")
-    public int getSelectedItemPosition() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.101 -0500", hash_original_method = "055DCA84E8C7B3F34F7D7819C2CD5AC3", hash_generated_method = "8A3175CA69A3FA68DA6E161E8C3CEDF4")
+    
+public int getSelectedItemPosition() {
         if (!isShowing()) {
             return ListView.INVALID_POSITION;
         }
@@ -1008,8 +1068,9 @@ public void onInvalidated() {
      * 
      * @see ListView#getSelectedItemId()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.348 -0500", hash_original_method = "4492784EC84C61BD8D41E43112FEBCD0", hash_generated_method = "D3EEC71A6116CC51874E3E01EAFBD952")
-    public long getSelectedItemId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.103 -0500", hash_original_method = "4492784EC84C61BD8D41E43112FEBCD0", hash_generated_method = "D3EEC71A6116CC51874E3E01EAFBD952")
+    
+public long getSelectedItemId() {
         if (!isShowing()) {
             return ListView.INVALID_ROW_ID;
         }
@@ -1022,8 +1083,9 @@ public void onInvalidated() {
      * 
      * @see ListView#getSelectedView()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.349 -0500", hash_original_method = "A94FEEC1ECDAC3555C21CB10FFC68C47", hash_generated_method = "892A145AB2B636C1047E11E5595197C0")
-    public View getSelectedView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.105 -0500", hash_original_method = "A94FEEC1ECDAC3555C21CB10FFC68C47", hash_generated_method = "892A145AB2B636C1047E11E5595197C0")
+    
+public View getSelectedView() {
         if (!isShowing()) {
             return null;
         }
@@ -1034,8 +1096,9 @@ public void onInvalidated() {
      * @return The {@link ListView} displayed within the popup window.
      * Only valid when {@link #isShowing()} == {@code true}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.350 -0500", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "7312C25846E6B9BBA3DB1F353BAB6BF7")
-    public ListView getListView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.107 -0500", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "7312C25846E6B9BBA3DB1F353BAB6BF7")
+    
+public ListView getListView() {
         return mDropDownList;
     }
 
@@ -1045,8 +1108,9 @@ public void onInvalidated() {
      *
      * @param max Max number of items that can be visible and still allow the list to expand.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.350 -0500", hash_original_method = "21262ED785FC4787FB1F1DE7107BCA92", hash_generated_method = "21262ED785FC4787FB1F1DE7107BCA92")
-    void setListItemExpandMax(int max) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.109 -0500", hash_original_method = "21262ED785FC4787FB1F1DE7107BCA92", hash_generated_method = "21262ED785FC4787FB1F1DE7107BCA92")
+    
+void setListItemExpandMax(int max) {
         mListItemExpandMaximum = max;
     }
 
@@ -1060,8 +1124,9 @@ public void onInvalidated() {
      * 
      * @see #setModal(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.352 -0500", hash_original_method = "D4938DA23F7CC8247819641EDCB20246", hash_generated_method = "E26895403B9726AC0E4194C8C214B026")
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.112 -0500", hash_original_method = "D4938DA23F7CC8247819641EDCB20246", hash_generated_method = "E26895403B9726AC0E4194C8C214B026")
+    
+public boolean onKeyDown(int keyCode, KeyEvent event) {
         // when the drop down is shown, we drive it directly
         if (isShowing()) {
             // the key events are forwarded to the list in the drop down view
@@ -1157,8 +1222,9 @@ public void onInvalidated() {
      * 
      * @see #setModal(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.353 -0500", hash_original_method = "CD01E8977B386E95EB43DA8A15EDF875", hash_generated_method = "38CE1FE25476BBCB139B3C9A4E2BE658")
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.115 -0500", hash_original_method = "CD01E8977B386E95EB43DA8A15EDF875", hash_generated_method = "38CE1FE25476BBCB139B3C9A4E2BE658")
+    
+public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (isShowing() && mDropDownList.getSelectedItemPosition() >= 0) {
             boolean consumed = mDropDownList.onKeyUp(keyCode, event);
             if (consumed) {
@@ -1188,8 +1254,9 @@ public void onInvalidated() {
      * 
      * @see #setModal(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.353 -0500", hash_original_method = "5D81C652E72C1CAFD12E9CC95CD171E7", hash_generated_method = "92218C43C173710D3667B50B89726F62")
-    public boolean onKeyPreIme(int keyCode, KeyEvent event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.117 -0500", hash_original_method = "5D81C652E72C1CAFD12E9CC95CD171E7", hash_generated_method = "92218C43C173710D3667B50B89726F62")
+    
+public boolean onKeyPreIme(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && isShowing()) {
             // special case for the back key, we do not even try to send it
             // to the drop down list but instead, consume it immediately
@@ -1224,8 +1291,9 @@ public void onInvalidated() {
         {
             Context context = mContext;
             mShowDropDownRunnable = new Runnable() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.355 -0500", hash_original_method = "CEA8CEF9AA7B34E441550DF384140083", hash_generated_method = "EED7FFBA9AD29D9AA69601D426B89EA5")
-                public void run() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.121 -0500", hash_original_method = "CEA8CEF9AA7B34E441550DF384140083", hash_generated_method = "EED7FFBA9AD29D9AA69601D426B89EA5")
+                
+public void run() {
                     // View layout should be all done before displaying the drop down.
                     View view = getAnchorView();
                     if (view != null && view.getWindowToken() != null) {
@@ -1243,8 +1311,9 @@ public void onInvalidated() {
             mDropDownList.setFocusable(true);
             mDropDownList.setFocusableInTouchMode(true);
             mDropDownList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.356 -0500", hash_original_method = "A3D9BDCD43F35F92A348E2938D25FA58", hash_generated_method = "9DBF480F8DAD4B30F9F09FED0CFA2CA0")
-                public void onItemSelected(AdapterView<?> parent, View view,
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.124 -0500", hash_original_method = "A3D9BDCD43F35F92A348E2938D25FA58", hash_generated_method = "9DBF480F8DAD4B30F9F09FED0CFA2CA0")
+                
+public void onItemSelected(AdapterView<?> parent, View view,
                         int position, long id) {
 
                     if (position != -1) {
@@ -1256,8 +1325,9 @@ public void onInvalidated() {
                     }
                 }
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:10.357 -0500", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "6E7AEBAFC80C8D60C49939A085C5BFAF")
-                public void onNothingSelected(AdapterView<?> parent) {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.127 -0500", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "6E7AEBAFC80C8D60C49939A085C5BFAF")
+                
+public void onNothingSelected(AdapterView<?> parent) {
                 }
 });
             mDropDownList.setOnScrollListener(mScrollListener);

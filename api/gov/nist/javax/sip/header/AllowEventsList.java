@@ -17,7 +17,7 @@ import javax.sip.header.AllowEventsHeader;
 
 
 public class AllowEventsList extends SIPHeaderList<AllowEvents> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.744 -0500", hash_original_field = "F850C344EE0C5124FED83C597CBFB673", hash_generated_field = "86B6C308D3FCCC18BA910315347C5416")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.816 -0500", hash_original_field = "F850C344EE0C5124FED83C597CBFB673", hash_generated_field = "86B6C308D3FCCC18BA910315347C5416")
 
 
     private static final long serialVersionUID = -684763195336212992L;
@@ -25,13 +25,15 @@ public class AllowEventsList extends SIPHeaderList<AllowEvents> {
 
     /** default constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.747 -0500", hash_original_method = "BE25141B87EEBB7CC79E715B98DBCC1B", hash_generated_method = "1830E60686F9030EC32D01D2CE2303E3")
-    public AllowEventsList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.822 -0500", hash_original_method = "BE25141B87EEBB7CC79E715B98DBCC1B", hash_generated_method = "1830E60686F9030EC32D01D2CE2303E3")
+    
+public AllowEventsList() {
         super(AllowEvents.class, AllowEventsHeader.NAME);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.746 -0500", hash_original_method = "73FBB2E32770F78B7C4AE500CDD51F25", hash_generated_method = "A0EA21C71E3199A31B7950BE526D14E0")
-    public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.819 -0500", hash_original_method = "73FBB2E32770F78B7C4AE500CDD51F25", hash_generated_method = "A0EA21C71E3199A31B7950BE526D14E0")
+    
+public Object clone() {
         AllowEventsList retval = new AllowEventsList();
         retval.clonehlist(this.hlist);
         return retval;
@@ -50,8 +52,9 @@ public class AllowEventsList extends SIPHeaderList<AllowEvents> {
      *
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.749 -0500", hash_original_method = "8BAEE8E3A5391DDA801BF0B845B6BCD7", hash_generated_method = "FDEA2FDB650D04EE5EB88AA720957BD1")
-    public ListIterator<String> getMethods() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.825 -0500", hash_original_method = "8BAEE8E3A5391DDA801BF0B845B6BCD7", hash_generated_method = "FDEA2FDB650D04EE5EB88AA720957BD1")
+    
+public ListIterator<String> getMethods() {
         ListIterator<AllowEvents> li = super.hlist.listIterator();
         LinkedList<String>  ll = new LinkedList<String> ();
         while (li.hasNext()) {
@@ -76,8 +79,9 @@ public class AllowEventsList extends SIPHeaderList<AllowEvents> {
      *
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.750 -0500", hash_original_method = "222F0135AD0C9432632E9A9F7AD003FD", hash_generated_method = "72C063C4DB2B9B1CD412E92B49A10884")
-    public void setMethods(List<String> methods) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.828 -0500", hash_original_method = "222F0135AD0C9432632E9A9F7AD003FD", hash_generated_method = "72C063C4DB2B9B1CD412E92B49A10884")
+    
+public void setMethods(List<String> methods) throws ParseException {
         ListIterator<String> it = methods.listIterator();
         while (it.hasNext()) {
             AllowEvents allowEvents = new AllowEvents();

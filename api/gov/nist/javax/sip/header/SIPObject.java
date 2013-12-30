@@ -19,8 +19,9 @@ public abstract class SIPObject extends GenericObject {
 
     /** default Constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.146 -0500", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "EF0377E88863F74D89719B23AA2BF7B9")
-    protected SIPObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.421 -0500", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "EF0377E88863F74D89719B23AA2BF7B9")
+    
+protected SIPObject() {
         super();
     }
 
@@ -28,22 +29,25 @@ public abstract class SIPObject extends GenericObject {
 
     /** Debug function
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.147 -0500", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07FA9249E0984A0CAE96B90D99799894")
-    public void dbgPrint() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.424 -0500", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07FA9249E0984A0CAE96B90D99799894")
+    
+public void dbgPrint() {
         super.dbgPrint();
     }
 
     /** Encode the header into a String.
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.148 -0500", hash_original_method = "62F9CE492238F967486EB3E8B7CFE75A", hash_generated_method = "5BF421C60268DEDED1E2C31D57984D81")
-    public abstract String encode();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.427 -0500", hash_original_method = "62F9CE492238F967486EB3E8B7CFE75A", hash_generated_method = "5BF421C60268DEDED1E2C31D57984D81")
+    
+public abstract String encode();
 
     /** Encode the header into the given StringBuffer.
      * Default implemation calls encode().
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.149 -0500", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "E83555D6561D540C12E200451394DEB5")
-    public StringBuffer encode(StringBuffer buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.431 -0500", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "E83555D6561D540C12E200451394DEB5")
+    
+public StringBuffer encode(StringBuffer buffer) {
         return buffer.append(encode());
     }
 
@@ -51,8 +55,9 @@ public abstract class SIPObject extends GenericObject {
      * An introspection based equality predicate for SIPObjects.
      *@param other the other object to test against.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.152 -0500", hash_original_method = "C625D56C28F833180267D6A3AE3C9C8E", hash_generated_method = "3235E79C076831103811E5F9B5DBF5E3")
-    public boolean equals(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.435 -0500", hash_original_method = "C625D56C28F833180267D6A3AE3C9C8E", hash_generated_method = "3235E79C076831103811E5F9B5DBF5E3")
+    
+public boolean equals(Object other) {
         if (!this.getClass().equals(other.getClass()))
             return false;
         SIPObject that = (SIPObject) other;
@@ -141,8 +146,9 @@ public abstract class SIPObject extends GenericObject {
      * are ignored when making the comparison.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.154 -0500", hash_original_method = "060178C12313F034DC0CE078907A1CE4", hash_generated_method = "A59E76E07226A59A509F31C28C1E52FB")
-    public boolean match(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.441 -0500", hash_original_method = "060178C12313F034DC0CE078907A1CE4", hash_generated_method = "A59E76E07226A59A509F31C28C1E52FB")
+    
+public boolean match(Object other) {
         if (other == null) {
             return true;
         }
@@ -261,8 +267,9 @@ public abstract class SIPObject extends GenericObject {
      * of the other objects in this class.
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.156 -0500", hash_original_method = "8C7E8103DEE2671781774C37BABA3BB5", hash_generated_method = "43ACE820E048560DD88C790458E7EB59")
-    public String debugDump() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.447 -0500", hash_original_method = "8C7E8103DEE2671781774C37BABA3BB5", hash_generated_method = "43ACE820E048560DD88C790458E7EB59")
+    
+public String debugDump() {
         stringRepresentation = "";
         Class myclass = getClass();
         sprint(myclass.getName());
@@ -361,8 +368,9 @@ public abstract class SIPObject extends GenericObject {
      * @param indent int to set
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.158 -0500", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "17B15A15CB497DC07A940E8E9144F966")
-    public String debugDump(int indent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.450 -0500", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "17B15A15CB497DC07A940E8E9144F966")
+    
+public String debugDump(int indent) {
         int save = indentation;
         indentation = indent;
         String retval = this.debugDump();
@@ -371,8 +379,9 @@ public abstract class SIPObject extends GenericObject {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.159 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.453 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
+    
+public String toString() {
         return this.encode();
     }
 

@@ -32,8 +32,9 @@ public class BasicScheme extends RFC2617Scheme {
      * 
      * @return a basic authorization header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.195 -0500", hash_original_method = "89C676068719473CE74FFF06348E4F41", hash_generated_method = "75796DC6F277B176DCAF2177AE57B335")
-    public static Header authenticate(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.905 -0500", hash_original_method = "89C676068719473CE74FFF06348E4F41", hash_generated_method = "75796DC6F277B176DCAF2177AE57B335")
+    
+public static Header authenticate(
             final Credentials credentials, 
             final String charset, 
             boolean proxy) {
@@ -63,15 +64,16 @@ public class BasicScheme extends RFC2617Scheme {
         
         return new BufferedHeader(buffer);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.189 -0500", hash_original_field = "C51E6506F56B38D2FA99DED8C0973BFD", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.888 -0500", hash_original_field = "C51E6506F56B38D2FA99DED8C0973BFD", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
 
     private boolean complete;
     
     /**
      * Default constructor for the basic authetication scheme.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.190 -0500", hash_original_method = "34C51F903ABE689F4DFB975D927E1D44", hash_generated_method = "7E698B321E9117B4B56D78F5DF699EBE")
-    public BasicScheme() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.890 -0500", hash_original_method = "34C51F903ABE689F4DFB975D927E1D44", hash_generated_method = "7E698B321E9117B4B56D78F5DF699EBE")
+    
+public BasicScheme() {
         super();
         this.complete = false;
     }
@@ -81,8 +83,9 @@ public class BasicScheme extends RFC2617Scheme {
      * 
      * @return <code>basic</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.191 -0500", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "219E61D29C3B60261ABA492391FC0B7D")
-    public String getSchemeName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.893 -0500", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "219E61D29C3B60261ABA492391FC0B7D")
+    
+public String getSchemeName() {
         return "basic";
     }
 
@@ -94,9 +97,10 @@ public class BasicScheme extends RFC2617Scheme {
      * @throws MalformedChallengeException is thrown if the authentication challenge
      * is malformed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.192 -0500", hash_original_method = "B3A99E56E7F7C8BB825E320F08AA1BAE", hash_generated_method = "E9E81C8510DBE10CC53C82CAA8344CAE")
-    @Override
-public void processChallenge(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.895 -0500", hash_original_method = "B3A99E56E7F7C8BB825E320F08AA1BAE", hash_generated_method = "E9E81C8510DBE10CC53C82CAA8344CAE")
+    
+@Override
+    public void processChallenge(
             final Header header) throws MalformedChallengeException {
         super.processChallenge(header);
         this.complete = true;
@@ -108,8 +112,9 @@ public void processChallenge(
      * @return <tt>true</tt> if Basic authorization has been processed,
      *   <tt>false</tt> otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.192 -0500", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "6580BADA867DF5458EDFF68BF25A56B3")
-    public boolean isComplete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.897 -0500", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "6580BADA867DF5458EDFF68BF25A56B3")
+    
+public boolean isComplete() {
         return this.complete;
     }
 
@@ -118,8 +123,9 @@ public void processChallenge(
      * 
      * @return <tt>false</tt>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.193 -0500", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "2AFD9511A9C9359DA57C31C6DF79FB99")
-    public boolean isConnectionBased() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.899 -0500", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "2AFD9511A9C9359DA57C31C6DF79FB99")
+    
+public boolean isConnectionBased() {
         return false;    
     }
 
@@ -135,8 +141,9 @@ public void processChallenge(
      * 
      * @return a basic authorization string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.194 -0500", hash_original_method = "29881E2E3CE612A2D14B025CB6CBAAB9", hash_generated_method = "73189CB0BF0ED0C322E2573686274826")
-    public Header authenticate(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.902 -0500", hash_original_method = "29881E2E3CE612A2D14B025CB6CBAAB9", hash_generated_method = "73189CB0BF0ED0C322E2573686274826")
+    
+public Header authenticate(
             final Credentials credentials, 
             final HttpRequest request) throws AuthenticationException {
 

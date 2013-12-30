@@ -32,11 +32,12 @@ import org.apache.harmony.security.x509.AlgorithmIdentifier;
 
 public class EncryptedPrivateKeyInfo {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.461 -0500", hash_original_method = "C7F017D6BF0E95CAC7E674AE844EA4C0", hash_generated_method = "771F301A53C79B4866730FA1B1BFDF03")
-    private static boolean isNullValue(byte[] toCheck) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.909 -0500", hash_original_method = "C7F017D6BF0E95CAC7E674AE844EA4C0", hash_generated_method = "771F301A53C79B4866730FA1B1BFDF03")
+    
+private static boolean isNullValue(byte[] toCheck) {
         return toCheck[0] == 5 && toCheck[1] == 0;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.473 -0500", hash_original_field = "6AA659307682AEBB3689DA3CB2EFE970", hash_generated_field = "3BB751772098CBC3BE6239971FC3AA39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.945 -0500", hash_original_field = "6AA659307682AEBB3689DA3CB2EFE970", hash_generated_field = "3BB751772098CBC3BE6239971FC3AA39")
 
     // EncryptedPrivateKeyInfo DER encoder/decoder.
     // EncryptedPrivateKeyInfo ASN.1 definition
@@ -54,9 +55,10 @@ public class EncryptedPrivateKeyInfo {
     private static final ASN1Sequence asn1 = new ASN1Sequence(new ASN1Type[] {
             AlgorithmIdentifier.ASN1, ASN1OctetString.getInstance() }) {
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.474 -0500", hash_original_method = "C7B48C01EA9BD54A7C386B9C416EAF20", hash_generated_method = "48CF409BFA2FD98CA784817441662D7D")
-        @Override
-protected void getValues(Object object, Object[] values) {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.949 -0500", hash_original_method = "C7B48C01EA9BD54A7C386B9C416EAF20", hash_generated_method = "48CF409BFA2FD98CA784817441662D7D")
+        
+@Override
+                protected void getValues(Object object, Object[] values) {
 
                     EncryptedPrivateKeyInfo epki = (EncryptedPrivateKeyInfo) object;
 
@@ -72,7 +74,7 @@ protected void getValues(Object object, Object[] values) {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.477 -0500", hash_original_field = "A11EDF8CF3A8BB86D36A267914CFC02F", hash_generated_field = "FECDA1F83CA859E5D8EFB1232126B5BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.954 -0500", hash_original_field = "A11EDF8CF3A8BB86D36A267914CFC02F", hash_generated_field = "FECDA1F83CA859E5D8EFB1232126B5BC")
 
     // PrivateKeyInfo ASN.1 definition
     // (as defined in PKCS #8: Private-Key Information Syntax Standard
@@ -94,7 +96,7 @@ protected void getValues(Object object, Object[] values) {
     //      Attributes ::= SET OF Attribute
 
     private static final ASN1SetOf ASN1Attributes = new ASN1SetOf(ASN1Any.getInstance());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.478 -0500", hash_original_field = "D26FDF2D9014955F3EDD22BA2379AFC1", hash_generated_field = "3F79D30007B2B4B6B1391DB32F1ED09E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.957 -0500", hash_original_field = "D26FDF2D9014955F3EDD22BA2379AFC1", hash_generated_field = "3F79D30007B2B4B6B1391DB32F1ED09E")
 
 
     private static final ASN1Sequence ASN1PrivateKeyInfo = new ASN1Sequence(
@@ -105,19 +107,19 @@ protected void getValues(Object object, Object[] values) {
             setOptional(3); //attributes are optional
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.455 -0500", hash_original_field = "185F123DDE5C4A6836DC3E442124135F", hash_generated_field = "660D008EA392E932E9C27E468BE1012B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.895 -0500", hash_original_field = "185F123DDE5C4A6836DC3E442124135F", hash_generated_field = "660D008EA392E932E9C27E468BE1012B")
 
     private String algName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.456 -0500", hash_original_field = "E821E523F1E958F6986B4B19804F6B2B", hash_generated_field = "F067F90327B8A01DE7755B4FD06CC969")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.897 -0500", hash_original_field = "E821E523F1E958F6986B4B19804F6B2B", hash_generated_field = "F067F90327B8A01DE7755B4FD06CC969")
 
     private  AlgorithmParameters algParameters;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.457 -0500", hash_original_field = "608FC506AA693B29FB44BD7478B0A23D", hash_generated_field = "B29484238F58CF38DC30E0B9CE6E09D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.899 -0500", hash_original_field = "608FC506AA693B29FB44BD7478B0A23D", hash_generated_field = "B29484238F58CF38DC30E0B9CE6E09D3")
 
     private  byte[] encryptedData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.458 -0500", hash_original_field = "9C420410CA5A3136C0764F58D4287A0B", hash_generated_field = "D745B114B0A51171DAD36F87C0CC38B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.902 -0500", hash_original_field = "9C420410CA5A3136C0764F58D4287A0B", hash_generated_field = "D745B114B0A51171DAD36F87C0CC38B4")
 
     private String oid;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.458 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "30CBCFF31EBF02BAF8CCE8746893E2BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.904 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "30CBCFF31EBF02BAF8CCE8746893E2BE")
 
     private volatile byte[] encoded;
 
@@ -132,8 +134,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws NullPointerException
      *             if {@code encoded} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.459 -0500", hash_original_method = "5968D7DC318FA4818B0D7FF4BA782716", hash_generated_method = "35DDAD652CB58CF16A4FC25D3CC36893")
-    public EncryptedPrivateKeyInfo(byte[] encoded) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.907 -0500", hash_original_method = "5968D7DC318FA4818B0D7FF4BA782716", hash_generated_method = "35DDAD652CB58CF16A4FC25D3CC36893")
+    
+public EncryptedPrivateKeyInfo(byte[] encoded) throws IOException {
         if (encoded == null) {
             throw new NullPointerException("encoded == null");
         }
@@ -184,8 +187,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws IllegalArgumentException
      *             if {@code encryptedData} is empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.462 -0500", hash_original_method = "C009D0E8F0D5EB33E14FDFB24A942703", hash_generated_method = "90B51164B2B5F6D1BAEE74AACBC078CB")
-    public EncryptedPrivateKeyInfo(String encrAlgName, byte[] encryptedData)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.912 -0500", hash_original_method = "C009D0E8F0D5EB33E14FDFB24A942703", hash_generated_method = "90B51164B2B5F6D1BAEE74AACBC078CB")
+    
+public EncryptedPrivateKeyInfo(String encrAlgName, byte[] encryptedData)
         throws NoSuchAlgorithmException {
         if (encrAlgName == null) {
             throw new NullPointerException("the algName parameter is null");
@@ -221,8 +225,9 @@ protected void getValues(Object object, Object[] values) {
      *             if {@code algParams} or {@code encryptedData} is
      *             {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.463 -0500", hash_original_method = "5A4FF1B4B6EE8C8ABD405D2DD33761E1", hash_generated_method = "1C1631A0E74EAD9E9B3F3FC9AAFD9227")
-    public EncryptedPrivateKeyInfo(AlgorithmParameters algParams, byte[] encryptedData)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.916 -0500", hash_original_method = "5A4FF1B4B6EE8C8ABD405D2DD33761E1", hash_generated_method = "1C1631A0E74EAD9E9B3F3FC9AAFD9227")
+    
+public EncryptedPrivateKeyInfo(AlgorithmParameters algParams, byte[] encryptedData)
         throws NoSuchAlgorithmException {
         if (algParams == null) {
             throw new NullPointerException("algParams == null");
@@ -248,8 +253,9 @@ protected void getValues(Object object, Object[] values) {
      *
      * @return the name of the encryption algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.463 -0500", hash_original_method = "099B16E0CAD27366561935338A7E9D49", hash_generated_method = "5AA3D5AAD76F730C1A3ECC390DC0233B")
-    public String getAlgName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.919 -0500", hash_original_method = "099B16E0CAD27366561935338A7E9D49", hash_generated_method = "5AA3D5AAD76F730C1A3ECC390DC0233B")
+    
+public String getAlgName() {
         return algName;
     }
 
@@ -258,8 +264,9 @@ protected void getValues(Object object, Object[] values) {
      *
      * @return the parameters used by the encryption algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.464 -0500", hash_original_method = "E53778AACD7278B4FF9EA916DFF39F89", hash_generated_method = "7D57BF37CA5A17CA5EADF0E819A5F24E")
-    public AlgorithmParameters getAlgParameters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.921 -0500", hash_original_method = "E53778AACD7278B4FF9EA916DFF39F89", hash_generated_method = "7D57BF37CA5A17CA5EADF0E819A5F24E")
+    
+public AlgorithmParameters getAlgParameters() {
         return algParameters;
     }
 
@@ -269,8 +276,9 @@ protected void getValues(Object object, Object[] values) {
      * @return the encrypted data of this key, each time this method is called a
      *         new array is returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.465 -0500", hash_original_method = "953A1BC97C4FC2CA6B0BC7CB45B78971", hash_generated_method = "9C20FA4CC1CE75FC577A9F9BAAB21AFD")
-    public byte[] getEncryptedData() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.923 -0500", hash_original_method = "953A1BC97C4FC2CA6B0BC7CB45B78971", hash_generated_method = "9C20FA4CC1CE75FC577A9F9BAAB21AFD")
+    
+public byte[] getEncryptedData() {
         byte[] ret = new byte[encryptedData.length];
         System.arraycopy(encryptedData, 0, ret, 0, encryptedData.length);
         return ret;
@@ -293,8 +301,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws NullPointerException
      *             if {@code cipher} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.466 -0500", hash_original_method = "5E7E74DFC3F27253F408C7A3D7CB1593", hash_generated_method = "B5B5FF4BF80F8BB143008AC94EED3070")
-    public PKCS8EncodedKeySpec getKeySpec(Cipher cipher)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.926 -0500", hash_original_method = "5E7E74DFC3F27253F408C7A3D7CB1593", hash_generated_method = "B5B5FF4BF80F8BB143008AC94EED3070")
+    
+public PKCS8EncodedKeySpec getKeySpec(Cipher cipher)
         throws InvalidKeySpecException {
         if (cipher == null) {
             throw new NullPointerException("cipher == null");
@@ -332,8 +341,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws NullPointerException
      *             if {@code decryptKey} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.467 -0500", hash_original_method = "E86A0445ED0DCCD02C804E7FA87DE046", hash_generated_method = "F49D88DE8FCC2C7D409380CE18A69C9C")
-    public PKCS8EncodedKeySpec getKeySpec(Key decryptKey) throws NoSuchAlgorithmException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.929 -0500", hash_original_method = "E86A0445ED0DCCD02C804E7FA87DE046", hash_generated_method = "F49D88DE8FCC2C7D409380CE18A69C9C")
+    
+public PKCS8EncodedKeySpec getKeySpec(Key decryptKey) throws NoSuchAlgorithmException,
                InvalidKeyException {
         if (decryptKey == null) {
             throw new NullPointerException("decryptKey == null");
@@ -387,8 +397,9 @@ protected void getValues(Object object, Object[] values) {
      *             if {@code decryptKey} or {@code providerName} is {@code null}
      *             .
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.468 -0500", hash_original_method = "B712B7178E60AED4791DB32F07137FE5", hash_generated_method = "08BE82471E385C5F3849CFEAEC1307C4")
-    public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, String providerName)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.932 -0500", hash_original_method = "B712B7178E60AED4791DB32F07137FE5", hash_generated_method = "08BE82471E385C5F3849CFEAEC1307C4")
+    
+public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, String providerName)
         throws NoSuchProviderException,
                NoSuchAlgorithmException,
                InvalidKeyException {
@@ -443,8 +454,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws NullPointerException
      *             if {@code decryptKey} or {@code provider} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.469 -0500", hash_original_method = "90A968B6E2258355BD8D757E8E7A32BF", hash_generated_method = "13A5E6F239E1078E9EA802ABB49EFC38")
-    public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, Provider provider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.935 -0500", hash_original_method = "90A968B6E2258355BD8D757E8E7A32BF", hash_generated_method = "13A5E6F239E1078E9EA802ABB49EFC38")
+    
+public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, Provider provider)
         throws NoSuchAlgorithmException,
                InvalidKeyException {
         if (decryptKey == null) {
@@ -480,8 +492,9 @@ protected void getValues(Object object, Object[] values) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.470 -0500", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "C89E4771B98C8F23FB7E2846E4B6C518")
-    private InvalidKeyException invalidKey() throws InvalidKeyException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.937 -0500", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "C89E4771B98C8F23FB7E2846E4B6C518")
+    
+private InvalidKeyException invalidKey() throws InvalidKeyException {
         throw new InvalidKeyException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
     }
 
@@ -492,8 +505,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws IOException
      *             if encoding this object fails.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.471 -0500", hash_original_method = "64506A3A148BFB8614C90465965B2E22", hash_generated_method = "429BA8AB473A949FCE514B8CBD77E250")
-    public byte[] getEncoded() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.939 -0500", hash_original_method = "64506A3A148BFB8614C90465965B2E22", hash_generated_method = "429BA8AB473A949FCE514B8CBD77E250")
+    
+public byte[] getEncoded() throws IOException {
         if (encoded == null) {
             // Generate ASN.1 encoding:
             encoded = asn1.encode(this);
@@ -505,8 +519,9 @@ protected void getValues(Object object, Object[] values) {
 
     // Performs all needed alg name mappings.
     // Returns 'true' if mapping available 'false' otherwise
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.472 -0500", hash_original_method = "BB96A16B2E5B8AF0DEB9007883ABA8DF", hash_generated_method = "523D01EB592C72324F70A8A3FFC59C8B")
-    private boolean mapAlgName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.942 -0500", hash_original_method = "BB96A16B2E5B8AF0DEB9007883ABA8DF", hash_generated_method = "523D01EB592C72324F70A8A3FFC59C8B")
+    
+private boolean mapAlgName() {
         if (AlgNameMapper.isOID(this.algName)) {
             // OID provided to the ctor
             // get rid of possible leading "OID."

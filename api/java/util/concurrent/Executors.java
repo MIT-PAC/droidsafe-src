@@ -35,8 +35,9 @@ public class Executors {
      * @return the newly created thread pool
      * @throws IllegalArgumentException if {@code nThreads <= 0}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.179 -0500", hash_original_method = "4E40ED8EF1E85B572E2151F7FE652635", hash_generated_method = "24FC77A84622C7E6D132714BA0E4E804")
-    public static ExecutorService newFixedThreadPool(int nThreads) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.737 -0500", hash_original_method = "4E40ED8EF1E85B572E2151F7FE652635", hash_generated_method = "24FC77A84622C7E6D132714BA0E4E804")
+    
+public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
                                       new LinkedBlockingQueue<Runnable>());
@@ -61,8 +62,9 @@ public class Executors {
      * @throws NullPointerException if threadFactory is null
      * @throws IllegalArgumentException if {@code nThreads <= 0}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.179 -0500", hash_original_method = "B4B819B5FCF44407B1B16756E048CBA8", hash_generated_method = "E3B00C6A4203188D2006ED62C0A7DE75")
-    public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.740 -0500", hash_original_method = "B4B819B5FCF44407B1B16756E048CBA8", hash_generated_method = "E3B00C6A4203188D2006ED62C0A7DE75")
+    
+public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
                                       new LinkedBlockingQueue<Runnable>(),
@@ -82,8 +84,9 @@ public class Executors {
      *
      * @return the newly created single-threaded Executor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.180 -0500", hash_original_method = "C1C113EB7A09B292CF1C69F4CC48EB73", hash_generated_method = "9221D76F05BD5816E653D4B3D94FCBF6")
-    public static ExecutorService newSingleThreadExecutor() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.743 -0500", hash_original_method = "C1C113EB7A09B292CF1C69F4CC48EB73", hash_generated_method = "9221D76F05BD5816E653D4B3D94FCBF6")
+    
+public static ExecutorService newSingleThreadExecutor() {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
@@ -104,8 +107,9 @@ public class Executors {
      * @return the newly created single-threaded Executor
      * @throws NullPointerException if threadFactory is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.181 -0500", hash_original_method = "B2D89085FD1440204585B1FDE708D472", hash_generated_method = "0DB1D891C4BC734697C61313156F9928")
-    public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.745 -0500", hash_original_method = "B2D89085FD1440204585B1FDE708D472", hash_generated_method = "0DB1D891C4BC734697C61313156F9928")
+    
+public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
@@ -129,8 +133,9 @@ public class Executors {
      *
      * @return the newly created thread pool
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.182 -0500", hash_original_method = "F8AEA60969AF891BED1528CB27A5B3DF", hash_generated_method = "5531971EB656A2DB0F9493BF080E0215")
-    public static ExecutorService newCachedThreadPool() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.748 -0500", hash_original_method = "F8AEA60969AF891BED1528CB27A5B3DF", hash_generated_method = "5531971EB656A2DB0F9493BF080E0215")
+    
+public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
                                       new SynchronousQueue<Runnable>());
@@ -145,8 +150,9 @@ public class Executors {
      * @return the newly created thread pool
      * @throws NullPointerException if threadFactory is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.183 -0500", hash_original_method = "75C2AC8A8F418D624F70F1077C2FBC95", hash_generated_method = "A546D36DD3CD43F0C743AE5AE607FB0C")
-    public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.751 -0500", hash_original_method = "75C2AC8A8F418D624F70F1077C2FBC95", hash_generated_method = "A546D36DD3CD43F0C743AE5AE607FB0C")
+    
+public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
                                       new SynchronousQueue<Runnable>(),
@@ -166,8 +172,9 @@ public class Executors {
      * guaranteed not to be reconfigurable to use additional threads.
      * @return the newly created scheduled executor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.184 -0500", hash_original_method = "3B8D30E77CB845E3C376AA2B983070C1", hash_generated_method = "55D57A7E9E195C304A2DD55867C5D9F9")
-    public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.754 -0500", hash_original_method = "3B8D30E77CB845E3C376AA2B983070C1", hash_generated_method = "55D57A7E9E195C304A2DD55867C5D9F9")
+    
+public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1));
     }
@@ -188,8 +195,9 @@ public class Executors {
      * @return a newly created scheduled executor
      * @throws NullPointerException if threadFactory is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.185 -0500", hash_original_method = "662E48DC77F0E634963E4AF8B4B2319F", hash_generated_method = "3031A768012849957C19B4921EB5DA3F")
-    public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.756 -0500", hash_original_method = "662E48DC77F0E634963E4AF8B4B2319F", hash_generated_method = "3031A768012849957C19B4921EB5DA3F")
+    
+public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1, threadFactory));
     }
@@ -202,8 +210,9 @@ public class Executors {
      * @return a newly created scheduled thread pool
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.186 -0500", hash_original_method = "27FBCCF1D4D5EC0F51777630C21B1B2E", hash_generated_method = "D472E85837C5D4BE96BA90F2DAE0F3A5")
-    public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.759 -0500", hash_original_method = "27FBCCF1D4D5EC0F51777630C21B1B2E", hash_generated_method = "D472E85837C5D4BE96BA90F2DAE0F3A5")
+    
+public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
         return new ScheduledThreadPoolExecutor(corePoolSize);
     }
 
@@ -218,8 +227,9 @@ public class Executors {
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @throws NullPointerException if threadFactory is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.187 -0500", hash_original_method = "D2C28C34E5EB211F6345884E8C056637", hash_generated_method = "5881D63D11562D74770FEB0EA1531801")
-    public static ScheduledExecutorService newScheduledThreadPool(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.761 -0500", hash_original_method = "D2C28C34E5EB211F6345884E8C056637", hash_generated_method = "5881D63D11562D74770FEB0EA1531801")
+    
+public static ScheduledExecutorService newScheduledThreadPool(
             int corePoolSize, ThreadFactory threadFactory) {
         return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
     }
@@ -235,8 +245,9 @@ public class Executors {
      * @return an <tt>ExecutorService</tt> instance
      * @throws NullPointerException if executor null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.188 -0500", hash_original_method = "70EF475EAD59784B9F4988C66F330DB5", hash_generated_method = "11F8FC8C39CCEECCB7A9FB73F6C578A4")
-    public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.764 -0500", hash_original_method = "70EF475EAD59784B9F4988C66F330DB5", hash_generated_method = "11F8FC8C39CCEECCB7A9FB73F6C578A4")
+    
+public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
         return new DelegatedExecutorService(executor);
@@ -252,8 +263,9 @@ public class Executors {
      * @return a <tt>ScheduledExecutorService</tt> instance
      * @throws NullPointerException if executor null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.189 -0500", hash_original_method = "CB4FE1F500230F7BE13AAEEB48858B34", hash_generated_method = "BA534C9653084D895D901BCD16036D28")
-    public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.767 -0500", hash_original_method = "CB4FE1F500230F7BE13AAEEB48858B34", hash_generated_method = "BA534C9653084D895D901BCD16036D28")
+    
+public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
         return new DelegatedScheduledExecutorService(executor);
@@ -275,8 +287,9 @@ public class Executors {
      * of the thread created by this factory.
      * @return a thread factory
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.190 -0500", hash_original_method = "B7AE3746CAE0BF4DA70BB99A06CCB766", hash_generated_method = "FF7C731BBAD164B6710B160D5B3024B5")
-    public static ThreadFactory defaultThreadFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.769 -0500", hash_original_method = "B7AE3746CAE0BF4DA70BB99A06CCB766", hash_generated_method = "FF7C731BBAD164B6710B160D5B3024B5")
+    
+public static ThreadFactory defaultThreadFactory() {
         return new DefaultThreadFactory();
     }
 
@@ -312,8 +325,9 @@ public class Executors {
      * context does not have permission to both get and set context
      * class loader.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.190 -0500", hash_original_method = "B9A1CBBC5DC86C417067189200E34377", hash_generated_method = "78C9982FEA6BC9F8BF1266665F95D38E")
-    public static ThreadFactory privilegedThreadFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.771 -0500", hash_original_method = "B9A1CBBC5DC86C417067189200E34377", hash_generated_method = "78C9982FEA6BC9F8BF1266665F95D38E")
+    
+public static ThreadFactory privilegedThreadFactory() {
         return new PrivilegedThreadFactory();
     }
 
@@ -332,8 +346,9 @@ public class Executors {
      * @return a callable object
      * @throws NullPointerException if task null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.192 -0500", hash_original_method = "B54692C5F74502C1CEAE2E6CE0A90F1F", hash_generated_method = "8E843E3A5EF673FDB9702C5AAD91BD00")
-    public static Callable<Object> callable(Runnable task) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.776 -0500", hash_original_method = "B54692C5F74502C1CEAE2E6CE0A90F1F", hash_generated_method = "8E843E3A5EF673FDB9702C5AAD91BD00")
+    
+public static Callable<Object> callable(Runnable task) {
         if (task == null)
             throw new NullPointerException();
         return new RunnableAdapter<Object>(task, null);
@@ -346,8 +361,9 @@ public class Executors {
      * @return a callable object
      * @throws NullPointerException if action null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.194 -0500", hash_original_method = "F6FC70FD2057C587C6268022A75CFBC6", hash_generated_method = "0069F1EAA731D9CB4AE019BB10DF004D")
-    public static Callable<Object> callable(final PrivilegedAction<?> action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.783 -0500", hash_original_method = "F6FC70FD2057C587C6268022A75CFBC6", hash_generated_method = "0069F1EAA731D9CB4AE019BB10DF004D")
+    
+public static Callable<Object> callable(final PrivilegedAction<?> action) {
         if (action == null)
             throw new NullPointerException();
         return new Callable<Object>() {
@@ -362,8 +378,9 @@ public class Executors {
      * @return a callable object
      * @throws NullPointerException if action null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.197 -0500", hash_original_method = "359460025258D9D5DCCDA9E43BB1EDE6", hash_generated_method = "E46C05FBDBDD6F6AACF28A3DBB02B0C1")
-    public static Callable<Object> callable(final PrivilegedExceptionAction<?> action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.788 -0500", hash_original_method = "359460025258D9D5DCCDA9E43BB1EDE6", hash_generated_method = "E46C05FBDBDD6F6AACF28A3DBB02B0C1")
+    
+public static Callable<Object> callable(final PrivilegedExceptionAction<?> action) {
         if (action == null)
             throw new NullPointerException();
         return new Callable<Object>() {
@@ -388,24 +405,27 @@ public class Executors {
 
 
     /** Cannot instantiate. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.254 -0500", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "55D2E894E200221966BF60F73B91F1CC")
-    private Executors() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.947 -0500", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "55D2E894E200221966BF60F73B91F1CC")
+    
+private Executors() {}
 
     
     static final class RunnableAdapter<T> implements Callable<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.199 -0500", hash_original_field = "3B9DB014EA5583311EF52FFA01325C0E", hash_generated_field = "3B9DB014EA5583311EF52FFA01325C0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.797 -0500", hash_original_field = "3B9DB014EA5583311EF52FFA01325C0E", hash_generated_field = "3B9DB014EA5583311EF52FFA01325C0E")
 
          Runnable task;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.200 -0500", hash_original_field = "8B901F4123EF91F350535EEC5A55F787", hash_generated_field = "8B901F4123EF91F350535EEC5A55F787")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.799 -0500", hash_original_field = "8B901F4123EF91F350535EEC5A55F787", hash_generated_field = "8B901F4123EF91F350535EEC5A55F787")
 
          T result;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.201 -0500", hash_original_method = "39BEB710EA675D51CD733BCB993FC74E", hash_generated_method = "39BEB710EA675D51CD733BCB993FC74E")
-        RunnableAdapter(Runnable task, T result) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.801 -0500", hash_original_method = "39BEB710EA675D51CD733BCB993FC74E", hash_generated_method = "39BEB710EA675D51CD733BCB993FC74E")
+        
+RunnableAdapter(Runnable task, T result) {
             this.task = task;
             this.result = result;
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.202 -0500", hash_original_method = "0255C7C18478A7E06F3D7DE61652A41C", hash_generated_method = "1ED27E33BE4D8610214F7F251DDF57E0")
-        public T call() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.804 -0500", hash_original_method = "0255C7C18478A7E06F3D7DE61652A41C", hash_generated_method = "1ED27E33BE4D8610214F7F251DDF57E0")
+        
+public T call() {
             task.run();
             return result;
         }
@@ -416,15 +436,16 @@ public class Executors {
 
     
     static final class PrivilegedCallable<T> implements Callable<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.203 -0500", hash_original_field = "780677264D34CF51811BA7D1F20EC905", hash_generated_field = "CFBF2BD2CA84F7FFF876D42173005A51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.808 -0500", hash_original_field = "780677264D34CF51811BA7D1F20EC905", hash_generated_field = "CFBF2BD2CA84F7FFF876D42173005A51")
 
         private  Callable<T> task;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.204 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.811 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
 
         private  AccessControlContext acc;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.205 -0500", hash_original_method = "12C65A09BA65E906C8B3945E2B4DB442", hash_generated_method = "12C65A09BA65E906C8B3945E2B4DB442")
-        PrivilegedCallable(Callable<T> task) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.815 -0500", hash_original_method = "12C65A09BA65E906C8B3945E2B4DB442", hash_generated_method = "12C65A09BA65E906C8B3945E2B4DB442")
+        
+PrivilegedCallable(Callable<T> task) {
             this.task = task;
             this.acc = AccessController.getContext();
         }
@@ -437,8 +458,9 @@ public class Executors {
             {
 T var8C0E7955A367AA4C5A2C7492B4312867_977516067 =                 AccessController.doPrivileged(
                     new PrivilegedExceptionAction<T>() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.206 -0500", hash_original_method = "2C30E1492126DFE1004B0460419644DD", hash_generated_method = "4464CE67F8386D29E6467A911100C39C")
-                    public T run() throws Exception {
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.818 -0500", hash_original_method = "2C30E1492126DFE1004B0460419644DD", hash_generated_method = "4464CE67F8386D29E6467A911100C39C")
+                    
+public T run() throws Exception {
                             return task.call();
                         }
 }, acc);
@@ -475,18 +497,19 @@ T var8C0E7955A367AA4C5A2C7492B4312867_977516067 =                 AccessControll
 
     
     static final class PrivilegedCallableUsingCurrentClassLoader<T> implements Callable<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.209 -0500", hash_original_field = "780677264D34CF51811BA7D1F20EC905", hash_generated_field = "CFBF2BD2CA84F7FFF876D42173005A51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.826 -0500", hash_original_field = "780677264D34CF51811BA7D1F20EC905", hash_generated_field = "CFBF2BD2CA84F7FFF876D42173005A51")
 
         private  Callable<T> task;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.211 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.828 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
 
         private  AccessControlContext acc;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.211 -0500", hash_original_field = "CE6C80FF459328C5008A9F8AE52A22C6", hash_generated_field = "F0BF273B591E278A790B33F9A1F9CEDB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.831 -0500", hash_original_field = "CE6C80FF459328C5008A9F8AE52A22C6", hash_generated_field = "F0BF273B591E278A790B33F9A1F9CEDB")
 
         private  ClassLoader ccl;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.213 -0500", hash_original_method = "A45AF0A17387712B1B0259CF7D85D2E1", hash_generated_method = "EA5A282813953A9987262FF68D975AD1")
-        PrivilegedCallableUsingCurrentClassLoader(Callable<T> task) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.834 -0500", hash_original_method = "A45AF0A17387712B1B0259CF7D85D2E1", hash_generated_method = "EA5A282813953A9987262FF68D975AD1")
+        
+PrivilegedCallableUsingCurrentClassLoader(Callable<T> task) {
             SecurityManager sm = System.getSecurityManager();
             if (sm != null) {
                 // Calls to getContextClassLoader from this class
@@ -511,8 +534,9 @@ T var8C0E7955A367AA4C5A2C7492B4312867_977516067 =                 AccessControll
             {
 T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessController.doPrivileged(
                     new PrivilegedExceptionAction<T>() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.214 -0500", hash_original_method = "EAF5A8360517EEB3FD91B09A069198A5", hash_generated_method = "A29A67C4510C62A18A915200C80CAF23")
-                    public T run() throws Exception {
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.838 -0500", hash_original_method = "EAF5A8360517EEB3FD91B09A069198A5", hash_generated_method = "A29A67C4510C62A18A915200C80CAF23")
+                    
+public T run() throws Exception {
                             ClassLoader savedcl = null;
                             Thread t = Thread.currentThread();
                             try {
@@ -564,21 +588,22 @@ T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessControll
 
     
     static class DefaultThreadFactory implements ThreadFactory {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.217 -0500", hash_original_field = "A0056246F2A3A019EB9FCA2BF1F518E1", hash_generated_field = "4D1AD706E0B207CD49EDE0FDF77D35E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.845 -0500", hash_original_field = "A0056246F2A3A019EB9FCA2BF1F518E1", hash_generated_field = "4D1AD706E0B207CD49EDE0FDF77D35E3")
 
         private static final AtomicInteger poolNumber = new AtomicInteger(1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.218 -0500", hash_original_field = "33105990A6F540695DACD98BC18B81F7", hash_generated_field = "6F10AD05CE1F57FC2F4A5DF43A505F99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.848 -0500", hash_original_field = "33105990A6F540695DACD98BC18B81F7", hash_generated_field = "6F10AD05CE1F57FC2F4A5DF43A505F99")
 
         private  ThreadGroup group;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.219 -0500", hash_original_field = "ADA893980418D1565C4EC870C7176866", hash_generated_field = "1DD6DDF0F67F2F10AA2E1938FCC29304")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.850 -0500", hash_original_field = "ADA893980418D1565C4EC870C7176866", hash_generated_field = "1DD6DDF0F67F2F10AA2E1938FCC29304")
 
         private final AtomicInteger threadNumber = new AtomicInteger(1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.220 -0500", hash_original_field = "0CFF1478A396C5BC6613DA2AC8C37504", hash_generated_field = "2F76B01D831BB088ADF19AC1319DB54D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.853 -0500", hash_original_field = "0CFF1478A396C5BC6613DA2AC8C37504", hash_generated_field = "2F76B01D831BB088ADF19AC1319DB54D")
 
         private  String namePrefix;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.221 -0500", hash_original_method = "6C4DB34AB218BB8D6524A59E94717A2E", hash_generated_method = "6C4DB34AB218BB8D6524A59E94717A2E")
-        DefaultThreadFactory() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.857 -0500", hash_original_method = "6C4DB34AB218BB8D6524A59E94717A2E", hash_generated_method = "6C4DB34AB218BB8D6524A59E94717A2E")
+        
+DefaultThreadFactory() {
             SecurityManager s = System.getSecurityManager();
             group = (s != null) ? s.getThreadGroup() :
                                   Thread.currentThread().getThreadGroup();
@@ -587,8 +612,9 @@ T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessControll
                          "-thread-";
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.222 -0500", hash_original_method = "FA504429181C673B0F1001408D56C877", hash_generated_method = "CA56EC83A1C3C9C968761B032ADA6C4A")
-        public Thread newThread(Runnable r) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.860 -0500", hash_original_method = "FA504429181C673B0F1001408D56C877", hash_generated_method = "CA56EC83A1C3C9C968761B032ADA6C4A")
+        
+public Thread newThread(Runnable r) {
             Thread t = new Thread(group, r,
                                   namePrefix + threadNumber.getAndIncrement(),
                                   0);
@@ -603,15 +629,16 @@ T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessControll
 
     
     static class PrivilegedThreadFactory extends DefaultThreadFactory {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.223 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.864 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
 
         private  AccessControlContext acc;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.224 -0500", hash_original_field = "CE6C80FF459328C5008A9F8AE52A22C6", hash_generated_field = "F0BF273B591E278A790B33F9A1F9CEDB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.867 -0500", hash_original_field = "CE6C80FF459328C5008A9F8AE52A22C6", hash_generated_field = "F0BF273B591E278A790B33F9A1F9CEDB")
 
         private  ClassLoader ccl;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.226 -0500", hash_original_method = "1637F6F8B2206F80B43C5E6A7CCBC9A4", hash_generated_method = "B8E6825D1EEB42C0F8FEB349B83C6704")
-        PrivilegedThreadFactory() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.870 -0500", hash_original_method = "1637F6F8B2206F80B43C5E6A7CCBC9A4", hash_generated_method = "B8E6825D1EEB42C0F8FEB349B83C6704")
+        
+PrivilegedThreadFactory() {
             super();
             SecurityManager sm = System.getSecurityManager();
             if (sm != null) {
@@ -627,8 +654,9 @@ T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessControll
             this.ccl = Thread.currentThread().getContextClassLoader();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.229 -0500", hash_original_method = "0BB5C6FA3ECC4446695A9AB19E82A9A9", hash_generated_method = "F4714F7F7A9925E5C69E3F074A70A72A")
-        public Thread newThread(final Runnable r) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.879 -0500", hash_original_method = "0BB5C6FA3ECC4446695A9AB19E82A9A9", hash_generated_method = "F4714F7F7A9925E5C69E3F074A70A72A")
+        
+public Thread newThread(final Runnable r) {
             return super.newThread(new Runnable() {
                 public void run() {
                     AccessController.doPrivileged(new PrivilegedAction<Void>() {
@@ -648,28 +676,36 @@ T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessControll
 
     
     static class DelegatedExecutorService extends AbstractExecutorService {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.231 -0500", hash_original_field = "08308C1E09B9F16E16C40112958058EB", hash_generated_field = "11B8F83ADD158AE4ADD1E7AA1252842D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.884 -0500", hash_original_field = "08308C1E09B9F16E16C40112958058EB", hash_generated_field = "11B8F83ADD158AE4ADD1E7AA1252842D")
 
         private  ExecutorService e;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.232 -0500", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "69B8656E71D4B49ACEB9CE44B20A63F5")
-        DelegatedExecutorService(ExecutorService executor) { e = executor; }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.233 -0500", hash_original_method = "680CD1247FE9848C91F828B8B2655AA2", hash_generated_method = "5FF620BA750B9AA4D5060F4389C28B45")
-        public void execute(Runnable command) { e.execute(command); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.233 -0500", hash_original_method = "AC5ABD61901BFC6045B0080105C55DDA", hash_generated_method = "47459E05F3A9A2C970C5C1FE50023241")
-        public void shutdown() { e.shutdown(); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.234 -0500", hash_original_method = "96CCD300667A8693DD62C1833316B3E7", hash_generated_method = "A990C9CB1A96368BDFAA077334BA9CB2")
-        public List<Runnable> shutdownNow() { return e.shutdownNow(); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.235 -0500", hash_original_method = "6953493B1D30A903FCCDB4081BC753C6", hash_generated_method = "3ED36EAA0FDD5A7DA2E3DB880E4255AC")
-        public boolean isShutdown() { return e.isShutdown(); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.236 -0500", hash_original_method = "BA72422211BC216152EB93C851C6051E", hash_generated_method = "431E04F8EFA8337811BFB175053A048A")
-        public boolean isTerminated() { return e.isTerminated(); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.237 -0500", hash_original_method = "7B27D3C16A1D302AD16E181EBB018DAC", hash_generated_method = "73417C1B12A9F316B0A3C9BA038DEE1D")
-        public boolean awaitTermination(long timeout, TimeUnit unit)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.887 -0500", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "69B8656E71D4B49ACEB9CE44B20A63F5")
+        
+DelegatedExecutorService(ExecutorService executor) { e = executor; }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.889 -0500", hash_original_method = "680CD1247FE9848C91F828B8B2655AA2", hash_generated_method = "5FF620BA750B9AA4D5060F4389C28B45")
+        
+public void execute(Runnable command) { e.execute(command); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.892 -0500", hash_original_method = "AC5ABD61901BFC6045B0080105C55DDA", hash_generated_method = "47459E05F3A9A2C970C5C1FE50023241")
+        
+public void shutdown() { e.shutdown(); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.894 -0500", hash_original_method = "96CCD300667A8693DD62C1833316B3E7", hash_generated_method = "A990C9CB1A96368BDFAA077334BA9CB2")
+        
+public List<Runnable> shutdownNow() { return e.shutdownNow(); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.896 -0500", hash_original_method = "6953493B1D30A903FCCDB4081BC753C6", hash_generated_method = "3ED36EAA0FDD5A7DA2E3DB880E4255AC")
+        
+public boolean isShutdown() { return e.isShutdown(); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.898 -0500", hash_original_method = "BA72422211BC216152EB93C851C6051E", hash_generated_method = "431E04F8EFA8337811BFB175053A048A")
+        
+public boolean isTerminated() { return e.isTerminated(); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.902 -0500", hash_original_method = "7B27D3C16A1D302AD16E181EBB018DAC", hash_generated_method = "73417C1B12A9F316B0A3C9BA038DEE1D")
+        
+public boolean awaitTermination(long timeout, TimeUnit unit)
             throws InterruptedException {
             return e.awaitTermination(timeout, unit);
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.238 -0500", hash_original_method = "70A4BA700942918290F358C98B70C3C4", hash_generated_method = "B1E20F9363F4AD28BDBD861F9CB91AD2")
-        public Future<?> submit(Runnable task) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.905 -0500", hash_original_method = "70A4BA700942918290F358C98B70C3C4", hash_generated_method = "B1E20F9363F4AD28BDBD861F9CB91AD2")
+        
+public Future<?> submit(Runnable task) {
             return e.submit(task);
         }
 
@@ -754,12 +790,14 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114 =             e.invokeAny(tasks,
 
     
     static class FinalizableDelegatedExecutorService extends DelegatedExecutorService {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.245 -0500", hash_original_method = "0BC6912A00A2948375A36BA345B953A1", hash_generated_method = "0BC6912A00A2948375A36BA345B953A1")
-        FinalizableDelegatedExecutorService(ExecutorService executor) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.923 -0500", hash_original_method = "0BC6912A00A2948375A36BA345B953A1", hash_generated_method = "0BC6912A00A2948375A36BA345B953A1")
+        
+FinalizableDelegatedExecutorService(ExecutorService executor) {
             super(executor);
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.246 -0500", hash_original_method = "EFBA277C67FEFB15F281D1F7A5118361", hash_generated_method = "EEFE217E73A2E39A61F93BFB37D862D9")
-        protected void finalize() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.925 -0500", hash_original_method = "EFBA277C67FEFB15F281D1F7A5118361", hash_generated_method = "EEFE217E73A2E39A61F93BFB37D862D9")
+        
+protected void finalize() {
             super.shutdown();
         }
 
@@ -769,16 +807,18 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114 =             e.invokeAny(tasks,
 
     
     static class DelegatedScheduledExecutorService extends DelegatedExecutorService implements ScheduledExecutorService {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.248 -0500", hash_original_field = "B6F2D26F7E5AC760D384D7FDFDC2C7DA", hash_generated_field = "3D78CFB93E5EA21FD7B6DC753DB36818")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.930 -0500", hash_original_field = "B6F2D26F7E5AC760D384D7FDFDC2C7DA", hash_generated_field = "3D78CFB93E5EA21FD7B6DC753DB36818")
 
         private  ScheduledExecutorService e;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.249 -0500", hash_original_method = "B9414E1A08721941535D3112D446A4F5", hash_generated_method = "B9414E1A08721941535D3112D446A4F5")
-        DelegatedScheduledExecutorService(ScheduledExecutorService executor) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.933 -0500", hash_original_method = "B9414E1A08721941535D3112D446A4F5", hash_generated_method = "B9414E1A08721941535D3112D446A4F5")
+        
+DelegatedScheduledExecutorService(ScheduledExecutorService executor) {
             super(executor);
             e = executor;
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.249 -0500", hash_original_method = "D790041C21C164D4B5FF50718A4BC1E6", hash_generated_method = "800F163B0A4827257227764561C1138C")
-        public ScheduledFuture<?> schedule(Runnable command, long delay,  TimeUnit unit) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.935 -0500", hash_original_method = "D790041C21C164D4B5FF50718A4BC1E6", hash_generated_method = "800F163B0A4827257227764561C1138C")
+        
+public ScheduledFuture<?> schedule(Runnable command, long delay,  TimeUnit unit) {
             return e.schedule(command, delay, unit);
         }
 
@@ -795,12 +835,14 @@ ScheduledFuture<V> var25477A3DA2D98386CF98CD42AD75D94E_288143507 =             e
             // ---------- Original Method ----------
             //return e.schedule(callable, delay, unit);
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.251 -0500", hash_original_method = "913AC360688F049D7C1CA1D721236AC7", hash_generated_method = "FA48FD12BC63B95A262BD259B0E1DCE7")
-        public ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay,  long period, TimeUnit unit) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.940 -0500", hash_original_method = "913AC360688F049D7C1CA1D721236AC7", hash_generated_method = "FA48FD12BC63B95A262BD259B0E1DCE7")
+        
+public ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay,  long period, TimeUnit unit) {
             return e.scheduleAtFixedRate(command, initialDelay, period, unit);
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.252 -0500", hash_original_method = "6DC4F7F046861AD80936134D3479B23D", hash_generated_method = "18AC7CB4833D2DB4EE9FF9D76BB649E5")
-        public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay,  long delay, TimeUnit unit) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.942 -0500", hash_original_method = "6DC4F7F046861AD80936134D3479B23D", hash_generated_method = "18AC7CB4833D2DB4EE9FF9D76BB649E5")
+        
+public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay,  long delay, TimeUnit unit) {
             return e.scheduleWithFixedDelay(command, initialDelay, delay, unit);
         }
 

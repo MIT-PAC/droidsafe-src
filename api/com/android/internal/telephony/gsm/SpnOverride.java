@@ -25,36 +25,40 @@ import com.android.internal.util.XmlUtils;
 
 
 public class SpnOverride {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.007 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.014 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
 
 
     static final String LOG_TAG = "GSM";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.008 -0500", hash_original_field = "97CFD8EB4FAB8256217AB19827F26F14", hash_generated_field = "571B447F908349646546615F3EBC7F9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.017 -0500", hash_original_field = "97CFD8EB4FAB8256217AB19827F26F14", hash_generated_field = "571B447F908349646546615F3EBC7F9A")
 
     static final String PARTNER_SPN_OVERRIDE_PATH ="etc/spn-conf.xml";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.007 -0500", hash_original_field = "EC94D0246CDDF1BCD1FD8BAF3ED56B03", hash_generated_field = "F996EF25CC658B6424004352EBB9DD6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.012 -0500", hash_original_field = "EC94D0246CDDF1BCD1FD8BAF3ED56B03", hash_generated_field = "F996EF25CC658B6424004352EBB9DD6A")
 
     private HashMap<String, String> CarrierSpnMap;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.009 -0500", hash_original_method = "DBF3481E765E19045BAECAE6F7649C1E", hash_generated_method = "DBF3481E765E19045BAECAE6F7649C1E")
-    SpnOverride () {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.019 -0500", hash_original_method = "DBF3481E765E19045BAECAE6F7649C1E", hash_generated_method = "DBF3481E765E19045BAECAE6F7649C1E")
+    
+SpnOverride () {
         CarrierSpnMap = new HashMap<String, String>();
         loadSpnOverrides();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.010 -0500", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "F9DB25D793978B2E288A45309BFBD20E")
-    boolean containsCarrier(String carrier) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.021 -0500", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "F9DB25D793978B2E288A45309BFBD20E")
+    
+boolean containsCarrier(String carrier) {
         return CarrierSpnMap.containsKey(carrier);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.010 -0500", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "DEBF8ECBE1690451B3CAF7E732385AF7")
-    String getSpn(String carrier) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.023 -0500", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "DEBF8ECBE1690451B3CAF7E732385AF7")
+    
+String getSpn(String carrier) {
         return CarrierSpnMap.get(carrier);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:11.011 -0500", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "A0A0A66152D1527EEC801CBFC57BB3F0")
-    private void loadSpnOverrides() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.026 -0500", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "A0A0A66152D1527EEC801CBFC57BB3F0")
+    
+private void loadSpnOverrides() {
         FileReader spnReader;
 
         final File spnFile = new File(Environment.getRootDirectory(),

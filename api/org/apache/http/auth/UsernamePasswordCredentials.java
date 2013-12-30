@@ -9,11 +9,11 @@ import java.security.Principal;
 import org.apache.http.util.LangUtils;
 
 public class UsernamePasswordCredentials implements Credentials {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.411 -0500", hash_original_field = "F93842AFCA5096FA57DD8770403FD97C", hash_generated_field = "F686C01E11EE32E33613A169940ADF19")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.382 -0500", hash_original_field = "F93842AFCA5096FA57DD8770403FD97C", hash_generated_field = "F686C01E11EE32E33613A169940ADF19")
 
 
     private  BasicUserPrincipal principal;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.411 -0500", hash_original_field = "2AFEDC818D0EF3384B2D2537704E6E21", hash_generated_field = "690A5FCB6F6469C4B045B751039E14AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.384 -0500", hash_original_field = "2AFEDC818D0EF3384B2D2537704E6E21", hash_generated_field = "690A5FCB6F6469C4B045B751039E14AE")
 
     private  String password;
      
@@ -23,8 +23,9 @@ public class UsernamePasswordCredentials implements Credentials {
      * @param usernamePassword the username:password formed string
      * @see #toString
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.412 -0500", hash_original_method = "3728C308DDC1875044F9155978A28028", hash_generated_method = "C572CC27D20A5C8C052D2D08A429D4AA")
-    public UsernamePasswordCredentials(String usernamePassword) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.387 -0500", hash_original_method = "3728C308DDC1875044F9155978A28028", hash_generated_method = "C572CC27D20A5C8C052D2D08A429D4AA")
+    
+public UsernamePasswordCredentials(String usernamePassword) {
         super();
         if (usernamePassword == null) {
             throw new IllegalArgumentException("Username:password string may not be null");            
@@ -46,8 +47,9 @@ public class UsernamePasswordCredentials implements Credentials {
      * @param userName the user name
      * @param password the password
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.413 -0500", hash_original_method = "214A596E68D335B6B76C9680AF9532F2", hash_generated_method = "4FBEE594BDCE02B0031C333C9D820FDC")
-    public UsernamePasswordCredentials(String userName, String password) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.395 -0500", hash_original_method = "214A596E68D335B6B76C9680AF9532F2", hash_generated_method = "4FBEE594BDCE02B0031C333C9D820FDC")
+    
+public UsernamePasswordCredentials(String userName, String password) {
         super();
         if (userName == null) {
             throw new IllegalArgumentException("Username may not be null");            
@@ -56,30 +58,35 @@ public class UsernamePasswordCredentials implements Credentials {
         this.password = password;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.415 -0500", hash_original_method = "BB172E7710F2C6896B8F9EADD44CB225", hash_generated_method = "A41C8FC17036BC805EB11F650E75E163")
-    public Principal getUserPrincipal() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.398 -0500", hash_original_method = "BB172E7710F2C6896B8F9EADD44CB225", hash_generated_method = "A41C8FC17036BC805EB11F650E75E163")
+    
+public Principal getUserPrincipal() {
         return this.principal;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.416 -0500", hash_original_method = "6347097AADB7B31CC60D07DB2FA74ADC", hash_generated_method = "2209C780968F133DA4040FC6ACC8C215")
-    public String getUserName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.400 -0500", hash_original_method = "6347097AADB7B31CC60D07DB2FA74ADC", hash_generated_method = "2209C780968F133DA4040FC6ACC8C215")
+    
+public String getUserName() {
         return this.principal.getName();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.417 -0500", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "3422D16EB2EB2FA3C8F125F717D7CA7E")
-    public String getPassword() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.403 -0500", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "3422D16EB2EB2FA3C8F125F717D7CA7E")
+    
+public String getPassword() {
         return password;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.418 -0500", hash_original_method = "5706D3CF5C9B96E72AB79DF75196B0CC", hash_generated_method = "E9415AC900696208422A480BFD414B4D")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.405 -0500", hash_original_method = "5706D3CF5C9B96E72AB79DF75196B0CC", hash_generated_method = "E9415AC900696208422A480BFD414B4D")
+    
+@Override
+    public int hashCode() {
         return this.principal.hashCode();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.419 -0500", hash_original_method = "A404630EB6A67A8A7586EF96E1D8B3C7", hash_generated_method = "4443CE4BA3F4B8331E98C5D19A3B91E4")
-    @Override
-public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.408 -0500", hash_original_method = "A404630EB6A67A8A7586EF96E1D8B3C7", hash_generated_method = "4443CE4BA3F4B8331E98C5D19A3B91E4")
+    
+@Override
+    public boolean equals(Object o) {
         if (o == null) return false;
         if (this == o) return true;
         if (o instanceof UsernamePasswordCredentials) {
@@ -91,9 +98,10 @@ public boolean equals(Object o) {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.419 -0500", hash_original_method = "55E8D51693AC55264ABFBD18A6F31F91", hash_generated_method = "D39539D32F47AC5C651B46D55227C39D")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.411 -0500", hash_original_method = "55E8D51693AC55264ABFBD18A6F31F91", hash_generated_method = "D39539D32F47AC5C651B46D55227C39D")
+    
+@Override
+    public String toString() {
         return this.principal.toString();
     }
 

@@ -30,59 +30,60 @@ public final class URL implements Serializable {
      * @throws Error if a URLStreamHandlerFactory has already been installed
      *     for the current VM.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.467 -0500", hash_original_method = "E264CD67F28CEB420BDFAF4955BAAC34", hash_generated_method = "D41B6D48B40FB3DCB088E4959FD81241")
-    public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFactory factory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.773 -0500", hash_original_method = "E264CD67F28CEB420BDFAF4955BAAC34", hash_generated_method = "D41B6D48B40FB3DCB088E4959FD81241")
+    
+public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFactory factory) {
         if (streamHandlerFactory != null) {
             throw new Error("Factory already set");
         }
         streamHandlers.clear();
         streamHandlerFactory = factory;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.456 -0500", hash_original_field = "6827AAAC87B591CEC175FEC8C111BA73", hash_generated_field = "8D4046C0B22D26C3D18782292CFAEA41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.739 -0500", hash_original_field = "6827AAAC87B591CEC175FEC8C111BA73", hash_generated_field = "8D4046C0B22D26C3D18782292CFAEA41")
 
     private static final long serialVersionUID = -7627629688361524110L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.457 -0500", hash_original_field = "C1802D278A338655A9B7C39728F4AFD1", hash_generated_field = "7C5EE8C1A882C933CC017CE2A46222A0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.741 -0500", hash_original_field = "C1802D278A338655A9B7C39728F4AFD1", hash_generated_field = "7C5EE8C1A882C933CC017CE2A46222A0")
 
 
     private static URLStreamHandlerFactory streamHandlerFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.458 -0500", hash_original_field = "6456377C042EB67ED985FD40E1A4A79C", hash_generated_field = "16539CC8BECB892A33EEA156DBF8E5B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.744 -0500", hash_original_field = "6456377C042EB67ED985FD40E1A4A79C", hash_generated_field = "16539CC8BECB892A33EEA156DBF8E5B0")
 
     private static final Hashtable<String, URLStreamHandler> streamHandlers
             = new Hashtable<String, URLStreamHandler>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.459 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.747 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
 
 
     private String protocol;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.459 -0500", hash_original_field = "246C0F9F2C0270494BEB2E9C6833888B", hash_generated_field = "AC50B8E8CEC0F955316DE9A8EC0AB5AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.749 -0500", hash_original_field = "246C0F9F2C0270494BEB2E9C6833888B", hash_generated_field = "AC50B8E8CEC0F955316DE9A8EC0AB5AE")
 
     private String authority;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.460 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "6D420698033AD4B037D630A04933A2DD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.752 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "6D420698033AD4B037D630A04933A2DD")
 
     private String host;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.461 -0500", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "F51DF048A4B5B6B4A61A3652544F4757")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.754 -0500", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "F51DF048A4B5B6B4A61A3652544F4757")
 
     private int port = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.462 -0500", hash_original_field = "71FDB50C85529723B422EF50FDC30702", hash_generated_field = "30FC605F61F5025973295CA9594B2C5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.756 -0500", hash_original_field = "71FDB50C85529723B422EF50FDC30702", hash_generated_field = "30FC605F61F5025973295CA9594B2C5A")
 
     private String file;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.463 -0500", hash_original_field = "F33091824EB9F51BA1B1D156BD282F5F", hash_generated_field = "4B296BDB98B3E9CBEDF6971A25928318")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.758 -0500", hash_original_field = "F33091824EB9F51BA1B1D156BD282F5F", hash_generated_field = "4B296BDB98B3E9CBEDF6971A25928318")
 
     private String ref;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.463 -0500", hash_original_field = "10F5F4BA00300524BD223470F05A568F", hash_generated_field = "BED672F8886D4042083406EE52B803AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.761 -0500", hash_original_field = "10F5F4BA00300524BD223470F05A568F", hash_generated_field = "BED672F8886D4042083406EE52B803AE")
 
 
     private transient String userInfo;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.464 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "1E845389D3352EECA0945BADE902EA26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.763 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "1E845389D3352EECA0945BADE902EA26")
 
     private transient String path;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.465 -0500", hash_original_field = "088250EB717186C03CE550061F0A72FD", hash_generated_field = "296DE38AE03D10320738C7EA0F932C4A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.765 -0500", hash_original_field = "088250EB717186C03CE550061F0A72FD", hash_generated_field = "296DE38AE03D10320738C7EA0F932C4A")
 
     private transient String query;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.466 -0500", hash_original_field = "3EC59952C66038F01917A6F0E7AE443B", hash_generated_field = "9DB4BB741418299310AFA5D983E7DA2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.768 -0500", hash_original_field = "3EC59952C66038F01917A6F0E7AE443B", hash_generated_field = "9DB4BB741418299310AFA5D983E7DA2C")
 
 
     transient URLStreamHandler streamHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.467 -0500", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "24254DF41EE7E0D088838123A7BE5D39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.770 -0500", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "24254DF41EE7E0D088838123A7BE5D39")
 
     private transient int hashCode;
 
@@ -92,8 +93,9 @@ public final class URL implements Serializable {
      * @throws MalformedURLException if {@code spec} could not be parsed as a
      *     URL.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.468 -0500", hash_original_method = "121BE8263BD1C356B2FE90A678407E92", hash_generated_method = "957AACC1D575B1FFFB563B71D8404E20")
-    public URL(String spec) throws MalformedURLException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.776 -0500", hash_original_method = "121BE8263BD1C356B2FE90A678407E92", hash_generated_method = "957AACC1D575B1FFFB563B71D8404E20")
+    
+public URL(String spec) throws MalformedURLException {
         this((URL) null, spec, null);
     }
 
@@ -105,8 +107,9 @@ public final class URL implements Serializable {
      * @throws MalformedURLException if {@code spec} could not be parsed as a
      *     URL or has an unsupported protocol.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.469 -0500", hash_original_method = "472053565B13D456EDCEBEA98F287F95", hash_generated_method = "214AF839F51D69EA16CC67A7694133C0")
-    public URL(URL context, String spec) throws MalformedURLException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.779 -0500", hash_original_method = "472053565B13D456EDCEBEA98F287F95", hash_generated_method = "214AF839F51D69EA16CC67A7694133C0")
+    
+public URL(URL context, String spec) throws MalformedURLException {
         this(context, spec, null);
     }
 
@@ -120,8 +123,9 @@ public final class URL implements Serializable {
      * @throws MalformedURLException if the given string {@code spec} could not
      *     be parsed as a URL or an invalid protocol has been found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.471 -0500", hash_original_method = "D8E146F1F2E4ED207D7672129A3654D5", hash_generated_method = "81FB4A355BD0EB1A21C30E10A91F8FA2")
-    public URL(URL context, String spec, URLStreamHandler handler) throws MalformedURLException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.782 -0500", hash_original_method = "D8E146F1F2E4ED207D7672129A3654D5", hash_generated_method = "81FB4A355BD0EB1A21C30E10A91F8FA2")
+    
+public URL(URL context, String spec, URLStreamHandler handler) throws MalformedURLException {
         if (spec == null) {
             throw new MalformedURLException();
         }
@@ -172,8 +176,9 @@ public final class URL implements Serializable {
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.472 -0500", hash_original_method = "216BAC89605FCA377BB0AADBB6E2A8AC", hash_generated_method = "3077633676B6AE40756F1F933FD918E4")
-    public URL(String protocol, String host, String file) throws MalformedURLException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.785 -0500", hash_original_method = "216BAC89605FCA377BB0AADBB6E2A8AC", hash_generated_method = "3077633676B6AE40756F1F933FD918E4")
+    
+public URL(String protocol, String host, String file) throws MalformedURLException {
         this(protocol, host, -1, file, null);
     }
 
@@ -187,8 +192,9 @@ public final class URL implements Serializable {
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.473 -0500", hash_original_method = "9AD76E183D70EDC4767A9EAC128427AE", hash_generated_method = "7F84BB36FF6A492699D9A50DEDC1FED1")
-    public URL(String protocol, String host, int port, String file) throws MalformedURLException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.787 -0500", hash_original_method = "9AD76E183D70EDC4767A9EAC128427AE", hash_generated_method = "7F84BB36FF6A492699D9A50DEDC1FED1")
+    
+public URL(String protocol, String host, int port, String file) throws MalformedURLException {
         this(protocol, host, port, file, null);
     }
 
@@ -204,8 +210,9 @@ public final class URL implements Serializable {
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.474 -0500", hash_original_method = "D56485CA0554FF67A28005CBDB936EDB", hash_generated_method = "43F03066ACCDCA13567DF29511D1C59A")
-    public URL(String protocol, String host, int port, String file,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.791 -0500", hash_original_method = "D56485CA0554FF67A28005CBDB936EDB", hash_generated_method = "43F03066ACCDCA13567DF29511D1C59A")
+    
+public URL(String protocol, String host, int port, String file,
             URLStreamHandler handler) throws MalformedURLException {
         if (port < -1) {
             throw new MalformedURLException("port < -1: " + port);
@@ -249,8 +256,9 @@ public final class URL implements Serializable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.475 -0500", hash_original_method = "0200B051ED19728512FC68E42BCAEC0F", hash_generated_method = "0200B051ED19728512FC68E42BCAEC0F")
-    void fixURL(boolean fixHost) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.793 -0500", hash_original_method = "0200B051ED19728512FC68E42BCAEC0F", hash_generated_method = "0200B051ED19728512FC68E42BCAEC0F")
+    
+void fixURL(boolean fixHost) {
         int index;
         if (host != null && host.length() > 0) {
             authority = host;
@@ -280,8 +288,9 @@ public final class URL implements Serializable {
      * {@code URLStreamHandler} can use this method to set fields of the
      * existing URL instance. A URL is generally constant.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.476 -0500", hash_original_method = "2A0889AB616D5EC9F0D1FFB4406777A2", hash_generated_method = "AC21E5CF7CF0190B72BBA713681621AB")
-    protected void set(String protocol, String host, int port, String file, String ref) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.796 -0500", hash_original_method = "2A0889AB616D5EC9F0D1FFB4406777A2", hash_generated_method = "AC21E5CF7CF0190B72BBA713681621AB")
+    
+protected void set(String protocol, String host, int port, String file, String ref) {
         if (this.protocol == null) {
             this.protocol = protocol;
         }
@@ -321,9 +330,9 @@ public final class URL implements Serializable {
      * that release, URLs are only equal if their host names are equal (ignoring
      * case).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.477 -0500", hash_original_method = "90B240523657DD4FC87B9440FE931EC1", hash_generated_method = "E74F9CB753CD3DB5F05CA87211C5ED9B")
-    @Override
-public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.799 -0500", hash_original_method = "90B240523657DD4FC87B9440FE931EC1", hash_generated_method = "E74F9CB753CD3DB5F05CA87211C5ED9B")
+    
+@Override public boolean equals(Object o) {
         if (o == null) {
             return false;
         }
@@ -340,14 +349,15 @@ public boolean equals(Object o) {
      * Returns true if this URL refers to the same resource as {@code otherURL}.
      * All URL components except the reference field are compared.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.477 -0500", hash_original_method = "0A94C2599C7A34FBFDE0162C017FE126", hash_generated_method = "FA892CC0A5F854B974AF09B0080B2936")
-    public boolean sameFile(URL otherURL) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.801 -0500", hash_original_method = "0A94C2599C7A34FBFDE0162C017FE126", hash_generated_method = "FA892CC0A5F854B974AF09B0080B2936")
+    
+public boolean sameFile(URL otherURL) {
         return streamHandler.sameFile(this, otherURL);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.478 -0500", hash_original_method = "83584D9C6686BC529C911ABE882D39AB", hash_generated_method = "231C6ADC153005536655917E91567525")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.804 -0500", hash_original_method = "83584D9C6686BC529C911ABE882D39AB", hash_generated_method = "231C6ADC153005536655917E91567525")
+    
+@Override public int hashCode() {
         if (hashCode == 0) {
             hashCode = streamHandler.hashCode(this);
         }
@@ -364,8 +374,9 @@ public int hashCode() {
      *
      * @throws MalformedURLException if no reasonable handler is available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.479 -0500", hash_original_method = "7ED1A4A4DB26C9983DC69C2C091F1C50", hash_generated_method = "E036A7AC84D6D8EE280C732DEE29FF50")
-    void setupStreamHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.807 -0500", hash_original_method = "7ED1A4A4DB26C9983DC69C2C091F1C50", hash_generated_method = "E036A7AC84D6D8EE280C732DEE29FF50")
+    
+void setupStreamHandler() {
         // Check for a cached (previously looked up) handler for
         // the requested protocol.
         streamHandler = streamHandlers.get(protocol);
@@ -426,25 +437,28 @@ public int hashCode() {
      * default this returns an {@code InputStream}, or null if the content type
      * of the response is unknown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.480 -0500", hash_original_method = "D20F85DA45DCC6A1B9E0395104EBE2B6", hash_generated_method = "87CD5158EDA208789878ECB26921E749")
-    public final Object getContent() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.809 -0500", hash_original_method = "D20F85DA45DCC6A1B9E0395104EBE2B6", hash_generated_method = "87CD5158EDA208789878ECB26921E749")
+    
+public final Object getContent() throws IOException {
         return openConnection().getContent();
     }
 
     /**
      * Equivalent to {@code openConnection().getContent(types)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.481 -0500", hash_original_method = "D92AC8AC4808B4044341B9D346CCCA3C", hash_generated_method = "2449522D744084AA01B4B412F82BEEE0")
-    @SuppressWarnings("unchecked")
-public final Object getContent(Class[] types) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.811 -0500", hash_original_method = "D92AC8AC4808B4044341B9D346CCCA3C", hash_generated_method = "2449522D744084AA01B4B412F82BEEE0")
+    
+@SuppressWarnings("unchecked") // Param not generic in spec
+    public final Object getContent(Class[] types) throws IOException {
         return openConnection().getContent(types);
     }
 
     /**
      * Equivalent to {@code openConnection().getInputStream(types)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.482 -0500", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "20204A59BCA9CBCE334EE2309DE1C2D7")
-    public final InputStream openStream() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.814 -0500", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "20204A59BCA9CBCE334EE2309DE1C2D7")
+    
+public final InputStream openStream() throws IOException {
         return openConnection().getInputStream();
     }
 
@@ -453,8 +467,9 @@ public final Object getContent(Class[] types) throws IOException {
      *
      * @throws IOException if an error occurs while opening the connection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.483 -0500", hash_original_method = "DDCF57687ACF51357E563F1083DC4261", hash_generated_method = "28C15B77EC7816C10902E4F13397C53B")
-    public URLConnection openConnection() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.817 -0500", hash_original_method = "DDCF57687ACF51357E563F1083DC4261", hash_generated_method = "28C15B77EC7816C10902E4F13397C53B")
+    
+public URLConnection openConnection() throws IOException {
         return streamHandler.openConnection(this);
     }
 
@@ -468,8 +483,9 @@ public final Object getContent(Class[] types) throws IOException {
      * @throws UnsupportedOperationException if the protocol handler does not
      *     support opening connections through proxies.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.483 -0500", hash_original_method = "CB72409718452D46955A0A85FC179645", hash_generated_method = "9FFC82767BCEE2CD44BAA6101C4AB2EB")
-    public URLConnection openConnection(Proxy proxy) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.819 -0500", hash_original_method = "CB72409718452D46955A0A85FC179645", hash_generated_method = "9FFC82767BCEE2CD44BAA6101C4AB2EB")
+    
+public URLConnection openConnection(Proxy proxy) throws IOException {
         if (proxy == null) {
             throw new IllegalArgumentException("proxy == null");
         }
@@ -481,8 +497,9 @@ public final Object getContent(Class[] types) throws IOException {
      *
      * @throws URISyntaxException if this URL cannot be converted into a URI.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.484 -0500", hash_original_method = "1E43ADB2B24E4AEE234C287749830ABE", hash_generated_method = "BF31A384C12F3C95702A05E5A660934A")
-    public URI toURI() throws URISyntaxException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.822 -0500", hash_original_method = "1E43ADB2B24E4AEE234C287749830ABE", hash_generated_method = "BF31A384C12F3C95702A05E5A660934A")
+    
+public URI toURI() throws URISyntaxException {
         return new URI(toExternalForm());
     }
 
@@ -492,8 +509,9 @@ public final Object getContent(Class[] types) throws IOException {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.486 -0500", hash_original_method = "9819CA3EECC28CF10D8C0CAB99E6CDCB", hash_generated_method = "D55A4A5BF8356B88C6FCC1D691E3DDF7")
-    public URI toURILenient() throws URISyntaxException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.824 -0500", hash_original_method = "9819CA3EECC28CF10D8C0CAB99E6CDCB", hash_generated_method = "D55A4A5BF8356B88C6FCC1D691E3DDF7")
+    
+public URI toURILenient() throws URISyntaxException {
         if (streamHandler == null) {
             throw new IllegalStateException(protocol);
         }
@@ -505,9 +523,9 @@ public final Object getContent(Class[] types) throws IOException {
      * this URL. The returned string is the same as the result of the method
      * {@code toExternalForm()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.486 -0500", hash_original_method = "9D75BD75136BEBAB4AE2F806E85803AD", hash_generated_method = "F41EB6D03A99F60D56FE9D7C7FCBDF03")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.827 -0500", hash_original_method = "9D75BD75136BEBAB4AE2F806E85803AD", hash_generated_method = "F41EB6D03A99F60D56FE9D7C7FCBDF03")
+    
+@Override public String toString() {
         return toExternalForm();
     }
 
@@ -531,8 +549,9 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
         //return streamHandler.toExternalForm(this);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.488 -0500", hash_original_method = "75E256B9492C6227D987E1CACFC70E15", hash_generated_method = "D9AF24E0BCDF7E6260DB709F2833ED63")
-    private void readObject(ObjectInputStream stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.832 -0500", hash_original_method = "75E256B9492C6227D987E1CACFC70E15", hash_generated_method = "D9AF24E0BCDF7E6260DB709F2833ED63")
+    
+private void readObject(ObjectInputStream stream) throws IOException {
         try {
             stream.defaultReadObject();
             if (host != null && authority == null) {
@@ -559,14 +578,16 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.489 -0500", hash_original_method = "CCBF13D66B2182AA6C1A2589205C2944", hash_generated_method = "C4FE349242269BA033E70DA693229D12")
-    private void writeObject(ObjectOutputStream s) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.834 -0500", hash_original_method = "CCBF13D66B2182AA6C1A2589205C2944", hash_generated_method = "C4FE349242269BA033E70DA693229D12")
+    
+private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.490 -0500", hash_original_method = "89A7E9DBD8F7AF35FA9A39C4922A8C55", hash_generated_method = "6213020F1E5035EB15F334A843DC1554")
-    public int getEffectivePort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.836 -0500", hash_original_method = "89A7E9DBD8F7AF35FA9A39C4922A8C55", hash_generated_method = "6213020F1E5035EB15F334A843DC1554")
+    
+public int getEffectivePort() {
         return URI.getEffectivePort(protocol, port);
     }
 
@@ -574,8 +595,9 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
      * Returns the protocol of this URL like "http" or "file". This is also
      * known as the scheme. The returned string is lower case.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.491 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "777D707579F7653F7954BDBD83E0BBF8")
-    public String getProtocol() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.839 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "777D707579F7653F7954BDBD83E0BBF8")
+    
+public String getProtocol() {
         return protocol;
     }
 
@@ -583,24 +605,27 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
      * Returns the authority part of this URL, or null if this URL has no
      * authority.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.492 -0500", hash_original_method = "36971585CF0AC7121D34C5DBA5E7B5AD", hash_generated_method = "E75FA61151DC0C76513A5196E9624AC4")
-    public String getAuthority() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.841 -0500", hash_original_method = "36971585CF0AC7121D34C5DBA5E7B5AD", hash_generated_method = "E75FA61151DC0C76513A5196E9624AC4")
+    
+public String getAuthority() {
         return authority;
     }
 
     /**
      * Returns the user info of this URL, or null if this URL has no user info.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.492 -0500", hash_original_method = "C7599F6C2A9D16B1F9E84177D4C93D75", hash_generated_method = "17BDDCE7A19516BB15D091E4C2A176CA")
-    public String getUserInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.844 -0500", hash_original_method = "C7599F6C2A9D16B1F9E84177D4C93D75", hash_generated_method = "17BDDCE7A19516BB15D091E4C2A176CA")
+    
+public String getUserInfo() {
         return userInfo;
     }
 
     /**
      * Returns the host name or IP address of this URL.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.493 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
-    public String getHost() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.846 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
+    
+public String getHost() {
         return host;
     }
 
@@ -611,8 +636,9 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
      * <p>If this URL has no explicit port, connections opened using this URL
      * will use its {@link #getDefaultPort() default port}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.494 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
-    public int getPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.848 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
+    
+public int getPort() {
         return port;
     }
 
@@ -623,32 +649,36 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
      *
      * @see URLStreamHandler#getDefaultPort
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.495 -0500", hash_original_method = "7E7EF83BCD62492BD0A03823F89518D0", hash_generated_method = "0A09D8AE5151E369189C0C7B0C29D562")
-    public int getDefaultPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.851 -0500", hash_original_method = "7E7EF83BCD62492BD0A03823F89518D0", hash_generated_method = "0A09D8AE5151E369189C0C7B0C29D562")
+    
+public int getDefaultPort() {
         return streamHandler.getDefaultPort();
     }
 
     /**
      * Returns the file of this URL.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.495 -0500", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "D8CD1E2528FA75545C0B44B1301B41F0")
-    public String getFile() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.853 -0500", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "D8CD1E2528FA75545C0B44B1301B41F0")
+    
+public String getFile() {
         return file;
     }
 
     /**
      * Returns the path part of this URL.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.496 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
-    public String getPath() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.855 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
+    
+public String getPath() {
         return path;
     }
 
     /**
      * Returns the query part of this URL, or null if this URL has no query.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.497 -0500", hash_original_method = "1E279BC97111B7B33A732EF157351512", hash_generated_method = "2AAA8449DD21269C5BC425219F6CEB5A")
-    public String getQuery() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.857 -0500", hash_original_method = "1E279BC97111B7B33A732EF157351512", hash_generated_method = "2AAA8449DD21269C5BC425219F6CEB5A")
+    
+public String getQuery() {
         return query;
     }
 
@@ -656,8 +686,9 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
      * Returns the value of the reference part of this URL, or null if this URL
      * has no reference part. This is also known as the fragment.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.498 -0500", hash_original_method = "3AAC0179CDFA195C747754E7ED20A392", hash_generated_method = "348A7746E1620891E45DA4B06A2F61A1")
-    public String getRef() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.859 -0500", hash_original_method = "3AAC0179CDFA195C747754E7ED20A392", hash_generated_method = "348A7746E1620891E45DA4B06A2F61A1")
+    
+public String getRef() {
         return ref;
     }
 
@@ -666,8 +697,9 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
      * {@code URLStreamHandler} can use this method to set fields of the
      * existing URL instance. A URL is generally constant.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.499 -0500", hash_original_method = "1BAF8E8ECD99ADEA9022FFFFA6473F49", hash_generated_method = "8FCC00B35BBD4936BCDD3B32C3A18E99")
-    protected void set(String protocol, String host, int port, String authority, String userInfo,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.861 -0500", hash_original_method = "1BAF8E8ECD99ADEA9022FFFFA6473F49", hash_generated_method = "8FCC00B35BBD4936BCDD3B32C3A18E99")
+    
+protected void set(String protocol, String host, int port, String authority, String userInfo,
             String path, String query, String ref) {
         String file = path;
         if (query != null && !query.isEmpty()) {

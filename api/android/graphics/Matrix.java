@@ -350,36 +350,36 @@ public class Matrix {
 		//Formerly a native function
 		//Return nothing
 	}
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.296 -0500", hash_original_field = "397F6C4BE2DD640B9585E93522FF654F", hash_generated_field = "EFA3DBAD301BED225815D2F749817006")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.461 -0500", hash_original_field = "397F6C4BE2DD640B9585E93522FF654F", hash_generated_field = "EFA3DBAD301BED225815D2F749817006")
 
 
     public static final int MSCALE_X = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.297 -0500", hash_original_field = "D8BA06E22D3857EC9F5D5294939E37E2", hash_generated_field = "67EAC113D4E4932D73D3A487643F0FD1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.464 -0500", hash_original_field = "D8BA06E22D3857EC9F5D5294939E37E2", hash_generated_field = "67EAC113D4E4932D73D3A487643F0FD1")
 
     public static final int MSKEW_X  = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.298 -0500", hash_original_field = "6DC0939477C0263C9490EE8154FC5BD1", hash_generated_field = "07E5E1B67F0C9E5278715AAB25E91DAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.466 -0500", hash_original_field = "6DC0939477C0263C9490EE8154FC5BD1", hash_generated_field = "07E5E1B67F0C9E5278715AAB25E91DAB")
 
     public static final int MTRANS_X = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.299 -0500", hash_original_field = "2B35732BD55A3DD3A77625CB5BB2F729", hash_generated_field = "41EBD7259F41631F6876F58AE3C95D05")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.468 -0500", hash_original_field = "2B35732BD55A3DD3A77625CB5BB2F729", hash_generated_field = "41EBD7259F41631F6876F58AE3C95D05")
 
     public static final int MSKEW_Y  = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.300 -0500", hash_original_field = "06A95EC58DA72F86869B1D82485A40A0", hash_generated_field = "27781A2223BB5718506AC48FB1837DB0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.471 -0500", hash_original_field = "06A95EC58DA72F86869B1D82485A40A0", hash_generated_field = "27781A2223BB5718506AC48FB1837DB0")
 
     public static final int MSCALE_Y = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.301 -0500", hash_original_field = "984FA747058BF7EE322A5D2AB3B15B91", hash_generated_field = "43C2504D96C28B177ABC2A96E8E9F767")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.473 -0500", hash_original_field = "984FA747058BF7EE322A5D2AB3B15B91", hash_generated_field = "43C2504D96C28B177ABC2A96E8E9F767")
 
     public static final int MTRANS_Y = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.302 -0500", hash_original_field = "1C4A2F3F0A315431CB378C42988A8AA9", hash_generated_field = "5A7F9B6FF116E340A9248A261942F12B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.475 -0500", hash_original_field = "1C4A2F3F0A315431CB378C42988A8AA9", hash_generated_field = "5A7F9B6FF116E340A9248A261942F12B")
 
     public static final int MPERSP_0 = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.302 -0500", hash_original_field = "4F6AA819731A8266BC8B15F0578DA8AE", hash_generated_field = "4F80C0BDF0D0A262209ADA0919682BD4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.478 -0500", hash_original_field = "4F6AA819731A8266BC8B15F0578DA8AE", hash_generated_field = "4F80C0BDF0D0A262209ADA0919682BD4")
 
     public static final int MPERSP_1 = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.303 -0500", hash_original_field = "8E124C62359AC9F8056E069E958B7FE7", hash_generated_field = "1EF21E44267C42FB84A589D371DA23B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.480 -0500", hash_original_field = "8E124C62359AC9F8056E069E958B7FE7", hash_generated_field = "1EF21E44267C42FB84A589D371DA23B3")
 
     public static final int MPERSP_2 = 8;
     public static Matrix IDENTITY_MATRIX = new Matrix();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.336 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "368FA2DC569BFE75826F8A8AC6BD5246")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.571 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "368FA2DC569BFE75826F8A8AC6BD5246")
 
     public int native_instance;
     
@@ -930,11 +930,12 @@ public class Matrix {
         END     (3);
 
         // the native values must match those in SkMatrix.h 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.363 -0500", hash_original_method = "63FB077414864D6FD8B685EA30FF9871", hash_generated_method = "63FB077414864D6FD8B685EA30FF9871")
-            ScaleToFit(int nativeInt) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.647 -0500", hash_original_method = "63FB077414864D6FD8B685EA30FF9871", hash_generated_method = "63FB077414864D6FD8B685EA30FF9871")
+            
+ScaleToFit(int nativeInt) {
             this.nativeInt = nativeInt;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:55.364 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "6B116C6445FBD920A2653C64D32C9FB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.649 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "6B116C6445FBD920A2653C64D32C9FB3")
 
          int nativeInt;
     }

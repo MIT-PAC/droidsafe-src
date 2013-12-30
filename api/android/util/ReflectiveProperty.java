@@ -14,23 +14,23 @@ import java.lang.reflect.Method;
 
 
 class ReflectiveProperty<T, V> extends Property<T, V> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.200 -0500", hash_original_field = "5F7B571BB99FA76816322B7587147DD0", hash_generated_field = "DCD45C1BFB57F61F4FD82A59CD9038F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.292 -0500", hash_original_field = "5F7B571BB99FA76816322B7587147DD0", hash_generated_field = "DCD45C1BFB57F61F4FD82A59CD9038F7")
 
 
     private static final String PREFIX_GET = "get";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.200 -0500", hash_original_field = "05E81A61077B470225BE76F3EB3480A6", hash_generated_field = "BEF88240E4DBFFAA180B73F2B3351672")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.294 -0500", hash_original_field = "05E81A61077B470225BE76F3EB3480A6", hash_generated_field = "BEF88240E4DBFFAA180B73F2B3351672")
 
     private static final String PREFIX_IS = "is";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.201 -0500", hash_original_field = "9C27731008A7EE1670C9850706BDCE7A", hash_generated_field = "69FF23A6AF0F51D218A18A1112A00C6F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.296 -0500", hash_original_field = "9C27731008A7EE1670C9850706BDCE7A", hash_generated_field = "69FF23A6AF0F51D218A18A1112A00C6F")
 
     private static final String PREFIX_SET = "set";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.202 -0500", hash_original_field = "E0622C3B28C50EA05166B5F3A85164F6", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.298 -0500", hash_original_field = "E0622C3B28C50EA05166B5F3A85164F6", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
 
     private Method mSetter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.203 -0500", hash_original_field = "5E70FC9D82905C760AC172919A2D96FA", hash_generated_field = "6E8EC7297CA45290DB21D59C8AA7D832")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.300 -0500", hash_original_field = "5E70FC9D82905C760AC172919A2D96FA", hash_generated_field = "6E8EC7297CA45290DB21D59C8AA7D832")
 
     private Method mGetter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.204 -0500", hash_original_field = "A36D1E69B2CF857FFEEB155335429AF7", hash_generated_field = "0E3FF9C9FB2909B4EEFAB3A86E1A80E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.302 -0500", hash_original_field = "A36D1E69B2CF857FFEEB155335429AF7", hash_generated_field = "0E3FF9C9FB2909B4EEFAB3A86E1A80E5")
 
     private Field mField;
 
@@ -44,8 +44,9 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
      * "get" and "is to search for the appropriate methods. If the get/is methods are not found,
      * the constructor will search for a field with that exact name.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.205 -0500", hash_original_method = "4D5217EDB6A50C089202283FEC2465A8", hash_generated_method = "2C47B4FF771B11706F9E0B58201D7C3E")
-    public ReflectiveProperty(Class<T> propertyHolder, Class<V> valueType, String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.306 -0500", hash_original_method = "4D5217EDB6A50C089202283FEC2465A8", hash_generated_method = "2C47B4FF771B11706F9E0B58201D7C3E")
+    
+public ReflectiveProperty(Class<T> propertyHolder, Class<V> valueType, String name) {
          // TODO: cache reflection info for each new class/name pair
         super(valueType, name);
         char firstLetter = Character.toUpperCase(name.charAt(0));
@@ -97,8 +98,9 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
      * method/field will probably be a primitive type instead. Accept float as matching Float,
      * etc.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.207 -0500", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "90EE6004B1BC61FC87B465AFC51A1F2D")
-    private boolean typesMatch(Class<V> valueType, Class getterType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.309 -0500", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "90EE6004B1BC61FC87B465AFC51A1F2D")
+    
+private boolean typesMatch(Class<V> valueType, Class getterType) {
         if (getterType != valueType) {
             if (getterType.isPrimitive()) {
                 return (getterType == float.class && valueType == Float.class) ||
@@ -115,9 +117,10 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.208 -0500", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "47F4B9026211DAFB20F708621F748541")
-    @Override
-public void set(T object, V value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.311 -0500", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "47F4B9026211DAFB20F708621F748541")
+    
+@Override
+    public void set(T object, V value) {
         if (mSetter != null) {
             try {
                 mSetter.invoke(object, value);
@@ -137,9 +140,10 @@ public void set(T object, V value) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.209 -0500", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "CFEA08AC56501D6F20CDB2B045F6A76A")
-    @Override
-public V get(T object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.314 -0500", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "CFEA08AC56501D6F20CDB2B045F6A76A")
+    
+@Override
+    public V get(T object) {
         if (mGetter != null) {
             try {
                 return (V) mGetter.invoke(object, (Object[])null);
@@ -162,9 +166,10 @@ public V get(T object) {
     /**
      * Returns false if there is no setter or public field underlying this Property.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.209 -0500", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "50F85749A649DF96EF9573CA722BDC1F")
-    @Override
-public boolean isReadOnly() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.316 -0500", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "50F85749A649DF96EF9573CA722BDC1F")
+    
+@Override
+    public boolean isReadOnly() {
         return (mSetter == null && mField == null);
     }
 }

@@ -28,8 +28,9 @@ public abstract class SAXParserFactory {
      * @exception FactoryConfigurationError never. Included for API
      *     compatibility with other Java implementations.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.720 -0500", hash_original_method = "D6BFF54803293788CC40085FF209ED1E", hash_generated_method = "1BB62AC084791E5596A520819F0C0E7C")
-    public static SAXParserFactory newInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.643 -0500", hash_original_method = "D6BFF54803293788CC40085FF209ED1E", hash_generated_method = "1BB62AC084791E5596A520819F0C0E7C")
+    
+public static SAXParserFactory newInstance() {
         // instantiate the class directly rather than using reflection
         return new SAXParserFactoryImpl();
     }
@@ -41,8 +42,9 @@ public abstract class SAXParserFactory {
      *     instantiated.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.721 -0500", hash_original_method = "4635D9FD80382B0050D4F08EB297A814", hash_generated_method = "E5CC350DF6C6B2A5E3DB57C453569107")
-    public static SAXParserFactory newInstance(String factoryClassName,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.646 -0500", hash_original_method = "4635D9FD80382B0050D4F08EB297A814", hash_generated_method = "E5CC350DF6C6B2A5E3DB57C453569107")
+    
+public static SAXParserFactory newInstance(String factoryClassName,
             ClassLoader classLoader) {
         if (factoryClassName == null) {
             throw new FactoryConfigurationError("factoryClassName == null");
@@ -63,18 +65,19 @@ public abstract class SAXParserFactory {
             throw new FactoryConfigurationError(e);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.717 -0500", hash_original_field = "C056FD2FDA0F7E8A6B7443BDF09FC0F0", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.635 -0500", hash_original_field = "C056FD2FDA0F7E8A6B7443BDF09FC0F0", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")
 
     private boolean validating = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.718 -0500", hash_original_field = "6BDE859F4B3849644ED8212C15F2301D", hash_generated_field = "5485D5F0CEEDFBCE5E10558A9D6EF469")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.637 -0500", hash_original_field = "6BDE859F4B3849644ED8212C15F2301D", hash_generated_field = "5485D5F0CEEDFBCE5E10558A9D6EF469")
 
     private boolean namespaceAware = false;
 
     /**
      * <p>Protected constructor to force use of {@link #newInstance()}.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.719 -0500", hash_original_method = "5B4969E70C1A248827CF399EDBDC2A24", hash_generated_method = "C73DF4EC20E38CBE562282707D25088E")
-    protected SAXParserFactory () {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.641 -0500", hash_original_method = "5B4969E70C1A248827CF399EDBDC2A24", hash_generated_method = "C73DF4EC20E38CBE562282707D25088E")
+    
+protected SAXParserFactory () {
 
     }
 
@@ -89,8 +92,9 @@ public abstract class SAXParserFactory {
      * @exception SAXException for SAX errors.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.721 -0500", hash_original_method = "6A5BE2BD18213305F2D52F18BAB8AB70", hash_generated_method = "CFC46F7C8178EF9FFC1654D051B8FFF3")
-    public abstract SAXParser newSAXParser()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.648 -0500", hash_original_method = "6A5BE2BD18213305F2D52F18BAB8AB70", hash_generated_method = "CFC46F7C8178EF9FFC1654D051B8FFF3")
+    
+public abstract SAXParser newSAXParser()
         throws ParserConfigurationException, SAXException;
 
 
@@ -103,8 +107,9 @@ public abstract class SAXParserFactory {
      *                  provide support for XML namespaces; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.722 -0500", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "4FD13D12045B2E9F47E39E40A44BDDEE")
-    public void setNamespaceAware(boolean awareness) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.651 -0500", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "4FD13D12045B2E9F47E39E40A44BDDEE")
+    
+public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
     }
 
@@ -134,8 +139,9 @@ public abstract class SAXParserFactory {
      *                   validate documents as they are parsed; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.723 -0500", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "20A92CFBF84C6F5D289DA3B1FC978F63")
-    public void setValidating(boolean validating) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.653 -0500", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "20A92CFBF84C6F5D289DA3B1FC978F63")
+    
+public void setValidating(boolean validating) {
         this.validating = validating;
     }
 
@@ -147,8 +153,9 @@ public abstract class SAXParserFactory {
      *         parsers which are namespace aware; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.724 -0500", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "05DE9B7AFEC5AD5DCD1C87ACF69282FD")
-    public boolean isNamespaceAware() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.655 -0500", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "05DE9B7AFEC5AD5DCD1C87ACF69282FD")
+    
+public boolean isNamespaceAware() {
         return namespaceAware;
     }
 
@@ -160,8 +167,9 @@ public abstract class SAXParserFactory {
      *         the XML content during parse; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.724 -0500", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "8FE35D4442248DC57AD51037BE262D1B")
-    public boolean isValidating() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.657 -0500", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "8FE35D4442248DC57AD51037BE262D1B")
+    
+public boolean isValidating() {
         return validating;
     }
 
@@ -202,8 +210,9 @@ public abstract class SAXParserFactory {
      *
      * @see org.xml.sax.XMLReader#setFeature
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.725 -0500", hash_original_method = "520C8619FD9C9B6AF88B265C6938B254", hash_generated_method = "DE080B47328125529352E5F5672BFBBB")
-    public abstract void setFeature(String name, boolean value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.660 -0500", hash_original_method = "520C8619FD9C9B6AF88B265C6938B254", hash_generated_method = "DE080B47328125529352E5F5672BFBBB")
+    
+public abstract void setFeature(String name, boolean value)
         throws ParserConfigurationException, SAXNotRecognizedException,
                 SAXNotSupportedException;
 
@@ -222,8 +231,9 @@ public abstract class SAXParserFactory {
      *
      * @see org.xml.sax.XMLReader#getProperty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.726 -0500", hash_original_method = "DA680BE094D753B5194A0B62EF0B1C28", hash_generated_method = "0EF47D00AFE9E9437E3E7D1C425585AC")
-    public abstract boolean getFeature(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.662 -0500", hash_original_method = "DA680BE094D753B5194A0B62EF0B1C28", hash_generated_method = "0EF47D00AFE9E9437E3E7D1C425585AC")
+    
+public abstract boolean getFeature(String name)
         throws ParserConfigurationException, SAXNotRecognizedException,
                 SAXNotSupportedException;
 
@@ -245,8 +255,9 @@ public abstract class SAXParserFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.727 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
-    public Schema getSchema() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.664 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
+    
+public Schema getSchema() {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -305,8 +316,9 @@ public abstract class SAXParserFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.728 -0500", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "7F4E43F28FCAA4F27CDFFBBB38B303F1")
-    public void setSchema(Schema schema) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.667 -0500", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "7F4E43F28FCAA4F27CDFFBBB38B303F1")
+    
+public void setSchema(Schema schema) {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -335,8 +347,9 @@ public abstract class SAXParserFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.728 -0500", hash_original_method = "7123F2F991682C288B1EB84DFD3ADE3C", hash_generated_method = "E4DD79361E7B88C281F51675955E6730")
-    public void setXIncludeAware(final boolean state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.670 -0500", hash_original_method = "7123F2F991682C288B1EB84DFD3ADE3C", hash_generated_method = "E4DD79361E7B88C281F51675955E6730")
+    
+public void setXIncludeAware(final boolean state) {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -358,8 +371,9 @@ public abstract class SAXParserFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.729 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
-    public boolean isXIncludeAware() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.672 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
+    
+public boolean isXIncludeAware() {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()

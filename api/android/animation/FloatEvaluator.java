@@ -31,8 +31,9 @@ public class FloatEvaluator implements TypeEvaluator<Number> {
      * @return A linear interpolation between the start and end values, given the
      *         <code>fraction</code> parameter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.395 -0500", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "41F7EC398DC90091D42CE2C67E6D63FC")
-    public Float evaluate(float fraction, Number startValue, Number endValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.387 -0500", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "41F7EC398DC90091D42CE2C67E6D63FC")
+    
+public Float evaluate(float fraction, Number startValue, Number endValue) {
         float startFloat = startValue.floatValue();
         return startFloat + fraction * (endValue.floatValue() - startFloat);
     }

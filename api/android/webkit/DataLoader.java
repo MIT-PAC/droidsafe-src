@@ -22,8 +22,9 @@ class DataLoader extends StreamLoader {
      * @param dataUrl data: URL string optionally containing a mimetype
      * @param loadListener LoadListener to pass the content to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.938 -0500", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "973C5174F409BF73FE3F5C468E90899A")
-    DataLoader(String dataUrl, LoadListener loadListener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.244 -0500", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "973C5174F409BF73FE3F5C468E90899A")
+    
+DataLoader(String dataUrl, LoadListener loadListener) {
         super(loadListener);
 
         String url = dataUrl.substring("data:".length());
@@ -45,9 +46,10 @@ class DataLoader extends StreamLoader {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.939 -0500", hash_original_method = "741CD292254249FEBDFDE203F8AC2D5E", hash_generated_method = "A73B364F77DE34AD223121C6605AF5FF")
-    @Override
-protected boolean setupStreamAndSendStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.246 -0500", hash_original_method = "741CD292254249FEBDFDE203F8AC2D5E", hash_generated_method = "A73B364F77DE34AD223121C6605AF5FF")
+    
+@Override
+    protected boolean setupStreamAndSendStatus() {
         if (mDataStream != null) {
             mLoadListener.status(1, 1, 200, "OK");
             return true;
@@ -58,9 +60,10 @@ protected boolean setupStreamAndSendStatus() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.939 -0500", hash_original_method = "2B11D339C271386CE83AD39A9189005C", hash_generated_method = "138E19A88952EC3EA1712D8583B9657B")
-    @Override
-protected void buildHeaders(android.net.http.Headers h) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.248 -0500", hash_original_method = "2B11D339C271386CE83AD39A9189005C", hash_generated_method = "138E19A88952EC3EA1712D8583B9657B")
+    
+@Override
+    protected void buildHeaders(android.net.http.Headers h) {
     }
 
     

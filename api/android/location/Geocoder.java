@@ -25,8 +25,9 @@ public final class Geocoder {
      * connectivity may still cause these methods to return null or
      * empty lists.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.048 -0500", hash_original_method = "C5EE9D72EF131FEA950520687E6D432D", hash_generated_method = "4D141F4B433F72F4C5A0AF9C4C4E06BB")
-    public static boolean isPresent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.059 -0500", hash_original_method = "C5EE9D72EF131FEA950520687E6D432D", hash_generated_method = "4D141F4B433F72F4C5A0AF9C4C4E06BB")
+    
+public static boolean isPresent() {
         IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
         ILocationManager lm = ILocationManager.Stub.asInterface(b);
         try {
@@ -36,14 +37,14 @@ public final class Geocoder {
             return false;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.045 -0500", hash_original_field = "072F1A4A3EFACF2B6A18C72A3A81468A", hash_generated_field = "B31A436DE52E80FF02F1461C2CF60861")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.052 -0500", hash_original_field = "072F1A4A3EFACF2B6A18C72A3A81468A", hash_generated_field = "B31A436DE52E80FF02F1461C2CF60861")
 
     private static final String TAG = "Geocoder";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.046 -0500", hash_original_field = "B22824C6E906376A8FECCCCBCF30506F", hash_generated_field = "CA3AB959F12DEEA21A35F58EC638730B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.054 -0500", hash_original_field = "B22824C6E906376A8FECCCCBCF30506F", hash_generated_field = "CA3AB959F12DEEA21A35F58EC638730B")
 
 
     private GeocoderParams mParams;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.047 -0500", hash_original_field = "50ECBA7D5C5287025A532B86729D1152", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.056 -0500", hash_original_field = "50ECBA7D5C5287025A532B86729D1152", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
 
     private ILocationManager mService;
 
@@ -56,8 +57,9 @@ public final class Geocoder {
      *
      * @throws NullPointerException if Locale is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.049 -0500", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "1C36BBE9907E4DB6EC9677D2355EAD8B")
-    public Geocoder(Context context, Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.063 -0500", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "1C36BBE9907E4DB6EC9677D2355EAD8B")
+    
+public Geocoder(Context context, Locale locale) {
         if (locale == null) {
             throw new NullPointerException("locale == null");
         }
@@ -72,8 +74,9 @@ public final class Geocoder {
      *
      * @param context the Context of the calling Activity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.050 -0500", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "28778F0E116D3FCD4F6F5F892496788F")
-    public Geocoder(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.065 -0500", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "28778F0E116D3FCD4F6F5F892496788F")
+    
+public Geocoder(Context context) {
         this(context, Locale.getDefault());
     }
 
@@ -102,8 +105,9 @@ public final class Geocoder {
      * @throws IOException if the network is unavailable or any other
      * I/O problem occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.051 -0500", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "457A8E4836C67CBA625FDDB93C2539DD")
-    public List<Address> getFromLocation(double latitude, double longitude, int maxResults)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.068 -0500", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "457A8E4836C67CBA625FDDB93C2539DD")
+    
+public List<Address> getFromLocation(double latitude, double longitude, int maxResults)
         throws IOException {
         if (latitude < -90.0 || latitude > 90.0) {
             throw new IllegalArgumentException("latitude == " + latitude);
@@ -149,8 +153,9 @@ public final class Geocoder {
      * @throws IOException if the network is unavailable or any other
      * I/O problem occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.052 -0500", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "6C17B046873F8D38E071B5695D8A1BD9")
-    public List<Address> getFromLocationName(String locationName, int maxResults) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.070 -0500", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "6C17B046873F8D38E071B5695D8A1BD9")
+    
+public List<Address> getFromLocationName(String locationName, int maxResults) throws IOException {
         if (locationName == null) {
             throw new IllegalArgumentException("locationName == null");
         }
@@ -204,8 +209,9 @@ public final class Geocoder {
      * @throws IOException if the network is unavailable or any other
      * I/O problem occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.053 -0500", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "0B1DBFCDA45AB3795CE5CC65B4E634BC")
-    public List<Address> getFromLocationName(String locationName, int maxResults,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.073 -0500", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "0B1DBFCDA45AB3795CE5CC65B4E634BC")
+    
+public List<Address> getFromLocationName(String locationName, int maxResults,
         double lowerLeftLatitude, double lowerLeftLongitude,
         double upperRightLatitude, double upperRightLongitude) throws IOException {
         if (locationName == null) {

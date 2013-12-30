@@ -18,22 +18,22 @@ import javax.net.ssl.SSLProtocolException;
 
 
 public class ConnectionStateSSLv3 extends ConnectionState {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.372 -0500", hash_original_field = "4E8A5D540F861204E8032EC19BEBF1B2", hash_generated_field = "FCEAD5705B5DC9FB1937BC2FCBBCA9AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.980 -0500", hash_original_field = "4E8A5D540F861204E8032EC19BEBF1B2", hash_generated_field = "FCEAD5705B5DC9FB1937BC2FCBBCA9AF")
 
     private  MessageDigest messageDigest;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.373 -0500", hash_original_field = "03ABC585FF3E189597CE9D84DD36BBBA", hash_generated_field = "52F0A7E7FB8F697BA2DBD34D808EE930")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.982 -0500", hash_original_field = "03ABC585FF3E189597CE9D84DD36BBBA", hash_generated_field = "52F0A7E7FB8F697BA2DBD34D808EE930")
 
     private  byte[] mac_write_secret;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.373 -0500", hash_original_field = "C677F0C0D78B9C8A57EB564574FE7AA2", hash_generated_field = "8761BC41F67E290D2E4C5002A6776D51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.984 -0500", hash_original_field = "C677F0C0D78B9C8A57EB564574FE7AA2", hash_generated_field = "8761BC41F67E290D2E4C5002A6776D51")
 
     private  byte[] mac_read_secret;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.374 -0500", hash_original_field = "6AFD6D646359D2316AE189459311B1D0", hash_generated_field = "F7AB63294607944F603CC7ED7CDCFB7E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.987 -0500", hash_original_field = "6AFD6D646359D2316AE189459311B1D0", hash_generated_field = "F7AB63294607944F603CC7ED7CDCFB7E")
 
     private  byte[] pad_1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.375 -0500", hash_original_field = "05E909E2D0446AE7025C102AD82B8116", hash_generated_field = "BB8A0D4D3287636E4CC9DC82B8FCDD50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.989 -0500", hash_original_field = "05E909E2D0446AE7025C102AD82B8116", hash_generated_field = "BB8A0D4D3287636E4CC9DC82B8FCDD50")
 
     private  byte[] pad_2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.376 -0500", hash_original_field = "E7BD2645D7456572A31ED10DC03653E7", hash_generated_field = "5D85A0ED992BC70830B26009DA56A82F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.992 -0500", hash_original_field = "E7BD2645D7456572A31ED10DC03653E7", hash_generated_field = "5D85A0ED992BC70830B26009DA56A82F")
 
     // length of 3 == 1(SSLCompressed.type) + 2(SSLCompressed.length)
     // (more on SSLv3 MAC computation and payload protection see
@@ -49,8 +49,9 @@ public class ConnectionStateSSLv3 extends ConnectionState {
      * to the SSL v3 Protocol specification.
      * (http://www.mozilla.org/projects/security/pki/nss/ssl/draft302.txt)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.378 -0500", hash_original_method = "1B482CA9527A6F5074105168D7DF9619", hash_generated_method = "73AA028CE3FAAE6C1391FDD4E75C022F")
-    protected ConnectionStateSSLv3(SSLSessionImpl session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.997 -0500", hash_original_method = "1B482CA9527A6F5074105168D7DF9619", hash_generated_method = "73AA028CE3FAAE6C1391FDD4E75C022F")
+    
+protected ConnectionStateSSLv3(SSLSessionImpl session) {
         try {
             CipherSuite cipherSuite = session.cipherSuite;
 
@@ -217,9 +218,10 @@ public class ConnectionStateSSLv3 extends ConnectionState {
      * data structure for specified data of specified type.
      * @throws AlertException if alert was occurred.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.379 -0500", hash_original_method = "3F84D57F957CA4DCEBAF95364A0886D3", hash_generated_method = "0E8AC2BD0EC1AA0C121FCD5C79498A68")
-    @Override
-protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.001 -0500", hash_original_method = "3F84D57F957CA4DCEBAF95364A0886D3", hash_generated_method = "0E8AC2BD0EC1AA0C121FCD5C79498A68")
+    
+@Override
+    protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {
         try {
             int content_mac_length = len + hash_size;
             int padding_length = (block_size == 0) ? 0 : getPaddingSize(++content_mac_length);
@@ -278,9 +280,10 @@ protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {
      * the specified type from the provided data.
      * @throws AlertException if alert was occured.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.380 -0500", hash_original_method = "227FECEA7131D056EF18EE2E9369B9A1", hash_generated_method = "459DC1330B09FE06A09C222972E31D1D")
-    @Override
-protected byte[] decrypt(byte type, byte[] fragment,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.005 -0500", hash_original_method = "227FECEA7131D056EF18EE2E9369B9A1", hash_generated_method = "459DC1330B09FE06A09C222972E31D1D")
+    
+@Override
+    protected byte[] decrypt(byte type, byte[] fragment,
             int offset, int len) {
         // plain data of the Generic[Stream|Block]Cipher structure
         byte[] data = decCipher.update(fragment, offset, len);
@@ -345,9 +348,10 @@ protected byte[] decrypt(byte type, byte[] fragment,
      * Shutdown the protocol. It will be impossible to use the instance
      * after the calling of this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:09.381 -0500", hash_original_method = "193A05B6A3D6926494D4F0030FC865D1", hash_generated_method = "6B6E8ECDD5832732E8CAB74DA3C4FFDC")
-    @Override
-protected void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.007 -0500", hash_original_method = "193A05B6A3D6926494D4F0030FC865D1", hash_generated_method = "6B6E8ECDD5832732E8CAB74DA3C4FFDC")
+    
+@Override
+    protected void shutdown() {
         Arrays.fill(mac_write_secret, (byte) 0);
         Arrays.fill(mac_read_secret, (byte) 0);
         super.shutdown();

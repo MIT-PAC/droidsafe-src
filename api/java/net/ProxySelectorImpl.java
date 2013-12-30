@@ -21,22 +21,23 @@ final class ProxySelectorImpl extends ProxySelector {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.182 -0500", hash_original_method = "01DD13242757A7D8F74EE28AFD708C0E", hash_generated_method = "29F5815229612DB09221659BF1CB04F8")
-    @Override
-public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.995 -0500", hash_original_method = "01DD13242757A7D8F74EE28AFD708C0E", hash_generated_method = "29F5815229612DB09221659BF1CB04F8")
+    
+@Override public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
         if (uri == null || sa == null || ioe == null) {
             throw new IllegalArgumentException();
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.183 -0500", hash_original_method = "28B2C18C3900BEE8EC547F5A9EDC2C1E", hash_generated_method = "0086B5916FE0EC6FFE52559BB1010243")
-    @Override
-public List<Proxy> select(URI uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.998 -0500", hash_original_method = "28B2C18C3900BEE8EC547F5A9EDC2C1E", hash_generated_method = "0086B5916FE0EC6FFE52559BB1010243")
+    
+@Override public List<Proxy> select(URI uri) {
         return Collections.singletonList(selectOneProxy(uri));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.184 -0500", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "7640B91C4AE1E7CA290561CF6C521451")
-    private Proxy selectOneProxy(URI uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.001 -0500", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "7640B91C4AE1E7CA290561CF6C521451")
+    
+private Proxy selectOneProxy(URI uri) {
         if (uri == null) {
             throw new IllegalArgumentException("uri == null");
         }
@@ -95,8 +96,9 @@ public List<Proxy> select(URI uri) {
      * Returns the proxy identified by the {@code hostKey} system property, or
      * null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.184 -0500", hash_original_method = "8F772B362E14FE9459180F7871735648", hash_generated_method = "AD25A71DB3851E559376F63DE86C3D72")
-    private Proxy lookupProxy(String hostKey, String portKey, Proxy.Type type, int defaultPort) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.004 -0500", hash_original_method = "8F772B362E14FE9459180F7871735648", hash_generated_method = "AD25A71DB3851E559376F63DE86C3D72")
+    
+private Proxy lookupProxy(String hostKey, String portKey, Proxy.Type type, int defaultPort) {
         String host = System.getProperty(hostKey);
         if (host == null || host.isEmpty()) {
             return null;
@@ -106,8 +108,9 @@ public List<Proxy> select(URI uri) {
         return new Proxy(type, InetSocketAddress.createUnresolved(host, port));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.186 -0500", hash_original_method = "36E6CCC8C23DA7DA61B6599903A6840E", hash_generated_method = "23945B701BD4BAFEBC1AAC7FD98B1F9B")
-    private int getSystemPropertyInt(String key, int defaultValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.006 -0500", hash_original_method = "36E6CCC8C23DA7DA61B6599903A6840E", hash_generated_method = "23945B701BD4BAFEBC1AAC7FD98B1F9B")
+    
+private int getSystemPropertyInt(String key, int defaultValue) {
         String string = System.getProperty(key);
         if (string != null) {
             try {
@@ -122,8 +125,9 @@ public List<Proxy> select(URI uri) {
      * Returns true if the {@code nonProxyHosts} system property pattern exists
      * and matches {@code host}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.187 -0500", hash_original_method = "960A16929DB84D35FDCE84F421A041D1", hash_generated_method = "503A06BA5841F983D60CFB19779F5660")
-    private boolean isNonProxyHost(String host, String nonProxyHosts) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.009 -0500", hash_original_method = "960A16929DB84D35FDCE84F421A041D1", hash_generated_method = "503A06BA5841F983D60CFB19779F5660")
+    
+private boolean isNonProxyHost(String host, String nonProxyHosts) {
         if (host == null || nonProxyHosts == null) {
             return false;
         }

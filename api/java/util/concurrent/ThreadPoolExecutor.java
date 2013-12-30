@@ -22,87 +22,93 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ThreadPoolExecutor extends AbstractExecutorService {
 
     // Packing and unpacking ctl
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.544 -0500", hash_original_method = "35D20B7433D8164BEFED9190D6BE2329", hash_generated_method = "C62077775D699E39D0F9E2FD3271FE98")
-    private static int runStateOf(int c)     { return c & ~CAPACITY; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.545 -0500", hash_original_method = "621333305A7F85CE314303492213D34F", hash_generated_method = "3F6DB8D2AF9BE83CFB6E6678E2245387")
-    private static int workerCountOf(int c)  { return c & CAPACITY; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.546 -0500", hash_original_method = "12A3626063CD1D901A2F97DB97430792", hash_generated_method = "EDD0F382D13688A2B100EBA36802BC87")
-    private static int ctlOf(int rs, int wc) { return rs | wc; }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.735 -0500", hash_original_method = "35D20B7433D8164BEFED9190D6BE2329", hash_generated_method = "C62077775D699E39D0F9E2FD3271FE98")
+    
+private static int runStateOf(int c)     { return c & ~CAPACITY; }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.737 -0500", hash_original_method = "621333305A7F85CE314303492213D34F", hash_generated_method = "3F6DB8D2AF9BE83CFB6E6678E2245387")
+    
+private static int workerCountOf(int c)  { return c & CAPACITY; }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.739 -0500", hash_original_method = "12A3626063CD1D901A2F97DB97430792", hash_generated_method = "EDD0F382D13688A2B100EBA36802BC87")
+    
+private static int ctlOf(int rs, int wc) { return rs | wc; }
 
     /*
      * Bit field accessors that don't require unpacking ctl.
      * These depend on the bit layout and on workerCount being never negative.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.546 -0500", hash_original_method = "FA1A16BC6D47806587415BDA14DAC745", hash_generated_method = "EF0039E40E3F50A7A9E85DC0443D2F01")
-    private static boolean runStateLessThan(int c, int s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.742 -0500", hash_original_method = "FA1A16BC6D47806587415BDA14DAC745", hash_generated_method = "EF0039E40E3F50A7A9E85DC0443D2F01")
+    
+private static boolean runStateLessThan(int c, int s) {
         return c < s;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.547 -0500", hash_original_method = "493C1CFFB986457DAF9A40F53248A6E5", hash_generated_method = "C40DB75C4C0E5D690D3B22605714AAB8")
-    private static boolean runStateAtLeast(int c, int s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.744 -0500", hash_original_method = "493C1CFFB986457DAF9A40F53248A6E5", hash_generated_method = "C40DB75C4C0E5D690D3B22605714AAB8")
+    
+private static boolean runStateAtLeast(int c, int s) {
         return c >= s;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.548 -0500", hash_original_method = "11B81231945C57BFAFCA8253946950FE", hash_generated_method = "E45AF9BEAE37D18E69403B2D0717B63D")
-    private static boolean isRunning(int c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.747 -0500", hash_original_method = "11B81231945C57BFAFCA8253946950FE", hash_generated_method = "E45AF9BEAE37D18E69403B2D0717B63D")
+    
+private static boolean isRunning(int c) {
         return c < SHUTDOWN;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.537 -0500", hash_original_field = "46A7855766445EEA31AC6E9AA1885C81", hash_generated_field = "C674AAE591A4C2A6EB2F67EA80F2DE13")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.716 -0500", hash_original_field = "46A7855766445EEA31AC6E9AA1885C81", hash_generated_field = "C674AAE591A4C2A6EB2F67EA80F2DE13")
 
     private static final int COUNT_BITS = Integer.SIZE - 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.538 -0500", hash_original_field = "3DDAF28887BD84F1FB1E767C94D0C00F", hash_generated_field = "CF878CE62C328436BA99760DFF82027D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.718 -0500", hash_original_field = "3DDAF28887BD84F1FB1E767C94D0C00F", hash_generated_field = "CF878CE62C328436BA99760DFF82027D")
 
     private static final int CAPACITY   = (1 << COUNT_BITS) - 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.539 -0500", hash_original_field = "2B77831FFA1DEB46C429FB95C6863DEA", hash_generated_field = "CAC5C6E1B12A6971FDAEB64BF4F42B8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.720 -0500", hash_original_field = "2B77831FFA1DEB46C429FB95C6863DEA", hash_generated_field = "CAC5C6E1B12A6971FDAEB64BF4F42B8A")
 
     private static final int RUNNING    = -1 << COUNT_BITS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.540 -0500", hash_original_field = "758015A6039747D3220C91652026D30C", hash_generated_field = "88B12340C5E9ABC6D057CFECE99CB6E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.723 -0500", hash_original_field = "758015A6039747D3220C91652026D30C", hash_generated_field = "88B12340C5E9ABC6D057CFECE99CB6E3")
 
     private static final int SHUTDOWN   =  0 << COUNT_BITS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.541 -0500", hash_original_field = "8B5BF3F96513845991C47ABD96E5ADD0", hash_generated_field = "6E7F0CA66443C48AA2015EE41BE176B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.726 -0500", hash_original_field = "8B5BF3F96513845991C47ABD96E5ADD0", hash_generated_field = "6E7F0CA66443C48AA2015EE41BE176B0")
 
     private static final int STOP       =  1 << COUNT_BITS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.542 -0500", hash_original_field = "7447B3A1BE7DA4DDA8DAA2F2C6D47F84", hash_generated_field = "8F8DF3A5844AACE6D200E7F78FE2ADD1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.729 -0500", hash_original_field = "7447B3A1BE7DA4DDA8DAA2F2C6D47F84", hash_generated_field = "8F8DF3A5844AACE6D200E7F78FE2ADD1")
 
     private static final int TIDYING    =  2 << COUNT_BITS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.543 -0500", hash_original_field = "DB8B9FC999B6867C6FE7ECE4C75A118A", hash_generated_field = "0385C889A493B24F4B17131E67614BDD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.732 -0500", hash_original_field = "DB8B9FC999B6867C6FE7ECE4C75A118A", hash_generated_field = "0385C889A493B24F4B17131E67614BDD")
 
     private static final int TERMINATED =  3 << COUNT_BITS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.562 -0500", hash_original_field = "C59EDCBD3E114494FE18B92911DDD893", hash_generated_field = "D9AB1E8CC26AED3D197149D01E447734")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.786 -0500", hash_original_field = "C59EDCBD3E114494FE18B92911DDD893", hash_generated_field = "D9AB1E8CC26AED3D197149D01E447734")
 
     private static final RejectedExecutionHandler defaultHandler =
         new AbortPolicy();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.563 -0500", hash_original_field = "10EA9498027ED2B9040F7A8B92766FA9", hash_generated_field = "EE8D52406DBEBB0DDE00DE5ED1AF90DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.789 -0500", hash_original_field = "10EA9498027ED2B9040F7A8B92766FA9", hash_generated_field = "EE8D52406DBEBB0DDE00DE5ED1AF90DE")
 
     private static final RuntimePermission shutdownPerm =
         new RuntimePermission("modifyThread");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.582 -0500", hash_original_field = "82401C7F6200660BA43CA3DBEF610143", hash_generated_field = "5E955A6108BE148E09061102B5987F21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.842 -0500", hash_original_field = "82401C7F6200660BA43CA3DBEF610143", hash_generated_field = "5E955A6108BE148E09061102B5987F21")
 
 
     private static final boolean ONLY_ONE = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.536 -0500", hash_original_field = "47A0112F27709D9F9A3E6781A2A69466", hash_generated_field = "1E5D76E2038757171D1F1EFB86BB7B2D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.713 -0500", hash_original_field = "47A0112F27709D9F9A3E6781A2A69466", hash_generated_field = "1E5D76E2038757171D1F1EFB86BB7B2D")
 
     private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.551 -0500", hash_original_field = "849AB5511BC7FD6E728352C811B70F87", hash_generated_field = "9E38919357211CC9BEEC80B9F9218347")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.757 -0500", hash_original_field = "849AB5511BC7FD6E728352C811B70F87", hash_generated_field = "9E38919357211CC9BEEC80B9F9218347")
 
     private  BlockingQueue<Runnable> workQueue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.552 -0500", hash_original_field = "12CDED7703FC54D2A7C74C123BBC938C", hash_generated_field = "7B35E916BB35C7F976B4653697B4DA98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.759 -0500", hash_original_field = "12CDED7703FC54D2A7C74C123BBC938C", hash_generated_field = "7B35E916BB35C7F976B4653697B4DA98")
 
     private final ReentrantLock mainLock = new ReentrantLock();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.553 -0500", hash_original_field = "99747DA95E879B9F3F2A722C12440494", hash_generated_field = "EB2024D5E063C0CD7389C2261AC46D0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.762 -0500", hash_original_field = "99747DA95E879B9F3F2A722C12440494", hash_generated_field = "EB2024D5E063C0CD7389C2261AC46D0A")
 
     private final HashSet<Worker> workers = new HashSet<Worker>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.554 -0500", hash_original_field = "5D0522D7445E571293BF35BBFB35AA25", hash_generated_field = "2C20C5A8E5FB5CFA430FBF7CD68E16F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.764 -0500", hash_original_field = "5D0522D7445E571293BF35BBFB35AA25", hash_generated_field = "2C20C5A8E5FB5CFA430FBF7CD68E16F8")
 
     private final Condition termination = mainLock.newCondition();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.555 -0500", hash_original_field = "65C26B129128D47CCD8E3C1D0852D246", hash_generated_field = "121D2FE9A0E8A1127142F5163851FF7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.766 -0500", hash_original_field = "65C26B129128D47CCD8E3C1D0852D246", hash_generated_field = "121D2FE9A0E8A1127142F5163851FF7A")
 
     private int largestPoolSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.556 -0500", hash_original_field = "92317A4B8DF8C60B4D8B6A352D6F3E95", hash_generated_field = "35D6F2A97FA4C37D9711DD0E18037068")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.768 -0500", hash_original_field = "92317A4B8DF8C60B4D8B6A352D6F3E95", hash_generated_field = "35D6F2A97FA4C37D9711DD0E18037068")
 
     private long completedTaskCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.557 -0500", hash_original_field = "234E41C0185E0FF5F9C803B6B6AE98E4", hash_generated_field = "1F1AFD5975EE552B0F00CAFC9A7F03AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.771 -0500", hash_original_field = "234E41C0185E0FF5F9C803B6B6AE98E4", hash_generated_field = "1F1AFD5975EE552B0F00CAFC9A7F03AF")
 
 
     /**
@@ -118,19 +124,19 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * within this class.
      */
     private volatile ThreadFactory threadFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.558 -0500", hash_original_field = "526F7874C3CE5EE98FC3A4FD08F7EF88", hash_generated_field = "A77EE44F4E847B2CFCF9F9BFF9F8D340")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.774 -0500", hash_original_field = "526F7874C3CE5EE98FC3A4FD08F7EF88", hash_generated_field = "A77EE44F4E847B2CFCF9F9BFF9F8D340")
 
     private volatile RejectedExecutionHandler handler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.559 -0500", hash_original_field = "627D3F83C5435C435C76467D2F2153F2", hash_generated_field = "1EC333D36EC5007BBF0C2C3B15635A7F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.776 -0500", hash_original_field = "627D3F83C5435C435C76467D2F2153F2", hash_generated_field = "1EC333D36EC5007BBF0C2C3B15635A7F")
 
     private volatile long keepAliveTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.560 -0500", hash_original_field = "1907B75DCE6E9F2BB1C9513A89A6CFF1", hash_generated_field = "E539670BC9790CFFAAC6CA7187FC01F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.779 -0500", hash_original_field = "1907B75DCE6E9F2BB1C9513A89A6CFF1", hash_generated_field = "E539670BC9790CFFAAC6CA7187FC01F4")
 
     private volatile boolean allowCoreThreadTimeOut;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.561 -0500", hash_original_field = "306BEEB389498B83B3BCB1E140EB0A21", hash_generated_field = "FAC62E0577D05948399014C56DA3CCEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.781 -0500", hash_original_field = "306BEEB389498B83B3BCB1E140EB0A21", hash_generated_field = "FAC62E0577D05948399014C56DA3CCEB")
 
     private volatile int corePoolSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.561 -0500", hash_original_field = "4B16EEAF3FF035610FEA03E77A0A9BE0", hash_generated_field = "6C06C7B0806878AD4FB9956F328CBE28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.784 -0500", hash_original_field = "4B16EEAF3FF035610FEA03E77A0A9BE0", hash_generated_field = "6C06C7B0806878AD4FB9956F328CBE28")
 
     private volatile int maximumPoolSize;
 
@@ -160,8 +166,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *         {@code maximumPoolSize < corePoolSize}
      * @throws NullPointerException if {@code workQueue} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.592 -0500", hash_original_method = "6852B7239AD6D12F00F6FD31EAEE07F2", hash_generated_method = "4E2CD7E5651138D0F58893BF252ED460")
-    public ThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.869 -0500", hash_original_method = "6852B7239AD6D12F00F6FD31EAEE07F2", hash_generated_method = "4E2CD7E5651138D0F58893BF252ED460")
+    
+public ThreadPoolExecutor(int corePoolSize,
                               int maximumPoolSize,
                               long keepAliveTime,
                               TimeUnit unit,
@@ -195,8 +202,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @throws NullPointerException if {@code workQueue}
      *         or {@code threadFactory} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.593 -0500", hash_original_method = "472CB7CD686E5ED3EB32346C564DBF00", hash_generated_method = "84605A73D25D02739CD88A6A5A91E213")
-    public ThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.872 -0500", hash_original_method = "472CB7CD686E5ED3EB32346C564DBF00", hash_generated_method = "84605A73D25D02739CD88A6A5A91E213")
+    
+public ThreadPoolExecutor(int corePoolSize,
                               int maximumPoolSize,
                               long keepAliveTime,
                               TimeUnit unit,
@@ -231,8 +239,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @throws NullPointerException if {@code workQueue}
      *         or {@code handler} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.594 -0500", hash_original_method = "13BA0DF22A91EC098F651B146B1F0D91", hash_generated_method = "88C33B77218947A333B43FCF3CE52DE8")
-    public ThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.875 -0500", hash_original_method = "13BA0DF22A91EC098F651B146B1F0D91", hash_generated_method = "88C33B77218947A333B43FCF3CE52DE8")
+    
+public ThreadPoolExecutor(int corePoolSize,
                               int maximumPoolSize,
                               long keepAliveTime,
                               TimeUnit unit,
@@ -269,8 +278,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @throws NullPointerException if {@code workQueue}
      *         or {@code threadFactory} or {@code handler} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.595 -0500", hash_original_method = "7927F5CAD81FDA69C812A57334363D0A", hash_generated_method = "8CC14A50EDA24A2FCDF593BC1CE45EE1")
-    public ThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.878 -0500", hash_original_method = "7927F5CAD81FDA69C812A57334363D0A", hash_generated_method = "8CC14A50EDA24A2FCDF593BC1CE45EE1")
+    
+public ThreadPoolExecutor(int corePoolSize,
                               int maximumPoolSize,
                               long keepAliveTime,
                               TimeUnit unit,
@@ -295,16 +305,18 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     /**
      * Attempt to CAS-increment the workerCount field of ctl.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.549 -0500", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "872FD7AB81551DE312B06EA4051E8884")
-    private boolean compareAndIncrementWorkerCount(int expect) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.749 -0500", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "872FD7AB81551DE312B06EA4051E8884")
+    
+private boolean compareAndIncrementWorkerCount(int expect) {
         return ctl.compareAndSet(expect, expect + 1);
     }
 
     /**
      * Attempt to CAS-decrement the workerCount field of ctl.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.550 -0500", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "FEFD3AEF3C654851B345F063F22ACBC3")
-    private boolean compareAndDecrementWorkerCount(int expect) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.752 -0500", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "FEFD3AEF3C654851B345F063F22ACBC3")
+    
+private boolean compareAndDecrementWorkerCount(int expect) {
         return ctl.compareAndSet(expect, expect - 1);
     }
 
@@ -313,8 +325,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * abrupt termination of a thread (see processWorkerExit). Other
      * decrements are performed within getTask.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.550 -0500", hash_original_method = "197D64850896CFE44F6E60A0B666E58B", hash_generated_method = "F00E3657FFB8F9C7912B58DBEFE4BBFC")
-    private void decrementWorkerCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.754 -0500", hash_original_method = "197D64850896CFE44F6E60A0B666E58B", hash_generated_method = "F00E3657FFB8F9C7912B58DBEFE4BBFC")
+    
+private void decrementWorkerCount() {
         do {} while (! compareAndDecrementWorkerCount(ctl.get()));
     }
 
@@ -329,8 +342,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @param targetState the desired state, either SHUTDOWN or STOP
      *        (but not TIDYING or TERMINATED -- use tryTerminate for that)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.576 -0500", hash_original_method = "F2BE86117A689CA9DA89AB2ED7F58DB7", hash_generated_method = "E1182E4C8DB3BFB454EEDED9F23B5D39")
-    private void advanceRunState(int targetState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.827 -0500", hash_original_method = "F2BE86117A689CA9DA89AB2ED7F58DB7", hash_generated_method = "E1182E4C8DB3BFB454EEDED9F23B5D39")
+    
+private void advanceRunState(int targetState) {
         for (;;) {
             int c = ctl.get();
             if (runStateAtLeast(c, targetState) ||
@@ -349,8 +363,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * from the queue during shutdown. The method is non-private to
      * allow access from ScheduledThreadPoolExecutor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.577 -0500", hash_original_method = "80042B52D4C8A465DC8857956BEE8BCA", hash_generated_method = "36E83D420586B9E8BCB225354E372599")
-    final void tryTerminate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.829 -0500", hash_original_method = "80042B52D4C8A465DC8857956BEE8BCA", hash_generated_method = "36E83D420586B9E8BCB225354E372599")
+    
+final void tryTerminate() {
         for (;;) {
             int c = ctl.get();
             if (isRunning(c) ||
@@ -393,8 +408,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * first check passed, if the SecurityManager treats some threads
      * specially.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.578 -0500", hash_original_method = "AA36F499694835EB802B188BC7C59A14", hash_generated_method = "8953162C6AA68B916C25F394B240BDD3")
-    private void checkShutdownAccess() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.832 -0500", hash_original_method = "AA36F499694835EB802B188BC7C59A14", hash_generated_method = "8953162C6AA68B916C25F394B240BDD3")
+    
+private void checkShutdownAccess() {
         SecurityManager security = System.getSecurityManager();
         if (security != null) {
             security.checkPermission(shutdownPerm);
@@ -413,8 +429,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * Interrupts all threads, even if active. Ignores SecurityExceptions
      * (in which case some threads may remain uninterrupted).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.579 -0500", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "8228DE1580FEA319BE05259C1022DB6D")
-    private void interruptWorkers() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.835 -0500", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "8228DE1580FEA319BE05259C1022DB6D")
+    
+private void interruptWorkers() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -448,8 +465,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * idle workers so that redundant workers exit promptly, not
      * waiting for a straggler task to finish.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.580 -0500", hash_original_method = "C11819B67BF410300D59BD8104FE87A4", hash_generated_method = "D3F6BF35A48C5972FADA3B21B628784E")
-    private void interruptIdleWorkers(boolean onlyOne) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.837 -0500", hash_original_method = "C11819B67BF410300D59BD8104FE87A4", hash_generated_method = "D3F6BF35A48C5972FADA3B21B628784E")
+    
+private void interruptIdleWorkers(boolean onlyOne) {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -475,8 +493,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * Common form of interruptIdleWorkers, to avoid having to
      * remember what the boolean argument means.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.581 -0500", hash_original_method = "8AE0F2FE6E5901DBE1EC6FD71BA67D3B", hash_generated_method = "DE0ACFAA30DC2A8294B564425F69097F")
-    private void interruptIdleWorkers() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.840 -0500", hash_original_method = "8AE0F2FE6E5901DBE1EC6FD71BA67D3B", hash_generated_method = "DE0ACFAA30DC2A8294B564425F69097F")
+    
+private void interruptIdleWorkers() {
         interruptIdleWorkers(false);
     }
 
@@ -486,8 +505,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * of state in case the interrupt was cleared concurrently with a
      * shutdownNow -- if so, the interrupt is re-enabled.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.583 -0500", hash_original_method = "41D1BD0CB95E0A52108020867995148C", hash_generated_method = "7A4B3DC99CABF4731A85D90FA89CB1F3")
-    private void clearInterruptsForTaskRun() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.845 -0500", hash_original_method = "41D1BD0CB95E0A52108020867995148C", hash_generated_method = "7A4B3DC99CABF4731A85D90FA89CB1F3")
+    
+private void clearInterruptsForTaskRun() {
         if (runStateLessThan(ctl.get(), STOP) &&
             Thread.interrupted() &&
             runStateAtLeast(ctl.get(), STOP))
@@ -503,8 +523,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * Invokes the rejected execution handler for the given command.
      * Package-protected for use by ScheduledThreadPoolExecutor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.584 -0500", hash_original_method = "DBD2AA47670972F837B77D54B6813996", hash_generated_method = "F9D97FC80731E757B1F78DAFBBD554EA")
-    final void reject(Runnable command) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.847 -0500", hash_original_method = "DBD2AA47670972F837B77D54B6813996", hash_generated_method = "F9D97FC80731E757B1F78DAFBBD554EA")
+    
+final void reject(Runnable command) {
         handler.rejectedExecution(command, this);
     }
 
@@ -513,8 +534,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * invocation of shutdown.  A no-op here, but used by
      * ScheduledThreadPoolExecutor to cancel delayed tasks.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.585 -0500", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "0A1F69177689475EC5D7889C7292052F")
-    void onShutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.849 -0500", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "0A1F69177689475EC5D7889C7292052F")
+    
+void onShutdown() {
     }
 
     /**
@@ -523,8 +545,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @param shutdownOK true if should return true if SHUTDOWN
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.586 -0500", hash_original_method = "270A029E5D11891F0D07089698FD1A31", hash_generated_method = "8E8F4677D82BD84A63C391BB76BDF7E8")
-    final boolean isRunningOrShutdown(boolean shutdownOK) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.852 -0500", hash_original_method = "270A029E5D11891F0D07089698FD1A31", hash_generated_method = "8E8F4677D82BD84A63C391BB76BDF7E8")
+    
+final boolean isRunningOrShutdown(boolean shutdownOK) {
         int rs = runStateOf(ctl.get());
         return rs == RUNNING || (rs == SHUTDOWN && shutdownOK);
     }
@@ -535,8 +558,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * queue for which poll or drainTo may fail to remove some
      * elements, it deletes them one by one.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.587 -0500", hash_original_method = "4695ACF3E76D112BC6AF0E9543CB0BFB", hash_generated_method = "26219DFEC35E0FC3E1128B7D5373CEE0")
-    private List<Runnable> drainQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.854 -0500", hash_original_method = "4695ACF3E76D112BC6AF0E9543CB0BFB", hash_generated_method = "26219DFEC35E0FC3E1128B7D5373CEE0")
+    
+private List<Runnable> drainQueue() {
         BlockingQueue<Runnable> q = workQueue;
         List<Runnable> taskList = new ArrayList<Runnable>();
         q.drainTo(taskList);
@@ -578,8 +602,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * state).
      * @return true if successful
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.588 -0500", hash_original_method = "7812A944CC6B2EE743043503F380EB35", hash_generated_method = "0E8D7F2E1F7528C3F12D33E967E2B234")
-    private boolean addWorker(Runnable firstTask, boolean core) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.857 -0500", hash_original_method = "7812A944CC6B2EE743043503F380EB35", hash_generated_method = "0E8D7F2E1F7528C3F12D33E967E2B234")
+    
+private boolean addWorker(Runnable firstTask, boolean core) {
         retry:
         for (;;) {
             int c = ctl.get();
@@ -661,8 +686,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @param w the worker
      * @param completedAbruptly if the worker died due to user exception
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.589 -0500", hash_original_method = "98853BED73C436EB42A5D4B84EE5AAA8", hash_generated_method = "59D06008122C7C6A54BC83DA16FFA3E1")
-    private void processWorkerExit(Worker w, boolean completedAbruptly) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.861 -0500", hash_original_method = "98853BED73C436EB42A5D4B84EE5AAA8", hash_generated_method = "59D06008122C7C6A54BC83DA16FFA3E1")
+    
+private void processWorkerExit(Worker w, boolean completedAbruptly) {
         if (completedAbruptly) // If abrupt, then workerCount wasn't adjusted
             decrementWorkerCount();
 
@@ -706,8 +732,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @return task, or null if the worker must exit, in which case
      *         workerCount is decremented
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.590 -0500", hash_original_method = "CCE5E762047CA277EB153A60A9218EEF", hash_generated_method = "920140A9E7C575584C31E2FFF98FEAC4")
-    private Runnable getTask() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.864 -0500", hash_original_method = "CCE5E762047CA277EB153A60A9218EEF", hash_generated_method = "920140A9E7C575584C31E2FFF98FEAC4")
+    
+private Runnable getTask() {
         boolean timedOut = false; // Did the last poll() time out?
 
         retry:
@@ -793,8 +820,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @param w the worker
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.591 -0500", hash_original_method = "55359692B6793E8A8B1383DAA231ACAC", hash_generated_method = "F7C149BFBB01A4F53FCD11FC96FCE6DE")
-    final void runWorker(Worker w) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.867 -0500", hash_original_method = "55359692B6793E8A8B1383DAA231ACAC", hash_generated_method = "F7C149BFBB01A4F53FCD11FC96FCE6DE")
+    
+final void runWorker(Worker w) {
         Runnable task = w.firstTask;
         w.firstTask = null;
         boolean completedAbruptly = true;
@@ -842,8 +870,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *         cannot be accepted for execution
      * @throws NullPointerException if {@code command} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.596 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
-    public void execute(Runnable command) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.881 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
+    
+public void execute(Runnable command) {
         if (command == null)
             throw new NullPointerException();
         /*
@@ -894,8 +923,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @throws SecurityException {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.597 -0500", hash_original_method = "B2E77DE3594C1CCAEA14C26F5B572C39", hash_generated_method = "A6FA5A4736D01AF06261A4017AE2C456")
-    public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.884 -0500", hash_original_method = "B2E77DE3594C1CCAEA14C26F5B572C39", hash_generated_method = "A6FA5A4736D01AF06261A4017AE2C456")
+    
+public void shutdown() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -926,8 +956,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @throws SecurityException {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.598 -0500", hash_original_method = "D65CB76EC87687B7E50B9EEFFDD4C298", hash_generated_method = "0B105F0D7B3C003781CFF00F947B8982")
-    public List<Runnable> shutdownNow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.886 -0500", hash_original_method = "D65CB76EC87687B7E50B9EEFFDD4C298", hash_generated_method = "0B105F0D7B3C003781CFF00F947B8982")
+    
+public List<Runnable> shutdownNow() {
         List<Runnable> tasks;
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
@@ -943,8 +974,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         return tasks;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.598 -0500", hash_original_method = "968CAF504B3356CA71CED595275477F9", hash_generated_method = "1542BBFFA0EB9F56281F65599B489EEF")
-    public boolean isShutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.888 -0500", hash_original_method = "968CAF504B3356CA71CED595275477F9", hash_generated_method = "1542BBFFA0EB9F56281F65599B489EEF")
+    
+public boolean isShutdown() {
         return ! isRunning(ctl.get());
     }
 
@@ -959,19 +991,22 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return true if terminating but not yet terminated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.599 -0500", hash_original_method = "1B50F454F3FDC6963CA79768BA657116", hash_generated_method = "12E22D5A6AD32EA95167B56E6F0AAD3C")
-    public boolean isTerminating() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.891 -0500", hash_original_method = "1B50F454F3FDC6963CA79768BA657116", hash_generated_method = "12E22D5A6AD32EA95167B56E6F0AAD3C")
+    
+public boolean isTerminating() {
         int c = ctl.get();
         return ! isRunning(c) && runStateLessThan(c, TERMINATED);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.601 -0500", hash_original_method = "9F60EBE4EAB8D07AF1E9485C91ACF37E", hash_generated_method = "E44E30C4F70F99496C0D30A48D61809E")
-    public boolean isTerminated() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.893 -0500", hash_original_method = "9F60EBE4EAB8D07AF1E9485C91ACF37E", hash_generated_method = "E44E30C4F70F99496C0D30A48D61809E")
+    
+public boolean isTerminated() {
         return runStateAtLeast(ctl.get(), TERMINATED);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.601 -0500", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "285C3A629BCBC28461A60C9C13908699")
-    public boolean awaitTermination(long timeout, TimeUnit unit)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.896 -0500", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "285C3A629BCBC28461A60C9C13908699")
+    
+public boolean awaitTermination(long timeout, TimeUnit unit)
         throws InterruptedException {
         long nanos = unit.toNanos(timeout);
         final ReentrantLock mainLock = this.mainLock;
@@ -993,8 +1028,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * Invokes {@code shutdown} when this executor is no longer
      * referenced and it has no threads.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.602 -0500", hash_original_method = "54A2A12810CC337A284FDAF9A692A515", hash_generated_method = "E6F7EFDBBE10373B82F72016B4042D49")
-    protected void finalize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.898 -0500", hash_original_method = "54A2A12810CC337A284FDAF9A692A515", hash_generated_method = "E6F7EFDBBE10373B82F72016B4042D49")
+    
+protected void finalize() {
         shutdown();
     }
 
@@ -1005,8 +1041,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @throws NullPointerException if threadFactory is null
      * @see #getThreadFactory
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.603 -0500", hash_original_method = "59E32FCC6E49B2109079BB0F3E4FFE2B", hash_generated_method = "3234BF1E36593507FB72C9C5CD1AC0AC")
-    public void setThreadFactory(ThreadFactory threadFactory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.900 -0500", hash_original_method = "59E32FCC6E49B2109079BB0F3E4FFE2B", hash_generated_method = "3234BF1E36593507FB72C9C5CD1AC0AC")
+    
+public void setThreadFactory(ThreadFactory threadFactory) {
         if (threadFactory == null)
             throw new NullPointerException();
         this.threadFactory = threadFactory;
@@ -1018,8 +1055,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @return the current thread factory
      * @see #setThreadFactory
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.604 -0500", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "30129EE5743E9693C3CFDD056D29B834")
-    public ThreadFactory getThreadFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.902 -0500", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "30129EE5743E9693C3CFDD056D29B834")
+    
+public ThreadFactory getThreadFactory() {
         return threadFactory;
     }
 
@@ -1030,8 +1068,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @throws NullPointerException if handler is null
      * @see #getRejectedExecutionHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.605 -0500", hash_original_method = "7F03D06860A87C46B9897C91E7329182", hash_generated_method = "7A95060BBB0F804072F429E17D0AACF0")
-    public void setRejectedExecutionHandler(RejectedExecutionHandler handler) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.905 -0500", hash_original_method = "7F03D06860A87C46B9897C91E7329182", hash_generated_method = "7A95060BBB0F804072F429E17D0AACF0")
+    
+public void setRejectedExecutionHandler(RejectedExecutionHandler handler) {
         if (handler == null)
             throw new NullPointerException();
         this.handler = handler;
@@ -1043,8 +1082,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @return the current handler
      * @see #setRejectedExecutionHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.606 -0500", hash_original_method = "6DBE484B7F2A61BE5C5EC698F3E381D8", hash_generated_method = "05DF94FCA807DAA656D9F8646B69E05A")
-    public RejectedExecutionHandler getRejectedExecutionHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.907 -0500", hash_original_method = "6DBE484B7F2A61BE5C5EC698F3E381D8", hash_generated_method = "05DF94FCA807DAA656D9F8646B69E05A")
+    
+public RejectedExecutionHandler getRejectedExecutionHandler() {
         return handler;
     }
 
@@ -1059,8 +1099,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @see #getCorePoolSize
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.607 -0500", hash_original_method = "753479E48A5DF49EEF8BAF55BE437F30", hash_generated_method = "35E782E97A04DC3DF8DD8A86CE8F1899")
-    public void setCorePoolSize(int corePoolSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.910 -0500", hash_original_method = "753479E48A5DF49EEF8BAF55BE437F30", hash_generated_method = "35E782E97A04DC3DF8DD8A86CE8F1899")
+    
+public void setCorePoolSize(int corePoolSize) {
         if (corePoolSize < 0)
             throw new IllegalArgumentException();
         int delta = corePoolSize - this.corePoolSize;
@@ -1086,8 +1127,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @return the core number of threads
      * @see #setCorePoolSize
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.608 -0500", hash_original_method = "51C354BC1AFFD9D1E19ED52BB81EBE2C", hash_generated_method = "593101FECA5A37A2780DA36A67788FD2")
-    public int getCorePoolSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.913 -0500", hash_original_method = "51C354BC1AFFD9D1E19ED52BB81EBE2C", hash_generated_method = "593101FECA5A37A2780DA36A67788FD2")
+    
+public int getCorePoolSize() {
         return corePoolSize;
     }
 
@@ -1099,8 +1141,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return {@code true} if a thread was started
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.609 -0500", hash_original_method = "C3B1E657CEA1E5B0B9267C982B6F89C3", hash_generated_method = "C1F9D4E9513130FA34B6CF41191763FE")
-    public boolean prestartCoreThread() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.916 -0500", hash_original_method = "C3B1E657CEA1E5B0B9267C982B6F89C3", hash_generated_method = "C1F9D4E9513130FA34B6CF41191763FE")
+    
+public boolean prestartCoreThread() {
         return workerCountOf(ctl.get()) < corePoolSize &&
             addWorker(null, true);
     }
@@ -1112,8 +1155,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the number of threads started
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.609 -0500", hash_original_method = "BD3CEF4F9337B2BC7C235E398D43BE2A", hash_generated_method = "AEC1C8C7C09A3C195FC2992BF8B6587C")
-    public int prestartAllCoreThreads() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.918 -0500", hash_original_method = "BD3CEF4F9337B2BC7C235E398D43BE2A", hash_generated_method = "AEC1C8C7C09A3C195FC2992BF8B6587C")
+    
+public int prestartAllCoreThreads() {
         int n = 0;
         while (addWorker(null, true))
             ++n;
@@ -1133,8 +1177,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.610 -0500", hash_original_method = "B47D14DD952D3505364B334F55BDAD78", hash_generated_method = "010165353A43B510E9FC39273C78378A")
-    public boolean allowsCoreThreadTimeOut() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.921 -0500", hash_original_method = "B47D14DD952D3505364B334F55BDAD78", hash_generated_method = "010165353A43B510E9FC39273C78378A")
+    
+public boolean allowsCoreThreadTimeOut() {
         return allowCoreThreadTimeOut;
     }
 
@@ -1155,8 +1200,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.611 -0500", hash_original_method = "3CB040DA26A3A7AB5E245CC61764B17D", hash_generated_method = "A0B4D13229D5C1C12C48A6D2CA2CEBE7")
-    public void allowCoreThreadTimeOut(boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.923 -0500", hash_original_method = "3CB040DA26A3A7AB5E245CC61764B17D", hash_generated_method = "A0B4D13229D5C1C12C48A6D2CA2CEBE7")
+    
+public void allowCoreThreadTimeOut(boolean value) {
         if (value && keepAliveTime <= 0)
             throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
         if (value != allowCoreThreadTimeOut) {
@@ -1178,8 +1224,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *         less than the {@linkplain #getCorePoolSize core pool size}
      * @see #getMaximumPoolSize
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.612 -0500", hash_original_method = "21349012A93D2851376CF1101665B5CB", hash_generated_method = "7424A50BC6A7904E47A7A9F745BE1E2C")
-    public void setMaximumPoolSize(int maximumPoolSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.925 -0500", hash_original_method = "21349012A93D2851376CF1101665B5CB", hash_generated_method = "7424A50BC6A7904E47A7A9F745BE1E2C")
+    
+public void setMaximumPoolSize(int maximumPoolSize) {
         if (maximumPoolSize <= 0 || maximumPoolSize < corePoolSize)
             throw new IllegalArgumentException();
         this.maximumPoolSize = maximumPoolSize;
@@ -1193,8 +1240,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @return the maximum allowed number of threads
      * @see #setMaximumPoolSize
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.613 -0500", hash_original_method = "4164BA9A7B4677354D8831E6C94ADF71", hash_generated_method = "EA2CE6B40A470AF6F220E23AED2A72FC")
-    public int getMaximumPoolSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.928 -0500", hash_original_method = "4164BA9A7B4677354D8831E6C94ADF71", hash_generated_method = "EA2CE6B40A470AF6F220E23AED2A72FC")
+    
+public int getMaximumPoolSize() {
         return maximumPoolSize;
     }
 
@@ -1212,8 +1260,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *         if {@code time} is zero and {@code allowsCoreThreadTimeOut}
      * @see #getKeepAliveTime
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.614 -0500", hash_original_method = "863FC09A28296060918F86FB184DF489", hash_generated_method = "7FEF1FA184A8041A7BA1683A88D427DF")
-    public void setKeepAliveTime(long time, TimeUnit unit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.930 -0500", hash_original_method = "863FC09A28296060918F86FB184DF489", hash_generated_method = "7FEF1FA184A8041A7BA1683A88D427DF")
+    
+public void setKeepAliveTime(long time, TimeUnit unit) {
         if (time < 0)
             throw new IllegalArgumentException();
         if (time == 0 && allowsCoreThreadTimeOut())
@@ -1234,8 +1283,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @return the time limit
      * @see #setKeepAliveTime
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.615 -0500", hash_original_method = "DF59E7D78F54A4D1FBC20C042F5F1838", hash_generated_method = "7BD6FA669BE9CFDB5A7D0F050500A270")
-    public long getKeepAliveTime(TimeUnit unit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.933 -0500", hash_original_method = "DF59E7D78F54A4D1FBC20C042F5F1838", hash_generated_method = "7BD6FA669BE9CFDB5A7D0F050500A270")
+    
+public long getKeepAliveTime(TimeUnit unit) {
         return unit.convert(keepAliveTime, TimeUnit.NANOSECONDS);
     }
 
@@ -1249,8 +1299,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the task queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.615 -0500", hash_original_method = "BD8FCC0E1F95E7B090761BC333422796", hash_generated_method = "8F070FBBE71142D169CD39DD42909AB1")
-    public BlockingQueue<Runnable> getQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.935 -0500", hash_original_method = "BD8FCC0E1F95E7B090761BC333422796", hash_generated_method = "8F070FBBE71142D169CD39DD42909AB1")
+    
+public BlockingQueue<Runnable> getQueue() {
         return workQueue;
     }
 
@@ -1270,8 +1321,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @param task the task to remove
      * @return true if the task was removed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.616 -0500", hash_original_method = "79BF7D79C72AB53C9D385B8F29AB696D", hash_generated_method = "D3CC93BB4DBD07F46B86AB7121E4A5CD")
-    public boolean remove(Runnable task) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.937 -0500", hash_original_method = "79BF7D79C72AB53C9D385B8F29AB696D", hash_generated_method = "D3CC93BB4DBD07F46B86AB7121E4A5CD")
+    
+public boolean remove(Runnable task) {
         boolean removed = workQueue.remove(task);
         tryTerminate(); // In case SHUTDOWN and now empty
         return removed;
@@ -1279,16 +1331,16 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
 
     
     private final class Worker extends AbstractQueuedSynchronizer implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.565 -0500", hash_original_field = "28CFFFBF9ED4131A00FB4CB2F87B96BE", hash_generated_field = "F8F6CAECCAD1418C4C9E71235F2C474E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.793 -0500", hash_original_field = "28CFFFBF9ED4131A00FB4CB2F87B96BE", hash_generated_field = "F8F6CAECCAD1418C4C9E71235F2C474E")
 
         private static final long serialVersionUID = 6138294804551838833L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.565 -0500", hash_original_field = "AB87C4F6E5547EBD7483F34732EA576D", hash_generated_field = "AB87C4F6E5547EBD7483F34732EA576D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.795 -0500", hash_original_field = "AB87C4F6E5547EBD7483F34732EA576D", hash_generated_field = "AB87C4F6E5547EBD7483F34732EA576D")
 
          Thread thread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.566 -0500", hash_original_field = "52D2DAE86CEE20DA5D093E6C8E8D890A", hash_generated_field = "52D2DAE86CEE20DA5D093E6C8E8D890A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.798 -0500", hash_original_field = "52D2DAE86CEE20DA5D093E6C8E8D890A", hash_generated_field = "52D2DAE86CEE20DA5D093E6C8E8D890A")
 
         Runnable firstTask;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.567 -0500", hash_original_field = "7550A4CBD687D4AAE53F4F7D1D4A8245", hash_generated_field = "A27B0F0FE609EB920C0300ECD3CAA2E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.800 -0500", hash_original_field = "7550A4CBD687D4AAE53F4F7D1D4A8245", hash_generated_field = "A27B0F0FE609EB920C0300ECD3CAA2E3")
 
         volatile long completedTasks;
 
@@ -1296,15 +1348,17 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * Creates with given first task and thread from ThreadFactory.
          * @param firstTask the first task (null if none)
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.568 -0500", hash_original_method = "8E628C9261C64BEE296D97D919DD4FB9", hash_generated_method = "8E628C9261C64BEE296D97D919DD4FB9")
-        Worker(Runnable firstTask) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.803 -0500", hash_original_method = "8E628C9261C64BEE296D97D919DD4FB9", hash_generated_method = "8E628C9261C64BEE296D97D919DD4FB9")
+        
+Worker(Runnable firstTask) {
             this.firstTask = firstTask;
             this.thread = getThreadFactory().newThread(this);
         }
 
         /** Delegates main run loop to outer runWorker  */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.569 -0500", hash_original_method = "776DC8B2F80D9EC817EF7446A13B40B9", hash_generated_method = "4413017770EF1F180329D38AA6620E55")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.805 -0500", hash_original_method = "776DC8B2F80D9EC817EF7446A13B40B9", hash_generated_method = "4413017770EF1F180329D38AA6620E55")
+        
+public void run() {
             runWorker(this);
         }
 
@@ -1313,13 +1367,15 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         // The value 0 represents the unlocked state.
         // The value 1 represents the locked state.
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.570 -0500", hash_original_method = "C9E6BAFAC050F423C4392C73A0972F98", hash_generated_method = "DDF4F99A50E656D7D99BCCADF07C5E58")
-        protected boolean isHeldExclusively() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.807 -0500", hash_original_method = "C9E6BAFAC050F423C4392C73A0972F98", hash_generated_method = "DDF4F99A50E656D7D99BCCADF07C5E58")
+        
+protected boolean isHeldExclusively() {
             return getState() == 1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.571 -0500", hash_original_method = "48A928967742ABFEBADE0574311D01BE", hash_generated_method = "60401ADC501E426E82B8FAE93CFD80BB")
-        protected boolean tryAcquire(int unused) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.810 -0500", hash_original_method = "48A928967742ABFEBADE0574311D01BE", hash_generated_method = "60401ADC501E426E82B8FAE93CFD80BB")
+        
+protected boolean tryAcquire(int unused) {
             if (compareAndSetState(0, 1)) {
                 setExclusiveOwnerThread(Thread.currentThread());
                 return true;
@@ -1327,21 +1383,26 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.571 -0500", hash_original_method = "CF73EFA48EB2690CB7BA351224285F0C", hash_generated_method = "042BB669714D12BA155B6D3059E01403")
-        protected boolean tryRelease(int unused) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.812 -0500", hash_original_method = "CF73EFA48EB2690CB7BA351224285F0C", hash_generated_method = "042BB669714D12BA155B6D3059E01403")
+        
+protected boolean tryRelease(int unused) {
             setExclusiveOwnerThread(null);
             setState(0);
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.572 -0500", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "53AB982C832755FBDD126D465838CD8C")
-        public void lock()        { acquire(1); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.573 -0500", hash_original_method = "0FBAB3A752D629DDEE7FCF88CA811E1B", hash_generated_method = "9FC586365555C3138451287A6B60D9F6")
-        public boolean tryLock()  { return tryAcquire(1); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.574 -0500", hash_original_method = "375F138297D7668DFC40E00540A7DE61", hash_generated_method = "B0ECF85AF36803469A3E6808F39B5B34")
-        public void unlock()      { release(1); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.575 -0500", hash_original_method = "0FBE2B31D6107275F6E2B1C06D400675", hash_generated_method = "4B30CD3C1CD209CCB8B254788D3A2886")
-        public boolean isLocked() { return isHeldExclusively(); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.815 -0500", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "53AB982C832755FBDD126D465838CD8C")
+        
+public void lock()        { acquire(1); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.817 -0500", hash_original_method = "0FBAB3A752D629DDEE7FCF88CA811E1B", hash_generated_method = "9FC586365555C3138451287A6B60D9F6")
+        
+public boolean tryLock()  { return tryAcquire(1); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.820 -0500", hash_original_method = "375F138297D7668DFC40E00540A7DE61", hash_generated_method = "B0ECF85AF36803469A3E6808F39B5B34")
+        
+public void unlock()      { release(1); }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.822 -0500", hash_original_method = "0FBE2B31D6107275F6E2B1C06D400675", hash_generated_method = "4B30CD3C1CD209CCB8B254788D3A2886")
+        
+public boolean isLocked() { return isHeldExclusively(); }
     }
 
 
@@ -1350,8 +1411,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         /**
          * Creates a {@code CallerRunsPolicy}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.627 -0500", hash_original_method = "0024AA22CD353D26AF52EE7A7BFF5B6A", hash_generated_method = "37596DC4FA63974862CFD9E5EE2F5BCB")
-        public CallerRunsPolicy() { }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.967 -0500", hash_original_method = "0024AA22CD353D26AF52EE7A7BFF5B6A", hash_generated_method = "37596DC4FA63974862CFD9E5EE2F5BCB")
+        
+public CallerRunsPolicy() { }
 
         /**
          * Executes task r in the caller's thread, unless the executor
@@ -1360,8 +1422,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * @param r the runnable task requested to be executed
          * @param e the executor attempting to execute this task
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.628 -0500", hash_original_method = "1E8BCB605E875657A6EC0245732A9544", hash_generated_method = "67071B1E12E0471CDF55C3CC23CCA8B9")
-        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.969 -0500", hash_original_method = "1E8BCB605E875657A6EC0245732A9544", hash_generated_method = "67071B1E12E0471CDF55C3CC23CCA8B9")
+        
+public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             if (!e.isShutdown()) {
                 r.run();
             }
@@ -1376,8 +1439,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         /**
          * Creates an {@code AbortPolicy}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.630 -0500", hash_original_method = "0E304EA6C47EF7342B79AE7423647CD0", hash_generated_method = "5A72F746A40381548E8765CAE694BA8B")
-        public AbortPolicy() { }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.974 -0500", hash_original_method = "0E304EA6C47EF7342B79AE7423647CD0", hash_generated_method = "5A72F746A40381548E8765CAE694BA8B")
+        
+public AbortPolicy() { }
 
         /**
          * Always throws RejectedExecutionException.
@@ -1386,8 +1450,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * @param e the executor attempting to execute this task
          * @throws RejectedExecutionException always.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.631 -0500", hash_original_method = "499AAA3E1602997D93E7C4E818F2EBAC", hash_generated_method = "56B3257CD43C9AE77956052668F54BA9")
-        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.977 -0500", hash_original_method = "499AAA3E1602997D93E7C4E818F2EBAC", hash_generated_method = "56B3257CD43C9AE77956052668F54BA9")
+        
+public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             throw new RejectedExecutionException("Task " + r.toString() +
                                                  " rejected from " +
                                                  e.toString());
@@ -1402,8 +1467,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         /**
          * Creates a {@code DiscardPolicy}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.633 -0500", hash_original_method = "F09B76305D692D1CB8CB62E17F499CB5", hash_generated_method = "39998938A7FD11A04EFDD79C648AB919")
-        public DiscardPolicy() { }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.982 -0500", hash_original_method = "F09B76305D692D1CB8CB62E17F499CB5", hash_generated_method = "39998938A7FD11A04EFDD79C648AB919")
+        
+public DiscardPolicy() { }
 
         /**
          * Does nothing, which has the effect of discarding task r.
@@ -1411,8 +1477,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * @param r the runnable task requested to be executed
          * @param e the executor attempting to execute this task
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.633 -0500", hash_original_method = "81B7AD8C9B3A9908C7C41F3CCCB6E30B", hash_generated_method = "4F8A71592DABB995D5E265C49D0411B3")
-        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.984 -0500", hash_original_method = "81B7AD8C9B3A9908C7C41F3CCCB6E30B", hash_generated_method = "4F8A71592DABB995D5E265C49D0411B3")
+        
+public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
         }
 
         
@@ -1424,8 +1491,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         /**
          * Creates a {@code DiscardOldestPolicy} for the given executor.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.635 -0500", hash_original_method = "7D42DC0AF0C4E1A1DAE9147B8685950D", hash_generated_method = "05088EC62DD35021D0EFFE1A458A35D3")
-        public DiscardOldestPolicy() { }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.989 -0500", hash_original_method = "7D42DC0AF0C4E1A1DAE9147B8685950D", hash_generated_method = "05088EC62DD35021D0EFFE1A458A35D3")
+        
+public DiscardOldestPolicy() { }
 
         /**
          * Obtains and ignores the next task that the executor
@@ -1436,8 +1504,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * @param r the runnable task requested to be executed
          * @param e the executor attempting to execute this task
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.636 -0500", hash_original_method = "BC4245492A96EB743D1DE4975B9A07C3", hash_generated_method = "53F05455B3731AE5C218A16907CA0CAC")
-        public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.991 -0500", hash_original_method = "BC4245492A96EB743D1DE4975B9A07C3", hash_generated_method = "53F05455B3731AE5C218A16907CA0CAC")
+        
+public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             if (!e.isShutdown()) {
                 e.getQueue().poll();
                 e.execute(r);
@@ -1457,8 +1526,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * However, this method may fail to remove tasks in
      * the presence of interference by other threads.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.617 -0500", hash_original_method = "9B9E8DAAF98D7F6DDC91DC997B50219A", hash_generated_method = "3D3463F33A38734FC492A9FC5702CEB5")
-    public void purge() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.940 -0500", hash_original_method = "9B9E8DAAF98D7F6DDC91DC997B50219A", hash_generated_method = "3D3463F33A38734FC492A9FC5702CEB5")
+    
+public void purge() {
         final BlockingQueue<Runnable> q = workQueue;
         try {
             Iterator<Runnable> it = q.iterator();
@@ -1486,8 +1556,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the number of threads
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.618 -0500", hash_original_method = "4852DC9A347396E4E4A26FF1AFDF98FD", hash_generated_method = "818BD1EDD2A40E90A7E60A88A42AAC42")
-    public int getPoolSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.942 -0500", hash_original_method = "4852DC9A347396E4E4A26FF1AFDF98FD", hash_generated_method = "818BD1EDD2A40E90A7E60A88A42AAC42")
+    
+public int getPoolSize() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -1506,8 +1577,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the number of threads
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.619 -0500", hash_original_method = "F897DAAB3F6E4FA542BB8276CD2A7AD3", hash_generated_method = "EAEB8CADD56CD25DAD8F8545FE389FC2")
-    public int getActiveCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.945 -0500", hash_original_method = "F897DAAB3F6E4FA542BB8276CD2A7AD3", hash_generated_method = "EAEB8CADD56CD25DAD8F8545FE389FC2")
+    
+public int getActiveCount() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -1527,8 +1599,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the number of threads
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.620 -0500", hash_original_method = "B4A579D5588949E5556CF38ABCB55065", hash_generated_method = "6BD3EE73A2632BA69DCD6C729D0A8959")
-    public int getLargestPoolSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.947 -0500", hash_original_method = "B4A579D5588949E5556CF38ABCB55065", hash_generated_method = "6BD3EE73A2632BA69DCD6C729D0A8959")
+    
+public int getLargestPoolSize() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -1546,8 +1619,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the number of tasks
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.621 -0500", hash_original_method = "145E6751E1E0E0F3E4FA35DB76B7EDE5", hash_generated_method = "31FA9DA8D30EDC1FFE9A8B3502073E13")
-    public long getTaskCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.950 -0500", hash_original_method = "145E6751E1E0E0F3E4FA35DB76B7EDE5", hash_generated_method = "31FA9DA8D30EDC1FFE9A8B3502073E13")
+    
+public long getTaskCount() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -1572,8 +1646,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return the number of tasks
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.622 -0500", hash_original_method = "C21C1799DAC41B07982333C8F3E02012", hash_generated_method = "B5551174C2B6890DA552F9EBCFD180E0")
-    public long getCompletedTaskCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.953 -0500", hash_original_method = "C21C1799DAC41B07982333C8F3E02012", hash_generated_method = "B5551174C2B6890DA552F9EBCFD180E0")
+    
+public long getCompletedTaskCount() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
         try {
@@ -1593,8 +1668,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      *
      * @return a string identifying this pool, as well as its state
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.623 -0500", hash_original_method = "AA5F5BF44F4DA05ED8C1D4957936AC31", hash_generated_method = "15FC8A3B902B78037562F73229532457")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.955 -0500", hash_original_method = "AA5F5BF44F4DA05ED8C1D4957936AC31", hash_generated_method = "15FC8A3B902B78037562F73229532457")
+    
+public String toString() {
         long ncompleted;
         int nworkers, nactive;
         final ReentrantLock mainLock = this.mainLock;
@@ -1640,8 +1716,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @param t the thread that will run task {@code r}
      * @param r the task that will be executed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.624 -0500", hash_original_method = "4C3878CDFFA0878930C89982189B5032", hash_generated_method = "609FB1261E529A17FB09A9A442823611")
-    protected void beforeExecute(Thread t, Runnable r) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.958 -0500", hash_original_method = "4C3878CDFFA0878930C89982189B5032", hash_generated_method = "609FB1261E529A17FB09A9A442823611")
+    
+protected void beforeExecute(Thread t, Runnable r) { }
 
     /**
      * Method invoked upon completion of execution of the given Runnable.
@@ -1689,8 +1766,9 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * @param t the exception that caused termination, or null if
      * execution completed normally
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.624 -0500", hash_original_method = "1E835AC60F46FC4FB8E958FFB42880D4", hash_generated_method = "7E0C3E0B46EF292C8A7D40D4C270D415")
-    protected void afterExecute(Runnable r, Throwable t) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.961 -0500", hash_original_method = "1E835AC60F46FC4FB8E958FFB42880D4", hash_generated_method = "7E0C3E0B46EF292C8A7D40D4C270D415")
+    
+protected void afterExecute(Runnable r, Throwable t) { }
 
     /**
      * Method invoked when the Executor has terminated.  Default
@@ -1698,7 +1776,8 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * overridings, subclasses should generally invoke
      * {@code super.terminated} within this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:40.625 -0500", hash_original_method = "A29D7F7280B94AB8E3FBFAF6674D4BBC", hash_generated_method = "282AC55BADAC29DCA5D93C863C4EF6B7")
-    protected void terminated() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.963 -0500", hash_original_method = "A29D7F7280B94AB8E3FBFAF6674D4BBC", hash_generated_method = "282AC55BADAC29DCA5D93C863C4EF6B7")
+    
+protected void terminated() { }
 }
 

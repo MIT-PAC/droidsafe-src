@@ -27,17 +27,17 @@ import dalvik.system.SocketTagger;
 
 
 public class ThreadSafeClientConnManager implements ClientConnectionManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.864 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.990 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.865 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.992 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
     protected SchemeRegistry schemeRegistry;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.866 -0500", hash_original_field = "C51B0436AE871509A750A80EBB760F42", hash_generated_field = "A126A5C00AC17033F6B94E836FE92D15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.994 -0500", hash_original_field = "C51B0436AE871509A750A80EBB760F42", hash_generated_field = "A126A5C00AC17033F6B94E836FE92D15")
 
     protected  AbstractConnPool connectionPool;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.866 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.996 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
 
     protected ClientConnectionOperator connOperator;
     
@@ -50,8 +50,9 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
      * @param schreg    the scheme registry, or
      *                  <code>null</code> for the default registry
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.867 -0500", hash_original_method = "CE8305B2F50479AC170D47319F9570C8", hash_generated_method = "3017661F6403C8D54CDAF2BA856FA17A")
-    public ThreadSafeClientConnManager(HttpParams params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.999 -0500", hash_original_method = "CE8305B2F50479AC170D47319F9570C8", hash_generated_method = "3017661F6403C8D54CDAF2BA856FA17A")
+    
+public ThreadSafeClientConnManager(HttpParams params,
                                        SchemeRegistry schreg) {
 
         if (params == null) {
@@ -64,9 +65,10 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     } // <constructor>
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.868 -0500", hash_original_method = "0E19810A97EBEE58216EC05F0D60A026", hash_generated_method = "7633383EE29DF3462EC06822CAD53A41")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.002 -0500", hash_original_method = "0E19810A97EBEE58216EC05F0D60A026", hash_generated_method = "7633383EE29DF3462EC06822CAD53A41")
+    
+@Override
+    protected void finalize() throws Throwable {
         shutdown();
         super.finalize();
     }
@@ -77,8 +79,9 @@ protected void finalize() throws Throwable {
      *
      * @return  the connection pool to use
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.869 -0500", hash_original_method = "E5BC66DBF19261346819AE7E60C7F467", hash_generated_method = "43714C46B8D85A3B80F5B710851996FB")
-    protected AbstractConnPool createConnectionPool(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.004 -0500", hash_original_method = "E5BC66DBF19261346819AE7E60C7F467", hash_generated_method = "43714C46B8D85A3B80F5B710851996FB")
+    
+protected AbstractConnPool createConnectionPool(final HttpParams params) {
 
         AbstractConnPool acp = new ConnPoolByRoute(connOperator, params);
         boolean conngc = true; //@@@ check parameters to decide
@@ -101,8 +104,9 @@ protected void finalize() throws Throwable {
      *
      * @return  the connection operator to use
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.870 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
-    protected ClientConnectionOperator
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.006 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
+    
+protected ClientConnectionOperator
         createConnectionOperator(SchemeRegistry schreg) {
 
         return new DefaultClientConnectionOperator(schreg);
@@ -110,14 +114,16 @@ protected void finalize() throws Throwable {
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.871 -0500", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "F81D1E42481BBD388E0F662F8AE87096")
-    public SchemeRegistry getSchemeRegistry() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.008 -0500", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "F81D1E42481BBD388E0F662F8AE87096")
+    
+public SchemeRegistry getSchemeRegistry() {
         return this.schemeRegistry;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.874 -0500", hash_original_method = "3E5898B68534E316FCFFCF41E86D81D5", hash_generated_method = "2595F1BD101B9EFC4F50FA58275F098D")
-    public ClientConnectionRequest requestConnection(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.017 -0500", hash_original_method = "3E5898B68534E316FCFFCF41E86D81D5", hash_generated_method = "2595F1BD101B9EFC4F50FA58275F098D")
+    
+public ClientConnectionRequest requestConnection(
             final HttpRoute route, 
             final Object state) {
         
@@ -164,8 +170,9 @@ protected void finalize() throws Throwable {
 
     
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.875 -0500", hash_original_method = "3CF782E9F00803924FA9A14119B3585D", hash_generated_method = "965933621A779C00BB41B52FA48DB134")
-    public void releaseConnection(ManagedClientConnection conn, long validDuration, TimeUnit timeUnit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.021 -0500", hash_original_method = "3CF782E9F00803924FA9A14119B3585D", hash_generated_method = "965933621A779C00BB41B52FA48DB134")
+    
+public void releaseConnection(ManagedClientConnection conn, long validDuration, TimeUnit timeUnit) {
 
         if (!(conn instanceof BasicPooledConnAdapter)) {
             throw new IllegalArgumentException
@@ -222,8 +229,9 @@ protected void finalize() throws Throwable {
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.875 -0500", hash_original_method = "5B798EEC995C1D56865AC1580F955080", hash_generated_method = "CEE6CB689845EDD2EA493E239BD36C85")
-    public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.023 -0500", hash_original_method = "5B798EEC995C1D56865AC1580F955080", hash_generated_method = "CEE6CB689845EDD2EA493E239BD36C85")
+    
+public void shutdown() {
         connectionPool.shutdown();
     }
 
@@ -238,8 +246,9 @@ protected void finalize() throws Throwable {
      *
      * @return  the total number of pooled connections for that route
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.876 -0500", hash_original_method = "52C9DA1F5E2D598BCB82BD013D1068AD", hash_generated_method = "465C2C57EE0EF189E08CEF080378B6A3")
-    public int getConnectionsInPool(HttpRoute route) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.025 -0500", hash_original_method = "52C9DA1F5E2D598BCB82BD013D1068AD", hash_generated_method = "465C2C57EE0EF189E08CEF080378B6A3")
+    
+public int getConnectionsInPool(HttpRoute route) {
         return ((ConnPoolByRoute)connectionPool).getConnectionsInPool(
                 route);
     }
@@ -253,8 +262,9 @@ protected void finalize() throws Throwable {
      * 
      * @return the total number of pooled connections
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.877 -0500", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "AE043477A09E5726953EC376CD87E313")
-    public int getConnectionsInPool() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.027 -0500", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "AE043477A09E5726953EC376CD87E313")
+    
+public int getConnectionsInPool() {
         synchronized (connectionPool) {
             return connectionPool.numConnections; //@@@
         }
@@ -262,15 +272,17 @@ protected void finalize() throws Throwable {
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.878 -0500", hash_original_method = "614803CEB018564B6D4B8085A3E1BC4F", hash_generated_method = "9701D873AA485CC59CEAB1483AA16E3C")
-    public void closeIdleConnections(long idleTimeout, TimeUnit tunit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.029 -0500", hash_original_method = "614803CEB018564B6D4B8085A3E1BC4F", hash_generated_method = "9701D873AA485CC59CEAB1483AA16E3C")
+    
+public void closeIdleConnections(long idleTimeout, TimeUnit tunit) {
         // combine these two in a single call?
         connectionPool.closeIdleConnections(idleTimeout, tunit);
         connectionPool.deleteClosedConnections();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.878 -0500", hash_original_method = "3CBEAD5C5E5FD142C35EE66C6F0AAE4C", hash_generated_method = "CA70EE0AA50EB205DCE5EB4409E500DE")
-    public void closeExpiredConnections() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.032 -0500", hash_original_method = "3CBEAD5C5E5FD142C35EE66C6F0AAE4C", hash_generated_method = "CA70EE0AA50EB205DCE5EB4409E500DE")
+    
+public void closeExpiredConnections() {
         connectionPool.closeExpiredConnections();
         connectionPool.deleteClosedConnections();
     }

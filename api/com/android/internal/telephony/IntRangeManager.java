@@ -13,15 +13,16 @@ import java.util.Iterator;
 
 
 public abstract class IntRangeManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.483 -0500", hash_original_field = "424DA09941B427078B77E1C5B651D6D1", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.591 -0500", hash_original_field = "424DA09941B427078B77E1C5B651D6D1", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
 
     private static final int INITIAL_CLIENTS_ARRAY_SIZE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.497 -0500", hash_original_field = "DA7F6BB46067E5940DD062695FF3745C", hash_generated_field = "E43FB0C78759432184E49407A51B5267")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.647 -0500", hash_original_field = "DA7F6BB46067E5940DD062695FF3745C", hash_generated_field = "E43FB0C78759432184E49407A51B5267")
 
     private ArrayList<IntRange> mRanges = new ArrayList<IntRange>();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.498 -0500", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "B41342CA1903927E4B1C4E6DFD5B5AB9")
-    protected IntRangeManager() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.650 -0500", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "B41342CA1903927E4B1C4E6DFD5B5AB9")
+    
+protected IntRangeManager() {}
 
     /**
      * Enable a range for the specified client and update ranges
@@ -33,8 +34,9 @@ public abstract class IntRangeManager {
      * @param client the client requesting the enabled range
      * @return true if successful, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.500 -0500", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "D914C78F1D3000FFA3A5A9EC9CB7022D")
-    public synchronized boolean enableRange(int startId, int endId, String client) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.657 -0500", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "D914C78F1D3000FFA3A5A9EC9CB7022D")
+    
+public synchronized boolean enableRange(int startId, int endId, String client) {
         int len = mRanges.size();
 
         // empty range list: add the initial IntRange
@@ -220,8 +222,9 @@ public abstract class IntRangeManager {
      * @param client the client requesting to disable the range
      * @return true if successful, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.503 -0500", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "1F60D8A5ED2F45A9A9BCDB5D9DDF2ECB")
-    public synchronized boolean disableRange(int startId, int endId, String client) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.663 -0500", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "1F60D8A5ED2F45A9A9BCDB5D9DDF2ECB")
+    
+public synchronized boolean disableRange(int startId, int endId, String client) {
         int len = mRanges.size();
 
         for (int i=0; i < len; i++) {
@@ -363,8 +366,9 @@ public abstract class IntRangeManager {
      * more calls to {@link #addRange}, followed by {@link #finishUpdate}.
      * @return true if successful, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.504 -0500", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "25B01AFFB5A09D9A62F42C50C23FB56F")
-    public boolean updateRanges() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.672 -0500", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "25B01AFFB5A09D9A62F42C50C23FB56F")
+    
+public boolean updateRanges() {
         startUpdate();
         Iterator<IntRange> iterator = mRanges.iterator();
         if (iterator.hasNext()) {
@@ -398,8 +402,9 @@ public abstract class IntRangeManager {
      * @param selected true to enable range, false to disable range
      * @return true if successful, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.505 -0500", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "F458D0A984C1D2137808AB1EA3DDEA68")
-    private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.675 -0500", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "F458D0A984C1D2137808AB1EA3DDEA68")
+    
+private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
         startUpdate();
         addRange(startId, endId, selected);
         return finishUpdate();
@@ -409,8 +414,9 @@ public abstract class IntRangeManager {
      * Returns whether the list of ranges is completely empty.
      * @return true if there are no enabled ranges
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.506 -0500", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "B948E6FAB4BE4D2FE2FB2AB8D0C9B61A")
-    public boolean isEmpty() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.677 -0500", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "B948E6FAB4BE4D2FE2FB2AB8D0C9B61A")
+    
+public boolean isEmpty() {
         return mRanges.isEmpty();
     }
 
@@ -419,8 +425,9 @@ public abstract class IntRangeManager {
      * followed by zero or more calls to {@link #addRange} followed by
      * a call to {@link #finishUpdate}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.507 -0500", hash_original_method = "FCF51CD311107A31FE3B2EFC0793E843", hash_generated_method = "0C123BC9261889849152F9859E89C9E9")
-    protected abstract void startUpdate();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.681 -0500", hash_original_method = "FCF51CD311107A31FE3B2EFC0793E843", hash_generated_method = "0C123BC9261889849152F9859E89C9E9")
+    
+protected abstract void startUpdate();
 
     /**
      * Called after {@link #startUpdate} to indicate a range of enabled
@@ -430,18 +437,19 @@ public abstract class IntRangeManager {
      * @param endId the last id included in the range
      * @param selected true to enable range, false to disable range
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.508 -0500", hash_original_method = "F3A93B80CF184574F1C80995545F3790", hash_generated_method = "0ED64598EA827C0BEDDFD4FA8733DA59")
-    protected abstract void addRange(int startId, int endId, boolean selected);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.683 -0500", hash_original_method = "F3A93B80CF184574F1C80995545F3790", hash_generated_method = "0ED64598EA827C0BEDDFD4FA8733DA59")
+    
+protected abstract void addRange(int startId, int endId, boolean selected);
 
     
     private class IntRange {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.484 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.594 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
 
         int startId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.485 -0500", hash_original_field = "D469E1326C7C274FD4D56F815E4A1D73", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.597 -0500", hash_original_field = "D469E1326C7C274FD4D56F815E4A1D73", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
 
         int endId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.485 -0500", hash_original_field = "DD30F90F1DFDA1050591F66AD1E9CE7F", hash_generated_field = "DD30F90F1DFDA1050591F66AD1E9CE7F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.601 -0500", hash_original_field = "DD30F90F1DFDA1050591F66AD1E9CE7F", hash_generated_field = "DD30F90F1DFDA1050591F66AD1E9CE7F")
 
          ArrayList<ClientRange> clients;
 
@@ -451,8 +459,9 @@ public abstract class IntRangeManager {
          * @param endId the last id included in the range
          * @param client the client requesting the enabled range
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.486 -0500", hash_original_method = "F07B82A28B52231FBB76629ABCB97069", hash_generated_method = "F07B82A28B52231FBB76629ABCB97069")
-        IntRange(int startId, int endId, String client) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.604 -0500", hash_original_method = "F07B82A28B52231FBB76629ABCB97069", hash_generated_method = "F07B82A28B52231FBB76629ABCB97069")
+        
+IntRange(int startId, int endId, String client) {
             this.startId = startId;
             this.endId = endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
@@ -463,8 +472,9 @@ public abstract class IntRangeManager {
          * Create a new IntRange for an existing ClientRange.
          * @param clientRange the initial ClientRange to add
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.487 -0500", hash_original_method = "BA7832996744AA8092A9A5E21086E160", hash_generated_method = "BA7832996744AA8092A9A5E21086E160")
-        IntRange(ClientRange clientRange) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.607 -0500", hash_original_method = "BA7832996744AA8092A9A5E21086E160", hash_generated_method = "BA7832996744AA8092A9A5E21086E160")
+        
+IntRange(ClientRange clientRange) {
             startId = clientRange.startId;
             endId = clientRange.endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
@@ -481,8 +491,9 @@ public abstract class IntRangeManager {
          * @param intRange the original IntRange to copy elements from
          * @param numElements the number of elements to copy from the original
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.488 -0500", hash_original_method = "A2EC39EA4DD73652B403D173FB1236C3", hash_generated_method = "A2EC39EA4DD73652B403D173FB1236C3")
-        IntRange(IntRange intRange, int numElements) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.609 -0500", hash_original_method = "A2EC39EA4DD73652B403D173FB1236C3", hash_generated_method = "A2EC39EA4DD73652B403D173FB1236C3")
+        
+IntRange(IntRange intRange, int numElements) {
             this.startId = intRange.startId;
             this.endId = intRange.endId;
             this.clients = new ArrayList<ClientRange>(intRange.clients.size());
@@ -500,8 +511,9 @@ public abstract class IntRangeManager {
          * number of clients grows large enough that it would make a difference.
          * @param range the new ClientRange to insert
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.490 -0500", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "05663A8D6F45CCD39EBF87C099356AE4")
-        void insert(ClientRange range) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.612 -0500", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "05663A8D6F45CCD39EBF87C099356AE4")
+        
+void insert(ClientRange range) {
             int len = clients.size();
             for (int i=0; i < len; i++) {
                 ClientRange nextRange = clients.get(i);
@@ -522,26 +534,28 @@ public abstract class IntRangeManager {
 
     
     private class ClientRange {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.492 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.625 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
 
          int startId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.492 -0500", hash_original_field = "D469E1326C7C274FD4D56F815E4A1D73", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.628 -0500", hash_original_field = "D469E1326C7C274FD4D56F815E4A1D73", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
 
          int endId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.493 -0500", hash_original_field = "B53CFB15BD6573E83D2588E535C40087", hash_generated_field = "B53CFB15BD6573E83D2588E535C40087")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.631 -0500", hash_original_field = "B53CFB15BD6573E83D2588E535C40087", hash_generated_field = "B53CFB15BD6573E83D2588E535C40087")
 
          String client;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.494 -0500", hash_original_method = "0233CEEC110E7548B64806A81A8747BD", hash_generated_method = "0233CEEC110E7548B64806A81A8747BD")
-        ClientRange(int startId, int endId, String client) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.635 -0500", hash_original_method = "0233CEEC110E7548B64806A81A8747BD", hash_generated_method = "0233CEEC110E7548B64806A81A8747BD")
+        
+ClientRange(int startId, int endId, String client) {
             this.startId = startId;
             this.endId = endId;
             this.client = client;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.495 -0500", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "16202EE818EC4DDF9F149B854F56C5E2")
-        @Override
-public boolean equals(Object o) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.639 -0500", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "16202EE818EC4DDF9F149B854F56C5E2")
+        
+@Override
+        public boolean equals(Object o) {
             if (o != null && o instanceof ClientRange) {
                 ClientRange other = (ClientRange) o;
                 return startId == other.startId &&
@@ -552,9 +566,10 @@ public boolean equals(Object o) {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.496 -0500", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "06036D7E4EDE321F05B46CD2CA11EBC2")
-        @Override
-public int hashCode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.642 -0500", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "06036D7E4EDE321F05B46CD2CA11EBC2")
+        
+@Override
+        public int hashCode() {
             return (startId * 31 + endId) * 31 + client.hashCode();
         }
 
@@ -566,7 +581,8 @@ public int hashCode() {
      * previous call to {@link #startUpdate}.
      * @return true if successful, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.508 -0500", hash_original_method = "6F392A19DED1FB567010348872D79562", hash_generated_method = "8FEEA1381A8EBB4860023AB8FE45AAC7")
-    protected abstract boolean finishUpdate();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.686 -0500", hash_original_method = "6F392A19DED1FB567010348872D79562", hash_generated_method = "8FEEA1381A8EBB4860023AB8FE45AAC7")
+    
+protected abstract boolean finishUpdate();
 }
 

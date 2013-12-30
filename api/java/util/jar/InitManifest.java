@@ -14,31 +14,32 @@ import java.util.Map;
 
 
 class InitManifest {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.634 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "779441B2743BF5C0505B790A17C97DE6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.104 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "779441B2743BF5C0505B790A17C97DE6")
 
     private  byte[] buf;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.635 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.106 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
 
     private int pos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.636 -0500", hash_original_field = "B6C3F4133101E588C401E9449C3FB888", hash_generated_field = "D7569CAE48A3644A0F728A88E286B99D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.108 -0500", hash_original_field = "B6C3F4133101E588C401E9449C3FB888", hash_generated_field = "D7569CAE48A3644A0F728A88E286B99D")
 
 
     private Attributes.Name name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.636 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.111 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
 
 
     private String value;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.637 -0500", hash_original_field = "9C37F6B8A8CF78814560D41B139075FB", hash_generated_field = "E3B6135907F2544C8BA6970CAAB07453")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.113 -0500", hash_original_field = "9C37F6B8A8CF78814560D41B139075FB", hash_generated_field = "E3B6135907F2544C8BA6970CAAB07453")
 
 
     private final UnsafeByteSequence valueBuffer = new UnsafeByteSequence(80);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.638 -0500", hash_original_field = "D7F629BC0E42930C2E4F0450BDD658F7", hash_generated_field = "AC2BE617228FC59BA35299FD9389D19B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.116 -0500", hash_original_field = "D7F629BC0E42930C2E4F0450BDD658F7", hash_generated_field = "AC2BE617228FC59BA35299FD9389D19B")
 
     private int consecutiveLineBreaks = 0;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.639 -0500", hash_original_method = "89843BCADFC879C55233B63F5B246F2C", hash_generated_method = "DBA60F9BD722A7F975CC9357C24C9327")
-    InitManifest(byte[] buf, Attributes main, Attributes.Name ver) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.119 -0500", hash_original_method = "89843BCADFC879C55233B63F5B246F2C", hash_generated_method = "DBA60F9BD722A7F975CC9357C24C9327")
+    
+InitManifest(byte[] buf, Attributes main, Attributes.Name ver) throws IOException {
         this.buf = buf;
 
         // check a version attribute
@@ -52,8 +53,9 @@ class InitManifest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.640 -0500", hash_original_method = "CF9A667F0E0C9B5E94CE0B45251AAFAF", hash_generated_method = "B86EF89E75DC5F495793572B51D79D73")
-    void initEntries(Map<String, Attributes> entries,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.123 -0500", hash_original_method = "CF9A667F0E0C9B5E94CE0B45251AAFAF", hash_generated_method = "B86EF89E75DC5F495793572B51D79D73")
+    
+void initEntries(Map<String, Attributes> entries,
             Map<String, Manifest.Chunk> chunks) throws IOException {
 
         int mark = pos;
@@ -90,16 +92,18 @@ class InitManifest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.641 -0500", hash_original_method = "DA9F28DCB522B20E2FDE0CD9A032935D", hash_generated_method = "DA9F28DCB522B20E2FDE0CD9A032935D")
-    int getPos() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.125 -0500", hash_original_method = "DA9F28DCB522B20E2FDE0CD9A032935D", hash_generated_method = "DA9F28DCB522B20E2FDE0CD9A032935D")
+    
+int getPos() {
         return pos;
     }
 
     /**
      * Read a single line from the manifest buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.642 -0500", hash_original_method = "A5E7BCD31AF83D3157F8D11FE9DEE1F1", hash_generated_method = "B0989563A2859A21237FD768866FD7A4")
-    private boolean readHeader() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.128 -0500", hash_original_method = "A5E7BCD31AF83D3157F8D11FE9DEE1F1", hash_generated_method = "B0989563A2859A21237FD768866FD7A4")
+    
+private boolean readHeader() throws IOException {
         if (consecutiveLineBreaks > 1) {
             // break a section on an empty line
             consecutiveLineBreaks = 0;
@@ -113,8 +117,9 @@ class InitManifest {
         return consecutiveLineBreaks > 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.643 -0500", hash_original_method = "BA591702B8733A5B91A49342DCC26BF2", hash_generated_method = "B41DB55734822C9DEFD85397F22492F7")
-    private void readName() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.131 -0500", hash_original_method = "BA591702B8733A5B91A49342DCC26BF2", hash_generated_method = "B41DB55734822C9DEFD85397F22492F7")
+    
+private void readName() throws IOException {
         int mark = pos;
 
         while (pos < buf.length) {
@@ -138,8 +143,9 @@ class InitManifest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.644 -0500", hash_original_method = "F963A8011A3FFB3111BBD881FC78A3FF", hash_generated_method = "F3AA5C376290FFE67575A0054CF30EB5")
-    private void readValue() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.134 -0500", hash_original_method = "F963A8011A3FFB3111BBD881FC78A3FF", hash_generated_method = "F3AA5C376290FFE67575A0054CF30EB5")
+    
+private void readValue() throws IOException {
         boolean lastCr = false;
         int mark = pos;
         int last = pos;

@@ -18,21 +18,23 @@ import org.bouncycastle.util.encoders.Base64;
 
 
 public class PemReader extends BufferedReader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.268 -0500", hash_original_field = "4B5018B208B1D25A1E57B78BC5773F2B", hash_generated_field = "3012F10FFC028E270306D326E4F2BB4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.417 -0500", hash_original_field = "4B5018B208B1D25A1E57B78BC5773F2B", hash_generated_field = "3012F10FFC028E270306D326E4F2BB4D")
 
     private static final String BEGIN = "-----BEGIN ";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.268 -0500", hash_original_field = "ACDD7DF7CEFFE10381CC73399C5D5A81", hash_generated_field = "33FE8EF509AB5350D82B1C830CA62BCF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.419 -0500", hash_original_field = "ACDD7DF7CEFFE10381CC73399C5D5A81", hash_generated_field = "33FE8EF509AB5350D82B1C830CA62BCF")
 
     private static final String END = "-----END ";
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.269 -0500", hash_original_method = "422165DD33429D3A249B1D2E2C0897A9", hash_generated_method = "81E0698B66208C250B9CA5E2B4379DC6")
-    public PemReader(Reader reader)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.422 -0500", hash_original_method = "422165DD33429D3A249B1D2E2C0897A9", hash_generated_method = "81E0698B66208C250B9CA5E2B4379DC6")
+    
+public PemReader(Reader reader)
     {
         super(reader);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.271 -0500", hash_original_method = "D58B040BED022541C97B3ACE6DF7F511", hash_generated_method = "FA1ABE982A9EABFA55820C8F3A5FFF3C")
-    public PemObject readPemObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.424 -0500", hash_original_method = "D58B040BED022541C97B3ACE6DF7F511", hash_generated_method = "FA1ABE982A9EABFA55820C8F3A5FFF3C")
+    
+public PemObject readPemObject()
         throws IOException
     {
         String line = readLine();
@@ -52,8 +54,9 @@ public class PemReader extends BufferedReader {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.272 -0500", hash_original_method = "B4339AB43686CE97B8B754B51FC0C571", hash_generated_method = "8801FBEA7E395329E4F4FB9F2332D887")
-    private PemObject loadObject(String type)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.427 -0500", hash_original_method = "B4339AB43686CE97B8B754B51FC0C571", hash_generated_method = "8801FBEA7E395329E4F4FB9F2332D887")
+    
+private PemObject loadObject(String type)
         throws IOException
     {
         String          line;

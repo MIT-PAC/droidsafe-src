@@ -30,11 +30,11 @@ import org.apache.http.protocol.HttpContext;
 
 
 public class DefaultClientConnectionOperator implements ClientConnectionOperator {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.022 -0500", hash_original_field = "016661333E85B4B0D4E37C42367B4F10", hash_generated_field = "117D19A17E0FA862F4540CD5E143142A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.424 -0500", hash_original_field = "016661333E85B4B0D4E37C42367B4F10", hash_generated_field = "117D19A17E0FA862F4540CD5E143142A")
 
 
     private static final PlainSocketFactory staticPlainSocketFactory = new PlainSocketFactory();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.023 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.427 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
     protected SchemeRegistry schemeRegistry;
 
@@ -44,8 +44,9 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
      *
      * @param schemes   the scheme registry
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.024 -0500", hash_original_method = "564A7128C5B00F982644F6E1BD9B5118", hash_generated_method = "CA381C39136474BC252F3F016835318F")
-    public DefaultClientConnectionOperator(SchemeRegistry schemes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.429 -0500", hash_original_method = "564A7128C5B00F982644F6E1BD9B5118", hash_generated_method = "CA381C39136474BC252F3F016835318F")
+    
+public DefaultClientConnectionOperator(SchemeRegistry schemes) {
         if (schemes == null) {
             throw new IllegalArgumentException
                 ("Scheme registry must not be null.");
@@ -55,15 +56,17 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
 
 
     // non-javadoc, see interface ClientConnectionOperator
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.024 -0500", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "58CEAAE32D1F5ECD407C9AC056AB72D6")
-    public OperatedClientConnection createConnection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.431 -0500", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "58CEAAE32D1F5ECD407C9AC056AB72D6")
+    
+public OperatedClientConnection createConnection() {
         return new DefaultClientConnection();
     }
 
 
     // non-javadoc, see interface ClientConnectionOperator
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.026 -0500", hash_original_method = "3035FF1473A97381B4AFABBF5B73F76A", hash_generated_method = "57D276C4DAD0725F9DEA8C8D8CC5F8CA")
-    public void openConnection(OperatedClientConnection conn,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.435 -0500", hash_original_method = "3035FF1473A97381B4AFABBF5B73F76A", hash_generated_method = "57D276C4DAD0725F9DEA8C8D8CC5F8CA")
+    
+public void openConnection(OperatedClientConnection conn,
                                HttpHost target,
                                InetAddress local,
                                HttpContext context,
@@ -159,8 +162,9 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
 
 
     // non-javadoc, see interface ClientConnectionOperator
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.027 -0500", hash_original_method = "B263843ECB367B56A8B3543219BABBA8", hash_generated_method = "8C6B777C24337E1FE667E3677ED69F33")
-    public void updateSecureConnection(OperatedClientConnection conn,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.438 -0500", hash_original_method = "B263843ECB367B56A8B3543219BABBA8", hash_generated_method = "8C6B777C24337E1FE667E3677ED69F33")
+    
+public void updateSecureConnection(OperatedClientConnection conn,
                                        HttpHost target,
                                        HttpContext context,
                                        HttpParams params)
@@ -216,8 +220,9 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
      *
      * @throws IOException      in case of an IO problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.028 -0500", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "E82CEC69A1F5D37810182A3E91AD9916")
-    protected void prepareSocket(Socket sock, HttpContext context,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.441 -0500", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "E82CEC69A1F5D37810182A3E91AD9916")
+    
+protected void prepareSocket(Socket sock, HttpContext context,
                                  HttpParams params)
         throws IOException {
 

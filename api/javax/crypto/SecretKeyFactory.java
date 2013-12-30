@@ -33,8 +33,9 @@ public class SecretKeyFactory {
      * @throws NullPointerException
      *             if the specified algorithm is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.722 -0500", hash_original_method = "FA63063C6C30A15E13C0EA2583409D62", hash_generated_method = "F47579F88A935F5E8E05DA5C06601FD6")
-    public static final SecretKeyFactory getInstance(String algorithm)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.799 -0500", hash_original_method = "FA63063C6C30A15E13C0EA2583409D62", hash_generated_method = "F47579F88A935F5E8E05DA5C06601FD6")
+    
+public static final SecretKeyFactory getInstance(String algorithm)
             throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -62,8 +63,9 @@ public class SecretKeyFactory {
      * @throws IllegalArgumentException
      *             if the specified provider name is {@code null} or empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.723 -0500", hash_original_method = "BD88C9F954E8F02EEE2FFD90BA21223E", hash_generated_method = "B374E7357E43E2821C9416AA7A7016B4")
-    public static final SecretKeyFactory getInstance(String algorithm,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.803 -0500", hash_original_method = "BD88C9F954E8F02EEE2FFD90BA21223E", hash_generated_method = "B374E7357E43E2821C9416AA7A7016B4")
+    
+public static final SecretKeyFactory getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
@@ -94,8 +96,9 @@ public class SecretKeyFactory {
      * @throws NullPointerException
      *             is the specified algorithm name is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.724 -0500", hash_original_method = "203282E1287962AD001C6CC2CF356E7C", hash_generated_method = "8511625231A556A5B2AD5918D566CFF0")
-    public static final SecretKeyFactory getInstance(String algorithm,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.807 -0500", hash_original_method = "203282E1287962AD001C6CC2CF356E7C", hash_generated_method = "8511625231A556A5B2AD5918D566CFF0")
+    
+public static final SecretKeyFactory getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("provider == null");
@@ -106,16 +109,16 @@ public class SecretKeyFactory {
         Object spi = ENGINE.getInstance(algorithm, provider, null);
         return new SecretKeyFactory((SecretKeyFactorySpi) spi, provider, algorithm);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.716 -0500", hash_original_field = "9AB4E1C92A388096352EC1258FED95EE", hash_generated_field = "6E247A48EBB8DC98BDBEC2A4DB1C6ED9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.771 -0500", hash_original_field = "9AB4E1C92A388096352EC1258FED95EE", hash_generated_field = "6E247A48EBB8DC98BDBEC2A4DB1C6ED9")
 
     private static final Engine ENGINE = new Engine("SecretKeyFactory");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.716 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.775 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
     private  Provider provider;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.717 -0500", hash_original_field = "21BDC798C76DAD6CDDB79E40EE66E30A", hash_generated_field = "79A1051781D270F714DE1FB341564966")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.779 -0500", hash_original_field = "21BDC798C76DAD6CDDB79E40EE66E30A", hash_generated_field = "79A1051781D270F714DE1FB341564966")
 
     private  SecretKeyFactorySpi spiImpl;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.718 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.782 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
     private  String algorithm;
 
@@ -129,8 +132,9 @@ public class SecretKeyFactory {
      * @param algorithm
      *            the algorithm name for the secret key.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.719 -0500", hash_original_method = "3C76CE2839A142E4DF9C7001A6A7FCB1", hash_generated_method = "B9AC3E6BE6378B2B3FC297A49AC9461E")
-    protected SecretKeyFactory(SecretKeyFactorySpi keyFacSpi,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.787 -0500", hash_original_method = "3C76CE2839A142E4DF9C7001A6A7FCB1", hash_generated_method = "B9AC3E6BE6378B2B3FC297A49AC9461E")
+    
+protected SecretKeyFactory(SecretKeyFactorySpi keyFacSpi,
             Provider provider, String algorithm) {
         this.provider = provider;
         this.algorithm = algorithm;
@@ -142,8 +146,9 @@ public class SecretKeyFactory {
      *
      * @return the name of the secret key algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.720 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
-    public final String getAlgorithm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.790 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
+    
+public final String getAlgorithm() {
         return algorithm;
     }
 
@@ -152,8 +157,9 @@ public class SecretKeyFactory {
      *
      * @return the provider for this {@code SecretKeyFactory} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.721 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
-    public final Provider getProvider() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.794 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
+    
+public final Provider getProvider() {
         return provider;
     }
 
@@ -167,8 +173,9 @@ public class SecretKeyFactory {
      *             if the specified key specification cannot be used to generate
      *             a secret key.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.724 -0500", hash_original_method = "F35C5482AA0FDE82A0C15F5E475C73A0", hash_generated_method = "7124C9FED05E541D0F774F22C9866D10")
-    public final SecretKey generateSecret(KeySpec keySpec)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.811 -0500", hash_original_method = "F35C5482AA0FDE82A0C15F5E475C73A0", hash_generated_method = "7124C9FED05E541D0F774F22C9866D10")
+    
+public final SecretKey generateSecret(KeySpec keySpec)
             throws InvalidKeySpecException {
         return spiImpl.engineGenerateSecret(keySpec);
     }
@@ -185,9 +192,10 @@ public class SecretKeyFactory {
      *             if the specified secret key cannot be transformed into the
      *             requested key specification.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.726 -0500", hash_original_method = "A1C05AB5848F28D95DBE9FF597A00F29", hash_generated_method = "8AE1E6D967D743794FCA493FB3DB98CA")
-    @SuppressWarnings("unchecked")
-public final KeySpec getKeySpec(SecretKey key, Class keySpec)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.815 -0500", hash_original_method = "A1C05AB5848F28D95DBE9FF597A00F29", hash_generated_method = "8AE1E6D967D743794FCA493FB3DB98CA")
+    
+@SuppressWarnings("unchecked")
+    public final KeySpec getKeySpec(SecretKey key, Class keySpec)
             throws InvalidKeySpecException {
         return spiImpl.engineGetKeySpec(key, keySpec);
     }
@@ -203,8 +211,9 @@ public final KeySpec getKeySpec(SecretKey key, Class keySpec)
      *             if the specified key cannot be translated using this key
      *             factory.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.726 -0500", hash_original_method = "DE7905EDF6B0EF2B9BB95373F14A9269", hash_generated_method = "1BBDB8944905322C059906793349F99A")
-    public final SecretKey translateKey(SecretKey key)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.818 -0500", hash_original_method = "DE7905EDF6B0EF2B9BB95373F14A9269", hash_generated_method = "1BBDB8944905322C059906793349F99A")
+    
+public final SecretKey translateKey(SecretKey key)
             throws InvalidKeyException {
         return spiImpl.engineTranslateKey(key);
 

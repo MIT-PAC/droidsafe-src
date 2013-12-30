@@ -24,15 +24,16 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
      * This method was extracted to encourage VM to inline callers.
      * TODO: when we have a VM that can actually inline, move the test in here too!
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.870 -0500", hash_original_method = "4D1AAFD088944D073F1D6AEA9907E5AD", hash_generated_method = "7B46C8F09C7254045F5048910CD6EB03")
-    static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.923 -0500", hash_original_method = "4D1AAFD088944D073F1D6AEA9907E5AD", hash_generated_method = "7B46C8F09C7254045F5048910CD6EB03")
+    
+static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
         throw new IndexOutOfBoundsException("Invalid index " + index + ", size is " + size);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.897 -0500", hash_original_field = "3AA5C0C0296B47F3F0330027910A6EB1", hash_generated_field = "E089B2B162ABB353A6199922AA057C3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.994 -0500", hash_original_field = "3AA5C0C0296B47F3F0330027910A6EB1", hash_generated_field = "E089B2B162ABB353A6199922AA057C3E")
 
 
     private static final long serialVersionUID = 8683452581122892189L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.861 -0500", hash_original_field = "3E4C52F6F0428C39E4E692D20A9AA9AA", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.898 -0500", hash_original_field = "3E4C52F6F0428C39E4E692D20A9AA9AA", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
 
     transient Object[] array;
     
@@ -92,9 +93,9 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
      * @return a shallow copy of this {@code ArrayList}
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.872 -0500", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "A66D91953438B3767055934DA3E96394")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.928 -0500", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "A66D91953438B3767055934DA3E96394")
+    
+@Override public Object clone() {
         try {
             ArrayList<?> result = (ArrayList<?>) super.clone();
             result.array = array.clone();

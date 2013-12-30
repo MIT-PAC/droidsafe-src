@@ -32,93 +32,93 @@ import libcore.io.IoUtils;
 
 
 public final class Scanner implements Iterator<String> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.876 -0500", hash_original_field = "B47F8D0CFB8B0A8E74ACEF69EFAAF7CA", hash_generated_field = "198E8DC61E6EE6260DD0FD67EC1BE70A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.436 -0500", hash_original_field = "B47F8D0CFB8B0A8E74ACEF69EFAAF7CA", hash_generated_field = "198E8DC61E6EE6260DD0FD67EC1BE70A")
 
     private static final Pattern DEFAULT_DELIMITER = Pattern
             .compile("\\p{javaWhitespace}+");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.877 -0500", hash_original_field = "E6072ECAB98B788CF6574D4C97D8D133", hash_generated_field = "A53C7CC23A0CC495ADEF2FAB7B5DCB77")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.438 -0500", hash_original_field = "E6072ECAB98B788CF6574D4C97D8D133", hash_generated_field = "A53C7CC23A0CC495ADEF2FAB7B5DCB77")
 
     private static final Pattern BOOLEAN_PATTERN = Pattern.compile(
             "true|false", Pattern.CASE_INSENSITIVE);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.877 -0500", hash_original_field = "0BF1909410F4A29EC6B6ABDEDC782911", hash_generated_field = "34D957310674ACDBDEF2BA84C8EFAF52")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.441 -0500", hash_original_field = "0BF1909410F4A29EC6B6ABDEDC782911", hash_generated_field = "34D957310674ACDBDEF2BA84C8EFAF52")
 
     private static  Pattern LINE_TERMINATOR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.878 -0500", hash_original_field = "CF20E0E1E14B42FCBC3774DAA78CE133", hash_generated_field = "6C40428A55C17D2895C0B094BEB1F611")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.443 -0500", hash_original_field = "CF20E0E1E14B42FCBC3774DAA78CE133", hash_generated_field = "6C40428A55C17D2895C0B094BEB1F611")
 
     private static  Pattern MULTI_LINE_TERMINATOR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.879 -0500", hash_original_field = "A71AF44F8C916A62639225A5929D8710", hash_generated_field = "3C4C83BD4BB2A832CA90E27F9C78BAE2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.446 -0500", hash_original_field = "A71AF44F8C916A62639225A5929D8710", hash_generated_field = "3C4C83BD4BB2A832CA90E27F9C78BAE2")
 
     private static  Pattern LINE_PATTERN;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.880 -0500", hash_original_field = "078F02C6E7267763693DC0BE3C6B9AC7", hash_generated_field = "D845CBECA21831ED0A78D9A752686AC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.449 -0500", hash_original_field = "078F02C6E7267763693DC0BE3C6B9AC7", hash_generated_field = "D845CBECA21831ED0A78D9A752686AC5")
 
     private static final Pattern ANY_PATTERN = Pattern.compile("(?s).*");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.881 -0500", hash_original_field = "0ABE4119F73D0DFB83A02A15D725E728", hash_generated_field = "3BA97B4331D762E18310C69487A4537F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.452 -0500", hash_original_field = "0ABE4119F73D0DFB83A02A15D725E728", hash_generated_field = "3BA97B4331D762E18310C69487A4537F")
 
 
     private static final int DIPLOID = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.882 -0500", hash_original_field = "EB97D6C44BD18C424D4E82265283D91D", hash_generated_field = "6AD996F6F0E1D10B17B6B57671BFAA93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.454 -0500", hash_original_field = "EB97D6C44BD18C424D4E82265283D91D", hash_generated_field = "6AD996F6F0E1D10B17B6B57671BFAA93")
 
     private static final int DEFAULT_RADIX = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.883 -0500", hash_original_field = "28E0DBF2907BB09A2F5C21AB717FC9F5", hash_generated_field = "943912C72E8350CCD8E69B9D60A0C886")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.456 -0500", hash_original_field = "28E0DBF2907BB09A2F5C21AB717FC9F5", hash_generated_field = "943912C72E8350CCD8E69B9D60A0C886")
 
 
     private static final int DEFAULT_TRUNK_SIZE = 1024;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.884 -0500", hash_original_field = "65616AC57FB84BDA6BF682056C572304", hash_generated_field = "E0D52F97F351E69EECDE3C383EA70269")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.459 -0500", hash_original_field = "65616AC57FB84BDA6BF682056C572304", hash_generated_field = "E0D52F97F351E69EECDE3C383EA70269")
 
     private Readable input;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.884 -0500", hash_original_field = "89091A77A3F40B97932F1F5BA644968C", hash_generated_field = "D260AE04E52CF23D72C8A3D8295E450B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.461 -0500", hash_original_field = "89091A77A3F40B97932F1F5BA644968C", hash_generated_field = "D260AE04E52CF23D72C8A3D8295E450B")
 
 
     private CharBuffer buffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.885 -0500", hash_original_field = "817851E00C2E34D79720AD08AAA6BADB", hash_generated_field = "7320765086863239DD8B2CE732355E5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.463 -0500", hash_original_field = "817851E00C2E34D79720AD08AAA6BADB", hash_generated_field = "7320765086863239DD8B2CE732355E5C")
 
 
     private Pattern delimiter = DEFAULT_DELIMITER;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.886 -0500", hash_original_field = "C7324B9A1B7E5BCAD3D2B1A512AC9CEE", hash_generated_field = "B6C086223608E4F54F76DF9A158EFEB4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.465 -0500", hash_original_field = "C7324B9A1B7E5BCAD3D2B1A512AC9CEE", hash_generated_field = "B6C086223608E4F54F76DF9A158EFEB4")
 
 
     private Matcher matcher;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.887 -0500", hash_original_field = "EB84341BC05B1803B3A35E00097AB259", hash_generated_field = "C3DABC3C885E91F4BEBE65D18A5D41DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.468 -0500", hash_original_field = "EB84341BC05B1803B3A35E00097AB259", hash_generated_field = "C3DABC3C885E91F4BEBE65D18A5D41DF")
 
 
     private int integerRadix = DEFAULT_RADIX;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.887 -0500", hash_original_field = "8B296BE1494CF2FB637267DFD6EEFC9C", hash_generated_field = "E93B6DD8D2B917BF94B1E13ADC86BBF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.470 -0500", hash_original_field = "8B296BE1494CF2FB637267DFD6EEFC9C", hash_generated_field = "E93B6DD8D2B917BF94B1E13ADC86BBF9")
 
 
     private Locale locale = Locale.getDefault();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.888 -0500", hash_original_field = "D8305FA40AEB30D5626E8AD10AD16362", hash_generated_field = "08240EC224E7D1F658B6C3E2B561656E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.472 -0500", hash_original_field = "D8305FA40AEB30D5626E8AD10AD16362", hash_generated_field = "08240EC224E7D1F658B6C3E2B561656E")
 
     private int findStartIndex = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.889 -0500", hash_original_field = "8583C5362BF485A0C6C00658F881BB2D", hash_generated_field = "6421FE0EA4BD2B6775B9AA3004FC3126")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.474 -0500", hash_original_field = "8583C5362BF485A0C6C00658F881BB2D", hash_generated_field = "6421FE0EA4BD2B6775B9AA3004FC3126")
 
     private int preStartIndex = findStartIndex;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.890 -0500", hash_original_field = "D56A6B35B888DDB27932ABF7650D0DD1", hash_generated_field = "C005C413DDA0AFEE3D457FA4BFDF129F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.477 -0500", hash_original_field = "D56A6B35B888DDB27932ABF7650D0DD1", hash_generated_field = "C005C413DDA0AFEE3D457FA4BFDF129F")
 
     private int bufferLength = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.891 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "C3C8C0E68189514A1B9B3B296C0A3F2A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.479 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "C3C8C0E68189514A1B9B3B296C0A3F2A")
 
     // is closed.
     private boolean closed = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.891 -0500", hash_original_field = "2D64161965ACCFD5E6EAFC7F1C573898", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.482 -0500", hash_original_field = "2D64161965ACCFD5E6EAFC7F1C573898", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
 
 
     private IOException lastIOException;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.892 -0500", hash_original_field = "1C6D1D477DD6E2911B78F6585589561F", hash_generated_field = "FB51DEF3DC08BBEC5FA219733A95DF92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.484 -0500", hash_original_field = "1C6D1D477DD6E2911B78F6585589561F", hash_generated_field = "FB51DEF3DC08BBEC5FA219733A95DF92")
 
 
     private boolean matchSuccessful = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.893 -0500", hash_original_field = "B59EEAA341F75708242A9E3221E821BD", hash_generated_field = "5CD50592C114680F0C3429A3015DD789")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.486 -0500", hash_original_field = "B59EEAA341F75708242A9E3221E821BD", hash_generated_field = "5CD50592C114680F0C3429A3015DD789")
 
 
     private DecimalFormat decimalFormat;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.894 -0500", hash_original_field = "12665679D2CAFF8C4A053D9B20D5EF70", hash_generated_field = "835E9638D88C3871B5D667F83042A305")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.488 -0500", hash_original_field = "12665679D2CAFF8C4A053D9B20D5EF70", hash_generated_field = "835E9638D88C3871B5D667F83042A305")
 
     private boolean inputExhausted = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.894 -0500", hash_original_field = "A51D0ECC63E18EDB9ADABF3293B68917", hash_generated_field = "16846571F2386772C11DF4DB11C6F290")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.491 -0500", hash_original_field = "A51D0ECC63E18EDB9ADABF3293B68917", hash_generated_field = "16846571F2386772C11DF4DB11C6F290")
 
 
     private Object cacheHasNextValue = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.895 -0500", hash_original_field = "A4D950C48A6DDF26C40A5B63963E74FC", hash_generated_field = "890CB8D9E7ACCC8E639BDCEBE76016CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.493 -0500", hash_original_field = "A4D950C48A6DDF26C40A5B63963E74FC", hash_generated_field = "890CB8D9E7ACCC8E639BDCEBE76016CB")
 
 
     private int cachehasNextIndex = -1;
@@ -132,8 +132,9 @@ public final class Scanner implements Iterator<String> {
      * @throws FileNotFoundException
      *             if the specified file does not exist.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.897 -0500", hash_original_method = "B810C33BB807151E40D15163250E5E02", hash_generated_method = "D26577CCB9043AF802260E163F23AE5F")
-    public Scanner(File src) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.498 -0500", hash_original_method = "B810C33BB807151E40D15163250E5E02", hash_generated_method = "D26577CCB9043AF802260E163F23AE5F")
+    
+public Scanner(File src) throws FileNotFoundException {
         this(src, Charset.defaultCharset().name());
     }
 
@@ -150,8 +151,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalArgumentException
      *             if the specified coding does not exist.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.898 -0500", hash_original_method = "CF25217F399E81A22DEECAEA7B649FFD", hash_generated_method = "BCC05EBF9F99943E48C097803F5E86A7")
-    public Scanner(File src, String charsetName) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.500 -0500", hash_original_method = "CF25217F399E81A22DEECAEA7B649FFD", hash_generated_method = "BCC05EBF9F99943E48C097803F5E86A7")
+    
+public Scanner(File src, String charsetName) throws FileNotFoundException {
         if (src == null) {
             throw new NullPointerException("src == null");
         }
@@ -174,8 +176,9 @@ public final class Scanner implements Iterator<String> {
      * @param src
      *            the string to be scanned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.899 -0500", hash_original_method = "4332C70F225A92CAAA372FEA2EE20E90", hash_generated_method = "9A8745855040CE72758452F40B97FD65")
-    public Scanner(String src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.503 -0500", hash_original_method = "4332C70F225A92CAAA372FEA2EE20E90", hash_generated_method = "9A8745855040CE72758452F40B97FD65")
+    
+public Scanner(String src) {
         input = new StringReader(src);
         initialization();
     }
@@ -187,8 +190,9 @@ public final class Scanner implements Iterator<String> {
      * @param src
      *            the {@code InputStream} to be scanned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.900 -0500", hash_original_method = "C892D51D9056C33835D132934536F6A9", hash_generated_method = "1871A8297329316346417FC0FD505506")
-    public Scanner(InputStream src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.505 -0500", hash_original_method = "C892D51D9056C33835D132934536F6A9", hash_generated_method = "1871A8297329316346417FC0FD505506")
+    
+public Scanner(InputStream src) {
         this(src, Charset.defaultCharset().name());
     }
 
@@ -203,8 +207,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalArgumentException
      *             if the specified character set is not found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.901 -0500", hash_original_method = "BF515108409EAD1D2D6060053F2B8EDA", hash_generated_method = "F01C1A51850B7F9FA80CC88D51BB9A3D")
-    public Scanner(InputStream src, String charsetName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.508 -0500", hash_original_method = "BF515108409EAD1D2D6060053F2B8EDA", hash_generated_method = "F01C1A51850B7F9FA80CC88D51BB9A3D")
+    
+public Scanner(InputStream src, String charsetName) {
         if (src == null) {
             throw new NullPointerException("src == null");
         }
@@ -222,8 +227,9 @@ public final class Scanner implements Iterator<String> {
      * @param src
      *            the {@code Readable} to be scanned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.902 -0500", hash_original_method = "E0E6972A58007CF9E26777BD359FD5D7", hash_generated_method = "2A8F26655E138D46B6E3613B4BE01534")
-    public Scanner(Readable src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.512 -0500", hash_original_method = "E0E6972A58007CF9E26777BD359FD5D7", hash_generated_method = "2A8F26655E138D46B6E3613B4BE01534")
+    
+public Scanner(Readable src) {
         if (src == null) {
             throw new NullPointerException();
         }
@@ -238,8 +244,9 @@ public final class Scanner implements Iterator<String> {
      * @param src
      *            the {@code ReadableByteChannel} to be scanned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.903 -0500", hash_original_method = "246C896BCE9403BE34073893721DED9F", hash_generated_method = "069714EF3DCA6F62A8E3A391D2BFABFE")
-    public Scanner(ReadableByteChannel src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.514 -0500", hash_original_method = "246C896BCE9403BE34073893721DED9F", hash_generated_method = "069714EF3DCA6F62A8E3A391D2BFABFE")
+    
+public Scanner(ReadableByteChannel src) {
         this(src, Charset.defaultCharset().name());
     }
 
@@ -254,8 +261,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalArgumentException
      *             if the specified character set is not found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.904 -0500", hash_original_method = "88C5EB3CF5CA9A4257014ADC8E6F132C", hash_generated_method = "F52F3CC8E84801B31B8691294881609F")
-    public Scanner(ReadableByteChannel src, String charsetName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.517 -0500", hash_original_method = "88C5EB3CF5CA9A4257014ADC8E6F132C", hash_generated_method = "F52F3CC8E84801B31B8691294881609F")
+    
+public Scanner(ReadableByteChannel src, String charsetName) {
         if (src == null) {
             throw new NullPointerException("src == null");
         }
@@ -274,8 +282,9 @@ public final class Scanner implements Iterator<String> {
      *
      * @see Closeable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.905 -0500", hash_original_method = "BE0E5A82355C52347C0C57A7BA02C4C5", hash_generated_method = "4981E93226D3D642ADB0B81DB0C8464D")
-    public void close() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.520 -0500", hash_original_method = "BE0E5A82355C52347C0C57A7BA02C4C5", hash_generated_method = "4981E93226D3D642ADB0B81DB0C8464D")
+    
+public void close() {
         if (closed) {
             return;
         }
@@ -294,8 +303,9 @@ public final class Scanner implements Iterator<String> {
      *
      * @return the delimiter {@code Pattern} in use by this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.905 -0500", hash_original_method = "E452C40637B7AD54EC03E79C646861D9", hash_generated_method = "DFF982F44BD23684A397DA7C52C5E9C6")
-    public Pattern delimiter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.522 -0500", hash_original_method = "E452C40637B7AD54EC03E79C646861D9", hash_generated_method = "DFF982F44BD23684A397DA7C52C5E9C6")
+    
+public Pattern delimiter() {
         return delimiter;
     }
 
@@ -314,8 +324,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} is closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.907 -0500", hash_original_method = "8312FC53E313435440A1A7306CBE2B24", hash_generated_method = "0665BC44FDAB5AFF5C5B8A4F09E9EA4A")
-    public String findInLine(Pattern pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.526 -0500", hash_original_method = "8312FC53E313435440A1A7306CBE2B24", hash_generated_method = "0665BC44FDAB5AFF5C5B8A4F09E9EA4A")
+    
+public String findInLine(Pattern pattern) {
         checkClosed();
         checkNull(pattern);
         int horizonLineSeparator = 0;
@@ -407,8 +418,9 @@ public final class Scanner implements Iterator<String> {
      *             if the {@code Scanner} is closed.
      * @see #findInLine(Pattern)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.908 -0500", hash_original_method = "D8B205142F30EEA5F1FA557732B63716", hash_generated_method = "BC32758F998B73A2DB17BCD342A1D048")
-    public String findInLine(String pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.528 -0500", hash_original_method = "D8B205142F30EEA5F1FA557732B63716", hash_generated_method = "BC32758F998B73A2DB17BCD342A1D048")
+    
+public String findInLine(String pattern) {
         return findInLine(Pattern.compile(pattern));
     }
 
@@ -444,8 +456,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalArgumentException
      *             if {@code horizon} is less than zero.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.909 -0500", hash_original_method = "9C32C72D7AABC6AF4F26B68B84901E99", hash_generated_method = "A2989CF0C81C88E8B5DCC98A1B678232")
-    public String findWithinHorizon(Pattern pattern, int horizon) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.532 -0500", hash_original_method = "9C32C72D7AABC6AF4F26B68B84901E99", hash_generated_method = "A2989CF0C81C88E8B5DCC98A1B678232")
+    
+public String findWithinHorizon(Pattern pattern, int horizon) {
         checkClosed();
         checkNull(pattern);
         if (horizon < 0) {
@@ -520,8 +533,9 @@ public final class Scanner implements Iterator<String> {
      *             if {@code horizon} is less than zero.
      * @see #findWithinHorizon(Pattern, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.909 -0500", hash_original_method = "A3C55B99475A85AD2BF4742E957D07D7", hash_generated_method = "8B42006EAC7EE929F9A09B522FEFB34E")
-    public String findWithinHorizon(String pattern, int horizon) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.534 -0500", hash_original_method = "A3C55B99475A85AD2BF4742E957D07D7", hash_generated_method = "8B42006EAC7EE929F9A09B522FEFB34E")
+    
+public String findWithinHorizon(String pattern, int horizon) {
         return findWithinHorizon(Pattern.compile(pattern), horizon);
     }
 
@@ -534,8 +548,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.910 -0500", hash_original_method = "A3E9F8A3E3BBCA86A059EA14ECB05A95", hash_generated_method = "8ACF5D97C09012CFC95287039A2EEAF0")
-    public boolean hasNext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.536 -0500", hash_original_method = "A3E9F8A3E3BBCA86A059EA14ECB05A95", hash_generated_method = "8ACF5D97C09012CFC95287039A2EEAF0")
+    
+public boolean hasNext() {
         return hasNext(ANY_PATTERN);
     }
 
@@ -551,8 +566,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.911 -0500", hash_original_method = "31E7CF1F7239BC857AE7CC1A1F63EEFE", hash_generated_method = "91000FE766A7F566C442F9715F92DD46")
-    public boolean hasNext(Pattern pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.539 -0500", hash_original_method = "31E7CF1F7239BC857AE7CC1A1F63EEFE", hash_generated_method = "91000FE766A7F566C442F9715F92DD46")
+    
+public boolean hasNext(Pattern pattern) {
         checkClosed();
         checkNull(pattern);
         matchSuccessful = false;
@@ -588,8 +604,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.912 -0500", hash_original_method = "9958A7260053054A7CE88A67057D0BAF", hash_generated_method = "3CAEEBC9983F9DD4125ABDBE34B87EB3")
-    public boolean hasNext(String pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.541 -0500", hash_original_method = "9958A7260053054A7CE88A67057D0BAF", hash_generated_method = "3CAEEBC9983F9DD4125ABDBE34B87EB3")
+    
+public boolean hasNext(String pattern) {
         return hasNext(Pattern.compile(pattern));
     }
 
@@ -602,8 +619,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.913 -0500", hash_original_method = "725531718FDC15B509CB20755672217B", hash_generated_method = "F3CE9986D9718C8BA2EC07532D1859BA")
-    public boolean hasNextBigDecimal() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.544 -0500", hash_original_method = "725531718FDC15B509CB20755672217B", hash_generated_method = "F3CE9986D9718C8BA2EC07532D1859BA")
+    
+public boolean hasNextBigDecimal() {
         Pattern floatPattern = getFloatPattern();
         boolean isBigDecimalValue = false;
         if (hasNext(floatPattern)) {
@@ -628,8 +646,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.914 -0500", hash_original_method = "E4D3C235D8E1DAFC304BAA9FB6E2754B", hash_generated_method = "7EE56A2CED0FB3287ABEDB164A2C2507")
-    public boolean hasNextBigInteger() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.546 -0500", hash_original_method = "E4D3C235D8E1DAFC304BAA9FB6E2754B", hash_generated_method = "7EE56A2CED0FB3287ABEDB164A2C2507")
+    
+public boolean hasNextBigInteger() {
         return hasNextBigInteger(integerRadix);
     }
 
@@ -645,8 +664,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.916 -0500", hash_original_method = "C25E77B6A38D1DC9BA3B0FA0BBEC50D5", hash_generated_method = "CEF42E54E0D157534F17D4FDF6FD2AAE")
-    public boolean hasNextBigInteger(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.548 -0500", hash_original_method = "C25E77B6A38D1DC9BA3B0FA0BBEC50D5", hash_generated_method = "CEF42E54E0D157534F17D4FDF6FD2AAE")
+    
+public boolean hasNextBigInteger(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isBigIntegerValue = false;
         if (hasNext(integerPattern)) {
@@ -671,8 +691,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.917 -0500", hash_original_method = "EB649DF4AB30251C023B5B81F2B2B0E4", hash_generated_method = "5E2F13790BE01AB548A4A994457B6D74")
-    public boolean hasNextBoolean() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.550 -0500", hash_original_method = "EB649DF4AB30251C023B5B81F2B2B0E4", hash_generated_method = "5E2F13790BE01AB548A4A994457B6D74")
+    
+public boolean hasNextBoolean() {
         return hasNext(BOOLEAN_PATTERN);
     }
 
@@ -685,8 +706,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.917 -0500", hash_original_method = "58199F8244631FBA465F06EC32762D29", hash_generated_method = "66103AC50E2D34E655900B44943C3E44")
-    public boolean hasNextByte() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.553 -0500", hash_original_method = "58199F8244631FBA465F06EC32762D29", hash_generated_method = "66103AC50E2D34E655900B44943C3E44")
+    
+public boolean hasNextByte() {
         return hasNextByte(integerRadix);
     }
 
@@ -702,8 +724,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.918 -0500", hash_original_method = "A5B80B22ED065BD547115A7BB2F2B96D", hash_generated_method = "765DA349C498F3E2D333DCF93C4154AC")
-    public boolean hasNextByte(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.556 -0500", hash_original_method = "A5B80B22ED065BD547115A7BB2F2B96D", hash_generated_method = "765DA349C498F3E2D333DCF93C4154AC")
+    
+public boolean hasNextByte(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isByteValue = false;
         if (hasNext(integerPattern)) {
@@ -728,8 +751,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.919 -0500", hash_original_method = "66A96A75B245956604135FA693CF46B1", hash_generated_method = "F8B531C62063230A6EE1A40D271FC11A")
-    public boolean hasNextDouble() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.558 -0500", hash_original_method = "66A96A75B245956604135FA693CF46B1", hash_generated_method = "F8B531C62063230A6EE1A40D271FC11A")
+    
+public boolean hasNextDouble() {
         Pattern floatPattern = getFloatPattern();
         boolean isDoubleValue = false;
         if (hasNext(floatPattern)) {
@@ -754,8 +778,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.920 -0500", hash_original_method = "FBD2AAA8FD71EC1957BF71E495BA575B", hash_generated_method = "8F6A1E1F5F736C31E893878B03609D18")
-    public boolean hasNextFloat() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.561 -0500", hash_original_method = "FBD2AAA8FD71EC1957BF71E495BA575B", hash_generated_method = "8F6A1E1F5F736C31E893878B03609D18")
+    
+public boolean hasNextFloat() {
         Pattern floatPattern = getFloatPattern();
         boolean isFloatValue = false;
         if (hasNext(floatPattern)) {
@@ -780,8 +805,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed,
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.921 -0500", hash_original_method = "5C4A5382507FD210B704AB0FDDE676B5", hash_generated_method = "607A88F24BF4021BB120DA8DCA567014")
-    public boolean hasNextInt() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.563 -0500", hash_original_method = "5C4A5382507FD210B704AB0FDDE676B5", hash_generated_method = "607A88F24BF4021BB120DA8DCA567014")
+    
+public boolean hasNextInt() {
         return hasNextInt(integerRadix);
     }
 
@@ -798,8 +824,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.922 -0500", hash_original_method = "98DA0996AE9A85FE2EB4C6BCBC334600", hash_generated_method = "69B1860955268A674911C0D4299B3B4C")
-    public boolean hasNextInt(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.566 -0500", hash_original_method = "98DA0996AE9A85FE2EB4C6BCBC334600", hash_generated_method = "69B1860955268A674911C0D4299B3B4C")
+    
+public boolean hasNextInt(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isIntValue = false;
         if (hasNext(integerPattern)) {
@@ -824,8 +851,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} is closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.923 -0500", hash_original_method = "F85B53817DDA0DC627A3FD344338966A", hash_generated_method = "E1AA38C47583B8A7FD0F5013C7785A12")
-    public boolean hasNextLine() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.568 -0500", hash_original_method = "F85B53817DDA0DC627A3FD344338966A", hash_generated_method = "E1AA38C47583B8A7FD0F5013C7785A12")
+    
+public boolean hasNextLine() {
         checkClosed();
         matcher.usePattern(LINE_PATTERN);
         matcher.region(findStartIndex, bufferLength);
@@ -861,8 +889,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.924 -0500", hash_original_method = "4E2EF7109AFFFF700ACDD8E154A60B95", hash_generated_method = "E1BC5DC88D8FA8113CEC2DA7D72F6A33")
-    public boolean hasNextLong() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.571 -0500", hash_original_method = "4E2EF7109AFFFF700ACDD8E154A60B95", hash_generated_method = "E1BC5DC88D8FA8113CEC2DA7D72F6A33")
+    
+public boolean hasNextLong() {
         return hasNextLong(integerRadix);
     }
 
@@ -878,8 +907,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.924 -0500", hash_original_method = "9F7A3D072C1FB851C44AA1EFB73ED70A", hash_generated_method = "3488429AADF56C1BF642DD376DE24243")
-    public boolean hasNextLong(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.574 -0500", hash_original_method = "9F7A3D072C1FB851C44AA1EFB73ED70A", hash_generated_method = "3488429AADF56C1BF642DD376DE24243")
+    
+public boolean hasNextLong(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isLongValue = false;
         if (hasNext(integerPattern)) {
@@ -904,8 +934,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.925 -0500", hash_original_method = "68819BFDCF6E57EBBFC27075215E0009", hash_generated_method = "8DC980CE9BECAAB756362F4C52E78435")
-    public boolean hasNextShort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.576 -0500", hash_original_method = "68819BFDCF6E57EBBFC27075215E0009", hash_generated_method = "8DC980CE9BECAAB756362F4C52E78435")
+    
+public boolean hasNextShort() {
         return hasNextShort(integerRadix);
     }
 
@@ -921,8 +952,9 @@ public final class Scanner implements Iterator<String> {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.926 -0500", hash_original_method = "BC1837EAC21D315C1A66DDC5582DCF81", hash_generated_method = "325B69F645497A2CDF3612F30CB4DFD3")
-    public boolean hasNextShort(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.579 -0500", hash_original_method = "BC1837EAC21D315C1A66DDC5582DCF81", hash_generated_method = "325B69F645497A2CDF3612F30CB4DFD3")
+    
+public boolean hasNextShort(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isShortValue = false;
         if (hasNext(integerPattern)) {
@@ -944,8 +976,9 @@ public final class Scanner implements Iterator<String> {
      *
      * @return the last thrown {@code IOException}, or {@code null} if none was thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.927 -0500", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "9021EA20032F11132D2B9F300EA6476A")
-    public IOException ioException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.581 -0500", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "9021EA20032F11132D2B9F300EA6476A")
+    
+public IOException ioException() {
         return lastIOException;
     }
 
@@ -954,8 +987,9 @@ public final class Scanner implements Iterator<String> {
      *
      * @return the {@code Locale} of this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.928 -0500", hash_original_method = "21C822C4BC15A6F74D874095878E5501", hash_generated_method = "844FD25BD3EAACE05B7B47916D0B681B")
-    public Locale locale() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.583 -0500", hash_original_method = "21C822C4BC15A6F74D874095878E5501", hash_generated_method = "844FD25BD3EAACE05B7B47916D0B681B")
+    
+public Locale locale() {
         return locale;
     }
 
@@ -970,8 +1004,9 @@ public final class Scanner implements Iterator<String> {
      *             if the match result is not available, of if the last match
      *             was not successful.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.928 -0500", hash_original_method = "2D94F093F10F1A8356EDEC86FADDCA70", hash_generated_method = "5641FECC4850BFBA421BE67B82DBDED5")
-    public MatchResult match() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.586 -0500", hash_original_method = "2D94F093F10F1A8356EDEC86FADDCA70", hash_generated_method = "5641FECC4850BFBA421BE67B82DBDED5")
+    
+public MatchResult match() {
         if (!matchSuccessful) {
             throw new IllegalStateException();
         }
@@ -989,8 +1024,9 @@ public final class Scanner implements Iterator<String> {
      * @throws NoSuchElementException
      *             if input has been exhausted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.929 -0500", hash_original_method = "A473F9C9E320CD6CEDCE3CE271E08C07", hash_generated_method = "5AD096FC9C61E6884323F08CF48B6FE0")
-    public String next() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.588 -0500", hash_original_method = "A473F9C9E320CD6CEDCE3CE271E08C07", hash_generated_method = "5AD096FC9C61E6884323F08CF48B6FE0")
+    
+public String next() {
         return next(ANY_PATTERN);
     }
 
@@ -1010,8 +1046,9 @@ public final class Scanner implements Iterator<String> {
      * @throws InputMismatchException
      *             if the next token does not match the pattern given.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.930 -0500", hash_original_method = "064C5502A668BA6541E1986AFB8ECCE1", hash_generated_method = "3B0A40E136CAEE9ADB002BDD01A8DD39")
-    public String next(Pattern pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.590 -0500", hash_original_method = "064C5502A668BA6541E1986AFB8ECCE1", hash_generated_method = "3B0A40E136CAEE9ADB002BDD01A8DD39")
+    
+public String next(Pattern pattern) {
         checkClosed();
         checkNull(pattern);
         matchSuccessful = false;
@@ -1048,8 +1085,9 @@ public final class Scanner implements Iterator<String> {
      * @throws InputMismatchException
      *             if the next token does not match the pattern given.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.931 -0500", hash_original_method = "4894718ADE2D067062D34204C5088110", hash_generated_method = "6A7C61792D0E39B4E38E7DBC1DC510B8")
-    public String next(String pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.593 -0500", hash_original_method = "4894718ADE2D067062D34204C5088110", hash_generated_method = "6A7C61792D0E39B4E38E7DBC1DC510B8")
+    
+public String next(String pattern) {
         return next(Pattern.compile(pattern));
     }
 
@@ -1072,8 +1110,9 @@ public final class Scanner implements Iterator<String> {
      *             if the next token can not be translated into a valid
      *             {@code BigDecimal}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.932 -0500", hash_original_method = "E9A644C72A3309EE871164344474A07C", hash_generated_method = "A6FC10D084F11C0FD29AA7D7677E5B62")
-    public BigDecimal nextBigDecimal() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.595 -0500", hash_original_method = "E9A644C72A3309EE871164344474A07C", hash_generated_method = "A6FC10D084F11C0FD29AA7D7677E5B62")
+    
+public BigDecimal nextBigDecimal() {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1108,8 +1147,9 @@ public final class Scanner implements Iterator<String> {
      *             if the next token can not be translated into a valid
      *             {@code BigInteger}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.933 -0500", hash_original_method = "144A2EEE9BFD199E176BF785D76B1260", hash_generated_method = "5B039D66EE6ED1F670308D7D32127FB6")
-    public BigInteger nextBigInteger() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.597 -0500", hash_original_method = "144A2EEE9BFD199E176BF785D76B1260", hash_generated_method = "5B039D66EE6ED1F670308D7D32127FB6")
+    
+public BigInteger nextBigInteger() {
         return nextBigInteger(integerRadix);
     }
 
@@ -1136,8 +1176,9 @@ public final class Scanner implements Iterator<String> {
      *             if the next token can not be translated into a valid
      *             {@code BigInteger}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.934 -0500", hash_original_method = "A32F88E5530C257A4D62223BBE0A1F90", hash_generated_method = "6F0D66E3D4C02FAC893009D665798369")
-    public BigInteger nextBigInteger(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.600 -0500", hash_original_method = "A32F88E5530C257A4D62223BBE0A1F90", hash_generated_method = "6F0D66E3D4C02FAC893009D665798369")
+    
+public BigInteger nextBigInteger(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1172,8 +1213,9 @@ public final class Scanner implements Iterator<String> {
      *             if the next token can not be translated into a valid
      *             {@code boolean} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.935 -0500", hash_original_method = "D0E4DE4C67E1DCF9B9C54027B3E1E21D", hash_generated_method = "EB909912857FD197A194F38FBA4A9EA8")
-    public boolean nextBoolean() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.603 -0500", hash_original_method = "D0E4DE4C67E1DCF9B9C54027B3E1E21D", hash_generated_method = "EB909912857FD197A194F38FBA4A9EA8")
+    
+public boolean nextBoolean() {
         return Boolean.parseBoolean(next(BOOLEAN_PATTERN));
     }
 
@@ -1190,8 +1232,9 @@ public final class Scanner implements Iterator<String> {
      *             if the next token can not be translated into a valid
      *             {@code byte} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.935 -0500", hash_original_method = "7CE1C60D76B7F2532B9BC1651A113CEF", hash_generated_method = "C642C25DB42477C1DD6ABDC20CB0DB38")
-    public byte nextByte() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.605 -0500", hash_original_method = "7CE1C60D76B7F2532B9BC1651A113CEF", hash_generated_method = "C642C25DB42477C1DD6ABDC20CB0DB38")
+    
+public byte nextByte() {
         return nextByte(integerRadix);
     }
 
@@ -1217,9 +1260,10 @@ public final class Scanner implements Iterator<String> {
      *             if the next token can not be translated into a valid
      *             {@code byte} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.936 -0500", hash_original_method = "9181863BF854F96D8E1FF1A461B82F5F", hash_generated_method = "EF247ECD09C24698B239C83C3A87996D")
-    @SuppressWarnings("boxing")
-public byte nextByte(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.609 -0500", hash_original_method = "9181863BF854F96D8E1FF1A461B82F5F", hash_generated_method = "EF247ECD09C24698B239C83C3A87996D")
+    
+@SuppressWarnings("boxing")
+    public byte nextByte(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1262,9 +1306,10 @@ public byte nextByte(int radix) {
      *             if the next token can not be translated into a valid
      *             {@code double} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.937 -0500", hash_original_method = "59ED3F69878B10BC787D8DCCAB5B2B3E", hash_generated_method = "5E03FA7352C1C59BCA9729DCDDF2A859")
-    @SuppressWarnings("boxing")
-public double nextDouble() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.612 -0500", hash_original_method = "59ED3F69878B10BC787D8DCCAB5B2B3E", hash_generated_method = "5E03FA7352C1C59BCA9729DCDDF2A859")
+    
+@SuppressWarnings("boxing")
+    public double nextDouble() {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1307,9 +1352,10 @@ public double nextDouble() {
      *             if the next token can not be translated into a valid
      *             {@code float} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.938 -0500", hash_original_method = "465894BBFB87D2894D77A1BB6EACCD0F", hash_generated_method = "960CA18B06981941274FE4D936B5B297")
-    @SuppressWarnings("boxing")
-public float nextFloat() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.614 -0500", hash_original_method = "465894BBFB87D2894D77A1BB6EACCD0F", hash_generated_method = "960CA18B06981941274FE4D936B5B297")
+    
+@SuppressWarnings("boxing")
+    public float nextFloat() {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1344,8 +1390,9 @@ public float nextFloat() {
      *             if the next token can not be translated into a valid
      *             {@code int} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.939 -0500", hash_original_method = "5185135F499E2963894A73963B55B971", hash_generated_method = "4D7E86235A8A3FDAE9C860E44B38B8E5")
-    public int nextInt() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.617 -0500", hash_original_method = "5185135F499E2963894A73963B55B971", hash_generated_method = "4D7E86235A8A3FDAE9C860E44B38B8E5")
+    
+public int nextInt() {
         return nextInt(integerRadix);
     }
 
@@ -1372,9 +1419,10 @@ public float nextFloat() {
      *             if the next token can not be translated into a valid
      *             {@code int} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.940 -0500", hash_original_method = "B06EC911E3305341017BDCE4EADE227D", hash_generated_method = "83B58D6B235A69C4D91062F3D70D49DD")
-    @SuppressWarnings("boxing")
-public int nextInt(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.619 -0500", hash_original_method = "B06EC911E3305341017BDCE4EADE227D", hash_generated_method = "83B58D6B235A69C4D91062F3D70D49DD")
+    
+@SuppressWarnings("boxing")
+    public int nextInt(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1409,8 +1457,9 @@ public int nextInt(int radix) {
      * @throws NoSuchElementException
      *             if no line can be found, e.g. when input is an empty string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.941 -0500", hash_original_method = "3D66719B22D4824A272B09AB38D3D0FA", hash_generated_method = "A67F991174304DC7835FDA74A6F7E641")
-    public String nextLine() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.622 -0500", hash_original_method = "3D66719B22D4824A272B09AB38D3D0FA", hash_generated_method = "A67F991174304DC7835FDA74A6F7E641")
+    
+public String nextLine() {
         checkClosed();
 
         matcher.usePattern(LINE_PATTERN);
@@ -1459,8 +1508,9 @@ public int nextInt(int radix) {
      *             if the next token can not be translated into a valid
      *             {@code long} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.942 -0500", hash_original_method = "6374462D33C9F89E6E50C3F6D20F5373", hash_generated_method = "3BBB9A10635ED766175135AD0EBB0FE7")
-    public long nextLong() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.625 -0500", hash_original_method = "6374462D33C9F89E6E50C3F6D20F5373", hash_generated_method = "3BBB9A10635ED766175135AD0EBB0FE7")
+    
+public long nextLong() {
         return nextLong(integerRadix);
     }
 
@@ -1487,9 +1537,10 @@ public int nextInt(int radix) {
      *             if the next token can not be translated into a valid
      *             {@code long} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.943 -0500", hash_original_method = "36B6D1B74C7A404A698E79C7D45F2371", hash_generated_method = "9963EDFD210EE22DE7D5B9BFF4A29C45")
-    @SuppressWarnings("boxing")
-public long nextLong(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.627 -0500", hash_original_method = "36B6D1B74C7A404A698E79C7D45F2371", hash_generated_method = "9963EDFD210EE22DE7D5B9BFF4A29C45")
+    
+@SuppressWarnings("boxing")
+    public long nextLong(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1524,8 +1575,9 @@ public long nextLong(int radix) {
      *             if the next token can not be translated into a valid
      *             {@code short} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.944 -0500", hash_original_method = "D33600E854DF5F367D7728611F6ACBC6", hash_generated_method = "8EF6F9187C3D1ADACA2CC8597573C8A8")
-    public short nextShort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.630 -0500", hash_original_method = "D33600E854DF5F367D7728611F6ACBC6", hash_generated_method = "8EF6F9187C3D1ADACA2CC8597573C8A8")
+    
+public short nextShort() {
         return nextShort(integerRadix);
     }
 
@@ -1552,9 +1604,10 @@ public long nextLong(int radix) {
      *             if the next token can not be translated into a valid
      *             {@code short} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.945 -0500", hash_original_method = "74041A63415BC5E03BF2BCCD0D0C92EB", hash_generated_method = "519B225D4032AF6626D88746299F7E18")
-    @SuppressWarnings("boxing")
-public short nextShort(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.633 -0500", hash_original_method = "74041A63415BC5E03BF2BCCD0D0C92EB", hash_generated_method = "519B225D4032AF6626D88746299F7E18")
+    
+@SuppressWarnings("boxing")
+    public short nextShort(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
@@ -1581,8 +1634,9 @@ public short nextShort(int radix) {
      *
      * @return the radix of this {@code Scanner}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.946 -0500", hash_original_method = "108FFB02BFAD84F212F542E44C9F6CE4", hash_generated_method = "60B2C488923915D138DB59CA6F833796")
-    public int radix() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.635 -0500", hash_original_method = "108FFB02BFAD84F212F542E44C9F6CE4", hash_generated_method = "60B2C488923915D138DB59CA6F833796")
+    
+public int radix() {
         return integerRadix;
     }
 
@@ -1602,8 +1656,9 @@ public short nextShort(int radix) {
      * @throws NoSuchElementException
      *             if the specified pattern match fails.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.947 -0500", hash_original_method = "EA8E10FC12D1B40BE210D235F143A214", hash_generated_method = "D687E245D884C1A05D43A7AA64DF9E41")
-    public Scanner skip(Pattern pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.637 -0500", hash_original_method = "EA8E10FC12D1B40BE210D235F143A214", hash_generated_method = "D687E245D884C1A05D43A7AA64DF9E41")
+    
+public Scanner skip(Pattern pattern) {
         checkClosed();
         checkNull(pattern);
         matcher.usePattern(pattern);
@@ -1644,8 +1699,9 @@ public short nextShort(int radix) {
      * @throws IllegalStateException
      *             if the {@code Scanner} is closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.948 -0500", hash_original_method = "B5629C8DC277AD4A72B913564449A4A1", hash_generated_method = "EE099B8A0CB9887603937DAD664F147E")
-    public Scanner skip(String pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.640 -0500", hash_original_method = "B5629C8DC277AD4A72B913564449A4A1", hash_generated_method = "EE099B8A0CB9887603937DAD664F147E")
+    
+public Scanner skip(String pattern) {
         return skip(Pattern.compile(pattern));
     }
 
@@ -1655,9 +1711,10 @@ public short nextShort(int radix) {
      *
      * @return a string representation of this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.949 -0500", hash_original_method = "13B9E1963603D8F8D017FAED70E76372", hash_generated_method = "3C2663A8A94A2D3F1590CC05F9225C3F")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.642 -0500", hash_original_method = "13B9E1963603D8F8D017FAED70E76372", hash_generated_method = "3C2663A8A94A2D3F1590CC05F9225C3F")
+    
+@Override
+    public String toString() {
         return getClass().getName() +
                 "[delimiter=" + delimiter +
                 ",findStartIndex=" + findStartIndex +
@@ -1673,8 +1730,9 @@ public String toString() {
      *            the delimiting pattern to use.
      * @return this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.949 -0500", hash_original_method = "E89CBE82FDB8B0CDDF4705672288D942", hash_generated_method = "4D64D29F69F9DEBA174C001EE6A817A9")
-    public Scanner useDelimiter(Pattern pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.644 -0500", hash_original_method = "E89CBE82FDB8B0CDDF4705672288D942", hash_generated_method = "4D64D29F69F9DEBA174C001EE6A817A9")
+    
+public Scanner useDelimiter(Pattern pattern) {
         delimiter = pattern;
         return this;
     }
@@ -1687,8 +1745,9 @@ public String toString() {
      *            a string from which a {@code Pattern} can be compiled.
      * @return this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.950 -0500", hash_original_method = "353C3ED30BA7FF969DF17D7F091BC9CC", hash_generated_method = "1D64DC9B54D27C13E0181D72A1A4168B")
-    public Scanner useDelimiter(String pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.647 -0500", hash_original_method = "353C3ED30BA7FF969DF17D7F091BC9CC", hash_generated_method = "1D64DC9B54D27C13E0181D72A1A4168B")
+    
+public Scanner useDelimiter(String pattern) {
         return useDelimiter(Pattern.compile(pattern));
     }
 
@@ -1699,8 +1758,9 @@ public String toString() {
      *            the specified {@code Locale} to use.
      * @return this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.951 -0500", hash_original_method = "A3D9C7BB7710DA92E291534F4EEE6EBE", hash_generated_method = "7890CDABECF8145D5EFFB94664E6F13E")
-    public Scanner useLocale(Locale l) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.649 -0500", hash_original_method = "A3D9C7BB7710DA92E291534F4EEE6EBE", hash_generated_method = "7890CDABECF8145D5EFFB94664E6F13E")
+    
+public Scanner useLocale(Locale l) {
         if (l == null) {
             throw new NullPointerException();
         }
@@ -1715,15 +1775,17 @@ public String toString() {
      *            the specified radix to use.
      * @return this {@code Scanner}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.952 -0500", hash_original_method = "345B5E07834B16EBD69B375363EEC767", hash_generated_method = "BD3246A81CFD23034FE57C1950675DF1")
-    public Scanner useRadix(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.652 -0500", hash_original_method = "345B5E07834B16EBD69B375363EEC767", hash_generated_method = "BD3246A81CFD23034FE57C1950675DF1")
+    
+public Scanner useRadix(int radix) {
         checkRadix(radix);
         this.integerRadix = radix;
         return this;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.952 -0500", hash_original_method = "A1030C8BAA30073CC5ACF726BB676E36", hash_generated_method = "9679C0000F24C0D7305319F9A71B6D9B")
-    private void checkRadix(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.655 -0500", hash_original_method = "A1030C8BAA30073CC5ACF726BB676E36", hash_generated_method = "9679C0000F24C0D7305319F9A71B6D9B")
+    
+private void checkRadix(int radix) {
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             throw new IllegalArgumentException("Invalid radix: " + radix);
         }
@@ -1735,16 +1797,18 @@ public String toString() {
      * @throws UnsupportedOperationException
      *             if this method is invoked.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.953 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
-    public void remove() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.657 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
+    
+public void remove() {
         throw new UnsupportedOperationException();
     }
 
     /*
      * Initialize some components.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.954 -0500", hash_original_method = "406043B74DF8E969B61AA0BA511B152F", hash_generated_method = "79289E1E750749625EC821690D670138")
-    private void initialization() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.659 -0500", hash_original_method = "406043B74DF8E969B61AA0BA511B152F", hash_generated_method = "79289E1E750749625EC821690D670138")
+    
+private void initialization() {
         buffer = CharBuffer.allocate(DEFAULT_TRUNK_SIZE);
         buffer.limit(0);
         matcher = delimiter.matcher(buffer);
@@ -1754,8 +1818,9 @@ public String toString() {
      * Check the {@code Scanner}'s state, if it is closed, IllegalStateException will be
      * thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.955 -0500", hash_original_method = "B30B600A81B32166D215C68FA4624658", hash_generated_method = "04B3916192B420CA2BBD922CB53A10AE")
-    private void checkClosed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.661 -0500", hash_original_method = "B30B600A81B32166D215C68FA4624658", hash_generated_method = "04B3916192B420CA2BBD922CB53A10AE")
+    
+private void checkClosed() {
         if (closed) {
             throw new IllegalStateException();
         }
@@ -1765,8 +1830,9 @@ public String toString() {
      * Check the inputed pattern. If it is null, then a NullPointerException
      * will be thrown out.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.955 -0500", hash_original_method = "36E7BDE51D05E7575D4F9253BA0F7A7F", hash_generated_method = "373C3C3F2BF4F3BDAB51AE9E5AD728B3")
-    private void checkNull(Pattern pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.664 -0500", hash_original_method = "36E7BDE51D05E7575D4F9253BA0F7A7F", hash_generated_method = "373C3C3F2BF4F3BDAB51AE9E5AD728B3")
+    
+private void checkNull(Pattern pattern) {
         if (pattern == null) {
             throw new NullPointerException();
         }
@@ -1775,8 +1841,9 @@ public String toString() {
     /*
      * Change the matcher's string after reading input
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.956 -0500", hash_original_method = "EB8AF45030CFA93895E22043F16AA91D", hash_generated_method = "04067805E7449EAF64C1FAE30FAB4D55")
-    private void resetMatcher() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.666 -0500", hash_original_method = "EB8AF45030CFA93895E22043F16AA91D", hash_generated_method = "04067805E7449EAF64C1FAE30FAB4D55")
+    
+private void resetMatcher() {
         if (matcher == null) {
             matcher = delimiter.matcher(buffer);
         } else {
@@ -1788,24 +1855,27 @@ public String toString() {
     /*
      * Save the matcher's last find position
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.957 -0500", hash_original_method = "8767C8E3B92497CDD5E1C8E3E9AF12A5", hash_generated_method = "F033BB3D8F2D204583029D755746C95A")
-    private void saveCurrentStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.668 -0500", hash_original_method = "8767C8E3B92497CDD5E1C8E3E9AF12A5", hash_generated_method = "F033BB3D8F2D204583029D755746C95A")
+    
+private void saveCurrentStatus() {
         preStartIndex = findStartIndex;
     }
 
     /*
      * Change the matcher's status to last find position
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.958 -0500", hash_original_method = "C4EDF4CCA1B99C808834619656C45D45", hash_generated_method = "E3DB46B8A8AF36053DB62D7867AB1516")
-    private void recoverPreviousStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.671 -0500", hash_original_method = "C4EDF4CCA1B99C808834619656C45D45", hash_generated_method = "E3DB46B8A8AF36053DB62D7867AB1516")
+    
+private void recoverPreviousStatus() {
         findStartIndex = preStartIndex;
     }
 
     /*
      * Get integer's pattern
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.959 -0500", hash_original_method = "B97F3D0429BBD1DC99EF41C42DDF373F", hash_generated_method = "799570D06D0C4023ECB1B158D31696DB")
-    private Pattern getIntegerPattern(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.673 -0500", hash_original_method = "B97F3D0429BBD1DC99EF41C42DDF373F", hash_generated_method = "799570D06D0C4023ECB1B158D31696DB")
+    
+private Pattern getIntegerPattern(int radix) {
         checkRadix(radix);
         decimalFormat = (DecimalFormat) NumberFormat.getInstance(locale);
 
@@ -1830,8 +1900,9 @@ public String toString() {
     /*
      * Get pattern of float
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.960 -0500", hash_original_method = "C0E115C785C5444E26611E86ADCD9532", hash_generated_method = "E2F50B51F92C15F431F41B593BEE77F8")
-    private Pattern getFloatPattern() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.677 -0500", hash_original_method = "C0E115C785C5444E26611E86ADCD9532", hash_generated_method = "E2F50B51F92C15F431F41B593BEE77F8")
+    
+private Pattern getFloatPattern() {
         decimalFormat = (DecimalFormat) NumberFormat.getInstance(locale);
 
         StringBuilder digit = new StringBuilder("([0-9]|(\\p{javaDigit}))");
@@ -1872,8 +1943,9 @@ public String toString() {
         return floatPattern;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.961 -0500", hash_original_method = "F633057156584A1CC211DF943CEE8B2E", hash_generated_method = "73748FC15FE66879BF1AE7A44A42B0EA")
-    private StringBuilder getNumeral(StringBuilder digit,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.679 -0500", hash_original_method = "F633057156584A1CC211DF943CEE8B2E", hash_generated_method = "73748FC15FE66879BF1AE7A44A42B0EA")
+    
+private StringBuilder getNumeral(StringBuilder digit,
             StringBuilder nonZeroDigit) {
         String groupSeparator = "\\"
                 + decimalFormat.getDecimalFormatSymbols()
@@ -1890,8 +1962,9 @@ public String toString() {
     /*
      * Add the locale specific positive prefixes and suffixes to the pattern
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.962 -0500", hash_original_method = "F4802B299CEDF4B393BE453F4FA35C1C", hash_generated_method = "7D85113D4BF0815A0B463659BDFF04AE")
-    private StringBuilder addPositiveSign(StringBuilder unSignNumeral) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.682 -0500", hash_original_method = "F4802B299CEDF4B393BE453F4FA35C1C", hash_generated_method = "7D85113D4BF0815A0B463659BDFF04AE")
+    
+private StringBuilder addPositiveSign(StringBuilder unSignNumeral) {
         String positivePrefix = "";
         String positiveSuffix = "";
         if (!decimalFormat.getPositivePrefix().isEmpty()) {
@@ -1909,8 +1982,9 @@ public String toString() {
     /*
      * Add the locale specific negative prefixes and suffixes to the pattern
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.963 -0500", hash_original_method = "52EA29890EB11047B6BC838B1D351A19", hash_generated_method = "1CA5D0203C2E79AAAF9425ADD7E5B1AE")
-    private StringBuilder addNegativeSign(StringBuilder unSignNumeral) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.684 -0500", hash_original_method = "52EA29890EB11047B6BC838B1D351A19", hash_generated_method = "1CA5D0203C2E79AAAF9425ADD7E5B1AE")
+    
+private StringBuilder addNegativeSign(StringBuilder unSignNumeral) {
         String negativePrefix = "";
         String negativeSuffix = "";
         if (!decimalFormat.getNegativePrefix().isEmpty()) {
@@ -1928,8 +2002,9 @@ public String toString() {
     /*
      * Remove locale related information from float String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.964 -0500", hash_original_method = "E9627567024197FCA7EA352F1F4FD73F", hash_generated_method = "AF6FFAAA17BE7962B31E3F8E8F3E2D0A")
-    private String removeLocaleInfoFromFloat(String floatString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.688 -0500", hash_original_method = "E9627567024197FCA7EA352F1F4FD73F", hash_generated_method = "AF6FFAAA17BE7962B31E3F8E8F3E2D0A")
+    
+private String removeLocaleInfoFromFloat(String floatString) {
         // If the token is HexFloat
         if (-1 != floatString.indexOf('x') || -1 != floatString.indexOf('X')) {
             return floatString;
@@ -1961,8 +2036,9 @@ public String toString() {
      * Remove the locale specific prefixes, group separators, and locale
      * specific suffixes from input string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.966 -0500", hash_original_method = "E0679D6E03D5A7C0D246B9231F9BA005", hash_generated_method = "DF8CE1CE2A873757BB46E37CCE99B79D")
-    private String removeLocaleInfo(String token, DataType type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.691 -0500", hash_original_method = "E0679D6E03D5A7C0D246B9231F9BA005", hash_generated_method = "DF8CE1CE2A873757BB46E37CCE99B79D")
+    
+private String removeLocaleInfo(String token, DataType type) {
         StringBuilder tokenBuilder = new StringBuilder(token);
         boolean negative = removeLocaleSign(tokenBuilder);
         // Remove group separator
@@ -2019,8 +2095,9 @@ public String toString() {
      * Remove positive and negative sign from the parameter stringBuilder, and
      * return whether the input string is negative
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.967 -0500", hash_original_method = "78E2FFE43DDA019FB87A76C655422357", hash_generated_method = "547428C328765DB155CB245C2CAA68E0")
-    private boolean removeLocaleSign(StringBuilder tokenBuilder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.694 -0500", hash_original_method = "78E2FFE43DDA019FB87A76C655422357", hash_generated_method = "547428C328765DB155CB245C2CAA68E0")
+    
+private boolean removeLocaleSign(StringBuilder tokenBuilder) {
         String positivePrefix = decimalFormat.getPositivePrefix();
         String positiveSuffix = decimalFormat.getPositiveSuffix();
         String negativePrefix = decimalFormat.getNegativePrefix();
@@ -2062,8 +2139,9 @@ public String toString() {
      * and set the start index and end index of Matcher region. If postfixed
      * delimiter does not exist, the end index is set to be end of input.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.968 -0500", hash_original_method = "F9C3F510E83B834D3EF4AA01E6CFE4F9", hash_generated_method = "68AB05A16E0FE35AF872C4C2509251D2")
-    private boolean setTokenRegion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.697 -0500", hash_original_method = "F9C3F510E83B834D3EF4AA01E6CFE4F9", hash_generated_method = "68AB05A16E0FE35AF872C4C2509251D2")
+    
+private boolean setTokenRegion() {
         // The position where token begins
         int tokenStartIndex = 0;
         // The position where token ends
@@ -2094,8 +2172,9 @@ public String toString() {
     /*
      * Find prefix delimiter
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.969 -0500", hash_original_method = "C22FCAE783E3B780837C6EC57B7427D4", hash_generated_method = "74D02CA3B586F483486C4941572061CE")
-    private int findPreDelimiter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.700 -0500", hash_original_method = "C22FCAE783E3B780837C6EC57B7427D4", hash_generated_method = "74D02CA3B586F483486C4941572061CE")
+    
+private int findPreDelimiter() {
         int tokenStartIndex;
         boolean findComplete = false;
         while (!findComplete) {
@@ -2128,8 +2207,9 @@ public String toString() {
     /*
      * Handle some special cases
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.970 -0500", hash_original_method = "CDCEB3053237613D9179B8FF1482F233", hash_generated_method = "1F02923AA39AAEEAD799B42A8247F79B")
-    private boolean setHeadTokenRegion(int findIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.703 -0500", hash_original_method = "CDCEB3053237613D9179B8FF1482F233", hash_generated_method = "1F02923AA39AAEEAD799B42A8247F79B")
+    
+private boolean setHeadTokenRegion(int findIndex) {
         int tokenStartIndex;
         int tokenEndIndex;
         boolean setSuccess = false;
@@ -2162,8 +2242,9 @@ public String toString() {
     /*
      * Find postfix delimiter
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.971 -0500", hash_original_method = "2DA8EAAAB20ACFBF7221E1B39889C369", hash_generated_method = "D3203076C152DC16E53D674D548AA877")
-    private int findPostDelimiter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.706 -0500", hash_original_method = "2DA8EAAAB20ACFBF7221E1B39889C369", hash_generated_method = "D3203076C152DC16E53D674D548AA877")
+    
+private int findPostDelimiter() {
         int tokenEndIndex = 0;
         boolean findComplete = false;
         while (!findComplete) {
@@ -2192,8 +2273,9 @@ public String toString() {
      * operation fails, global boolean variable inputExhausted will be set to
      * true, otherwise set to false.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.972 -0500", hash_original_method = "71E256A499C0BF5FC1327A59408A7116", hash_generated_method = "6E64D940A09BB57189208F09D6ED3FA6")
-    private void readMore() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.709 -0500", hash_original_method = "71E256A499C0BF5FC1327A59408A7116", hash_generated_method = "6E64D940A09BB57189208F09D6ED3FA6")
+    
+private void readMore() {
         int oldPosition = buffer.position();
         int oldBufferLength = bufferLength;
         // Increase capacity if empty space is not enough
@@ -2233,8 +2315,9 @@ public String toString() {
     }
 
     // Expand the size of internal buffer.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.973 -0500", hash_original_method = "333CE5605A5055092BA8AAF7729359CC", hash_generated_method = "1F8C96133D01F88B888A13E0AA6E5864")
-    private void expandBuffer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.711 -0500", hash_original_method = "333CE5605A5055092BA8AAF7729359CC", hash_generated_method = "1F8C96133D01F88B888A13E0AA6E5864")
+    
+private void expandBuffer() {
         int oldPosition = buffer.position();
         int oldCapacity = buffer.capacity();
         int oldLimit = buffer.limit();
@@ -2252,8 +2335,9 @@ public String toString() {
      * @return this scanner
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.973 -0500", hash_original_method = "6E6895DF0C38F7FD4A1856B0BE65A90D", hash_generated_method = "853C9A1985467115793F13C6AA0E5867")
-    public Scanner reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.714 -0500", hash_original_method = "6E6895DF0C38F7FD4A1856B0BE65A90D", hash_generated_method = "853C9A1985467115793F13C6AA0E5867")
+    
+public Scanner reset() {
         delimiter = DEFAULT_DELIMITER;
         locale = Locale.getDefault();
         integerRadix = 10;

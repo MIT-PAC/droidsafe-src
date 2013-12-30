@@ -21,10 +21,10 @@ import org.bouncycastle.math.ec.ECPoint;
 
 
 public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECConstants {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.796 -0500", hash_original_field = "1AFC7445D28E654B0EF1545F8475DF56", hash_generated_field = "1AFC7445D28E654B0EF1545F8475DF56")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.774 -0500", hash_original_field = "1AFC7445D28E654B0EF1545F8475DF56", hash_generated_field = "1AFC7445D28E654B0EF1545F8475DF56")
 
     ECDomainParameters  params;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.797 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.776 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
 
     SecureRandom        random;
     
@@ -34,8 +34,9 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.797 -0500", hash_original_method = "D75087D014852658987FF99D82A818E7", hash_generated_method = "DF842EAE673AC846B252FE559997875B")
-    public void init(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.779 -0500", hash_original_method = "D75087D014852658987FF99D82A818E7", hash_generated_method = "DF842EAE673AC846B252FE559997875B")
+    
+public void init(
         KeyGenerationParameters param)
     {
         ECKeyGenerationParameters  ecP = (ECKeyGenerationParameters)param;
@@ -48,8 +49,9 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
      * Given the domain parameters this routine generates an EC key
      * pair in accordance with X9.62 section 5.2.1 pages 26, 27.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.798 -0500", hash_original_method = "BE753751E7356A8E17BBC3B84C55A0A8", hash_generated_method = "325EEEC871F4540CF42A50709AF17200")
-    public AsymmetricCipherKeyPair generateKeyPair()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.781 -0500", hash_original_method = "BE753751E7356A8E17BBC3B84C55A0A8", hash_generated_method = "325EEEC871F4540CF42A50709AF17200")
+    
+public AsymmetricCipherKeyPair generateKeyPair()
     {
         BigInteger n = params.getN();
         int        nBitLength = n.bitLength();

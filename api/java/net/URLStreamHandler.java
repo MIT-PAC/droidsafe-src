@@ -17,8 +17,9 @@ public abstract class URLStreamHandler {
     /**
      * Returns a new path by resolving {@code path} relative to {@code base}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.247 -0500", hash_original_method = "A806CA7014E8BD9EACDE88341CB2140E", hash_generated_method = "9BE48AEDEDDA3DE7BD6115522CF4A620")
-    private static String relativePath(String base, String path) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.483 -0500", hash_original_method = "A806CA7014E8BD9EACDE88341CB2140E", hash_generated_method = "9BE48AEDEDDA3DE7BD6115522CF4A620")
+    
+private static String relativePath(String base, String path) {
         if (path.startsWith("/")) {
             return UrlUtils.canonicalizePath(path, true);
         } else if (base != null) {
@@ -46,8 +47,9 @@ public abstract class URLStreamHandler {
      * @throws IOException
      *             if an I/O error occurs during opening the connection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.243 -0500", hash_original_method = "041D500E1591B8A75B5DD1417FC123EC", hash_generated_method = "300967F6DD1F653B0B214BF830AB6C5B")
-    protected abstract URLConnection openConnection(URL u) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.472 -0500", hash_original_method = "041D500E1591B8A75B5DD1417FC123EC", hash_generated_method = "300967F6DD1F653B0B214BF830AB6C5B")
+    
+protected abstract URLConnection openConnection(URL u) throws IOException;
 
     /**
      * Establishes a new connection to the resource specified by the URL {@code
@@ -67,8 +69,9 @@ public abstract class URLStreamHandler {
      * @throws UnsupportedOperationException
      *             if the protocol handler doesn't support this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.244 -0500", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "A9F14988D1A778777FC1E31E1759BC16")
-    protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.475 -0500", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "A9F14988D1A778777FC1E31E1759BC16")
+    
+protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         throw new UnsupportedOperationException();
     }
 
@@ -214,9 +217,10 @@ switch(spec.charAt(pos)){
      * @deprecated use setURL(URL, String String, int, String, String, String,
      *             String, String) instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.248 -0500", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "4A9BF45FB9BD6560FDF1FE1C146BD4D7")
-    @Deprecated
-protected void setURL(URL u, String protocol, String host, int port,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.485 -0500", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "4A9BF45FB9BD6560FDF1FE1C146BD4D7")
+    
+@Deprecated
+    protected void setURL(URL u, String protocol, String host, int port,
             String file, String ref) {
         if (this != u.streamHandler) {
             throw new SecurityException();
@@ -228,8 +232,9 @@ protected void setURL(URL u, String protocol, String host, int port,
      * Sets the fields of the URL {@code u} to the values of the supplied
      * arguments.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.248 -0500", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "BB8E807735BF8B37BD6D9D1A31362EC2")
-    protected void setURL(URL u, String protocol, String host, int port,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.488 -0500", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "BB8E807735BF8B37BD6D9D1A31362EC2")
+    
+protected void setURL(URL u, String protocol, String host, int port,
             String authority, String userInfo, String path, String query,
             String ref) {
         if (this != u.streamHandler) {
@@ -247,8 +252,9 @@ protected void setURL(URL u, String protocol, String host, int port,
      * @see #parseURL
      * @see URL#toExternalForm()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.249 -0500", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "CA11A05DE26BB29DA87518A02206BA27")
-    protected String toExternalForm(URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.490 -0500", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "CA11A05DE26BB29DA87518A02206BA27")
+    
+protected String toExternalForm(URL url) {
         return toExternalForm(url, false);
     }
 
@@ -310,8 +316,9 @@ String varE65B3A02759122992CB82C0E651AD408_1238751379 =         result.toString(
      * Returns true if {@code a} and {@code b} have the same protocol, host,
      * port, file, and reference.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.251 -0500", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "5CE74B9F6208391846C455088544C7EA")
-    protected boolean equals(URL a, URL b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.496 -0500", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "5CE74B9F6208391846C455088544C7EA")
+    
+protected boolean equals(URL a, URL b) {
         return sameFile(a, b)
                 && Objects.equal(a.getRef(), b.getRef())
                 && Objects.equal(a.getQuery(), b.getQuery());
@@ -321,16 +328,18 @@ String varE65B3A02759122992CB82C0E651AD408_1238751379 =         result.toString(
      * Returns the default port of the protocol used by the handled URL. The
      * default implementation always returns {@code -1}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.252 -0500", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "205C6723B425D54E9B5A8C1AA4C8FA2F")
-    protected int getDefaultPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.499 -0500", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "205C6723B425D54E9B5A8C1AA4C8FA2F")
+    
+protected int getDefaultPort() {
         return -1;
     }
 
     /**
      * Returns the host address of {@code url}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.253 -0500", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "2215DE521BAD2D6AFEF78F79F87E6D9A")
-    protected InetAddress getHostAddress(URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.501 -0500", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "2215DE521BAD2D6AFEF78F79F87E6D9A")
+    
+protected InetAddress getHostAddress(URL url) {
         try {
             String host = url.getHost();
             if (host == null || host.length() == 0) {
@@ -345,16 +354,18 @@ String varE65B3A02759122992CB82C0E651AD408_1238751379 =         result.toString(
     /**
      * Returns the hash code of {@code url}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.253 -0500", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "3D67A5380D5954AFF1BAB48395A5ADB1")
-    protected int hashCode(URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.504 -0500", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "3D67A5380D5954AFF1BAB48395A5ADB1")
+    
+protected int hashCode(URL url) {
         return toExternalForm(url).hashCode();
     }
 
     /**
      * Returns true if the hosts of {@code a} and {@code b} are equal.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.254 -0500", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "0C94BC53A56883B931F9FB502EDD9033")
-    protected boolean hostsEqual(URL a, URL b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.506 -0500", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "0C94BC53A56883B931F9FB502EDD9033")
+    
+protected boolean hostsEqual(URL a, URL b) {
         // URLs with the same case-insensitive host name have equal hosts
         String aHost = a.getHost();
         String bHost = b.getHost();
@@ -365,8 +376,9 @@ String varE65B3A02759122992CB82C0E651AD408_1238751379 =         result.toString(
      * Returns true if {@code a} and {@code b} have the same protocol, host,
      * port and file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.255 -0500", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "23043EB8BE3FDBE60673B3EE851E2612")
-    protected boolean sameFile(URL a, URL b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.509 -0500", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "23043EB8BE3FDBE60673B3EE851E2612")
+    
+protected boolean sameFile(URL a, URL b) {
         return Objects.equal(a.getProtocol(), b.getProtocol())
                 && hostsEqual(a, b)
                 && a.getEffectivePort() == b.getEffectivePort()

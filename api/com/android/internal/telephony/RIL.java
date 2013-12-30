@@ -62,8 +62,9 @@ class RILRequest {
      * @param result sent when operation completes
      * @return a RILRequest instance from the pool.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.941 -0500", hash_original_method = "6A7FA32ED0AD9506923594ED32C4601A", hash_generated_method = "A7F67091EA6B158F41DE9930ED9770EF")
-    static RILRequest obtain(int request, Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.037 -0500", hash_original_method = "6A7FA32ED0AD9506923594ED32C4601A", hash_generated_method = "A7F67091EA6B158F41DE9930ED9770EF")
+    
+static RILRequest obtain(int request, Message result) {
         RILRequest rr = null;
 
         synchronized(sPoolSync) {
@@ -97,52 +98,54 @@ class RILRequest {
         return rr;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.943 -0500", hash_original_method = "090F8DC2C2098B0DB717AD347DCE04D3", hash_generated_method = "AD20F5051567213539C070678E314170")
-    static void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.045 -0500", hash_original_method = "090F8DC2C2098B0DB717AD347DCE04D3", hash_generated_method = "AD20F5051567213539C070678E314170")
+    
+static void
     resetSerial() {
         synchronized(sSerialMonitor) {
             sNextSerial = 0;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.931 -0500", hash_original_field = "5DB06ACB907164DDFD56CB65AEF4A643", hash_generated_field = "21AA8117BA78E2A6B7853733E283EBA4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.010 -0500", hash_original_field = "5DB06ACB907164DDFD56CB65AEF4A643", hash_generated_field = "21AA8117BA78E2A6B7853733E283EBA4")
 
     static final String LOG_TAG = "RILJ";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.932 -0500", hash_original_field = "D3306DFE5B4A0ABFAD51D71C18B9CF84", hash_generated_field = "4648C36C9B39D123F3C2DC203738A8FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.012 -0500", hash_original_field = "D3306DFE5B4A0ABFAD51D71C18B9CF84", hash_generated_field = "4648C36C9B39D123F3C2DC203738A8FE")
 
     static int sNextSerial = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.933 -0500", hash_original_field = "79EAD435D05FFA812BC1F9BA764B9F2B", hash_generated_field = "A7E278FEB1EC2BFEA3ED505503B40F1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.015 -0500", hash_original_field = "79EAD435D05FFA812BC1F9BA764B9F2B", hash_generated_field = "A7E278FEB1EC2BFEA3ED505503B40F1D")
 
     static Object sSerialMonitor = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.934 -0500", hash_original_field = "FF70C662CB92BB1987F6CF4637424D6E", hash_generated_field = "8885194D9D2ADA6648AB65C43BA7A18A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.017 -0500", hash_original_field = "FF70C662CB92BB1987F6CF4637424D6E", hash_generated_field = "8885194D9D2ADA6648AB65C43BA7A18A")
 
     private static Object sPoolSync = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.935 -0500", hash_original_field = "EAD385387EEE4256509C93E26B7757D8", hash_generated_field = "29AEB546B72810AE137F2724EB8AC46F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.019 -0500", hash_original_field = "EAD385387EEE4256509C93E26B7757D8", hash_generated_field = "29AEB546B72810AE137F2724EB8AC46F")
 
     private static RILRequest sPool = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.935 -0500", hash_original_field = "58C64529682BFD4E11D662842F129355", hash_generated_field = "A60993B78066ACEFAC0F4A6F4AB10BB4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.021 -0500", hash_original_field = "58C64529682BFD4E11D662842F129355", hash_generated_field = "A60993B78066ACEFAC0F4A6F4AB10BB4")
 
     private static int sPoolSize = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.936 -0500", hash_original_field = "97C7BDD81D087D5FA5CE96AB2991A5FB", hash_generated_field = "E10F8FF6B26141CA5E230C0B750B2798")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.024 -0500", hash_original_field = "97C7BDD81D087D5FA5CE96AB2991A5FB", hash_generated_field = "E10F8FF6B26141CA5E230C0B750B2798")
 
     private static final int MAX_POOL_SIZE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.937 -0500", hash_original_field = "2C995DC68A290AA0E91A0F8065297DF6", hash_generated_field = "2C995DC68A290AA0E91A0F8065297DF6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.026 -0500", hash_original_field = "2C995DC68A290AA0E91A0F8065297DF6", hash_generated_field = "2C995DC68A290AA0E91A0F8065297DF6")
 
     int mSerial;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.938 -0500", hash_original_field = "6C368ED9CE82768FD0B5A0D34D844F82", hash_generated_field = "6C368ED9CE82768FD0B5A0D34D844F82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.028 -0500", hash_original_field = "6C368ED9CE82768FD0B5A0D34D844F82", hash_generated_field = "6C368ED9CE82768FD0B5A0D34D844F82")
 
     int mRequest;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.938 -0500", hash_original_field = "275BCCDB24FCA985A62252086534EA41", hash_generated_field = "275BCCDB24FCA985A62252086534EA41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.030 -0500", hash_original_field = "275BCCDB24FCA985A62252086534EA41", hash_generated_field = "275BCCDB24FCA985A62252086534EA41")
 
     Message mResult;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.939 -0500", hash_original_field = "EEF79C3D9374B5C2140B6DF15C81B0D3", hash_generated_field = "EEF79C3D9374B5C2140B6DF15C81B0D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.032 -0500", hash_original_field = "EEF79C3D9374B5C2140B6DF15C81B0D3", hash_generated_field = "EEF79C3D9374B5C2140B6DF15C81B0D3")
 
     Parcel mp;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.940 -0500", hash_original_field = "64C9DCC5A15FF3A81952EE0FF77BF4DE", hash_generated_field = "64C9DCC5A15FF3A81952EE0FF77BF4DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.034 -0500", hash_original_field = "64C9DCC5A15FF3A81952EE0FF77BF4DE", hash_generated_field = "64C9DCC5A15FF3A81952EE0FF77BF4DE")
 
     RILRequest mNext;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.943 -0500", hash_original_method = "9C4E8F6E2A10EF2C06F20638ED2CBC6D", hash_generated_method = "9161999B880C7E10C983CA44E7AAFCBF")
-    private RILRequest() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.042 -0500", hash_original_method = "9C4E8F6E2A10EF2C06F20638ED2CBC6D", hash_generated_method = "9161999B880C7E10C983CA44E7AAFCBF")
+    
+private RILRequest() {
     }
 
     /**
@@ -150,8 +153,9 @@ class RILRequest {
      *
      * Note: This should only be called once per use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.942 -0500", hash_original_method = "E7EE736E24A2BE53AC107C249FFB0880", hash_generated_method = "E7EE736E24A2BE53AC107C249FFB0880")
-    void release() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.039 -0500", hash_original_method = "E7EE736E24A2BE53AC107C249FFB0880", hash_generated_method = "E7EE736E24A2BE53AC107C249FFB0880")
+    
+void release() {
         synchronized (sPoolSync) {
             if (sPoolSize < MAX_POOL_SIZE) {
                 this.mNext = sPool;
@@ -162,8 +166,9 @@ class RILRequest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.944 -0500", hash_original_method = "9C13ECBB4C9B57CD7FC06025C6091C8F", hash_generated_method = "FDAAF67AB401FFBE9EE7FECBE302FD4B")
-    String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.047 -0500", hash_original_method = "9C13ECBB4C9B57CD7FC06025C6091C8F", hash_generated_method = "FDAAF67AB401FFBE9EE7FECBE302FD4B")
+    
+String
     serialString() {
         //Cheesy way to do %04d
         StringBuilder sb = new StringBuilder(8);
@@ -182,8 +187,9 @@ class RILRequest {
         return sb.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.945 -0500", hash_original_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6", hash_generated_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6")
-    void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.049 -0500", hash_original_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6", hash_generated_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6")
+    
+void
     onError(int error, Object ret) {
         CommandException ex;
 
@@ -220,8 +226,9 @@ public final class RIL extends BaseCommands implements CommandsInterface {
      * @return Length of message less header, or -1 on end of stream.
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.975 -0500", hash_original_method = "276911B1F31C12ADE55317E1DBA28A10", hash_generated_method = "CB85081F1CD1198E5F33E7DDF76DB880")
-    private static int readRilMessage(InputStream is, byte[] buffer)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.133 -0500", hash_original_method = "276911B1F31C12ADE55317E1DBA28A10", hash_generated_method = "CB85081F1CD1198E5F33E7DDF76DB880")
+    
+private static int readRilMessage(InputStream is, byte[] buffer)
             throws IOException {
         int countRead;
         int offset;
@@ -267,8 +274,9 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         return messageLength;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.117 -0500", hash_original_method = "A6BE0A2E0E75DCD61AF717228F0C001C", hash_generated_method = "A36B10338A6834F66F5F4B915A83374D")
-    static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.520 -0500", hash_original_method = "A6BE0A2E0E75DCD61AF717228F0C001C", hash_generated_method = "A36B10338A6834F66F5F4B915A83374D")
+    
+static String
     requestToString(int request) {
 /*
  cat libs/telephony/ril_commands.h \
@@ -387,8 +395,9 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.118 -0500", hash_original_method = "D2B90A548E62E677ED47B4C8A846A41D", hash_generated_method = "1972C5F5D69CCA9A4C3A8EC2103BBBB8")
-    static String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.524 -0500", hash_original_method = "D2B90A548E62E677ED47B4C8A846A41D", hash_generated_method = "1972C5F5D69CCA9A4C3A8EC2103BBBB8")
+    
+static String
     responseToString(int request)
     {
 /*
@@ -435,16 +444,16 @@ public final class RIL extends BaseCommands implements CommandsInterface {
             default: return "<unknown reponse>";
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.948 -0500", hash_original_field = "5DB06ACB907164DDFD56CB65AEF4A643", hash_generated_field = "21AA8117BA78E2A6B7853733E283EBA4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.056 -0500", hash_original_field = "5DB06ACB907164DDFD56CB65AEF4A643", hash_generated_field = "21AA8117BA78E2A6B7853733E283EBA4")
 
     static final String LOG_TAG = "RILJ";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.948 -0500", hash_original_field = "2224FD0C8B94519C5DA953BCAE383B64", hash_generated_field = "E8AEBB7BC1E8DE7102DD065D634CC293")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.058 -0500", hash_original_field = "2224FD0C8B94519C5DA953BCAE383B64", hash_generated_field = "E8AEBB7BC1E8DE7102DD065D634CC293")
 
     static final boolean RILJ_LOGD = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.949 -0500", hash_original_field = "A9764A09E8D58C6EAA25BCAF58113079", hash_generated_field = "0C6948A169D6E1D2E1ADEB0F80785D40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.061 -0500", hash_original_field = "A9764A09E8D58C6EAA25BCAF58113079", hash_generated_field = "0C6948A169D6E1D2E1ADEB0F80785D40")
 
     static final boolean RILJ_LOGV = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.950 -0500", hash_original_field = "4214191B75EC7610CB78A60A83ABB237", hash_generated_field = "2A5370CA35CD21108F4ED0D2665FA27C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.063 -0500", hash_original_field = "4214191B75EC7610CB78A60A83ABB237", hash_generated_field = "2A5370CA35CD21108F4ED0D2665FA27C")
 
 
     /**
@@ -452,77 +461,77 @@ public final class RIL extends BaseCommands implements CommandsInterface {
      * the vendor ril.
      */
     private static final int DEFAULT_WAKE_LOCK_TIMEOUT = 60000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.958 -0500", hash_original_field = "F1DEE3A771D3E3CFF213C021D2728FB5", hash_generated_field = "EAFA57C607FF50983754A1B1A1DB0736")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.089 -0500", hash_original_field = "F1DEE3A771D3E3CFF213C021D2728FB5", hash_generated_field = "EAFA57C607FF50983754A1B1A1DB0736")
 
 
     static final int EVENT_SEND                 = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.960 -0500", hash_original_field = "6E7DCBFDBC7E8D011B39730FA3200D48", hash_generated_field = "6A179A477F6E9E6E9040DC18977E01CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.092 -0500", hash_original_field = "6E7DCBFDBC7E8D011B39730FA3200D48", hash_generated_field = "6A179A477F6E9E6E9040DC18977E01CB")
 
     static final int EVENT_WAKE_LOCK_TIMEOUT    = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.961 -0500", hash_original_field = "DDB9DBAE4150B6B7D23DA2AFBFDE0205", hash_generated_field = "C9C6661CA6015E3437D26DDF8A3F4C47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.094 -0500", hash_original_field = "DDB9DBAE4150B6B7D23DA2AFBFDE0205", hash_generated_field = "C9C6661CA6015E3437D26DDF8A3F4C47")
 
 
     // match with constant in ril.cpp
     static final int RIL_MAX_COMMAND_BYTES = (8 * 1024);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.962 -0500", hash_original_field = "771CD4999349A71CCF74C56975058AF4", hash_generated_field = "7A9920177945AAD6E3BDD930CB1D5FDA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.097 -0500", hash_original_field = "771CD4999349A71CCF74C56975058AF4", hash_generated_field = "7A9920177945AAD6E3BDD930CB1D5FDA")
 
     static final int RESPONSE_SOLICITED = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.963 -0500", hash_original_field = "C3C1AC8D4B2CE02A384A0B3F6DF62E2A", hash_generated_field = "F7189327FBCA5256349AE6998692EE59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.099 -0500", hash_original_field = "C3C1AC8D4B2CE02A384A0B3F6DF62E2A", hash_generated_field = "F7189327FBCA5256349AE6998692EE59")
 
     static final int RESPONSE_UNSOLICITED = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.964 -0500", hash_original_field = "99FCBA019863F85C570EF386F45BF3C5", hash_generated_field = "66495E17EC0A0057CA4BC33F77ACB85F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.101 -0500", hash_original_field = "99FCBA019863F85C570EF386F45BF3C5", hash_generated_field = "66495E17EC0A0057CA4BC33F77ACB85F")
 
 
     static final String SOCKET_NAME_RIL = "rild";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.965 -0500", hash_original_field = "34C5F94ABB1E632304D783A0CE1FE12B", hash_generated_field = "0C3577BF4F60D2979C4EC6F1261A00D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.103 -0500", hash_original_field = "34C5F94ABB1E632304D783A0CE1FE12B", hash_generated_field = "0C3577BF4F60D2979C4EC6F1261A00D0")
 
 
     static final int SOCKET_OPEN_RETRY_MILLIS = 4 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.966 -0500", hash_original_field = "EA5E9D4D9E25D1C3C36F8DE3FFA2BA27", hash_generated_field = "2AAB4923DC15ECFCD362A5FDA717AEC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.106 -0500", hash_original_field = "EA5E9D4D9E25D1C3C36F8DE3FFA2BA27", hash_generated_field = "2AAB4923DC15ECFCD362A5FDA717AEC9")
 
     // RIL_CDMA_BroadcastServiceInfo
     private static final int CDMA_BSI_NO_OF_INTS_STRUCT = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.967 -0500", hash_original_field = "25AC31352BAE9D9A7F24629E960EE07E", hash_generated_field = "8AC0B7212834068F171EE2AA5B80B5F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.109 -0500", hash_original_field = "25AC31352BAE9D9A7F24629E960EE07E", hash_generated_field = "8AC0B7212834068F171EE2AA5B80B5F8")
 
 
     private static final int CDMA_BROADCAST_SMS_NO_OF_SERVICE_CATEGORIES = 31;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.951 -0500", hash_original_field = "6971E2A0D3E5B2508308ACDF0894CC71", hash_generated_field = "6971E2A0D3E5B2508308ACDF0894CC71")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.065 -0500", hash_original_field = "6971E2A0D3E5B2508308ACDF0894CC71", hash_generated_field = "6971E2A0D3E5B2508308ACDF0894CC71")
 
 
     LocalSocket mSocket;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.951 -0500", hash_original_field = "447BDB484814847833708DAC5CD0741B", hash_generated_field = "447BDB484814847833708DAC5CD0741B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.067 -0500", hash_original_field = "447BDB484814847833708DAC5CD0741B", hash_generated_field = "447BDB484814847833708DAC5CD0741B")
 
     HandlerThread mSenderThread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.952 -0500", hash_original_field = "F824B77C4D08BC410F85653F55DB5D17", hash_generated_field = "F824B77C4D08BC410F85653F55DB5D17")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.069 -0500", hash_original_field = "F824B77C4D08BC410F85653F55DB5D17", hash_generated_field = "F824B77C4D08BC410F85653F55DB5D17")
 
     RILSender mSender;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.953 -0500", hash_original_field = "4C5A8172CA27A059D229944DFD840114", hash_generated_field = "4C5A8172CA27A059D229944DFD840114")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.071 -0500", hash_original_field = "4C5A8172CA27A059D229944DFD840114", hash_generated_field = "4C5A8172CA27A059D229944DFD840114")
 
     Thread mReceiverThread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.954 -0500", hash_original_field = "B718778FEA0061AFBE714CC16C50488E", hash_generated_field = "B718778FEA0061AFBE714CC16C50488E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.073 -0500", hash_original_field = "B718778FEA0061AFBE714CC16C50488E", hash_generated_field = "B718778FEA0061AFBE714CC16C50488E")
 
     RILReceiver mReceiver;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.954 -0500", hash_original_field = "33E56F28B2B8FE4608887A854590880D", hash_generated_field = "33E56F28B2B8FE4608887A854590880D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.076 -0500", hash_original_field = "33E56F28B2B8FE4608887A854590880D", hash_generated_field = "33E56F28B2B8FE4608887A854590880D")
 
     WakeLock mWakeLock;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.955 -0500", hash_original_field = "102A8E8B4FA31B396B477F22D2A32DA8", hash_generated_field = "102A8E8B4FA31B396B477F22D2A32DA8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.078 -0500", hash_original_field = "102A8E8B4FA31B396B477F22D2A32DA8", hash_generated_field = "102A8E8B4FA31B396B477F22D2A32DA8")
 
     int mWakeLockTimeout;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.956 -0500", hash_original_field = "9200B1A2FDF04FDBA9EA6DB75F97F5C2", hash_generated_field = "AD7C5BAFD48BFFF8105D8322194E4C27")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.080 -0500", hash_original_field = "9200B1A2FDF04FDBA9EA6DB75F97F5C2", hash_generated_field = "AD7C5BAFD48BFFF8105D8322194E4C27")
 
     // EVENT_SEND and decreases while handling EVENT_SEND. It gets cleared while
     // WAKE_LOCK_TIMEOUT occurs.
     int mRequestMessagesPending;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.956 -0500", hash_original_field = "2A0F03062FAF4047F837E853AF898D37", hash_generated_field = "F8BC55AA6D7D115FF68A75EB43C66CCF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.082 -0500", hash_original_field = "2A0F03062FAF4047F837E853AF898D37", hash_generated_field = "F8BC55AA6D7D115FF68A75EB43C66CCF")
 
     // sending request and decreases while handling response. It should match
     // mRequestList.size() unless there are requests no replied while
     // WAKE_LOCK_TIMEOUT occurs.
     int mRequestMessagesWaiting;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.957 -0500", hash_original_field = "A8E052F302542BDDE893942D71524913", hash_generated_field = "A8E052F302542BDDE893942D71524913")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.084 -0500", hash_original_field = "A8E052F302542BDDE893942D71524913", hash_generated_field = "A8E052F302542BDDE893942D71524913")
 
     ArrayList<RILRequest> mRequestsList = new ArrayList<RILRequest>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.958 -0500", hash_original_field = "DD6FA850B0C2512C103BBC579CD52D51", hash_generated_field = "DD6FA850B0C2512C103BBC579CD52D51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.087 -0500", hash_original_field = "DD6FA850B0C2512C103BBC579CD52D51", hash_generated_field = "DD6FA850B0C2512C103BBC579CD52D51")
 
 
     Object     mLastNITZTimeInfo;
@@ -560,7 +569,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.063 -0500", hash_original_field = "8205422FA9C8EE734805852885A1A6AF", hash_generated_field = "517EE6BA92CA6D3C16C0F4FDDB025C17")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.370 -0500", hash_original_field = "8205422FA9C8EE734805852885A1A6AF", hash_generated_field = "517EE6BA92CA6D3C16C0F4FDDB025C17")
 
     private int mSetPreferredNetworkType;
 
@@ -568,8 +577,9 @@ public final class RIL extends BaseCommands implements CommandsInterface {
 
     //***** Constructors
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.981 -0500", hash_original_method = "57415555D3C32D9CF1C37CD62128114E", hash_generated_method = "EBD4AF15FC15B3B45EC1BCB6C3450064")
-    public RIL(Context context, int preferredNetworkType, int cdmaSubscription) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.147 -0500", hash_original_method = "57415555D3C32D9CF1C37CD62128114E", hash_generated_method = "EBD4AF15FC15B3B45EC1BCB6C3450064")
+    
+public RIL(Context context, int preferredNetworkType, int cdmaSubscription) {
         super(context);
         if (RILJ_LOGD) {
             riljLog("RIL(context, preferredNetworkType=" + preferredNetworkType +
@@ -612,9 +622,9 @@ public final class RIL extends BaseCommands implements CommandsInterface {
 
     //***** CommandsInterface implementation
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.982 -0500", hash_original_method = "9505EC70575F3F081B82639224A26C6E", hash_generated_method = "83CD86D85ACADBA9C0784283738A5FAC")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.151 -0500", hash_original_method = "9505EC70575F3F081B82639224A26C6E", hash_generated_method = "83CD86D85ACADBA9C0784283738A5FAC")
+    
+@Override public void
     setOnNITZTime(Handler h, int what, Object obj) {
         super.setOnNITZTime(h, what, obj);
 
@@ -627,8 +637,9 @@ public void
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.983 -0500", hash_original_method = "9A7EB00CD2404F3C288A75EFD9E4A220", hash_generated_method = "9845F65534EE430AF5488FBE4965FCDD")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.153 -0500", hash_original_method = "9A7EB00CD2404F3C288A75EFD9E4A220", hash_generated_method = "9845F65534EE430AF5488FBE4965FCDD")
+    
+public void
     getIccCardStatus(Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -639,16 +650,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.983 -0500", hash_original_method = "A64490CEA7617DBF7C16959DD443F320", hash_generated_method = "2754B6467538470FD26123A3EF2B5082")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.156 -0500", hash_original_method = "A64490CEA7617DBF7C16959DD443F320", hash_generated_method = "2754B6467538470FD26123A3EF2B5082")
+    
+@Override public void
     supplyIccPin(String pin, Message result) {
         supplyIccPinForApp(pin, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.984 -0500", hash_original_method = "292CEACE366769BDA48EB6300D49BD27", hash_generated_method = "03431EFD1052830D3AA53E969ACB5FA1")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.158 -0500", hash_original_method = "292CEACE366769BDA48EB6300D49BD27", hash_generated_method = "03431EFD1052830D3AA53E969ACB5FA1")
+    
+@Override public void
     supplyIccPinForApp(String pin, String aid, Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -663,16 +674,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.985 -0500", hash_original_method = "EDD0A15F8BC2322B300440A8148B03FB", hash_generated_method = "54D27AB755308927B0BDDEC73E883C89")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.160 -0500", hash_original_method = "EDD0A15F8BC2322B300440A8148B03FB", hash_generated_method = "54D27AB755308927B0BDDEC73E883C89")
+    
+@Override public void
     supplyIccPuk(String puk, String newPin, Message result) {
         supplyIccPukForApp(puk, newPin, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.986 -0500", hash_original_method = "1780B25BC715F62B7E7B76DC76BDB7F8", hash_generated_method = "0E900A5DCBE4FAD14857EC491876F845")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.163 -0500", hash_original_method = "1780B25BC715F62B7E7B76DC76BDB7F8", hash_generated_method = "0E900A5DCBE4FAD14857EC491876F845")
+    
+@Override public void
     supplyIccPukForApp(String puk, String newPin, String aid, Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -688,16 +699,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.987 -0500", hash_original_method = "8076AE95CA0491033B7A3B1FDB27A00D", hash_generated_method = "05631E0E9F31EA04A8693EE3330EAF9E")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.165 -0500", hash_original_method = "8076AE95CA0491033B7A3B1FDB27A00D", hash_generated_method = "05631E0E9F31EA04A8693EE3330EAF9E")
+    
+@Override public void
     supplyIccPin2(String pin, Message result) {
         supplyIccPin2ForApp(pin, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.988 -0500", hash_original_method = "2364DF46EB4F312709574B2C726226B0", hash_generated_method = "1D93784D90C3EB061F59DE72838B2D0D")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.168 -0500", hash_original_method = "2364DF46EB4F312709574B2C726226B0", hash_generated_method = "1D93784D90C3EB061F59DE72838B2D0D")
+    
+@Override public void
     supplyIccPin2ForApp(String pin, String aid, Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -712,16 +723,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.989 -0500", hash_original_method = "02C50C8BAA9C120A4383EA48E4CE9EF9", hash_generated_method = "60499D17D410B085AA92DF9352484088")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.170 -0500", hash_original_method = "02C50C8BAA9C120A4383EA48E4CE9EF9", hash_generated_method = "60499D17D410B085AA92DF9352484088")
+    
+@Override public void
     supplyIccPuk2(String puk2, String newPin2, Message result) {
         supplyIccPuk2ForApp(puk2, newPin2, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.990 -0500", hash_original_method = "16881D0ACCF987B6F55F1477C7A8AF2E", hash_generated_method = "E6F13F7A8A4D62CB7C8EF7CD217A04EB")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.173 -0500", hash_original_method = "16881D0ACCF987B6F55F1477C7A8AF2E", hash_generated_method = "E6F13F7A8A4D62CB7C8EF7CD217A04EB")
+    
+@Override public void
     supplyIccPuk2ForApp(String puk, String newPin2, String aid, Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -737,16 +748,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.991 -0500", hash_original_method = "E5801ABF4ED976E8B47A9DC4E0EF9FFC", hash_generated_method = "9333566F226F95BAC1E450E00E492DF5")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.176 -0500", hash_original_method = "E5801ABF4ED976E8B47A9DC4E0EF9FFC", hash_generated_method = "9333566F226F95BAC1E450E00E492DF5")
+    
+@Override public void
     changeIccPin(String oldPin, String newPin, Message result) {
         changeIccPinForApp(oldPin, newPin, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.992 -0500", hash_original_method = "FB6D60EEFAF19AC3A68522374AFE5A34", hash_generated_method = "F2F757C43C302BDE99C83FFA05B8D513")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.178 -0500", hash_original_method = "FB6D60EEFAF19AC3A68522374AFE5A34", hash_generated_method = "F2F757C43C302BDE99C83FFA05B8D513")
+    
+@Override public void
     changeIccPinForApp(String oldPin, String newPin, String aid, Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -762,16 +773,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.993 -0500", hash_original_method = "09C1A469DD89C445C72DC064DAF532C6", hash_generated_method = "E07452CA5AE27EF53049F3F2F894DE01")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.181 -0500", hash_original_method = "09C1A469DD89C445C72DC064DAF532C6", hash_generated_method = "E07452CA5AE27EF53049F3F2F894DE01")
+    
+@Override public void
     changeIccPin2(String oldPin2, String newPin2, Message result) {
         changeIccPin2ForApp(oldPin2, newPin2, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.993 -0500", hash_original_method = "5CD184F5005892F6A2376DA12B8940E7", hash_generated_method = "79AE42D7498EDFA3139C1A9948D8DEC8")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.183 -0500", hash_original_method = "5CD184F5005892F6A2376DA12B8940E7", hash_generated_method = "79AE42D7498EDFA3139C1A9948D8DEC8")
+    
+@Override public void
     changeIccPin2ForApp(String oldPin2, String newPin2, String aid, Message result) {
         //Note: This RIL request has not been renamed to ICC,
         //       but this request is also valid for SIM and RUIM
@@ -787,8 +798,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.994 -0500", hash_original_method = "DCA3B69D42E061A95FB4470FAF19888E", hash_generated_method = "0C2BE2193A2ACE8870F82099D481706D")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.186 -0500", hash_original_method = "DCA3B69D42E061A95FB4470FAF19888E", hash_generated_method = "0C2BE2193A2ACE8870F82099D481706D")
+    
+public void
     changeBarringPassword(String facility, String oldPwd, String newPwd, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CHANGE_BARRING_PASSWORD, result);
 
@@ -802,8 +814,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.995 -0500", hash_original_method = "FD9166E53C98E732567F842FC6265121", hash_generated_method = "53EF95420EC6CA5BEAC41B8E62018336")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.188 -0500", hash_original_method = "FD9166E53C98E732567F842FC6265121", hash_generated_method = "53EF95420EC6CA5BEAC41B8E62018336")
+    
+public void
     supplyNetworkDepersonalization(String netpin, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION, result);
 
@@ -815,8 +828,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.996 -0500", hash_original_method = "6F2937ACBD34EE8D8FEF57D35663AFCC", hash_generated_method = "EA7655888FDB71BBD2E76B7A0678657B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.190 -0500", hash_original_method = "6F2937ACBD34EE8D8FEF57D35663AFCC", hash_generated_method = "EA7655888FDB71BBD2E76B7A0678657B")
+    
+public void
     getCurrentCalls (Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_CURRENT_CALLS, result);
 
@@ -825,15 +839,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.997 -0500", hash_original_method = "A1D311E0B227CABB8D0707A1650659D2", hash_generated_method = "C3AC6F9A2CFFD32EBFB9540BD60867FB")
-    @Deprecated
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.192 -0500", hash_original_method = "A1D311E0B227CABB8D0707A1650659D2", hash_generated_method = "C3AC6F9A2CFFD32EBFB9540BD60867FB")
+    
+@Deprecated public void
     getPDPContextList(Message result) {
         getDataCallList(result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.997 -0500", hash_original_method = "68CF653DB375A3C63D89D09DBB57244C", hash_generated_method = "6FEA3516FF175A7249C9230A95AB4F2A")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.194 -0500", hash_original_method = "68CF653DB375A3C63D89D09DBB57244C", hash_generated_method = "6FEA3516FF175A7249C9230A95AB4F2A")
+    
+public void
     getDataCallList(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_DATA_CALL_LIST, result);
 
@@ -842,14 +857,16 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.998 -0500", hash_original_method = "85029AD0E77EFB7E7AAB9535BAB079D4", hash_generated_method = "5F12969E39261F925BD794DDAFA6B78D")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.197 -0500", hash_original_method = "85029AD0E77EFB7E7AAB9535BAB079D4", hash_generated_method = "5F12969E39261F925BD794DDAFA6B78D")
+    
+public void
     dial (String address, int clirMode, Message result) {
         dial(address, clirMode, null, result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.999 -0500", hash_original_method = "2937351315DD22A0DBB0EBEECB6FBD52", hash_generated_method = "6F5D53D6E8CBFC87ED23ADEB04ACEC10")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.200 -0500", hash_original_method = "2937351315DD22A0DBB0EBEECB6FBD52", hash_generated_method = "6F5D53D6E8CBFC87ED23ADEB04ACEC10")
+    
+public void
     dial(String address, int clirMode, UUSInfo uusInfo, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_DIAL, result);
 
@@ -871,8 +888,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.000 -0500", hash_original_method = "DCABA764531B1065D0038AAAD031BA27", hash_generated_method = "3821C0875657DA375DE89A3D9EC97311")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.202 -0500", hash_original_method = "DCABA764531B1065D0038AAAD031BA27", hash_generated_method = "3821C0875657DA375DE89A3D9EC97311")
+    
+public void
     getIMSI(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_IMSI, result);
 
@@ -881,8 +899,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.001 -0500", hash_original_method = "4D0F2CCF9960CC448C13E6CB3F3B5DE4", hash_generated_method = "EBAB5A5D400EF87FFB713114AFE6D989")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.204 -0500", hash_original_method = "4D0F2CCF9960CC448C13E6CB3F3B5DE4", hash_generated_method = "EBAB5A5D400EF87FFB713114AFE6D989")
+    
+public void
     getIMEI(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_IMEI, result);
 
@@ -891,8 +910,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.001 -0500", hash_original_method = "149F0748B48493B8EA1EFEBB8389549A", hash_generated_method = "1BB8B43004ECEF4213FC68CBCBE9FD5F")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.206 -0500", hash_original_method = "149F0748B48493B8EA1EFEBB8389549A", hash_generated_method = "1BB8B43004ECEF4213FC68CBCBE9FD5F")
+    
+public void
     getIMEISV(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_IMEISV, result);
 
@@ -902,8 +922,9 @@ public void
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.002 -0500", hash_original_method = "7905AFC17F454606777953D509A8D53A", hash_generated_method = "BC7CFDFB679492079FC8FCE9BE71BA5A")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.209 -0500", hash_original_method = "7905AFC17F454606777953D509A8D53A", hash_generated_method = "BC7CFDFB679492079FC8FCE9BE71BA5A")
+    
+public void
     hangupConnection (int gsmIndex, Message result) {
         if (RILJ_LOGD) riljLog("hangupConnection: gsmIndex=" + gsmIndex);
 
@@ -918,8 +939,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.003 -0500", hash_original_method = "85440FD9AE077A395C6F94573FB9B35A", hash_generated_method = "E6FF9476B275D0DC38BF69ADFCBEE6F5")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.211 -0500", hash_original_method = "85440FD9AE077A395C6F94573FB9B35A", hash_generated_method = "E6FF9476B275D0DC38BF69ADFCBEE6F5")
+    
+public void
     hangupWaitingOrBackground (Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_HANGUP_WAITING_OR_BACKGROUND,
                                         result);
@@ -929,8 +951,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.004 -0500", hash_original_method = "7CE301AE0A34FEB3B57BD0350A2D5E6A", hash_generated_method = "E5D7DA806077A1E7F519079AF9DD8DA5")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.213 -0500", hash_original_method = "7CE301AE0A34FEB3B57BD0350A2D5E6A", hash_generated_method = "E5D7DA806077A1E7F519079AF9DD8DA5")
+    
+public void
     hangupForegroundResumeBackground (Message result) {
         RILRequest rr
                 = RILRequest.obtain(
@@ -941,8 +964,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.006 -0500", hash_original_method = "D308C1E0C4F8D94B5EF5B2D9D0D36F66", hash_generated_method = "6C3EBEA4670E1346E5FD7E9714AB8040")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.216 -0500", hash_original_method = "D308C1E0C4F8D94B5EF5B2D9D0D36F66", hash_generated_method = "6C3EBEA4670E1346E5FD7E9714AB8040")
+    
+public void
     switchWaitingOrHoldingAndActive (Message result) {
         RILRequest rr
                 = RILRequest.obtain(
@@ -953,8 +977,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.007 -0500", hash_original_method = "E472C7A7FA5FA1FA68AAF1D140E0BD67", hash_generated_method = "7E26170C64B3F7BF1A4ACB2CF37883B4")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.218 -0500", hash_original_method = "E472C7A7FA5FA1FA68AAF1D140E0BD67", hash_generated_method = "7E26170C64B3F7BF1A4ACB2CF37883B4")
+    
+public void
     conference (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_CONFERENCE, result);
@@ -965,8 +990,9 @@ public void
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.007 -0500", hash_original_method = "B803BD13961A7A2F16F3119AE2CBAC6F", hash_generated_method = "56748265189431DC6EED4D6419B2FDE4")
-    public void setPreferredVoicePrivacy(boolean enable, Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.220 -0500", hash_original_method = "B803BD13961A7A2F16F3119AE2CBAC6F", hash_generated_method = "56748265189431DC6EED4D6419B2FDE4")
+    
+public void setPreferredVoicePrivacy(boolean enable, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_SET_PREFERRED_VOICE_PRIVACY_MODE,
                 result);
 
@@ -976,15 +1002,17 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.008 -0500", hash_original_method = "3E434E6C0C8E17A9191C0565807B19D8", hash_generated_method = "9DE0A8550A35ED14E3ADF1AAA141B584")
-    public void getPreferredVoicePrivacy(Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.223 -0500", hash_original_method = "3E434E6C0C8E17A9191C0565807B19D8", hash_generated_method = "9DE0A8550A35ED14E3ADF1AAA141B584")
+    
+public void getPreferredVoicePrivacy(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_QUERY_PREFERRED_VOICE_PRIVACY_MODE,
                 result);
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.009 -0500", hash_original_method = "4B8D613904DEDF72212F0EB9A1BF349B", hash_generated_method = "A8C4008CF9862BC555954280CCB9C1F4")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.225 -0500", hash_original_method = "4B8D613904DEDF72212F0EB9A1BF349B", hash_generated_method = "A8C4008CF9862BC555954280CCB9C1F4")
+    
+public void
     separateConnection (int gsmIndex, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SEPARATE_CONNECTION, result);
@@ -998,8 +1026,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.010 -0500", hash_original_method = "8CB5CF57551B01694681D1FE4B325AA7", hash_generated_method = "A0D8B1F3DDFE1F168FDD036ECA70557B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.228 -0500", hash_original_method = "8CB5CF57551B01694681D1FE4B325AA7", hash_generated_method = "A0D8B1F3DDFE1F168FDD036ECA70557B")
+    
+public void
     acceptCall (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_ANSWER, result);
@@ -1009,8 +1038,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.011 -0500", hash_original_method = "2E92E83F2C082778F7F377F259918641", hash_generated_method = "932FC016B001EBFC546955A03D9FAEAE")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.230 -0500", hash_original_method = "2E92E83F2C082778F7F377F259918641", hash_generated_method = "932FC016B001EBFC546955A03D9FAEAE")
+    
+public void
     rejectCall (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_UDUB, result);
@@ -1020,8 +1050,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.012 -0500", hash_original_method = "4490A3E422842C7946255FFDE06D02C6", hash_generated_method = "CFBC79636E40BC223D2B7BC5B5696CE4")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.232 -0500", hash_original_method = "4490A3E422842C7946255FFDE06D02C6", hash_generated_method = "CFBC79636E40BC223D2B7BC5B5696CE4")
+    
+public void
     explicitCallTransfer (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_EXPLICIT_CALL_TRANSFER, result);
@@ -1031,8 +1062,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.012 -0500", hash_original_method = "286D2CDF105911EDAA78CDFFAADE2FB4", hash_generated_method = "F51BDAA0E7FD7C098629275530565AD4")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.234 -0500", hash_original_method = "286D2CDF105911EDAA78CDFFAADE2FB4", hash_generated_method = "F51BDAA0E7FD7C098629275530565AD4")
+    
+public void
     getLastCallFailCause (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_LAST_CALL_FAIL_CAUSE, result);
@@ -1045,8 +1077,9 @@ public void
     /**
      * @deprecated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.013 -0500", hash_original_method = "E839391FA5F4E8371F0D2466E996CFDA", hash_generated_method = "CF76277DBC8C7B5A718A27CC9BF2B21B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.236 -0500", hash_original_method = "E839391FA5F4E8371F0D2466E996CFDA", hash_generated_method = "CF76277DBC8C7B5A718A27CC9BF2B21B")
+    
+public void
     getLastPdpFailCause (Message result) {
         getLastDataCallFailCause (result);
     }
@@ -1054,8 +1087,9 @@ public void
     /**
      * The preferred new alternative to getLastPdpFailCause
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.014 -0500", hash_original_method = "367089EF39FE579C6BCEE97FCB3E914B", hash_generated_method = "531209B68622DD6030DAC21E00483D36")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.238 -0500", hash_original_method = "367089EF39FE579C6BCEE97FCB3E914B", hash_generated_method = "531209B68622DD6030DAC21E00483D36")
+    
+public void
     getLastDataCallFailCause (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_LAST_DATA_CALL_FAIL_CAUSE, result);
@@ -1065,8 +1099,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.015 -0500", hash_original_method = "350AC1F658DA4E0097EF1D14A3117454", hash_generated_method = "046395BA0C4A3458086930CF3ABF0EFF")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.241 -0500", hash_original_method = "350AC1F658DA4E0097EF1D14A3117454", hash_generated_method = "046395BA0C4A3458086930CF3ABF0EFF")
+    
+public void
     setMute (boolean enableMute, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_MUTE, response);
@@ -1080,8 +1115,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.016 -0500", hash_original_method = "B42AC6EC10626260A88AA941D9E9F704", hash_generated_method = "0E2319DBE885BD40576DD73F0F0AA2DA")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.244 -0500", hash_original_method = "B42AC6EC10626260A88AA941D9E9F704", hash_generated_method = "0E2319DBE885BD40576DD73F0F0AA2DA")
+    
+public void
     getMute (Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_GET_MUTE, response);
@@ -1091,8 +1127,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.017 -0500", hash_original_method = "16BB78D78D9B012F64B70344D11CBBD0", hash_generated_method = "ECF268D5AFD9C78BBD12C74007956873")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.246 -0500", hash_original_method = "16BB78D78D9B012F64B70344D11CBBD0", hash_generated_method = "ECF268D5AFD9C78BBD12C74007956873")
+    
+public void
     getSignalStrength (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SIGNAL_STRENGTH, result);
@@ -1102,8 +1139,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.018 -0500", hash_original_method = "CD1D773750E577C45A4986B8D31A3404", hash_generated_method = "B949981C03E7EB84863FA2B1609338D0")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.248 -0500", hash_original_method = "CD1D773750E577C45A4986B8D31A3404", hash_generated_method = "B949981C03E7EB84863FA2B1609338D0")
+    
+public void
     getVoiceRegistrationState (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_VOICE_REGISTRATION_STATE, result);
@@ -1113,8 +1151,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.018 -0500", hash_original_method = "A42E908B0E0EAE7E9677D8B8370610F9", hash_generated_method = "C0B0FE8BB6EDB3EB434106EA3CB80AD8")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.250 -0500", hash_original_method = "A42E908B0E0EAE7E9677D8B8370610F9", hash_generated_method = "C0B0FE8BB6EDB3EB434106EA3CB80AD8")
+    
+public void
     getDataRegistrationState (Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_DATA_REGISTRATION_STATE, result);
@@ -1124,8 +1163,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.019 -0500", hash_original_method = "F3EF4D956FA5FB9BDF6C62381BC62F41", hash_generated_method = "DB9E8C7615E7CE76630EBE707F313EBA")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.253 -0500", hash_original_method = "F3EF4D956FA5FB9BDF6C62381BC62F41", hash_generated_method = "DB9E8C7615E7CE76630EBE707F313EBA")
+    
+public void
     getOperator(Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_OPERATOR, result);
@@ -1135,8 +1175,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.020 -0500", hash_original_method = "3D70E9C0BFE2429BE8FC0BF7A1D59B4A", hash_generated_method = "8A8670FDE3946A58059F5AFF69F77A9B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.255 -0500", hash_original_method = "3D70E9C0BFE2429BE8FC0BF7A1D59B4A", hash_generated_method = "8A8670FDE3946A58059F5AFF69F77A9B")
+    
+public void
     sendDtmf(char c, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_DTMF, result);
@@ -1148,8 +1189,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.021 -0500", hash_original_method = "BAA741C14C9F73BEA8C72D4011D64DC0", hash_generated_method = "3D03E3D292D1FCE7EF7AC887F78EF147")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.257 -0500", hash_original_method = "BAA741C14C9F73BEA8C72D4011D64DC0", hash_generated_method = "3D03E3D292D1FCE7EF7AC887F78EF147")
+    
+public void
     startDtmf(char c, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_DTMF_START, result);
@@ -1161,8 +1203,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.022 -0500", hash_original_method = "C4D329464DB2A188FDA1049FC1B5C820", hash_generated_method = "55EC131B28BC90264579AAA064A7722D")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.261 -0500", hash_original_method = "C4D329464DB2A188FDA1049FC1B5C820", hash_generated_method = "55EC131B28BC90264579AAA064A7722D")
+    
+public void
     stopDtmf(Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_DTMF_STOP, result);
@@ -1172,8 +1215,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.023 -0500", hash_original_method = "AF9E26B6734BDEC93AE44BA0DF8E2C9A", hash_generated_method = "155A8822F82960FD963489239935C5E8")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.263 -0500", hash_original_method = "AF9E26B6734BDEC93AE44BA0DF8E2C9A", hash_generated_method = "155A8822F82960FD963489239935C5E8")
+    
+public void
     sendBurstDtmf(String dtmfString, int on, int off, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_BURST_DTMF, result);
 
@@ -1188,8 +1232,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.023 -0500", hash_original_method = "6216EB8701D12EFA1EABB572C0722209", hash_generated_method = "2C1DB9724BA444AE25C924A9DD76129A")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.265 -0500", hash_original_method = "6216EB8701D12EFA1EABB572C0722209", hash_generated_method = "2C1DB9724BA444AE25C924A9DD76129A")
+    
+public void
     sendSMS (String smscPDU, String pdu, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SEND_SMS, result);
@@ -1203,8 +1248,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.025 -0500", hash_original_method = "B6146A457115D22EC1FC450C9E047949", hash_generated_method = "6BE347AC28A5379D92CECEA7AE510A60")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.269 -0500", hash_original_method = "B6146A457115D22EC1FC450C9E047949", hash_generated_method = "6BE347AC28A5379D92CECEA7AE510A60")
+    
+public void
     sendCdmaSms(byte[] pdu, Message result) {
         int address_nbr_of_digits;
         int subaddr_nbr_of_digits;
@@ -1251,8 +1297,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.026 -0500", hash_original_method = "33AA1BF497C1DD92CFF4D18BA36EE77C", hash_generated_method = "F99460047421C8D5D64BCF244C64F65C")
-    public void deleteSmsOnSim(int index, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.271 -0500", hash_original_method = "33AA1BF497C1DD92CFF4D18BA36EE77C", hash_generated_method = "F99460047421C8D5D64BCF244C64F65C")
+    
+public void deleteSmsOnSim(int index, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_DELETE_SMS_ON_SIM,
                 response);
 
@@ -1268,8 +1315,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.027 -0500", hash_original_method = "AADBC281C1547D2CD40AF49A4F15439D", hash_generated_method = "704232C679311C80B843F775014DE8DD")
-    public void deleteSmsOnRuim(int index, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.273 -0500", hash_original_method = "AADBC281C1547D2CD40AF49A4F15439D", hash_generated_method = "704232C679311C80B843F775014DE8DD")
+    
+public void deleteSmsOnRuim(int index, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_DELETE_SMS_ON_RUIM,
                 response);
 
@@ -1285,8 +1333,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.028 -0500", hash_original_method = "371A972FE084C98FCAE13C1996429D8F", hash_generated_method = "50811507BE39FF50AD9E1F587E5794D0")
-    public void writeSmsToSim(int status, String smsc, String pdu, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.276 -0500", hash_original_method = "371A972FE084C98FCAE13C1996429D8F", hash_generated_method = "50811507BE39FF50AD9E1F587E5794D0")
+    
+public void writeSmsToSim(int status, String smsc, String pdu, Message response) {
         status = translateStatus(status);
 
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_WRITE_SMS_TO_SIM,
@@ -1305,8 +1354,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.029 -0500", hash_original_method = "05C70D9FCCFAC2D0EDAAC7E4EA19DFB0", hash_generated_method = "59F01B989B0C4BEEE73D632778EBB1F8")
-    public void writeSmsToRuim(int status, String pdu, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.278 -0500", hash_original_method = "05C70D9FCCFAC2D0EDAAC7E4EA19DFB0", hash_generated_method = "59F01B989B0C4BEEE73D632778EBB1F8")
+    
+public void writeSmsToRuim(int status, String pdu, Message response) {
         status = translateStatus(status);
 
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_WRITE_SMS_TO_RUIM,
@@ -1328,8 +1378,9 @@ public void
      *  Translates EF_SMS status bits to a status value compatible with
      *  SMS AT commands.  See TS 27.005 3.1.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.029 -0500", hash_original_method = "0D77FBD1C1F349CB6A533B80F899FC6F", hash_generated_method = "C66ADC636E87867704F6F5AA6E39475A")
-    private int translateStatus(int status) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.280 -0500", hash_original_method = "0D77FBD1C1F349CB6A533B80F899FC6F", hash_generated_method = "C66ADC636E87867704F6F5AA6E39475A")
+    
+private int translateStatus(int status) {
         switch(status & 0x7) {
             case SmsManager.STATUS_ON_ICC_READ:
                 return 1;
@@ -1345,8 +1396,9 @@ public void
         return 1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.030 -0500", hash_original_method = "9997727B0C7061EF37C7F5F20BA491DC", hash_generated_method = "D20CC6A6D047E0F970912023FA1291CE")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.283 -0500", hash_original_method = "9997727B0C7061EF37C7F5F20BA491DC", hash_generated_method = "D20CC6A6D047E0F970912023FA1291CE")
+    
+public void
     setupDataCall(String radioTechnology, String profile, String apn,
             String user, String password, String authType, String protocol,
             Message result) {
@@ -1371,8 +1423,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.031 -0500", hash_original_method = "7ACA8E6FBBE8E5A758B0F14E8B7A1BD0", hash_generated_method = "388143E101DCD24D563B3727CE5B80CE")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.286 -0500", hash_original_method = "7ACA8E6FBBE8E5A758B0F14E8B7A1BD0", hash_generated_method = "388143E101DCD24D563B3727CE5B80CE")
+    
+public void
     deactivateDataCall(int cid, int reason, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_DEACTIVATE_DATA_CALL, result);
@@ -1387,8 +1440,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.032 -0500", hash_original_method = "EB783AFA41C6889D4897D81BF3D72432", hash_generated_method = "686F2E29DDA2AF0EC2F04382E1CE80D6")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.288 -0500", hash_original_method = "EB783AFA41C6889D4897D81BF3D72432", hash_generated_method = "686F2E29DDA2AF0EC2F04382E1CE80D6")
+    
+public void
     setRadioPower(boolean on, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_RADIO_POWER, result);
 
@@ -1403,8 +1457,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.033 -0500", hash_original_method = "20525E4C07E2BDDC8598F4A8A0A24AAC", hash_generated_method = "2BF85C7CE50207040943845077511BC3")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.291 -0500", hash_original_method = "20525E4C07E2BDDC8598F4A8A0A24AAC", hash_generated_method = "2BF85C7CE50207040943845077511BC3")
+    
+public void
     setSuppServiceNotifications(boolean enable, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_SUPP_SVC_NOTIFICATION, result);
@@ -1418,8 +1473,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.034 -0500", hash_original_method = "2FD7CAC0F0B66293984C61A06F9D6871", hash_generated_method = "5920708B8C26F91AE7D3BB30F7E10DA9")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.293 -0500", hash_original_method = "2FD7CAC0F0B66293984C61A06F9D6871", hash_generated_method = "5920708B8C26F91AE7D3BB30F7E10DA9")
+    
+public void
     acknowledgeLastIncomingGsmSms(boolean success, int cause, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SMS_ACKNOWLEDGE, result);
@@ -1434,8 +1490,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.035 -0500", hash_original_method = "7D64BD1B5FFD5E98E91826BF607F7EF6", hash_generated_method = "408F82B93ED17A846FD1A2F9653DBA68")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.295 -0500", hash_original_method = "7D64BD1B5FFD5E98E91826BF607F7EF6", hash_generated_method = "408F82B93ED17A846FD1A2F9653DBA68")
+    
+public void
     acknowledgeLastIncomingCdmaSms(boolean success, int cause, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_CDMA_SMS_ACKNOWLEDGE, result);
@@ -1450,8 +1507,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.036 -0500", hash_original_method = "64AA0D67C6CE837D613809948FDF7791", hash_generated_method = "A2E88224725052AB6466C65D9F319EA1")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.298 -0500", hash_original_method = "64AA0D67C6CE837D613809948FDF7791", hash_generated_method = "A2E88224725052AB6466C65D9F319EA1")
+    
+public void
     acknowledgeIncomingGsmSmsWithPdu(boolean success, String ackPdu, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_ACKNOWLEDGE_INCOMING_GSM_SMS_WITH_PDU, result);
@@ -1466,8 +1524,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.037 -0500", hash_original_method = "59EE7F242CC2ECDC31CC3317E2625FB0", hash_generated_method = "95833E15F0F428F6E1FDDACD1109D23B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.300 -0500", hash_original_method = "59EE7F242CC2ECDC31CC3317E2625FB0", hash_generated_method = "95833E15F0F428F6E1FDDACD1109D23B")
+    
+public void
     iccIO (int command, int fileid, String path, int p1, int p2, int p3,
             String data, String pin2, Message result) {
         //Note: This RIL request has not been renamed to ICC,
@@ -1493,8 +1552,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.038 -0500", hash_original_method = "ED6C155DF5FB4724355C53F41C941076", hash_generated_method = "A2E646C83B943925E8B4C31D7F99E428")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.303 -0500", hash_original_method = "ED6C155DF5FB4724355C53F41C941076", hash_generated_method = "A2E646C83B943925E8B4C31D7F99E428")
+    
+public void
     getCLIR(Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_GET_CLIR, result);
@@ -1504,8 +1564,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.039 -0500", hash_original_method = "19860D4829B0277968FE7219CA94272C", hash_generated_method = "989D5E2592D27339F53219A2357C1B75")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.305 -0500", hash_original_method = "19860D4829B0277968FE7219CA94272C", hash_generated_method = "989D5E2592D27339F53219A2357C1B75")
+    
+public void
     setCLIR(int clirMode, Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_CLIR, result);
@@ -1521,8 +1582,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.039 -0500", hash_original_method = "32FF52B6F1E399D1F262392EAB262972", hash_generated_method = "5616119EB615D297BDB179D335070818")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.307 -0500", hash_original_method = "32FF52B6F1E399D1F262392EAB262972", hash_generated_method = "5616119EB615D297BDB179D335070818")
+    
+public void
     queryCallWaiting(int serviceClass, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_QUERY_CALL_WAITING, response);
@@ -1536,8 +1598,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.040 -0500", hash_original_method = "5A203D1E3F2536DB5285EBA696BDFC7A", hash_generated_method = "AA022B60BC2EDC2F0C5D01BC0F3E8D88")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.310 -0500", hash_original_method = "5A203D1E3F2536DB5285EBA696BDFC7A", hash_generated_method = "AA022B60BC2EDC2F0C5D01BC0F3E8D88")
+    
+public void
     setCallWaiting(boolean enable, int serviceClass, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_CALL_WAITING, response);
@@ -1552,8 +1615,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.041 -0500", hash_original_method = "B2CF07F1A50F7E09BFE7FA86DAEC0935", hash_generated_method = "57EF2908CA19E86A69874E56C9860323")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.313 -0500", hash_original_method = "B2CF07F1A50F7E09BFE7FA86DAEC0935", hash_generated_method = "57EF2908CA19E86A69874E56C9860323")
+    
+public void
     setNetworkSelectionModeAutomatic(Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC,
@@ -1564,8 +1628,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.042 -0500", hash_original_method = "D59960D2C4E94DFBAD71EBB3A94610C2", hash_generated_method = "57B64BE62B4A78F5F44FC1B64CE8FE96")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.315 -0500", hash_original_method = "D59960D2C4E94DFBAD71EBB3A94610C2", hash_generated_method = "57B64BE62B4A78F5F44FC1B64CE8FE96")
+    
+public void
     setNetworkSelectionModeManual(String operatorNumeric, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL,
@@ -1579,8 +1644,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.043 -0500", hash_original_method = "7D16D9750A543F65AAA01DDCEE296D12", hash_generated_method = "3CA91A53E3D13F5F040AE7ED02F952F8")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.318 -0500", hash_original_method = "7D16D9750A543F65AAA01DDCEE296D12", hash_generated_method = "3CA91A53E3D13F5F040AE7ED02F952F8")
+    
+public void
     getNetworkSelectionMode(Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE,
@@ -1591,8 +1657,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.043 -0500", hash_original_method = "A28AFA8A6050502E50A0794217CD9CA3", hash_generated_method = "7B3626F3DDFCC64B3EFE66C93C008F2E")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.320 -0500", hash_original_method = "A28AFA8A6050502E50A0794217CD9CA3", hash_generated_method = "7B3626F3DDFCC64B3EFE66C93C008F2E")
+    
+public void
     getAvailableNetworks(Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_QUERY_AVAILABLE_NETWORKS,
@@ -1603,8 +1670,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.044 -0500", hash_original_method = "BAE7513A4D74D7F41628BC2CA56E49A7", hash_generated_method = "07120DC0F58BC8F1D81318A2617B116B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.322 -0500", hash_original_method = "BAE7513A4D74D7F41628BC2CA56E49A7", hash_generated_method = "07120DC0F58BC8F1D81318A2617B116B")
+    
+public void
     setCallForward(int action, int cfReason, int serviceClass,
                 String number, int timeSeconds, Message response) {
         RILRequest rr
@@ -1624,8 +1692,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.045 -0500", hash_original_method = "23037026F2CF508E3AB593A615459BEF", hash_generated_method = "6181A2B5EC19EC16A179309FEF845C1E")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.325 -0500", hash_original_method = "23037026F2CF508E3AB593A615459BEF", hash_generated_method = "6181A2B5EC19EC16A179309FEF845C1E")
+    
+public void
     queryCallForwardStatus(int cfReason, int serviceClass,
                 String number, Message response) {
         RILRequest rr
@@ -1644,8 +1713,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.046 -0500", hash_original_method = "51655E0BCF7B1E2F86E04B0432A13A10", hash_generated_method = "63D5767B7D068D080B49528CE2DC4183")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.327 -0500", hash_original_method = "51655E0BCF7B1E2F86E04B0432A13A10", hash_generated_method = "63D5767B7D068D080B49528CE2DC4183")
+    
+public void
     queryCLIP(Message response) {
         RILRequest rr
             = RILRequest.obtain(RIL_REQUEST_QUERY_CLIP, response);
@@ -1656,8 +1726,9 @@ public void
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.047 -0500", hash_original_method = "A7E1CFA2EA980EF525A71B63D23749C6", hash_generated_method = "14E7F6C603D6C9B01BA7EB4AC147FBA2")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.329 -0500", hash_original_method = "A7E1CFA2EA980EF525A71B63D23749C6", hash_generated_method = "14E7F6C603D6C9B01BA7EB4AC147FBA2")
+    
+public void
     getBasebandVersion (Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_BASEBAND_VERSION, response);
@@ -1667,17 +1738,19 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.048 -0500", hash_original_method = "E2D6CDE0F4A2E0F1E247B2E96BC06629", hash_generated_method = "D17AE35798FE231554412438D1F222C1")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.332 -0500", hash_original_method = "E2D6CDE0F4A2E0F1E247B2E96BC06629", hash_generated_method = "D17AE35798FE231554412438D1F222C1")
+    
+@Override
+    public void
     queryFacilityLock(String facility, String password, int serviceClass,
                             Message response) {
         queryFacilityLockForApp(facility, password, serviceClass, null, response);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.049 -0500", hash_original_method = "B68C5E6FDA45200A6E5673701837774F", hash_generated_method = "CE6630C9E5340D7AF2287323F466B069")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.334 -0500", hash_original_method = "B68C5E6FDA45200A6E5673701837774F", hash_generated_method = "CE6630C9E5340D7AF2287323F466B069")
+    
+@Override
+    public void
     queryFacilityLockForApp(String facility, String password, int serviceClass, String appId,
                             Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_QUERY_FACILITY_LOCK, response);
@@ -1696,17 +1769,19 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.051 -0500", hash_original_method = "AF27A0F06A4AEF0B8CE967EE20FD6D5A", hash_generated_method = "9C4FFCA6FAA0DD46269341542FE465DA")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.337 -0500", hash_original_method = "AF27A0F06A4AEF0B8CE967EE20FD6D5A", hash_generated_method = "9C4FFCA6FAA0DD46269341542FE465DA")
+    
+@Override
+    public void
     setFacilityLock (String facility, boolean lockState, String password,
                         int serviceClass, Message response) {
         setFacilityLockForApp(facility, lockState, password, serviceClass, null, response);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.052 -0500", hash_original_method = "99FAE35221FB0E541022587B483A8F41", hash_generated_method = "D1107DAF5EE97BA0C8C069CDF2159BAA")
-    @Override
-public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.339 -0500", hash_original_method = "99FAE35221FB0E541022587B483A8F41", hash_generated_method = "D1107DAF5EE97BA0C8C069CDF2159BAA")
+    
+@Override
+    public void
     setFacilityLockForApp(String facility, boolean lockState, String password,
                         int serviceClass, String appId, Message response) {
         String lockString;
@@ -1729,8 +1804,9 @@ public void
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.052 -0500", hash_original_method = "B3D73089A364D1181DC1E2D229325D6D", hash_generated_method = "A9CF38C79CB01E66FFA4BDB2880DBFF7")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.342 -0500", hash_original_method = "B3D73089A364D1181DC1E2D229325D6D", hash_generated_method = "A9CF38C79CB01E66FFA4BDB2880DBFF7")
+    
+public void
     sendUSSD (String ussdString, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SEND_USSD, response);
@@ -1744,8 +1820,9 @@ public void
     }
 
     // inherited javadoc suffices
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.053 -0500", hash_original_method = "08754E29DFB7112567CD0DC9F54BCD3D", hash_generated_method = "15C5D19C1E8E5B6701BE305EAC14A0CB")
-    public void cancelPendingUssd (Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.344 -0500", hash_original_method = "08754E29DFB7112567CD0DC9F54BCD3D", hash_generated_method = "15C5D19C1E8E5B6701BE305EAC14A0CB")
+    
+public void cancelPendingUssd (Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_CANCEL_USSD, response);
 
@@ -1756,8 +1833,9 @@ public void
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.054 -0500", hash_original_method = "5EED3CE7F239827AE459A68B7A5F6205", hash_generated_method = "0E409341A3956DB5EFB5A9E73C5179CF")
-    public void resetRadio(Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.347 -0500", hash_original_method = "5EED3CE7F239827AE459A68B7A5F6205", hash_generated_method = "0E409341A3956DB5EFB5A9E73C5179CF")
+    
+public void resetRadio(Message result) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_RESET_RADIO, result);
 
@@ -1766,8 +1844,9 @@ public void
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.055 -0500", hash_original_method = "CC2053517147AA26411A18AF4FB47931", hash_generated_method = "7B3346418E1878C98E2C294B637B5C60")
-    public void invokeOemRilRequestRaw(byte[] data, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.350 -0500", hash_original_method = "CC2053517147AA26411A18AF4FB47931", hash_generated_method = "7B3346418E1878C98E2C294B637B5C60")
+    
+public void invokeOemRilRequestRaw(byte[] data, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_OEM_HOOK_RAW, response);
 
@@ -1780,8 +1859,9 @@ public void
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.056 -0500", hash_original_method = "30F3E98808998C1043AF97B2AEFF80ED", hash_generated_method = "3AF6767D205A3D0512107736E9A49512")
-    public void invokeOemRilRequestStrings(String[] strings, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.352 -0500", hash_original_method = "30F3E98808998C1043AF97B2AEFF80ED", hash_generated_method = "3AF6767D205A3D0512107736E9A49512")
+    
+public void invokeOemRilRequestStrings(String[] strings, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_OEM_HOOK_STRINGS, response);
 
@@ -1798,8 +1878,9 @@ public void
      * @param bandMode one of BM_*_BAND
      * @param response is callback message
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.057 -0500", hash_original_method = "0483D811AD0184EC240C471A09F163C0", hash_generated_method = "BF4EBAFE928208405D513F5D1B756B52")
-    public void setBandMode (int bandMode, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.354 -0500", hash_original_method = "0483D811AD0184EC240C471A09F163C0", hash_generated_method = "BF4EBAFE928208405D513F5D1B756B52")
+    
+public void setBandMode (int bandMode, Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_BAND_MODE, response);
 
@@ -1819,8 +1900,9 @@ public void
      *        ((AsyncResult)response.obj).result  is an int[] with every
      *        element representing one avialable BM_*_BAND
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.057 -0500", hash_original_method = "3559A91588B2C9F9707F9FC4DC3F7539", hash_generated_method = "BDC5422584671C8096A4799FA99AA589")
-    public void queryAvailableBandMode (Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.357 -0500", hash_original_method = "3559A91588B2C9F9707F9FC4DC3F7539", hash_generated_method = "BDC5422584671C8096A4799FA99AA589")
+    
+public void queryAvailableBandMode (Message response) {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_QUERY_AVAILABLE_BAND_MODE,
                 response);
@@ -1833,8 +1915,9 @@ public void
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.058 -0500", hash_original_method = "E6DDFD05E0997BF7790CA803E711C2EC", hash_generated_method = "22C977A3B3ED9A8E5AFFBC0082B9EA2C")
-    public void sendTerminalResponse(String contents, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.359 -0500", hash_original_method = "E6DDFD05E0997BF7790CA803E711C2EC", hash_generated_method = "22C977A3B3ED9A8E5AFFBC0082B9EA2C")
+    
+public void sendTerminalResponse(String contents, Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_STK_SEND_TERMINAL_RESPONSE, response);
 
@@ -1847,8 +1930,9 @@ public void
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.059 -0500", hash_original_method = "AF8E8A7CD3B08412D1DCD73CAE0ACCA0", hash_generated_method = "1E02E5E6DAD7F5776FD54E3EE589B562")
-    public void sendEnvelope(String contents, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.362 -0500", hash_original_method = "AF8E8A7CD3B08412D1DCD73CAE0ACCA0", hash_generated_method = "1E02E5E6DAD7F5776FD54E3EE589B562")
+    
+public void sendEnvelope(String contents, Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_STK_SEND_ENVELOPE_COMMAND, response);
 
@@ -1861,8 +1945,9 @@ public void
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.060 -0500", hash_original_method = "A3C6115C92419E7DB4E4439F1BAFD013", hash_generated_method = "EE3C2A79AE717250C462050D7E870410")
-    public void sendEnvelopeWithStatus(String contents, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.364 -0500", hash_original_method = "A3C6115C92419E7DB4E4439F1BAFD013", hash_generated_method = "EE3C2A79AE717250C462050D7E870410")
+    
+public void sendEnvelopeWithStatus(String contents, Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_STK_SEND_ENVELOPE_WITH_STATUS, response);
 
@@ -1876,8 +1961,9 @@ public void
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.061 -0500", hash_original_method = "0FD1EE2A52540A4F80ECA30E950318D2", hash_generated_method = "DA6632C1D4D3B6DEE73D98A414BDD497")
-    public void handleCallSetupRequestFromSim(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.366 -0500", hash_original_method = "0FD1EE2A52540A4F80ECA30E950318D2", hash_generated_method = "DA6632C1D4D3B6DEE73D98A414BDD497")
+    
+public void handleCallSetupRequestFromSim(
             boolean accept, Message response) {
 
         RILRequest rr = RILRequest.obtain(
@@ -1895,9 +1981,10 @@ public void
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.062 -0500", hash_original_method = "E0470661D17E36A9D9FCCA070C28B88C", hash_generated_method = "8EF44D4BE40411F689C46C82530B7AD0")
-    @Override
-public void setCurrentPreferredNetworkType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.368 -0500", hash_original_method = "E0470661D17E36A9D9FCCA070C28B88C", hash_generated_method = "8EF44D4BE40411F689C46C82530B7AD0")
+    
+@Override
+    public void setCurrentPreferredNetworkType() {
         if (RILJ_LOGD) riljLog("setCurrentPreferredNetworkType: " + mSetPreferredNetworkType);
         setPreferredNetworkType(mSetPreferredNetworkType, null);
     }
@@ -1905,8 +1992,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.063 -0500", hash_original_method = "CD05D01D2353BF09784B2C892638713C", hash_generated_method = "29A697DD9FFE9E1B2FF8AE99FE5ADC1D")
-    public void setPreferredNetworkType(int networkType , Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.373 -0500", hash_original_method = "CD05D01D2353BF09784B2C892638713C", hash_generated_method = "29A697DD9FFE9E1B2FF8AE99FE5ADC1D")
+    
+public void setPreferredNetworkType(int networkType , Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_SET_PREFERRED_NETWORK_TYPE, response);
 
@@ -1925,8 +2013,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.064 -0500", hash_original_method = "9630540DB0E1A382F252246374543CFF", hash_generated_method = "65E23DF9DEFF73F9CE87D994CBF73F75")
-    public void getPreferredNetworkType(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.376 -0500", hash_original_method = "9630540DB0E1A382F252246374543CFF", hash_generated_method = "65E23DF9DEFF73F9CE87D994CBF73F75")
+    
+public void getPreferredNetworkType(Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_GET_PREFERRED_NETWORK_TYPE, response);
 
@@ -1938,8 +2027,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.065 -0500", hash_original_method = "EA7CB0793F40AD8E91B9E82268500DF5", hash_generated_method = "675049F2439C90DBE32981F7BBE76BA6")
-    public void getNeighboringCids(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.378 -0500", hash_original_method = "EA7CB0793F40AD8E91B9E82268500DF5", hash_generated_method = "675049F2439C90DBE32981F7BBE76BA6")
+    
+public void getNeighboringCids(Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_GET_NEIGHBORING_CELL_IDS, response);
 
@@ -1951,8 +2041,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.066 -0500", hash_original_method = "29FCAB1F96F7A6DF63D13BAE634B9C42", hash_generated_method = "C8850D378A117AFFFD8A0480D6558240")
-    public void setLocationUpdates(boolean enable, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.380 -0500", hash_original_method = "29FCAB1F96F7A6DF63D13BAE634B9C42", hash_generated_method = "C8850D378A117AFFFD8A0480D6558240")
+    
+public void setLocationUpdates(boolean enable, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_SET_LOCATION_UPDATES, response);
         rr.mp.writeInt(1);
         rr.mp.writeInt(enable ? 1 : 0);
@@ -1966,8 +2057,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.067 -0500", hash_original_method = "7C3C5691348423704F3F89A5A1253262", hash_generated_method = "D96A012163224A327084C400AF00B85A")
-    public void getSmscAddress(Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.383 -0500", hash_original_method = "7C3C5691348423704F3F89A5A1253262", hash_generated_method = "D96A012163224A327084C400AF00B85A")
+    
+public void getSmscAddress(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_SMSC_ADDRESS, result);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
@@ -1978,8 +2070,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.068 -0500", hash_original_method = "8030AF8483F275DADFE9FBCDFA4401B2", hash_generated_method = "098BA9D896232E87B63E22E4A4D4B330")
-    public void setSmscAddress(String address, Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.385 -0500", hash_original_method = "8030AF8483F275DADFE9FBCDFA4401B2", hash_generated_method = "098BA9D896232E87B63E22E4A4D4B330")
+    
+public void setSmscAddress(String address, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_SET_SMSC_ADDRESS, result);
 
         rr.mp.writeString(address);
@@ -1993,8 +2086,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.069 -0500", hash_original_method = "E14FF49FE633CFCC7BBD49EA04EF5648", hash_generated_method = "03BE0317615134E80403B54853479AFC")
-    public void reportSmsMemoryStatus(boolean available, Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.387 -0500", hash_original_method = "E14FF49FE633CFCC7BBD49EA04EF5648", hash_generated_method = "03BE0317615134E80403B54853479AFC")
+    
+public void reportSmsMemoryStatus(boolean available, Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_REPORT_SMS_MEMORY_STATUS, result);
         rr.mp.writeInt(1);
         rr.mp.writeInt(available ? 1 : 0);
@@ -2008,8 +2102,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.069 -0500", hash_original_method = "00A5515B81A4CB5336CA56505ADAAD61", hash_generated_method = "0AE7BB021A319F33ED124C88FDA12E52")
-    public void reportStkServiceIsRunning(Message result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.390 -0500", hash_original_method = "00A5515B81A4CB5336CA56505ADAAD61", hash_generated_method = "0AE7BB021A319F33ED124C88FDA12E52")
+    
+public void reportStkServiceIsRunning(Message result) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING, result);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
@@ -2020,8 +2115,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.070 -0500", hash_original_method = "8D8904D0E740DF21294F215C1D1D7109", hash_generated_method = "2608ADD1006B924DC51A494BD0790A9A")
-    public void getGsmBroadcastConfig(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.392 -0500", hash_original_method = "8D8904D0E740DF21294F215C1D1D7109", hash_generated_method = "2608ADD1006B924DC51A494BD0790A9A")
+    
+public void getGsmBroadcastConfig(Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GSM_GET_BROADCAST_CONFIG, response);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
@@ -2032,8 +2128,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.071 -0500", hash_original_method = "052EA3DC72AD24FB98DF1CE5007E33C5", hash_generated_method = "4223DEF321C95104EFC299896948462E")
-    public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.395 -0500", hash_original_method = "052EA3DC72AD24FB98DF1CE5007E33C5", hash_generated_method = "4223DEF321C95104EFC299896948462E")
+    
+public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GSM_SET_BROADCAST_CONFIG, response);
 
         int numOfConfig = config.length;
@@ -2061,8 +2158,9 @@ public void setCurrentPreferredNetworkType() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.072 -0500", hash_original_method = "A31C3FA8B485D8364A045A89E34CE9F1", hash_generated_method = "F398D908B27115F13C17C02E003F2CB8")
-    public void setGsmBroadcastActivation(boolean activate, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.397 -0500", hash_original_method = "A31C3FA8B485D8364A045A89E34CE9F1", hash_generated_method = "F398D908B27115F13C17C02E003F2CB8")
+    
+public void setGsmBroadcastActivation(boolean activate, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_GSM_BROADCAST_ACTIVATION, response);
 
         rr.mp.writeInt(1);
@@ -2075,8 +2173,9 @@ public void setCurrentPreferredNetworkType() {
 
     //***** Private Methods
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.073 -0500", hash_original_method = "98C8C2D826445A3B0F1B6AA20E13AA85", hash_generated_method = "2DE309AE11E663AE1208FD76C3B1C6BA")
-    private void sendScreenState(boolean on) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.399 -0500", hash_original_method = "98C8C2D826445A3B0F1B6AA20E13AA85", hash_generated_method = "2DE309AE11E663AE1208FD76C3B1C6BA")
+    
+private void sendScreenState(boolean on) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_SCREEN_STATE, null);
         rr.mp.writeInt(1);
         rr.mp.writeInt(on ? 1 : 0);
@@ -2087,8 +2186,9 @@ public void setCurrentPreferredNetworkType() {
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.074 -0500", hash_original_method = "BB835229E5EA50CDBB0B126232F0F168", hash_generated_method = "C4718256DED8454907982DFF7F7963E9")
-    protected void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.401 -0500", hash_original_method = "BB835229E5EA50CDBB0B126232F0F168", hash_generated_method = "C4718256DED8454907982DFF7F7963E9")
+    
+protected void
     onRadioAvailable() {
         // In case screen state was lost (due to process crash),
         // this ensures that the RIL knows the correct screen state.
@@ -2098,8 +2198,9 @@ public void setCurrentPreferredNetworkType() {
         sendScreenState(true);
    }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.075 -0500", hash_original_method = "160781DFD510822CA161AF254F33803E", hash_generated_method = "62DE4A3B1AB42A27278FF32FFE445953")
-    private RadioState getRadioStateFromInt(int stateInt) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.404 -0500", hash_original_method = "160781DFD510822CA161AF254F33803E", hash_generated_method = "62DE4A3B1AB42A27278FF32FFE445953")
+    
+private RadioState getRadioStateFromInt(int stateInt) {
         RadioState state;
 
         /* RIL_RadioState ril.h */
@@ -2122,8 +2223,9 @@ public void setCurrentPreferredNetworkType() {
         return state;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.076 -0500", hash_original_method = "63485FEB05CEDE30346AAC1338BBCCD0", hash_generated_method = "B0B8B09EF94640BE531744F19AD42C68")
-    private void switchToRadioState(RadioState newState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.407 -0500", hash_original_method = "63485FEB05CEDE30346AAC1338BBCCD0", hash_generated_method = "B0B8B09EF94640BE531744F19AD42C68")
+    
+private void switchToRadioState(RadioState newState) {
         setRadioState(newState);
     }
 
@@ -2136,8 +2238,9 @@ public void setCurrentPreferredNetworkType() {
      * happen often.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.077 -0500", hash_original_method = "80B68145386C06F39CF9C77A11CB4F6E", hash_generated_method = "8224FCD3C213FD53AFC8DB9EB6ED1691")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.410 -0500", hash_original_method = "80B68145386C06F39CF9C77A11CB4F6E", hash_generated_method = "8224FCD3C213FD53AFC8DB9EB6ED1691")
+    
+private void
     acquireWakeLock() {
         synchronized (mWakeLock) {
             mWakeLock.acquire();
@@ -2149,8 +2252,9 @@ public void setCurrentPreferredNetworkType() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.077 -0500", hash_original_method = "F7B2E2DA8A26C192DB4FA2BF8451999B", hash_generated_method = "5BB48DB32B9521B4C38F28494A2B2237")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.412 -0500", hash_original_method = "F7B2E2DA8A26C192DB4FA2BF8451999B", hash_generated_method = "5BB48DB32B9521B4C38F28494A2B2237")
+    
+private void
     releaseWakeLockIfDone() {
         synchronized (mWakeLock) {
             if (mWakeLock.isHeld() &&
@@ -2162,8 +2266,9 @@ public void setCurrentPreferredNetworkType() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.078 -0500", hash_original_method = "035841781AADB837D6EAD23CCB5C67B0", hash_generated_method = "F3A7299D499D0FDB239FABCE65D81EA7")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.414 -0500", hash_original_method = "035841781AADB837D6EAD23CCB5C67B0", hash_generated_method = "F3A7299D499D0FDB239FABCE65D81EA7")
+    
+private void
     send(RILRequest rr) {
         Message msg;
 
@@ -2180,8 +2285,9 @@ public void setCurrentPreferredNetworkType() {
         msg.sendToTarget();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.079 -0500", hash_original_method = "BE5BB24392C97184A4E1C8B58214F114", hash_generated_method = "BB4CF8C2C3E4F143A64FC7B6AEB09307")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.416 -0500", hash_original_method = "BE5BB24392C97184A4E1C8B58214F114", hash_generated_method = "BB4CF8C2C3E4F143A64FC7B6AEB09307")
+    
+private void
     processResponse (Parcel p) {
         int type;
 
@@ -2201,8 +2307,9 @@ public void setCurrentPreferredNetworkType() {
      * @param error is the RIL_Errno sent back
      * @param loggable true means to print all requests in mRequestslist
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.081 -0500", hash_original_method = "BC68EE684C76422271CAFE5D885C13B0", hash_generated_method = "DD84DE362D634E6ABBF5E8C5669F17DC")
-    private void clearRequestsList(int error, boolean loggable) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.419 -0500", hash_original_method = "BC68EE684C76422271CAFE5D885C13B0", hash_generated_method = "DD84DE362D634E6ABBF5E8C5669F17DC")
+    
+private void clearRequestsList(int error, boolean loggable) {
         RILRequest rr;
         synchronized (mRequestsList) {
             int count = mRequestsList.size();
@@ -2226,8 +2333,9 @@ public void setCurrentPreferredNetworkType() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.081 -0500", hash_original_method = "821C18746C2BF0250268E9897F34563E", hash_generated_method = "F93F5E85292EEA31D86C25F2CE2306C6")
-    private RILRequest findAndRemoveRequestFromList(int serial) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.422 -0500", hash_original_method = "821C18746C2BF0250268E9897F34563E", hash_generated_method = "F93F5E85292EEA31D86C25F2CE2306C6")
+    
+private RILRequest findAndRemoveRequestFromList(int serial) {
         synchronized (mRequestsList) {
             for (int i = 0, s = mRequestsList.size() ; i < s ; i++) {
                 RILRequest rr = mRequestsList.get(i);
@@ -2244,8 +2352,9 @@ public void setCurrentPreferredNetworkType() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.084 -0500", hash_original_method = "E53F353584D1FC1676A6EAA90642D430", hash_generated_method = "BD5989B3769BC1F9B20CBEE0D3FBBBD3")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.429 -0500", hash_original_method = "E53F353584D1FC1676A6EAA90642D430", hash_generated_method = "BD5989B3769BC1F9B20CBEE0D3FBBBD3")
+    
+private void
     processSolicited (Parcel p) {
         int serial, error;
         boolean found = false;
@@ -2416,8 +2525,9 @@ public void setCurrentPreferredNetworkType() {
         rr.release();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.085 -0500", hash_original_method = "8A94A1215BBA17FF474D4F8406941ACC", hash_generated_method = "7BDB2C2C2FE64369E4BFA5FB1DA60FC8")
-    private String
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.433 -0500", hash_original_method = "8A94A1215BBA17FF474D4F8406941ACC", hash_generated_method = "7BDB2C2C2FE64369E4BFA5FB1DA60FC8")
+    
+private String
     retToString(int req, Object ret) {
         if (ret == null) return "";
         switch (req) {
@@ -2481,8 +2591,9 @@ public void setCurrentPreferredNetworkType() {
         return s;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.089 -0500", hash_original_method = "0DD0C2CAC9DFFC256536DE8141109DEC", hash_generated_method = "391F90E9A57590FBA3FDE60B8EFD9402")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.442 -0500", hash_original_method = "0DD0C2CAC9DFFC256536DE8141109DEC", hash_generated_method = "391F90E9A57590FBA3FDE60B8EFD9402")
+    
+private void
     processUnsolicited (Parcel p) {
         int response;
         Object ret;
@@ -2879,8 +2990,9 @@ public void setCurrentPreferredNetworkType() {
      *
      * @param rilVer is the version of the ril or -1 if disconnected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.090 -0500", hash_original_method = "B856EBB2256F144A73FE56175A9B6A36", hash_generated_method = "DDC3745A3F8DC757EF205535670D3FDD")
-    private void notifyRegistrantsRilConnectionChanged(int rilVer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.445 -0500", hash_original_method = "B856EBB2256F144A73FE56175A9B6A36", hash_generated_method = "DDC3745A3F8DC757EF205535670D3FDD")
+    
+private void notifyRegistrantsRilConnectionChanged(int rilVer) {
         mRilVersion = rilVer;
         if (mRilConnectedRegistrants != null) {
             mRilConnectedRegistrants.notifyRegistrants(
@@ -2888,8 +3000,9 @@ public void setCurrentPreferredNetworkType() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.091 -0500", hash_original_method = "2C7447093749DDBD708485E3CB5D7194", hash_generated_method = "58FE475C70A6E9810FA1A21048791969")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.448 -0500", hash_original_method = "2C7447093749DDBD708485E3CB5D7194", hash_generated_method = "58FE475C70A6E9810FA1A21048791969")
+    
+private Object
     responseInts(Parcel p) {
         int numInts;
         int response[];
@@ -2906,14 +3019,16 @@ public void setCurrentPreferredNetworkType() {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.092 -0500", hash_original_method = "F83E9E0330A999E5D5277EA606DEC7ED", hash_generated_method = "44F88BD92252367CACA6013E784AC19E")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.451 -0500", hash_original_method = "F83E9E0330A999E5D5277EA606DEC7ED", hash_generated_method = "44F88BD92252367CACA6013E784AC19E")
+    
+private Object
     responseVoid(Parcel p) {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.093 -0500", hash_original_method = "A9CCF034900EFF9E845FDB7DB22E08D2", hash_generated_method = "8B3D1A53E30992354590C5D02CB7B0FF")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.453 -0500", hash_original_method = "A9CCF034900EFF9E845FDB7DB22E08D2", hash_generated_method = "8B3D1A53E30992354590C5D02CB7B0FF")
+    
+private Object
     responseCallForward(Parcel p) {
         int numInfos;
         CallForwardInfo infos[];
@@ -2936,8 +3051,9 @@ public void setCurrentPreferredNetworkType() {
         return infos;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.093 -0500", hash_original_method = "6CA2F91918640E9DE536352B73E673A3", hash_generated_method = "F60F85AFAA552486B581CBBE1012FD6E")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.456 -0500", hash_original_method = "6CA2F91918640E9DE536352B73E673A3", hash_generated_method = "F60F85AFAA552486B581CBBE1012FD6E")
+    
+private Object
     responseSuppServiceNotification(Parcel p) {
         SuppServiceNotification notification = new SuppServiceNotification();
 
@@ -2950,8 +3066,9 @@ public void setCurrentPreferredNetworkType() {
         return notification;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.096 -0500", hash_original_method = "F3FE5FFB00EF9163091B0B3C9957ECDA", hash_generated_method = "C9262477EBC0EAE924A202DF9B25FDB5")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.458 -0500", hash_original_method = "F3FE5FFB00EF9163091B0B3C9957ECDA", hash_generated_method = "C9262477EBC0EAE924A202DF9B25FDB5")
+    
+private Object
     responseCdmaSms(Parcel p) {
         SmsMessage sms;
         sms = SmsMessage.newFromParcel(p);
@@ -2959,8 +3076,9 @@ public void setCurrentPreferredNetworkType() {
         return sms;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.096 -0500", hash_original_method = "E706FBE3176786F101EC24273C477E8B", hash_generated_method = "1CFDE9F5B5092DDC15D53EF077AB8DF7")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.460 -0500", hash_original_method = "E706FBE3176786F101EC24273C477E8B", hash_generated_method = "1CFDE9F5B5092DDC15D53EF077AB8DF7")
+    
+private Object
     responseString(Parcel p) {
         String response;
 
@@ -2969,8 +3087,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.097 -0500", hash_original_method = "D52365FD6A67C03CB48CBBF364BA22AF", hash_generated_method = "9D998DB899C5533A62D4248C6295E8BD")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.462 -0500", hash_original_method = "D52365FD6A67C03CB48CBBF364BA22AF", hash_generated_method = "9D998DB899C5533A62D4248C6295E8BD")
+    
+private Object
     responseStrings(Parcel p) {
         int num;
         String response[];
@@ -2989,8 +3108,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.098 -0500", hash_original_method = "B7DD4FAF5DCF16E3869A5E71E7C7982F", hash_generated_method = "EE6C0E5A95BC0C3EFE8D56FCD41B9A59")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.464 -0500", hash_original_method = "B7DD4FAF5DCF16E3869A5E71E7C7982F", hash_generated_method = "EE6C0E5A95BC0C3EFE8D56FCD41B9A59")
+    
+private Object
     responseRaw(Parcel p) {
         int num;
         byte response[];
@@ -3000,8 +3120,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.099 -0500", hash_original_method = "6A2331BAD13DEAF24E14B96082F25F22", hash_generated_method = "9EAB5CF23B6CE37D1FDEBCB9780C76B2")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.467 -0500", hash_original_method = "6A2331BAD13DEAF24E14B96082F25F22", hash_generated_method = "9EAB5CF23B6CE37D1FDEBCB9780C76B2")
+    
+private Object
     responseSMS(Parcel p) {
         int messageRef, errorCode;
         String ackPDU;
@@ -3016,8 +3137,9 @@ public void setCurrentPreferredNetworkType() {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.100 -0500", hash_original_method = "36285902341CFAECFF4B1CF0D454D382", hash_generated_method = "5307DE4C11B27F7594C3A70D8F837049")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.470 -0500", hash_original_method = "36285902341CFAECFF4B1CF0D454D382", hash_generated_method = "5307DE4C11B27F7594C3A70D8F837049")
+    
+private Object
     responseICC_IO(Parcel p) {
         int sw1, sw2;
         byte data[] = null;
@@ -3036,8 +3158,9 @@ public void setCurrentPreferredNetworkType() {
         return new IccIoResult(sw1, sw2, s);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.101 -0500", hash_original_method = "D5683AC0AFFFFAC7278B155F54988C15", hash_generated_method = "B26496E41CBD49AF55E8049B2DA06F29")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.473 -0500", hash_original_method = "D5683AC0AFFFFAC7278B155F54988C15", hash_generated_method = "B26496E41CBD49AF55E8049B2DA06F29")
+    
+private Object
     responseIccCardStatus(Parcel p) {
         IccCardApplication ca;
 
@@ -3070,8 +3193,9 @@ public void setCurrentPreferredNetworkType() {
         return status;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.102 -0500", hash_original_method = "26536CEB9BA98624BF6B84456E63F303", hash_generated_method = "FF490025FC0D83989689934CBECBC4FC")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.476 -0500", hash_original_method = "26536CEB9BA98624BF6B84456E63F303", hash_generated_method = "FF490025FC0D83989689934CBECBC4FC")
+    
+private Object
     responseCallList(Parcel p) {
         int num;
         int voiceSettings;
@@ -3135,8 +3259,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.103 -0500", hash_original_method = "ED5CAFCBF47B1330CD2566A0B897CA0C", hash_generated_method = "71512459E732C910B542DB6C1ADA5185")
-    private DataCallState getDataCallState(Parcel p, int version) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.479 -0500", hash_original_method = "ED5CAFCBF47B1330CD2566A0B897CA0C", hash_generated_method = "71512459E732C910B542DB6C1ADA5185")
+    
+private DataCallState getDataCallState(Parcel p, int version) {
         DataCallState dataCall = new DataCallState();
 
         dataCall.version = version;
@@ -3175,8 +3300,9 @@ public void setCurrentPreferredNetworkType() {
         return dataCall;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.104 -0500", hash_original_method = "123D49A321BB97EFA9843423F7545450", hash_generated_method = "61DE004301076E4BCC33A21DEC70F0EE")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.482 -0500", hash_original_method = "123D49A321BB97EFA9843423F7545450", hash_generated_method = "61DE004301076E4BCC33A21DEC70F0EE")
+    
+private Object
     responseDataCallList(Parcel p) {
         ArrayList<DataCallState> response;
 
@@ -3192,8 +3318,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.105 -0500", hash_original_method = "6E11D362E553C380CF6ADBFD5304CD05", hash_generated_method = "A6D130DD58DC45CE2E494B4BA05C0FD4")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.485 -0500", hash_original_method = "6E11D362E553C380CF6ADBFD5304CD05", hash_generated_method = "A6D130DD58DC45CE2E494B4BA05C0FD4")
+    
+private Object
     responseSetupDataCall(Parcel p) {
         int ver = p.readInt();
         int num = p.readInt();
@@ -3240,8 +3367,9 @@ public void setCurrentPreferredNetworkType() {
         return dataCall;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.106 -0500", hash_original_method = "F2D5C4032BE6024B6126759412E50A01", hash_generated_method = "5DFF726CF185B8AF1CE90DE981582B33")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.488 -0500", hash_original_method = "F2D5C4032BE6024B6126759412E50A01", hash_generated_method = "5DFF726CF185B8AF1CE90DE981582B33")
+    
+private Object
     responseOperatorInfos(Parcel p) {
         String strings[] = (String [])responseStrings(p);
         ArrayList<OperatorInfo> ret;
@@ -3266,8 +3394,9 @@ public void setCurrentPreferredNetworkType() {
         return ret;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.107 -0500", hash_original_method = "E4123D5DA30749CB6D4FFE47F8C7BEAC", hash_generated_method = "BB29BCDA37F4ACDDBACEC16A2E61BD77")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.491 -0500", hash_original_method = "E4123D5DA30749CB6D4FFE47F8C7BEAC", hash_generated_method = "BB29BCDA37F4ACDDBACEC16A2E61BD77")
+    
+private Object
     responseCellList(Parcel p) {
        int num, rssi;
        String location;
@@ -3309,8 +3438,9 @@ public void setCurrentPreferredNetworkType() {
        return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.108 -0500", hash_original_method = "225C4A262B1740AD55FF47639121D5EF", hash_generated_method = "5489CBB4FF442F65DA2D4F1866587C2A")
-    private Object responseGetPreferredNetworkType(Parcel p) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.494 -0500", hash_original_method = "225C4A262B1740AD55FF47639121D5EF", hash_generated_method = "5489CBB4FF442F65DA2D4F1866587C2A")
+    
+private Object responseGetPreferredNetworkType(Parcel p) {
        int [] response = (int[]) responseInts(p);
 
        if (response.length >= 1) {
@@ -3322,8 +3452,9 @@ public void setCurrentPreferredNetworkType() {
        return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.109 -0500", hash_original_method = "C459166A8880B065FE8A1B083AFDAF89", hash_generated_method = "0F6BE402FAFB0E2698726FDCC2070824")
-    private Object responseGmsBroadcastConfig(Parcel p) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.496 -0500", hash_original_method = "C459166A8880B065FE8A1B083AFDAF89", hash_generated_method = "0F6BE402FAFB0E2698726FDCC2070824")
+    
+private Object responseGmsBroadcastConfig(Parcel p) {
         int num;
         ArrayList<SmsBroadcastConfigInfo> response;
         SmsBroadcastConfigInfo info;
@@ -3345,8 +3476,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.110 -0500", hash_original_method = "55259F8FDA4B0C41A34B6184E02D7C2F", hash_generated_method = "19A68165695F38C6B4687CFB4FA46EA6")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.499 -0500", hash_original_method = "55259F8FDA4B0C41A34B6184E02D7C2F", hash_generated_method = "19A68165695F38C6B4687CFB4FA46EA6")
+    
+private Object
     responseCdmaBroadcastConfig(Parcel p) {
         int numServiceCategories;
         int response[];
@@ -3385,8 +3517,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.111 -0500", hash_original_method = "90CED6467BA07D7B46A1F95705E3AC70", hash_generated_method = "2DC8C6A648473217783DBDDBCF78D774")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.501 -0500", hash_original_method = "90CED6467BA07D7B46A1F95705E3AC70", hash_generated_method = "2DC8C6A648473217783DBDDBCF78D774")
+    
+private Object
     responseSignalStrength(Parcel p) {
         int numInts = 12;
         int response[];
@@ -3400,8 +3533,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.112 -0500", hash_original_method = "07F57EA5026D76F851755C6714CD7CB2", hash_generated_method = "53918D85714B547D3196FDC4FD5C6D74")
-    private ArrayList<CdmaInformationRecords>
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.504 -0500", hash_original_method = "07F57EA5026D76F851755C6714CD7CB2", hash_generated_method = "53918D85714B547D3196FDC4FD5C6D74")
+    
+private ArrayList<CdmaInformationRecords>
     responseCdmaInformationRecord(Parcel p) {
         int numberOfInfoRecs;
         ArrayList<CdmaInformationRecords> response;
@@ -3421,8 +3555,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.113 -0500", hash_original_method = "C7CB5D07451D489A78BF82365C5A0B27", hash_generated_method = "080E78805484873FD500B8F4FA59555B")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.506 -0500", hash_original_method = "C7CB5D07451D489A78BF82365C5A0B27", hash_generated_method = "080E78805484873FD500B8F4FA59555B")
+    
+private Object
     responseCdmaCallWaiting(Parcel p) {
         CdmaCallWaitingNotification notification = new CdmaCallWaitingNotification();
 
@@ -3440,8 +3575,9 @@ public void setCurrentPreferredNetworkType() {
         return notification;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.114 -0500", hash_original_method = "F4EF6B3A014077C64691F0B8D26D4AED", hash_generated_method = "8C72FD3EED228F0EA56391C35103BC05")
-    private Object
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.509 -0500", hash_original_method = "F4EF6B3A014077C64691F0B8D26D4AED", hash_generated_method = "8C72FD3EED228F0EA56391C35103BC05")
+    
+private Object
     responseCallRing(Parcel p){
         char response[] = new char[4];
 
@@ -3453,8 +3589,9 @@ public void setCurrentPreferredNetworkType() {
         return response;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.115 -0500", hash_original_method = "04666C2E99832FCFAFCF388A68EF0610", hash_generated_method = "179EB04D5DAEDBEE9ADB20BFE245346A")
-    private void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.514 -0500", hash_original_method = "04666C2E99832FCFAFCF388A68EF0610", hash_generated_method = "179EB04D5DAEDBEE9ADB20BFE245346A")
+    
+private void
     notifyRegistrantsCdmaInfoRec(CdmaInformationRecords infoRec) {
         int response = RIL_UNSOL_CDMA_INFO_REC;
         if (infoRec.record instanceof CdmaInformationRecords.CdmaDisplayInfoRec) {
@@ -3502,40 +3639,47 @@ public void setCurrentPreferredNetworkType() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.119 -0500", hash_original_method = "513B160CE13530A75C92D2BB2C156FD7", hash_generated_method = "1E131635314ABAE5EF6FDA3C0768DE7F")
-    private void riljLog(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.526 -0500", hash_original_method = "513B160CE13530A75C92D2BB2C156FD7", hash_generated_method = "1E131635314ABAE5EF6FDA3C0768DE7F")
+    
+private void riljLog(String msg) {
         Log.d(LOG_TAG, msg);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.120 -0500", hash_original_method = "709360DE622013B25C1B037A3416C3B6", hash_generated_method = "482E15019ADD4308592A2EF421ADF481")
-    private void riljLogv(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.528 -0500", hash_original_method = "709360DE622013B25C1B037A3416C3B6", hash_generated_method = "482E15019ADD4308592A2EF421ADF481")
+    
+private void riljLogv(String msg) {
         Log.v(LOG_TAG, msg);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.121 -0500", hash_original_method = "2B7AB7C6A9DFCD91149097CF23FA21DF", hash_generated_method = "3FC2E71BEA4797AEB881F8072DE56110")
-    private void unsljLog(int response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.531 -0500", hash_original_method = "2B7AB7C6A9DFCD91149097CF23FA21DF", hash_generated_method = "3FC2E71BEA4797AEB881F8072DE56110")
+    
+private void unsljLog(int response) {
         riljLog("[UNSL]< " + responseToString(response));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.121 -0500", hash_original_method = "B9D4DA0AB06082664757422C0E23F4B2", hash_generated_method = "3FCBFE29986B3A5AD4E199C9E8C84365")
-    private void unsljLogMore(int response, String more) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.533 -0500", hash_original_method = "B9D4DA0AB06082664757422C0E23F4B2", hash_generated_method = "3FCBFE29986B3A5AD4E199C9E8C84365")
+    
+private void unsljLogMore(int response, String more) {
         riljLog("[UNSL]< " + responseToString(response) + " " + more);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.122 -0500", hash_original_method = "02F7DA800ECB6E455062B2AF08D2856E", hash_generated_method = "4308949EB9B61C1B0F428CCAF52E8C62")
-    private void unsljLogRet(int response, Object ret) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.535 -0500", hash_original_method = "02F7DA800ECB6E455062B2AF08D2856E", hash_generated_method = "4308949EB9B61C1B0F428CCAF52E8C62")
+    
+private void unsljLogRet(int response, Object ret) {
         riljLog("[UNSL]< " + responseToString(response) + " " + retToString(response, ret));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.123 -0500", hash_original_method = "5479F9B9AF9D3C3FE7229BC789506755", hash_generated_method = "8E80D7270098728D5CB1E651C097C44E")
-    private void unsljLogvRet(int response, Object ret) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.537 -0500", hash_original_method = "5479F9B9AF9D3C3FE7229BC789506755", hash_generated_method = "8E80D7270098728D5CB1E651C097C44E")
+    
+private void unsljLogvRet(int response, Object ret) {
         riljLogv("[UNSL]< " + responseToString(response) + " " + retToString(response, ret));
     }
 
 
     // ***** Methods for CDMA support
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.124 -0500", hash_original_method = "B8DB86D0D3DD2A6C87C6DBBEA17396A3", hash_generated_method = "76A6078265BCBAD73DB0DFCC3EC222BC")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.539 -0500", hash_original_method = "B8DB86D0D3DD2A6C87C6DBBEA17396A3", hash_generated_method = "76A6078265BCBAD73DB0DFCC3EC222BC")
+    
+public void
     getDeviceIdentity(Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_DEVICE_IDENTITY, response);
 
@@ -3544,8 +3688,9 @@ public void setCurrentPreferredNetworkType() {
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.126 -0500", hash_original_method = "2F4B55F10DAACCDACB48694F0AD6C5FC", hash_generated_method = "201594DD11867F9E5568C225E7F2F93B")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.542 -0500", hash_original_method = "2F4B55F10DAACCDACB48694F0AD6C5FC", hash_generated_method = "201594DD11867F9E5568C225E7F2F93B")
+    
+public void
     getCDMASubscription(Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_SUBSCRIPTION, response);
 
@@ -3556,26 +3701,28 @@ public void setCurrentPreferredNetworkType() {
 
     
     class RILSender extends Handler implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.971 -0500", hash_original_field = "D1362109E83ED4221773106790FD549F", hash_generated_field = "D1362109E83ED4221773106790FD549F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.120 -0500", hash_original_field = "D1362109E83ED4221773106790FD549F", hash_generated_field = "D1362109E83ED4221773106790FD549F")
 
         byte[] dataLength = new byte[4];
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.970 -0500", hash_original_method = "4D17817439BCC34837C575257CF9147F", hash_generated_method = "7F3B9F7D5201A9EB032C84CA645BFD5D")
-        public RILSender(Looper looper) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.118 -0500", hash_original_method = "4D17817439BCC34837C575257CF9147F", hash_generated_method = "7F3B9F7D5201A9EB032C84CA645BFD5D")
+        
+public RILSender(Looper looper) {
             super(looper);
         }
 
         //***** Runnable implementation
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.971 -0500", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "AB7009E9147A46711C31F9E68A9A4C54")
-        public void
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.122 -0500", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "AB7009E9147A46711C31F9E68A9A4C54")
+        
+public void
         run() {
             //setup if needed
         }
 
 
         //***** Handler implementation
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.973 -0500", hash_original_method = "D25DB5A43D9B976C2A2C198EC34CFB08", hash_generated_method = "31FD0E667E5596F74C850B900AEA6238")
-        @Override
-public void
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.127 -0500", hash_original_method = "D25DB5A43D9B976C2A2C198EC34CFB08", hash_generated_method = "31FD0E667E5596F74C850B900AEA6238")
+        
+@Override public void
         handleMessage(Message msg) {
             RILRequest rr = (RILRequest)(msg.obj);
             RILRequest req = null;
@@ -3724,17 +3871,19 @@ public void
 
     
     class RILReceiver implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.976 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.136 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
 
         byte[] buffer;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.977 -0500", hash_original_method = "AEB7D4EC0C0D3B29B57F76734A093487", hash_generated_method = "AEB7D4EC0C0D3B29B57F76734A093487")
-        RILReceiver() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.138 -0500", hash_original_method = "AEB7D4EC0C0D3B29B57F76734A093487", hash_generated_method = "AEB7D4EC0C0D3B29B57F76734A093487")
+        
+RILReceiver() {
             buffer = new byte[RIL_MAX_COMMAND_BYTES];
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.979 -0500", hash_original_method = "3E25FFC0D00CEB4B0CF0C518A51DB777", hash_generated_method = "CB2E9E1461282E6FAEAB0D17308BF755")
-        public void
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.142 -0500", hash_original_method = "3E25FFC0D00CEB4B0CF0C518A51DB777", hash_generated_method = "CB2E9E1461282E6FAEAB0D17308BF755")
+        
+public void
         run() {
             int retryCount = 0;
 
@@ -3841,9 +3990,10 @@ public void
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.127 -0500", hash_original_method = "CD84ED40ADC2BEFF960D6D373762CCB2", hash_generated_method = "4CBCB581979D50D11AFFCF74C71147BD")
-    @Override
-public void setPhoneType(int phoneType) { // Called by CDMAPhone and GSMPhone constructor
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.544 -0500", hash_original_method = "CD84ED40ADC2BEFF960D6D373762CCB2", hash_generated_method = "4CBCB581979D50D11AFFCF74C71147BD")
+    
+@Override
+    public void setPhoneType(int phoneType) { // Called by CDMAPhone and GSMPhone constructor
         if (RILJ_LOGD) riljLog("setPhoneType=" + phoneType + " old value=" + mPhoneType);
         mPhoneType = phoneType;
     }
@@ -3851,8 +4001,9 @@ public void setPhoneType(int phoneType) { // Called by CDMAPhone and GSMPhone co
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.127 -0500", hash_original_method = "849E6CD9CCE8F1ECF8BC959270B499A0", hash_generated_method = "25CA41E73B576D36C4DC46D880827142")
-    public void queryCdmaRoamingPreference(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.547 -0500", hash_original_method = "849E6CD9CCE8F1ECF8BC959270B499A0", hash_generated_method = "25CA41E73B576D36C4DC46D880827142")
+    
+public void queryCdmaRoamingPreference(Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_CDMA_QUERY_ROAMING_PREFERENCE, response);
 
@@ -3864,8 +4015,9 @@ public void setPhoneType(int phoneType) { // Called by CDMAPhone and GSMPhone co
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.128 -0500", hash_original_method = "BC2979EAC0CBA90D634290B385917086", hash_generated_method = "D86D1F5E67B9A4CCE3C77FB04C17DB36")
-    public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.549 -0500", hash_original_method = "BC2979EAC0CBA90D634290B385917086", hash_generated_method = "D86D1F5E67B9A4CCE3C77FB04C17DB36")
+    
+public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_CDMA_SET_ROAMING_PREFERENCE, response);
 
@@ -3881,8 +4033,9 @@ public void setPhoneType(int phoneType) { // Called by CDMAPhone and GSMPhone co
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.129 -0500", hash_original_method = "5B737D91D0E47D0010D2976568B23A82", hash_generated_method = "E1E8C91BCC3E820165CCFBF1CF0ACE9F")
-    public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.552 -0500", hash_original_method = "5B737D91D0E47D0010D2976568B23A82", hash_generated_method = "E1E8C91BCC3E820165CCFBF1CF0ACE9F")
+    
+public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE, response);
 
@@ -3898,9 +4051,10 @@ public void setPhoneType(int phoneType) { // Called by CDMAPhone and GSMPhone co
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.130 -0500", hash_original_method = "5EEECA9C4DAFB6EB7CE2420CACC9812C", hash_generated_method = "A7F30A855D4290597F2EC53B818E42FD")
-    @Override
-public void getCdmaSubscriptionSource(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.554 -0500", hash_original_method = "5EEECA9C4DAFB6EB7CE2420CACC9812C", hash_generated_method = "A7F30A855D4290597F2EC53B818E42FD")
+    
+@Override
+    public void getCdmaSubscriptionSource(Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE, response);
 
@@ -3912,8 +4066,9 @@ public void getCdmaSubscriptionSource(Message response) {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.131 -0500", hash_original_method = "116710C0DB0DC531DE694B6BC2F4AE2B", hash_generated_method = "E820AD6E49E48479B64279165D44A52F")
-    public void queryTTYMode(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.557 -0500", hash_original_method = "116710C0DB0DC531DE694B6BC2F4AE2B", hash_generated_method = "E820AD6E49E48479B64279165D44A52F")
+    
+public void queryTTYMode(Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_QUERY_TTY_MODE, response);
 
@@ -3925,8 +4080,9 @@ public void getCdmaSubscriptionSource(Message response) {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.132 -0500", hash_original_method = "0B5DA23B67CE8A881960D39226001892", hash_generated_method = "BAE8EA5E99A08E0B9EBF1E0DA3E3CD55")
-    public void setTTYMode(int ttyMode, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.559 -0500", hash_original_method = "0B5DA23B67CE8A881960D39226001892", hash_generated_method = "BAE8EA5E99A08E0B9EBF1E0DA3E3CD55")
+    
+public void setTTYMode(int ttyMode, Message response) {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_SET_TTY_MODE, response);
 
@@ -3942,8 +4098,9 @@ public void getCdmaSubscriptionSource(Message response) {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.133 -0500", hash_original_method = "9DB0667959C6184F19426DF0FB910315", hash_generated_method = "1CDF46E850D12393272BE824CF77736E")
-    public void
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.562 -0500", hash_original_method = "9DB0667959C6184F19426DF0FB910315", hash_generated_method = "1CDF46E850D12393272BE824CF77736E")
+    
+public void
     sendCDMAFeatureCode(String FeatureCode, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_FLASH, response);
 
@@ -3955,16 +4112,18 @@ public void getCdmaSubscriptionSource(Message response) {
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.134 -0500", hash_original_method = "EB6E132144573DF781138A585850ED0A", hash_generated_method = "9B71DBAB3FD34DE9DFB39BCC252B4E52")
-    public void getCdmaBroadcastConfig(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.564 -0500", hash_original_method = "EB6E132144573DF781138A585850ED0A", hash_generated_method = "9B71DBAB3FD34DE9DFB39BCC252B4E52")
+    
+public void getCdmaBroadcastConfig(Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_GET_BROADCAST_CONFIG, response);
 
         send(rr);
     }
 
     // TODO: Change the configValuesArray to a RIL_BroadcastSMSConfig
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.134 -0500", hash_original_method = "7AE57418607D61F0BA79FD2FF4F728AF", hash_generated_method = "8CF52294E8F8C9B4382CEA72F47F270F")
-    public void setCdmaBroadcastConfig(int[] configValuesArray, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.566 -0500", hash_original_method = "7AE57418607D61F0BA79FD2FF4F728AF", hash_generated_method = "8CF52294E8F8C9B4382CEA72F47F270F")
+    
+public void setCdmaBroadcastConfig(int[] configValuesArray, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_SET_BROADCAST_CONFIG, response);
 
         for(int i = 0; i < configValuesArray.length; i++) {
@@ -3976,8 +4135,9 @@ public void getCdmaSubscriptionSource(Message response) {
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.135 -0500", hash_original_method = "41C22C7BD9DE14E15F4803649E353969", hash_generated_method = "F7D6A0F4C6291549FF4E3BB3428A700D")
-    public void setCdmaBroadcastActivation(boolean activate, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.569 -0500", hash_original_method = "41C22C7BD9DE14E15F4803649E353969", hash_generated_method = "F7D6A0F4C6291549FF4E3BB3428A700D")
+    
+public void setCdmaBroadcastActivation(boolean activate, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_BROADCAST_ACTIVATION, response);
 
         rr.mp.writeInt(1);
@@ -3991,8 +4151,9 @@ public void getCdmaSubscriptionSource(Message response) {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.136 -0500", hash_original_method = "82BAE0E7FF72D1A409D61F03DD8EFEA2", hash_generated_method = "20351156A4CEAF44F8649AE6EAE5E45A")
-    public void exitEmergencyCallbackMode(Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.571 -0500", hash_original_method = "82BAE0E7FF72D1A409D61F03DD8EFEA2", hash_generated_method = "20351156A4CEAF44F8649AE6EAE5E45A")
+    
+public void exitEmergencyCallbackMode(Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_EXIT_EMERGENCY_CALLBACK_MODE, response);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
@@ -4000,8 +4161,9 @@ public void getCdmaSubscriptionSource(Message response) {
         send(rr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.137 -0500", hash_original_method = "381EF137384490D69DA50E927DA4C209", hash_generated_method = "2FDEC52408531AFB988CB22C04CE278C")
-    public void requestIsimAuthentication(String nonce, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.573 -0500", hash_original_method = "381EF137384490D69DA50E927DA4C209", hash_generated_method = "2FDEC52408531AFB988CB22C04CE278C")
+    
+public void requestIsimAuthentication(String nonce, Message response) {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_ISIM_AUTHENTICATION, response);
 
         rr.mp.writeString(nonce);

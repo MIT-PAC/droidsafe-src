@@ -44,21 +44,22 @@ import javax.sip.message.Response;
 
 
 class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.835 -0500", hash_original_field = "3CB65F1BFC9F96380AAF7B1DE4A7DDC2", hash_generated_field = "B58F2862CC3FB933DFE2CD13D62E4F29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.969 -0500", hash_original_field = "3CB65F1BFC9F96380AAF7B1DE4A7DDC2", hash_generated_field = "B58F2862CC3FB933DFE2CD13D62E4F29")
 
 
     protected SIPTransaction transactionChannel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.836 -0500", hash_original_field = "886D2BC0241587EE779F16016F69799C", hash_generated_field = "39488158E1B35E48EDB34C41C325AC90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.972 -0500", hash_original_field = "886D2BC0241587EE779F16016F69799C", hash_generated_field = "39488158E1B35E48EDB34C41C325AC90")
 
 
     protected ListeningPointImpl listeningPoint;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.837 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.975 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
 
     private SipStackImpl sipStack;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.838 -0500", hash_original_method = "A91C8A8D71CBF898AE2C5B460693B699", hash_generated_method = "3CDADBEAE627BC16C150B38C956E64BD")
-    public DialogFilter(SipStackImpl sipStack) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.978 -0500", hash_original_method = "A91C8A8D71CBF898AE2C5B460693B699", hash_generated_method = "3CDADBEAE627BC16C150B38C956E64BD")
+    
+public DialogFilter(SipStackImpl sipStack) {
         this.sipStack = sipStack;
 
     }
@@ -69,8 +70,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @param sipRequest
      * @param transaction
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.839 -0500", hash_original_method = "07FCA8BF1CB05FED9E9EE5BE5B9D0DF8", hash_generated_method = "BF297F88E2C526AD78F061C0319EEB89")
-    private void sendRequestPendingResponse(SIPRequest sipRequest,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.981 -0500", hash_original_method = "07FCA8BF1CB05FED9E9EE5BE5B9D0DF8", hash_generated_method = "BF297F88E2C526AD78F061C0319EEB89")
+    
+private void sendRequestPendingResponse(SIPRequest sipRequest,
             SIPServerTransaction transaction) {
         SIPResponse sipResponse = sipRequest.createResponse(Response.REQUEST_PENDING);
         ServerHeader serverHeader = MessageFactoryImpl.getDefaultServerHeader();
@@ -101,8 +103,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @param reasonPhrase
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.840 -0500", hash_original_method = "C4ABF2148AD4585DF588E0AB365097FF", hash_generated_method = "1847CE9A4775F30DB6446D2F571CBAB6")
-    private void sendBadRequestResponse(SIPRequest sipRequest, SIPServerTransaction transaction,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.984 -0500", hash_original_method = "C4ABF2148AD4585DF588E0AB365097FF", hash_generated_method = "1847CE9A4775F30DB6446D2F571CBAB6")
+    
+private void sendBadRequestResponse(SIPRequest sipRequest, SIPServerTransaction transaction,
             String reasonPhrase) {
         SIPResponse sipResponse = sipRequest.createResponse(Response.BAD_REQUEST);
         if (reasonPhrase != null)
@@ -132,8 +135,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @param transaction
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.842 -0500", hash_original_method = "D6292ED26CFFFD47381D5C093FDBF969", hash_generated_method = "8C5FE46F3BF7A6E186EC1C93630D29A1")
-    private void sendCallOrTransactionDoesNotExistResponse(SIPRequest sipRequest,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.987 -0500", hash_original_method = "D6292ED26CFFFD47381D5C093FDBF969", hash_generated_method = "8C5FE46F3BF7A6E186EC1C93630D29A1")
+    
+private void sendCallOrTransactionDoesNotExistResponse(SIPRequest sipRequest,
             SIPServerTransaction transaction) {
 
         SIPResponse sipResponse = sipRequest
@@ -165,8 +169,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @param transaction
      * 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.843 -0500", hash_original_method = "3FDF2D179E068B8AD4629A716A32BCF6", hash_generated_method = "CFBB9677838418A294831DDE7199EB2B")
-    private void sendLoopDetectedResponse(SIPRequest sipRequest, SIPServerTransaction transaction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.989 -0500", hash_original_method = "3FDF2D179E068B8AD4629A716A32BCF6", hash_generated_method = "CFBB9677838418A294831DDE7199EB2B")
+    
+private void sendLoopDetectedResponse(SIPRequest sipRequest, SIPServerTransaction transaction) {
         SIPResponse sipResponse = sipRequest.createResponse(Response.LOOP_DETECTED);
 
         ServerHeader serverHeader = MessageFactoryImpl.getDefaultServerHeader();
@@ -193,8 +198,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @param transaction
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.844 -0500", hash_original_method = "1BAB8A1EF49695D9BD2CE878014B3A7C", hash_generated_method = "C530EBE8B43236563249FD97A1A8E031")
-    private void sendServerInternalErrorResponse(SIPRequest sipRequest,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:30.992 -0500", hash_original_method = "1BAB8A1EF49695D9BD2CE878014B3A7C", hash_generated_method = "C530EBE8B43236563249FD97A1A8E031")
+    
+private void sendServerInternalErrorResponse(SIPRequest sipRequest,
             SIPServerTransaction transaction) {
         if (sipStack.isLoggingEnabled())
             sipStack.getStackLogger()
@@ -226,8 +232,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * 
      * @exception SIPServerException is thrown when there is an error processing the request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.850 -0500", hash_original_method = "358FFD6F817CCE2A8A6AEFD88EADC0D0", hash_generated_method = "79917D8CA357A494EFAC68C2B2CC183F")
-    public void processRequest(SIPRequest sipRequest, MessageChannel incomingMessageChannel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.009 -0500", hash_original_method = "358FFD6F817CCE2A8A6AEFD88EADC0D0", hash_generated_method = "79917D8CA357A494EFAC68C2B2CC183F")
+    
+public void processRequest(SIPRequest sipRequest, MessageChannel incomingMessageChannel) {
         // Generate the wrapper JAIN-SIP object.
         if (sipStack.isLoggingEnabled())
             sipStack.getStackLogger().logDebug(
@@ -1084,8 +1091,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @exception SIPServerException is thrown when there is an error processing the response
      * @param incomingMessageChannel -- message channel on which the response is received.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.853 -0500", hash_original_method = "4FD6D5D7FFBD58CDE4927F751F9B55A3", hash_generated_method = "13B3758B8A5C0AACB128B23388DCBDF8")
-    public void processResponse(SIPResponse response, MessageChannel incomingMessageChannel,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.016 -0500", hash_original_method = "4FD6D5D7FFBD58CDE4927F751F9B55A3", hash_generated_method = "13B3758B8A5C0AACB128B23388DCBDF8")
+    
+public void processResponse(SIPResponse response, MessageChannel incomingMessageChannel,
             SIPDialog dialog) {
         if (sipStack.isLoggingEnabled()) {
             sipStack.getStackLogger().logDebug(
@@ -1227,8 +1235,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @return auxiliary information that we may have generated during the message processing
      *         which is retrieved by the message logger.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.854 -0500", hash_original_method = "45F8896428832201E8BC8983A22C5151", hash_generated_method = "E358815487E38934DAFD8737DF516416")
-    public String getProcessingInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.019 -0500", hash_original_method = "45F8896428832201E8BC8983A22C5151", hash_generated_method = "E358815487E38934DAFD8737DF516416")
+    
+public String getProcessingInfo() {
         return null;
     }
 
@@ -1238,8 +1247,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
      * @see gov.nist.javax.sip.stack.ServerResponseInterface#processResponse(gov.nist.javax.sip.message.SIPResponse,
      *      gov.nist.javax.sip.stack.MessageChannel)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:03.857 -0500", hash_original_method = "913AD64E566DC17432B7074017A68B2C", hash_generated_method = "E4BB58AF9BC559A61D633803157B9AE4")
-    public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.025 -0500", hash_original_method = "913AD64E566DC17432B7074017A68B2C", hash_generated_method = "E4BB58AF9BC559A61D633803157B9AE4")
+    
+public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
         String dialogID = sipResponse.getDialogId(false);
         SIPDialog sipDialog = this.sipStack.getDialog(dialogID);
 

@@ -31,8 +31,9 @@ public final class AttributeTypeAndValue {
     /**
      * Returns known OID or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.625 -0500", hash_original_method = "E69664DF4B06AA7B2D486D69240A9EDA", hash_generated_method = "78762018B546B35CC876C218AF5DCF8D")
-    private static ObjectIdentifier getOID(int[] oid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.393 -0500", hash_original_method = "E69664DF4B06AA7B2D486D69240A9EDA", hash_generated_method = "78762018B546B35CC876C218AF5DCF8D")
+    
+private static ObjectIdentifier getOID(int[] oid) {
         int index = hashIntArray(oid) % CAPACITY;
 
         // look for OID in the pool
@@ -49,8 +50,9 @@ public final class AttributeTypeAndValue {
      * Adds known OID to pool.
      * for static AttributeTypeAndValue initialization only
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.626 -0500", hash_original_method = "BFF86F06D273903B963DFA916A722686", hash_generated_method = "4FE0FBBFCB4CFF862AE86B08133326C6")
-    private static void addOID(ObjectIdentifier oid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.397 -0500", hash_original_method = "BFF86F06D273903B963DFA916A722686", hash_generated_method = "4FE0FBBFCB4CFF862AE86B08133326C6")
+    
+private static void addOID(ObjectIdentifier oid) {
         int[] newOid = oid.getOid();
         int index = hashIntArray(newOid) % CAPACITY;
 
@@ -76,110 +78,111 @@ public final class AttributeTypeAndValue {
     /**
      * Returns hash for array of integers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.627 -0500", hash_original_method = "9326E50D231DBE55A4CC7DEFA5FC4FF2", hash_generated_method = "AFBCD72A8015E7440F7486AFB8662303")
-    private static int hashIntArray(int[] oid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.400 -0500", hash_original_method = "9326E50D231DBE55A4CC7DEFA5FC4FF2", hash_generated_method = "AFBCD72A8015E7440F7486AFB8662303")
+    
+private static int hashIntArray(int[] oid) {
         int intHash = 0;
         for (int i = 0; i < oid.length && i < 4; i++) {
             intHash += oid[i] << (8 * i); //TODO what about to find better one?
         }
         return intHash & 0x7FFFFFFF; // only positive
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.583 -0500", hash_original_field = "6EBC08B8A2BC982BE4B2D585315CB5D9", hash_generated_field = "5207D163779DEE9675E626EA13EFBE30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.216 -0500", hash_original_field = "6EBC08B8A2BC982BE4B2D585315CB5D9", hash_generated_field = "5207D163779DEE9675E626EA13EFBE30")
 
     private static final HashMap<String, ObjectIdentifier> RFC1779_NAMES
             = new HashMap<String, ObjectIdentifier>(10);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.584 -0500", hash_original_field = "D9EFCC410410EC7544B85A023A6CAB69", hash_generated_field = "8066102F970313958E622F86A17AE18D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.220 -0500", hash_original_field = "D9EFCC410410EC7544B85A023A6CAB69", hash_generated_field = "8066102F970313958E622F86A17AE18D")
 
     private static final HashMap<String, ObjectIdentifier> KNOWN_NAMES
             = new HashMap<String, ObjectIdentifier>(30);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.585 -0500", hash_original_field = "456063591053670D4BF8C85065C279FC", hash_generated_field = "EF00B04823B98540169FF1AB7F4513ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.224 -0500", hash_original_field = "456063591053670D4BF8C85065C279FC", hash_generated_field = "EF00B04823B98540169FF1AB7F4513ED")
 
     private static final HashMap<String, ObjectIdentifier> RFC2253_NAMES
             = new HashMap<String, ObjectIdentifier>(10);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.586 -0500", hash_original_field = "5FB2070C37FE434F661BA9AD5A5684A5", hash_generated_field = "D6C412F713A28CD3973BFEED8B39D464")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.229 -0500", hash_original_field = "5FB2070C37FE434F661BA9AD5A5684A5", hash_generated_field = "D6C412F713A28CD3973BFEED8B39D464")
 
     private static final HashMap<String, ObjectIdentifier> RFC2459_NAMES
             = new HashMap<String, ObjectIdentifier>(10);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.587 -0500", hash_original_field = "C6CD9A4D86DBEA00D00AC9C96ED9F4C3", hash_generated_field = "8CB088E05D348A8F09614B48F4BF38BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.233 -0500", hash_original_field = "C6CD9A4D86DBEA00D00AC9C96ED9F4C3", hash_generated_field = "8CB088E05D348A8F09614B48F4BF38BA")
 
     private static final ObjectIdentifier C
             = new ObjectIdentifier(new int[] { 2, 5, 4, 6 }, "C", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.588 -0500", hash_original_field = "82AEBF2F8991357FC787250BC59E79B7", hash_generated_field = "62019E46EE850D23270F9E3DC652B5CE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.237 -0500", hash_original_field = "82AEBF2F8991357FC787250BC59E79B7", hash_generated_field = "62019E46EE850D23270F9E3DC652B5CE")
 
     private static final ObjectIdentifier CN
             = new ObjectIdentifier(new int[] { 2, 5, 4, 3 }, "CN", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.589 -0500", hash_original_field = "26CB62F2F1A5E0415989EDB20E68045A", hash_generated_field = "E89A0D43336082D6B88BB1634AA2C65A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.241 -0500", hash_original_field = "26CB62F2F1A5E0415989EDB20E68045A", hash_generated_field = "E89A0D43336082D6B88BB1634AA2C65A")
 
     private static final ObjectIdentifier DC = new ObjectIdentifier(
             new int[] { 0, 9, 2342, 19200300, 100, 1, 25 }, "DC", RFC2253_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.590 -0500", hash_original_field = "2450F51303494C0D530A73B8E9C21A9A", hash_generated_field = "4206325E209BCC75E8D09F6566439C1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.245 -0500", hash_original_field = "2450F51303494C0D530A73B8E9C21A9A", hash_generated_field = "4206325E209BCC75E8D09F6566439C1E")
 
     private static final ObjectIdentifier DNQ
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQ", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.591 -0500", hash_original_field = "328C2184289264351D05B861768AE32B", hash_generated_field = "188B912ADB054B566A701AFA00C51543")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.249 -0500", hash_original_field = "328C2184289264351D05B861768AE32B", hash_generated_field = "188B912ADB054B566A701AFA00C51543")
 
 
     private static final ObjectIdentifier DNQUALIFIER
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQUALIFIER", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.592 -0500", hash_original_field = "0ECACBDF3ED551EA32197932D01392D7", hash_generated_field = "ECF87076C29754CD3A47D1F600E03D36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.253 -0500", hash_original_field = "0ECACBDF3ED551EA32197932D01392D7", hash_generated_field = "ECF87076C29754CD3A47D1F600E03D36")
 
     private static final ObjectIdentifier EMAILADDRESS = new ObjectIdentifier(
             new int[] { 1, 2, 840, 113549, 1, 9, 1}, "EMAILADDRESS", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.593 -0500", hash_original_field = "CEDBF57C6F2EEB472958013EC124CA20", hash_generated_field = "89E386C4E13C2710860B9E2B4D58F012")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.257 -0500", hash_original_field = "CEDBF57C6F2EEB472958013EC124CA20", hash_generated_field = "89E386C4E13C2710860B9E2B4D58F012")
 
     private static final ObjectIdentifier GENERATION
             = new ObjectIdentifier(new int[] { 2, 5, 4, 44 }, "GENERATION", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.594 -0500", hash_original_field = "CDB77315077E4779CA2E8FE7A1AE82D6", hash_generated_field = "FECEA0BD201D269BBB53725DB5B9838E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.261 -0500", hash_original_field = "CDB77315077E4779CA2E8FE7A1AE82D6", hash_generated_field = "FECEA0BD201D269BBB53725DB5B9838E")
 
     private static final ObjectIdentifier GIVENNAME
             = new ObjectIdentifier(new int[] { 2, 5, 4, 42 }, "GIVENNAME", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.595 -0500", hash_original_field = "DF6DF77952DA218FD1231AA2FD3262AD", hash_generated_field = "1D557C1E8E06306A4E0632901015C2C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.265 -0500", hash_original_field = "DF6DF77952DA218FD1231AA2FD3262AD", hash_generated_field = "1D557C1E8E06306A4E0632901015C2C0")
 
     private static final ObjectIdentifier INITIALS
             = new ObjectIdentifier(new int[] { 2, 5, 4, 43 }, "INITIALS", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.596 -0500", hash_original_field = "D5EBEC7B94B59492DACB7C375E9C49BB", hash_generated_field = "6BA6F2EA3D1BBB84B8BF35E1E59C76C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.269 -0500", hash_original_field = "D5EBEC7B94B59492DACB7C375E9C49BB", hash_generated_field = "6BA6F2EA3D1BBB84B8BF35E1E59C76C9")
 
     private static final ObjectIdentifier L
             = new ObjectIdentifier(new int[] { 2, 5, 4, 7 }, "L", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.597 -0500", hash_original_field = "9F1B0BF363E021281C31A9DD3D6075C3", hash_generated_field = "FF0191CC096C1961ACFBE7F14EF0EC1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.273 -0500", hash_original_field = "9F1B0BF363E021281C31A9DD3D6075C3", hash_generated_field = "FF0191CC096C1961ACFBE7F14EF0EC1E")
 
     private static final ObjectIdentifier O
             = new ObjectIdentifier(new int[] { 2, 5, 4, 10 }, "O", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.598 -0500", hash_original_field = "E174C90C557CE08E1D5F8ABE4E168E38", hash_generated_field = "D0C255D53E24FFD7ED03EB524107F518")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.276 -0500", hash_original_field = "E174C90C557CE08E1D5F8ABE4E168E38", hash_generated_field = "D0C255D53E24FFD7ED03EB524107F518")
 
     private static final ObjectIdentifier OU
             = new ObjectIdentifier(new int[] { 2, 5, 4, 11 }, "OU", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.598 -0500", hash_original_field = "962442119729E22F3C8DAD9A87FD236E", hash_generated_field = "4B5476A6E7F002FA4498E2B57B02FA56")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.281 -0500", hash_original_field = "962442119729E22F3C8DAD9A87FD236E", hash_generated_field = "4B5476A6E7F002FA4498E2B57B02FA56")
 
     private static final ObjectIdentifier SERIALNUMBER
             = new ObjectIdentifier(new int[] { 2, 5, 4, 5 }, "SERIALNUMBER", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.599 -0500", hash_original_field = "2487C009A85FD1E474DB892AC325C9B8", hash_generated_field = "F49BCBBFE38E5E8659597739D8D96955")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.284 -0500", hash_original_field = "2487C009A85FD1E474DB892AC325C9B8", hash_generated_field = "F49BCBBFE38E5E8659597739D8D96955")
 
     private static final ObjectIdentifier ST
             = new ObjectIdentifier(new int[] { 2, 5, 4, 8 }, "ST", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.600 -0500", hash_original_field = "A9D5CCC8BAB9DD0E577E406817A4201C", hash_generated_field = "3DE3D60B4A41F406FFF34CD8BE6C0C4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.288 -0500", hash_original_field = "A9D5CCC8BAB9DD0E577E406817A4201C", hash_generated_field = "3DE3D60B4A41F406FFF34CD8BE6C0C4D")
 
     private static final ObjectIdentifier STREET
             = new ObjectIdentifier(new int[] { 2, 5, 4, 9 }, "STREET", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.601 -0500", hash_original_field = "83FD6A748F12F0832AB27CA74E1DBAB7", hash_generated_field = "939200CC1A97087F817576C7C025D9D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.292 -0500", hash_original_field = "83FD6A748F12F0832AB27CA74E1DBAB7", hash_generated_field = "939200CC1A97087F817576C7C025D9D6")
 
     private static final ObjectIdentifier SURNAME
             = new ObjectIdentifier(new int[] { 2, 5, 4, 4 }, "SURNAME", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.602 -0500", hash_original_field = "A29BC2DA31AC156B66DC4278056FF08B", hash_generated_field = "997CD818EEB2AE6309709767B20EB267")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.297 -0500", hash_original_field = "A29BC2DA31AC156B66DC4278056FF08B", hash_generated_field = "997CD818EEB2AE6309709767B20EB267")
 
     private static final ObjectIdentifier T
             = new ObjectIdentifier(new int[] { 2, 5, 4, 12 }, "T", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.604 -0500", hash_original_field = "3BA3D14F2BDF5C624075ECCF71804379", hash_generated_field = "EE00D14202867529C037600B0E0A0159")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.301 -0500", hash_original_field = "3BA3D14F2BDF5C624075ECCF71804379", hash_generated_field = "EE00D14202867529C037600B0E0A0159")
 
     private static final ObjectIdentifier UID = new ObjectIdentifier(
             new int[]{ 0, 9, 2342, 19200300, 100, 1, 1 }, "UID", RFC2253_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.604 -0500", hash_original_field = "2625278C87E2DCD19FC4AF4501288607", hash_generated_field = "D1143EB3F5AB2EA1D8FE8AB241E7C1A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.304 -0500", hash_original_field = "2625278C87E2DCD19FC4AF4501288607", hash_generated_field = "D1143EB3F5AB2EA1D8FE8AB241E7C1A7")
 
     private static final int CAPACITY = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.605 -0500", hash_original_field = "EF3B102BE0ABDC78921BA3B5AA46C75F", hash_generated_field = "70468A6CBECF0AAF7AB8398F9B18D4C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.308 -0500", hash_original_field = "EF3B102BE0ABDC78921BA3B5AA46C75F", hash_generated_field = "70468A6CBECF0AAF7AB8398F9B18D4C4")
 
     private static final int SIZE = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.606 -0500", hash_original_field = "09B62EFD97CA9862BC547BDD0B1AEB22", hash_generated_field = "C6E5CDF5F54C03C730B88D808733A92F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.312 -0500", hash_original_field = "09B62EFD97CA9862BC547BDD0B1AEB22", hash_generated_field = "C6E5CDF5F54C03C730B88D808733A92F")
 
     private static final ObjectIdentifier[][] KNOWN_OIDS = new ObjectIdentifier[SIZE][CAPACITY];
     
@@ -187,13 +190,15 @@ public final class AttributeTypeAndValue {
 
     public static final ASN1Type attributeValue = new ASN1Type(ASN1Constants.TAG_PRINTABLESTRING) {
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.613 -0500", hash_original_method = "0E705085A9B1D73F25D30FC4A7DB73D9", hash_generated_method = "4A1E423FEDE7C14FE65C3996F1372E11")
-        public boolean checkTag(int tag) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.343 -0500", hash_original_method = "0E705085A9B1D73F25D30FC4A7DB73D9", hash_generated_method = "4A1E423FEDE7C14FE65C3996F1372E11")
+        
+public boolean checkTag(int tag) {
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.615 -0500", hash_original_method = "47B9DE0A06449E5D837276EC22B3F0E8", hash_generated_method = "4706185B32D0AB80A7CA4C86EA7DFEBB")
-        public Object decode(BerInputStream in) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.347 -0500", hash_original_method = "47B9DE0A06449E5D837276EC22B3F0E8", hash_generated_method = "4706185B32D0AB80A7CA4C86EA7DFEBB")
+        
+public Object decode(BerInputStream in) throws IOException {
             // FIXME what about constr???
             String str = null;
             if (DirectoryString.ASN1.checkTag(in.tag)) {
@@ -211,9 +216,9 @@ public final class AttributeTypeAndValue {
             return new AttributeValue(str, bytesEncoded, in.tag);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.615 -0500", hash_original_method = "7DF56D76B0B7364F01AC493B84727F79", hash_generated_method = "995C5EF05C5ED12603776BEE26B568DD")
-        @Override
-public Object getDecodedObject(BerInputStream in) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.351 -0500", hash_original_method = "7DF56D76B0B7364F01AC493B84727F79", hash_generated_method = "995C5EF05C5ED12603776BEE26B568DD")
+        
+@Override public Object getDecodedObject(BerInputStream in) throws IOException {
             // stub to avoid wrong decoder usage
             throw new RuntimeException("AttributeValue getDecodedObject MUST NOT be invoked");
         }
@@ -221,8 +226,9 @@ public Object getDecodedObject(BerInputStream in) throws IOException {
         //
         // Encode
         //
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.616 -0500", hash_original_method = "BE595AA7EBC46615F96838D06A8BB9E6", hash_generated_method = "7F2C8FBB675F0DF592949387C0377532")
-        public void encodeASN(BerOutputStream out) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.356 -0500", hash_original_method = "BE595AA7EBC46615F96838D06A8BB9E6", hash_generated_method = "7F2C8FBB675F0DF592949387C0377532")
+        
+public void encodeASN(BerOutputStream out) {
             AttributeValue av = (AttributeValue) out.content;
 
             if (av.encoded != null) {
@@ -235,8 +241,9 @@ public Object getDecodedObject(BerInputStream in) throws IOException {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.617 -0500", hash_original_method = "23586BD12951670B298A785C71BB9FF4", hash_generated_method = "ACBCC99F666986B6AF7AB3F9537C495D")
-        public void setEncodingContent(BerOutputStream out) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.361 -0500", hash_original_method = "23586BD12951670B298A785C71BB9FF4", hash_generated_method = "ACBCC99F666986B6AF7AB3F9537C495D")
+        
+public void setEncodingContent(BerOutputStream out) {
             AttributeValue av = (AttributeValue) out.content;
 
             if (av.encoded != null) {
@@ -254,15 +261,16 @@ public Object getDecodedObject(BerInputStream in) throws IOException {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.618 -0500", hash_original_method = "1D8F631AE92C0A1AA4D055920CF0287B", hash_generated_method = "373B8C2B09AFF2821F9426B3446F0E7D")
-        public void encodeContent(BerOutputStream out) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.365 -0500", hash_original_method = "1D8F631AE92C0A1AA4D055920CF0287B", hash_generated_method = "373B8C2B09AFF2821F9426B3446F0E7D")
+        
+public void encodeContent(BerOutputStream out) {
             // stub to avoid wrong encoder usage
             throw new RuntimeException("AttributeValue encodeContent MUST NOT be invoked");
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.620 -0500", hash_original_method = "BC25F25AEFB600C56F14C45BC364CF5C", hash_generated_method = "823D9FCC8D10C74BCE74958C343D4FC1")
-        @Override
-public int getEncodedLength(BerOutputStream out) { //FIXME name
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.369 -0500", hash_original_method = "BC25F25AEFB600C56F14C45BC364CF5C", hash_generated_method = "823D9FCC8D10C74BCE74958C343D4FC1")
+        
+@Override public int getEncodedLength(BerOutputStream out) { //FIXME name
             AttributeValue av = (AttributeValue) out.content;
             if (av.encoded != null) {
                 return out.length;
@@ -276,31 +284,32 @@ public int getEncodedLength(BerOutputStream out) { //FIXME name
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Oid.getInstance(), attributeValue }) {
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.622 -0500", hash_original_method = "D8107E6357EFE36630D3CBCE737F6259", hash_generated_method = "2FA6C59B2B9119548883FDA128E87FC3")
-        @Override
-protected Object getDecodedObject(BerInputStream in) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.380 -0500", hash_original_method = "D8107E6357EFE36630D3CBCE737F6259", hash_generated_method = "2FA6C59B2B9119548883FDA128E87FC3")
+        
+@Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
             return new AttributeTypeAndValue((int[]) values[0], (AttributeValue) values[1]);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.624 -0500", hash_original_method = "63A50B62635E4187659C3BDD7CE857B1", hash_generated_method = "175ACDA24D9DCFA834A829B64E163A19")
-        @Override
-protected void getValues(Object object, Object[] values) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.384 -0500", hash_original_method = "63A50B62635E4187659C3BDD7CE857B1", hash_generated_method = "175ACDA24D9DCFA834A829B64E163A19")
+        
+@Override protected void getValues(Object object, Object[] values) {
             AttributeTypeAndValue atav = (AttributeTypeAndValue) object;
             values[0] = atav.oid.getOid();
             values[1] = atav.value;
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.607 -0500", hash_original_field = "794BB2E15805CC7F48AFFECC7F6B34CC", hash_generated_field = "8882A462AEDA287957EC397E85D609FD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.317 -0500", hash_original_field = "794BB2E15805CC7F48AFFECC7F6B34CC", hash_generated_field = "8882A462AEDA287957EC397E85D609FD")
 
     private  ObjectIdentifier oid;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.608 -0500", hash_original_field = "92F2E406F79FFD9F26E7D286CDB7138F", hash_generated_field = "4F163C427394BA0FF5E07FEF103C118C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.321 -0500", hash_original_field = "92F2E406F79FFD9F26E7D286CDB7138F", hash_generated_field = "4F163C427394BA0FF5E07FEF103C118C")
 
     private  AttributeValue value;
 
     // for decoder only
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.609 -0500", hash_original_method = "6EC11ED1743D72D03D153EE3955FA226", hash_generated_method = "D3248DE04962BAD63BCFA76115DC7F20")
-    private AttributeTypeAndValue(int[] oid, AttributeValue value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.325 -0500", hash_original_method = "6EC11ED1743D72D03D153EE3955FA226", hash_generated_method = "D3248DE04962BAD63BCFA76115DC7F20")
+    
+private AttributeTypeAndValue(int[] oid, AttributeValue value) throws IOException {
         ObjectIdentifier thisOid = getOID(oid);
         if (thisOid == null) {
             thisOid = new ObjectIdentifier(oid);
@@ -320,8 +329,9 @@ protected void getValues(Object object, Object[] values) {
      * @throws IOException
      *             if OID can not be created from its string representation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.610 -0500", hash_original_method = "C6730356D790440CF3C53B1796ADEA2C", hash_generated_method = "0CAD47B083AF93FFE9E90E4101142A11")
-    public AttributeTypeAndValue(String sOid, AttributeValue value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.329 -0500", hash_original_method = "C6730356D790440CF3C53B1796ADEA2C", hash_generated_method = "0CAD47B083AF93FFE9E90E4101142A11")
+    
+public AttributeTypeAndValue(String sOid, AttributeValue value) throws IOException {
         if (sOid.charAt(0) >= '0' && sOid.charAt(0) <= '9') {
             int[] array = org.apache.harmony.security.asn1.ObjectIdentifier.toIntArray(sOid);
             ObjectIdentifier thisOid = getOID(array);
@@ -375,8 +385,9 @@ protected void getValues(Object object, Object[] values) {
      *
      * @param attrFormat - format of DN
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.612 -0500", hash_original_method = "296A7913293032A81F372D58309D975C", hash_generated_method = "2DCFB75665D03A476E8B08961103B604")
-    public void appendName(String attrFormat, StringBuilder sb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.333 -0500", hash_original_method = "296A7913293032A81F372D58309D975C", hash_generated_method = "2DCFB75665D03A476E8B08961103B604")
+    
+public void appendName(String attrFormat, StringBuilder sb) {
         boolean hexFormat = false;
         if (X500Principal.RFC1779.equals(attrFormat)) {
             if (RFC1779_NAMES == oid.getGroup()) {
@@ -434,8 +445,9 @@ protected void getValues(Object object, Object[] values) {
     /**
      * Gets type of the AttributeTypeAndValue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.612 -0500", hash_original_method = "FA85FF96313B2EEDB4486C871DCE0458", hash_generated_method = "978C1306EB6EC4C023A636CD52F4898F")
-    public ObjectIdentifier getType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.338 -0500", hash_original_method = "FA85FF96313B2EEDB4486C871DCE0458", hash_generated_method = "978C1306EB6EC4C023A636CD52F4898F")
+    
+public ObjectIdentifier getType() {
         return oid;
     }
     // orphaned legacy method

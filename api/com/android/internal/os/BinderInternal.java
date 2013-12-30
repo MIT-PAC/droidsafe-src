@@ -33,8 +33,9 @@ public class BinderInternal {
      * @return Returns the time as per {@link SystemClock#uptimeMillis
      * SystemClock.uptimeMillis()} of the last garbage collection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.492 -0500", hash_original_method = "97EE1367F7D21A2061B5C261F1E7F987", hash_generated_method = "93E1464CFF71D32450A26A70F1E8933A")
-    public static long getLastGcTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.469 -0500", hash_original_method = "97EE1367F7D21A2061B5C261F1E7F987", hash_generated_method = "93E1464CFF71D32450A26A70F1E8933A")
+    
+public static long getLastGcTime() {
         return mLastGcTime;
     }
 
@@ -54,17 +55,19 @@ public class BinderInternal {
     static final void handleGc() {
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.497 -0500", hash_original_method = "C06A63825025685CD72A0C7EB0DA954F", hash_generated_method = "2A120C37FE09D2BBCA349EC198BD8790")
-    public static void forceGc(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.483 -0500", hash_original_method = "C06A63825025685CD72A0C7EB0DA954F", hash_generated_method = "2A120C37FE09D2BBCA349EC198BD8790")
+    
+public static void forceGc(String reason) {
         EventLog.writeEvent(2741, reason);
         Runtime.getRuntime().gc();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.498 -0500", hash_original_method = "C8BAA80AD02F89B5235BAA5DBC498303", hash_generated_method = "9FA534FAAC552D584AAD550252C07FB9")
-    static void forceBinderGc() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.486 -0500", hash_original_method = "C8BAA80AD02F89B5235BAA5DBC498303", hash_generated_method = "9FA534FAAC552D584AAD550252C07FB9")
+    
+static void forceBinderGc() {
         forceGc("Binder");
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.488 -0500", hash_original_field = "97A81D7F56367AE21A0331CDF22407E7", hash_generated_field = "4909DFFCC1B301559EF73389910CBE90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.455 -0500", hash_original_field = "97A81D7F56367AE21A0331CDF22407E7", hash_generated_field = "4909DFFCC1B301559EF73389910CBE90")
 
     static WeakReference<GcWatcher> mGcWatcher
             = new WeakReference<GcWatcher>(new GcWatcher());
@@ -78,9 +81,10 @@ public class BinderInternal {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.490 -0500", hash_original_method = "D42E2C52A602997A5DDE899C13954EBC", hash_generated_method = "2835620AD59CBECDB4AE305DEB0923E8")
-        @Override
-protected void finalize() throws Throwable {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.461 -0500", hash_original_method = "D42E2C52A602997A5DDE899C13954EBC", hash_generated_method = "2835620AD59CBECDB4AE305DEB0923E8")
+        
+@Override
+        protected void finalize() throws Throwable {
             handleGc();
             mLastGcTime = SystemClock.uptimeMillis();
             mGcWatcher = new WeakReference<GcWatcher>(new GcWatcher());
@@ -88,7 +92,7 @@ protected void finalize() throws Throwable {
 
         
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.488 -0500", hash_original_field = "8CAF103EDA9DB77FDE721BD1922741E3", hash_generated_field = "D78279B3A9A95C1743A81AEED357F5B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.457 -0500", hash_original_field = "8CAF103EDA9DB77FDE721BD1922741E3", hash_generated_field = "D78279B3A9A95C1743A81AEED357F5B0")
 
     static long mLastGcTime;
     

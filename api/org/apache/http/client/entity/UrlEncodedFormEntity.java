@@ -23,8 +23,9 @@ public class UrlEncodedFormEntity extends StringEntity {
      * @param encoding encoding the name/value pairs be encoded with
      * @throws UnsupportedEncodingException if the encoding isn't supported
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.349 -0500", hash_original_method = "2B79106283EA78C37FC06864AB4CC20F", hash_generated_method = "97236FA94CD4379FBBB97CBB8054EEFB")
-    public UrlEncodedFormEntity (
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.628 -0500", hash_original_method = "2B79106283EA78C37FC06864AB4CC20F", hash_generated_method = "97236FA94CD4379FBBB97CBB8054EEFB")
+    
+public UrlEncodedFormEntity (
         final List <? extends NameValuePair> parameters, 
         final String encoding) throws UnsupportedEncodingException {
         super(URLEncodedUtils.format(parameters, encoding), 
@@ -39,8 +40,9 @@ public class UrlEncodedFormEntity extends StringEntity {
      * @param parameters list of name/value pairs
      * @throws UnsupportedEncodingException if the default encoding isn't supported
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.350 -0500", hash_original_method = "EFE31A1BCD3079C9AAB0E8E3BC2999DC", hash_generated_method = "F2ADCBCD03D851844BFD7EFF8118FD22")
-    public UrlEncodedFormEntity (
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.631 -0500", hash_original_method = "EFE31A1BCD3079C9AAB0E8E3BC2999DC", hash_generated_method = "F2ADCBCD03D851844BFD7EFF8118FD22")
+    
+public UrlEncodedFormEntity (
         final List <? extends NameValuePair> parameters) throws UnsupportedEncodingException {
         super(URLEncodedUtils.format(parameters, HTTP.DEFAULT_CONTENT_CHARSET), 
             HTTP.DEFAULT_CONTENT_CHARSET);

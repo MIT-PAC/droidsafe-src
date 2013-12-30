@@ -66,129 +66,130 @@ import com.google.android.collect.Maps;
 
 public class SyncManager implements OnAccountsUpdateListener {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.339 -0500", hash_original_method = "868C4665098C5E1E551E069914A3869C", hash_generated_method = "962E00FF9753425DE0943B5B1EB5482A")
-    static String formatTime(long time) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.938 -0500", hash_original_method = "868C4665098C5E1E551E069914A3869C", hash_generated_method = "962E00FF9753425DE0943B5B1EB5482A")
+    
+static String formatTime(long time) {
         Time tobj = new Time();
         tobj.set(time);
         return tobj.format("%Y-%m-%d %H:%M:%S");
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.241 -0500", hash_original_field = "264AE0F69A379AF82B30661B10A7553C", hash_generated_field = "AF31108A14FC5488BDB972C9330ED310")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.672 -0500", hash_original_field = "264AE0F69A379AF82B30661B10A7553C", hash_generated_field = "AF31108A14FC5488BDB972C9330ED310")
 
     private static final String TAG = "SyncManager";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.241 -0500", hash_original_field = "F3430E3F09D68E40B45C15F013F1890D", hash_generated_field = "4208D47E32C101BD1011FA8D9E027183")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.674 -0500", hash_original_field = "F3430E3F09D68E40B45C15F013F1890D", hash_generated_field = "4208D47E32C101BD1011FA8D9E027183")
 
     private static  long LOCAL_SYNC_DELAY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.242 -0500", hash_original_field = "9B64AF0DF31B556F43213B53FF72FC3E", hash_generated_field = "63AD8E40CBA9E89F2FEE5FAFC18666A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.676 -0500", hash_original_field = "9B64AF0DF31B556F43213B53FF72FC3E", hash_generated_field = "63AD8E40CBA9E89F2FEE5FAFC18666A5")
 
     private static  long MAX_TIME_PER_SYNC;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.243 -0500", hash_original_field = "152CFB1F4746092B0CF238EC2F0B64D8", hash_generated_field = "3AAF491FDBA16F2F889370991CA097D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.679 -0500", hash_original_field = "152CFB1F4746092B0CF238EC2F0B64D8", hash_generated_field = "3AAF491FDBA16F2F889370991CA097D0")
 
 
     private static  long SYNC_NOTIFICATION_DELAY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.244 -0500", hash_original_field = "5C58C2EAABEF0EEB6C1B28E5353F2F7E", hash_generated_field = "83F3A378A2D13840721B0279CB462023")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.681 -0500", hash_original_field = "5C58C2EAABEF0EEB6C1B28E5353F2F7E", hash_generated_field = "83F3A378A2D13840721B0279CB462023")
 
     private static final long INITIAL_SYNC_RETRY_TIME_IN_MS = 30 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:42.192 -0500", hash_original_field = "EFD7058D08EE824519CCE863156AAFBA", hash_generated_field = "D9F9309F2A7D6BB06145CE9D49037E6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.684 -0500", hash_original_field = "EFD7058D08EE824519CCE863156AAFBA", hash_generated_field = "D9F9309F2A7D6BB06145CE9D49037E6C")
 
 
     /**
      * Default the max sync retry time to this value.
      */
     private static final long DEFAULT_MAX_SYNC_RETRY_TIME_IN_SECONDS = 60 * 60;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:42.193 -0500", hash_original_field = "11865CCD8959EA8A59F1BC8A9E425767", hash_generated_field = "5D2D36F41977B33D0EE5A8ABDE6B0790")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.686 -0500", hash_original_field = "11865CCD8959EA8A59F1BC8A9E425767", hash_generated_field = "5D2D36F41977B33D0EE5A8ABDE6B0790")
 
 
     /**
      * How long to wait before retrying a sync that failed due to one already being in progress.
      */
     private static final int DELAY_RETRY_SYNC_IN_PROGRESS_IN_SECONDS = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.247 -0500", hash_original_field = "4089BAF2DA7C23D4D0032BA7DEE5B8BE", hash_generated_field = "B0D1B128A9CF950755F3C1F260FD40B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.689 -0500", hash_original_field = "4089BAF2DA7C23D4D0032BA7DEE5B8BE", hash_generated_field = "B0D1B128A9CF950755F3C1F260FD40B6")
 
 
     private static final int INITIALIZATION_UNBIND_DELAY_MS = 5000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.248 -0500", hash_original_field = "32DF7CC059FEC0B043C029D28FB3AB32", hash_generated_field = "7F3CEE103BD418D549113FC97263D665")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.691 -0500", hash_original_field = "32DF7CC059FEC0B043C029D28FB3AB32", hash_generated_field = "7F3CEE103BD418D549113FC97263D665")
 
 
     private static final String SYNC_WAKE_LOCK_PREFIX = "*sync*";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.249 -0500", hash_original_field = "8C1EAC0F2EE23B45E6D497677A97B0E5", hash_generated_field = "B085210333D6AE1E4EF229385F1B25F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.693 -0500", hash_original_field = "8C1EAC0F2EE23B45E6D497677A97B0E5", hash_generated_field = "B085210333D6AE1E4EF229385F1B25F4")
 
     private static final String HANDLE_SYNC_ALARM_WAKE_LOCK = "SyncManagerHandleSyncAlarm";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.250 -0500", hash_original_field = "F5BC5EA9499B1BE6601ECC7F384434DD", hash_generated_field = "791AF54DB72DF3C3FD2BE8EA99DCAD10")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.695 -0500", hash_original_field = "F5BC5EA9499B1BE6601ECC7F384434DD", hash_generated_field = "791AF54DB72DF3C3FD2BE8EA99DCAD10")
 
     private static final String SYNC_LOOP_WAKE_LOCK = "SyncLoopWakeLock";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.251 -0500", hash_original_field = "C691AAC99D25250E9C7880580F75FB2A", hash_generated_field = "DC304F1B2F6CD9046C54D34DCF49FB2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.698 -0500", hash_original_field = "C691AAC99D25250E9C7880580F75FB2A", hash_generated_field = "DC304F1B2F6CD9046C54D34DCF49FB2F")
 
 
     private static  int MAX_SIMULTANEOUS_REGULAR_SYNCS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.252 -0500", hash_original_field = "0BB5BAC0FB974F12BEDA9756A34D42B0", hash_generated_field = "8E80CF6DF9009EC95BD99B5E32172ABF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.700 -0500", hash_original_field = "0BB5BAC0FB974F12BEDA9756A34D42B0", hash_generated_field = "8E80CF6DF9009EC95BD99B5E32172ABF")
 
     private static  int MAX_SIMULTANEOUS_INITIALIZATION_SYNCS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.270 -0500", hash_original_field = "C75D21172DC2853A9E452D6E66F9EAC4", hash_generated_field = "AC3DDB789130E3521D0C40EF27CE7201")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.751 -0500", hash_original_field = "C75D21172DC2853A9E452D6E66F9EAC4", hash_generated_field = "AC3DDB789130E3521D0C40EF27CE7201")
 
 
     private static final Account[] INITIAL_ACCOUNTS_ARRAY = new Account[0];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.272 -0500", hash_original_field = "75209FF05AFDA4AAAF88D8E26E589C21", hash_generated_field = "756530F66B344934D47CAC2FCBB3C754")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.756 -0500", hash_original_field = "75209FF05AFDA4AAAF88D8E26E589C21", hash_generated_field = "756530F66B344934D47CAC2FCBB3C754")
 
 
     private static final long SYNC_ALARM_TIMEOUT_MIN = 30 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.273 -0500", hash_original_field = "96B8EE59D89501E1B2D339F7302B2CF4", hash_generated_field = "7B838AAC8E827495E078DC2F638D031A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.758 -0500", hash_original_field = "96B8EE59D89501E1B2D339F7302B2CF4", hash_generated_field = "7B838AAC8E827495E078DC2F638D031A")
 
     private static final long SYNC_ALARM_TIMEOUT_MAX = 2 * 60 * 60 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.280 -0500", hash_original_field = "9E4F8647B48053CF4FC225728CAEE0BA", hash_generated_field = "4F82340A6F1A976788D789CF812DC25C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.776 -0500", hash_original_field = "9E4F8647B48053CF4FC225728CAEE0BA", hash_generated_field = "4F82340A6F1A976788D789CF812DC25C")
 
 
     private static final String ACTION_SYNC_ALARM = "android.content.syncmanager.SYNC_ALARM";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.252 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.702 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.253 -0500", hash_original_field = "845A5A580213CBFD668C110606A2504F", hash_generated_field = "F3BBCBF609328E3671F4870EF2739BA1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.704 -0500", hash_original_field = "845A5A580213CBFD668C110606A2504F", hash_generated_field = "F3BBCBF609328E3671F4870EF2739BA1")
 
 
     private volatile Account[] mAccounts = INITIAL_ACCOUNTS_ARRAY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.254 -0500", hash_original_field = "8603C0242557F71A2994E4C3B773BB6F", hash_generated_field = "EA882B4EDA8036D1634A0912AFD18614")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.707 -0500", hash_original_field = "8603C0242557F71A2994E4C3B773BB6F", hash_generated_field = "EA882B4EDA8036D1634A0912AFD18614")
 
 
     volatile private PowerManager.WakeLock mHandleAlarmWakeLock;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.255 -0500", hash_original_field = "B141A1644D25834F78CDC4DB249BE50D", hash_generated_field = "8C143BC8231548B929C0E876431327F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.710 -0500", hash_original_field = "B141A1644D25834F78CDC4DB249BE50D", hash_generated_field = "8C143BC8231548B929C0E876431327F2")
 
     volatile private PowerManager.WakeLock mSyncManagerWakeLock;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.256 -0500", hash_original_field = "A30B0D635DF10D910443C7132B050CB6", hash_generated_field = "17D5CCC25BF0F59A9B8C5AD2751D5254")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.712 -0500", hash_original_field = "A30B0D635DF10D910443C7132B050CB6", hash_generated_field = "17D5CCC25BF0F59A9B8C5AD2751D5254")
 
     volatile private boolean mDataConnectionIsConnected = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.256 -0500", hash_original_field = "02B459BD30A80E22BD7CF3AE0B3058F3", hash_generated_field = "466B67045A4516E83F397111D3AB9D8F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.714 -0500", hash_original_field = "02B459BD30A80E22BD7CF3AE0B3058F3", hash_generated_field = "466B67045A4516E83F397111D3AB9D8F")
 
     volatile private boolean mStorageIsLow = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.257 -0500", hash_original_field = "6A2B8A09D5C240CBD7AD74CDA4562CDB", hash_generated_field = "E3BFB96D82A2106A16337E9442023DA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.716 -0500", hash_original_field = "6A2B8A09D5C240CBD7AD74CDA4562CDB", hash_generated_field = "E3BFB96D82A2106A16337E9442023DA0")
 
 
     private  NotificationManager mNotificationMgr;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.258 -0500", hash_original_field = "6D98CBFF94066488E311378512F8B5B0", hash_generated_field = "A708A7397CF3CD2AD62512A76A16AA9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.718 -0500", hash_original_field = "6D98CBFF94066488E311378512F8B5B0", hash_generated_field = "A708A7397CF3CD2AD62512A76A16AA9A")
 
     private AlarmManager mAlarmService = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.259 -0500", hash_original_field = "9E2BCBFE661FFE13826B6A4F1567CFD7", hash_generated_field = "C4D1F4553F2DAB654514F44F7C643ACD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.720 -0500", hash_original_field = "9E2BCBFE661FFE13826B6A4F1567CFD7", hash_generated_field = "C4D1F4553F2DAB654514F44F7C643ACD")
 
 
     private SyncStorageEngine mSyncStorageEngine;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.260 -0500", hash_original_field = "D8967589B8332EBDEC8A18EE276DECC4", hash_generated_field = "9C22406DD21183D6092ABB0219CA18DB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.722 -0500", hash_original_field = "D8967589B8332EBDEC8A18EE276DECC4", hash_generated_field = "9C22406DD21183D6092ABB0219CA18DB")
 
     public SyncQueue mSyncQueue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.260 -0500", hash_original_field = "2EB8B5E1EA4DFA355B7AADB92DD6C88F", hash_generated_field = "36C4E8795C18DEB3F2B34C61084BC4F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.724 -0500", hash_original_field = "2EB8B5E1EA4DFA355B7AADB92DD6C88F", hash_generated_field = "36C4E8795C18DEB3F2B34C61084BC4F5")
 
 
     protected final ArrayList<ActiveSyncContext> mActiveSyncContexts = Lists.newArrayList();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.261 -0500", hash_original_field = "0016E9E72DBE1D94A821E3553BFFFD05", hash_generated_field = "2C170DA4C09FF899D129001B1ECCF61D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.727 -0500", hash_original_field = "0016E9E72DBE1D94A821E3553BFFFD05", hash_generated_field = "2C170DA4C09FF899D129001B1ECCF61D")
 
     private boolean mNeedSyncActiveNotification = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.262 -0500", hash_original_field = "3A3E8F23738038ED964C67ADC77054D7", hash_generated_field = "FF2D77AC785FF38C8AC4F17DE204C25B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.729 -0500", hash_original_field = "3A3E8F23738038ED964C67ADC77054D7", hash_generated_field = "FF2D77AC785FF38C8AC4F17DE204C25B")
 
 
     private  PendingIntent mSyncAlarmIntent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:42.210 -0500", hash_original_field = "FA8A1D4424A6623358333969B018DAD0", hash_generated_field = "39562B56F400454A44E271504F72B34B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.731 -0500", hash_original_field = "FA8A1D4424A6623358333969B018DAD0", hash_generated_field = "39562B56F400454A44E271504F72B34B")
 
     // its accessor, getConnManager().
     private ConnectivityManager mConnManagerDoNotUseDirectly;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.264 -0500", hash_original_field = "28674E2BF490B530F6ABE61C2901A829", hash_generated_field = "E33ECCC9C6F1F57E962D4A8990DDF83C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.733 -0500", hash_original_field = "28674E2BF490B530F6ABE61C2901A829", hash_generated_field = "E33ECCC9C6F1F57E962D4A8990DDF83C")
 
 
     protected SyncAdaptersCache mSyncAdapters;
@@ -282,7 +283,7 @@ public class SyncManager implements OnAccountsUpdateListener {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.271 -0500", hash_original_field = "AE9C7C49DB568DF15B12F481B3602630", hash_generated_field = "C0ABFDE975E218E90A8E9AECD9B1F45A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.753 -0500", hash_original_field = "AE9C7C49DB568DF15B12F481B3602630", hash_generated_field = "C0ABFDE975E218E90A8E9AECD9B1F45A")
 
 
     private  PowerManager mPowerManager;
@@ -339,19 +340,20 @@ public class SyncManager implements OnAccountsUpdateListener {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.280 -0500", hash_original_field = "30F3865DA6BDC3299D22E35C93783E71", hash_generated_field = "48C1F195FC8EA9F865537B3EB1F3D277")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.778 -0500", hash_original_field = "30F3865DA6BDC3299D22E35C93783E71", hash_generated_field = "48C1F195FC8EA9F865537B3EB1F3D277")
 
     private  SyncHandler mSyncHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.281 -0500", hash_original_field = "028D008EEBDEF4402B8F64158F6B8728", hash_generated_field = "36D62901B5F66AD7425C1042CCC68DC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.780 -0500", hash_original_field = "028D008EEBDEF4402B8F64158F6B8728", hash_generated_field = "36D62901B5F66AD7425C1042CCC68DC2")
 
     private  Handler mMainHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.282 -0500", hash_original_field = "CB95B15DD6DB754D638B2E9E1BDFC8C5", hash_generated_field = "575B378AD4BFE1F61DDDF06CA57D041D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.783 -0500", hash_original_field = "CB95B15DD6DB754D638B2E9E1BDFC8C5", hash_generated_field = "575B378AD4BFE1F61DDDF06CA57D041D")
 
 
     private volatile boolean mBootCompleted = false;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.286 -0500", hash_original_method = "03EC3B1422C9597488B0C8A9401C488F", hash_generated_method = "8CEFDAE76290DB2247BC9DDD5083EE30")
-    public SyncManager(Context context, boolean factoryTest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.795 -0500", hash_original_method = "03EC3B1422C9597488B0C8A9401C488F", hash_generated_method = "8CEFDAE76290DB2247BC9DDD5083EE30")
+    
+public SyncManager(Context context, boolean factoryTest) {
         // Initialize the SyncStorageEngine first, before registering observers
         // and creating threads and so on; it may fail if the disk is full.
         mContext = context;
@@ -440,8 +442,9 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
     } // two hours
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.274 -0500", hash_original_method = "F68E26CE46C5E71DC7131B4E8982A697", hash_generated_method = "C784E064F631A17307967154D2A286CA")
-    public void onAccountsUpdated(Account[] accounts) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.761 -0500", hash_original_method = "F68E26CE46C5E71DC7131B4E8982A697", hash_generated_method = "C784E064F631A17307967154D2A286CA")
+    
+public void onAccountsUpdated(Account[] accounts) {
         // remember if this was the first time this was called after an update
         final boolean justBootedUp = mAccounts == INITIAL_ACCOUNTS_ARRAY;
         mAccounts = accounts;
@@ -484,14 +487,16 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.277 -0500", hash_original_method = "90A2C58DEF02026C184592212F85FF18", hash_generated_method = "3C8E66097B7278B4A38CF252A1DDA6B2")
-    private boolean readDataConnectionState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.768 -0500", hash_original_method = "90A2C58DEF02026C184592212F85FF18", hash_generated_method = "3C8E66097B7278B4A38CF252A1DDA6B2")
+    
+private boolean readDataConnectionState() {
         NetworkInfo networkInfo = getConnectivityManager().getActiveNetworkInfo();
         return (networkInfo != null) && networkInfo.isConnected();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.283 -0500", hash_original_method = "85835365DA8D3F37E74A4C98C5566C52", hash_generated_method = "E1D1CC1280EDED6866BFEFA3085B9698")
-    private ConnectivityManager getConnectivityManager() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.785 -0500", hash_original_method = "85835365DA8D3F37E74A4C98C5566C52", hash_generated_method = "E1D1CC1280EDED6866BFEFA3085B9698")
+    
+private ConnectivityManager getConnectivityManager() {
         synchronized (this) {
             if (mConnManagerDoNotUseDirectly == null) {
                 mConnManagerDoNotUseDirectly = (ConnectivityManager)mContext.getSystemService(
@@ -505,8 +510,9 @@ public class SyncManager implements OnAccountsUpdateListener {
      * Return a random value v that satisfies minValue <= v < maxValue. The difference between
      * maxValue and minValue must be less than Integer.MAX_VALUE.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.287 -0500", hash_original_method = "2C829A46E677D5FF63843A6B74A54E87", hash_generated_method = "E70428BC7F81D405D012426240F6C46E")
-    private long jitterize(long minValue, long maxValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.797 -0500", hash_original_method = "2C829A46E677D5FF63843A6B74A54E87", hash_generated_method = "E70428BC7F81D405D012426240F6C46E")
+    
+private long jitterize(long minValue, long maxValue) {
         Random random = new Random(SystemClock.elapsedRealtime());
         long spread = maxValue - minValue;
         if (spread > Integer.MAX_VALUE) {
@@ -516,20 +522,23 @@ public class SyncManager implements OnAccountsUpdateListener {
         return minValue + random.nextInt((int)spread);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.288 -0500", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "8A53332D37684B50F04247CD91A254AD")
-    public SyncStorageEngine getSyncStorageEngine() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.799 -0500", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "8A53332D37684B50F04247CD91A254AD")
+    
+public SyncStorageEngine getSyncStorageEngine() {
         return mSyncStorageEngine;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.289 -0500", hash_original_method = "51F169FF6EC2BB253880B74521EEDA04", hash_generated_method = "55AD7DE6237D442382C27E98D0DB8A89")
-    private void ensureAlarmService() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.802 -0500", hash_original_method = "51F169FF6EC2BB253880B74521EEDA04", hash_generated_method = "55AD7DE6237D442382C27E98D0DB8A89")
+    
+private void ensureAlarmService() {
         if (mAlarmService == null) {
             mAlarmService = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.290 -0500", hash_original_method = "3B1126FA248635D8E240EE322F732C4B", hash_generated_method = "D22B2591A35228D21531770D339CC8DA")
-    private void initializeSyncAdapter(Account account, String authority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.808 -0500", hash_original_method = "3B1126FA248635D8E240EE322F732C4B", hash_generated_method = "D22B2591A35228D21531770D339CC8DA")
+    
+private void initializeSyncAdapter(Account account, String authority) {
         if (Log.isLoggable(TAG, Log.VERBOSE)) {
             Log.v(TAG, "initializeSyncAdapter: " + account + ", authority " + authority);
         }
@@ -580,8 +589,9 @@ public class SyncManager implements OnAccountsUpdateListener {
      * @param delay how many milliseconds in the future to wait before performing this
      * @param onlyThoseWithUnkownSyncableState
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.301 -0500", hash_original_method = "B73E52BAF4D022DC2D77FE197F842436", hash_generated_method = "68811D59D85B0B3BC00DE3DBDD6E8117")
-    public void scheduleSync(Account requestedAccount, String requestedAuthority,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.839 -0500", hash_original_method = "B73E52BAF4D022DC2D77FE197F842436", hash_generated_method = "68811D59D85B0B3BC00DE3DBDD6E8117")
+    
+public void scheduleSync(Account requestedAccount, String requestedAuthority,
             Bundle extras, long delay, boolean onlyThoseWithUnkownSyncableState) {
         boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
 
@@ -726,16 +736,18 @@ public class SyncManager implements OnAccountsUpdateListener {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.302 -0500", hash_original_method = "9A217D026FB5B08090F4BAFAA08C0DF7", hash_generated_method = "66C51F8AC2AF9A632DB25E5265E06FE1")
-    public void scheduleLocalSync(Account account, String authority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.841 -0500", hash_original_method = "9A217D026FB5B08090F4BAFAA08C0DF7", hash_generated_method = "66C51F8AC2AF9A632DB25E5265E06FE1")
+    
+public void scheduleLocalSync(Account account, String authority) {
         final Bundle extras = new Bundle();
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         scheduleSync(account, authority, extras, LOCAL_SYNC_DELAY,
                 false /* onlyThoseWithUnkownSyncableState */);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.303 -0500", hash_original_method = "0A2ACD1B7EA84D8FDEC2211873578368", hash_generated_method = "7291730C9E70766674342FB3BE517F48")
-    public SyncAdapterType[] getSyncAdapterTypes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.844 -0500", hash_original_method = "0A2ACD1B7EA84D8FDEC2211873578368", hash_generated_method = "7291730C9E70766674342FB3BE517F48")
+    
+public SyncAdapterType[] getSyncAdapterTypes() {
         final Collection<RegisteredServicesCache.ServiceInfo<SyncAdapterType>>
                 serviceInfos =
                 mSyncAdapters.getAllServices();
@@ -748,20 +760,23 @@ public class SyncManager implements OnAccountsUpdateListener {
         return types;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.304 -0500", hash_original_method = "14A3D8C2E4B2E28E7EAE9416931B0D4D", hash_generated_method = "A72EF30B52851AC54AB4CF72BF451788")
-    private void sendSyncAlarmMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.846 -0500", hash_original_method = "14A3D8C2E4B2E28E7EAE9416931B0D4D", hash_generated_method = "A72EF30B52851AC54AB4CF72BF451788")
+    
+private void sendSyncAlarmMessage() {
         if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_SYNC_ALARM");
         mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_SYNC_ALARM);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.305 -0500", hash_original_method = "48CD41A4FC7AAC6DBD3D417BDFF3952E", hash_generated_method = "896E5067C0E45899884FF34849A6BB4B")
-    private void sendCheckAlarmsMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.848 -0500", hash_original_method = "48CD41A4FC7AAC6DBD3D417BDFF3952E", hash_generated_method = "896E5067C0E45899884FF34849A6BB4B")
+    
+private void sendCheckAlarmsMessage() {
         if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_CHECK_ALARMS");
         mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_CHECK_ALARMS);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.306 -0500", hash_original_method = "A4D4C528BED9CEDB160AF5BFC279888F", hash_generated_method = "F6ACDAC7DAB6FF05F70F3EEBB9AEC06E")
-    private void sendSyncFinishedOrCanceledMessage(ActiveSyncContext syncContext,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.851 -0500", hash_original_method = "A4D4C528BED9CEDB160AF5BFC279888F", hash_generated_method = "F6ACDAC7DAB6FF05F70F3EEBB9AEC06E")
+    
+private void sendSyncFinishedOrCanceledMessage(ActiveSyncContext syncContext,
             SyncResult syncResult) {
         if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_SYNC_FINISHED");
         Message msg = mSyncHandler.obtainMessage();
@@ -772,24 +787,25 @@ public class SyncManager implements OnAccountsUpdateListener {
 
     
     private static class InitializerServiceConnection implements ServiceConnection {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.291 -0500", hash_original_field = "77E70EE964F6B49E35EDB9210610AC8E", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.811 -0500", hash_original_field = "77E70EE964F6B49E35EDB9210610AC8E", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
 
         private  Account mAccount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.292 -0500", hash_original_field = "BC4522E788A053F96319766AEE95ACCB", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.813 -0500", hash_original_field = "BC4522E788A053F96319766AEE95ACCB", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
 
         private  String mAuthority;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.293 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.816 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
         private  Handler mHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.294 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "D774CCF7C32F86EE269A0C9F9D84415A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.819 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "D774CCF7C32F86EE269A0C9F9D84415A")
 
         private volatile Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.295 -0500", hash_original_field = "C9E05499054E8056F0A4805D1295DEC9", hash_generated_field = "C96DBD94ABC21BAB3CFD91A494AEBFFE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.821 -0500", hash_original_field = "C9E05499054E8056F0A4805D1295DEC9", hash_generated_field = "C96DBD94ABC21BAB3CFD91A494AEBFFE")
 
         private volatile boolean mInitialized;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.296 -0500", hash_original_method = "24302E8CE101646513826470385452C3", hash_generated_method = "44D4A03B7B5E2A3740EF0BCFA346F811")
-        public InitializerServiceConnection(Account account, String authority, Context context,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.824 -0500", hash_original_method = "24302E8CE101646513826470385452C3", hash_generated_method = "44D4A03B7B5E2A3740EF0BCFA346F811")
+        
+public InitializerServiceConnection(Account account, String authority, Context context,
                 Handler handler) {
             mAccount = account;
             mAuthority = authority;
@@ -798,8 +814,9 @@ public class SyncManager implements OnAccountsUpdateListener {
             mInitialized = false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.298 -0500", hash_original_method = "9C4A98A4ADBC598450E25E4EB304536B", hash_generated_method = "4FE20BCD4E939DEC9ED1EFC87B5C0ABF")
-        public void onServiceConnected(ComponentName name, IBinder service) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.830 -0500", hash_original_method = "9C4A98A4ADBC598450E25E4EB304536B", hash_generated_method = "4FE20BCD4E939DEC9ED1EFC87B5C0ABF")
+        
+public void onServiceConnected(ComponentName name, IBinder service) {
             try {
                 if (!mInitialized) {
                     mInitialized = true;
@@ -826,8 +843,9 @@ public class SyncManager implements OnAccountsUpdateListener {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.299 -0500", hash_original_method = "7C8777D718751E565C82B5C1458835CE", hash_generated_method = "8819CC5446606228F6A395524AAECE84")
-        public void onServiceDisconnected(ComponentName name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.832 -0500", hash_original_method = "7C8777D718751E565C82B5C1458835CE", hash_generated_method = "8819CC5446606228F6A395524AAECE84")
+        
+public void onServiceDisconnected(ComponentName name) {
             if (mContext != null) {
                 mContext.unbindService(InitializerServiceConnection.this);
                 mContext = null;
@@ -840,15 +858,16 @@ public class SyncManager implements OnAccountsUpdateListener {
 
     
     class SyncHandlerMessagePayload {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.308 -0500", hash_original_field = "C625860717E5838B98EA7B19EB8B27A2", hash_generated_field = "A63DF1A530DF0116354A195B2D61C988")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.856 -0500", hash_original_field = "C625860717E5838B98EA7B19EB8B27A2", hash_generated_field = "A63DF1A530DF0116354A195B2D61C988")
 
         public  ActiveSyncContext activeSyncContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.308 -0500", hash_original_field = "30CCDFB05BB78D935437109E44F615B5", hash_generated_field = "1E280B614C5836CFB973E2780B056065")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.858 -0500", hash_original_field = "30CCDFB05BB78D935437109E44F615B5", hash_generated_field = "1E280B614C5836CFB973E2780B056065")
 
         public  SyncResult syncResult;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.309 -0500", hash_original_method = "56E2C68849F116EE41FAA5D226ECBDA3", hash_generated_method = "56E2C68849F116EE41FAA5D226ECBDA3")
-        SyncHandlerMessagePayload(ActiveSyncContext syncContext, SyncResult syncResult) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.861 -0500", hash_original_method = "56E2C68849F116EE41FAA5D226ECBDA3", hash_generated_method = "56E2C68849F116EE41FAA5D226ECBDA3")
+        
+SyncHandlerMessagePayload(ActiveSyncContext syncContext, SyncResult syncResult) {
             this.activeSyncContext = syncContext;
             this.syncResult = syncResult;
         }
@@ -865,8 +884,9 @@ public class SyncManager implements OnAccountsUpdateListener {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.311 -0500", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "AC05120E515B5E624DA5B4792F2B76AD")
-        public void onReceive(Context context, Intent intent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.865 -0500", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "AC05120E515B5E624DA5B4792F2B76AD")
+        
+public void onReceive(Context context, Intent intent) {
             mHandleAlarmWakeLock.acquire();
             sendSyncAlarmMessage();
         }
@@ -877,34 +897,34 @@ public class SyncManager implements OnAccountsUpdateListener {
 
     
     class ActiveSyncContext extends ISyncContext.Stub implements ServiceConnection, IBinder.DeathRecipient {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.320 -0500", hash_original_field = "CAEB8FA396F504839F82FDA41F0B6FEA", hash_generated_field = "CAEB8FA396F504839F82FDA41F0B6FEA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.886 -0500", hash_original_field = "CAEB8FA396F504839F82FDA41F0B6FEA", hash_generated_field = "CAEB8FA396F504839F82FDA41F0B6FEA")
 
          SyncOperation mSyncOperation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.321 -0500", hash_original_field = "506D1AD61A010C0C1665DFBD26F66F91", hash_generated_field = "506D1AD61A010C0C1665DFBD26F66F91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.889 -0500", hash_original_field = "506D1AD61A010C0C1665DFBD26F66F91", hash_generated_field = "506D1AD61A010C0C1665DFBD26F66F91")
 
          long mHistoryRowId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.321 -0500", hash_original_field = "57DE2857F3D6D189DF99142B1CBC936B", hash_generated_field = "57DE2857F3D6D189DF99142B1CBC936B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.892 -0500", hash_original_field = "57DE2857F3D6D189DF99142B1CBC936B", hash_generated_field = "57DE2857F3D6D189DF99142B1CBC936B")
 
         ISyncAdapter mSyncAdapter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.322 -0500", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "3C3A30DDD94D9D47CBB52C3848791CE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.894 -0500", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "3C3A30DDD94D9D47CBB52C3848791CE7")
 
          long mStartTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.323 -0500", hash_original_field = "2DA32C9B0D6927F8ADE9B98444FE7E93", hash_generated_field = "2DA32C9B0D6927F8ADE9B98444FE7E93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.896 -0500", hash_original_field = "2DA32C9B0D6927F8ADE9B98444FE7E93", hash_generated_field = "2DA32C9B0D6927F8ADE9B98444FE7E93")
 
         long mTimeoutStartTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.324 -0500", hash_original_field = "E78E5DB82E19559DD5BEFC2040680967", hash_generated_field = "E78E5DB82E19559DD5BEFC2040680967")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.898 -0500", hash_original_field = "E78E5DB82E19559DD5BEFC2040680967", hash_generated_field = "E78E5DB82E19559DD5BEFC2040680967")
 
         boolean mBound;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.324 -0500", hash_original_field = "40DA6E2B4575B8523B863BAC87FE141E", hash_generated_field = "40DA6E2B4575B8523B863BAC87FE141E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.900 -0500", hash_original_field = "40DA6E2B4575B8523B863BAC87FE141E", hash_generated_field = "40DA6E2B4575B8523B863BAC87FE141E")
 
          PowerManager.WakeLock mSyncWakeLock;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.325 -0500", hash_original_field = "2C18D3EE7F9C970AA993762D01A316E3", hash_generated_field = "2C18D3EE7F9C970AA993762D01A316E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.903 -0500", hash_original_field = "2C18D3EE7F9C970AA993762D01A316E3", hash_generated_field = "2C18D3EE7F9C970AA993762D01A316E3")
 
          int mSyncAdapterUid;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.326 -0500", hash_original_field = "D364355005B405C007FFCAD9043FC337", hash_generated_field = "D364355005B405C007FFCAD9043FC337")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.905 -0500", hash_original_field = "D364355005B405C007FFCAD9043FC337", hash_generated_field = "D364355005B405C007FFCAD9043FC337")
 
         SyncInfo mSyncInfo;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.327 -0500", hash_original_field = "468C40F467A1821737E93795346B1787", hash_generated_field = "468C40F467A1821737E93795346B1787")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.907 -0500", hash_original_field = "468C40F467A1821737E93795346B1787", hash_generated_field = "468C40F467A1821737E93795346B1787")
 
         boolean mIsLinkedToDeath = false;
 
@@ -918,8 +938,9 @@ public class SyncManager implements OnAccountsUpdateListener {
          * @param syncAdapterUid the UID of the application that contains the sync adapter
          * for this sync. This is used to attribute the wakelock hold to that application.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.328 -0500", hash_original_method = "FBEF152C2B412533A606ADB2B9DA9D2A", hash_generated_method = "934ED55826BA80564998FB18A725B8F7")
-        public ActiveSyncContext(SyncOperation syncOperation, long historyRowId,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.909 -0500", hash_original_method = "FBEF152C2B412533A606ADB2B9DA9D2A", hash_generated_method = "934ED55826BA80564998FB18A725B8F7")
+        
+public ActiveSyncContext(SyncOperation syncOperation, long historyRowId,
                 int syncAdapterUid) {
             super();
             mSyncAdapterUid = syncAdapterUid;
@@ -934,13 +955,15 @@ public class SyncManager implements OnAccountsUpdateListener {
             mSyncWakeLock.acquire();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.328 -0500", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "E0C9C354D05D8480CC9CFF615B9EE283")
-        public void sendHeartbeat() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.912 -0500", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "E0C9C354D05D8480CC9CFF615B9EE283")
+        
+public void sendHeartbeat() {
             // heartbeats are no longer used
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.329 -0500", hash_original_method = "2741CA480AE203CDFD1BCCBB420C487D", hash_generated_method = "F812194F2D270B808A095FEBE3FA2336")
-        public void onFinished(SyncResult result) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.914 -0500", hash_original_method = "2741CA480AE203CDFD1BCCBB420C487D", hash_generated_method = "F812194F2D270B808A095FEBE3FA2336")
+        
+public void onFinished(SyncResult result) {
             if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "onFinished: " + this);
             // include "this" in the message so that the handler can ignore it if this
             // ActiveSyncContext is no longer the mActiveSyncContext at message handling
@@ -948,32 +971,36 @@ public class SyncManager implements OnAccountsUpdateListener {
             sendSyncFinishedOrCanceledMessage(this, result);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.330 -0500", hash_original_method = "EB9B131EDBEF0858B3038B79ABC0948E", hash_generated_method = "65BC9C6CBDCC89E2ACB2A1A5A760883B")
-        public void toString(StringBuilder sb) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.916 -0500", hash_original_method = "EB9B131EDBEF0858B3038B79ABC0948E", hash_generated_method = "65BC9C6CBDCC89E2ACB2A1A5A760883B")
+        
+public void toString(StringBuilder sb) {
             sb.append("startTime ").append(mStartTime)
                     .append(", mTimeoutStartTime ").append(mTimeoutStartTime)
                     .append(", mHistoryRowId ").append(mHistoryRowId)
                     .append(", syncOperation ").append(mSyncOperation);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.331 -0500", hash_original_method = "CBDE36ABE821F23EF1CFAFB665E67134", hash_generated_method = "6DDC1D2CCCB7A9F82CC7F0BA854617A5")
-        public void onServiceConnected(ComponentName name, IBinder service) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.919 -0500", hash_original_method = "CBDE36ABE821F23EF1CFAFB665E67134", hash_generated_method = "6DDC1D2CCCB7A9F82CC7F0BA854617A5")
+        
+public void onServiceConnected(ComponentName name, IBinder service) {
             Message msg = mSyncHandler.obtainMessage();
             msg.what = SyncHandler.MESSAGE_SERVICE_CONNECTED;
             msg.obj = new ServiceConnectionData(this, ISyncAdapter.Stub.asInterface(service));
             mSyncHandler.sendMessage(msg);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.332 -0500", hash_original_method = "E604348BDB0F3F95B7C0274B0D40964D", hash_generated_method = "4E6A01E67BD78CA904AEC2026A373A50")
-        public void onServiceDisconnected(ComponentName name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.921 -0500", hash_original_method = "E604348BDB0F3F95B7C0274B0D40964D", hash_generated_method = "4E6A01E67BD78CA904AEC2026A373A50")
+        
+public void onServiceDisconnected(ComponentName name) {
             Message msg = mSyncHandler.obtainMessage();
             msg.what = SyncHandler.MESSAGE_SERVICE_DISCONNECTED;
             msg.obj = new ServiceConnectionData(this, null);
             mSyncHandler.sendMessage(msg);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.333 -0500", hash_original_method = "79606510FDB8502633B50F75722531BD", hash_generated_method = "79606510FDB8502633B50F75722531BD")
-        boolean bindToSyncAdapter(RegisteredServicesCache.ServiceInfo info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.924 -0500", hash_original_method = "79606510FDB8502633B50F75722531BD", hash_generated_method = "79606510FDB8502633B50F75722531BD")
+        
+boolean bindToSyncAdapter(RegisteredServicesCache.ServiceInfo info) {
             if (Log.isLoggable(TAG, Log.VERBOSE)) {
                 Log.d(TAG, "bindToSyncAdapter: " + info.componentName + ", connection " + this);
             }
@@ -998,8 +1025,9 @@ public class SyncManager implements OnAccountsUpdateListener {
          * Performs the required cleanup, which is the releasing of the wakelock and
          * unbinding from the sync adapter (if actually bound).
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.334 -0500", hash_original_method = "BCACA708B6725C3BB29ED8DCC5E23FC1", hash_generated_method = "F5EDD96EE5977E159E75809E65120ECE")
-        protected void close() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.926 -0500", hash_original_method = "BCACA708B6725C3BB29ED8DCC5E23FC1", hash_generated_method = "F5EDD96EE5977E159E75809E65120ECE")
+        
+protected void close() {
             if (Log.isLoggable(TAG, Log.VERBOSE)) {
                 Log.d(TAG, "unBindFromSyncAdapter: connection " + this);
             }
@@ -1011,17 +1039,19 @@ public class SyncManager implements OnAccountsUpdateListener {
             mSyncWakeLock.setWorkSource(null);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.336 -0500", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "3BECD9234F2F7FB11B03C135B5C86054")
-        @Override
-public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.928 -0500", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "3BECD9234F2F7FB11B03C135B5C86054")
+        
+@Override
+        public String toString() {
             StringBuilder sb = new StringBuilder();
             toString(sb);
             return sb.toString();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.337 -0500", hash_original_method = "A39B4ABAEA9F27E501EB3B3EC7A37B2F", hash_generated_method = "8438E77660EB602E7F8D8EBD7973AD2C")
-        @Override
-public void binderDied() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.931 -0500", hash_original_method = "A39B4ABAEA9F27E501EB3B3EC7A37B2F", hash_generated_method = "8438E77660EB602E7F8D8EBD7973AD2C")
+        
+@Override
+        public void binderDied() {
             sendSyncFinishedOrCanceledMessage(this, null);
         }
 
@@ -1031,21 +1061,22 @@ public void binderDied() {
 
     
     private static class AuthoritySyncStats {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.352 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.972 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
 
         String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.353 -0500", hash_original_field = "019980784258B693231C7932844AF0BC", hash_generated_field = "019980784258B693231C7932844AF0BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.974 -0500", hash_original_field = "019980784258B693231C7932844AF0BC", hash_generated_field = "019980784258B693231C7932844AF0BC")
 
         long elapsedTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.354 -0500", hash_original_field = "3A95A04ECEF69E80207E92842B01313D", hash_generated_field = "3A95A04ECEF69E80207E92842B01313D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.976 -0500", hash_original_field = "3A95A04ECEF69E80207E92842B01313D", hash_generated_field = "3A95A04ECEF69E80207E92842B01313D")
 
         int times;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.354 -0500", hash_original_field = "F30C35077CC725990FFE0E1D8AA05301", hash_generated_field = "F30C35077CC725990FFE0E1D8AA05301")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.979 -0500", hash_original_field = "F30C35077CC725990FFE0E1D8AA05301", hash_generated_field = "F30C35077CC725990FFE0E1D8AA05301")
 
         Map<String, AccountSyncStats> accountMap = Maps.newHashMap();
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.355 -0500", hash_original_method = "BA2AD08D9B4BF110732C8291C5F36CF8", hash_generated_method = "C569DAF1A529089ABB34870F514F3E04")
-        private AuthoritySyncStats(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.982 -0500", hash_original_method = "BA2AD08D9B4BF110732C8291C5F36CF8", hash_generated_method = "C569DAF1A529089ABB34870F514F3E04")
+        
+private AuthoritySyncStats(String name) {
             this.name = name;
         }
 
@@ -1055,18 +1086,19 @@ public void binderDied() {
 
     
     private static class AccountSyncStats {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.357 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.986 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
 
         String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.358 -0500", hash_original_field = "019980784258B693231C7932844AF0BC", hash_generated_field = "019980784258B693231C7932844AF0BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.988 -0500", hash_original_field = "019980784258B693231C7932844AF0BC", hash_generated_field = "019980784258B693231C7932844AF0BC")
 
         long elapsedTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.358 -0500", hash_original_field = "3A95A04ECEF69E80207E92842B01313D", hash_generated_field = "3A95A04ECEF69E80207E92842B01313D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.990 -0500", hash_original_field = "3A95A04ECEF69E80207E92842B01313D", hash_generated_field = "3A95A04ECEF69E80207E92842B01313D")
 
         int times;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.359 -0500", hash_original_method = "1D94286E4C9E35DF248CEA39D6389F91", hash_generated_method = "198934C6E675C2EDFBF5D8E667F470B3")
-        private AccountSyncStats(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.993 -0500", hash_original_method = "1D94286E4C9E35DF248CEA39D6389F91", hash_generated_method = "198934C6E675C2EDFBF5D8E667F470B3")
+        
+private AccountSyncStats(String name) {
             this.name = name;
         }
 
@@ -1076,13 +1108,13 @@ public void binderDied() {
 
     
     private class SyncTimeTracker {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.361 -0500", hash_original_field = "462785F9BDC050A0984AB02796F85FBF", hash_generated_field = "462785F9BDC050A0984AB02796F85FBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.997 -0500", hash_original_field = "462785F9BDC050A0984AB02796F85FBF", hash_generated_field = "462785F9BDC050A0984AB02796F85FBF")
 
         boolean mLastWasSyncing = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.361 -0500", hash_original_field = "42BA20EF7800084DF8B05592B8E3E7BE", hash_generated_field = "42BA20EF7800084DF8B05592B8E3E7BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.999 -0500", hash_original_field = "42BA20EF7800084DF8B05592B8E3E7BE", hash_generated_field = "42BA20EF7800084DF8B05592B8E3E7BE")
 
         long mWhenSyncStarted = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.362 -0500", hash_original_field = "34A093039C5B6C1239AC051BD507CA99", hash_generated_field = "2B002605222CEDCD3A05F1765E34CF80")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.001 -0500", hash_original_field = "34A093039C5B6C1239AC051BD507CA99", hash_generated_field = "2B002605222CEDCD3A05F1765E34CF80")
 
         private long mTimeSpentSyncing;
         
@@ -1093,8 +1125,9 @@ public void binderDied() {
         }
 
         /** Call to let the tracker know that the sync state may have changed */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.363 -0500", hash_original_method = "3978D6C321E5167908096EFEB475874E", hash_generated_method = "E97DA93FBE369BF9AEF002CD7047468D")
-        public synchronized void update() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.004 -0500", hash_original_method = "3978D6C321E5167908096EFEB475874E", hash_generated_method = "E97DA93FBE369BF9AEF002CD7047468D")
+        
+public synchronized void update() {
             final boolean isSyncInProgress = !mActiveSyncContexts.isEmpty();
             if (isSyncInProgress == mLastWasSyncing) return;
             final long now = SystemClock.elapsedRealtime();
@@ -1107,8 +1140,9 @@ public void binderDied() {
         }
 
         /** Get how long we have been syncing, in ms */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.364 -0500", hash_original_method = "73972E33AC37B98D757DD1126931E451", hash_generated_method = "E8E050816EDB154EDCCBEF0FC7375BCD")
-        public synchronized long timeSpentSyncing() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.006 -0500", hash_original_method = "73972E33AC37B98D757DD1126931E451", hash_generated_method = "E8E050816EDB154EDCCBEF0FC7375BCD")
+        
+public synchronized long timeSpentSyncing() {
             if (!mLastWasSyncing) return mTimeSpentSyncing;
 
             final long now = SystemClock.elapsedRealtime();
@@ -1121,14 +1155,15 @@ public void binderDied() {
 
     
     class ServiceConnectionData {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.366 -0500", hash_original_field = "C625860717E5838B98EA7B19EB8B27A2", hash_generated_field = "A63DF1A530DF0116354A195B2D61C988")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.012 -0500", hash_original_field = "C625860717E5838B98EA7B19EB8B27A2", hash_generated_field = "A63DF1A530DF0116354A195B2D61C988")
 
         public  ActiveSyncContext activeSyncContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.367 -0500", hash_original_field = "D05D481BB346CBD6D76DDBB0CD15D44F", hash_generated_field = "C583279FC3521EE740A066A3F5FFA86D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.014 -0500", hash_original_field = "D05D481BB346CBD6D76DDBB0CD15D44F", hash_generated_field = "C583279FC3521EE740A066A3F5FFA86D")
 
         public  ISyncAdapter syncAdapter;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.368 -0500", hash_original_method = "CF4E9A067E77243E4BB7B7FFBE17CC6D", hash_generated_method = "CF4E9A067E77243E4BB7B7FFBE17CC6D")
-        ServiceConnectionData(ActiveSyncContext activeSyncContext, ISyncAdapter syncAdapter) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.016 -0500", hash_original_method = "CF4E9A067E77243E4BB7B7FFBE17CC6D", hash_generated_method = "CF4E9A067E77243E4BB7B7FFBE17CC6D")
+        
+ServiceConnectionData(ActiveSyncContext activeSyncContext, ISyncAdapter syncAdapter) {
             this.activeSyncContext = activeSyncContext;
             this.syncAdapter = syncAdapter;
         }
@@ -1160,31 +1195,33 @@ public void binderDied() {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:10.269 -0400", hash_original_field = "B56FD915F9E3BA514D2DA1F9DBF0F24B", hash_generated_field = "0105AF109819D8B5DE1BE5345785186D")
 
         private static final int MESSAGE_CANCEL = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.375 -0500", hash_original_field = "E7D27FD73C3DE2A4069890D49E2CBA56", hash_generated_field = "1599D96A237A164A880FFE88C1C3EE7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.036 -0500", hash_original_field = "E7D27FD73C3DE2A4069890D49E2CBA56", hash_generated_field = "1599D96A237A164A880FFE88C1C3EE7C")
 
 
         public final SyncNotificationInfo mSyncNotificationInfo = new SyncNotificationInfo();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.376 -0500", hash_original_field = "E719A734088D76E0B26FCEE2377AA569", hash_generated_field = "0C75AEF43A0C9FFA242F4986360329AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.038 -0500", hash_original_field = "E719A734088D76E0B26FCEE2377AA569", hash_generated_field = "0C75AEF43A0C9FFA242F4986360329AE")
 
         private Long mAlarmScheduleTime = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.377 -0500", hash_original_field = "DA46E151A794E1264C4901CA787D59F2", hash_generated_field = "D1BE6D0FAF2F6FBF2B9D20FDC62CD03D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.040 -0500", hash_original_field = "DA46E151A794E1264C4901CA787D59F2", hash_generated_field = "D1BE6D0FAF2F6FBF2B9D20FDC62CD03D")
 
         public final SyncTimeTracker mSyncTimeTracker = new SyncTimeTracker();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.378 -0500", hash_original_field = "ACEF0671EBACBC511E4CAAD0E209A1F0", hash_generated_field = "2F89F9D45AD779522DB295A0D1595A30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.043 -0500", hash_original_field = "ACEF0671EBACBC511E4CAAD0E209A1F0", hash_generated_field = "2F89F9D45AD779522DB295A0D1595A30")
 
         private final HashMap<Pair<Account, String>, PowerManager.WakeLock> mWakeLocks =
                 Maps.newHashMap();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.379 -0500", hash_original_field = "402C81A743EC1C9B61A1A0FF7AB5045F", hash_generated_field = "28D2205C6B63956ABF9398C7BB3353C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.045 -0500", hash_original_field = "402C81A743EC1C9B61A1A0FF7AB5045F", hash_generated_field = "28D2205C6B63956ABF9398C7BB3353C2")
 
 
         private volatile CountDownLatch mReadyToRunLatch = new CountDownLatch(1);
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.387 -0500", hash_original_method = "483F6356A2D06E95B4EBFBB05049FAB5", hash_generated_method = "865822B62B723F7CECB8506694F29152")
-        public SyncHandler(Looper looper) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.067 -0500", hash_original_method = "483F6356A2D06E95B4EBFBB05049FAB5", hash_generated_method = "865822B62B723F7CECB8506694F29152")
+        
+public SyncHandler(Looper looper) {
             super(looper);
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.379 -0500", hash_original_method = "A4C54FCCA01900F2BC7EC8A1E7F40380", hash_generated_method = "0D6AAEF0C98EE5CB1E845D2247E6BA30")
-        public void onBootCompleted() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.047 -0500", hash_original_method = "A4C54FCCA01900F2BC7EC8A1E7F40380", hash_generated_method = "0D6AAEF0C98EE5CB1E845D2247E6BA30")
+        
+public void onBootCompleted() {
             mBootCompleted = true;
             mSyncStorageEngine.doDatabaseCleanup(AccountManager.get(mContext).getAccounts());
             if (mReadyToRunLatch != null) {
@@ -1192,8 +1229,9 @@ public void binderDied() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.380 -0500", hash_original_method = "F60450395CB7370B81745EFD5F3059FF", hash_generated_method = "49D7D01AE0147CC86F869261D70F331F")
-        private PowerManager.WakeLock getSyncWakeLock(Account account, String authority) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.050 -0500", hash_original_method = "F60450395CB7370B81745EFD5F3059FF", hash_generated_method = "49D7D01AE0147CC86F869261D70F331F")
+        
+private PowerManager.WakeLock getSyncWakeLock(Account account, String authority) {
             final Pair<Account, String> wakeLockKey = Pair.create(account, authority);
             PowerManager.WakeLock wakeLock = mWakeLocks.get(wakeLockKey);
             if (wakeLock == null) {
@@ -1205,8 +1243,9 @@ public void binderDied() {
             return wakeLock;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.381 -0500", hash_original_method = "CE8AE663CA89CC7DD7AABF796BC60E1D", hash_generated_method = "CE75B7F04697F3D0F3F1788B03D2E59A")
-        private void waitUntilReadyToRun() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.052 -0500", hash_original_method = "CE8AE663CA89CC7DD7AABF796BC60E1D", hash_generated_method = "CE75B7F04697F3D0F3F1788B03D2E59A")
+        
+private void waitUntilReadyToRun() {
             CountDownLatch latch = mReadyToRunLatch;
             if (latch != null) {
                 while (true) {
@@ -1221,8 +1260,9 @@ public void binderDied() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.389 -0500", hash_original_method = "AC98BBE28F5005D2D34EEDF919BF395C", hash_generated_method = "D5B3D37F5FF9529134AA97A3439A9C83")
-        public void handleMessage(Message msg) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.071 -0500", hash_original_method = "AC98BBE28F5005D2D34EEDF919BF395C", hash_generated_method = "D5B3D37F5FF9529134AA97A3439A9C83")
+        
+public void handleMessage(Message msg) {
             long earliestFuturePollTime = Long.MAX_VALUE;
             long nextPendingSyncTime = Long.MAX_VALUE;
 
@@ -1345,8 +1385,9 @@ public void binderDied() {
          * @return the desired start time of the earliest future  periodic sync operation,
          * in milliseconds since boot
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.390 -0500", hash_original_method = "5F18B995A8D5126079C876CBB8B37FF8", hash_generated_method = "9B939A32BB270F981CC6D393026C6794")
-        private long scheduleReadyPeriodicSyncs() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.075 -0500", hash_original_method = "5F18B995A8D5126079C876CBB8B37FF8", hash_generated_method = "9B939A32BB270F981CC6D393026C6794")
+        
+private long scheduleReadyPeriodicSyncs() {
             final boolean backgroundDataUsageAllowed =
                     getConnectivityManager().getBackgroundDataSetting();
             long earliestFuturePollTime = Long.MAX_VALUE;
@@ -1419,8 +1460,9 @@ public void binderDied() {
                       : (earliestFuturePollTime - nowAbsolute));
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.393 -0500", hash_original_method = "8B5418D48FBDFB608CDA80C6788E1356", hash_generated_method = "9EF590F36DF09506A1AC184374DC8D93")
-        private long maybeStartNextSyncLocked() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.082 -0500", hash_original_method = "8B5418D48FBDFB608CDA80C6788E1356", hash_generated_method = "9EF590F36DF09506A1AC184374DC8D93")
+        
+private long maybeStartNextSyncLocked() {
             final boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
             if (isLoggable) Log.v(TAG, "maybeStartNextSync");
 
@@ -1628,8 +1670,9 @@ public void binderDied() {
             return nextReadyToRunTime;
      }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.394 -0500", hash_original_method = "40340E62514BC19DB7E9216642814F86", hash_generated_method = "4410C918ADE32E42EF62ED2308700FFA")
-        private boolean dispatchSyncOperation(SyncOperation op) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.085 -0500", hash_original_method = "40340E62514BC19DB7E9216642814F86", hash_generated_method = "4410C918ADE32E42EF62ED2308700FFA")
+        
+private boolean dispatchSyncOperation(SyncOperation op) {
             if (Log.isLoggable(TAG, Log.VERBOSE)) {
                 Log.v(TAG, "dispatchSyncOperation: we are going to sync " + op);
                 Log.v(TAG, "num active syncs: " + mActiveSyncContexts.size());
@@ -1665,8 +1708,9 @@ public void binderDied() {
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.396 -0500", hash_original_method = "61AEAAC860377C6ACC1D13743DAD80A2", hash_generated_method = "4D6A132B2B0DF401011414CE015CFFC5")
-        private void runBoundToSyncAdapter(final ActiveSyncContext activeSyncContext,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.088 -0500", hash_original_method = "61AEAAC860377C6ACC1D13743DAD80A2", hash_generated_method = "4D6A132B2B0DF401011414CE015CFFC5")
+        
+private void runBoundToSyncAdapter(final ActiveSyncContext activeSyncContext,
               ISyncAdapter syncAdapter) {
             activeSyncContext.mSyncAdapter = syncAdapter;
             final SyncOperation syncOperation = activeSyncContext.mSyncOperation;
@@ -1687,8 +1731,9 @@ public void binderDied() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.396 -0500", hash_original_method = "7B28CEC882EFEBA05BFBBAFD319121EA", hash_generated_method = "6002EB5E6C65A2B33FC8BAEA7C86B03D")
-        private void cancelActiveSyncLocked(Account account, String authority) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.091 -0500", hash_original_method = "7B28CEC882EFEBA05BFBBAFD319121EA", hash_generated_method = "6002EB5E6C65A2B33FC8BAEA7C86B03D")
+        
+private void cancelActiveSyncLocked(Account account, String authority) {
             ArrayList<ActiveSyncContext> activeSyncs =
                     new ArrayList<ActiveSyncContext>(mActiveSyncContexts);
             for (ActiveSyncContext activeSyncContext : activeSyncs) {
@@ -1711,8 +1756,9 @@ public void binderDied() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.398 -0500", hash_original_method = "8D8637124BC010FEF841826099E3536E", hash_generated_method = "373C7535CE5F1721869B327DABC3F312")
-        private void runSyncFinishedOrCanceledLocked(SyncResult syncResult,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.095 -0500", hash_original_method = "8D8637124BC010FEF841826099E3536E", hash_generated_method = "373C7535CE5F1721869B327DABC3F312")
+        
+private void runSyncFinishedOrCanceledLocked(SyncResult syncResult,
                 ActiveSyncContext activeSyncContext) {
             boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
 
@@ -1792,8 +1838,9 @@ public void binderDied() {
             // no need to schedule an alarm, as that will be done by our caller.
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.399 -0500", hash_original_method = "1880B76D7799B7E884F5DD7B88555973", hash_generated_method = "6A5809665A3C23B907E63F0C6051E243")
-        private void closeActiveSyncContext(ActiveSyncContext activeSyncContext) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.098 -0500", hash_original_method = "1880B76D7799B7E884F5DD7B88555973", hash_generated_method = "6A5809665A3C23B907E63F0C6051E243")
+        
+private void closeActiveSyncContext(ActiveSyncContext activeSyncContext) {
             activeSyncContext.close();
             mActiveSyncContexts.remove(activeSyncContext);
             mSyncStorageEngine.removeActiveSync(activeSyncContext.mSyncInfo);
@@ -1808,8 +1855,9 @@ public void binderDied() {
          * @throws IllegalStateException if the SyncResult does not indicate any errors.
          *   If SyncResult.error() is true then it is safe to call this.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.400 -0500", hash_original_method = "F73ADCF1F7F7E573F488FB12A7E0DEC9", hash_generated_method = "709D340BF59F35234DFF46D5CEACA330")
-        private int syncResultToErrorNumber(SyncResult syncResult) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.100 -0500", hash_original_method = "F73ADCF1F7F7E573F488FB12A7E0DEC9", hash_generated_method = "709D340BF59F35234DFF46D5CEACA330")
+        
+private int syncResultToErrorNumber(SyncResult syncResult) {
             if (syncResult.syncAlreadyInProgress)
                 return ContentResolver.SYNC_ERROR_SYNC_ALREADY_IN_PROGRESS;
             if (syncResult.stats.numAuthExceptions > 0)
@@ -1829,8 +1877,9 @@ public void binderDied() {
             throw new IllegalStateException("we are not in an error state, " + syncResult);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.401 -0500", hash_original_method = "D7164ED4506DE94304BF76B0FBC03583", hash_generated_method = "0CCF20B02793E636D9E379B97E5897FE")
-        private void manageSyncNotificationLocked() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.103 -0500", hash_original_method = "D7164ED4506DE94304BF76B0FBC03583", hash_generated_method = "0CCF20B02793E636D9E379B97E5897FE")
+        
+private void manageSyncNotificationLocked() {
             boolean shouldCancel;
             boolean shouldInstall;
 
@@ -1893,10 +1942,10 @@ public void binderDied() {
 
         
         class SyncNotificationInfo {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.382 -0500", hash_original_field = "D668059AD9B14841DD4D4E946150A758", hash_generated_field = "1F020E689776523E90BE0EA7B3F2C831")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.056 -0500", hash_original_field = "D668059AD9B14841DD4D4E946150A758", hash_generated_field = "1F020E689776523E90BE0EA7B3F2C831")
 
             public boolean isActive = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:42.329 -0500", hash_original_field = "7BADA940BA70D425D56166E1FB80EF9A", hash_generated_field = "6EBA5780AD5C0D6A11CC8B40A0837D46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.058 -0500", hash_original_field = "7BADA940BA70D425D56166E1FB80EF9A", hash_generated_field = "6EBA5780AD5C0D6A11CC8B40A0837D46")
 
             // the opposite transition.
             public Long startTime = null;
@@ -1907,14 +1956,16 @@ public void binderDied() {
                 //Synthesized constructor
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.384 -0500", hash_original_method = "4796BE9F4C6BFE28E8FE17808C5D7635", hash_generated_method = "654787112CD4506BF0CBA4DC96EF8199")
-            public void toString(StringBuilder sb) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.060 -0500", hash_original_method = "4796BE9F4C6BFE28E8FE17808C5D7635", hash_generated_method = "654787112CD4506BF0CBA4DC96EF8199")
+            
+public void toString(StringBuilder sb) {
                 sb.append("isActive ").append(isActive).append(", startTime ").append(startTime);
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.385 -0500", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "3BECD9234F2F7FB11B03C135B5C86054")
-            @Override
-public String toString() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.062 -0500", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "3BECD9234F2F7FB11B03C135B5C86054")
+            
+@Override
+            public String toString() {
                 StringBuilder sb = new StringBuilder();
                 toString(sb);
                 return sb.toString();
@@ -1923,8 +1974,9 @@ public String toString() {
             
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.403 -0500", hash_original_method = "E1B88EC7C887370D571018E17194D40D", hash_generated_method = "A5495618E7F5B03D4EF3599CA03BB6F8")
-        private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.107 -0500", hash_original_method = "E1B88EC7C887370D571018E17194D40D", hash_generated_method = "A5495618E7F5B03D4EF3599CA03BB6F8")
+        
+private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
                 long nextPendingEventElapsedTime) {
             // in each of these cases the sync loop will be kicked, which will cause this
             // method to be called again
@@ -2019,8 +2071,9 @@ public String toString() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.404 -0500", hash_original_method = "A9010BB637A8EEC323C58050189C44ED", hash_generated_method = "F7900B66055B8D9623EC4F5AF202BA43")
-        private void sendSyncStateIntent() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.110 -0500", hash_original_method = "A9010BB637A8EEC323C58050189C44ED", hash_generated_method = "F7900B66055B8D9623EC4F5AF202BA43")
+        
+private void sendSyncStateIntent() {
             Intent syncStateIntent = new Intent(Intent.ACTION_SYNC_STATE_CHANGED);
             syncStateIntent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT);
             syncStateIntent.putExtra("active", mNeedSyncActiveNotification);
@@ -2028,8 +2081,9 @@ public String toString() {
             mContext.sendBroadcast(syncStateIntent);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.405 -0500", hash_original_method = "87A468A0891FD210AAD2B0099F053FF2", hash_generated_method = "2D42FA9A0E80E359623681030C7CAEBB")
-        private void installHandleTooManyDeletesNotification(Account account, String authority,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.113 -0500", hash_original_method = "87A468A0891FD210AAD2B0099F053FF2", hash_generated_method = "2D42FA9A0E80E359623681030C7CAEBB")
+        
+private void installHandleTooManyDeletesNotification(Account account, String authority,
                 long numDeletes) {
             if (mNotificationMgr == null) return;
 
@@ -2075,8 +2129,9 @@ public String toString() {
          * @param intent The intent for an activity.
          * @return Whether or not an activity exists.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.406 -0500", hash_original_method = "ABB616725C31652C20F8F96BBDEFC6AA", hash_generated_method = "E03276DC332DEF5DB0A396B708CD9689")
-        private boolean isActivityAvailable(Intent intent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.116 -0500", hash_original_method = "ABB616725C31652C20F8F96BBDEFC6AA", hash_generated_method = "E03276DC332DEF5DB0A396B708CD9689")
+        
+private boolean isActivityAvailable(Intent intent) {
             PackageManager pm = mContext.getPackageManager();
             List<ResolveInfo> list = pm.queryIntentActivities(intent, 0);
             int listSize = list.size();
@@ -2091,8 +2146,9 @@ public String toString() {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.407 -0500", hash_original_method = "6B3E86A8BC94835376C1AE5FBE72A92C", hash_generated_method = "C1956268552AD9DF1E4D5C766FEA0AD9")
-        public long insertStartSyncEvent(SyncOperation syncOperation) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.119 -0500", hash_original_method = "6B3E86A8BC94835376C1AE5FBE72A92C", hash_generated_method = "C1956268552AD9DF1E4D5C766FEA0AD9")
+        
+public long insertStartSyncEvent(SyncOperation syncOperation) {
             final int source = syncOperation.syncSource;
             final long now = System.currentTimeMillis();
 
@@ -2104,8 +2160,9 @@ public String toString() {
                     syncOperation.account, syncOperation.authority, now, source);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.408 -0500", hash_original_method = "7B2BF6D83EFC49C83F4A75250B3225F9", hash_generated_method = "89168F8BB14EFB60826199CA4E095EA8")
-        public void stopSyncEvent(long rowId, SyncOperation syncOperation, String resultMessage,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.121 -0500", hash_original_method = "7B2BF6D83EFC49C83F4A75250B3225F9", hash_generated_method = "89168F8BB14EFB60826199CA4E095EA8")
+        
+public void stopSyncEvent(long rowId, SyncOperation syncOperation, String resultMessage,
                 int upstreamActivity, int downstreamActivity, long elapsedTime) {
             EventLog.writeEvent(2720, syncOperation.authority,
                                 SyncStorageEngine.EVENT_STOP, syncOperation.syncSource,
@@ -2116,8 +2173,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.307 -0500", hash_original_method = "162904FEAED4FE3BDD09493527BC709D", hash_generated_method = "30CD802BAD29DEC0BE30AADE1851260E")
-    private void sendCancelSyncsMessage(final Account account, final String authority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.853 -0500", hash_original_method = "162904FEAED4FE3BDD09493527BC709D", hash_generated_method = "30CD802BAD29DEC0BE30AADE1851260E")
+    
+private void sendCancelSyncsMessage(final Account account, final String authority) {
         if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_CANCEL");
         Message msg = mSyncHandler.obtainMessage();
         msg.what = SyncHandler.MESSAGE_CANCEL;
@@ -2125,8 +2183,9 @@ public String toString() {
         mSyncHandler.sendMessage(msg);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.313 -0500", hash_original_method = "1BD5650AC2366081E95971C40228D13F", hash_generated_method = "F3B41AFF9A9C64B8CA72412AD848C9F6")
-    private void clearBackoffSetting(SyncOperation op) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.869 -0500", hash_original_method = "1BD5650AC2366081E95971C40228D13F", hash_generated_method = "F3B41AFF9A9C64B8CA72412AD848C9F6")
+    
+private void clearBackoffSetting(SyncOperation op) {
         mSyncStorageEngine.setBackoff(op.account, op.authority,
                 SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
         synchronized (mSyncQueue) {
@@ -2134,8 +2193,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.314 -0500", hash_original_method = "42DD92B3EE29EAC346CC626BA6B5C78C", hash_generated_method = "54DF0E7641EE320AAB4AFE76F6EFC4A6")
-    private void increaseBackoffSetting(SyncOperation op) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.872 -0500", hash_original_method = "42DD92B3EE29EAC346CC626BA6B5C78C", hash_generated_method = "54DF0E7641EE320AAB4AFE76F6EFC4A6")
+    
+private void increaseBackoffSetting(SyncOperation op) {
         final long now = SystemClock.elapsedRealtime();
 
         final Pair<Long, Long> previousSettings =
@@ -2196,8 +2256,9 @@ public String toString() {
                 SystemProperties.getLong("sync.notification_delay", 30 * 1000 );
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.315 -0500", hash_original_method = "D0F8BD8389FAB953FA57BE172373CE33", hash_generated_method = "57D05F7ACE35CF49BA068F3A674B5331")
-    private void setDelayUntilTime(SyncOperation op, long delayUntilSeconds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.874 -0500", hash_original_method = "D0F8BD8389FAB953FA57BE172373CE33", hash_generated_method = "57D05F7ACE35CF49BA068F3A674B5331")
+    
+private void setDelayUntilTime(SyncOperation op, long delayUntilSeconds) {
         final long delayUntil = delayUntilSeconds * 1000;
         final long absoluteNow = System.currentTimeMillis();
         long newDelayUntilTime;
@@ -2217,8 +2278,9 @@ public String toString() {
      * @param account limit the cancelations to syncs with this account, if non-null
      * @param authority limit the cancelations to syncs with this authority, if non-null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.316 -0500", hash_original_method = "CC013A9497DA672D61638E0368F0173C", hash_generated_method = "8815B0416208F1B491A58BB0505028B6")
-    public void cancelActiveSync(Account account, String authority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.877 -0500", hash_original_method = "CC013A9497DA672D61638E0368F0173C", hash_generated_method = "8815B0416208F1B491A58BB0505028B6")
+    
+public void cancelActiveSync(Account account, String authority) {
         sendCancelSyncsMessage(account, authority);
     }
 
@@ -2227,8 +2289,9 @@ public String toString() {
      *
      * @param syncOperation the SyncOperation to schedule
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.316 -0500", hash_original_method = "B18DC4486E3B23A71F43236C6D4E20D9", hash_generated_method = "A3602EF00600F3986C8AAF7BA25206BA")
-    public void scheduleSyncOperation(SyncOperation syncOperation) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.879 -0500", hash_original_method = "B18DC4486E3B23A71F43236C6D4E20D9", hash_generated_method = "A3602EF00600F3986C8AAF7BA25206BA")
+    
+public void scheduleSyncOperation(SyncOperation syncOperation) {
         boolean queueChanged;
         synchronized (mSyncQueue) {
             queueChanged = mSyncQueue.add(syncOperation);
@@ -2252,8 +2315,9 @@ public String toString() {
      * @param account limit the removals to operations with this account, if non-null
      * @param authority limit the removals to operations with this authority, if non-null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.317 -0500", hash_original_method = "A2720167EE002D05FE5DA0F6211150BE", hash_generated_method = "475387FBACEF2F5CBCF9DA6389D77F70")
-    public void clearScheduledSyncOperations(Account account, String authority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.881 -0500", hash_original_method = "A2720167EE002D05FE5DA0F6211150BE", hash_generated_method = "475387FBACEF2F5CBCF9DA6389D77F70")
+    
+public void clearScheduledSyncOperations(Account account, String authority) {
         synchronized (mSyncQueue) {
             mSyncQueue.remove(account, authority);
         }
@@ -2261,8 +2325,9 @@ public String toString() {
                 SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.319 -0500", hash_original_method = "7F8B5486825DA8802A08F87FCECDEB6D", hash_generated_method = "D43EC31920600BF9E5E0B1F3669384C5")
-    void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.884 -0500", hash_original_method = "7F8B5486825DA8802A08F87FCECDEB6D", hash_generated_method = "D43EC31920600BF9E5E0B1F3669384C5")
+    
+void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
         boolean isLoggable = Log.isLoggable(TAG, Log.DEBUG);
         if (isLoggable) {
             Log.d(TAG, "encountered error(s) during the sync: " + syncResult + ", " + operation);
@@ -2322,8 +2387,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.338 -0500", hash_original_method = "E59AB1EB4C672AE41E3C994B41A259B0", hash_generated_method = "460F19F4401C3E3FB1BFC2014B5B1EA3")
-    protected void dump(FileDescriptor fd, PrintWriter pw) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.936 -0500", hash_original_method = "E59AB1EB4C672AE41E3C994B41A259B0", hash_generated_method = "460F19F4401C3E3FB1BFC2014B5B1EA3")
+    
+protected void dump(FileDescriptor fd, PrintWriter pw) {
         dumpSyncState(pw);
         dumpSyncHistory(pw);
 
@@ -2334,8 +2400,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.341 -0500", hash_original_method = "A56698FB2481C281E3929C7135D64B8A", hash_generated_method = "E5C4EEF1BE5D0F7704B3D7B1C6A63106")
-    protected void dumpSyncState(PrintWriter pw) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.944 -0500", hash_original_method = "A56698FB2481C281E3929C7135D64B8A", hash_generated_method = "E5C4EEF1BE5D0F7704B3D7B1C6A63106")
+    
+protected void dumpSyncState(PrintWriter pw) {
         pw.print("data connected: "); pw.println(mDataConnectionIsConnected);
         pw.print("memory low: "); pw.println(mStorageIsLow);
 
@@ -2466,8 +2533,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.342 -0500", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "23B08CDB7D07BA4557A1E5F722A09891")
-    private String getLastFailureMessage(int code) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.947 -0500", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "23B08CDB7D07BA4557A1E5F722A09891")
+    
+private String getLastFailureMessage(int code) {
         switch (code) {
             case ContentResolver.SYNC_ERROR_SYNC_ALREADY_IN_PROGRESS:
                 return "sync already in progress";
@@ -2498,14 +2566,16 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.343 -0500", hash_original_method = "2E5C9A0C484B8BFAAD4FF120631D1FEC", hash_generated_method = "3D756EAC90092A2839B2F0D4075EE9BB")
-    private void dumpTimeSec(PrintWriter pw, long time) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.949 -0500", hash_original_method = "2E5C9A0C484B8BFAAD4FF120631D1FEC", hash_generated_method = "3D756EAC90092A2839B2F0D4075EE9BB")
+    
+private void dumpTimeSec(PrintWriter pw, long time) {
         pw.print(time/1000); pw.print('.'); pw.print((time/100)%10);
         pw.print('s');
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.344 -0500", hash_original_method = "05C5ECB94ECE9FA6501463D9FF0137FC", hash_generated_method = "0C9CEBB4993925DBC053174806B4AA30")
-    private void dumpDayStatistic(PrintWriter pw, SyncStorageEngine.DayStats ds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.951 -0500", hash_original_method = "05C5ECB94ECE9FA6501463D9FF0137FC", hash_generated_method = "0C9CEBB4993925DBC053174806B4AA30")
+    
+private void dumpDayStatistic(PrintWriter pw, SyncStorageEngine.DayStats ds) {
         pw.print("Success ("); pw.print(ds.successCount);
         if (ds.successCount > 0) {
             pw.print(" for "); dumpTimeSec(pw, ds.successTime);
@@ -2519,14 +2589,16 @@ public String toString() {
         pw.println(")");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.345 -0500", hash_original_method = "47B1A67BEBB64EEFEE0789183294D0B7", hash_generated_method = "3DB271269F52E76FC8904419210514A5")
-    protected void dumpSyncHistory(PrintWriter pw) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.953 -0500", hash_original_method = "47B1A67BEBB64EEFEE0789183294D0B7", hash_generated_method = "3DB271269F52E76FC8904419210514A5")
+    
+protected void dumpSyncHistory(PrintWriter pw) {
         dumpRecentHistory(pw);
         dumpDayStatistics(pw);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.350 -0500", hash_original_method = "C137DBDBD7D2B9AF348453A35EDAB8EF", hash_generated_method = "B5D29A48771E7CDB25D49ACFA8EAAE7A")
-    private void dumpRecentHistory(PrintWriter pw) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.967 -0500", hash_original_method = "C137DBDBD7D2B9AF348453A35EDAB8EF", hash_generated_method = "B5D29A48771E7CDB25D49ACFA8EAAE7A")
+    
+private void dumpRecentHistory(PrintWriter pw) {
         final ArrayList<SyncStorageEngine.SyncHistoryItem> items
                 = mSyncStorageEngine.getSyncHistory();
         if (items != null && items.size() > 0) {
@@ -2719,8 +2791,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.351 -0500", hash_original_method = "9349911975C50CB78B5A389074CC1BDC", hash_generated_method = "B523465746AD0B4CBF27FDA0B4AEFE7A")
-    private void dumpDayStatistics(PrintWriter pw) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.970 -0500", hash_original_method = "9349911975C50CB78B5A389074CC1BDC", hash_generated_method = "B523465746AD0B4CBF27FDA0B4AEFE7A")
+    
+private void dumpDayStatistics(PrintWriter pw) {
         SyncStorageEngine.DayStats dses[] = mSyncStorageEngine.getDayStatistics();
         if (dses != null && dses[0] != null) {
             pw.println();
@@ -2772,8 +2845,9 @@ public String toString() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:59.415 -0500", hash_original_method = "3A4E555675ED758A699E30DB2B6A1D6C", hash_generated_method = "4A5C59DABE1CF9534BA25DD4234612A8")
-    private boolean isSyncStillActive(ActiveSyncContext activeSyncContext) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.138 -0500", hash_original_method = "3A4E555675ED758A699E30DB2B6A1D6C", hash_generated_method = "4A5C59DABE1CF9534BA25DD4234612A8")
+    
+private boolean isSyncStillActive(ActiveSyncContext activeSyncContext) {
         for (ActiveSyncContext sync : mActiveSyncContexts) {
             if (sync == activeSyncContext) {
                 return true;

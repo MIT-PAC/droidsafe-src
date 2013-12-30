@@ -45,8 +45,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *
      * @since 2.0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.506 -0500", hash_original_method = "C89ABE013600473558BF14E3725A2CD0", hash_generated_method = "B0C40DB3A8237F2BE59F07DCF31CFDCD")
-    public static UserAgentHeader getDefaultUserAgentHeader() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.692 -0500", hash_original_method = "C89ABE013600473558BF14E3725A2CD0", hash_generated_method = "B0C40DB3A8237F2BE59F07DCF31CFDCD")
+    
+public static UserAgentHeader getDefaultUserAgentHeader() {
         return userAgent;
     }
 
@@ -56,30 +57,32 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *
      * @return the server header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.507 -0500", hash_original_method = "8E30377DD5EA58EE24E9DBB58EDE843C", hash_generated_method = "76BB6719BE01E20BAA78776A5DEBF512")
-    public static ServerHeader getDefaultServerHeader() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.694 -0500", hash_original_method = "8E30377DD5EA58EE24E9DBB58EDE843C", hash_generated_method = "76BB6719BE01E20BAA78776A5DEBF512")
+    
+public static ServerHeader getDefaultServerHeader() {
         return server;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.509 -0500", hash_original_method = "09F50F9145B26B5F9153A759802EF925", hash_generated_method = "7174EC97A2B0FEFE949F88B49B15845F")
-    public static String getDefaultContentEncodingCharset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.699 -0500", hash_original_method = "09F50F9145B26B5F9153A759802EF925", hash_generated_method = "7174EC97A2B0FEFE949F88B49B15845F")
+    
+public static String getDefaultContentEncodingCharset() {
         return MessageFactoryImpl.defaultContentEncodingCharset;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.481 -0500", hash_original_field = "7A0FDE982719C7AE0EADC20730BAA3A9", hash_generated_field = "790B4B09B170A9194D25942ACCB3ACEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.625 -0500", hash_original_field = "7A0FDE982719C7AE0EADC20730BAA3A9", hash_generated_field = "790B4B09B170A9194D25942ACCB3ACEB")
 
 
     private static String defaultContentEncodingCharset = "UTF-8";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.482 -0500", hash_original_field = "D5E000297A9E09754C3FCD741F248C73", hash_generated_field = "52E17AB48D222AC2268208CD5EE77BA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.628 -0500", hash_original_field = "D5E000297A9E09754C3FCD741F248C73", hash_generated_field = "52E17AB48D222AC2268208CD5EE77BA5")
 
     private static UserAgentHeader userAgent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.483 -0500", hash_original_field = "4FA79EC2DE15E51C42E5B8F1D6E6F0AE", hash_generated_field = "18CB845DD4EFE6EE2073E71A0755D764")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.630 -0500", hash_original_field = "4FA79EC2DE15E51C42E5B8F1D6E6F0AE", hash_generated_field = "18CB845DD4EFE6EE2073E71A0755D764")
 
     private static ServerHeader server;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.479 -0500", hash_original_field = "42C8CC112359A643E3AEC6584A18C02E", hash_generated_field = "2C7FA1926E1866F2BD0E0444E5B75063")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.620 -0500", hash_original_field = "42C8CC112359A643E3AEC6584A18C02E", hash_generated_field = "2C7FA1926E1866F2BD0E0444E5B75063")
 
 
     private boolean testing = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.480 -0500", hash_original_field = "3A05141681835043707EF1785E49D1A7", hash_generated_field = "99E1394EBF258394BF69F9B0CF058AC0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.623 -0500", hash_original_field = "3A05141681835043707EF1785E49D1A7", hash_generated_field = "99E1394EBF258394BF69F9B0CF058AC0")
 
     
     private boolean strict  = true;
@@ -87,13 +90,15 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     /**
      * Creates a new instance of MessageFactoryImpl
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.486 -0500", hash_original_method = "1A6840ADE4B5EE3A7D8D47E6638687F6", hash_generated_method = "60B67C93F701D6B0EF25391D410DC2A2")
-    public MessageFactoryImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.638 -0500", hash_original_method = "1A6840ADE4B5EE3A7D8D47E6638687F6", hash_generated_method = "60B67C93F701D6B0EF25391D410DC2A2")
+    
+public MessageFactoryImpl() {
     }
     
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.483 -0500", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "A576CD55F5552CD6C33C357CE066752B")
-    public void setStrict(boolean strict) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.632 -0500", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "A576CD55F5552CD6C33C357CE066752B")
+    
+public void setStrict(boolean strict) {
         this.strict = strict;
     }
 
@@ -102,8 +107,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     /**
      * This is for testing -- allows you to generate invalid requests
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.484 -0500", hash_original_method = "4DD923E2326A355154686E3A31C60072", hash_generated_method = "40A81F28D3B4860286BEEBA56D2BD3A6")
-    public void setTest(boolean flag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.635 -0500", hash_original_method = "4DD923E2326A355154686E3A31C60072", hash_generated_method = "40A81F28D3B4860286BEEBA56D2BD3A6")
+    
+public void setTest(boolean flag) {
         this.testing = flag;
     }
 
@@ -136,8 +142,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the method or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.487 -0500", hash_original_method = "D170EED829DCE544127E74E1BD3E45CA", hash_generated_method = "30AEC1A9B9DFA1C178954384FBDA7648")
-    public Request createRequest(javax.sip.address.URI requestURI,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.641 -0500", hash_original_method = "D170EED829DCE544127E74E1BD3E45CA", hash_generated_method = "30AEC1A9B9DFA1C178954384FBDA7648")
+    
+public Request createRequest(javax.sip.address.URI requestURI,
             String method, CallIdHeader callId, CSeqHeader cSeq,
             FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards, ContentTypeHeader contentType,
@@ -194,8 +201,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the method or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.488 -0500", hash_original_method = "41D839E013CFE4CFF0DE63311CBF1487", hash_generated_method = "F308EC2A20BF7839426DC70AA3A867C3")
-    public Request createRequest(URI requestURI, String method,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.644 -0500", hash_original_method = "41D839E013CFE4CFF0DE63311CBF1487", hash_generated_method = "F308EC2A20BF7839426DC70AA3A867C3")
+    
+public Request createRequest(URI requestURI, String method,
             CallIdHeader callId, CSeqHeader cSeq, FromHeader from, ToHeader to,
             List via, MaxForwardsHeader maxForwards, byte[] content,
             ContentTypeHeader contentType) throws ParseException {
@@ -248,8 +256,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.489 -0500", hash_original_method = "CE2184BFA0A9A5A1AA8BA0C0C675B13F", hash_generated_method = "F6885C253F66C4BA576C0F815CAC3106")
-    public Request createRequest(URI requestURI, String method,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.647 -0500", hash_original_method = "CE2184BFA0A9A5A1AA8BA0C0C675B13F", hash_generated_method = "F6885C253F66C4BA576C0F815CAC3106")
+    
+public Request createRequest(URI requestURI, String method,
             CallIdHeader callId, CSeqHeader cSeq, FromHeader from, ToHeader to,
             List via, MaxForwardsHeader maxForwards) throws ParseException {
         if (requestURI == null || method == null || callId == null
@@ -304,8 +313,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.490 -0500", hash_original_method = "ECF04A8977F592B6B34B54A1AB720125", hash_generated_method = "52AF108A6E18123F1928924A90B876C3")
-    public Response createResponse(int statusCode, CallIdHeader callId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.650 -0500", hash_original_method = "ECF04A8977F592B6B34B54A1AB720125", hash_generated_method = "52AF108A6E18123F1928924A90B876C3")
+    
+public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards, Object content,
             ContentTypeHeader contentType) throws ParseException {
@@ -362,8 +372,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.492 -0500", hash_original_method = "A629704DD43A1871A6A3CE469581E96B", hash_generated_method = "2B90D17DC577F0EEFB1B5F7D9D1D4021")
-    public Response createResponse(int statusCode, CallIdHeader callId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.653 -0500", hash_original_method = "A629704DD43A1871A6A3CE469581E96B", hash_generated_method = "2B90D17DC577F0EEFB1B5F7D9D1D4021")
+    
+public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards, byte[] content,
             ContentTypeHeader contentType) throws ParseException {
@@ -410,8 +421,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.493 -0500", hash_original_method = "A7A78E739513CEBA7D925C6C5ED3F852", hash_generated_method = "592D2A350CB8CD8F3C1412A7AEBE5273")
-    public Response createResponse(int statusCode, CallIdHeader callId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.656 -0500", hash_original_method = "A7A78E739513CEBA7D925C6C5ED3F852", hash_generated_method = "592D2A350CB8CD8F3C1412A7AEBE5273")
+    
+public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards) throws ParseException {
         if (callId == null || cSeq == null || from == null || to == null
@@ -454,8 +466,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.494 -0500", hash_original_method = "DD467BD39ED470F41EBF28C514D0DE9D", hash_generated_method = "14EE41019E4C43E3407A25417435EE5C")
-    public Response createResponse(int statusCode, Request request,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.659 -0500", hash_original_method = "DD467BD39ED470F41EBF28C514D0DE9D", hash_generated_method = "14EE41019E4C43E3407A25417435EE5C")
+    
+public Response createResponse(int statusCode, Request request,
             ContentTypeHeader contentType, Object content)
             throws ParseException {
         if (request == null || content == null || contentType == null)
@@ -488,8 +501,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.495 -0500", hash_original_method = "8BDEFE6980DC0197E43DC25D26C94143", hash_generated_method = "C5424F955C0A4BA4C1BE08A81A337C61")
-    public Response createResponse(int statusCode, Request request,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.662 -0500", hash_original_method = "8BDEFE6980DC0197E43DC25D26C94143", hash_generated_method = "C5424F955C0A4BA4C1BE08A81A337C61")
+    
+public Response createResponse(int statusCode, Request request,
             ContentTypeHeader contentType, byte[] content)
             throws ParseException {
         if (request == null || content == null || contentType == null)
@@ -518,8 +532,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.496 -0500", hash_original_method = "C92B83B60B03C2CCAA2954674526918C", hash_generated_method = "C10A7094A82089B77B56F1557666283F")
-    public Response createResponse(int statusCode, Request request)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.665 -0500", hash_original_method = "C92B83B60B03C2CCAA2954674526918C", hash_generated_method = "C10A7094A82089B77B56F1557666283F")
+    
+public Response createResponse(int statusCode, Request request)
             throws ParseException {
         if (request == null)
             throw new NullPointerException("null parameters");
@@ -568,8 +583,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the method or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.497 -0500", hash_original_method = "CA414FF436476B2FF81777F9CBBFC86F", hash_generated_method = "F6306F7924D61C0659C380C9D4C4BD69")
-    public Request createRequest(javax.sip.address.URI requestURI,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.668 -0500", hash_original_method = "CA414FF436476B2FF81777F9CBBFC86F", hash_generated_method = "F6306F7924D61C0659C380C9D4C4BD69")
+    
+public Request createRequest(javax.sip.address.URI requestURI,
             String method, CallIdHeader callId, CSeqHeader cSeq,
             FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards, ContentTypeHeader contentType,
@@ -623,8 +639,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.498 -0500", hash_original_method = "F442F4A57014D62724BCC0FFB03CA549", hash_generated_method = "7CBF6AECDEAC88AF1032F8EF8101BFA7")
-    public Response createResponse(int statusCode, CallIdHeader callId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.671 -0500", hash_original_method = "F442F4A57014D62724BCC0FFB03CA549", hash_generated_method = "7CBF6AECDEAC88AF1032F8EF8101BFA7")
+    
+public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards, ContentTypeHeader contentType,
             Object content) throws ParseException {
@@ -680,8 +697,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.500 -0500", hash_original_method = "6F9C1831E48382AD1DFACEE268167E8E", hash_generated_method = "D589AA3DC448C821179FDC12FF1C0570")
-    public Response createResponse(int statusCode, CallIdHeader callId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.674 -0500", hash_original_method = "6F9C1831E48382AD1DFACEE268167E8E", hash_generated_method = "D589AA3DC448C821179FDC12FF1C0570")
+    
+public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
             MaxForwardsHeader maxForwards, ContentTypeHeader contentType,
             byte[] content) throws ParseException {
@@ -718,8 +736,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *            string from which to create the message null string returns an
      *            empty message.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.502 -0500", hash_original_method = "973FDAB995A16C4007672A92A7C4D585", hash_generated_method = "755D25DCA1AE9A93D4537C572B1FE3F0")
-    public javax.sip.message.Request createRequest(String requestString)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.681 -0500", hash_original_method = "973FDAB995A16C4007672A92A7C4D585", hash_generated_method = "755D25DCA1AE9A93D4537C572B1FE3F0")
+    
+public javax.sip.message.Request createRequest(String requestString)
             throws java.text.ParseException {
         if (requestString == null || requestString.equals("")) {
             SIPRequest retval = new SIPRequest();
@@ -779,8 +798,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *            empty message.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.503 -0500", hash_original_method = "8329107E7147BB5F0DCDAFE41A50D91D", hash_generated_method = "4E0D90FADC346D513AFBD89460FD3736")
-    public Response createResponse(String responseString)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.684 -0500", hash_original_method = "8329107E7147BB5F0DCDAFE41A50D91D", hash_generated_method = "4E0D90FADC346D513AFBD89460FD3736")
+    
+public Response createResponse(String responseString)
             throws java.text.ParseException {
         if (responseString == null)
             return new SIPResponse();
@@ -805,8 +825,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      * @since 2.0
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.504 -0500", hash_original_method = "F6370A15361A54B6EDEFA955061D514D", hash_generated_method = "EE6F50D119E56F8B58DAC14A0A46D6CB")
-    public void setDefaultUserAgentHeader(UserAgentHeader userAgent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.686 -0500", hash_original_method = "F6370A15361A54B6EDEFA955061D514D", hash_generated_method = "EE6F50D119E56F8B58DAC14A0A46D6CB")
+    
+public void setDefaultUserAgentHeader(UserAgentHeader userAgent) {
         MessageFactoryImpl.userAgent = userAgent;
     }
 
@@ -820,8 +841,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      * @since 2.0
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.505 -0500", hash_original_method = "86783F390E61522F639FC7DF78604B5D", hash_generated_method = "EE4282027359EE5B9E724AB36B5B2FA8")
-    public void setDefaultServerHeader(ServerHeader server) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.689 -0500", hash_original_method = "86783F390E61522F639FC7DF78604B5D", hash_generated_method = "EE4282027359EE5B9E724AB36B5B2FA8")
+    
+public void setDefaultServerHeader(ServerHeader server) {
         MessageFactoryImpl.server = server;
     }
 
@@ -830,8 +852,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      * Set default charset used for encoding String content.
      * @param charset
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.508 -0500", hash_original_method = "7A37B9B6512C6512FDCFFA4B5CE85073", hash_generated_method = "7823BC126FCEC5FEA79BE7FF64141AC1")
-    public void setDefaultContentEncodingCharset(String charset) throws NullPointerException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.696 -0500", hash_original_method = "7A37B9B6512C6512FDCFFA4B5CE85073", hash_generated_method = "7823BC126FCEC5FEA79BE7FF64141AC1")
+    
+public  void setDefaultContentEncodingCharset(String charset) throws NullPointerException,
     IllegalArgumentException {
         if (charset == null ) throw new NullPointerException ("Null argument!");
         MessageFactoryImpl.defaultContentEncodingCharset = charset;
@@ -839,8 +862,9 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.510 -0500", hash_original_method = "86E485BB3E030FD77D4D70ABB6598D25", hash_generated_method = "BA29B266289A492235B2F750E3C5807F")
-    public MultipartMimeContent createMultipartMimeContent(ContentTypeHeader multipartMimeCth,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.701 -0500", hash_original_method = "86E485BB3E030FD77D4D70ABB6598D25", hash_generated_method = "BA29B266289A492235B2F750E3C5807F")
+    
+public MultipartMimeContent createMultipartMimeContent(ContentTypeHeader multipartMimeCth,
             String[] contentType,
             String[] contentSubtype, 
             String[] contentBody) {

@@ -28,19 +28,21 @@ import org.bouncycastle.util.BigIntegers;
 
 
 public class ECPrivateKeyStructure extends ASN1Encodable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.890 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.903 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
 
     private ASN1Sequence  seq;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.892 -0500", hash_original_method = "D12821E856A648EC440CD525D918157C", hash_generated_method = "A68BAD4AAB480A2E7BE6E5A231381F22")
-    public ECPrivateKeyStructure(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.906 -0500", hash_original_method = "D12821E856A648EC440CD525D918157C", hash_generated_method = "A68BAD4AAB480A2E7BE6E5A231381F22")
+    
+public ECPrivateKeyStructure(
         ASN1Sequence  seq)
     {
         this.seq = seq;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.893 -0500", hash_original_method = "722B9EB1887267D3DC7C06AD31EE54C1", hash_generated_method = "BCE8D78B5238BAB1C8693E6E331470FF")
-    public ECPrivateKeyStructure(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.909 -0500", hash_original_method = "722B9EB1887267D3DC7C06AD31EE54C1", hash_generated_method = "BCE8D78B5238BAB1C8693E6E331470FF")
+    
+public ECPrivateKeyStructure(
         BigInteger  key)
     {
         byte[] bytes = BigIntegers.asUnsignedByteArray(key);
@@ -53,16 +55,18 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
         seq = new DERSequence(v);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.894 -0500", hash_original_method = "407D07F6896B0C0E44D96F389E9D6F27", hash_generated_method = "5A7EFFA01892E1270667AAE53BA7BF4C")
-    public ECPrivateKeyStructure(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.912 -0500", hash_original_method = "407D07F6896B0C0E44D96F389E9D6F27", hash_generated_method = "5A7EFFA01892E1270667AAE53BA7BF4C")
+    
+public ECPrivateKeyStructure(
         BigInteger    key,
         ASN1Encodable parameters)
     {
         this(key, null, parameters);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.895 -0500", hash_original_method = "C18ECEEFE6A75682B0803E3F34C5782F", hash_generated_method = "B85488BAD5CD5C0674C9A1567398920C")
-    public ECPrivateKeyStructure(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.915 -0500", hash_original_method = "C18ECEEFE6A75682B0803E3F34C5782F", hash_generated_method = "B85488BAD5CD5C0674C9A1567398920C")
+    
+public ECPrivateKeyStructure(
         BigInteger    key,
         DERBitString  publicKey,
         ASN1Encodable parameters)
@@ -87,28 +91,32 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
         seq = new DERSequence(v);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.896 -0500", hash_original_method = "3364DFDFDAE0C599569065625E34DFA6", hash_generated_method = "58D9B52081BC7BE22DFFBCD415AC7AE0")
-    public BigInteger getKey()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.917 -0500", hash_original_method = "3364DFDFDAE0C599569065625E34DFA6", hash_generated_method = "58D9B52081BC7BE22DFFBCD415AC7AE0")
+    
+public BigInteger getKey()
     {
         ASN1OctetString  octs = (ASN1OctetString)seq.getObjectAt(1);
 
         return new BigInteger(1, octs.getOctets());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.897 -0500", hash_original_method = "DEBAFCE224E8193448683CCA3427311E", hash_generated_method = "0E4C7DA28767A783362300A26CB8EA66")
-    public DERBitString getPublicKey()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.919 -0500", hash_original_method = "DEBAFCE224E8193448683CCA3427311E", hash_generated_method = "0E4C7DA28767A783362300A26CB8EA66")
+    
+public DERBitString getPublicKey()
     {
         return (DERBitString)getObjectInTag(1);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.897 -0500", hash_original_method = "6CC550729D926E5F97154297F8F1FBC7", hash_generated_method = "C45B7BA65F98995134F30F5384B871C4")
-    public ASN1Object getParameters()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.922 -0500", hash_original_method = "6CC550729D926E5F97154297F8F1FBC7", hash_generated_method = "C45B7BA65F98995134F30F5384B871C4")
+    
+public ASN1Object getParameters()
     {
         return getObjectInTag(0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.898 -0500", hash_original_method = "F319A866ECD7F1BB5BF305B540FF9ADA", hash_generated_method = "A4E55A8C11A667E5BE3707ECC99AF9F0")
-    private ASN1Object getObjectInTag(int tagNo)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.924 -0500", hash_original_method = "F319A866ECD7F1BB5BF305B540FF9ADA", hash_generated_method = "A4E55A8C11A667E5BE3707ECC99AF9F0")
+    
+private ASN1Object getObjectInTag(int tagNo)
     {
         Enumeration e = seq.getObjects();
 
@@ -135,8 +143,9 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
      *     parameters [0] Parameters OPTIONAL,
      *     publicKey [1] BIT STRING OPTIONAL }
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.899 -0500", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "DA3C9DFD280268761F4161BB76907E1D")
-    public DERObject toASN1Object()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.927 -0500", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "DA3C9DFD280268761F4161BB76907E1D")
+    
+public DERObject toASN1Object()
     {
         return seq;
     }

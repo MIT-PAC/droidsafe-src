@@ -24,8 +24,9 @@ public final class TextServicesManager {
      * Retrieve the global TextServicesManager instance, creating it if it doesn't already exist.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.977 -0500", hash_original_method = "818A9F7557AFA3E51F48AB4545B2EDDB", hash_generated_method = "7A23ECBE53D73EDFB2A1F08003C262F0")
-    public static TextServicesManager getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.512 -0500", hash_original_method = "818A9F7557AFA3E51F48AB4545B2EDDB", hash_generated_method = "7A23ECBE53D73EDFB2A1F08003C262F0")
+    
+public static TextServicesManager getInstance() {
         synchronized (TextServicesManager.class) {
             if (sInstance != null) {
                 return sInstance;
@@ -34,17 +35,17 @@ public final class TextServicesManager {
         }
         return sInstance;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.973 -0500", hash_original_field = "950CB17C61FD4EA41D1C78B02596638A", hash_generated_field = "CA1CF66AA4296CAE6DA89B4A033D5D06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.499 -0500", hash_original_field = "950CB17C61FD4EA41D1C78B02596638A", hash_generated_field = "CA1CF66AA4296CAE6DA89B4A033D5D06")
 
     private static final String TAG = TextServicesManager.class.getSimpleName();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.973 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.501 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
     private static final boolean DBG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.974 -0500", hash_original_field = "A82911E658B2C72E4F8802885050882D", hash_generated_field = "C8FA124301EED2431C4D22EB09223E94")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.504 -0500", hash_original_field = "A82911E658B2C72E4F8802885050882D", hash_generated_field = "C8FA124301EED2431C4D22EB09223E94")
 
 
     private static TextServicesManager sInstance;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.975 -0500", hash_original_field = "95CDD9B4B410618635F97CABFD44149C", hash_generated_field = "BCB4F2C99AD5684E437C6C7FDD215756")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.506 -0500", hash_original_field = "95CDD9B4B410618635F97CABFD44149C", hash_generated_field = "BCB4F2C99AD5684E437C6C7FDD215756")
 
     private static ITextServicesManager sService;
     
@@ -79,8 +80,9 @@ public final class TextServicesManager {
      * languages in settings will be returned.
      * @return the spell checker session of the spell checker
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.978 -0500", hash_original_method = "ABA188D86B8DA63ED0FEF813BC6FEFB9", hash_generated_method = "33D92E01EC6B9451C8CC684770178036")
-    public SpellCheckerSession newSpellCheckerSession(Bundle bundle, Locale locale,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.516 -0500", hash_original_method = "ABA188D86B8DA63ED0FEF813BC6FEFB9", hash_generated_method = "33D92E01EC6B9451C8CC684770178036")
+    
+public SpellCheckerSession newSpellCheckerSession(Bundle bundle, Locale locale,
             SpellCheckerSessionListener listener, boolean referToSpellCheckerLanguageSettings) {
         if (listener == null) {
             throw new NullPointerException();
@@ -148,8 +150,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.979 -0500", hash_original_method = "996F778F72629C35F59A814BE7E587F6", hash_generated_method = "E251415AB5E626FBDF7980F548B14732")
-    public SpellCheckerInfo[] getEnabledSpellCheckers() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.518 -0500", hash_original_method = "996F778F72629C35F59A814BE7E587F6", hash_generated_method = "E251415AB5E626FBDF7980F548B14732")
+    
+public SpellCheckerInfo[] getEnabledSpellCheckers() {
         try {
             final SpellCheckerInfo[] retval = sService.getEnabledSpellCheckers();
             if (DBG) {
@@ -165,8 +168,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.980 -0500", hash_original_method = "A6F1D379519B22786C64C08B94869872", hash_generated_method = "67E1A73C9BB08CF84E611330E81B471E")
-    public SpellCheckerInfo getCurrentSpellChecker() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.521 -0500", hash_original_method = "A6F1D379519B22786C64C08B94869872", hash_generated_method = "67E1A73C9BB08CF84E611330E81B471E")
+    
+public SpellCheckerInfo getCurrentSpellChecker() {
         try {
             // Passing null as a locale for ICS
             return sService.getCurrentSpellChecker(null);
@@ -178,8 +182,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.981 -0500", hash_original_method = "4E93A8413D33E514F2933033BBA9E9C6", hash_generated_method = "C22F703830145D2CEBC318C7C98D180F")
-    public void setCurrentSpellChecker(SpellCheckerInfo sci) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.523 -0500", hash_original_method = "4E93A8413D33E514F2933033BBA9E9C6", hash_generated_method = "C22F703830145D2CEBC318C7C98D180F")
+    
+public void setCurrentSpellChecker(SpellCheckerInfo sci) {
         try {
             if (sci == null) {
                 throw new NullPointerException("SpellCheckerInfo is null.");
@@ -193,8 +198,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.982 -0500", hash_original_method = "A09B5B882B337AC1ACCDB12AE24B1D1D", hash_generated_method = "36DE492E4C2B12A218D9F69B818CB76C")
-    public SpellCheckerSubtype getCurrentSpellCheckerSubtype(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.526 -0500", hash_original_method = "A09B5B882B337AC1ACCDB12AE24B1D1D", hash_generated_method = "36DE492E4C2B12A218D9F69B818CB76C")
+    
+public SpellCheckerSubtype getCurrentSpellCheckerSubtype(
             boolean allowImplicitlySelectedSubtype) {
         try {
             // Passing null as a locale for ICS
@@ -208,8 +214,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.983 -0500", hash_original_method = "CBCFCEE50800407BA5D76453EB5E1B5E", hash_generated_method = "0FCAD81A9A40E76F63E30EB4A07EA36C")
-    public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.528 -0500", hash_original_method = "CBCFCEE50800407BA5D76453EB5E1B5E", hash_generated_method = "0FCAD81A9A40E76F63E30EB4A07EA36C")
+    
+public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
         try {
             final int hashCode;
             if (subtype == null) {
@@ -226,8 +233,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.984 -0500", hash_original_method = "61F4D400D4BC8B241A007E9AEF488847", hash_generated_method = "3E27938A1621CB00828E5E8511D5EE35")
-    public void setSpellCheckerEnabled(boolean enabled) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.531 -0500", hash_original_method = "61F4D400D4BC8B241A007E9AEF488847", hash_generated_method = "3E27938A1621CB00828E5E8511D5EE35")
+    
+public void setSpellCheckerEnabled(boolean enabled) {
         try {
             sService.setSpellCheckerEnabled(enabled);
         } catch (RemoteException e) {
@@ -238,8 +246,9 @@ public final class TextServicesManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.985 -0500", hash_original_method = "AE8BC5A0830A7B4F81FE6C44FCEBBBC8", hash_generated_method = "01438B1F64BCE7B936E4ED745978FBB6")
-    public boolean isSpellCheckerEnabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.533 -0500", hash_original_method = "AE8BC5A0830A7B4F81FE6C44FCEBBBC8", hash_generated_method = "01438B1F64BCE7B936E4ED745978FBB6")
+    
+public boolean isSpellCheckerEnabled() {
         try {
             return sService.isSpellCheckerEnabled();
         } catch (RemoteException e) {

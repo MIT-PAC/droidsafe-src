@@ -11,8 +11,9 @@ import java.math.BigInteger;
 
 
 public class ECAlgorithms {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.354 -0500", hash_original_method = "F48E0D5EA6C0E86FA4BAC23458A6895D", hash_generated_method = "A1CFEDCDA2D25AC533DB4D31967D0324")
-    public static ECPoint sumOfTwoMultiplies(ECPoint P, BigInteger a,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.780 -0500", hash_original_method = "F48E0D5EA6C0E86FA4BAC23458A6895D", hash_generated_method = "A1CFEDCDA2D25AC533DB4D31967D0324")
+    
+public static ECPoint sumOfTwoMultiplies(ECPoint P, BigInteger a,
         ECPoint Q, BigInteger b)
     {
         ECCurve c = P.getCurve();
@@ -53,8 +54,9 @@ public class ECAlgorithms {
      * 9: return R
      * </pre>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.355 -0500", hash_original_method = "9FF3335214D46EC0C51CC23F1021FA73", hash_generated_method = "E7F2FDA4AA1BA81ECA9694627A5B7572")
-    public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.783 -0500", hash_original_method = "9FF3335214D46EC0C51CC23F1021FA73", hash_generated_method = "E7F2FDA4AA1BA81ECA9694627A5B7572")
+    
+public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l)
     {
         if (!P.getCurve().equals(Q.getCurve()))
@@ -65,8 +67,9 @@ public class ECAlgorithms {
         return implShamirsTrick(P, k, Q, l);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.355 -0500", hash_original_method = "CD0CA0D93D25834154450637B9C6752C", hash_generated_method = "53301DB5FBC8B137560781DF04CC9B00")
-    private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.786 -0500", hash_original_method = "CD0CA0D93D25834154450637B9C6752C", hash_generated_method = "53301DB5FBC8B137560781DF04CC9B00")
+    
+private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l)
     {
         int m = Math.max(k.bitLength(), l.bitLength());

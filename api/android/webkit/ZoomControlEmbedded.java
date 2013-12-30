@@ -16,25 +16,27 @@ import android.widget.ZoomButtonsController;
 
 
 class ZoomControlEmbedded implements ZoomControlBase {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.205 -0500", hash_original_field = "89F04BCF2CEF2FF9614BE546923CA10D", hash_generated_field = "9B99C2FE2EA0A3C0CAEC1D267CB6150C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.008 -0500", hash_original_field = "89F04BCF2CEF2FF9614BE546923CA10D", hash_generated_field = "9B99C2FE2EA0A3C0CAEC1D267CB6150C")
 
 
     private  ZoomManager mZoomManager;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.206 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.010 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
 
     private  WebView mWebView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.207 -0500", hash_original_field = "4AD90657AB7879F5FF6863A18E81A79F", hash_generated_field = "A8A0DD9E8E1D109A248CAEBBC4A8688D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.012 -0500", hash_original_field = "4AD90657AB7879F5FF6863A18E81A79F", hash_generated_field = "A8A0DD9E8E1D109A248CAEBBC4A8688D")
 
     private ZoomButtonsController mZoomButtonsController;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.208 -0500", hash_original_method = "58B848602B04675A34284534D0242989", hash_generated_method = "D748EB4302246DD00F5F94F46567B16A")
-    public ZoomControlEmbedded(ZoomManager zoomManager, WebView webView) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.014 -0500", hash_original_method = "58B848602B04675A34284534D0242989", hash_generated_method = "D748EB4302246DD00F5F94F46567B16A")
+    
+public ZoomControlEmbedded(ZoomManager zoomManager, WebView webView) {
         mZoomManager = zoomManager;
         mWebView = webView;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.209 -0500", hash_original_method = "AC6DDF8CBB501A63B7872C74FE4374B8", hash_generated_method = "328A0AB607EB91E6D512D071D2A483CD")
-    public void show() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.017 -0500", hash_original_method = "AC6DDF8CBB501A63B7872C74FE4374B8", hash_generated_method = "328A0AB607EB91E6D512D071D2A483CD")
+    
+public void show() {
         if (!getControls().isVisible() && !mZoomManager.isZoomScaleFixed()) {
 
             mZoomButtonsController.setVisible(true);
@@ -52,20 +54,23 @@ class ZoomControlEmbedded implements ZoomControlBase {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.209 -0500", hash_original_method = "01D9936CB3AEEFE463F6049C6D59A6E4", hash_generated_method = "0B40AA260FFF7C1BE2FE7387A99F28AF")
-    public void hide() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.019 -0500", hash_original_method = "01D9936CB3AEEFE463F6049C6D59A6E4", hash_generated_method = "0B40AA260FFF7C1BE2FE7387A99F28AF")
+    
+public void hide() {
         if (mZoomButtonsController != null) {
             mZoomButtonsController.setVisible(false);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.210 -0500", hash_original_method = "518B1D44CA5DDB1FC736D41ED30011CF", hash_generated_method = "5BD531AE3778221A23DFC231A1D18C84")
-    public boolean isVisible() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.021 -0500", hash_original_method = "518B1D44CA5DDB1FC736D41ED30011CF", hash_generated_method = "5BD531AE3778221A23DFC231A1D18C84")
+    
+public boolean isVisible() {
         return mZoomButtonsController != null && mZoomButtonsController.isVisible();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.211 -0500", hash_original_method = "3EEB1B7639B141DBF4A839E2ACE958E1", hash_generated_method = "4EB328696D58A43BEC74059B167A3B43")
-    public void update() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.023 -0500", hash_original_method = "3EEB1B7639B141DBF4A839E2ACE958E1", hash_generated_method = "4EB328696D58A43BEC74059B167A3B43")
+    
+public void update() {
         if (mZoomButtonsController == null) {
             return;
         }
@@ -82,8 +87,9 @@ class ZoomControlEmbedded implements ZoomControlBase {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.212 -0500", hash_original_method = "0263F8BCA60BCA372CF61DE8AB7A303B", hash_generated_method = "F5D4F746BF08592E30559E547F0A1A5D")
-    private ZoomButtonsController getControls() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.026 -0500", hash_original_method = "0263F8BCA60BCA372CF61DE8AB7A303B", hash_generated_method = "F5D4F746BF08592E30559E547F0A1A5D")
+    
+private ZoomButtonsController getControls() {
         if (mZoomButtonsController == null) {
             mZoomButtonsController = new ZoomButtonsController(mWebView);
             mZoomButtonsController.setOnZoomListener(new ZoomListener());
@@ -108,8 +114,9 @@ class ZoomControlEmbedded implements ZoomControlBase {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.213 -0500", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "4111D1A62E6EB55B091510A8B69395AA")
-        public void onVisibilityChanged(boolean visible) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.028 -0500", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "4111D1A62E6EB55B091510A8B69395AA")
+        
+public void onVisibilityChanged(boolean visible) {
             if (visible) {
                 mWebView.switchOutDrawHistory();
                 // Bring back the hidden zoom controls.
@@ -118,8 +125,9 @@ class ZoomControlEmbedded implements ZoomControlBase {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.214 -0500", hash_original_method = "A16881C1E119771D4FCCD4DE4DCAF173", hash_generated_method = "3724CEBC8BB7643EC7A121CA32DBAB53")
-        public void onZoom(boolean zoomIn) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.031 -0500", hash_original_method = "A16881C1E119771D4FCCD4DE4DCAF173", hash_generated_method = "3724CEBC8BB7643EC7A121CA32DBAB53")
+        
+public void onZoom(boolean zoomIn) {
             if (zoomIn) {
                 mWebView.zoomIn();
             } else {

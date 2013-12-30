@@ -26,30 +26,30 @@ import com.android.internal.R;
 
 
 public class ShareActionProvider extends ActionProvider {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.650 -0500", hash_original_field = "34EE3314F9DB54E68585F253DD85D08C", hash_generated_field = "92B8F76AAEC7AF7155BC287F38FE45EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.233 -0500", hash_original_field = "34EE3314F9DB54E68585F253DD85D08C", hash_generated_field = "92B8F76AAEC7AF7155BC287F38FE45EA")
 
     private static final int DEFAULT_INITIAL_ACTIVITY_COUNT = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.652 -0500", hash_original_field = "94E9563AA87AAABA6812D665689E77D3", hash_generated_field = "1CB003B559FB29C1D53091AA377E4BB2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.240 -0500", hash_original_field = "94E9563AA87AAABA6812D665689E77D3", hash_generated_field = "1CB003B559FB29C1D53091AA377E4BB2")
 
     public static final String DEFAULT_SHARE_HISTORY_FILE_NAME = "share_history.xml";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.651 -0500", hash_original_field = "B2541B73A076DEB3E51A9B0DC3991BB2", hash_generated_field = "B8F76B4F7281B5BE96A33CBC1F738330")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.236 -0500", hash_original_field = "B2541B73A076DEB3E51A9B0DC3991BB2", hash_generated_field = "B8F76B4F7281B5BE96A33CBC1F738330")
 
     private int mMaxShownActivityCount = DEFAULT_INITIAL_ACTIVITY_COUNT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.651 -0500", hash_original_field = "1E88B09EA16A8C1A1465168EEFD351DC", hash_generated_field = "3718A0AB49E217FA6EE98546A2005E61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.238 -0500", hash_original_field = "1E88B09EA16A8C1A1465168EEFD351DC", hash_generated_field = "3718A0AB49E217FA6EE98546A2005E61")
 
     private final ShareMenuItemOnMenuItemClickListener mOnMenuItemClickListener =
         new ShareMenuItemOnMenuItemClickListener();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.653 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.242 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.654 -0500", hash_original_field = "B0DDE9C45BE36EE89075DF033570DAE9", hash_generated_field = "7409E28971D0B0DB16EF85249AF9A2B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.245 -0500", hash_original_field = "B0DDE9C45BE36EE89075DF033570DAE9", hash_generated_field = "7409E28971D0B0DB16EF85249AF9A2B4")
 
     private String mShareHistoryFileName = DEFAULT_SHARE_HISTORY_FILE_NAME;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.654 -0500", hash_original_field = "14ABF3424D70483DB072A6166D335E25", hash_generated_field = "8D0302721DF93B0058B1E99D4AC6931D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.247 -0500", hash_original_field = "14ABF3424D70483DB072A6166D335E25", hash_generated_field = "8D0302721DF93B0058B1E99D4AC6931D")
 
 
     private OnShareTargetSelectedListener mOnShareTargetSelectedListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.656 -0500", hash_original_field = "4E6DF115C423E32576A5D1CB98B81F8F", hash_generated_field = "A3948F7FA69A8ECB6B19574CCCA8D09F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.249 -0500", hash_original_field = "4E6DF115C423E32576A5D1CB98B81F8F", hash_generated_field = "A3948F7FA69A8ECB6B19574CCCA8D09F")
 
 
     private OnChooseActivityListener mOnChooseActivityListener;
@@ -59,8 +59,9 @@ public class ShareActionProvider extends ActionProvider {
      *
      * @param context Context for accessing resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.657 -0500", hash_original_method = "D37DD9362CC0C7C9F17F614AA422CDA5", hash_generated_method = "EB12F0C179FF5049530FB71B65E2D7EF")
-    public ShareActionProvider(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.252 -0500", hash_original_method = "D37DD9362CC0C7C9F17F614AA422CDA5", hash_generated_method = "EB12F0C179FF5049530FB71B65E2D7EF")
+    
+public ShareActionProvider(Context context) {
         super(context);
         mContext = context;
     }
@@ -75,8 +76,9 @@ public class ShareActionProvider extends ActionProvider {
      * </p>
      * @param listener The listener.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.657 -0500", hash_original_method = "AF132A5C7109C48F5C74FEA83B1BA0C7", hash_generated_method = "B8FE842239AA363CF03B3737C8FA23CD")
-    public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.254 -0500", hash_original_method = "AF132A5C7109C48F5C74FEA83B1BA0C7", hash_generated_method = "B8FE842239AA363CF03B3737C8FA23CD")
+    
+public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener listener) {
         mOnShareTargetSelectedListener = listener;
         setActivityChooserPolicyIfNeeded();
     }
@@ -84,9 +86,10 @@ public class ShareActionProvider extends ActionProvider {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.659 -0500", hash_original_method = "457E9B3A86A4C9D09DD81D115C288523", hash_generated_method = "E07572EF0BC7910C642FC568B6409FD7")
-    @Override
-public View onCreateActionView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.257 -0500", hash_original_method = "457E9B3A86A4C9D09DD81D115C288523", hash_generated_method = "E07572EF0BC7910C642FC568B6409FD7")
+    
+@Override
+    public View onCreateActionView() {
         // Create the view and set its data model.
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         ActivityChooserView activityChooserView = new ActivityChooserView(mContext);
@@ -111,18 +114,20 @@ public View onCreateActionView() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.659 -0500", hash_original_method = "35CF29CD4DCA84D0FC63AC1A69E282B0", hash_generated_method = "CF1645D2E26EE80D0A742936B16D492A")
-    @Override
-public boolean hasSubMenu() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.259 -0500", hash_original_method = "35CF29CD4DCA84D0FC63AC1A69E282B0", hash_generated_method = "CF1645D2E26EE80D0A742936B16D492A")
+    
+@Override
+    public boolean hasSubMenu() {
         return true;
     }
 
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.660 -0500", hash_original_method = "780159D1510500332D77DB35C815CAE0", hash_generated_method = "0FAFC374C81773C7F1EB75B321D82417")
-    @Override
-public void onPrepareSubMenu(SubMenu subMenu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.262 -0500", hash_original_method = "780159D1510500332D77DB35C815CAE0", hash_generated_method = "0FAFC374C81773C7F1EB75B321D82417")
+    
+@Override
+    public void onPrepareSubMenu(SubMenu subMenu) {
         // Clear since the order of items may change.
         subMenu.clear();
 
@@ -168,8 +173,9 @@ public void onPrepareSubMenu(SubMenu subMenu) {
      *
      * @param shareHistoryFile The share history file name.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.661 -0500", hash_original_method = "55B9AB4A16F0F7764FD2AA524BC9ED0A", hash_generated_method = "03E0DA1D52ECA62A54D2669894C69150")
-    public void setShareHistoryFileName(String shareHistoryFile) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.264 -0500", hash_original_method = "55B9AB4A16F0F7764FD2AA524BC9ED0A", hash_generated_method = "03E0DA1D52ECA62A54D2669894C69150")
+    
+public void setShareHistoryFileName(String shareHistoryFile) {
         mShareHistoryFileName = shareHistoryFile;
         setActivityChooserPolicyIfNeeded();
     }
@@ -182,9 +188,10 @@ public void onPrepareSubMenu(SubMenu subMenu) {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.663 -0500", hash_original_method = "9C4E8B2E808FE0B52E60FC78C14CA469", hash_generated_method = "BCEB5A74B50F4C8F134CC96CC477B833")
-        @Override
-public boolean onMenuItemClick(MenuItem item) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.269 -0500", hash_original_method = "9C4E8B2E808FE0B52E60FC78C14CA469", hash_generated_method = "BCEB5A74B50F4C8F134CC96CC477B833")
+        
+@Override
+        public boolean onMenuItemClick(MenuItem item) {
             ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
                     mShareHistoryFileName);
             final int itemId = item.getItemId();
@@ -207,9 +214,10 @@ public boolean onMenuItemClick(MenuItem item) {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.666 -0500", hash_original_method = "5A8A50866214BBC9FA1FE4AEB29A128B", hash_generated_method = "28A7A415C8C8EBAB11FB98C6B1217E60")
-        @Override
-public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.276 -0500", hash_original_method = "5A8A50866214BBC9FA1FE4AEB29A128B", hash_generated_method = "28A7A415C8C8EBAB11FB98C6B1217E60")
+        
+@Override
+        public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
             if (mOnShareTargetSelectedListener != null) {
                 return mOnShareTargetSelectedListener.onShareTargetSelected(
                         ShareActionProvider.this, intent);
@@ -247,8 +255,9 @@ public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
      * @see Intent#ACTION_SEND
      * @see Intent#ACTION_SEND_MULTIPLE
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.662 -0500", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "CC784081647578CB91B85D7C5DF7179C")
-    public void setShareIntent(Intent shareIntent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.267 -0500", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "CC784081647578CB91B85D7C5DF7179C")
+    
+public void setShareIntent(Intent shareIntent) {
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
             mShareHistoryFileName);
         dataModel.setIntent(shareIntent);
@@ -258,8 +267,9 @@ public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
      * Set the activity chooser policy of the model backed by the current
      * share history file if needed which is if there is a registered callback.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.665 -0500", hash_original_method = "5CBD2FEC274C7972832B56342BCF52F4", hash_generated_method = "C4C90C5DAE2924F19930082702F6F18A")
-    private void setActivityChooserPolicyIfNeeded() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.273 -0500", hash_original_method = "5CBD2FEC274C7972832B56342BCF52F4", hash_generated_method = "C4C90C5DAE2924F19930082702F6F18A")
+    
+private void setActivityChooserPolicyIfNeeded() {
         if (mOnShareTargetSelectedListener == null) {
             return;
         }

@@ -15,8 +15,9 @@ import java.text.ParseException;
 
 public class RequestLineParser extends Parser {
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.171 -0500", hash_original_method = "81D449396CA92A7AD8E004264E406593", hash_generated_method = "DBBA46FA2C859B3EF3FBE0D60D8B4D68")
-    public static void main(String args[]) throws ParseException {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.469 -0500", hash_original_method = "81D449396CA92A7AD8E004264E406593", hash_generated_method = "DBBA46FA2C859B3EF3FBE0D60D8B4D68")
+    
+public static void main(String args[]) throws ParseException {
             String requestLines[] = {
                 "REGISTER sip:192.168.0.68 SIP/2.0\n",
                 "REGISTER sip:company.com SIP/2.0\n",
@@ -35,18 +36,21 @@ public class RequestLineParser extends Parser {
             }
 
         }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.167 -0500", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "2EF319665DA089D9F7AB53A9E02C67CA")
-    public RequestLineParser(String requestLine) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.461 -0500", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "2EF319665DA089D9F7AB53A9E02C67CA")
+    
+public RequestLineParser(String requestLine) {
         this.lexer = new Lexer("method_keywordLexer", requestLine);
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.168 -0500", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "D233B63A45EDFB95DFD732BE908C3EB5")
-    public RequestLineParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.463 -0500", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "D233B63A45EDFB95DFD732BE908C3EB5")
+    
+public RequestLineParser(Lexer lexer) {
         this.lexer = lexer;
         this.lexer.selectLexer("method_keywordLexer");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.169 -0500", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "B3DA0F50F698C533CAC7A4174C2C4620")
-    public RequestLine parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.466 -0500", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "B3DA0F50F698C533CAC7A4174C2C4620")
+    
+public RequestLine parse() throws ParseException {
         if (debug)
             dbg_enter("parse");
         try {

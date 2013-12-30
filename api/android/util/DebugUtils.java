@@ -50,8 +50,9 @@ public class DebugUtils {
      * @return true if object is selected by the ANDROID_OBJECT_FILTER
      *         environment variable, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.259 -0500", hash_original_method = "89690390C58E88977CA907FE5A88EB05", hash_generated_method = "E3F84148E6D130EB22903A427DD6E36D")
-    public static boolean isObjectSelected(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.463 -0500", hash_original_method = "89690390C58E88977CA907FE5A88EB05", hash_generated_method = "E3F84148E6D130EB22903A427DD6E36D")
+    
+public static boolean isObjectSelected(Object object) {
         boolean match = false;
         String s = System.getenv("ANDROID_OBJECT_FILTER");
         if (s != null && s.length() > 0) {
@@ -93,8 +94,9 @@ public class DebugUtils {
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.260 -0500", hash_original_method = "BC1C0A6DDB905724B12A3BE1E03F80F1", hash_generated_method = "A0E49CBE1D8E6D2C12C59921D8EDC0B4")
-    public static void buildShortClassTag(Object cls, StringBuilder out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.465 -0500", hash_original_method = "BC1C0A6DDB905724B12A3BE1E03F80F1", hash_generated_method = "A0E49CBE1D8E6D2C12C59921D8EDC0B4")
+    
+public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");
         } else {
@@ -111,8 +113,9 @@ public class DebugUtils {
             out.append(Integer.toHexString(System.identityHashCode(cls)));
         }
     }
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.258 -0500", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "BF5454E33769117159B2FC3ECE3C6B8B")
-    public DebugUtils() {}
+    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.460 -0500", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "BF5454E33769117159B2FC3ECE3C6B8B")
+    
+public DebugUtils() {}
 
     
 }

@@ -19,29 +19,29 @@ import com.android.internal.os.IDropBoxManagerService;
 
 
 public class DropBoxManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.157 -0500", hash_original_field = "D9B79A0164BB0C0D43E8BE0E50A07175", hash_generated_field = "7F88B1F6C3AA23682B73D2063D96AD46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.339 -0500", hash_original_field = "D9B79A0164BB0C0D43E8BE0E50A07175", hash_generated_field = "7F88B1F6C3AA23682B73D2063D96AD46")
 
     private static final String TAG = "DropBoxManager";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.158 -0500", hash_original_field = "DEEF993D34CD370CC60DFD894A869C66", hash_generated_field = "4342C6618E9F33B619CAED2246633D02")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.343 -0500", hash_original_field = "DEEF993D34CD370CC60DFD894A869C66", hash_generated_field = "4342C6618E9F33B619CAED2246633D02")
 
     public static final int IS_EMPTY = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.159 -0500", hash_original_field = "AA2789A4A3E70D0EFE2E695516CCB611", hash_generated_field = "26AE776D9F0D1E8967689D8BDE25B1E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.346 -0500", hash_original_field = "AA2789A4A3E70D0EFE2E695516CCB611", hash_generated_field = "26AE776D9F0D1E8967689D8BDE25B1E4")
 
     public static final int IS_TEXT = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.160 -0500", hash_original_field = "CAC9CC5411262E33D125EFD3EF4EEF00", hash_generated_field = "0467C01D2B434424775E1AEC77EA10FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.348 -0500", hash_original_field = "CAC9CC5411262E33D125EFD3EF4EEF00", hash_generated_field = "0467C01D2B434424775E1AEC77EA10FE")
 
     public static final int IS_GZIPPED = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.160 -0500", hash_original_field = "040DCB4C99D0BA1206DE938DF7F9A853", hash_generated_field = "48D79452E0CE2C4C0A373F8DD88D3A93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.350 -0500", hash_original_field = "040DCB4C99D0BA1206DE938DF7F9A853", hash_generated_field = "48D79452E0CE2C4C0A373F8DD88D3A93")
 
     private static final int HAS_BYTE_ARRAY = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.161 -0500", hash_original_field = "827C230EC3BF90168B2033A65704689D", hash_generated_field = "C96D94412FCD56314FB7038C746F0C74")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.353 -0500", hash_original_field = "827C230EC3BF90168B2033A65704689D", hash_generated_field = "C96D94412FCD56314FB7038C746F0C74")
 
     public static final String ACTION_DROPBOX_ENTRY_ADDED =
         "android.intent.action.DROPBOX_ENTRY_ADDED";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.162 -0500", hash_original_field = "970450E13346796A53A85829B5008AC6", hash_generated_field = "DA52E65CF9683E9971D90CD0BBF2BACB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.355 -0500", hash_original_field = "970450E13346796A53A85829B5008AC6", hash_generated_field = "DA52E65CF9683E9971D90CD0BBF2BACB")
 
     public static final String EXTRA_TAG = "tag";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.163 -0500", hash_original_field = "D910661ED5A65576B5BFD7269C64298B", hash_generated_field = "BF72FAE2E20FCDE1DA6F95CAA1981EAC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.358 -0500", hash_original_field = "D910661ED5A65576B5BFD7269C64298B", hash_generated_field = "BF72FAE2E20FCDE1DA6F95CAA1981EAC")
 
     public static final String EXTRA_TIME = "time";
 
@@ -52,10 +52,12 @@ public class DropBoxManager {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.039 -0400", hash_original_field = "A8DC184895BB5B5BEE6BB5E9D72AA17F", hash_generated_field = "329A53A95C2F0B54BB6DBA5A539F5907")
 
         public static final Parcelable.Creator<Entry> CREATOR = new Parcelable.Creator() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.180 -0500", hash_original_method = "A391752DBE5FDE90AB459A0FCBEFF4D2", hash_generated_method = "3F9FC880A62633725193C63B42998327")
-            public Entry[] newArray(int size) { return new Entry[size]; }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.181 -0500", hash_original_method = "946DD766314338FFDBA7B29D274BE59A", hash_generated_method = "4066987818FA603CCE0C5DC4EDFC22BF")
-            public Entry createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.403 -0500", hash_original_method = "A391752DBE5FDE90AB459A0FCBEFF4D2", hash_generated_method = "3F9FC880A62633725193C63B42998327")
+            
+public Entry[] newArray(int size) { return new Entry[size]; }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.406 -0500", hash_original_method = "946DD766314338FFDBA7B29D274BE59A", hash_generated_method = "4066987818FA603CCE0C5DC4EDFC22BF")
+            
+public Entry createFromParcel(Parcel in) {
                 String tag = in.readString();
                 long millis = in.readLong();
                 int flags = in.readInt();
@@ -66,26 +68,27 @@ public class DropBoxManager {
                 }
             }
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.164 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.361 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
 
         private  String mTag;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.165 -0500", hash_original_field = "0571E75BFD18E7506EEB52F2B46715AC", hash_generated_field = "753DEC84E9370E35F2BD26C6679E5DA4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.363 -0500", hash_original_field = "0571E75BFD18E7506EEB52F2B46715AC", hash_generated_field = "753DEC84E9370E35F2BD26C6679E5DA4")
 
         private  long mTimeMillis;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.166 -0500", hash_original_field = "5D97F7C0534662C5183D05D4FFD1A145", hash_generated_field = "04254C7D5555806109D3DE22B9918A82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.366 -0500", hash_original_field = "5D97F7C0534662C5183D05D4FFD1A145", hash_generated_field = "04254C7D5555806109D3DE22B9918A82")
 
 
         private  byte[] mData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.167 -0500", hash_original_field = "E57966AB286B8F6F75FB7E135DD8912B", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.369 -0500", hash_original_field = "E57966AB286B8F6F75FB7E135DD8912B", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
 
         private  ParcelFileDescriptor mFileDescriptor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.168 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.371 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
 
         private  int mFlags;
 
         /** Create a new empty Entry with no contents. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.169 -0500", hash_original_method = "59D4C7A828654550E9A00289F418A41B", hash_generated_method = "A1ADB842CDB3D89617B61CB662BF8B7B")
-        public Entry(String tag, long millis) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.373 -0500", hash_original_method = "59D4C7A828654550E9A00289F418A41B", hash_generated_method = "A1ADB842CDB3D89617B61CB662BF8B7B")
+        
+public Entry(String tag, long millis) {
             if (tag == null) throw new NullPointerException("tag == null");
 
             mTag = tag;
@@ -96,8 +99,9 @@ public class DropBoxManager {
         }
 
         /** Create a new Entry with plain text contents. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.170 -0500", hash_original_method = "3040DA05407F13E8561F02C468A7DEB4", hash_generated_method = "96B96B503A807A17EFBA37C423574278")
-        public Entry(String tag, long millis, String text) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.376 -0500", hash_original_method = "3040DA05407F13E8561F02C468A7DEB4", hash_generated_method = "96B96B503A807A17EFBA37C423574278")
+        
+public Entry(String tag, long millis, String text) {
             if (tag == null) throw new NullPointerException("tag == null");
             if (text == null) throw new NullPointerException("text == null");
 
@@ -112,8 +116,9 @@ public class DropBoxManager {
          * Create a new Entry with byte array contents.
          * The data array must not be modified after creating this entry.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.171 -0500", hash_original_method = "182B4976A5D069A0C2E90B74F50A592D", hash_generated_method = "C5D0979BD3404C0F59668145B60A0893")
-        public Entry(String tag, long millis, byte[] data, int flags) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.379 -0500", hash_original_method = "182B4976A5D069A0C2E90B74F50A592D", hash_generated_method = "C5D0979BD3404C0F59668145B60A0893")
+        
+public Entry(String tag, long millis, byte[] data, int flags) {
             if (tag == null) throw new NullPointerException("tag == null");
             if (((flags & IS_EMPTY) != 0) != (data == null)) {
                 throw new IllegalArgumentException("Bad flags: " + flags);
@@ -130,8 +135,9 @@ public class DropBoxManager {
          * Create a new Entry with streaming data contents.
          * Takes ownership of the ParcelFileDescriptor.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.172 -0500", hash_original_method = "98F6B6C49553AC4D3032798198FC694A", hash_generated_method = "E0D85ABA1500C693E45FDA4B5393020F")
-        public Entry(String tag, long millis, ParcelFileDescriptor data, int flags) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.382 -0500", hash_original_method = "98F6B6C49553AC4D3032798198FC694A", hash_generated_method = "E0D85ABA1500C693E45FDA4B5393020F")
+        
+public Entry(String tag, long millis, ParcelFileDescriptor data, int flags) {
             if (tag == null) throw new NullPointerException("tag == null");
             if (((flags & IS_EMPTY) != 0) != (data == null)) {
                 throw new IllegalArgumentException("Bad flags: " + flags);
@@ -148,8 +154,9 @@ public class DropBoxManager {
          * Create a new Entry with the contents read from a file.
          * The file will be read when the entry's contents are requested.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.174 -0500", hash_original_method = "102E401D4541F654441520BE506818C4", hash_generated_method = "897BA93736BAF4043F4A43BFE77F6801")
-        public Entry(String tag, long millis, File data, int flags) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.385 -0500", hash_original_method = "102E401D4541F654441520BE506818C4", hash_generated_method = "897BA93736BAF4043F4A43BFE77F6801")
+        
+public Entry(String tag, long millis, File data, int flags) throws IOException {
             if (tag == null) throw new NullPointerException("tag == null");
             if ((flags & IS_EMPTY) != 0) throw new IllegalArgumentException("Bad flags: " + flags);
 
@@ -161,29 +168,34 @@ public class DropBoxManager {
         }
 
         /** Close the input stream associated with this entry. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.174 -0500", hash_original_method = "377836285D1E96A0220618E9638425CD", hash_generated_method = "B1898091EE92D272834555453BD42E12")
-        public void close() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.387 -0500", hash_original_method = "377836285D1E96A0220618E9638425CD", hash_generated_method = "B1898091EE92D272834555453BD42E12")
+        
+public void close() {
             try { if (mFileDescriptor != null) mFileDescriptor.close(); } catch (IOException e) { }
         }
 
         /** @return the tag originally attached to the entry. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.175 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
-        public String getTag() { return mTag; }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.389 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
+        
+public String getTag() { return mTag; }
 
         /** @return time when the entry was originally created. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.176 -0500", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "4EEBC7115EF2483FED0898219C32EC53")
-        public long getTimeMillis() { return mTimeMillis; }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.392 -0500", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "4EEBC7115EF2483FED0898219C32EC53")
+        
+public long getTimeMillis() { return mTimeMillis; }
 
         /** @return flags describing the content returned by {@link #getInputStream()}. */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.177 -0500", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "A232C7C0C5207087EB20025BE13ADFF2")
-        public int getFlags() { return mFlags & ~IS_GZIPPED; }  // getInputStream() decompresses.
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.394 -0500", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "A232C7C0C5207087EB20025BE13ADFF2")
+        
+public int getFlags() { return mFlags & ~IS_GZIPPED; }  // getInputStream() decompresses.
 
         /**
          * @param maxBytes of string to return (will truncate at this length).
          * @return the uncompressed text contents of the entry, null if the entry is not text.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.178 -0500", hash_original_method = "5115D4296A1E9A49B9B7627B57AD3F2E", hash_generated_method = "0AE4E31616817EE423844A6965610297")
-        public String getText(int maxBytes) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.397 -0500", hash_original_method = "5115D4296A1E9A49B9B7627B57AD3F2E", hash_generated_method = "0AE4E31616817EE423844A6965610297")
+        
+public String getText(int maxBytes) {
             if ((mFlags & IS_TEXT) == 0) return null;
             if (mData != null) return new String(mData, 0, Math.min(maxBytes, mData.length));
 
@@ -206,8 +218,9 @@ public class DropBoxManager {
         }
 
         /** @return the uncompressed contents of the entry, or null if the contents were lost */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.179 -0500", hash_original_method = "1138A2AC2CDA63F5FD2C1DAD635BB1B0", hash_generated_method = "4C74AC11C608A83FA2239CD66FDB48B6")
-        public InputStream getInputStream() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.399 -0500", hash_original_method = "1138A2AC2CDA63F5FD2C1DAD635BB1B0", hash_generated_method = "4C74AC11C608A83FA2239CD66FDB48B6")
+        
+public InputStream getInputStream() throws IOException {
             InputStream is;
             if (mData != null) {
                 is = new ByteArrayInputStream(mData);
@@ -219,13 +232,15 @@ public class DropBoxManager {
             return (mFlags & IS_GZIPPED) != 0 ? new GZIPInputStream(is) : is;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.183 -0500", hash_original_method = "CE12D992AD97C7CB4D92B660FD5831CC", hash_generated_method = "66BFD16BA58041EE15EE07E040489680")
-        public int describeContents() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.411 -0500", hash_original_method = "CE12D992AD97C7CB4D92B660FD5831CC", hash_generated_method = "66BFD16BA58041EE15EE07E040489680")
+        
+public int describeContents() {
             return mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.184 -0500", hash_original_method = "651672D7808B55AEFC112D3455309C97", hash_generated_method = "E49A12FEBDA90A9B384C764C321BA52B")
-        public void writeToParcel(Parcel out, int flags) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.413 -0500", hash_original_method = "651672D7808B55AEFC112D3455309C97", hash_generated_method = "E49A12FEBDA90A9B384C764C321BA52B")
+        
+public void writeToParcel(Parcel out, int flags) {
             out.writeString(mTag);
             out.writeLong(mTimeMillis);
             if (mFileDescriptor != null) {
@@ -252,7 +267,7 @@ public class DropBoxManager {
         public Entry[] newArray(int size) { return new Entry[size]; }
         
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.157 -0500", hash_original_field = "66CB97C4BDD5BC95418A2AD4B0FF67EE", hash_generated_field = "FF673E933014905FBCDFD4D8541297A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.341 -0500", hash_original_field = "66CB97C4BDD5BC95418A2AD4B0FF67EE", hash_generated_field = "FF673E933014905FBCDFD4D8541297A4")
 
     private  IDropBoxManagerService mService;
     
@@ -282,8 +297,9 @@ public class DropBoxManager {
      * @param tag describing the type of entry being stored
      * @param data value to store
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.188 -0500", hash_original_method = "B6329499D071F8AC982F0B19B7FB97DF", hash_generated_method = "22BEA5D439C7F6C8877A2F60763310E7")
-    public void addText(String tag, String data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.423 -0500", hash_original_method = "B6329499D071F8AC982F0B19B7FB97DF", hash_generated_method = "22BEA5D439C7F6C8877A2F60763310E7")
+    
+public void addText(String tag, String data) {
         try { mService.add(new Entry(tag, 0, data)); } catch (RemoteException e) {}
     }
 
@@ -294,8 +310,9 @@ public class DropBoxManager {
      * @param data value to store
      * @param flags describing the data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.189 -0500", hash_original_method = "7BD48A32860AA6BD88FDC639FDB6D7D8", hash_generated_method = "816B8F2A0763E5731CF9279A7CDEC9C7")
-    public void addData(String tag, byte[] data, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.426 -0500", hash_original_method = "7BD48A32860AA6BD88FDC639FDB6D7D8", hash_generated_method = "816B8F2A0763E5731CF9279A7CDEC9C7")
+    
+public void addData(String tag, byte[] data, int flags) {
         if (data == null) throw new NullPointerException("data == null");
         try { mService.add(new Entry(tag, 0, data, flags)); } catch (RemoteException e) {}
     }
@@ -309,8 +326,9 @@ public class DropBoxManager {
      * @param flags describing the data
      * @throws IOException if the file can't be opened
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.190 -0500", hash_original_method = "BF97B72EB64F4DB129C9C48237659777", hash_generated_method = "FA73C886BED1C418635F13184FE537E3")
-    public void addFile(String tag, File file, int flags) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.429 -0500", hash_original_method = "BF97B72EB64F4DB129C9C48237659777", hash_generated_method = "FA73C886BED1C418635F13184FE537E3")
+    
+public void addFile(String tag, File file, int flags) throws IOException {
         if (file == null) throw new NullPointerException("file == null");
         Entry entry = new Entry(tag, 0, file, flags);
         try {
@@ -330,8 +348,9 @@ public class DropBoxManager {
      * @param tag that would be used in {@link #addText} or {@link #addFile}
      * @return whether events with that tag would be accepted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.191 -0500", hash_original_method = "0FE06F2CE6966672337D3755F0FF0CD0", hash_generated_method = "8B784C203CC3281453FD048DD2F4F71B")
-    public boolean isTagEnabled(String tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.431 -0500", hash_original_method = "0FE06F2CE6966672337D3755F0FF0CD0", hash_generated_method = "8B784C203CC3281453FD048DD2F4F71B")
+    
+public boolean isTagEnabled(String tag) {
         try { return mService.isTagEnabled(tag); } catch (RemoteException e) { return false; }
     }
 
@@ -344,8 +363,9 @@ public class DropBoxManager {
      * @param msec time of the last entry seen
      * @return the next entry, or null if there are no more entries
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:37.192 -0500", hash_original_method = "A691D94F864449A091C30E093C0F46CD", hash_generated_method = "B801D28E7D11A86E5711BAC5D5D99291")
-    public Entry getNextEntry(String tag, long msec) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.433 -0500", hash_original_method = "A691D94F864449A091C30E093C0F46CD", hash_generated_method = "B801D28E7D11A86E5711BAC5D5D99291")
+    
+public Entry getNextEntry(String tag, long msec) {
         try { return mService.getNextEntry(tag, msec); } catch (RemoteException e) { return null; }
     }
 }

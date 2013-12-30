@@ -13,25 +13,28 @@ import java.io.InputStream;
 
 
 final class BluetoothInputStream extends InputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.942 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.438 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.943 -0500", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1")
-    BluetoothInputStream(BluetoothSocket s) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.440 -0500", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1")
+    
+BluetoothInputStream(BluetoothSocket s) {
         mSocket = s;
     }
 
     /**
      * Return number of bytes available before this stream will block.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.944 -0500", hash_original_method = "F8D5D10C5F2F8FB1DCC0A3044A3235C3", hash_generated_method = "698BE5E5354DC14F82BB3A94A7C5289A")
-    public int available() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.442 -0500", hash_original_method = "F8D5D10C5F2F8FB1DCC0A3044A3235C3", hash_generated_method = "698BE5E5354DC14F82BB3A94A7C5289A")
+    
+public int available() throws IOException {
         return mSocket.available();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.945 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
-    public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.445 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
+    
+public void close() throws IOException {
         mSocket.close();
     }
 
@@ -46,8 +49,9 @@ final class BluetoothInputStream extends InputStream {
      *             if the stream is closed or another IOException occurs.
      * @since Android 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.946 -0500", hash_original_method = "2059D974D6DFEDC9A8B8553096188222", hash_generated_method = "6E79AC07ED988EFBA15A6F1994AEF577")
-    public int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.447 -0500", hash_original_method = "2059D974D6DFEDC9A8B8553096188222", hash_generated_method = "6E79AC07ED988EFBA15A6F1994AEF577")
+    
+public int read() throws IOException {
         byte b[] = new byte[1];
         int ret = mSocket.read(b, 0, 1);
         if (ret == 1) {
@@ -78,8 +82,9 @@ final class BluetoothInputStream extends InputStream {
      *             if the stream is closed or another IOException occurs.
      * @since Android 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.947 -0500", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "0DF6D203DCBC3F1E01A85090A3B0A6A7")
-    public int read(byte[] b, int offset, int length) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.449 -0500", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "0DF6D203DCBC3F1E01A85090A3B0A6A7")
+    
+public int read(byte[] b, int offset, int length) throws IOException {
         if (b == null) {
             throw new NullPointerException("byte array is null");
         }

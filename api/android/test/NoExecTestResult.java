@@ -20,9 +20,10 @@ class NoExecTestResult extends TestResult {
      * Override parent to just inform listeners of test,
      * and skip test execution.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.465 -0500", hash_original_method = "89F3D03C5156AFAF550D3AA0FD377E62", hash_generated_method = "58233B713A68AFA01F3A12659B0F4385")
-    @Override
-protected void run(final TestCase test) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.856 -0500", hash_original_method = "89F3D03C5156AFAF550D3AA0FD377E62", hash_generated_method = "58233B713A68AFA01F3A12659B0F4385")
+    
+@Override
+    protected void run(final TestCase test) {
         startTest(test);
         endTest(test);
     }

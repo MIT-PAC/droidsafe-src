@@ -15,13 +15,14 @@ import org.apache.http.params.HttpParams;
 
 
 public class SocketInputBuffer extends AbstractSessionInputBuffer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.469 -0500", hash_original_field = "5019B3EE05D6098E4ECE32F00F7F88CA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.146 -0500", hash_original_field = "5019B3EE05D6098E4ECE32F00F7F88CA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
 
 
     private  Socket socket;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.470 -0500", hash_original_method = "7283DB9E346A36B4239C51041B32EE66", hash_generated_method = "589AA70F20F0C29C0CEDB39CA43959BC")
-    public SocketInputBuffer(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.149 -0500", hash_original_method = "7283DB9E346A36B4239C51041B32EE66", hash_generated_method = "589AA70F20F0C29C0CEDB39CA43959BC")
+    
+public SocketInputBuffer(
             final Socket socket,
             int buffersize,
             final HttpParams params) throws IOException {
@@ -39,8 +40,9 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
         // END android-changed
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.471 -0500", hash_original_method = "311ACBA3C6B98FE9C535127054B24088", hash_generated_method = "A078C5AF499E827D5762FC0B5E1D7F31")
-    public boolean isDataAvailable(int timeout) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.151 -0500", hash_original_method = "311ACBA3C6B98FE9C535127054B24088", hash_generated_method = "A078C5AF499E827D5762FC0B5E1D7F31")
+    
+public boolean isDataAvailable(int timeout) throws IOException {
         boolean result = hasBufferedData();
         if (!result) {
             int oldtimeout = this.socket.getSoTimeout();
@@ -68,8 +70,9 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.471 -0500", hash_original_method = "60456E7A862D179906482739ACBD4572", hash_generated_method = "1FED05F39E3BB61C72DF3B048AB4D949")
-    public boolean isStale() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.154 -0500", hash_original_method = "60456E7A862D179906482739ACBD4572", hash_generated_method = "1FED05F39E3BB61C72DF3B048AB4D949")
+    
+public boolean isStale() throws IOException {
         if (hasBufferedData()) {
             return false;
         }

@@ -19,8 +19,9 @@ public abstract class KeyManagerFactorySpi {
     /**
      * Creates a new {@code KeyManagerFactorySpi} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.153 -0500", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "F5CC1388BD4584472660C93AE5203C58")
-    public KeyManagerFactorySpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.279 -0500", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "F5CC1388BD4584472660C93AE5203C58")
+    
+public KeyManagerFactorySpi() {
     }
 
     /**
@@ -37,8 +38,9 @@ public abstract class KeyManagerFactorySpi {
      * @throws UnrecoverableKeyException
      *             if a key cannot be recovered.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.154 -0500", hash_original_method = "0D3635A5835C673EAD5B27BBB788074D", hash_generated_method = "C0D480B7C5034ED1B3D23C67E786E8C8")
-    protected abstract void engineInit(KeyStore ks, char[] password) throws KeyStoreException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.282 -0500", hash_original_method = "0D3635A5835C673EAD5B27BBB788074D", hash_generated_method = "C0D480B7C5034ED1B3D23C67E786E8C8")
+    
+protected abstract void engineInit(KeyStore ks, char[] password) throws KeyStoreException,
             NoSuchAlgorithmException, UnrecoverableKeyException;
 
     /**
@@ -49,8 +51,9 @@ public abstract class KeyManagerFactorySpi {
      * @throws InvalidAlgorithmParameterException
      *             if an error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.155 -0500", hash_original_method = "E8464373E665456E480D3D33F7327997", hash_generated_method = "6C76039366DDF10BC7CEC02412F7F915")
-    protected abstract void engineInit(ManagerFactoryParameters spec)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.284 -0500", hash_original_method = "E8464373E665456E480D3D33F7327997", hash_generated_method = "6C76039366DDF10BC7CEC02412F7F915")
+    
+protected abstract void engineInit(ManagerFactoryParameters spec)
             throws InvalidAlgorithmParameterException;
 
     /**
@@ -59,8 +62,9 @@ public abstract class KeyManagerFactorySpi {
      *
      * @return a list of key managers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.156 -0500", hash_original_method = "8AA3A930AA2BEA7107EAE536F3FF6F57", hash_generated_method = "5859AFE7FD8C07975D107F33B4FBBAFE")
-    protected abstract KeyManager[] engineGetKeyManagers();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.286 -0500", hash_original_method = "8AA3A930AA2BEA7107EAE536F3FF6F57", hash_generated_method = "5859AFE7FD8C07975D107F33B4FBBAFE")
+    
+protected abstract KeyManager[] engineGetKeyManagers();
 
     
 }

@@ -6,15 +6,17 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import android.util.Log;
 public class ProgramFragmentFixedFunction extends ProgramFragment {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.374 -0500", hash_original_method = "2A0FFECD56CD5C732668EEC76534036D", hash_generated_method = "2A0FFECD56CD5C732668EEC76534036D")
-    ProgramFragmentFixedFunction(int id, RenderScript rs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.076 -0500", hash_original_method = "2A0FFECD56CD5C732668EEC76534036D", hash_generated_method = "2A0FFECD56CD5C732668EEC76534036D")
+    
+ProgramFragmentFixedFunction(int id, RenderScript rs) {
         super(id, rs);
     }
 
     
     static class InternalBuilder extends BaseProgramBuilder {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.375 -0500", hash_original_method = "3D66AE7CFC6D0E068FD8C5ABF2875F8E", hash_generated_method = "90FB3BFBB3978AD101B037A64F848DBB")
-        public InternalBuilder(RenderScript rs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.079 -0500", hash_original_method = "3D66AE7CFC6D0E068FD8C5ABF2875F8E", hash_generated_method = "90FB3BFBB3978AD101B037A64F848DBB")
+        
+public InternalBuilder(RenderScript rs) {
             super(rs);
         }
 
@@ -24,8 +26,9 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
          *
          * @return  ProgramFragmentFixedFunction
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.376 -0500", hash_original_method = "7DD57EC723991E6F8C51D4D9D2500308", hash_generated_method = "6F25A8B5DECEABA945AC7BA918121214")
-        public ProgramFragmentFixedFunction create() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.083 -0500", hash_original_method = "7DD57EC723991E6F8C51D4D9D2500308", hash_generated_method = "6F25A8B5DECEABA945AC7BA918121214")
+        
+public ProgramFragmentFixedFunction create() {
             mRS.validate();
             int[] tmp = new int[(mInputCount + mOutputCount + mConstantCount + mTextureCount) * 2];
             int idx = 0;
@@ -59,25 +62,25 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
 
     
     public static class Builder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.378 -0500", hash_original_field = "1F002A5FFE4CD3118A7F221649B77A0A", hash_generated_field = "D118099FAF0CA6FBAD03B4A799F8496F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.090 -0500", hash_original_field = "1F002A5FFE4CD3118A7F221649B77A0A", hash_generated_field = "D118099FAF0CA6FBAD03B4A799F8496F")
 
         public static final int MAX_TEXTURE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.379 -0500", hash_original_field = "5EBE2D4E6525687A45933CC3EF6AE134", hash_generated_field = "5EBE2D4E6525687A45933CC3EF6AE134")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.092 -0500", hash_original_field = "5EBE2D4E6525687A45933CC3EF6AE134", hash_generated_field = "5EBE2D4E6525687A45933CC3EF6AE134")
 
         int mNumTextures;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.380 -0500", hash_original_field = "F7B5253FBC182C9C461FE015FFB50788", hash_generated_field = "F7B5253FBC182C9C461FE015FFB50788")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.094 -0500", hash_original_field = "F7B5253FBC182C9C461FE015FFB50788", hash_generated_field = "F7B5253FBC182C9C461FE015FFB50788")
 
         boolean mPointSpriteEnable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.380 -0500", hash_original_field = "B9BA2C47AA10798901FCB3AD89A619C3", hash_generated_field = "B9BA2C47AA10798901FCB3AD89A619C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.096 -0500", hash_original_field = "B9BA2C47AA10798901FCB3AD89A619C3", hash_generated_field = "B9BA2C47AA10798901FCB3AD89A619C3")
 
         boolean mVaryingColorEnable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.381 -0500", hash_original_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB", hash_generated_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.107 -0500", hash_original_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB", hash_generated_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB")
 
         String mShader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.382 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.120 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
 
         RenderScript mRS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.394 -0500", hash_original_field = "B67103FC01CD4B885D5571B0ADD4D716", hash_generated_field = "B67103FC01CD4B885D5571B0ADD4D716")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.162 -0500", hash_original_field = "B67103FC01CD4B885D5571B0ADD4D716", hash_generated_field = "B67103FC01CD4B885D5571B0ADD4D716")
 
         Slot[] mSlots;
 
@@ -86,15 +89,17 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
          *
          * @param rs Context to which the program will belong.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.396 -0500", hash_original_method = "30E90F3B75611917E8432C24A0A6175A", hash_generated_method = "7D407CF6AA77E71DBBA3D6EC3B90ECC0")
-        public Builder(RenderScript rs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.168 -0500", hash_original_method = "30E90F3B75611917E8432C24A0A6175A", hash_generated_method = "7D407CF6AA77E71DBBA3D6EC3B90ECC0")
+        
+public Builder(RenderScript rs) {
             mRS = rs;
             mSlots = new Slot[MAX_TEXTURE];
             mPointSpriteEnable = false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.395 -0500", hash_original_method = "3F6F70CDA9BD5D62D40FB2B1189D5392", hash_generated_method = "80D2C71AE69E1846D25FDCBFD9EFA22A")
-        private void buildShaderString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.165 -0500", hash_original_method = "3F6F70CDA9BD5D62D40FB2B1189D5392", hash_generated_method = "80D2C71AE69E1846D25FDCBFD9EFA22A")
+        
+private void buildShaderString() {
             mShader  = "//rs_shader_internal\n";
             mShader += "varying lowp vec4 varColor;\n";
             mShader += "varying vec2 varTex0;\n";
@@ -171,8 +176,9 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
          *
          * @return this
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.397 -0500", hash_original_method = "F52C9ED64BC7C6FC8999E2931805AE1F", hash_generated_method = "371AFD039C12D4D0D8AE6DE233BA53B0")
-        public Builder setTexture(EnvMode env, Format fmt, int slot)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.170 -0500", hash_original_method = "F52C9ED64BC7C6FC8999E2931805AE1F", hash_generated_method = "371AFD039C12D4D0D8AE6DE233BA53B0")
+        
+public Builder setTexture(EnvMode env, Format fmt, int slot)
             throws IllegalArgumentException {
             if((slot < 0) || (slot >= MAX_TEXTURE)) {
                 throw new IllegalArgumentException("MAX_TEXTURE exceeded.");
@@ -187,8 +193,9 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
          * sprite texture coordinate
          *
          **/
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.398 -0500", hash_original_method = "3DF94441BBEEF2DAAF6E4E2BA3DC7FCD", hash_generated_method = "7BEE0FD664772D9FF1AD074072BC6077")
-        public Builder setPointSpriteTexCoordinateReplacement(boolean enable) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.173 -0500", hash_original_method = "3DF94441BBEEF2DAAF6E4E2BA3DC7FCD", hash_generated_method = "7BEE0FD664772D9FF1AD074072BC6077")
+        
+public Builder setPointSpriteTexCoordinateReplacement(boolean enable) {
             mPointSpriteEnable = enable;
             return this;
         }
@@ -200,8 +207,9 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
          * fragment shader
          *
          **/
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.399 -0500", hash_original_method = "D1AB2679757C6095D46ED85B9CF52D59", hash_generated_method = "7AE46836E8824E08AD1DBCBFED407F2F")
-        public Builder setVaryingColor(boolean enable) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.175 -0500", hash_original_method = "D1AB2679757C6095D46ED85B9CF52D59", hash_generated_method = "7AE46836E8824E08AD1DBCBFED407F2F")
+        
+public Builder setVaryingColor(boolean enable) {
             mVaryingColorEnable = enable;
             return this;
         }
@@ -211,12 +219,13 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
             REPLACE (1),
             MODULATE (2),
             DECAL (3);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.383 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.123 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
 
             int mID;
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.384 -0500", hash_original_method = "BC2794D90A010B5BEE2BCC9613647072", hash_generated_method = "BC2794D90A010B5BEE2BCC9613647072")
-                EnvMode(int id) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.125 -0500", hash_original_method = "BC2794D90A010B5BEE2BCC9613647072", hash_generated_method = "BC2794D90A010B5BEE2BCC9613647072")
+                
+EnvMode(int id) {
                 mID = id;
             }
         }
@@ -227,26 +236,28 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
             LUMINANCE_ALPHA (2),
             RGB (3),
             RGBA (4);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.388 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.146 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
 
             int mID;
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.389 -0500", hash_original_method = "2B69801ED3396BD5684C671CD8CCE22F", hash_generated_method = "2B69801ED3396BD5684C671CD8CCE22F")
-                Format(int id) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.148 -0500", hash_original_method = "2B69801ED3396BD5684C671CD8CCE22F", hash_generated_method = "2B69801ED3396BD5684C671CD8CCE22F")
+                
+Format(int id) {
                 mID = id;
             }
         }
 
         
         private class Slot {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.391 -0500", hash_original_field = "9F74C5A2DE54F696FBAF5E851601C0E8", hash_generated_field = "9F74C5A2DE54F696FBAF5E851601C0E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.153 -0500", hash_original_field = "9F74C5A2DE54F696FBAF5E851601C0E8", hash_generated_field = "9F74C5A2DE54F696FBAF5E851601C0E8")
 
             EnvMode env;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.392 -0500", hash_original_field = "381386A1132E12A7CB58DF05EF5AB5BB", hash_generated_field = "381386A1132E12A7CB58DF05EF5AB5BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.156 -0500", hash_original_field = "381386A1132E12A7CB58DF05EF5AB5BB", hash_generated_field = "381386A1132E12A7CB58DF05EF5AB5BB")
 
             Format format;
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.393 -0500", hash_original_method = "6603C262DCA775BA18F529F86363B60E", hash_generated_method = "6603C262DCA775BA18F529F86363B60E")
-            Slot(EnvMode _env, Format _fmt) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.158 -0500", hash_original_method = "6603C262DCA775BA18F529F86363B60E", hash_generated_method = "6603C262DCA775BA18F529F86363B60E")
+            
+Slot(EnvMode _env, Format _fmt) {
                 env = _env;
                 format = _fmt;
             }
@@ -259,8 +270,9 @@ public class ProgramFragmentFixedFunction extends ProgramFragment {
         * state of the builder.
         *
         */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.400 -0500", hash_original_method = "3191286FB0D548047357A5725F784799", hash_generated_method = "04B816B88698BF566D662C4705F90071")
-        public ProgramFragmentFixedFunction create() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.178 -0500", hash_original_method = "3191286FB0D548047357A5725F784799", hash_generated_method = "04B816B88698BF566D662C4705F90071")
+        
+public ProgramFragmentFixedFunction create() {
             InternalBuilder sb = new InternalBuilder(mRS);
             mNumTextures = 0;
             for(int i = 0; i < MAX_TEXTURE; i ++) {

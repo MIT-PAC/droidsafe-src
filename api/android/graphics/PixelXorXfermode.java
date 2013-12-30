@@ -18,8 +18,9 @@ public class PixelXorXfermode extends Xfermode {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725099153;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.721 -0500", hash_original_method = "D83BD6D1A9BB9762D9B3F34AF8222FEA", hash_generated_method = "49761BF2B177A0B0BE27E037B184148F")
-    public PixelXorXfermode(int opColor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.941 -0500", hash_original_method = "D83BD6D1A9BB9762D9B3F34AF8222FEA", hash_generated_method = "49761BF2B177A0B0BE27E037B184148F")
+    
+public PixelXorXfermode(int opColor) {
         native_instance = nativeCreate(opColor);
     }
 

@@ -22,114 +22,114 @@ import android.view.animation.DecelerateInterpolator;
 
 
 public class LayoutTransition {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.270 -0500", hash_original_field = "4C19ABB566B055A3E37A924670A808DA", hash_generated_field = "E63A0521AAA8C6DC4279BA44E098FD23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.958 -0500", hash_original_field = "4C19ABB566B055A3E37A924670A808DA", hash_generated_field = "E63A0521AAA8C6DC4279BA44E098FD23")
 
     public static final int CHANGE_APPEARING = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.271 -0500", hash_original_field = "AF12ADCFA393E8E86815AE4F98E3D85F", hash_generated_field = "A5E247EB4D6439D9A98E49F907931252")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.960 -0500", hash_original_field = "AF12ADCFA393E8E86815AE4F98E3D85F", hash_generated_field = "A5E247EB4D6439D9A98E49F907931252")
 
     public static final int CHANGE_DISAPPEARING = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.272 -0500", hash_original_field = "617D8D451E869F839F4CBB2D7759B943", hash_generated_field = "F22B7CC5AA7D7298C87C59E48B6986CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.963 -0500", hash_original_field = "617D8D451E869F839F4CBB2D7759B943", hash_generated_field = "F22B7CC5AA7D7298C87C59E48B6986CB")
 
     public static final int APPEARING = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.273 -0500", hash_original_field = "8DC6C4F5080BEB5EF1670D11AEEC341A", hash_generated_field = "2B4B660177B7589D2F5A7A330CB80759")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.965 -0500", hash_original_field = "8DC6C4F5080BEB5EF1670D11AEEC341A", hash_generated_field = "2B4B660177B7589D2F5A7A330CB80759")
 
     public static final int DISAPPEARING = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.276 -0500", hash_original_field = "18DE96D777456C523D7D3BB6A1CE5F81", hash_generated_field = "F23425A4D82261A0713821E518F1C782")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.976 -0500", hash_original_field = "18DE96D777456C523D7D3BB6A1CE5F81", hash_generated_field = "F23425A4D82261A0713821E518F1C782")
 
     private static ObjectAnimator defaultChangeIn;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.277 -0500", hash_original_field = "4A1E3DEEEB5BB2C11B59AD401D564741", hash_generated_field = "383D2DB6CC8BE4F70A8FC6AE24EF0892")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.978 -0500", hash_original_field = "4A1E3DEEEB5BB2C11B59AD401D564741", hash_generated_field = "383D2DB6CC8BE4F70A8FC6AE24EF0892")
 
     private static ObjectAnimator defaultChangeOut;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.278 -0500", hash_original_field = "86FB6FBD261F12D7DB91CCD29E2C1D72", hash_generated_field = "9FE642298321DB1BFB3B90AC8C413400")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.980 -0500", hash_original_field = "86FB6FBD261F12D7DB91CCD29E2C1D72", hash_generated_field = "9FE642298321DB1BFB3B90AC8C413400")
 
     private static ObjectAnimator defaultFadeIn;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.279 -0500", hash_original_field = "F3BAD51C6DD8E4FA21C315D29C704485", hash_generated_field = "25D149E4F7D04D3FBA535A38951E6CA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.982 -0500", hash_original_field = "F3BAD51C6DD8E4FA21C315D29C704485", hash_generated_field = "25D149E4F7D04D3FBA535A38951E6CA0")
 
     private static ObjectAnimator defaultFadeOut;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.279 -0500", hash_original_field = "D654CBBF7E1044E4E025795BDBB6A0A2", hash_generated_field = "B0EA698E636B3BDA7398DDB39E975802")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.984 -0500", hash_original_field = "D654CBBF7E1044E4E025795BDBB6A0A2", hash_generated_field = "B0EA698E636B3BDA7398DDB39E975802")
 
     private static long DEFAULT_DURATION = 300;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.273 -0500", hash_original_field = "207532A5D14CD4FA8F863FE1CCF3410B", hash_generated_field = "75E407E7333EB2D59F0ED20EAD88E34E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.967 -0500", hash_original_field = "207532A5D14CD4FA8F863FE1CCF3410B", hash_generated_field = "75E407E7333EB2D59F0ED20EAD88E34E")
 
     private Animator mDisappearingAnim = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.274 -0500", hash_original_field = "941DD54D732E4B02C6E3F02ADB6F7821", hash_generated_field = "F269A266B00229E5734E5B06B519CF4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.969 -0500", hash_original_field = "941DD54D732E4B02C6E3F02ADB6F7821", hash_generated_field = "F269A266B00229E5734E5B06B519CF4D")
 
     private Animator mAppearingAnim = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.275 -0500", hash_original_field = "AF86CCA2DE57A65ADCD1D91B87079796", hash_generated_field = "8569DC611F2B171274327A8DFA6BA137")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.971 -0500", hash_original_field = "AF86CCA2DE57A65ADCD1D91B87079796", hash_generated_field = "8569DC611F2B171274327A8DFA6BA137")
 
     private Animator mChangingAppearingAnim = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.275 -0500", hash_original_field = "741BA5E69D672EE008AD28409FF430FB", hash_generated_field = "295E17A6E98CD794E342CB0517EC6D87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.973 -0500", hash_original_field = "741BA5E69D672EE008AD28409FF430FB", hash_generated_field = "295E17A6E98CD794E342CB0517EC6D87")
 
     private Animator mChangingDisappearingAnim = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.280 -0500", hash_original_field = "401DCA7348BFB495967F8B16D52F83DE", hash_generated_field = "A5577F39C2927B8AF67AB98D2B541767")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.986 -0500", hash_original_field = "401DCA7348BFB495967F8B16D52F83DE", hash_generated_field = "A5577F39C2927B8AF67AB98D2B541767")
 
     private long mChangingAppearingDuration = DEFAULT_DURATION;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.281 -0500", hash_original_field = "489F97FD6457AAE7C534761F9CC86F23", hash_generated_field = "463C58461ED789E13A8EEFA59D868711")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.988 -0500", hash_original_field = "489F97FD6457AAE7C534761F9CC86F23", hash_generated_field = "463C58461ED789E13A8EEFA59D868711")
 
     private long mChangingDisappearingDuration = DEFAULT_DURATION;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.281 -0500", hash_original_field = "45E72D08C240CEC0A63E06EBBA6786FB", hash_generated_field = "B1A031389441AED70DA8674A9CDD4213")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.990 -0500", hash_original_field = "45E72D08C240CEC0A63E06EBBA6786FB", hash_generated_field = "B1A031389441AED70DA8674A9CDD4213")
 
     private long mAppearingDuration = DEFAULT_DURATION;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.282 -0500", hash_original_field = "3140CFC0064E3A5DB10F873D0180C094", hash_generated_field = "83E0F49BD50CEA25C451F339C8D938A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.992 -0500", hash_original_field = "3140CFC0064E3A5DB10F873D0180C094", hash_generated_field = "83E0F49BD50CEA25C451F339C8D938A9")
 
     private long mDisappearingDuration = DEFAULT_DURATION;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.283 -0500", hash_original_field = "15AA9320328EF848673755BF1E9570A5", hash_generated_field = "6B89F75DB8D18324FDA519C3D6E9C3E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.995 -0500", hash_original_field = "15AA9320328EF848673755BF1E9570A5", hash_generated_field = "6B89F75DB8D18324FDA519C3D6E9C3E1")
 
     private long mAppearingDelay = DEFAULT_DURATION;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.284 -0500", hash_original_field = "EB600507D5DC4B177A7595EBC05176D1", hash_generated_field = "EE2346FE7169B9AB19EA56A1B913BA60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.997 -0500", hash_original_field = "EB600507D5DC4B177A7595EBC05176D1", hash_generated_field = "EE2346FE7169B9AB19EA56A1B913BA60")
 
     private long mDisappearingDelay = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.285 -0500", hash_original_field = "F6B70F97A0BBBC294C0483CD74D07531", hash_generated_field = "B72CDDC89FC836C2633888FAF590185E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.999 -0500", hash_original_field = "F6B70F97A0BBBC294C0483CD74D07531", hash_generated_field = "B72CDDC89FC836C2633888FAF590185E")
 
     private long mChangingAppearingDelay = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.286 -0500", hash_original_field = "6870591B4CF9194694FB70D98FE7173F", hash_generated_field = "A8B24D136EA5EC6890818CC10AD17C05")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.001 -0500", hash_original_field = "6870591B4CF9194694FB70D98FE7173F", hash_generated_field = "A8B24D136EA5EC6890818CC10AD17C05")
 
     private long mChangingDisappearingDelay = DEFAULT_DURATION;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.286 -0500", hash_original_field = "C69E40C26ABC3CD2EE37272CE52B66A8", hash_generated_field = "715370DF92240EF0021A1CA25FFC6060")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.003 -0500", hash_original_field = "C69E40C26ABC3CD2EE37272CE52B66A8", hash_generated_field = "715370DF92240EF0021A1CA25FFC6060")
 
     private long mChangingAppearingStagger = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.287 -0500", hash_original_field = "1C9A58E46D3413ECE51DD1780CDEA3FD", hash_generated_field = "95B0E8048A3A312DC3734A9E265C8176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.006 -0500", hash_original_field = "1C9A58E46D3413ECE51DD1780CDEA3FD", hash_generated_field = "95B0E8048A3A312DC3734A9E265C8176")
 
     private long mChangingDisappearingStagger = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.288 -0500", hash_original_field = "53D30455682B73128BC0B4EED743B79D", hash_generated_field = "3164C261F18E7FCC582837BE79E7E946")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.008 -0500", hash_original_field = "53D30455682B73128BC0B4EED743B79D", hash_generated_field = "3164C261F18E7FCC582837BE79E7E946")
 
     private TimeInterpolator mAppearingInterpolator = new AccelerateDecelerateInterpolator();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.289 -0500", hash_original_field = "8F3AD636B706F6BCE0C73EE23C1B7106", hash_generated_field = "44480B19C903085EE0CD5A188A9C0404")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.010 -0500", hash_original_field = "8F3AD636B706F6BCE0C73EE23C1B7106", hash_generated_field = "44480B19C903085EE0CD5A188A9C0404")
 
     private TimeInterpolator mDisappearingInterpolator = new AccelerateDecelerateInterpolator();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.290 -0500", hash_original_field = "A2AE8B29E642071A7FAF0789443B0A30", hash_generated_field = "6AD343EAC627700E45ADD7F9BC2E498E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.012 -0500", hash_original_field = "A2AE8B29E642071A7FAF0789443B0A30", hash_generated_field = "6AD343EAC627700E45ADD7F9BC2E498E")
 
     private TimeInterpolator mChangingAppearingInterpolator = new DecelerateInterpolator();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.290 -0500", hash_original_field = "6AB96FAA09712C3951FA8522CF378B86", hash_generated_field = "002DBF51FA8D471B18C74A9B6E24123D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.013 -0500", hash_original_field = "6AB96FAA09712C3951FA8522CF378B86", hash_generated_field = "002DBF51FA8D471B18C74A9B6E24123D")
 
     private TimeInterpolator mChangingDisappearingInterpolator = new DecelerateInterpolator();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.291 -0500", hash_original_field = "E1330B8A29F59AE7629A4826050E9280", hash_generated_field = "E1CDEDB0BCFDEF2A4DF3C7DEFC5DB240")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.016 -0500", hash_original_field = "E1330B8A29F59AE7629A4826050E9280", hash_generated_field = "E1CDEDB0BCFDEF2A4DF3C7DEFC5DB240")
 
     private final HashMap<View, Animator> pendingAnimations =
             new HashMap<View, Animator>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.292 -0500", hash_original_field = "AE55086C2A1AB873E001356F4B577B15", hash_generated_field = "8713B14FF07C44A33F515A732D4D8076")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.018 -0500", hash_original_field = "AE55086C2A1AB873E001356F4B577B15", hash_generated_field = "8713B14FF07C44A33F515A732D4D8076")
 
     private final LinkedHashMap<View, Animator> currentChangingAnimations =
             new LinkedHashMap<View, Animator>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.293 -0500", hash_original_field = "40EB9361456D86D2BE4E109759C65FA3", hash_generated_field = "755F172D8CEDE1F2AF3C01713E92C67E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.020 -0500", hash_original_field = "40EB9361456D86D2BE4E109759C65FA3", hash_generated_field = "755F172D8CEDE1F2AF3C01713E92C67E")
 
     private final LinkedHashMap<View, Animator> currentAppearingAnimations =
             new LinkedHashMap<View, Animator>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.294 -0500", hash_original_field = "66F4D0544BDC0696F122543A3C831417", hash_generated_field = "81FCC6D3A7C9183D354AEB95CEBC1072")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.023 -0500", hash_original_field = "66F4D0544BDC0696F122543A3C831417", hash_generated_field = "81FCC6D3A7C9183D354AEB95CEBC1072")
 
     private final LinkedHashMap<View, Animator> currentDisappearingAnimations =
             new LinkedHashMap<View, Animator>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.295 -0500", hash_original_field = "DBFEBE51CE6DFDCC1EDE6A540F6971E5", hash_generated_field = "41A143D43A4B7FD3193B7EDB883D2AE9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.025 -0500", hash_original_field = "DBFEBE51CE6DFDCC1EDE6A540F6971E5", hash_generated_field = "41A143D43A4B7FD3193B7EDB883D2AE9")
 
     private final HashMap<View, View.OnLayoutChangeListener> layoutChangeListenerMap =
             new HashMap<View, View.OnLayoutChangeListener>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.296 -0500", hash_original_field = "B59E57CCDC399C3D4E1E24DC89EEB19F", hash_generated_field = "62799693C20798E5E433F1B0AF6A3DC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.027 -0500", hash_original_field = "B59E57CCDC399C3D4E1E24DC89EEB19F", hash_generated_field = "62799693C20798E5E433F1B0AF6A3DC5")
 
     private long staggerDelay;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.297 -0500", hash_original_field = "8CC3982710C523CBC6F66C910948FFD6", hash_generated_field = "F165C7B3902835B1E7EE6F9F45B1EBD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.029 -0500", hash_original_field = "8CC3982710C523CBC6F66C910948FFD6", hash_generated_field = "F165C7B3902835B1E7EE6F9F45B1EBD6")
 
     private ArrayList<TransitionListener> mListeners;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.298 -0500", hash_original_field = "C20731C8230F3770F75D2E852F726EE8", hash_generated_field = "E61C51FC893874C4BB912FEBE4441512")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.031 -0500", hash_original_field = "C20731C8230F3770F75D2E852F726EE8", hash_generated_field = "E61C51FC893874C4BB912FEBE4441512")
 
     private boolean mAnimateParentHierarchy = true;
 
@@ -139,8 +139,9 @@ public class LayoutTransition {
      * events on any ViewGroup that it is set on and will run default animations for each
      * type of layout event.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.299 -0500", hash_original_method = "52DB630B34835349C84181A9ADA45542", hash_generated_method = "D6FD60071C2464339504599926CC4579")
-    public LayoutTransition() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.034 -0500", hash_original_method = "52DB630B34835349C84181A9ADA45542", hash_generated_method = "D6FD60071C2464339504599926CC4579")
+    
+public LayoutTransition() {
         if (defaultChangeIn == null) {
             // "left" is just a placeholder; we'll put real properties/values in when needed
             PropertyValuesHolder pvhLeft = PropertyValuesHolder.ofInt("left", 0, 1);
@@ -181,8 +182,9 @@ public class LayoutTransition {
      * @param duration The length of time, in milliseconds, that the transition animations
      * should last.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.300 -0500", hash_original_method = "24394BA80BA94B39DCA5B438DC3EBDB1", hash_generated_method = "139CBBC6BDE68B4B096EC42CE56154C3")
-    public void setDuration(long duration) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.036 -0500", hash_original_method = "24394BA80BA94B39DCA5B438DC3EBDB1", hash_generated_method = "139CBBC6BDE68B4B096EC42CE56154C3")
+    
+public void setDuration(long duration) {
         mChangingAppearingDuration = duration;
         mChangingDisappearingDuration = duration;
         mAppearingDuration = duration;
@@ -200,8 +202,9 @@ public class LayoutTransition {
      * @param delay The length of time, in milliseconds, to delay before starting the animation.
      * @see Animator#setStartDelay(long)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.301 -0500", hash_original_method = "939FBD8B4C5590BFCAA9E14AEC15ED50", hash_generated_method = "0B2404D63C14F2FDF7CDF15FACE94E31")
-    public void setStartDelay(int transitionType, long delay) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.039 -0500", hash_original_method = "939FBD8B4C5590BFCAA9E14AEC15ED50", hash_generated_method = "0B2404D63C14F2FDF7CDF15FACE94E31")
+    
+public void setStartDelay(int transitionType, long delay) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 mChangingAppearingDelay = delay;
@@ -229,8 +232,9 @@ public class LayoutTransition {
      * @return long The start delay of the specified animation.
      * @see Animator#getStartDelay()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.301 -0500", hash_original_method = "3F88CD33B6864BEBC3B576EB6504FB35", hash_generated_method = "8508466D282632DE4A1219D3A48B67BA")
-    public long getStartDelay(int transitionType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.042 -0500", hash_original_method = "3F88CD33B6864BEBC3B576EB6504FB35", hash_generated_method = "8508466D282632DE4A1219D3A48B67BA")
+    
+public long getStartDelay(int transitionType) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 return mChangingAppearingDuration;
@@ -256,8 +260,9 @@ public class LayoutTransition {
      * @param duration The length of time, in milliseconds, that the specified animation should run.
      * @see Animator#setDuration(long)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.302 -0500", hash_original_method = "2851CBF3AA331995F771441E9F6D0AAD", hash_generated_method = "AF0CF4855990622955D2C8F2DA3126B4")
-    public void setDuration(int transitionType, long duration) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.044 -0500", hash_original_method = "2851CBF3AA331995F771441E9F6D0AAD", hash_generated_method = "AF0CF4855990622955D2C8F2DA3126B4")
+    
+public void setDuration(int transitionType, long duration) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 mChangingAppearingDuration = duration;
@@ -285,8 +290,9 @@ public class LayoutTransition {
      * @return long The duration of the specified animation.
      * @see Animator#getDuration()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.303 -0500", hash_original_method = "F259A86CD3BB3A6D515EAAF2335DC6DD", hash_generated_method = "BCEE60D56F7309AF485DEAE31950E1F5")
-    public long getDuration(int transitionType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.046 -0500", hash_original_method = "F259A86CD3BB3A6D515EAAF2335DC6DD", hash_generated_method = "BCEE60D56F7309AF485DEAE31950E1F5")
+    
+public long getDuration(int transitionType) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 return mChangingAppearingDuration;
@@ -309,8 +315,9 @@ public class LayoutTransition {
      * @param duration The length of time, in milliseconds, to delay before launching the next
      * animation in the sequence.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.304 -0500", hash_original_method = "DB3710D74B2FBFD7C44693C4FBA40808", hash_generated_method = "111B1870A075A175A5AEEA478B5AB237")
-    public void setStagger(int transitionType, long duration) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.048 -0500", hash_original_method = "DB3710D74B2FBFD7C44693C4FBA40808", hash_generated_method = "111B1870A075A175A5AEEA478B5AB237")
+    
+public void setStagger(int transitionType, long duration) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 mChangingAppearingStagger = duration;
@@ -330,8 +337,9 @@ public class LayoutTransition {
      * @return long The length of time, in milliseconds, to delay before launching the next
      * animation in the sequence.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.305 -0500", hash_original_method = "70FCFF77D9C405B5FA9E6B4579BF3D8B", hash_generated_method = "6D42613D172E51766B0C3C2E27283690")
-    public long getStagger(int transitionType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.051 -0500", hash_original_method = "70FCFF77D9C405B5FA9E6B4579BF3D8B", hash_generated_method = "6D42613D172E51766B0C3C2E27283690")
+    
+public long getStagger(int transitionType) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 return mChangingAppearingStagger;
@@ -353,8 +361,9 @@ public class LayoutTransition {
      * @param interpolator The interpolator that the specified animation should use.
      * @see Animator#setInterpolator(TimeInterpolator)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.306 -0500", hash_original_method = "2AD5234EB4F80ED9C0D5C1F0BD7735E5", hash_generated_method = "2269DBFCD5437FCA81DA4790A143D0DE")
-    public void setInterpolator(int transitionType, TimeInterpolator interpolator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.053 -0500", hash_original_method = "2AD5234EB4F80ED9C0D5C1F0BD7735E5", hash_generated_method = "2269DBFCD5437FCA81DA4790A143D0DE")
+    
+public void setInterpolator(int transitionType, TimeInterpolator interpolator) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 mChangingAppearingInterpolator = interpolator;
@@ -382,8 +391,9 @@ public class LayoutTransition {
      * @return TimeInterpolator The interpolator that the specified animation uses.
      * @see Animator#setInterpolator(TimeInterpolator)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.307 -0500", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "6097A50CFE1AAE0F3F7BC0B8D1D65D63")
-    public TimeInterpolator getInterpolator(int transitionType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.055 -0500", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "6097A50CFE1AAE0F3F7BC0B8D1D65D63")
+    
+public TimeInterpolator getInterpolator(int transitionType) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 return mChangingAppearingInterpolator;
@@ -428,8 +438,9 @@ public class LayoutTransition {
      * @param animator The animation being assigned. A value of <code>null</code> means that no
      * animation will be run for the specified transitionType.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.307 -0500", hash_original_method = "1CE02B172FBE4A7CE10D1F87669E47EA", hash_generated_method = "4C4074951E5B1E4F9398D7CFF83A1884")
-    public void setAnimator(int transitionType, Animator animator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.057 -0500", hash_original_method = "1CE02B172FBE4A7CE10D1F87669E47EA", hash_generated_method = "4C4074951E5B1E4F9398D7CFF83A1884")
+    
+public void setAnimator(int transitionType, Animator animator) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 mChangingAppearingAnim = animator;
@@ -455,8 +466,9 @@ public class LayoutTransition {
      * @return Animator The animation being used for the given transition type.
      * @see #setAnimator(int, Animator)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.308 -0500", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "C51A0AF56F6A393099373922DBD79008")
-    public Animator getAnimator(int transitionType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.060 -0500", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "C51A0AF56F6A393099373922DBD79008")
+    
+public Animator getAnimator(int transitionType) {
         switch (transitionType) {
             case CHANGE_APPEARING:
                 return mChangingAppearingAnim;
@@ -484,8 +496,9 @@ public class LayoutTransition {
      * @param changeReason A value of APPEARING or DISAPPEARING, indicating whether the
      * transition is occuring because an item is being added to or removed from the parent.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.311 -0500", hash_original_method = "388160589FFEE2126FAAE5CBAFC89998", hash_generated_method = "620CC03CF597F8CBF6D5987D96E996A8")
-    private void runChangeTransition(final ViewGroup parent, View newView, final int changeReason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.066 -0500", hash_original_method = "388160589FFEE2126FAAE5CBAFC89998", hash_generated_method = "620CC03CF597F8CBF6D5987D96E996A8")
+    
+private void runChangeTransition(final ViewGroup parent, View newView, final int changeReason) {
 
         Animator baseAnimator = (changeReason == APPEARING) ?
                 mChangingAppearingAnim : mChangingDisappearingAnim;
@@ -568,8 +581,9 @@ public class LayoutTransition {
      * @param animateParentHierarchy A boolean value indicating whether the parents of
      * transitioning views should also be animated during the transition. Default value is true.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.312 -0500", hash_original_method = "5ECFD2D430BE870F40C042D01FD8A2D6", hash_generated_method = "83C54A14C0718ED0F9CD4ADC14FF78AB")
-    public void setAnimateParentHierarchy(boolean animateParentHierarchy) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.068 -0500", hash_original_method = "5ECFD2D430BE870F40C042D01FD8A2D6", hash_generated_method = "83C54A14C0718ED0F9CD4ADC14FF78AB")
+    
+public void setAnimateParentHierarchy(boolean animateParentHierarchy) {
         mAnimateParentHierarchy = animateParentHierarchy;
     }
 
@@ -577,8 +591,9 @@ public class LayoutTransition {
      * Utility function called by runChangingTransition for both the children and the parent
      * hierarchy.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.319 -0500", hash_original_method = "108854515942B7EF6A63499B84E31466", hash_generated_method = "08E07596C8E954E87ED92336E5211220")
-    private void setupChangeAnimation(final ViewGroup parent, final int changeReason,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.089 -0500", hash_original_method = "108854515942B7EF6A63499B84E31466", hash_generated_method = "08E07596C8E954E87ED92336E5211220")
+    
+private void setupChangeAnimation(final ViewGroup parent, final int changeReason,
             Animator baseAnimator, final long duration, final View child) {
 
         // If we already have a listener for this child, then we've already set up the
@@ -728,8 +743,9 @@ public class LayoutTransition {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.320 -0500", hash_original_method = "7222BE89A56886A0CF62DC8766C00475", hash_generated_method = "FAC29BD5275371BFCD9C73BB60490696")
-    public void startChangingAnimations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.092 -0500", hash_original_method = "7222BE89A56886A0CF62DC8766C00475", hash_generated_method = "FAC29BD5275371BFCD9C73BB60490696")
+    
+public void startChangingAnimations() {
         LinkedHashMap<View, Animator> currentAnimCopy =
                 (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
         for (Animator anim : currentAnimCopy.values()) {
@@ -748,8 +764,9 @@ public class LayoutTransition {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.321 -0500", hash_original_method = "7BA742550F1E1298AB8FE77F45C4383D", hash_generated_method = "DDAB7213622B60870B3DDF4B8F9529AA")
-    public void endChangingAnimations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.094 -0500", hash_original_method = "7BA742550F1E1298AB8FE77F45C4383D", hash_generated_method = "DDAB7213622B60870B3DDF4B8F9529AA")
+    
+public void endChangingAnimations() {
         LinkedHashMap<View, Animator> currentAnimCopy =
                 (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
         for (Animator anim : currentAnimCopy.values()) {
@@ -766,8 +783,9 @@ public class LayoutTransition {
      * @return true if CHANGE_APPEARING or CHANGE_DISAPPEARING animations are currently
      * running.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.321 -0500", hash_original_method = "8C9364165F532DD8BD43415668542398", hash_generated_method = "D88BD879963879B9E1B8DEA5D63DE73C")
-    public boolean isChangingLayout() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.096 -0500", hash_original_method = "8C9364165F532DD8BD43415668542398", hash_generated_method = "D88BD879963879B9E1B8DEA5D63DE73C")
+    
+public boolean isChangingLayout() {
         return (currentChangingAnimations.size() > 0);
     }
 
@@ -776,8 +794,9 @@ public class LayoutTransition {
      *
      * @return true if any animations in the transition are running.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.322 -0500", hash_original_method = "7F683046BB72ECC23A172B1D3B81B266", hash_generated_method = "56869A7660E1C3AD74C0D688406DECD5")
-    public boolean isRunning() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.098 -0500", hash_original_method = "7F683046BB72ECC23A172B1D3B81B266", hash_generated_method = "56869A7660E1C3AD74C0D688406DECD5")
+    
+public boolean isRunning() {
         return (currentChangingAnimations.size() > 0 || currentAppearingAnimations.size() > 0 ||
                 currentDisappearingAnimations.size() > 0);
     }
@@ -790,8 +809,9 @@ public class LayoutTransition {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.323 -0500", hash_original_method = "2E46A59670A61A0AF64FD97BDAF7B728", hash_generated_method = "828BE72ADF06D717936B8246B18C9535")
-    public void cancel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.101 -0500", hash_original_method = "2E46A59670A61A0AF64FD97BDAF7B728", hash_generated_method = "828BE72ADF06D717936B8246B18C9535")
+    
+public void cancel() {
         if (currentChangingAnimations.size() > 0) {
             LinkedHashMap<View, Animator> currentAnimCopy =
                     (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
@@ -826,8 +846,9 @@ public class LayoutTransition {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.324 -0500", hash_original_method = "19B870791205108BA3B602A2E8CB5138", hash_generated_method = "ED4F98EBA2B28BCF9848A8F63679AE29")
-    public void cancel(int transitionType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.103 -0500", hash_original_method = "19B870791205108BA3B602A2E8CB5138", hash_generated_method = "ED4F98EBA2B28BCF9848A8F63679AE29")
+    
+public void cancel(int transitionType) {
         switch (transitionType) {
             case CHANGE_APPEARING:
             case CHANGE_DISAPPEARING:
@@ -881,8 +902,9 @@ public class LayoutTransition {
      * @param parent The ViewGroup to which the View is being added.
      * @param child The View being added to the ViewGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.326 -0500", hash_original_method = "071036D6A0EA050ACF09A35752DC1D52", hash_generated_method = "AD15DD92D58E9CC695BBD917D3BF7904")
-    private void runAppearingTransition(final ViewGroup parent, final View child) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.109 -0500", hash_original_method = "071036D6A0EA050ACF09A35752DC1D52", hash_generated_method = "AD15DD92D58E9CC695BBD917D3BF7904")
+    
+private void runAppearingTransition(final ViewGroup parent, final View child) {
         Animator currentAnimation = currentDisappearingAnimations.get(child);
         if (currentAnimation != null) {
             currentAnimation.cancel();
@@ -923,8 +945,9 @@ public class LayoutTransition {
      * @param parent The ViewGroup from which the View is being removed.
      * @param child The View being removed from the ViewGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.328 -0500", hash_original_method = "202CDBACC5F0926CC1D7E1540267464D", hash_generated_method = "CDF12FD46F3BA8C8CF298C4F939667E9")
-    private void runDisappearingTransition(final ViewGroup parent, final View child) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.115 -0500", hash_original_method = "202CDBACC5F0926CC1D7E1540267464D", hash_generated_method = "CDF12FD46F3BA8C8CF298C4F939667E9")
+    
+private void runDisappearingTransition(final ViewGroup parent, final View child) {
         Animator currentAnimation = currentAppearingAnimations.get(child);
         if (currentAnimation != null) {
             currentAnimation.cancel();
@@ -968,8 +991,9 @@ public class LayoutTransition {
      * @param parent The ViewGroup to which the View is being added.
      * @param child The View being added to the ViewGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.330 -0500", hash_original_method = "05533C05F33D5C5B655A5BABA4CC6F65", hash_generated_method = "97F066157AF6A5B4BB9E2F793964FAF4")
-    public void addChild(ViewGroup parent, View child) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.118 -0500", hash_original_method = "05533C05F33D5C5B655A5BABA4CC6F65", hash_generated_method = "97F066157AF6A5B4BB9E2F793964FAF4")
+    
+public void addChild(ViewGroup parent, View child) {
         // Want disappearing animations to finish up before proceeding
         cancel(DISAPPEARING);
         // Also, cancel changing animations so that we start fresh ones from current locations
@@ -992,8 +1016,9 @@ public class LayoutTransition {
      * @param parent The ViewGroup to which the View is being added.
      * @param child The View being added to the ViewGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.331 -0500", hash_original_method = "5867E97EE566113A4AD2D7416A9B4CB1", hash_generated_method = "D390D692C34DE48F67E907E2804A3BE8")
-    public void showChild(ViewGroup parent, View child) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.120 -0500", hash_original_method = "5867E97EE566113A4AD2D7416A9B4CB1", hash_generated_method = "D390D692C34DE48F67E907E2804A3BE8")
+    
+public void showChild(ViewGroup parent, View child) {
         addChild(parent, child);
     }
 
@@ -1006,8 +1031,9 @@ public class LayoutTransition {
      * @param parent The ViewGroup from which the View is being removed.
      * @param child The View being removed from the ViewGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.332 -0500", hash_original_method = "E23F457F66AC508EC3728A00193F4832", hash_generated_method = "B653AD6F86B79032AB814C58C8307159")
-    public void removeChild(ViewGroup parent, View child) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.122 -0500", hash_original_method = "E23F457F66AC508EC3728A00193F4832", hash_generated_method = "B653AD6F86B79032AB814C58C8307159")
+    
+public void removeChild(ViewGroup parent, View child) {
         // Want appearing animations to finish up before proceeding
         cancel(APPEARING);
         // Also, cancel changing animations so that we start fresh ones from current locations
@@ -1030,8 +1056,9 @@ public class LayoutTransition {
      * @param parent The ViewGroup from which the View is being removed.
      * @param child The View being removed from the ViewGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.332 -0500", hash_original_method = "59CF94EEC1336BEEB8FFF5467E6ED5F9", hash_generated_method = "63BFB9BB3D76E970A92ECED557CACBB5")
-    public void hideChild(ViewGroup parent, View child) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.125 -0500", hash_original_method = "59CF94EEC1336BEEB8FFF5467E6ED5F9", hash_generated_method = "63BFB9BB3D76E970A92ECED557CACBB5")
+    
+public void hideChild(ViewGroup parent, View child) {
         removeChild(parent, child);
     }
 
@@ -1041,8 +1068,9 @@ public class LayoutTransition {
      *
      * @param listener The listener that will be called when layout bounds change.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.333 -0500", hash_original_method = "167EED27AB5F7469F2545513C43EBDC4", hash_generated_method = "22C1304A7D61036CDD4AFDF25D7CF527")
-    public void addTransitionListener(TransitionListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.127 -0500", hash_original_method = "167EED27AB5F7469F2545513C43EBDC4", hash_generated_method = "22C1304A7D61036CDD4AFDF25D7CF527")
+    
+public void addTransitionListener(TransitionListener listener) {
         if (mListeners == null) {
             mListeners = new ArrayList<TransitionListener>();
         }
@@ -1054,8 +1082,9 @@ public class LayoutTransition {
      *
      * @param listener The listener for layout bounds change.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.334 -0500", hash_original_method = "CD0DE6419C69039B8FDEE8C2D5BC497D", hash_generated_method = "248C1C952D163FCE25996597B9DE3951")
-    public void removeTransitionListener(TransitionListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.129 -0500", hash_original_method = "CD0DE6419C69039B8FDEE8C2D5BC497D", hash_generated_method = "248C1C952D163FCE25996597B9DE3951")
+    
+public void removeTransitionListener(TransitionListener listener) {
         if (mListeners == null) {
             return;
         }
@@ -1066,8 +1095,9 @@ public class LayoutTransition {
      * Gets the current list of listeners for layout changes.
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.335 -0500", hash_original_method = "F0DD3EC0CE94CE6304D7C3009A3E39A6", hash_generated_method = "881B9E5CA5AA55FE67201917DF3AE25A")
-    public List<TransitionListener> getTransitionListeners() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.132 -0500", hash_original_method = "F0DD3EC0CE94CE6304D7C3009A3E39A6", hash_generated_method = "881B9E5CA5AA55FE67201917DF3AE25A")
+    
+public List<TransitionListener> getTransitionListeners() {
         return mListeners;
     }
 }

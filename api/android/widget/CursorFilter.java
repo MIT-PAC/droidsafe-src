@@ -9,25 +9,28 @@ import android.database.Cursor;
 
 
 class CursorFilter extends Filter {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.349 -0500", hash_original_field = "D7B21BB19581EA5872B7B46EEFBFEFD2", hash_generated_field = "D7B21BB19581EA5872B7B46EEFBFEFD2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.218 -0500", hash_original_field = "D7B21BB19581EA5872B7B46EEFBFEFD2", hash_generated_field = "D7B21BB19581EA5872B7B46EEFBFEFD2")
 
     
     CursorFilterClient mClient;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.350 -0500", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "D61DC331CF58D286B36C03C7DC72D315")
-    CursorFilter(CursorFilterClient client) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.222 -0500", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "D61DC331CF58D286B36C03C7DC72D315")
+    
+CursorFilter(CursorFilterClient client) {
         mClient = client;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.351 -0500", hash_original_method = "13FD068C641361B638C17FBE36928984", hash_generated_method = "FF91822F802434705CBC4C09319997FF")
-    @Override
-public CharSequence convertResultToString(Object resultValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.224 -0500", hash_original_method = "13FD068C641361B638C17FBE36928984", hash_generated_method = "FF91822F802434705CBC4C09319997FF")
+    
+@Override
+    public CharSequence convertResultToString(Object resultValue) {
         return mClient.convertToString((Cursor) resultValue);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.352 -0500", hash_original_method = "A46F4651EB2D092BF8983D238E1886EF", hash_generated_method = "E68AF8F684BAC8BB9C76E876AB44A3BD")
-    @Override
-protected FilterResults performFiltering(CharSequence constraint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.226 -0500", hash_original_method = "A46F4651EB2D092BF8983D238E1886EF", hash_generated_method = "E68AF8F684BAC8BB9C76E876AB44A3BD")
+    
+@Override
+    protected FilterResults performFiltering(CharSequence constraint) {
         Cursor cursor = mClient.runQueryOnBackgroundThread(constraint);
 
         FilterResults results = new FilterResults();
@@ -41,9 +44,10 @@ protected FilterResults performFiltering(CharSequence constraint) {
         return results;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:58.353 -0500", hash_original_method = "9BA8484E000B7F5A5243E4175A8A6AA1", hash_generated_method = "F36CBE0D47BEC60B532B63E6A8C401B3")
-    @Override
-protected void publishResults(CharSequence constraint, FilterResults results) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.229 -0500", hash_original_method = "9BA8484E000B7F5A5243E4175A8A6AA1", hash_generated_method = "F36CBE0D47BEC60B532B63E6A8C401B3")
+    
+@Override
+    protected void publishResults(CharSequence constraint, FilterResults results) {
         Cursor oldCursor = mClient.getCursor();
         
         if (results.values != null && results.values != oldCursor) {

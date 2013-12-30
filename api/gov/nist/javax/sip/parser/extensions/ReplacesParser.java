@@ -18,8 +18,9 @@ import java.text.ParseException;
 
 public class ReplacesParser extends ParametersParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.591 -0500", hash_original_method = "692C1299D37731F69C2749F85944CAD1", hash_generated_method = "0778FB052F7B489AD21896898A219B9A")
-    public static void main(String args[]) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.847 -0500", hash_original_method = "692C1299D37731F69C2749F85944CAD1", hash_generated_method = "0778FB052F7B489AD21896898A219B9A")
+    
+public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Replaces: 12345th5z8z\n",
                 "Replaces: 12345th5z8z;to-tag=tozght6-45;from-tag=fromzght789-337-2\n",
@@ -40,8 +41,9 @@ public class ReplacesParser extends ParametersParser {
      * Creates new CallIDParser
      * @param callID message to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.588 -0500", hash_original_method = "F53F10172FA8BD8FD32B526A24946E78", hash_generated_method = "282ADED346198690760F95FCEC2D8702")
-    public ReplacesParser(String callID) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.839 -0500", hash_original_method = "F53F10172FA8BD8FD32B526A24946E78", hash_generated_method = "282ADED346198690760F95FCEC2D8702")
+    
+public ReplacesParser(String callID) {
         super(callID);
     }
 
@@ -49,8 +51,9 @@ public class ReplacesParser extends ParametersParser {
      * Constructor
      * @param lexer Lexer to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.589 -0500", hash_original_method = "668CF87BAE793626F7B81C622AF1AD1A", hash_generated_method = "110B1695C4985FA9BBEFB26317F22327")
-    protected ReplacesParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.842 -0500", hash_original_method = "668CF87BAE793626F7B81C622AF1AD1A", hash_generated_method = "110B1695C4985FA9BBEFB26317F22327")
+    
+protected ReplacesParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -59,8 +62,9 @@ public class ReplacesParser extends ParametersParser {
      * @return SIPHeader (CallID object)
      * @throws ParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.590 -0500", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "3518CD312AFC52DA7EF5346FA10E1FB5")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.845 -0500", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "3518CD312AFC52DA7EF5346FA10E1FB5")
+    
+public SIPHeader parse() throws ParseException {
         if (debug)
             dbg_enter("parse");
         try {

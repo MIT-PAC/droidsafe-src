@@ -23,14 +23,15 @@ public abstract class SocketFactory {
      *
      * @return the system default socket factory.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.698 -0500", hash_original_method = "94A92FA9F3862BBC2F949BB5EF556892", hash_generated_method = "77B5BFA33B79EE4E2EC4F32DFDC5EB44")
-    public static synchronized SocketFactory getDefault() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.805 -0500", hash_original_method = "94A92FA9F3862BBC2F949BB5EF556892", hash_generated_method = "77B5BFA33B79EE4E2EC4F32DFDC5EB44")
+    
+public static synchronized SocketFactory getDefault() {
         if (defaultFactory == null) {
             defaultFactory = new DefaultSocketFactory();
         }
         return defaultFactory;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.697 -0500", hash_original_field = "7E3B37F826EA75D27C247D416E7C0D99", hash_generated_field = "56F0D4B4CAC1522C61207F4CDB9A2E1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.803 -0500", hash_original_field = "7E3B37F826EA75D27C247D416E7C0D99", hash_generated_field = "56F0D4B4CAC1522C61207F4CDB9A2E1E")
 
 
     private static SocketFactory defaultFactory;
@@ -38,8 +39,9 @@ public abstract class SocketFactory {
     /**
      * Creates a new {@code SocketFactory} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.698 -0500", hash_original_method = "558E5CF77A92B4D322EAE73AA7FC9ED5", hash_generated_method = "FF97926B4FA8C53D65322F48A6AC6EB4")
-    protected SocketFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.808 -0500", hash_original_method = "558E5CF77A92B4D322EAE73AA7FC9ED5", hash_generated_method = "FF97926B4FA8C53D65322F48A6AC6EB4")
+    
+protected SocketFactory() {
     }
 
     /**
@@ -51,8 +53,9 @@ public abstract class SocketFactory {
      * @throws IOException
      *             if an error occurs while creating a new socket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.699 -0500", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "3223CC07973034D16BC112F67CE7D73F")
-    public Socket createSocket() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.810 -0500", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "3223CC07973034D16BC112F67CE7D73F")
+    
+public Socket createSocket() throws IOException {
         // follow RI's behavior
         throw new SocketException("Unconnected sockets not implemented");
     }
@@ -74,8 +77,9 @@ public abstract class SocketFactory {
      *             if the specified host is unknown or the IP address could not
      *             be resolved.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.700 -0500", hash_original_method = "C95CA781A864BA87FB97D9FD6525423C", hash_generated_method = "98A3CD8FE02D9C8C3BA2DDCCC69A24C2")
-    public abstract Socket createSocket(String host, int port) throws IOException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.812 -0500", hash_original_method = "C95CA781A864BA87FB97D9FD6525423C", hash_generated_method = "98A3CD8FE02D9C8C3BA2DDCCC69A24C2")
+    
+public abstract Socket createSocket(String host, int port) throws IOException,
             UnknownHostException;
 
     /**
@@ -101,8 +105,9 @@ public abstract class SocketFactory {
      *             if the specified host is unknown or the IP address could not
      *             be resolved.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.701 -0500", hash_original_method = "A1DC492B94BC729FC090E1C6AD76416C", hash_generated_method = "F32C32B0894205694B4E47BCFD04E606")
-    public abstract Socket createSocket(String host, int port, InetAddress localHost, int localPort)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.814 -0500", hash_original_method = "A1DC492B94BC729FC090E1C6AD76416C", hash_generated_method = "F32C32B0894205694B4E47BCFD04E606")
+    
+public abstract Socket createSocket(String host, int port, InetAddress localHost, int localPort)
             throws IOException, UnknownHostException;
 
     /**
@@ -119,8 +124,9 @@ public abstract class SocketFactory {
      * @throws IOException
      *             if an error occurs while creating a new socket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.702 -0500", hash_original_method = "B9B39D1CB99FF18D629D38672F44F910", hash_generated_method = "66B94998F53DC6534AACD9B3518B694E")
-    public abstract Socket createSocket(InetAddress host, int port) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.817 -0500", hash_original_method = "B9B39D1CB99FF18D629D38672F44F910", hash_generated_method = "66B94998F53DC6534AACD9B3518B694E")
+    
+public abstract Socket createSocket(InetAddress host, int port) throws IOException;
 
 
     /**
@@ -143,8 +149,9 @@ public abstract class SocketFactory {
      * @throws IOException
      *             if an error occurs while creating a new socket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.702 -0500", hash_original_method = "898886BBDBE8C5251E28416FF4767287", hash_generated_method = "FE34E03AF12C3D8151725C29B50001CD")
-    public abstract Socket createSocket(InetAddress address, int port, InetAddress localAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.819 -0500", hash_original_method = "898886BBDBE8C5251E28416FF4767287", hash_generated_method = "FE34E03AF12C3D8151725C29B50001CD")
+    
+public abstract Socket createSocket(InetAddress address, int port, InetAddress localAddress,
             int localPort) throws IOException;
 }
 

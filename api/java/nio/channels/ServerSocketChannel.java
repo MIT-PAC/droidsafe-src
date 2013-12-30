@@ -25,8 +25,9 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.592 -0500", hash_original_method = "34D19E8F6CC7AE23963D26F15FC056F7", hash_generated_method = "82BC2C8DDAA1412A8ADF42B437FD7D7F")
-    public static ServerSocketChannel open() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.380 -0500", hash_original_method = "34D19E8F6CC7AE23963D26F15FC056F7", hash_generated_method = "82BC2C8DDAA1412A8ADF42B437FD7D7F")
+    
+public static ServerSocketChannel open() throws IOException {
         return SelectorProvider.provider().openServerSocketChannel();
     }
 
@@ -36,8 +37,9 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
      * @param selectorProvider
      *            an instance of SelectorProvider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.591 -0500", hash_original_method = "D01FB77CE4D99625B967A0B24C153D7F", hash_generated_method = "D1CAF59EE5D623AF472B9D7554336637")
-    protected ServerSocketChannel(SelectorProvider selectorProvider) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.378 -0500", hash_original_method = "D01FB77CE4D99625B967A0B24C153D7F", hash_generated_method = "D1CAF59EE5D623AF472B9D7554336637")
+    
+protected ServerSocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
     }
 
@@ -49,9 +51,10 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
      * @see java.nio.channels.SelectableChannel#validOps()
      * @return the operations supported by this channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.593 -0500", hash_original_method = "63BB8F155E94FEBA5DA1D0A1F3E44C8C", hash_generated_method = "93311AFBDA5C9F832C6547EFAF34981A")
-    @Override
-public final int validOps() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.383 -0500", hash_original_method = "63BB8F155E94FEBA5DA1D0A1F3E44C8C", hash_generated_method = "93311AFBDA5C9F832C6547EFAF34981A")
+    
+@Override
+    public final int validOps() {
         return SelectionKey.OP_ACCEPT;
     }
 
@@ -61,8 +64,9 @@ public final int validOps() {
      *
      * @return the server-socket assigned to this channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.594 -0500", hash_original_method = "E46E31344319076C9803158D28BD500C", hash_generated_method = "632783B6BE4977774D73D2AA87CFFB62")
-    public abstract ServerSocket socket();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.386 -0500", hash_original_method = "E46E31344319076C9803158D28BD500C", hash_generated_method = "632783B6BE4977774D73D2AA87CFFB62")
+    
+public abstract ServerSocket socket();
 
     /**
      * Accepts a connection to this server-socket channel.
@@ -91,8 +95,9 @@ public final int validOps() {
      * @throws NotYetBoundException
      *             if the socket has not yet been bound.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.595 -0500", hash_original_method = "F5741EF9698B4CF9EEEA6AE06A1F48D2", hash_generated_method = "D333A8257FEB8A1F812C98D1166ABF69")
-    public abstract SocketChannel accept() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.389 -0500", hash_original_method = "F5741EF9698B4CF9EEEA6AE06A1F48D2", hash_generated_method = "D333A8257FEB8A1F812C98D1166ABF69")
+    
+public abstract SocketChannel accept() throws IOException;
 
     
 }

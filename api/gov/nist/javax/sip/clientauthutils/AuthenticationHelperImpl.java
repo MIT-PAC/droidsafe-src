@@ -38,20 +38,20 @@ import javax.sip.message.Response;
 
 
 public class AuthenticationHelperImpl implements AuthenticationHelper {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.220 -0500", hash_original_field = "97A26D8BD8CC9D6A8A6173064B299B5B", hash_generated_field = "1A1B69CD5FD1781DFE3A277E582E290E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.489 -0500", hash_original_field = "97A26D8BD8CC9D6A8A6173064B299B5B", hash_generated_field = "1A1B69CD5FD1781DFE3A277E582E290E")
 
     private CredentialsCache cachedCredentials;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.220 -0500", hash_original_field = "C27B4CFF7ED57BCE405C9A2519668187", hash_generated_field = "BFC31B1DC824029BF180F9CDA8004E27")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.493 -0500", hash_original_field = "C27B4CFF7ED57BCE405C9A2519668187", hash_generated_field = "BFC31B1DC824029BF180F9CDA8004E27")
 
     private Object accountManager = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.221 -0500", hash_original_field = "10A2CC1A3815FEE16ABD51761A52F26D", hash_generated_field = "1DEC16ADC00415FCFA26FDBCB5573275")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.495 -0500", hash_original_field = "10A2CC1A3815FEE16ABD51761A52F26D", hash_generated_field = "1DEC16ADC00415FCFA26FDBCB5573275")
 
     private HeaderFactory headerFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.222 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.498 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
 
     private SipStackImpl sipStack;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.223 -0500", hash_original_field = "738C3D18449F14F8BF2AE2302B0A1011", hash_generated_field = "738C3D18449F14F8BF2AE2302B0A1011")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.500 -0500", hash_original_field = "738C3D18449F14F8BF2AE2302B0A1011", hash_generated_field = "738C3D18449F14F8BF2AE2302B0A1011")
 
 
     Timer timer;
@@ -64,8 +64,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      * @param accountManager -- an implementation of the AccountManager interface.
      * @param headerFactory -- header factory.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.224 -0500", hash_original_method = "F290994E580301A1A06D86741D2EE4F7", hash_generated_method = "33B7CE5A0CBE6C6AB083EADD5FC8BFB9")
-    public AuthenticationHelperImpl(SipStackImpl sipStack, AccountManager accountManager,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.503 -0500", hash_original_method = "F290994E580301A1A06D86741D2EE4F7", hash_generated_method = "33B7CE5A0CBE6C6AB083EADD5FC8BFB9")
+    
+public AuthenticationHelperImpl(SipStackImpl sipStack, AccountManager accountManager,
             HeaderFactory headerFactory) {
         this.accountManager = accountManager;
         this.headerFactory = headerFactory;
@@ -82,8 +83,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      * @param accountManager -- an implementation of the AccountManager interface.
      * @param headerFactory -- header factory.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.226 -0500", hash_original_method = "9D2E3CB72F7305E91EB5EE506EB32A3F", hash_generated_method = "FA1055DE4A5DF1618E1899C9039840B3")
-    public AuthenticationHelperImpl(SipStackImpl sipStack, SecureAccountManager accountManager,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.506 -0500", hash_original_method = "9D2E3CB72F7305E91EB5EE506EB32A3F", hash_generated_method = "FA1055DE4A5DF1618E1899C9039840B3")
+    
+public AuthenticationHelperImpl(SipStackImpl sipStack, SecureAccountManager accountManager,
             HeaderFactory headerFactory) {
         this.accountManager = accountManager;
         this.headerFactory = headerFactory;
@@ -99,8 +101,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      * @see gov.nist.javax.sip.clientauthutils.AuthenticationHelper#handleChallenge(javax.sip.message.Response,
      *      javax.sip.ClientTransaction, javax.sip.SipProvider)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.228 -0500", hash_original_method = "CD11AFCBEA5D85B140502117B9E2B2FE", hash_generated_method = "8FCC82F4671DFF458822C68BE5416359")
-    public ClientTransaction handleChallenge(Response challenge,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.512 -0500", hash_original_method = "CD11AFCBEA5D85B140502117B9E2B2FE", hash_generated_method = "8FCC82F4671DFF458822C68BE5416359")
+    
+public ClientTransaction handleChallenge(Response challenge,
             ClientTransaction challengedTransaction, SipProvider transactionCreator, int cacheTime)
             throws SipException, NullPointerException {
         try {
@@ -270,8 +273,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      *
      * @throws OperationFailedException if auth header was malformated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.229 -0500", hash_original_method = "2D1C964540C22A20DCB24ADF01A4F207", hash_generated_method = "3C62CCFD7B649592248DE3F9EE489D88")
-    private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.516 -0500", hash_original_method = "2D1C964540C22A20DCB24ADF01A4F207", hash_generated_method = "3C62CCFD7B649592248DE3F9EE489D88")
+    
+private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
             WWWAuthenticateHeader authHeader, UserCredentials userCredentials) {
         String response = null;
 
@@ -338,8 +342,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      *
      * @throws OperationFailedException if auth header was malformated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.231 -0500", hash_original_method = "122A01004B39FE573FF7374B710A1EFB", hash_generated_method = "18E181D32449677DD9947AC370571D70")
-    private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.519 -0500", hash_original_method = "122A01004B39FE573FF7374B710A1EFB", hash_generated_method = "18E181D32449677DD9947AC370571D70")
+    
+private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
             WWWAuthenticateHeader authHeader, UserCredentialHash userCredentials) {
         String response = null;
 
@@ -399,8 +404,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      * @param request the Request whose branchID we'd like to remove.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.232 -0500", hash_original_method = "ADD4EE56A02B7B5492F16169DF575C77", hash_generated_method = "C79BF4B67E3189EEF19E9080990D2DC9")
-    private void removeBranchID(Request request) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.522 -0500", hash_original_method = "ADD4EE56A02B7B5492F16169DF575C77", hash_generated_method = "C79BF4B67E3189EEF19E9080990D2DC9")
+    
+private void removeBranchID(Request request) {
 
         ViaHeader viaHeader = (ViaHeader) request.getHeader(ViaHeader.NAME);
 
@@ -413,8 +419,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      *
      * @see gov.nist.javax.sip.clientauthutils.AuthenticationHelper#attachAuthenticationHeaders(javax.sip.message.Request)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.233 -0500", hash_original_method = "B9EE184222D97BBFBAC451553E77E803", hash_generated_method = "A798D3698DF72238D1C6CD71B2A220E9")
-    public void setAuthenticationHeaders(Request request) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.524 -0500", hash_original_method = "B9EE184222D97BBFBAC451553E77E803", hash_generated_method = "A798D3698DF72238D1C6CD71B2A220E9")
+    
+public void setAuthenticationHeaders(Request request) {
         SIPRequest sipRequest = (SIPRequest) request;
 
         String callId = sipRequest.getCallId().getCallId();
@@ -440,8 +447,9 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
      *
      * @see gov.nist.javax.sip.clientauthutils.AuthenticationHelper#removeCachedAuthenticationHeaders(java.lang.String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.234 -0500", hash_original_method = "43BBEEB97A3047C63D843E4DFDBBA534", hash_generated_method = "BF571E1D8212250C7306D7DD8B674A4E")
-    public void removeCachedAuthenticationHeaders(String callId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.527 -0500", hash_original_method = "43BBEEB97A3047C63D843E4DFDBBA534", hash_generated_method = "BF571E1D8212250C7306D7DD8B674A4E")
+    
+public void removeCachedAuthenticationHeaders(String callId) {
         if (callId == null)
             throw new NullPointerException("Null callId argument ");
         this.cachedCredentials.removeAuthenticationHeader(callId);

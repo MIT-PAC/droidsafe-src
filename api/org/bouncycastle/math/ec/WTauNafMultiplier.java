@@ -19,8 +19,9 @@ class WTauNafMultiplier implements ECMultiplier {
      * @param u The the WTNAF of <code>&lambda;</code>..
      * @return <code>&lambda; * p</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.386 -0500", hash_original_method = "F00CA9D97108BA5070CFC1FB26407FEF", hash_generated_method = "A74E8B70C66ABBF9E0F80DF05BFAF283")
-    private static ECPoint.F2m multiplyFromWTnaf(ECPoint.F2m p, byte[] u,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.873 -0500", hash_original_method = "F00CA9D97108BA5070CFC1FB26407FEF", hash_generated_method = "A74E8B70C66ABBF9E0F80DF05BFAF283")
+    
+private static ECPoint.F2m multiplyFromWTnaf(ECPoint.F2m p, byte[] u,
             PreCompInfo preCompInfo)
     {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
@@ -72,8 +73,9 @@ class WTauNafMultiplier implements ECMultiplier {
      * @param k The integer by which to multiply <code>k</code>.
      * @return <code>p</code> multiplied by <code>k</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.384 -0500", hash_original_method = "02F90693504CEA800318EF0ACD8D13BB", hash_generated_method = "25146FF2DF1DCE7739EE65892126F292")
-    public ECPoint multiply(ECPoint point, BigInteger k, PreCompInfo preCompInfo)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.868 -0500", hash_original_method = "02F90693504CEA800318EF0ACD8D13BB", hash_generated_method = "25146FF2DF1DCE7739EE65892126F292")
+    
+public ECPoint multiply(ECPoint point, BigInteger k, PreCompInfo preCompInfo)
     {
         if (!(point instanceof ECPoint.F2m))
         {
@@ -104,8 +106,9 @@ class WTauNafMultiplier implements ECMultiplier {
      * <code>[&tau;]</code>-adic NAF.
      * @return <code>p</code> multiplied by <code>&lambda;</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.385 -0500", hash_original_method = "35C9D9252ADD71DF3C65B7738D13F8CD", hash_generated_method = "5DE4D3C53F738BC1AF89FB7587EED53B")
-    private ECPoint.F2m multiplyWTnaf(ECPoint.F2m p, ZTauElement lambda,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.871 -0500", hash_original_method = "35C9D9252ADD71DF3C65B7738D13F8CD", hash_generated_method = "5DE4D3C53F738BC1AF89FB7587EED53B")
+    
+private ECPoint.F2m multiplyWTnaf(ECPoint.F2m p, ZTauElement lambda,
             PreCompInfo preCompInfo, byte a, byte mu)
     {
         ZTauElement[] alpha;

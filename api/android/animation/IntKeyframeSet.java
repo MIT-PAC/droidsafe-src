@@ -13,33 +13,36 @@ import android.animation.Keyframe.IntKeyframe;
 
 
 class IntKeyframeSet extends KeyframeSet {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.734 -0500", hash_original_field = "D7C570C1A8BC4A63589CBEB595FA32A4", hash_generated_field = "CCD07B82BF514AF2BA45DC7821C1FB70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.280 -0500", hash_original_field = "D7C570C1A8BC4A63589CBEB595FA32A4", hash_generated_field = "CCD07B82BF514AF2BA45DC7821C1FB70")
 
     private int firstValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.735 -0500", hash_original_field = "F6660164170FAEB6EBE204DD70033325", hash_generated_field = "C61F9B7F3773608B569D6EA3B1F7CFAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.282 -0500", hash_original_field = "F6660164170FAEB6EBE204DD70033325", hash_generated_field = "C61F9B7F3773608B569D6EA3B1F7CFAB")
 
     private int lastValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.736 -0500", hash_original_field = "188BB588952B109C42F8A434D5AA24CC", hash_generated_field = "AF830F3ABC6E7D884EA4ED2FCFAB117E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.284 -0500", hash_original_field = "188BB588952B109C42F8A434D5AA24CC", hash_generated_field = "AF830F3ABC6E7D884EA4ED2FCFAB117E")
 
     private int deltaValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.737 -0500", hash_original_field = "F412180418A11B6AA562D209649B7A4F", hash_generated_field = "38B092BB517A9D8CB0718E3125088A8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.287 -0500", hash_original_field = "F412180418A11B6AA562D209649B7A4F", hash_generated_field = "38B092BB517A9D8CB0718E3125088A8D")
 
     private boolean firstTime = true;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.738 -0500", hash_original_method = "64E77D5D4265D6E8D649F0A18EA66E47", hash_generated_method = "7BB77F9600CAA520A18582235F2C1E1C")
-    public IntKeyframeSet(IntKeyframe... keyframes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.290 -0500", hash_original_method = "64E77D5D4265D6E8D649F0A18EA66E47", hash_generated_method = "7BB77F9600CAA520A18582235F2C1E1C")
+    
+public IntKeyframeSet(IntKeyframe... keyframes) {
         super(keyframes);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.739 -0500", hash_original_method = "9A8CA9046BD131DAA0650B91E65A3FB9", hash_generated_method = "24F6A53CF731B7867C333CCC5DA206D6")
-    @Override
-public Object getValue(float fraction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.292 -0500", hash_original_method = "9A8CA9046BD131DAA0650B91E65A3FB9", hash_generated_method = "24F6A53CF731B7867C333CCC5DA206D6")
+    
+@Override
+    public Object getValue(float fraction) {
         return getIntValue(fraction);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.740 -0500", hash_original_method = "9997EE114626B9F926D48E4DA6AD12AC", hash_generated_method = "DA3DC9C66EE70173E0F7E1A807F7BFB8")
-    @Override
-public IntKeyframeSet clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.294 -0500", hash_original_method = "9997EE114626B9F926D48E4DA6AD12AC", hash_generated_method = "DA3DC9C66EE70173E0F7E1A807F7BFB8")
+    
+@Override
+    public IntKeyframeSet clone() {
         ArrayList<Keyframe> keyframes = mKeyframes;
         int numKeyframes = mKeyframes.size();
         IntKeyframe[] newKeyframes = new IntKeyframe[numKeyframes];
@@ -50,8 +53,9 @@ public IntKeyframeSet clone() {
         return newSet;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.741 -0500", hash_original_method = "7B6E2369DEAB44F75E4F137274BA59BB", hash_generated_method = "566B4FE64534C71386D22372B7BA3C5A")
-    public int getIntValue(float fraction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.298 -0500", hash_original_method = "7B6E2369DEAB44F75E4F137274BA59BB", hash_generated_method = "566B4FE64534C71386D22372B7BA3C5A")
+    
+public int getIntValue(float fraction) {
         if (mNumKeyframes == 2) {
             if (firstTime) {
                 firstTime = false;

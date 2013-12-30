@@ -71,68 +71,69 @@ import org.apache.http.protocol.HttpRequestExecutor;
 
 
 public class DefaultRequestDirector implements RequestDirector {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.643 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.864 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.644 -0500", hash_original_field = "79C539F0631DE1ED22CABB863DF47A25", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.867 -0500", hash_original_field = "79C539F0631DE1ED22CABB863DF47A25", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
 
     protected  ClientConnectionManager connManager;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.645 -0500", hash_original_field = "8823E067EE1A73A5A4F8381AD9DE926C", hash_generated_field = "C85BE630FF179384873F74B45C3D1A5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.869 -0500", hash_original_field = "8823E067EE1A73A5A4F8381AD9DE926C", hash_generated_field = "C85BE630FF179384873F74B45C3D1A5E")
 
     protected  HttpRoutePlanner routePlanner;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.645 -0500", hash_original_field = "28E659C3D090811B03AB9280351D82C6", hash_generated_field = "D092FC62D0768D92CCEB66662883652A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.871 -0500", hash_original_field = "28E659C3D090811B03AB9280351D82C6", hash_generated_field = "D092FC62D0768D92CCEB66662883652A")
 
     protected  ConnectionReuseStrategy reuseStrategy;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.646 -0500", hash_original_field = "DC7075B9CA312E5C377DD150B9B7DC40", hash_generated_field = "CC83794776099E15447E3B95C8DA1298")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.873 -0500", hash_original_field = "DC7075B9CA312E5C377DD150B9B7DC40", hash_generated_field = "CC83794776099E15447E3B95C8DA1298")
 
     protected  ConnectionKeepAliveStrategy keepAliveStrategy;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.647 -0500", hash_original_field = "8F281D2DD0CAF0CB49AD825611A30021", hash_generated_field = "AE8B5D85021B1C853E8228EC07BB45BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.876 -0500", hash_original_field = "8F281D2DD0CAF0CB49AD825611A30021", hash_generated_field = "AE8B5D85021B1C853E8228EC07BB45BD")
 
     protected  HttpRequestExecutor requestExec;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.648 -0500", hash_original_field = "0B667B56B623A6709D8228F6864C17B9", hash_generated_field = "BE58AA1EBB61C1DA0052321621920348")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.879 -0500", hash_original_field = "0B667B56B623A6709D8228F6864C17B9", hash_generated_field = "BE58AA1EBB61C1DA0052321621920348")
 
     protected  HttpProcessor httpProcessor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.649 -0500", hash_original_field = "BE7CB17045E13BE02A346FA0C3A4D12A", hash_generated_field = "98BC4E4D2CA69028F19F530E761B7A50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.881 -0500", hash_original_field = "BE7CB17045E13BE02A346FA0C3A4D12A", hash_generated_field = "98BC4E4D2CA69028F19F530E761B7A50")
 
     protected  HttpRequestRetryHandler retryHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.649 -0500", hash_original_field = "C389F7622E181983E4C8376E70EDBD71", hash_generated_field = "1D6916AFC0FC11340932EC2AB84E4EEA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.883 -0500", hash_original_field = "C389F7622E181983E4C8376E70EDBD71", hash_generated_field = "1D6916AFC0FC11340932EC2AB84E4EEA")
 
     protected  RedirectHandler redirectHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.650 -0500", hash_original_field = "DBA4951E5E541F8099D40BF93DF5F36F", hash_generated_field = "6C80A901FF52F10B6A44B9702DD7CAAC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.886 -0500", hash_original_field = "DBA4951E5E541F8099D40BF93DF5F36F", hash_generated_field = "6C80A901FF52F10B6A44B9702DD7CAAC")
 
     private  AuthenticationHandler targetAuthHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.651 -0500", hash_original_field = "5E81B4DA49E5D7964FC77151D6BD375D", hash_generated_field = "BEE8D0545E89B6E0C8B7E30053A9F7B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.888 -0500", hash_original_field = "5E81B4DA49E5D7964FC77151D6BD375D", hash_generated_field = "BEE8D0545E89B6E0C8B7E30053A9F7B8")
 
     private  AuthenticationHandler proxyAuthHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.652 -0500", hash_original_field = "CAE4A7A320983E8C1CCB152CF3DFF728", hash_generated_field = "EB0695AD7F13D362DB9842F689B4BC95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.890 -0500", hash_original_field = "CAE4A7A320983E8C1CCB152CF3DFF728", hash_generated_field = "EB0695AD7F13D362DB9842F689B4BC95")
 
     private  UserTokenHandler userTokenHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.653 -0500", hash_original_field = "E1952F00A693661EA0D1C7B3D836F77E", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.893 -0500", hash_original_field = "E1952F00A693661EA0D1C7B3D836F77E", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
 
     protected  HttpParams params;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.654 -0500", hash_original_field = "ECC1A1A1F3BB31DE20717F98D44EFC60", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.896 -0500", hash_original_field = "ECC1A1A1F3BB31DE20717F98D44EFC60", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
 
     protected ManagedClientConnection managedConn;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.654 -0500", hash_original_field = "0AE41E5E8D5B3D970EA29093BE41B738", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.898 -0500", hash_original_field = "0AE41E5E8D5B3D970EA29093BE41B738", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
 
 
     private int redirectCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.655 -0500", hash_original_field = "74902B111622E9E3A744EFC5D329328E", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.900 -0500", hash_original_field = "74902B111622E9E3A744EFC5D329328E", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
 
 
     private int maxRedirects;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.656 -0500", hash_original_field = "5A35C8104FC2D865E8F8A0879C0F7F9A", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.903 -0500", hash_original_field = "5A35C8104FC2D865E8F8A0879C0F7F9A", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
 
     
     private  AuthState targetAuthState;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.657 -0500", hash_original_field = "A6CA6072C1BFCC3C72577263E286D091", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.905 -0500", hash_original_field = "A6CA6072C1BFCC3C72577263E286D091", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
 
     
     private  AuthState proxyAuthState;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.658 -0500", hash_original_method = "0B21A162BE3540982FD94EA0624DFDC2", hash_generated_method = "F6CEE975853313FCFBBAA42B262AAD1E")
-    public DefaultRequestDirector(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.909 -0500", hash_original_method = "0B21A162BE3540982FD94EA0624DFDC2", hash_generated_method = "F6CEE975853313FCFBBAA42B262AAD1E")
+    
+public DefaultRequestDirector(
             final HttpRequestExecutor requestExec,
             final ClientConnectionManager conman,
             final ConnectionReuseStrategy reustrat,
@@ -216,8 +217,9 @@ public class DefaultRequestDirector implements RequestDirector {
     } // constructor
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.659 -0500", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "6FBF59CD03CC8B4D52C23997423EADC5")
-    private RequestWrapper wrapRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.911 -0500", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "6FBF59CD03CC8B4D52C23997423EADC5")
+    
+private RequestWrapper wrapRequest(
             final HttpRequest request) throws ProtocolException {
         if (request instanceof HttpEntityEnclosingRequest) {
             return new EntityEnclosingRequestWrapper(
@@ -229,8 +231,9 @@ public class DefaultRequestDirector implements RequestDirector {
     }
     
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.660 -0500", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "127EB3421BD46398C7ABCCC86B5FF295")
-    protected void rewriteRequestURI(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.914 -0500", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "127EB3421BD46398C7ABCCC86B5FF295")
+    
+protected void rewriteRequestURI(
             final RequestWrapper request,
             final HttpRoute route) throws ProtocolException {
         try {
@@ -259,8 +262,9 @@ public class DefaultRequestDirector implements RequestDirector {
     
     
     // non-javadoc, see interface ClientRequestDirector
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.662 -0500", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "FADA447509B07675118E8E4872FBFA31")
-    public HttpResponse execute(HttpHost target, HttpRequest request,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.921 -0500", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "FADA447509B07675118E8E4872FBFA31")
+    
+public HttpResponse execute(HttpHost target, HttpRequest request,
                                 HttpContext context)
         throws HttpException, IOException {
 
@@ -514,8 +518,9 @@ public class DefaultRequestDirector implements RequestDirector {
      * and prepares for retrieving a new connection during
      * the next request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.663 -0500", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "8BE1B8153A027B32D41BF07FD000777A")
-    protected void releaseConnection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.923 -0500", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "8BE1B8153A027B32D41BF07FD000777A")
+    
+protected void releaseConnection() {
         // Release the connection through the ManagedConnection instead of the
         // ConnectionManager directly.  This lets the connection control how
         // it is released.
@@ -544,8 +549,9 @@ public class DefaultRequestDirector implements RequestDirector {
      *
      * @throws HttpException    in case of a problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.664 -0500", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "A332452DAA3A752D6FC6722C5C72039F")
-    protected HttpRoute determineRoute(HttpHost    target,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.926 -0500", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "A332452DAA3A752D6FC6722C5C72039F")
+    
+protected HttpRoute determineRoute(HttpHost    target,
                                            HttpRequest request,
                                            HttpContext context)
         throws HttpException {
@@ -585,8 +591,9 @@ public class DefaultRequestDirector implements RequestDirector {
      * @throws HttpException    in case of a problem
      * @throws IOException      in case of an IO problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.665 -0500", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "93361CD9C318CE622A8DACDDD93D80AA")
-    protected void establishRoute(HttpRoute route, HttpContext context)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.929 -0500", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "93361CD9C318CE622A8DACDDD93D80AA")
+    
+protected void establishRoute(HttpRoute route, HttpContext context)
         throws HttpException, IOException {
 
         //@@@ how to handle CONNECT requests for tunnelling?
@@ -673,8 +680,9 @@ public class DefaultRequestDirector implements RequestDirector {
      * @throws HttpException    in case of a problem
      * @throws IOException      in case of an IO problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.667 -0500", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "863385F4DDF4E2867E79479775F0563A")
-    protected boolean createTunnelToTarget(HttpRoute route,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.934 -0500", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "863385F4DDF4E2867E79479775F0563A")
+    
+protected boolean createTunnelToTarget(HttpRoute route,
                                            HttpContext context)
         throws HttpException, IOException {
 
@@ -811,8 +819,9 @@ public class DefaultRequestDirector implements RequestDirector {
      * @throws HttpException    in case of a problem
      * @throws IOException      in case of an IO problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.668 -0500", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "7E55AD8D0773EBBDA8B51AD34E5BAF6B")
-    protected boolean createTunnelToProxy(HttpRoute route, int hop,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.936 -0500", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "7E55AD8D0773EBBDA8B51AD34E5BAF6B")
+    
+protected boolean createTunnelToProxy(HttpRoute route, int hop,
                                           HttpContext context)
         throws HttpException, IOException {
 
@@ -840,8 +849,9 @@ public class DefaultRequestDirector implements RequestDirector {
      *
      * @return  the CONNECT request for tunnelling
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.669 -0500", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "DCF19388C8A870851BDAE2D1C0669598")
-    protected HttpRequest createConnectRequest(HttpRoute route,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.939 -0500", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "DCF19388C8A870851BDAE2D1C0669598")
+    
+protected HttpRequest createConnectRequest(HttpRoute route,
                                                HttpContext context) {
         // see RFC 2817, section 5.2 and 
         // INTERNET-DRAFT: Tunneling TCP based protocols through 
@@ -884,8 +894,9 @@ public class DefaultRequestDirector implements RequestDirector {
      * @throws HttpException    in case of a problem
      * @throws IOException      in case of an IO problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.671 -0500", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "24E27C826C46B023BB99412DF746179B")
-    protected RoutedRequest handleResponse(RoutedRequest roureq,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.943 -0500", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "24E27C826C46B023BB99412DF746179B")
+    
+protected RoutedRequest handleResponse(RoutedRequest roureq,
                                            HttpResponse response,
                                            HttpContext context)
         throws HttpException, IOException {
@@ -1005,8 +1016,9 @@ public class DefaultRequestDirector implements RequestDirector {
      * This method is called from a <code>catch</code> block in
      * {@link #execute execute} during exception handling.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.672 -0500", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "6068E21F3A76D203B26A018E1BECEB31")
-    private void abortConnection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.946 -0500", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "6068E21F3A76D203B26A018E1BECEB31")
+    
+private void abortConnection() {
         ManagedClientConnection mcc = managedConn;
         if (mcc != null) {
             // we got here as the result of an exception
@@ -1029,8 +1041,9 @@ public class DefaultRequestDirector implements RequestDirector {
     } // abortConnection
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.673 -0500", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "83C7CA03A31FEC6F6006FB8DE25DCE8F")
-    private void processChallenges(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.949 -0500", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "83C7CA03A31FEC6F6006FB8DE25DCE8F")
+    
+private void processChallenges(
             final Map<String, Header> challenges, 
             final AuthState authState,
             final AuthenticationHandler authHandler,
@@ -1056,8 +1069,9 @@ public class DefaultRequestDirector implements RequestDirector {
     }
     
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.674 -0500", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "ADD32D1227248CB9BD42747DB98E512A")
-    private void updateAuthState(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.952 -0500", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "ADD32D1227248CB9BD42747DB98E512A")
+    
+private void updateAuthState(
             final AuthState authState, 
             final HttpHost host,
             final CredentialsProvider credsProvider) {

@@ -22,21 +22,24 @@ import java.text.ParseException;
 
 public class ViaParser extends HeaderParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.498 -0500", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "1F132816A00B46E58B7BC1EC0DFF40DB")
-    public ViaParser(String via) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.587 -0500", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "1F132816A00B46E58B7BC1EC0DFF40DB")
+    
+public ViaParser(String via) {
         super(via);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.499 -0500", hash_original_method = "16747522FA7D80CA65EEE675350A9BF1", hash_generated_method = "76369E9A9B876D6F6852BF5392BEB475")
-    public ViaParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.589 -0500", hash_original_method = "16747522FA7D80CA65EEE675350A9BF1", hash_generated_method = "76369E9A9B876D6F6852BF5392BEB475")
+    
+public ViaParser(Lexer lexer) {
         super(lexer);
     }
 
     /**
      * a parser for the essential part of the via header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.501 -0500", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "6C971D18B78C1160D112611D2C69AEEE")
-    private void parseVia(Via v) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.594 -0500", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "6C971D18B78C1160D112611D2C69AEEE")
+    
+private void parseVia(Via v) throws ParseException {
         // The protocol
         lexer.match(TokenTypes.ID);
         Token protocolName = lexer.getNextToken();
@@ -126,8 +129,9 @@ public class ViaParser extends HeaderParser {
      * Overrides the superclass nameValue parser because we have to tolerate
      * IPV6 addresses in the received parameter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.502 -0500", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "CB3CC522C26BFEA09961AD4D142B51A3")
-    protected NameValue nameValue() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.597 -0500", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "CB3CC522C26BFEA09961AD4D142B51A3")
+    
+protected NameValue nameValue() throws ParseException {
         if (debug)
             dbg_enter("nameValue");
         try {
@@ -180,8 +184,9 @@ public class ViaParser extends HeaderParser {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.503 -0500", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "55A478D3076709D8EA03DFE2374A0C93")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.601 -0500", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "55A478D3076709D8EA03DFE2374A0C93")
+    
+public SIPHeader parse() throws ParseException {
         if (debug)
             dbg_enter("parse");
         try {

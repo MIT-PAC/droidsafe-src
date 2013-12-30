@@ -16,8 +16,9 @@ public class Object {
     /**
      * Constructs a new instance of {@code Object}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.841 -0500", hash_original_method = "1035BC9FD37C3D2AC57825226BBB0539", hash_generated_method = "D31E84B79A4FC29F631370F22BA60293")
-    public Object() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.129 -0500", hash_original_method = "1035BC9FD37C3D2AC57825226BBB0539", hash_generated_method = "D31E84B79A4FC29F631370F22BA60293")
+    
+public Object() {
     }
 
     
@@ -76,8 +77,9 @@ public class Object {
      *         Object}; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.844 -0500", hash_original_method = "9AE1611573D7E7CF89E7E933B2D1DCAF", hash_generated_method = "9814B1EDD6A309DF77DC31113B9908C5")
-    public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.140 -0500", hash_original_method = "9AE1611573D7E7CF89E7E933B2D1DCAF", hash_generated_method = "9814B1EDD6A309DF77DC31113B9908C5")
+    
+public boolean equals(Object o) {
         return this == o;
     }
 
@@ -109,9 +111,10 @@ public class Object {
      *
      * See <i>Effective Java</i> Item 7, "Avoid finalizers" for more.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.845 -0500", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "7BAE00D5214727B96165F35F1A10FDEF")
-    @FindBugsSuppressWarnings("FI_EMPTY")
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.142 -0500", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "7BAE00D5214727B96165F35F1A10FDEF")
+    
+@FindBugsSuppressWarnings("FI_EMPTY")
+    protected void finalize() throws Throwable {
     }
 
     
@@ -135,8 +138,13 @@ protected void finalize() throws Throwable {
      * @return this object's hash code.
      * @see #equals
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.848 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "1752793FA5EABF016299BFC6474E6534")
-    public native int hashCode();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.150 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "1752793FA5EABF016299BFC6474E6534")
+    
+    public int hashCode(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
 
     /**
      * Causes a thread which is waiting on this object's monitor (by means of
@@ -164,8 +172,12 @@ protected void finalize() throws Throwable {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.849 -0500", hash_original_method = "2491F7F734B89141B57F81CC2F5A48BA", hash_generated_method = "31FCE39B0D76E1315FFF2B02B5E02276")
-    public final native void notify();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.154 -0500", hash_original_method = "2491F7F734B89141B57F81CC2F5A48BA", hash_generated_method = "31FCE39B0D76E1315FFF2B02B5E02276")
+    
+    public final void notify(){
+    	//Formerly a native method
+    }
+
 
     /**
      * Causes all threads which are waiting on this object's monitor (by means
@@ -194,8 +206,12 @@ protected void finalize() throws Throwable {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.851 -0500", hash_original_method = "4A0AA061C7039561E8E17F1D3678B2F2", hash_generated_method = "7C450C91A6344FB734DC7E279E95B4D0")
-    public final native void notifyAll();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.158 -0500", hash_original_method = "4A0AA061C7039561E8E17F1D3678B2F2", hash_generated_method = "7C450C91A6344FB734DC7E279E95B4D0")
+    
+    public final void notifyAll(){
+    	//Formerly a native method
+    }
+
 
     /**
      * Returns a string containing a concise, human-readable description of this
@@ -210,8 +226,9 @@ protected void finalize() throws Throwable {
      *
      * @return a printable representation of this object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.852 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.161 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")
+    
+public String toString() {
         return getClass().getName() + '@' + Integer.toHexString(hashCode());
     }
 
@@ -243,8 +260,9 @@ protected void finalize() throws Throwable {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.853 -0500", hash_original_method = "6FE2BE558DA9BAF1A2BFC29AD62222DA", hash_generated_method = "A38D1B1FBB7E81A6F5CC0EDFC909A7FB")
-    public final void wait() throws InterruptedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.163 -0500", hash_original_method = "6FE2BE558DA9BAF1A2BFC29AD62222DA", hash_generated_method = "A38D1B1FBB7E81A6F5CC0EDFC909A7FB")
+    
+public final void wait() throws InterruptedException {
         wait(0 ,0);
     }
 
@@ -281,8 +299,9 @@ protected void finalize() throws Throwable {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.853 -0500", hash_original_method = "4BB57D31A4F088800B6AE0C762E042CC", hash_generated_method = "EE97E942915A85089DFA80C469394C60")
-    public final void wait(long millis) throws InterruptedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.166 -0500", hash_original_method = "4BB57D31A4F088800B6AE0C762E042CC", hash_generated_method = "EE97E942915A85089DFA80C469394C60")
+    
+public final void wait(long millis) throws InterruptedException {
         wait(millis, 0);
     }
 
@@ -323,8 +342,14 @@ protected void finalize() throws Throwable {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.855 -0500", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "94504481D3D619737083E8726B8C7754")
-    public final native void wait(long millis, int nanos) throws InterruptedException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.170 -0500", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "94504481D3D619737083E8726B8C7754")
+    
+    public final void wait(long millis, int nanos) throws InterruptedException{
+    	//Formerly a native method
+    	addTaint(millis);
+    	addTaint(nanos);
+    }
+
 
     
     // orphaned legacy method

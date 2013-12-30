@@ -20,8 +20,9 @@ public class Base64 {
      *
      * @return a byte array containing the base 64 encoded data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.115 -0500", hash_original_method = "6BB12F6B6A2A60E765D247BDBB325022", hash_generated_method = "983C38CF37685DAEA43C9890A5C93689")
-    public static byte[] encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.551 -0500", hash_original_method = "6BB12F6B6A2A60E765D247BDBB325022", hash_generated_method = "983C38CF37685DAEA43C9890A5C93689")
+    
+public static byte[] encode(
         byte[]    data)
     {
         int len = (data.length + 2) / 3 * 4;
@@ -44,8 +45,9 @@ public class Base64 {
      *
      * @return the number of bytes produced.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.116 -0500", hash_original_method = "1CEB56F49B83563E5DD5C049B4907F1C", hash_generated_method = "EA016316EFA6DA7F4832ED4A08DBEDBE")
-    public static int encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.554 -0500", hash_original_method = "1CEB56F49B83563E5DD5C049B4907F1C", hash_generated_method = "EA016316EFA6DA7F4832ED4A08DBEDBE")
+    
+public static int encode(
         byte[]                data,
         OutputStream    out)
         throws IOException
@@ -58,8 +60,9 @@ public class Base64 {
      *
      * @return the number of bytes produced.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.117 -0500", hash_original_method = "E2FC40814B9169B5CD5C50C2FA8F907C", hash_generated_method = "5DD0BD6D57B1D4C166366483EC7A0A8A")
-    public static int encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.557 -0500", hash_original_method = "E2FC40814B9169B5CD5C50C2FA8F907C", hash_generated_method = "5DD0BD6D57B1D4C166366483EC7A0A8A")
+    
+public static int encode(
         byte[]                data,
         int                    off,
         int                    length,
@@ -74,8 +77,9 @@ public class Base64 {
      *
      * @return a byte array representing the decoded data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.118 -0500", hash_original_method = "864CC96C484326CBC4ECFC5A9B22196D", hash_generated_method = "E516A32D078264CB25440C88185A5F22")
-    public static byte[] decode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.559 -0500", hash_original_method = "864CC96C484326CBC4ECFC5A9B22196D", hash_generated_method = "E516A32D078264CB25440C88185A5F22")
+    
+public static byte[] decode(
         byte[]    data)
     {
         int len = data.length / 4 * 3;
@@ -98,8 +102,9 @@ public class Base64 {
      *
      * @return a byte array representing the decoded data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.119 -0500", hash_original_method = "2D34DDD985EB62B933696188ECD0E85B", hash_generated_method = "F8A1F343999E726AB5380E952822DA7C")
-    public static byte[] decode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.561 -0500", hash_original_method = "2D34DDD985EB62B933696188ECD0E85B", hash_generated_method = "F8A1F343999E726AB5380E952822DA7C")
+    
+public static byte[] decode(
         String    data)
     {
         int len = data.length() / 4 * 3;
@@ -123,15 +128,16 @@ public class Base64 {
      *
      * @return the number of bytes produced.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.120 -0500", hash_original_method = "458D6DD6719B8027CA3FE9134A58BF91", hash_generated_method = "8DD64E9834DC70811B76533374F3E9D2")
-    public static int decode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.564 -0500", hash_original_method = "458D6DD6719B8027CA3FE9134A58BF91", hash_generated_method = "8DD64E9834DC70811B76533374F3E9D2")
+    
+public static int decode(
         String                data,
         OutputStream    out)
         throws IOException
     {
         return encoder.decode(data, out);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.114 -0500", hash_original_field = "F2514EE7741B8A5EBE42475EF5DF2FBC", hash_generated_field = "82B3D023B3737398DBE3759E13F6CAAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.549 -0500", hash_original_field = "F2514EE7741B8A5EBE42475EF5DF2FBC", hash_generated_field = "82B3D023B3737398DBE3759E13F6CAAE")
 
     private static final Encoder encoder = new Base64Encoder();
     

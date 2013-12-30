@@ -22,8 +22,9 @@ public class ContentEncodingParser extends HeaderParser {
      * Creates a new instance of ContentEncodingParser
      * @param contentEncoding the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.913 -0500", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "AF9BD842838DEB26BE1BF73447B9C978")
-    public ContentEncodingParser(String contentEncoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.960 -0500", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "AF9BD842838DEB26BE1BF73447B9C978")
+    
+public ContentEncodingParser(String contentEncoding) {
         super(contentEncoding);
     }
 
@@ -31,8 +32,9 @@ public class ContentEncodingParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.914 -0500", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "4F38E4650F7DEAEE468A52EC2980675D")
-    protected ContentEncodingParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.963 -0500", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "4F38E4650F7DEAEE468A52EC2980675D")
+    
+protected ContentEncodingParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class ContentEncodingParser extends HeaderParser {
      * @return SIPHeader (ContentEncodingList object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.915 -0500", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "7B1E5B53927553375DCF3987967EF71D")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.966 -0500", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "7B1E5B53927553375DCF3987967EF71D")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("ContentEncodingParser.parse");

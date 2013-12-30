@@ -17,8 +17,9 @@ import org.apache.http.protocol.HTTP;
 public class StringEntity extends AbstractHttpEntity implements Cloneable {
     protected  byte[] content = null;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.816 -0500", hash_original_method = "310FAE5CF3493E31DD2A41A7B590618B", hash_generated_method = "AB109E6E9CB1E6644855DA118C9B8507")
-    public StringEntity(final String s, String charset) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.030 -0500", hash_original_method = "310FAE5CF3493E31DD2A41A7B590618B", hash_generated_method = "AB109E6E9CB1E6644855DA118C9B8507")
+    
+public StringEntity(final String s, String charset) 
             throws UnsupportedEncodingException {
         super();
         if (s == null) {
@@ -76,8 +77,9 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
 		return null;
 	}
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.820 -0500", hash_original_method = "F9996C70B2856060246DFF92163DB1CA", hash_generated_method = "BDD092DE07E44519E63AE6CE1D7E2553")
-    public void writeTo(final OutputStream outstream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.044 -0500", hash_original_method = "F9996C70B2856060246DFF92163DB1CA", hash_generated_method = "BDD092DE07E44519E63AE6CE1D7E2553")
+    
+public void writeTo(final OutputStream outstream) throws IOException {
         if (outstream == null) {
             throw new IllegalArgumentException("Output stream may not be null");
         }
@@ -90,13 +92,15 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
      *
      * @return <code>false</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.821 -0500", hash_original_method = "1C9916E491D93B6DAF758D3D738C6EEB", hash_generated_method = "15A1411ACDA23E1A918918FF0CDDBE57")
-    public boolean isStreaming() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.048 -0500", hash_original_method = "1C9916E491D93B6DAF758D3D738C6EEB", hash_generated_method = "15A1411ACDA23E1A918918FF0CDDBE57")
+    
+public boolean isStreaming() {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.822 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
-    public Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.052 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
+    
+public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
     

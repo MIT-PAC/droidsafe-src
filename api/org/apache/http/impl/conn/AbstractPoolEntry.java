@@ -20,22 +20,22 @@ import org.apache.http.protocol.HttpContext;
 
 
 public abstract class AbstractPoolEntry {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.032 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.141 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
 
     protected  ClientConnectionOperator connOperator;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.033 -0500", hash_original_field = "45EB9987EA77D96C4F33011A8FFCB241", hash_generated_field = "D4C9C47F1F7C872802E0304B9FD77E44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.143 -0500", hash_original_field = "45EB9987EA77D96C4F33011A8FFCB241", hash_generated_field = "D4C9C47F1F7C872802E0304B9FD77E44")
 
     protected  OperatedClientConnection connection;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.034 -0500", hash_original_field = "8824947D446181E666F5CCE159788709", hash_generated_field = "C6EE8D3571C9CAFA0488F1263D2FAF69")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.145 -0500", hash_original_field = "8824947D446181E666F5CCE159788709", hash_generated_field = "C6EE8D3571C9CAFA0488F1263D2FAF69")
 
     //@@@ currently accessed from connection manager(s) as attribute
     //@@@ avoid that, derived classes should decide whether update is allowed
     //@@@ SCCM: yes, TSCCM: no
     protected volatile HttpRoute route;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.035 -0500", hash_original_field = "9AF76BE6C13059245F182C3ACEF90276", hash_generated_field = "84C5CEDAE5C6F44A990A3028DB7D51E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.148 -0500", hash_original_field = "9AF76BE6C13059245F182C3ACEF90276", hash_generated_field = "84C5CEDAE5C6F44A990A3028DB7D51E1")
 
     protected volatile Object state;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.035 -0500", hash_original_field = "F03334D6C9BF95AC15CF9711AE96481C", hash_generated_field = "178FE92301487BDC4E429ED14BD188F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.150 -0500", hash_original_field = "F03334D6C9BF95AC15CF9711AE96481C", hash_generated_field = "178FE92301487BDC4E429ED14BD188F8")
 
     protected volatile RouteTracker tracker;
 
@@ -47,8 +47,9 @@ public abstract class AbstractPoolEntry {
      * @param route   the planned route for the connection,
      *                or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.036 -0500", hash_original_method = "87A56F69F978A1F4113143BFD741AEF0", hash_generated_method = "E5109B1670976D516FDE9A73A8892416")
-    protected AbstractPoolEntry(ClientConnectionOperator connOperator,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.153 -0500", hash_original_method = "87A56F69F978A1F4113143BFD741AEF0", hash_generated_method = "E5109B1670976D516FDE9A73A8892416")
+    
+protected AbstractPoolEntry(ClientConnectionOperator connOperator,
                                 HttpRoute route) {
         super();
         if (connOperator == null) {
@@ -65,8 +66,9 @@ public abstract class AbstractPoolEntry {
      * 
      * @return The state object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.037 -0500", hash_original_method = "079ECF1B585CB82D2480C2A65F324FB6", hash_generated_method = "D182279B326BD725F747B0B0AAA3409A")
-    public Object getState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.155 -0500", hash_original_method = "079ECF1B585CB82D2480C2A65F324FB6", hash_generated_method = "D182279B326BD725F747B0B0AAA3409A")
+    
+public Object getState() {
         return state;
     }
     
@@ -75,8 +77,9 @@ public abstract class AbstractPoolEntry {
      * 
      * @param state The state object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.038 -0500", hash_original_method = "9D16F7D7F90D43454808FD39B427C300", hash_generated_method = "224578FC3E85EF51536EB7D5810BFD25")
-    public void setState(final Object state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.157 -0500", hash_original_method = "9D16F7D7F90D43454808FD39B427C300", hash_generated_method = "224578FC3E85EF51536EB7D5810BFD25")
+    
+public void setState(final Object state) {
         this.state = state;
     }
     
@@ -89,8 +92,9 @@ public abstract class AbstractPoolEntry {
      *
      * @throws IOException  in case of a problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.040 -0500", hash_original_method = "52A8017CB43DDF5506166F15621D416B", hash_generated_method = "8CE23F25206850F891145EB8898653D8")
-    public void open(HttpRoute route,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.160 -0500", hash_original_method = "52A8017CB43DDF5506166F15621D416B", hash_generated_method = "8CE23F25206850F891145EB8898653D8")
+    
+public void open(HttpRoute route,
                      HttpContext context, HttpParams params)
         throws IOException {
 
@@ -152,8 +156,9 @@ public abstract class AbstractPoolEntry {
      *
      * @throws IOException  in case of a problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.041 -0500", hash_original_method = "01B7EFBCCE4449D378FBB0354733064C", hash_generated_method = "557C53C56C5D392F3318C8E0C0B8F3E1")
-    public void tunnelTarget(boolean secure, HttpParams params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.162 -0500", hash_original_method = "01B7EFBCCE4449D378FBB0354733064C", hash_generated_method = "557C53C56C5D392F3318C8E0C0B8F3E1")
+    
+public void tunnelTarget(boolean secure, HttpParams params)
         throws IOException {
 
         if (params == null) {
@@ -194,8 +199,9 @@ public abstract class AbstractPoolEntry {
      *
      * @throws IOException  in case of a problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.041 -0500", hash_original_method = "5E0B2221F8D2EF0994AAAD177B417545", hash_generated_method = "F4F65B7E9093228D7B22317C2AE4DEBF")
-    public void tunnelProxy(HttpHost next, boolean secure, HttpParams params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.165 -0500", hash_original_method = "5E0B2221F8D2EF0994AAAD177B417545", hash_generated_method = "F4F65B7E9093228D7B22317C2AE4DEBF")
+    
+public void tunnelProxy(HttpHost next, boolean secure, HttpParams params)
         throws IOException {
 
         if (next == null) {
@@ -228,8 +234,9 @@ public abstract class AbstractPoolEntry {
      *
      * @throws IOException  in case of a problem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.042 -0500", hash_original_method = "1EA8AE44B2BF05DF27C07019783A5F43", hash_generated_method = "FE4B58D9741614D3DCF53109A5ACB4F6")
-    public void layerProtocol(HttpContext context, HttpParams params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.168 -0500", hash_original_method = "1EA8AE44B2BF05DF27C07019783A5F43", hash_generated_method = "FE4B58D9741614D3DCF53109A5ACB4F6")
+    
+public void layerProtocol(HttpContext context, HttpParams params)
         throws IOException {
 
         //@@@ is context allowed to be null? depends on operator?
@@ -273,8 +280,9 @@ public abstract class AbstractPoolEntry {
      * If {@link #open(HttpRoute, HttpContext, HttpParams)} is in progress,
      * this will cause that open to possibly throw an {@link IOException}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.043 -0500", hash_original_method = "9A8AC70CC76BCE1A1C90EAA4BDE4B23E", hash_generated_method = "AF9ECE305AF8983017FB26E5E30E930A")
-    protected void shutdownEntry() { 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.170 -0500", hash_original_method = "9A8AC70CC76BCE1A1C90EAA4BDE4B23E", hash_generated_method = "AF9ECE305AF8983017FB26E5E30E930A")
+    
+protected void shutdownEntry() { 
         tracker = null;
     }
 

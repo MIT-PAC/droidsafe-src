@@ -21,8 +21,9 @@ public class ServerKeyExchange extends Message {
      * Remove first byte if 0. Needed because BigInteger.toByteArray() sometimes
      * returns a zero prefix.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.884 -0500", hash_original_method = "742AAF4B41AFCCB3DF4DF84474592F25", hash_generated_method = "DB47A975A9AC8C2C01808AEA60F19D71")
-    public static byte[] toUnsignedByteArray(BigInteger bi) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.676 -0500", hash_original_method = "742AAF4B41AFCCB3DF4DF84474592F25", hash_generated_method = "DB47A975A9AC8C2C01808AEA60F19D71")
+    
+public static byte[] toUnsignedByteArray(BigInteger bi) {
         if (bi == null) {
             return null;
         }
@@ -36,30 +37,30 @@ public class ServerKeyExchange extends Message {
             return bb;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.877 -0500", hash_original_field = "F2393EDA2114C170A28B32BCFE39CA4A", hash_generated_field = "F2393EDA2114C170A28B32BCFE39CA4A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.654 -0500", hash_original_field = "F2393EDA2114C170A28B32BCFE39CA4A", hash_generated_field = "F2393EDA2114C170A28B32BCFE39CA4A")
 
      BigInteger par1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.877 -0500", hash_original_field = "EACF62C123FC164BE029507CCE179CCF", hash_generated_field = "EACF62C123FC164BE029507CCE179CCF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.657 -0500", hash_original_field = "EACF62C123FC164BE029507CCE179CCF", hash_generated_field = "EACF62C123FC164BE029507CCE179CCF")
 
      byte[] bytes1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.878 -0500", hash_original_field = "49DF98649AA30F777A7B9E97B2259031", hash_generated_field = "49DF98649AA30F777A7B9E97B2259031")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.659 -0500", hash_original_field = "49DF98649AA30F777A7B9E97B2259031", hash_generated_field = "49DF98649AA30F777A7B9E97B2259031")
 
 
      BigInteger par2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.879 -0500", hash_original_field = "A1E23DAADE58A1B5E338B97B1B783D02", hash_generated_field = "A1E23DAADE58A1B5E338B97B1B783D02")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.662 -0500", hash_original_field = "A1E23DAADE58A1B5E338B97B1B783D02", hash_generated_field = "A1E23DAADE58A1B5E338B97B1B783D02")
 
      byte[] bytes2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.880 -0500", hash_original_field = "04ADECD493FBEAF3F6DA9C0D47888E6A", hash_generated_field = "04ADECD493FBEAF3F6DA9C0D47888E6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.664 -0500", hash_original_field = "04ADECD493FBEAF3F6DA9C0D47888E6A", hash_generated_field = "04ADECD493FBEAF3F6DA9C0D47888E6A")
 
 
      BigInteger par3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.880 -0500", hash_original_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2", hash_generated_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.666 -0500", hash_original_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2", hash_generated_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2")
 
      byte[] bytes3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.881 -0500", hash_original_field = "6195FCC77BFDBC9D95F3A31F9C19748F", hash_generated_field = "6195FCC77BFDBC9D95F3A31F9C19748F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.668 -0500", hash_original_field = "6195FCC77BFDBC9D95F3A31F9C19748F", hash_generated_field = "6195FCC77BFDBC9D95F3A31F9C19748F")
 
      byte[] hash;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.882 -0500", hash_original_field = "F63DCAD7F3A074B3619ED6D0D6ADB2CE", hash_generated_field = "2C21B14519E4B3866FCF3554754DEBAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.670 -0500", hash_original_field = "F63DCAD7F3A074B3619ED6D0D6ADB2CE", hash_generated_field = "2C21B14519E4B3866FCF3554754DEBAE")
 
 
     private RSAPublicKey key;
@@ -71,8 +72,9 @@ public class ServerKeyExchange extends Message {
      * @param par3 dh_Ys for ServerDHParams; should be null for ServerRSAParams
      * @param hash should be null for anonymous SignatureAlgorithm
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.883 -0500", hash_original_method = "BAF04F24660E6C5095996548EBED85A1", hash_generated_method = "2776557779CA2C278A208A7575A76BF4")
-    public ServerKeyExchange(BigInteger par1, BigInteger par2, BigInteger par3,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.673 -0500", hash_original_method = "BAF04F24660E6C5095996548EBED85A1", hash_generated_method = "2776557779CA2C278A208A7575A76BF4")
+    
+public ServerKeyExchange(BigInteger par1, BigInteger par2, BigInteger par3,
             byte[] hash) {
         this.par1 = par1;
         this.par2 = par2;
@@ -102,8 +104,9 @@ public class ServerKeyExchange extends Message {
      * @param keyExchange
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.885 -0500", hash_original_method = "0FED75D6D7B207E32712BBEB8093B91D", hash_generated_method = "6FC8ED0338E954EB3F74DF47F1EE5440")
-    public ServerKeyExchange(HandshakeIODataStream in, int length,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.679 -0500", hash_original_method = "0FED75D6D7B207E32712BBEB8093B91D", hash_generated_method = "6FC8ED0338E954EB3F74DF47F1EE5440")
+    
+public ServerKeyExchange(HandshakeIODataStream in, int length,
             int keyExchange) throws IOException {
 
         int size = in.readUint16();
@@ -141,9 +144,10 @@ public class ServerKeyExchange extends Message {
      * Sends message
      * @param out
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.886 -0500", hash_original_method = "2B7BAEA20D94561E69BFE5897EA1BEB9", hash_generated_method = "316B677311269FE7A70880051EF64718")
-    @Override
-public void send(HandshakeIODataStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.682 -0500", hash_original_method = "2B7BAEA20D94561E69BFE5897EA1BEB9", hash_generated_method = "316B677311269FE7A70880051EF64718")
+    
+@Override
+    public void send(HandshakeIODataStream out) {
         out.writeUint16(bytes1.length);
         out.write(bytes1);
         out.writeUint16(bytes2.length);
@@ -164,8 +168,9 @@ public void send(HandshakeIODataStream out) {
      *
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.887 -0500", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "5CC42133DB9D05A4256503D09C60F486")
-    public RSAPublicKey getRSAPublicKey() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.684 -0500", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "5CC42133DB9D05A4256503D09C60F486")
+    
+public RSAPublicKey getRSAPublicKey() {
         if (key != null) {
             return key;
         }
@@ -183,9 +188,10 @@ public void send(HandshakeIODataStream out) {
      * Returns message type
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.888 -0500", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "5AF29C62290EC2907F6A69FAFE3ED111")
-    @Override
-public int getType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.687 -0500", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "5AF29C62290EC2907F6A69FAFE3ED111")
+    
+@Override
+    public int getType() {
         return Handshake.SERVER_KEY_EXCHANGE;
     }
 

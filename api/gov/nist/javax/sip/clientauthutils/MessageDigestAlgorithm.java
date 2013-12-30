@@ -35,8 +35,9 @@ public class MessageDigestAlgorithm {
      * @throws NullPointerException in case of incorrectly null parameters.
      */
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.375 -0500", hash_original_method = "0859014C9C2A58304C2260E63DE25724", hash_generated_method = "B26144A06FDD5921E083B96E0109D1EF")
-    static String calculateResponse(String algorithm, String hashUserNameRealmPasswd,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.919 -0500", hash_original_method = "0859014C9C2A58304C2260E63DE25724", hash_generated_method = "B26144A06FDD5921E083B96E0109D1EF")
+    
+static String calculateResponse(String algorithm, String hashUserNameRealmPasswd,
             String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
             StackLogger stackLogger)  {
@@ -112,8 +113,9 @@ public class MessageDigestAlgorithm {
      * @return a digest response as defined in rfc2617
      * @throws NullPointerException in case of incorrectly null parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.376 -0500", hash_original_method = "07C0079BF2F96BA7A92F94B983D4C2AC", hash_generated_method = "F80200D97F01813E3D660C511F1F4EE3")
-    static String calculateResponse(String algorithm, String username_value, String realm_value,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.923 -0500", hash_original_method = "07C0079BF2F96BA7A92F94B983D4C2AC", hash_generated_method = "F80200D97F01813E3D660C511F1F4EE3")
+    
+static String calculateResponse(String algorithm, String username_value, String realm_value,
             String passwd, String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
             StackLogger stackLogger) {
@@ -178,8 +180,9 @@ public class MessageDigestAlgorithm {
      * @param data data
      * @return MD5(data)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.377 -0500", hash_original_method = "7B8469B0AAC5ED28F7A0B3958D69BFB4", hash_generated_method = "73B92C22D9B5CF4BE324DB60001EE529")
-    private static String H(String data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.927 -0500", hash_original_method = "7B8469B0AAC5ED28F7A0B3958D69BFB4", hash_generated_method = "73B92C22D9B5CF4BE324DB60001EE529")
+    
+private static String H(String data) {
         try {
             MessageDigest digest = MessageDigest.getInstance("MD5");
 
@@ -197,8 +200,9 @@ public class MessageDigestAlgorithm {
      * @param secret secret
      * @return H(concat(secret, ":", data));
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.378 -0500", hash_original_method = "BB88C0CE3A8E823447F9A5A2F73C21EF", hash_generated_method = "DF9A814AAF225F544A6AC46306B744BC")
-    private static String KD(String secret, String data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.930 -0500", hash_original_method = "BB88C0CE3A8E823447F9A5A2F73C21EF", hash_generated_method = "DF9A814AAF225F544A6AC46306B744BC")
+    
+private static String KD(String secret, String data) {
         return H(secret + ":" + data);
     }
 
@@ -208,8 +212,9 @@ public class MessageDigestAlgorithm {
      * @param b the bte array to convert
      * @return a Hex representation of b.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.380 -0500", hash_original_method = "CAF32B6D436555758214A0AC3F1F5894", hash_generated_method = "6C81B083B68686955D287B63805BA3F2")
-    private static String toHexString(byte b[]) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.936 -0500", hash_original_method = "CAF32B6D436555758214A0AC3F1F5894", hash_generated_method = "6C81B083B68686955D287B63805BA3F2")
+    
+private static String toHexString(byte b[]) {
         int pos = 0;
         char[] c = new char[b.length * 2];
         for (int i = 0; i < b.length; i++) {
@@ -218,7 +223,7 @@ public class MessageDigestAlgorithm {
         }
         return new String(c);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.379 -0500", hash_original_field = "8D139981331595450D79D39F36281B87", hash_generated_field = "5B94293AD88E841972DD6EAC13087224")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.933 -0500", hash_original_field = "8D139981331595450D79D39F36281B87", hash_generated_field = "5B94293AD88E841972DD6EAC13087224")
 
     // messenger (its author is Olivier Deruelle). Thanks for making it public!
     /**

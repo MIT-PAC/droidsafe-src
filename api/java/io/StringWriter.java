@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 
 public class StringWriter extends Writer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.384 -0500", hash_original_field = "AE723DBE63A0A007DD0888E4AE2CF636", hash_generated_field = "EB9E5A2DAF0C9C70707F8B833E05E535")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.088 -0500", hash_original_field = "AE723DBE63A0A007DD0888E4AE2CF636", hash_generated_field = "EB9E5A2DAF0C9C70707F8B833E05E535")
 
 
     private StringBuffer buf;
@@ -23,8 +23,9 @@ public class StringWriter extends Writer {
      * StringBuffer} is also the {@code lock} used to synchronize access to this
      * writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.386 -0500", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "7E2C64E64DC268AFCDD2C66951952544")
-    public StringWriter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.091 -0500", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "7E2C64E64DC268AFCDD2C66951952544")
+    
+public StringWriter() {
         buf = new StringBuffer(16);
         lock = buf;
     }
@@ -38,8 +39,9 @@ public class StringWriter extends Writer {
      * @param initialSize
      *            the intial size of the target string buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.387 -0500", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "C2FFDDB811278DE495C1C31F5BEAB90C")
-    public StringWriter(int initialSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.094 -0500", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "C2FFDDB811278DE495C1C31F5BEAB90C")
+    
+public StringWriter(int initialSize) {
         if (initialSize < 0) {
             throw new IllegalArgumentException();
         }
@@ -55,18 +57,20 @@ public class StringWriter extends Writer {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.388 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "18141BA36FD6959CD13F78BAD6F7E786")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.096 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "18141BA36FD6959CD13F78BAD6F7E786")
+    
+@Override
+    public void close() throws IOException {
         /* empty */
     }
 
     /**
      * Calling this method has no effect.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.389 -0500", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "0687F2D6ADC2467547D72E32B4897227")
-    @Override
-public void flush() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.098 -0500", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "0687F2D6ADC2467547D72E32B4897227")
+    
+@Override
+    public void flush() {
         /* empty */
     }
 
@@ -76,8 +80,9 @@ public void flush() {
      *
      * @return a reference to this writer's internal {@code StringBuffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.390 -0500", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "9DACA42F3BBA428D705F71B19D733A93")
-    public StringBuffer getBuffer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.101 -0500", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "9DACA42F3BBA428D705F71B19D733A93")
+    
+public StringBuffer getBuffer() {
         return buf;
     }
 
@@ -86,9 +91,10 @@ public void flush() {
      *
      * @return this writer's contents as a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.391 -0500", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "1774137BABF77D6332E3E77ADE4EE85A")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.104 -0500", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "1774137BABF77D6332E3E77ADE4EE85A")
+    
+@Override
+    public String toString() {
         return buf.toString();
     }
 
@@ -106,9 +112,10 @@ public String toString() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the size of {@code buf}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.391 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
-    @Override
-public void write(char[] chars, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.106 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
+    
+@Override
+    public void write(char[] chars, int offset, int count) {
         Arrays.checkOffsetAndCount(chars.length, offset, count);
         if (count == 0) {
             return;
@@ -123,9 +130,10 @@ public void write(char[] chars, int offset, int count) {
      * @param oneChar
      *            the character to write to this writer's {@code StringBuffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.392 -0500", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "C5C3795F9028875601BFA514394360DA")
-    @Override
-public void write(int oneChar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.109 -0500", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "C5C3795F9028875601BFA514394360DA")
+    
+@Override
+    public void write(int oneChar) {
         buf.append((char) oneChar);
     }
 
@@ -136,9 +144,10 @@ public void write(int oneChar) {
      * @param str
      *            the non-null string containing the characters to write.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.393 -0500", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B9E6C838B077F39FFE8F290B8FE54952")
-    @Override
-public void write(String str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.111 -0500", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B9E6C838B077F39FFE8F290B8FE54952")
+    
+@Override
+    public void write(String str) {
         buf.append(str);
     }
 
@@ -156,9 +165,10 @@ public void write(String str) {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code str}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.394 -0500", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "A8BBB0A5273822517081196A431752C3")
-    @Override
-public void write(String str, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.114 -0500", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "A8BBB0A5273822517081196A431752C3")
+    
+@Override
+    public void write(String str, int offset, int count) {
         String sub = str.substring(offset, offset + count);
         buf.append(sub);
     }
@@ -171,9 +181,10 @@ public void write(String str, int offset, int count) {
      *            the character to append to the target stream.
      * @return this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.395 -0500", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "245948B56E5876E69D845B1347DB8EB8")
-    @Override
-public StringWriter append(char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.116 -0500", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "245948B56E5876E69D845B1347DB8EB8")
+    
+@Override
+    public StringWriter append(char c) {
         write(c);
         return this;
     }
@@ -188,9 +199,10 @@ public StringWriter append(char c) {
      *            the character sequence appended to the target.
      * @return this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.396 -0500", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "B284D98AD1C78CD17BCF774DB4E26F37")
-    @Override
-public StringWriter append(CharSequence csq) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.119 -0500", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "B284D98AD1C78CD17BCF774DB4E26F37")
+    
+@Override
+    public StringWriter append(CharSequence csq) {
         if (csq == null) {
             csq = "null";
         }
@@ -219,9 +231,10 @@ public StringWriter append(CharSequence csq) {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code csq}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.397 -0500", hash_original_method = "D18F40A53A7260972FC6506FD741C13E", hash_generated_method = "A23470303E65CCE10FA1B68E37099E96")
-    @Override
-public StringWriter append(CharSequence csq, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.121 -0500", hash_original_method = "D18F40A53A7260972FC6506FD741C13E", hash_generated_method = "A23470303E65CCE10FA1B68E37099E96")
+    
+@Override
+    public StringWriter append(CharSequence csq, int start, int end) {
         if (csq == null) {
             csq = "null";
         }

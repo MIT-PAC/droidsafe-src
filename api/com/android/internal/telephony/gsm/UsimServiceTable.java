@@ -12,25 +12,29 @@ import com.android.internal.telephony.IccServiceTable;
 
 public final class UsimServiceTable extends IccServiceTable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.129 -0500", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "150542268E0F45E4B0E90D2995ECAF23")
-    public UsimServiceTable(byte[] table) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.718 -0500", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "150542268E0F45E4B0E90D2995ECAF23")
+    
+public UsimServiceTable(byte[] table) {
         super(table);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.129 -0500", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "6A590D4EAB7DD9114E1A9B7AE87BB34A")
-    public boolean isAvailable(UsimService service) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.721 -0500", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "6A590D4EAB7DD9114E1A9B7AE87BB34A")
+    
+public boolean isAvailable(UsimService service) {
         return super.isAvailable(service.ordinal());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.130 -0500", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "B571DFE3EED0772F1CF5DFD247BE4C20")
-    @Override
-protected String getTag() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.723 -0500", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "B571DFE3EED0772F1CF5DFD247BE4C20")
+    
+@Override
+    protected String getTag() {
         return "UsimServiceTable";
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.131 -0500", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "9AF79B41A56042B3A8942DF1FC353844")
-    @Override
-protected Object[] getValues() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.725 -0500", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "9AF79B41A56042B3A8942DF1FC353844")
+    
+@Override
+    protected Object[] getValues() {
         return UsimService.values();
     }
 

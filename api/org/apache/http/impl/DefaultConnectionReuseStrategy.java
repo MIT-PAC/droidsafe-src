@@ -22,14 +22,16 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.269 -0500", hash_original_method = "34BE1FD46571091C81AAB19A83E6EA86", hash_generated_method = "86528F5F65914F5929E8417F1AFC209E")
-    public DefaultConnectionReuseStrategy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.597 -0500", hash_original_method = "34BE1FD46571091C81AAB19A83E6EA86", hash_generated_method = "86528F5F65914F5929E8417F1AFC209E")
+    
+public DefaultConnectionReuseStrategy() {
         super();
     }
 
     // see interface ConnectionReuseStrategy
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.270 -0500", hash_original_method = "99701CE5AD38D49B49A62B2892241655", hash_generated_method = "9C5EAA05C0FE23320E5792BD37C1027B")
-    public boolean keepAlive(final HttpResponse response,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.602 -0500", hash_original_method = "99701CE5AD38D49B49A62B2892241655", hash_generated_method = "9C5EAA05C0FE23320E5792BD37C1027B")
+    
+public boolean keepAlive(final HttpResponse response,
                              final HttpContext context) {
         if (response == null) {
             throw new IllegalArgumentException
@@ -130,8 +132,9 @@ public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
      *
      * @return  the token iterator
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.271 -0500", hash_original_method = "EFAD97F429DE8DB8F9E4AB7241876CEE", hash_generated_method = "F267F4777920ABE45213A1BBDCEC5A8C")
-    protected TokenIterator createTokenIterator(HeaderIterator hit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.604 -0500", hash_original_method = "EFAD97F429DE8DB8F9E4AB7241876CEE", hash_generated_method = "F267F4777920ABE45213A1BBDCEC5A8C")
+    
+protected TokenIterator createTokenIterator(HeaderIterator hit) {
         return new BasicTokenIterator(hit);
     }
 

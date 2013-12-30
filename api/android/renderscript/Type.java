@@ -7,31 +7,32 @@ import droidsafe.runtime.*;
 import android.util.Log;
 import java.lang.reflect.Field;
 public class Type extends BaseObj {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.614 -0500", hash_original_field = "166EAD939F5B09E30CBCA868F3EBACAE", hash_generated_field = "166EAD939F5B09E30CBCA868F3EBACAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.018 -0500", hash_original_field = "166EAD939F5B09E30CBCA868F3EBACAE", hash_generated_field = "166EAD939F5B09E30CBCA868F3EBACAE")
 
     int mDimX;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.615 -0500", hash_original_field = "52E465806612DCEB5EFA0AB2B3ADAE76", hash_generated_field = "52E465806612DCEB5EFA0AB2B3ADAE76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.020 -0500", hash_original_field = "52E465806612DCEB5EFA0AB2B3ADAE76", hash_generated_field = "52E465806612DCEB5EFA0AB2B3ADAE76")
 
     int mDimY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.616 -0500", hash_original_field = "CECA88AF13F74CDB4E12BE33048A317C", hash_generated_field = "CECA88AF13F74CDB4E12BE33048A317C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.022 -0500", hash_original_field = "CECA88AF13F74CDB4E12BE33048A317C", hash_generated_field = "CECA88AF13F74CDB4E12BE33048A317C")
 
     int mDimZ;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.616 -0500", hash_original_field = "25321B8A368E9568ECB8D39F78480AB5", hash_generated_field = "25321B8A368E9568ECB8D39F78480AB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.024 -0500", hash_original_field = "25321B8A368E9568ECB8D39F78480AB5", hash_generated_field = "25321B8A368E9568ECB8D39F78480AB5")
 
     boolean mDimMipmaps;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.617 -0500", hash_original_field = "DFD2959534422FCC872B818F7E0B6875", hash_generated_field = "DFD2959534422FCC872B818F7E0B6875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.027 -0500", hash_original_field = "DFD2959534422FCC872B818F7E0B6875", hash_generated_field = "DFD2959534422FCC872B818F7E0B6875")
 
     boolean mDimFaces;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.618 -0500", hash_original_field = "E724C728128A53C10A09F06C64DDD490", hash_generated_field = "E724C728128A53C10A09F06C64DDD490")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.028 -0500", hash_original_field = "E724C728128A53C10A09F06C64DDD490", hash_generated_field = "E724C728128A53C10A09F06C64DDD490")
 
     int mElementCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.619 -0500", hash_original_field = "EC8CEE28EE8EC6C488BEE33A3E23406D", hash_generated_field = "EC8CEE28EE8EC6C488BEE33A3E23406D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.030 -0500", hash_original_field = "EC8CEE28EE8EC6C488BEE33A3E23406D", hash_generated_field = "EC8CEE28EE8EC6C488BEE33A3E23406D")
 
     Element mElement;
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.628 -0500", hash_original_method = "16C6269A6A80062F3C7B05511AF2EA14", hash_generated_method = "16C6269A6A80062F3C7B05511AF2EA14")
-    Type(int id, RenderScript rs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.057 -0500", hash_original_method = "16C6269A6A80062F3C7B05511AF2EA14", hash_generated_method = "16C6269A6A80062F3C7B05511AF2EA14")
+    
+Type(int id, RenderScript rs) {
         super(id, rs);
     }
 
@@ -40,8 +41,9 @@ public class Type extends BaseObj {
      *
      * @return Element
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.622 -0500", hash_original_method = "4A983E462672C2EA1E6C39A6A01B91CB", hash_generated_method = "D36EAF357291305E00905E7D38FC8987")
-    public Element getElement() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.039 -0500", hash_original_method = "4A983E462672C2EA1E6C39A6A01B91CB", hash_generated_method = "D36EAF357291305E00905E7D38FC8987")
+    
+public Element getElement() {
         return mElement;
     }
 
@@ -50,8 +52,9 @@ public class Type extends BaseObj {
      *
      * @return int
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.623 -0500", hash_original_method = "B8C0887F5E9E541E727ECCD0086F5E5B", hash_generated_method = "C3E376CA9068FEA6A69EEB85328B8C4E")
-    public int getX() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.041 -0500", hash_original_method = "B8C0887F5E9E541E727ECCD0086F5E5B", hash_generated_method = "C3E376CA9068FEA6A69EEB85328B8C4E")
+    
+public int getX() {
         return mDimX;
     }
 
@@ -60,8 +63,9 @@ public class Type extends BaseObj {
      *
      * @return int
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.624 -0500", hash_original_method = "5E9C3BBA0D7932B9CBA182F8B32036BC", hash_generated_method = "F0577C464B17A02017BA91EF44D925A3")
-    public int getY() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.044 -0500", hash_original_method = "5E9C3BBA0D7932B9CBA182F8B32036BC", hash_generated_method = "F0577C464B17A02017BA91EF44D925A3")
+    
+public int getY() {
         return mDimY;
     }
 
@@ -70,8 +74,9 @@ public class Type extends BaseObj {
      *
      * @return int
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.624 -0500", hash_original_method = "E315B95FC6DF6C1A4510539F8CFF9FC2", hash_generated_method = "61ABC746DD74FAB75CAB1606DF4A5A23")
-    public int getZ() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.046 -0500", hash_original_method = "E315B95FC6DF6C1A4510539F8CFF9FC2", hash_generated_method = "61ABC746DD74FAB75CAB1606DF4A5A23")
+    
+public int getZ() {
         return mDimZ;
     }
 
@@ -80,8 +85,9 @@ public class Type extends BaseObj {
      *
      * @return boolean
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.625 -0500", hash_original_method = "4B051F35B9C270411E541578F7D74139", hash_generated_method = "CAA61CEDD6773BF38F3304301B6F4716")
-    public boolean hasMipmaps() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.048 -0500", hash_original_method = "4B051F35B9C270411E541578F7D74139", hash_generated_method = "CAA61CEDD6773BF38F3304301B6F4716")
+    
+public boolean hasMipmaps() {
         return mDimMipmaps;
     }
 
@@ -90,8 +96,9 @@ public class Type extends BaseObj {
      *
      * @return boolean
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.626 -0500", hash_original_method = "A298ED811BA5BE2EDFB864807B88B98E", hash_generated_method = "CCF6C2B2D75122A7B8B8B267C87CE322")
-    public boolean hasFaces() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.050 -0500", hash_original_method = "A298ED811BA5BE2EDFB864807B88B98E", hash_generated_method = "CCF6C2B2D75122A7B8B8B267C87CE322")
+    
+public boolean hasFaces() {
         return mDimFaces;
     }
 
@@ -100,13 +107,15 @@ public class Type extends BaseObj {
      *
      * @return int
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.627 -0500", hash_original_method = "48334469C8B133AB7598FD3FC5B4F37B", hash_generated_method = "07B3E2B76BEDBA594AEC525B81BB271B")
-    public int getCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.052 -0500", hash_original_method = "48334469C8B133AB7598FD3FC5B4F37B", hash_generated_method = "07B3E2B76BEDBA594AEC525B81BB271B")
+    
+public int getCount() {
         return mElementCount;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.628 -0500", hash_original_method = "2C27E4A52BBF3CC9203234C207690BDD", hash_generated_method = "2C27E4A52BBF3CC9203234C207690BDD")
-    void calcElementCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.055 -0500", hash_original_method = "2C27E4A52BBF3CC9203234C207690BDD", hash_generated_method = "2C27E4A52BBF3CC9203234C207690BDD")
+    
+void calcElementCount() {
         boolean hasLod = hasMipmaps();
         int x = getX();
         int y = getY();
@@ -143,9 +152,10 @@ public class Type extends BaseObj {
         mElementCount = count;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.629 -0500", hash_original_method = "D9C91D8B790AFADAD6800FA858F1EFFA", hash_generated_method = "24B69C690FA1AA47BA6F18E4A983AE74")
-    @Override
-void updateFromNative() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.060 -0500", hash_original_method = "D9C91D8B790AFADAD6800FA858F1EFFA", hash_generated_method = "24B69C690FA1AA47BA6F18E4A983AE74")
+    
+@Override
+    void updateFromNative() {
         // We have 6 integer to obtain mDimX; mDimY; mDimZ;
         // mDimLOD; mDimFaces; mElement;
         int[] dataBuffer = new int[6];
@@ -179,37 +189,38 @@ void updateFromNative() {
         POSITVE_Y (2),
         @Deprecated
         POSITVE_Z (4);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.620 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.033 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
 
         int mID;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.621 -0500", hash_original_method = "7F0480675545CC5C5FE59A3A30729560", hash_generated_method = "7F0480675545CC5C5FE59A3A30729560")
-            CubemapFace(int id) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.035 -0500", hash_original_method = "7F0480675545CC5C5FE59A3A30729560", hash_generated_method = "7F0480675545CC5C5FE59A3A30729560")
+            
+CubemapFace(int id) {
             mID = id;
         }
     }
 
     
     public static class Builder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.631 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.063 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
 
         RenderScript mRS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.631 -0500", hash_original_field = "19CD781E8EBBB291E01238A36BA4EFE0", hash_generated_field = "19CD781E8EBBB291E01238A36BA4EFE0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.065 -0500", hash_original_field = "19CD781E8EBBB291E01238A36BA4EFE0", hash_generated_field = "19CD781E8EBBB291E01238A36BA4EFE0")
 
         int mDimX = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.632 -0500", hash_original_field = "52E465806612DCEB5EFA0AB2B3ADAE76", hash_generated_field = "52E465806612DCEB5EFA0AB2B3ADAE76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.067 -0500", hash_original_field = "52E465806612DCEB5EFA0AB2B3ADAE76", hash_generated_field = "52E465806612DCEB5EFA0AB2B3ADAE76")
 
         int mDimY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.633 -0500", hash_original_field = "CECA88AF13F74CDB4E12BE33048A317C", hash_generated_field = "CECA88AF13F74CDB4E12BE33048A317C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.069 -0500", hash_original_field = "CECA88AF13F74CDB4E12BE33048A317C", hash_generated_field = "CECA88AF13F74CDB4E12BE33048A317C")
 
         int mDimZ;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.633 -0500", hash_original_field = "25321B8A368E9568ECB8D39F78480AB5", hash_generated_field = "25321B8A368E9568ECB8D39F78480AB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.072 -0500", hash_original_field = "25321B8A368E9568ECB8D39F78480AB5", hash_generated_field = "25321B8A368E9568ECB8D39F78480AB5")
 
         boolean mDimMipmaps;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.634 -0500", hash_original_field = "DFD2959534422FCC872B818F7E0B6875", hash_generated_field = "DFD2959534422FCC872B818F7E0B6875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.074 -0500", hash_original_field = "DFD2959534422FCC872B818F7E0B6875", hash_generated_field = "DFD2959534422FCC872B818F7E0B6875")
 
         boolean mDimFaces;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.635 -0500", hash_original_field = "EC8CEE28EE8EC6C488BEE33A3E23406D", hash_generated_field = "EC8CEE28EE8EC6C488BEE33A3E23406D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.076 -0500", hash_original_field = "EC8CEE28EE8EC6C488BEE33A3E23406D", hash_generated_field = "EC8CEE28EE8EC6C488BEE33A3E23406D")
 
 
         Element mElement;
@@ -220,8 +231,9 @@ void updateFromNative() {
          * @param rs
          * @param e The element for the type to be created.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.636 -0500", hash_original_method = "7F91DC25C3C3CDE10A09CD9C14BFD4B5", hash_generated_method = "A69BA93BB45D8DD9CC8C1228B4D15887")
-        public Builder(RenderScript rs, Element e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.078 -0500", hash_original_method = "7F91DC25C3C3CDE10A09CD9C14BFD4B5", hash_generated_method = "A69BA93BB45D8DD9CC8C1228B4D15887")
+        
+public Builder(RenderScript rs, Element e) {
             e.checkValid();
             mRS = rs;
             mElement = e;
@@ -233,8 +245,9 @@ void updateFromNative() {
          *
          * @param value
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.637 -0500", hash_original_method = "49C74CAE6836798531411A61C63C5943", hash_generated_method = "7A1E15900F801E6272BB39F7A1A7BF36")
-        public Builder setX(int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.080 -0500", hash_original_method = "49C74CAE6836798531411A61C63C5943", hash_generated_method = "7A1E15900F801E6272BB39F7A1A7BF36")
+        
+public Builder setX(int value) {
             if(value < 1) {
                 throw new RSIllegalArgumentException("Values of less than 1 for Dimension X are not valid.");
             }
@@ -242,8 +255,9 @@ void updateFromNative() {
             return this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.637 -0500", hash_original_method = "DFB03FCEFD1326FB2171A041DB523085", hash_generated_method = "3AD63D81C725F1F4DE1D4824205DB86A")
-        public Builder setY(int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.083 -0500", hash_original_method = "DFB03FCEFD1326FB2171A041DB523085", hash_generated_method = "3AD63D81C725F1F4DE1D4824205DB86A")
+        
+public Builder setY(int value) {
             if(value < 1) {
                 throw new RSIllegalArgumentException("Values of less than 1 for Dimension Y are not valid.");
             }
@@ -251,14 +265,16 @@ void updateFromNative() {
             return this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.638 -0500", hash_original_method = "6FF2F97061E56A03E659E1B7B4FEDFAC", hash_generated_method = "8347A30040E5AD98F09C2ACC01143311")
-        public Builder setMipmaps(boolean value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.085 -0500", hash_original_method = "6FF2F97061E56A03E659E1B7B4FEDFAC", hash_generated_method = "8347A30040E5AD98F09C2ACC01143311")
+        
+public Builder setMipmaps(boolean value) {
             mDimMipmaps = value;
             return this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.639 -0500", hash_original_method = "A3F9FA926CF212B551274C553F57A403", hash_generated_method = "7E79D368FFD6012497169A4412D60FE0")
-        public Builder setFaces(boolean value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.088 -0500", hash_original_method = "A3F9FA926CF212B551274C553F57A403", hash_generated_method = "7E79D368FFD6012497169A4412D60FE0")
+        
+public Builder setFaces(boolean value) {
             mDimFaces = value;
             return this;
         }
@@ -269,8 +285,9 @@ void updateFromNative() {
          *
          * @return Type
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:49.640 -0500", hash_original_method = "FE3D5B55E53BDF1600935D20E2D4BB17", hash_generated_method = "C63988662C52768F3AC4AD1066D1DB21")
-        public Type create() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.091 -0500", hash_original_method = "FE3D5B55E53BDF1600935D20E2D4BB17", hash_generated_method = "C63988662C52768F3AC4AD1066D1DB21")
+        
+public Type create() {
             if (mDimZ > 0) {
                 if ((mDimX < 1) || (mDimY < 1)) {
                     throw new RSInvalidStateException("Both X and Y dimension required when Z is present.");

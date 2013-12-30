@@ -21,8 +21,9 @@ public abstract class WebBackForwardListClient {
      * WebBackForwardList.
      * @param item The newly created WebHistoryItem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.335 -0500", hash_original_method = "1F6D8177500DFC3D1F576E07196A0774", hash_generated_method = "98B7C3854156F83ED7D3C6F9613B5879")
-    public void onNewHistoryItem(WebHistoryItem item) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.838 -0500", hash_original_method = "1F6D8177500DFC3D1F576E07196A0774", hash_generated_method = "98B7C3854156F83ED7D3C6F9613B5879")
+    
+public void onNewHistoryItem(WebHistoryItem item) { }
 
     /**
      * Notify the client that the <var>item</var> at <var>index</var> is now
@@ -30,8 +31,9 @@ public abstract class WebBackForwardListClient {
      * @param item A WebHistoryItem
      * @param index The new history index
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.336 -0500", hash_original_method = "DA8164C67D7B3779FDED447EEF1649BA", hash_generated_method = "D1F90A23A260AF74142BEABDA486C7C2")
-    public void onIndexChanged(WebHistoryItem item, int index) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.841 -0500", hash_original_method = "DA8164C67D7B3779FDED447EEF1649BA", hash_generated_method = "D1F90A23A260AF74142BEABDA486C7C2")
+    
+public void onIndexChanged(WebHistoryItem item, int index) { }
 
     
 }

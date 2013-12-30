@@ -13,8 +13,9 @@ import java.io.Serializable;
 
 public abstract class Format implements Serializable, Cloneable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.560 -0500", hash_original_method = "342F58D58D7CDE61587D20CC55F1BF65", hash_generated_method = "E40E3DF50A129A615CEDF26F12F19796")
-    static boolean upTo(String string, ParsePosition position,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.562 -0500", hash_original_method = "342F58D58D7CDE61587D20CC55F1BF65", hash_generated_method = "E40E3DF50A129A615CEDF26F12F19796")
+    
+static boolean upTo(String string, ParsePosition position,
             StringBuffer buffer, char stop) {
         int index = position.getIndex(), length = string.length();
         boolean lastQuote = false, quote = false;
@@ -38,8 +39,9 @@ public abstract class Format implements Serializable, Cloneable {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.561 -0500", hash_original_method = "E4DAD8C2181AF3C8695050B31E68F195", hash_generated_method = "EC7B532152BFC21D3BEC28BD5621AAB5")
-    static boolean upToWithQuotes(String string, ParsePosition position,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.565 -0500", hash_original_method = "E4DAD8C2181AF3C8695050B31E68F195", hash_generated_method = "EC7B532152BFC21D3BEC28BD5621AAB5")
+    
+static boolean upToWithQuotes(String string, ParsePosition position,
             StringBuffer buffer, char stop, char start) {
         int index = position.getIndex(), length = string.length(), count = 1;
         boolean quote = false;
@@ -64,7 +66,7 @@ public abstract class Format implements Serializable, Cloneable {
         }
         throw new IllegalArgumentException("Unmatched braces in the pattern");
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.553 -0500", hash_original_field = "0DB40A090DF073D3D23310F63EA8393F", hash_generated_field = "F20B0022FF8D3E84304897148427AD29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.541 -0500", hash_original_field = "0DB40A090DF073D3D23310F63EA8393F", hash_generated_field = "F20B0022FF8D3E84304897148427AD29")
 
 
     private static final long serialVersionUID = -299282585814624189L;
@@ -72,8 +74,9 @@ public abstract class Format implements Serializable, Cloneable {
     /**
      * Used by subclasses. This was public in Java 5.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.554 -0500", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "EFA7B769FE1AEB1EF8661CFADF6D58B2")
-    protected Format() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.544 -0500", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "EFA7B769FE1AEB1EF8661CFADF6D58B2")
+    
+protected Format() {
     }
 
     /**
@@ -83,9 +86,10 @@ public abstract class Format implements Serializable, Cloneable {
      *
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.555 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.547 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
+    
+@Override
+    public Object clone() {
         try {
             return super.clone();
         } catch (CloneNotSupportedException e) {
@@ -102,8 +106,9 @@ public Object clone() {
      * @throws IllegalArgumentException
      *         if the object cannot be formatted by this format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.555 -0500", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "D6FF871E879357E151D2BDB709C4FF98")
-    public final String format(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.549 -0500", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "D6FF871E879357E151D2BDB709C4FF98")
+    
+public final String format(Object object) {
         return format(object, new StringBuffer(), new FieldPosition(0))
                 .toString();
     }
@@ -128,8 +133,9 @@ public Object clone() {
      * @throws IllegalArgumentException
      *            if the object cannot be formatted by this format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.556 -0500", hash_original_method = "51EFA60E0E20FDE37B9F085D9B58A623", hash_generated_method = "8613FF54F89F6D1F30A04F56DAF4DDD3")
-    public abstract StringBuffer format(Object object, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.553 -0500", hash_original_method = "51EFA60E0E20FDE37B9F085D9B58A623", hash_generated_method = "8613FF54F89F6D1F30A04F56DAF4DDD3")
+    
+public abstract StringBuffer format(Object object, StringBuffer buffer,
             FieldPosition field);
 
     /**
@@ -147,8 +153,9 @@ public Object clone() {
      * @throws IllegalArgumentException
      *            if the object cannot be formatted by this format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.557 -0500", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "EE414D44458FA6E5766F6B76051CCB77")
-    public AttributedCharacterIterator formatToCharacterIterator(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.555 -0500", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "EE414D44458FA6E5766F6B76051CCB77")
+    
+public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         return new AttributedString(format(object)).getIterator();
     }
 
@@ -161,8 +168,9 @@ public Object clone() {
      * @throws ParseException
      *            if an error occurs during parsing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.558 -0500", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "4599B9C84ED9B8144980A818CAE01834")
-    public Object parseObject(String string) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.557 -0500", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "4599B9C84ED9B8144980A818CAE01834")
+    
+public Object parseObject(String string) throws ParseException {
         ParsePosition position = new ParsePosition(0);
         Object result = parseObject(string, position);
         if (position.getIndex() == 0) {
@@ -173,7 +181,7 @@ public Object clone() {
 
     
     public static class Field extends AttributedCharacterIterator.Attribute {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.563 -0500", hash_original_field = "7B33E614D84C5CC7F14E8DA120EFE29B", hash_generated_field = "DE61A40CF1E88A2D4F1C7CBD694BE984")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.568 -0500", hash_original_field = "7B33E614D84C5CC7F14E8DA120EFE29B", hash_generated_field = "DE61A40CF1E88A2D4F1C7CBD694BE984")
 
 
         private static final long serialVersionUID = 276966692217360283L;
@@ -184,8 +192,9 @@ public Object clone() {
          * @param fieldName
          *            the field name.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.564 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
-        protected Field(String fieldName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.572 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
+        
+protected Field(String fieldName) {
             super(fieldName);
         }
     }
@@ -208,7 +217,8 @@ public Object clone() {
      * @return the object resulting from the parse or {@code null} if there is
      *         an error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.559 -0500", hash_original_method = "B30F2D29CF174E11D687387FB98BED90", hash_generated_method = "2D7138DA8CBCBAF9EF63AF3FC800E113")
-    public abstract Object parseObject(String string, ParsePosition position);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.560 -0500", hash_original_method = "B30F2D29CF174E11D687387FB98BED90", hash_generated_method = "2D7138DA8CBCBAF9EF63AF3FC800E113")
+    
+public abstract Object parseObject(String string, ParsePosition position);
 }
 

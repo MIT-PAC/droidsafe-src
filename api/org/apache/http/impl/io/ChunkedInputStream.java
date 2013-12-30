@@ -31,43 +31,45 @@ public class ChunkedInputStream extends InputStream {
      * @param inStream The {@link InputStream} to exhaust.
      * @throws IOException If an IO problem occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.851 -0500", hash_original_method = "D70623C6F3F3546E610A0761808ACD51", hash_generated_method = "7153314C2BD4370663FC9A00A6B9E867")
-    static void exhaustInputStream(final InputStream inStream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.211 -0500", hash_original_method = "D70623C6F3F3546E610A0761808ACD51", hash_generated_method = "7153314C2BD4370663FC9A00A6B9E867")
+    
+static void exhaustInputStream(final InputStream inStream) throws IOException {
         // read and discard the remainder of the message
         byte buffer[] = new byte[1024];
         while (inStream.read(buffer) >= 0) {
             ;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.837 -0500", hash_original_field = "70993BC56EC5FB33DD67D98C82018650", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.169 -0500", hash_original_field = "70993BC56EC5FB33DD67D98C82018650", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
 
     private SessionInputBuffer in;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.837 -0500", hash_original_field = "350F4DBD74AB8DD54F1F983317E69056", hash_generated_field = "2D6B54E04F26AA35A63824F1627650C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.172 -0500", hash_original_field = "350F4DBD74AB8DD54F1F983317E69056", hash_generated_field = "2D6B54E04F26AA35A63824F1627650C8")
 
 
     private  CharArrayBuffer buffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.838 -0500", hash_original_field = "8D4654446C9DD3E766BE07B4267F3234", hash_generated_field = "47235E9A35474F8DBDD6D8DBB4AB5B6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.175 -0500", hash_original_field = "8D4654446C9DD3E766BE07B4267F3234", hash_generated_field = "47235E9A35474F8DBDD6D8DBB4AB5B6A")
 
     private int chunkSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.839 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.177 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
     private int pos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.840 -0500", hash_original_field = "F33F0652333827FC54B09EF681817D98", hash_generated_field = "C7D7F0DB76F14B1CC635F97425C47305")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.179 -0500", hash_original_field = "F33F0652333827FC54B09EF681817D98", hash_generated_field = "C7D7F0DB76F14B1CC635F97425C47305")
 
     private boolean bof = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.841 -0500", hash_original_field = "35FBA36BFF4EF032B0A0118B3A595ECD", hash_generated_field = "9D21D7F75CFE95F29DC47C0C3AFEC881")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.181 -0500", hash_original_field = "35FBA36BFF4EF032B0A0118B3A595ECD", hash_generated_field = "9D21D7F75CFE95F29DC47C0C3AFEC881")
 
     private boolean eof = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.842 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.183 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
 
     private boolean closed = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.842 -0500", hash_original_field = "18F5AA99B5063C2655DD04975F7C54A5", hash_generated_field = "A74851231E6F66E8990234BC00C8E61F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.185 -0500", hash_original_field = "18F5AA99B5063C2655DD04975F7C54A5", hash_generated_field = "A74851231E6F66E8990234BC00C8E61F")
 
     
     private Header[] footers = new Header[] {};
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.843 -0500", hash_original_method = "A74B5C02541010DFF9C03CAF0620A33C", hash_generated_method = "84DB1223B64EFCF6F03092871343DCFB")
-    public ChunkedInputStream(final SessionInputBuffer in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.188 -0500", hash_original_method = "A74B5C02541010DFF9C03CAF0620A33C", hash_generated_method = "84DB1223B64EFCF6F03092871343DCFB")
+    
+public ChunkedInputStream(final SessionInputBuffer in) {
         super();
         if (in == null) {
             throw new IllegalArgumentException("Session input buffer may not be null");
@@ -89,8 +91,9 @@ public class ChunkedInputStream extends InputStream {
      * byte
      * @throws IOException If an IO problem occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.844 -0500", hash_original_method = "5987C40EBD16187447E09174CE17A1D5", hash_generated_method = "11C8E65F36ECC436105906060B9725E9")
-    public int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.192 -0500", hash_original_method = "5987C40EBD16187447E09174CE17A1D5", hash_generated_method = "11C8E65F36ECC436105906060B9725E9")
+    
+public int read() throws IOException {
         if (this.closed) {
             throw new IOException("Attempted read from closed stream.");
         }
@@ -118,8 +121,9 @@ public class ChunkedInputStream extends InputStream {
      * @see java.io.InputStream#read(byte[], int, int)
      * @throws IOException if an IO problem occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.845 -0500", hash_original_method = "3658228930DC027E604760F33BD6E163", hash_generated_method = "6E895E4791EAA7C54ED5D455FB855F58")
-    public int read (byte[] b, int off, int len) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.194 -0500", hash_original_method = "3658228930DC027E604760F33BD6E163", hash_generated_method = "6E895E4791EAA7C54ED5D455FB855F58")
+    
+public int read (byte[] b, int off, int len) throws IOException {
 
         if (closed) {
             throw new IOException("Attempted read from closed stream.");
@@ -148,8 +152,9 @@ public class ChunkedInputStream extends InputStream {
      * @see java.io.InputStream#read(byte[])
      * @throws IOException if an IO problem occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.846 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E0F9C5B343EA0376178403393DBFABB2")
-    public int read (byte[] b) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.196 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E0F9C5B343EA0376178403393DBFABB2")
+    
+public int read (byte[] b) throws IOException {
         return read(b, 0, b.length);
     }
 
@@ -157,8 +162,9 @@ public class ChunkedInputStream extends InputStream {
      * Read the next chunk.
      * @throws IOException If an IO error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.847 -0500", hash_original_method = "4EC8EF70B227B064D40EEFDD2252C457", hash_generated_method = "83ABCC4598E21E5B401D267A4724D136")
-    private void nextChunk() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.199 -0500", hash_original_method = "4EC8EF70B227B064D40EEFDD2252C457", hash_generated_method = "83ABCC4598E21E5B401D267A4724D136")
+    
+private void nextChunk() throws IOException {
         chunkSize = getChunkSize();
         if (chunkSize < 0) {
             throw new MalformedChunkCodingException("Negative chunk size");
@@ -184,8 +190,9 @@ public class ChunkedInputStream extends InputStream {
      * 
      * @throws IOException when the chunk size could not be parsed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.847 -0500", hash_original_method = "992D2E5FFE364796E637C7610DCE798B", hash_generated_method = "984043FD4603F59C9F4EE0A228878B4F")
-    private int getChunkSize() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.201 -0500", hash_original_method = "992D2E5FFE364796E637C7610DCE798B", hash_generated_method = "984043FD4603F59C9F4EE0A228878B4F")
+    
+private int getChunkSize() throws IOException {
         // skip CRLF
         if (!bof) {
             int cr = in.read();
@@ -217,8 +224,9 @@ public class ChunkedInputStream extends InputStream {
      * Reads and stores the Trailer headers.
      * @throws IOException If an IO problem occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.848 -0500", hash_original_method = "B639A385C0DFC1E0B0F3B3045E38F98A", hash_generated_method = "1850CB8BED76D50CE56B0CC208CCB3C6")
-    private void parseTrailerHeaders() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.204 -0500", hash_original_method = "B639A385C0DFC1E0B0F3B3045E38F98A", hash_generated_method = "1850CB8BED76D50CE56B0CC208CCB3C6")
+    
+private void parseTrailerHeaders() throws IOException {
         try {
             this.footers = AbstractMessageParser.parseHeaders
                 (in, -1, -1, null);
@@ -236,8 +244,9 @@ public class ChunkedInputStream extends InputStream {
      * next response without scanning.
      * @throws IOException If an IO problem occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.849 -0500", hash_original_method = "7C0EA5C3612B6B07D60F3A7E9A05393C", hash_generated_method = "A0CD67C0024A67AF6FE62D0CDBFBCB76")
-    public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.206 -0500", hash_original_method = "7C0EA5C3612B6B07D60F3A7E9A05393C", hash_generated_method = "A0CD67C0024A67AF6FE62D0CDBFBCB76")
+    
+public void close() throws IOException {
         if (!closed) {
             try {
                 if (!eof) {
@@ -250,8 +259,9 @@ public class ChunkedInputStream extends InputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.850 -0500", hash_original_method = "7163A37F445D9A153E08F6B88D28A6E4", hash_generated_method = "06FFEACFF7B2DF64E7931EEAD93BB078")
-    public Header[] getFooters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.208 -0500", hash_original_method = "7163A37F445D9A153E08F6B88D28A6E4", hash_generated_method = "06FFEACFF7B2DF64E7931EEAD93BB078")
+    
+public Header[] getFooters() {
         return (Header[])this.footers.clone();
     }
 

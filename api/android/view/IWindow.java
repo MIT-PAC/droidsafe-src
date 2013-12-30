@@ -10,15 +10,16 @@ public interface IWindow extends android.os.IInterface
 
 public static abstract class Stub extends android.os.Binder implements android.view.IWindow
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.784 -0500", hash_original_field = "0AAA31184C36BC4966CE6DC82AF3658B", hash_generated_field = "755650C6C99F1AB4D14B9EAAEFDE9BB2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.952 -0500", hash_original_field = "0AAA31184C36BC4966CE6DC82AF3658B", hash_generated_field = "755650C6C99F1AB4D14B9EAAEFDE9BB2")
 
 private static final java.lang.String DESCRIPTOR = "android.view.IWindow";
 /**
  * Cast an IBinder object into an android.view.IWindow interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.786 -0500", hash_original_method = "C27E0EBC0F8FE11BF725DD4DF2EED1AD", hash_generated_method = "736F011477D210BD4724B5D9849FA203")
-        public static android.view.IWindow asInterface(android.os.IBinder obj)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.957 -0500", hash_original_method = "C27E0EBC0F8FE11BF725DD4DF2EED1AD", hash_generated_method = "736F011477D210BD4724B5D9849FA203")
+        
+public static android.view.IWindow asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -29,32 +30,35 @@ return ((android.view.IWindow)iin);
 }
 return new android.view.IWindow.Stub.Proxy(obj);
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.805 -0500", hash_original_field = "1A3E79F8E7FC0364FEC342A348C9742A", hash_generated_field = "26072D2C8004426DF2AC02EE50EA8322")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.010 -0500", hash_original_field = "1A3E79F8E7FC0364FEC342A348C9742A", hash_generated_field = "26072D2C8004426DF2AC02EE50EA8322")
 
 static final int TRANSACTION_executeCommand = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.806 -0500", hash_original_field = "DACE981EF92AA5CC6C19E839962AD519", hash_generated_field = "36B5F05C8761D3E2491FCD4538F302A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.012 -0500", hash_original_field = "DACE981EF92AA5CC6C19E839962AD519", hash_generated_field = "36B5F05C8761D3E2491FCD4538F302A4")
 
 static final int TRANSACTION_resized = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.807 -0500", hash_original_field = "2F91A90F3EB12177F1122D564B773DF1", hash_generated_field = "ED97BA86451AEC6505A6A1E4410FD2E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.015 -0500", hash_original_field = "2F91A90F3EB12177F1122D564B773DF1", hash_generated_field = "ED97BA86451AEC6505A6A1E4410FD2E3")
 
 static final int TRANSACTION_dispatchAppVisibility = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
 private static class Proxy implements android.view.IWindow
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.790 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.968 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
 
 private android.os.IBinder mRemote;
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.791 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
-            Proxy(android.os.IBinder remote)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.971 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
+            
+Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.792 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
-            public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.973 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
+            
+public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.793 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
-            public java.lang.String getInterfaceDescriptor()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.975 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+            
+public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -67,8 +71,9 @@ return DESCRIPTOR;
      * command. Any response from the receiver must be sent through the
      * specified file descriptor.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.794 -0500", hash_original_method = "E57BFF56F043C94276BA34FADEBFD994", hash_generated_method = "996D6C3A80AF2A68707D3F0E18073DCB")
-            public void executeCommand(java.lang.String command, java.lang.String parameters, android.os.ParcelFileDescriptor descriptor) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.978 -0500", hash_original_method = "E57BFF56F043C94276BA34FADEBFD994", hash_generated_method = "996D6C3A80AF2A68707D3F0E18073DCB")
+            
+public void executeCommand(java.lang.String command, java.lang.String parameters, android.os.ParcelFileDescriptor descriptor) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -88,8 +93,9 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.795 -0500", hash_original_method = "792F80B3795471B1BF10AB5C364E398B", hash_generated_method = "7BE4A27942140F65DEC254AC265189A4")
-            public void resized(int w, int h, android.graphics.Rect coveredInsets, android.graphics.Rect visibleInsets, boolean reportDraw, android.content.res.Configuration newConfig) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.981 -0500", hash_original_method = "792F80B3795471B1BF10AB5C364E398B", hash_generated_method = "7BE4A27942140F65DEC254AC265189A4")
+            
+public void resized(int w, int h, android.graphics.Rect coveredInsets, android.graphics.Rect visibleInsets, boolean reportDraw, android.content.res.Configuration newConfig) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -124,8 +130,9 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.796 -0500", hash_original_method = "B82B388CF88B088EAE11646FD909B807", hash_generated_method = "CC5D89C51ABC5DF6D43525290D01E0BA")
-            public void dispatchAppVisibility(boolean visible) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.984 -0500", hash_original_method = "B82B388CF88B088EAE11646FD909B807", hash_generated_method = "CC5D89C51ABC5DF6D43525290D01E0BA")
+            
+public void dispatchAppVisibility(boolean visible) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -137,8 +144,9 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.797 -0500", hash_original_method = "7E4F13F12CF006B04E347834299E8AEE", hash_generated_method = "430FC274AE5B37DC94056AC5F3D2CC89")
-            public void dispatchGetNewSurface() throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.986 -0500", hash_original_method = "7E4F13F12CF006B04E347834299E8AEE", hash_generated_method = "430FC274AE5B37DC94056AC5F3D2CC89")
+            
+public void dispatchGetNewSurface() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -153,8 +161,9 @@ _data.recycle();
      * Tell the window that it is either gaining or losing focus.  Keep it up
      * to date on the current state showing navigational focus (touch mode) too.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.798 -0500", hash_original_method = "0939BB3456A9AA0DF90F1E7AD4E73FA8", hash_generated_method = "34A6BAF43A160C22EC035523CFD247F0")
-            public void windowFocusChanged(boolean hasFocus, boolean inTouchMode) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.989 -0500", hash_original_method = "0939BB3456A9AA0DF90F1E7AD4E73FA8", hash_generated_method = "34A6BAF43A160C22EC035523CFD247F0")
+            
+public void windowFocusChanged(boolean hasFocus, boolean inTouchMode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -167,8 +176,9 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.799 -0500", hash_original_method = "9A4A81A1599BFA8CB3FEFA1825B0BE90", hash_generated_method = "0E8C9F942AD6DA472ACCA6779E0F22A1")
-            public void closeSystemDialogs(java.lang.String reason) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.991 -0500", hash_original_method = "9A4A81A1599BFA8CB3FEFA1825B0BE90", hash_generated_method = "0E8C9F942AD6DA472ACCA6779E0F22A1")
+            
+public void closeSystemDialogs(java.lang.String reason) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -183,8 +193,9 @@ _data.recycle();
 /**
      * Called for wallpaper windows when their offsets change.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.800 -0500", hash_original_method = "430A5D0BAD2A6B0195ACDFD5A84BD8D5", hash_generated_method = "0E42ADD02C32455D8CB456CA337B1B1B")
-            public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep, boolean sync) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.994 -0500", hash_original_method = "430A5D0BAD2A6B0195ACDFD5A84BD8D5", hash_generated_method = "0E42ADD02C32455D8CB456CA337B1B1B")
+            
+public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep, boolean sync) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -200,8 +211,9 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.801 -0500", hash_original_method = "97B5FF9971C1886E6FA32012B72AA491", hash_generated_method = "93F02765844CA4773F9254720CC2D84A")
-            public void dispatchWallpaperCommand(java.lang.String action, int x, int y, int z, android.os.Bundle extras, boolean sync) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.998 -0500", hash_original_method = "97B5FF9971C1886E6FA32012B72AA491", hash_generated_method = "93F02765844CA4773F9254720CC2D84A")
+            
+public void dispatchWallpaperCommand(java.lang.String action, int x, int y, int z, android.os.Bundle extras, boolean sync) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -227,8 +239,9 @@ _data.recycle();
 /**
      * Drag/drop events
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.802 -0500", hash_original_method = "CD74DD3D29B56C7A54D09014AF06B3B9", hash_generated_method = "23F5F42116FB8242A9477F5C9593A757")
-            public void dispatchDragEvent(android.view.DragEvent event) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.001 -0500", hash_original_method = "CD74DD3D29B56C7A54D09014AF06B3B9", hash_generated_method = "23F5F42116FB8242A9477F5C9593A757")
+            
+public void dispatchDragEvent(android.view.DragEvent event) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -249,8 +262,9 @@ _data.recycle();
 /**
      * System chrome visibility changes
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.803 -0500", hash_original_method = "DBF8D361CA4F63AA616D4F1E15B51426", hash_generated_method = "4B67386B05ADFA23F653F23655712DD8")
-            public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility, int localValue, int localChanges) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.004 -0500", hash_original_method = "DBF8D361CA4F63AA616D4F1E15B51426", hash_generated_method = "4B67386B05ADFA23F653F23655712DD8")
+            
+public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility, int localValue, int localChanges) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -266,41 +280,43 @@ _data.recycle();
 }
 }
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.808 -0500", hash_original_field = "C2280D5A1A2B9F8ADF4CEFA3AC38D864", hash_generated_field = "982D0307BDF400DF6798F51685666B51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.017 -0500", hash_original_field = "C2280D5A1A2B9F8ADF4CEFA3AC38D864", hash_generated_field = "982D0307BDF400DF6798F51685666B51")
 
 static final int TRANSACTION_dispatchGetNewSurface = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.809 -0500", hash_original_field = "656326322A28B747A82D19C019C1CC6C", hash_generated_field = "B6E46E378E848A703C23D2C407F96731")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.020 -0500", hash_original_field = "656326322A28B747A82D19C019C1CC6C", hash_generated_field = "B6E46E378E848A703C23D2C407F96731")
 
 static final int TRANSACTION_windowFocusChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.810 -0500", hash_original_field = "4CDA49739345018EBBEABCF334E93EC1", hash_generated_field = "71A946625455229CF822F423CB1E1A9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.022 -0500", hash_original_field = "4CDA49739345018EBBEABCF334E93EC1", hash_generated_field = "71A946625455229CF822F423CB1E1A9F")
 
 static final int TRANSACTION_closeSystemDialogs = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.810 -0500", hash_original_field = "3E4CBEBEF39BB71800C0C469A0E2774D", hash_generated_field = "5553B8E37BE85B7624C5A4F0E14FC398")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.025 -0500", hash_original_field = "3E4CBEBEF39BB71800C0C469A0E2774D", hash_generated_field = "5553B8E37BE85B7624C5A4F0E14FC398")
 
 static final int TRANSACTION_dispatchWallpaperOffsets = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.811 -0500", hash_original_field = "6B8398CBBC5FD60557EBBA7EAD2975C9", hash_generated_field = "4970A8C610E1AFCA9FA85FB505E4AEA7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.028 -0500", hash_original_field = "6B8398CBBC5FD60557EBBA7EAD2975C9", hash_generated_field = "4970A8C610E1AFCA9FA85FB505E4AEA7")
 
 static final int TRANSACTION_dispatchWallpaperCommand = (android.os.IBinder.FIRST_CALL_TRANSACTION + 7);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.812 -0500", hash_original_field = "FEE050168BC23F33C9E3D6AE76AA0E56", hash_generated_field = "509073A96430452066EF2C446438AA14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.031 -0500", hash_original_field = "FEE050168BC23F33C9E3D6AE76AA0E56", hash_generated_field = "509073A96430452066EF2C446438AA14")
 
 static final int TRANSACTION_dispatchDragEvent = (android.os.IBinder.FIRST_CALL_TRANSACTION + 8);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.813 -0500", hash_original_field = "A3D59FAB0A4D244A3DC8CE1349E7C2C2", hash_generated_field = "70DA3520080F2B2536B4A6920F98AF20")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.033 -0500", hash_original_field = "A3D59FAB0A4D244A3DC8CE1349E7C2C2", hash_generated_field = "70DA3520080F2B2536B4A6920F98AF20")
 
 static final int TRANSACTION_dispatchSystemUiVisibilityChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.785 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
-        public Stub()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.954 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        
+public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.787 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
-        public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.960 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+        
+public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.789 -0500", hash_original_method = "3FEF827E49E6C9E563A6F0CC853C3078", hash_generated_method = "48CC69DBF57B277160B28CC1F82BCC8A")
-        @Override
-public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.964 -0500", hash_original_method = "3FEF827E49E6C9E563A6F0CC853C3078", hash_generated_method = "48CC69DBF57B277160B28CC1F82BCC8A")
+        
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {

@@ -20,8 +20,9 @@ import org.bouncycastle.asn1.DERSequence;
 
 public class IssuerSerial extends ASN1Encodable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.270 -0500", hash_original_method = "F369CB01BCE8122A7661819262EC732F", hash_generated_method = "C73D815F8A6CB4383D861082720D129C")
-    public static IssuerSerial getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.491 -0500", hash_original_method = "F369CB01BCE8122A7661819262EC732F", hash_generated_method = "C73D815F8A6CB4383D861082720D129C")
+    
+public static IssuerSerial getInstance(
             Object  obj)
     {
         if (obj == null || obj instanceof IssuerSerial)
@@ -37,25 +38,27 @@ public class IssuerSerial extends ASN1Encodable {
         throw new IllegalArgumentException("illegal object in getInstance: " + obj.getClass().getName());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.271 -0500", hash_original_method = "16EE3F5497429C0B3335EEF6761E4C38", hash_generated_method = "808E378EF807DCAA4B5F79230D1808F7")
-    public static IssuerSerial getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.493 -0500", hash_original_method = "16EE3F5497429C0B3335EEF6761E4C38", hash_generated_method = "808E378EF807DCAA4B5F79230D1808F7")
+    
+public static IssuerSerial getInstance(
         ASN1TaggedObject obj,
         boolean          explicit)
     {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.268 -0500", hash_original_field = "FBA189AA1CCDF885E2BAFE3258EFE992", hash_generated_field = "FBA189AA1CCDF885E2BAFE3258EFE992")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.484 -0500", hash_original_field = "FBA189AA1CCDF885E2BAFE3258EFE992", hash_generated_field = "FBA189AA1CCDF885E2BAFE3258EFE992")
 
     GeneralNames            issuer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.269 -0500", hash_original_field = "B567171129E718B07996A791966D9A47", hash_generated_field = "B567171129E718B07996A791966D9A47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.486 -0500", hash_original_field = "B567171129E718B07996A791966D9A47", hash_generated_field = "B567171129E718B07996A791966D9A47")
 
     DERInteger              serial;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.270 -0500", hash_original_field = "3D9E898FBB0D3A6964BB9F619F1BE32F", hash_generated_field = "3D9E898FBB0D3A6964BB9F619F1BE32F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.488 -0500", hash_original_field = "3D9E898FBB0D3A6964BB9F619F1BE32F", hash_generated_field = "3D9E898FBB0D3A6964BB9F619F1BE32F")
 
     DERBitString            issuerUID;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.272 -0500", hash_original_method = "6A7E42DF8EF9B09B844C872DFCA023C7", hash_generated_method = "21B5E94B1503EB3B81CAD22E6A3D29F8")
-    public IssuerSerial(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.496 -0500", hash_original_method = "6A7E42DF8EF9B09B844C872DFCA023C7", hash_generated_method = "21B5E94B1503EB3B81CAD22E6A3D29F8")
+    
+public IssuerSerial(
         ASN1Sequence    seq)
     {
         if (seq.size() != 2 && seq.size() != 3)
@@ -72,8 +75,9 @@ public class IssuerSerial extends ASN1Encodable {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.273 -0500", hash_original_method = "B838D7E53D177DFF65C1A291EEAEEEE1", hash_generated_method = "B019390C0E97EF31F3632A3E801BE04A")
-    public IssuerSerial(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.499 -0500", hash_original_method = "B838D7E53D177DFF65C1A291EEAEEEE1", hash_generated_method = "B019390C0E97EF31F3632A3E801BE04A")
+    
+public IssuerSerial(
         GeneralNames    issuer,
         DERInteger      serial)
     {
@@ -81,20 +85,23 @@ public class IssuerSerial extends ASN1Encodable {
         this.serial = serial;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.274 -0500", hash_original_method = "C6A01CC056B505ECB1961F3D46D5E125", hash_generated_method = "121D325F48E2B3A786B066E3FBD8CF8E")
-    public GeneralNames getIssuer()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.501 -0500", hash_original_method = "C6A01CC056B505ECB1961F3D46D5E125", hash_generated_method = "121D325F48E2B3A786B066E3FBD8CF8E")
+    
+public GeneralNames getIssuer()
     {
         return issuer;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.276 -0500", hash_original_method = "4A26172B3E4E9D1CBD95C0010541030C", hash_generated_method = "5D6388981ABB0E785476088CA6DBF8F0")
-    public DERInteger getSerial()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.504 -0500", hash_original_method = "4A26172B3E4E9D1CBD95C0010541030C", hash_generated_method = "5D6388981ABB0E785476088CA6DBF8F0")
+    
+public DERInteger getSerial()
     {
         return serial;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.277 -0500", hash_original_method = "6FC86B4935E8EDEA9326972109BFF43A", hash_generated_method = "DEAD8AFE430386E1B7F42E96AADE631F")
-    public DERBitString getIssuerUID()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.506 -0500", hash_original_method = "6FC86B4935E8EDEA9326972109BFF43A", hash_generated_method = "DEAD8AFE430386E1B7F42E96AADE631F")
+    
+public DERBitString getIssuerUID()
     {
         return issuerUID;
     }
@@ -109,8 +116,9 @@ public class IssuerSerial extends ASN1Encodable {
      *  }
      * </pre>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.277 -0500", hash_original_method = "91432FD7FC59DB0CA5EF9903A7843F73", hash_generated_method = "10A3F3F9908BFA8B7AE8CBA1BE39230F")
-    public DERObject toASN1Object()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.509 -0500", hash_original_method = "91432FD7FC59DB0CA5EF9903A7843F73", hash_generated_method = "10A3F3F9908BFA8B7AE8CBA1BE39230F")
+    
+public DERObject toASN1Object()
     {
         ASN1EncodableVector  v = new ASN1EncodableVector();
 

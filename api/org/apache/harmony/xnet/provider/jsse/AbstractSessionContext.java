@@ -30,21 +30,22 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 
 abstract class AbstractSessionContext implements SSLSessionContext {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.762 -0500", hash_original_method = "3A6F397C175F2D6C1475AA31D913F50C", hash_generated_method = "C4AF5DE8488C50BF001E56A5628D4AAD")
-    static void log(Throwable t) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.739 -0500", hash_original_method = "3A6F397C175F2D6C1475AA31D913F50C", hash_generated_method = "C4AF5DE8488C50BF001E56A5628D4AAD")
+    
+static void log(Throwable t) {
         System.logW("Error converting session.", t);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.745 -0500", hash_original_field = "C9F10DBB8FC258C75032872F0523BC2D", hash_generated_field = "53E86EE3900A5BFC3BD52A7722DFD982")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.691 -0500", hash_original_field = "C9F10DBB8FC258C75032872F0523BC2D", hash_generated_field = "53E86EE3900A5BFC3BD52A7722DFD982")
 
     static final int OPEN_SSL = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.743 -0500", hash_original_field = "3B2E03B648ADD645927E4F8A923F302D", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.684 -0500", hash_original_field = "3B2E03B648ADD645927E4F8A923F302D", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
 
 
     volatile int maximumSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.743 -0500", hash_original_field = "884A23FAAA5E3251B7E5FE4A3FE97CA1", hash_generated_field = "66A9610107B22FE560E0442C7F3278C6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.686 -0500", hash_original_field = "884A23FAAA5E3251B7E5FE4A3FE97CA1", hash_generated_field = "66A9610107B22FE560E0442C7F3278C6")
 
     volatile int timeout;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.744 -0500", hash_original_field = "252155234ECFEA9B5523A07896E7063B", hash_generated_field = "ECA4AAD8222BFFC05678F5BBEB12C033")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.688 -0500", hash_original_field = "252155234ECFEA9B5523A07896E7063B", hash_generated_field = "ECA4AAD8222BFFC05678F5BBEB12C033")
 
 
     final int sslCtxNativePointer = NativeCrypto.SSL_CTX_new();
@@ -73,8 +74,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
      * @param maximumSize of cache
      * @param timeout for cache entries
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.748 -0500", hash_original_method = "B86A9D4A1D1D4BFB528024933586DA07", hash_generated_method = "B86A9D4A1D1D4BFB528024933586DA07")
-    AbstractSessionContext(int maximumSize, int timeout) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.699 -0500", hash_original_method = "B86A9D4A1D1D4BFB528024933586DA07", hash_generated_method = "B86A9D4A1D1D4BFB528024933586DA07")
+    
+AbstractSessionContext(int maximumSize, int timeout) {
         this.maximumSize = maximumSize;
         this.timeout = timeout;
     }
@@ -82,8 +84,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
     /**
      * Returns the collection of sessions ordered from oldest to newest
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.749 -0500", hash_original_method = "A58241B75AD2B44C3E74E917DCCEF491", hash_generated_method = "215F523582B3EE7C120B8C74154E005E")
-    private Iterator<SSLSession> sessionIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.701 -0500", hash_original_method = "A58241B75AD2B44C3E74E917DCCEF491", hash_generated_method = "215F523582B3EE7C120B8C74154E005E")
+    
+private Iterator<SSLSession> sessionIterator() {
         synchronized (sessions) {
             SSLSession[] array = sessions.values().toArray(
                     new SSLSession[sessions.size()]);
@@ -91,8 +94,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.752 -0500", hash_original_method = "106825D731C9327C3D7A99A6486CA67E", hash_generated_method = "CC9DF34A26927DEAD2570F68D3C37643")
-    public final Enumeration getIds() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.712 -0500", hash_original_method = "106825D731C9327C3D7A99A6486CA67E", hash_generated_method = "CC9DF34A26927DEAD2570F68D3C37643")
+    
+public final Enumeration getIds() {
         final Iterator<SSLSession> i = sessionIterator();
         return new Enumeration<byte[]>() {
             private SSLSession next;
@@ -121,21 +125,24 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         };
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.753 -0500", hash_original_method = "D0015EDFECCAD43C3752A19176DA2F6D", hash_generated_method = "F0EBFE5E7F902D90C766F622695BC03B")
-    public final int getSessionCacheSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.714 -0500", hash_original_method = "D0015EDFECCAD43C3752A19176DA2F6D", hash_generated_method = "F0EBFE5E7F902D90C766F622695BC03B")
+    
+public final int getSessionCacheSize() {
         return maximumSize;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.754 -0500", hash_original_method = "4FB73E0AB538272543472A54EAEE75CD", hash_generated_method = "C50CE6E687111402FF4DE12D51A55364")
-    public final int getSessionTimeout() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.717 -0500", hash_original_method = "4FB73E0AB538272543472A54EAEE75CD", hash_generated_method = "C50CE6E687111402FF4DE12D51A55364")
+    
+public final int getSessionTimeout() {
         return timeout;
     }
 
     /**
      * Makes sure cache size is < maximumSize.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.755 -0500", hash_original_method = "8615761B2210F074D79DA775AC19AA71", hash_generated_method = "40A9876A6B3EAF3C82AAFB29DE7EA0E5")
-    protected void trimToSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.719 -0500", hash_original_method = "8615761B2210F074D79DA775AC19AA71", hash_generated_method = "40A9876A6B3EAF3C82AAFB29DE7EA0E5")
+    
+protected void trimToSize() {
         synchronized (sessions) {
             int size = sessions.size();
             if (size > maximumSize) {
@@ -150,8 +157,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.756 -0500", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "9D88FD2BEFA99FD748CE0F874EC83014")
-    public void setSessionTimeout(int seconds)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.722 -0500", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "9D88FD2BEFA99FD748CE0F874EC83014")
+    
+public void setSessionTimeout(int seconds)
             throws IllegalArgumentException {
         if (seconds < 0) {
             throw new IllegalArgumentException("seconds < 0");
@@ -176,11 +184,13 @@ abstract class AbstractSessionContext implements SSLSessionContext {
      * Called when a session is removed. Used by ClientSessionContext
      * to update its host-and-port based cache.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.757 -0500", hash_original_method = "8412ECD60BBEE2A0ADC657B1AA8071DE", hash_generated_method = "FE93B555E00C0291AAAED04329503CCC")
-    protected abstract void sessionRemoved(SSLSession session);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.724 -0500", hash_original_method = "8412ECD60BBEE2A0ADC657B1AA8071DE", hash_generated_method = "FE93B555E00C0291AAAED04329503CCC")
+    
+protected abstract void sessionRemoved(SSLSession session);
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.757 -0500", hash_original_method = "ACCBBC1F3ACDB7C97A3E02614B766E1C", hash_generated_method = "98CDFCE0326B4E35895BD084229DFB7C")
-    public final void setSessionCacheSize(int size)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.726 -0500", hash_original_method = "ACCBBC1F3ACDB7C97A3E02614B766E1C", hash_generated_method = "98CDFCE0326B4E35895BD084229DFB7C")
+    
+public final void setSessionCacheSize(int size)
             throws IllegalArgumentException {
         if (size < 0) {
             throw new IllegalArgumentException("size < 0");
@@ -200,8 +210,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
      *
      * @return session data as bytes or null if the session can't be converted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.758 -0500", hash_original_method = "B42ED13DCD08C26044D05FD9CDF469CF", hash_generated_method = "352FEDC8FDC2993B8AFE5D3AE0423841")
-    byte[] toBytes(SSLSession session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.729 -0500", hash_original_method = "B42ED13DCD08C26044D05FD9CDF469CF", hash_generated_method = "352FEDC8FDC2993B8AFE5D3AE0423841")
+    
+byte[] toBytes(SSLSession session) {
         // TODO: Support SSLSessionImpl, too.
         if (!(session instanceof OpenSSLSessionImpl)) {
             return null;
@@ -245,8 +256,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
      *
      * @return a session or null if the session can't be converted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.759 -0500", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "1F6A50EAF05C581243DFC8EDF15FF940")
-    SSLSession toSession(byte[] data, String host, int port) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.732 -0500", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "1F6A50EAF05C581243DFC8EDF15FF940")
+    
+SSLSession toSession(byte[] data, String host, int port) {
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         DataInputStream dais = new DataInputStream(bais);
         try {
@@ -276,8 +288,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.760 -0500", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "D03819EE9B926AF234C3C351F04BB654")
-    public SSLSession getSession(byte[] sessionId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.735 -0500", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "D03819EE9B926AF234C3C351F04BB654")
+    
+public SSLSession getSession(byte[] sessionId) {
         if (sessionId == null) {
             throw new NullPointerException("sessionId == null");
         }
@@ -292,8 +305,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.761 -0500", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "01E7B06223DFEA7D5DECA9A679FEAED7")
-    void putSession(SSLSession session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.737 -0500", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "01E7B06223DFEA7D5DECA9A679FEAED7")
+    
+void putSession(SSLSession session) {
         byte[] id = session.getId();
         if (id.length == 0) {
             return;
@@ -304,9 +318,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.763 -0500", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "B21566E80A2D5EBF94270E3732AA186A")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.742 -0500", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "B21566E80A2D5EBF94270E3732AA186A")
+    
+@Override protected void finalize() throws Throwable {
         try {
             NativeCrypto.SSL_CTX_free(sslCtxNativePointer);
         } finally {

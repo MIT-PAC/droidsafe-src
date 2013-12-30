@@ -16,13 +16,13 @@ import java.util.Locale;
 
 
 public class PrintStream extends FilterOutputStream implements Appendable, Closeable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.457 -0500", hash_original_field = "B8E55DCF378C62700C874FE9D168DA3C", hash_generated_field = "C89C47EA16E34DEBAC0E78BF779BC70F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.005 -0500", hash_original_field = "B8E55DCF378C62700C874FE9D168DA3C", hash_generated_field = "C89C47EA16E34DEBAC0E78BF779BC70F")
 
     private boolean ioError;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.458 -0500", hash_original_field = "E18E64283FE6FFBC087BABE45EE375FC", hash_generated_field = "C3BCA0E638347F15CBD7648899C5AE35")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.008 -0500", hash_original_field = "E18E64283FE6FFBC087BABE45EE375FC", hash_generated_field = "C3BCA0E638347F15CBD7648899C5AE35")
 
     private boolean autoFlush;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.459 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.010 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
 
 
     private String encoding;
@@ -37,8 +37,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws NullPointerException
      *             if {@code out} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.460 -0500", hash_original_method = "DA75705BB6C20C2B5C6B266426BAE0E0", hash_generated_method = "75B61BC554C1596260D713DFDCFA50C9")
-    public PrintStream(OutputStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.013 -0500", hash_original_method = "DA75705BB6C20C2B5C6B266426BAE0E0", hash_generated_method = "75B61BC554C1596260D713DFDCFA50C9")
+    
+public PrintStream(OutputStream out) {
         super(out);
         if (out == null) {
             throw new NullPointerException();
@@ -59,8 +60,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws NullPointerException
      *             if {@code out} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.461 -0500", hash_original_method = "4DF55F7DB2EC2DB5AB84BECA03073608", hash_generated_method = "0F3B6D2546CA2DCE1EE0ECD7A536C6C0")
-    public PrintStream(OutputStream out, boolean autoFlush) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.016 -0500", hash_original_method = "4DF55F7DB2EC2DB5AB84BECA03073608", hash_generated_method = "0F3B6D2546CA2DCE1EE0ECD7A536C6C0")
+    
+public PrintStream(OutputStream out, boolean autoFlush) {
         super(out);
         if (out == null) {
             throw new NullPointerException();
@@ -86,8 +88,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws UnsupportedEncodingException
      *             if the encoding specified by {@code enc} is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.462 -0500", hash_original_method = "88526CF0A98EC9AB97C7088D88161C3A", hash_generated_method = "C8BD5832E5EC910C132DE3F1D8AF5182")
-    public PrintStream(OutputStream out, boolean autoFlush, String enc)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.019 -0500", hash_original_method = "88526CF0A98EC9AB97C7088D88161C3A", hash_generated_method = "C8BD5832E5EC910C132DE3F1D8AF5182")
+    
+public PrintStream(OutputStream out, boolean autoFlush, String enc)
             throws UnsupportedEncodingException {
         super(out);
         if (out == null || enc == null) {
@@ -114,8 +117,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws FileNotFoundException
      *             if an error occurs while opening or creating the target file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.463 -0500", hash_original_method = "029BA830A503765157243541D9849231", hash_generated_method = "1EAB385A2069599FAC05C66B6FA7928D")
-    public PrintStream(File file) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.021 -0500", hash_original_method = "029BA830A503765157243541D9849231", hash_generated_method = "1EAB385A2069599FAC05C66B6FA7928D")
+    
+public PrintStream(File file) throws FileNotFoundException {
         super(new FileOutputStream(file));
     }
 
@@ -135,8 +139,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws UnsupportedEncodingException
      *             if the encoding specified by {@code csn} is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.464 -0500", hash_original_method = "7BD29578480474358E31B9B912D3F437", hash_generated_method = "175C82E760110A6597BD34EC1DA71962")
-    public PrintStream(File file, String csn) throws FileNotFoundException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.025 -0500", hash_original_method = "7BD29578480474358E31B9B912D3F437", hash_generated_method = "175C82E760110A6597BD34EC1DA71962")
+    
+public PrintStream(File file, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
         super(new FileOutputStream(file));
         if (csn == null) {
@@ -159,8 +164,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws FileNotFoundException
      *             if an error occurs while opening or creating the target file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.465 -0500", hash_original_method = "75348CDEFC68D9839C10010605892932", hash_generated_method = "E3C9AFC9C4BC886E80C53B895B4D5BAC")
-    public PrintStream(String fileName) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.028 -0500", hash_original_method = "75348CDEFC68D9839C10010605892932", hash_generated_method = "E3C9AFC9C4BC886E80C53B895B4D5BAC")
+    
+public PrintStream(String fileName) throws FileNotFoundException {
         this(new File(fileName));
     }
 
@@ -181,8 +187,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws UnsupportedEncodingException
      *             if the encoding specified by {@code csn} is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.466 -0500", hash_original_method = "8131D7469DBCAB446E9D65623F4F3558", hash_generated_method = "7FBBBB5348ED91BFF4D6BF5319B51BA2")
-    public PrintStream(String fileName, String csn)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.031 -0500", hash_original_method = "8131D7469DBCAB446E9D65623F4F3558", hash_generated_method = "7FBBBB5348ED91BFF4D6BF5319B51BA2")
+    
+public PrintStream(String fileName, String csn)
             throws FileNotFoundException, UnsupportedEncodingException {
         this(new File(fileName), csn);
     }
@@ -195,8 +202,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      *         {@code false} otherwise.
      * @see #setError()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.467 -0500", hash_original_method = "DD851A8041FFB3055294FF15D1DC9C59", hash_generated_method = "30EE3B42F5C6B086AF598CBF64677C2F")
-    public boolean checkError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.034 -0500", hash_original_method = "DD851A8041FFB3055294FF15D1DC9C59", hash_generated_method = "30EE3B42F5C6B086AF598CBF64677C2F")
+    
+public boolean checkError() {
         OutputStream delegate = out;
         if (delegate == null) {
             return ioError;
@@ -210,8 +218,9 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * Sets the error state of the stream to false.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.468 -0500", hash_original_method = "785F4CCF429F72C42E20A1AABCB6C5CE", hash_generated_method = "075905FDD441758AAED077D2A076C316")
-    protected void clearError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.036 -0500", hash_original_method = "785F4CCF429F72C42E20A1AABCB6C5CE", hash_generated_method = "075905FDD441758AAED077D2A076C316")
+    
+protected void clearError() {
         ioError = false;
     }
 
@@ -220,9 +229,10 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * stream. If an I/O error occurs, this stream's error state is set to
      * {@code true}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.469 -0500", hash_original_method = "43C4845D6E61D29AF25E893F4FEF10C8", hash_generated_method = "084C41C8180277B84887369DD4B0E622")
-    @Override
-public synchronized void close() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.038 -0500", hash_original_method = "43C4845D6E61D29AF25E893F4FEF10C8", hash_generated_method = "084C41C8180277B84887369DD4B0E622")
+    
+@Override
+    public synchronized void close() {
         flush();
         if (out != null) {
             try {
@@ -239,9 +249,10 @@ public synchronized void close() {
      * flushes the target stream. If an I/O error occurs, this stream's error
      * state is set to {@code true}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.469 -0500", hash_original_method = "02B2E054E74BF295FB5EB637205E6B35", hash_generated_method = "3C8D1A6118D423ADD64926B1139D4505")
-    @Override
-public synchronized void flush() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.041 -0500", hash_original_method = "02B2E054E74BF295FB5EB637205E6B35", hash_generated_method = "3C8D1A6118D423ADD64926B1139D4505")
+    
+@Override
+    public synchronized void flush() {
         if (out != null) {
             try {
                 out.flush();
@@ -270,8 +281,9 @@ public synchronized void flush() {
      *             error regarding the format string or arguments is detected.
      * @throws NullPointerException if {@code format == null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.470 -0500", hash_original_method = "05D45546979F5891D35AE44E50FD3553", hash_generated_method = "D0E8C8C1362771CFD28131DEFE60204D")
-    public PrintStream format(String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.043 -0500", hash_original_method = "05D45546979F5891D35AE44E50FD3553", hash_generated_method = "D0E8C8C1362771CFD28131DEFE60204D")
+    
+public PrintStream format(String format, Object... args) {
         return format(Locale.getDefault(), format, args);
     }
 
@@ -294,8 +306,9 @@ public synchronized void flush() {
      *             error regarding the format string or arguments is detected.
      * @throws NullPointerException if {@code format == null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.471 -0500", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "C1FAA506AEBAF707B9693792FA852381")
-    public PrintStream format(Locale l, String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.046 -0500", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "C1FAA506AEBAF707B9693792FA852381")
+    
+public PrintStream format(Locale l, String format, Object... args) {
         if (format == null) {
             throw new NullPointerException("format == null");
         }
@@ -322,8 +335,9 @@ public synchronized void flush() {
      *             error regarding the format string or arguments is detected.
      * @throws NullPointerException if {@code format == null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.472 -0500", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "4289AA1E34294762A281E81EC632CE31")
-    public PrintStream printf(String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.049 -0500", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "4289AA1E34294762A281E81EC632CE31")
+    
+public PrintStream printf(String format, Object... args) {
         return format(format, args);
     }
 
@@ -346,72 +360,81 @@ public synchronized void flush() {
      *             error regarding the format string or arguments is detected.
      * @throws NullPointerException if {@code format == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.473 -0500", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "7FF92F5F2A23577E4AA6EF79C86D6193")
-    public PrintStream printf(Locale l, String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.052 -0500", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "7FF92F5F2A23577E4AA6EF79C86D6193")
+    
+public PrintStream printf(Locale l, String format, Object... args) {
         return format(l, format, args);
     }
 
     /**
      * Put the line separator String onto the print stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.474 -0500", hash_original_method = "171496FE667133D572716C296277B927", hash_generated_method = "D3FD447AE5153B73BF6854A34B2A5107")
-    private void newline() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.054 -0500", hash_original_method = "171496FE667133D572716C296277B927", hash_generated_method = "D3FD447AE5153B73BF6854A34B2A5107")
+    
+private void newline() {
         print(System.lineSeparator());
     }
 
     /**
      * Prints the string representation of the character array {@code chars}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.475 -0500", hash_original_method = "4DD9E13DA9D3ED57FA18E838A052301E", hash_generated_method = "11ED1780228B502450BA8A221394877E")
-    public void print(char[] chars) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.057 -0500", hash_original_method = "4DD9E13DA9D3ED57FA18E838A052301E", hash_generated_method = "11ED1780228B502450BA8A221394877E")
+    
+public void print(char[] chars) {
         print(new String(chars, 0, chars.length));
     }
 
     /**
      * Prints the string representation of the char {@code c}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.476 -0500", hash_original_method = "C9EF4F31D0CD27922D7B220DA437A7D8", hash_generated_method = "6CEBC2F82D21BF559E12C90A3D8E19A5")
-    public void print(char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.059 -0500", hash_original_method = "C9EF4F31D0CD27922D7B220DA437A7D8", hash_generated_method = "6CEBC2F82D21BF559E12C90A3D8E19A5")
+    
+public void print(char c) {
         print(String.valueOf(c));
     }
 
     /**
      * Prints the string representation of the double {@code d}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.477 -0500", hash_original_method = "7C6D053B4D54D80C9838D841006F1F5C", hash_generated_method = "58A01733132BC6CCDEB5D240F498B36F")
-    public void print(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.062 -0500", hash_original_method = "7C6D053B4D54D80C9838D841006F1F5C", hash_generated_method = "58A01733132BC6CCDEB5D240F498B36F")
+    
+public void print(double d) {
         print(String.valueOf(d));
     }
 
     /**
      * Prints the string representation of the float {@code f}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.478 -0500", hash_original_method = "A190B4C4751A586A57985573C64F773B", hash_generated_method = "962C13EEE455314007099C3A6CD2D084")
-    public void print(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.064 -0500", hash_original_method = "A190B4C4751A586A57985573C64F773B", hash_generated_method = "962C13EEE455314007099C3A6CD2D084")
+    
+public void print(float f) {
         print(String.valueOf(f));
     }
 
     /**
      * Prints the string representation of the int {@code i}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.478 -0500", hash_original_method = "9B0E5210436ABAF1CDC241F3CE945D0E", hash_generated_method = "FADE47AC1A634AD994A0F184BE398837")
-    public void print(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.066 -0500", hash_original_method = "9B0E5210436ABAF1CDC241F3CE945D0E", hash_generated_method = "FADE47AC1A634AD994A0F184BE398837")
+    
+public void print(int i) {
         print(String.valueOf(i));
     }
 
     /**
      * Prints the string representation of the long {@code l}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.479 -0500", hash_original_method = "ABA84580B4C740A85A05D502E7787C38", hash_generated_method = "C45FEB84A6EFC606463B784C6B78DFA2")
-    public void print(long l) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.068 -0500", hash_original_method = "ABA84580B4C740A85A05D502E7787C38", hash_generated_method = "C45FEB84A6EFC606463B784C6B78DFA2")
+    
+public void print(long l) {
         print(String.valueOf(l));
     }
 
     /**
      * Prints the string representation of the Object {@code o}, or {@code "null"}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.480 -0500", hash_original_method = "56B00C0EF01C99C01A3E7CAB0AC14873", hash_generated_method = "581D9A606F1CEDFB3C9C70F6CC66072B")
-    public void print(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.071 -0500", hash_original_method = "56B00C0EF01C99C01A3E7CAB0AC14873", hash_generated_method = "581D9A606F1CEDFB3C9C70F6CC66072B")
+    
+public void print(Object o) {
         print(String.valueOf(o));
     }
 
@@ -427,8 +450,9 @@ public synchronized void flush() {
      *            the string to print to the target stream.
      * @see #write(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.481 -0500", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "489F7F4EEA6ECCC433FBCD9535D0F2B2")
-    public synchronized void print(String str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.073 -0500", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "489F7F4EEA6ECCC433FBCD9535D0F2B2")
+    
+public synchronized void print(String str) {
         if (out == null) {
             setError();
             return;
@@ -452,64 +476,72 @@ public synchronized void flush() {
     /**
      * Prints the string representation of the boolean {@code b}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.482 -0500", hash_original_method = "D26761927DA4C2D28104AACA6719892E", hash_generated_method = "ABD327A177FABF113139187D82522D24")
-    public void print(boolean b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.076 -0500", hash_original_method = "D26761927DA4C2D28104AACA6719892E", hash_generated_method = "ABD327A177FABF113139187D82522D24")
+    
+public void print(boolean b) {
         print(String.valueOf(b));
     }
 
     /**
      * Prints a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.483 -0500", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "2FB2249EAF550DB99337C4213777CDD2")
-    public void println() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.078 -0500", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "2FB2249EAF550DB99337C4213777CDD2")
+    
+public void println() {
         newline();
     }
 
     /**
      * Prints the string representation of the character array {@code chars} followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.484 -0500", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "401BCD9244EE35B0A776F2A2CEDD37CF")
-    public void println(char[] chars) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.081 -0500", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "401BCD9244EE35B0A776F2A2CEDD37CF")
+    
+public void println(char[] chars) {
         println(new String(chars, 0, chars.length));
     }
 
     /**
      * Prints the string representation of the char {@code c} followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.484 -0500", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "82BB46696338001ACA80E01920212F73")
-    public void println(char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.083 -0500", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "82BB46696338001ACA80E01920212F73")
+    
+public void println(char c) {
         println(String.valueOf(c));
     }
 
     /**
      * Prints the string representation of the double {@code d} followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.485 -0500", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "84BC8C6D54950BCAF58BC3BD27296799")
-    public void println(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.086 -0500", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "84BC8C6D54950BCAF58BC3BD27296799")
+    
+public void println(double d) {
         println(String.valueOf(d));
     }
 
     /**
      * Prints the string representation of the float {@code f} followed by a newline.
      */
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.486 -0500", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "9D7FF09A264CAD926D6BBFC063392F4E")
-    public void println(float f) {
+   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.088 -0500", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "9D7FF09A264CAD926D6BBFC063392F4E")
+    
+public void println(float f) {
         println(String.valueOf(f));
     }
 
    /**
      * Prints the string representation of the int {@code i} followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.487 -0500", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "98B5DD023B996103C774771444368106")
-    public void println(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.090 -0500", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "98B5DD023B996103C774771444368106")
+    
+public void println(int i) {
         println(String.valueOf(i));
     }
 
     /**
      * Prints the string representation of the long {@code l} followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.488 -0500", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "82CA901E151A642E436F396BAF71A3BB")
-    public void println(long l) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.093 -0500", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "82CA901E151A642E436F396BAF71A3BB")
+    
+public void println(long l) {
         println(String.valueOf(l));
     }
 
@@ -517,8 +549,9 @@ public synchronized void flush() {
      * Prints the string representation of the Object {@code o}, or {@code "null"},
      * followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.488 -0500", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "69578B780CE18EFA9BFBB5EC9A3A6677")
-    public void println(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.096 -0500", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "69578B780CE18EFA9BFBB5EC9A3A6677")
+    
+public void println(Object o) {
         println(String.valueOf(o));
     }
 
@@ -533,8 +566,9 @@ public synchronized void flush() {
      *            the string to print to the target stream.
      * @see #write(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.489 -0500", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "4A512F9EF154A49E278AEE766A83050C")
-    public synchronized void println(String str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.098 -0500", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "4A512F9EF154A49E278AEE766A83050C")
+    
+public synchronized void println(String str) {
         print(str);
         newline();
     }
@@ -542,16 +576,18 @@ public synchronized void flush() {
     /**
      * Prints the string representation of the boolean {@code b} followed by a newline.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.491 -0500", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "D2EE9655DC271F139DF31A427D683083")
-    public void println(boolean b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.101 -0500", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "D2EE9655DC271F139DF31A427D683083")
+    
+public void println(boolean b) {
         println(String.valueOf(b));
     }
 
     /**
      * Sets the error flag of this print stream to true.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.491 -0500", hash_original_method = "203605AE3CB77711209DB798B89166F2", hash_generated_method = "B72650C135282FC171600ACE0FA9C219")
-    protected void setError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.103 -0500", hash_original_method = "203605AE3CB77711209DB798B89166F2", hash_generated_method = "B72650C135282FC171600ACE0FA9C219")
+    
+protected void setError() {
         ioError = true;
     }
 
@@ -574,9 +610,10 @@ public synchronized void flush() {
      *             offset + count} is bigger than the length of {@code buffer}.
      * @see #flush()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.492 -0500", hash_original_method = "F607EA18611E8A10720BC492B203762D", hash_generated_method = "7562AB976D042B765C95D22DF08E1782")
-    @Override
-public void write(byte[] buffer, int offset, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.106 -0500", hash_original_method = "F607EA18611E8A10720BC492B203762D", hash_generated_method = "7562AB976D042B765C95D22DF08E1782")
+    
+@Override
+    public void write(byte[] buffer, int offset, int length) {
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
         synchronized (this) {
             if (out == null) {
@@ -606,9 +643,10 @@ public void write(byte[] buffer, int offset, int length) {
      * @param oneByte
      *            the byte to be written
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.494 -0500", hash_original_method = "18F006677191AEE023EC3E30B84DCBEE", hash_generated_method = "83A206AAFDBAE22539ADABBF4F92F72F")
-    @Override
-public synchronized void write(int oneByte) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.109 -0500", hash_original_method = "18F006677191AEE023EC3E30B84DCBEE", hash_generated_method = "83A206AAFDBAE22539ADABBF4F92F72F")
+    
+@Override
+    public synchronized void write(int oneByte) {
         if (out == null) {
             setError();
             return;
@@ -630,8 +668,9 @@ public synchronized void write(int oneByte) {
      * Appends the char {@code c}.
      * @return this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.494 -0500", hash_original_method = "C72D2A095158FF2DF7FBE0880B8BD63F", hash_generated_method = "567388336315194D44F6B3A0E6810A6D")
-    public PrintStream append(char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.111 -0500", hash_original_method = "C72D2A095158FF2DF7FBE0880B8BD63F", hash_generated_method = "567388336315194D44F6B3A0E6810A6D")
+    
+public PrintStream append(char c) {
         print(c);
         return this;
     }
@@ -640,8 +679,9 @@ public synchronized void write(int oneByte) {
      * Appends the CharSequence {@code charSequence}, or {@code "null"}.
      * @return this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.495 -0500", hash_original_method = "FC28086FFC8546AD8E2DD12638EADD5B", hash_generated_method = "CBEF6036EF5324F7F8E9482B27D68A9B")
-    public PrintStream append(CharSequence charSequence) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.113 -0500", hash_original_method = "FC28086FFC8546AD8E2DD12638EADD5B", hash_generated_method = "CBEF6036EF5324F7F8E9482B27D68A9B")
+    
+public PrintStream append(CharSequence charSequence) {
         if (charSequence == null) {
             print("null");
         } else {
@@ -667,8 +707,9 @@ public synchronized void write(int oneByte) {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code charSequence}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.496 -0500", hash_original_method = "E6E1D45C488E30FA7AAEB51CD532F3E9", hash_generated_method = "2CCB3331F640FEC4F2ECC7BDFC23CD2A")
-    public PrintStream append(CharSequence charSequence, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.116 -0500", hash_original_method = "E6E1D45C488E30FA7AAEB51CD532F3E9", hash_generated_method = "2CCB3331F640FEC4F2ECC7BDFC23CD2A")
+    
+public PrintStream append(CharSequence charSequence, int start, int end) {
         if (charSequence == null) {
             charSequence = "null";
         }

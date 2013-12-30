@@ -33,8 +33,9 @@ public class AnimationUtils {
      *
      * @see android.os.SystemClock
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.183 -0500", hash_original_method = "A342CAA3729B80BF74C5D77B5CF79EC1", hash_generated_method = "21A5922E1D802850493459379CB374FB")
-    public static long currentAnimationTimeMillis() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.803 -0500", hash_original_method = "A342CAA3729B80BF74C5D77B5CF79EC1", hash_generated_method = "21A5922E1D802850493459379CB374FB")
+    
+public static long currentAnimationTimeMillis() {
         return SystemClock.uptimeMillis();
     }
 
@@ -46,8 +47,9 @@ public class AnimationUtils {
      * @return The animation object reference by the specified id
      * @throws NotFoundException when the animation cannot be loaded
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.185 -0500", hash_original_method = "6C4C15BBA350A59BA813AA1FCD4C13A9", hash_generated_method = "964AEB68764DEFC476CB3B91239FBE82")
-    public static Animation loadAnimation(Context context, int id)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.806 -0500", hash_original_method = "6C4C15BBA350A59BA813AA1FCD4C13A9", hash_generated_method = "964AEB68764DEFC476CB3B91239FBE82")
+    
+public static Animation loadAnimation(Context context, int id)
             throws NotFoundException {
 
         XmlResourceParser parser = null;
@@ -69,15 +71,17 @@ public class AnimationUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.186 -0500", hash_original_method = "D069E550D8CA085DD74A82091E68A3BB", hash_generated_method = "E9AACF23E7B7D7C0B4B70CD109F223F4")
-    private static Animation createAnimationFromXml(Context c, XmlPullParser parser)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.808 -0500", hash_original_method = "D069E550D8CA085DD74A82091E68A3BB", hash_generated_method = "E9AACF23E7B7D7C0B4B70CD109F223F4")
+    
+private static Animation createAnimationFromXml(Context c, XmlPullParser parser)
             throws XmlPullParserException, IOException {
 
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.188 -0500", hash_original_method = "6893224B8C5FB1211DCEDC246B169A3D", hash_generated_method = "46807B79D860F3A5D11390F26BD9090F")
-    private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.812 -0500", hash_original_method = "6893224B8C5FB1211DCEDC246B169A3D", hash_generated_method = "46807B79D860F3A5D11390F26BD9090F")
+    
+private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
 
         Animation anim = null;
@@ -119,8 +123,9 @@ public class AnimationUtils {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.190 -0500", hash_original_method = "964443399E2AD1454EB45E33276D0BAE", hash_generated_method = "33527BDB58F8A855DA6F244F1B62FF41")
-    public static LayoutAnimationController loadLayoutAnimation(Context context, int id)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.814 -0500", hash_original_method = "964443399E2AD1454EB45E33276D0BAE", hash_generated_method = "33527BDB58F8A855DA6F244F1B62FF41")
+    
+public static LayoutAnimationController loadLayoutAnimation(Context context, int id)
             throws NotFoundException {
         
         XmlResourceParser parser = null;
@@ -142,15 +147,17 @@ public class AnimationUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.191 -0500", hash_original_method = "D5A580594CC8247DA48066F217E0E158", hash_generated_method = "679AA6A7A9AC44AD25D49125CAC39704")
-    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.817 -0500", hash_original_method = "D5A580594CC8247DA48066F217E0E158", hash_generated_method = "679AA6A7A9AC44AD25D49125CAC39704")
+    
+private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
 
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.193 -0500", hash_original_method = "C8C5E0568990FFB27974DEFE12A4AD2A", hash_generated_method = "827F6E4015649E16003AF499ACCEC4D2")
-    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.819 -0500", hash_original_method = "C8C5E0568990FFB27974DEFE12A4AD2A", hash_generated_method = "827F6E4015649E16003AF499ACCEC4D2")
+    
+private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
 
         LayoutAnimationController controller = null;
@@ -187,8 +194,9 @@ public class AnimationUtils {
      * @param fromLeft is the object to be animated coming from the left
      * @return The new animation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.195 -0500", hash_original_method = "B59788400A18B5E3292425CD27578F4B", hash_generated_method = "41B067F5168791CA498F83690E2207FA")
-    public static Animation makeInAnimation(Context c, boolean fromLeft) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.822 -0500", hash_original_method = "B59788400A18B5E3292425CD27578F4B", hash_generated_method = "41B067F5168791CA498F83690E2207FA")
+    
+public static Animation makeInAnimation(Context c, boolean fromLeft) {
         Animation a;
         if (fromLeft) {
             a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_in_left);
@@ -209,8 +217,9 @@ public class AnimationUtils {
      * @param toRight is the object to be animated exiting to the right
      * @return The new animation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.197 -0500", hash_original_method = "EFC2A850FD89486062001F23F510B160", hash_generated_method = "C71D866ED8D898D3F57E239DC4AECBCD")
-    public static Animation makeOutAnimation(Context c, boolean toRight) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.825 -0500", hash_original_method = "EFC2A850FD89486062001F23F510B160", hash_generated_method = "C71D866ED8D898D3F57E239DC4AECBCD")
+    
+public static Animation makeOutAnimation(Context c, boolean toRight) {
         Animation a;
         if (toRight) {
             a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_out_right);
@@ -231,8 +240,9 @@ public class AnimationUtils {
      * @param c Context for loading resources
      * @return The new animation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.198 -0500", hash_original_method = "7B6B1330F30409B85DB9F92A5EA503D0", hash_generated_method = "64E7B3AF362314C12BDFE387D77BB0A2")
-    public static Animation makeInChildBottomAnimation(Context c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.828 -0500", hash_original_method = "7B6B1330F30409B85DB9F92A5EA503D0", hash_generated_method = "64E7B3AF362314C12BDFE387D77BB0A2")
+    
+public static Animation makeInChildBottomAnimation(Context c) {
         Animation a;
         a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_in_child_bottom);
         a.setInterpolator(new AccelerateInterpolator());
@@ -248,8 +258,9 @@ public class AnimationUtils {
      * @return The animation object reference by the specified id
      * @throws NotFoundException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.200 -0500", hash_original_method = "BDF8B873A1CA7BFCFC39306793FA91B3", hash_generated_method = "2826F5F26A01425B8BA48E1AC8D3ABDF")
-    public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.830 -0500", hash_original_method = "BDF8B873A1CA7BFCFC39306793FA91B3", hash_generated_method = "2826F5F26A01425B8BA48E1AC8D3ABDF")
+    
+public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -270,8 +281,9 @@ public class AnimationUtils {
 
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.202 -0500", hash_original_method = "88F319A6CBF98DB679955694B16E5858", hash_generated_method = "31C0831015B42322C9C383EEB33E7551")
-    private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.834 -0500", hash_original_method = "88F319A6CBF98DB679955694B16E5858", hash_generated_method = "31C0831015B42322C9C383EEB33E7551")
+    
+private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser)
             throws XmlPullParserException, IOException {
         
         Interpolator interpolator = null;
@@ -319,10 +331,10 @@ public class AnimationUtils {
         return interpolator;
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.180 -0500", hash_original_field = "31840C65EBCC9B611F2D04F9CD2949C0", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.797 -0500", hash_original_field = "31840C65EBCC9B611F2D04F9CD2949C0", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
 
     private static final int TOGETHER = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.181 -0500", hash_original_field = "A210847C0A06CE4FC0BB17DB93B5E26D", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.801 -0500", hash_original_field = "A210847C0A06CE4FC0BB17DB93B5E26D", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
 
     private static final int SEQUENTIALLY = 1;
     

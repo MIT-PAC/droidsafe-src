@@ -14,23 +14,23 @@ import android.view.View;
 
 
 public class SimpleCursorAdapter extends ResourceCursorAdapter {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.567 -0500", hash_original_field = "AFCDB43F15D9604C60DF81DB309311CD", hash_generated_field = "6AD876BF1B2A93FF841DC0A6CDF82D53")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.880 -0500", hash_original_field = "AFCDB43F15D9604C60DF81DB309311CD", hash_generated_field = "6AD876BF1B2A93FF841DC0A6CDF82D53")
 
     protected int[] mFrom;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.567 -0500", hash_original_field = "51C70736F499787D82D1093BC908680A", hash_generated_field = "793C2D88DE3BA12DDE77A56E8B34D202")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.882 -0500", hash_original_field = "51C70736F499787D82D1093BC908680A", hash_generated_field = "793C2D88DE3BA12DDE77A56E8B34D202")
 
     protected int[] mTo;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.568 -0500", hash_original_field = "14E762043CB48AC077260FF08B82CF80", hash_generated_field = "76FAAB307CBAB2502A74F2FD4809A2B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.884 -0500", hash_original_field = "14E762043CB48AC077260FF08B82CF80", hash_generated_field = "76FAAB307CBAB2502A74F2FD4809A2B4")
 
 
     private int mStringConversionColumn = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.569 -0500", hash_original_field = "F8263407921113CB7A610A2339B65BA8", hash_generated_field = "9EC5CDC29EBE32FECD7EDABDB5C61341")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.886 -0500", hash_original_field = "F8263407921113CB7A610A2339B65BA8", hash_generated_field = "9EC5CDC29EBE32FECD7EDABDB5C61341")
 
     private CursorToStringConverter mCursorToStringConverter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.570 -0500", hash_original_field = "5860CDE70C11C388F482671B0B0F2511", hash_generated_field = "308F8B2EF2E94DF958649BB3CD716341")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.888 -0500", hash_original_field = "5860CDE70C11C388F482671B0B0F2511", hash_generated_field = "308F8B2EF2E94DF958649BB3CD716341")
 
     private ViewBinder mViewBinder;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.570 -0500", hash_original_field = "393D022CD0A88B84A417682AA08505E2", hash_generated_field = "393D022CD0A88B84A417682AA08505E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.889 -0500", hash_original_field = "393D022CD0A88B84A417682AA08505E2", hash_generated_field = "393D022CD0A88B84A417682AA08505E2")
 
 
     String[] mOriginalFrom;
@@ -43,9 +43,10 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
      * responsiveness or even Application Not Responding errors.  As an alternative,
      * use {@link android.app.LoaderManager} with a {@link android.content.CursorLoader}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.571 -0500", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "6B7F935D2F35D8A0B1A77449115435C4")
-    @Deprecated
-public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.892 -0500", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "6B7F935D2F35D8A0B1A77449115435C4")
+    
+@Deprecated
+    public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
         super(context, layout, c);
         mTo = to;
         mOriginalFrom = from;
@@ -70,8 +71,9 @@ public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
      * @param flags Flags used to determine the behavior of the adapter,
      * as per {@link CursorAdapter#CursorAdapter(Context, Cursor, int)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.572 -0500", hash_original_method = "07FEC305B6EF36E13BFB609FC3D08908", hash_generated_method = "D87625839B42EA84B49136225DC04AD3")
-    public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.895 -0500", hash_original_method = "07FEC305B6EF36E13BFB609FC3D08908", hash_generated_method = "D87625839B42EA84B49136225DC04AD3")
+    
+public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
             int[] to, int flags) {
         super(context, layout, c, flags);
         mTo = to;
@@ -103,9 +105,10 @@ public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
      * @see #setViewImage(ImageView, String)
      * @see #setViewText(TextView, String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.573 -0500", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "01273149BA86C6FD86C6E74045C8A8EE")
-    @Override
-public void bindView(View view, Context context, Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.899 -0500", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "01273149BA86C6FD86C6E74045C8A8EE")
+    
+@Override
+    public void bindView(View view, Context context, Cursor cursor) {
         final ViewBinder binder = mViewBinder;
         final int count = mTo.length;
         final int[] from = mFrom;
@@ -146,8 +149,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @see #bindView(android.view.View, android.content.Context, android.database.Cursor)
      * @see #setViewBinder(android.widget.SimpleCursorAdapter.ViewBinder)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.574 -0500", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "24EF2DCAC9F252399E7488BB4B6717A3")
-    public ViewBinder getViewBinder() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.901 -0500", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "24EF2DCAC9F252399E7488BB4B6717A3")
+    
+public ViewBinder getViewBinder() {
         return mViewBinder;
     }
 
@@ -160,8 +164,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @see #bindView(android.view.View, android.content.Context, android.database.Cursor)
      * @see #getViewBinder()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.575 -0500", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "CD8F00DE3A674A18D556142232BB8469")
-    public void setViewBinder(ViewBinder viewBinder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.903 -0500", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "CD8F00DE3A674A18D556142232BB8469")
+    
+public void setViewBinder(ViewBinder viewBinder) {
         mViewBinder = viewBinder;
     }
 
@@ -180,8 +185,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @param v ImageView to receive an image
      * @param value the value retrieved from the cursor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.576 -0500", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "A3BA9232B932A48C4241116FDADFE82E")
-    public void setViewImage(ImageView v, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.905 -0500", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "A3BA9232B932A48C4241116FDADFE82E")
+    
+public void setViewImage(ImageView v, String value) {
         try {
             v.setImageResource(Integer.parseInt(value));
         } catch (NumberFormatException nfe) {
@@ -200,8 +206,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @param v TextView to receive text
      * @param text the text to be set for the TextView
      */    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.577 -0500", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "78A796D1AAAB9527A328641E2AF2A0ED")
-    public void setViewText(TextView v, String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.907 -0500", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "78A796D1AAAB9527A328641E2AF2A0ED")
+    
+public void setViewText(TextView v, String text) {
         v.setText(text);
     }
 
@@ -216,8 +223,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @see #setCursorToStringConverter(android.widget.SimpleCursorAdapter.CursorToStringConverter)
      * @see #getCursorToStringConverter()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.577 -0500", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "4748C86A8A294C786E42F1CAB875D0E2")
-    public int getStringConversionColumn() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.909 -0500", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "4748C86A8A294C786E42F1CAB875D0E2")
+    
+public int getStringConversionColumn() {
         return mStringConversionColumn;
     }
 
@@ -235,8 +243,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @see #setCursorToStringConverter(android.widget.SimpleCursorAdapter.CursorToStringConverter)
      * @see #getCursorToStringConverter()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.578 -0500", hash_original_method = "CAA7C791E82A28ED194AFE600FF6DEEE", hash_generated_method = "A04D52F96CBD825C390926357CBB3767")
-    public void setStringConversionColumn(int stringConversionColumn) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.911 -0500", hash_original_method = "CAA7C791E82A28ED194AFE600FF6DEEE", hash_generated_method = "A04D52F96CBD825C390926357CBB3767")
+    
+public void setStringConversionColumn(int stringConversionColumn) {
         mStringConversionColumn = stringConversionColumn;
     }
 
@@ -252,8 +261,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @see #setStringConversionColumn(int)
      * @see android.widget.CursorAdapter#convertToString(android.database.Cursor)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.579 -0500", hash_original_method = "80E6B5584C3F52CF90E7103CF53469C6", hash_generated_method = "2159E9B220EB00EFBBD6466CB188A47D")
-    public CursorToStringConverter getCursorToStringConverter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.913 -0500", hash_original_method = "80E6B5584C3F52CF90E7103CF53469C6", hash_generated_method = "2159E9B220EB00EFBBD6466CB188A47D")
+    
+public CursorToStringConverter getCursorToStringConverter() {
         return mCursorToStringConverter;
     }
 
@@ -269,8 +279,9 @@ public void bindView(View view, Context context, Cursor cursor) {
      * @see #setStringConversionColumn(int)
      * @see android.widget.CursorAdapter#convertToString(android.database.Cursor)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.580 -0500", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "DFE617ADD8B61894A6CE4B159A12E09D")
-    public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.915 -0500", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "DFE617ADD8B61894A6CE4B159A12E09D")
+    
+public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
         mCursorToStringConverter = cursorToStringConverter;
     }
 
@@ -285,9 +296,10 @@ public void bindView(View view, Context context, Cursor cursor) {
      *
      * @return a non-null CharSequence representing the cursor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.581 -0500", hash_original_method = "600E1910E4ECD6C26E4D3B813A27ACFC", hash_generated_method = "92FBC115C9B18DFF04C67ACA9C6FAA42")
-    @Override
-public CharSequence convertToString(Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.918 -0500", hash_original_method = "600E1910E4ECD6C26E4D3B813A27ACFC", hash_generated_method = "92FBC115C9B18DFF04C67ACA9C6FAA42")
+    
+@Override
+    public CharSequence convertToString(Cursor cursor) {
         if (mCursorToStringConverter != null) {
             return mCursorToStringConverter.convertToString(cursor);
         } else if (mStringConversionColumn > -1) {
@@ -303,8 +315,9 @@ public CharSequence convertToString(Cursor cursor) {
      * 
      * @param from the Strings naming the columns of interest
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.582 -0500", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "F6BB161E6EF8993E01BF9BFC3DEBA729")
-    private void findColumns(String[] from) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.920 -0500", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "F6BB161E6EF8993E01BF9BFC3DEBA729")
+    
+private void findColumns(String[] from) {
         if (mCursor != null) {
             int i;
             int count = from.length;
@@ -319,9 +332,10 @@ public CharSequence convertToString(Cursor cursor) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.583 -0500", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "DCAFF21CFF90CAE27D942A9EA9291B7A")
-    @Override
-public Cursor swapCursor(Cursor c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.923 -0500", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "DCAFF21CFF90CAE27D942A9EA9291B7A")
+    
+@Override
+    public Cursor swapCursor(Cursor c) {
         // super.swapCursor() will notify observers before we have
         // a valid mapping, make sure we have a mapping before this
         // happens
@@ -345,8 +359,9 @@ public Cursor swapCursor(Cursor c) {
      *            are given the values of the first N columns in the from
      *            parameter.  Can be null if the cursor is not available yet.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:12.583 -0500", hash_original_method = "6EF93FFBB8E610946B54D3F2EC498321", hash_generated_method = "EDD54B4A4DEF333250C82AA09EE72669")
-    public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.925 -0500", hash_original_method = "6EF93FFBB8E610946B54D3F2EC498321", hash_generated_method = "EDD54B4A4DEF333250C82AA09EE72669")
+    
+public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
         mOriginalFrom = from;
         mTo = to;
         // super.changeCursor() will notify observers before we have

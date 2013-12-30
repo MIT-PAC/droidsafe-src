@@ -12,8 +12,9 @@ import java.util.Vector;
 
 
 public final class Strings {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.299 -0500", hash_original_method = "B47613E89A2CC1F48721E17BD0A5946A", hash_generated_method = "EA309DDF6AF776480907963056B451E4")
-    public static String fromUTF8ByteArray(byte[] bytes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.062 -0500", hash_original_method = "B47613E89A2CC1F48721E17BD0A5946A", hash_generated_method = "EA309DDF6AF776480907963056B451E4")
+    
+public static String fromUTF8ByteArray(byte[] bytes)
     {
         int i = 0;
         int length = 0;
@@ -88,14 +89,16 @@ public final class Strings {
         return new String(cs);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.299 -0500", hash_original_method = "11F14F6D67F3A19A434DCD3C27391CE2", hash_generated_method = "D33B610DF7284146EF2F397DA7DE2B6B")
-    public static byte[] toUTF8ByteArray(String string)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.066 -0500", hash_original_method = "11F14F6D67F3A19A434DCD3C27391CE2", hash_generated_method = "D33B610DF7284146EF2F397DA7DE2B6B")
+    
+public static byte[] toUTF8ByteArray(String string)
     {
         return toUTF8ByteArray(string.toCharArray());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.301 -0500", hash_original_method = "AAC70FE61EB3A143CC365155E81C05C6", hash_generated_method = "767F50748FA7E9E4BB6E144FB8FF8099")
-    public static byte[] toUTF8ByteArray(char[] string)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.069 -0500", hash_original_method = "AAC70FE61EB3A143CC365155E81C05C6", hash_generated_method = "767F50748FA7E9E4BB6E144FB8FF8099")
+    
+public static byte[] toUTF8ByteArray(char[] string)
     {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         char[] c = string;
@@ -157,8 +160,9 @@ public final class Strings {
      * @param string input to be converted
      * @return a US Ascii uppercase version
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.302 -0500", hash_original_method = "236CE70381CAE691CF8D03F3D0A7E2E8", hash_generated_method = "34048EFAD324F63AAF648818713681BB")
-    public static String toUpperCase(String string)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.071 -0500", hash_original_method = "236CE70381CAE691CF8D03F3D0A7E2E8", hash_generated_method = "34048EFAD324F63AAF648818713681BB")
+    
+public static String toUpperCase(String string)
     {
         boolean changed = false;
         char[] chars = string.toCharArray();
@@ -187,8 +191,9 @@ public final class Strings {
      * @param string input to be converted
      * @return a US ASCII lowercase version
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.303 -0500", hash_original_method = "002C3CFFC816A38E005543BB54E228FD", hash_generated_method = "24D6A751F50FC61EC42FBA4D0FC608F4")
-    public static String toLowerCase(String string)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.074 -0500", hash_original_method = "002C3CFFC816A38E005543BB54E228FD", hash_generated_method = "24D6A751F50FC61EC42FBA4D0FC608F4")
+    
+public static String toLowerCase(String string)
     {
         boolean changed = false;
         char[] chars = string.toCharArray();
@@ -211,8 +216,9 @@ public final class Strings {
         return string;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.304 -0500", hash_original_method = "B1EA6429766BB5E3D20876B7DED97594", hash_generated_method = "850E66C32D53A2FDDDEC60FEF36BC2F7")
-    public static byte[] toByteArray(char[] chars)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.076 -0500", hash_original_method = "B1EA6429766BB5E3D20876B7DED97594", hash_generated_method = "850E66C32D53A2FDDDEC60FEF36BC2F7")
+    
+public static byte[] toByteArray(char[] chars)
     {
         byte[] bytes = new byte[chars.length];
 
@@ -224,8 +230,9 @@ public final class Strings {
         return bytes;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.305 -0500", hash_original_method = "2A0080751452B3FDDACC7FA743757BC1", hash_generated_method = "BE61902378165AEC00C15814973AA80B")
-    public static byte[] toByteArray(String string)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.079 -0500", hash_original_method = "2A0080751452B3FDDACC7FA743757BC1", hash_generated_method = "BE61902378165AEC00C15814973AA80B")
+    
+public static byte[] toByteArray(String string)
     {
         byte[] bytes = new byte[string.length()];
 
@@ -239,8 +246,9 @@ public final class Strings {
         return bytes;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.306 -0500", hash_original_method = "AB1D421432E9EE56DDFDE78AE7927A61", hash_generated_method = "9332EF3B1385D3C9F7AAE81E8AF001A6")
-    public static String[] split(String input, char delimiter)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.082 -0500", hash_original_method = "AB1D421432E9EE56DDFDE78AE7927A61", hash_generated_method = "9332EF3B1385D3C9F7AAE81E8AF001A6")
+    
+public static String[] split(String input, char delimiter)
     {
         Vector           v = new Vector();
         boolean moreTokens = true;

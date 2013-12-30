@@ -14,22 +14,24 @@ import java.io.InputStream;
 
 
 public class ASN1StreamParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.434 -0500", hash_original_field = "0AF8B53607342E2932B67C3C39DDF67E", hash_generated_field = "AD9BC78DBAEEEA7F3095C3D4235D31E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.840 -0500", hash_original_field = "0AF8B53607342E2932B67C3C39DDF67E", hash_generated_field = "AD9BC78DBAEEEA7F3095C3D4235D31E3")
 
     private  InputStream _in;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.435 -0500", hash_original_field = "ADA4D5F0AAE64549A210DC56084FD197", hash_generated_field = "CC1F761CCB044A54710FD1E5F22ED61A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.843 -0500", hash_original_field = "ADA4D5F0AAE64549A210DC56084FD197", hash_generated_field = "CC1F761CCB044A54710FD1E5F22ED61A")
 
     private  int         _limit;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.436 -0500", hash_original_method = "DBA5BC9F59C3649B70C3A3387D909190", hash_generated_method = "BAE0FCF7C6B0631AA209089D9032CDB1")
-    public ASN1StreamParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.845 -0500", hash_original_method = "DBA5BC9F59C3649B70C3A3387D909190", hash_generated_method = "BAE0FCF7C6B0631AA209089D9032CDB1")
+    
+public ASN1StreamParser(
         InputStream in)
     {
         this(in, ASN1InputStream.findLimit(in));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.437 -0500", hash_original_method = "6581181C0F10BA1424D0E617E42FF352", hash_generated_method = "8AA58FCB9481546333D8BD072ABE2005")
-    public ASN1StreamParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.848 -0500", hash_original_method = "6581181C0F10BA1424D0E617E42FF352", hash_generated_method = "8AA58FCB9481546333D8BD072ABE2005")
+    
+public ASN1StreamParser(
         InputStream in,
         int         limit)
     {
@@ -37,15 +39,17 @@ public class ASN1StreamParser {
         this._limit = limit;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.438 -0500", hash_original_method = "2384F9E8B7C9F8CABF70D53041DA5305", hash_generated_method = "AD730A8C8B52879F4F0751AE2D6F8CB5")
-    public ASN1StreamParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.851 -0500", hash_original_method = "2384F9E8B7C9F8CABF70D53041DA5305", hash_generated_method = "AD730A8C8B52879F4F0751AE2D6F8CB5")
+    
+public ASN1StreamParser(
         byte[] encoding)
     {
         this(new ByteArrayInputStream(encoding), encoding.length);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.439 -0500", hash_original_method = "C3E0BE0AC09DBB98B8E162DDEE686364", hash_generated_method = "F26828307F2BB67D67D8475A095865AB")
-    DEREncodable readIndef(int tagValue) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.853 -0500", hash_original_method = "C3E0BE0AC09DBB98B8E162DDEE686364", hash_generated_method = "F26828307F2BB67D67D8475A095865AB")
+    
+DEREncodable readIndef(int tagValue) throws IOException
     {
         // Note: INDEF => CONSTRUCTED
 
@@ -65,8 +69,9 @@ public class ASN1StreamParser {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.440 -0500", hash_original_method = "CAB584B2B56E52E14F26B47F81A64976", hash_generated_method = "53A03EBCA02B4F64398F1CB47E4F7014")
-    DEREncodable readImplicit(boolean constructed, int tag) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.856 -0500", hash_original_method = "CAB584B2B56E52E14F26B47F81A64976", hash_generated_method = "53A03EBCA02B4F64398F1CB47E4F7014")
+    
+DEREncodable readImplicit(boolean constructed, int tag) throws IOException
     {
         if (_in instanceof IndefiniteLengthInputStream)
         {
@@ -107,8 +112,9 @@ public class ASN1StreamParser {
         throw new RuntimeException("implicit tagging not implemented");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.441 -0500", hash_original_method = "52179F915187689C742CC095EFF2DB0F", hash_generated_method = "6EBBC96986A4DF17FEF4820E878DDFC1")
-    DERObject readTaggedObject(boolean constructed, int tag) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.858 -0500", hash_original_method = "52179F915187689C742CC095EFF2DB0F", hash_generated_method = "6EBBC96986A4DF17FEF4820E878DDFC1")
+    
+DERObject readTaggedObject(boolean constructed, int tag) throws IOException
     {
         if (!constructed)
         {
@@ -131,8 +137,9 @@ public class ASN1StreamParser {
             :   new DERTaggedObject(false, tag, DERFactory.createSequence(v));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.442 -0500", hash_original_method = "8294A0F9B070E477A3BFFFBCF1187D7F", hash_generated_method = "C4E1948F478189E4460B57988A21D92F")
-    public DEREncodable readObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.862 -0500", hash_original_method = "8294A0F9B070E477A3BFFFBCF1187D7F", hash_generated_method = "C4E1948F478189E4460B57988A21D92F")
+    
+public DEREncodable readObject()
         throws IOException
     {
         int tag = _in.read();
@@ -234,8 +241,9 @@ public class ASN1StreamParser {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.443 -0500", hash_original_method = "4F333A451CCAA8C49D86BC8C0430A606", hash_generated_method = "40DC3822BFE66D04E675FE3600FC1C84")
-    private void set00Check(boolean enabled)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.865 -0500", hash_original_method = "4F333A451CCAA8C49D86BC8C0430A606", hash_generated_method = "40DC3822BFE66D04E675FE3600FC1C84")
+    
+private void set00Check(boolean enabled)
     {
         if (_in instanceof IndefiniteLengthInputStream)
         {
@@ -243,8 +251,9 @@ public class ASN1StreamParser {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.444 -0500", hash_original_method = "0431F63F80CE6652BCE08CECE2E42AA0", hash_generated_method = "0431F63F80CE6652BCE08CECE2E42AA0")
-    ASN1EncodableVector readVector() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.867 -0500", hash_original_method = "0431F63F80CE6652BCE08CECE2E42AA0", hash_generated_method = "0431F63F80CE6652BCE08CECE2E42AA0")
+    
+ASN1EncodableVector readVector() throws IOException
     {
         ASN1EncodableVector v = new ASN1EncodableVector();
 

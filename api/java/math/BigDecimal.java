@@ -33,8 +33,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @return {@code BigDecimal} instance with the value {@code unscaledVal}*
      *         10^(-{@code unscaledVal}).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.769 -0500", hash_original_method = "F9892CC1443390F81D4FBFF3F20214AD", hash_generated_method = "5CE479A48454C88ED412F5E65ACE7121")
-    public static BigDecimal valueOf(long unscaledVal, int scale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.216 -0500", hash_original_method = "F9892CC1443390F81D4FBFF3F20214AD", hash_generated_method = "5CE479A48454C88ED412F5E65ACE7121")
+    
+public static BigDecimal valueOf(long unscaledVal, int scale) {
         if (scale == 0) {
             return valueOf(unscaledVal);
         }
@@ -54,8 +55,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            value to be converted to a {@code BigDecimal}.
      * @return {@code BigDecimal} instance with the value {@code unscaledVal}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.769 -0500", hash_original_method = "6005B27E24A666ABF80A39B1F52409D2", hash_generated_method = "004BECF32C4D7725B75CD1E903B7E085")
-    public static BigDecimal valueOf(long unscaledVal) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.219 -0500", hash_original_method = "6005B27E24A666ABF80A39B1F52409D2", hash_generated_method = "004BECF32C4D7725B75CD1E903B7E085")
+    
+public static BigDecimal valueOf(long unscaledVal) {
         if ((unscaledVal >= 0) && (unscaledVal < BI_SCALED_BY_ZERO_LENGTH)) {
             return BI_SCALED_BY_ZERO[(int)unscaledVal];
         }
@@ -80,16 +82,18 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NumberFormatException
      *             if {@code val} is infinite or {@code val} is not a number
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.770 -0500", hash_original_method = "10A95FF55B9E585002402901CCF62557", hash_generated_method = "C311EE40996D59E17B3F55D313EE4358")
-    public static BigDecimal valueOf(double val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.222 -0500", hash_original_method = "10A95FF55B9E585002402901CCF62557", hash_generated_method = "C311EE40996D59E17B3F55D313EE4358")
+    
+public static BigDecimal valueOf(double val) {
         if (Double.isInfinite(val) || Double.isNaN(val)) {
             throw new NumberFormatException("Infinity or NaN: " + val);
         }
         return new BigDecimal(Double.toString(val));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.772 -0500", hash_original_method = "A46415AE823E313D5E8C5AE45376215F", hash_generated_method = "80370484F8CE3F1AD90C7B721552903B")
-    private static BigDecimal addAndMult10(BigDecimal thisValue,BigDecimal augend, int diffScale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.228 -0500", hash_original_method = "A46415AE823E313D5E8C5AE45376215F", hash_generated_method = "80370484F8CE3F1AD90C7B721552903B")
+    
+private static BigDecimal addAndMult10(BigDecimal thisValue,BigDecimal augend, int diffScale) {
         if(diffScale < MathUtils.LONG_POWERS_OF_TEN.length &&
                 Math.max(thisValue.bitLength,augend.bitLength+LONG_POWERS_OF_TEN_BIT_LENGTH[diffScale])+1<64) {
             return valueOf(thisValue.smallValue+augend.smallValue*MathUtils.LONG_POWERS_OF_TEN[diffScale],thisValue.scale);
@@ -100,8 +104,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.782 -0500", hash_original_method = "5942F5A028CB6724F6727335EEB4228B", hash_generated_method = "DA627B5F8B1BC7F08FAB5B469CFE1529")
-    private static BigDecimal divideBigIntegers(BigInteger scaledDividend, BigInteger scaledDivisor, int scale, RoundingMode roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.252 -0500", hash_original_method = "5942F5A028CB6724F6727335EEB4228B", hash_generated_method = "DA627B5F8B1BC7F08FAB5B469CFE1529")
+    
+private static BigDecimal divideBigIntegers(BigInteger scaledDividend, BigInteger scaledDivisor, int scale, RoundingMode roundingMode) {
 
         BigInteger[] quotAndRem = scaledDividend.divideAndRemainder(scaledDivisor);  // quotient and remainder
         // If after division there is a remainder...
@@ -137,8 +142,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         return new BigDecimal(quotient, scale);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.783 -0500", hash_original_method = "7B0F2D11454582168AA71FF633AE192E", hash_generated_method = "44DAF81F917D0C26F92BE7A5A93C17FF")
-    private static BigDecimal dividePrimitiveLongs(long scaledDividend, long scaledDivisor, int scale, RoundingMode roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.256 -0500", hash_original_method = "7B0F2D11454582168AA71FF633AE192E", hash_generated_method = "44DAF81F917D0C26F92BE7A5A93C17FF")
+    
+private static BigDecimal dividePrimitiveLongs(long scaledDividend, long scaledDivisor, int scale, RoundingMode roundingMode) {
         long quotient = scaledDividend / scaledDivisor;
         long remainder = scaledDividend % scaledDivisor;
         int sign = Long.signum( scaledDividend ) * Long.signum( scaledDivisor );
@@ -155,8 +161,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         return valueOf(quotient, scale);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.836 -0500", hash_original_method = "6F8795E63BC9049AAA9B8D7577159AC3", hash_generated_method = "2C494A30C70403F75BDC3A7CF90E78BB")
-    private static int longCompareTo(long value1, long value2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.411 -0500", hash_original_method = "6F8795E63BC9049AAA9B8D7577159AC3", hash_generated_method = "2C494A30C70403F75BDC3A7CF90E78BB")
+    
+private static int longCompareTo(long value1, long value2) {
         return value1 > value2 ? 1 : (value1 < value2 ? -1 : 0);
     }
 
@@ -173,8 +180,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            the type of rounding
      * @return the carry propagated after rounding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.839 -0500", hash_original_method = "89FB81061342283FD2D255BA617B9F56", hash_generated_method = "D85A0B85302C2EDA6C22AC490F606B0B")
-    private static int roundingBehavior(int parityBit, int fraction, RoundingMode roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.417 -0500", hash_original_method = "89FB81061342283FD2D255BA617B9F56", hash_generated_method = "D85A0B85302C2EDA6C22AC490F606B0B")
+    
+private static int roundingBehavior(int parityBit, int fraction, RoundingMode roundingMode) {
         int increment = 0; // the carry after rounding
 
         switch (roundingMode) {
@@ -213,8 +221,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         return increment;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.841 -0500", hash_original_method = "3E37D52FCEF46233035FAF85688E9AE3", hash_generated_method = "4EFDE105A2047266074EE79EE87CC770")
-    private static int safeLongToInt(long longValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.424 -0500", hash_original_method = "3E37D52FCEF46233035FAF85688E9AE3", hash_generated_method = "4EFDE105A2047266074EE79EE87CC770")
+    
+private static int safeLongToInt(long longValue) {
         if (longValue < Integer.MIN_VALUE || longValue > Integer.MAX_VALUE) {
             throw new ArithmeticException("Out of int range: " + longValue);
         }
@@ -234,8 +243,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @return the value 0 scaled by the closer scale of type {@code int}.
      * @see #scale
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.842 -0500", hash_original_method = "02562B606C3E71F0B7DFB1304AA72DDB", hash_generated_method = "C194E961E90BA0311F68E21D1A359734")
-    private static BigDecimal zeroScaledBy(long longScale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.427 -0500", hash_original_method = "02562B606C3E71F0B7DFB1304AA72DDB", hash_generated_method = "C194E961E90BA0311F68E21D1A359734")
+    
+private static BigDecimal zeroScaledBy(long longScale) {
         if (longScale == (int) longScale) {
             return valueOf(0,(int)longScale);
             }
@@ -245,58 +255,60 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         return new BigDecimal( 0, Integer.MIN_VALUE);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.847 -0500", hash_original_method = "82F1645A8A86A2C28F5CBA199054A99A", hash_generated_method = "C60AF3E4191D1B3AD0803B03B056147B")
-    private static int bitLength(long smallValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.440 -0500", hash_original_method = "82F1645A8A86A2C28F5CBA199054A99A", hash_generated_method = "C60AF3E4191D1B3AD0803B03B056147B")
+    
+private static int bitLength(long smallValue) {
         if(smallValue < 0) {
             smallValue = ~smallValue;
         }
         return 64 - Long.numberOfLeadingZeros(smallValue);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.848 -0500", hash_original_method = "DC0F77C7653E0BDC476925E875F64B26", hash_generated_method = "A286E1DAA74B22D67487DC50E36C15B2")
-    private static int bitLength(int smallValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.443 -0500", hash_original_method = "DC0F77C7653E0BDC476925E875F64B26", hash_generated_method = "A286E1DAA74B22D67487DC50E36C15B2")
+    
+private static int bitLength(int smallValue) {
         if(smallValue < 0) {
             smallValue = ~smallValue;
         }
         return 32 - Integer.numberOfLeadingZeros(smallValue);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.723 -0500", hash_original_field = "376C7D7B79D7F4567BFE1A377FE284B2", hash_generated_field = "B6EECEB04C7C8E9BC518DBA316290DA7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.085 -0500", hash_original_field = "376C7D7B79D7F4567BFE1A377FE284B2", hash_generated_field = "B6EECEB04C7C8E9BC518DBA316290DA7")
 
     public static final int ROUND_UP = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.724 -0500", hash_original_field = "E9C02588513D6417E25D4AA45014BE66", hash_generated_field = "454999CD924CB489896B8D343444FE92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.087 -0500", hash_original_field = "E9C02588513D6417E25D4AA45014BE66", hash_generated_field = "454999CD924CB489896B8D343444FE92")
 
     public static final int ROUND_DOWN = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.725 -0500", hash_original_field = "51785B13ED3E5BDB46F34040F95F4255", hash_generated_field = "3C0D845F7C2F954D2ED7E86C0AE35835")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.090 -0500", hash_original_field = "51785B13ED3E5BDB46F34040F95F4255", hash_generated_field = "3C0D845F7C2F954D2ED7E86C0AE35835")
 
     public static final int ROUND_CEILING = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.725 -0500", hash_original_field = "19296B0DFAC123E30E1C315A6B16D4C8", hash_generated_field = "53D60190BBA8538A982DF868F4C6200E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.093 -0500", hash_original_field = "19296B0DFAC123E30E1C315A6B16D4C8", hash_generated_field = "53D60190BBA8538A982DF868F4C6200E")
 
     public static final int ROUND_FLOOR = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.726 -0500", hash_original_field = "5CBA3FB7BB360CDD170671E9457D16E2", hash_generated_field = "F10F1696D5C52C5E6B4B91643A72CEBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.096 -0500", hash_original_field = "5CBA3FB7BB360CDD170671E9457D16E2", hash_generated_field = "F10F1696D5C52C5E6B4B91643A72CEBE")
 
     public static final int ROUND_HALF_UP = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.727 -0500", hash_original_field = "0B26D612BA5EFAE8EDE3F710E3F5C666", hash_generated_field = "1619429E1C6C75DCE5756A9CF242CB9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.098 -0500", hash_original_field = "0B26D612BA5EFAE8EDE3F710E3F5C666", hash_generated_field = "1619429E1C6C75DCE5756A9CF242CB9E")
 
     public static final int ROUND_HALF_DOWN = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.728 -0500", hash_original_field = "1AA68CFE0DAD904695650F4BBAD21E43", hash_generated_field = "737A62C6AFA4A3B8167B738F856B0DEA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.101 -0500", hash_original_field = "1AA68CFE0DAD904695650F4BBAD21E43", hash_generated_field = "737A62C6AFA4A3B8167B738F856B0DEA")
 
     public static final int ROUND_HALF_EVEN = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.729 -0500", hash_original_field = "A88EC5ED045AD3D66EE024D7473AD192", hash_generated_field = "C5A01DD93D79DC15583A8D0F0236E74E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.103 -0500", hash_original_field = "A88EC5ED045AD3D66EE024D7473AD192", hash_generated_field = "C5A01DD93D79DC15583A8D0F0236E74E")
 
     public static final int ROUND_UNNECESSARY = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.730 -0500", hash_original_field = "63B1D38782173ABAAED19D754998DD9D", hash_generated_field = "732C210E7618496C3947E6F404C23DC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.105 -0500", hash_original_field = "63B1D38782173ABAAED19D754998DD9D", hash_generated_field = "732C210E7618496C3947E6F404C23DC5")
 
     private static final long serialVersionUID = 6108874887143696463L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.731 -0500", hash_original_field = "98CE2463B419C045DFD2A6D6C60E2402", hash_generated_field = "E93F26BA415E2A63370EECFB39CABE9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.108 -0500", hash_original_field = "98CE2463B419C045DFD2A6D6C60E2402", hash_generated_field = "E93F26BA415E2A63370EECFB39CABE9A")
 
     private static final double LOG10_2 = 0.3010299956639812;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.733 -0500", hash_original_field = "752505761B9845B313A2EF02A3C16815", hash_generated_field = "BC1FA69034FA076F552F1F096B6FE848")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.117 -0500", hash_original_field = "752505761B9845B313A2EF02A3C16815", hash_generated_field = "BC1FA69034FA076F552F1F096B6FE848")
 
     private static  BigInteger[] FIVE_POW;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.734 -0500", hash_original_field = "FF7162C0B5BE8CFB0550B2B3387E69CA", hash_generated_field = "487DAC2FC944E340E99AE2E5C8C63B33")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.119 -0500", hash_original_field = "FF7162C0B5BE8CFB0550B2B3387E69CA", hash_generated_field = "487DAC2FC944E340E99AE2E5C8C63B33")
 
     private static  BigInteger[] TEN_POW;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.736 -0500", hash_original_field = "8FA9D1BEEAB8A8C00CACD4833A69484A", hash_generated_field = "7278FA9BE84E3C616E4421DE5FF2F206")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.122 -0500", hash_original_field = "8FA9D1BEEAB8A8C00CACD4833A69484A", hash_generated_field = "7278FA9BE84E3C616E4421DE5FF2F206")
 
 
     private static final long[] LONG_FIVE_POW = new long[]
@@ -328,68 +340,70 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         298023223876953125L,
         1490116119384765625L,
         7450580596923828125L, };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.737 -0500", hash_original_field = "A77A182FE39DE5EBF94A318A1AFECB07", hash_generated_field = "FD0F7EAC9A9246982008521CC29799A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.125 -0500", hash_original_field = "A77A182FE39DE5EBF94A318A1AFECB07", hash_generated_field = "FD0F7EAC9A9246982008521CC29799A7")
 
 
     private static final int[] LONG_FIVE_POW_BIT_LENGTH = new int[LONG_FIVE_POW.length];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.738 -0500", hash_original_field = "4749A86959EF10EF1080A9333DA3124F", hash_generated_field = "9DFBCE8298EAB00B86718FC0B2D88337")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.128 -0500", hash_original_field = "4749A86959EF10EF1080A9333DA3124F", hash_generated_field = "9DFBCE8298EAB00B86718FC0B2D88337")
 
     private static final int[] LONG_POWERS_OF_TEN_BIT_LENGTH = new int[MathUtils.LONG_POWERS_OF_TEN.length];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.739 -0500", hash_original_field = "52C500940B1EC4250CA8ACC65D9CCA1A", hash_generated_field = "E22EB04741B2BFD88E960FE524D60B1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.130 -0500", hash_original_field = "52C500940B1EC4250CA8ACC65D9CCA1A", hash_generated_field = "E22EB04741B2BFD88E960FE524D60B1A")
 
 
     private static final int BI_SCALED_BY_ZERO_LENGTH = 11;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.740 -0500", hash_original_field = "DCAF56BF5ED70EAB2415C3D633724F4E", hash_generated_field = "5B020D40BF07C0EC94E4149184B70A65")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.133 -0500", hash_original_field = "DCAF56BF5ED70EAB2415C3D633724F4E", hash_generated_field = "5B020D40BF07C0EC94E4149184B70A65")
 
     private static final BigDecimal[] BI_SCALED_BY_ZERO = new BigDecimal[BI_SCALED_BY_ZERO_LENGTH];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.741 -0500", hash_original_field = "3D15C3A7C135CCF6BA5DCFF7AADD7FD0", hash_generated_field = "5C08AD19ABFF43369109F8D9272F2B04")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.135 -0500", hash_original_field = "3D15C3A7C135CCF6BA5DCFF7AADD7FD0", hash_generated_field = "5C08AD19ABFF43369109F8D9272F2B04")
 
     private static final BigDecimal[] ZERO_SCALED_BY = new BigDecimal[11];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.741 -0500", hash_original_field = "4587AF79F3F280A350A136CBA1B8049B", hash_generated_field = "12A340B61FB03C00F6D04EBF43FAFF99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.138 -0500", hash_original_field = "4587AF79F3F280A350A136CBA1B8049B", hash_generated_field = "12A340B61FB03C00F6D04EBF43FAFF99")
 
     private static final char[] CH_ZEROS = new char[100];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.743 -0500", hash_original_field = "1D7AF782751FE95BB10255F61ECD5990", hash_generated_field = "E2BD5BBDB2DF3AE4973FDC84A00AF40A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.142 -0500", hash_original_field = "1D7AF782751FE95BB10255F61ECD5990", hash_generated_field = "E2BD5BBDB2DF3AE4973FDC84A00AF40A")
 
     public static final BigDecimal ZERO = new BigDecimal(0, 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.744 -0500", hash_original_field = "EED8177809CCB66F893BAF55D41D0B52", hash_generated_field = "9F34079F2BD32FDD32B17DD6B2BC0759")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.144 -0500", hash_original_field = "EED8177809CCB66F893BAF55D41D0B52", hash_generated_field = "9F34079F2BD32FDD32B17DD6B2BC0759")
 
     public static final BigDecimal ONE = new BigDecimal(1, 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.744 -0500", hash_original_field = "61F8CE6C71126BF7F7297E72E0D2A276", hash_generated_field = "7D43F273171CCD7BF176CC18D6BEE813")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.146 -0500", hash_original_field = "61F8CE6C71126BF7F7297E72E0D2A276", hash_generated_field = "7D43F273171CCD7BF176CC18D6BEE813")
 
     public static final BigDecimal TEN = new BigDecimal(10, 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.732 -0500", hash_original_field = "C7E6CF1EB1F09252628C67CF5F252D88", hash_generated_field = "326D03DFD6F64D4B3F1173FBD427B520")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.111 -0500", hash_original_field = "C7E6CF1EB1F09252628C67CF5F252D88", hash_generated_field = "326D03DFD6F64D4B3F1173FBD427B520")
 
     private transient String toStringImage = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.732 -0500", hash_original_field = "2257B8AF42139E78B9EB6F31816249E1", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.113 -0500", hash_original_field = "2257B8AF42139E78B9EB6F31816249E1", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
 
     private transient int hashCode = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.745 -0500", hash_original_field = "22392F4CDA217309CEACFD6B5400654A", hash_generated_field = "E1C21CCC8969038A086EDD16030014B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.149 -0500", hash_original_field = "22392F4CDA217309CEACFD6B5400654A", hash_generated_field = "E1C21CCC8969038A086EDD16030014B8")
 
     private BigInteger intVal;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.746 -0500", hash_original_field = "2D47056835D2DB19B19AB49B6EFAF056", hash_generated_field = "1C841931B61AD9BC0EB5C76BA4219E64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.151 -0500", hash_original_field = "2D47056835D2DB19B19AB49B6EFAF056", hash_generated_field = "1C841931B61AD9BC0EB5C76BA4219E64")
 
 
     private transient int bitLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.747 -0500", hash_original_field = "C7105AF1F7C710FDA21C6C5661A3F35B", hash_generated_field = "27339F171BD0CF229BCBE4E7356A5F0B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.153 -0500", hash_original_field = "C7105AF1F7C710FDA21C6C5661A3F35B", hash_generated_field = "27339F171BD0CF229BCBE4E7356A5F0B")
 
 
     private transient long smallValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.748 -0500", hash_original_field = "BA0D3D812FE0526303F6820DD8690E4B", hash_generated_field = "F9D5D1CA2ABDD82810FF1FE80E0268E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.156 -0500", hash_original_field = "BA0D3D812FE0526303F6820DD8690E4B", hash_generated_field = "F9D5D1CA2ABDD82810FF1FE80E0268E6")
 
     private int scale;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.749 -0500", hash_original_field = "0306FC1243D52C8B5E0B842583EF7F23", hash_generated_field = "4E7D370BAE76B07332BBBB929C2DF340")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.159 -0500", hash_original_field = "0306FC1243D52C8B5E0B842583EF7F23", hash_generated_field = "4E7D370BAE76B07332BBBB929C2DF340")
 
     private transient int precision = 0;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.750 -0500", hash_original_method = "6BC27F867C09C0249873A4D338F8666D", hash_generated_method = "F5A17E3EA4EFB84D0C87E0D2B7FB5801")
-    private BigDecimal(long smallValue, int scale){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.162 -0500", hash_original_method = "6BC27F867C09C0249873A4D338F8666D", hash_generated_method = "F5A17E3EA4EFB84D0C87E0D2B7FB5801")
+    
+private BigDecimal(long smallValue, int scale){
         this.smallValue = smallValue;
         this.scale = scale;
         this.bitLength = bitLength(smallValue);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.751 -0500", hash_original_method = "9F6CD654516DCD03F33530EDCF81D84D", hash_generated_method = "2DA05A7D2D4CDD563EC3533635DFDC65")
-    private BigDecimal(int smallValue, int scale){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.165 -0500", hash_original_method = "9F6CD654516DCD03F33530EDCF81D84D", hash_generated_method = "2DA05A7D2D4CDD563EC3533635DFDC65")
+    
+private BigDecimal(int smallValue, int scale){
         this.smallValue = smallValue;
         this.scale = scale;
         this.bitLength = bitLength(smallValue);
@@ -411,8 +425,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             offset+len-1 >= in.length}, or if {@code in} does not
      *             contain a valid string representation of a big decimal.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.752 -0500", hash_original_method = "374C425CF4086C798A21EEA670343536", hash_generated_method = "1344B854F823E3ECBDC918043A9EFA67")
-    public BigDecimal(char[] in, int offset, int len) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.169 -0500", hash_original_method = "374C425CF4086C798A21EEA670343536", hash_generated_method = "1344B854F823E3ECBDC918043A9EFA67")
+    
+public BigDecimal(char[] in, int offset, int len) {
         int begin = offset; // first index to be copied
         int last = offset + (len - 1); // last index to be copied
         String scaleString; // buffer for scale
@@ -524,8 +539,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.753 -0500", hash_original_method = "021DB19003FFCB38960FC53E0DB20D11", hash_generated_method = "CDDA988A05CDA057AA45C4E3F8EF4061")
-    public BigDecimal(char[] in, int offset, int len, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.172 -0500", hash_original_method = "021DB19003FFCB38960FC53E0DB20D11", hash_generated_method = "CDDA988A05CDA057AA45C4E3F8EF4061")
+    
+public BigDecimal(char[] in, int offset, int len, MathContext mc) {
         this(in, offset, len);
         inplaceRound(mc);
     }
@@ -541,8 +557,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code in} does not contain a valid string representation
      *             of a big decimal.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.754 -0500", hash_original_method = "2CA49E7A005F756FE298C75D3E276FBD", hash_generated_method = "4AC8B8EE73741A27E40468A1F00ADD73")
-    public BigDecimal(char[] in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.175 -0500", hash_original_method = "2CA49E7A005F756FE298C75D3E276FBD", hash_generated_method = "4AC8B8EE73741A27E40468A1F00ADD73")
+    
+public BigDecimal(char[] in) {
         this(in, 0, in.length);
     }
 
@@ -564,8 +581,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.755 -0500", hash_original_method = "24A3A809E90D8D728111B1E9DFB6AE2B", hash_generated_method = "4FF142B916F88376ADF7F1B880F61B37")
-    public BigDecimal(char[] in, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.178 -0500", hash_original_method = "24A3A809E90D8D728111B1E9DFB6AE2B", hash_generated_method = "4FF142B916F88376ADF7F1B880F61B37")
+    
+public BigDecimal(char[] in, MathContext mc) {
         this(in, 0, in.length);
         inplaceRound(mc);
     }
@@ -581,8 +599,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code val} does not contain a valid string representation
      *             of a big decimal.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.756 -0500", hash_original_method = "97883F5F25D8C2D5B9EC2501AC7ECDA2", hash_generated_method = "8A7E2F1E0BA78CDD4F6AE32E1A77DAE9")
-    public BigDecimal(String val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.181 -0500", hash_original_method = "97883F5F25D8C2D5B9EC2501AC7ECDA2", hash_generated_method = "8A7E2F1E0BA78CDD4F6AE32E1A77DAE9")
+    
+public BigDecimal(String val) {
         this(val.toCharArray(), 0, val.length());
     }
 
@@ -604,8 +623,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.757 -0500", hash_original_method = "65FA78E7CB5F82CDA77BAA4B434CD165", hash_generated_method = "D81DDA313B6CAB173D7687D7A33BFB68")
-    public BigDecimal(String val, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.184 -0500", hash_original_method = "65FA78E7CB5F82CDA77BAA4B434CD165", hash_generated_method = "D81DDA313B6CAB173D7687D7A33BFB68")
+    
+public BigDecimal(String val, MathContext mc) {
         this(val.toCharArray(), 0, val.length());
         inplaceRound(mc);
     }
@@ -625,8 +645,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NumberFormatException
      *             if {@code val} is infinity or not a number.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.758 -0500", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "21F06AAA0AAC6CA3F389A18FE466D483")
-    public BigDecimal(double val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.188 -0500", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "21F06AAA0AAC6CA3F389A18FE466D483")
+    
+public BigDecimal(double val) {
         if (Double.isInfinite(val) || Double.isNaN(val)) {
             throw new NumberFormatException("Infinity or NaN: " + val);
         }
@@ -700,8 +721,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.760 -0500", hash_original_method = "A301A521891A68A20E545213C1CF7F7F", hash_generated_method = "E9786ABA71C9886B56D6F46B8B4947A4")
-    public BigDecimal(double val, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.191 -0500", hash_original_method = "A301A521891A68A20E545213C1CF7F7F", hash_generated_method = "E9786ABA71C9886B56D6F46B8B4947A4")
+    
+public BigDecimal(double val, MathContext mc) {
         this(val);
         inplaceRound(mc);
     }
@@ -714,8 +736,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            {@code BigInteger} value to be converted to a {@code
      *            BigDecimal} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.761 -0500", hash_original_method = "35103202AC4D8227390F065BF679C471", hash_generated_method = "B65C999537FA8174D81B17542E707877")
-    public BigDecimal(BigInteger val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.193 -0500", hash_original_method = "35103202AC4D8227390F065BF679C471", hash_generated_method = "B65C999537FA8174D81B17542E707877")
+    
+public BigDecimal(BigInteger val) {
         this(val, 0);
     }
 
@@ -733,8 +756,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.762 -0500", hash_original_method = "4DD15F45D533F2889A2A72BE2BF675A6", hash_generated_method = "021F311C52BFAFE27D4FD77CD8BBBEA4")
-    public BigDecimal(BigInteger val, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.196 -0500", hash_original_method = "4DD15F45D533F2889A2A72BE2BF675A6", hash_generated_method = "021F311C52BFAFE27D4FD77CD8BBBEA4")
+    
+public BigDecimal(BigInteger val, MathContext mc) {
         this(val);
         inplaceRound(mc);
     }
@@ -752,8 +776,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code unscaledVal == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.763 -0500", hash_original_method = "E5BF86952E31D522F2FAABCF30464562", hash_generated_method = "115C2EAA40DB64ED0BDD57F24BD9C782")
-    public BigDecimal(BigInteger unscaledVal, int scale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.199 -0500", hash_original_method = "E5BF86952E31D522F2FAABCF30464562", hash_generated_method = "115C2EAA40DB64ED0BDD57F24BD9C782")
+    
+public BigDecimal(BigInteger unscaledVal, int scale) {
         if (unscaledVal == null) {
             throw new NullPointerException();
         }
@@ -781,8 +806,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code unscaledVal == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.764 -0500", hash_original_method = "59F34EC0A04F061EC6FA9A9EFC322A4C", hash_generated_method = "8285298D80A91748B2E308D1A7BE8433")
-    public BigDecimal(BigInteger unscaledVal, int scale, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.202 -0500", hash_original_method = "59F34EC0A04F061EC6FA9A9EFC322A4C", hash_generated_method = "8285298D80A91748B2E308D1A7BE8433")
+    
+public BigDecimal(BigInteger unscaledVal, int scale, MathContext mc) {
         this(unscaledVal, scale);
         inplaceRound(mc);
     }
@@ -794,8 +820,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @param val
      *            int value to be converted to a {@code BigDecimal} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.764 -0500", hash_original_method = "5359C9BE484C4A97ECD231D115B1BCDB", hash_generated_method = "A43CF34EEBC609AD9C787706045DDEE9")
-    public BigDecimal(int val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.205 -0500", hash_original_method = "5359C9BE484C4A97ECD231D115B1BCDB", hash_generated_method = "A43CF34EEBC609AD9C787706045DDEE9")
+    
+public BigDecimal(int val) {
         this(val,0);
     }
 
@@ -813,8 +840,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.766 -0500", hash_original_method = "919820155B3DF9AD0A8E776AC27BF824", hash_generated_method = "244D6A792EAFC43B9353B4FA0D185B13")
-    public BigDecimal(int val, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.208 -0500", hash_original_method = "919820155B3DF9AD0A8E776AC27BF824", hash_generated_method = "244D6A792EAFC43B9353B4FA0D185B13")
+    
+public BigDecimal(int val, MathContext mc) {
         this(val,0);
         inplaceRound(mc);
     }
@@ -826,8 +854,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @param val
      *            long value to be converted to a {@code BigDecimal} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.767 -0500", hash_original_method = "3B8082CDF108D6321820C9FA6A6A1D42", hash_generated_method = "059A38D1C6121517C792C0A4590EED1F")
-    public BigDecimal(long val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.211 -0500", hash_original_method = "3B8082CDF108D6321820C9FA6A6A1D42", hash_generated_method = "059A38D1C6121517C792C0A4590EED1F")
+    
+public BigDecimal(long val) {
         this(val,0);
     }
 
@@ -845,8 +874,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and the new big decimal cannot be represented
      *             within the given precision without rounding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.768 -0500", hash_original_method = "E0851629E0BD0FDB6233816479A7E4A8", hash_generated_method = "3D6ECC8BE254CA47FA1B8AEFED4EAECE")
-    public BigDecimal(long val, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.213 -0500", hash_original_method = "E0851629E0BD0FDB6233816479A7E4A8", hash_generated_method = "3D6ECC8BE254CA47FA1B8AEFED4EAECE")
+    
+public BigDecimal(long val, MathContext mc) {
         this(val);
         inplaceRound(mc);
     }
@@ -862,8 +892,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code augend == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.771 -0500", hash_original_method = "1DCD141A7D54B6C70CB155CC6BA0AB13", hash_generated_method = "A1CC44DFE2DE860538438C2DDD6F971C")
-    public BigDecimal add(BigDecimal augend) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.225 -0500", hash_original_method = "1DCD141A7D54B6C70CB155CC6BA0AB13", hash_generated_method = "A1CC44DFE2DE860538438C2DDD6F971C")
+    
+public BigDecimal add(BigDecimal augend) {
         int diffScale = this.scale - augend.scale;
         // Fast return when some operand is zero
         if (this.isZero()) {
@@ -905,8 +936,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code augend == null} or {@code mc == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.773 -0500", hash_original_method = "37BDD6EE07613654EB8729406017A0AF", hash_generated_method = "80FAC738473446FAD371EA1BBE419EA4")
-    public BigDecimal add(BigDecimal augend, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.231 -0500", hash_original_method = "37BDD6EE07613654EB8729406017A0AF", hash_generated_method = "80FAC738473446FAD371EA1BBE419EA4")
+    
+public BigDecimal add(BigDecimal augend, MathContext mc) {
         BigDecimal larger; // operand with the largest unscaled value
         BigDecimal smaller; // operand with the smallest unscaled value
         BigInteger tempBI;
@@ -957,8 +989,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code subtrahend == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.774 -0500", hash_original_method = "463B27AE9A4331C20782D4CCC2226F12", hash_generated_method = "2734D33C57E8B2121F820F66D4927122")
-    public BigDecimal subtract(BigDecimal subtrahend) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.235 -0500", hash_original_method = "463B27AE9A4331C20782D4CCC2226F12", hash_generated_method = "2734D33C57E8B2121F820F66D4927122")
+    
+public BigDecimal subtract(BigDecimal subtrahend) {
         int diffScale = this.scale - subtrahend.scale;
         // Fast return when some operand is zero
         if (this.isZero()) {
@@ -1011,8 +1044,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code subtrahend == null} or {@code mc == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.775 -0500", hash_original_method = "427D658D2E18BC359A41906DA92107B2", hash_generated_method = "1320AADB37D8AF23B94C83AEBA55F6AE")
-    public BigDecimal subtract(BigDecimal subtrahend, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.238 -0500", hash_original_method = "427D658D2E18BC359A41906DA92107B2", hash_generated_method = "1320AADB37D8AF23B94C83AEBA55F6AE")
+    
+public BigDecimal subtract(BigDecimal subtrahend, MathContext mc) {
         long diffScale = subtrahend.scale - (long)this.scale;
         int thisSignum;
         BigDecimal leftOperand; // it will be only the left operand (this)
@@ -1055,8 +1089,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code multiplicand == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.776 -0500", hash_original_method = "0CD1948BD2366020AE6A84C7902D73D6", hash_generated_method = "5C491A48FEADFCE39ABE82868E1406F2")
-    public BigDecimal multiply(BigDecimal multiplicand) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.240 -0500", hash_original_method = "0CD1948BD2366020AE6A84C7902D73D6", hash_generated_method = "5C491A48FEADFCE39ABE82868E1406F2")
+    
+public BigDecimal multiply(BigDecimal multiplicand) {
         long newScale = (long)this.scale + multiplicand.scale;
 
         if ((this.isZero()) || (multiplicand.isZero())) {
@@ -1084,8 +1119,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code multiplicand == null} or {@code mc == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.777 -0500", hash_original_method = "C6525DC236CD6C9B7DA82BBF840C4183", hash_generated_method = "52A1FCECF98A8C691396122D634473BB")
-    public BigDecimal multiply(BigDecimal multiplicand, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.243 -0500", hash_original_method = "C6525DC236CD6C9B7DA82BBF840C4183", hash_generated_method = "52A1FCECF98A8C691396122D634473BB")
+    
+public BigDecimal multiply(BigDecimal multiplicand, MathContext mc) {
         BigDecimal result = multiply(multiplicand);
 
         result.inplaceRound(mc);
@@ -1116,8 +1152,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code roundingMode == ROUND_UNNECESSARY} and rounding is
      *             necessary according to the given scale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.778 -0500", hash_original_method = "462A8C7DE00EC7C78FAA3F28B925453C", hash_generated_method = "6C7A5F52403ED80085324A00698592FF")
-    public BigDecimal divide(BigDecimal divisor, int scale, int roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.245 -0500", hash_original_method = "462A8C7DE00EC7C78FAA3F28B925453C", hash_generated_method = "6C7A5F52403ED80085324A00698592FF")
+    
+public BigDecimal divide(BigDecimal divisor, int scale, int roundingMode) {
         return divide(divisor, scale, RoundingMode.valueOf(roundingMode));
     }
 
@@ -1144,8 +1181,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             rounding is necessary according to the given scale and given
      *             precision.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.781 -0500", hash_original_method = "CAF40474AE4670E1A6482892323F28CB", hash_generated_method = "8E41DFBCEF5D09C6638D7BC1CAB80B89")
-    public BigDecimal divide(BigDecimal divisor, int scale, RoundingMode roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.249 -0500", hash_original_method = "CAF40474AE4670E1A6482892323F28CB", hash_generated_method = "8E41DFBCEF5D09C6638D7BC1CAB80B89")
+    
+public BigDecimal divide(BigDecimal divisor, int scale, RoundingMode roundingMode) {
         // Let be: this = [u1,s1]  and  divisor = [u2,s2]
         if (roundingMode == null) {
             throw new NullPointerException();
@@ -1215,8 +1253,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code roundingMode == ROUND_UNNECESSARY} and rounding is
      *             necessary according to the scale of this.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.784 -0500", hash_original_method = "2C6660A6ECCA62927D6A6B71E8D4804F", hash_generated_method = "13281CE06210DF139A9EA2F2D9C8C712")
-    public BigDecimal divide(BigDecimal divisor, int roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.258 -0500", hash_original_method = "2C6660A6ECCA62927D6A6B71E8D4804F", hash_generated_method = "13281CE06210DF139A9EA2F2D9C8C712")
+    
+public BigDecimal divide(BigDecimal divisor, int roundingMode) {
         return divide(divisor, scale, RoundingMode.valueOf(roundingMode));
     }
 
@@ -1240,8 +1279,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code roundingMode == RoundingMode.UNNECESSARY} and
      *             rounding is necessary according to the scale of this.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.785 -0500", hash_original_method = "5F1D784ACEFAF8C3A3D46632D71C7A92", hash_generated_method = "A11F6777CF2B847BA6B6999A1D83BEB8")
-    public BigDecimal divide(BigDecimal divisor, RoundingMode roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.261 -0500", hash_original_method = "5F1D784ACEFAF8C3A3D46632D71C7A92", hash_generated_method = "A11F6777CF2B847BA6B6999A1D83BEB8")
+    
+public BigDecimal divide(BigDecimal divisor, RoundingMode roundingMode) {
         return divide(divisor, scale, roundingMode);
     }
 
@@ -1262,8 +1302,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws ArithmeticException
      *             if the result cannot be represented exactly.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.786 -0500", hash_original_method = "A7E2E0DD5FAFAFB93C0707787850F19F", hash_generated_method = "1F0C17975A47CA0FEF73DC81D15EA38E")
-    public BigDecimal divide(BigDecimal divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.272 -0500", hash_original_method = "A7E2E0DD5FAFAFB93C0707787850F19F", hash_generated_method = "1F0C17975A47CA0FEF73DC81D15EA38E")
+    
+public BigDecimal divide(BigDecimal divisor) {
         BigInteger p = this.getUnscaledValue();
         BigInteger q = divisor.getUnscaledValue();
         BigInteger gcd; // greatest common divisor between 'p' and 'q'
@@ -1341,8 +1382,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code mc.getRoundingMode() == UNNECESSARY} and rounding
      *             is necessary according {@code mc.getPrecision()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.787 -0500", hash_original_method = "E69AD17C16131904FF2F859BB6B8C3E0", hash_generated_method = "F765F5E322DA9590229DFFE04C6282D6")
-    public BigDecimal divide(BigDecimal divisor, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.276 -0500", hash_original_method = "E69AD17C16131904FF2F859BB6B8C3E0", hash_generated_method = "F765F5E322DA9590229DFFE04C6282D6")
+    
+public BigDecimal divide(BigDecimal divisor, MathContext mc) {
         /* Calculating how many zeros must be append to 'dividend'
          * to obtain a  quotient with at least 'mc.precision()' digits */
         long trailingZeros = mc.getPrecision() + 2L
@@ -1410,8 +1452,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws ArithmeticException
      *             if {@code divisor == 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.789 -0500", hash_original_method = "370FC7E5A1C86319865302EB832BE460", hash_generated_method = "2F19FB5249D6D45C12D12CA0B3557CFB")
-    public BigDecimal divideToIntegralValue(BigDecimal divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.279 -0500", hash_original_method = "370FC7E5A1C86319865302EB832BE460", hash_generated_method = "2F19FB5249D6D45C12D12CA0B3557CFB")
+    
+public BigDecimal divideToIntegralValue(BigDecimal divisor) {
         BigInteger integralValue; // the integer of result
         BigInteger powerOfTen; // some power of ten
         BigInteger quotAndRem[] = {getUnscaledValue()};
@@ -1482,8 +1525,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code mc.getPrecision() > 0} and the result requires more
      *             digits to be represented.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.790 -0500", hash_original_method = "15ECC758BA9BF5EB2D64CC984DE4A4C9", hash_generated_method = "011ACBACE693B1E02D307BCE345A0CFC")
-    public BigDecimal divideToIntegralValue(BigDecimal divisor, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.283 -0500", hash_original_method = "15ECC758BA9BF5EB2D64CC984DE4A4C9", hash_generated_method = "011ACBACE693B1E02D307BCE345A0CFC")
+    
+public BigDecimal divideToIntegralValue(BigDecimal divisor, MathContext mc) {
         int mcPrecision = mc.getPrecision();
         int diffPrecision = this.precision() - divisor.precision();
         int lastPow = TEN_POW.length - 1;
@@ -1585,8 +1629,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws ArithmeticException
      *             if {@code divisor == 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.791 -0500", hash_original_method = "EBDBD1FB251B2EF1CF76CA97862E098F", hash_generated_method = "AB69E7BF707C97D5E6B9E9048F53ED2E")
-    public BigDecimal remainder(BigDecimal divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.285 -0500", hash_original_method = "EBDBD1FB251B2EF1CF76CA97862E098F", hash_generated_method = "AB69E7BF707C97D5E6B9E9048F53ED2E")
+    
+public BigDecimal remainder(BigDecimal divisor) {
         return divideAndRemainder(divisor)[1];
     }
 
@@ -1612,8 +1657,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             this.divideToIntegralValue(divisor, mc)} requires more digits
      *             to be represented.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.792 -0500", hash_original_method = "B5D8082AFBB8A8B7919238963079BE8E", hash_generated_method = "4E21F5572C26DDBE9DDC6EE648EC9748")
-    public BigDecimal remainder(BigDecimal divisor, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.288 -0500", hash_original_method = "B5D8082AFBB8A8B7919238963079BE8E", hash_generated_method = "4E21F5572C26DDBE9DDC6EE648EC9748")
+    
+public BigDecimal remainder(BigDecimal divisor, MathContext mc) {
         return divideAndRemainder(divisor, mc)[1];
     }
 
@@ -1634,8 +1680,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @see #divideToIntegralValue
      * @see #remainder
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.793 -0500", hash_original_method = "078854E5024F03E2C96ABDC15A98EC28", hash_generated_method = "95F5EC5C0624C1DFAF0EBCCED0C95990")
-    public BigDecimal[] divideAndRemainder(BigDecimal divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.291 -0500", hash_original_method = "078854E5024F03E2C96ABDC15A98EC28", hash_generated_method = "95F5EC5C0624C1DFAF0EBCCED0C95990")
+    
+public BigDecimal[] divideAndRemainder(BigDecimal divisor) {
         BigDecimal quotAndRem[] = new BigDecimal[2];
 
         quotAndRem[0] = this.divideToIntegralValue(divisor);
@@ -1665,8 +1712,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @see #divideToIntegralValue
      * @see #remainder
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.794 -0500", hash_original_method = "36D2BD3305B7DD5EA1226F88EE4D6B60", hash_generated_method = "96881AA2D33E5764CBEF7A18A067F51B")
-    public BigDecimal[] divideAndRemainder(BigDecimal divisor, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.293 -0500", hash_original_method = "36D2BD3305B7DD5EA1226F88EE4D6B60", hash_generated_method = "96881AA2D33E5764CBEF7A18A067F51B")
+    
+public BigDecimal[] divideAndRemainder(BigDecimal divisor, MathContext mc) {
         BigDecimal quotAndRem[] = new BigDecimal[2];
 
         quotAndRem[0] = this.divideToIntegralValue(divisor, mc);
@@ -1689,8 +1737,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws ArithmeticException
      *             if {@code n < 0} or {@code n > 999999999}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.795 -0500", hash_original_method = "0BA2A5CD46D450D69AC19365E08D7C5C", hash_generated_method = "25E358A0E55FC38F39ED177E74617051")
-    public BigDecimal pow(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.296 -0500", hash_original_method = "0BA2A5CD46D450D69AC19365E08D7C5C", hash_generated_method = "25E358A0E55FC38F39ED177E74617051")
+    
+public BigDecimal pow(int n) {
         if (n == 0) {
             return ONE;
         }
@@ -1718,8 +1767,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws ArithmeticException
      *             if {@code n < 0} or {@code n > 999999999}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.796 -0500", hash_original_method = "C8938AEDE89231C5AAB8CE41C7A1DE59", hash_generated_method = "18223D9F3EF2BF4C360117304A880604")
-    public BigDecimal pow(int n, MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.300 -0500", hash_original_method = "C8938AEDE89231C5AAB8CE41C7A1DE59", hash_generated_method = "18223D9F3EF2BF4C360117304A880604")
+    
+public BigDecimal pow(int n, MathContext mc) {
         // The ANSI standard X3.274-1996 algorithm
         int m = Math.abs(n);
         int mcPrecision = mc.getPrecision();
@@ -1766,8 +1816,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *
      * @return {@code abs(this)}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.797 -0500", hash_original_method = "DF1CB3D65F2CAE136A2978BF9C5604B4", hash_generated_method = "4358A16DCF011550343A5FC8F0CA9D4A")
-    public BigDecimal abs() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.302 -0500", hash_original_method = "DF1CB3D65F2CAE136A2978BF9C5604B4", hash_generated_method = "4358A16DCF011550343A5FC8F0CA9D4A")
+    
+public BigDecimal abs() {
         return ((signum() < 0) ? negate() : this);
     }
 
@@ -1780,8 +1831,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            rounding mode and precision for the result of this operation.
      * @return {@code abs(this)}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.798 -0500", hash_original_method = "BC934B9214C4819E6720F567E9C870B9", hash_generated_method = "6FEE03E6A8452AEAF7F666FC73BA2FFE")
-    public BigDecimal abs(MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.304 -0500", hash_original_method = "BC934B9214C4819E6720F567E9C870B9", hash_generated_method = "6FEE03E6A8452AEAF7F666FC73BA2FFE")
+    
+public BigDecimal abs(MathContext mc) {
         BigDecimal result = abs();
         result.inplaceRound(mc);
         return result;
@@ -1793,8 +1845,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *
      * @return {@code -this}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.799 -0500", hash_original_method = "434D4E2CBF9E3CBC75126AF4586B2CF0", hash_generated_method = "87F17B3831C0BC1042D691FEA8A8F24E")
-    public BigDecimal negate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.307 -0500", hash_original_method = "434D4E2CBF9E3CBC75126AF4586B2CF0", hash_generated_method = "87F17B3831C0BC1042D691FEA8A8F24E")
+    
+public BigDecimal negate() {
         if(bitLength < 63 || (bitLength == 63 && smallValue!=Long.MIN_VALUE)) {
             return valueOf(-smallValue,scale);
         }
@@ -1809,8 +1862,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            rounding mode and precision for the result of this operation.
      * @return {@code -this}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.800 -0500", hash_original_method = "1D24791EE4ADD6E04558F8C92319E898", hash_generated_method = "D3AC0378F8C5F18782A745AA8B2E039D")
-    public BigDecimal negate(MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.309 -0500", hash_original_method = "1D24791EE4ADD6E04558F8C92319E898", hash_generated_method = "D3AC0378F8C5F18782A745AA8B2E039D")
+    
+public BigDecimal negate(MathContext mc) {
         BigDecimal result = negate();
         result.inplaceRound(mc);
         return result;
@@ -1822,8 +1876,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *
      * @return {@code this}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.801 -0500", hash_original_method = "E5A0BEEECFDAB0EB24F23ED92FDA1EE0", hash_generated_method = "7F40BB81175E92CA68ADFEEF6FCDEC73")
-    public BigDecimal plus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.311 -0500", hash_original_method = "E5A0BEEECFDAB0EB24F23ED92FDA1EE0", hash_generated_method = "7F40BB81175E92CA68ADFEEF6FCDEC73")
+    
+public BigDecimal plus() {
         return this;
     }
 
@@ -1835,8 +1890,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            rounding mode and precision for the result of this operation.
      * @return {@code this}, rounded
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.801 -0500", hash_original_method = "06DE611812CE14E42B61206CBE361795", hash_generated_method = "6B61789A5B5B2DA5B7E2A04DD45154AD")
-    public BigDecimal plus(MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.314 -0500", hash_original_method = "06DE611812CE14E42B61206CBE361795", hash_generated_method = "6B61789A5B5B2DA5B7E2A04DD45154AD")
+    
+public BigDecimal plus(MathContext mc) {
         return round(mc);
     }
 
@@ -1846,16 +1902,18 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @return {@code -1} if {@code this < 0},
      *         {@code 0} if {@code this == 0},
      *         {@code 1} if {@code this > 0}.     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.802 -0500", hash_original_method = "CA4E5917AFEF32459FAB7B79AFDA8BD4", hash_generated_method = "4DBB12AF7DE147BE0A03C552985E5DC1")
-    public int signum() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.316 -0500", hash_original_method = "CA4E5917AFEF32459FAB7B79AFDA8BD4", hash_generated_method = "4DBB12AF7DE147BE0A03C552985E5DC1")
+    
+public int signum() {
         if( bitLength < 64) {
             return Long.signum( this.smallValue );
         }
         return getUnscaledValue().signum();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.803 -0500", hash_original_method = "F3E74BAAEB162D78F28E445308393563", hash_generated_method = "2BCD342721AE558B0DD72466E06E93D1")
-    private boolean isZero() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.319 -0500", hash_original_method = "F3E74BAAEB162D78F28E445308393563", hash_generated_method = "2BCD342721AE558B0DD72466E06E93D1")
+    
+private boolean isZero() {
         //Watch out: -1 has a bitLength=0
         return bitLength == 0 && this.smallValue != -1;
     }
@@ -1868,8 +1926,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *
      * @return the scale of this {@code BigDecimal}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.804 -0500", hash_original_method = "5F6F67A9AE4AEECC5BD64D7ACC145B6A", hash_generated_method = "B158333277170B3A0321DD3B71C3A01D")
-    public int scale() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.321 -0500", hash_original_method = "5F6F67A9AE4AEECC5BD64D7ACC145B6A", hash_generated_method = "B158333277170B3A0321DD3B71C3A01D")
+    
+public int scale() {
         return scale;
     }
 
@@ -1881,8 +1940,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *
      * @return the precision of this {@code BigDecimal}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.805 -0500", hash_original_method = "6DFBDD0E771CAF738A0C801E888E1E3B", hash_generated_method = "C38299C41AB0EFACD90A3DEB330E8D64")
-    public int precision() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.324 -0500", hash_original_method = "6DFBDD0E771CAF738A0C801E888E1E3B", hash_generated_method = "C38299C41AB0EFACD90A3DEB330E8D64")
+    
+public int precision() {
         // Checking if the precision already was calculated
         if (precision > 0) {
             return precision;
@@ -1905,8 +1965,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         return precision;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.806 -0500", hash_original_method = "EAD040D94F5F819E555B537F69E87C66", hash_generated_method = "F60221B654271D80FB8BDE0D14AFD145")
-    private int decimalDigitsInLong(long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.326 -0500", hash_original_method = "EAD040D94F5F819E555B537F69E87C66", hash_generated_method = "F60221B654271D80FB8BDE0D14AFD145")
+    
+private int decimalDigitsInLong(long value) {
         if (value == Long.MIN_VALUE) {
             return 19; // special case required because abs(MIN_VALUE) == MIN_VALUE
         } else {
@@ -1922,8 +1983,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *
      * @return unscaled value (this * 10^(scale)).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.807 -0500", hash_original_method = "067DA515CBCF3B72C5546CE6034B99CF", hash_generated_method = "B45B8C228515EC5B5F844E259B43D7A8")
-    public BigInteger unscaledValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.328 -0500", hash_original_method = "067DA515CBCF3B72C5546CE6034B99CF", hash_generated_method = "B45B8C228515EC5B5F844E259B43D7A8")
+    
+public BigInteger unscaledValue() {
         return getUnscaledValue();
     }
 
@@ -1945,8 +2007,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             UNNECESSARY} and this cannot be represented within the given
      *             precision.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.808 -0500", hash_original_method = "2FC46B1D06394AF066FA7CDA852A22F8", hash_generated_method = "62B403C0FFEDBC4570040CA6FE4782B8")
-    public BigDecimal round(MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.330 -0500", hash_original_method = "2FC46B1D06394AF066FA7CDA852A22F8", hash_generated_method = "62B403C0FFEDBC4570040CA6FE4782B8")
+    
+public BigDecimal round(MathContext mc) {
         BigDecimal thisBD = new BigDecimal(getUnscaledValue(), scale);
 
         thisBD.inplaceRound(mc);
@@ -1975,8 +2038,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code roundingMode == ROUND_UNNECESSARY} and rounding is
      *             necessary according to the given scale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.809 -0500", hash_original_method = "7B0F1A102C68137F597240860B4573E3", hash_generated_method = "1251547CE725D247880878D8861F2E24")
-    public BigDecimal setScale(int newScale, RoundingMode roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.333 -0500", hash_original_method = "7B0F1A102C68137F597240860B4573E3", hash_generated_method = "1251547CE725D247880878D8861F2E24")
+    
+public BigDecimal setScale(int newScale, RoundingMode roundingMode) {
         if (roundingMode == null) {
             throw new NullPointerException();
         }
@@ -2023,8 +2087,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *             if {@code roundingMode == ROUND_UNNECESSARY} and rounding is
      *             necessary according to the given scale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.809 -0500", hash_original_method = "82E5CBCA5195979E97780CEADBFBD3C4", hash_generated_method = "1F01152117CE8A68F2CE84AFB39BC354")
-    public BigDecimal setScale(int newScale, int roundingMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.336 -0500", hash_original_method = "82E5CBCA5195979E97780CEADBFBD3C4", hash_generated_method = "1F01152117CE8A68F2CE84AFB39BC354")
+    
+public BigDecimal setScale(int newScale, int roundingMode) {
         return setScale(newScale, RoundingMode.valueOf(roundingMode));
     }
 
@@ -2044,8 +2109,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws ArithmeticException
      *             if rounding would be necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.811 -0500", hash_original_method = "ABCD452F1FC16ADBD3F58023EF098557", hash_generated_method = "E8ED73193568A0B44AEC00A62500D3AB")
-    public BigDecimal setScale(int newScale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.339 -0500", hash_original_method = "ABCD452F1FC16ADBD3F58023EF098557", hash_generated_method = "E8ED73193568A0B44AEC00A62500D3AB")
+    
+public BigDecimal setScale(int newScale) {
         return setScale(newScale, RoundingMode.UNNECESSARY);
     }
 
@@ -2065,13 +2131,15 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            number of placed the decimal point has to be moved.
      * @return {@code this * 10^(-n}).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.811 -0500", hash_original_method = "146C1C6822DF31E0F5C90B0C65347C9D", hash_generated_method = "4713584E466523900457042FCB2F3E55")
-    public BigDecimal movePointLeft(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.342 -0500", hash_original_method = "146C1C6822DF31E0F5C90B0C65347C9D", hash_generated_method = "4713584E466523900457042FCB2F3E55")
+    
+public BigDecimal movePointLeft(int n) {
         return movePoint(scale + (long)n);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.812 -0500", hash_original_method = "EF6481821B33DB93DBF91CDB78772ACF", hash_generated_method = "2BC2E099FA195247465E4408C93C222B")
-    private BigDecimal movePoint(long newScale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.344 -0500", hash_original_method = "EF6481821B33DB93DBF91CDB78772ACF", hash_generated_method = "2BC2E099FA195247465E4408C93C222B")
+    
+private BigDecimal movePoint(long newScale) {
         if (isZero()) {
             return zeroScaledBy(Math.max(newScale, 0));
         }
@@ -2109,8 +2177,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            number of placed the decimal point has to be moved.
      * @return {@code this * 10^n}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.813 -0500", hash_original_method = "07D5C3611C3ACCF090DC6103621F9345", hash_generated_method = "663A838C1DB631F9E734F605CD440991")
-    public BigDecimal movePointRight(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.347 -0500", hash_original_method = "07D5C3611C3ACCF090DC6103621F9345", hash_generated_method = "663A838C1DB631F9E734F605CD440991")
+    
+public BigDecimal movePointRight(int n) {
         return movePoint(scale - (long)n);
     }
 
@@ -2126,8 +2195,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            number of places the decimal point has to be moved.
      * @return {@code this * 10^n}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.814 -0500", hash_original_method = "D86719E7E7F9F283B32E5780DA0BBE23", hash_generated_method = "9C622986FD776E9A6A5BDECA62A856D0")
-    public BigDecimal scaleByPowerOfTen(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.349 -0500", hash_original_method = "D86719E7E7F9F283B32E5780DA0BBE23", hash_generated_method = "9C622986FD776E9A6A5BDECA62A856D0")
+    
+public BigDecimal scaleByPowerOfTen(int n) {
         long newScale = scale - (long)n;
         if(bitLength < 64) {
             //Taking care when a 0 is to be scaled
@@ -2148,8 +2218,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @return a new {@code BigDecimal} instance equivalent to this where the
      *         trailing zeros of the unscaled value have been removed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.815 -0500", hash_original_method = "6A410D70691999CADF96A81B91BD2E64", hash_generated_method = "DDC4B67999A47862066557831C042146")
-    public BigDecimal stripTrailingZeros() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.352 -0500", hash_original_method = "6A410D70691999CADF96A81B91BD2E64", hash_generated_method = "DDC4B67999A47862066557831C042146")
+    
+public BigDecimal stripTrailingZeros() {
         int i = 1; // 1 <= i <= 18
         int lastPow = TEN_POW.length - 1;
         long newScale = scale;
@@ -2203,8 +2274,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      * @throws NullPointerException
      *             if {@code val == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.816 -0500", hash_original_method = "1C45ED34C4C1F5BEBD8BB8EF3CBE1A6B", hash_generated_method = "1695AC05EBFF1DFDEC554390AEF57837")
-    public int compareTo(BigDecimal val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.355 -0500", hash_original_method = "1C45ED34C4C1F5BEBD8BB8EF3CBE1A6B", hash_generated_method = "1695AC05EBFF1DFDEC554390AEF57837")
+    
+public int compareTo(BigDecimal val) {
         int thisSign = signum();
         int valueSign = val.signum();
 
@@ -2247,9 +2319,10 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
      *            object to be compared with {@code this}.
      * @return true if {@code x} is a {@code BigDecimal} and {@code this == x}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.817 -0500", hash_original_method = "310E755E039C5525B03EE3C0A35D27A8", hash_generated_method = "852B71EA9B73031C580A43D11F197A7C")
-    @Override
-public boolean equals(Object x) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.358 -0500", hash_original_method = "310E755E039C5525B03EE3C0A35D27A8", hash_generated_method = "852B71EA9B73031C580A43D11F197A7C")
+    
+@Override
+    public boolean equals(Object x) {
         if (this == x) {
             return true;
         }
@@ -2273,8 +2346,9 @@ public boolean equals(Object x) {
      * @throws NullPointerException
      *             if {@code val == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.818 -0500", hash_original_method = "F19ED99F66E082325A61ACA186AF7454", hash_generated_method = "B5C322E27F4A2821E47AB8C9C3381577")
-    public BigDecimal min(BigDecimal val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.360 -0500", hash_original_method = "F19ED99F66E082325A61ACA186AF7454", hash_generated_method = "B5C322E27F4A2821E47AB8C9C3381577")
+    
+public BigDecimal min(BigDecimal val) {
         return ((compareTo(val) <= 0) ? this : val);
     }
 
@@ -2287,8 +2361,9 @@ public boolean equals(Object x) {
      * @throws NullPointerException
      *             if {@code val == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.819 -0500", hash_original_method = "4EA6A2C4CEA295044D603E0ACE9B5BC6", hash_generated_method = "A8A3E4227932E5E2F4E68F9FE8867014")
-    public BigDecimal max(BigDecimal val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.363 -0500", hash_original_method = "4EA6A2C4CEA295044D603E0ACE9B5BC6", hash_generated_method = "A8A3E4227932E5E2F4E68F9FE8867014")
+    
+public BigDecimal max(BigDecimal val) {
         return ((compareTo(val) >= 0) ? this : val);
     }
 
@@ -2297,9 +2372,10 @@ public boolean equals(Object x) {
      *
      * @return hash code for {@code this}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.819 -0500", hash_original_method = "F20F131BB03F0B25B12A1EF1F413017D", hash_generated_method = "8704A94867026972F3E4DA16D3DB25FD")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.366 -0500", hash_original_method = "F20F131BB03F0B25B12A1EF1F413017D", hash_generated_method = "8704A94867026972F3E4DA16D3DB25FD")
+    
+@Override
+    public int hashCode() {
         if (hashCode != 0) {
             return hashCode;
         }
@@ -2324,9 +2400,10 @@ public int hashCode() {
      * @return a string representation of {@code this} in scientific notation if
      *         necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.821 -0500", hash_original_method = "7C431BE8FF70735180E872A989DC1E52", hash_generated_method = "573FF4C86B22743A6E931033731866A5")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.369 -0500", hash_original_method = "7C431BE8FF70735180E872A989DC1E52", hash_generated_method = "573FF4C86B22743A6E931033731866A5")
+    
+@Override
+    public String toString() {
         if (toStringImage != null) {
             return toStringImage;
         }
@@ -2378,8 +2455,9 @@ public String toString() {
      * @return a string representation of {@code this} in engineering notation
      *         if necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.822 -0500", hash_original_method = "37C393D601D5FE9982CCA7EB2837999F", hash_generated_method = "86A9CDAD28C9E49F01DE5A9B6AF6D07D")
-    public String toEngineeringString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.372 -0500", hash_original_method = "37C393D601D5FE9982CCA7EB2837999F", hash_generated_method = "86A9CDAD28C9E49F01DE5A9B6AF6D07D")
+    
+public String toEngineeringString() {
         String intString = getUnscaledValue().toString();
         if (scale == 0) {
             return intString;
@@ -2448,8 +2526,9 @@ public String toString() {
      *
      * @return a string representation of {@code this} without exponent part.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.823 -0500", hash_original_method = "F2C3CA97C72252FC482FDCEF1D32932E", hash_generated_method = "E324CD78D77655299471C188FBC93245")
-    public String toPlainString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.375 -0500", hash_original_method = "F2C3CA97C72252FC482FDCEF1D32932E", hash_generated_method = "E324CD78D77655299471C188FBC93245")
+    
+public String toPlainString() {
         String intStr = getUnscaledValue().toString();
         if ((scale == 0) || ((isZero()) && (scale < 0))) {
             return intStr;
@@ -2496,8 +2575,9 @@ public String toString() {
      *
      * @return this {@code BigDecimal} as a big integer instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.824 -0500", hash_original_method = "E90ADE3EE93FD433EFA047972DEC5382", hash_generated_method = "DDF1452A65A1812AE69308240A7202DE")
-    public BigInteger toBigInteger() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.378 -0500", hash_original_method = "E90ADE3EE93FD433EFA047972DEC5382", hash_generated_method = "DDF1452A65A1812AE69308240A7202DE")
+    
+public BigInteger toBigInteger() {
         if ((scale == 0) || (isZero())) {
             return getUnscaledValue();
         } else if (scale < 0) {
@@ -2516,8 +2596,9 @@ public String toString() {
      * @throws ArithmeticException
      *             if rounding is necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.826 -0500", hash_original_method = "0E78A189176A3E6769EBE407FB203DE6", hash_generated_method = "9A763559F8D384779FDD35E8114B47BC")
-    public BigInteger toBigIntegerExact() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.381 -0500", hash_original_method = "0E78A189176A3E6769EBE407FB203DE6", hash_generated_method = "9A763559F8D384779FDD35E8114B47BC")
+    
+public BigInteger toBigIntegerExact() {
         if ((scale == 0) || (isZero())) {
             return getUnscaledValue();
         } else if (scale < 0) {
@@ -2544,9 +2625,10 @@ public String toString() {
      *
      * @return this {@code BigDecimal} as a long value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.827 -0500", hash_original_method = "A54EDCAFB9A559A1B4EB83484BB75122", hash_generated_method = "53A993C5E954A4A33DB257E84EB74F2C")
-    @Override
-public long longValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.383 -0500", hash_original_method = "A54EDCAFB9A559A1B4EB83484BB75122", hash_generated_method = "53A993C5E954A4A33DB257E84EB74F2C")
+    
+@Override
+    public long longValue() {
         /*
          * If scale <= -64 there are at least 64 trailing bits zero in
          * 10^(-scale). If the scale is positive and very large the long value
@@ -2565,8 +2647,9 @@ public long longValue() {
      * @throws ArithmeticException
      *             if rounding is necessary or the number doesn't fit in a long.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.827 -0500", hash_original_method = "FC36A176D0180DB1420333E5E0A5371B", hash_generated_method = "B9863E23290D0379E457DCB3773F4DEF")
-    public long longValueExact() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.386 -0500", hash_original_method = "FC36A176D0180DB1420333E5E0A5371B", hash_generated_method = "B9863E23290D0379E457DCB3773F4DEF")
+    
+public long longValueExact() {
         return valueExact(64);
     }
 
@@ -2577,9 +2660,10 @@ public long longValue() {
      *
      * @return this {@code BigDecimal} as a int value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.828 -0500", hash_original_method = "C22AEC57669E1045E01A9977FB32CBED", hash_generated_method = "B69D30E547226408DE329DDBCF67633E")
-    @Override
-public int intValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.388 -0500", hash_original_method = "C22AEC57669E1045E01A9977FB32CBED", hash_generated_method = "B69D30E547226408DE329DDBCF67633E")
+    
+@Override
+    public int intValue() {
         /*
          * If scale <= -32 there are at least 32 trailing bits zero in
          * 10^(-scale). If the scale is positive and very large the long value
@@ -2599,8 +2683,9 @@ public int intValue() {
      * @throws ArithmeticException
      *             if rounding is necessary or the number doesn't fit in a int.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.829 -0500", hash_original_method = "3865E14853C36D94FA2C26348C89A3B8", hash_generated_method = "C51B444E4A78D734F9BE458FA15ED71F")
-    public int intValueExact() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.391 -0500", hash_original_method = "3865E14853C36D94FA2C26348C89A3B8", hash_generated_method = "C51B444E4A78D734F9BE458FA15ED71F")
+    
+public int intValueExact() {
         return (int)valueExact(32);
     }
 
@@ -2614,8 +2699,9 @@ public int intValue() {
      *             if rounding is necessary of the number doesn't fit in a
      *             short.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.830 -0500", hash_original_method = "D0948D36E91C12739D01E1A7BD76887B", hash_generated_method = "AE0F9EA057BEB70F9F7ECAB896283675")
-    public short shortValueExact() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.393 -0500", hash_original_method = "D0948D36E91C12739D01E1A7BD76887B", hash_generated_method = "AE0F9EA057BEB70F9F7ECAB896283675")
+    
+public short shortValueExact() {
         return (short)valueExact(16);
     }
 
@@ -2628,8 +2714,9 @@ public int intValue() {
      * @throws ArithmeticException
      *             if rounding is necessary or the number doesn't fit in a byte.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.831 -0500", hash_original_method = "D6CE76A6DF6EC675E82ED0D5BFCEAF06", hash_generated_method = "97241FFE0CE8D9719558489CF6B811DC")
-    public byte byteValueExact() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.395 -0500", hash_original_method = "D6CE76A6DF6EC675E82ED0D5BFCEAF06", hash_generated_method = "97241FFE0CE8D9719558489CF6B811DC")
+    
+public byte byteValueExact() {
         return (byte)valueExact(8);
     }
 
@@ -2651,9 +2738,10 @@ public int intValue() {
      *
      * @return this {@code BigDecimal} as a float value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.832 -0500", hash_original_method = "4137052570907849FFBB7EF546BA389D", hash_generated_method = "36C08B39863DE723086D4D6AB52E9C5C")
-    @Override
-public float floatValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.398 -0500", hash_original_method = "4137052570907849FFBB7EF546BA389D", hash_generated_method = "36C08B39863DE723086D4D6AB52E9C5C")
+    
+@Override
+    public float floatValue() {
         /* A similar code like in doubleValue() could be repeated here,
          * but this simple implementation is quite efficient. */
         float floatResult = signum();
@@ -2689,9 +2777,10 @@ public float floatValue() {
      *
      * @return this {@code BigDecimal} as a double value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.833 -0500", hash_original_method = "73F99D783081712086B11A0804DADCB9", hash_generated_method = "776D3F9A3EE753795FD46C836C3A97B2")
-    @Override
-public double doubleValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.403 -0500", hash_original_method = "73F99D783081712086B11A0804DADCB9", hash_generated_method = "776D3F9A3EE753795FD46C836C3A97B2")
+    
+@Override
+    public double doubleValue() {
         int sign = signum();
         int exponent = 1076; // bias + 53
         int lowestSetBit;
@@ -2806,8 +2895,9 @@ public double doubleValue() {
      *
      * @return unit in the last place (ULP) of this {@code BigDecimal} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.834 -0500", hash_original_method = "AE130D2701C769DD6982173139D47466", hash_generated_method = "EABCD499FF416C3B00F13851160E0BAC")
-    public BigDecimal ulp() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.405 -0500", hash_original_method = "AE130D2701C769DD6982173139D47466", hash_generated_method = "EABCD499FF416C3B00F13851160E0BAC")
+    
+public BigDecimal ulp() {
         return valueOf(1, scale);
     }
 
@@ -2822,8 +2912,9 @@ public double doubleValue() {
      *            the {@code MathContext} for perform the rounding.
      * @see #round(MathContext)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.836 -0500", hash_original_method = "55CD7E6ED2002FE9D7C30850FBD08759", hash_generated_method = "1BACB30DEF0675711E42916D30144FDD")
-    private void inplaceRound(MathContext mc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.409 -0500", hash_original_method = "55CD7E6ED2002FE9D7C30850FBD08759", hash_generated_method = "1BACB30DEF0675711E42916D30144FDD")
+    
+private void inplaceRound(MathContext mc) {
         int mcPrecision = mc.getPrecision();
         if (approxPrecision() < mcPrecision || mcPrecision == 0) {
             return;
@@ -2877,8 +2968,9 @@ public double doubleValue() {
      *            the number of decimal digits that are discarded
      * @see #round(MathContext)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.837 -0500", hash_original_method = "7FBE752FF3FF6B350050AE2B0F2B0308", hash_generated_method = "37FE81751B97E7D6EAD2DCA0FFF6D997")
-    private void smallRound(MathContext mc, int discardedPrecision) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.414 -0500", hash_original_method = "7FBE752FF3FF6B350050AE2B0F2B0308", hash_generated_method = "37FE81751B97E7D6EAD2DCA0FFF6D997")
+    
+private void smallRound(MathContext mc, int discardedPrecision) {
         long sizeOfFraction = MathUtils.LONG_POWERS_OF_TEN[discardedPrecision];
         long newScale = (long)scale - discardedPrecision;
         long unscaledVal = smallValue;
@@ -2923,8 +3015,9 @@ public double doubleValue() {
      * @throws ArithmeticException when rounding is necessary or the
      *             number don't fit in the primitive type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.840 -0500", hash_original_method = "77E444DFD73510CC8BF3E35576C17A04", hash_generated_method = "564BACCFB068A700E026DE346050608E")
-    private long valueExact(int bitLengthOfType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.419 -0500", hash_original_method = "77E444DFD73510CC8BF3E35576C17A04", hash_generated_method = "564BACCFB068A700E026DE346050608E")
+    
+private long valueExact(int bitLengthOfType) {
         BigInteger bigInteger = toBigIntegerExact();
 
         if (bigInteger.bitLength() < bitLengthOfType) {
@@ -2942,8 +3035,9 @@ public double doubleValue() {
      *
      * @return an approximation of {@code precision()} value
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.840 -0500", hash_original_method = "610DE3E95388579A8DD4E22BDEDE3C6E", hash_generated_method = "EF0951ABBD6CF64F7215F07309AE070A")
-    private int approxPrecision() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.422 -0500", hash_original_method = "610DE3E95388579A8DD4E22BDEDE3C6E", hash_generated_method = "EF0951ABBD6CF64F7215F07309AE070A")
+    
+private int approxPrecision() {
         return precision > 0
                 ? precision
                 : (int) ((this.bitLength - 1) * LOG10_2) + 1;
@@ -2954,8 +3048,9 @@ public double doubleValue() {
      * {@code BigDecimal} instance (bitLength and smallValue). The transient
      * field precision is assigned lazily.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.843 -0500", hash_original_method = "886E4F08C2196C85465CF795B505FE44", hash_generated_method = "5EFA3B947738FDBB6421F5EEFF179627")
-    private void readObject(ObjectInputStream in) throws IOException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.430 -0500", hash_original_method = "886E4F08C2196C85465CF795B505FE44", hash_generated_method = "5EFA3B947738FDBB6421F5EEFF179627")
+    
+private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
         in.defaultReadObject();
 
@@ -2984,22 +3079,25 @@ public double doubleValue() {
      * Prepares this {@code BigDecimal} for serialization, i.e. the
      * non-transient field {@code intVal} is assigned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.844 -0500", hash_original_method = "19FA8CC309F5EC9C814FD711C697099A", hash_generated_method = "DE66862784E7C18CF2CA3EC569D2BABB")
-    private void writeObject(ObjectOutputStream out) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.432 -0500", hash_original_method = "19FA8CC309F5EC9C814FD711C697099A", hash_generated_method = "DE66862784E7C18CF2CA3EC569D2BABB")
+    
+private void writeObject(ObjectOutputStream out) throws IOException {
         getUnscaledValue();
         out.defaultWriteObject();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.845 -0500", hash_original_method = "1C1109E2DBDCFAE7331AD37D197254D0", hash_generated_method = "AD75AA5CC8607B923389235FD93F223C")
-    private BigInteger getUnscaledValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.434 -0500", hash_original_method = "1C1109E2DBDCFAE7331AD37D197254D0", hash_generated_method = "AD75AA5CC8607B923389235FD93F223C")
+    
+private BigInteger getUnscaledValue() {
         if(intVal == null) {
             intVal = BigInteger.valueOf(smallValue);
         }
         return intVal;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.846 -0500", hash_original_method = "3BE919C32007DA5FAF4FB8B842EE650C", hash_generated_method = "F3ABDF381707075FC8F9129AE1388BE4")
-    private void setUnscaledValue(BigInteger unscaledValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.437 -0500", hash_original_method = "3BE919C32007DA5FAF4FB8B842EE650C", hash_generated_method = "F3ABDF381707075FC8F9129AE1388BE4")
+    
+private void setUnscaledValue(BigInteger unscaledValue) {
         this.intVal = unscaledValue;
         this.bitLength = unscaledValue.bitLength();
         if(this.bitLength < 64) {

@@ -48,8 +48,9 @@ class Request {
      * @param response  the response, to obtain the status code
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.048 -0500", hash_original_method = "04461905D5906FA3DCAABB508245B209", hash_generated_method = "C59D3BA0BCD3A6EE5C635817F5FB067D")
-    private static boolean canResponseHaveBody(final HttpRequest request,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.704 -0500", hash_original_method = "04461905D5906FA3DCAABB508245B209", hash_generated_method = "C59D3BA0BCD3A6EE5C635817F5FB067D")
+    
+private static boolean canResponseHaveBody(final HttpRequest request,
                                                final int status) {
 
         if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {
@@ -59,61 +60,61 @@ class Request {
             && status != HttpStatus.SC_NO_CONTENT
             && status != HttpStatus.SC_NOT_MODIFIED;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.030 -0500", hash_original_field = "1E92A266EBDB8B46D3250CA0A5786BE9", hash_generated_field = "7B9DE3A4130C6C995D9A037F9150C7FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.651 -0500", hash_original_field = "1E92A266EBDB8B46D3250CA0A5786BE9", hash_generated_field = "7B9DE3A4130C6C995D9A037F9150C7FA")
 
 
     private final static String HOST_HEADER = "Host";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.031 -0500", hash_original_field = "3EE60C7966B8BBAB851456B4A377E69C", hash_generated_field = "E84D9A59CAEF3BCC11F8F89244D21D5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.654 -0500", hash_original_field = "3EE60C7966B8BBAB851456B4A377E69C", hash_generated_field = "E84D9A59CAEF3BCC11F8F89244D21D5D")
 
     private final static String ACCEPT_ENCODING_HEADER = "Accept-Encoding";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.032 -0500", hash_original_field = "2A644AF32A7BD6AAC4259523FF330F77", hash_generated_field = "A5FEF046E57453815489487A5ADC09DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.657 -0500", hash_original_field = "2A644AF32A7BD6AAC4259523FF330F77", hash_generated_field = "A5FEF046E57453815489487A5ADC09DE")
 
     private final static String CONTENT_LENGTH_HEADER = "content-length";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.034 -0500", hash_original_field = "FC05EDC2EC2D172FD33EBDA8371CD59C", hash_generated_field = "F007AA5F14F6E3C18CB781D2C4A675C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.664 -0500", hash_original_field = "FC05EDC2EC2D172FD33EBDA8371CD59C", hash_generated_field = "F007AA5F14F6E3C18CB781D2C4A675C4")
 
     private static RequestContent requestContentProcessor =
             new RequestContent();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.022 -0500", hash_original_field = "48DBEFEB1D57D7425F34775E3B0822FD", hash_generated_field = "48DBEFEB1D57D7425F34775E3B0822FD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.627 -0500", hash_original_field = "48DBEFEB1D57D7425F34775E3B0822FD", hash_generated_field = "48DBEFEB1D57D7425F34775E3B0822FD")
 
     EventHandler mEventHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.023 -0500", hash_original_field = "D468AD0EA1184CE89FA8A45254E2CDD6", hash_generated_field = "619FD7E303013DFEE90F58DA7C3DCACD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.630 -0500", hash_original_field = "D468AD0EA1184CE89FA8A45254E2CDD6", hash_generated_field = "619FD7E303013DFEE90F58DA7C3DCACD")
 
 
     private Connection mConnection;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.023 -0500", hash_original_field = "00DCF501A850F291B81138270DDF7D4D", hash_generated_field = "00DCF501A850F291B81138270DDF7D4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.632 -0500", hash_original_field = "00DCF501A850F291B81138270DDF7D4D", hash_generated_field = "00DCF501A850F291B81138270DDF7D4D")
 
     BasicHttpRequest mHttpRequest;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.024 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "1D4D0FAE668EECF10ED75DDC284FFC16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.634 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "1D4D0FAE668EECF10ED75DDC284FFC16")
 
     String mPath;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.025 -0500", hash_original_field = "BB62408D38B8CFFE64423F7A37FB51DF", hash_generated_field = "BB62408D38B8CFFE64423F7A37FB51DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.636 -0500", hash_original_field = "BB62408D38B8CFFE64423F7A37FB51DF", hash_generated_field = "BB62408D38B8CFFE64423F7A37FB51DF")
 
     HttpHost mHost;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.025 -0500", hash_original_field = "8D07AC44AA4C74B2AC6E6F002329824C", hash_generated_field = "8D07AC44AA4C74B2AC6E6F002329824C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.638 -0500", hash_original_field = "8D07AC44AA4C74B2AC6E6F002329824C", hash_generated_field = "8D07AC44AA4C74B2AC6E6F002329824C")
 
     HttpHost mProxyHost;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.026 -0500", hash_original_field = "DE939164FC7BA4BBF78A04A60D6F1F48", hash_generated_field = "81F1F19F02DD71D9D08A9477DAAD695B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.641 -0500", hash_original_field = "DE939164FC7BA4BBF78A04A60D6F1F48", hash_generated_field = "81F1F19F02DD71D9D08A9477DAAD695B")
 
     volatile boolean mCancelled = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.027 -0500", hash_original_field = "5E66863F07F10B7287F0E997DBE9BDFD", hash_generated_field = "5E66863F07F10B7287F0E997DBE9BDFD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.642 -0500", hash_original_field = "5E66863F07F10B7287F0E997DBE9BDFD", hash_generated_field = "5E66863F07F10B7287F0E997DBE9BDFD")
 
 
     int mFailCount = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:22.524 -0500", hash_original_field = "9F24C9AA82C33343B9BFCD7DF72B7F2C", hash_generated_field = "9AA1D199AB2A27232DA25E07F74C582A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.644 -0500", hash_original_field = "9F24C9AA82C33343B9BFCD7DF72B7F2C", hash_generated_field = "9AA1D199AB2A27232DA25E07F74C582A")
 
     // is http/1.1 feature.
     private int mReceivedBytes = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.029 -0500", hash_original_field = "00BD06F3A68F022203FBFD258BDC707D", hash_generated_field = "D18E2D3147EECBD8F566EDA75779DDA2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.647 -0500", hash_original_field = "00BD06F3A68F022203FBFD258BDC707D", hash_generated_field = "D18E2D3147EECBD8F566EDA75779DDA2")
 
 
     private InputStream mBodyProvider;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.029 -0500", hash_original_field = "9F97B0948BBDDDA2CDEDF84C846F0425", hash_generated_field = "DAA6C79DB8D209A54BE4FF4B04B63B6B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.649 -0500", hash_original_field = "9F97B0948BBDDDA2CDEDF84C846F0425", hash_generated_field = "DAA6C79DB8D209A54BE4FF4B04B63B6B")
 
     private int mBodyLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.033 -0500", hash_original_field = "EE22D57F1DBDB5332BEC1A7C1228CAB3", hash_generated_field = "58B1C220EAC61D22A66429CC428EF626")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.660 -0500", hash_original_field = "EE22D57F1DBDB5332BEC1A7C1228CAB3", hash_generated_field = "58B1C220EAC61D22A66429CC428EF626")
 
     private final Object mClientResource = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.033 -0500", hash_original_field = "0504A143E354556BF76FDA83FD8D3BB5", hash_generated_field = "E2A1F626EC5A40F2B6A741C8173B85D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.662 -0500", hash_original_field = "0504A143E354556BF76FDA83FD8D3BB5", hash_generated_field = "E2A1F626EC5A40F2B6A741C8173B85D6")
 
     private boolean mLoadingPaused = false;
 
@@ -128,8 +129,9 @@ class Request {
      * this interface
      * @param headers reqeust headers
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.036 -0500", hash_original_method = "E3AB2A1C4C118761EA0CC20D593A5A78", hash_generated_method = "E3C161AA33E9F97B75915A04C7D01B65")
-    Request(String method, HttpHost host, HttpHost proxyHost, String path,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.667 -0500", hash_original_method = "E3AB2A1C4C118761EA0CC20D593A5A78", hash_generated_method = "E3C161AA33E9F97B75915A04C7D01B65")
+    
+Request(String method, HttpHost host, HttpHost proxyHost, String path,
             InputStream bodyProvider, int bodyLength,
             EventHandler eventHandler,
             Map<String, String> headers) {
@@ -164,8 +166,9 @@ class Request {
     /**
      * @param pause True if the load should be paused.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.036 -0500", hash_original_method = "E8032EBF304EE392C16172EA55A4B7FA", hash_generated_method = "6D078047263CC1711E539100E6DECBDE")
-    synchronized void setLoadingPaused(boolean pause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.669 -0500", hash_original_method = "E8032EBF304EE392C16172EA55A4B7FA", hash_generated_method = "6D078047263CC1711E539100E6DECBDE")
+    
+synchronized void setLoadingPaused(boolean pause) {
         mLoadingPaused = pause;
 
         // Wake up the paused thread if we're unpausing the load.
@@ -177,13 +180,15 @@ class Request {
     /**
      * @param connection Request served by this connection
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.037 -0500", hash_original_method = "A8C7471D7BEF79EC71A4F8B9C611F231", hash_generated_method = "A8C7471D7BEF79EC71A4F8B9C611F231")
-    void setConnection(Connection connection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.671 -0500", hash_original_method = "A8C7471D7BEF79EC71A4F8B9C611F231", hash_generated_method = "A8C7471D7BEF79EC71A4F8B9C611F231")
+    
+void setConnection(Connection connection) {
         mConnection = connection;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.038 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
-    EventHandler getEventHandler() {
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.673 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
+    
+EventHandler getEventHandler() {
         return mEventHandler;
     }
 
@@ -193,8 +198,9 @@ class Request {
      * @param name of header
      * @param value of header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.038 -0500", hash_original_method = "CAFFB5BC78A2E3A526CF37E51EA3E6DA", hash_generated_method = "CAFFB5BC78A2E3A526CF37E51EA3E6DA")
-    void addHeader(String name, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.676 -0500", hash_original_method = "CAFFB5BC78A2E3A526CF37E51EA3E6DA", hash_generated_method = "CAFFB5BC78A2E3A526CF37E51EA3E6DA")
+    
+void addHeader(String name, String value) {
         if (name == null) {
             String damage = "Null http header name";
             HttpLog.e(damage);
@@ -212,8 +218,9 @@ class Request {
      * Add all headers in given map to this request.  This is a helper
      * method: it calls addHeader for each pair in the map.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.039 -0500", hash_original_method = "CAEF84F00E8BD676D33383FFEC6D862C", hash_generated_method = "CAEF84F00E8BD676D33383FFEC6D862C")
-    void addHeaders(Map<String, String> headers) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.678 -0500", hash_original_method = "CAEF84F00E8BD676D33383FFEC6D862C", hash_generated_method = "CAEF84F00E8BD676D33383FFEC6D862C")
+    
+void addHeaders(Map<String, String> headers) {
         if (headers == null) {
             return;
         }
@@ -399,8 +406,9 @@ class Request {
      *
      * Called by RequestHandle from non-network thread
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.043 -0500", hash_original_method = "0703BC7E6FB4CF479DE68CDEB6E6E012", hash_generated_method = "4B6EC5FDAD794F7DFF50406E013371F9")
-    synchronized void cancel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.687 -0500", hash_original_method = "0703BC7E6FB4CF479DE68CDEB6E6E012", hash_generated_method = "4B6EC5FDAD794F7DFF50406E013371F9")
+    
+synchronized void cancel() {
         if (HttpLog.LOGV) {
             HttpLog.v("Request.cancel(): " + getUri());
         }
@@ -416,8 +424,9 @@ class Request {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.043 -0500", hash_original_method = "512B3E32AEE990D1477AF1DD14A214E5", hash_generated_method = "632932A86D9A8B15AC1DAA7F9BBDA079")
-    String getHostPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.689 -0500", hash_original_method = "512B3E32AEE990D1477AF1DD14A214E5", hash_generated_method = "632932A86D9A8B15AC1DAA7F9BBDA079")
+    
+String getHostPort() {
         String myScheme = mHost.getSchemeName();
         int myPort = mHost.getPort();
 
@@ -455,8 +464,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
     /**
      * for debugging
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.045 -0500", hash_original_method = "260B42F8E7BEBB3ADC717EDEB2B728A2", hash_generated_method = "A34314B6DE7E4E9B624F3C7CC5F6B943")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.693 -0500", hash_original_method = "260B42F8E7BEBB3ADC717EDEB2B728A2", hash_generated_method = "A34314B6DE7E4E9B624F3C7CC5F6B943")
+    
+public String toString() {
         return mPath;
     }
 
@@ -465,8 +475,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
      * If this request has been sent once and failed, it must be reset
      * before it can be sent again.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.046 -0500", hash_original_method = "6782015769BAD3CE7033564D51D44773", hash_generated_method = "5F9D0864E5714EA6E374497F09D12465")
-    void reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.696 -0500", hash_original_method = "6782015769BAD3CE7033564D51D44773", hash_generated_method = "5F9D0864E5714EA6E374497F09D12465")
+    
+void reset() {
         /* clear content-length header */
         mHttpRequest.removeHeaders(CONTENT_LENGTH_HEADER);
 
@@ -495,8 +506,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
      * Pause thread request completes.  Used for synchronous requests,
      * and testing
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.046 -0500", hash_original_method = "59F95FD933B02B7872449B124B2DE304", hash_generated_method = "59F95FD933B02B7872449B124B2DE304")
-    void waitUntilComplete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.698 -0500", hash_original_method = "59F95FD933B02B7872449B124B2DE304", hash_generated_method = "59F95FD933B02B7872449B124B2DE304")
+    
+void waitUntilComplete() {
         synchronized (mClientResource) {
             try {
                 if (HttpLog.LOGV) HttpLog.v("Request.waitUntilComplete()");
@@ -507,8 +519,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.047 -0500", hash_original_method = "7B097BCF5E489C3DB5111F527714D27C", hash_generated_method = "7B097BCF5E489C3DB5111F527714D27C")
-    void complete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.701 -0500", hash_original_method = "7B097BCF5E489C3DB5111F527714D27C", hash_generated_method = "7B097BCF5E489C3DB5111F527714D27C")
+    
+void complete() {
         synchronized (mClientResource) {
             mClientResource.notifyAll();
         }
@@ -522,8 +535,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
      * itself without a costly readthrough.  I'm not sure skip() would
      * do what we want.  If you know a better way, please let me know.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.049 -0500", hash_original_method = "270D8BA233306D6526BC7DEE9032A6D1", hash_generated_method = "8DDA10B9AFD52875FB60E681BAE21A29")
-    private void setBodyProvider(InputStream bodyProvider, int bodyLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.706 -0500", hash_original_method = "270D8BA233306D6526BC7DEE9032A6D1", hash_generated_method = "8DDA10B9AFD52875FB60E681BAE21A29")
+    
+private void setBodyProvider(InputStream bodyProvider, int bodyLength) {
         if (!bodyProvider.markSupported()) {
             throw new IllegalArgumentException(
                     "bodyProvider must support mark()");
@@ -540,8 +554,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
      * Handles SSL error(s) on the way down from the user (the user
      * has already provided their feedback).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.050 -0500", hash_original_method = "9C3B106C5F2D1AB923C52530BB6B2461", hash_generated_method = "01C2FD017899B9334C1015E99D77DF22")
-    public void handleSslErrorResponse(boolean proceed) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.708 -0500", hash_original_method = "9C3B106C5F2D1AB923C52530BB6B2461", hash_generated_method = "01C2FD017899B9334C1015E99D77DF22")
+    
+public void handleSslErrorResponse(boolean proceed) {
         HttpsConnection connection = (HttpsConnection)(mConnection);
         if (connection != null) {
             connection.restartConnection(proceed);
@@ -552,8 +567,9 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
      * Helper: calls error() on eventhandler with appropriate message
      * This should not be called before the mConnection is set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.051 -0500", hash_original_method = "0F527F16FE7A8194B2376A18FA9A34FA", hash_generated_method = "0F527F16FE7A8194B2376A18FA9A34FA")
-    void error(int errorId, int resourceId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.710 -0500", hash_original_method = "0F527F16FE7A8194B2376A18FA9A34FA", hash_generated_method = "0F527F16FE7A8194B2376A18FA9A34FA")
+    
+void error(int errorId, int resourceId) {
         mEventHandler.error(
                 errorId,
                 mConnection.mContext.getText(

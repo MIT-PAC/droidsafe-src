@@ -17,10 +17,10 @@ import android.text.TextUtils;
 
 
 public class SearchRecentSuggestions {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.236 -0500", hash_original_field = "DE2A394F7B6C2556435D3DDBACC95E2C", hash_generated_field = "83CF5D93D7647E05E9E9EB88C1379A3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.965 -0500", hash_original_field = "DE2A394F7B6C2556435D3DDBACC95E2C", hash_generated_field = "83CF5D93D7647E05E9E9EB88C1379A3E")
 
     private static final String LOG_TAG = "SearchSuggestions";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:31.473 -0500", hash_original_field = "FBFB92C55AD066E0B85285653E596473", hash_generated_field = "3B7FD1627016148392C3DD3385EC693A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.980 -0500", hash_original_field = "FBFB92C55AD066E0B85285653E596473", hash_generated_field = "3B7FD1627016148392C3DD3385EC693A")
 
     /**
      * This is the database projection that can be used to view saved queries, when
@@ -32,7 +32,7 @@ public class SearchRecentSuggestions {
         SuggestionColumns.QUERY,
         SuggestionColumns.DISPLAY1,
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:31.474 -0500", hash_original_field = "4762377235A80FA4BDF1D00417E34C84", hash_generated_field = "84ADE51B6A2C9C17BB13DC56E3A55A39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.982 -0500", hash_original_field = "4762377235A80FA4BDF1D00417E34C84", hash_generated_field = "84ADE51B6A2C9C17BB13DC56E3A55A39")
 
     /**
      * This is the database projection that can be used to view saved queries, when
@@ -45,20 +45,20 @@ public class SearchRecentSuggestions {
         SuggestionColumns.DISPLAY1,
         SuggestionColumns.DISPLAY2,
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:31.475 -0500", hash_original_field = "73269E3BAF5F38D48FF6F56B486D4313", hash_generated_field = "7B5DF2211EC0974DD32B448A0535485E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.985 -0500", hash_original_field = "73269E3BAF5F38D48FF6F56B486D4313", hash_generated_field = "7B5DF2211EC0974DD32B448A0535485E")
 
     /** Index into the provided query projections.  For use with Cursor.update methods. */
     public static final int QUERIES_PROJECTION_DATE_INDEX = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.245 -0500", hash_original_field = "0B727DE61B1E406829A1F293C4480A15", hash_generated_field = "4096D68BBB16F0235E9688143E1E6746")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.988 -0500", hash_original_field = "0B727DE61B1E406829A1F293C4480A15", hash_generated_field = "4096D68BBB16F0235E9688143E1E6746")
 
     public static final int QUERIES_PROJECTION_QUERY_INDEX = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.246 -0500", hash_original_field = "AF9AAC27FAC772014A9B39AEC9B86D37", hash_generated_field = "C196F013DFC7347A79C9051D8233C1FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.990 -0500", hash_original_field = "AF9AAC27FAC772014A9B39AEC9B86D37", hash_generated_field = "C196F013DFC7347A79C9051D8233C1FB")
 
     public static final int QUERIES_PROJECTION_DISPLAY1_INDEX = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.246 -0500", hash_original_field = "132606B3D3398630EF25CEBD041807A3", hash_generated_field = "7CB1EB71CBC2BEDF603E06F68C40E535")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.993 -0500", hash_original_field = "132606B3D3398630EF25CEBD041807A3", hash_generated_field = "7CB1EB71CBC2BEDF603E06F68C40E535")
 
     public static final int QUERIES_PROJECTION_DISPLAY2_INDEX = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:31.479 -0500", hash_original_field = "C82910879C292C21BA69457BB73148F8", hash_generated_field = "FF675A23123BD79B2D764781FDE6166C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.995 -0500", hash_original_field = "C82910879C292C21BA69457BB73148F8", hash_generated_field = "FF675A23123BD79B2D764781FDE6166C")
 
 
     /*
@@ -67,25 +67,25 @@ public class SearchRecentSuggestions {
      * cap when/if db/layout performance improvements are made.
      */
     private static final int MAX_HISTORY_COUNT = 250;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.251 -0500", hash_original_field = "1E8EB0344CC41644AAD8FE28A89758B0", hash_generated_field = "10A476FD002C06ABCB4B050247C842C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.006 -0500", hash_original_field = "1E8EB0344CC41644AAD8FE28A89758B0", hash_generated_field = "10A476FD002C06ABCB4B050247C842C7")
 
     private static final Semaphore sWritesInProgress = new Semaphore(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.248 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.997 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private  Context mContext;
 
     
     private static class SuggestionColumns implements BaseColumns {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.238 -0500", hash_original_field = "1F02AE2A2A3698D98A835DE2FB2A3AD8", hash_generated_field = "4C20FFD88D15FE183A2FD7C689BC4C8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.969 -0500", hash_original_field = "1F02AE2A2A3698D98A835DE2FB2A3AD8", hash_generated_field = "4C20FFD88D15FE183A2FD7C689BC4C8E")
 
         public static final String DISPLAY1 = "display1";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.239 -0500", hash_original_field = "8036F3C197B403D71E096416D1F32339", hash_generated_field = "6E0628EA9C10950E8DF8845FF414EE62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.971 -0500", hash_original_field = "8036F3C197B403D71E096416D1F32339", hash_generated_field = "6E0628EA9C10950E8DF8845FF414EE62")
 
         public static final String DISPLAY2 = "display2";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.240 -0500", hash_original_field = "A973C6A881D51091815AA2E1EB8D05BB", hash_generated_field = "61C7143C9AFD93657C9BFDDC418E3D13")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.973 -0500", hash_original_field = "A973C6A881D51091815AA2E1EB8D05BB", hash_generated_field = "61C7143C9AFD93657C9BFDDC418E3D13")
 
         public static final String QUERY = "query";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.241 -0500", hash_original_field = "5B6FCEF8C44CB783DFFC37049083A6ED", hash_generated_field = "FDAA1E4DCD8393137807C1AA22ED16F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.976 -0500", hash_original_field = "5B6FCEF8C44CB783DFFC37049083A6ED", hash_generated_field = "FDAA1E4DCD8393137807C1AA22ED16F2")
 
         public static final String DATE = "date";
         
@@ -96,13 +96,13 @@ public class SearchRecentSuggestions {
             //Synthesized constructor
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.249 -0500", hash_original_field = "BC4522E788A053F96319766AEE95ACCB", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.999 -0500", hash_original_field = "BC4522E788A053F96319766AEE95ACCB", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
 
     private  String mAuthority;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.250 -0500", hash_original_field = "671000407E7D4220CBD952C076CC82E3", hash_generated_field = "9C78137A5E34C9818D08D92469A7DDDE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.001 -0500", hash_original_field = "671000407E7D4220CBD952C076CC82E3", hash_generated_field = "9C78137A5E34C9818D08D92469A7DDDE")
 
     private  boolean mTwoLineDisplay;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.251 -0500", hash_original_field = "EDAEBB8E2B258706A464C373C3F3FEF0", hash_generated_field = "474B06C5F572DACCF7230DB8072DB33C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.003 -0500", hash_original_field = "EDAEBB8E2B258706A464C373C3F3FEF0", hash_generated_field = "474B06C5F572DACCF7230DB8072DB33C")
 
     private  Uri mSuggestionsUri;
     
@@ -144,8 +144,9 @@ public class SearchRecentSuggestions {
      * If you did not configure two-line mode, or if a given suggestion does not have any
      * additional text to display, you can pass null here.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.254 -0500", hash_original_method = "70A1E3C233B875F18C99CFE4264D2F59", hash_generated_method = "32E7D90A3ECA61D592C2E9D49A110CAD")
-    public void saveRecentQuery(final String queryString, final String line2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.014 -0500", hash_original_method = "70A1E3C233B875F18C99CFE4264D2F59", hash_generated_method = "32E7D90A3ECA61D592C2E9D49A110CAD")
+    
+public void saveRecentQuery(final String queryString, final String line2) {
         if (TextUtils.isEmpty(queryString)) {
             return;
         }
@@ -163,8 +164,9 @@ public class SearchRecentSuggestions {
     }
 
     // Visible for testing.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.255 -0500", hash_original_method = "CEDACB2E58AE40EFB4E2590521E9B487", hash_generated_method = "5CB8BDED8225B2ACE71C54BBA8B1237C")
-    void waitForSave() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.016 -0500", hash_original_method = "CEDACB2E58AE40EFB4E2590521E9B487", hash_generated_method = "5CB8BDED8225B2ACE71C54BBA8B1237C")
+    
+void waitForSave() {
         // Acquire writes semaphore until there is nothing available.
         // This is to clean up after any previous callers to saveRecentQuery
         // who did not also call waitForSave().
@@ -173,8 +175,9 @@ public class SearchRecentSuggestions {
         } while (sWritesInProgress.availablePermits() > 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.256 -0500", hash_original_method = "9709D87DB23792EAEE277FC562FC04A5", hash_generated_method = "FC6F5F01764156C7D856570F5C5CCFE4")
-    private void saveRecentQueryBlocking(String queryString, String line2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.019 -0500", hash_original_method = "9709D87DB23792EAEE277FC562FC04A5", hash_generated_method = "FC6F5F01764156C7D856570F5C5CCFE4")
+    
+private void saveRecentQueryBlocking(String queryString, String line2) {
         ContentResolver cr = mContext.getContentResolver();
         long now = System.currentTimeMillis();
 
@@ -204,8 +207,9 @@ public class SearchRecentSuggestions {
      * history.  This gives the user a measure of privacy, if they do not wish for their recent
      * searches to be replayed by other users of the device (via suggestions).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.257 -0500", hash_original_method = "9379C31AF46289752B20FFA616A8CEEF", hash_generated_method = "61FE23FE6BF777E9A110DE8EC3BB1869")
-    public void clearHistory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.021 -0500", hash_original_method = "9379C31AF46289752B20FFA616A8CEEF", hash_generated_method = "61FE23FE6BF777E9A110DE8EC3BB1869")
+    
+public void clearHistory() {
         ContentResolver cr = mContext.getContentResolver();
         truncateHistory(cr, 0);
     }
@@ -216,8 +220,9 @@ public class SearchRecentSuggestions {
      * @param cr Convenience copy of the content resolver.
      * @param maxEntries Max entries to leave in the table. 0 means remove all entries.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:48.258 -0500", hash_original_method = "0EFC2C7DB10B5AB62D9BC5D8C29D3C9A", hash_generated_method = "4CC284166F1D9E8EDAD728C9AB1ED2BD")
-    protected void truncateHistory(ContentResolver cr, int maxEntries) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.023 -0500", hash_original_method = "0EFC2C7DB10B5AB62D9BC5D8C29D3C9A", hash_generated_method = "4CC284166F1D9E8EDAD728C9AB1ED2BD")
+    
+protected void truncateHistory(ContentResolver cr, int maxEntries) {
         if (maxEntries < 0) {
             throw new IllegalArgumentException();
         }

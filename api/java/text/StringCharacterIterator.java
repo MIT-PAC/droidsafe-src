@@ -10,7 +10,7 @@ import droidsafe.annotations.*;
 
 
 public final class StringCharacterIterator implements CharacterIterator {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.613 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.480 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
 
 
     String string;
@@ -32,8 +32,9 @@ public final class StringCharacterIterator implements CharacterIterator {
      * @param value
      *            the source string to iterate over.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.615 -0500", hash_original_method = "DAE1DA2C567D7E8FDA6EBD1FE5405924", hash_generated_method = "93516EC8B8DC016F21DFBAE3D09B5820")
-    public StringCharacterIterator(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.485 -0500", hash_original_method = "DAE1DA2C567D7E8FDA6EBD1FE5405924", hash_generated_method = "93516EC8B8DC016F21DFBAE3D09B5820")
+    
+public StringCharacterIterator(String value) {
         string = value;
         start = offset = 0;
         end = string.length();
@@ -53,8 +54,9 @@ public final class StringCharacterIterator implements CharacterIterator {
      *            if {@code location} is negative or greater than the length
      *            of the source string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.616 -0500", hash_original_method = "5C2CF51DC0D0A9D0DCD2C7E4ADB28E8E", hash_generated_method = "9532413F151017E8364879F74187F66F")
-    public StringCharacterIterator(String value, int location) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.487 -0500", hash_original_method = "5C2CF51DC0D0A9D0DCD2C7E4ADB28E8E", hash_generated_method = "9532413F151017E8364879F74187F66F")
+    
+public StringCharacterIterator(String value, int location) {
         string = value;
         start = 0;
         end = string.length();
@@ -81,8 +83,9 @@ public final class StringCharacterIterator implements CharacterIterator {
      *            start}, {@code location > end} or if {@code end} is greater
      *            than the length of {@code value}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.617 -0500", hash_original_method = "704865465DB7061F34F598DD3605E202", hash_generated_method = "05C9949133E14BF5402CE864C72615D9")
-    public StringCharacterIterator(String value, int start, int end, int location) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.491 -0500", hash_original_method = "704865465DB7061F34F598DD3605E202", hash_generated_method = "05C9949133E14BF5402CE864C72615D9")
+    
+public StringCharacterIterator(String value, int start, int end, int location) {
         string = value;
         if (start < 0 || end > string.length() || start > end
                 || location < start || location > end) {
@@ -100,9 +103,10 @@ public final class StringCharacterIterator implements CharacterIterator {
      * @return a shallow copy of this iterator.
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.618 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.494 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
+    
+@Override
+    public Object clone() {
         try {
             return super.clone();
         } catch (CloneNotSupportedException e) {
@@ -116,8 +120,9 @@ public Object clone() {
      * @return the current character, or {@code DONE} if the current index is
      *         past the end.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.619 -0500", hash_original_method = "0495E4BE554B279F8C8552A3E8BBAE9B", hash_generated_method = "CB63B3B77AD88F3F08287FFBADF6C86B")
-    public char current() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.496 -0500", hash_original_method = "0495E4BE554B279F8C8552A3E8BBAE9B", hash_generated_method = "CB63B3B77AD88F3F08287FFBADF6C86B")
+    
+public char current() {
         if (offset == end) {
             return DONE;
         }
@@ -136,9 +141,10 @@ public Object clone() {
      *         {@code StringCharacterIterator}; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.620 -0500", hash_original_method = "4A7E92C9AA8B158215F27F7CAB59071D", hash_generated_method = "3B8D8F39B89B9959CEF1B48A3A12808B")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.499 -0500", hash_original_method = "4A7E92C9AA8B158215F27F7CAB59071D", hash_generated_method = "3B8D8F39B89B9959CEF1B48A3A12808B")
+    
+@Override
+    public boolean equals(Object object) {
         if (!(object instanceof StringCharacterIterator)) {
             return false;
         }
@@ -154,8 +160,9 @@ public boolean equals(Object object) {
      * @return the character at the begin index or {@code DONE} if the begin
      *         index is equal to the end index.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.621 -0500", hash_original_method = "B333B42236D9FFA1243D291D9F8E02D4", hash_generated_method = "AFE17903F70720F83CDBC1BB6F9D1B08")
-    public char first() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.501 -0500", hash_original_method = "B333B42236D9FFA1243D291D9F8E02D4", hash_generated_method = "AFE17903F70720F83CDBC1BB6F9D1B08")
+    
+public char first() {
         if (start == end) {
             return DONE;
         }
@@ -168,8 +175,9 @@ public boolean equals(Object object) {
      *
      * @return the index of the first character of the iteration.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.622 -0500", hash_original_method = "C91A51EED2BDD0863CA60178FB31B7F7", hash_generated_method = "61BB8D523DF35DF9979CE39259FD5564")
-    public int getBeginIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.504 -0500", hash_original_method = "C91A51EED2BDD0863CA60178FB31B7F7", hash_generated_method = "61BB8D523DF35DF9979CE39259FD5564")
+    
+public int getBeginIndex() {
         return start;
     }
 
@@ -178,8 +186,9 @@ public boolean equals(Object object) {
      *
      * @return the index one past the last character of the iteration.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.623 -0500", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "ACC8D1B1439CA809AB08C45ABAB29DED")
-    public int getEndIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.506 -0500", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "ACC8D1B1439CA809AB08C45ABAB29DED")
+    
+public int getEndIndex() {
         return end;
     }
 
@@ -188,14 +197,16 @@ public boolean equals(Object object) {
      *
      * @return the current index.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.624 -0500", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "78C6B22E21CF81415ABD0C7B74926529")
-    public int getIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.508 -0500", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "78C6B22E21CF81415ABD0C7B74926529")
+    
+public int getIndex() {
         return offset;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.625 -0500", hash_original_method = "261EF3CD78C94C444435F1728CE93178", hash_generated_method = "17A831DD66A1F4461FA71BE5269F41B2")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.511 -0500", hash_original_method = "261EF3CD78C94C444435F1728CE93178", hash_generated_method = "17A831DD66A1F4461FA71BE5269F41B2")
+    
+@Override
+    public int hashCode() {
         return string.hashCode() + start + end + offset;
     }
 
@@ -206,8 +217,9 @@ public int hashCode() {
      * @return the character before the end index or {@code DONE} if the begin
      *         index is equal to the end index.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.626 -0500", hash_original_method = "920E2CC099037AFE91302301CF7E9F3E", hash_generated_method = "AFBCB786E817854F5D34F17C592E0592")
-    public char last() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.513 -0500", hash_original_method = "920E2CC099037AFE91302301CF7E9F3E", hash_generated_method = "AFBCB786E817854F5D34F17C592E0592")
+    
+public char last() {
         if (start == end) {
             return DONE;
         }
@@ -221,8 +233,9 @@ public int hashCode() {
      * @return the character at the next index, or {@code DONE} if the next
      *         index would be past the end.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.627 -0500", hash_original_method = "8F260F0099582263F775831BBCA28C0F", hash_generated_method = "28483A73600FD1618D2907A401199D2D")
-    public char next() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.516 -0500", hash_original_method = "8F260F0099582263F775831BBCA28C0F", hash_generated_method = "28483A73600FD1618D2907A401199D2D")
+    
+public char next() {
         if (offset >= (end - 1)) {
             offset = end;
             return DONE;
@@ -236,8 +249,9 @@ public int hashCode() {
      * @return the character at the previous index, or {@code DONE} if the
      *         previous index would be past the beginning.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.628 -0500", hash_original_method = "6641F70E0E9C6153122A4B9C58397241", hash_generated_method = "AC3C770EA337D5D3EEA5382F4D68ABF2")
-    public char previous() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.518 -0500", hash_original_method = "6641F70E0E9C6153122A4B9C58397241", hash_generated_method = "AC3C770EA337D5D3EEA5382F4D68ABF2")
+    
+public char previous() {
         if (offset == start) {
             return DONE;
         }
@@ -255,8 +269,9 @@ public int hashCode() {
      *            if {@code location} is smaller than the begin index or greater
      *            than the end index.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.629 -0500", hash_original_method = "EE5D609C4869D1C6E36BED6C6655B503", hash_generated_method = "AFED77A3090D1B189B24D105A4484250")
-    public char setIndex(int location) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.521 -0500", hash_original_method = "EE5D609C4869D1C6E36BED6C6655B503", hash_generated_method = "AFED77A3090D1B189B24D105A4484250")
+    
+public char setIndex(int location) {
         if (location < start || location > end) {
             throw new IllegalArgumentException();
         }
@@ -274,8 +289,9 @@ public int hashCode() {
      * @param value
      *            the new source string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.629 -0500", hash_original_method = "C3050CECF999A44D7D35577309274942", hash_generated_method = "22CC0F07CED43A3C2DB9262A496CFC9F")
-    public void setText(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.523 -0500", hash_original_method = "C3050CECF999A44D7D35577309274942", hash_generated_method = "22CC0F07CED43A3C2DB9262A496CFC9F")
+    
+public void setText(String value) {
         string = value;
         start = offset = 0;
         end = value.length();

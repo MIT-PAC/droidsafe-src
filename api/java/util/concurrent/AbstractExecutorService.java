@@ -49,8 +49,9 @@ RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_34807659 =         new Fut
      * @throws RejectedExecutionException {@inheritDoc}
      * @throws NullPointerException       {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.479 -0500", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "D79DC49478D56E7E26C565781312A0F8")
-    public Future<?> submit(Runnable task) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.253 -0500", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "D79DC49478D56E7E26C565781312A0F8")
+    
+public Future<?> submit(Runnable task) {
         if (task == null) throw new NullPointerException();
         RunnableFuture<Void> ftask = newTaskFor(task, null);
         execute(ftask);

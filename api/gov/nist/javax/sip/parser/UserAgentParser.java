@@ -16,8 +16,9 @@ import java.text.ParseException;
 public class UserAgentParser extends HeaderParser {
 
 
-      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.437 -0500", hash_original_method = "20E70CF6E7A6970225082D89AB2D734D", hash_generated_method = "514731961847CCC15B5FE2F7C683B7CB")
-    public static void main(String args[]) throws ParseException { String
+      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.212 -0500", hash_original_method = "20E70CF6E7A6970225082D89AB2D734D", hash_generated_method = "514731961847CCC15B5FE2F7C683B7CB")
+    
+public static void main(String args[]) throws ParseException { String
       userAgent[] = { "User-Agent: Softphone/Beta1.5 \n", "User-Agent:Nist/Beta1 (beta version) \n", "User-Agent: Nist UA (beta version)\n",
       "User-Agent: Nist1.0/Beta2 Ubi/vers.1.0 (very cool) \n" ,
       "User-Agent: SJphone/1.60.299a/L (SJ Labs)\n",
@@ -34,8 +35,9 @@ public class UserAgentParser extends HeaderParser {
      * @param userAgent -
      *            UserAgent header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.433 -0500", hash_original_method = "72C240456E98B58E534CB3630B89C3C4", hash_generated_method = "7AE5D9F5EC165E8DEB680519446B6B66")
-    public UserAgentParser(String userAgent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.202 -0500", hash_original_method = "72C240456E98B58E534CB3630B89C3C4", hash_generated_method = "7AE5D9F5EC165E8DEB680519446B6B66")
+    
+public UserAgentParser(String userAgent) {
         super(userAgent);
     }
 
@@ -45,8 +47,9 @@ public class UserAgentParser extends HeaderParser {
      * @param lexer -
      *            the lexer to use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.434 -0500", hash_original_method = "1D2877F696A9DE47D6D871F3024594AA", hash_generated_method = "9CF1E5C512FD2E8FD8F666461AA2E1C0")
-    protected UserAgentParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.204 -0500", hash_original_method = "1D2877F696A9DE47D6D871F3024594AA", hash_generated_method = "9CF1E5C512FD2E8FD8F666461AA2E1C0")
+    
+protected UserAgentParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -58,8 +61,9 @@ public class UserAgentParser extends HeaderParser {
      * @throws SIPParseException
      *             if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.435 -0500", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "0F21D589345DAE214FD9040C8112095B")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.208 -0500", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "0F21D589345DAE214FD9040C8112095B")
+    
+public SIPHeader parse() throws ParseException {
         if (debug)
             dbg_enter("UserAgentParser.parse");
         UserAgent userAgent = new UserAgent();

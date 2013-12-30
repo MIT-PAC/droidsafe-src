@@ -26,8 +26,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.450 -0500", hash_original_method = "F74095F651F3A7ACE8110967D615306B", hash_generated_method = "D262C61D273102DA93E08958EA36A1F1")
-    public static SignalStrength newFromBundle(Bundle m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.524 -0500", hash_original_method = "F74095F651F3A7ACE8110967D615306B", hash_generated_method = "D262C61D273102DA93E08958EA36A1F1")
+    
+public static SignalStrength newFromBundle(Bundle m) {
         SignalStrength ret;
         ret = new SignalStrength();
         ret.setFromNotifierBundle(m);
@@ -37,36 +38,37 @@ public class SignalStrength implements Parcelable { // This value is set by the 
     /**
      * log
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.485 -0500", hash_original_method = "277DE078A3A03DEDE382EACFE7464D2F", hash_generated_method = "735FBAD30ECBFB458FF9D49ED05CF8FD")
-    private static void log(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.712 -0500", hash_original_method = "277DE078A3A03DEDE382EACFE7464D2F", hash_generated_method = "735FBAD30ECBFB458FF9D49ED05CF8FD")
+    
+private static void log(String s) {
         Log.w(LOG_TAG, s);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.432 -0500", hash_original_field = "5DD80A8750491DA26C4FBD004B3C57C8", hash_generated_field = "6E97287BC5323EE3BC717AB66CCBDA0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.415 -0500", hash_original_field = "5DD80A8750491DA26C4FBD004B3C57C8", hash_generated_field = "6E97287BC5323EE3BC717AB66CCBDA0F")
 
 
     private static final String LOG_TAG = "SignalStrength";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.432 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.420 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
     private static final boolean DBG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.433 -0500", hash_original_field = "716DF6D29353257FC3F76380825B545B", hash_generated_field = "F36B5DA862F2210B7CC8B63BBEC96BC6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.425 -0500", hash_original_field = "716DF6D29353257FC3F76380825B545B", hash_generated_field = "F36B5DA862F2210B7CC8B63BBEC96BC6")
 
     public static final int SIGNAL_STRENGTH_NONE_OR_UNKNOWN = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.434 -0500", hash_original_field = "564954C6C84BFBF3047FDEA705F988FD", hash_generated_field = "97056B85052FD1665F55A477FCCE88E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.430 -0500", hash_original_field = "564954C6C84BFBF3047FDEA705F988FD", hash_generated_field = "97056B85052FD1665F55A477FCCE88E5")
 
     public static final int SIGNAL_STRENGTH_POOR = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.436 -0500", hash_original_field = "1338A3F076D1ACA7409FEE26094F7F8D", hash_generated_field = "3C5058BFCEEB115196EE2231DF9981BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.436 -0500", hash_original_field = "1338A3F076D1ACA7409FEE26094F7F8D", hash_generated_field = "3C5058BFCEEB115196EE2231DF9981BF")
 
     public static final int SIGNAL_STRENGTH_MODERATE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.437 -0500", hash_original_field = "5E470FC33752C826D45E830287B1DF65", hash_generated_field = "84ECBAA9293AB4A1FA6C266A70AD82B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.441 -0500", hash_original_field = "5E470FC33752C826D45E830287B1DF65", hash_generated_field = "84ECBAA9293AB4A1FA6C266A70AD82B1")
 
     public static final int SIGNAL_STRENGTH_GOOD = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.438 -0500", hash_original_field = "69711A990BA93487026D4963A9AB97E2", hash_generated_field = "8354359F6FF7CC86EEAB975D01842E00")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.446 -0500", hash_original_field = "69711A990BA93487026D4963A9AB97E2", hash_generated_field = "8354359F6FF7CC86EEAB975D01842E00")
 
     public static final int SIGNAL_STRENGTH_GREAT = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.439 -0500", hash_original_field = "78000C6AB06742DB0B3A816436C257A1", hash_generated_field = "77B4BF83352A596F63869F754229CB9B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.451 -0500", hash_original_field = "78000C6AB06742DB0B3A816436C257A1", hash_generated_field = "77B4BF83352A596F63869F754229CB9B")
 
     public static final int NUM_SIGNAL_STRENGTH_BINS = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.440 -0500", hash_original_field = "8E31076D04EC68E3F5F76000802DE88B", hash_generated_field = "BDFDB8B094372B725FE43741B8D7FCCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.458 -0500", hash_original_field = "8E31076D04EC68E3F5F76000802DE88B", hash_generated_field = "BDFDB8B094372B725FE43741B8D7FCCB")
 
     public static final String[] SIGNAL_STRENGTH_NAMES = {
         "none", "poor", "moderate", "good", "great"
@@ -74,54 +76,56 @@ public class SignalStrength implements Parcelable { // This value is set by the 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.854 -0400", hash_original_field = "17161E0D5F664640DD3B27CBEFA72BA0", hash_generated_field = "9C95D36DB334C11AD4000563454AA3FC")
 
     public static final Parcelable.Creator<SignalStrength> CREATOR = new Parcelable.Creator() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.459 -0500", hash_original_method = "FD487B8B32AF513C14420FE03C44E804", hash_generated_method = "FBB55F9C50025DD4CE74BA243C7973DE")
-        public SignalStrength createFromParcel(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.571 -0500", hash_original_method = "FD487B8B32AF513C14420FE03C44E804", hash_generated_method = "FBB55F9C50025DD4CE74BA243C7973DE")
+        
+public SignalStrength createFromParcel(Parcel in) {
             return new SignalStrength(in);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.460 -0500", hash_original_method = "0A7CC95D329D0816525677C5750140E9", hash_generated_method = "4AEB3F01F18CF1585BF55AE4A08CD24A")
-        public SignalStrength[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.576 -0500", hash_original_method = "0A7CC95D329D0816525677C5750140E9", hash_generated_method = "4AEB3F01F18CF1585BF55AE4A08CD24A")
+        
+public SignalStrength[] newArray(int size) {
             return new SignalStrength[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.440 -0500", hash_original_field = "0CBBC6A72330084E0CC692C755044B09", hash_generated_field = "DF212ABBD77FA8BBA06AA948D0C786A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.462 -0500", hash_original_field = "0CBBC6A72330084E0CC692C755044B09", hash_generated_field = "DF212ABBD77FA8BBA06AA948D0C786A3")
 
 
     private int mGsmSignalStrength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.441 -0500", hash_original_field = "8B5E0463438451B3E5A13222F556D2B1", hash_generated_field = "62197276EA9E6CE4D0502EE53FF46E07")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.467 -0500", hash_original_field = "8B5E0463438451B3E5A13222F556D2B1", hash_generated_field = "62197276EA9E6CE4D0502EE53FF46E07")
 
     private int mGsmBitErrorRate;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.442 -0500", hash_original_field = "718FE6AEE7CAB3F6EEE0681A49ABBD06", hash_generated_field = "E86784A230D482159884E423762742A0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.472 -0500", hash_original_field = "718FE6AEE7CAB3F6EEE0681A49ABBD06", hash_generated_field = "E86784A230D482159884E423762742A0")
 
     private int mCdmaDbm;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.443 -0500", hash_original_field = "AA280C7EB41BDEC06FF762D1B7CA92D7", hash_generated_field = "6E97F40BFD836F3CE5BD662C51380A2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.477 -0500", hash_original_field = "AA280C7EB41BDEC06FF762D1B7CA92D7", hash_generated_field = "6E97F40BFD836F3CE5BD662C51380A2E")
 
     private int mCdmaEcio;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.443 -0500", hash_original_field = "854C6B26A02287849D5AFE137DDEE0DB", hash_generated_field = "5F77C00D970A012CF8A70A743502955E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.482 -0500", hash_original_field = "854C6B26A02287849D5AFE137DDEE0DB", hash_generated_field = "5F77C00D970A012CF8A70A743502955E")
 
     private int mEvdoDbm;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.444 -0500", hash_original_field = "6FDB64E890242C074EE9560B8DF3FDEB", hash_generated_field = "9D4FAC062F6677FEF890917A2CC74060")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.486 -0500", hash_original_field = "6FDB64E890242C074EE9560B8DF3FDEB", hash_generated_field = "9D4FAC062F6677FEF890917A2CC74060")
 
     private int mEvdoEcio;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.445 -0500", hash_original_field = "F919FA943612E7EA28A2F2E5A54E1793", hash_generated_field = "A8393F6F3E55D49B155906169F7DF105")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.491 -0500", hash_original_field = "F919FA943612E7EA28A2F2E5A54E1793", hash_generated_field = "A8393F6F3E55D49B155906169F7DF105")
 
     private int mEvdoSnr;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.446 -0500", hash_original_field = "7B0B441611B71220B687FDC3E41A8E95", hash_generated_field = "2E9C18263B0918B024A476E0A3021D5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.497 -0500", hash_original_field = "7B0B441611B71220B687FDC3E41A8E95", hash_generated_field = "2E9C18263B0918B024A476E0A3021D5D")
 
     private int mLteSignalStrength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.447 -0500", hash_original_field = "CE016C8D25CB8FD288B0253D114BBA47", hash_generated_field = "F7BF008784D2B5C3302EECB15948BC9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.501 -0500", hash_original_field = "CE016C8D25CB8FD288B0253D114BBA47", hash_generated_field = "F7BF008784D2B5C3302EECB15948BC9E")
 
     private int mLteRsrp;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.447 -0500", hash_original_field = "7796A07EDCACAF05024B615D793B1419", hash_generated_field = "034A5562CA8669F3C12137B1EB35AA93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.505 -0500", hash_original_field = "7796A07EDCACAF05024B615D793B1419", hash_generated_field = "034A5562CA8669F3C12137B1EB35AA93")
 
     private int mLteRsrq;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.448 -0500", hash_original_field = "6A7457B917C73FDC85548CBF20AB4923", hash_generated_field = "CF3AA4BA421912BC2B971AF50DDB829D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.510 -0500", hash_original_field = "6A7457B917C73FDC85548CBF20AB4923", hash_generated_field = "CF3AA4BA421912BC2B971AF50DDB829D")
 
     private int mLteRssnr;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.449 -0500", hash_original_field = "B34E401530F050E0AF759347444F1719", hash_generated_field = "39529D74D8B59671DDC05D399EF4A2BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.515 -0500", hash_original_field = "B34E401530F050E0AF759347444F1719", hash_generated_field = "39529D74D8B59671DDC05D399EF4A2BD")
 
     private int mLteCqi;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.450 -0500", hash_original_field = "16B155E0C303D6F5ECDBE048BD6C6AD6", hash_generated_field = "5BB65659E30CE1CC8D95D33184A43135")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.520 -0500", hash_original_field = "16B155E0C303D6F5ECDBE048BD6C6AD6", hash_generated_field = "5BB65659E30CE1CC8D95D33184A43135")
 
 
     private boolean isGsm;
@@ -131,8 +135,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.451 -0500", hash_original_method = "39BD55AB1A011261FC242AC9054B9C2E", hash_generated_method = "5B311C8F95E0463D19E33F59389E3E80")
-    public SignalStrength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.529 -0500", hash_original_method = "39BD55AB1A011261FC242AC9054B9C2E", hash_generated_method = "5B311C8F95E0463D19E33F59389E3E80")
+    
+public SignalStrength() {
         mGsmSignalStrength = 99;
         mGsmBitErrorRate = -1;
         mCdmaDbm = -1;
@@ -153,8 +158,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.452 -0500", hash_original_method = "A4D70EF20E0500A170A5E059B2CA4163", hash_generated_method = "614BF96E4E6C01488E7FC97D07AF001B")
-    public SignalStrength(int gsmSignalStrength, int gsmBitErrorRate,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.535 -0500", hash_original_method = "A4D70EF20E0500A170A5E059B2CA4163", hash_generated_method = "614BF96E4E6C01488E7FC97D07AF001B")
+    
+public SignalStrength(int gsmSignalStrength, int gsmBitErrorRate,
             int cdmaDbm, int cdmaEcio,
             int evdoDbm, int evdoEcio, int evdoSnr,
             int lteSignalStrength, int lteRsrp, int lteRsrq, int lteRssnr, int lteCqi,
@@ -179,8 +185,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.453 -0500", hash_original_method = "50D26D8F6F19A1F72234E376840BB613", hash_generated_method = "45D85321B18D404F19621F75F6F2EF7B")
-    public SignalStrength(int gsmSignalStrength, int gsmBitErrorRate,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.541 -0500", hash_original_method = "50D26D8F6F19A1F72234E376840BB613", hash_generated_method = "45D85321B18D404F19621F75F6F2EF7B")
+    
+public SignalStrength(int gsmSignalStrength, int gsmBitErrorRate,
             int cdmaDbm, int cdmaEcio,
             int evdoDbm, int evdoEcio, int evdoSnr,
             boolean gsm) {
@@ -195,8 +202,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.454 -0500", hash_original_method = "304799902D63DF1F3D1583B2575C70EA", hash_generated_method = "16B7EA948454D079B746A18CB9BDC0C7")
-    public SignalStrength(SignalStrength s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.546 -0500", hash_original_method = "304799902D63DF1F3D1583B2575C70EA", hash_generated_method = "16B7EA948454D079B746A18CB9BDC0C7")
+    
+public SignalStrength(SignalStrength s) {
         copyFrom(s);
     }
 
@@ -205,8 +213,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.456 -0500", hash_original_method = "2E336C5190A64F570C9C97735BEE0094", hash_generated_method = "DA08102AFFDAD05B779B6EB245A14FFA")
-    public SignalStrength(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.556 -0500", hash_original_method = "2E336C5190A64F570C9C97735BEE0094", hash_generated_method = "DA08102AFFDAD05B779B6EB245A14FFA")
+    
+public SignalStrength(Parcel in) {
         mGsmSignalStrength = in.readInt();
         mGsmBitErrorRate = in.readInt();
         mCdmaDbm = in.readInt();
@@ -225,8 +234,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.455 -0500", hash_original_method = "2805E95BBC437ECAE5861EC35986FF86", hash_generated_method = "B85F01283BD71E753B8E04C6ECFDD3CA")
-    protected void copyFrom(SignalStrength s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.551 -0500", hash_original_method = "2805E95BBC437ECAE5861EC35986FF86", hash_generated_method = "B85F01283BD71E753B8E04C6ECFDD3CA")
+    
+protected void copyFrom(SignalStrength s) {
         mGsmSignalStrength = s.mGsmSignalStrength;
         mGsmBitErrorRate = s.mGsmBitErrorRate;
         mCdmaDbm = s.mCdmaDbm;
@@ -245,8 +255,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
     /**
      * {@link Parcelable#writeToParcel}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.457 -0500", hash_original_method = "85E260BC5044CD4D9894DB51C4B27CA0", hash_generated_method = "6552A84D8A543BBD88280E09B55A46F6")
-    public void writeToParcel(Parcel out, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.561 -0500", hash_original_method = "85E260BC5044CD4D9894DB51C4B27CA0", hash_generated_method = "6552A84D8A543BBD88280E09B55A46F6")
+    
+public void writeToParcel(Parcel out, int flags) {
         out.writeInt(mGsmSignalStrength);
         out.writeInt(mGsmBitErrorRate);
         out.writeInt(mCdmaDbm);
@@ -265,64 +276,72 @@ public class SignalStrength implements Parcelable { // This value is set by the 
     /**
      * {@link Parcelable#describeContents}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.458 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.565 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 
     /**
      * Get the GSM Signal Strength, valid values are (0-31, 99) as defined in TS 27.007 8.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.462 -0500", hash_original_method = "BF744C5FBE02CF825B56C3345AF59498", hash_generated_method = "CBC90B152B3CA37C0698181443702CA1")
-    public int getGsmSignalStrength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.584 -0500", hash_original_method = "BF744C5FBE02CF825B56C3345AF59498", hash_generated_method = "CBC90B152B3CA37C0698181443702CA1")
+    
+public int getGsmSignalStrength() {
         return this.mGsmSignalStrength;
     }
 
     /**
      * Get the GSM bit error rate (0-7, 99) as defined in TS 27.007 8.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.463 -0500", hash_original_method = "092AE71FB082AB370F835236471B5652", hash_generated_method = "B16D3AA7A53422306E3A8740E3C67D7F")
-    public int getGsmBitErrorRate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.590 -0500", hash_original_method = "092AE71FB082AB370F835236471B5652", hash_generated_method = "B16D3AA7A53422306E3A8740E3C67D7F")
+    
+public int getGsmBitErrorRate() {
         return this.mGsmBitErrorRate;
     }
 
     /**
      * Get the CDMA RSSI value in dBm
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.463 -0500", hash_original_method = "4A3A20AF02DE258CADBBD180CAF3D12D", hash_generated_method = "836885968B8AC0E5580F43B2D5AA9963")
-    public int getCdmaDbm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.594 -0500", hash_original_method = "4A3A20AF02DE258CADBBD180CAF3D12D", hash_generated_method = "836885968B8AC0E5580F43B2D5AA9963")
+    
+public int getCdmaDbm() {
         return this.mCdmaDbm;
     }
 
     /**
      * Get the CDMA Ec/Io value in dB*10
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.464 -0500", hash_original_method = "38AEFFB984E37DCE606B9F88ABDA8DE8", hash_generated_method = "7CF8615F4999A1DEB5E9E69E4C71105C")
-    public int getCdmaEcio() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.598 -0500", hash_original_method = "38AEFFB984E37DCE606B9F88ABDA8DE8", hash_generated_method = "7CF8615F4999A1DEB5E9E69E4C71105C")
+    
+public int getCdmaEcio() {
         return this.mCdmaEcio;
     }
 
     /**
      * Get the EVDO RSSI value in dBm
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.465 -0500", hash_original_method = "D895F9B1A344D14CB24D80BCC48EF38D", hash_generated_method = "CF1E921B63371517D651D32B6D66885C")
-    public int getEvdoDbm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.602 -0500", hash_original_method = "D895F9B1A344D14CB24D80BCC48EF38D", hash_generated_method = "CF1E921B63371517D651D32B6D66885C")
+    
+public int getEvdoDbm() {
         return this.mEvdoDbm;
     }
 
     /**
      * Get the EVDO Ec/Io value in dB*10
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.466 -0500", hash_original_method = "E512C4871B3839CD9850A80797FFBB27", hash_generated_method = "E0F1C04DCDFEA48FF27E7568449A248F")
-    public int getEvdoEcio() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.606 -0500", hash_original_method = "E512C4871B3839CD9850A80797FFBB27", hash_generated_method = "E0F1C04DCDFEA48FF27E7568449A248F")
+    
+public int getEvdoEcio() {
         return this.mEvdoEcio;
     }
 
     /**
      * Get the signal to noise ratio. Valid values are 0-8. 8 is the highest.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.467 -0500", hash_original_method = "76215695BF499679C7BA84176FCF6732", hash_generated_method = "A75B4C92D8C401436FA5CEE42A38C107")
-    public int getEvdoSnr() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.610 -0500", hash_original_method = "76215695BF499679C7BA84176FCF6732", hash_generated_method = "A75B4C92D8C401436FA5CEE42A38C107")
+    
+public int getEvdoSnr() {
         return this.mEvdoSnr;
     }
 
@@ -331,8 +350,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.468 -0500", hash_original_method = "7504E540028056CDE39219F81B4E1E59", hash_generated_method = "842F87F6F7F7B7D9924C69932C2B9958")
-    public int getLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.615 -0500", hash_original_method = "7504E540028056CDE39219F81B4E1E59", hash_generated_method = "842F87F6F7F7B7D9924C69932C2B9958")
+    
+public int getLevel() {
         int level;
 
         if (isGsm) {
@@ -368,8 +388,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.469 -0500", hash_original_method = "6887E245B7148208FA71118C76512694", hash_generated_method = "AFF46E2FBC9A6ABC9ADD5E2B1D3DF9B0")
-    public int getAsuLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.620 -0500", hash_original_method = "6887E245B7148208FA71118C76512694", hash_generated_method = "AFF46E2FBC9A6ABC9ADD5E2B1D3DF9B0")
+    
+public int getAsuLevel() {
         int asuLevel;
         if (isGsm) {
             if ((mLteSignalStrength == -1)
@@ -404,8 +425,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.470 -0500", hash_original_method = "91A92262F8869E8CA480E3922C8E164F", hash_generated_method = "F8AEE6964D3BBAC08D70507D411198EC")
-    public int getDbm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.625 -0500", hash_original_method = "91A92262F8869E8CA480E3922C8E164F", hash_generated_method = "F8AEE6964D3BBAC08D70507D411198EC")
+    
+public int getDbm() {
         int dBm;
 
         if(isGsm()) {
@@ -430,8 +452,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.471 -0500", hash_original_method = "EDC72A768CC18025065D104AFB382B7A", hash_generated_method = "C2C2B71C0BEA196AE42DC8779609DC06")
-    public int getGsmDbm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.630 -0500", hash_original_method = "EDC72A768CC18025065D104AFB382B7A", hash_generated_method = "C2C2B71C0BEA196AE42DC8779609DC06")
+    
+public int getGsmDbm() {
         int dBm;
 
         int gsmSignalStrength = getGsmSignalStrength();
@@ -450,8 +473,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.471 -0500", hash_original_method = "B3F3D7206F2B752B03A36760D7E06194", hash_generated_method = "ACEA269BFABDE7496A419B66B3513F13")
-    public int getGsmLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.635 -0500", hash_original_method = "B3F3D7206F2B752B03A36760D7E06194", hash_generated_method = "ACEA269BFABDE7496A419B66B3513F13")
+    
+public int getGsmLevel() {
         int level;
 
         // ASU ranges from 0 to 31 - TS 27.007 Sec 8.5
@@ -473,8 +497,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.472 -0500", hash_original_method = "F4862B9CE73023A8FAAD3B95D31594BE", hash_generated_method = "8BDA35C9EE527BAD2783CF4D97290121")
-    public int getGsmAsuLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.641 -0500", hash_original_method = "F4862B9CE73023A8FAAD3B95D31594BE", hash_generated_method = "8BDA35C9EE527BAD2783CF4D97290121")
+    
+public int getGsmAsuLevel() {
         // ASU ranges from 0 to 31 - TS 27.007 Sec 8.5
         // asu = 0 (-113dB or less) is very weak
         // signal, its better to show 0 bars to the user in such cases.
@@ -489,8 +514,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.473 -0500", hash_original_method = "CB4649EF15F9DF295DD79289916B6CB5", hash_generated_method = "CB1E07E237199AC54ED3FFE24C4C8914")
-    public int getCdmaLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.646 -0500", hash_original_method = "CB4649EF15F9DF295DD79289916B6CB5", hash_generated_method = "CB1E07E237199AC54ED3FFE24C4C8914")
+    
+public int getCdmaLevel() {
         final int cdmaDbm = getCdmaDbm();
         final int cdmaEcio = getCdmaEcio();
         int levelDbm;
@@ -519,8 +545,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.474 -0500", hash_original_method = "EE526C4AB692E407ACE78BB15D53BCB0", hash_generated_method = "D2D8EEE5422E48683C1F8010CF6B6580")
-    public int getCdmaAsuLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.652 -0500", hash_original_method = "EE526C4AB692E407ACE78BB15D53BCB0", hash_generated_method = "D2D8EEE5422E48683C1F8010CF6B6580")
+    
+public int getCdmaAsuLevel() {
         final int cdmaDbm = getCdmaDbm();
         final int cdmaEcio = getCdmaEcio();
         int cdmaAsuLevel;
@@ -551,8 +578,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.475 -0500", hash_original_method = "0AB26F5835CA97F0ED2A069B69FE7D82", hash_generated_method = "8AEBD915D6EC034217EB3BFF97C8E6F8")
-    public int getEvdoLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.658 -0500", hash_original_method = "0AB26F5835CA97F0ED2A069B69FE7D82", hash_generated_method = "8AEBD915D6EC034217EB3BFF97C8E6F8")
+    
+public int getEvdoLevel() {
         int evdoDbm = getEvdoDbm();
         int evdoSnr = getEvdoSnr();
         int levelEvdoDbm;
@@ -580,8 +608,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.476 -0500", hash_original_method = "B3D272849081E8A85734C2EAD9030507", hash_generated_method = "2D9D2D57ADE9025D1A571DBA72780BFF")
-    public int getEvdoAsuLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.663 -0500", hash_original_method = "B3D272849081E8A85734C2EAD9030507", hash_generated_method = "2D9D2D57ADE9025D1A571DBA72780BFF")
+    
+public int getEvdoAsuLevel() {
         int evdoDbm = getEvdoDbm();
         int evdoSnr = getEvdoSnr();
         int levelEvdoDbm;
@@ -611,8 +640,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.477 -0500", hash_original_method = "94E656AC1ABF6547309F24472B6D486E", hash_generated_method = "A2FB0A483B2495384417590B637B00B3")
-    public int getLteDbm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.668 -0500", hash_original_method = "94E656AC1ABF6547309F24472B6D486E", hash_generated_method = "A2FB0A483B2495384417590B637B00B3")
+    
+public int getLteDbm() {
         return mLteRsrp;
     }
 
@@ -621,8 +651,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.477 -0500", hash_original_method = "CDB40306822E2DC8617AD5A6BB9C97E4", hash_generated_method = "53FE26EDA023995FA53580B41C15C3E2")
-    public int getLteLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.672 -0500", hash_original_method = "CDB40306822E2DC8617AD5A6BB9C97E4", hash_generated_method = "53FE26EDA023995FA53580B41C15C3E2")
+    
+public int getLteLevel() {
         int levelLteRsrp = 0;
 
         if (mLteRsrp == -1) levelLteRsrp = 0;
@@ -642,8 +673,9 @@ public class SignalStrength implements Parcelable { // This value is set by the 
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.478 -0500", hash_original_method = "8F8EC9A4414474C4302B52EA8F689AB4", hash_generated_method = "83860E8BA866BDB665AC2749FB5AD6E5")
-    public int getLteAsuLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.678 -0500", hash_original_method = "8F8EC9A4414474C4302B52EA8F689AB4", hash_generated_method = "83860E8BA866BDB665AC2749FB5AD6E5")
+    
+public int getLteAsuLevel() {
         int lteAsuLevel = 99;
         int lteDbm = getLteDbm();
         if (lteDbm <= -140) lteAsuLevel = 0;
@@ -656,17 +688,19 @@ public class SignalStrength implements Parcelable { // This value is set by the 
     /**
      * @return true if this is for GSM
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.479 -0500", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "B70409FA6ADEB0B1159578592B61EB05")
-    public boolean isGsm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.682 -0500", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "B70409FA6ADEB0B1159578592B61EB05")
+    
+public boolean isGsm() {
         return this.isGsm;
     }
 
     /**
      * @return hash code
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.480 -0500", hash_original_method = "77932B1FC1CD240B3EE054141A5B543F", hash_generated_method = "F31A78FDF53901CABE2268F0585E0E54")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.687 -0500", hash_original_method = "77932B1FC1CD240B3EE054141A5B543F", hash_generated_method = "F31A78FDF53901CABE2268F0585E0E54")
+    
+@Override
+    public int hashCode() {
         int primeNum = 31;
         return ((mGsmSignalStrength * primeNum)
                 + (mGsmBitErrorRate * primeNum)
@@ -680,9 +714,10 @@ public int hashCode() {
     /**
      * @return true if the signal strengths are the same
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.481 -0500", hash_original_method = "42740862A2861DE7D9325894DE272263", hash_generated_method = "300E89C8E73B1FC5E5AD5D1F57AC069C")
-    @Override
-public boolean equals (Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.693 -0500", hash_original_method = "42740862A2861DE7D9325894DE272263", hash_generated_method = "300E89C8E73B1FC5E5AD5D1F57AC069C")
+    
+@Override
+    public boolean equals (Object o) {
         SignalStrength s;
 
         try {
@@ -713,9 +748,10 @@ public boolean equals (Object o) {
     /**
      * @return string representation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.482 -0500", hash_original_method = "4C867D664E694B283CE0DE88ADFC0BF6", hash_generated_method = "15FEA039970CFFA8D149F77DE1D83B8A")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.698 -0500", hash_original_method = "4C867D664E694B283CE0DE88ADFC0BF6", hash_generated_method = "15FEA039970CFFA8D149F77DE1D83B8A")
+    
+@Override
+    public String toString() {
         return ("SignalStrength:"
                 + " " + mGsmSignalStrength
                 + " " + mGsmBitErrorRate
@@ -738,8 +774,9 @@ public String toString() {
      * @param m intent notifier map
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.483 -0500", hash_original_method = "3660E1E14B95E0E07C3D11C71AA6DC38", hash_generated_method = "95924EC67C4EF5182C0126129F09A75D")
-    private void setFromNotifierBundle(Bundle m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.703 -0500", hash_original_method = "3660E1E14B95E0E07C3D11C71AA6DC38", hash_generated_method = "95924EC67C4EF5182C0126129F09A75D")
+    
+private void setFromNotifierBundle(Bundle m) {
         mGsmSignalStrength = m.getInt("GsmSignalStrength");
         mGsmBitErrorRate = m.getInt("GsmBitErrorRate");
         mCdmaDbm = m.getInt("CdmaDbm");
@@ -761,8 +798,9 @@ public String toString() {
      * @param m intent notifier Bundle
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.484 -0500", hash_original_method = "936283CC8EFD34F7D7362628995C0399", hash_generated_method = "04666F3055631A388E7245104E27551E")
-    public void fillInNotifierBundle(Bundle m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.707 -0500", hash_original_method = "936283CC8EFD34F7D7362628995C0399", hash_generated_method = "04666F3055631A388E7245104E27551E")
+    
+public void fillInNotifierBundle(Bundle m) {
         m.putInt("GsmSignalStrength", mGsmSignalStrength);
         m.putInt("GsmBitErrorRate", mGsmBitErrorRate);
         m.putInt("CdmaDbm", mCdmaDbm);

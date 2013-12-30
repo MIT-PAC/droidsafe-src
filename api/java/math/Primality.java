@@ -19,8 +19,9 @@ class Primality {
      *
      * @see BigInteger#nextProbablePrime()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.294 -0500", hash_original_method = "03EAD52EF6C4F384E7E8361BBED5D4F8", hash_generated_method = "1C5C9667967D12828A8772423BE465C9")
-    static BigInteger nextProbablePrime(BigInteger n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.698 -0500", hash_original_method = "03EAD52EF6C4F384E7E8361BBED5D4F8", hash_generated_method = "1C5C9667967D12828A8772423BE465C9")
+    
+static BigInteger nextProbablePrime(BigInteger n) {
         // PRE: n >= 0
         int i, j;
 //        int certainty;
@@ -79,7 +80,7 @@ class Primality {
             startPoint.addPositiveInt(gapSize);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.292 -0500", hash_original_field = "C3DA734B26E9CB4D731987BCAE74BCEA", hash_generated_field = "C83F4D8599BBB0CEE3395F15A4E154B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.692 -0500", hash_original_field = "C3DA734B26E9CB4D731987BCAE74BCEA", hash_generated_field = "C83F4D8599BBB0CEE3395F15A4E154B6")
 
     private static final int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
             31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
@@ -95,13 +96,14 @@ class Primality {
             827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911,
             919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009,
             1013, 1019, 1021 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.293 -0500", hash_original_field = "E4B2B472C21ECCC0FAF6F73441D5C348", hash_generated_field = "694815BADD9AFBE18A40D6B05D39F7EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.695 -0500", hash_original_field = "E4B2B472C21ECCC0FAF6F73441D5C348", hash_generated_field = "694815BADD9AFBE18A40D6B05D39F7EA")
 
     private static final BigInteger BIprimes[] = new BigInteger[primes.length];
 
     /** Just to denote that this class can't be instantiated. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.291 -0500", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "3C90B9653382FF7F7553ECE11AC58DB1")
-    private Primality() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.688 -0500", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "3C90B9653382FF7F7553ECE11AC58DB1")
+    
+private Primality() {}
     static {
         for (int i = 0; i < primes.length; i++) {
             BIprimes[i] = BigInteger.valueOf(primes[i]);

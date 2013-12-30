@@ -10,8 +10,9 @@ public class DataLengthException extends RuntimeCryptoException {
     /**
      * base constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.845 -0500", hash_original_method = "FC0834C19CF17037D683010F152D90BB", hash_generated_method = "640E14C6DAC5BD895111CCF1A35ADC2C")
-    public DataLengthException()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.911 -0500", hash_original_method = "FC0834C19CF17037D683010F152D90BB", hash_generated_method = "640E14C6DAC5BD895111CCF1A35ADC2C")
+    
+public DataLengthException()
     {
     }
 
@@ -20,8 +21,9 @@ public class DataLengthException extends RuntimeCryptoException {
      *
      * @param message the message to be carried with the exception.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.846 -0500", hash_original_method = "DC74BD7370354E956783B762D3A498AE", hash_generated_method = "9AFF01BF9F54091F29523BD38AD6C2B1")
-    public DataLengthException(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.914 -0500", hash_original_method = "DC74BD7370354E956783B762D3A498AE", hash_generated_method = "9AFF01BF9F54091F29523BD38AD6C2B1")
+    
+public DataLengthException(
         String  message)
     {
         super(message);

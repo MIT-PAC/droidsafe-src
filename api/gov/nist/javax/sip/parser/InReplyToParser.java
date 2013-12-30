@@ -22,8 +22,9 @@ public class InReplyToParser extends HeaderParser {
      * Creates a new instance of InReplyToParser
      * @param inReplyTo the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.249 -0500", hash_original_method = "7EE0A4AE96DC703284542932FE729FBB", hash_generated_method = "D9BAA364E4896897364EC470C55B144D")
-    public InReplyToParser(String inReplyTo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.687 -0500", hash_original_method = "7EE0A4AE96DC703284542932FE729FBB", hash_generated_method = "D9BAA364E4896897364EC470C55B144D")
+    
+public InReplyToParser(String inReplyTo) {
         super(inReplyTo);
     }
 
@@ -31,8 +32,9 @@ public class InReplyToParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.251 -0500", hash_original_method = "513EEBB38452DE199EDFA3069C858F5F", hash_generated_method = "0D8B268B46F9A92E6178751B56CF0C2D")
-    protected InReplyToParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.691 -0500", hash_original_method = "513EEBB38452DE199EDFA3069C858F5F", hash_generated_method = "0D8B268B46F9A92E6178751B56CF0C2D")
+    
+protected InReplyToParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class InReplyToParser extends HeaderParser {
      * @return SIPHeader (InReplyToList object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.252 -0500", hash_original_method = "A68E0921F08E40A4FFD6BCC285B4B760", hash_generated_method = "8F8FF4F55B417D9FC34E9B3BBDC89DB8")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.694 -0500", hash_original_method = "A68E0921F08E40A4FFD6BCC285B4B760", hash_generated_method = "8F8FF4F55B417D9FC34E9B3BBDC89DB8")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("InReplyToParser.parse");

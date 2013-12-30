@@ -13,8 +13,9 @@ class Conversion {
 
 
     /** @see BigInteger#toString(int) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.009 -0500", hash_original_method = "772044A697B0A3955AAC66B382242312", hash_generated_method = "8807D038D38E6169705B33AF641BFDD7")
-    static String bigInteger2String(BigInteger val, int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.099 -0500", hash_original_method = "772044A697B0A3955AAC66B382242312", hash_generated_method = "8807D038D38E6169705B33AF641BFDD7")
+    
+static String bigInteger2String(BigInteger val, int radix) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -98,8 +99,9 @@ class Conversion {
      * @see BigInteger#toString()
      * @see BigDecimal#toString()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.012 -0500", hash_original_method = "ECCDDE8CF78405B2C7A885C17695063A", hash_generated_method = "4661E4799A0A89D7D8BA207A96FFB159")
-    static String toDecimalScaledString(BigInteger val, int scale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.104 -0500", hash_original_method = "ECCDDE8CF78405B2C7A885C17695063A", hash_generated_method = "4661E4799A0A89D7D8BA207A96FFB159")
+    
+static String toDecimalScaledString(BigInteger val, int scale) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -259,8 +261,9 @@ class Conversion {
     }
 
     /* can process only 32-bit numbers */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.014 -0500", hash_original_method = "201E7AEE63EBD628AB78F5CEAD89D42F", hash_generated_method = "9419F6C5515D327CC57BA5C463908593")
-    static String toDecimalScaledString(long value, int scale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.108 -0500", hash_original_method = "201E7AEE63EBD628AB78F5CEAD89D42F", hash_generated_method = "9419F6C5515D327CC57BA5C463908593")
+    
+static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;
         char[] result;
@@ -357,8 +360,9 @@ class Conversion {
         return result1.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.016 -0500", hash_original_method = "A8B9614249F094BD6D2B27571E6B35A9", hash_generated_method = "22949F2418B12D16283978E94EA6A0CC")
-    static long divideLongByBillion(long a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.111 -0500", hash_original_method = "A8B9614249F094BD6D2B27571E6B35A9", hash_generated_method = "22949F2418B12D16283978E94EA6A0CC")
+    
+static long divideLongByBillion(long a) {
         long quot;
         long rem;
 
@@ -382,8 +386,9 @@ class Conversion {
     }
 
     /** @see BigInteger#doubleValue() */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.017 -0500", hash_original_method = "FB6C73E4A3BD3BD2C5D2B6433E6DFD5C", hash_generated_method = "8C3F32ECEDDBA392345AB721DC818532")
-    static double bigInteger2Double(BigInteger val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.115 -0500", hash_original_method = "FB6C73E4A3BD3BD2C5D2B6433E6DFD5C", hash_generated_method = "8C3F32ECEDDBA392345AB721DC818532")
+    
+static double bigInteger2Double(BigInteger val) {
         val.prepareJavaRepresentation();
         // val.bitLength() < 64
         if ((val.numberLength < 2)
@@ -426,12 +431,12 @@ class Conversion {
         long result = resSign | exponent | mantissa;
         return Double.longBitsToDouble(result);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.005 -0500", hash_original_field = "3AA009C3AA22C32CFF003DDE778D0CCB", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.092 -0500", hash_original_field = "3AA009C3AA22C32CFF003DDE778D0CCB", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
 
     static final int[] digitFitInInt = { -1, -1, 31, 19, 15, 13, 11,
             11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6,
             6, 6, 6, 6, 6, 6, 6, 5 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.006 -0500", hash_original_field = "CD7097E492F5DF815D1022CD39139733", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.095 -0500", hash_original_field = "CD7097E492F5DF815D1022CD39139733", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
 
 
     static final int[] bigRadices = { -2147483648, 1162261467,
@@ -443,7 +448,8 @@ class Conversion {
             1291467969, 1544804416, 1838265625, 60466176 };
 
     /** Just to denote that this class can't be instantiated */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.004 -0500", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "94DED0337828532B8CFA714A972D6810")
-    private Conversion() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.089 -0500", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "94DED0337828532B8CFA714A972D6810")
+    
+private Conversion() {}
 }
 

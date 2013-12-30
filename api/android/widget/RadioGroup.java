@@ -18,27 +18,28 @@ import com.android.internal.R;
 
 
 public class RadioGroup extends LinearLayout {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.897 -0500", hash_original_field = "C47AF993A50B19E53756FB24F9912A08", hash_generated_field = "0E60C492BFE4F917273C3792086EBFC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.152 -0500", hash_original_field = "C47AF993A50B19E53756FB24F9912A08", hash_generated_field = "0E60C492BFE4F917273C3792086EBFC2")
 
     private int mCheckedId = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.898 -0500", hash_original_field = "8F07D72633256E02859E81595C975571", hash_generated_field = "03B71B077035EFD15E0CC238CED14ADB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.155 -0500", hash_original_field = "8F07D72633256E02859E81595C975571", hash_generated_field = "03B71B077035EFD15E0CC238CED14ADB")
 
     private CompoundButton.OnCheckedChangeListener mChildOnCheckedChangeListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.899 -0500", hash_original_field = "A5F2820840D9BCD08A2F8056CB86062F", hash_generated_field = "8EA8A86994F8653D806F8D39B40F3A7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.157 -0500", hash_original_field = "A5F2820840D9BCD08A2F8056CB86062F", hash_generated_field = "8EA8A86994F8653D806F8D39B40F3A7A")
 
     private boolean mProtectFromCheckedChange = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.899 -0500", hash_original_field = "1439B2658D0E6AECB31AD74173388CC7", hash_generated_field = "CADA2218212B45C2541514362AD86DC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.159 -0500", hash_original_field = "1439B2658D0E6AECB31AD74173388CC7", hash_generated_field = "CADA2218212B45C2541514362AD86DC5")
 
     private OnCheckedChangeListener mOnCheckedChangeListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.900 -0500", hash_original_field = "0B7FCC6D40B623480D6B038BC197F26E", hash_generated_field = "D6873107348DB82058DBF97E94E973A0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.161 -0500", hash_original_field = "0B7FCC6D40B623480D6B038BC197F26E", hash_generated_field = "D6873107348DB82058DBF97E94E973A0")
 
     private PassThroughHierarchyChangeListener mPassThroughListener;
 
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.901 -0500", hash_original_method = "3F150AF0F79E2D2E674BD2F6CDCB9019", hash_generated_method = "CD607C8AACC191FD2EFAD1CBF0C9253E")
-    public RadioGroup(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.164 -0500", hash_original_method = "3F150AF0F79E2D2E674BD2F6CDCB9019", hash_generated_method = "CD607C8AACC191FD2EFAD1CBF0C9253E")
+    
+public RadioGroup(Context context) {
         super(context);
         setOrientation(VERTICAL);
         init();
@@ -47,8 +48,9 @@ public class RadioGroup extends LinearLayout {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.902 -0500", hash_original_method = "90AD2839FB0C3C5CF6A003259AE74157", hash_generated_method = "69E782FDA7881A382953429DF0F9F7B4")
-    public RadioGroup(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.167 -0500", hash_original_method = "90AD2839FB0C3C5CF6A003259AE74157", hash_generated_method = "69E782FDA7881A382953429DF0F9F7B4")
+    
+public RadioGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         // retrieve selected radio button as requested by the user in the
@@ -68,8 +70,9 @@ public class RadioGroup extends LinearLayout {
         init();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.903 -0500", hash_original_method = "BF04917C1358A32EDE5746B4072D7D20", hash_generated_method = "092D531ED22915F12D228E20373014E8")
-    private void init() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.169 -0500", hash_original_method = "BF04917C1358A32EDE5746B4072D7D20", hash_generated_method = "092D531ED22915F12D228E20373014E8")
+    
+private void init() {
         mChildOnCheckedChangeListener = new CheckedStateTracker();
         mPassThroughListener = new PassThroughHierarchyChangeListener();
         super.setOnHierarchyChangeListener(mPassThroughListener);
@@ -78,9 +81,10 @@ public class RadioGroup extends LinearLayout {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.904 -0500", hash_original_method = "E023B2331F5B7D82E6BF896494CABA17", hash_generated_method = "AF74A4B1FE64A7C419FFF3963B6269E6")
-    @Override
-public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.172 -0500", hash_original_method = "E023B2331F5B7D82E6BF896494CABA17", hash_generated_method = "AF74A4B1FE64A7C419FFF3963B6269E6")
+    
+@Override
+    public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         // the user listener is delegated to our pass-through listener
         mPassThroughListener.mOnHierarchyChangeListener = listener;
     }
@@ -88,9 +92,10 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.905 -0500", hash_original_method = "DD6500FC505DB421A3CAF1F1EB2A0C5C", hash_generated_method = "267EBD4680E132898E3C56F6E7B22752")
-    @Override
-protected void onFinishInflate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.174 -0500", hash_original_method = "DD6500FC505DB421A3CAF1F1EB2A0C5C", hash_generated_method = "267EBD4680E132898E3C56F6E7B22752")
+    
+@Override
+    protected void onFinishInflate() {
         super.onFinishInflate();
 
         // checks the appropriate radio button as requested in the XML file
@@ -102,9 +107,10 @@ protected void onFinishInflate() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.906 -0500", hash_original_method = "CB461CEACD94E412C8E6191745000CDB", hash_generated_method = "B97E4410DC386F72E2A2E736E308EE13")
-    @Override
-public void addView(View child, int index, ViewGroup.LayoutParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.176 -0500", hash_original_method = "CB461CEACD94E412C8E6191745000CDB", hash_generated_method = "B97E4410DC386F72E2A2E736E308EE13")
+    
+@Override
+    public void addView(View child, int index, ViewGroup.LayoutParams params) {
         if (child instanceof RadioButton) {
             final RadioButton button = (RadioButton) child;
             if (button.isChecked()) {
@@ -130,8 +136,9 @@ public void addView(View child, int index, ViewGroup.LayoutParams params) {
      * @see #getCheckedRadioButtonId()
      * @see #clearCheck()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.907 -0500", hash_original_method = "09268A2A1BCE88884506BAA643569A97", hash_generated_method = "18261EA61F80E2DD498F7E8562AA92D5")
-    public void check(int id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.179 -0500", hash_original_method = "09268A2A1BCE88884506BAA643569A97", hash_generated_method = "18261EA61F80E2DD498F7E8562AA92D5")
+    
+public void check(int id) {
         // don't even bother
         if (id != -1 && (id == mCheckedId)) {
             return;
@@ -148,16 +155,18 @@ public void addView(View child, int index, ViewGroup.LayoutParams params) {
         setCheckedId(id);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.908 -0500", hash_original_method = "5FA05BD652ABFE7F3AF547784FD6946B", hash_generated_method = "1ABE797A75A958D4D9D46CFE872E6665")
-    private void setCheckedId(int id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.181 -0500", hash_original_method = "5FA05BD652ABFE7F3AF547784FD6946B", hash_generated_method = "1ABE797A75A958D4D9D46CFE872E6665")
+    
+private void setCheckedId(int id) {
         mCheckedId = id;
         if (mOnCheckedChangeListener != null) {
             mOnCheckedChangeListener.onCheckedChanged(this, mCheckedId);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.909 -0500", hash_original_method = "C9C9D7D4FE388186AB4F88F5226CFA81", hash_generated_method = "ACEF9C7829489C0561227FBD2BF1F5A5")
-    private void setCheckedStateForView(int viewId, boolean checked) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.183 -0500", hash_original_method = "C9C9D7D4FE388186AB4F88F5226CFA81", hash_generated_method = "ACEF9C7829489C0561227FBD2BF1F5A5")
+    
+private void setCheckedStateForView(int viewId, boolean checked) {
         View checkedView = findViewById(viewId);
         if (checkedView != null && checkedView instanceof RadioButton) {
             ((RadioButton) checkedView).setChecked(checked);
@@ -173,8 +182,9 @@ public void addView(View child, int index, ViewGroup.LayoutParams params) {
      * @see #check(int)
      * @see #clearCheck()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.910 -0500", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "CA799BFEF6959DBCC5E4B26BE6AA9F99")
-    public int getCheckedRadioButtonId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.185 -0500", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "CA799BFEF6959DBCC5E4B26BE6AA9F99")
+    
+public int getCheckedRadioButtonId() {
         return mCheckedId;
     }
 
@@ -186,8 +196,9 @@ public void addView(View child, int index, ViewGroup.LayoutParams params) {
      * @see #check(int)
      * @see #getCheckedRadioButtonId()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.910 -0500", hash_original_method = "E28523184AF4023EBEA953058E4D04A2", hash_generated_method = "5EC70AFE9558DD8C5492D929A49D4E3F")
-    public void clearCheck() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.187 -0500", hash_original_method = "E28523184AF4023EBEA953058E4D04A2", hash_generated_method = "5EC70AFE9558DD8C5492D929A49D4E3F")
+    
+public void clearCheck() {
         check(-1);
     }
 
@@ -197,32 +208,36 @@ public void addView(View child, int index, ViewGroup.LayoutParams params) {
      *
      * @param listener the callback to call on checked state change
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.911 -0500", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "2005422FD19D8F4D4652659CAEDD0423")
-    public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.189 -0500", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "2005422FD19D8F4D4652659CAEDD0423")
+    
+public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
     }
 
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.912 -0500", hash_original_method = "D352CF2A356795872216EFA2E7D695F4", hash_generated_method = "060B8431BC28B8585E3CB6FF3A98A5CD")
-    @Override
-public LayoutParams generateLayoutParams(AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.191 -0500", hash_original_method = "D352CF2A356795872216EFA2E7D695F4", hash_generated_method = "060B8431BC28B8585E3CB6FF3A98A5CD")
+    
+@Override
+    public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new RadioGroup.LayoutParams(getContext(), attrs);
     }
 
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.913 -0500", hash_original_method = "B6F650811616014198C7164725061E28", hash_generated_method = "F665D68F1DC1CA6C2EA0A47864080DB1")
-    @Override
-protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.193 -0500", hash_original_method = "B6F650811616014198C7164725061E28", hash_generated_method = "F665D68F1DC1CA6C2EA0A47864080DB1")
+    
+@Override
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         return p instanceof RadioGroup.LayoutParams;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.914 -0500", hash_original_method = "4DB39C46ED4EFC166BB2C749224E802D", hash_generated_method = "5CEB0C2180DDEEAAE00B4E9D2E5ABEEF")
-    @Override
-protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.196 -0500", hash_original_method = "4DB39C46ED4EFC166BB2C749224E802D", hash_generated_method = "5CEB0C2180DDEEAAE00B4E9D2E5ABEEF")
+    
+@Override
+    protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     }
 
@@ -231,40 +246,45 @@ protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.915 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
-        public LayoutParams(Context c, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.200 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
+        
+public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
         }
 
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.916 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
-        public LayoutParams(int w, int h) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.202 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
+        
+public LayoutParams(int w, int h) {
             super(w, h);
         }
 
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.917 -0500", hash_original_method = "A72C7A56D1748794301804B2844F1EFE", hash_generated_method = "D9C12FAB2BFA4A4083C418C192DB9624")
-        public LayoutParams(int w, int h, float initWeight) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.205 -0500", hash_original_method = "A72C7A56D1748794301804B2844F1EFE", hash_generated_method = "D9C12FAB2BFA4A4083C418C192DB9624")
+        
+public LayoutParams(int w, int h, float initWeight) {
             super(w, h, initWeight);
         }
 
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.918 -0500", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "AA7E78F64C1B2029CADFD7AA230FA359")
-        public LayoutParams(ViewGroup.LayoutParams p) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.208 -0500", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "AA7E78F64C1B2029CADFD7AA230FA359")
+        
+public LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
         }
 
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.923 -0500", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "A83E3EC70AE7CFFC0495D4E169E975D9")
-        public LayoutParams(MarginLayoutParams source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.211 -0500", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "A83E3EC70AE7CFFC0495D4E169E975D9")
+        
+public LayoutParams(MarginLayoutParams source) {
             super(source);
         }
 
@@ -278,9 +298,10 @@ protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
          * @param widthAttr the width attribute to fetch
          * @param heightAttr the height attribute to fetch
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.924 -0500", hash_original_method = "B48B8CC58D894F8848FAA9A802B21490", hash_generated_method = "2926E02E4D8CFF91F30DF8B86F4F32D9")
-        @Override
-protected void setBaseAttributes(TypedArray a,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.213 -0500", hash_original_method = "B48B8CC58D894F8848FAA9A802B21490", hash_generated_method = "2926E02E4D8CFF91F30DF8B86F4F32D9")
+        
+@Override
+        protected void setBaseAttributes(TypedArray a,
                 int widthAttr, int heightAttr) {
 
             if (a.hasValue(widthAttr)) {
@@ -308,8 +329,9 @@ protected void setBaseAttributes(TypedArray a,
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.926 -0500", hash_original_method = "E56141A548162EED06032B62A97D492B", hash_generated_method = "B91BC49251EAE47F445CC91D609B0303")
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.220 -0500", hash_original_method = "E56141A548162EED06032B62A97D492B", hash_generated_method = "B91BC49251EAE47F445CC91D609B0303")
+        
+public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             // prevents from infinite recursion
             if (mProtectFromCheckedChange) {
                 return;
@@ -331,7 +353,7 @@ protected void setBaseAttributes(TypedArray a,
 
     
     private class PassThroughHierarchyChangeListener implements ViewGroup.OnHierarchyChangeListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.928 -0500", hash_original_field = "D01F937FCB17217561DE5F8FD1984593", hash_generated_field = "ADB5398B42E06BDFAAB3C7B984E67131")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.225 -0500", hash_original_field = "D01F937FCB17217561DE5F8FD1984593", hash_generated_field = "ADB5398B42E06BDFAAB3C7B984E67131")
 
         private ViewGroup.OnHierarchyChangeListener mOnHierarchyChangeListener;
         
@@ -344,8 +366,9 @@ protected void setBaseAttributes(TypedArray a,
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.928 -0500", hash_original_method = "9AE0BCF025F178DCB126CF7F54B6A426", hash_generated_method = "2864E12F07F68E25F4C02B9CB0ACC8A4")
-        public void onChildViewAdded(View parent, View child) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.228 -0500", hash_original_method = "9AE0BCF025F178DCB126CF7F54B6A426", hash_generated_method = "2864E12F07F68E25F4C02B9CB0ACC8A4")
+        
+public void onChildViewAdded(View parent, View child) {
             if (parent == RadioGroup.this && child instanceof RadioButton) {
                 int id = child.getId();
                 // generates an id if it's missing
@@ -365,8 +388,9 @@ protected void setBaseAttributes(TypedArray a,
         /**
          * {@inheritDoc}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.929 -0500", hash_original_method = "14A14DEA096CEDEB26071DA272A91074", hash_generated_method = "92A3E8C44EC42C5D25360940F92B1BD8")
-        public void onChildViewRemoved(View parent, View child) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.230 -0500", hash_original_method = "14A14DEA096CEDEB26071DA272A91074", hash_generated_method = "92A3E8C44EC42C5D25360940F92B1BD8")
+        
+public void onChildViewRemoved(View parent, View child) {
             if (parent == RadioGroup.this && child instanceof RadioButton) {
                 ((RadioButton) child).setOnCheckedChangeWidgetListener(null);
             }

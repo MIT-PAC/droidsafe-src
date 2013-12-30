@@ -42,8 +42,9 @@ public class ActivityCompat {
      * @param activity Invalidate the options menu of this activity
      * @return true if this operation was supported and it completed; false if it was not available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.977 -0500", hash_original_method = "AFEC59B988F821DE139FCC1A106B0231", hash_generated_method = "237A008A3D9327234FB134E5D5B8BBAA")
-    public static boolean invalidateOptionsMenu(Activity activity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.913 -0500", hash_original_method = "AFEC59B988F821DE139FCC1A106B0231", hash_generated_method = "237A008A3D9327234FB134E5D5B8BBAA")
+    
+public static boolean invalidateOptionsMenu(Activity activity) {
         if (Build.VERSION.SDK_INT >= 11) {
             ActivityCompatHoneycomb.invalidateOptionsMenu(activity);
             return true;
@@ -76,8 +77,9 @@ public class ActivityCompat {
      *                length-1 will correspond to the top activity on the resulting task stack.
      * @return true if the underlying API was available and the call was successful, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.978 -0500", hash_original_method = "F795553E3E2863CD60C70A0480C00F05", hash_generated_method = "9849AA69ACB5B2607449DBE34ECE3361")
-    public static boolean startActivities(Activity activity, Intent[] intents) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.915 -0500", hash_original_method = "F795553E3E2863CD60C70A0480C00F05", hash_generated_method = "9849AA69ACB5B2607449DBE34ECE3361")
+    
+public static boolean startActivities(Activity activity, Intent[] intents) {
         if (Build.VERSION.SDK_INT >= 11) {
             ActivityCompatHoneycomb.startActivities(activity, intents);
             return true;

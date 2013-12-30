@@ -131,7 +131,7 @@ import javax.sip.header.WarningHeader;
 
 
 public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.215 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "0D2878F1D6B0CD805C869443DA7FE75E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.119 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "0D2878F1D6B0CD805C869443DA7FE75E")
 
     private boolean stripAddressScopeZones = false;
     
@@ -144,8 +144,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     /**
      * Default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.316 -0500", hash_original_method = "EA4ABB94B4CFEF029E31D8F450F44C66", hash_generated_method = "7C59928D1BF5C24D54A1BBDB8351FCF2")
-    public HeaderFactoryImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.398 -0500", hash_original_method = "EA4ABB94B4CFEF029E31D8F450F44C66", hash_generated_method = "7C59928D1BF5C24D54A1BBDB8351FCF2")
+    
+public HeaderFactoryImpl() {
         stripAddressScopeZones
             = Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
     }
@@ -156,8 +157,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * debugging ).
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.216 -0500", hash_original_method = "9BEACA878DCF694953AD8141227DB60F", hash_generated_method = "F632BF1452A4CEE092D75156519D0C5E")
-    public void setPrettyEncoding(boolean flag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.122 -0500", hash_original_method = "9BEACA878DCF694953AD8141227DB60F", hash_generated_method = "F632BF1452A4CEE092D75156519D0C5E")
+    
+public void setPrettyEncoding(boolean flag) {
         SIPHeaderList.setPrettyEncode(flag);
     }
 
@@ -170,8 +172,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     * unexpectedly while parsing the encoding value.
     * @return the newly created AcceptEncodingHeader object.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.217 -0500", hash_original_method = "58113BBBA3D76308CFB19C46D0FF7A27", hash_generated_method = "4ADDCA2C43F67377B35C89EE4966ED54")
-    public AcceptEncodingHeader createAcceptEncodingHeader(String encoding)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.125 -0500", hash_original_method = "58113BBBA3D76308CFB19C46D0FF7A27", hash_generated_method = "4ADDCA2C43F67377B35C89EE4966ED54")
+    
+public AcceptEncodingHeader createAcceptEncodingHeader(String encoding)
         throws ParseException {
         if (encoding == null)
             throw new NullPointerException("the encoding parameter is null");
@@ -190,8 +193,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the content type or content subtype value.
      * @return the newly created AcceptHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.218 -0500", hash_original_method = "3FEA70547EDCF31E1AA086D3362AC6CE", hash_generated_method = "4B1983FBB805BAAF80775A2DCEAE6D38")
-    public AcceptHeader createAcceptHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.128 -0500", hash_original_method = "3FEA70547EDCF31E1AA086D3362AC6CE", hash_generated_method = "4B1983FBB805BAAF80775A2DCEAE6D38")
+    
+public AcceptHeader createAcceptHeader(
         String contentType,
         String contentSubType)
         throws ParseException {
@@ -211,8 +215,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @param language - the new Locale value of the language
      * @return the newly created AcceptLanguageHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.219 -0500", hash_original_method = "5AF5E9D92982780781CC81035C3C1529", hash_generated_method = "24ECF7D91B9CA37241100F960164BEB1")
-    public AcceptLanguageHeader createAcceptLanguageHeader(Locale language) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.131 -0500", hash_original_method = "5AF5E9D92982780781CC81035C3C1529", hash_generated_method = "24ECF7D91B9CA37241100F960164BEB1")
+    
+public AcceptLanguageHeader createAcceptLanguageHeader(Locale language) {
         if (language == null)
             throw new NullPointerException("null arg");
         AcceptLanguage acceptLanguage = new AcceptLanguage();
@@ -228,8 +233,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created AlertInfoHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.220 -0500", hash_original_method = "3E0D5311E2AF98CBAC12E04C1647AAA5", hash_generated_method = "E6B283644A8BA7769E8D561B4AED32BB")
-    public AlertInfoHeader createAlertInfoHeader(URI alertInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.134 -0500", hash_original_method = "3E0D5311E2AF98CBAC12E04C1647AAA5", hash_generated_method = "E6B283644A8BA7769E8D561B4AED32BB")
+    
+public AlertInfoHeader createAlertInfoHeader(URI alertInfo) {
         if (alertInfo == null)
             throw new NullPointerException("null arg alertInfo");
         AlertInfo a = new AlertInfo();
@@ -247,8 +253,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created AllowEventsHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.221 -0500", hash_original_method = "7A8DE3D3022A3669E75EC61B4D0B5F19", hash_generated_method = "DEA02F1853780F13659D188767E49E7A")
-    public AllowEventsHeader createAllowEventsHeader(String eventType)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.137 -0500", hash_original_method = "7A8DE3D3022A3669E75EC61B4D0B5F19", hash_generated_method = "DEA02F1853780F13659D188767E49E7A")
+    
+public AllowEventsHeader createAllowEventsHeader(String eventType)
         throws ParseException {
         if (eventType == null)
             throw new NullPointerException("null arg eventType");
@@ -265,8 +272,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the method value.
      * @return the newly created AllowHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.222 -0500", hash_original_method = "C562ECE8E2158A54C27A4525D88FEA63", hash_generated_method = "63B9FB84CB44C042143E43DCB8FC5923")
-    public AllowHeader createAllowHeader(String method) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.140 -0500", hash_original_method = "C562ECE8E2158A54C27A4525D88FEA63", hash_generated_method = "63B9FB84CB44C042143E43DCB8FC5923")
+    
+public AllowHeader createAllowHeader(String method) throws ParseException {
         if (method == null)
             throw new NullPointerException("null arg method");
         Allow allow = new Allow();
@@ -285,8 +293,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created AuthenticationInfoHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.223 -0500", hash_original_method = "E72D81A306A857A102E9D4437AB18CA6", hash_generated_method = "7865E9FC50251318513C5BE7BE5FFC44")
-    public AuthenticationInfoHeader createAuthenticationInfoHeader(String response)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.143 -0500", hash_original_method = "E72D81A306A857A102E9D4437AB18CA6", hash_generated_method = "7865E9FC50251318513C5BE7BE5FFC44")
+    
+public AuthenticationInfoHeader createAuthenticationInfoHeader(String response)
         throws ParseException {
         if (response == null)
             throw new NullPointerException("null arg response");
@@ -305,8 +314,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the scheme value.
      * @return the newly created AuthorizationHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.225 -0500", hash_original_method = "F250EC80C8CD1CBE5FF237A98CBD8CD0", hash_generated_method = "CB87B5E2DA0BE74731188AC23FFB4D66")
-    public AuthorizationHeader createAuthorizationHeader(String scheme)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.147 -0500", hash_original_method = "F250EC80C8CD1CBE5FF237A98CBD8CD0", hash_generated_method = "CB87B5E2DA0BE74731188AC23FFB4D66")
+    
+public AuthorizationHeader createAuthorizationHeader(String scheme)
         throws ParseException {
         if (scheme == null)
             throw new NullPointerException("null arg scheme ");
@@ -328,8 +338,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the method value.
      * @return the newly created CSeqHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.226 -0500", hash_original_method = "9707416B5040BCEA07917ADCBF33DA70", hash_generated_method = "BD36747DA6AC46D7BD2660400A684EF2")
-    public CSeqHeader createCSeqHeader( long sequenceNumber, String method)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.150 -0500", hash_original_method = "9707416B5040BCEA07917ADCBF33DA70", hash_generated_method = "BD36747DA6AC46D7BD2660400A684EF2")
+    
+public CSeqHeader createCSeqHeader( long sequenceNumber, String method)
         throws ParseException, InvalidArgumentException {
         if (sequenceNumber < 0)
             throw new InvalidArgumentException("bad arg " + sequenceNumber);
@@ -346,8 +357,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * For backwards compatibility, also accept int
      * @deprecated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.228 -0500", hash_original_method = "332D5DD16F528ACCDED76BFE26F4F243", hash_generated_method = "116978D5ECE6F115C01EBBBAF952AACA")
-    public CSeqHeader createCSeqHeader( int sequenceNumber, String method)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.152 -0500", hash_original_method = "332D5DD16F528ACCDED76BFE26F4F243", hash_generated_method = "116978D5ECE6F115C01EBBBAF952AACA")
+    
+public CSeqHeader createCSeqHeader( int sequenceNumber, String method)
         throws ParseException, InvalidArgumentException {
         return this.createCSeqHeader( (long) sequenceNumber, method );
     }
@@ -360,8 +372,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the callId value.
      * @return the newly created CallIdHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.229 -0500", hash_original_method = "0CB560808F252622C176039BC6E86FF7", hash_generated_method = "60C55E1F0F57974C53272E8EC79F9AE8")
-    public CallIdHeader createCallIdHeader(String callId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.155 -0500", hash_original_method = "0CB560808F252622C176039BC6E86FF7", hash_generated_method = "60C55E1F0F57974C53272E8EC79F9AE8")
+    
+public CallIdHeader createCallIdHeader(String callId)
         throws ParseException {
         if (callId == null)
             throw new NullPointerException("null arg callId");
@@ -376,8 +389,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @param callInfo The new string value of the callInfo.
      * @return the newly created CallInfoHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.230 -0500", hash_original_method = "8867B6CA9EB8DB8DAA3F991D7B0AD5D9", hash_generated_method = "1651370205F0B14DD8D601CDE34C8D81")
-    public CallInfoHeader createCallInfoHeader(URI callInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.158 -0500", hash_original_method = "8867B6CA9EB8DB8DAA3F991D7B0AD5D9", hash_generated_method = "1651370205F0B14DD8D601CDE34C8D81")
+    
+public CallInfoHeader createCallInfoHeader(URI callInfo) {
         if (callInfo == null)
             throw new NullPointerException("null arg callInfo");
 
@@ -392,8 +406,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @param address - the new Address value of the address.
      * @return the newly created ContactHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.231 -0500", hash_original_method = "45EF0D9994A51A34EA10DF4A185E8F21", hash_generated_method = "2619631381D97BC4F9BCEC4E74E8BD78")
-    public ContactHeader createContactHeader(Address address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.161 -0500", hash_original_method = "45EF0D9994A51A34EA10DF4A185E8F21", hash_generated_method = "2619631381D97BC4F9BCEC4E74E8BD78")
+    
+public ContactHeader createContactHeader(Address address) {
         if (address == null)
             throw new NullPointerException("null arg address");
         Contact contact = new Contact();
@@ -415,8 +430,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     *
     * @return the newly created wildcard ContactHeader.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.232 -0500", hash_original_method = "5873C88FB18B86DA11D334099F5AE064", hash_generated_method = "A09433F3D27BC274B9CEE81390A27CFC")
-    public ContactHeader createContactHeader() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.164 -0500", hash_original_method = "5873C88FB18B86DA11D334099F5AE064", hash_generated_method = "A09433F3D27BC274B9CEE81390A27CFC")
+    
+public ContactHeader createContactHeader() {
         Contact contact = new Contact();
         contact.setWildCardFlag(true);
         contact.setExpires(0);
@@ -434,8 +450,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created ContentDispositionHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.233 -0500", hash_original_method = "CC352C2425871DC27A0C55CF39D4ABAB", hash_generated_method = "C7B47C8513D14DF9685682FBD153F45C")
-    public ContentDispositionHeader createContentDispositionHeader(String contentDisposition)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.167 -0500", hash_original_method = "CC352C2425871DC27A0C55CF39D4ABAB", hash_generated_method = "C7B47C8513D14DF9685682FBD153F45C")
+    
+public ContentDispositionHeader createContentDispositionHeader(String contentDisposition)
         throws ParseException {
         if (contentDisposition == null)
             throw new NullPointerException("null arg contentDisposition");
@@ -454,8 +471,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     * unexpectedly while parsing the encoding value.
     * @return the newly created ContentEncodingHeader object.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.234 -0500", hash_original_method = "090104ADCCDA5F259494E038435257D1", hash_generated_method = "44967D4371B86643EEA5A7B1E742DF94")
-    public ContentEncodingHeader createContentEncodingHeader(String encoding)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.175 -0500", hash_original_method = "090104ADCCDA5F259494E038435257D1", hash_generated_method = "44967D4371B86643EEA5A7B1E742DF94")
+    
+public ContentEncodingHeader createContentEncodingHeader(String encoding)
         throws ParseException {
         if (encoding == null)
             throw new NullPointerException("null encoding");
@@ -473,8 +491,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created ContentLanguageHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.235 -0500", hash_original_method = "CD027E2457CF527330FF9F4C0A972B91", hash_generated_method = "A01A741425EF2E0926BFA778BF4AFACC")
-    public ContentLanguageHeader createContentLanguageHeader(Locale contentLanguage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.179 -0500", hash_original_method = "CD027E2457CF527330FF9F4C0A972B91", hash_generated_method = "A01A741425EF2E0926BFA778BF4AFACC")
+    
+public ContentLanguageHeader createContentLanguageHeader(Locale contentLanguage) {
         if (contentLanguage == null)
             throw new NullPointerException("null arg contentLanguage");
         ContentLanguage c = new ContentLanguage();
@@ -491,8 +510,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * than zero.
      * @return the newly created ContentLengthHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.236 -0500", hash_original_method = "DA3B5EC62F3E30804B07AD592D303E3E", hash_generated_method = "C581C5630CD37B1611A79974E1D1D0BE")
-    public ContentLengthHeader createContentLengthHeader(int contentLength)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.181 -0500", hash_original_method = "DA3B5EC62F3E30804B07AD592D303E3E", hash_generated_method = "C581C5630CD37B1611A79974E1D1D0BE")
+    
+public ContentLengthHeader createContentLengthHeader(int contentLength)
         throws InvalidArgumentException {
         if (contentLength < 0)
             throw new InvalidArgumentException("bad contentLength");
@@ -512,8 +532,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the content type or content subtype value.
      * @return the newly created ContentTypeHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.238 -0500", hash_original_method = "BF42B4FF2E7F96D2FA4773C6E514B79D", hash_generated_method = "CB2C94B316DEDEA4A30B30A937886F41")
-    public ContentTypeHeader createContentTypeHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.184 -0500", hash_original_method = "BF42B4FF2E7F96D2FA4773C6E514B79D", hash_generated_method = "CB2C94B316DEDEA4A30B30A937886F41")
+    
+public ContentTypeHeader createContentTypeHeader(
         String contentType,
         String contentSubType)
         throws ParseException {
@@ -531,8 +552,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     * @param date - the new Calender value of the date.
     * @return the newly created DateHeader object.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.239 -0500", hash_original_method = "F3D0948AB2AB5DCB4D46B0F9C4754A1D", hash_generated_method = "2DA6945439286EF6E87FA0E912C22609")
-    public DateHeader createDateHeader(Calendar date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.187 -0500", hash_original_method = "F3D0948AB2AB5DCB4D46B0F9C4754A1D", hash_generated_method = "2DA6945439286EF6E87FA0E912C22609")
+    
+public DateHeader createDateHeader(Calendar date) {
         SIPDateHeader d = new SIPDateHeader();
         if (date == null)
             throw new NullPointerException("null date");
@@ -550,8 +572,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created EventHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.240 -0500", hash_original_method = "7FD58797EECF83FE34BEE1F3B093BC46", hash_generated_method = "3712E6BE7ED8D8AF9BBA7E5263530F4C")
-    public EventHeader createEventHeader(String eventType)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.190 -0500", hash_original_method = "7FD58797EECF83FE34BEE1F3B093BC46", hash_generated_method = "3712E6BE7ED8D8AF9BBA7E5263530F4C")
+    
+public EventHeader createEventHeader(String eventType)
         throws ParseException {
         if (eventType == null)
             throw new NullPointerException("null eventType");
@@ -569,8 +592,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * than zero.
      * @return the newly created ExpiresHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.241 -0500", hash_original_method = "1A307AD1BD02E7BD6299AF40D811E5D5", hash_generated_method = "08918995EB82EDD3A70D4A64ED663891")
-    public ExpiresHeader createExpiresHeader(int expires)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.193 -0500", hash_original_method = "1A307AD1BD02E7BD6299AF40D811E5D5", hash_generated_method = "08918995EB82EDD3A70D4A64ED663891")
+    
+public ExpiresHeader createExpiresHeader(int expires)
         throws InvalidArgumentException {
         if (expires < 0)
             throw new InvalidArgumentException("bad value " + expires);
@@ -590,8 +614,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the name or value values.
      * @return the newly created ExtensionHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.242 -0500", hash_original_method = "C38CB4735B94E96E0C6FB81DC8E60CBF", hash_generated_method = "5C1F890CCF751902F2531EF1594E7667")
-    public javax.sip.header.ExtensionHeader createExtensionHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.197 -0500", hash_original_method = "C38CB4735B94E96E0C6FB81DC8E60CBF", hash_generated_method = "5C1F890CCF751902F2531EF1594E7667")
+    
+public javax.sip.header.ExtensionHeader createExtensionHeader(
         String name,
         String value)
         throws ParseException {
@@ -616,8 +641,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the tag value.
      * @return the newly created FromHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.243 -0500", hash_original_method = "E3876C81F77C4C65824998CB51869857", hash_generated_method = "1171480E4D0A7406002DC8F060F5B518")
-    public FromHeader createFromHeader(Address address, String tag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.200 -0500", hash_original_method = "E3876C81F77C4C65824998CB51869857", hash_generated_method = "1171480E4D0A7406002DC8F060F5B518")
+    
+public FromHeader createFromHeader(Address address, String tag)
         throws ParseException {
         if (address == null)
             throw new NullPointerException("null address arg");
@@ -639,8 +665,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created InReplyToHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.244 -0500", hash_original_method = "4DE074146D6A81FB201A39A399764E9F", hash_generated_method = "F7FB78044DCFD0CD6B05FD966C0EA7AC")
-    public InReplyToHeader createInReplyToHeader(String callId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.203 -0500", hash_original_method = "4DE074146D6A81FB201A39A399764E9F", hash_generated_method = "F7FB78044DCFD0CD6B05FD966C0EA7AC")
+    
+public InReplyToHeader createInReplyToHeader(String callId)
         throws ParseException {
         if (callId == null)
             throw new NullPointerException("null callId arg");
@@ -658,8 +685,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     * than zero or greater than 255.
     * @return the newly created MaxForwardsHeader object.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.245 -0500", hash_original_method = "2B62AE770A28023C5424C7B7718E4BD4", hash_generated_method = "452226191162440A69C61CCC2956DB5F")
-    public MaxForwardsHeader createMaxForwardsHeader(int maxForwards)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.206 -0500", hash_original_method = "2B62AE770A28023C5424C7B7718E4BD4", hash_generated_method = "452226191162440A69C61CCC2956DB5F")
+    
+public MaxForwardsHeader createMaxForwardsHeader(int maxForwards)
         throws InvalidArgumentException {
         if (maxForwards < 0 || maxForwards > 255)
             throw new InvalidArgumentException(
@@ -681,8 +709,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created MimeVersionHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.246 -0500", hash_original_method = "623C745ED7578EC4227F3B15A38B5D4A", hash_generated_method = "B10F93C097FE82E158B0DB65EFE2067A")
-    public MimeVersionHeader createMimeVersionHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.209 -0500", hash_original_method = "623C745ED7578EC4227F3B15A38B5D4A", hash_generated_method = "B10F93C097FE82E158B0DB65EFE2067A")
+    
+public MimeVersionHeader createMimeVersionHeader(
         int majorVersion,
         int minorVersion)
         throws InvalidArgumentException {
@@ -705,8 +734,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created MinExpiresHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.247 -0500", hash_original_method = "F897D0FECB8A8CC74BFA504858C91B42", hash_generated_method = "20D805C70E663C57C461557042E0E3B3")
-    public MinExpiresHeader createMinExpiresHeader(int minExpires)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.212 -0500", hash_original_method = "F897D0FECB8A8CC74BFA504858C91B42", hash_generated_method = "20D805C70E663C57C461557042E0E3B3")
+    
+public MinExpiresHeader createMinExpiresHeader(int minExpires)
         throws InvalidArgumentException {
         if (minExpires < 0)
             throw new InvalidArgumentException("bad minExpires " + minExpires);
@@ -729,8 +759,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      *
      * pmusgrave
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.249 -0500", hash_original_method = "8EE941BB2D8E39A517F98D1ED3613B4D", hash_generated_method = "0C3FA5BA462F527FE7CBB3A7D0B35421")
-    public ExtensionHeader createMinSEHeader(int expires)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.215 -0500", hash_original_method = "8EE941BB2D8E39A517F98D1ED3613B4D", hash_generated_method = "0C3FA5BA462F527FE7CBB3A7D0B35421")
+    
+public ExtensionHeader createMinSEHeader(int expires)
         throws InvalidArgumentException {
         if (expires < 0)
             throw new InvalidArgumentException("bad value " + expires);
@@ -749,8 +780,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the organization value.
      * @return the newly created OrganizationHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.250 -0500", hash_original_method = "2F5DB311D13CB6144CC7B49271775C33", hash_generated_method = "41AF39E66C83ED832AC9F229D6F9164F")
-    public OrganizationHeader createOrganizationHeader(String organization)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.218 -0500", hash_original_method = "2F5DB311D13CB6144CC7B49271775C33", hash_generated_method = "41AF39E66C83ED832AC9F229D6F9164F")
+    
+public OrganizationHeader createOrganizationHeader(String organization)
         throws ParseException {
         if (organization == null)
             throw new NullPointerException("bad organization arg");
@@ -768,8 +800,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the priority value.
      * @return the newly created PriorityHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.251 -0500", hash_original_method = "085951AB405380C6C60E1EC174C5C855", hash_generated_method = "16376C82AD540DE0B3FF145F4013D4E5")
-    public PriorityHeader createPriorityHeader(String priority)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.221 -0500", hash_original_method = "085951AB405380C6C60E1EC174C5C855", hash_generated_method = "16376C82AD540DE0B3FF145F4013D4E5")
+    
+public PriorityHeader createPriorityHeader(String priority)
         throws ParseException {
         if (priority == null)
             throw new NullPointerException("bad priority arg");
@@ -788,8 +821,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the scheme value.
      * @return the newly created ProxyAuthenticateHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.252 -0500", hash_original_method = "E2D1E713D6EFBD9B5EF73CE359255B39", hash_generated_method = "1A53B31ADE594DF2C681C945212BEE94")
-    public ProxyAuthenticateHeader createProxyAuthenticateHeader(String scheme)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.224 -0500", hash_original_method = "E2D1E713D6EFBD9B5EF73CE359255B39", hash_generated_method = "1A53B31ADE594DF2C681C945212BEE94")
+    
+public ProxyAuthenticateHeader createProxyAuthenticateHeader(String scheme)
         throws ParseException {
         if (scheme == null)
             throw new NullPointerException("bad scheme arg");
@@ -808,8 +842,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the scheme value.
      * @return the newly created ProxyAuthorizationHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.253 -0500", hash_original_method = "E046B5DACDD94AD026F81045FF391CD1", hash_generated_method = "F17286D5428B6A5E43260B1B6BC9CB17")
-    public ProxyAuthorizationHeader createProxyAuthorizationHeader(String scheme)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.226 -0500", hash_original_method = "E046B5DACDD94AD026F81045FF391CD1", hash_generated_method = "F17286D5428B6A5E43260B1B6BC9CB17")
+    
+public ProxyAuthorizationHeader createProxyAuthorizationHeader(String scheme)
         throws ParseException {
         if (scheme == null)
             throw new NullPointerException("bad scheme arg");
@@ -828,8 +863,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the optionTag value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.254 -0500", hash_original_method = "A059B8FD47D8FC83321E2DEF4CB18490", hash_generated_method = "611D9F064A8B84D209095D30B8CFDDB5")
-    public ProxyRequireHeader createProxyRequireHeader(String optionTag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.229 -0500", hash_original_method = "A059B8FD47D8FC83321E2DEF4CB18490", hash_generated_method = "611D9F064A8B84D209095D30B8CFDDB5")
+    
+public ProxyRequireHeader createProxyRequireHeader(String optionTag)
         throws ParseException {
         if (optionTag == null)
             throw new NullPointerException("bad optionTag arg");
@@ -853,8 +889,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created RAckHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.255 -0500", hash_original_method = "42539302BE9490416DF1DC01B8BC3D99", hash_generated_method = "B308AE63B2AE7F6A862BBAB1359FA13C")
-    public RAckHeader createRAckHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.232 -0500", hash_original_method = "42539302BE9490416DF1DC01B8BC3D99", hash_generated_method = "B308AE63B2AE7F6A862BBAB1359FA13C")
+    
+public RAckHeader createRAckHeader(
         long rSeqNumber,
         long cSeqNumber,
         String method)
@@ -875,8 +912,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @deprecated
      * @see javax.sip.header.HeaderFactory#createRAckHeader(int, int, java.lang.String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.256 -0500", hash_original_method = "B44C2BD23DFFCB51A992C42D93BADE4E", hash_generated_method = "2CADF926ED6409AFC24EC6CAF3D74F33")
-    public RAckHeader createRAckHeader(int rSeqNumber, int cSeqNumber, String method) throws InvalidArgumentException, ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.237 -0500", hash_original_method = "B44C2BD23DFFCB51A992C42D93BADE4E", hash_generated_method = "2CADF926ED6409AFC24EC6CAF3D74F33")
+    
+public RAckHeader createRAckHeader(int rSeqNumber, int cSeqNumber, String method) throws InvalidArgumentException, ParseException {
 
         return createRAckHeader((long)rSeqNumber, (long)cSeqNumber, method);
     }
@@ -886,8 +924,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @deprecated
      * @see javax.sip.header.HeaderFactory#createRSeqHeader(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.257 -0500", hash_original_method = "38086BF4D4EB3CE5AB4BF7772F8EACF2", hash_generated_method = "AB81220B2482779995348ED5405A3957")
-    public RSeqHeader createRSeqHeader(int sequenceNumber) throws InvalidArgumentException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.239 -0500", hash_original_method = "38086BF4D4EB3CE5AB4BF7772F8EACF2", hash_generated_method = "AB81220B2482779995348ED5405A3957")
+    
+public RSeqHeader createRSeqHeader(int sequenceNumber) throws InvalidArgumentException {
 
         return createRSeqHeader((long) sequenceNumber) ;
     }
@@ -901,8 +940,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created RSeqHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.258 -0500", hash_original_method = "CA4CA07B31DF6CB609C05636F40DB22F", hash_generated_method = "F1656D64C351B2C62FC72407CC65AFFB")
-    public RSeqHeader createRSeqHeader(long sequenceNumber)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.242 -0500", hash_original_method = "CA4CA07B31DF6CB609C05636F40DB22F", hash_generated_method = "F1656D64C351B2C62FC72407CC65AFFB")
+    
+public RSeqHeader createRSeqHeader(long sequenceNumber)
         throws InvalidArgumentException {
         if (sequenceNumber < 0)
             throw new InvalidArgumentException(
@@ -924,8 +964,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created ReasonHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.259 -0500", hash_original_method = "57AD0B4E4FE03197F2B52972D6060CBA", hash_generated_method = "40A032A3A8D301529979F4966F793C9E")
-    public ReasonHeader createReasonHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.245 -0500", hash_original_method = "57AD0B4E4FE03197F2B52972D6060CBA", hash_generated_method = "40A032A3A8D301529979F4966F793C9E")
+    
+public ReasonHeader createReasonHeader(
         String protocol,
         int cause,
         String text)
@@ -948,8 +989,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     * @param address - the new Address object of the address.
     * @return the newly created RecordRouteHeader object.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.260 -0500", hash_original_method = "6DA29D8692407706B9B05391AF333993", hash_generated_method = "56F038CB529152D185A2CBDA69DBA81D")
-    public RecordRouteHeader createRecordRouteHeader(Address address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.248 -0500", hash_original_method = "6DA29D8692407706B9B05391AF333993", hash_generated_method = "56F038CB529152D185A2CBDA69DBA81D")
+    
+public RecordRouteHeader createRecordRouteHeader(Address address) {
         if ( address == null) throw new NullPointerException("Null argument!");
         RecordRoute recordRoute = new RecordRoute();
         recordRoute.setAddress(address);
@@ -964,8 +1006,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     * @return the newly created ReplyToHeader object.
     * @since v1.1
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.261 -0500", hash_original_method = "4393C033D6B63EF338EB93DE3E753573", hash_generated_method = "5DB2D9E57BFAA6FD56609D8C5F508B28")
-    public ReplyToHeader createReplyToHeader(Address address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.251 -0500", hash_original_method = "4393C033D6B63EF338EB93DE3E753573", hash_generated_method = "5DB2D9E57BFAA6FD56609D8C5F508B28")
+    
+public ReplyToHeader createReplyToHeader(Address address) {
         if (address == null)
             throw new NullPointerException("null address");
         ReplyTo replyTo = new ReplyTo();
@@ -983,8 +1026,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the List of optionTag value.
      * @return the newly created RequireHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.263 -0500", hash_original_method = "F65B5EA444DA08358E800CD7B469501A", hash_generated_method = "BD84134232A792C8DCFF472DF4074AE7")
-    public RequireHeader createRequireHeader(String optionTag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.254 -0500", hash_original_method = "F65B5EA444DA08358E800CD7B469501A", hash_generated_method = "BD84134232A792C8DCFF472DF4074AE7")
+    
+public RequireHeader createRequireHeader(String optionTag)
         throws ParseException {
         if (optionTag == null)
             throw new NullPointerException("null optionTag");
@@ -1003,8 +1047,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * than zero.
      * @return the newly created RetryAfterHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.264 -0500", hash_original_method = "43D5E8C96E4C1ED3ED5B8AD5C39C801C", hash_generated_method = "B66E712B9FB43D7AC2C0E83502131686")
-    public RetryAfterHeader createRetryAfterHeader(int retryAfter)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.257 -0500", hash_original_method = "43D5E8C96E4C1ED3ED5B8AD5C39C801C", hash_generated_method = "B66E712B9FB43D7AC2C0E83502131686")
+    
+public RetryAfterHeader createRetryAfterHeader(int retryAfter)
         throws InvalidArgumentException {
         if (retryAfter < 0)
             throw new InvalidArgumentException("bad retryAfter arg");
@@ -1020,8 +1065,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @param address - the new Address object of the address.
      * @return the newly created RouteHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.265 -0500", hash_original_method = "03611E3BB30258B8EC4FDC9F783CBCCF", hash_generated_method = "75EED4D564C6A1FA0F492FBBD941CE61")
-    public RouteHeader createRouteHeader(Address address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.260 -0500", hash_original_method = "03611E3BB30258B8EC4FDC9F783CBCCF", hash_generated_method = "75EED4D564C6A1FA0F492FBBD941CE61")
+    
+public RouteHeader createRouteHeader(Address address) {
         if (address == null)
             throw new NullPointerException("null address arg");
         Route route = new Route();
@@ -1038,8 +1084,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the product value.
      * @return the newly created ServerHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.266 -0500", hash_original_method = "65AF02D93E753F97E0AF00F542D03529", hash_generated_method = "F29F21797D70C4B06E85B79AB9E1968B")
-    public ServerHeader createServerHeader(List product)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.263 -0500", hash_original_method = "65AF02D93E753F97E0AF00F542D03529", hash_generated_method = "F29F21797D70C4B06E85B79AB9E1968B")
+    
+public ServerHeader createServerHeader(List product)
         throws ParseException {
         if (product == null)
             throw new NullPointerException("null productList arg");
@@ -1057,8 +1104,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the subject value.
      * @return the newly created SubjectHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.267 -0500", hash_original_method = "288EA55C0FFC9E81469649B581E59F71", hash_generated_method = "F55F59D5712F53A7811C6D777FB2784B")
-    public SubjectHeader createSubjectHeader(String subject)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.266 -0500", hash_original_method = "288EA55C0FFC9E81469649B581E59F71", hash_generated_method = "F55F59D5712F53A7811C6D777FB2784B")
+    
+public SubjectHeader createSubjectHeader(String subject)
         throws ParseException {
         if (subject == null)
             throw new NullPointerException("null subject arg");
@@ -1078,8 +1126,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created SubscriptionStateHeader object.
      * @since v1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.268 -0500", hash_original_method = "9B68B72DA8144991BC14639C6BE11723", hash_generated_method = "8327BB6171ABB6B2BBE7C0886198BF4C")
-    public SubscriptionStateHeader createSubscriptionStateHeader(String subscriptionState)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.269 -0500", hash_original_method = "9B68B72DA8144991BC14639C6BE11723", hash_generated_method = "8327BB6171ABB6B2BBE7C0886198BF4C")
+    
+public SubscriptionStateHeader createSubscriptionStateHeader(String subscriptionState)
         throws ParseException {
         if (subscriptionState == null)
             throw new NullPointerException("null subscriptionState arg");
@@ -1098,8 +1147,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the optionTag value.
      * @return the newly created SupportedHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.269 -0500", hash_original_method = "589849ECCDAFDA20BE0DBE1D9A436669", hash_generated_method = "E3A560F8FEC6A0B6AED8F8CC16C5F534")
-    public SupportedHeader createSupportedHeader(String optionTag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.272 -0500", hash_original_method = "589849ECCDAFDA20BE0DBE1D9A436669", hash_generated_method = "E3A560F8FEC6A0B6AED8F8CC16C5F534")
+    
+public SupportedHeader createSupportedHeader(String optionTag)
         throws ParseException {
         if (optionTag == null)
             throw new NullPointerException("null optionTag arg");
@@ -1117,8 +1167,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * than zero.
      * @return the newly created TimeStampHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.270 -0500", hash_original_method = "380079DA7F92D6CF2CEA9086AA5F92D7", hash_generated_method = "62F810F2BCF68D3D445BB90D996DBF7B")
-    public TimeStampHeader createTimeStampHeader(float timeStamp)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.274 -0500", hash_original_method = "380079DA7F92D6CF2CEA9086AA5F92D7", hash_generated_method = "62F810F2BCF68D3D445BB90D996DBF7B")
+    
+public TimeStampHeader createTimeStampHeader(float timeStamp)
         throws InvalidArgumentException {
         if (timeStamp < 0)
             throw new IllegalArgumentException("illegal timeStamp");
@@ -1138,8 +1189,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the tag value.
      * @return the newly created ToHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.271 -0500", hash_original_method = "7928C6AF630E4BCE57D31FA4979B7453", hash_generated_method = "8EF7C6FA85B09C645E654C803E6CB6A8")
-    public ToHeader createToHeader(Address address, String tag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.277 -0500", hash_original_method = "7928C6AF630E4BCE57D31FA4979B7453", hash_generated_method = "8EF7C6FA85B09C645E654C803E6CB6A8")
+    
+public ToHeader createToHeader(Address address, String tag)
         throws ParseException {
         if (address == null)
             throw new NullPointerException("null address");
@@ -1160,8 +1212,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the List of optionTag value.
      * @return the newly created UnsupportedHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.272 -0500", hash_original_method = "9A62FFB59334167B71BC2FE402276C31", hash_generated_method = "D42C210D0000FD68DEC32966AF1098BB")
-    public UnsupportedHeader createUnsupportedHeader(String optionTag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.281 -0500", hash_original_method = "9A62FFB59334167B71BC2FE402276C31", hash_generated_method = "D42C210D0000FD68DEC32966AF1098BB")
+    
+public UnsupportedHeader createUnsupportedHeader(String optionTag)
         throws ParseException {
         if (optionTag == null)
             throw new NullPointerException(optionTag);
@@ -1179,8 +1232,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the product value.
      * @return the newly created UserAgentHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.273 -0500", hash_original_method = "0FDDC4550D32FE0A8E48193D044787BB", hash_generated_method = "B845E00C9CBC6D2C4107804420C92A12")
-    public UserAgentHeader createUserAgentHeader(List product)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.284 -0500", hash_original_method = "0FDDC4550D32FE0A8E48193D044787BB", hash_generated_method = "B845E00C9CBC6D2C4107804420C92A12")
+    
+public UserAgentHeader createUserAgentHeader(List product)
         throws ParseException {
 
         if (product == null)
@@ -1202,8 +1256,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the branch value.
      * @return the newly created ViaHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.275 -0500", hash_original_method = "B7A9F5DC521617567AEB2EDF2366DE24", hash_generated_method = "0EFB6A67DF9CE37072D3FACBB70497CD")
-    public ViaHeader createViaHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.287 -0500", hash_original_method = "B7A9F5DC521617567AEB2EDF2366DE24", hash_generated_method = "0EFB6A67DF9CE37072D3FACBB70497CD")
+    
+public ViaHeader createViaHeader(
         String host,
         int port,
         String transport,
@@ -1246,8 +1301,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * unexpectedly while parsing the scheme values.
      * @return the newly created WWWAuthenticateHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.276 -0500", hash_original_method = "EDE3AD5442B3DE671B6476C917BB6D0F", hash_generated_method = "0BD13C9317D8A307EA5DDA251AC3963A")
-    public WWWAuthenticateHeader createWWWAuthenticateHeader(String scheme)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.291 -0500", hash_original_method = "EDE3AD5442B3DE671B6476C917BB6D0F", hash_generated_method = "0BD13C9317D8A307EA5DDA251AC3963A")
+    
+public WWWAuthenticateHeader createWWWAuthenticateHeader(String scheme)
         throws ParseException {
         if (scheme == null)
             throw new NullPointerException("null scheme");
@@ -1270,8 +1326,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * the WarningHeader.
      * @return the newly created WarningHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.277 -0500", hash_original_method = "F34478A6D1616AB2836BA2A212AE0D49", hash_generated_method = "407CF276C84C9D1F86E52E8ABF982FBB")
-    public WarningHeader createWarningHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.294 -0500", hash_original_method = "F34478A6D1616AB2836BA2A212AE0D49", hash_generated_method = "407CF276C84C9D1F86E52E8ABF982FBB")
+    
+public WarningHeader createWarningHeader(
         String agent,
         int code,
         String comment)
@@ -1292,8 +1349,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @param errorInfo - the new URI value of the errorInfo.
      * @return the newly created ErrorInfoHeader object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.278 -0500", hash_original_method = "CB42C1424760C62123C05E2F8CB60B35", hash_generated_method = "D4E29284985BDC12CE5A30B884928967")
-    public ErrorInfoHeader createErrorInfoHeader(URI errorInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.297 -0500", hash_original_method = "CB42C1424760C62123C05E2F8CB60B35", hash_generated_method = "D4E29284985BDC12CE5A30B884928967")
+    
+public ErrorInfoHeader createErrorInfoHeader(URI errorInfo) {
         if (errorInfo == null)
             throw new NullPointerException("null arg");
         return new ErrorInfo((GenericURI) errorInfo);
@@ -1304,8 +1362,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Header should not have the trailng crlf.
      * @throws ParseException 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.280 -0500", hash_original_method = "7E6122EDAE408D205AF0C9E45A024F04", hash_generated_method = "73FD79D12E0BC58DBF740D0607743065")
-    public javax.sip.header.Header createHeader(String headerText) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.300 -0500", hash_original_method = "7E6122EDAE408D205AF0C9E45A024F04", hash_generated_method = "73FD79D12E0BC58DBF740D0607743065")
+    
+public javax.sip.header.Header createHeader(String headerText) throws ParseException {
         StringMsgParser smp = new StringMsgParser();
         SIPHeader sipHeader = smp.parseSIPHeader(headerText.trim());
         if (sipHeader instanceof SIPHeaderList) {
@@ -1341,8 +1400,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws ParseException
      * @return  the parsed sip header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.281 -0500", hash_original_method = "BE8A77015DA0080195A899A1BFDA2B08", hash_generated_method = "4DD51F69C4AFAD774B946588A2335384")
-    public javax.sip.header.Header createHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.303 -0500", hash_original_method = "BE8A77015DA0080195A899A1BFDA2B08", hash_generated_method = "4DD51F69C4AFAD774B946588A2335384")
+    
+public javax.sip.header.Header createHeader(
         String headerName,
         String headerValue)
         throws java.text.ParseException {
@@ -1364,8 +1424,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * of that type of header is not alowed.
      *@return a List containing the headers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.282 -0500", hash_original_method = "FDCDF9463F1CDDAF0BCBB63B8B4D05F5", hash_generated_method = "6F9F4BC4A555F6FA29F7EE824BCD7CBA")
-    public java.util.List createHeaders(String headers)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.306 -0500", hash_original_method = "FDCDF9463F1CDDAF0BCBB63B8B4D05F5", hash_generated_method = "6F9F4BC4A555F6FA29F7EE824BCD7CBA")
+    
+public java.util.List createHeaders(String headers)
         throws java.text.ParseException {
         if (headers == null)
             throw new NullPointerException("null arg!");
@@ -1382,8 +1443,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     /** Create a ReferTo Header.
      *@param address -- address for the header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.283 -0500", hash_original_method = "5541F8A2ED86060178CAD1F0D5BA2507", hash_generated_method = "9A8154AF2DB6006EE81316CA88E8859B")
-    public ReferToHeader createReferToHeader(Address address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.309 -0500", hash_original_method = "5541F8A2ED86060178CAD1F0D5BA2507", hash_generated_method = "9A8154AF2DB6006EE81316CA88E8859B")
+    
+public ReferToHeader createReferToHeader(Address address) {
         if (address == null)
             throw new NullPointerException("null address!");
         ReferTo referTo = new ReferTo();
@@ -1401,8 +1463,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * and add to HeaderFactory. - pmusgrave
 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.284 -0500", hash_original_method = "A51D0E58D36C2041DD351AE4FDD73BCF", hash_generated_method = "9C103DD34050B3EC7184403C7C7A4648")
-    public ReferredByHeader createReferredByHeader(Address address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.313 -0500", hash_original_method = "A51D0E58D36C2041DD351AE4FDD73BCF", hash_generated_method = "9C103DD34050B3EC7184403C7C7A4648")
+    
+public ReferredByHeader createReferredByHeader(Address address) {
         if (address == null)
             throw new NullPointerException("null address!");
         ReferredBy referredBy = new ReferredBy();
@@ -1417,8 +1480,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * and add to HeaderFactory. - pmusgrave
      * pmusgrave
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.285 -0500", hash_original_method = "E3BB57144A133C8AFDA0829EAE12FAAB", hash_generated_method = "3BF3976AD13BB809A78001ADD263A2CE")
-    public ReplacesHeader createReplacesHeader(String callId, String toTag,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.316 -0500", hash_original_method = "E3BB57144A133C8AFDA0829EAE12FAAB", hash_generated_method = "3BF3976AD13BB809A78001ADD263A2CE")
+    
+public ReplacesHeader createReplacesHeader(String callId, String toTag,
                 String fromTag) throws ParseException
     {
         Replaces replaces = new Replaces();
@@ -1433,8 +1497,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Create a Join header with a call Id, to and from tag.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.286 -0500", hash_original_method = "C42E665E40D735B4BFD234363CD8C238", hash_generated_method = "6FE2D9C0A2B717CDE23FE0708B3F64F1")
-    public JoinHeader createJoinHeader(String callId, String toTag,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.318 -0500", hash_original_method = "C42E665E40D735B4BFD234363CD8C238", hash_generated_method = "6FE2D9C0A2B717CDE23FE0708B3F64F1")
+    
+public JoinHeader createJoinHeader(String callId, String toTag,
                 String fromTag) throws ParseException
     {
         Join join = new Join();
@@ -1450,8 +1515,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * (non-Javadoc)
      * @see javax.sip.header.HeaderFactory#createSIPETagHeader(java.lang.String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.287 -0500", hash_original_method = "95F88F9209912EE6FCAFCB830227A87B", hash_generated_method = "FDD78E279AEF1A3D79ECF0365945D565")
-    public SIPETagHeader createSIPETagHeader(String etag) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.321 -0500", hash_original_method = "95F88F9209912EE6FCAFCB830227A87B", hash_generated_method = "FDD78E279AEF1A3D79ECF0365945D565")
+    
+public SIPETagHeader createSIPETagHeader(String etag) throws ParseException {
         return new SIPETag(etag);
     }
 
@@ -1459,8 +1525,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * (non-Javadoc)
      * @see javax.sip.header.HeaderFactory#createSIPIfMatchHeader(java.lang.String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.288 -0500", hash_original_method = "9EE2B60A802A938BDC15DDB307A8B1D7", hash_generated_method = "5BE88D8333E0CCC7319E74CE2496534D")
-    public SIPIfMatchHeader createSIPIfMatchHeader(String etag) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.324 -0500", hash_original_method = "9EE2B60A802A938BDC15DDB307A8B1D7", hash_generated_method = "5BE88D8333E0CCC7319E74CE2496534D")
+    
+public SIPIfMatchHeader createSIPIfMatchHeader(String etag) throws ParseException {
         return new SIPIfMatch(etag);
     }
 
@@ -1474,8 +1541,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * creates a P-Access-Network-Info header
      * @return newly created P-Access-Network-Info header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.289 -0500", hash_original_method = "5900AA55EC6D83D47F45CED3D37DDEC7", hash_generated_method = "CCC9F37081A68346A27EB06AC5AAD37C")
-    public PAccessNetworkInfoHeader createPAccessNetworkInfoHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.327 -0500", hash_original_method = "5900AA55EC6D83D47F45CED3D37DDEC7", hash_generated_method = "CCC9F37081A68346A27EB06AC5AAD37C")
+    
+public PAccessNetworkInfoHeader createPAccessNetworkInfoHeader()
     {
         PAccessNetworkInfo accessNetworkInfo = new PAccessNetworkInfo();
 
@@ -1490,8 +1558,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws ParseException
      * @throws NullPointerException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.290 -0500", hash_original_method = "7A9453157C5A8C4FD99B8F34DC853877", hash_generated_method = "1045EE4969ECD81E537D6973B265F1AF")
-    public PAssertedIdentityHeader createPAssertedIdentityHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.330 -0500", hash_original_method = "7A9453157C5A8C4FD99B8F34DC853877", hash_generated_method = "1045EE4969ECD81E537D6973B265F1AF")
+    
+public PAssertedIdentityHeader createPAssertedIdentityHeader(Address address)
         throws NullPointerException, ParseException
     {
         if (address == null)
@@ -1513,8 +1582,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws NullPointerException if the supplied address is null
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.291 -0500", hash_original_method = "4BD897B5832A55E4A60E9B49C4611708", hash_generated_method = "A56AA34F6163DB735767BAFF47EB85B0")
-    public PAssociatedURIHeader createPAssociatedURIHeader(Address assocURI)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.333 -0500", hash_original_method = "4BD897B5832A55E4A60E9B49C4611708", hash_generated_method = "A56AA34F6163DB735767BAFF47EB85B0")
+    
+public PAssociatedURIHeader createPAssociatedURIHeader(Address assocURI)
     {
         if (assocURI == null)
         throw new NullPointerException("null associatedURI!");
@@ -1535,8 +1605,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws NullPointerException
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.293 -0500", hash_original_method = "FD713420BE4BC11FE9D9AB43BBBEAD30", hash_generated_method = "2457ABF9713E7ECE18E95E908033EB4B")
-    public PCalledPartyIDHeader createPCalledPartyIDHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.336 -0500", hash_original_method = "FD713420BE4BC11FE9D9AB43BBBEAD30", hash_generated_method = "2457ABF9713E7ECE18E95E908033EB4B")
+    
+public PCalledPartyIDHeader createPCalledPartyIDHeader(Address address)
     {
         if (address == null)
             throw new NullPointerException("null address!");
@@ -1553,8 +1624,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * P-Charging-Function-Addresses header
      * @return newly created P-Charging-Function-Addresses header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.294 -0500", hash_original_method = "F3DC851C781199B1B5D5ECAC93663797", hash_generated_method = "77352DEEEA7B933847DD36C7B723EE3F")
-    public PChargingFunctionAddressesHeader createPChargingFunctionAddressesHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.339 -0500", hash_original_method = "F3DC851C781199B1B5D5ECAC93663797", hash_generated_method = "77352DEEEA7B933847DD36C7B723EE3F")
+    
+public PChargingFunctionAddressesHeader createPChargingFunctionAddressesHeader()
     {
         PChargingFunctionAddresses cfa = new PChargingFunctionAddresses();
 
@@ -1569,8 +1641,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws NullPointerException
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.295 -0500", hash_original_method = "E82D256C40CCFC0E4431BA44734EBBF3", hash_generated_method = "6D5C7CC2F0D81500F711AEA9D1B3F8EF")
-    public PChargingVectorHeader createChargingVectorHeader(String icid)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.342 -0500", hash_original_method = "E82D256C40CCFC0E4431BA44734EBBF3", hash_generated_method = "6D5C7CC2F0D81500F711AEA9D1B3F8EF")
+    
+public PChargingVectorHeader createChargingVectorHeader(String icid)
         throws ParseException
     {
         if (icid == null)
@@ -1591,8 +1664,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws InvalidArgumentException
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.296 -0500", hash_original_method = "FB93C1554D708A44568E0208A3D181E0", hash_generated_method = "FC1E8895E9E654084A4957FF43CAA4B3")
-    public PMediaAuthorizationHeader createPMediaAuthorizationHeader(String token)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.345 -0500", hash_original_method = "FB93C1554D708A44568E0208A3D181E0", hash_generated_method = "FC1E8895E9E654084A4957FF43CAA4B3")
+    
+public PMediaAuthorizationHeader createPMediaAuthorizationHeader(String token)
         throws InvalidArgumentException, ParseException
     {
         if (token == null || token == "")
@@ -1612,8 +1686,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return newly created P-Preferred-Identity header
      * @throws NullPointerException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.297 -0500", hash_original_method = "3BA03116BEA38D71B8C38B4BA62E5B71", hash_generated_method = "5F3061FD2E1DF2232BFC4EDD62C08709")
-    public PPreferredIdentityHeader createPPreferredIdentityHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.348 -0500", hash_original_method = "3BA03116BEA38D71B8C38B4BA62E5B71", hash_generated_method = "5F3061FD2E1DF2232BFC4EDD62C08709")
+    
+public PPreferredIdentityHeader createPPreferredIdentityHeader(Address address)
     {
         if (address == null)
             throw new NullPointerException("null address!");
@@ -1629,8 +1704,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * P-Visited-Network-ID header
      * @return newly created P-Visited-Network-ID header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.298 -0500", hash_original_method = "B32CA202259A9B847AD818F044EE39DA", hash_generated_method = "52B75BB1D59F871626310C46024D7C11")
-    public PVisitedNetworkIDHeader createPVisitedNetworkIDHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.351 -0500", hash_original_method = "B32CA202259A9B847AD818F044EE39DA", hash_generated_method = "52B75BB1D59F871626310C46024D7C11")
+    
+public PVisitedNetworkIDHeader createPVisitedNetworkIDHeader()
     {
         PVisitedNetworkID visitedNetworkID = new PVisitedNetworkID();
 
@@ -1646,8 +1722,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws NullPointerException
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.299 -0500", hash_original_method = "537B18CC29F2C70486994281CB29500B", hash_generated_method = "6A482BE6A74E58339F6E34A315D068FB")
-    public PathHeader createPathHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.354 -0500", hash_original_method = "537B18CC29F2C70486994281CB29500B", hash_generated_method = "6A482BE6A74E58339F6E34A315D068FB")
+    
+public PathHeader createPathHeader(Address address)
     {
         if (address == null)
             throw new NullPointerException("null address!");
@@ -1666,8 +1743,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return newly created Privacy header
      * @throws NullPointerException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.300 -0500", hash_original_method = "85C1BF55B1F968333EFFBCF4DBC75BE6", hash_generated_method = "369026569CB74E2410F62F5387F7F141")
-    public PrivacyHeader createPrivacyHeader(String privacyType)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.357 -0500", hash_original_method = "85C1BF55B1F968333EFFBCF4DBC75BE6", hash_generated_method = "369026569CB74E2410F62F5387F7F141")
+    
+public PrivacyHeader createPrivacyHeader(String privacyType)
     {
         if (privacyType == null)
             throw new NullPointerException("null privacyType arg");
@@ -1685,8 +1763,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return newly created Service-Route header
      * @throws NullPointerException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.301 -0500", hash_original_method = "A7CA2EB6DD40139D85B6778D2C783F9F", hash_generated_method = "EC2C494CA659AFA06CA752F5FEFC3E49")
-    public ServiceRouteHeader createServiceRouteHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.360 -0500", hash_original_method = "A7CA2EB6DD40139D85B6778D2C783F9F", hash_generated_method = "EC2C494CA659AFA06CA752F5FEFC3E49")
+    
+public ServiceRouteHeader createServiceRouteHeader(Address address)
     {
         if (address == null)
             throw new NullPointerException("null address!");
@@ -1702,8 +1781,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Security-Server header
      * @return newly created Security-Server header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.303 -0500", hash_original_method = "7A3E4AE36777C6F2CF79A6B3882A3053", hash_generated_method = "A03BB373737BEB4EF11616B7687DED0D")
-    public SecurityServerHeader createSecurityServerHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.363 -0500", hash_original_method = "7A3E4AE36777C6F2CF79A6B3882A3053", hash_generated_method = "A03BB373737BEB4EF11616B7687DED0D")
+    
+public SecurityServerHeader createSecurityServerHeader()
     {
         SecurityServer secServer = new SecurityServer();
         return secServer;
@@ -1713,8 +1793,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Security-Client header
      * @return newly created Security-Client header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.303 -0500", hash_original_method = "2361364E4BB205FAC2A8F8549D9431F6", hash_generated_method = "AF914157A79A59D795CD06072A593918")
-    public SecurityClientHeader createSecurityClientHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.365 -0500", hash_original_method = "2361364E4BB205FAC2A8F8549D9431F6", hash_generated_method = "AF914157A79A59D795CD06072A593918")
+    
+public SecurityClientHeader createSecurityClientHeader()
     {
         SecurityClient secClient = new SecurityClient();
         return secClient;
@@ -1724,8 +1805,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Security-Verify header
      * @return newly created Security-Verify header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.304 -0500", hash_original_method = "1063C2554F38236C917DADCB6A55ADB8", hash_generated_method = "707DF2990815E7D886CAB50CA5F51B6E")
-    public SecurityVerifyHeader createSecurityVerifyHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.368 -0500", hash_original_method = "1063C2554F38236C917DADCB6A55ADB8", hash_generated_method = "707DF2990815E7D886CAB50CA5F51B6E")
+    
+public SecurityVerifyHeader createSecurityVerifyHeader()
     {
         SecurityVerify secVerify = new SecurityVerify();
         return secVerify;
@@ -1736,8 +1818,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Please note that this is not a SIP/TEL uri. It is a
      * DIAMETER AAA URI.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.305 -0500", hash_original_method = "2DDC01C5DAA0917C6B8BE6B8A00F5568", hash_generated_method = "19CF3EB64D252DCC1E914345C8438226")
-    public PUserDatabaseHeader createPUserDatabaseHeader(String databaseName)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.371 -0500", hash_original_method = "2DDC01C5DAA0917C6B8BE6B8A00F5568", hash_generated_method = "19CF3EB64D252DCC1E914345C8438226")
+    
+public PUserDatabaseHeader createPUserDatabaseHeader(String databaseName)
     {
         if((databaseName ==null)||(databaseName.equals(" ")))
             throw new NullPointerException("Database name is null");
@@ -1754,8 +1837,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return The newly created P-Profile-Key header.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.306 -0500", hash_original_method = "6A0691F102D20D70FD0A6921A61CA118", hash_generated_method = "0719F075B7D06CC9B93C7D1074B2B433")
-    public PProfileKeyHeader createPProfileKeyHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.374 -0500", hash_original_method = "6A0691F102D20D70FD0A6921A61CA118", hash_generated_method = "0719F075B7D06CC9B93C7D1074B2B433")
+    
+public PProfileKeyHeader createPProfileKeyHeader(Address address)
     {
         if (address ==null)
             throw new NullPointerException("Address is null");
@@ -1769,8 +1853,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * 
      * @return The newly created P-Served-User header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.308 -0500", hash_original_method = "38B7C1667A9FD579C07BB14E255FF56A", hash_generated_method = "778782CCC1A57132F2C6C14F3A8F276B")
-    public PServedUserHeader createPServedUserHeader(Address address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.377 -0500", hash_original_method = "38B7C1667A9FD579C07BB14E255FF56A", hash_generated_method = "778782CCC1A57132F2C6C14F3A8F276B")
+    
+public PServedUserHeader createPServedUserHeader(Address address)
     {
         if(address==null)
             throw new NullPointerException("Address is null");
@@ -1782,8 +1867,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     /**
      * @return The newly created P-Preferred-Service header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.308 -0500", hash_original_method = "C0CFD4DCC2CCE8A2BE967D3A2132C68A", hash_generated_method = "F4411F29895AB1E48A0F1D4960E19576")
-    public PPreferredServiceHeader createPPreferredServiceHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.380 -0500", hash_original_method = "C0CFD4DCC2CCE8A2BE967D3A2132C68A", hash_generated_method = "F4411F29895AB1E48A0F1D4960E19576")
+    
+public PPreferredServiceHeader createPPreferredServiceHeader()
     {
         PPreferredService pps = new PPreferredService();
         return pps;
@@ -1793,8 +1879,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      *
      * @return The newly created P-Asserted-Service header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.309 -0500", hash_original_method = "48E529894AF92157CD42EE8DFB6E18AB", hash_generated_method = "1E7D131782BCC183C2A9A2CA524EFEFF")
-    public PAssertedServiceHeader createPAssertedServiceHeader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.383 -0500", hash_original_method = "48E529894AF92157CD42EE8DFB6E18AB", hash_generated_method = "1E7D131782BCC183C2A9A2CA524EFEFF")
+    
+public PAssertedServiceHeader createPAssertedServiceHeader()
     {
         PAssertedService pas = new PAssertedService();
         return pas;
@@ -1809,8 +1896,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @return the newly created SessionExpiresHeader object.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.310 -0500", hash_original_method = "6D472F26B8815D9A75157924D7DB3DB8", hash_generated_method = "0A0E6DA44D324DA85EA874CE831AF067")
-    public SessionExpiresHeader createSessionExpiresHeader(int expires)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.386 -0500", hash_original_method = "6D472F26B8815D9A75157924D7DB3DB8", hash_generated_method = "0A0E6DA44D324DA85EA874CE831AF067")
+    
+public SessionExpiresHeader createSessionExpiresHeader(int expires)
         throws InvalidArgumentException {
         if (expires < 0)
             throw new InvalidArgumentException("bad value " + expires);
@@ -1825,8 +1913,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * Create a new Request Line from a String.
      * 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.311 -0500", hash_original_method = "F07701895F7EA99F66D330A17A2FD28D", hash_generated_method = "CCE225807CE483E1E6E6673A8C5B1BD7")
-    public SipRequestLine createRequestLine(String requestLine)  throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.389 -0500", hash_original_method = "F07701895F7EA99F66D330A17A2FD28D", hash_generated_method = "CCE225807CE483E1E6E6673A8C5B1BD7")
+    
+public SipRequestLine createRequestLine(String requestLine)  throws ParseException {
         
         RequestLineParser requestLineParser = new RequestLineParser(requestLine);
         return (SipRequestLine) requestLineParser.parse();
@@ -1835,8 +1924,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     /**
      * Create a new StatusLine from a String.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.312 -0500", hash_original_method = "94ED81BC52F6E3EE358EE57713F40357", hash_generated_method = "230AE6DD7E6E198D168305C6A355146F")
-    public SipStatusLine createStatusLine(String statusLine) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.392 -0500", hash_original_method = "94ED81BC52F6E3EE358EE57713F40357", hash_generated_method = "230AE6DD7E6E198D168305C6A355146F")
+    
+public SipStatusLine createStatusLine(String statusLine) throws ParseException {
         StatusLineParser statusLineParser = new StatusLineParser(statusLine);
         return (SipStatusLine) statusLineParser.parse();
     }
@@ -1852,8 +1942,9 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
      * @throws ParseException
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.313 -0500", hash_original_method = "B06A6A8CC80D9698711113EFD1E58499", hash_generated_method = "57C1CCBA69B4100AD0EB721BFEB07DD9")
-    public ReferencesHeader createReferencesHeader(String callId, String rel) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.395 -0500", hash_original_method = "B06A6A8CC80D9698711113EFD1E58499", hash_generated_method = "57C1CCBA69B4100AD0EB721BFEB07DD9")
+    
+public ReferencesHeader createReferencesHeader(String callId, String rel) throws ParseException {
         ReferencesHeader retval = new References();
         retval.setCallId(callId);
         retval.setRel(rel);

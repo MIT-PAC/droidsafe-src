@@ -27,8 +27,9 @@ public final class NfcF extends BasicTagTechnology {
      * @param tag an NFC-F compatible tag
      * @return NFC-F object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.786 -0500", hash_original_method = "01EE8F8F25FC85AEFD4590A65782423B", hash_generated_method = "65D8731C233C576499FFAA97AABF3A1E")
-    public static NfcF get(Tag tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.296 -0500", hash_original_method = "01EE8F8F25FC85AEFD4590A65782423B", hash_generated_method = "65D8731C233C576499FFAA97AABF3A1E")
+    
+public static NfcF get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NFC_F)) return null;
         try {
             return new NfcF(tag);
@@ -36,26 +37,27 @@ public final class NfcF extends BasicTagTechnology {
             return null;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.782 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.283 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
 
     private static final String TAG = "NFC";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.783 -0500", hash_original_field = "3A3EF9C6C54546E4BF85A7751A52E607", hash_generated_field = "5704B992AD33B718B3C71C8EF40A32EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.285 -0500", hash_original_field = "3A3EF9C6C54546E4BF85A7751A52E607", hash_generated_field = "5704B992AD33B718B3C71C8EF40A32EC")
 
     public static final String EXTRA_SC = "systemcode";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.784 -0500", hash_original_field = "EB354D25CB69AD72862611E3F61F6F33", hash_generated_field = "34E329AB64B6D1770F31F0C3818A0179")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.288 -0500", hash_original_field = "EB354D25CB69AD72862611E3F61F6F33", hash_generated_field = "34E329AB64B6D1770F31F0C3818A0179")
 
     public static final String EXTRA_PMM = "pmm";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.785 -0500", hash_original_field = "C464B493AC4D8DC6313AA390DA7A6EC5", hash_generated_field = "8144AE907BE5B2181516DBD1D62E97D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.291 -0500", hash_original_field = "C464B493AC4D8DC6313AA390DA7A6EC5", hash_generated_field = "8144AE907BE5B2181516DBD1D62E97D6")
 
 
     private byte[] mSystemCode = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.785 -0500", hash_original_field = "883831788F4B7782C6FB141F06D6641B", hash_generated_field = "D7A1C8F789011716682DAB2FCD913220")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.293 -0500", hash_original_field = "883831788F4B7782C6FB141F06D6641B", hash_generated_field = "D7A1C8F789011716682DAB2FCD913220")
 
     private byte[] mManufacturer = null;
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.787 -0500", hash_original_method = "0D9BC91BC56C91CB4B73C77A46406834", hash_generated_method = "BE2E50C5D4F8D9EA2230B6B194FD72CC")
-    public NfcF(Tag tag) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.299 -0500", hash_original_method = "0D9BC91BC56C91CB4B73C77A46406834", hash_generated_method = "BE2E50C5D4F8D9EA2230B6B194FD72CC")
+    
+public NfcF(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NFC_F);
         Bundle extras = tag.getTechExtras(TagTechnology.NFC_F);
         if (extras != null) {
@@ -71,8 +73,9 @@ public final class NfcF extends BasicTagTechnology {
      *
      * @return System Code bytes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.788 -0500", hash_original_method = "5593A08645ACC7B6D3C7AFEF98D893C4", hash_generated_method = "9CE4BDDFFE2865B8A00D5D4FDD81E27E")
-    public byte[] getSystemCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.301 -0500", hash_original_method = "5593A08645ACC7B6D3C7AFEF98D893C4", hash_generated_method = "9CE4BDDFFE2865B8A00D5D4FDD81E27E")
+    
+public byte[] getSystemCode() {
       return mSystemCode;
     }
 
@@ -83,8 +86,9 @@ public final class NfcF extends BasicTagTechnology {
      *
      * @return Manufacturer bytes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.789 -0500", hash_original_method = "674E72909806E7E1411B5B9E47606852", hash_generated_method = "A5414D0E37F77118EDF179C7B49BE366")
-    public byte[] getManufacturer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.303 -0500", hash_original_method = "674E72909806E7E1411B5B9E47606852", hash_generated_method = "A5414D0E37F77118EDF179C7B49BE366")
+    
+public byte[] getManufacturer() {
       return mManufacturer;
     }
 
@@ -108,8 +112,9 @@ public final class NfcF extends BasicTagTechnology {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or this operation is canceled
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.790 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
-    public byte[] transceive(byte[] data) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.305 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
+    
+public byte[] transceive(byte[] data) throws IOException {
         return transceive(data, true);
     }
 
@@ -117,8 +122,9 @@ public final class NfcF extends BasicTagTechnology {
      * Return the maximum number of bytes that can be sent with {@link #transceive}.
      * @return the maximum number of bytes that can be sent with {@link #transceive}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.790 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
-    public int getMaxTransceiveLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.307 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
+    
+public int getMaxTransceiveLength() {
         return getMaxTransceiveLengthInternal();
     }
 
@@ -136,8 +142,9 @@ public final class NfcF extends BasicTagTechnology {
      *
      * @param timeout timeout value in milliseconds
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.791 -0500", hash_original_method = "D0C1DC7ECC9E082014D504E80FD68DDB", hash_generated_method = "1D0EF75D84E1BBF3CF36BCFF44B909AD")
-    public void setTimeout(int timeout) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.309 -0500", hash_original_method = "D0C1DC7ECC9E082014D504E80FD68DDB", hash_generated_method = "1D0EF75D84E1BBF3CF36BCFF44B909AD")
+    
+public void setTimeout(int timeout) {
         try {
             int err = mTag.getTagService().setTimeout(TagTechnology.NFC_F, timeout);
             if (err != ErrorCodes.SUCCESS) {
@@ -155,8 +162,9 @@ public final class NfcF extends BasicTagTechnology {
      *
      * @return timeout value in milliseconds
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.792 -0500", hash_original_method = "BA26E553829B17341BEC1294BC995A3C", hash_generated_method = "26151274738C2CA4100F741611DC2854")
-    public int getTimeout() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.312 -0500", hash_original_method = "BA26E553829B17341BEC1294BC995A3C", hash_generated_method = "26151274738C2CA4100F741611DC2854")
+    
+public int getTimeout() {
         try {
             return mTag.getTagService().getTimeout(TagTechnology.NFC_F);
         } catch (RemoteException e) {

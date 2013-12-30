@@ -15,8 +15,9 @@ public class ParserConfigurationException extends Exception {
      * detail message.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.429 -0500", hash_original_method = "8E684FA0ECF2833FC98AE584F5004E57", hash_generated_method = "0C6BC82ACD7D70E8489D62B197489044")
-    public ParserConfigurationException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.264 -0500", hash_original_method = "8E684FA0ECF2833FC98AE584F5004E57", hash_generated_method = "0C6BC82ACD7D70E8489D62B197489044")
+    
+public ParserConfigurationException() {
     }
 
     /**
@@ -26,8 +27,9 @@ public class ParserConfigurationException extends Exception {
      * @param msg The error message for the exception.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.430 -0500", hash_original_method = "A53B6C9369FBB7C97FD6103A4EABE7DB", hash_generated_method = "EAB55C0344617AE8D546309413C0BDDC")
-    public ParserConfigurationException(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.267 -0500", hash_original_method = "A53B6C9369FBB7C97FD6103A4EABE7DB", hash_generated_method = "EAB55C0344617AE8D546309413C0BDDC")
+    
+public ParserConfigurationException(String msg) {
         super(msg);
     }
 

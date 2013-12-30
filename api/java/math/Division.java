@@ -14,8 +14,9 @@ class Division {
      *
      * @return remainder
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:28.095 -0500", hash_original_method = "E1E264751E5195BA90C2FFC7352846D5", hash_generated_method = "C2300A69C9E396B7E6838C00C51A153A")
-    static int divideArrayByInt(int[] quotient, int[] dividend, final int dividendLength,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.250 -0500", hash_original_method = "E1E264751E5195BA90C2FFC7352846D5", hash_generated_method = "C2300A69C9E396B7E6838C00C51A153A")
+    
+static int divideArrayByInt(int[] quotient, int[] dividend, final int dividendLength,
             final int divisor) {
 
         long rem = 0;

@@ -10,7 +10,7 @@ import android.util.Log;
 
 
 public abstract class BluetoothHealthCallback {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.015 -0500", hash_original_field = "642BDE9D66CC618D4867D292C96D4AE8", hash_generated_field = "382730F49298B348E501E4E6F20F9E07")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.659 -0500", hash_original_field = "642BDE9D66CC618D4867D292C96D4AE8", hash_generated_field = "382730F49298B348E501E4E6F20F9E07")
 
     private static final String TAG = "BluetoothHealthCallback";
     
@@ -33,8 +33,9 @@ public abstract class BluetoothHealthCallback {
      *            {@link BluetoothHealth#APP_CONFIG_UNREGISTRATION_SUCCESS} or
      *            {@link BluetoothHealth#APP_CONFIG_UNREGISTRATION_FAILURE}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.016 -0500", hash_original_method = "E5722E3313A7E9ED90B679A7B4C5AF2F", hash_generated_method = "08DB39347D00CD0ACECDA317DC22500C")
-    public void onHealthAppConfigurationStatusChange(BluetoothHealthAppConfiguration config,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.661 -0500", hash_original_method = "E5722E3313A7E9ED90B679A7B4C5AF2F", hash_generated_method = "08DB39347D00CD0ACECDA317DC22500C")
+    
+public void onHealthAppConfigurationStatusChange(BluetoothHealthAppConfiguration config,
             int status) {
         Log.d(TAG, "onHealthAppConfigurationStatusChange: " + config + "Status: " + status);
     }
@@ -53,8 +54,9 @@ public abstract class BluetoothHealthCallback {
      * @param channelId The id associated with the channel. This id will be used
      *            in future calls like when disconnecting the channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.017 -0500", hash_original_method = "C3B7CE27D41B26760CE03C19222744F6", hash_generated_method = "CC2054EA2845F5679CED0538D6BAC037")
-    public void onHealthChannelStateChange(BluetoothHealthAppConfiguration config,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.664 -0500", hash_original_method = "C3B7CE27D41B26760CE03C19222744F6", hash_generated_method = "CC2054EA2845F5679CED0538D6BAC037")
+    
+public void onHealthChannelStateChange(BluetoothHealthAppConfiguration config,
             BluetoothDevice device, int prevState, int newState, ParcelFileDescriptor fd,
             int channelId) {
         Log.d(TAG, "onHealthChannelStateChange: " + config + "Device: " + device +

@@ -10,8 +10,9 @@ import libcore.icu.RuleBasedCollatorICU;
 
 
 public class RuleBasedCollator extends Collator {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.974 -0500", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "31FBA21C05DBD02C02879BE90D845185")
-    RuleBasedCollator(RuleBasedCollatorICU wrapper) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.510 -0500", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "31FBA21C05DBD02C02879BE90D845185")
+    
+RuleBasedCollator(RuleBasedCollatorICU wrapper) {
         super(wrapper);
     }
 
@@ -34,8 +35,9 @@ public class RuleBasedCollator extends Collator {
      *             if {@code rules} contains rules with invalid collation rule
      *             syntax.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.975 -0500", hash_original_method = "A2DABBE445FB3F5820A862D094AFC471", hash_generated_method = "840BD50A6031165BD7BE803F46CCD2A6")
-    public RuleBasedCollator(String rules) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.513 -0500", hash_original_method = "A2DABBE445FB3F5820A862D094AFC471", hash_generated_method = "840BD50A6031165BD7BE803F46CCD2A6")
+    
+public RuleBasedCollator(String rules) throws ParseException {
         if (rules == null) {
             throw new NullPointerException();
         }
@@ -65,8 +67,9 @@ public class RuleBasedCollator extends Collator {
      *            the source character iterator.
      * @return a {@code CollationElementIterator} for {@code source}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.976 -0500", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "19E5E258C162D2AA8B88185575754404")
-    public CollationElementIterator getCollationElementIterator(CharacterIterator source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.516 -0500", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "19E5E258C162D2AA8B88185575754404")
+    
+public CollationElementIterator getCollationElementIterator(CharacterIterator source) {
         if (source == null) {
             throw new NullPointerException();
         }
@@ -80,8 +83,9 @@ public class RuleBasedCollator extends Collator {
      *            the source string.
      * @return the {@code CollationElementIterator} for {@code source}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.976 -0500", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "AD1B8AD7AFE2E9C0E340482B3A9D095A")
-    public CollationElementIterator getCollationElementIterator(String source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.518 -0500", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "AD1B8AD7AFE2E9C0E340482B3A9D095A")
+    
+public CollationElementIterator getCollationElementIterator(String source) {
         if (source == null) {
             throw new NullPointerException();
         }
@@ -100,8 +104,9 @@ public class RuleBasedCollator extends Collator {
      *
      * @return the collation rules.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.977 -0500", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "883506D97BFF401123E80AC480D00700")
-    public String getRules() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.520 -0500", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "883506D97BFF401123E80AC480D00700")
+    
+public String getRules() {
         return icuColl.getRules();
     }
 
@@ -112,9 +117,10 @@ public class RuleBasedCollator extends Collator {
      * @return a shallow copy of this collator.
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.978 -0500", hash_original_method = "FBA963D7A9FB0658F4932AD387478243", hash_generated_method = "BD7CF7AD8C750BA12A60D8708AABA86F")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.523 -0500", hash_original_method = "FBA963D7A9FB0658F4932AD387478243", hash_generated_method = "BD7CF7AD8C750BA12A60D8708AABA86F")
+    
+@Override
+    public Object clone() {
         RuleBasedCollator clone = (RuleBasedCollator) super.clone();
         return clone;
     }
@@ -140,9 +146,10 @@ public Object clone() {
      *         positive value depending on whether {@code source} is less than,
      *         equivalent to, or greater than {@code target}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.979 -0500", hash_original_method = "6590B43BC0A35CBDE76A6B18FA6459C5", hash_generated_method = "0DF60C39C52DB2B5C9099A792AE49CAE")
-    @Override
-public int compare(String source, String target) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.526 -0500", hash_original_method = "6590B43BC0A35CBDE76A6B18FA6459C5", hash_generated_method = "0DF60C39C52DB2B5C9099A792AE49CAE")
+    
+@Override
+    public int compare(String source, String target) {
         if (source == null || target == null) {
             throw new NullPointerException();
         }
@@ -156,15 +163,17 @@ public int compare(String source, String target) {
      *            the specified source text.
      * @return the {@code CollationKey} for the given source text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.980 -0500", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "FF55CC53E57881B8F6A0E0C8E176DD06")
-    @Override
-public CollationKey getCollationKey(String source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.528 -0500", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "FF55CC53E57881B8F6A0E0C8E176DD06")
+    
+@Override
+    public CollationKey getCollationKey(String source) {
         return icuColl.getCollationKey(source);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.980 -0500", hash_original_method = "B4EBBD96DB20771CAD5EB8825D399E3B", hash_generated_method = "FBDB92B114BF8DE843F423E76B85435F")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.531 -0500", hash_original_method = "B4EBBD96DB20771CAD5EB8825D399E3B", hash_generated_method = "FBDB92B114BF8DE843F423E76B85435F")
+    
+@Override
+    public int hashCode() {
         return icuColl.getRules().hashCode();
     }
 
@@ -180,9 +189,10 @@ public int hashCode() {
      *         {@code RuleBasedCollator}; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.981 -0500", hash_original_method = "1D9A70F4229C9ABE49C60D2B9C1F5E2A", hash_generated_method = "508188801AE74624F2F85A8DB46E72E5")
-    @Override
-public boolean equals(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.533 -0500", hash_original_method = "1D9A70F4229C9ABE49C60D2B9C1F5E2A", hash_generated_method = "508188801AE74624F2F85A8DB46E72E5")
+    
+@Override
+    public boolean equals(Object obj) {
         if (!(obj instanceof Collator)) {
             return false;
         }

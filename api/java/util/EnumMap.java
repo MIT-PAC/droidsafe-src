@@ -18,29 +18,29 @@ import java.lang.reflect.Array;
 
 
 public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements Serializable, Cloneable, Map<K, V> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.389 -0500", hash_original_field = "EB1539CD940D015469BC4183AF7CD45A", hash_generated_field = "1557AA800F5DBE5D3C634E50FE75E1EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.022 -0500", hash_original_field = "EB1539CD940D015469BC4183AF7CD45A", hash_generated_field = "1557AA800F5DBE5D3C634E50FE75E1EE")
 
     // added implements Map<K, V> for apicheck
     // END android-changed
 
     private static final long serialVersionUID = 458661240069192865L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.390 -0500", hash_original_field = "F010784A251FB129AC47F47773283FBF", hash_generated_field = "784B4CB2B0AA1435846B96ECF749418D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.025 -0500", hash_original_field = "F010784A251FB129AC47F47773283FBF", hash_generated_field = "784B4CB2B0AA1435846B96ECF749418D")
 
 
     private Class<K> keyType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.391 -0500", hash_original_field = "1379FEA8AFFEC55DC6F8F74FF07B46B6", hash_generated_field = "1296F5D01B4090600677F6D5CA1FE096")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.027 -0500", hash_original_field = "1379FEA8AFFEC55DC6F8F74FF07B46B6", hash_generated_field = "1296F5D01B4090600677F6D5CA1FE096")
 
 
     transient Enum[] keys;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.391 -0500", hash_original_field = "54F62F83C92A1C47E6690E56D98127DA", hash_generated_field = "4150C40DB1D8CEF16DAAF4E72141B18D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.030 -0500", hash_original_field = "54F62F83C92A1C47E6690E56D98127DA", hash_generated_field = "4150C40DB1D8CEF16DAAF4E72141B18D")
 
 
     transient Object[] values;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.392 -0500", hash_original_field = "5657F62044D4B0C47422B6B8DEA9CE7F", hash_generated_field = "2AFD2ACFCCD988AD1A9DB860BFAFC15E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.032 -0500", hash_original_field = "5657F62044D4B0C47422B6B8DEA9CE7F", hash_generated_field = "2AFD2ACFCCD988AD1A9DB860BFAFC15E")
 
 
     transient boolean[] hasMapping;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.393 -0500", hash_original_field = "C7945E17114FC3C5BCFFF5BB4A9DD560", hash_generated_field = "204CA002E2DD9253A57F08EEC28189B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.034 -0500", hash_original_field = "C7945E17114FC3C5BCFFF5BB4A9DD560", hash_generated_field = "204CA002E2DD9253A57F08EEC28189B5")
 
 
     private transient int mappingsCount;
@@ -172,8 +172,9 @@ for(int i = elementCount;i > 0;i--)
         //}
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.464 -0500", hash_original_method = "7E98F968D6A8FBC0CE4D31A606E7DB44", hash_generated_method = "5EA4F7CC0E91ABF4E769AFD01C01E496")
-    private void writeObject(ObjectOutputStream stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.235 -0500", hash_original_method = "7E98F968D6A8FBC0CE4D31A606E7DB44", hash_generated_method = "5EA4F7CC0E91ABF4E769AFD01C01E496")
+    
+private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.defaultWriteObject();
         stream.writeInt(mappingsCount);
         Iterator<Map.Entry<K, V>> iterator = entrySet().iterator();

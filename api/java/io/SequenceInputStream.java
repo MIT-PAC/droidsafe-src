@@ -12,10 +12,10 @@ import java.util.Vector;
 
 
 public class SequenceInputStream extends InputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.822 -0500", hash_original_field = "978C925AD7599B7FA8038D4E71D9603D", hash_generated_field = "18AD9586F739C9162783E991FCA98C7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.515 -0500", hash_original_field = "978C925AD7599B7FA8038D4E71D9603D", hash_generated_field = "18AD9586F739C9162783E991FCA98C7A")
 
     private Enumeration<? extends InputStream> e;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.823 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.517 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
 
     private InputStream in;
 
@@ -30,8 +30,9 @@ public class SequenceInputStream extends InputStream {
      * @throws NullPointerException
      *             if {@code s1} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.824 -0500", hash_original_method = "29105F0198123C3B47FC811BDEDF639D", hash_generated_method = "FAE899BBBE3848D239BB94B55785FAFA")
-    public SequenceInputStream(InputStream s1, InputStream s2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.520 -0500", hash_original_method = "29105F0198123C3B47FC811BDEDF639D", hash_generated_method = "FAE899BBBE3848D239BB94B55785FAFA")
+    
+public SequenceInputStream(InputStream s1, InputStream s2) {
         if (s1 == null) {
             throw new NullPointerException();
         }
@@ -51,8 +52,9 @@ public class SequenceInputStream extends InputStream {
      * @throws NullPointerException
      *             if any of the elements in {@code e} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.825 -0500", hash_original_method = "4836B5679700B3654AB08A07E2FBBEF0", hash_generated_method = "AAFB9F87E498C432E91EC33F6617B737")
-    public SequenceInputStream(Enumeration<? extends InputStream> e) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.523 -0500", hash_original_method = "4836B5679700B3654AB08A07E2FBBEF0", hash_generated_method = "AAFB9F87E498C432E91EC33F6617B737")
+    
+public SequenceInputStream(Enumeration<? extends InputStream> e) {
         this.e = e;
         if (e.hasMoreElements()) {
             in = e.nextElement();
@@ -62,9 +64,10 @@ public class SequenceInputStream extends InputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.826 -0500", hash_original_method = "989AE899244AE453B2C16F0363EA8BF3", hash_generated_method = "02B44B8FAFB26FBCA83D48F0525D06EA")
-    @Override
-public int available() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.526 -0500", hash_original_method = "989AE899244AE453B2C16F0363EA8BF3", hash_generated_method = "02B44B8FAFB26FBCA83D48F0525D06EA")
+    
+@Override
+    public int available() throws IOException {
         if (e != null && in != null) {
             return in.available();
         }
@@ -77,9 +80,10 @@ public int available() throws IOException {
      * @throws IOException
      *             if an error occurs while closing any of the input streams.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.827 -0500", hash_original_method = "1749070D39A948E7280B7E9ED33867CE", hash_generated_method = "AF5F3B912050135F4B8E788773021C22")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.528 -0500", hash_original_method = "1749070D39A948E7280B7E9ED33867CE", hash_generated_method = "AF5F3B912050135F4B8E788773021C22")
+    
+@Override
+    public void close() throws IOException {
         while (in != null) {
             nextStream();
         }
@@ -91,8 +95,9 @@ public void close() throws IOException {
      *
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.828 -0500", hash_original_method = "AA61F30EE9F68EF2787A55BE84FD9C61", hash_generated_method = "A7C3AA52849A0E697C5FC3DACAD2587D")
-    private void nextStream() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.531 -0500", hash_original_method = "AA61F30EE9F68EF2787A55BE84FD9C61", hash_generated_method = "A7C3AA52849A0E697C5FC3DACAD2587D")
+    
+private void nextStream() throws IOException {
         if (in != null) {
             in.close();
         }
@@ -120,9 +125,10 @@ public void close() throws IOException {
      *             if an error occurs while reading the current source input
      *             stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.829 -0500", hash_original_method = "2AFBD8CC3EA20986AC27924C0AD5D7EE", hash_generated_method = "ABB08D2AC960F1D8DE8C995F725AAEFC")
-    @Override
-public int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.533 -0500", hash_original_method = "2AFBD8CC3EA20986AC27924C0AD5D7EE", hash_generated_method = "ABB08D2AC960F1D8DE8C995F725AAEFC")
+    
+@Override
+    public int read() throws IOException {
         while (in != null) {
             int result = in.read();
             if (result >= 0) {
@@ -168,9 +174,10 @@ public int read() throws IOException {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.830 -0500", hash_original_method = "D0BE57C4BCBFEEAAABF8F255E34909BC", hash_generated_method = "22342A6D5C517E89E4A3F3617B99EA99")
-    @Override
-public int read(byte[] buffer, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.536 -0500", hash_original_method = "D0BE57C4BCBFEEAAABF8F255E34909BC", hash_generated_method = "22342A6D5C517E89E4A3F3617B99EA99")
+    
+@Override
+    public int read(byte[] buffer, int offset, int count) throws IOException {
         if (in == null) {
             return -1;
         }

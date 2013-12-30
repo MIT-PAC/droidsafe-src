@@ -15,20 +15,20 @@ public interface AttributedCharacterIterator extends CharacterIterator {
 
     
     public static class Attribute implements Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.270 -0500", hash_original_field = "A257E6C9ED72D07359849AED69D69087", hash_generated_field = "385C16D260BAD11F2749B86ED81E7405")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.340 -0500", hash_original_field = "A257E6C9ED72D07359849AED69D69087", hash_generated_field = "385C16D260BAD11F2749B86ED81E7405")
 
 
         private static final long serialVersionUID = -9142742483513960612L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.271 -0500", hash_original_field = "5B636D7ABFAFE29C5A1F4DDC52A925B5", hash_generated_field = "02AAC6208FE1255FF42E622F931F0B28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.343 -0500", hash_original_field = "5B636D7ABFAFE29C5A1F4DDC52A925B5", hash_generated_field = "02AAC6208FE1255FF42E622F931F0B28")
 
         public static final Attribute INPUT_METHOD_SEGMENT = new Attribute("input_method_segment");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.272 -0500", hash_original_field = "BE94DBD7B8057611768D647AE1064C6A", hash_generated_field = "CA74EC4F0D13A5655444EF72BDE11F98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.346 -0500", hash_original_field = "BE94DBD7B8057611768D647AE1064C6A", hash_generated_field = "CA74EC4F0D13A5655444EF72BDE11F98")
 
         public static final Attribute LANGUAGE = new Attribute("language");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.273 -0500", hash_original_field = "01453FAFA7492D7320684842EA3055CB", hash_generated_field = "9778834F848AE49974A15956283CDD59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.349 -0500", hash_original_field = "01453FAFA7492D7320684842EA3055CB", hash_generated_field = "9778834F848AE49974A15956283CDD59")
 
         public static final Attribute READING = new Attribute("reading");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.274 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.351 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
 
         private String name;
@@ -39,8 +39,9 @@ public interface AttributedCharacterIterator extends CharacterIterator {
          * @param name
          *            the name of the new {@code Attribute}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.275 -0500", hash_original_method = "ACCFEBD66AB851A6FC608414A08D299B", hash_generated_method = "61712E1BA4300DCAD5753E2F1F265E00")
-        protected Attribute(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.354 -0500", hash_original_method = "ACCFEBD66AB851A6FC608414A08D299B", hash_generated_method = "61712E1BA4300DCAD5753E2F1F265E00")
+        
+protected Attribute(String name) {
             this.name = name;
         }
 
@@ -54,9 +55,10 @@ public interface AttributedCharacterIterator extends CharacterIterator {
          * @return {@code true} if the object passed is equal to this instance;
          *         {@code false} otherwise.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.276 -0500", hash_original_method = "36C8AF9F829C9B051BDBF3B9526FC822", hash_generated_method = "34C966AA4C0E8EC46BF85551F0775538")
-        @Override
-public final boolean equals(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.357 -0500", hash_original_method = "36C8AF9F829C9B051BDBF3B9526FC822", hash_generated_method = "34C966AA4C0E8EC46BF85551F0775538")
+        
+@Override
+        public final boolean equals(Object object) {
             return this == object;
         }
 
@@ -65,8 +67,9 @@ public final boolean equals(Object object) {
          *
          * @return the name of this attribute.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.276 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "C7902D845D08F4F6CA0D1BA5E593678A")
-        protected String getName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.359 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "C7902D845D08F4F6CA0D1BA5E593678A")
+        
+protected String getName() {
             return name;
         }
 
@@ -77,9 +80,10 @@ public final boolean equals(Object object) {
          *
          * @return the hash code for this instance of {@code Attribute}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.277 -0500", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "BDAAB55570B432722AF7AB079E5FB145")
-        @Override
-public final int hashCode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.361 -0500", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "BDAAB55570B432722AF7AB079E5FB145")
+        
+@Override
+        public final int hashCode() {
             return super.hashCode();
         }
 
@@ -91,8 +95,9 @@ public final int hashCode() {
          *             if this instance is not of type {@code Attribute.class}
          *             or if it is not a known {@code Attribute}.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.279 -0500", hash_original_method = "E825C982907901F08723C9B3A9C59DC5", hash_generated_method = "B5F8BDA74B76C82BB3DB988F74EDA6D3")
-        protected Object readResolve() throws InvalidObjectException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.364 -0500", hash_original_method = "E825C982907901F08723C9B3A9C59DC5", hash_generated_method = "B5F8BDA74B76C82BB3DB988F74EDA6D3")
+        
+protected Object readResolve() throws InvalidObjectException {
             /*
              * This class is used like Java enums, where all instances are
              * defined as fields of their own class. To preserve identity
@@ -118,9 +123,10 @@ public final int hashCode() {
          *
          * @return the string representing this instance.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.280 -0500", hash_original_method = "4A1605B03FE1E22048A20B9E05E481A5", hash_generated_method = "4396D2BAEFB73347858E563F022F81BC")
-        @Override
-public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.367 -0500", hash_original_method = "4A1605B03FE1E22048A20B9E05E481A5", hash_generated_method = "4396D2BAEFB73347858E563F022F81BC")
+        
+@Override
+        public String toString() {
             return getClass().getName() + '(' + getName() + ')';
         }
     }

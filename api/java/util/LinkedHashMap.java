@@ -10,7 +10,7 @@ import droidsafe.annotations.*;
 
 
 public class LinkedHashMap<K, V> extends HashMap<K, V> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.191 -0500", hash_original_field = "03C2294E3359F1BC714385FB4CB7EADD", hash_generated_field = "58143BDD5D2BB4E9A1A5E401127BE552")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.812 -0500", hash_original_field = "03C2294E3359F1BC714385FB4CB7EADD", hash_generated_field = "58143BDD5D2BB4E9A1A5E401127BE552")
 
 
     private static final long serialVersionUID = 3801124242820219131L;

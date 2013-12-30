@@ -42,8 +42,9 @@ public class AccountManager {
     /**
      * @hide for internal use only
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.358 -0500", hash_original_method = "F888113D3DF006EA49FF73334C06BE1E", hash_generated_method = "B3E3A4DBE45ECE90EEB5DB065EDB493F")
-    public static Bundle sanitizeResult(Bundle result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.971 -0500", hash_original_method = "F888113D3DF006EA49FF73334C06BE1E", hash_generated_method = "B3E3A4DBE45ECE90EEB5DB065EDB493F")
+    
+public static Bundle sanitizeResult(Bundle result) {
         if (result != null) {
             if (result.containsKey(KEY_AUTHTOKEN)
                     && !TextUtils.isEmpty(result.getString(KEY_AUTHTOKEN))) {
@@ -69,8 +70,9 @@ public class AccountManager {
      * @param context The {@link Context} to use when necessary
      * @return An {@link AccountManager} instance
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.358 -0500", hash_original_method = "5160F1A7A4EC859C57D4D0FFF150F671", hash_generated_method = "5EF3D5664AA350D0DC486554FEE23BDB")
-    public static AccountManager get(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.973 -0500", hash_original_method = "5160F1A7A4EC859C57D4D0FFF150F671", hash_generated_method = "5EF3D5664AA350D0DC486554FEE23BDB")
+    
+public static AccountManager get(Context context) {
         if (context == null) throw new IllegalArgumentException("context is null");
         return (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
     }
@@ -107,8 +109,9 @@ public class AccountManager {
      * parameter
      * @return an {@link Intent} that can be used to launch the ChooseAccount activity flow.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.457 -0500", hash_original_method = "8106C3BE6C75982E692D742A84DC4CF5", hash_generated_method = "BAB723D4B0B362AA257356D33B802776")
-    static public Intent newChooseAccountIntent(Account selectedAccount,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.257 -0500", hash_original_method = "8106C3BE6C75982E692D742A84DC4CF5", hash_generated_method = "BAB723D4B0B362AA257356D33B802776")
+    
+static public Intent newChooseAccountIntent(Account selectedAccount,
             ArrayList<Account> allowableAccounts,
             String[] allowableAccountTypes,
             boolean alwaysPromptForAccount,
@@ -136,117 +139,117 @@ public class AccountManager {
                 addAccountRequiredFeatures);
         return intent;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.325 -0500", hash_original_field = "2551A9EED4AFC4DB7A7E20A21CCF5516", hash_generated_field = "011994D593F4EA76C280FB7FCC436706")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.878 -0500", hash_original_field = "2551A9EED4AFC4DB7A7E20A21CCF5516", hash_generated_field = "011994D593F4EA76C280FB7FCC436706")
 
     private static final String TAG = "AccountManager";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.326 -0500", hash_original_field = "D0D59A7AFBDB1F965C9519675B93E3CF", hash_generated_field = "839EE2AD959F91D7F8A30C4DF896A0A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.881 -0500", hash_original_field = "D0D59A7AFBDB1F965C9519675B93E3CF", hash_generated_field = "839EE2AD959F91D7F8A30C4DF896A0A9")
 
 
     public static final int ERROR_CODE_REMOTE_EXCEPTION = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.327 -0500", hash_original_field = "AA737B716F124CE97EA182DE75F3738F", hash_generated_field = "28836EE16DABE4CC8F98413027A9030B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.883 -0500", hash_original_field = "AA737B716F124CE97EA182DE75F3738F", hash_generated_field = "28836EE16DABE4CC8F98413027A9030B")
 
     public static final int ERROR_CODE_NETWORK_ERROR = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.328 -0500", hash_original_field = "884923CFE9CA885B7210EB9279F5CE50", hash_generated_field = "E9001C9A5A6B658887C8978E4189FD52")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.886 -0500", hash_original_field = "884923CFE9CA885B7210EB9279F5CE50", hash_generated_field = "E9001C9A5A6B658887C8978E4189FD52")
 
     public static final int ERROR_CODE_CANCELED = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.329 -0500", hash_original_field = "A3E7FF4CE25E8B43568B8E85505A9671", hash_generated_field = "215CD378075E4729EC91AA3C099AEFED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.889 -0500", hash_original_field = "A3E7FF4CE25E8B43568B8E85505A9671", hash_generated_field = "215CD378075E4729EC91AA3C099AEFED")
 
     public static final int ERROR_CODE_INVALID_RESPONSE = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.330 -0500", hash_original_field = "FC401022A5DDBE76AC23981DB8464226", hash_generated_field = "0BA889018A83A6B2347976FA0C25E335")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.891 -0500", hash_original_field = "FC401022A5DDBE76AC23981DB8464226", hash_generated_field = "0BA889018A83A6B2347976FA0C25E335")
 
     public static final int ERROR_CODE_UNSUPPORTED_OPERATION = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.331 -0500", hash_original_field = "DF99DCDCA0E2CCBB02CE88852C0A825E", hash_generated_field = "3B28C1EA1CA857E1ECC16D27FCB2B421")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.894 -0500", hash_original_field = "DF99DCDCA0E2CCBB02CE88852C0A825E", hash_generated_field = "3B28C1EA1CA857E1ECC16D27FCB2B421")
 
     public static final int ERROR_CODE_BAD_ARGUMENTS = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.331 -0500", hash_original_field = "710EB42A3C855A651F39C8B0D1C90887", hash_generated_field = "12AE862392583AD965A36301576778CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.896 -0500", hash_original_field = "710EB42A3C855A651F39C8B0D1C90887", hash_generated_field = "12AE862392583AD965A36301576778CD")
 
     public static final int ERROR_CODE_BAD_REQUEST = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.332 -0500", hash_original_field = "EFF6C03B9352F6ED649EEAA3316BCB0D", hash_generated_field = "F859CD3519729A82BCD23BCE5084C439")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.899 -0500", hash_original_field = "EFF6C03B9352F6ED649EEAA3316BCB0D", hash_generated_field = "F859CD3519729A82BCD23BCE5084C439")
 
     public static final String KEY_ACCOUNT_NAME = "authAccount";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.333 -0500", hash_original_field = "7FA0FC5BC6EFAF210273A2BC6786A670", hash_generated_field = "01FDA1F42087656DFED808AC20B15C21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.901 -0500", hash_original_field = "7FA0FC5BC6EFAF210273A2BC6786A670", hash_generated_field = "01FDA1F42087656DFED808AC20B15C21")
 
     public static final String KEY_ACCOUNT_TYPE = "accountType";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.334 -0500", hash_original_field = "01D195418E3300775311A2262868CE0D", hash_generated_field = "3A382E093156E682D8C89BEB9C2CF37B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.905 -0500", hash_original_field = "01D195418E3300775311A2262868CE0D", hash_generated_field = "3A382E093156E682D8C89BEB9C2CF37B")
 
     public static final String KEY_AUTHTOKEN = "authtoken";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.335 -0500", hash_original_field = "BE29B56C524FD8B4F067E3ADD78CB2FF", hash_generated_field = "DD3EB87933A482E342BDBCADB6FCD849")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.907 -0500", hash_original_field = "BE29B56C524FD8B4F067E3ADD78CB2FF", hash_generated_field = "DD3EB87933A482E342BDBCADB6FCD849")
 
     public static final String KEY_INTENT = "intent";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.336 -0500", hash_original_field = "1912076E802C9C31476D766AB9B794FA", hash_generated_field = "B6E4CF7265B3037CDACBE69F87D1F211")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.910 -0500", hash_original_field = "1912076E802C9C31476D766AB9B794FA", hash_generated_field = "B6E4CF7265B3037CDACBE69F87D1F211")
 
     public static final String KEY_PASSWORD = "password";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.337 -0500", hash_original_field = "118D55C478CC5432ABEB40A1DAB155D5", hash_generated_field = "48376F363D9C8E28672349E76C9AB9D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.912 -0500", hash_original_field = "118D55C478CC5432ABEB40A1DAB155D5", hash_generated_field = "48376F363D9C8E28672349E76C9AB9D6")
 
 
     public static final String KEY_ACCOUNTS = "accounts";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.338 -0500", hash_original_field = "B2A4953447EB6A8BE6F40E723830CAA9", hash_generated_field = "B6500903448CA38B1C135E7FAACA8E59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.915 -0500", hash_original_field = "B2A4953447EB6A8BE6F40E723830CAA9", hash_generated_field = "B6500903448CA38B1C135E7FAACA8E59")
 
 
     public static final String KEY_ACCOUNT_AUTHENTICATOR_RESPONSE = "accountAuthenticatorResponse";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.339 -0500", hash_original_field = "82E3FFC4F1A3C550AD57D2E4CEFE16A7", hash_generated_field = "6787B86CE20B7D25DB80F65A6DF78575")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.918 -0500", hash_original_field = "82E3FFC4F1A3C550AD57D2E4CEFE16A7", hash_generated_field = "6787B86CE20B7D25DB80F65A6DF78575")
 
     public static final String KEY_ACCOUNT_MANAGER_RESPONSE = "accountManagerResponse";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.340 -0500", hash_original_field = "3ADE0968885F2B69F714587571C2EBFA", hash_generated_field = "A880DA3011386B62681F12DCA6F995AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.920 -0500", hash_original_field = "3ADE0968885F2B69F714587571C2EBFA", hash_generated_field = "A880DA3011386B62681F12DCA6F995AF")
 
     public static final String KEY_AUTHENTICATOR_TYPES = "authenticator_types";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.341 -0500", hash_original_field = "08334C2698FE204AF6B81CC611A4DBBA", hash_generated_field = "E3A6E02E13FC436339BAE96EF05B9915")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.922 -0500", hash_original_field = "08334C2698FE204AF6B81CC611A4DBBA", hash_generated_field = "E3A6E02E13FC436339BAE96EF05B9915")
 
     public static final String KEY_AUTH_FAILED_MESSAGE = "authFailedMessage";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.341 -0500", hash_original_field = "E37E5ECAD0D64D7ED1A5CEF66DE47EAF", hash_generated_field = "6A52A1128A766E523E11400904962290")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.925 -0500", hash_original_field = "E37E5ECAD0D64D7ED1A5CEF66DE47EAF", hash_generated_field = "6A52A1128A766E523E11400904962290")
 
     public static final String KEY_AUTH_TOKEN_LABEL = "authTokenLabelKey";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.342 -0500", hash_original_field = "B51DD36D5E260AACD54FF2DE312E527D", hash_generated_field = "0966148F1C7D6F1B380611DBCB3F9034")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.927 -0500", hash_original_field = "B51DD36D5E260AACD54FF2DE312E527D", hash_generated_field = "0966148F1C7D6F1B380611DBCB3F9034")
 
     public static final String KEY_BOOLEAN_RESULT = "booleanResult";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.343 -0500", hash_original_field = "1CF502F8D50764F6B13A55576D6CDFFA", hash_generated_field = "5C41C2089C3858E1102D472FE91ABBF6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.930 -0500", hash_original_field = "1CF502F8D50764F6B13A55576D6CDFFA", hash_generated_field = "5C41C2089C3858E1102D472FE91ABBF6")
 
     public static final String KEY_ERROR_CODE = "errorCode";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.344 -0500", hash_original_field = "ADA3EC44AC6E597F649FE6254D2E789B", hash_generated_field = "6F255AB3CB507FA25E18B20330ACC508")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.933 -0500", hash_original_field = "ADA3EC44AC6E597F649FE6254D2E789B", hash_generated_field = "6F255AB3CB507FA25E18B20330ACC508")
 
     public static final String KEY_ERROR_MESSAGE = "errorMessage";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.346 -0500", hash_original_field = "E9A4AAE118D7BB95C318CA13DDDD555F", hash_generated_field = "41604824FAA4E2183B26678B9BA94C58")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.935 -0500", hash_original_field = "E9A4AAE118D7BB95C318CA13DDDD555F", hash_generated_field = "41604824FAA4E2183B26678B9BA94C58")
 
     public static final String KEY_USERDATA = "userdata";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.346 -0500", hash_original_field = "A3A647AD7521C8D42BF47A6D3AA88A59", hash_generated_field = "C963ED8E4968C78870BB72394D89E0BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.938 -0500", hash_original_field = "A3A647AD7521C8D42BF47A6D3AA88A59", hash_generated_field = "C963ED8E4968C78870BB72394D89E0BF")
 
     public static final String KEY_CALLER_UID = "callerUid";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.347 -0500", hash_original_field = "55A411E770665B1EB4CCBC2E84E23565", hash_generated_field = "597D7766913E4C39E55EDE8137AC8EF2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.940 -0500", hash_original_field = "55A411E770665B1EB4CCBC2E84E23565", hash_generated_field = "597D7766913E4C39E55EDE8137AC8EF2")
 
     public static final String KEY_CALLER_PID = "callerPid";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.348 -0500", hash_original_field = "41AEA02ECD85A934BE39FCB182815AF4", hash_generated_field = "DDEECC7543FA2BF07514362519C946F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.944 -0500", hash_original_field = "41AEA02ECD85A934BE39FCB182815AF4", hash_generated_field = "DDEECC7543FA2BF07514362519C946F4")
 
     public static final String KEY_ANDROID_PACKAGE_NAME = "androidPackageName";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.349 -0500", hash_original_field = "F9F02A0F8B553AA8CD71E53F99B100AF", hash_generated_field = "CBB4031BA4A54F6632AC99B12AF54139")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.946 -0500", hash_original_field = "F9F02A0F8B553AA8CD71E53F99B100AF", hash_generated_field = "CBB4031BA4A54F6632AC99B12AF54139")
 
     public static final String KEY_NOTIFY_ON_FAILURE = "notifyOnAuthFailure";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.350 -0500", hash_original_field = "8544C1E28E24976FB062BD804ABC83D7", hash_generated_field = "7CF12A75D3DE0CB88FEDEEC45F4C6998")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.949 -0500", hash_original_field = "8544C1E28E24976FB062BD804ABC83D7", hash_generated_field = "7CF12A75D3DE0CB88FEDEEC45F4C6998")
 
 
     public static final String ACTION_AUTHENTICATOR_INTENT =
             "android.accounts.AccountAuthenticator";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.350 -0500", hash_original_field = "C01C2A817D5D6732C027E2696F342880", hash_generated_field = "38C40DD9584F5E25D4E08184425EF38E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.951 -0500", hash_original_field = "C01C2A817D5D6732C027E2696F342880", hash_generated_field = "38C40DD9584F5E25D4E08184425EF38E")
 
     public static final String AUTHENTICATOR_META_DATA_NAME =
             "android.accounts.AccountAuthenticator";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.352 -0500", hash_original_field = "314037DEFD7C2016E3B7B7D5633C6393", hash_generated_field = "A69C2C428C8648CBB8DC6F428CBCC207")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.954 -0500", hash_original_field = "314037DEFD7C2016E3B7B7D5633C6393", hash_generated_field = "A69C2C428C8648CBB8DC6F428CBCC207")
 
     public static final String AUTHENTICATOR_ATTRIBUTES_NAME = "account-authenticator";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.355 -0500", hash_original_field = "A898A14B43D894B160BDF4779E4C2100", hash_generated_field = "5DE28EA7EC32E4A054DAAC679C704B36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.963 -0500", hash_original_field = "A898A14B43D894B160BDF4779E4C2100", hash_generated_field = "5DE28EA7EC32E4A054DAAC679C704B36")
 
     public static final String LOGIN_ACCOUNTS_CHANGED_ACTION =
         "android.accounts.LOGIN_ACCOUNTS_CHANGED";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.352 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.956 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.353 -0500", hash_original_field = "41CD1B8397AB313E493085F486A2475D", hash_generated_field = "5EECF8903744EA4C4535FC399DE7EDD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.958 -0500", hash_original_field = "41CD1B8397AB313E493085F486A2475D", hash_generated_field = "5EECF8903744EA4C4535FC399DE7EDD3")
 
     private  IAccountManager mService;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.354 -0500", hash_original_field = "028D008EEBDEF4402B8F64158F6B8728", hash_generated_field = "36D62901B5F66AD7425C1042CCC68DC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.961 -0500", hash_original_field = "028D008EEBDEF4402B8F64158F6B8728", hash_generated_field = "36D62901B5F66AD7425C1042CCC68DC2")
 
     private  Handler mMainHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.458 -0500", hash_original_field = "A97C603C6192DBB01430A77ACF905E46", hash_generated_field = "E06E5EFE2F853C682425BCF2C68C9174")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.259 -0500", hash_original_field = "A97C603C6192DBB01430A77ACF905E46", hash_generated_field = "E06E5EFE2F853C682425BCF2C68C9174")
 
 
     private final HashMap<OnAccountsUpdateListener, Handler> mAccountsUpdatedListeners =
@@ -301,20 +304,21 @@ public class AccountManager {
 
     
     private abstract class AmsTask extends FutureTask<Bundle> implements AccountManagerFuture<Bundle> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.401 -0500", hash_original_field = "BCCFC11938EEC7DE34A0DE82C0A04729", hash_generated_field = "BCCFC11938EEC7DE34A0DE82C0A04729")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.101 -0500", hash_original_field = "BCCFC11938EEC7DE34A0DE82C0A04729", hash_generated_field = "BCCFC11938EEC7DE34A0DE82C0A04729")
 
          IAccountManagerResponse mResponse;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.401 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.103 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
          Handler mHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.402 -0500", hash_original_field = "382974AD998518E9037A5E4EDC0E3105", hash_generated_field = "382974AD998518E9037A5E4EDC0E3105")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.105 -0500", hash_original_field = "382974AD998518E9037A5E4EDC0E3105", hash_generated_field = "382974AD998518E9037A5E4EDC0E3105")
 
          AccountManagerCallback<Bundle> mCallback;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.403 -0500", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "3895D7E6DB5042DA7856DC78E391C7B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.108 -0500", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "3895D7E6DB5042DA7856DC78E391C7B9")
 
          Activity mActivity;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.406 -0500", hash_original_method = "B1B053361B7316D8D8AF57ECEF4696C6", hash_generated_method = "D3F9634578D9A1D06C549591FAC325A2")
-        public AmsTask(Activity activity, Handler handler, AccountManagerCallback<Bundle> callback) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.115 -0500", hash_original_method = "B1B053361B7316D8D8AF57ECEF4696C6", hash_generated_method = "D3F9634578D9A1D06C549591FAC325A2")
+        
+public AmsTask(Activity activity, Handler handler, AccountManagerCallback<Bundle> callback) {
             super(new Callable<Bundle>() {
                 public Bundle call() throws Exception {
                     throw new IllegalStateException("this should never be called");
@@ -327,8 +331,9 @@ public class AccountManager {
             mResponse = new Response();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.407 -0500", hash_original_method = "E07DE3E7F6D29C4D4BDAC4812A3CF430", hash_generated_method = "920E5F18578729F244F551A940BC7E44")
-        public final AccountManagerFuture<Bundle> start() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.117 -0500", hash_original_method = "E07DE3E7F6D29C4D4BDAC4812A3CF430", hash_generated_method = "920E5F18578729F244F551A940BC7E44")
+        
+public final AccountManagerFuture<Bundle> start() {
             try {
                 doWork();
             } catch (RemoteException e) {
@@ -337,8 +342,9 @@ public class AccountManager {
             return this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.408 -0500", hash_original_method = "127E02577FE14DDB30AB934EB38A0588", hash_generated_method = "4BC6487A229BD836DB45687EBF9E02A9")
-        protected void set(Bundle bundle) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.120 -0500", hash_original_method = "127E02577FE14DDB30AB934EB38A0588", hash_generated_method = "4BC6487A229BD836DB45687EBF9E02A9")
+        
+protected void set(Bundle bundle) {
             // TODO: somehow a null is being set as the result of the Future. Log this
             // case to help debug where this is occurring. When this bug is fixed this
             // condition statement should be removed.
@@ -348,11 +354,13 @@ public class AccountManager {
             super.set(bundle);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.409 -0500", hash_original_method = "E172AC54BDA548AF6DAEF4A168CC4707", hash_generated_method = "84F2E7A49346DDBB2054F34A8AF373BF")
-        public abstract void doWork() throws RemoteException;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.123 -0500", hash_original_method = "E172AC54BDA548AF6DAEF4A168CC4707", hash_generated_method = "84F2E7A49346DDBB2054F34A8AF373BF")
+        
+public abstract void doWork() throws RemoteException;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.410 -0500", hash_original_method = "6C34E289CBAB2DD26AA2603338539143", hash_generated_method = "DDD1772D3E9759F0EF2ED2D8151322AC")
-        private Bundle internalGetResult(Long timeout, TimeUnit unit)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.126 -0500", hash_original_method = "6C34E289CBAB2DD26AA2603338539143", hash_generated_method = "DDD1772D3E9759F0EF2ED2D8151322AC")
+        
+private Bundle internalGetResult(Long timeout, TimeUnit unit)
                 throws OperationCanceledException, IOException, AuthenticatorException {
             if (!isDone()) {
                 ensureNotOnMainThread();
@@ -390,20 +398,23 @@ public class AccountManager {
             throw new OperationCanceledException();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.411 -0500", hash_original_method = "7428E8716809F4A01AF7F726F040DE64", hash_generated_method = "00F9263FEFCB2E71541C4C0C76EA7412")
-        public Bundle getResult()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.129 -0500", hash_original_method = "7428E8716809F4A01AF7F726F040DE64", hash_generated_method = "00F9263FEFCB2E71541C4C0C76EA7412")
+        
+public Bundle getResult()
                 throws OperationCanceledException, IOException, AuthenticatorException {
             return internalGetResult(null, null);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.411 -0500", hash_original_method = "2DB61FA3CF370F8EAC405A022C9CA553", hash_generated_method = "9D7E637B2597AAA6B0B651988F82E2BB")
-        public Bundle getResult(long timeout, TimeUnit unit)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.132 -0500", hash_original_method = "2DB61FA3CF370F8EAC405A022C9CA553", hash_generated_method = "9D7E637B2597AAA6B0B651988F82E2BB")
+        
+public Bundle getResult(long timeout, TimeUnit unit)
                 throws OperationCanceledException, IOException, AuthenticatorException {
             return internalGetResult(timeout, unit);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.412 -0500", hash_original_method = "3B9C9BC58CC1D6BA66EF9DB56725570D", hash_generated_method = "BFB06F3537CB087B532440F69518A89B")
-        protected void done() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.134 -0500", hash_original_method = "3B9C9BC58CC1D6BA66EF9DB56725570D", hash_generated_method = "BFB06F3537CB087B532440F69518A89B")
+        
+protected void done() {
             if (mCallback != null) {
                 postToHandler(mHandler, mCallback, this);
             }
@@ -417,8 +428,9 @@ public class AccountManager {
             {
                 //Synthesized constructor
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.414 -0500", hash_original_method = "BC11F9A6ED106794CC5C9152E9BD3B43", hash_generated_method = "3F87B4BC1804003A7DAC7BA8131AFE99")
-            public void onResult(Bundle bundle) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.138 -0500", hash_original_method = "BC11F9A6ED106794CC5C9152E9BD3B43", hash_generated_method = "3F87B4BC1804003A7DAC7BA8131AFE99")
+            
+public void onResult(Bundle bundle) {
                 Intent intent = bundle.getParcelable(KEY_INTENT);
                 if (intent != null && mActivity != null) {
                     // since the user provided an Activity we will silently start intents
@@ -437,8 +449,9 @@ public class AccountManager {
                 }
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.427 -0500", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "E9A25AD74E531D0CA5E7898168BA1F21")
-            public void onError(int code, String message) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.173 -0500", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "E9A25AD74E531D0CA5E7898168BA1F21")
+            
+public void onError(int code, String message) {
                 if (code == ERROR_CODE_CANCELED) {
                     cancel(true /* mayInterruptIfRunning */);
                     return;
@@ -456,15 +469,16 @@ public class AccountManager {
 
     
     private abstract class BaseFutureTask<T> extends FutureTask<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.417 -0500", hash_original_field = "BCCFC11938EEC7DE34A0DE82C0A04729", hash_generated_field = "A54F64CAD983BA5040DC733186B2FF3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.148 -0500", hash_original_field = "BCCFC11938EEC7DE34A0DE82C0A04729", hash_generated_field = "A54F64CAD983BA5040DC733186B2FF3B")
 
          public IAccountManagerResponse mResponse;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.418 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.150 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
          Handler mHandler;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.421 -0500", hash_original_method = "26CFE7EFCBFE85C3047A425A4F720F86", hash_generated_method = "97C1A6A5D268F23A7F2832D180811246")
-        public BaseFutureTask(Handler handler) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.157 -0500", hash_original_method = "26CFE7EFCBFE85C3047A425A4F720F86", hash_generated_method = "97C1A6A5D268F23A7F2832D180811246")
+        
+public BaseFutureTask(Handler handler) {
             super(new Callable<T>() {
                 public T call() throws Exception {
                     throw new IllegalStateException("this should never be called");
@@ -474,20 +488,24 @@ public class AccountManager {
             mResponse = new Response();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.422 -0500", hash_original_method = "E172AC54BDA548AF6DAEF4A168CC4707", hash_generated_method = "84F2E7A49346DDBB2054F34A8AF373BF")
-        public abstract void doWork() throws RemoteException;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.160 -0500", hash_original_method = "E172AC54BDA548AF6DAEF4A168CC4707", hash_generated_method = "84F2E7A49346DDBB2054F34A8AF373BF")
+        
+public abstract void doWork() throws RemoteException;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.423 -0500", hash_original_method = "B16E0611AA9ED6C18764DFE7CA12071D", hash_generated_method = "90D20EACEA319C48DC12C539CF65F27B")
-        public abstract T bundleToResult(Bundle bundle) throws AuthenticatorException;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.162 -0500", hash_original_method = "B16E0611AA9ED6C18764DFE7CA12071D", hash_generated_method = "90D20EACEA319C48DC12C539CF65F27B")
+        
+public abstract T bundleToResult(Bundle bundle) throws AuthenticatorException;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.424 -0500", hash_original_method = "B01C5697E6FB95B4A78D57A4C431F13F", hash_generated_method = "35A1D19D1320A4FEF16D6440EB19C749")
-        protected void postRunnableToHandler(Runnable runnable) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.165 -0500", hash_original_method = "B01C5697E6FB95B4A78D57A4C431F13F", hash_generated_method = "35A1D19D1320A4FEF16D6440EB19C749")
+        
+protected void postRunnableToHandler(Runnable runnable) {
             Handler handler = (mHandler == null) ? mMainHandler : mHandler;
             handler.post(runnable);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.425 -0500", hash_original_method = "030130E13746E076BBD203E6D46CECFF", hash_generated_method = "CE63BDF795AFCD5FD813F1CD9CB6EAE0")
-        protected void startTask() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.167 -0500", hash_original_method = "030130E13746E076BBD203E6D46CECFF", hash_generated_method = "CE63BDF795AFCD5FD813F1CD9CB6EAE0")
+        
+protected void startTask() {
             try {
                 doWork();
             } catch (RemoteException e) {
@@ -503,8 +521,9 @@ public class AccountManager {
             {
                 //Synthesized constructor
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.426 -0500", hash_original_method = "B8AEC5DE9AFE3040461BEFA9E791EE34", hash_generated_method = "51996DB584D72AA7DA964142316806B5")
-            public void onResult(Bundle bundle) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.171 -0500", hash_original_method = "B8AEC5DE9AFE3040461BEFA9E791EE34", hash_generated_method = "51996DB584D72AA7DA964142316806B5")
+            
+public void onResult(Bundle bundle) {
                 try {
                     T result = bundleToResult(bundle);
                     if (result == null) {
@@ -550,17 +569,19 @@ public class AccountManager {
 
     
     private abstract class Future2Task<T> extends BaseFutureTask<T> implements AccountManagerFuture<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.429 -0500", hash_original_field = "719E4FBEE0E6D8BC8E61E553D79747F3", hash_generated_field = "719E4FBEE0E6D8BC8E61E553D79747F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.180 -0500", hash_original_field = "719E4FBEE0E6D8BC8E61E553D79747F3", hash_generated_field = "719E4FBEE0E6D8BC8E61E553D79747F3")
 
          AccountManagerCallback<T> mCallback;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.430 -0500", hash_original_method = "FC1DD61776F9D5FC9C321068652B66F1", hash_generated_method = "8184112D75CA5479DB5EB0D06C531140")
-        public Future2Task(Handler handler, AccountManagerCallback<T> callback) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.182 -0500", hash_original_method = "FC1DD61776F9D5FC9C321068652B66F1", hash_generated_method = "8184112D75CA5479DB5EB0D06C531140")
+        
+public Future2Task(Handler handler, AccountManagerCallback<T> callback) {
             super(handler);
             mCallback = callback;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.432 -0500", hash_original_method = "762C0B9FE5A1A00B697BA32E9AEAF22E", hash_generated_method = "CC61DCE0CA778D73894F80744B6264E9")
-        protected void done() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.189 -0500", hash_original_method = "762C0B9FE5A1A00B697BA32E9AEAF22E", hash_generated_method = "CC61DCE0CA778D73894F80744B6264E9")
+        
+protected void done() {
             if (mCallback != null) {
                 postRunnableToHandler(new Runnable() {
                     public void run() {
@@ -570,14 +591,16 @@ public class AccountManager {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.433 -0500", hash_original_method = "31A85EDC6833090D765F6613E9274CD1", hash_generated_method = "7D9A6A6A9F04A41A6BD46ED77E3F5619")
-        public Future2Task<T> start() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.191 -0500", hash_original_method = "31A85EDC6833090D765F6613E9274CD1", hash_generated_method = "7D9A6A6A9F04A41A6BD46ED77E3F5619")
+        
+public Future2Task<T> start() {
             startTask();
             return this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.434 -0500", hash_original_method = "41F0112BBEC6735226A2F41FF2202D7E", hash_generated_method = "0239A56840CD6C80C452C472F8299284")
-        private T internalGetResult(Long timeout, TimeUnit unit)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.194 -0500", hash_original_method = "41F0112BBEC6735226A2F41FF2202D7E", hash_generated_method = "0239A56840CD6C80C452C472F8299284")
+        
+private T internalGetResult(Long timeout, TimeUnit unit)
                 throws OperationCanceledException, IOException, AuthenticatorException {
             if (!isDone()) {
                 ensureNotOnMainThread();
@@ -615,14 +638,16 @@ public class AccountManager {
             throw new OperationCanceledException();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.435 -0500", hash_original_method = "F09B519E265A8A66FE763E800742348B", hash_generated_method = "9EBD0039162A8275DDAC5AE2D3DEF838")
-        public T getResult()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.197 -0500", hash_original_method = "F09B519E265A8A66FE763E800742348B", hash_generated_method = "9EBD0039162A8275DDAC5AE2D3DEF838")
+        
+public T getResult()
                 throws OperationCanceledException, IOException, AuthenticatorException {
             return internalGetResult(null, null);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.436 -0500", hash_original_method = "50CBD7888960B26C4BF28EA57E206BB1", hash_generated_method = "02AF5BFF6F8E1D6BEF4E55776C8ECD52")
-        public T getResult(long timeout, TimeUnit unit)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.200 -0500", hash_original_method = "50CBD7888960B26C4BF28EA57E206BB1", hash_generated_method = "02AF5BFF6F8E1D6BEF4E55776C8ECD52")
+        
+public T getResult(long timeout, TimeUnit unit)
                 throws OperationCanceledException, IOException, AuthenticatorException {
             return internalGetResult(timeout, unit);
         }
@@ -633,32 +658,33 @@ public class AccountManager {
 
     
     private class GetAuthTokenByTypeAndFeaturesTask extends AmsTask implements AccountManagerCallback<Bundle> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.440 -0500", hash_original_field = "787F270AB101B859863E4A8AC2ACCBAB", hash_generated_field = "DA7FCA7FD25B2715DDA5B1151A329B57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.209 -0500", hash_original_field = "787F270AB101B859863E4A8AC2ACCBAB", hash_generated_field = "DA7FCA7FD25B2715DDA5B1151A329B57")
 
         volatile AccountManagerFuture<Bundle> mFuture = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.441 -0500", hash_original_field = "1BAC3F5B48D7CBDC0DEC096887906F9A", hash_generated_field = "1BAC3F5B48D7CBDC0DEC096887906F9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.212 -0500", hash_original_field = "1BAC3F5B48D7CBDC0DEC096887906F9A", hash_generated_field = "1BAC3F5B48D7CBDC0DEC096887906F9A")
 
          String mAccountType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.442 -0500", hash_original_field = "62E235D18D61381B167C250C0385DCF5", hash_generated_field = "62E235D18D61381B167C250C0385DCF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.214 -0500", hash_original_field = "62E235D18D61381B167C250C0385DCF5", hash_generated_field = "62E235D18D61381B167C250C0385DCF5")
 
          String mAuthTokenType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.443 -0500", hash_original_field = "BB73EBD9036EEEC92FAB5A91A39B5A6F", hash_generated_field = "BB73EBD9036EEEC92FAB5A91A39B5A6F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.218 -0500", hash_original_field = "BB73EBD9036EEEC92FAB5A91A39B5A6F", hash_generated_field = "BB73EBD9036EEEC92FAB5A91A39B5A6F")
 
          String[] mFeatures;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.444 -0500", hash_original_field = "7B6AE567E0F7C37B83B94413E80422D3", hash_generated_field = "7B6AE567E0F7C37B83B94413E80422D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.220 -0500", hash_original_field = "7B6AE567E0F7C37B83B94413E80422D3", hash_generated_field = "7B6AE567E0F7C37B83B94413E80422D3")
 
          Bundle mAddAccountOptions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.444 -0500", hash_original_field = "4B7678D538696871E7C4A9E9A154E69B", hash_generated_field = "4B7678D538696871E7C4A9E9A154E69B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.222 -0500", hash_original_field = "4B7678D538696871E7C4A9E9A154E69B", hash_generated_field = "4B7678D538696871E7C4A9E9A154E69B")
 
          Bundle mLoginOptions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.445 -0500", hash_original_field = "9AB039BA73F970DDDFBFE5E982A0A257", hash_generated_field = "9AB039BA73F970DDDFBFE5E982A0A257")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.225 -0500", hash_original_field = "9AB039BA73F970DDDFBFE5E982A0A257", hash_generated_field = "9AB039BA73F970DDDFBFE5E982A0A257")
 
          AccountManagerCallback<Bundle> mMyCallback;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.446 -0500", hash_original_field = "72DA832F6EC774BAB58CFC3BEE423DA0", hash_generated_field = "71E70B13764C89A5A2D6CAA3A090D703")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.227 -0500", hash_original_field = "72DA832F6EC774BAB58CFC3BEE423DA0", hash_generated_field = "71E70B13764C89A5A2D6CAA3A090D703")
 
         private volatile int mNumAccounts = 0;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.439 -0500", hash_original_method = "8B428F75DFA4C0F7DC2037249CE783CE", hash_generated_method = "8B428F75DFA4C0F7DC2037249CE783CE")
-        GetAuthTokenByTypeAndFeaturesTask(final String accountType, final String authTokenType,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.207 -0500", hash_original_method = "8B428F75DFA4C0F7DC2037249CE783CE", hash_generated_method = "8B428F75DFA4C0F7DC2037249CE783CE")
+        
+GetAuthTokenByTypeAndFeaturesTask(final String accountType, final String authTokenType,
                 final String[] features, Activity activityForPrompting,
                 final Bundle addAccountOptions, final Bundle loginOptions,
                 AccountManagerCallback<Bundle> callback, Handler handler) {
@@ -672,8 +698,9 @@ public class AccountManager {
             mMyCallback = this;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.452 -0500", hash_original_method = "C4C5F207D191035A436136641EA5FDB4", hash_generated_method = "7576066B51E9EF8200F077235AE71D71")
-        public void doWork() throws RemoteException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.244 -0500", hash_original_method = "C4C5F207D191035A436136641EA5FDB4", hash_generated_method = "7576066B51E9EF8200F077235AE71D71")
+        
+public void doWork() throws RemoteException {
             getAccountsByTypeAndFeatures(mAccountType, mFeatures,
                     new AccountManagerCallback<Account[]>() {
                         public void run(AccountManagerFuture<Account[]> future) {
@@ -763,8 +790,9 @@ public class AccountManager {
                         }}, mHandler);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.453 -0500", hash_original_method = "770A26A7F965A1883CF21DF75B7155CF", hash_generated_method = "789EE338FABA28369118D635F320E85B")
-        public void run(AccountManagerFuture<Bundle> future) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.247 -0500", hash_original_method = "770A26A7F965A1883CF21DF75B7155CF", hash_generated_method = "789EE338FABA28369118D635F320E85B")
+        
+public void run(AccountManagerFuture<Bundle> future) {
             try {
                 final Bundle result = future.getResult();
                 if (mNumAccounts == 0) {
@@ -813,8 +841,9 @@ public class AccountManager {
      * @param account The account to query for a password
      * @return The account's password, null if none or if the account doesn't exist
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.360 -0500", hash_original_method = "96491C15B9EBF498D1F12389B670F852", hash_generated_method = "507B905B9387DA03A81F4A185732ED61")
-    public String getPassword(final Account account) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.977 -0500", hash_original_method = "96491C15B9EBF498D1F12389B670F852", hash_generated_method = "507B905B9387DA03A81F4A185732ED61")
+    
+public String getPassword(final Account account) {
         if (account == null) throw new IllegalArgumentException("account is null");
         try {
             return mService.getPassword(account);
@@ -839,8 +868,9 @@ public class AccountManager {
      * @param account The account to query for user data
      * @return The user data, null if the account or key doesn't exist
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.361 -0500", hash_original_method = "8DF662EA0E604D155E2F8EF5AE185580", hash_generated_method = "AE45A2B824F8C312756415AB8BD08328")
-    public String getUserData(final Account account, final String key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.980 -0500", hash_original_method = "8DF662EA0E604D155E2F8EF5AE185580", hash_generated_method = "AE45A2B824F8C312756415AB8BD08328")
+    
+public String getUserData(final Account account, final String key) {
         if (account == null) throw new IllegalArgumentException("account is null");
         if (key == null) throw new IllegalArgumentException("key is null");
         try {
@@ -862,8 +892,9 @@ public class AccountManager {
      *     authenticator known to the AccountManager service.  Empty (never
      *     null) if no authenticators are known.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.362 -0500", hash_original_method = "CE81752A69974A848970631715E35659", hash_generated_method = "748F931D39A4440F0C9729C8E4947ADB")
-    public AuthenticatorDescription[] getAuthenticatorTypes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.982 -0500", hash_original_method = "CE81752A69974A848970631715E35659", hash_generated_method = "748F931D39A4440F0C9729C8E4947ADB")
+    
+public AuthenticatorDescription[] getAuthenticatorTypes() {
         try {
             return mService.getAuthenticatorTypes();
         } catch (RemoteException e) {
@@ -884,8 +915,9 @@ public class AccountManager {
      * @return An array of {@link Account}, one for each account.  Empty
      *     (never null) if no accounts have been added.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.362 -0500", hash_original_method = "CBAE32CDB06D92C44980C30430EF1CC0", hash_generated_method = "3C8716EFC8BE771BB2ED9E3800837556")
-    public Account[] getAccounts() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.984 -0500", hash_original_method = "CBAE32CDB06D92C44980C30430EF1CC0", hash_generated_method = "3C8716EFC8BE771BB2ED9E3800837556")
+    
+public Account[] getAccounts() {
         try {
             return mService.getAccounts(null);
         } catch (RemoteException e) {
@@ -910,8 +942,9 @@ public class AccountManager {
      * @return An array of {@link Account}, one per matching account.  Empty
      *     (never null) if no accounts of the specified type have been added.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.363 -0500", hash_original_method = "182706774272102452F63339D769DBB2", hash_generated_method = "3E5A9E7DA6686259CE7A37D9087EAE06")
-    public Account[] getAccountsByType(String type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.987 -0500", hash_original_method = "182706774272102452F63339D769DBB2", hash_generated_method = "3E5A9E7DA6686259CE7A37D9087EAE06")
+    
+public Account[] getAccountsByType(String type) {
         try {
             return mService.getAccounts(type);
         } catch (RemoteException e) {
@@ -943,8 +976,9 @@ public class AccountManager {
      * @return An {@link AccountManagerFuture} which resolves to a Boolean,
      * true if the account exists and has all of the specified features.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.366 -0500", hash_original_method = "74ADBAC1696D9C481AB31AC8146F1AF9", hash_generated_method = "C14BE34C7DF9E035F0BC9FA9EDFC8E53")
-    public AccountManagerFuture<Boolean> hasFeatures(final Account account,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.995 -0500", hash_original_method = "74ADBAC1696D9C481AB31AC8146F1AF9", hash_generated_method = "C14BE34C7DF9E035F0BC9FA9EDFC8E53")
+    
+public AccountManagerFuture<Boolean> hasFeatures(final Account account,
             final String[] features,
             AccountManagerCallback<Boolean> callback, Handler handler) {
         if (account == null) throw new IllegalArgumentException("account is null");
@@ -989,8 +1023,9 @@ public class AccountManager {
      *     {@link Account}, one per account of the specified type which
      *     matches the requested features.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.370 -0500", hash_original_method = "430725BCDDC603435317A3A309F1AEF2", hash_generated_method = "9021CB12DAAAF3EB5390CFB8CEE7C861")
-    public AccountManagerFuture<Account[]> getAccountsByTypeAndFeatures(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.005 -0500", hash_original_method = "430725BCDDC603435317A3A309F1AEF2", hash_generated_method = "9021CB12DAAAF3EB5390CFB8CEE7C861")
+    
+public AccountManagerFuture<Account[]> getAccountsByTypeAndFeatures(
             final String type, final String[] features,
             AccountManagerCallback<Account[]> callback, Handler handler) {
         if (type == null) throw new IllegalArgumentException("type is null");
@@ -1028,8 +1063,9 @@ public class AccountManager {
      * @return True if the account was successfully added, false if the account
      *     already exists, the account is null, or another error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.371 -0500", hash_original_method = "757D4D500E44E3A8DF2EF3DE74D56199", hash_generated_method = "3DCE731003B6465DC675805C3C9DBC38")
-    public boolean addAccountExplicitly(Account account, String password, Bundle userdata) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.008 -0500", hash_original_method = "757D4D500E44E3A8DF2EF3DE74D56199", hash_generated_method = "3DCE731003B6465DC675805C3C9DBC38")
+    
+public boolean addAccountExplicitly(Account account, String password, Bundle userdata) {
         if (account == null) throw new IllegalArgumentException("account is null");
         try {
             return mService.addAccount(account, password, userdata);
@@ -1060,8 +1096,9 @@ public class AccountManager {
      *     true if the account has been successfully removed,
      *     false if the authenticator forbids deleting this account.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.374 -0500", hash_original_method = "E8BA698C89E3CF76A294446D4D176FF0", hash_generated_method = "604D26B1D6F9346FDB793FE2F6AF6F35")
-    public AccountManagerFuture<Boolean> removeAccount(final Account account,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.016 -0500", hash_original_method = "E8BA698C89E3CF76A294446D4D176FF0", hash_generated_method = "604D26B1D6F9346FDB793FE2F6AF6F35")
+    
+public AccountManagerFuture<Boolean> removeAccount(final Account account,
             AccountManagerCallback<Boolean> callback, Handler handler) {
         if (account == null) throw new IllegalArgumentException("account is null");
         return new Future2Task<Boolean>(handler, callback) {
@@ -1093,8 +1130,9 @@ public class AccountManager {
      * @param accountType The account type of the auth token to invalidate, must not be null
      * @param authToken The auth token to invalidate, may be null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.375 -0500", hash_original_method = "4162D414A92CDAFD44055C84C3F9947E", hash_generated_method = "951E58E3DB5435C77EA4F5E2F3AD6DB5")
-    public void invalidateAuthToken(final String accountType, final String authToken) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.018 -0500", hash_original_method = "4162D414A92CDAFD44055C84C3F9947E", hash_generated_method = "951E58E3DB5435C77EA4F5E2F3AD6DB5")
+    
+public void invalidateAuthToken(final String accountType, final String authToken) {
         if (accountType == null) throw new IllegalArgumentException("accountType is null");
         try {
             if (authToken != null) {
@@ -1123,8 +1161,9 @@ public class AccountManager {
      * @return The cached auth token for this account and type, or null if
      *     no auth token is cached or the account does not exist.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.376 -0500", hash_original_method = "DF00C62B1FBE79E2C2C3124DAA6E8CCA", hash_generated_method = "A0F5850B683375BA8343334B52A2ABE0")
-    public String peekAuthToken(final Account account, final String authTokenType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.021 -0500", hash_original_method = "DF00C62B1FBE79E2C2C3124DAA6E8CCA", hash_generated_method = "A0F5850B683375BA8343334B52A2ABE0")
+    
+public String peekAuthToken(final Account account, final String authTokenType) {
         if (account == null) throw new IllegalArgumentException("account is null");
         if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
         try {
@@ -1150,8 +1189,9 @@ public class AccountManager {
      * @param account The account to set a password for
      * @param password The password to set, null to clear the password
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.377 -0500", hash_original_method = "DBE21AE149A5EC66FBC34FA1D5807CA3", hash_generated_method = "A8E24B094050C44F65D349391CF51349")
-    public void setPassword(final Account account, final String password) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.024 -0500", hash_original_method = "DBE21AE149A5EC66FBC34FA1D5807CA3", hash_generated_method = "A8E24B094050C44F65D349391CF51349")
+    
+public void setPassword(final Account account, final String password) {
         if (account == null) throw new IllegalArgumentException("account is null");
         try {
             mService.setPassword(account, password);
@@ -1175,8 +1215,9 @@ public class AccountManager {
      *
      * @param account The account whose password to clear
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.378 -0500", hash_original_method = "9D6E3653B7C827404B4854FFAF700F44", hash_generated_method = "CCF578CC7F5CD0D40880E62BB767450E")
-    public void clearPassword(final Account account) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.026 -0500", hash_original_method = "9D6E3653B7C827404B4854FFAF700F44", hash_generated_method = "CCF578CC7F5CD0D40880E62BB767450E")
+    
+public void clearPassword(final Account account) {
         if (account == null) throw new IllegalArgumentException("account is null");
         try {
             mService.clearPassword(account);
@@ -1201,8 +1242,9 @@ public class AccountManager {
      * @param key The userdata key to set.  Must not be null
      * @param value The value to set, null to clear this userdata key
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.378 -0500", hash_original_method = "39E18EFA140E2C140EF9BDAC244CFA88", hash_generated_method = "31F2A702F9CF815DA5920719B8142700")
-    public void setUserData(final Account account, final String key, final String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.029 -0500", hash_original_method = "39E18EFA140E2C140EF9BDAC244CFA88", hash_generated_method = "31F2A702F9CF815DA5920719B8142700")
+    
+public void setUserData(final Account account, final String key, final String value) {
         if (account == null) throw new IllegalArgumentException("account is null");
         if (key == null) throw new IllegalArgumentException("key is null");
         try {
@@ -1229,8 +1271,9 @@ public class AccountManager {
      * @param authTokenType The type of the auth token, see {#getAuthToken}
      * @param authToken The auth token to add to the cache
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.379 -0500", hash_original_method = "967876CD971AD7982E73046636574113", hash_generated_method = "E7C787CE5FFA14E341ACA23702086A73")
-    public void setAuthToken(Account account, final String authTokenType, final String authToken) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.031 -0500", hash_original_method = "967876CD971AD7982E73046636574113", hash_generated_method = "E7C787CE5FFA14E341ACA23702086A73")
+    
+public void setAuthToken(Account account, final String authTokenType, final String authToken) {
         if (account == null) throw new IllegalArgumentException("account is null");
         if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
         try {
@@ -1264,8 +1307,9 @@ public class AccountManager {
      * @throws java.io.IOException if the authenticator experienced an I/O problem
      *     creating a new auth token, usually because of network trouble
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.380 -0500", hash_original_method = "51CDD8704FBB21791536BE5C26E3F85E", hash_generated_method = "88EFABDB4E4E86089ADFDC19C5A43689")
-    public String blockingGetAuthToken(Account account, String authTokenType,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.034 -0500", hash_original_method = "51CDD8704FBB21791536BE5C26E3F85E", hash_generated_method = "88EFABDB4E4E86089ADFDC19C5A43689")
+    
+public String blockingGetAuthToken(Account account, String authTokenType,
             boolean notifyAuthFailure)
             throws OperationCanceledException, IOException, AuthenticatorException {
         if (account == null) throw new IllegalArgumentException("account is null");
@@ -1339,8 +1383,9 @@ public class AccountManager {
      * authenticator-dependent.  The caller should verify the validity of the
      * account before requesting an auth token.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.383 -0500", hash_original_method = "DC329BE18D12A187B670EF72046E93F0", hash_generated_method = "6A78EF68BD695D1D60F2FED08D299EE1")
-    public AccountManagerFuture<Bundle> getAuthToken(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.040 -0500", hash_original_method = "DC329BE18D12A187B670EF72046E93F0", hash_generated_method = "6A78EF68BD695D1D60F2FED08D299EE1")
+    
+public AccountManagerFuture<Bundle> getAuthToken(
             final Account account, final String authTokenType, final Bundle options,
             final Activity activity, AccountManagerCallback<Bundle> callback, Handler handler) {
         if (account == null) throw new IllegalArgumentException("account is null");
@@ -1429,9 +1474,10 @@ public class AccountManager {
      * @deprecated use {@link #getAuthToken(Account, String, android.os.Bundle,
      * boolean, AccountManagerCallback, android.os.Handler)} instead
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.383 -0500", hash_original_method = "63BBFF30BB2AEF86FE403A4E568375F4", hash_generated_method = "982AFE464C844194B8DCAD4487B88C71")
-    @Deprecated
-public AccountManagerFuture<Bundle> getAuthToken(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.043 -0500", hash_original_method = "63BBFF30BB2AEF86FE403A4E568375F4", hash_generated_method = "982AFE464C844194B8DCAD4487B88C71")
+    
+@Deprecated
+    public AccountManagerFuture<Bundle> getAuthToken(
             final Account account, final String authTokenType, 
             final boolean notifyAuthFailure,
             AccountManagerCallback<Bundle> callback, Handler handler) {
@@ -1509,8 +1555,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      * authenticator-dependent.  The caller should verify the validity of the
      * account before requesting an auth token.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.386 -0500", hash_original_method = "748DC8BCC0E7F6CE1552DDD9EEAFB074", hash_generated_method = "06E63B0EA22F6B040ADFECFA126FA224")
-    public AccountManagerFuture<Bundle> getAuthToken(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.050 -0500", hash_original_method = "748DC8BCC0E7F6CE1552DDD9EEAFB074", hash_generated_method = "06E63B0EA22F6B040ADFECFA126FA224")
+    
+public AccountManagerFuture<Bundle> getAuthToken(
             final Account account, final String authTokenType, final Bundle options,
             final boolean notifyAuthFailure,
             AccountManagerCallback<Bundle> callback, Handler handler) {
@@ -1578,8 +1625,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      *      creating a new account, usually because of network trouble
      * </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.388 -0500", hash_original_method = "6ACDAD8A4FE951A7F40DF03A76D4A058", hash_generated_method = "1185125A1E5F2791E5AF6908BD303D50")
-    public AccountManagerFuture<Bundle> addAccount(final String accountType,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.055 -0500", hash_original_method = "6ACDAD8A4FE951A7F40DF03A76D4A058", hash_generated_method = "1185125A1E5F2791E5AF6908BD303D50")
+    
+public AccountManagerFuture<Bundle> addAccount(final String accountType,
             final String authTokenType, final String[] requiredFeatures,
             final Bundle addAccountOptions,
             final Activity activity, AccountManagerCallback<Bundle> callback, Handler handler) {
@@ -1652,8 +1700,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      *      verifying the password, usually because of network trouble
      * </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.390 -0500", hash_original_method = "E9F24B896DDD289C3D9D25FA0235DC55", hash_generated_method = "E2D82630AC364FC858051E0C6AC18D99")
-    public AccountManagerFuture<Bundle> confirmCredentials(final Account account,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.061 -0500", hash_original_method = "E9F24B896DDD289C3D9D25FA0235DC55", hash_generated_method = "E2D82630AC364FC858051E0C6AC18D99")
+    
+public AccountManagerFuture<Bundle> confirmCredentials(final Account account,
             final Bundle options,
             final Activity activity,
             final AccountManagerCallback<Bundle> callback,
@@ -1713,8 +1762,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      *      verifying the password, usually because of network trouble
      * </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.392 -0500", hash_original_method = "D809F6F9BB7D46EEEE0B772ED5C9F6A9", hash_generated_method = "6E18974BE6A1CA9F6A170DC8B365EFCE")
-    public AccountManagerFuture<Bundle> updateCredentials(final Account account,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.078 -0500", hash_original_method = "D809F6F9BB7D46EEEE0B772ED5C9F6A9", hash_generated_method = "6E18974BE6A1CA9F6A170DC8B365EFCE")
+    
+public AccountManagerFuture<Bundle> updateCredentials(final Account account,
             final String authTokenType,
             final Bundle options, final Activity activity,
             final AccountManagerCallback<Bundle> callback,
@@ -1765,8 +1815,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      *      updating settings, usually because of network trouble
      * </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.394 -0500", hash_original_method = "72C42C362A18F251D937648B5DDE9096", hash_generated_method = "0B5B02A0D7E40E55766A1D4FA9DA5FDA")
-    public AccountManagerFuture<Bundle> editProperties(final String accountType,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.084 -0500", hash_original_method = "72C42C362A18F251D937648B5DDE9096", hash_generated_method = "0B5B02A0D7E40E55766A1D4FA9DA5FDA")
+    
+public AccountManagerFuture<Bundle> editProperties(final String accountType,
             final Activity activity, final AccountManagerCallback<Bundle> callback,
             final Handler handler) {
         if (accountType == null) throw new IllegalArgumentException("accountType is null");
@@ -1777,8 +1828,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
         }.start();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.396 -0500", hash_original_method = "05C769BBE692F72E464B52B58848EACE", hash_generated_method = "AC805C3019B3B0AC462E72DD9A55AA27")
-    private void ensureNotOnMainThread() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.086 -0500", hash_original_method = "05C769BBE692F72E464B52B58848EACE", hash_generated_method = "AC805C3019B3B0AC462E72DD9A55AA27")
+    
+private void ensureNotOnMainThread() {
         final Looper looper = Looper.myLooper();
         if (looper != null && looper == mContext.getMainLooper()) {
             final IllegalStateException exception = new IllegalStateException(
@@ -1791,8 +1843,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.397 -0500", hash_original_method = "80D38BDC6E0DE7333CAAD84CC9E6E84A", hash_generated_method = "5C7B88FBC2023512CF9D7AADA7F3251A")
-    private void postToHandler(Handler handler, final AccountManagerCallback<Bundle> callback,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.092 -0500", hash_original_method = "80D38BDC6E0DE7333CAAD84CC9E6E84A", hash_generated_method = "5C7B88FBC2023512CF9D7AADA7F3251A")
+    
+private void postToHandler(Handler handler, final AccountManagerCallback<Bundle> callback,
             final AccountManagerFuture<Bundle> future) {
         handler = handler == null ? mMainHandler : handler;
         handler.post(new Runnable() {
@@ -1802,8 +1855,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
         });
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.400 -0500", hash_original_method = "20F25A89C89C92245636BC8DCFF18BD7", hash_generated_method = "4045BDD7789E44982A042C28F60CC555")
-    private void postToHandler(Handler handler, final OnAccountsUpdateListener listener,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.098 -0500", hash_original_method = "20F25A89C89C92245636BC8DCFF18BD7", hash_generated_method = "4045BDD7789E44982A042C28F60CC555")
+    
+private void postToHandler(Handler handler, final OnAccountsUpdateListener listener,
             final Account[] accounts) {
         final Account[] accountsCopy = new Account[accounts.length];
         // send a copy to make sure that one doesn't
@@ -1823,8 +1877,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
         });
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.438 -0500", hash_original_method = "6FDE075EEB86D1BECEDE842FFDA184DE", hash_generated_method = "E3E7A3DF6CE8F3FD2FAF466271540457")
-    private Exception convertErrorToException(int code, String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.204 -0500", hash_original_method = "6FDE075EEB86D1BECEDE842FFDA184DE", hash_generated_method = "E3E7A3DF6CE8F3FD2FAF466271540457")
+    
+private Exception convertErrorToException(int code, String message) {
         if (code == ERROR_CODE_NETWORK_ERROR) {
             return new IOException(message);
         }
@@ -1897,8 +1952,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      *      updating settings, usually because of network trouble
      * </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.456 -0500", hash_original_method = "801F35A66961F670B5EADD181BA66DC7", hash_generated_method = "E96204DEE4ACD9C303080284B2FA6B19")
-    public AccountManagerFuture<Bundle> getAuthTokenByFeatures(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.253 -0500", hash_original_method = "801F35A66961F670B5EADD181BA66DC7", hash_generated_method = "E96204DEE4ACD9C303080284B2FA6B19")
+    
+public AccountManagerFuture<Bundle> getAuthTokenByFeatures(
             final String accountType, final String authTokenType, final String[] features,
             final Activity activity, final Bundle addAccountOptions,
             final Bundle getAuthTokenOptions,
@@ -1936,8 +1992,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      * @throws IllegalArgumentException if listener is null
      * @throws IllegalStateException if listener was already added
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.461 -0500", hash_original_method = "7A5668A93C6BCE258395457FB89679A1", hash_generated_method = "89B02BB73B7FF745EB07796067141868")
-    public void addOnAccountsUpdatedListener(final OnAccountsUpdateListener listener,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.267 -0500", hash_original_method = "7A5668A93C6BCE258395457FB89679A1", hash_generated_method = "89B02BB73B7FF745EB07796067141868")
+    
+public void addOnAccountsUpdatedListener(final OnAccountsUpdateListener listener,
             Handler handler, boolean updateImmediately) {
         if (listener == null) {
             throw new IllegalArgumentException("the listener is null");
@@ -1978,8 +2035,9 @@ public AccountManagerFuture<Bundle> getAuthToken(
      * @throws IllegalArgumentException if listener is null
      * @throws IllegalStateException if listener was not already added
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:04.462 -0500", hash_original_method = "66F9A18B2BBFAE47B027D9D23A795F11", hash_generated_method = "83C4424B2DDA414C73E45E20774E7B62")
-    public void removeOnAccountsUpdatedListener(OnAccountsUpdateListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.270 -0500", hash_original_method = "66F9A18B2BBFAE47B027D9D23A795F11", hash_generated_method = "83C4424B2DDA414C73E45E20774E7B62")
+    
+public void removeOnAccountsUpdatedListener(OnAccountsUpdateListener listener) {
         if (listener == null) throw new IllegalArgumentException("listener is null");
         synchronized (mAccountsUpdatedListeners) {
             if (!mAccountsUpdatedListeners.containsKey(listener)) {

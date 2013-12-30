@@ -27,8 +27,9 @@ public class DomainNameValidator {
      * @param thisDomain The domain name of the site being visited
      * @return True iff if there is a domain match as specified by RFC2818
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.200 -0500", hash_original_method = "68F4A719CC13890482E2E4D067F0B6D6", hash_generated_method = "352A5D5B42344D6A9110067E6C3F7EBC")
-    public static boolean match(X509Certificate certificate, String thisDomain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.508 -0500", hash_original_method = "68F4A719CC13890482E2E4D067F0B6D6", hash_generated_method = "352A5D5B42344D6A9110067E6C3F7EBC")
+    
+public static boolean match(X509Certificate certificate, String thisDomain) {
         if (certificate == null || thisDomain == null || thisDomain.length() == 0) {
             return false;
         }
@@ -44,8 +45,9 @@ public class DomainNameValidator {
     /**
      * @return True iff the domain name is specified as an IP address
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.201 -0500", hash_original_method = "E9F532CEF2F4F6A1EF805C8CA429D275", hash_generated_method = "86542C5257423536EE37AAD413F10E68")
-    private static boolean isIpAddress(String domain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.512 -0500", hash_original_method = "E9F532CEF2F4F6A1EF805C8CA429D275", hash_generated_method = "86542C5257423536EE37AAD413F10E68")
+    
+private static boolean isIpAddress(String domain) {
         boolean rval = (domain != null && domain.length() != 0);
         if (rval) {
             try {
@@ -70,8 +72,9 @@ public class DomainNameValidator {
      * @param thisDomain The DNS domain name of the site being visited
      * @return True iff if there is a domain match as specified by RFC2818
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.202 -0500", hash_original_method = "DBB4EF5840B4656B4D7CD7498EF1A157", hash_generated_method = "B5D6BEEE5C50711516C06A63C9884CAB")
-    private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.514 -0500", hash_original_method = "DBB4EF5840B4656B4D7CD7498EF1A157", hash_generated_method = "B5D6BEEE5C50711516C06A63C9884CAB")
+    
+private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchIpAddress(): this domain: " + thisDomain);
         }
@@ -111,8 +114,9 @@ public class DomainNameValidator {
      * @param thisDomain The DNS domain name of the site being visited
      * @return True iff if there is a domain match as specified by RFC2818
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.203 -0500", hash_original_method = "C83F44B9F19EF99C9FE0202DE345EC32", hash_generated_method = "744132E1B36703B77D181E917FFD7267")
-    private static boolean matchDns(X509Certificate certificate, String thisDomain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.518 -0500", hash_original_method = "C83F44B9F19EF99C9FE0202DE345EC32", hash_generated_method = "744132E1B36703B77D181E917FFD7267")
+    
+private static boolean matchDns(X509Certificate certificate, String thisDomain) {
         boolean hasDns = false;
         try {
             Collection subjectAltNames = certificate.getSubjectAlternativeNames();
@@ -168,8 +172,9 @@ public class DomainNameValidator {
      * @return True iff thisDomain matches thatDomain as specified by RFC2818
      */
     // not private for testing
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.204 -0500", hash_original_method = "0B5A208364AC9B44AEB8DF5D731BCC74", hash_generated_method = "770287C4C10413BAD8138E7D865F2B54")
-    public static boolean matchDns(String thisDomain, String thatDomain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.522 -0500", hash_original_method = "0B5A208364AC9B44AEB8DF5D731BCC74", hash_generated_method = "770287C4C10413BAD8138E7D865F2B54")
+    
+public static boolean matchDns(String thisDomain, String thatDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchDns():" +
                       " this domain: " + thisDomain +
@@ -229,8 +234,9 @@ public class DomainNameValidator {
      * wildcard match as specified by RFC2818-3.1. For example, f*.com must
      * match foo.com but not bar.com
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.206 -0500", hash_original_method = "1D471F2BF3CC1DAFB05659B887498BFC", hash_generated_method = "38B50B82DF4BA0374F8D009DAA3B4212")
-    private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.527 -0500", hash_original_method = "1D471F2BF3CC1DAFB05659B887498BFC", hash_generated_method = "38B50B82DF4BA0374F8D009DAA3B4212")
+    
+private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
         if (thisDomainToken != null && thatDomainToken != null) {
             int starIndex = thatDomainToken.indexOf('*');
             if (starIndex >= 0) {
@@ -245,21 +251,21 @@ public class DomainNameValidator {
 
         return false;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.195 -0500", hash_original_field = "90BA4ACBA52A64B2A93E30F1403CE221", hash_generated_field = "D762B92100EC492C8E2F43AE3DE0E7E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.493 -0500", hash_original_field = "90BA4ACBA52A64B2A93E30F1403CE221", hash_generated_field = "D762B92100EC492C8E2F43AE3DE0E7E1")
 
     private final static String TAG = "DomainNameValidator";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.196 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.497 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
 
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.197 -0500", hash_original_field = "F06F6BE52D1AF076D79F1A84048E39C0", hash_generated_field = "C040F7E72494FCBA74A6440C651C9D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.500 -0500", hash_original_field = "F06F6BE52D1AF076D79F1A84048E39C0", hash_generated_field = "C040F7E72494FCBA74A6440C651C9D2C")
 
     private static final boolean LOG_ENABLED = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.198 -0500", hash_original_field = "A194604B11DC96868B69180CE9EB583D", hash_generated_field = "D60747C22CE448F6B43389DBEE293EA4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.503 -0500", hash_original_field = "A194604B11DC96868B69180CE9EB583D", hash_generated_field = "D60747C22CE448F6B43389DBEE293EA4")
 
 
     private static final int ALT_DNS_NAME = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.199 -0500", hash_original_field = "0127BD18D2C5AC00745DDAAD2707820A", hash_generated_field = "8F4F08DC629818A48F022D07A771C3BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.505 -0500", hash_original_field = "0127BD18D2C5AC00745DDAAD2707820A", hash_generated_field = "8F4F08DC629818A48F022D07A771C3BD")
 
     private static final int ALT_IPA_NAME = 7;
     

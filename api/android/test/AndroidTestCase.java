@@ -18,11 +18,11 @@ import android.net.Uri;
 
 
 public class AndroidTestCase extends TestCase {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.021 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.465 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
 
 
     protected Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.022 -0500", hash_original_field = "04AD68CC6EA94CE4EAEB7BB7E922A064", hash_generated_field = "4100C2793C522C9FB77478AD95CF578C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.467 -0500", hash_original_field = "04AD68CC6EA94CE4EAEB7BB7E922A064", hash_generated_field = "4100C2793C522C9FB77478AD95CF578C")
 
     private Context mTestContext;
     
@@ -32,31 +32,36 @@ public class AndroidTestCase extends TestCase {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.023 -0500", hash_original_method = "C075C1EA684B5A9C947727B1963E4CB2", hash_generated_method = "6E282E8121AB714D0FB5A04382A994EF")
-    @Override
-protected void setUp() throws Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.469 -0500", hash_original_method = "C075C1EA684B5A9C947727B1963E4CB2", hash_generated_method = "6E282E8121AB714D0FB5A04382A994EF")
+    
+@Override
+    protected void setUp() throws Exception {
         super.setUp();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.023 -0500", hash_original_method = "2BD388E2F32CC4B26827F8032514E9AF", hash_generated_method = "9B7D31DB93ED0ADA2A4FEEE1D209E054")
-    @Override
-protected void tearDown() throws Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.471 -0500", hash_original_method = "2BD388E2F32CC4B26827F8032514E9AF", hash_generated_method = "9B7D31DB93ED0ADA2A4FEEE1D209E054")
+    
+@Override
+    protected void tearDown() throws Exception {
         super.tearDown();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.024 -0500", hash_original_method = "A28E17AE7E99D1F277F3747A57A4A95C", hash_generated_method = "0CEE8D974D99D240157D8FCE9886C47B")
-    public void testAndroidTestCaseSetupProperly() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.473 -0500", hash_original_method = "A28E17AE7E99D1F277F3747A57A4A95C", hash_generated_method = "0CEE8D974D99D240157D8FCE9886C47B")
+    
+public void testAndroidTestCaseSetupProperly() {
         assertNotNull("Context is null. setContext should be called before tests are run",
                 mContext);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.025 -0500", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "8123FBA4DFA38D2D9EDCDEEE26B6DCB9")
-    public void setContext(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.475 -0500", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "8123FBA4DFA38D2D9EDCDEEE26B6DCB9")
+    
+public void setContext(Context context) {
         mContext = context;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.026 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
-    public Context getContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.478 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
+    
+public Context getContext() {
         return mContext;
     }
 
@@ -68,16 +73,18 @@ protected void tearDown() throws Exception {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.027 -0500", hash_original_method = "3848B0B3D63F14BFB1A8E29618D82C34", hash_generated_method = "752CD0A2A6FCB0882195C04C583A839C")
-    public void setTestContext(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.480 -0500", hash_original_method = "3848B0B3D63F14BFB1A8E29618D82C34", hash_generated_method = "752CD0A2A6FCB0882195C04C583A839C")
+    
+public void setTestContext(Context context) {
         mTestContext = context;
     }
 
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.027 -0500", hash_original_method = "0FA51A2375E728630821E2E4824DA56A", hash_generated_method = "64E6FC98E14FF5627AE394EECA3D86BE")
-    public Context getTestContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.483 -0500", hash_original_method = "0FA51A2375E728630821E2E4824DA56A", hash_generated_method = "64E6FC98E14FF5627AE394EECA3D86BE")
+    
+public Context getTestContext() {
         return mTestContext;
     }
 
@@ -93,8 +100,9 @@ protected void tearDown() throws Exception {
      * @param className The class of the activity to launch.
      * @param permission The name of the permission.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.028 -0500", hash_original_method = "3DE5935B2434BD0D17B624272A135469", hash_generated_method = "C760F0306485FADA7DC49EABDCC387BD")
-    public void assertActivityRequiresPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.485 -0500", hash_original_method = "3DE5935B2434BD0D17B624272A135469", hash_generated_method = "C760F0306485FADA7DC49EABDCC387BD")
+    
+public void assertActivityRequiresPermission(
             String packageName, String className, String permission) {
         final Intent intent = new Intent();
         intent.setClassName(packageName, className);
@@ -118,8 +126,9 @@ protected void tearDown() throws Exception {
      * @param uri The uri that requires a permission to query.
      * @param permission The permission that should be required.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.029 -0500", hash_original_method = "CB8C127D61BF3BFB6D4AA0767F4C3E81", hash_generated_method = "B3667C7485168CE2F0F8D67ADA173960")
-    public void assertReadingContentUriRequiresPermission(Uri uri, String permission) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.487 -0500", hash_original_method = "CB8C127D61BF3BFB6D4AA0767F4C3E81", hash_generated_method = "B3667C7485168CE2F0F8D67ADA173960")
+    
+public void assertReadingContentUriRequiresPermission(Uri uri, String permission) {
         try {
             getContext().getContentResolver().query(uri, null, null, null, null);
             fail("expected SecurityException requiring " + permission);
@@ -138,8 +147,9 @@ protected void tearDown() throws Exception {
      * @param uri The uri that requires a permission to query.
      * @param permission The permission that should be required.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.030 -0500", hash_original_method = "945434805312A02DD9F6BB0BD9CF6A31", hash_generated_method = "7713FCED4EA91C274ABE6F4E71A7D728")
-    public void assertWritingContentUriRequiresPermission(Uri uri, String permission) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.490 -0500", hash_original_method = "945434805312A02DD9F6BB0BD9CF6A31", hash_generated_method = "7713FCED4EA91C274ABE6F4E71A7D728")
+    
+public void assertWritingContentUriRequiresPermission(Uri uri, String permission) {
         try {
             getContext().getContentResolver().insert(uri, new ContentValues());
             fail("expected SecurityException requiring " + permission);
@@ -160,8 +170,9 @@ protected void tearDown() throws Exception {
      *
      * @throws IllegalAccessException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.031 -0500", hash_original_method = "A497F47748432DFEA008CEEF9E1905F4", hash_generated_method = "793AE6E5B9D8FE042AF372C3242448F2")
-    protected void scrubClass(final Class<?> testCaseClass)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.493 -0500", hash_original_method = "A497F47748432DFEA008CEEF9E1905F4", hash_generated_method = "793AE6E5B9D8FE042AF372C3242448F2")
+    
+protected void scrubClass(final Class<?> testCaseClass)
     throws IllegalAccessException {
         final Field[] fields = getClass().getDeclaredFields();
         for (Field field : fields) {

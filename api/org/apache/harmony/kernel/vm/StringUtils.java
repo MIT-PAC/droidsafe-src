@@ -15,8 +15,9 @@ public final class StringUtils {
      * @param list non-null; the strings to combine
      * @return non-null; the combined form
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.492 -0500", hash_original_method = "888FC51886C6044A7D8C9FF6C24BD9F3", hash_generated_method = "2BD935C62418A5B02B2F993978154287")
-    public static String combineStrings(Object[] list) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.365 -0500", hash_original_method = "888FC51886C6044A7D8C9FF6C24BD9F3", hash_generated_method = "2BD935C62418A5B02B2F993978154287")
+    
+public static String combineStrings(Object[] list) {
         int listLength = list.length;
 
         switch (listLength) {
@@ -45,8 +46,9 @@ public final class StringUtils {
     /**
      * This class is uninstantiable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.491 -0500", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "445D9BE0B3E6A16F60D0C20F91B79742")
-    private StringUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.362 -0500", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "445D9BE0B3E6A16F60D0C20F91B79742")
+    
+private StringUtils() {
         // This space intentionally left blank.
     }
 

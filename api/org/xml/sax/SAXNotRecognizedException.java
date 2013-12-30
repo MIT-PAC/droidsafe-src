@@ -13,8 +13,9 @@ public class SAXNotRecognizedException extends SAXException {
     /**
      * Default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.172 -0500", hash_original_method = "2CF643FEC5E16E9FDCFBAF4C08D87D85", hash_generated_method = "E512291726A01C2EA0534C297FA49C24")
-    public SAXNotRecognizedException ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.581 -0500", hash_original_method = "2CF643FEC5E16E9FDCFBAF4C08D87D85", hash_generated_method = "E512291726A01C2EA0534C297FA49C24")
+    
+public SAXNotRecognizedException ()
     {
     }
 
@@ -24,8 +25,9 @@ public class SAXNotRecognizedException extends SAXException {
      *
      * @param message The text message of the exception.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.173 -0500", hash_original_method = "84A25E65A73DED1248F34FD8C53BD2A1", hash_generated_method = "412AEC39F7625D9BD34A4DF4F1D28F5C")
-    public SAXNotRecognizedException (String message)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.583 -0500", hash_original_method = "84A25E65A73DED1248F34FD8C53BD2A1", hash_generated_method = "412AEC39F7625D9BD34A4DF4F1D28F5C")
+    
+public SAXNotRecognizedException (String message)
     {
     super(message);
     }

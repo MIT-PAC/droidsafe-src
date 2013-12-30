@@ -29,8 +29,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      * @throws DecoderException Thrown if an odd number or illegal of characters 
      *         is supplied
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.090 -0500", hash_original_method = "B601E34EA293BA88B55F6A64935FC5DC", hash_generated_method = "1D0981A94C4AD37C0BFF170C7DBC532D")
-    public static byte[] decodeHex(char[] data) throws DecoderException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.739 -0500", hash_original_method = "B601E34EA293BA88B55F6A64935FC5DC", hash_generated_method = "1D0981A94C4AD37C0BFF170C7DBC532D")
+    
+public static byte[] decodeHex(char[] data) throws DecoderException {
 
         int len = data.length;
 
@@ -60,8 +61,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      * @return An integer
      * @throws DecoderException Thrown if ch is an illegal hex character
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.091 -0500", hash_original_method = "8DFB6DF41A3F3D055DAE389A113EB960", hash_generated_method = "64C121B97B5278B1BF2017E99C88A8EB")
-    protected static int toDigit(char ch, int index) throws DecoderException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.741 -0500", hash_original_method = "8DFB6DF41A3F3D055DAE389A113EB960", hash_generated_method = "64C121B97B5278B1BF2017E99C88A8EB")
+    
+protected static int toDigit(char ch, int index) throws DecoderException {
         int digit = Character.digit(ch, 16);
         if (digit == -1) {
             throw new DecoderException("Illegal hexadecimal charcter " + ch + " at index " + index);
@@ -78,8 +80,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      *                  a byte[] to convert to Hex characters
      * @return A char[] containing hexidecimal characters
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.092 -0500", hash_original_method = "01C49558DED2DE24F896F908105CD756", hash_generated_method = "CD93DA4C1C1B38B7502DF1AB3E17F9C3")
-    public static char[] encodeHex(byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.744 -0500", hash_original_method = "01C49558DED2DE24F896F908105CD756", hash_generated_method = "CD93DA4C1C1B38B7502DF1AB3E17F9C3")
+    
+public static char[] encodeHex(byte[] data) {
 
         int l = data.length;
 
@@ -93,7 +96,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
 
            return out;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.089 -0500", hash_original_field = "6A79B7FE9690C6CB215ECF581D2C9051", hash_generated_field = "951B6C7D58E013204229930C868FD053")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.736 -0500", hash_original_field = "6A79B7FE9690C6CB215ECF581D2C9051", hash_generated_field = "951B6C7D58E013204229930C868FD053")
 
     private static final char[] DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7',
@@ -120,8 +123,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      *                   to this function
      * @see #decodeHex(char[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.093 -0500", hash_original_method = "A17636F69FEFB6DDDFC5F873DED10994", hash_generated_method = "60C8C0188F520A0E56A43B3C97B10639")
-    public byte[] decode(byte[] array) throws DecoderException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.746 -0500", hash_original_method = "A17636F69FEFB6DDDFC5F873DED10994", hash_generated_method = "60C8C0188F520A0E56A43B3C97B10639")
+    
+public byte[] decode(byte[] array) throws DecoderException {
         return decodeHex(new String(array).toCharArray());
     }
     
@@ -139,8 +143,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      *                   to this function or the object is not a String or char[]
      * @see #decodeHex(char[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.094 -0500", hash_original_method = "259B1B44CE3EA0D75FAE3A3A31435A4B", hash_generated_method = "C6C4C645FD0EAABF29F771E2F97C02E5")
-    public Object decode(Object object) throws DecoderException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.749 -0500", hash_original_method = "259B1B44CE3EA0D75FAE3A3A31435A4B", hash_generated_method = "C6C4C645FD0EAABF29F771E2F97C02E5")
+    
+public Object decode(Object object) throws DecoderException {
         try {
             char[] charArray = object instanceof String ? ((String) object).toCharArray() : (char[]) object;
             return decodeHex(charArray);
@@ -159,8 +164,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      * @return A byte[] containing the bytes of the hexidecimal characters
      * @see #encodeHex(byte[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.095 -0500", hash_original_method = "50DBD5604B609ED94F02B18C89B60347", hash_generated_method = "117BABCF8A047303DF484347B3136DE9")
-    public byte[] encode(byte[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.752 -0500", hash_original_method = "50DBD5604B609ED94F02B18C89B60347", hash_generated_method = "117BABCF8A047303DF484347B3136DE9")
+    
+public byte[] encode(byte[] array) {
         return new String(encodeHex(array)).getBytes();
     }
 
@@ -175,8 +181,9 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      * @throws EncoderException Thrown if the given object is not a String or byte[]
      * @see #encodeHex(byte[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.095 -0500", hash_original_method = "65D07AA1ACA3F409200AC5EFDF123AC8", hash_generated_method = "4674FA6F6A3412B85ACB310AC9769419")
-    public Object encode(Object object) throws EncoderException {    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.754 -0500", hash_original_method = "65D07AA1ACA3F409200AC5EFDF123AC8", hash_generated_method = "4674FA6F6A3412B85ACB310AC9769419")
+    
+public Object encode(Object object) throws EncoderException {    
         try {
             byte[] byteArray = object instanceof String ? ((String) object).getBytes() : (byte[]) object;
             return encodeHex(byteArray);

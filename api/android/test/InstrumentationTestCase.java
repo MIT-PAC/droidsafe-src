@@ -22,7 +22,7 @@ import android.view.KeyEvent;
 
 
 public class InstrumentationTestCase extends TestCase {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.082 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.649 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
 
 
     private Instrumentation mInstrumentation;
@@ -39,8 +39,9 @@ public class InstrumentationTestCase extends TestCase {
      * 
      * @param instrumentation the instrumentation to use with this instance
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.083 -0500", hash_original_method = "30957576898B0AE27F5837919E36AECD", hash_generated_method = "27BC3CA23290C294456ECA80A96CE2A3")
-    public void injectInstrumentation(Instrumentation instrumentation) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.652 -0500", hash_original_method = "30957576898B0AE27F5837919E36AECD", hash_generated_method = "27BC3CA23290C294456ECA80A96CE2A3")
+    
+public void injectInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
     }
 
@@ -53,9 +54,10 @@ public class InstrumentationTestCase extends TestCase {
      * @deprecated Incorrect spelling,
      * use {@link #injectInstrumentation(android.app.Instrumentation)} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.084 -0500", hash_original_method = "80E7DE8B78F72228CE1CBFCE791EFB84", hash_generated_method = "B65E30465F363197B705A3C86C2FABCB")
-    @Deprecated
-public void injectInsrumentation(Instrumentation instrumentation) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.655 -0500", hash_original_method = "80E7DE8B78F72228CE1CBFCE791EFB84", hash_generated_method = "B65E30465F363197B705A3C86C2FABCB")
+    
+@Deprecated
+    public void injectInsrumentation(Instrumentation instrumentation) {
         injectInstrumentation(instrumentation);
     }
 
@@ -63,8 +65,9 @@ public void injectInsrumentation(Instrumentation instrumentation) {
      * Inheritors can access the instrumentation using this.
      * @return instrumentation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.084 -0500", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "952CE09D28EE4A9669353A5E94B20293")
-    public Instrumentation getInstrumentation() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.657 -0500", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "952CE09D28EE4A9669353A5E94B20293")
+    
+public Instrumentation getInstrumentation() {
         return mInstrumentation;
     }
 
@@ -129,8 +132,9 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
      * 
      * @param r runnable containing test code in the {@link Runnable#run()} method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.088 -0500", hash_original_method = "F4164F0D843971333C91373781EC7696", hash_generated_method = "FA78C3D82C6F95488BFEC136367D79E7")
-    public void runTestOnUiThread(final Runnable r) throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.667 -0500", hash_original_method = "F4164F0D843971333C91373781EC7696", hash_generated_method = "FA78C3D82C6F95488BFEC136367D79E7")
+    
+public void runTestOnUiThread(final Runnable r) throws Throwable {
         final Throwable[] exceptions = new Throwable[1];
         getInstrumentation().runOnMainSync(new Runnable() {
             public void run() {
@@ -150,9 +154,10 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
      * Runs the current unit test. If the unit test is annotated with
      * {@link android.test.UiThreadTest}, the test is run on the UI thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.090 -0500", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "9E354E4A8B85C516A1BC416C3F058180")
-    @Override
-protected void runTest() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.673 -0500", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "9E354E4A8B85C516A1BC416C3F058180")
+    
+@Override
+    protected void runTest() throws Throwable {
         String fName = getName();
         assertNotNull(fName);
         Method method = null;
@@ -202,13 +207,15 @@ protected void runTest() throws Throwable {
     }
 
     // For backwards-compatibility after adding isRepetitive
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.091 -0500", hash_original_method = "73C1718FE30AA12508CCB537F6FDE014", hash_generated_method = "F684732A2DB48884CF3D52D339B7917A")
-    private void runMethod(Method runMethod, int tolerance) throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.676 -0500", hash_original_method = "73C1718FE30AA12508CCB537F6FDE014", hash_generated_method = "F684732A2DB48884CF3D52D339B7917A")
+    
+private void runMethod(Method runMethod, int tolerance) throws Throwable {
         runMethod(runMethod, tolerance, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.092 -0500", hash_original_method = "FE4B0FEDC134C5D618CB046880639140", hash_generated_method = "84881099638F5CAC8A41158572946D5F")
-    private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.678 -0500", hash_original_method = "FE4B0FEDC134C5D618CB046880639140", hash_generated_method = "84881099638F5CAC8A41158572946D5F")
+    
+private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) throws Throwable {
         Throwable exception = null;
 
         int runCount = 0;
@@ -247,8 +254,9 @@ protected void runTest() throws Throwable {
      *
      * @param keysSequence The sequence of keys.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.093 -0500", hash_original_method = "F1A2611A7518798734124BE0FA3DC184", hash_generated_method = "2954BED3906FA26E267504074A939ECD")
-    public void sendKeys(String keysSequence) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.681 -0500", hash_original_method = "F1A2611A7518798734124BE0FA3DC184", hash_generated_method = "2954BED3906FA26E267504074A939ECD")
+    
+public void sendKeys(String keysSequence) {
         final String[] keys = keysSequence.split(" ");
         final int count = keys.length;
 
@@ -300,8 +308,9 @@ protected void runTest() throws Throwable {
      *
      * @param keys The series of key codes to send through instrumentation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.094 -0500", hash_original_method = "25439235D86C904EDC7CD1B76214296A", hash_generated_method = "1C437CDD5C62F5899CF06D0019BF182B")
-    public void sendKeys(int... keys) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.683 -0500", hash_original_method = "25439235D86C904EDC7CD1B76214296A", hash_generated_method = "1C437CDD5C62F5899CF06D0019BF182B")
+    
+public void sendKeys(int... keys) {
         final int count = keys.length;
         final Instrumentation instrumentation = getInstrumentation();
 
@@ -325,8 +334,9 @@ protected void runTest() throws Throwable {
      *
      * @param keys The series of key repeats and codes to send through instrumentation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.095 -0500", hash_original_method = "FBC03E5CDE4AF992F9EAA065B65F23C0", hash_generated_method = "7F19AE149B5B43D49DC16C43F00EF024")
-    public void sendRepeatedKeys(int... keys) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.686 -0500", hash_original_method = "FBC03E5CDE4AF992F9EAA065B65F23C0", hash_generated_method = "7F19AE149B5B43D49DC16C43F00EF024")
+    
+public void sendRepeatedKeys(int... keys) {
         final int count = keys.length;
         if ((count & 0x1) == 0x1) {
             throw new IllegalArgumentException("The size of the keys array must "
@@ -359,9 +369,10 @@ protected void runTest() throws Throwable {
      * 
      * @throws Exception
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.096 -0500", hash_original_method = "FDD2FC9FD3536A57EA5709C92DDFDA00", hash_generated_method = "25F8972A71AF3F265EBEAA230EB3E829")
-    @Override
-protected void tearDown() throws Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.688 -0500", hash_original_method = "FDD2FC9FD3536A57EA5709C92DDFDA00", hash_generated_method = "25F8972A71AF3F265EBEAA230EB3E829")
+    
+@Override
+    protected void tearDown() throws Exception {
         Runtime.getRuntime().gc();
         Runtime.getRuntime().runFinalization();
         Runtime.getRuntime().gc();

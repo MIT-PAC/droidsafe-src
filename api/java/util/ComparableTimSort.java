@@ -17,13 +17,15 @@ class ComparableTimSort {
      * of the public method with the same signature in java.util.Arrays.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.053 -0500", hash_original_method = "C14D2E7089843CCC45AD27058813D72D", hash_generated_method = "EEA198836F48BF259761D97C28E57090")
-    static void sort(Object[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.268 -0500", hash_original_method = "C14D2E7089843CCC45AD27058813D72D", hash_generated_method = "EEA198836F48BF259761D97C28E57090")
+    
+static void sort(Object[] a) {
           sort(a, 0, a.length);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.054 -0500", hash_original_method = "E921ED41B4BC28E5D7E967678958CC4D", hash_generated_method = "63CA3B030DEA946F2566040F133797E7")
-    static void sort(Object[] a, int lo, int hi) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.271 -0500", hash_original_method = "E921ED41B4BC28E5D7E967678958CC4D", hash_generated_method = "63CA3B030DEA946F2566040F133797E7")
+    
+static void sort(Object[] a, int lo, int hi) {
         Arrays.checkStartAndEnd(a.length, lo, hi);
         int nRemaining  = hi - lo;
         if (nRemaining < 2)
@@ -86,9 +88,10 @@ class ComparableTimSort {
      * @param start the index of the first element in the range that is
      *        not already known to be sorted (@code lo <= start <= hi}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.055 -0500", hash_original_method = "7FA02AFD0C69D9246744FAA91808ABAC", hash_generated_method = "69591D1CEC99C37938E80D1958E2FF9D")
-    @SuppressWarnings("fallthrough")
-private static void binarySort(Object[] a, int lo, int hi, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.275 -0500", hash_original_method = "7FA02AFD0C69D9246744FAA91808ABAC", hash_generated_method = "69591D1CEC99C37938E80D1958E2FF9D")
+    
+@SuppressWarnings("fallthrough")
+    private static void binarySort(Object[] a, int lo, int hi, int start) {
         if (DEBUG) assert lo <= start && start <= hi;
         if (start == lo)
             start++;
@@ -157,9 +160,10 @@ private static void binarySort(Object[] a, int lo, int hi, int start) {
      * @return  the length of the run beginning at the specified position in
      *          the specified array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.056 -0500", hash_original_method = "E06F0431A63DD6BC92462DEC6B607411", hash_generated_method = "818FFFC000C1E64D94E8782637F58CAD")
-    @SuppressWarnings("unchecked")
-private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.279 -0500", hash_original_method = "E06F0431A63DD6BC92462DEC6B607411", hash_generated_method = "818FFFC000C1E64D94E8782637F58CAD")
+    
+@SuppressWarnings("unchecked")
+    private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
         if (DEBUG) assert lo < hi;
         int runHi = lo + 1;
         if (runHi == hi)
@@ -185,8 +189,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      * @param lo the index of the first element in the range to be reversed
      * @param hi the index after the last element in the range to be reversed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.057 -0500", hash_original_method = "91B272278DB88F42B96F73872CBFFA74", hash_generated_method = "2BAD7E2C66283498F1FE17C97BEBA274")
-    private static void reverseRange(Object[] a, int lo, int hi) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.281 -0500", hash_original_method = "91B272278DB88F42B96F73872CBFFA74", hash_generated_method = "2BAD7E2C66283498F1FE17C97BEBA274")
+    
+private static void reverseRange(Object[] a, int lo, int hi) {
         hi--;
         while (lo < hi) {
             Object t = a[lo];
@@ -212,8 +217,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      * @param n the length of the array to be sorted
      * @return the length of the minimum run to be merged
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.058 -0500", hash_original_method = "901F75134304B9C846324F0D4BE695EF", hash_generated_method = "22954E4A0482F5141A4D40F3AD54F81A")
-    private static int minRunLength(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.283 -0500", hash_original_method = "901F75134304B9C846324F0D4BE695EF", hash_generated_method = "22954E4A0482F5141A4D40F3AD54F81A")
+    
+private static int minRunLength(int n) {
         if (DEBUG) assert n >= 0;
         int r = 0;      // Becomes 1 if any 1 bits are shifted off
         while (n >= MIN_MERGE) {
@@ -240,8 +246,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      *    the first k elements of a should precede key, and the last n - k
      *    should follow it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.063 -0500", hash_original_method = "999E8B45D34E439F1CA5445DE0CC91D3", hash_generated_method = "99F4659982D515EA4EFA650C5FA4A9BA")
-    private static int gallopLeft(Comparable<Object> key, Object[] a,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.298 -0500", hash_original_method = "999E8B45D34E439F1CA5445DE0CC91D3", hash_generated_method = "99F4659982D515EA4EFA650C5FA4A9BA")
+    
+private static int gallopLeft(Comparable<Object> key, Object[] a,
             int base, int len, int hint) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
 
@@ -311,8 +318,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      *     The closer hint is to the result, the faster this method will run.
      * @return the int k,  0 <= k <= n such that a[b + k - 1] <= key < a[b + k]
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.065 -0500", hash_original_method = "EA7ED5AC4BAC7A2CA54578C2426C4A08", hash_generated_method = "280D424FB9C6CFC33FD25FFCEFCD28A8")
-    private static int gallopRight(Comparable<Object> key, Object[] a,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.302 -0500", hash_original_method = "EA7ED5AC4BAC7A2CA54578C2426C4A08", hash_generated_method = "280D424FB9C6CFC33FD25FFCEFCD28A8")
+    
+private static int gallopRight(Comparable<Object> key, Object[] a,
             int base, int len, int hint) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
 
@@ -369,34 +377,34 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
         if (DEBUG) assert lastOfs == ofs;    // so a[b + ofs - 1] <= key < a[b + ofs]
         return ofs;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.042 -0500", hash_original_field = "1307CBABEFD47350256956AAE2842964", hash_generated_field = "1A1060B28D1C27E15E432236A4693699")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.241 -0500", hash_original_field = "1307CBABEFD47350256956AAE2842964", hash_generated_field = "1A1060B28D1C27E15E432236A4693699")
 
     private static final int MIN_MERGE = 32;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.044 -0500", hash_original_field = "7F3A96AEAE8EC23E387368ED4CCA16F2", hash_generated_field = "0A02EC7FDA0A1C3141333E8D07B6EF69")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.246 -0500", hash_original_field = "7F3A96AEAE8EC23E387368ED4CCA16F2", hash_generated_field = "0A02EC7FDA0A1C3141333E8D07B6EF69")
 
     private static final int  MIN_GALLOP = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.046 -0500", hash_original_field = "2827E8C3E7F287425A6F7CA7915691E7", hash_generated_field = "9DD7294B2FF4DA861EF4EC84065C8162")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.251 -0500", hash_original_field = "2827E8C3E7F287425A6F7CA7915691E7", hash_generated_field = "9DD7294B2FF4DA861EF4EC84065C8162")
 
     private static final int INITIAL_TMP_STORAGE_LENGTH = 256;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.051 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.263 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.043 -0500", hash_original_field = "7F805B9E54DAFA1E877FE3F6566DB56D", hash_generated_field = "57C26AE792187D8B778587C6F2CC693D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.243 -0500", hash_original_field = "7F805B9E54DAFA1E877FE3F6566DB56D", hash_generated_field = "57C26AE792187D8B778587C6F2CC693D")
 
     private  Object[] a;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.046 -0500", hash_original_field = "FB9CCA74629CB078987B5D969038E11A", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.249 -0500", hash_original_field = "FB9CCA74629CB078987B5D969038E11A", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
 
     private int minGallop = MIN_GALLOP;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.047 -0500", hash_original_field = "BC935034679139893C2726FD0586E834", hash_generated_field = "F29293D0549CBA3455BA89626253287F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.253 -0500", hash_original_field = "BC935034679139893C2726FD0586E834", hash_generated_field = "F29293D0549CBA3455BA89626253287F")
 
     private Object[] tmp;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.048 -0500", hash_original_field = "7B918E739EAB69FF9211C8EF3B5951F1", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.255 -0500", hash_original_field = "7B918E739EAB69FF9211C8EF3B5951F1", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
 
     private int stackSize = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.049 -0500", hash_original_field = "985A1F0E8785593558B801DB58D1556B", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.258 -0500", hash_original_field = "985A1F0E8785593558B801DB58D1556B", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
 
     private  int[] runBase;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.050 -0500", hash_original_field = "2B7E78CBBFDB4DCCA8541AB68C5A6FCD", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.260 -0500", hash_original_field = "2B7E78CBBFDB4DCCA8541AB68C5A6FCD", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
 
     private  int[] runLen;
 
@@ -405,8 +413,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.052 -0500", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "433131C2E635F21E7867A70992F1749C")
-    private ComparableTimSort(Object[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.266 -0500", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "433131C2E635F21E7867A70992F1749C")
+    
+private ComparableTimSort(Object[] a) {
         this.a = a;
 
         // Allocate temp storage (which may be increased later if necessary)
@@ -439,8 +448,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      * @param runBase index of the first element in the run
      * @param runLen  the number of elements in the run
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.059 -0500", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "B945D9D44581F68296FA3FBD6173A146")
-    private void pushRun(int runBase, int runLen) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.285 -0500", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "B945D9D44581F68296FA3FBD6173A146")
+    
+private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
         stackSize++;
@@ -457,8 +467,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      * so the invariants are guaranteed to hold for i < stackSize upon
      * entry to the method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.059 -0500", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "E56B43F48F2878D3CB0575C123027539")
-    private void mergeCollapse() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.288 -0500", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "E56B43F48F2878D3CB0575C123027539")
+    
+private void mergeCollapse() {
         while (stackSize > 1) {
             int n = stackSize - 2;
             if (n > 0 && runLen[n-1] <= runLen[n] + runLen[n+1]) {
@@ -477,8 +488,9 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      * Merges all runs on the stack until only one remains.  This method is
      * called once, to complete the sort.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.060 -0500", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "3E5590DAB928E12BB7FB6F548EF87AAE")
-    private void mergeForceCollapse() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.291 -0500", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "3E5590DAB928E12BB7FB6F548EF87AAE")
+    
+private void mergeForceCollapse() {
         while (stackSize > 1) {
             int n = stackSize - 2;
             if (n > 0 && runLen[n - 1] < runLen[n + 1])
@@ -494,9 +506,10 @@ private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
      *
      * @param i stack index of the first of the two runs to merge
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.062 -0500", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "ED7DE1B2185580D0B770863787D22FDF")
-    @SuppressWarnings("unchecked")
-private void mergeAt(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.294 -0500", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "ED7DE1B2185580D0B770863787D22FDF")
+    
+@SuppressWarnings("unchecked")
+    private void mergeAt(int i) {
         if (DEBUG) assert stackSize >= 2;
         if (DEBUG) assert i >= 0;
         if (DEBUG) assert i == stackSize - 2 || i == stackSize - 3;
@@ -564,9 +577,10 @@ private void mergeAt(int i) {
      *        (must be aBase + aLen)
      * @param len2  length of second run to be merged (must be > 0)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.066 -0500", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "FDBE76F2D72D0EEE427967DB714D990D")
-    @SuppressWarnings("unchecked")
-private void mergeLo(int base1, int len1, int base2, int len2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.306 -0500", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "FDBE76F2D72D0EEE427967DB714D990D")
+    
+@SuppressWarnings("unchecked")
+    private void mergeLo(int base1, int len1, int base2, int len2) {
         if (DEBUG) assert len1 > 0 && len2 > 0 && base1 + len1 == base2;
 
         // Copy first run into temp array
@@ -682,9 +696,10 @@ private void mergeLo(int base1, int len1, int base2, int len2) {
      *        (must be aBase + aLen)
      * @param len2  length of second run to be merged (must be > 0)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.068 -0500", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "84AA26745E10021C664F47F53C9058B5")
-    @SuppressWarnings("unchecked")
-private void mergeHi(int base1, int len1, int base2, int len2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.311 -0500", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "84AA26745E10021C664F47F53C9058B5")
+    
+@SuppressWarnings("unchecked")
+    private void mergeHi(int base1, int len1, int base2, int len2) {
         if (DEBUG) assert len1 > 0 && len2 > 0 && base1 + len1 == base2;
 
         // Copy second run into temp array
@@ -801,8 +816,9 @@ private void mergeHi(int base1, int len1, int base2, int len2) {
      * @param minCapacity the minimum required capacity of the tmp array
      * @return tmp, whether or not it grew
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.069 -0500", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "4AF2550EA09BF8C55F64BB98239623ED")
-    private Object[]  ensureCapacity(int minCapacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.314 -0500", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "4AF2550EA09BF8C55F64BB98239623ED")
+    
+private Object[]  ensureCapacity(int minCapacity) {
         if (tmp.length < minCapacity) {
             // Compute smallest power of 2 > minCapacity
             int newSize = minCapacity;

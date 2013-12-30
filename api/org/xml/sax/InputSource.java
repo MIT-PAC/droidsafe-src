@@ -13,22 +13,22 @@ import java.io.Reader;
 
 
 public class InputSource {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.196 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "8C20C363CB97A5312B8A9E5F182DBDF4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.646 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "8C20C363CB97A5312B8A9E5F182DBDF4")
 
     // Internal state.
     ////////////////////////////////////////////////////////////////////
 
     private String publicId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.196 -0500", hash_original_field = "EA33D5D9FADC1DE12A306FAB26B3A5DA", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.648 -0500", hash_original_field = "EA33D5D9FADC1DE12A306FAB26B3A5DA", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
 
     private String systemId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.197 -0500", hash_original_field = "BA38C079FA1F85CB3FDFDA791B5E38AF", hash_generated_field = "F48D8933D1E0CC3DCA366E513A5A0250")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.650 -0500", hash_original_field = "BA38C079FA1F85CB3FDFDA791B5E38AF", hash_generated_field = "F48D8933D1E0CC3DCA366E513A5A0250")
 
     private InputStream byteStream;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.198 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.652 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
 
     private String encoding;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.198 -0500", hash_original_field = "C80288420C0FBFA7028519B6A3C8A163", hash_generated_field = "063FD46ACCBF055B33EB5A7725463DCE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.655 -0500", hash_original_field = "C80288420C0FBFA7028519B6A3C8A163", hash_generated_field = "063FD46ACCBF055B33EB5A7725463DCE")
 
     private Reader characterStream;
 
@@ -41,8 +41,9 @@ public class InputSource {
      * @see #setCharacterStream
      * @see #setEncoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.184 -0500", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "217A98420DCE906E732B6983D19C2476")
-    public InputSource ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.614 -0500", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "217A98420DCE906E732B6983D19C2476")
+    
+public InputSource ()
     {
     }
 
@@ -64,8 +65,9 @@ public class InputSource {
      * @see #setEncoding
      * @see #setCharacterStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.185 -0500", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "D1835C4469F5A6537AB5B42A8D63DDEC")
-    public InputSource (String systemId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.616 -0500", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "D1835C4469F5A6537AB5B42A8D63DDEC")
+    
+public InputSource (String systemId)
     {
     setSystemId(systemId);
     }
@@ -86,8 +88,9 @@ public class InputSource {
      * @see #setByteStream
      * @see #setCharacterStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.186 -0500", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "B633A9743DD0CC7151290BD357306BDA")
-    public InputSource (InputStream byteStream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.619 -0500", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "B633A9743DD0CC7151290BD357306BDA")
+    
+public InputSource (InputStream byteStream)
     {
     setByteStream(byteStream);
     }
@@ -108,8 +111,9 @@ public class InputSource {
      * @see #setByteStream
      * @see #setCharacterStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.187 -0500", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "00DC1AEE141141E3911D24487E76D6D2")
-    public InputSource (Reader characterStream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.621 -0500", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "00DC1AEE141141E3911D24487E76D6D2")
+    
+public InputSource (Reader characterStream)
     {
     setCharacterStream(characterStream);
     }
@@ -127,8 +131,9 @@ public class InputSource {
      * @see org.xml.sax.Locator#getPublicId
      * @see org.xml.sax.SAXParseException#getPublicId
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.188 -0500", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "3A3E52BAAC3045FB9B9AC7B751166BEE")
-    public void setPublicId (String publicId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.623 -0500", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "3A3E52BAAC3045FB9B9AC7B751166BEE")
+    
+public void setPublicId (String publicId)
     {
     this.publicId = publicId;
     }
@@ -140,8 +145,9 @@ public class InputSource {
      * @return The public identifier, or null if none was supplied.
      * @see #setPublicId
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.189 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
-    public String getPublicId ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.625 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
+    
+public String getPublicId ()
     {
     return publicId;
     }
@@ -170,8 +176,9 @@ public class InputSource {
      * @see org.xml.sax.Locator#getSystemId
      * @see org.xml.sax.SAXParseException#getSystemId
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.190 -0500", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "D9FED68AD30F5F5E327902500C39300D")
-    public void setSystemId (String systemId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.627 -0500", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "D9FED68AD30F5F5E327902500C39300D")
+    
+public void setSystemId (String systemId)
     {
     this.systemId = systemId;
     }
@@ -189,8 +196,9 @@ public class InputSource {
      * @see #setSystemId
      * @see #getEncoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.191 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
-    public String getSystemId ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.630 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
+    
+public String getSystemId ()
     {
     return systemId;
     }
@@ -213,8 +221,9 @@ public class InputSource {
      * @see #getEncoding
      * @see java.io.InputStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.191 -0500", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "7170255CE17CFBCBB0C9C68C57B03FC2")
-    public void setByteStream (InputStream byteStream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.632 -0500", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "7170255CE17CFBCBB0C9C68C57B03FC2")
+    
+public void setByteStream (InputStream byteStream)
     {
     this.byteStream = byteStream;
     }
@@ -230,8 +239,9 @@ public class InputSource {
      * @see #getEncoding
      * @see #setByteStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.192 -0500", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "76EC79038C4C277B48D1CB1A365564C4")
-    public InputStream getByteStream ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.635 -0500", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "76EC79038C4C277B48D1CB1A365564C4")
+    
+public InputStream getByteStream ()
     {
     return byteStream;
     }
@@ -252,8 +262,9 @@ public class InputSource {
      * @see #setByteStream
      * @see #getEncoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.193 -0500", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "F16BDC16289B2D2161EBDE6B982650A4")
-    public void setEncoding (String encoding)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.637 -0500", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "F16BDC16289B2D2161EBDE6B982650A4")
+    
+public void setEncoding (String encoding)
     {
     this.encoding = encoding;
     }
@@ -269,8 +280,9 @@ public class InputSource {
      * @see #getSystemId
      * @see #getByteStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.193 -0500", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "AB48E45DF4593246DCA3A0BE40153818")
-    public String getEncoding ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.639 -0500", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "AB48E45DF4593246DCA3A0BE40153818")
+    
+public String getEncoding ()
     {
     return encoding;
     }
@@ -288,8 +300,9 @@ public class InputSource {
      * @see #getCharacterStream
      * @see java.io.Reader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.194 -0500", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "3E62366D6D0369BEB314A23F18365986")
-    public void setCharacterStream (Reader characterStream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.641 -0500", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "3E62366D6D0369BEB314A23F18365986")
+    
+public void setCharacterStream (Reader characterStream)
     {
     this.characterStream = characterStream;
     }
@@ -301,8 +314,9 @@ public class InputSource {
      * @return The character stream, or null if none was supplied.
      * @see #setCharacterStream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.195 -0500", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "EBA0998A74E28C27CEDA0CDD239F6CC3")
-    public Reader getCharacterStream ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.644 -0500", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "EBA0998A74E28C27CEDA0CDD239F6CC3")
+    
+public Reader getCharacterStream ()
     {
     return characterStream;
     }

@@ -12,10 +12,10 @@ import java.util.Arrays;
 
 
 public class PushbackInputStream extends FilterInputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.101 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.544 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected byte[] buf;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.102 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.546 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
 
     protected int pos;
 
@@ -31,8 +31,9 @@ public class PushbackInputStream extends FilterInputStream {
      * @param in
      *            the source input stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.103 -0500", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "D360854ACE2AA0CA85C5491A466A340C")
-    public PushbackInputStream(InputStream in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.549 -0500", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "D360854ACE2AA0CA85C5491A466A340C")
+    
+public PushbackInputStream(InputStream in) {
         super(in);
         buf = (in == null) ? null : new byte[1];
         pos = 1;
@@ -53,8 +54,9 @@ public class PushbackInputStream extends FilterInputStream {
      * @throws IllegalArgumentException
      *             if {@code size} is negative.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.104 -0500", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "CA99E296F05811C04CC8506980310862")
-    public PushbackInputStream(InputStream in, int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.552 -0500", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "CA99E296F05811C04CC8506980310862")
+    
+public PushbackInputStream(InputStream in, int size) {
         super(in);
         if (size <= 0) {
             throw new IllegalArgumentException("size <= 0");
@@ -63,9 +65,10 @@ public class PushbackInputStream extends FilterInputStream {
         pos = size;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.105 -0500", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "70B65E77014A2AD13CE7E13AC69CAE3A")
-    @Override
-public int available() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.555 -0500", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "70B65E77014A2AD13CE7E13AC69CAE3A")
+    
+@Override
+    public int available() throws IOException {
         if (buf == null) {
             throw new IOException();
         }
@@ -79,9 +82,10 @@ public int available() throws IOException {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.106 -0500", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "E8F8B044021BD44FB7B4A0DB83968990")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.557 -0500", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "E8F8B044021BD44FB7B4A0DB83968990")
+    
+@Override
+    public void close() throws IOException {
         if (in != null) {
             in.close();
             in = null;
@@ -98,9 +102,10 @@ public void close() throws IOException {
      * @see #mark(int)
      * @see #reset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.107 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
-    @Override
-public boolean markSupported() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.560 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
+    
+@Override
+    public boolean markSupported() {
         return false;
     }
 
@@ -117,9 +122,10 @@ public boolean markSupported() {
      *             if this stream is closed or an I/O error occurs while reading
      *             from this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.108 -0500", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "ABC96A72A8ADD58AE2E0786F9FC8E24B")
-    @Override
-public int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.563 -0500", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "ABC96A72A8ADD58AE2E0786F9FC8E24B")
+    
+@Override
+    public int read() throws IOException {
         if (buf == null) {
             throw new IOException();
         }
@@ -158,9 +164,10 @@ public int read() throws IOException {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.109 -0500", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "8166BEB41CDADC014E3C1918E6FB3725")
-    @Override
-public int read(byte[] buffer, int offset, int length) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.566 -0500", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "8166BEB41CDADC014E3C1918E6FB3725")
+    
+@Override
+    public int read(byte[] buffer, int offset, int length) throws IOException {
         if (buf == null) {
             throw streamClosed();
         }
@@ -190,8 +197,9 @@ public int read(byte[] buffer, int offset, int length) throws IOException {
         return copiedBytes;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.110 -0500", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "69313A2FE135E1A632378547FD715C13")
-    private IOException streamClosed() throws IOException  {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.568 -0500", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "69313A2FE135E1A632378547FD715C13")
+    
+private IOException streamClosed() throws IOException  {
         throw new IOException("PushbackInputStream is closed");
     }
 
@@ -203,9 +211,10 @@ public int read(byte[] buffer, int offset, int length) throws IOException {
      * @throws IOException
      *             if this stream is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.111 -0500", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "5943182388EB20F5DDA697A803583DA5")
-    @Override
-public long skip(long byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.570 -0500", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "5943182388EB20F5DDA697A803583DA5")
+    
+@Override
+    public long skip(long byteCount) throws IOException {
         if (in == null) {
             throw streamClosed();
         }
@@ -239,8 +248,9 @@ public long skip(long byteCount) throws IOException {
      *             if the free space in the internal pushback buffer is not
      *             sufficient to store the contents of {@code buffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.111 -0500", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "E3B26592E9220AEE0471A023816C1918")
-    public void unread(byte[] buffer) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.573 -0500", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "E3B26592E9220AEE0471A023816C1918")
+    
+public void unread(byte[] buffer) throws IOException {
         unread(buffer, 0, buffer.length);
     }
 
@@ -270,8 +280,9 @@ public long skip(long byteCount) throws IOException {
      *             if the free space in the internal pushback buffer is not
      *             sufficient to store the selected contents of {@code buffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.112 -0500", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "9CAD033DFC15BA84921E61D8ED94391D")
-    public void unread(byte[] buffer, int offset, int length) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.575 -0500", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "9CAD033DFC15BA84921E61D8ED94391D")
+    
+public void unread(byte[] buffer, int offset, int length) throws IOException {
         if (length > pos) {
             throw new IOException("Pushback buffer full");
         }
@@ -299,8 +310,9 @@ public long skip(long byteCount) throws IOException {
      *             if this stream is closed or the internal pushback buffer is
      *             full.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.113 -0500", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "BA3E56535EE8E6396EAC1C1F27A9326F")
-    public void unread(int oneByte) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.578 -0500", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "BA3E56535EE8E6396EAC1C1F27A9326F")
+    
+public void unread(int oneByte) throws IOException {
         if (buf == null) {
             throw new IOException();
         }
@@ -318,9 +330,9 @@ public long skip(long byteCount) throws IOException {
      *            the number of bytes that can be read from this stream before
      *            the mark is invalidated; this parameter is ignored.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.114 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "3661B9E6F99225CA9976B419D6E2DE03")
-    @Override
-public void mark(int readlimit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.580 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "3661B9E6F99225CA9976B419D6E2DE03")
+    
+@Override public void mark(int readlimit) {
     }
 
     /**
@@ -331,9 +343,10 @@ public void mark(int readlimit) {
      * @throws IOException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.115 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "982040414CDBED77657D44B5E5A8ACAA")
-    @Override
-public void reset() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.583 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "982040414CDBED77657D44B5E5A8ACAA")
+    
+@Override
+    public void reset() throws IOException {
         throw new IOException();
     }
 

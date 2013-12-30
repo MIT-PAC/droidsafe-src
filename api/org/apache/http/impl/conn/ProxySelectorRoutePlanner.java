@@ -29,10 +29,10 @@ import org.apache.http.protocol.HttpContext;
 
 
 public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.397 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.702 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
     protected SchemeRegistry schemeRegistry;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.398 -0500", hash_original_field = "BD8907878A7DA3B0E5B8AF7E66FD6133", hash_generated_field = "B499B9C301A586D28A25B3CD3E9E47FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.704 -0500", hash_original_field = "BD8907878A7DA3B0E5B8AF7E66FD6133", hash_generated_field = "B499B9C301A586D28A25B3CD3E9E47FC")
 
     protected ProxySelector proxySelector;
 
@@ -44,8 +44,9 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
      * @param prosel    the proxy selector, or
      *                  <code>null</code> for the system default
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.399 -0500", hash_original_method = "2940DDB99DA35A45D241AA850C69BABB", hash_generated_method = "233D9C497249B4182F6C699E5A5AEB4F")
-    public ProxySelectorRoutePlanner(SchemeRegistry schreg,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.707 -0500", hash_original_method = "2940DDB99DA35A45D241AA850C69BABB", hash_generated_method = "233D9C497249B4182F6C699E5A5AEB4F")
+    
+public ProxySelectorRoutePlanner(SchemeRegistry schreg,
                                      ProxySelector prosel) {
 
         if (schreg == null) {
@@ -62,8 +63,9 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
      *
      * @return the proxy selector, or <code>null</code> for the system default
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.400 -0500", hash_original_method = "7BFDCA23B0C60DE048DC61BFB74DD1F2", hash_generated_method = "F39972908F6A56C4ED115C3866308504")
-    public ProxySelector getProxySelector() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.709 -0500", hash_original_method = "7BFDCA23B0C60DE048DC61BFB74DD1F2", hash_generated_method = "F39972908F6A56C4ED115C3866308504")
+    
+public ProxySelector getProxySelector() {
         return this.proxySelector;
     }
 
@@ -74,16 +76,18 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
      * @param prosel    the proxy selector, or
      *                  <code>null</code> to use the system default
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.401 -0500", hash_original_method = "8D192BFFC053F859733660633466B9E1", hash_generated_method = "1B3C585CE85476DAEF614C2867B107EA")
-    public void setProxySelector(ProxySelector prosel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.712 -0500", hash_original_method = "8D192BFFC053F859733660633466B9E1", hash_generated_method = "1B3C585CE85476DAEF614C2867B107EA")
+    
+public void setProxySelector(ProxySelector prosel) {
         this.proxySelector = prosel;
     }
 
 
 
     // non-javadoc, see interface HttpRoutePlanner
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.402 -0500", hash_original_method = "B16751A21C345B7821B79B349C2D4F51", hash_generated_method = "084FA6E885FE7584185FAF481605ED19")
-    public HttpRoute determineRoute(HttpHost target,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.714 -0500", hash_original_method = "B16751A21C345B7821B79B349C2D4F51", hash_generated_method = "084FA6E885FE7584185FAF481605ED19")
+    
+public HttpRoute determineRoute(HttpHost target,
                                     HttpRequest request,
                                     HttpContext context)
         throws HttpException {
@@ -149,8 +153,9 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
      * @throws HttpException
      *         in case of system proxy settings that cannot be handled
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.403 -0500", hash_original_method = "D5DFF4CEFF9EFFF0748C4A7B53D21FF4", hash_generated_method = "14EF3B907582DAACD36CDF9102EE8DCD")
-    protected HttpHost determineProxy(HttpHost    target,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.717 -0500", hash_original_method = "D5DFF4CEFF9EFFF0748C4A7B53D21FF4", hash_generated_method = "14EF3B907582DAACD36CDF9102EE8DCD")
+    
+protected HttpHost determineProxy(HttpHost    target,
                                       HttpRequest request,
                                       HttpContext context)
         throws HttpException {
@@ -199,8 +204,9 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
      * <br/>
      * (TODO: determine format for IPv6 addresses, with or without [brackets])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.404 -0500", hash_original_method = "E71E40B42A0A74E659F7570AD29A596D", hash_generated_method = "D753955B088170EDBEF92362EF8B671E")
-    protected String getHost(InetSocketAddress isa) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.719 -0500", hash_original_method = "E71E40B42A0A74E659F7570AD29A596D", hash_generated_method = "D753955B088170EDBEF92362EF8B671E")
+    
+protected String getHost(InetSocketAddress isa) {
 
         //@@@ Will this work with literal IPv6 addresses, or do we
         //@@@ need to wrap these in [] for the string representation?
@@ -228,8 +234,9 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
      * @return  a proxy of type {@link Proxy.Type#DIRECT DIRECT}
      *          or {@link Proxy.Type#HTTP HTTP}, never <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.405 -0500", hash_original_method = "694ED3015481C37C82C93AB5B9471B72", hash_generated_method = "CD647C76698C28DB96765D71FA1C8570")
-    protected Proxy chooseProxy(List<Proxy> proxies,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.722 -0500", hash_original_method = "694ED3015481C37C82C93AB5B9471B72", hash_generated_method = "CD647C76698C28DB96765D71FA1C8570")
+    
+protected Proxy chooseProxy(List<Proxy> proxies,
                                 HttpHost    target,
                                 HttpRequest request,
                                 HttpContext context) {

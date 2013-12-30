@@ -19,27 +19,28 @@ import android.view.ViewGroup;
 
 
 class ExpandableListConnector extends BaseAdapter implements Filterable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.241 -0500", hash_original_field = "F740C7542DC629DE756D7957303B1D05", hash_generated_field = "18A81DFA989CC3FAA8A107E272992504")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.753 -0500", hash_original_field = "F740C7542DC629DE756D7957303B1D05", hash_generated_field = "18A81DFA989CC3FAA8A107E272992504")
 
     private ExpandableListAdapter mExpandableListAdapter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.242 -0500", hash_original_field = "F2FDDB550851DBE7270480C9FF934C87", hash_generated_field = "3E8BCCD4064217A7C173330F3F39D938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.756 -0500", hash_original_field = "F2FDDB550851DBE7270480C9FF934C87", hash_generated_field = "3E8BCCD4064217A7C173330F3F39D938")
 
     private ArrayList<GroupMetadata> mExpGroupMetadataList;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.243 -0500", hash_original_field = "37887A3E62399A0ACB7249DD77013A39", hash_generated_field = "64833B5112863E55C291272F61C229B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.758 -0500", hash_original_field = "37887A3E62399A0ACB7249DD77013A39", hash_generated_field = "64833B5112863E55C291272F61C229B3")
 
     private int mTotalExpChildrenCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.244 -0500", hash_original_field = "D4E3BB0538C28AEDDB9AC38FB2177D5E", hash_generated_field = "73604CF012E96086A83733575D92D3EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.760 -0500", hash_original_field = "D4E3BB0538C28AEDDB9AC38FB2177D5E", hash_generated_field = "73604CF012E96086A83733575D92D3EC")
 
     private int mMaxExpGroupCount = Integer.MAX_VALUE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.245 -0500", hash_original_field = "16BBF73E74D7AA68ED02DDB0C88EAD36", hash_generated_field = "096B6AFF2D4BE73F0317C948A7EB332C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.762 -0500", hash_original_field = "16BBF73E74D7AA68ED02DDB0C88EAD36", hash_generated_field = "096B6AFF2D4BE73F0317C948A7EB332C")
 
     private final DataSetObserver mDataSetObserver = new MyDataSetObserver();
 
     /**
      * Constructs the connector
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.245 -0500", hash_original_method = "BC5B318F45FBBBBC44050BD05FD123C0", hash_generated_method = "D399C7E10126385D5C50DCE64A629E53")
-    public ExpandableListConnector(ExpandableListAdapter expandableListAdapter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.765 -0500", hash_original_method = "BC5B318F45FBBBBC44050BD05FD123C0", hash_generated_method = "D399C7E10126385D5C50DCE64A629E53")
+    
+public ExpandableListConnector(ExpandableListAdapter expandableListAdapter) {
         mExpGroupMetadataList = new ArrayList<GroupMetadata>();
 
         setExpandableListAdapter(expandableListAdapter);
@@ -50,8 +51,9 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
      * 
      * @param expandableListAdapter the adapter that supplies us with data/Views
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.246 -0500", hash_original_method = "20624F8A2041913E46624C5620B8C178", hash_generated_method = "5FF1A583D1FF272FC786661E94CCA714")
-    public void setExpandableListAdapter(ExpandableListAdapter expandableListAdapter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.767 -0500", hash_original_method = "20624F8A2041913E46624C5620B8C178", hash_generated_method = "5FF1A583D1FF272FC786661E94CCA714")
+    
+public void setExpandableListAdapter(ExpandableListAdapter expandableListAdapter) {
         if (mExpandableListAdapter != null) {
             mExpandableListAdapter.unregisterDataSetObserver(mDataSetObserver);
         }
@@ -72,8 +74,9 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
      *         position encompassed in a {@link PositionMetadata} object
      *         that contains additional useful info for insertion, etc.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.248 -0500", hash_original_method = "1168BEC82030FA7343EA44D40ECA13BC", hash_generated_method = "98E44E4E5FE99FDAB046C6B842A4D180")
-    PositionMetadata getUnflattenedPos(final int flPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.771 -0500", hash_original_method = "1168BEC82030FA7343EA44D40ECA13BC", hash_generated_method = "98E44E4E5FE99FDAB046C6B842A4D180")
+    
+PositionMetadata getUnflattenedPos(final int flPos) {
         /* Keep locally since frequent use */
         final ArrayList<GroupMetadata> egml = mExpGroupMetadataList;
         final int numExpGroups = egml.size();
@@ -224,8 +227,9 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
      * @return the flat list position encompassed in a {@link PositionMetadata}
      *         object that contains additional useful info for insertion, etc., or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.249 -0500", hash_original_method = "1D3F8862F07489DB803D2A10735D7C2B", hash_generated_method = "47E59E70BB5AAAA10CA364DAE8C4BCC5")
-    PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.775 -0500", hash_original_method = "1D3F8862F07489DB803D2A10735D7C2B", hash_generated_method = "47E59E70BB5AAAA10CA364DAE8C4BCC5")
+    
+PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         final ArrayList<GroupMetadata> egml = mExpGroupMetadataList;
         final int numExpGroups = egml.size();
 
@@ -335,15 +339,17 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.251 -0500", hash_original_method = "DAE4954D9EDE366A718556293A5AA5D3", hash_generated_method = "DE28B911F155222C0193C0AD581248C1")
-    @Override
-public boolean areAllItemsEnabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.777 -0500", hash_original_method = "DAE4954D9EDE366A718556293A5AA5D3", hash_generated_method = "DE28B911F155222C0193C0AD581248C1")
+    
+@Override
+    public boolean areAllItemsEnabled() {
         return mExpandableListAdapter.areAllItemsEnabled();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.252 -0500", hash_original_method = "0084AC4844BFD434CBA804E2DF22BA27", hash_generated_method = "7432A7A6BA74BE172448AF50DF9AFE19")
-    @Override
-public boolean isEnabled(int flatListPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.780 -0500", hash_original_method = "0084AC4844BFD434CBA804E2DF22BA27", hash_generated_method = "7432A7A6BA74BE172448AF50DF9AFE19")
+    
+@Override
+    public boolean isEnabled(int flatListPos) {
         final ExpandableListPosition pos = getUnflattenedPos(flatListPos).position;
         
         boolean retValue;
@@ -359,8 +365,9 @@ public boolean isEnabled(int flatListPos) {
         return retValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.252 -0500", hash_original_method = "E43CB6EF7F0706DB8CAE1E4EB2A6AE3E", hash_generated_method = "47DB55305C8A6796D86224A1FE93B0AA")
-    public int getCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.782 -0500", hash_original_method = "E43CB6EF7F0706DB8CAE1E4EB2A6AE3E", hash_generated_method = "47DB55305C8A6796D86224A1FE93B0AA")
+    
+public int getCount() {
         /*
          * Total count for the list view is the number groups plus the 
          * number of children from currently expanded groups (a value we keep
@@ -369,8 +376,9 @@ public boolean isEnabled(int flatListPos) {
         return mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.253 -0500", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "AB9F9881D27F80592D3E7BA9E009E48F")
-    public Object getItem(int flatListPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.784 -0500", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "AB9F9881D27F80592D3E7BA9E009E48F")
+    
+public Object getItem(int flatListPos) {
         final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
 
         Object retValue;
@@ -390,8 +398,9 @@ public boolean isEnabled(int flatListPos) {
         return retValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.254 -0500", hash_original_method = "4AC16A8A6C46491D50BE7E30F75A3576", hash_generated_method = "9C1FA81FA45FB4F67BB0BA95A8E37A70")
-    public long getItemId(int flatListPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.787 -0500", hash_original_method = "4AC16A8A6C46491D50BE7E30F75A3576", hash_generated_method = "9C1FA81FA45FB4F67BB0BA95A8E37A70")
+    
+public long getItemId(int flatListPos) {
         final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
         final long groupId = mExpandableListAdapter.getGroupId(posMetadata.position.groupPos);
         
@@ -412,8 +421,9 @@ public boolean isEnabled(int flatListPos) {
         return retValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.256 -0500", hash_original_method = "E8F063B04C087445609A9E5E66DA0C8E", hash_generated_method = "278DAC0FDBB3963CE3BC73B3B7D74A5B")
-    public View getView(int flatListPos, View convertView, ViewGroup parent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.790 -0500", hash_original_method = "E8F063B04C087445609A9E5E66DA0C8E", hash_generated_method = "278DAC0FDBB3963CE3BC73B3B7D74A5B")
+    
+public View getView(int flatListPos, View convertView, ViewGroup parent) {
         final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
 
         View retValue;
@@ -435,9 +445,10 @@ public boolean isEnabled(int flatListPos) {
         return retValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.257 -0500", hash_original_method = "99547DA2855DBC2792C3AF02654A4FE0", hash_generated_method = "C3666CABD146D7E0B72B8235EAFF3D01")
-    @Override
-public int getItemViewType(int flatListPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.792 -0500", hash_original_method = "99547DA2855DBC2792C3AF02654A4FE0", hash_generated_method = "C3666CABD146D7E0B72B8235EAFF3D01")
+    
+@Override
+    public int getItemViewType(int flatListPos) {
         final ExpandableListPosition pos = getUnflattenedPos(flatListPos).position;
 
         int retValue;
@@ -463,9 +474,10 @@ public int getItemViewType(int flatListPos) {
         return retValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.257 -0500", hash_original_method = "CE0634CAEF6413BEB2C07851873B554E", hash_generated_method = "A5F3735927BB5E300DA60480B75908FF")
-    @Override
-public int getViewTypeCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.794 -0500", hash_original_method = "CE0634CAEF6413BEB2C07851873B554E", hash_generated_method = "A5F3735927BB5E300DA60480B75908FF")
+    
+@Override
+    public int getViewTypeCount() {
         if (mExpandableListAdapter instanceof HeterogeneousExpandableList) {
             HeterogeneousExpandableList adapter =
                     (HeterogeneousExpandableList) mExpandableListAdapter;
@@ -475,9 +487,10 @@ public int getViewTypeCount() {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.258 -0500", hash_original_method = "4910256FB1EE08A13057FF7D9F357251", hash_generated_method = "2A0DFAE132E3C5C2CA6E69107DE71084")
-    @Override
-public boolean hasStableIds() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.796 -0500", hash_original_method = "4910256FB1EE08A13057FF7D9F357251", hash_generated_method = "2A0DFAE132E3C5C2CA6E69107DE71084")
+    
+@Override
+    public boolean hasStableIds() {
         return mExpandableListAdapter.hasStableIds();
     }
 
@@ -491,9 +504,10 @@ public boolean hasStableIds() {
      *         based on the group IDs. This should only be needed when calling
      *         this from an onChanged callback.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.259 -0500", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "F6328C3E10841AEBBE550B2E6E81DCC3")
-    @SuppressWarnings("unchecked")
-private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.800 -0500", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "F6328C3E10841AEBBE550B2E6E81DCC3")
+    
+@SuppressWarnings("unchecked")
+    private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
             boolean syncGroupPositions) {
         final ArrayList<GroupMetadata> egml = mExpGroupMetadataList;
         int egmlSize = egml.size();
@@ -569,8 +583,9 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
      * 
      * @param groupPos position of the group to collapse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.260 -0500", hash_original_method = "356AA5E78F17E2ABD0F401EB8EAF983A", hash_generated_method = "356AA5E78F17E2ABD0F401EB8EAF983A")
-    boolean collapseGroup(int groupPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.803 -0500", hash_original_method = "356AA5E78F17E2ABD0F401EB8EAF983A", hash_generated_method = "356AA5E78F17E2ABD0F401EB8EAF983A")
+    
+boolean collapseGroup(int groupPos) {
         PositionMetadata pm = getFlattenedPos(ExpandableListPosition.obtain(
                 ExpandableListPosition.GROUP, groupPos, -1, -1)); 
         if (pm == null) return false;
@@ -580,8 +595,9 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
         return retValue;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.261 -0500", hash_original_method = "B7CC4B14B03031BB8898031F497A0B04", hash_generated_method = "267E8E0A4BB170AAE242A75ACEE5AB84")
-    boolean collapseGroup(PositionMetadata posMetadata) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.805 -0500", hash_original_method = "B7CC4B14B03031BB8898031F497A0B04", hash_generated_method = "267E8E0A4BB170AAE242A75ACEE5AB84")
+    
+boolean collapseGroup(PositionMetadata posMetadata) {
         /*
          * Collapsing requires removal from mExpGroupMetadataList 
          */
@@ -612,8 +628,9 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
      * Expand a group in the grouped list view
      * @param groupPos the group to be expanded
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.262 -0500", hash_original_method = "5E373C5564B1740CC801138FBC6EE83B", hash_generated_method = "5E373C5564B1740CC801138FBC6EE83B")
-    boolean expandGroup(int groupPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.808 -0500", hash_original_method = "5E373C5564B1740CC801138FBC6EE83B", hash_generated_method = "5E373C5564B1740CC801138FBC6EE83B")
+    
+boolean expandGroup(int groupPos) {
         PositionMetadata pm = getFlattenedPos(ExpandableListPosition.obtain(
                 ExpandableListPosition.GROUP, groupPos, -1, -1));
         boolean retValue = expandGroup(pm);
@@ -621,8 +638,9 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
         return retValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.263 -0500", hash_original_method = "7C096EBC61E7C7FF959B994559196523", hash_generated_method = "02C8AEB6F7EB50B90C736E8109445974")
-    boolean expandGroup(PositionMetadata posMetadata) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.810 -0500", hash_original_method = "7C096EBC61E7C7FF959B994559196523", hash_generated_method = "02C8AEB6F7EB50B90C736E8109445974")
+    
+boolean expandGroup(PositionMetadata posMetadata) {
         /*
          * Expanding requires insertion into the mExpGroupMetadataList 
          */
@@ -679,8 +697,9 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
      * @param groupPosition The group to check.
      * @return Whether the group is currently expanded.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.264 -0500", hash_original_method = "14DD7EE25463BE2F409F1A554DB1FBD9", hash_generated_method = "90AC6F49BA9BBA0C4EBC7A0E5C05A64C")
-    public boolean isGroupExpanded(int groupPosition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.813 -0500", hash_original_method = "14DD7EE25463BE2F409F1A554DB1FBD9", hash_generated_method = "90AC6F49BA9BBA0C4EBC7A0E5C05A64C")
+    
+public boolean isGroupExpanded(int groupPosition) {
         GroupMetadata groupMetadata;
         for (int i = mExpGroupMetadataList.size() - 1; i >= 0; i--) {
             groupMetadata = mExpGroupMetadataList.get(i);
@@ -696,18 +715,21 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
     /**
      * Set the maximum number of groups that can be expanded at any given time
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.264 -0500", hash_original_method = "5DCA730791D083145030F1469300702C", hash_generated_method = "3A314B2BF11D01C42E3E0FA03748D4B3")
-    public void setMaxExpGroupCount(int maxExpGroupCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.815 -0500", hash_original_method = "5DCA730791D083145030F1469300702C", hash_generated_method = "3A314B2BF11D01C42E3E0FA03748D4B3")
+    
+public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.266 -0500", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "473155659E1950E1738B6CCA8650B997")
-    ExpandableListAdapter getAdapter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.817 -0500", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "473155659E1950E1738B6CCA8650B997")
+    
+ExpandableListAdapter getAdapter() {
         return mExpandableListAdapter;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.267 -0500", hash_original_method = "D7C89EA0D9DD591B12578E8793100CE2", hash_generated_method = "D406C3BE28EC3D0684B6ED6E2E370ED0")
-    public Filter getFilter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.819 -0500", hash_original_method = "D7C89EA0D9DD591B12578E8793100CE2", hash_generated_method = "D406C3BE28EC3D0684B6ED6E2E370ED0")
+    
+public Filter getFilter() {
         ExpandableListAdapter adapter = getAdapter();
         if (adapter instanceof Filterable) {
             return ((Filterable) adapter).getFilter();
@@ -716,13 +738,15 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.267 -0500", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "740752E96AF2B266538C6125F8E79937")
-    ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.821 -0500", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "740752E96AF2B266538C6125F8E79937")
+    
+ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
         return mExpGroupMetadataList;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.268 -0500", hash_original_method = "43D377DDC694A5D1EB7EAB73153EC2C8", hash_generated_method = "0EA033DF078D862B1BB25A2BC8FF1ADC")
-    void setExpandedGroupMetadataList(ArrayList<GroupMetadata> expandedGroupMetadataList) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.823 -0500", hash_original_method = "43D377DDC694A5D1EB7EAB73153EC2C8", hash_generated_method = "0EA033DF078D862B1BB25A2BC8FF1ADC")
+    
+void setExpandedGroupMetadataList(ArrayList<GroupMetadata> expandedGroupMetadataList) {
         
         if ((expandedGroupMetadataList == null) || (mExpandableListAdapter == null)) {
             return;
@@ -742,9 +766,10 @@ private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
         refreshExpGroupMetadataList(true, false);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.269 -0500", hash_original_method = "DF256FE26F67ED917C946C2E9410F027", hash_generated_method = "9D851244A11EC8F22F920F089137062E")
-    @Override
-public boolean isEmpty() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.825 -0500", hash_original_method = "DF256FE26F67ED917C946C2E9410F027", hash_generated_method = "9D851244A11EC8F22F920F089137062E")
+    
+@Override
+    public boolean isEmpty() {
         ExpandableListAdapter adapter = getAdapter();
         return adapter != null ? adapter.isEmpty() : true;
     }
@@ -760,8 +785,9 @@ public boolean isEmpty() {
      *         {@link AdapterView#INVALID_POSITION} if it can't be found
      * @see AdapterView#findSyncPosition()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.270 -0500", hash_original_method = "174FBE5747A707DB845F85C327785D51", hash_generated_method = "FA57EACDCE0D3B1E10B241C2A5BB18B2")
-    int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.828 -0500", hash_original_method = "174FBE5747A707DB845F85C327785D51", hash_generated_method = "FA57EACDCE0D3B1E10B241C2A5BB18B2")
+    
+int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
         int count = mExpandableListAdapter.getGroupCount();
 
         if (count == 0) {
@@ -845,17 +871,19 @@ public boolean isEmpty() {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.271 -0500", hash_original_method = "6638C55358D7A5972C632ED02BA3E5C3", hash_generated_method = "B265B43DFC29D8AF82A6D948594046AD")
-        @Override
-public void onChanged() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.832 -0500", hash_original_method = "6638C55358D7A5972C632ED02BA3E5C3", hash_generated_method = "B265B43DFC29D8AF82A6D948594046AD")
+        
+@Override
+        public void onChanged() {
             refreshExpGroupMetadataList(true, true);
             
             notifyDataSetChanged();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.272 -0500", hash_original_method = "097361F82E1EAFBA4D6D3BF1780C0DD3", hash_generated_method = "122D3CAD2026DFBB4A415C8D12DED51C")
-        @Override
-public void onInvalidated() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.834 -0500", hash_original_method = "097361F82E1EAFBA4D6D3BF1780C0DD3", hash_generated_method = "122D3CAD2026DFBB4A415C8D12DED51C")
+        
+@Override
+        public void onInvalidated() {
             refreshExpGroupMetadataList(true, true);
             
             notifyDataSetInvalidated();
@@ -868,8 +896,9 @@ public void onInvalidated() {
     
     static class GroupMetadata implements Parcelable, Comparable<GroupMetadata> {
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.279 -0500", hash_original_method = "2B12A460F68F821AFB893D8E745D52C4", hash_generated_method = "7A619C7E7D1D4CD22319AE170751805D")
-        static GroupMetadata obtain(int flPos, int lastChildFlPos, int gPos, long gId) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.852 -0500", hash_original_method = "2B12A460F68F821AFB893D8E745D52C4", hash_generated_method = "7A619C7E7D1D4CD22319AE170751805D")
+        
+static GroupMetadata obtain(int flPos, int lastChildFlPos, int gPos, long gId) {
             GroupMetadata gm = new GroupMetadata();
             gm.flPos = flPos;
             gm.lastChildFlPos = lastChildFlPos;
@@ -877,7 +906,7 @@ public void onInvalidated() {
             gm.gId = gId;
             return gm;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.274 -0500", hash_original_field = "84B4B68A7FC7370DC7068FDF8FE255E0", hash_generated_field = "AA4362F6390CEC3E3D3C031E047DB090")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.839 -0500", hash_original_field = "84B4B68A7FC7370DC7068FDF8FE255E0", hash_generated_field = "AA4362F6390CEC3E3D3C031E047DB090")
 
         final static int REFRESH = -1;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.397 -0400", hash_original_field = "78442AA8D3BDB00B3E51CD054914D00C", hash_generated_field = "904F1381FE24EA0344AB3807F0522586")
@@ -885,8 +914,9 @@ public void onInvalidated() {
         public static final Parcelable.Creator<GroupMetadata> CREATOR =
                 new Parcelable.Creator<GroupMetadata>() {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.283 -0500", hash_original_method = "7666142641B123E4C50AF29F73470D4C", hash_generated_method = "EC2ECA427037B9F9CB737317DAE26498")
-            public GroupMetadata createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.862 -0500", hash_original_method = "7666142641B123E4C50AF29F73470D4C", hash_generated_method = "EC2ECA427037B9F9CB737317DAE26498")
+            
+public GroupMetadata createFromParcel(Parcel in) {
                 GroupMetadata gm = GroupMetadata.obtain(
                         in.readInt(),
                         in.readInt(),
@@ -895,15 +925,16 @@ public void onInvalidated() {
                 return gm;
             }
     
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.284 -0500", hash_original_method = "EF75B3740CF336BA8876BFA102D2490A", hash_generated_method = "BEA2FC89CEEEC1BF914754800F6CDB26")
-            public GroupMetadata[] newArray(int size) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.865 -0500", hash_original_method = "EF75B3740CF336BA8876BFA102D2490A", hash_generated_method = "BEA2FC89CEEEC1BF914754800F6CDB26")
+            
+public GroupMetadata[] newArray(int size) {
                 return new GroupMetadata[size];
             }
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.275 -0500", hash_original_field = "58B6025F7C34D4075DA7A8B5B78AF226", hash_generated_field = "58B6025F7C34D4075DA7A8B5B78AF226")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.841 -0500", hash_original_field = "58B6025F7C34D4075DA7A8B5B78AF226", hash_generated_field = "58B6025F7C34D4075DA7A8B5B78AF226")
 
         int flPos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:42.779 -0500", hash_original_field = "1D206009A6034643761BC2A5FF4F958A", hash_generated_field = "CA711A65235C080BF7996DBB0A1BD502")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.843 -0500", hash_original_field = "1D206009A6034643761BC2A5FF4F958A", hash_generated_field = "CA711A65235C080BF7996DBB0A1BD502")
 
         
         /**
@@ -911,19 +942,21 @@ public void onInvalidated() {
          * the range of this group in the flat list
          */
         int lastChildFlPos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.276 -0500", hash_original_field = "3DC369C72F1134212FEABAA7CBB84833", hash_generated_field = "3DC369C72F1134212FEABAA7CBB84833")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.845 -0500", hash_original_field = "3DC369C72F1134212FEABAA7CBB84833", hash_generated_field = "3DC369C72F1134212FEABAA7CBB84833")
 
         int gPos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.277 -0500", hash_original_field = "FF49466B0FCBC21119470C70559BF788", hash_generated_field = "FF49466B0FCBC21119470C70559BF788")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.847 -0500", hash_original_field = "FF49466B0FCBC21119470C70559BF788", hash_generated_field = "FF49466B0FCBC21119470C70559BF788")
 
         long gId;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.278 -0500", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "66B3DA2A621E45583C4F654641E42F64")
-        private GroupMetadata() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.850 -0500", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "66B3DA2A621E45583C4F654641E42F64")
+        
+private GroupMetadata() {
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.280 -0500", hash_original_method = "ECBFFC8C0ED7A961DBF56C4EE305170D", hash_generated_method = "F866B1A80686D809602404CC871A528E")
-        public int compareTo(GroupMetadata another) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.855 -0500", hash_original_method = "ECBFFC8C0ED7A961DBF56C4EE305170D", hash_generated_method = "F866B1A80686D809602404CC871A528E")
+        
+public int compareTo(GroupMetadata another) {
             if (another == null) {
                 throw new IllegalArgumentException();
             }
@@ -931,13 +964,15 @@ public void onInvalidated() {
             return gPos - another.gPos;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.281 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-        public int describeContents() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.857 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+        
+public int describeContents() {
             return 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.281 -0500", hash_original_method = "65A29D222E83CA17BC122C9C28EAFA8F", hash_generated_method = "2E3B19BB47FEF2A550C9EC556F865025")
-        public void writeToParcel(Parcel dest, int flags) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.859 -0500", hash_original_method = "65A29D222E83CA17BC122C9C28EAFA8F", hash_generated_method = "2E3B19BB47FEF2A550C9EC556F865025")
+        
+public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(flPos);
             dest.writeInt(lastChildFlPos);
             dest.writeInt(gPos);
@@ -964,8 +999,9 @@ public void onInvalidated() {
     
     static public class PositionMetadata {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.292 -0500", hash_original_method = "649262705A74E8A0806C94474C513B14", hash_generated_method = "44AC1CC38A599427EC0C253D6A7AACAA")
-        static PositionMetadata obtain(int flatListPos, int type, int groupPos,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.889 -0500", hash_original_method = "649262705A74E8A0806C94474C513B14", hash_generated_method = "44AC1CC38A599427EC0C253D6A7AACAA")
+        
+static PositionMetadata obtain(int flatListPos, int type, int groupPos,
                 int childPos, GroupMetadata groupMetadata, int groupInsertIndex) {
             PositionMetadata pm = getRecycledOrCreate();
             pm.position = ExpandableListPosition.obtain(type, groupPos, childPos, flatListPos);
@@ -974,8 +1010,9 @@ public void onInvalidated() {
             return pm;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.293 -0500", hash_original_method = "9149D60AD78C864FCC50349463BE3741", hash_generated_method = "8F2EA208F3D1BFA826E16A80AB1BC40C")
-        private static PositionMetadata getRecycledOrCreate() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.892 -0500", hash_original_method = "9149D60AD78C864FCC50349463BE3741", hash_generated_method = "8F2EA208F3D1BFA826E16A80AB1BC40C")
+        
+private static PositionMetadata getRecycledOrCreate() {
             PositionMetadata pm;
             synchronized (sPool) {
                 if (sPool.size() > 0) {
@@ -987,40 +1024,43 @@ public void onInvalidated() {
             pm.resetState();
             return pm;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.286 -0500", hash_original_field = "73A7DB4BA52C41C46FF2526949A8CECE", hash_generated_field = "7127A67374BF405D0F01EEB2429B1D48")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.873 -0500", hash_original_field = "73A7DB4BA52C41C46FF2526949A8CECE", hash_generated_field = "7127A67374BF405D0F01EEB2429B1D48")
 
         
         private static final int MAX_POOL_SIZE = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.287 -0500", hash_original_field = "E5612D1F77D6B8D6ECF15E38DB9451F9", hash_generated_field = "8C9EE594696DB4880353F853B50DD5E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.876 -0500", hash_original_field = "E5612D1F77D6B8D6ECF15E38DB9451F9", hash_generated_field = "8C9EE594696DB4880353F853B50DD5E0")
 
         private static ArrayList<PositionMetadata> sPool =
                 new ArrayList<PositionMetadata>(MAX_POOL_SIZE);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.288 -0500", hash_original_field = "5CE0DE49289E9E4A92A29888327E246E", hash_generated_field = "439A44C84644DDD041C72E7D8E43AE28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.878 -0500", hash_original_field = "5CE0DE49289E9E4A92A29888327E246E", hash_generated_field = "439A44C84644DDD041C72E7D8E43AE28")
 
         public ExpandableListPosition position;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.289 -0500", hash_original_field = "CFA5706C7EB0D6C13E6F2F74CED23C0E", hash_generated_field = "1B4C4593E0FDCF44159ACC4FBB332E4C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.880 -0500", hash_original_field = "CFA5706C7EB0D6C13E6F2F74CED23C0E", hash_generated_field = "1B4C4593E0FDCF44159ACC4FBB332E4C")
 
         public GroupMetadata groupMetadata;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.290 -0500", hash_original_field = "60AEE389EED8EDE628BA8FEFA78FE807", hash_generated_field = "21E16F098268A299565F9E372C785629")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.882 -0500", hash_original_field = "60AEE389EED8EDE628BA8FEFA78FE807", hash_generated_field = "21E16F098268A299565F9E372C785629")
 
         public int groupInsertIndex;
         
         /**
          * Use {@link #obtain(int, int, int, int, GroupMetadata, int)}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.292 -0500", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "A9ADC97C919B0932908B14D94925CB26")
-        private PositionMetadata() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.886 -0500", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "A9ADC97C919B0932908B14D94925CB26")
+        
+private PositionMetadata() {
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.291 -0500", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "FF685B47CD5846D30FF011982012AE01")
-        private void resetState() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.884 -0500", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "FF685B47CD5846D30FF011982012AE01")
+        
+private void resetState() {
             position = null;
             groupMetadata = null;
             groupInsertIndex = 0;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.294 -0500", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "D64E89134CFC371784818AC6DB037546")
-        public void recycle() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.894 -0500", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "D64E89134CFC371784818AC6DB037546")
+        
+public void recycle() {
             synchronized (sPool) {
                 if (sPool.size() < MAX_POOL_SIZE) {
                     sPool.add(this);
@@ -1034,8 +1074,9 @@ public void onInvalidated() {
          * 
          * @return whether the group at groupPos is expanded or not
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:09.295 -0500", hash_original_method = "3DA77438EDE7E493B793AF2E840B43CD", hash_generated_method = "D01D31263CC47F8D2C2E50DB6F92AA06")
-        public boolean isExpanded() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.896 -0500", hash_original_method = "3DA77438EDE7E493B793AF2E840B43CD", hash_generated_method = "D01D31263CC47F8D2C2E50DB6F92AA06")
+        
+public boolean isExpanded() {
             return groupMetadata != null;
         }
     }

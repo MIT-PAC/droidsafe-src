@@ -32,8 +32,9 @@ public class SSLContext {
      * the default instance.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.030 -0500", hash_original_method = "95B85BB32D8715FAB21A58C07C90C0CF", hash_generated_method = "AE9C5CE95C71C9318BAA63E07FB050DC")
-    public static SSLContext getDefault() throws NoSuchAlgorithmException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.935 -0500", hash_original_method = "95B85BB32D8715FAB21A58C07C90C0CF", hash_generated_method = "AE9C5CE95C71C9318BAA63E07FB050DC")
+    
+public static SSLContext getDefault() throws NoSuchAlgorithmException {
         synchronized (ENGINE) {
             if (DEFAULT == null) {
                 DEFAULT = SSLContext.getInstance("Default");
@@ -49,8 +50,9 @@ public class SSLContext {
      * @throws NullPointerException on a null argument
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.031 -0500", hash_original_method = "CD249DA83A6553D8042C3D056F14877E", hash_generated_method = "E1C154430A8D6939BA6AF42965804786")
-    public static void setDefault(SSLContext sslContext) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.937 -0500", hash_original_method = "CD249DA83A6553D8042C3D056F14877E", hash_generated_method = "E1C154430A8D6939BA6AF42965804786")
+    
+public static void setDefault(SSLContext sslContext) {
         if (sslContext == null) {
             throw new NullPointerException("sslContext == null");
         }
@@ -71,8 +73,9 @@ public class SSLContext {
      *             if {@code protocol} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.032 -0500", hash_original_method = "290AE10C7E5CA88B73DF82087A6F1FF6", hash_generated_method = "BF2C0057FB297CFA34EBDA8AFBA00B97")
-    public static SSLContext getInstance(String protocol) throws NoSuchAlgorithmException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.940 -0500", hash_original_method = "290AE10C7E5CA88B73DF82087A6F1FF6", hash_generated_method = "BF2C0057FB297CFA34EBDA8AFBA00B97")
+    
+public static SSLContext getInstance(String protocol) throws NoSuchAlgorithmException {
         if (protocol == null) {
             throw new NullPointerException("protocol is null");
         }
@@ -98,8 +101,9 @@ public class SSLContext {
      *             if {@code protocol} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.033 -0500", hash_original_method = "FB566E7CF465D4D2FD3830A55B204330", hash_generated_method = "7A73B622B29BDE0EDFDF42DADE3800F2")
-    public static SSLContext getInstance(String protocol, String provider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.942 -0500", hash_original_method = "FB566E7CF465D4D2FD3830A55B204330", hash_generated_method = "7A73B622B29BDE0EDFDF42DADE3800F2")
+    
+public static SSLContext getInstance(String protocol, String provider)
             throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null) {
             throw new IllegalArgumentException("Provider is null");
@@ -130,8 +134,9 @@ public class SSLContext {
      *             if {@code protocol} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.034 -0500", hash_original_method = "391F8D562A0F9200AE7CEB2E407E9313", hash_generated_method = "AF9B106B072669656950AD6A135A0807")
-    public static SSLContext getInstance(String protocol, Provider provider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.945 -0500", hash_original_method = "391F8D562A0F9200AE7CEB2E407E9313", hash_generated_method = "AF9B106B072669656950AD6A135A0807")
+    
+public static SSLContext getInstance(String protocol, Provider provider)
             throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("provider is null");
@@ -142,24 +147,24 @@ public class SSLContext {
         Object spi = ENGINE.getInstance(protocol, provider, null);
         return new SSLContext((SSLContextSpi) spi, provider, protocol);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.028 -0500", hash_original_field = "2FA34E623E8D8C604B054B1C8CF4587A", hash_generated_field = "F9968588171E1F6215F8BDC43FEE8F36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.927 -0500", hash_original_field = "2FA34E623E8D8C604B054B1C8CF4587A", hash_generated_field = "F9968588171E1F6215F8BDC43FEE8F36")
 
     private static final String SERVICE = "SSLContext";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.029 -0500", hash_original_field = "17F86B5CB94419D7D346BC8D1B101EA5", hash_generated_field = "0CDCB796C7211B2802F60DAA409FC065")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.930 -0500", hash_original_field = "17F86B5CB94419D7D346BC8D1B101EA5", hash_generated_field = "0CDCB796C7211B2802F60DAA409FC065")
 
     private static final Engine ENGINE = new Engine(SERVICE);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.029 -0500", hash_original_field = "50CAFB43E1FA192D4A2E9F04A2DBB316", hash_generated_field = "2B7DA749EDE2455861561266A5813438")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.932 -0500", hash_original_field = "50CAFB43E1FA192D4A2E9F04A2DBB316", hash_generated_field = "2B7DA749EDE2455861561266A5813438")
 
     private static SSLContext DEFAULT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.035 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.947 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
 
     private  Provider provider;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.036 -0500", hash_original_field = "CFEE11B24DA2F4BBB4EF246AF4DA8F53", hash_generated_field = "35670434E65BDBAFCC16200249E01B00")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.950 -0500", hash_original_field = "CFEE11B24DA2F4BBB4EF246AF4DA8F53", hash_generated_field = "35670434E65BDBAFCC16200249E01B00")
 
 
     private  SSLContextSpi spiImpl;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.037 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.952 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
 
 
     private  String protocol;
@@ -174,8 +179,9 @@ public class SSLContext {
      * @param protocol
      *            the protocol name.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.038 -0500", hash_original_method = "C804D9011355FC1C1182E28B9F55F9CC", hash_generated_method = "51949A4394879F3440099AB86F04B2E6")
-    protected SSLContext(SSLContextSpi contextSpi, Provider provider, String protocol) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.955 -0500", hash_original_method = "C804D9011355FC1C1182E28B9F55F9CC", hash_generated_method = "51949A4394879F3440099AB86F04B2E6")
+    
+protected SSLContext(SSLContextSpi contextSpi, Provider provider, String protocol) {
         this.provider = provider;
         this.protocol = protocol;
         this.spiImpl = contextSpi;
@@ -186,8 +192,9 @@ public class SSLContext {
      *
      * @return the name of the secure socket protocol of this instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.038 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "4DF996DD4ED6E38DFDC56EAB9AE5D939")
-    public final String getProtocol() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.957 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "4DF996DD4ED6E38DFDC56EAB9AE5D939")
+    
+public final String getProtocol() {
         return protocol;
     }
 
@@ -196,8 +203,9 @@ public class SSLContext {
      *
      * @return the provider of this {@code SSLContext} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.039 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
-    public final Provider getProvider() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.959 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
+    
+public final Provider getProvider() {
         return provider;
     }
 
@@ -215,8 +223,9 @@ public class SSLContext {
      * @throws KeyManagementException
      *             if initializing this instance fails.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.040 -0500", hash_original_method = "862C6735087482F43EE162F8A0522BCE", hash_generated_method = "54937273F02B9EF1E587F83D41C29AEC")
-    public final void init(KeyManager[] km, TrustManager[] tm, SecureRandom sr)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.961 -0500", hash_original_method = "862C6735087482F43EE162F8A0522BCE", hash_generated_method = "54937273F02B9EF1E587F83D41C29AEC")
+    
+public final void init(KeyManager[] km, TrustManager[] tm, SecureRandom sr)
             throws KeyManagementException {
         spiImpl.engineInit(km, tm, sr);
     }
@@ -226,8 +235,9 @@ public class SSLContext {
      *
      * @return a socket factory for this instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.041 -0500", hash_original_method = "B0765B951456A1F8D049DA95DEF67C61", hash_generated_method = "AE7AC5E9642A89A29A96C5CF6A2BF2BD")
-    public final SSLSocketFactory getSocketFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.964 -0500", hash_original_method = "B0765B951456A1F8D049DA95DEF67C61", hash_generated_method = "AE7AC5E9642A89A29A96C5CF6A2BF2BD")
+    
+public final SSLSocketFactory getSocketFactory() {
         return spiImpl.engineGetSocketFactory();
     }
 
@@ -236,8 +246,9 @@ public class SSLContext {
      *
      * @return a server socket factory for this instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.041 -0500", hash_original_method = "6B854724B17F4BE278032C18BCD40494", hash_generated_method = "63ACCC172110C9DC2EB130015056916C")
-    public final SSLServerSocketFactory getServerSocketFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.967 -0500", hash_original_method = "6B854724B17F4BE278032C18BCD40494", hash_generated_method = "63ACCC172110C9DC2EB130015056916C")
+    
+public final SSLServerSocketFactory getServerSocketFactory() {
         return spiImpl.engineGetServerSocketFactory();
     }
 
@@ -248,8 +259,9 @@ public class SSLContext {
      * @throws UnsupportedOperationException
      *             if the provider does not support the operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.042 -0500", hash_original_method = "9326AAD5FC0B444F9C3CCC582EB8A84C", hash_generated_method = "B6B1C0F22D56A1CEE368F0B54F2991CB")
-    public final SSLEngine createSSLEngine() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.970 -0500", hash_original_method = "9326AAD5FC0B444F9C3CCC582EB8A84C", hash_generated_method = "B6B1C0F22D56A1CEE368F0B54F2991CB")
+    
+public final SSLEngine createSSLEngine() {
         return spiImpl.engineCreateSSLEngine();
     }
 
@@ -265,8 +277,9 @@ public class SSLContext {
      * @throws UnsupportedOperationException
      *             if the provider does not support the operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.043 -0500", hash_original_method = "4AC4A8F933626C577BD77D72E35BEF87", hash_generated_method = "9C470B5BCE90188A0832C29487E33A80")
-    public final SSLEngine createSSLEngine(String peerHost, int peerPort) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.972 -0500", hash_original_method = "4AC4A8F933626C577BD77D72E35BEF87", hash_generated_method = "9C470B5BCE90188A0832C29487E33A80")
+    
+public final SSLEngine createSSLEngine(String peerHost, int peerPort) {
         return spiImpl.engineCreateSSLEngine(peerHost, peerPort);
     }
 
@@ -278,8 +291,9 @@ public class SSLContext {
      *         if the underlying provider does not provide an implementation of
      *         the {@code SSLSessionContext} interface.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.044 -0500", hash_original_method = "13CFBFF97EBEA17DB24F1E636C863192", hash_generated_method = "DE6B68E8F154C129FD28449F1FBE3003")
-    public final SSLSessionContext getServerSessionContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.975 -0500", hash_original_method = "13CFBFF97EBEA17DB24F1E636C863192", hash_generated_method = "DE6B68E8F154C129FD28449F1FBE3003")
+    
+public final SSLSessionContext getServerSessionContext() {
         return spiImpl.engineGetServerSessionContext();
     }
 
@@ -291,8 +305,9 @@ public class SSLContext {
      *         if the underlying provider does not provide an implementation of
      *         the {@code SSLSessionContext} interface.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.045 -0500", hash_original_method = "ECC6F07A2C60018ED286E62595778908", hash_generated_method = "A186EB06C2FF4FC0DB898AE584F21371")
-    public final SSLSessionContext getClientSessionContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.977 -0500", hash_original_method = "ECC6F07A2C60018ED286E62595778908", hash_generated_method = "A186EB06C2FF4FC0DB898AE584F21371")
+    
+public final SSLSessionContext getClientSessionContext() {
         return spiImpl.engineGetClientSessionContext();
     }
 
@@ -303,8 +318,9 @@ public class SSLContext {
      * @throws UnsupportedOperationException
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.045 -0500", hash_original_method = "EF50F11BBBC92F54F2BB8CD8681E5FD1", hash_generated_method = "B9973F15E21F332D6EF816356C41E08A")
-    public final SSLParameters getDefaultSSLParameters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.979 -0500", hash_original_method = "EF50F11BBBC92F54F2BB8CD8681E5FD1", hash_generated_method = "B9973F15E21F332D6EF816356C41E08A")
+    
+public final SSLParameters getDefaultSSLParameters() {
         return spiImpl.engineGetDefaultSSLParameters();
     }
 
@@ -315,8 +331,9 @@ public class SSLContext {
      * @throws UnsupportedOperationException
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.046 -0500", hash_original_method = "B61455860318644024B430BCDF123BB8", hash_generated_method = "C36A8CD37168C1EB898C2E0B1717444A")
-    public final SSLParameters getSupportedSSLParameters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.981 -0500", hash_original_method = "B61455860318644024B430BCDF123BB8", hash_generated_method = "C36A8CD37168C1EB898C2E0B1717444A")
+    
+public final SSLParameters getSupportedSSLParameters() {
         return spiImpl.engineGetSupportedSSLParameters();
     }
 }

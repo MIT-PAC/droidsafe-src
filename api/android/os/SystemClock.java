@@ -20,8 +20,9 @@ public final class SystemClock {
      *
      * @param ms to sleep before returning, in milliseconds of uptime.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.762 -0500", hash_original_method = "D4BA21E42781D683EDE66760B12EFE55", hash_generated_method = "7BE0E448310CD35EBF03CDB3833013C9")
-    public static void sleep(long ms)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.628 -0500", hash_original_method = "D4BA21E42781D683EDE66760B12EFE55", hash_generated_method = "7BE0E448310CD35EBF03CDB3833013C9")
+    
+public static void sleep(long ms)
     {
         long start = uptimeMillis();
         long duration = ms;
@@ -82,8 +83,9 @@ public final class SystemClock {
     /**
      * This class is uninstantiable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.761 -0500", hash_original_method = "447AF20F3E8B0F9406C259A46D1AF12B", hash_generated_method = "874F5813A3F49589CCC4C945CC392D71")
-    private SystemClock() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.625 -0500", hash_original_method = "447AF20F3E8B0F9406C259A46D1AF12B", hash_generated_method = "874F5813A3F49589CCC4C945CC392D71")
+    
+private SystemClock() {
         // This space intentionally left blank.
     }
 

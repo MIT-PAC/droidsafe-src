@@ -27,8 +27,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *
      * @return an UUID instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.016 -0500", hash_original_method = "062E55715164230436BF863A3994A273", hash_generated_method = "29D0A8B9D260A09CC32C49AB2CD937C9")
-    public static UUID randomUUID() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.038 -0500", hash_original_method = "062E55715164230436BF863A3994A273", hash_generated_method = "29D0A8B9D260A09CC32C49AB2CD937C9")
+    
+public static UUID randomUUID() {
         byte[] data = new byte[16];
         // lock on the class to protect lazy init
         synchronized (UUID.class) {
@@ -49,8 +50,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *            the name used as byte array to create an UUID.
      * @return an UUID instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.017 -0500", hash_original_method = "ADE744546D5EDC5F1118EE072B40943A", hash_generated_method = "F912BC9FD1D619B64EE1F4B0C6A632F3")
-    public static UUID nameUUIDFromBytes(byte[] name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.041 -0500", hash_original_method = "ADE744546D5EDC5F1118EE072B40943A", hash_generated_method = "F912BC9FD1D619B64EE1F4B0C6A632F3")
+    
+public static UUID nameUUIDFromBytes(byte[] name) {
         if (name == null) {
             throw new NullPointerException();
         }
@@ -62,8 +64,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.017 -0500", hash_original_method = "9E98E00BE8824DAD14A3C091F30213C3", hash_generated_method = "AD54A954ABC3BE59A4B71DACEFCE0467")
-    private static UUID makeUuid(byte[] hash, int version) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.044 -0500", hash_original_method = "9E98E00BE8824DAD14A3C091F30213C3", hash_generated_method = "AD54A954ABC3BE59A4B71DACEFCE0467")
+    
+private static UUID makeUuid(byte[] hash, int version) {
         long msb = Memory.peekLong(hash, 0, ByteOrder.BIG_ENDIAN);
         long lsb = Memory.peekLong(hash, 8, ByteOrder.BIG_ENDIAN);
         // Set the version field.
@@ -88,8 +91,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @throws IllegalArgumentException
      *             if {@code uuid} is not formatted correctly.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.019 -0500", hash_original_method = "91976DDD0DF6E7445909995B535A77C8", hash_generated_method = "A51362772C45D6E1A99F12EB4EFB1AE6")
-    public static UUID fromString(String uuid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.048 -0500", hash_original_method = "91976DDD0DF6E7445909995B535A77C8", hash_generated_method = "A51362772C45D6E1A99F12EB4EFB1AE6")
+    
+public static UUID fromString(String uuid) {
         if (uuid == null) {
             throw new NullPointerException();
         }
@@ -122,38 +126,38 @@ public final class UUID implements Serializable, Comparable<UUID> {
 
         return new UUID(msb, lsb);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.005 -0500", hash_original_field = "5CDDBC3B8FA8D7F612FD471D9CFE74D5", hash_generated_field = "091C22832E79DC74DEA4ADB3F391327C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.008 -0500", hash_original_field = "5CDDBC3B8FA8D7F612FD471D9CFE74D5", hash_generated_field = "091C22832E79DC74DEA4ADB3F391327C")
 
 
     private static final long serialVersionUID = -4856846361193249489L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.006 -0500", hash_original_field = "21F405F8CC9F93FAD1F4753A00726900", hash_generated_field = "A9867F7F1BA5EDFF98FD827A1CEF8FD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.011 -0500", hash_original_field = "21F405F8CC9F93FAD1F4753A00726900", hash_generated_field = "A9867F7F1BA5EDFF98FD827A1CEF8FD3")
 
 
     private static SecureRandom rng;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.006 -0500", hash_original_field = "0F762932F80AC8DAB307969FF1CE2B08", hash_generated_field = "E05311E58F38272D7C9B90EC864288E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.013 -0500", hash_original_field = "0F762932F80AC8DAB307969FF1CE2B08", hash_generated_field = "E05311E58F38272D7C9B90EC864288E6")
 
 
     private long mostSigBits;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.007 -0500", hash_original_field = "0835F98F890E38C6CF15225FB4DA9AC1", hash_generated_field = "76D70F6EAB49CBC32F6DF9DF520746D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.016 -0500", hash_original_field = "0835F98F890E38C6CF15225FB4DA9AC1", hash_generated_field = "76D70F6EAB49CBC32F6DF9DF520746D2")
 
     private long leastSigBits;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.008 -0500", hash_original_field = "47DF7A5E2AD811615D5B7885C50AD7F1", hash_generated_field = "ED6112CF1FA2DA1876E57F9A6D2E2836")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.018 -0500", hash_original_field = "47DF7A5E2AD811615D5B7885C50AD7F1", hash_generated_field = "ED6112CF1FA2DA1876E57F9A6D2E2836")
 
 
     private transient int variant;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.009 -0500", hash_original_field = "971D53A5DDB5A515B8A18CE48C276387", hash_generated_field = "BAD42B86A408081FE78996E122739899")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.021 -0500", hash_original_field = "971D53A5DDB5A515B8A18CE48C276387", hash_generated_field = "BAD42B86A408081FE78996E122739899")
 
     private transient int version;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.009 -0500", hash_original_field = "145039C09D0281F07AE1DE322AF921C0", hash_generated_field = "C23704E529A178DBBDAFF49586FA6DE5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.023 -0500", hash_original_field = "145039C09D0281F07AE1DE322AF921C0", hash_generated_field = "C23704E529A178DBBDAFF49586FA6DE5")
 
     private transient long timestamp;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.011 -0500", hash_original_field = "ED9A37752C0A5C555F392E9F85BEE67E", hash_generated_field = "40191C6E13CEA31DB65CE03BDD6C6CBD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.025 -0500", hash_original_field = "ED9A37752C0A5C555F392E9F85BEE67E", hash_generated_field = "40191C6E13CEA31DB65CE03BDD6C6CBD")
 
     private transient int clockSequence;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.012 -0500", hash_original_field = "42F97C738A85E2B80817A0D2AE02511D", hash_generated_field = "65A72028038C4267F57DA36CF8BC58D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.028 -0500", hash_original_field = "42F97C738A85E2B80817A0D2AE02511D", hash_generated_field = "65A72028038C4267F57DA36CF8BC58D6")
 
     private transient long node;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.013 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.030 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
 
     private transient int hash;
 
@@ -166,8 +170,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @param leastSigBits
      *            The 64 least significant bits of the UUID.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.014 -0500", hash_original_method = "ED635EB76A78F00DCB10AED73CFEDC4B", hash_generated_method = "11D84901F7C11F43D6F6B0A18CF21732")
-    public UUID(long mostSigBits, long leastSigBits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.033 -0500", hash_original_method = "ED635EB76A78F00DCB10AED73CFEDC4B", hash_generated_method = "11D84901F7C11F43D6F6B0A18CF21732")
+    
+public UUID(long mostSigBits, long leastSigBits) {
         this.mostSigBits = mostSigBits;
         this.leastSigBits = leastSigBits;
         init();
@@ -178,8 +183,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * Sets up the transient fields of this instance based on the current values
      * of the {@code mostSigBits} and {@code leastSigBits} fields.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.015 -0500", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "06EC0B1949340F2A3EB7AF13AF6BBD5C")
-    private void init() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.036 -0500", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "06EC0B1949340F2A3EB7AF13AF6BBD5C")
+    
+private void init() {
         // setup hash field
         int msbHash = (int) (mostSigBits ^ (mostSigBits >>> 32));
         int lsbHash = (int) (leastSigBits ^ (leastSigBits >>> 32));
@@ -223,8 +229,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *
      * @return the 64 least significant bits.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.019 -0500", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "0F5FC44ACDB839899508AF1E5C082750")
-    public long getLeastSignificantBits() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.050 -0500", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "0F5FC44ACDB839899508AF1E5C082750")
+    
+public long getLeastSignificantBits() {
         return leastSigBits;
     }
 
@@ -234,8 +241,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *
      * @return the 64 most significant bits.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.020 -0500", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "4BCCED70E8636580E4C52D6A665113BF")
-    public long getMostSignificantBits() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.053 -0500", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "4BCCED70E8636580E4C52D6A665113BF")
+    
+public long getMostSignificantBits() {
         return mostSigBits;
     }
 
@@ -254,8 +262,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *
      * @return an {@code int} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.021 -0500", hash_original_method = "33CA23C03592D558650D6881FB39BD17", hash_generated_method = "A9B36DF3A23FE7A3AEE1DADC87E725DC")
-    public int version() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.055 -0500", hash_original_method = "33CA23C03592D558650D6881FB39BD17", hash_generated_method = "A9B36DF3A23FE7A3AEE1DADC87E725DC")
+    
+public int version() {
         return version;
     }
 
@@ -272,8 +281,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *
      * @return an {@code int} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.022 -0500", hash_original_method = "F3E55A7ADD1B924C0020F2B2D27D2CBA", hash_generated_method = "31413DCEDDB1BC04FDF5FC122CF638E7")
-    public int variant() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.057 -0500", hash_original_method = "F3E55A7ADD1B924C0020F2B2D27D2CBA", hash_generated_method = "31413DCEDDB1BC04FDF5FC122CF638E7")
+    
+public int variant() {
         return variant;
     }
 
@@ -286,8 +296,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @throws UnsupportedOperationException
      *             if {@link #version()} is not 1.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.023 -0500", hash_original_method = "BC9161978762C6E74741C357EC2A66B7", hash_generated_method = "02CF73D626607FB8E47E0621DEB845B1")
-    public long timestamp() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.060 -0500", hash_original_method = "BC9161978762C6E74741C357EC2A66B7", hash_generated_method = "02CF73D626607FB8E47E0621DEB845B1")
+    
+public long timestamp() {
         if (version != 1) {
             throw new UnsupportedOperationException();
         }
@@ -303,8 +314,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @throws UnsupportedOperationException
      *             if {@link #version()} is not 1.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.023 -0500", hash_original_method = "22D2FA35D30B9562E8F9B8FBAC9604FC", hash_generated_method = "88D563792C86D28CDA44D828651551F6")
-    public int clockSequence() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.062 -0500", hash_original_method = "22D2FA35D30B9562E8F9B8FBAC9604FC", hash_generated_method = "88D563792C86D28CDA44D828651551F6")
+    
+public int clockSequence() {
         if (version != 1) {
             throw new UnsupportedOperationException();
         }
@@ -320,8 +332,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @throws UnsupportedOperationException
      *             if {@link #version()} is not 1.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.024 -0500", hash_original_method = "F570F6113919571E2190BC663D44A8A0", hash_generated_method = "FE36934490D31E4E3A8AB2A433A505F0")
-    public long node() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.064 -0500", hash_original_method = "F570F6113919571E2190BC663D44A8A0", hash_generated_method = "FE36934490D31E4E3A8AB2A433A505F0")
+    
+public long node() {
         if (version != 1) {
             throw new UnsupportedOperationException();
         }
@@ -339,8 +352,9 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @return a value of -1, 0 or 1 if this UUID is less than, equal to or
      *         greater than {@code uuid}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.025 -0500", hash_original_method = "BF37BBD9CA2A2DE01ED617F2C2EA69AA", hash_generated_method = "3B0CFEE9CA9904EF17EDFCD35393AA9C")
-    public int compareTo(UUID uuid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.067 -0500", hash_original_method = "BF37BBD9CA2A2DE01ED617F2C2EA69AA", hash_generated_method = "3B0CFEE9CA9904EF17EDFCD35393AA9C")
+    
+public int compareTo(UUID uuid) {
         if (uuid == this) {
             return 0;
         }
@@ -371,9 +385,10 @@ public final class UUID implements Serializable, Comparable<UUID> {
      * @return {@code true} if this UUID is equal to {@code object}
      *         or {@code false} if not.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.026 -0500", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "DAC5BFD454F218AA43C5BFBD266BFE3D")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.070 -0500", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "DAC5BFD454F218AA43C5BFBD266BFE3D")
+    
+@Override
+    public boolean equals(Object object) {
         if (object == null) {
             return false;
         }
@@ -399,9 +414,10 @@ public boolean equals(Object object) {
      *
      * @return an {@code int} value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.027 -0500", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "42F78C5D38BF7B44D96FA3AD3E18463A")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.072 -0500", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "42F78C5D38BF7B44D96FA3AD3E18463A")
+    
+@Override
+    public int hashCode() {
         return hash;
     }
 
@@ -430,9 +446,10 @@ public int hashCode() {
      *
      * @return a String instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.028 -0500", hash_original_method = "2C7CA3FB1758723F3B30AD693E280579", hash_generated_method = "279F062792C198058C3199DAE4C411FA")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.076 -0500", hash_original_method = "2C7CA3FB1758723F3B30AD693E280579", hash_generated_method = "279F062792C198058C3199DAE4C411FA")
+    
+@Override
+    public String toString() {
         StringBuilder builder = new StringBuilder(36);
         String msbStr = Long.toHexString(mostSigBits);
         if (msbStr.length() < 16) {
@@ -468,8 +485,9 @@ public String toString() {
      * @throws ClassNotFoundException
      *             if {@code in} throws it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.029 -0500", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "AE005D9470B3BE63E266195D5DB3C857")
-    private void readObject(ObjectInputStream in) throws IOException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.078 -0500", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "AE005D9470B3BE63E266195D5DB3C857")
+    
+private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
         // read in non-transient fields
         in.defaultReadObject();

@@ -12,10 +12,10 @@ import java.util.Arrays;
 
 
 public class ByteArrayOutputStream extends OutputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.183 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.326 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected byte[] buf;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.184 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.329 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
 
     protected int count;
 
@@ -24,8 +24,9 @@ public class ByteArrayOutputStream extends OutputStream {
      * If more than 32 bytes are written to this instance, the underlying byte
      * array will expand.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.185 -0500", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "FDFBFEB3E3EF5CD81ADCFCD518080293")
-    public ByteArrayOutputStream() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.332 -0500", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "FDFBFEB3E3EF5CD81ADCFCD518080293")
+    
+public ByteArrayOutputStream() {
         buf = new byte[32];
     }
 
@@ -40,8 +41,9 @@ public class ByteArrayOutputStream extends OutputStream {
      * @throws IllegalArgumentException
      *             if {@code size} < 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.186 -0500", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "CE24AC27B7B66339EC71838E2850BE11")
-    public ByteArrayOutputStream(int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.334 -0500", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "CE24AC27B7B66339EC71838E2850BE11")
+    
+public ByteArrayOutputStream(int size) {
         if (size >= 0) {
             buf = new byte[size];
         } else {
@@ -55,9 +57,10 @@ public class ByteArrayOutputStream extends OutputStream {
      * @throws IOException
      *             if an error occurs while attempting to close this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.187 -0500", hash_original_method = "04777FE12371C5E12A689BB328BF05B3", hash_generated_method = "81559B248840B4A8460F72A02952056A")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.337 -0500", hash_original_method = "04777FE12371C5E12A689BB328BF05B3", hash_generated_method = "81559B248840B4A8460F72A02952056A")
+    
+@Override
+    public void close() throws IOException {
         /**
          * Although the spec claims "A closed stream cannot perform output
          * operations and cannot be reopened.", this implementation must do
@@ -66,8 +69,9 @@ public void close() throws IOException {
         super.close();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.188 -0500", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "92873E091686E9A0835B54C164A67468")
-    private void expand(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.339 -0500", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "92873E091686E9A0835B54C164A67468")
+    
+private void expand(int i) {
         /* Can the buffer handle @i more bytes, if not expand it */
         if (count + i <= buf.length) {
             return;
@@ -83,8 +87,9 @@ public void close() throws IOException {
      * subsequent writes will overwrite any bytes previously stored in this
      * stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.189 -0500", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "ABCB19599E50D7E02937CF8C013B8534")
-    public synchronized void reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.342 -0500", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "ABCB19599E50D7E02937CF8C013B8534")
+    
+public synchronized void reset() {
         count = 0;
     }
 
@@ -93,8 +98,9 @@ public void close() throws IOException {
      *
      * @return the number of bytes written to this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.189 -0500", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "CF994FCC7B87BF04A6C8FECB8C53A973")
-    public int size() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.345 -0500", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "CF994FCC7B87BF04A6C8FECB8C53A973")
+    
+public int size() {
         return count;
     }
 
@@ -105,8 +111,9 @@ public void close() throws IOException {
      *
      * @return this stream's current contents as a byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.190 -0500", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "5951B27DBA1F36D666752B978F5E613C")
-    public synchronized byte[] toByteArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.347 -0500", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "5951B27DBA1F36D666752B978F5E613C")
+    
+public synchronized byte[] toByteArray() {
         byte[] newArray = new byte[count];
         System.arraycopy(buf, 0, newArray, 0, count);
         return newArray;
@@ -120,9 +127,10 @@ public void close() throws IOException {
      * @return this stream's current contents as a string.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.191 -0500", hash_original_method = "2951DD657350D2DCE6E576199EA1BCE5", hash_generated_method = "7968FA611011C95228850E21792E4778")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.350 -0500", hash_original_method = "2951DD657350D2DCE6E576199EA1BCE5", hash_generated_method = "7968FA611011C95228850E21792E4778")
+    
+@Override
+    public String toString() {
         return new String(buf, 0, count);
     }
 
@@ -140,9 +148,10 @@ public String toString() {
      *         to {@code hibyte}.
      * @deprecated Use {@link #toString()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.192 -0500", hash_original_method = "3E105C3C1F43529FE32D861B80701B8D", hash_generated_method = "C6CFEEA61A0DCD6BB1F2236DA0668836")
-    @Deprecated
-public String toString(int hibyte) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.353 -0500", hash_original_method = "3E105C3C1F43529FE32D861B80701B8D", hash_generated_method = "C6CFEEA61A0DCD6BB1F2236DA0668836")
+    
+@Deprecated
+    public String toString(int hibyte) {
         char[] newBuf = new char[size()];
         for (int i = 0; i < newBuf.length; i++) {
             newBuf[i] = (char) (((hibyte & 0xff) << 8) | (buf[i] & 0xff));
@@ -161,8 +170,9 @@ public String toString(int hibyte) {
      * @throws UnsupportedEncodingException
      *             if the provided encoding is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.193 -0500", hash_original_method = "E8B99C45FE2629BCCA1491714FD1F75F", hash_generated_method = "F57D6B578A28E83BF8E89D2D606E161E")
-    public String toString(String enc) throws UnsupportedEncodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.355 -0500", hash_original_method = "E8B99C45FE2629BCCA1491714FD1F75F", hash_generated_method = "F57D6B578A28E83BF8E89D2D606E161E")
+    
+public String toString(String enc) throws UnsupportedEncodingException {
         return new String(buf, 0, count, enc);
     }
 
@@ -183,9 +193,10 @@ public String toString(int hibyte) {
      *             {@code offset + len} is greater than the length of
      *             {@code buffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.194 -0500", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E48309311986BABB80FA0DD25BCC37B3")
-    @Override
-public synchronized void write(byte[] buffer, int offset, int len) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.358 -0500", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E48309311986BABB80FA0DD25BCC37B3")
+    
+@Override
+    public synchronized void write(byte[] buffer, int offset, int len) {
         Arrays.checkOffsetAndCount(buffer.length, offset, len);
         if (len == 0) {
             return;
@@ -202,9 +213,10 @@ public synchronized void write(byte[] buffer, int offset, int len) {
      * @param oneByte
      *            the byte to be written.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.196 -0500", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "EC4AA14B7223D43B9330AFEFE8B74404")
-    @Override
-public synchronized void write(int oneByte) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.360 -0500", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "EC4AA14B7223D43B9330AFEFE8B74404")
+    
+@Override
+    public synchronized void write(int oneByte) {
         if (count == buf.length) {
             expand(1);
         }
@@ -220,8 +232,9 @@ public synchronized void write(int oneByte) {
      * @throws IOException
      *             if an error occurs while writing to {@code out}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.197 -0500", hash_original_method = "19AD6C910070CA1BF00692AA88EF7627", hash_generated_method = "E8A59A9914B35A8F5F08030434E3B1BF")
-    public synchronized void writeTo(OutputStream out) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.363 -0500", hash_original_method = "19AD6C910070CA1BF00692AA88EF7627", hash_generated_method = "E8A59A9914B35A8F5F08030434E3B1BF")
+    
+public synchronized void writeTo(OutputStream out) throws IOException {
         out.write(buf, 0, count);
     }
 

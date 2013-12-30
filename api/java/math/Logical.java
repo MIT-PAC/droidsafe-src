@@ -10,8 +10,9 @@ class Logical {
 
 
     /** @see BigInteger#not() */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.391 -0500", hash_original_method = "392AFC3BDADB24DC195370AE34B72ED7", hash_generated_method = "EE559654C2007CDF8FB59F6C5F0BB36B")
-    static BigInteger not(BigInteger val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.008 -0500", hash_original_method = "392AFC3BDADB24DC195370AE34B72ED7", hash_generated_method = "EE559654C2007CDF8FB59F6C5F0BB36B")
+    
+static BigInteger not(BigInteger val) {
         if (val.sign == 0) {
             return BigInteger.MINUS_ONE;
         }
@@ -54,8 +55,9 @@ class Logical {
     }
 
     /** @see BigInteger#and(BigInteger) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.392 -0500", hash_original_method = "2C8DC85E0E1CCD004FAAD21C9629C260", hash_generated_method = "A6E1EF5B13BCCC1070AF257A88240E7E")
-    static BigInteger and(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.010 -0500", hash_original_method = "2C8DC85E0E1CCD004FAAD21C9629C260", hash_generated_method = "A6E1EF5B13BCCC1070AF257A88240E7E")
+    
+static BigInteger and(BigInteger val, BigInteger that) {
         if (that.sign == 0 || val.sign == 0) {
             return BigInteger.ZERO;
         }
@@ -84,8 +86,9 @@ class Logical {
     }
 
     /** @return sign = 1, magnitude = val.magnitude & that.magnitude*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.393 -0500", hash_original_method = "7F3EB0E904FF3E9DD99368007D6C9B81", hash_generated_method = "AE5E29782941B2940AE2AF6FDFBDFDDF")
-    static BigInteger andPositive(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.013 -0500", hash_original_method = "7F3EB0E904FF3E9DD99368007D6C9B81", hash_generated_method = "AE5E29782941B2940AE2AF6FDFBDFDDF")
+    
+static BigInteger andPositive(BigInteger val, BigInteger that) {
         // PRE: both arguments are positive
         int resLength = Math.min(val.numberLength, that.numberLength);
         int i = Math.max(val.getFirstNonzeroDigit(), that.getFirstNonzeroDigit());
@@ -103,8 +106,9 @@ class Logical {
     }
 
     /** @return sign = positive.magnitude & magnitude = -negative.magnitude */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.394 -0500", hash_original_method = "D4ADDF36FE9698AFC6A4BD65552D080E", hash_generated_method = "F9731EA323E9DF142F65C996737B4DA4")
-    static BigInteger andDiffSigns(BigInteger positive, BigInteger negative) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.016 -0500", hash_original_method = "D4ADDF36FE9698AFC6A4BD65552D080E", hash_generated_method = "F9731EA323E9DF142F65C996737B4DA4")
+    
+static BigInteger andDiffSigns(BigInteger positive, BigInteger negative) {
         // PRE: positive is positive and negative is negative
         int iPos = positive.getFirstNonzeroDigit();
         int iNeg = negative.getFirstNonzeroDigit();
@@ -139,8 +143,9 @@ class Logical {
     }
 
     /** @return sign = -1, magnitude = -(-longer.magnitude & -shorter.magnitude)*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.396 -0500", hash_original_method = "4BA9A3F2357E229226C0FDBBF26C29A3", hash_generated_method = "B4B1EBF48EC15332B07C45037F6BD707")
-    static BigInteger andNegative(BigInteger longer, BigInteger shorter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.019 -0500", hash_original_method = "4BA9A3F2357E229226C0FDBBF26C29A3", hash_generated_method = "B4B1EBF48EC15332B07C45037F6BD707")
+    
+static BigInteger andNegative(BigInteger longer, BigInteger shorter) {
         // PRE: longer and shorter are negative
         // PRE: longer has at least as many digits as shorter
         int iLonger = longer.getFirstNonzeroDigit();
@@ -194,8 +199,9 @@ class Logical {
     }
 
     /** @see BigInteger#andNot(BigInteger) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.397 -0500", hash_original_method = "FFE149F0CA07D5DDAB8B34E15CBB188E", hash_generated_method = "7A4116E6DB1FE2D05FD59C5571D0563A")
-    static BigInteger andNot(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.022 -0500", hash_original_method = "FFE149F0CA07D5DDAB8B34E15CBB188E", hash_generated_method = "7A4116E6DB1FE2D05FD59C5571D0563A")
+    
+static BigInteger andNot(BigInteger val, BigInteger that) {
         if (that.sign == 0 ) {
             return val;
         }
@@ -227,8 +233,9 @@ class Logical {
     }
 
     /** @return sign = 1, magnitude = val.magnitude & ~that.magnitude*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.398 -0500", hash_original_method = "C0E54D558D226B234C4AF57127F55347", hash_generated_method = "DFAC7F613E03603AE640C401A858F3AF")
-    static BigInteger andNotPositive(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.025 -0500", hash_original_method = "C0E54D558D226B234C4AF57127F55347", hash_generated_method = "DFAC7F613E03603AE640C401A858F3AF")
+    
+static BigInteger andNotPositive(BigInteger val, BigInteger that) {
         // PRE: both arguments are positive
         int[] resDigits = new int[val.numberLength];
 
@@ -245,8 +252,9 @@ class Logical {
     }
 
     /** @return sign = 1, magnitude = positive.magnitude & ~(-negative.magnitude)*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.399 -0500", hash_original_method = "3369F881491DAA5EA286C0C2A65C4740", hash_generated_method = "CAB55BB40A9374C3CDC62CA4F7FC0760")
-    static BigInteger andNotPositiveNegative(BigInteger positive, BigInteger negative) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.027 -0500", hash_original_method = "3369F881491DAA5EA286C0C2A65C4740", hash_generated_method = "CAB55BB40A9374C3CDC62CA4F7FC0760")
+    
+static BigInteger andNotPositiveNegative(BigInteger positive, BigInteger negative) {
         // PRE: positive > 0 && negative < 0
         int iNeg = negative.getFirstNonzeroDigit();
         int iPos = positive.getFirstNonzeroDigit();
@@ -277,8 +285,9 @@ class Logical {
     }
 
     /** @return sign = -1, magnitude = -(-negative.magnitude & ~positive.magnitude)*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.401 -0500", hash_original_method = "DD119577D67A3E7BD795D9D09EFDA25B", hash_generated_method = "079FA99B4F273C98C10B5B0D5A00B7E0")
-    static BigInteger andNotNegativePositive(BigInteger negative, BigInteger positive) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.031 -0500", hash_original_method = "DD119577D67A3E7BD795D9D09EFDA25B", hash_generated_method = "079FA99B4F273C98C10B5B0D5A00B7E0")
+    
+static BigInteger andNotNegativePositive(BigInteger negative, BigInteger positive) {
         // PRE: negative < 0 && positive > 0
         int resLength;
         int[] resDigits;
@@ -351,8 +360,9 @@ class Logical {
     }
 
     /** @return sign = 1, magnitude = -val.magnitude & ~(-that.magnitude)*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.402 -0500", hash_original_method = "B3B8A3E928EA206167CF1C5192B047DF", hash_generated_method = "78AEE2D4AE5CCC92371A8E41899EE777")
-    static BigInteger andNotNegative(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.035 -0500", hash_original_method = "B3B8A3E928EA206167CF1C5192B047DF", hash_generated_method = "78AEE2D4AE5CCC92371A8E41899EE777")
+    
+static BigInteger andNotNegative(BigInteger val, BigInteger that) {
         // PRE: val < 0 && that < 0
         int iVal = val.getFirstNonzeroDigit();
         int iThat = that.getFirstNonzeroDigit();
@@ -406,8 +416,9 @@ class Logical {
     }
 
     /** @see BigInteger#or(BigInteger) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.403 -0500", hash_original_method = "E26D488F3AAB4CDC413B1181E2CD9C21", hash_generated_method = "EA3D26D70594626EBA130E26FF9BAC1C")
-    static BigInteger or(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.038 -0500", hash_original_method = "E26D488F3AAB4CDC413B1181E2CD9C21", hash_generated_method = "EA3D26D70594626EBA130E26FF9BAC1C")
+    
+static BigInteger or(BigInteger val, BigInteger that) {
         if (that.equals(BigInteger.MINUS_ONE) || val.equals(BigInteger.MINUS_ONE)) {
             return BigInteger.MINUS_ONE;
         }
@@ -440,8 +451,9 @@ class Logical {
     }
 
     /** @return sign = 1, magnitude = longer.magnitude | shorter.magnitude*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.404 -0500", hash_original_method = "E1A52B0EEA69860CA581AD315054499A", hash_generated_method = "9016A128788D0A4570A9797EA91F4B40")
-    static BigInteger orPositive(BigInteger longer, BigInteger shorter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.041 -0500", hash_original_method = "E1A52B0EEA69860CA581AD315054499A", hash_generated_method = "9016A128788D0A4570A9797EA91F4B40")
+    
+static BigInteger orPositive(BigInteger longer, BigInteger shorter) {
         // PRE: longer and shorter are positive;
         // PRE: longer has at least as many digits as shorter
         int resLength = longer.numberLength;
@@ -459,8 +471,9 @@ class Logical {
     }
 
     /** @return sign = -1, magnitude = -(-val.magnitude | -that.magnitude) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.405 -0500", hash_original_method = "260F2451AD2E052F4E7F80E194494B56", hash_generated_method = "F3A064319B9501202717A6BAC5674F9C")
-    static BigInteger orNegative(BigInteger val, BigInteger that){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.044 -0500", hash_original_method = "260F2451AD2E052F4E7F80E194494B56", hash_generated_method = "F3A064319B9501202717A6BAC5674F9C")
+    
+static BigInteger orNegative(BigInteger val, BigInteger that){
         // PRE: val and that are negative;
         // PRE: val has at least as many trailing zeros digits as that
         int iThat = that.getFirstNonzeroDigit();
@@ -495,8 +508,9 @@ class Logical {
     }
 
     /** @return sign = -1, magnitude = -(positive.magnitude | -negative.magnitude) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.406 -0500", hash_original_method = "A13CE9D347F1A0B9FB1AE680E2818289", hash_generated_method = "04A4455207987297C5176168225A2C25")
-    static BigInteger orDiffSigns(BigInteger positive, BigInteger negative){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.047 -0500", hash_original_method = "A13CE9D347F1A0B9FB1AE680E2818289", hash_generated_method = "04A4455207987297C5176168225A2C25")
+    
+static BigInteger orDiffSigns(BigInteger positive, BigInteger negative){
         // Jumping over the least significant zero bits
         int iNeg = negative.getFirstNonzeroDigit();
         int iPos = positive.getFirstNonzeroDigit();
@@ -554,8 +568,9 @@ class Logical {
     }
 
     /** @see BigInteger#xor(BigInteger) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.407 -0500", hash_original_method = "1821B11966444E78361FC548F4258C0F", hash_generated_method = "A768D5C8C525E6ACFEBC4AA7AE1CF6E1")
-    static BigInteger xor(BigInteger val, BigInteger that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.050 -0500", hash_original_method = "1821B11966444E78361FC548F4258C0F", hash_generated_method = "A768D5C8C525E6ACFEBC4AA7AE1CF6E1")
+    
+static BigInteger xor(BigInteger val, BigInteger that) {
         if (that.sign == 0) {
             return val;
         }
@@ -591,8 +606,9 @@ class Logical {
     }
 
     /** @return sign = 0, magnitude = longer.magnitude | shorter.magnitude */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.408 -0500", hash_original_method = "189DD0842BC0FB3122036364D7D12A46", hash_generated_method = "6787C77786A7156D1D47603FAE8F9B62")
-    static BigInteger xorPositive(BigInteger longer, BigInteger shorter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.053 -0500", hash_original_method = "189DD0842BC0FB3122036364D7D12A46", hash_generated_method = "6787C77786A7156D1D47603FAE8F9B62")
+    
+static BigInteger xorPositive(BigInteger longer, BigInteger shorter) {
         // PRE: longer and shorter are positive;
         // PRE: longer has at least as many digits as shorter
         int resLength = longer.numberLength;
@@ -609,8 +625,9 @@ class Logical {
     }
 
     /** @return sign = 0, magnitude = -val.magnitude ^ -that.magnitude */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.410 -0500", hash_original_method = "8F87E09A5F75207496657A0F33C785A9", hash_generated_method = "719F646D47E7CF47CCF977B0DC7EE88B")
-    static BigInteger xorNegative(BigInteger val, BigInteger that){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.057 -0500", hash_original_method = "8F87E09A5F75207496657A0F33C785A9", hash_generated_method = "719F646D47E7CF47CCF977B0DC7EE88B")
+    
+static BigInteger xorNegative(BigInteger val, BigInteger that){
         // PRE: val and that are negative
         // PRE: val has at least as many trailing zero digits as that
         int resLength = Math.max(val.numberLength, that.numberLength);
@@ -663,8 +680,9 @@ class Logical {
     }
 
     /** @return sign = 1, magnitude = -(positive.magnitude ^ -negative.magnitude)*/
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.411 -0500", hash_original_method = "3948FB7D779F1B72187D779FDF9029B7", hash_generated_method = "30400D7C3287C536DD1449A48E158514")
-    static BigInteger xorDiffSigns(BigInteger positive, BigInteger negative){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.061 -0500", hash_original_method = "3948FB7D779F1B72187D779FDF9029B7", hash_generated_method = "30400D7C3287C536DD1449A48E158514")
+    
+static BigInteger xorDiffSigns(BigInteger positive, BigInteger negative){
         int resLength = Math.max(negative.numberLength, positive.numberLength);
         int[] resDigits;
         int iNeg = negative.getFirstNonzeroDigit();
@@ -765,8 +783,9 @@ class Logical {
 
     /** Just to denote that this class can't be instantiated. */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.390 -0500", hash_original_method = "E0A3DE35724A26B6DFF41660E2732E13", hash_generated_method = "70AB7B0A4996E44234A828B6E1A790AE")
-    private Logical() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.005 -0500", hash_original_method = "E0A3DE35724A26B6DFF41660E2732E13", hash_generated_method = "70AB7B0A4996E44234A828B6E1A790AE")
+    
+private Logical() {}
 
     
 }

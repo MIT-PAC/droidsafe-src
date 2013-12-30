@@ -35,8 +35,9 @@ public final class CookieManager {
      * 
      * @return CookieManager
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.793 -0500", hash_original_method = "320195B5814A82CDAD5D188DBD73B8D9", hash_generated_method = "041F3F39198BFF3134D422820E8011E0")
-    public static synchronized CookieManager getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.569 -0500", hash_original_method = "320195B5814A82CDAD5D188DBD73B8D9", hash_generated_method = "041F3F39198BFF3134D422820E8011E0")
+    
+public static synchronized CookieManager getInstance() {
         if (sRef == null) {
             sRef = new CookieManager();
         }
@@ -46,8 +47,9 @@ public final class CookieManager {
     /**
      * Whether cookies are accepted for file scheme URLs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.815 -0500", hash_original_method = "B431463E1C39FBF9835A224B363A2DCD", hash_generated_method = "88C4D72F6317DC1B05F9A8117880A962")
-    public static boolean allowFileSchemeCookies() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.632 -0500", hash_original_method = "B431463E1C39FBF9835A224B363A2DCD", hash_generated_method = "88C4D72F6317DC1B05F9A8117880A962")
+    
+public static boolean allowFileSchemeCookies() {
         if (JniUtil.useChromiumHttpStack()) {
             return nativeAcceptFileSchemeCookies();
         } else {
@@ -64,8 +66,9 @@ public final class CookieManager {
      * Note that calls to this method will have no effect if made after a WebView or CookieManager
      * instance has been created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.816 -0500", hash_original_method = "DDDF3B365E373BA27DDF165EB75D805C", hash_generated_method = "919ED282712AA5CB733CFC020940955F")
-    public static void setAcceptFileSchemeCookies(boolean accept) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.634 -0500", hash_original_method = "DDDF3B365E373BA27DDF165EB75D805C", hash_generated_method = "919ED282712AA5CB733CFC020940955F")
+    
+public static void setAcceptFileSchemeCookies(boolean accept) {
         if (JniUtil.useChromiumHttpStack()) {
             nativeSetAcceptFileSchemeCookies(accept);
         }
@@ -134,190 +137,193 @@ public final class CookieManager {
     @DSModeled(DSC.SAFE)
     private static void nativeSetAcceptFileSchemeCookies(boolean accept) {
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.742 -0500", hash_original_field = "E0557A7A649926C8CE19F6226ADACE2C", hash_generated_field = "F3E12733AF62A9958A559C9B68C05600")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.441 -0500", hash_original_field = "E0557A7A649926C8CE19F6226ADACE2C", hash_generated_field = "F3E12733AF62A9958A559C9B68C05600")
 
 
     private static CookieManager sRef;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.743 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.444 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
 
     private static final String LOGTAG = "webkit";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.744 -0500", hash_original_field = "27043D2583D10F5C11A5DA11E81058CD", hash_generated_field = "5430298A9897B69B0A98E2CC4D81D311")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.446 -0500", hash_original_field = "27043D2583D10F5C11A5DA11E81058CD", hash_generated_field = "5430298A9897B69B0A98E2CC4D81D311")
 
 
     private static final String DOMAIN = "domain";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.745 -0500", hash_original_field = "F72D5783F800DBD83E9904759EECFA11", hash_generated_field = "487DA3D0E0435A01D919AD07E7109D33")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.449 -0500", hash_original_field = "F72D5783F800DBD83E9904759EECFA11", hash_generated_field = "487DA3D0E0435A01D919AD07E7109D33")
 
 
     private static final String PATH = "path";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.746 -0500", hash_original_field = "002E36B52DB598DD795E59C99EE81CCD", hash_generated_field = "066A210975164BE5260662AAE6EB4D7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.451 -0500", hash_original_field = "002E36B52DB598DD795E59C99EE81CCD", hash_generated_field = "066A210975164BE5260662AAE6EB4D7C")
 
 
     private static final String EXPIRES = "expires";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.747 -0500", hash_original_field = "9758C225BB938A3B0AD67594CBA9CFC7", hash_generated_field = "854A2BF9C58B1D456228AC3164C91937")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.454 -0500", hash_original_field = "9758C225BB938A3B0AD67594CBA9CFC7", hash_generated_field = "854A2BF9C58B1D456228AC3164C91937")
 
 
     private static final String SECURE = "secure";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.748 -0500", hash_original_field = "04D54F7257534E50A6A60C8A9BACF9EA", hash_generated_field = "17FDE42B196035B579C4AE0481D84D7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.456 -0500", hash_original_field = "04D54F7257534E50A6A60C8A9BACF9EA", hash_generated_field = "17FDE42B196035B579C4AE0481D84D7C")
 
 
     private static final String MAX_AGE = "max-age";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.749 -0500", hash_original_field = "1CFA4328BF4632BE6B446A4D108D2C9F", hash_generated_field = "8B75A58E3869C3DA24B83475B2775E3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.458 -0500", hash_original_field = "1CFA4328BF4632BE6B446A4D108D2C9F", hash_generated_field = "8B75A58E3869C3DA24B83475B2775E3B")
 
 
     private static final String HTTP_ONLY = "httponly";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.749 -0500", hash_original_field = "F2AD625CF02F5E5AE2151E99043F3F65", hash_generated_field = "6FC6F50ECB134EEDF902652D4FB1FA39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.462 -0500", hash_original_field = "F2AD625CF02F5E5AE2151E99043F3F65", hash_generated_field = "6FC6F50ECB134EEDF902652D4FB1FA39")
 
 
     private static final String HTTPS = "https";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.750 -0500", hash_original_field = "36032EADE678241AC6D9F441EE69CB3A", hash_generated_field = "5A20D569DC0501B46372E384E70DCE74")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.464 -0500", hash_original_field = "36032EADE678241AC6D9F441EE69CB3A", hash_generated_field = "5A20D569DC0501B46372E384E70DCE74")
 
 
     private static final char PERIOD = '.';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.751 -0500", hash_original_field = "8BB6C4236B31068A1306757F1B35C6D8", hash_generated_field = "E7AE80758443AFBC3D01DB1788C8C0D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.466 -0500", hash_original_field = "8BB6C4236B31068A1306757F1B35C6D8", hash_generated_field = "E7AE80758443AFBC3D01DB1788C8C0D3")
 
 
     private static final char COMMA = ',';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.752 -0500", hash_original_field = "258ADCDD90C6B7575CD98259D7ACF59C", hash_generated_field = "4358BD4872C7B54C285E161294F74EAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.468 -0500", hash_original_field = "258ADCDD90C6B7575CD98259D7ACF59C", hash_generated_field = "4358BD4872C7B54C285E161294F74EAE")
 
 
     private static final char SEMICOLON = ';';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.753 -0500", hash_original_field = "E3D68564A4FC2FD24BBCF5369DEDB319", hash_generated_field = "340B33BC049413F4F0AFE836879E9796")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.471 -0500", hash_original_field = "E3D68564A4FC2FD24BBCF5369DEDB319", hash_generated_field = "340B33BC049413F4F0AFE836879E9796")
 
 
     private static final char EQUAL = '=';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.754 -0500", hash_original_field = "F1DABF63D16B5BF613835EA1B0B830D7", hash_generated_field = "C33C95C10EDB14BB946C605F87F0993F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.473 -0500", hash_original_field = "F1DABF63D16B5BF613835EA1B0B830D7", hash_generated_field = "C33C95C10EDB14BB946C605F87F0993F")
 
 
     private static final char PATH_DELIM = '/';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.754 -0500", hash_original_field = "CF3EED31B695BB343A263C84A4EC2261", hash_generated_field = "1712D6DC544FB52547AA3F9EFF9A0265")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.476 -0500", hash_original_field = "CF3EED31B695BB343A263C84A4EC2261", hash_generated_field = "1712D6DC544FB52547AA3F9EFF9A0265")
 
 
     private static final char QUESTION_MARK = '?';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.755 -0500", hash_original_field = "FE2F512CCB95E31ED8510ED04D4A34E0", hash_generated_field = "A797569C73AC5864E7DB653CB9E83AD5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.478 -0500", hash_original_field = "FE2F512CCB95E31ED8510ED04D4A34E0", hash_generated_field = "A797569C73AC5864E7DB653CB9E83AD5")
 
 
     private static final char WHITE_SPACE = ' ';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.756 -0500", hash_original_field = "8D966EAFFEE59C2062B1509F414834CD", hash_generated_field = "EE4E21B4CF81F5D51BBD3F71550541EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.481 -0500", hash_original_field = "8D966EAFFEE59C2062B1509F414834CD", hash_generated_field = "EE4E21B4CF81F5D51BBD3F71550541EA")
 
 
     private static final char QUOTATION = '\"';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.757 -0500", hash_original_field = "8A36CC6070E9C4F5B749337DE00CB115", hash_generated_field = "961A1ADB46113FB181B555DA4F33FEF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.483 -0500", hash_original_field = "8A36CC6070E9C4F5B749337DE00CB115", hash_generated_field = "961A1ADB46113FB181B555DA4F33FEF9")
 
 
     private static final int SECURE_LENGTH = SECURE.length();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.758 -0500", hash_original_field = "0DA6F57A0AAC62B67D3CD75C3F60852B", hash_generated_field = "FA80D5C271D5DC9600F2ED7151FE4E42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.485 -0500", hash_original_field = "0DA6F57A0AAC62B67D3CD75C3F60852B", hash_generated_field = "FA80D5C271D5DC9600F2ED7151FE4E42")
 
 
     private static final int HTTP_ONLY_LENGTH = HTTP_ONLY.length();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.759 -0500", hash_original_field = "C6241C8B52C7FBEF23F7372AEBBEE270", hash_generated_field = "DDFF82DC777498CEEC17430F3F2218D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.488 -0500", hash_original_field = "C6241C8B52C7FBEF23F7372AEBBEE270", hash_generated_field = "DDFF82DC777498CEEC17430F3F2218D5")
 
     private static final int MAX_COOKIE_LENGTH = 4 * 1024;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:11.812 -0500", hash_original_field = "839AB7B188139F0EF0DBC307F24AC201", hash_generated_field = "D65F2AA66F092420104FA12D92E51FD9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.491 -0500", hash_original_field = "839AB7B188139F0EF0DBC307F24AC201", hash_generated_field = "D65F2AA66F092420104FA12D92E51FD9")
 
     // domain, we allow 50 per base domain
     private static final int MAX_COOKIE_COUNT_PER_BASE_DOMAIN = 50;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:11.813 -0500", hash_original_field = "34487FBA10CCB8004B0A3970E604EA72", hash_generated_field = "BD58EF0B6FF13EA11D5D4DE30C73046C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.493 -0500", hash_original_field = "34487FBA10CCB8004B0A3970E604EA72", hash_generated_field = "BD58EF0B6FF13EA11D5D4DE30C73046C")
 
     // domain, we set 200 as max base domain count
     private static final int MAX_DOMAIN_COUNT = 200;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:11.814 -0500", hash_original_field = "29CA77A715008F1B71EE63409D072F5E", hash_generated_field = "2EB403D7ACD0A44BEA01650EB311C606")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.496 -0500", hash_original_field = "29CA77A715008F1B71EE63409D072F5E", hash_generated_field = "2EB403D7ACD0A44BEA01650EB311C606")
 
     // average cookie entry size is less than 100 bytes
     private static final int MAX_RAM_COOKIES_COUNT = 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.763 -0500", hash_original_field = "A76EA322406CCCA5B08EFE5F57C0D0B8", hash_generated_field = "88188D2D99FE8F90CB26B5E79B041F22")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.498 -0500", hash_original_field = "A76EA322406CCCA5B08EFE5F57C0D0B8", hash_generated_field = "88188D2D99FE8F90CB26B5E79B041F22")
 
     private static final int MAX_RAM_DOMAIN_COUNT = 15;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.766 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "6968AEDC2C31A50F6ADB7A7EFEF7EBAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.507 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "6968AEDC2C31A50F6ADB7A7EFEF7EBAD")
 
     private final static String[] BAD_COUNTRY_2LDS =
           { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.788 -0500", hash_original_field = "0F7D50A59029816A4D368B97BE6BE48C", hash_generated_field = "EF91073A1DCAEA8DA1E091E70D6320E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.557 -0500", hash_original_field = "0F7D50A59029816A4D368B97BE6BE48C", hash_generated_field = "EF91073A1DCAEA8DA1E091E70D6320E1")
 
 
     private static final CookieComparator COMPARATOR = new CookieComparator();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.764 -0500", hash_original_field = "B2867ECF89E84A901A71873E5DD9AA88", hash_generated_field = "FBED18CAF24013DA0D8FA265CFF0028E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.500 -0500", hash_original_field = "B2867ECF89E84A901A71873E5DD9AA88", hash_generated_field = "FBED18CAF24013DA0D8FA265CFF0028E")
 
 
     private Map<String, ArrayList<Cookie>> mCookieMap = new LinkedHashMap
             <String, ArrayList<Cookie>>(MAX_DOMAIN_COUNT, 0.75f, true);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.764 -0500", hash_original_field = "C0091976776BBAF1BB48ECDA03611FA0", hash_generated_field = "EA988CB62FE4EFBF1E2849AAB3DDD6B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.503 -0500", hash_original_field = "C0091976776BBAF1BB48ECDA03611FA0", hash_generated_field = "EA988CB62FE4EFBF1E2849AAB3DDD6B9")
 
 
     private boolean mAcceptCookie = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.765 -0500", hash_original_field = "35C4CBAC80990DDC8FB84CEF632D2149", hash_generated_field = "E7DA179CDB1C423BB7FF952CDAC068A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.505 -0500", hash_original_field = "35C4CBAC80990DDC8FB84CEF632D2149", hash_generated_field = "E7DA179CDB1C423BB7FF952CDAC068A2")
 
 
     private int pendingCookieOperations = 0;
 
     
     static class Cookie {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.767 -0500", hash_original_field = "C8F8D160D63A5816E439772AD5DBC925", hash_generated_field = "58722C253669E0810A7E8B6D3908054B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.511 -0500", hash_original_field = "C8F8D160D63A5816E439772AD5DBC925", hash_generated_field = "58722C253669E0810A7E8B6D3908054B")
 
         static final byte MODE_NEW = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.768 -0500", hash_original_field = "DE4016D737F4E23403016FD47F84932B", hash_generated_field = "BC0224E6D81C7EF3B83B8B7EFE2FE5E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.514 -0500", hash_original_field = "DE4016D737F4E23403016FD47F84932B", hash_generated_field = "BC0224E6D81C7EF3B83B8B7EFE2FE5E3")
 
 
         static final byte MODE_NORMAL = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.769 -0500", hash_original_field = "8B4F9E6B93623B1ACBD28CF43F79FEC9", hash_generated_field = "94113342DF84F1B38CF08AE47B6FF64D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.516 -0500", hash_original_field = "8B4F9E6B93623B1ACBD28CF43F79FEC9", hash_generated_field = "94113342DF84F1B38CF08AE47B6FF64D")
 
 
         static final byte MODE_DELETED = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.770 -0500", hash_original_field = "99B4577D1F6EDAD32AB7E19A64E4666F", hash_generated_field = "CD378DA107C809D64EE250CC5FAF59F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.518 -0500", hash_original_field = "99B4577D1F6EDAD32AB7E19A64E4666F", hash_generated_field = "CD378DA107C809D64EE250CC5FAF59F0")
 
 
         static final byte MODE_REPLACED = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.770 -0500", hash_original_field = "B45971700BE10ABC690F6ABCD38C274A", hash_generated_field = "B45971700BE10ABC690F6ABCD38C274A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.521 -0500", hash_original_field = "B45971700BE10ABC690F6ABCD38C274A", hash_generated_field = "B45971700BE10ABC690F6ABCD38C274A")
 
 
         String domain;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.771 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "4936DBCD90EF1129A7D9F03C4DB55EE0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.524 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "4936DBCD90EF1129A7D9F03C4DB55EE0")
 
 
         String path;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.772 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.526 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
 
 
         String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.773 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "EE6B270D979EDA88DA18EA680B9EE570")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.528 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "EE6B270D979EDA88DA18EA680B9EE570")
 
 
         String value;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.773 -0500", hash_original_field = "79E45F34FE773E697DAD830A242384A5", hash_generated_field = "79E45F34FE773E697DAD830A242384A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.530 -0500", hash_original_field = "79E45F34FE773E697DAD830A242384A5", hash_generated_field = "79E45F34FE773E697DAD830A242384A5")
 
 
         long expires;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.774 -0500", hash_original_field = "6AE4DE9DE049C06174725EC4E5976F6D", hash_generated_field = "6AE4DE9DE049C06174725EC4E5976F6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.532 -0500", hash_original_field = "6AE4DE9DE049C06174725EC4E5976F6D", hash_generated_field = "6AE4DE9DE049C06174725EC4E5976F6D")
 
 
         long lastAcessTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.775 -0500", hash_original_field = "357B404F32323702F25D563FFF0505BF", hash_generated_field = "357B404F32323702F25D563FFF0505BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.534 -0500", hash_original_field = "357B404F32323702F25D563FFF0505BF", hash_generated_field = "357B404F32323702F25D563FFF0505BF")
 
 
         long lastUpdateTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.776 -0500", hash_original_field = "63DC6869FF37EDAA23661806B080C4ED", hash_generated_field = "63DC6869FF37EDAA23661806B080C4ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.536 -0500", hash_original_field = "63DC6869FF37EDAA23661806B080C4ED", hash_generated_field = "63DC6869FF37EDAA23661806B080C4ED")
 
 
         boolean secure;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.776 -0500", hash_original_field = "E1716F24954CF03C4F874BC683AC0606", hash_generated_field = "E1716F24954CF03C4F874BC683AC0606")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.538 -0500", hash_original_field = "E1716F24954CF03C4F874BC683AC0606", hash_generated_field = "E1716F24954CF03C4F874BC683AC0606")
 
 
         byte mode;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.777 -0500", hash_original_method = "91108A58846CEDD8DA5905902DEE69F4", hash_generated_method = "91108A58846CEDD8DA5905902DEE69F4")
-        Cookie() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.540 -0500", hash_original_method = "91108A58846CEDD8DA5905902DEE69F4", hash_generated_method = "91108A58846CEDD8DA5905902DEE69F4")
+        
+Cookie() {
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.783 -0500", hash_original_method = "E1F86FD348EBFCA5152C7C5B27A3DCAA", hash_generated_method = "E1F86FD348EBFCA5152C7C5B27A3DCAA")
-        Cookie(String defaultDomain, String defaultPath) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.543 -0500", hash_original_method = "E1F86FD348EBFCA5152C7C5B27A3DCAA", hash_generated_method = "E1F86FD348EBFCA5152C7C5B27A3DCAA")
+        
+Cookie(String defaultDomain, String defaultPath) {
             domain = defaultDomain;
             path = defaultPath;
             expires = -1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.784 -0500", hash_original_method = "78A5F78070F927D77B7E42EE06AFDBC4", hash_generated_method = "D4CAC9EE6014BA038508EEAE8A25E0B2")
-        boolean exactMatch(Cookie in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.545 -0500", hash_original_method = "78A5F78070F927D77B7E42EE06AFDBC4", hash_generated_method = "D4CAC9EE6014BA038508EEAE8A25E0B2")
+        
+boolean exactMatch(Cookie in) {
             // An exact match means that domain, path, and name are equal. If
             // both values are null, the cookies match. If both values are
             // non-null, the cookies match. If one value is null and the other
@@ -327,8 +333,9 @@ public final class CookieManager {
                     name.equals(in.name) && valuesMatch;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.785 -0500", hash_original_method = "AE74CD0D7D859A06FEAA31D7F99E4D83", hash_generated_method = "5EA36DC3E57D31AA105F550302CDD607")
-        boolean domainMatch(String urlHost) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.548 -0500", hash_original_method = "AE74CD0D7D859A06FEAA31D7F99E4D83", hash_generated_method = "5EA36DC3E57D31AA105F550302CDD607")
+        
+boolean domainMatch(String urlHost) {
             if (domain.startsWith(".")) {
                 if (urlHost.endsWith(domain.substring(1))) {
                     int len = domain.length();
@@ -346,8 +353,9 @@ public final class CookieManager {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.786 -0500", hash_original_method = "0FD43CB7A1B51508534ED8D9F7B624E8", hash_generated_method = "9C66539CC742B320686392AD36889B54")
-        boolean pathMatch(String urlPath) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.551 -0500", hash_original_method = "0FD43CB7A1B51508534ED8D9F7B624E8", hash_generated_method = "9C66539CC742B320686392AD36889B54")
+        
+boolean pathMatch(String urlPath) {
             if (urlPath.startsWith(path)) {
                 int len = path.length();
                 if (len == 0) {
@@ -364,8 +372,9 @@ public final class CookieManager {
             return false;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.786 -0500", hash_original_method = "08415E5687C0C693DFF8536ADAD3E2AA", hash_generated_method = "66C3B49355618198D7266A87F8C66D10")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.553 -0500", hash_original_method = "08415E5687C0C693DFF8536ADAD3E2AA", hash_generated_method = "66C3B49355618198D7266A87F8C66D10")
+        
+public String toString() {
             return "domain: " + domain + "; path: " + path + "; name: " + name
                     + "; value: " + value;
         }
@@ -381,8 +390,9 @@ public final class CookieManager {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.789 -0500", hash_original_method = "2F959C67E8DDB6BD10BD3460D506EDBA", hash_generated_method = "2E07D6C1DA3B791E7C764D88671094B7")
-        public int compare(Cookie cookie1, Cookie cookie2) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.560 -0500", hash_original_method = "2F959C67E8DDB6BD10BD3460D506EDBA", hash_generated_method = "2E07D6C1DA3B791E7C764D88671094B7")
+        
+public int compare(Cookie cookie1, Cookie cookie2) {
             // According to RFC 2109, multiple cookies are ordered in a way such
             // that those with more specific Path attributes precede those with
             // less specific. Ordering with respect to other attributes (e.g.,
@@ -416,12 +426,14 @@ public final class CookieManager {
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.791 -0500", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7CA78116DACA37A676690D998A505551")
-    private CookieManager() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.565 -0500", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7CA78116DACA37A676690D998A505551")
+    
+private CookieManager() {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.792 -0500", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "6D3F334E8E934FE8B33726A6E75490EE")
-    protected Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.567 -0500", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "6D3F334E8E934FE8B33726A6E75490EE")
+    
+protected Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("doesn't implement Cloneable");
     }
 
@@ -429,8 +441,9 @@ public final class CookieManager {
      * Control whether cookie is enabled or disabled
      * @param accept TRUE if accept cookie
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.794 -0500", hash_original_method = "0044CC48946D988BAC3F9C31DC5ECF6E", hash_generated_method = "B7376D77B769A65F1CC07D0018DDB18B")
-    public synchronized void setAcceptCookie(boolean accept) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.572 -0500", hash_original_method = "0044CC48946D988BAC3F9C31DC5ECF6E", hash_generated_method = "B7376D77B769A65F1CC07D0018DDB18B")
+    
+public synchronized void setAcceptCookie(boolean accept) {
         if (JniUtil.useChromiumHttpStack()) {
             nativeSetAcceptCookie(accept);
             return;
@@ -443,8 +456,9 @@ public final class CookieManager {
      * Return whether cookie is enabled
      * @return TRUE if accept cookie
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.795 -0500", hash_original_method = "EAEA6182C3DE8E7E3FA46C84A2197DA5", hash_generated_method = "B180F6983476FEA8B8920141905124B4")
-    public synchronized boolean acceptCookie() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.574 -0500", hash_original_method = "EAEA6182C3DE8E7E3FA46C84A2197DA5", hash_generated_method = "B180F6983476FEA8B8920141905124B4")
+    
+public synchronized boolean acceptCookie() {
         if (JniUtil.useChromiumHttpStack()) {
             return nativeAcceptCookie();
         }
@@ -459,8 +473,9 @@ public final class CookieManager {
      * @param url The url which cookie is set for
      * @param value The value for set-cookie: in http response header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.795 -0500", hash_original_method = "3C733C3F28B1C91BBFDBB065F4DCBFE1", hash_generated_method = "FE8729DC115F9EBD9D55754063D2EA3A")
-    public void setCookie(String url, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.577 -0500", hash_original_method = "3C733C3F28B1C91BBFDBB065F4DCBFE1", hash_generated_method = "FE8729DC115F9EBD9D55754063D2EA3A")
+    
+public void setCookie(String url, String value) {
         if (JniUtil.useChromiumHttpStack()) {
             setCookie(url, value, false);
             return;
@@ -486,8 +501,9 @@ public final class CookieManager {
      * @param privateBrowsing cookie jar to use
      * @hide hiding private browsing
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.796 -0500", hash_original_method = "FD6DC9D8EE462ADB809067B2E36820B1", hash_generated_method = "FDEB59589056420D1A8219C370655CD0")
-    public void setCookie(String url, String value, boolean privateBrowsing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.579 -0500", hash_original_method = "FD6DC9D8EE462ADB809067B2E36820B1", hash_generated_method = "FDEB59589056420D1A8219C370655CD0")
+    
+public void setCookie(String url, String value, boolean privateBrowsing) {
         if (!JniUtil.useChromiumHttpStack()) {
             setCookie(url, value);
             return;
@@ -513,8 +529,9 @@ public final class CookieManager {
      * @hide - hide this because it takes in a parameter of type WebAddress,
      * a system private class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.798 -0500", hash_original_method = "8AF5CC468B90A5A42A5116E5B0AA2987", hash_generated_method = "68A5F5C13A312CF02575B2A8F28C0224")
-    public synchronized void setCookie(WebAddress uri, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.583 -0500", hash_original_method = "8AF5CC468B90A5A42A5116E5B0AA2987", hash_generated_method = "68A5F5C13A312CF02575B2A8F28C0224")
+    
+public synchronized void setCookie(WebAddress uri, String value) {
         if (JniUtil.useChromiumHttpStack()) {
             nativeSetCookie(uri.toString(), value, false);
             return;
@@ -625,8 +642,9 @@ public final class CookieManager {
      * @param url The url needs cookie
      * @return The cookies in the format of NAME=VALUE [; NAME=VALUE]
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.799 -0500", hash_original_method = "CFFC2606C8B97641601C2B54714068BC", hash_generated_method = "830F33A2CDAF3F84C95EBE9D142A6A26")
-    public String getCookie(String url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.586 -0500", hash_original_method = "CFFC2606C8B97641601C2B54714068BC", hash_generated_method = "830F33A2CDAF3F84C95EBE9D142A6A26")
+    
+public String getCookie(String url) {
         if (JniUtil.useChromiumHttpStack()) {
             return getCookie(url, false);
         }
@@ -650,8 +668,9 @@ public final class CookieManager {
      * @return The cookies in the format of NAME=VALUE [; NAME=VALUE]
      * @hide Private mode is not very well exposed for now
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.799 -0500", hash_original_method = "5ACC35EE5D78B03ACC91967E6F456E58", hash_generated_method = "4D5DBE5CE059E56BD529F447878E5099")
-    public String getCookie(String url, boolean privateBrowsing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.588 -0500", hash_original_method = "5ACC35EE5D78B03ACC91967E6F456E58", hash_generated_method = "4D5DBE5CE059E56BD529F447878E5099")
+    
+public String getCookie(String url, boolean privateBrowsing) {
         if (!JniUtil.useChromiumHttpStack()) {
             // Just redirect to regular get cookie for android stack
             return getCookie(url);
@@ -676,8 +695,9 @@ public final class CookieManager {
      * @hide - hide this because it has a parameter of type WebAddress, which
      * is a system private class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.801 -0500", hash_original_method = "BE3F143473537E9CE993D89B685428CF", hash_generated_method = "AA990C1922C046F320802845178EDD5E")
-    public synchronized String getCookie(WebAddress uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.593 -0500", hash_original_method = "BE3F143473537E9CE993D89B685428CF", hash_generated_method = "AA990C1922C046F320802845178EDD5E")
+    
+public synchronized String getCookie(WebAddress uri) {
         if (JniUtil.useChromiumHttpStack()) {
             return nativeGetCookie(uri.toString(), false);
         }
@@ -754,8 +774,9 @@ public final class CookieManager {
      * Waits for pending operations to completed.
      * {@hide}  Too late to release publically.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.801 -0500", hash_original_method = "E5896ED24A303B704C1A851D6E9894DE", hash_generated_method = "168696F32F6CF2E9BFE1784A56B00332")
-    public void waitForCookieOperationsToComplete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.596 -0500", hash_original_method = "E5896ED24A303B704C1A851D6E9894DE", hash_generated_method = "168696F32F6CF2E9BFE1784A56B00332")
+    
+public void waitForCookieOperationsToComplete() {
         // Note that this function is applicable for both the java
         // and native http stacks, and works correctly with either.
         synchronized (this) {
@@ -767,23 +788,26 @@ public final class CookieManager {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.802 -0500", hash_original_method = "65B0411E3AAD9BA729084C50D7485B13", hash_generated_method = "546BDABBE3929411E17F576BE1FD9961")
-    private synchronized void signalCookieOperationsComplete() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.598 -0500", hash_original_method = "65B0411E3AAD9BA729084C50D7485B13", hash_generated_method = "546BDABBE3929411E17F576BE1FD9961")
+    
+private synchronized void signalCookieOperationsComplete() {
         pendingCookieOperations--;
         assert pendingCookieOperations > -1;
         notify();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.803 -0500", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "040CAD6D5912124CE2A118841C2472B4")
-    private synchronized void signalCookieOperationsStart() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.600 -0500", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "040CAD6D5912124CE2A118841C2472B4")
+    
+private synchronized void signalCookieOperationsStart() {
         pendingCookieOperations++;
     }
 
     /**
      * Remove all session cookies, which are cookies without expiration date
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.807 -0500", hash_original_method = "E9CA847999E57130D19A4C553707D595", hash_generated_method = "35A6245350BA89B9D1AFC9D1408998A0")
-    public void removeSessionCookie() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.609 -0500", hash_original_method = "E9CA847999E57130D19A4C553707D595", hash_generated_method = "35A6245350BA89B9D1AFC9D1408998A0")
+    
+public void removeSessionCookie() {
         signalCookieOperationsStart();
         if (JniUtil.useChromiumHttpStack()) {
             new AsyncTask<Void, Void, Void>() {
@@ -822,8 +846,9 @@ public final class CookieManager {
     /**
      * Remove all cookies
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.809 -0500", hash_original_method = "E6726E6A7287E971302CDEBC56D91ADA", hash_generated_method = "F7782F661BDC204D435810D6A8CA9452")
-    public void removeAllCookie() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.616 -0500", hash_original_method = "E6726E6A7287E971302CDEBC56D91ADA", hash_generated_method = "F7782F661BDC204D435810D6A8CA9452")
+    
+public void removeAllCookie() {
         if (JniUtil.useChromiumHttpStack()) {
             nativeRemoveAllCookie();
             return;
@@ -844,8 +869,9 @@ public final class CookieManager {
     /**
      *  Return true if there are stored cookies.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.810 -0500", hash_original_method = "2201D105B8AC0DA82BEBC1DB9FB29AE8", hash_generated_method = "4EEF790287B80339924484EFECFB0831")
-    public synchronized boolean hasCookies() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.618 -0500", hash_original_method = "2201D105B8AC0DA82BEBC1DB9FB29AE8", hash_generated_method = "4EEF790287B80339924484EFECFB0831")
+    
+public synchronized boolean hasCookies() {
         if (JniUtil.useChromiumHttpStack()) {
             return hasCookies(false);
         }
@@ -858,8 +884,9 @@ public final class CookieManager {
      *  @param privateBrowsing cookie jar to use
      *  @hide Hiding private mode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.811 -0500", hash_original_method = "6C96B3E47AB792BE3053A98B747C02B0", hash_generated_method = "762C6F42E9E67BA3B76C7151964CBF27")
-    public synchronized boolean hasCookies(boolean privateBrowsing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.621 -0500", hash_original_method = "6C96B3E47AB792BE3053A98B747C02B0", hash_generated_method = "762C6F42E9E67BA3B76C7151964CBF27")
+    
+public synchronized boolean hasCookies(boolean privateBrowsing) {
         if (!JniUtil.useChromiumHttpStack()) {
             return hasCookies();
         }
@@ -870,8 +897,9 @@ public final class CookieManager {
     /**
      * Remove all expired cookies
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.813 -0500", hash_original_method = "EBBBDCC80F6ABDA541004A954FD75C00", hash_generated_method = "6D0268756977AA60E0FD133F74344ED7")
-    public void removeExpiredCookie() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.627 -0500", hash_original_method = "EBBBDCC80F6ABDA541004A954FD75C00", hash_generated_method = "6D0268756977AA60E0FD133F74344ED7")
+    
+public void removeExpiredCookie() {
         if (JniUtil.useChromiumHttpStack()) {
             nativeRemoveExpiredCookie();
             return;
@@ -907,8 +935,9 @@ public final class CookieManager {
      *
      * Flush all cookies managed by the Chrome HTTP stack to flash.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.814 -0500", hash_original_method = "6E81366EB3EC21A5D57BD56704F05E83", hash_generated_method = "6E81366EB3EC21A5D57BD56704F05E83")
-    void flushCookieStore() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.629 -0500", hash_original_method = "6E81366EB3EC21A5D57BD56704F05E83", hash_generated_method = "6E81366EB3EC21A5D57BD56704F05E83")
+    
+void flushCookieStore() {
         if (JniUtil.useChromiumHttpStack()) {
             nativeFlushCookieStore();
         }
@@ -921,8 +950,9 @@ public final class CookieManager {
      * @param last The given time in millisec
      * @return A list of cookies
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.816 -0500", hash_original_method = "F607692A589F63FF1216167E4F5DA44E", hash_generated_method = "1BE8C4C7D6C04AEB757CF034AA70A1A5")
-    synchronized ArrayList<Cookie> getUpdatedCookiesSince(long last) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.637 -0500", hash_original_method = "F607692A589F63FF1216167E4F5DA44E", hash_generated_method = "1BE8C4C7D6C04AEB757CF034AA70A1A5")
+    
+synchronized ArrayList<Cookie> getUpdatedCookiesSince(long last) {
         ArrayList<Cookie> cookies = new ArrayList<Cookie>();
         Collection<ArrayList<Cookie>> cookieList = mCookieMap.values();
         Iterator<ArrayList<Cookie>> listIter = cookieList.iterator();
@@ -945,8 +975,9 @@ public final class CookieManager {
      * Delete a Cookie in the RAM
      * @param cookie Cookie to be deleted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.817 -0500", hash_original_method = "EBDE0BAE6A65E045698E84F7289F4664", hash_generated_method = "0E4864763233876F8875A8560CBC3873")
-    synchronized void deleteACookie(Cookie cookie) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.639 -0500", hash_original_method = "EBDE0BAE6A65E045698E84F7289F4664", hash_generated_method = "0E4864763233876F8875A8560CBC3873")
+    
+synchronized void deleteACookie(Cookie cookie) {
         if (cookie.mode == Cookie.MODE_DELETED) {
             String baseDomain = getBaseDomain(cookie.domain);
             ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
@@ -965,8 +996,9 @@ public final class CookieManager {
      * Called after a cookie is synced to FLASH
      * @param cookie Cookie to be synced
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.818 -0500", hash_original_method = "23D0913407E37C8868B97CA5EA461217", hash_generated_method = "A389FCA1130A717D740B7FD1F0E2C17E")
-    synchronized void syncedACookie(Cookie cookie) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.641 -0500", hash_original_method = "23D0913407E37C8868B97CA5EA461217", hash_generated_method = "A389FCA1130A717D740B7FD1F0E2C17E")
+    
+synchronized void syncedACookie(Cookie cookie) {
         cookie.mode = Cookie.MODE_NORMAL;
     }
 
@@ -977,8 +1009,9 @@ public final class CookieManager {
      * exceeds the limit
      * @return A list of cookies which are removed from RAM
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.819 -0500", hash_original_method = "37E656A6EDF347445C1655B2E42F538E", hash_generated_method = "37AF33C9029C525839FDBA472304273B")
-    synchronized ArrayList<Cookie> deleteLRUDomain() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.645 -0500", hash_original_method = "37E656A6EDF347445C1655B2E42F538E", hash_generated_method = "37AF33C9029C525839FDBA472304273B")
+    
+synchronized ArrayList<Cookie> deleteLRUDomain() {
         int count = 0;
         int byteCount = 0;
         int mapSize = mCookieMap.size();
@@ -1037,8 +1070,9 @@ public final class CookieManager {
      *          which has at least two periods, String[1] is path which always
      *          ended with "/"
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.820 -0500", hash_original_method = "5193D0EACEE146C23C2F9C98185BC9CF", hash_generated_method = "B7D42267FECCB5489BFD758DC7726422")
-    private String[] getHostAndPath(WebAddress uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.648 -0500", hash_original_method = "5193D0EACEE146C23C2F9C98185BC9CF", hash_generated_method = "B7D42267FECCB5489BFD758DC7726422")
+    
+private String[] getHostAndPath(WebAddress uri) {
         if (uri.getHost() != null && uri.getPath() != null) {
 
             /*
@@ -1096,8 +1130,9 @@ public final class CookieManager {
      * @param host The give host
      * @return the base domain
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.821 -0500", hash_original_method = "0BC29AC3055E44155EBF14855C5D487F", hash_generated_method = "EEC25C8F6A177D8FA6AAD21B22507415")
-    private String getBaseDomain(String host) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.650 -0500", hash_original_method = "0BC29AC3055E44155EBF14855C5D487F", hash_generated_method = "EEC25C8F6A177D8FA6AAD21B22507415")
+    
+private String getBaseDomain(String host) {
         int startIndex = 0;
         int nextIndex = host.indexOf(PERIOD);
         int lastIndex = host.lastIndexOf(PERIOD);
@@ -1129,8 +1164,9 @@ public final class CookieManager {
      * @param cookieString The string coming from "Set-Cookie:"
      * @return A list of Cookies
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:33.824 -0500", hash_original_method = "686D7BF75F67F22DBAC0E1E36B7A58EB", hash_generated_method = "212251E1BC3E86E873859FCFE5219FB9")
-    private ArrayList<Cookie> parseCookie(String host, String path,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.657 -0500", hash_original_method = "686D7BF75F67F22DBAC0E1E36B7A58EB", hash_generated_method = "212251E1BC3E86E873859FCFE5219FB9")
+    
+private ArrayList<Cookie> parseCookie(String host, String path,
             String cookieString) {
         ArrayList<Cookie> ret = new ArrayList<Cookie>();
 

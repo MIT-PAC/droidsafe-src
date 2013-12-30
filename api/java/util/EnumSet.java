@@ -129,24 +129,27 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         set.setRange(start, end);
         return set;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.962 -0500", hash_original_field = "410E538DA3F679A78C5742732ACBCDAB", hash_generated_field = "EC99618EBC86758F2DE324F7F50D83B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.884 -0500", hash_original_field = "410E538DA3F679A78C5742732ACBCDAB", hash_generated_field = "EC99618EBC86758F2DE324F7F50D83B7")
 
     private static final long serialVersionUID = 1009687484059888093L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.963 -0500", hash_original_field = "0757B9C0415F73A0D91556E8A81F8809", hash_generated_field = "0757B9C0415F73A0D91556E8A81F8809")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.887 -0500", hash_original_field = "0757B9C0415F73A0D91556E8A81F8809", hash_generated_field = "0757B9C0415F73A0D91556E8A81F8809")
 
 
      Class<E> elementClass;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.963 -0500", hash_original_method = "39015C507ACAACD362C6AF5AEC7D9CF8", hash_generated_method = "39015C507ACAACD362C6AF5AEC7D9CF8")
-    EnumSet(Class<E> cls) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.889 -0500", hash_original_method = "39015C507ACAACD362C6AF5AEC7D9CF8", hash_generated_method = "39015C507ACAACD362C6AF5AEC7D9CF8")
+    
+EnumSet(Class<E> cls) {
         elementClass = cls;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.968 -0500", hash_original_method = "EDF5635B07DD157E75B67DB68527FFEC", hash_generated_method = "ACF3C29D7B78CD2551BA957A21A83266")
-    abstract void complement();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.904 -0500", hash_original_method = "EDF5635B07DD157E75B67DB68527FFEC", hash_generated_method = "ACF3C29D7B78CD2551BA957A21A83266")
+    
+abstract void complement();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.975 -0500", hash_original_method = "22E0C0F3586FDDB410A4105E191F862F", hash_generated_method = "F372EEBFD9F4E52EB239CB2AEAC3C717")
-    abstract void setRange(E start, E end);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.921 -0500", hash_original_method = "22E0C0F3586FDDB410A4105E191F862F", hash_generated_method = "F372EEBFD9F4E52EB239CB2AEAC3C717")
+    
+abstract void setRange(E start, E end);
 
     /**
      * Creates a new enum set with the same elements as those contained in this
@@ -155,10 +158,11 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
      * @return a new enum set with the same elements as those contained in this
      *         enum set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.975 -0500", hash_original_method = "37C8AB3D6E991A765CF2ADF4E1FAB73C", hash_generated_method = "94112DC51F4003A94A0F873704824E8C")
-    @SuppressWarnings("unchecked")
-@Override
-public EnumSet<E> clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.924 -0500", hash_original_method = "37C8AB3D6E991A765CF2ADF4E1FAB73C", hash_generated_method = "94112DC51F4003A94A0F873704824E8C")
+    
+@SuppressWarnings("unchecked")
+    @Override
+    public EnumSet<E> clone() {
         try {
             return (EnumSet<E>) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -166,22 +170,23 @@ public EnumSet<E> clone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.976 -0500", hash_original_method = "04E56AE18F38E72A8E3B6B437517B693", hash_generated_method = "04E56AE18F38E72A8E3B6B437517B693")
-    boolean isValidType(Class<?> cls) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.927 -0500", hash_original_method = "04E56AE18F38E72A8E3B6B437517B693", hash_generated_method = "04E56AE18F38E72A8E3B6B437517B693")
+    
+boolean isValidType(Class<?> cls) {
         return cls == elementClass || cls.getSuperclass() == elementClass;
     }
 
     
     private static class SerializationProxy<E extends Enum<E>> implements Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.977 -0500", hash_original_field = "590689D01799A1C2393FB3444EAC58BE", hash_generated_field = "E79FD2852CCA02DD45BA574EFFDAB459")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.931 -0500", hash_original_field = "590689D01799A1C2393FB3444EAC58BE", hash_generated_field = "E79FD2852CCA02DD45BA574EFFDAB459")
 
 
         private static final long serialVersionUID = 362491234563181265L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.978 -0500", hash_original_field = "D4653695FD4E6285822AB50E4AE9CD38", hash_generated_field = "BAFDB1CEF7FBA0865D5F65267AFDE26E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.934 -0500", hash_original_field = "D4653695FD4E6285822AB50E4AE9CD38", hash_generated_field = "BAFDB1CEF7FBA0865D5F65267AFDE26E")
 
 
         private Class<E> elementType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.979 -0500", hash_original_field = "FB10D604B5E15C042369D34E470EFDCF", hash_generated_field = "2E15D256D1A6512A2F0AF70544EADE97")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.936 -0500", hash_original_field = "FB10D604B5E15C042369D34E470EFDCF", hash_generated_field = "2E15D256D1A6512A2F0AF70544EADE97")
 
 
         private E[] elements;
@@ -193,8 +198,9 @@ public EnumSet<E> clone() {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.980 -0500", hash_original_method = "60C5F56392547A20884548FBBB7D801A", hash_generated_method = "45836297E2DCA0C6F305BA7D8B75FD65")
-        private Object readResolve() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.939 -0500", hash_original_method = "60C5F56392547A20884548FBBB7D801A", hash_generated_method = "45836297E2DCA0C6F305BA7D8B75FD65")
+        
+private Object readResolve() {
             EnumSet<E> set = EnumSet.noneOf(elementType);
             for (E e : elements) {
                 set.add(e);
@@ -203,9 +209,10 @@ public EnumSet<E> clone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.982 -0500", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "4102122C8CA6BFB91A0AAFAE0AD38EAD")
-    @SuppressWarnings("unchecked")
-Object writeReplace() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.943 -0500", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "4102122C8CA6BFB91A0AAFAE0AD38EAD")
+    
+@SuppressWarnings("unchecked")
+    Object writeReplace() {
         SerializationProxy proxy = new SerializationProxy();
         proxy.elements = toArray(new Enum[0]);
         proxy.elementType = elementClass;

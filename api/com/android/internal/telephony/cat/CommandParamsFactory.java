@@ -22,8 +22,9 @@ import com.android.internal.telephony.IccFileHandler;
 
 class CommandParamsFactory extends Handler {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.354 -0500", hash_original_method = "902F6654BACA21B759C69CE5678E59A7", hash_generated_method = "F41D5CB95F3D9937A947AF7B2BE929CC")
-    static synchronized CommandParamsFactory getInstance(RilMessageDecoder caller,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.916 -0500", hash_original_method = "902F6654BACA21B759C69CE5678E59A7", hash_generated_method = "F41D5CB95F3D9937A947AF7B2BE929CC")
+    
+static synchronized CommandParamsFactory getInstance(RilMessageDecoder caller,
             IccFileHandler fh) {
         if (sInstance != null) {
             return sInstance;
@@ -33,60 +34,62 @@ class CommandParamsFactory extends Handler {
         }
         return null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.342 -0500", hash_original_field = "FBA6C42A53737C0C0C9954F2AF5604EF", hash_generated_field = "A02E695433658795D44A91F9AE9E9D68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.881 -0500", hash_original_field = "FBA6C42A53737C0C0C9954F2AF5604EF", hash_generated_field = "A02E695433658795D44A91F9AE9E9D68")
 
     private static CommandParamsFactory sInstance = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.346 -0500", hash_original_field = "4A3810B1004872FB82DA913B0E66948B", hash_generated_field = "0509FD10C97DF0D78F994025A148CFA1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.892 -0500", hash_original_field = "4A3810B1004872FB82DA913B0E66948B", hash_generated_field = "0509FD10C97DF0D78F994025A148CFA1")
 
     static final int MSG_ID_LOAD_ICON_DONE = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.347 -0500", hash_original_field = "AF5B6606F3B6E7A2BA513DAF3BD06C73", hash_generated_field = "0374DAA182CC981CAAA4DE858EB0B766")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.894 -0500", hash_original_field = "AF5B6606F3B6E7A2BA513DAF3BD06C73", hash_generated_field = "0374DAA182CC981CAAA4DE858EB0B766")
 
     static final int LOAD_NO_ICON           = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.348 -0500", hash_original_field = "1DB18240EB2651A6C354E2DB7274E4BB", hash_generated_field = "761C07843AF0BBB06B808D9C6BAA7BEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.897 -0500", hash_original_field = "1DB18240EB2651A6C354E2DB7274E4BB", hash_generated_field = "761C07843AF0BBB06B808D9C6BAA7BEF")
 
     static final int LOAD_SINGLE_ICON       = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.348 -0500", hash_original_field = "E71A65D4A7599F34836BCB99EA39EADA", hash_generated_field = "182C6267022EF7CFE59C2F652B4F88F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.900 -0500", hash_original_field = "E71A65D4A7599F34836BCB99EA39EADA", hash_generated_field = "182C6267022EF7CFE59C2F652B4F88F7")
 
     static final int LOAD_MULTI_ICONS       = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.349 -0500", hash_original_field = "A02DAFE502A966ED61B8C44BC47C44D9", hash_generated_field = "55FC531319D23B63500B05E76A240327")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.902 -0500", hash_original_field = "A02DAFE502A966ED61B8C44BC47C44D9", hash_generated_field = "55FC531319D23B63500B05E76A240327")
 
     static final int REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE  = 0x00;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.350 -0500", hash_original_field = "BCA11C7BF970459A4D812612E9D86F78", hash_generated_field = "0E4599A2E374EA02CB6A0600D5C88CB7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.904 -0500", hash_original_field = "BCA11C7BF970459A4D812612E9D86F78", hash_generated_field = "0E4599A2E374EA02CB6A0600D5C88CB7")
 
     static final int REFRESH_NAA_INIT_AND_FILE_CHANGE       = 0x02;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.351 -0500", hash_original_field = "D8BEF93BBF8F597C27382A2CDCA03AEC", hash_generated_field = "9E614C5C7AF00114FEDB9AEF35435672")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.907 -0500", hash_original_field = "D8BEF93BBF8F597C27382A2CDCA03AEC", hash_generated_field = "9E614C5C7AF00114FEDB9AEF35435672")
 
     static final int REFRESH_NAA_INIT                       = 0x03;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.352 -0500", hash_original_field = "9A723EAF28F4992AFF280FD6B3AC5893", hash_generated_field = "F329B35F0F2C675C33E539235C3A6551")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.909 -0500", hash_original_field = "9A723EAF28F4992AFF280FD6B3AC5893", hash_generated_field = "F329B35F0F2C675C33E539235C3A6551")
 
     static final int REFRESH_UICC_RESET                     = 0x04;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.352 -0500", hash_original_field = "9F04B45FD55C1684E09CBFE540E19FFF", hash_generated_field = "DD4EB25D5CA263605A614D46E2441751")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.911 -0500", hash_original_field = "9F04B45FD55C1684E09CBFE540E19FFF", hash_generated_field = "DD4EB25D5CA263605A614D46E2441751")
 
     static final int DTTZ_SETTING                           = 0x03;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.353 -0500", hash_original_field = "524859CA934A08BC6C495264E670DC15", hash_generated_field = "3A59590520C8A31CBBFD0DFA1F5A61E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.914 -0500", hash_original_field = "524859CA934A08BC6C495264E670DC15", hash_generated_field = "3A59590520C8A31CBBFD0DFA1F5A61E7")
 
     static final int LANGUAGE_SETTING                       = 0x04;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.343 -0500", hash_original_field = "2F5A1B4DA027881E19765F45FABD71C8", hash_generated_field = "066A6762D0C2A5B772EAA58E81EAA0D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.883 -0500", hash_original_field = "2F5A1B4DA027881E19765F45FABD71C8", hash_generated_field = "066A6762D0C2A5B772EAA58E81EAA0D0")
 
     private IconLoader mIconLoader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.344 -0500", hash_original_field = "80512E76B5F58ED0900AAC2FDFB7AB1D", hash_generated_field = "70CAC59D17D3D0BA6E05827D916BDA7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.885 -0500", hash_original_field = "80512E76B5F58ED0900AAC2FDFB7AB1D", hash_generated_field = "70CAC59D17D3D0BA6E05827D916BDA7A")
 
     private CommandParams mCmdParams = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.344 -0500", hash_original_field = "B32BA5D854CD4DC2A674EE344B7F3D8B", hash_generated_field = "BCA982B96F91D9BC42753272B3011D5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.887 -0500", hash_original_field = "B32BA5D854CD4DC2A674EE344B7F3D8B", hash_generated_field = "BCA982B96F91D9BC42753272B3011D5D")
 
     private int mIconLoadState = LOAD_NO_ICON;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.345 -0500", hash_original_field = "E962BAB0A688BD2E422902AEC50D5DEA", hash_generated_field = "14B912560D20DD60BB608B0ED44E164A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.890 -0500", hash_original_field = "E962BAB0A688BD2E422902AEC50D5DEA", hash_generated_field = "14B912560D20DD60BB608B0ED44E164A")
 
     private RilMessageDecoder mCaller = null;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.355 -0500", hash_original_method = "7BCA60CE4AA4C3E7854AB72DFCEE5CF9", hash_generated_method = "FD806CA97E8A66464671E5E3328C4A24")
-    private CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.919 -0500", hash_original_method = "7BCA60CE4AA4C3E7854AB72DFCEE5CF9", hash_generated_method = "FD806CA97E8A66464671E5E3328C4A24")
+    
+private CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
         mCaller = caller;
         mIconLoader = IconLoader.getInstance(this, fh);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.356 -0500", hash_original_method = "2E4478F23D166A2E5E35D0CD5C4A129E", hash_generated_method = "B6CB825255E9C63FAB84715E72DFE1D4")
-    private CommandDetails processCommandDetails(List<ComprehensionTlv> ctlvs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.922 -0500", hash_original_method = "2E4478F23D166A2E5E35D0CD5C4A129E", hash_generated_method = "B6CB825255E9C63FAB84715E72DFE1D4")
+    
+private CommandDetails processCommandDetails(List<ComprehensionTlv> ctlvs) {
         CommandDetails cmdDet = null;
 
         if (ctlvs != null) {
@@ -104,8 +107,9 @@ class CommandParamsFactory extends Handler {
         return cmdDet;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.358 -0500", hash_original_method = "1AA16ED3503C2EABAE519A247570B4D1", hash_generated_method = "16012F063D610DD6237B38D0B6F87C41")
-    void make(BerTlv berTlv) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.925 -0500", hash_original_method = "1AA16ED3503C2EABAE519A247570B4D1", hash_generated_method = "16012F063D610DD6237B38D0B6F87C41")
+    
+void make(BerTlv berTlv) {
         if (berTlv == null) {
             return;
         }
@@ -196,9 +200,10 @@ class CommandParamsFactory extends Handler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.358 -0500", hash_original_method = "31E304CCF35AF359465BB09182AC4380", hash_generated_method = "F33575EF43B3079DA096048B23584DF8")
-    @Override
-public void handleMessage(Message msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.928 -0500", hash_original_method = "31E304CCF35AF359465BB09182AC4380", hash_generated_method = "F33575EF43B3079DA096048B23584DF8")
+    
+@Override
+    public void handleMessage(Message msg) {
         switch (msg.what) {
         case MSG_ID_LOAD_ICON_DONE:
             sendCmdParams(setIcons(msg.obj));
@@ -206,8 +211,9 @@ public void handleMessage(Message msg) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.359 -0500", hash_original_method = "3AB391E8251356D82C52829EE4B32ED7", hash_generated_method = "E3356EC179A0390C98FDE662F9F214B3")
-    private ResultCode setIcons(Object data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.930 -0500", hash_original_method = "3AB391E8251356D82C52829EE4B32ED7", hash_generated_method = "E3356EC179A0390C98FDE662F9F214B3")
+    
+private ResultCode setIcons(Object data) {
         Bitmap[] icons = null;
         int iconIndex = 0;
 
@@ -229,8 +235,9 @@ public void handleMessage(Message msg) {
         return ResultCode.OK;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.360 -0500", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "0F78036AE11C468AB9BCD93A05DFCB29")
-    private void sendCmdParams(ResultCode resCode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.932 -0500", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "0F78036AE11C468AB9BCD93A05DFCB29")
+    
+private void sendCmdParams(ResultCode resCode) {
         mCaller.sendMsgParamsDecoded(resCode, mCmdParams);
     }
 
@@ -243,8 +250,9 @@ public void handleMessage(Message msg) {
      * @return A ComprehensionTlv object that has the tag value of {@code tag}.
      *         If no object is found with the tag, null is returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.361 -0500", hash_original_method = "747AFE004560A767DF481C3AA8002660", hash_generated_method = "9625D3D3689DEE9B299B2E695D5C9E6A")
-    private ComprehensionTlv searchForTag(ComprehensionTlvTag tag,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.935 -0500", hash_original_method = "747AFE004560A767DF481C3AA8002660", hash_generated_method = "9625D3D3689DEE9B299B2E695D5C9E6A")
+    
+private ComprehensionTlv searchForTag(ComprehensionTlvTag tag,
             List<ComprehensionTlv> ctlvs) {
         Iterator<ComprehensionTlv> iter = ctlvs.iterator();
         return searchForNextTag(tag, iter);
@@ -262,8 +270,9 @@ public void handleMessage(Message msg) {
      * @return A ComprehensionTlv object that has the tag value of {@code tag}.
      *         If no object is found with the tag, null is returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.361 -0500", hash_original_method = "D88B588A55F67F23980463DF8FB0DA04", hash_generated_method = "CEDDDCCC0A8F696D6842028354B776F0")
-    private ComprehensionTlv searchForNextTag(ComprehensionTlvTag tag,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.937 -0500", hash_original_method = "D88B588A55F67F23980463DF8FB0DA04", hash_generated_method = "CEDDDCCC0A8F696D6842028354B776F0")
+    
+private ComprehensionTlv searchForNextTag(ComprehensionTlvTag tag,
             Iterator<ComprehensionTlv> iter) {
         int tagValue = tag.value();
         while (iter.hasNext()) {
@@ -285,8 +294,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.363 -0500", hash_original_method = "7E1C347C9C4DEE22923C4A46BE429D13", hash_generated_method = "14E524A6E58CB4758EDD6DF999B7AC29")
-    private boolean processDisplayText(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.941 -0500", hash_original_method = "7E1C347C9C4DEE22923C4A46BE429D13", hash_generated_method = "14E524A6E58CB4758EDD6DF999B7AC29")
+    
+private boolean processDisplayText(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs)
             throws ResultException {
 
@@ -347,8 +357,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.364 -0500", hash_original_method = "7C3BADEB42DA2C878C6C5ABCBE524429", hash_generated_method = "8CDB4A3364B8F2209625D9813B166F22")
-    private boolean processSetUpIdleModeText(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.943 -0500", hash_original_method = "7C3BADEB42DA2C878C6C5ABCBE524429", hash_generated_method = "8CDB4A3364B8F2209625D9813B166F22")
+    
+private boolean processSetUpIdleModeText(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process SetUpIdleModeText");
@@ -391,8 +402,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.365 -0500", hash_original_method = "025DF7E231D7740FB891A823A7EE822B", hash_generated_method = "45B6A19FC2D426B21B2AC8287429C641")
-    private boolean processGetInkey(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.946 -0500", hash_original_method = "025DF7E231D7740FB891A823A7EE822B", hash_generated_method = "45B6A19FC2D426B21B2AC8287429C641")
+    
+private boolean processGetInkey(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process GetInkey");
@@ -449,8 +461,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.366 -0500", hash_original_method = "03663C70D425FF89FCC6E89BA931B637", hash_generated_method = "170A92F32027F9875BE7114B1EF48E7D")
-    private boolean processGetInput(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.949 -0500", hash_original_method = "03663C70D425FF89FCC6E89BA931B637", hash_generated_method = "170A92F32027F9875BE7114B1EF48E7D")
+    
+private boolean processGetInput(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process GetInput");
@@ -514,8 +527,9 @@ public void handleMessage(Message msg) {
      * @param ctlvs List of ComprehensionTlv objects following Command Details
      *        object and Device Identities object within the proactive command
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.367 -0500", hash_original_method = "328C209D553235E9687156E0E720555C", hash_generated_method = "49CD5A6A2D8FBFD4D95552F94CB6DE0A")
-    private boolean processRefresh(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.953 -0500", hash_original_method = "328C209D553235E9687156E0E720555C", hash_generated_method = "49CD5A6A2D8FBFD4D95552F94CB6DE0A")
+    
+private boolean processRefresh(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) {
 
         CatLog.d(this, "process Refresh");
@@ -544,8 +558,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.368 -0500", hash_original_method = "BCD1A4E1E4B160F1064A009F1000860C", hash_generated_method = "AED934F64C2AF3A3AA68C1BE35325EE1")
-    private boolean processSelectItem(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.956 -0500", hash_original_method = "BCD1A4E1E4B160F1064A009F1000860C", hash_generated_method = "AED934F64C2AF3A3AA68C1BE35325EE1")
+    
+private boolean processSelectItem(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process SelectItem");
@@ -642,8 +657,9 @@ public void handleMessage(Message msg) {
      * @return true if the command is processing is pending and additional
      *         asynchronous processing is required.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.370 -0500", hash_original_method = "A40BEAAD1582CC67F32BB145B8ABDE84", hash_generated_method = "AF28097F7F5696941EAC21D0DECD9B8D")
-    private boolean processEventNotify(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.959 -0500", hash_original_method = "A40BEAAD1582CC67F32BB145B8ABDE84", hash_generated_method = "AF28097F7F5696941EAC21D0DECD9B8D")
+    
+private boolean processEventNotify(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process EventNotify");
@@ -682,8 +698,9 @@ public void handleMessage(Message msg) {
      * @return true if the command is processing is pending and additional
      *         asynchronous processing is required.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.371 -0500", hash_original_method = "C7EE76D8654D8C691124AB97A0520EED", hash_generated_method = "D9D1C48A3F913A5F6D431A91482A34E1")
-    private boolean processSetUpEventList(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.961 -0500", hash_original_method = "C7EE76D8654D8C691124AB97A0520EED", hash_generated_method = "D9D1C48A3F913A5F6D431A91482A34E1")
+    
+private boolean processSetUpEventList(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) {
 
         CatLog.d(this, "process SetUpEventList");
@@ -711,8 +728,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.372 -0500", hash_original_method = "8945EEF95EF30DB6F3AC6F2F65AD50C7", hash_generated_method = "7D7A3879A22C748B9BCF7118D3B3BF76")
-    private boolean processLaunchBrowser(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.965 -0500", hash_original_method = "8945EEF95EF30DB6F3AC6F2F65AD50C7", hash_generated_method = "7D7A3879A22C748B9BCF7118D3B3BF76")
+    
+private boolean processLaunchBrowser(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process LaunchBrowser");
@@ -785,8 +803,9 @@ public void handleMessage(Message msg) {
      *         asynchronous processing is required.t
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.374 -0500", hash_original_method = "9E25ADC04DC19743F5D672C3FA9262A8", hash_generated_method = "7A042046982B20BD0D28A6D98CF6237D")
-    private boolean processPlayTone(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.968 -0500", hash_original_method = "9E25ADC04DC19743F5D672C3FA9262A8", hash_generated_method = "7A042046982B20BD0D28A6D98CF6237D")
+    
+private boolean processPlayTone(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
 
         CatLog.d(this, "process PlayTone");
@@ -852,8 +871,9 @@ public void handleMessage(Message msg) {
      * @return true if the command is processing is pending and additional
      *         asynchronous processing is required.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.375 -0500", hash_original_method = "1675CA7AE4DACD4909A19602008CCD7F", hash_generated_method = "1831C6AA7DFE31784A7A670410C2977D")
-    private boolean processSetupCall(CommandDetails cmdDet,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.972 -0500", hash_original_method = "1675CA7AE4DACD4909A19602008CCD7F", hash_generated_method = "1831C6AA7DFE31784A7A670410C2977D")
+    
+private boolean processSetupCall(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
         CatLog.d(this, "process SetupCall");
 
@@ -905,8 +925,9 @@ public void handleMessage(Message msg) {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:24.376 -0500", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "5F369B271055074A84D35E8275BE326B")
-    private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.975 -0500", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "5F369B271055074A84D35E8275BE326B")
+    
+private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs)
             throws ResultException {
         CatLog.d(this, "process ProvideLocalInfo");
         switch (cmdDet.commandQualifier) {

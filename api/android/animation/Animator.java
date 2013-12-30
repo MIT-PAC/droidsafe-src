@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 
 public abstract class Animator implements Cloneable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.703 -0500", hash_original_field = "3FD42DDC5A574D761F1E8BD3EC073311", hash_generated_field = "3FD42DDC5A574D761F1E8BD3EC073311")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.269 -0500", hash_original_field = "3FD42DDC5A574D761F1E8BD3EC073311", hash_generated_field = "3FD42DDC5A574D761F1E8BD3EC073311")
 
     ArrayList<AnimatorListener> mListeners = null;
     
@@ -36,8 +36,9 @@ public abstract class Animator implements Cloneable {
      * thread for that view hierarchy.</p>
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.704 -0500", hash_original_method = "077E81C30B4BFFEF2F9502DB378CA204", hash_generated_method = "DA898781E1CBA774E3501CFEAD68389F")
-    public void start() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.271 -0500", hash_original_method = "077E81C30B4BFFEF2F9502DB378CA204", hash_generated_method = "DA898781E1CBA774E3501CFEAD68389F")
+    
+public void start() {
     }
 
     /**
@@ -49,8 +50,9 @@ public abstract class Animator implements Cloneable {
      *
      * <p>This method must be called on the thread that is running the animation.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.705 -0500", hash_original_method = "E5C5DBED2FC0D18DB80484DB83D94F8A", hash_generated_method = "03D37BD64D7EA5A498C29F3157B06CA4")
-    public void cancel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.273 -0500", hash_original_method = "E5C5DBED2FC0D18DB80484DB83D94F8A", hash_generated_method = "03D37BD64D7EA5A498C29F3157B06CA4")
+    
+public void cancel() {
     }
 
     /**
@@ -61,8 +63,9 @@ public abstract class Animator implements Cloneable {
      *
      * <p>This method must be called on the thread that is running the animation.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.705 -0500", hash_original_method = "4F105473DD7236D24F8992C8503B57B1", hash_generated_method = "FE6D8DF71959D6F4FDE5F0F03D32C242")
-    public void end() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.275 -0500", hash_original_method = "4F105473DD7236D24F8992C8503B57B1", hash_generated_method = "FE6D8DF71959D6F4FDE5F0F03D32C242")
+    
+public void end() {
     }
 
     /**
@@ -71,8 +74,9 @@ public abstract class Animator implements Cloneable {
      *
      * @return the number of milliseconds to delay running the animation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.706 -0500", hash_original_method = "A456A6B27B0B6401B5CBF81B119A96B0", hash_generated_method = "FC57DB7F599A90334BED2B9983159634")
-    public abstract long getStartDelay();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.277 -0500", hash_original_method = "A456A6B27B0B6401B5CBF81B119A96B0", hash_generated_method = "FC57DB7F599A90334BED2B9983159634")
+    
+public abstract long getStartDelay();
 
     /**
      * The amount of time, in milliseconds, to delay starting the animation after
@@ -80,8 +84,9 @@ public abstract class Animator implements Cloneable {
 
      * @param startDelay The amount of the delay, in milliseconds
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.707 -0500", hash_original_method = "D1BDC615F0D6CB689D5A02F46F04F12A", hash_generated_method = "2CA8B335A9269A0A3839B3FA55AEDEF4")
-    public abstract void setStartDelay(long startDelay);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.279 -0500", hash_original_method = "D1BDC615F0D6CB689D5A02F46F04F12A", hash_generated_method = "2CA8B335A9269A0A3839B3FA55AEDEF4")
+    
+public abstract void setStartDelay(long startDelay);
 
 
     /**
@@ -89,16 +94,18 @@ public abstract class Animator implements Cloneable {
      *
      * @param duration The length of the animation, in milliseconds.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.708 -0500", hash_original_method = "82DE27B36BC4484095B14F7E1A297A9F", hash_generated_method = "9880ED4057E2743F5C69F69D7436C09A")
-    public abstract Animator setDuration(long duration);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.281 -0500", hash_original_method = "82DE27B36BC4484095B14F7E1A297A9F", hash_generated_method = "9880ED4057E2743F5C69F69D7436C09A")
+    
+public abstract Animator setDuration(long duration);
 
     /**
      * Gets the length of the animation.
      *
      * @return The length of the animation, in milliseconds.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.709 -0500", hash_original_method = "13809D2532E5FA38EF98BEB630AAB08D", hash_generated_method = "FF9278407590D9A00164135C344715E5")
-    public abstract long getDuration();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.284 -0500", hash_original_method = "13809D2532E5FA38EF98BEB630AAB08D", hash_generated_method = "FF9278407590D9A00164135C344715E5")
+    
+public abstract long getDuration();
 
     /**
      * The time interpolator used in calculating the elapsed fraction of this animation. The
@@ -108,8 +115,9 @@ public abstract class Animator implements Cloneable {
      *
      * @param value the interpolator to be used by this animation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.709 -0500", hash_original_method = "ECD218A4FB106B8E45D391E2FCFE38AF", hash_generated_method = "8E1A8C2825A4BD9063900C0EE443C3BD")
-    public abstract void setInterpolator(TimeInterpolator value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.286 -0500", hash_original_method = "ECD218A4FB106B8E45D391E2FCFE38AF", hash_generated_method = "8E1A8C2825A4BD9063900C0EE443C3BD")
+    
+public abstract void setInterpolator(TimeInterpolator value);
 
     /**
      * Returns whether this Animator is currently running (having been started and gone past any
@@ -117,8 +125,9 @@ public abstract class Animator implements Cloneable {
      *
      * @return Whether the Animator is running.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.710 -0500", hash_original_method = "01F0FE44E71A30E093E481EBA696B87A", hash_generated_method = "6E27EBB5A90EFE7D59D40ADC42E0CBF6")
-    public abstract boolean isRunning();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.288 -0500", hash_original_method = "01F0FE44E71A30E093E481EBA696B87A", hash_generated_method = "6E27EBB5A90EFE7D59D40ADC42E0CBF6")
+    
+public abstract boolean isRunning();
 
     /**
      * Returns whether this Animator has been started and not yet ended. This state is a superset
@@ -129,8 +138,9 @@ public abstract class Animator implements Cloneable {
      *
      * @return Whether the Animator has been started and not yet ended.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.711 -0500", hash_original_method = "5FAE51F608329798E727CB5CCA21128D", hash_generated_method = "F5AC37B65A93F3FBD5BB00F5B58D8A73")
-    public boolean isStarted() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.290 -0500", hash_original_method = "5FAE51F608329798E727CB5CCA21128D", hash_generated_method = "F5AC37B65A93F3FBD5BB00F5B58D8A73")
+    
+public boolean isStarted() {
         // Default method returns value for isRunning(). Subclasses should override to return a
         // real value.
         return isRunning();
@@ -163,8 +173,9 @@ public abstract class Animator implements Cloneable {
      * @param listener the listener to be removed from the current set of listeners for this
      *                 animation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.712 -0500", hash_original_method = "AF89FA0687B9630A1A89E59A21836778", hash_generated_method = "562085D41EA94DF7CF8C8CC219EFCA79")
-    public void removeListener(AnimatorListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.295 -0500", hash_original_method = "AF89FA0687B9630A1A89E59A21836778", hash_generated_method = "562085D41EA94DF7CF8C8CC219EFCA79")
+    
+public void removeListener(AnimatorListener listener) {
         if (mListeners == null) {
             return;
         }
@@ -180,8 +191,9 @@ public abstract class Animator implements Cloneable {
      *
      * @return ArrayList<AnimatorListener> The set of listeners.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.713 -0500", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "44544A80D5F91B2783A66E5247A2E8B1")
-    public ArrayList<AnimatorListener> getListeners() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.297 -0500", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "44544A80D5F91B2783A66E5247A2E8B1")
+    
+public ArrayList<AnimatorListener> getListeners() {
         return mListeners;
     }
 
@@ -190,17 +202,19 @@ public abstract class Animator implements Cloneable {
      * <code>getListeners()</code> followed by calling <code>clear()</code> on the
      * returned list of listeners.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.714 -0500", hash_original_method = "9F15C7E7001670487AA27A3E97528F7B", hash_generated_method = "EA064C71E10C4E95A204ACCF55D3C492")
-    public void removeAllListeners() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.299 -0500", hash_original_method = "9F15C7E7001670487AA27A3E97528F7B", hash_generated_method = "EA064C71E10C4E95A204ACCF55D3C492")
+    
+public void removeAllListeners() {
         if (mListeners != null) {
             mListeners.clear();
             mListeners = null;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.716 -0500", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "B7F66985686932E1DF636764C91CD1BA")
-    @Override
-public Animator clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.302 -0500", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "B7F66985686932E1DF636764C91CD1BA")
+    
+@Override
+    public Animator clone() {
         try {
             final Animator anim = (Animator) super.clone();
             if (mListeners != null) {
@@ -226,8 +240,9 @@ public Animator clone() {
      * An ValueAnimator object will ignore the request since it does not have enough
      * information (such as a target object) to gather these values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.717 -0500", hash_original_method = "32F08DC85010676418427AA8D9A17152", hash_generated_method = "6730FDB6F6254C0B72706150269179FD")
-    public void setupStartValues() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.304 -0500", hash_original_method = "32F08DC85010676418427AA8D9A17152", hash_generated_method = "6730FDB6F6254C0B72706150269179FD")
+    
+public void setupStartValues() {
     }
 
     /**
@@ -239,8 +254,9 @@ public Animator clone() {
      * An ValueAnimator object will ignore the request since it does not have enough
      * information (such as a target object) to gather these values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.717 -0500", hash_original_method = "4E652EB88F78E42C7E65C332BEA7074B", hash_generated_method = "0F36AB957B35647210D5123B32DEBC83")
-    public void setupEndValues() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.306 -0500", hash_original_method = "4E652EB88F78E42C7E65C332BEA7074B", hash_generated_method = "0F36AB957B35647210D5123B32DEBC83")
+    
+public void setupEndValues() {
     }
 
     /**
@@ -251,8 +267,9 @@ public Animator clone() {
      *
      * @param target The object being animated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.718 -0500", hash_original_method = "0B5C67CA62B433384E1BDDE3EB79AFB5", hash_generated_method = "F29AFE070434CC410DBB0B279E1F6376")
-    public void setTarget(Object target) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.308 -0500", hash_original_method = "0B5C67CA62B433384E1BDDE3EB79AFB5", hash_generated_method = "F29AFE070434CC410DBB0B279E1F6376")
+    
+public void setTarget(Object target) {
     }
 
     

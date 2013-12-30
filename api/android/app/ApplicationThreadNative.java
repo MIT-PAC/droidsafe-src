@@ -37,8 +37,9 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
      * Cast a Binder object into an application thread interface, generating
      * a proxy if needed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.547 -0500", hash_original_method = "17488503592C6659F091CE1A79A12BD0", hash_generated_method = "C72B4B66FE340E977D3EB25CDE7A551B")
-    static public IApplicationThread asInterface(IBinder obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.927 -0500", hash_original_method = "17488503592C6659F091CE1A79A12BD0", hash_generated_method = "C72B4B66FE340E977D3EB25CDE7A551B")
+    
+static public IApplicationThread asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -51,14 +52,16 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
         return new ApplicationThreadProxy(obj);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.548 -0500", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "9A0122931DF548A22EFD5BF8230ADA42")
-    public ApplicationThreadNative() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.930 -0500", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "9A0122931DF548A22EFD5BF8230ADA42")
+    
+public ApplicationThreadNative() {
         attachInterface(this, descriptor);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.553 -0500", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "6DCB879D2EBBA74EF430AE5BD6A63908")
-    @Override
-public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.942 -0500", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "6DCB879D2EBBA74EF430AE5BD6A63908")
+    
+@Override
+    public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
             throws RemoteException {
         switch (code) {
         case SCHEDULE_PAUSE_ACTIVITY_TRANSACTION:
@@ -537,8 +540,9 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
         return super.onTransact(code, data, reply, flags);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.555 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
-    public IBinder asBinder()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.945 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
+    
+public IBinder asBinder()
     {
         return this;
     }
@@ -547,22 +551,25 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
 }
 
 class ApplicationThreadProxy implements IApplicationThread {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.556 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.948 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
 
     private  IBinder mRemote;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.557 -0500", hash_original_method = "08B50EC8A0FF95C7A679215C14C2E347", hash_generated_method = "3B68CF7B4A084058DEBCEE5707CF9550")
-    public ApplicationThreadProxy(IBinder remote) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.950 -0500", hash_original_method = "08B50EC8A0FF95C7A679215C14C2E347", hash_generated_method = "3B68CF7B4A084058DEBCEE5707CF9550")
+    
+public ApplicationThreadProxy(IBinder remote) {
         mRemote = remote;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.558 -0500", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "1C034C9EF1188D622E292B288F350D1B")
-    public final IBinder asBinder() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.952 -0500", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "1C034C9EF1188D622E292B288F350D1B")
+    
+public final IBinder asBinder() {
         return mRemote;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.559 -0500", hash_original_method = "F385294CE3D6AC21F25405F7E688DF1E", hash_generated_method = "CBF0A1AFB674AE5BA1CA1826E5AE2835")
-    public final void schedulePauseActivity(IBinder token, boolean finished,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.954 -0500", hash_original_method = "F385294CE3D6AC21F25405F7E688DF1E", hash_generated_method = "CBF0A1AFB674AE5BA1CA1826E5AE2835")
+    
+public final void schedulePauseActivity(IBinder token, boolean finished,
             boolean userLeaving, int configChanges) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -575,8 +582,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.560 -0500", hash_original_method = "8D9A120B7A56CEA8B7726147C17D07B9", hash_generated_method = "0A9533EA0293AAF82BB79426513B0A81")
-    public final void scheduleStopActivity(IBinder token, boolean showWindow,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.957 -0500", hash_original_method = "8D9A120B7A56CEA8B7726147C17D07B9", hash_generated_method = "0A9533EA0293AAF82BB79426513B0A81")
+    
+public final void scheduleStopActivity(IBinder token, boolean showWindow,
             int configChanges) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -588,8 +596,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.561 -0500", hash_original_method = "5CD7B361184ED9060554C6A3DFD958DC", hash_generated_method = "B5DEEDBF6FA66341DEF01C3AF443B80A")
-    public final void scheduleWindowVisibility(IBinder token,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.959 -0500", hash_original_method = "5CD7B361184ED9060554C6A3DFD958DC", hash_generated_method = "B5DEEDBF6FA66341DEF01C3AF443B80A")
+    
+public final void scheduleWindowVisibility(IBinder token,
             boolean showWindow) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -600,8 +609,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.561 -0500", hash_original_method = "037CA20E3B4BFBAB7FFA0954AEB6461B", hash_generated_method = "DF373665954C0746BD82B703AF1D6917")
-    public final void scheduleSleeping(IBinder token,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.962 -0500", hash_original_method = "037CA20E3B4BFBAB7FFA0954AEB6461B", hash_generated_method = "DF373665954C0746BD82B703AF1D6917")
+    
+public final void scheduleSleeping(IBinder token,
             boolean sleeping) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -612,8 +622,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.562 -0500", hash_original_method = "3B8EDF2F01C1C03EA4B1D6DE44BA40A1", hash_generated_method = "CD10572F94195DA5F8791AE33358E55F")
-    public final void scheduleResumeActivity(IBinder token, boolean isForward)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.964 -0500", hash_original_method = "3B8EDF2F01C1C03EA4B1D6DE44BA40A1", hash_generated_method = "CD10572F94195DA5F8791AE33358E55F")
+    
+public final void scheduleResumeActivity(IBinder token, boolean isForward)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -624,8 +635,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.563 -0500", hash_original_method = "DF66BA9A5FFE4BEC7C06F9E22C0B5667", hash_generated_method = "33D4E89A4A541307DD512AE7B9D63EAE")
-    public final void scheduleSendResult(IBinder token, List<ResultInfo> results)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.967 -0500", hash_original_method = "DF66BA9A5FFE4BEC7C06F9E22C0B5667", hash_generated_method = "33D4E89A4A541307DD512AE7B9D63EAE")
+    
+public final void scheduleSendResult(IBinder token, List<ResultInfo> results)
     		throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -636,8 +648,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.564 -0500", hash_original_method = "F26C51AD11E848270AE4A9EC525A0958", hash_generated_method = "EBE2EF8167D55CABDD7812FD682B2E45")
-    public final void scheduleLaunchActivity(Intent intent, IBinder token, int ident,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.971 -0500", hash_original_method = "F26C51AD11E848270AE4A9EC525A0958", hash_generated_method = "EBE2EF8167D55CABDD7812FD682B2E45")
+    
+public final void scheduleLaunchActivity(Intent intent, IBinder token, int ident,
             ActivityInfo info, Configuration curConfig, CompatibilityInfo compatInfo,
             Bundle state, List<ResultInfo> pendingResults,
     		List<Intent> pendingNewIntents, boolean notResumed, boolean isForward,
@@ -669,8 +682,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.565 -0500", hash_original_method = "D28E37482E7B0F4E96EA5389499C167D", hash_generated_method = "8AF685184D06475E9309CB8D931EEBF9")
-    public final void scheduleRelaunchActivity(IBinder token,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.973 -0500", hash_original_method = "D28E37482E7B0F4E96EA5389499C167D", hash_generated_method = "8AF685184D06475E9309CB8D931EEBF9")
+    
+public final void scheduleRelaunchActivity(IBinder token,
             List<ResultInfo> pendingResults, List<Intent> pendingNewIntents,
             int configChanges, boolean notResumed, Configuration config)
             throws RemoteException {
@@ -692,8 +706,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.566 -0500", hash_original_method = "C9991D806FA54B06B2907086AD0FF677", hash_generated_method = "3CCF467753F3966284C8520DFAC2C903")
-    public void scheduleNewIntent(List<Intent> intents, IBinder token)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.976 -0500", hash_original_method = "C9991D806FA54B06B2907086AD0FF677", hash_generated_method = "3CCF467753F3966284C8520DFAC2C903")
+    
+public void scheduleNewIntent(List<Intent> intents, IBinder token)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -704,8 +719,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.567 -0500", hash_original_method = "30A44B425A4D374BA87F220BE9EBE9B7", hash_generated_method = "7C10FF8E99432EB62A17B52FDB771AEE")
-    public final void scheduleDestroyActivity(IBinder token, boolean finishing,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.978 -0500", hash_original_method = "30A44B425A4D374BA87F220BE9EBE9B7", hash_generated_method = "7C10FF8E99432EB62A17B52FDB771AEE")
+    
+public final void scheduleDestroyActivity(IBinder token, boolean finishing,
             int configChanges) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -717,8 +733,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.568 -0500", hash_original_method = "C42B70805B0C7922B26FF1FB8A47345A", hash_generated_method = "7228C0A8C4F23FAB9A04CD30CDF46BC8")
-    public final void scheduleReceiver(Intent intent, ActivityInfo info,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.981 -0500", hash_original_method = "C42B70805B0C7922B26FF1FB8A47345A", hash_generated_method = "7228C0A8C4F23FAB9A04CD30CDF46BC8")
+    
+public final void scheduleReceiver(Intent intent, ActivityInfo info,
             CompatibilityInfo compatInfo, int resultCode, String resultData,
             Bundle map, boolean sync) throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -735,8 +752,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.569 -0500", hash_original_method = "FBCEE90A351EFB6AE922D66BDA990D49", hash_generated_method = "645091E863567C7A8F794C896EC31910")
-    public final void scheduleCreateBackupAgent(ApplicationInfo app,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.983 -0500", hash_original_method = "FBCEE90A351EFB6AE922D66BDA990D49", hash_generated_method = "645091E863567C7A8F794C896EC31910")
+    
+public final void scheduleCreateBackupAgent(ApplicationInfo app,
             CompatibilityInfo compatInfo, int backupMode) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -748,8 +766,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.570 -0500", hash_original_method = "213DB620D8FBF1A9C8341DE04CE19BA9", hash_generated_method = "D2452E6BB27908AB4552791EAFEDCD19")
-    public final void scheduleDestroyBackupAgent(ApplicationInfo app,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.985 -0500", hash_original_method = "213DB620D8FBF1A9C8341DE04CE19BA9", hash_generated_method = "D2452E6BB27908AB4552791EAFEDCD19")
+    
+public final void scheduleDestroyBackupAgent(ApplicationInfo app,
             CompatibilityInfo compatInfo) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -760,8 +779,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.571 -0500", hash_original_method = "6404222A540CAF1DD9DE4C2FFFFCFFEA", hash_generated_method = "04ABC0E9B46B2AD2BF42A8B660CBC355")
-    public final void scheduleCreateService(IBinder token, ServiceInfo info,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.988 -0500", hash_original_method = "6404222A540CAF1DD9DE4C2FFFFCFFEA", hash_generated_method = "04ABC0E9B46B2AD2BF42A8B660CBC355")
+    
+public final void scheduleCreateService(IBinder token, ServiceInfo info,
             CompatibilityInfo compatInfo) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -773,8 +793,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.572 -0500", hash_original_method = "B7457DD503BA4FDF2022DE2BEF8A4AE7", hash_generated_method = "26BEC1CEA392937A526B3E1AD93184AD")
-    public final void scheduleBindService(IBinder token, Intent intent, boolean rebind)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.991 -0500", hash_original_method = "B7457DD503BA4FDF2022DE2BEF8A4AE7", hash_generated_method = "26BEC1CEA392937A526B3E1AD93184AD")
+    
+public final void scheduleBindService(IBinder token, Intent intent, boolean rebind)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -786,8 +807,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.573 -0500", hash_original_method = "015A697DF0B7313A5A91440BE749BA70", hash_generated_method = "5C06BFA5B54D2BC16CF66E108F7A6091")
-    public final void scheduleUnbindService(IBinder token, Intent intent)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.993 -0500", hash_original_method = "015A697DF0B7313A5A91440BE749BA70", hash_generated_method = "5C06BFA5B54D2BC16CF66E108F7A6091")
+    
+public final void scheduleUnbindService(IBinder token, Intent intent)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -798,8 +820,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.574 -0500", hash_original_method = "9440CDA1B00A67ECA4131E9DDBFF94BE", hash_generated_method = "C80BF5F302BC309D95DE0391EB3DEA3B")
-    public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.996 -0500", hash_original_method = "9440CDA1B00A67ECA4131E9DDBFF94BE", hash_generated_method = "C80BF5F302BC309D95DE0391EB3DEA3B")
+    
+public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
 	    int flags, Intent args) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -818,8 +841,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.575 -0500", hash_original_method = "C0CB5C15E3301223B23F08D2A5944F63", hash_generated_method = "FA8FFAA1903B1AAAD650ADB275F3799E")
-    public final void scheduleStopService(IBinder token)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.998 -0500", hash_original_method = "C0CB5C15E3301223B23F08D2A5944F63", hash_generated_method = "FA8FFAA1903B1AAAD650ADB275F3799E")
+    
+public final void scheduleStopService(IBinder token)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -829,8 +853,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.576 -0500", hash_original_method = "4BEF103D5873B276CD3FCACF31B60747", hash_generated_method = "A6C5CECF298A4DE9F8C3B7E0DCC43BD7")
-    public final void bindApplication(String packageName, ApplicationInfo info,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.001 -0500", hash_original_method = "4BEF103D5873B276CD3FCACF31B60747", hash_generated_method = "A6C5CECF298A4DE9F8C3B7E0DCC43BD7")
+    
+public final void bindApplication(String packageName, ApplicationInfo info,
             List<ProviderInfo> providers, ComponentName testName, String profileName,
             ParcelFileDescriptor profileFd, boolean autoStopProfiler, Bundle testArgs,
             IInstrumentationWatcher testWatcher, int debugMode, boolean restrictedBackupMode,
@@ -869,8 +894,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.577 -0500", hash_original_method = "D9B97B2B196869DD6997DE8F0F3DB6A8", hash_generated_method = "BA150D214AD2FC6BC65969D419362297")
-    public final void scheduleExit() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.003 -0500", hash_original_method = "D9B97B2B196869DD6997DE8F0F3DB6A8", hash_generated_method = "BA150D214AD2FC6BC65969D419362297")
+    
+public final void scheduleExit() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         mRemote.transact(SCHEDULE_EXIT_TRANSACTION, data, null,
@@ -878,8 +904,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.578 -0500", hash_original_method = "54C10BB1160F71CB1C13A86830E02D00", hash_generated_method = "32AAABE0D2C206F38735E2EE723F4C70")
-    public final void scheduleSuicide() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.006 -0500", hash_original_method = "54C10BB1160F71CB1C13A86830E02D00", hash_generated_method = "32AAABE0D2C206F38735E2EE723F4C70")
+    
+public final void scheduleSuicide() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         mRemote.transact(SCHEDULE_SUICIDE_TRANSACTION, data, null,
@@ -887,8 +914,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.579 -0500", hash_original_method = "D665A0E549B16E7CA815762264938E1F", hash_generated_method = "0326CC7D3D96DEDBCD74512EA57668DF")
-    public final void requestThumbnail(IBinder token)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.008 -0500", hash_original_method = "D665A0E549B16E7CA815762264938E1F", hash_generated_method = "0326CC7D3D96DEDBCD74512EA57668DF")
+    
+public final void requestThumbnail(IBinder token)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -898,8 +926,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.579 -0500", hash_original_method = "2C1AC44E23EDB2D99649E68F5C228686", hash_generated_method = "B23E0DAB23F0568D6B1C2A5ECD60C3AB")
-    public final void scheduleConfigurationChanged(Configuration config)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.011 -0500", hash_original_method = "2C1AC44E23EDB2D99649E68F5C228686", hash_generated_method = "B23E0DAB23F0568D6B1C2A5ECD60C3AB")
+    
+public final void scheduleConfigurationChanged(Configuration config)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -909,8 +938,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.581 -0500", hash_original_method = "0B9C0FCD5E0F49B1C57B4B2960062787", hash_generated_method = "7AB9CA5BD169FB933A3BF55C49697A91")
-    public void updateTimeZone() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.013 -0500", hash_original_method = "0B9C0FCD5E0F49B1C57B4B2960062787", hash_generated_method = "7AB9CA5BD169FB933A3BF55C49697A91")
+    
+public void updateTimeZone() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         mRemote.transact(UPDATE_TIME_ZONE_TRANSACTION, data, null,
@@ -918,8 +948,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.582 -0500", hash_original_method = "2659A1DE78848CD92C8786506E83B52E", hash_generated_method = "02C84CE53143317E1FEC0269D3AF811F")
-    public void clearDnsCache() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.015 -0500", hash_original_method = "2659A1DE78848CD92C8786506E83B52E", hash_generated_method = "02C84CE53143317E1FEC0269D3AF811F")
+    
+public void clearDnsCache() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         mRemote.transact(CLEAR_DNS_CACHE_TRANSACTION, data, null,
@@ -927,8 +958,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.582 -0500", hash_original_method = "B79CFB3A109E11AF1583EBEB0497855B", hash_generated_method = "ACAE0709FAB9A7B1C4FA7A24E51F242B")
-    public void setHttpProxy(String proxy, String port, String exclList) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.017 -0500", hash_original_method = "B79CFB3A109E11AF1583EBEB0497855B", hash_generated_method = "ACAE0709FAB9A7B1C4FA7A24E51F242B")
+    
+public void setHttpProxy(String proxy, String port, String exclList) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeString(proxy);
@@ -938,8 +970,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.583 -0500", hash_original_method = "3372F7AC9E7DAF2A573613018E648B58", hash_generated_method = "B927F861243FE72931954624F5BC6E70")
-    public void processInBackground() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.020 -0500", hash_original_method = "3372F7AC9E7DAF2A573613018E648B58", hash_generated_method = "B927F861243FE72931954624F5BC6E70")
+    
+public void processInBackground() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         mRemote.transact(PROCESS_IN_BACKGROUND_TRANSACTION, data, null,
@@ -947,8 +980,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.584 -0500", hash_original_method = "E161C2DD10689877C1DFEA4F44C5B49B", hash_generated_method = "874F1D2DCBFF80A10B2F0F45B0FF183F")
-    public void dumpService(FileDescriptor fd, IBinder token, String[] args)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.022 -0500", hash_original_method = "E161C2DD10689877C1DFEA4F44C5B49B", hash_generated_method = "874F1D2DCBFF80A10B2F0F45B0FF183F")
+    
+public void dumpService(FileDescriptor fd, IBinder token, String[] args)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -959,8 +993,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.585 -0500", hash_original_method = "D0D9D13B7AFC8143680190DFDB1E27B8", hash_generated_method = "7E21B40C2DF13A52F364085591CD1D28")
-    public void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.024 -0500", hash_original_method = "D0D9D13B7AFC8143680190DFDB1E27B8", hash_generated_method = "7E21B40C2DF13A52F364085591CD1D28")
+    
+public void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
             int resultCode, String dataStr, Bundle extras, boolean ordered, boolean sticky)
             throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -977,8 +1012,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.586 -0500", hash_original_method = "9B139EEAA8537BD0FDDE5F0ABD5B2BE9", hash_generated_method = "7A13411A4871013BADB2B3FBF83818BE")
-    public final void scheduleLowMemory() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.027 -0500", hash_original_method = "9B139EEAA8537BD0FDDE5F0ABD5B2BE9", hash_generated_method = "7A13411A4871013BADB2B3FBF83818BE")
+    
+public final void scheduleLowMemory() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         mRemote.transact(SCHEDULE_LOW_MEMORY_TRANSACTION, data, null,
@@ -986,8 +1022,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.587 -0500", hash_original_method = "17DBD33C1569C467FA5E9849A4B7DAA5", hash_generated_method = "668A5DB86925B19AC1DE4B9A49D27346")
-    public final void scheduleActivityConfigurationChanged(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.030 -0500", hash_original_method = "17DBD33C1569C467FA5E9849A4B7DAA5", hash_generated_method = "668A5DB86925B19AC1DE4B9A49D27346")
+    
+public final void scheduleActivityConfigurationChanged(
             IBinder token) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -997,8 +1034,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.587 -0500", hash_original_method = "727EEF540008C4D098D698BFCF8CD3C2", hash_generated_method = "047BC902781895D8A6398BFA6B3534BA")
-    public void profilerControl(boolean start, String path,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.032 -0500", hash_original_method = "727EEF540008C4D098D698BFCF8CD3C2", hash_generated_method = "047BC902781895D8A6398BFA6B3534BA")
+    
+public void profilerControl(boolean start, String path,
             ParcelFileDescriptor fd, int profileType) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1016,8 +1054,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.588 -0500", hash_original_method = "732323D2FE13A948B7BB2E76176A6F90", hash_generated_method = "9BFFA9D36155A3CF53FFA3E8588A53F2")
-    public void setSchedulingGroup(int group) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.034 -0500", hash_original_method = "732323D2FE13A948B7BB2E76176A6F90", hash_generated_method = "9BFFA9D36155A3CF53FFA3E8588A53F2")
+    
+public void setSchedulingGroup(int group) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeInt(group);
@@ -1026,8 +1065,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.589 -0500", hash_original_method = "307083C9D45C8404399A6967BFC677B1", hash_generated_method = "41893BFE254FD4D1327E8390CDCF1E0C")
-    public void getMemoryInfo(Debug.MemoryInfo outInfo) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.037 -0500", hash_original_method = "307083C9D45C8404399A6967BFC677B1", hash_generated_method = "41893BFE254FD4D1327E8390CDCF1E0C")
+    
+public void getMemoryInfo(Debug.MemoryInfo outInfo) throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1038,8 +1078,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         reply.recycle();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.590 -0500", hash_original_method = "ACFC9FA9BBB19958DCB9CD2CDA3432BC", hash_generated_method = "9F13079B67E1B340A910C2841C5A58D9")
-    public void dispatchPackageBroadcast(int cmd, String[] packages) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.039 -0500", hash_original_method = "ACFC9FA9BBB19958DCB9CD2CDA3432BC", hash_generated_method = "9F13079B67E1B340A910C2841C5A58D9")
+    
+public void dispatchPackageBroadcast(int cmd, String[] packages) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeInt(cmd);
@@ -1050,8 +1091,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.591 -0500", hash_original_method = "0DA34150FDE2C37709AA14FDDE4D7856", hash_generated_method = "F1B656A08AFA9BD1E791AEB210967BBF")
-    public void scheduleCrash(String msg) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.041 -0500", hash_original_method = "0DA34150FDE2C37709AA14FDDE4D7856", hash_generated_method = "F1B656A08AFA9BD1E791AEB210967BBF")
+    
+public void scheduleCrash(String msg) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeString(msg);
@@ -1061,8 +1103,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.591 -0500", hash_original_method = "14C0866A00E3EF07677471FCFBE5006D", hash_generated_method = "7C23DB5F40EDFC3138299924DC08C338")
-    public void dumpHeap(boolean managed, String path,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.043 -0500", hash_original_method = "14C0866A00E3EF07677471FCFBE5006D", hash_generated_method = "7C23DB5F40EDFC3138299924DC08C338")
+    
+public void dumpHeap(boolean managed, String path,
             ParcelFileDescriptor fd) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1079,8 +1122,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.592 -0500", hash_original_method = "7214E8ED977AF65264275D69BD7546BC", hash_generated_method = "C1AE6E651A598938A33575C23A351361")
-    public void dumpActivity(FileDescriptor fd, IBinder token, String prefix, String[] args)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.045 -0500", hash_original_method = "7214E8ED977AF65264275D69BD7546BC", hash_generated_method = "C1AE6E651A598938A33575C23A351361")
+    
+public void dumpActivity(FileDescriptor fd, IBinder token, String prefix, String[] args)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1092,16 +1136,18 @@ class ApplicationThreadProxy implements IApplicationThread {
         data.recycle();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.593 -0500", hash_original_method = "A6BD18E7AC0ECE0599305450F757BFCE", hash_generated_method = "3DE2C4A7538826C2FD90ABB22B8B6B1D")
-    public void setCoreSettings(Bundle coreSettings) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.048 -0500", hash_original_method = "A6BD18E7AC0ECE0599305450F757BFCE", hash_generated_method = "3DE2C4A7538826C2FD90ABB22B8B6B1D")
+    
+public void setCoreSettings(Bundle coreSettings) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeBundle(coreSettings);
         mRemote.transact(SET_CORE_SETTINGS_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.595 -0500", hash_original_method = "D2FA44681587FB29A159697C062E818E", hash_generated_method = "0A1BF5EC6EA1F3BA65EE3CF9CDFBEEB7")
-    public void updatePackageCompatibilityInfo(String pkg, CompatibilityInfo info)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.050 -0500", hash_original_method = "D2FA44681587FB29A159697C062E818E", hash_generated_method = "0A1BF5EC6EA1F3BA65EE3CF9CDFBEEB7")
+    
+public void updatePackageCompatibilityInfo(String pkg, CompatibilityInfo info)
             throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1111,8 +1157,9 @@ class ApplicationThreadProxy implements IApplicationThread {
                 IBinder.FLAG_ONEWAY);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.596 -0500", hash_original_method = "2D27841853A53E2CEBF025C44DD03509", hash_generated_method = "DFC13A93B430963CDA63C0FB28972FDC")
-    public void scheduleTrimMemory(int level) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.053 -0500", hash_original_method = "2D27841853A53E2CEBF025C44DD03509", hash_generated_method = "DFC13A93B430963CDA63C0FB28972FDC")
+    
+public void scheduleTrimMemory(int level) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeInt(level);
@@ -1120,8 +1167,9 @@ class ApplicationThreadProxy implements IApplicationThread {
                 IBinder.FLAG_ONEWAY);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.597 -0500", hash_original_method = "2FCBBED71EEEC4941D4B92155F73ADA0", hash_generated_method = "6D983E4C1BC7E0CC8BB8DB1DFDCCDC55")
-    public Debug.MemoryInfo dumpMemInfo(FileDescriptor fd, boolean checkin, boolean all,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.055 -0500", hash_original_method = "2FCBBED71EEEC4941D4B92155F73ADA0", hash_generated_method = "6D983E4C1BC7E0CC8BB8DB1DFDCCDC55")
+    
+public Debug.MemoryInfo dumpMemInfo(FileDescriptor fd, boolean checkin, boolean all,
             String[] args) throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -1139,8 +1187,9 @@ class ApplicationThreadProxy implements IApplicationThread {
         return info;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.598 -0500", hash_original_method = "A649B6B1FE51F3F8AC43A3FCCC575DB3", hash_generated_method = "FADE2085EA0A408B02D104A90E30C3BF")
-    public void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.057 -0500", hash_original_method = "A649B6B1FE51F3F8AC43A3FCCC575DB3", hash_generated_method = "FADE2085EA0A408B02D104A90E30C3BF")
+    
+public void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeFileDescriptor(fd);

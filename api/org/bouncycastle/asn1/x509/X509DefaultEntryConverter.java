@@ -32,8 +32,9 @@ public class X509DefaultEntryConverter extends X509NameEntryConverter {
      * @param value the value associated with it
      * @return the ASN.1 equivalent for the string value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.869 -0500", hash_original_method = "E0075DF75B4E99D6DCA984CA2F76B1C5", hash_generated_method = "65C23488AA7B25DC20A14CAB8DE26F94")
-    public DERObject getConvertedValue(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.190 -0500", hash_original_method = "E0075DF75B4E99D6DCA984CA2F76B1C5", hash_generated_method = "65C23488AA7B25DC20A14CAB8DE26F94")
+    
+public DERObject getConvertedValue(
         DERObjectIdentifier  oid,
         String               value)
     {

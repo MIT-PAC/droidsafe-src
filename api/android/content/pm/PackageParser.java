@@ -56,8 +56,9 @@ import com.android.internal.util.XmlUtils;
 
 public class PackageParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.868 -0500", hash_original_method = "72C97BC0A6F7F87BCA4FBB5B5356EA82", hash_generated_method = "F68BEDE219F72447698AE74F287EF92B")
-    private static final boolean isPackageFilename(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.480 -0500", hash_original_method = "72C97BC0A6F7F87BCA4FBB5B5356EA82", hash_generated_method = "F68BEDE219F72447698AE74F287EF92B")
+    
+private static final boolean isPackageFilename(String name) {
         return name.endsWith(".apk");
     }
 
@@ -67,8 +68,9 @@ public class PackageParser {
      * @param p the parsed package.
      * @param flags indicating which optional information is included.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.870 -0500", hash_original_method = "38A030F4DF6BC8DFDE06E024DE0CEB08", hash_generated_method = "0AEBBD1AB1E3468215DF364F5F23F6C5")
-    public static PackageInfo generatePackageInfo(PackageParser.Package p,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.485 -0500", hash_original_method = "38A030F4DF6BC8DFDE06E024DE0CEB08", hash_generated_method = "0AEBBD1AB1E3468215DF364F5F23F6C5")
+    
+public static PackageInfo generatePackageInfo(PackageParser.Package p,
             int gids[], int flags, long firstInstallTime, long lastUpdateTime) {
 
         PackageInfo pi = new PackageInfo();
@@ -223,8 +225,9 @@ public class PackageParser {
      * @param flags Special parse flags
      * @return PackageLite object with package information or null on failure.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.883 -0500", hash_original_method = "7D7BCAA297C61EC26138540C898FB792", hash_generated_method = "BEA49D3AA463F054A325D7AC0CE82A31")
-    public static PackageLite parsePackageLite(String packageFilePath, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.521 -0500", hash_original_method = "7D7BCAA297C61EC26138540C898FB792", hash_generated_method = "BEA49D3AA463F054A325D7AC0CE82A31")
+    
+public static PackageLite parsePackageLite(String packageFilePath, int flags) {
         AssetManager assmgr = null;
         final XmlResourceParser parser;
         final Resources res;
@@ -269,8 +272,9 @@ public class PackageParser {
         return packageLite;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.884 -0500", hash_original_method = "374948F6F76AAA09931A96A787759CD2", hash_generated_method = "062D1F11700DE49E41477C0CBC302FF0")
-    private static String validateName(String name, boolean requiresSeparator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.524 -0500", hash_original_method = "374948F6F76AAA09931A96A787759CD2", hash_generated_method = "062D1F11700DE49E41477C0CBC302FF0")
+    
+private static String validateName(String name, boolean requiresSeparator) {
         final int N = name.length();
         boolean hasSep = false;
         boolean front = true;
@@ -296,8 +300,9 @@ public class PackageParser {
                 ? null : "must have at least one '.' separator";
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.885 -0500", hash_original_method = "6B3D563B58D4F96DE33030FBF66A336A", hash_generated_method = "1B3BF268BDA96E13F5C88CE2B6B983B8")
-    private static String parsePackageName(XmlPullParser parser,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.527 -0500", hash_original_method = "6B3D563B58D4F96DE33030FBF66A336A", hash_generated_method = "1B3BF268BDA96E13F5C88CE2B6B983B8")
+    
+private static String parsePackageName(XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError)
             throws IOException, XmlPullParserException {
 
@@ -332,8 +337,9 @@ public class PackageParser {
         return pkgName.intern();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.887 -0500", hash_original_method = "903802580AFCCC0E0C0C83CC7450AE55", hash_generated_method = "C0481480429C41A4578A3687B007D765")
-    private static PackageLite parsePackageLite(Resources res, XmlPullParser parser,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.531 -0500", hash_original_method = "903802580AFCCC0E0C0C83CC7450AE55", hash_generated_method = "C0481480429C41A4578A3687B007D765")
+    
+private static PackageLite parsePackageLite(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws IOException,
             XmlPullParserException {
 
@@ -398,8 +404,9 @@ public class PackageParser {
     /**
      * Temporary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.888 -0500", hash_original_method = "72E471693D850A0BFE1FD60B22ACF701", hash_generated_method = "80391645FBEB741B513F9B9FA0266C30")
-    static public Signature stringToSignature(String str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.534 -0500", hash_original_method = "72E471693D850A0BFE1FD60B22ACF701", hash_generated_method = "80391645FBEB741B513F9B9FA0266C30")
+    
+static public Signature stringToSignature(String str) {
         final int N = str.length();
         byte[] sig = new byte[N];
         for (int i=0; i<N; i++) {
@@ -408,8 +415,9 @@ public class PackageParser {
         return new Signature(sig);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.894 -0500", hash_original_method = "BE6ACE39D7338BA32068799FDBB53169", hash_generated_method = "5114AB970AF376188D02B9F79EE2AB72")
-    private static String buildClassName(String pkg, CharSequence clsSeq,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.548 -0500", hash_original_method = "BE6ACE39D7338BA32068799FDBB53169", hash_generated_method = "5114AB970AF376188D02B9F79EE2AB72")
+    
+private static String buildClassName(String pkg, CharSequence clsSeq,
             String[] outError) {
         if (clsSeq == null || clsSeq.length() <= 0) {
             outError[0] = "Empty class name in package " + pkg;
@@ -433,8 +441,9 @@ public class PackageParser {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.895 -0500", hash_original_method = "B7A874DF1AB738544036771E9904B7D1", hash_generated_method = "0A340A4B44ED0BAA744122050A73F05C")
-    private static String buildCompoundName(String pkg,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.551 -0500", hash_original_method = "B7A874DF1AB738544036771E9904B7D1", hash_generated_method = "0A340A4B44ED0BAA744122050A73F05C")
+    
+private static String buildCompoundName(String pkg,
             CharSequence procSeq, String type, String[] outError) {
         String proc = procSeq.toString();
         char c = proc.charAt(0);
@@ -462,8 +471,9 @@ public class PackageParser {
         return proc.intern();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.896 -0500", hash_original_method = "F79F0069E41E7C1875AB943D60951387", hash_generated_method = "CB8A37C87D653C1260C9B8C8377D325B")
-    private static String buildProcessName(String pkg, String defProc,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.554 -0500", hash_original_method = "F79F0069E41E7C1875AB943D60951387", hash_generated_method = "CB8A37C87D653C1260C9B8C8377D325B")
+    
+private static String buildProcessName(String pkg, String defProc,
             CharSequence procSeq, int flags, String[] separateProcesses,
             String[] outError) {
         if ((flags&PARSE_IGNORE_PROCESSES) != 0 && !"system".equals(procSeq)) {
@@ -483,8 +493,9 @@ public class PackageParser {
         return buildCompoundName(pkg, procSeq, "process", outError);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.897 -0500", hash_original_method = "32096F88962FEB57039D62B42E8373BE", hash_generated_method = "E1E60AE288F83B30A24DF59607635C7F")
-    private static String buildTaskAffinityName(String pkg, String defProc,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.557 -0500", hash_original_method = "32096F88962FEB57039D62B42E8373BE", hash_generated_method = "E1E60AE288F83B30A24DF59607635C7F")
+    
+private static String buildTaskAffinityName(String pkg, String defProc,
             CharSequence procSeq, String[] outError) {
         if (procSeq == null) {
             return defProc;
@@ -495,8 +506,9 @@ public class PackageParser {
         return buildCompoundName(pkg, procSeq, "taskAffinity", outError);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.921 -0500", hash_original_method = "111FA512C44DA33ADE25A2DFFE0A4F74", hash_generated_method = "03EED201C006A36FFC98370A1D6C4245")
-    private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.619 -0500", hash_original_method = "111FA512C44DA33ADE25A2DFFE0A4F74", hash_generated_method = "03EED201C006A36FFC98370A1D6C4245")
+    
+private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException,
             IOException {
         final TypedArray sa = res.obtainAttributes(attrs,
@@ -553,8 +565,9 @@ public class PackageParser {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.985 -0500", hash_original_method = "CAD140A669B97EA92CBF60BA355D73F0", hash_generated_method = "D62D34A6B8005972C60E01E93BD1BB92")
-    private static boolean copyNeeded(int flags, Package p, Bundle metaData) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.799 -0500", hash_original_method = "CAD140A669B97EA92CBF60BA355D73F0", hash_generated_method = "D62D34A6B8005972C60E01E93BD1BB92")
+    
+private static boolean copyNeeded(int flags, Package p, Bundle metaData) {
         if (p.mSetEnabled != PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
             boolean enabled = p.mSetEnabled == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
             if (p.applicationInfo.enabled != enabled) {
@@ -572,8 +585,9 @@ public class PackageParser {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.986 -0500", hash_original_method = "18A902B290E2E89AC881C8EFCD66A2AB", hash_generated_method = "2FE73977995964B6EF67C354794C3EF5")
-    public static ApplicationInfo generateApplicationInfo(Package p, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.803 -0500", hash_original_method = "18A902B290E2E89AC881C8EFCD66A2AB", hash_generated_method = "2FE73977995964B6EF67C354794C3EF5")
+    
+public static ApplicationInfo generateApplicationInfo(Package p, int flags) {
         if (p == null) return null;
         if (!copyNeeded(flags, p, null)) {
             // CompatibilityMode is global state. It's safe to modify the instance
@@ -615,8 +629,9 @@ public class PackageParser {
         return ai;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.987 -0500", hash_original_method = "4F16162E163F3F1B8686121130365841", hash_generated_method = "C1B245AF3DED7F35C4C7A6D063520B49")
-    public static final PermissionInfo generatePermissionInfo(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.805 -0500", hash_original_method = "4F16162E163F3F1B8686121130365841", hash_generated_method = "C1B245AF3DED7F35C4C7A6D063520B49")
+    
+public static final PermissionInfo generatePermissionInfo(
             Permission p, int flags) {
         if (p == null) return null;
         if ((flags&PackageManager.GET_META_DATA) == 0) {
@@ -627,8 +642,9 @@ public class PackageParser {
         return pi;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.988 -0500", hash_original_method = "9F51850244FF4B7691C7FEFF9F6F1B1B", hash_generated_method = "EA25FEE9B4AF24DBE4C8384DE95DBB98")
-    public static final PermissionGroupInfo generatePermissionGroupInfo(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.807 -0500", hash_original_method = "9F51850244FF4B7691C7FEFF9F6F1B1B", hash_generated_method = "EA25FEE9B4AF24DBE4C8384DE95DBB98")
+    
+public static final PermissionGroupInfo generatePermissionGroupInfo(
             PermissionGroup pg, int flags) {
         if (pg == null) return null;
         if ((flags&PackageManager.GET_META_DATA) == 0) {
@@ -639,8 +655,9 @@ public class PackageParser {
         return pgi;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.993 -0500", hash_original_method = "8ED61B4C8FEFF188F2AE75668973FBE7", hash_generated_method = "C1DD9B6327681A6162B462CA0C52C937")
-    public static final ActivityInfo generateActivityInfo(Activity a,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.828 -0500", hash_original_method = "8ED61B4C8FEFF188F2AE75668973FBE7", hash_generated_method = "C1DD9B6327681A6162B462CA0C52C937")
+    
+public static final ActivityInfo generateActivityInfo(Activity a,
             int flags) {
         if (a == null) return null;
         if (!copyNeeded(flags, a.owner, a.metaData)) {
@@ -653,8 +670,9 @@ public class PackageParser {
         return ai;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.000 -0500", hash_original_method = "B2C9CF84770AAE8BF4EE944BF63601B9", hash_generated_method = "31672A183F7C4BDFD822156BD5FBC39A")
-    public static final ServiceInfo generateServiceInfo(Service s, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.843 -0500", hash_original_method = "B2C9CF84770AAE8BF4EE944BF63601B9", hash_generated_method = "31672A183F7C4BDFD822156BD5FBC39A")
+    
+public static final ServiceInfo generateServiceInfo(Service s, int flags) {
         if (s == null) return null;
         if (!copyNeeded(flags, s.owner, s.metaData)) {
             return s.info;
@@ -666,8 +684,9 @@ public class PackageParser {
         return si;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.007 -0500", hash_original_method = "324803AE93E479FD09C8CA1655E1A106", hash_generated_method = "B14D632DFD5C0CF9B136C25C935E42D8")
-    public static final ProviderInfo generateProviderInfo(Provider p,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.864 -0500", hash_original_method = "324803AE93E479FD09C8CA1655E1A106", hash_generated_method = "B14D632DFD5C0CF9B136C25C935E42D8")
+    
+public static final ProviderInfo generateProviderInfo(Provider p,
             int flags) {
         if (p == null) return null;
         if (!copyNeeded(flags, p.owner, p.metaData)
@@ -685,8 +704,9 @@ public class PackageParser {
         return pi;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.013 -0500", hash_original_method = "CDA3E7B404E43C4B1A6AB9F993E84DFF", hash_generated_method = "0E5941F7F793D070DCF06E1BA20B98C3")
-    public static final InstrumentationInfo generateInstrumentationInfo(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.879 -0500", hash_original_method = "CDA3E7B404E43C4B1A6AB9F993E84DFF", hash_generated_method = "0E5941F7F793D070DCF06E1BA20B98C3")
+    
+public static final InstrumentationInfo generateInstrumentationInfo(
             Instrumentation i, int flags) {
         if (i == null) return null;
         if ((flags&PackageManager.GET_META_DATA) == 0) {
@@ -700,23 +720,24 @@ public class PackageParser {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.026 -0500", hash_original_method = "F4D7076C32CD297FD655BA18A652F524", hash_generated_method = "64241781A3A13653B04D34555A2FABAF")
-    public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.915 -0500", hash_original_method = "F4D7076C32CD297FD655BA18A652F524", hash_generated_method = "64241781A3A13653B04D34555A2FABAF")
+    
+public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled) {
         sCompatibilityModeEnabled = compatibilityModeEnabled;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.823 -0500", hash_original_field = "680A313F6F4646E328FAB8F0A1753A64", hash_generated_field = "252B27621B0C95282FCD74EADD1D3B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.354 -0500", hash_original_field = "680A313F6F4646E328FAB8F0A1753A64", hash_generated_field = "252B27621B0C95282FCD74EADD1D3B06")
 
     private static final boolean DEBUG_JAR = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.824 -0500", hash_original_field = "1F510A5666FCC900F68E713014FEF0E9", hash_generated_field = "74CDFDDFB4ADEE936A3A2D224333889E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.357 -0500", hash_original_field = "1F510A5666FCC900F68E713014FEF0E9", hash_generated_field = "74CDFDDFB4ADEE936A3A2D224333889E")
 
     private static final boolean DEBUG_PARSER = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.825 -0500", hash_original_field = "14C5B4DAD51835B9D1CAC112FA9E96CD", hash_generated_field = "E528C7EA12190339B7B5F859330E06A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.359 -0500", hash_original_field = "14C5B4DAD51835B9D1CAC112FA9E96CD", hash_generated_field = "E528C7EA12190339B7B5F859330E06A3")
 
     private static final boolean DEBUG_BACKUP = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.825 -0500", hash_original_field = "5C950020DA9370B657965E3DE42F3AE4", hash_generated_field = "4F97594385EB4442B91157C93FC88149")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.362 -0500", hash_original_field = "5C950020DA9370B657965E3DE42F3AE4", hash_generated_field = "4F97594385EB4442B91157C93FC88149")
 
     private static final String ANDROID_MANIFEST_FILENAME = "AndroidManifest.xml";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.831 -0500", hash_original_field = "2CEFD5049C237C64DF0797080F7B36D6", hash_generated_field = "4E7CCA62AA0883D7BED63D0B9D564192")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.377 -0500", hash_original_field = "2CEFD5049C237C64DF0797080F7B36D6", hash_generated_field = "4E7CCA62AA0883D7BED63D0B9D564192")
 
     public static final PackageParser.NewPermissionInfo NEW_PERMISSIONS[] =
         new PackageParser.NewPermissionInfo[] {
@@ -725,111 +746,113 @@ public class PackageParser {
             new PackageParser.NewPermissionInfo(android.Manifest.permission.READ_PHONE_STATE,
                     android.os.Build.VERSION_CODES.DONUT, 0)
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.835 -0500", hash_original_field = "BF3301EF6D31C786401AD1D2EFADE93C", hash_generated_field = "905C38351D97D12004B7C4F50D80A9E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.387 -0500", hash_original_field = "BF3301EF6D31C786401AD1D2EFADE93C", hash_generated_field = "905C38351D97D12004B7C4F50D80A9E2")
 
     private static final int SDK_VERSION = Build.VERSION.SDK_INT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.836 -0500", hash_original_field = "5BA6892AD660FFBF674095E829F436D3", hash_generated_field = "F491825EC7555754BC21523DA68EFCCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.389 -0500", hash_original_field = "5BA6892AD660FFBF674095E829F436D3", hash_generated_field = "F491825EC7555754BC21523DA68EFCCB")
 
     private static final String SDK_CODENAME = "REL".equals(Build.VERSION.CODENAME)
             ? null : Build.VERSION.CODENAME;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.837 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "F668D47897E28620543685D1E68BB2A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.394 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "F668D47897E28620543685D1E68BB2A5")
 
 
     private static final Object mSync = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.838 -0500", hash_original_field = "AA4CA85B0A9FDAAA8AA5E18A1DAB542E", hash_generated_field = "C91A03D8C0281FD6FE8F7562B14775C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.396 -0500", hash_original_field = "AA4CA85B0A9FDAAA8AA5E18A1DAB542E", hash_generated_field = "C91A03D8C0281FD6FE8F7562B14775C4")
 
     private static WeakReference<byte[]> mReadBuffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.839 -0500", hash_original_field = "F7CDB5046ED291FCCD30C88E8D784F10", hash_generated_field = "23A0E0B3C74959CD54FEA5BC7440ADA6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.399 -0500", hash_original_field = "F7CDB5046ED291FCCD30C88E8D784F10", hash_generated_field = "23A0E0B3C74959CD54FEA5BC7440ADA6")
 
 
     private static boolean sCompatibilityModeEnabled = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.840 -0500", hash_original_field = "1F051C1B338C25A1719CB53D59B339BE", hash_generated_field = "1FDCA6654F70EEBFD65FBF1AF519E5AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.401 -0500", hash_original_field = "1F051C1B338C25A1719CB53D59B339BE", hash_generated_field = "1FDCA6654F70EEBFD65FBF1AF519E5AA")
 
     private static final int PARSE_DEFAULT_INSTALL_LOCATION = PackageInfo.INSTALL_LOCATION_UNSPECIFIED;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.864 -0500", hash_original_field = "A6DE6C9FE2681C7700168264C3725113", hash_generated_field = "9B95BCC659E00681D48AF406E80790EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.468 -0500", hash_original_field = "A6DE6C9FE2681C7700168264C3725113", hash_generated_field = "9B95BCC659E00681D48AF406E80790EA")
 
     private static final boolean RIGID_PARSER = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.865 -0500", hash_original_field = "932DCC841B95F57B0DA182694B3E0EE9", hash_generated_field = "DD8609BA0B76A819C8573C819B7348A6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.470 -0500", hash_original_field = "932DCC841B95F57B0DA182694B3E0EE9", hash_generated_field = "DD8609BA0B76A819C8573C819B7348A6")
 
 
     private static final String TAG = "PackageParser";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.872 -0500", hash_original_field = "E7BAC5E9490EC58238EC4C79E12B07D1", hash_generated_field = "4B52CDD8E5ADCA354868822A64689A48")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.490 -0500", hash_original_field = "E7BAC5E9490EC58238EC4C79E12B07D1", hash_generated_field = "4B52CDD8E5ADCA354868822A64689A48")
 
 
     public final static int PARSE_IS_SYSTEM = 1<<0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.873 -0500", hash_original_field = "2913D5634054C90EA1807E9EFA77B6CF", hash_generated_field = "D16481D6B9C894AA8F9AD72D6FF3BE41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.492 -0500", hash_original_field = "2913D5634054C90EA1807E9EFA77B6CF", hash_generated_field = "D16481D6B9C894AA8F9AD72D6FF3BE41")
 
     public final static int PARSE_CHATTY = 1<<1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.874 -0500", hash_original_field = "EE39DF329D11FABA0A34223FADC0AD24", hash_generated_field = "D85F2CA29F944D705DACCE7CFE1CCC41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.495 -0500", hash_original_field = "EE39DF329D11FABA0A34223FADC0AD24", hash_generated_field = "D85F2CA29F944D705DACCE7CFE1CCC41")
 
     public final static int PARSE_MUST_BE_APK = 1<<2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.875 -0500", hash_original_field = "0D4D81EC06D8EF24373CC0512646031F", hash_generated_field = "28588A534392FDDD099636AF774A3125")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.498 -0500", hash_original_field = "0D4D81EC06D8EF24373CC0512646031F", hash_generated_field = "28588A534392FDDD099636AF774A3125")
 
     public final static int PARSE_IGNORE_PROCESSES = 1<<3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.876 -0500", hash_original_field = "9826C91C24F75D3D514083E02269041C", hash_generated_field = "55AEA484B033A779430356E4D8F71309")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.501 -0500", hash_original_field = "9826C91C24F75D3D514083E02269041C", hash_generated_field = "55AEA484B033A779430356E4D8F71309")
 
     public final static int PARSE_FORWARD_LOCK = 1<<4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.876 -0500", hash_original_field = "1CBC5BFE02FAD2CF3A837BA190963F9C", hash_generated_field = "E1C3B202E87D4E3614B1E66CD70ED663")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.503 -0500", hash_original_field = "1CBC5BFE02FAD2CF3A837BA190963F9C", hash_generated_field = "E1C3B202E87D4E3614B1E66CD70ED663")
 
     public final static int PARSE_ON_SDCARD = 1<<5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.877 -0500", hash_original_field = "4AC215700D1C395D8D52A35730EE7DBA", hash_generated_field = "3D41C84BD91D95AD71586AAACE412C36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.505 -0500", hash_original_field = "4AC215700D1C395D8D52A35730EE7DBA", hash_generated_field = "3D41C84BD91D95AD71586AAACE412C36")
 
     public final static int PARSE_IS_SYSTEM_DIR = 1<<6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.922 -0500", hash_original_field = "59A90DB5D87AFDE3F77EBA16A5271315", hash_generated_field = "1E8F77612F2ACC70744F2BEF9D03FB1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.621 -0500", hash_original_field = "59A90DB5D87AFDE3F77EBA16A5271315", hash_generated_field = "1E8F77612F2ACC70744F2BEF9D03FB1E")
 
 
     private static final String ANDROID_RESOURCES
             = "http://schemas.android.com/apk/res/android";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.832 -0500", hash_original_field = "5E985BE30D34F2E0FE7988CAAB75FF22", hash_generated_field = "57425F83C121F61E241FD46B0ED62373")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.379 -0500", hash_original_field = "5E985BE30D34F2E0FE7988CAAB75FF22", hash_generated_field = "57425F83C121F61E241FD46B0ED62373")
 
 
     private String mArchiveSourcePath;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.833 -0500", hash_original_field = "E6B9EAEA02C9911B8AFDEDB52C3E24D9", hash_generated_field = "642D094C7AB0E1931029DBA1482587AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.382 -0500", hash_original_field = "E6B9EAEA02C9911B8AFDEDB52C3E24D9", hash_generated_field = "642D094C7AB0E1931029DBA1482587AA")
 
     private String[] mSeparateProcesses;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.834 -0500", hash_original_field = "ECD0FF8120A340F61DE545FF6F5422A9", hash_generated_field = "7D4097DC031AD87620CBAE061A799BA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.384 -0500", hash_original_field = "ECD0FF8120A340F61DE545FF6F5422A9", hash_generated_field = "7D4097DC031AD87620CBAE061A799BA0")
 
     private boolean mOnlyCoreApps;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.836 -0500", hash_original_field = "1787F62A32F37AC744CB4C7C3DE0D384", hash_generated_field = "809C28E1E054CBEE627F51452F62162E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.392 -0500", hash_original_field = "1787F62A32F37AC744CB4C7C3DE0D384", hash_generated_field = "809C28E1E054CBEE627F51452F62162E")
 
 
     private int mParseError = PackageManager.INSTALL_SUCCEEDED;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.859 -0500", hash_original_field = "0865FE81994682067F2D744C146263FF", hash_generated_field = "5C8F41F6CF659609357D809C60CDDF3A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.456 -0500", hash_original_field = "0865FE81994682067F2D744C146263FF", hash_generated_field = "5C8F41F6CF659609357D809C60CDDF3A")
 
 
     private ParsePackageItemArgs mParseInstrumentationArgs;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.861 -0500", hash_original_field = "EF8B3B9722DB40E9C36202B3E409B82A", hash_generated_field = "65DE09F18AF72BEAF7CDD76662D74019")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.459 -0500", hash_original_field = "EF8B3B9722DB40E9C36202B3E409B82A", hash_generated_field = "65DE09F18AF72BEAF7CDD76662D74019")
 
     private ParseComponentArgs mParseActivityArgs;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.861 -0500", hash_original_field = "8A6E260BB8FADC1D1B084A7815ABB25B", hash_generated_field = "ACF41630823F563A230447D3D7E52494")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.461 -0500", hash_original_field = "8A6E260BB8FADC1D1B084A7815ABB25B", hash_generated_field = "ACF41630823F563A230447D3D7E52494")
 
     private ParseComponentArgs mParseActivityAliasArgs;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.862 -0500", hash_original_field = "6A80C6B81848AB1394AA3B49050DBC18", hash_generated_field = "9225E738D789335DA1CFA407299C2B0D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.463 -0500", hash_original_field = "6A80C6B81848AB1394AA3B49050DBC18", hash_generated_field = "9225E738D789335DA1CFA407299C2B0D")
 
     private ParseComponentArgs mParseServiceArgs;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.863 -0500", hash_original_field = "80375BBFF3AC5BBA1CE69D4FA2DD3883", hash_generated_field = "319560D498F8EDD3EA50CA6B89B5AD1B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.465 -0500", hash_original_field = "80375BBFF3AC5BBA1CE69D4FA2DD3883", hash_generated_field = "319560D498F8EDD3EA50CA6B89B5AD1B")
 
     private ParseComponentArgs mParseProviderArgs;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.865 -0500", hash_original_method = "DDBED2CCEF7CE747A37B4CF69A21D51E", hash_generated_method = "1CC80E319B65BA017C53BE22DCB8F351")
-    public PackageParser(String archiveSourcePath) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.472 -0500", hash_original_method = "DDBED2CCEF7CE747A37B4CF69A21D51E", hash_generated_method = "1CC80E319B65BA017C53BE22DCB8F351")
+    
+public PackageParser(String archiveSourcePath) {
         mArchiveSourcePath = archiveSourcePath;
     }
 
     
     public static class NewPermissionInfo {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.827 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.365 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
 
         public  String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.827 -0500", hash_original_field = "851A374D8B206493A1DDEF73226FFD67", hash_generated_field = "BC6F74C41FF51DC8E932B8D548DFA77F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.367 -0500", hash_original_field = "851A374D8B206493A1DDEF73226FFD67", hash_generated_field = "BC6F74C41FF51DC8E932B8D548DFA77F")
 
         public  int sdkVersion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.828 -0500", hash_original_field = "8C61D5D73EEB7790DC6637F2CCDFEEDC", hash_generated_field = "110F458F9380E184018D0C29262B9616")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.370 -0500", hash_original_field = "8C61D5D73EEB7790DC6637F2CCDFEEDC", hash_generated_field = "110F458F9380E184018D0C29262B9616")
 
         public  int fileVersion;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.830 -0500", hash_original_method = "2CD4C5E2A660B34C44D0A141A2AEA4A5", hash_generated_method = "1455C509D2BB56A5C40367EA2EBB32FF")
-        public NewPermissionInfo(String name, int sdkVersion, int fileVersion) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.373 -0500", hash_original_method = "2CD4C5E2A660B34C44D0A141A2AEA4A5", hash_generated_method = "1455C509D2BB56A5C40367EA2EBB32FF")
+        
+public NewPermissionInfo(String name, int sdkVersion, int fileVersion) {
             this.name = name;
             this.sdkVersion = sdkVersion;
             this.fileVersion = fileVersion;
@@ -841,34 +864,35 @@ public class PackageParser {
 
     
     static class ParsePackageItemArgs {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.841 -0500", hash_original_field = "63E7E49220BEC65CFB906D3D26FF5320", hash_generated_field = "63E7E49220BEC65CFB906D3D26FF5320")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.403 -0500", hash_original_field = "63E7E49220BEC65CFB906D3D26FF5320", hash_generated_field = "63E7E49220BEC65CFB906D3D26FF5320")
 
          Package owner;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.841 -0500", hash_original_field = "291217E682224D693BB6F37B520F9B6C", hash_generated_field = "291217E682224D693BB6F37B520F9B6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.407 -0500", hash_original_field = "291217E682224D693BB6F37B520F9B6C", hash_generated_field = "291217E682224D693BB6F37B520F9B6C")
 
          String[] outError;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.842 -0500", hash_original_field = "0B58898276367165952073A704F8E936", hash_generated_field = "0B58898276367165952073A704F8E936")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.409 -0500", hash_original_field = "0B58898276367165952073A704F8E936", hash_generated_field = "0B58898276367165952073A704F8E936")
 
          int nameRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.843 -0500", hash_original_field = "72766807210949DB14E0A53D32EEFA42", hash_generated_field = "72766807210949DB14E0A53D32EEFA42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.411 -0500", hash_original_field = "72766807210949DB14E0A53D32EEFA42", hash_generated_field = "72766807210949DB14E0A53D32EEFA42")
 
          int labelRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.844 -0500", hash_original_field = "16A2D6444BA4128F5DED925DDCED14C3", hash_generated_field = "16A2D6444BA4128F5DED925DDCED14C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.414 -0500", hash_original_field = "16A2D6444BA4128F5DED925DDCED14C3", hash_generated_field = "16A2D6444BA4128F5DED925DDCED14C3")
 
          int iconRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.845 -0500", hash_original_field = "9076C14F4A6A5083F7B4331FB7F68DE2", hash_generated_field = "9076C14F4A6A5083F7B4331FB7F68DE2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.416 -0500", hash_original_field = "9076C14F4A6A5083F7B4331FB7F68DE2", hash_generated_field = "9076C14F4A6A5083F7B4331FB7F68DE2")
 
          int logoRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.846 -0500", hash_original_field = "FFCA994A2F44B678330E924D8C87385D", hash_generated_field = "FFCA994A2F44B678330E924D8C87385D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.418 -0500", hash_original_field = "FFCA994A2F44B678330E924D8C87385D", hash_generated_field = "FFCA994A2F44B678330E924D8C87385D")
 
         
         String tag;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.847 -0500", hash_original_field = "F31D05FD6AB3B23194ACB45C1F7F8DB9", hash_generated_field = "F31D05FD6AB3B23194ACB45C1F7F8DB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.420 -0500", hash_original_field = "F31D05FD6AB3B23194ACB45C1F7F8DB9", hash_generated_field = "F31D05FD6AB3B23194ACB45C1F7F8DB9")
 
         TypedArray sa;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.847 -0500", hash_original_method = "FEBED5B917290B280BC232B6F93C8DA6", hash_generated_method = "FEBED5B917290B280BC232B6F93C8DA6")
-        ParsePackageItemArgs(Package _owner, String[] _outError,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.423 -0500", hash_original_method = "FEBED5B917290B280BC232B6F93C8DA6", hash_generated_method = "FEBED5B917290B280BC232B6F93C8DA6")
+        
+ParsePackageItemArgs(Package _owner, String[] _outError,
                 int _nameRes, int _labelRes, int _iconRes, int _logoRes) {
             owner = _owner;
             outError = _outError;
@@ -884,24 +908,25 @@ public class PackageParser {
 
     
     static class ParseComponentArgs extends ParsePackageItemArgs {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.849 -0500", hash_original_field = "52628BA19847DEC6DD967DC512B6341E", hash_generated_field = "52628BA19847DEC6DD967DC512B6341E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.427 -0500", hash_original_field = "52628BA19847DEC6DD967DC512B6341E", hash_generated_field = "52628BA19847DEC6DD967DC512B6341E")
 
          String[] sepProcesses;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.850 -0500", hash_original_field = "98EAE5992470306073D805F3DE4D2B98", hash_generated_field = "98EAE5992470306073D805F3DE4D2B98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.429 -0500", hash_original_field = "98EAE5992470306073D805F3DE4D2B98", hash_generated_field = "98EAE5992470306073D805F3DE4D2B98")
 
          int processRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.851 -0500", hash_original_field = "1C23F3ABB5154D4340D3FAF2DBF4B754", hash_generated_field = "1C23F3ABB5154D4340D3FAF2DBF4B754")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.432 -0500", hash_original_field = "1C23F3ABB5154D4340D3FAF2DBF4B754", hash_generated_field = "1C23F3ABB5154D4340D3FAF2DBF4B754")
 
          int descriptionRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.852 -0500", hash_original_field = "DBC8C6552821B500EDF219C9444E5014", hash_generated_field = "DBC8C6552821B500EDF219C9444E5014")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.434 -0500", hash_original_field = "DBC8C6552821B500EDF219C9444E5014", hash_generated_field = "DBC8C6552821B500EDF219C9444E5014")
 
          int enabledRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.853 -0500", hash_original_field = "E0CDE1A38A40425C446F52269E5723DC", hash_generated_field = "E0CDE1A38A40425C446F52269E5723DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.437 -0500", hash_original_field = "E0CDE1A38A40425C446F52269E5723DC", hash_generated_field = "E0CDE1A38A40425C446F52269E5723DC")
 
         int flags;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.854 -0500", hash_original_method = "A5B17BCC2B409C42234E0A16A22942F4", hash_generated_method = "A5B17BCC2B409C42234E0A16A22942F4")
-        ParseComponentArgs(Package _owner, String[] _outError,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.439 -0500", hash_original_method = "A5B17BCC2B409C42234E0A16A22942F4", hash_generated_method = "A5B17BCC2B409C42234E0A16A22942F4")
+        
+ParseComponentArgs(Package _owner, String[] _outError,
                 int _nameRes, int _labelRes, int _iconRes, int _logoRes,
                 String[] _sepProcesses, int _processRes,
                 int _descriptionRes, int _enabledRes) {
@@ -918,18 +943,19 @@ public class PackageParser {
 
     
     public static class PackageLite {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.855 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.444 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
 
         public  String packageName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.856 -0500", hash_original_field = "BF693F839564E9279728D50BEF7E118B", hash_generated_field = "30578A504DDEAA8F4E71E08EEE4589B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.446 -0500", hash_original_field = "BF693F839564E9279728D50BEF7E118B", hash_generated_field = "30578A504DDEAA8F4E71E08EEE4589B5")
 
         public  int installLocation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.857 -0500", hash_original_field = "D633311B091C9DED3FD1539C654F3395", hash_generated_field = "547B5BDAEDA540976776CD453D2E9834")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.448 -0500", hash_original_field = "D633311B091C9DED3FD1539C654F3395", hash_generated_field = "547B5BDAEDA540976776CD453D2E9834")
 
         public  VerifierInfo[] verifiers;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.858 -0500", hash_original_method = "7A496B905B539B1321EA9EDB02EF9EB7", hash_generated_method = "EAE25EB1C7AE8C5C91C0B71E3C8FBDFA")
-        public PackageLite(String packageName, int installLocation, List<VerifierInfo> verifiers) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.452 -0500", hash_original_method = "7A496B905B539B1321EA9EDB02EF9EB7", hash_generated_method = "EAE25EB1C7AE8C5C91C0B71E3C8FBDFA")
+        
+public PackageLite(String packageName, int installLocation, List<VerifierInfo> verifiers) {
             this.packageName = packageName;
             this.installLocation = installLocation;
             this.verifiers = verifiers.toArray(new VerifierInfo[verifiers.size()]);
@@ -941,130 +967,132 @@ public class PackageParser {
 
     
     public final static class Package {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.925 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.630 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
 
         public String packageName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.926 -0500", hash_original_field = "1722FDB63F23A7F35DB3563CE76FB0CC", hash_generated_field = "4036EBD0249B46B198C5B885936F9FD5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.632 -0500", hash_original_field = "1722FDB63F23A7F35DB3563CE76FB0CC", hash_generated_field = "4036EBD0249B46B198C5B885936F9FD5")
 
         public final ApplicationInfo applicationInfo = new ApplicationInfo();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.927 -0500", hash_original_field = "47B4A3B931CA77844EF31DD547DFA859", hash_generated_field = "9F287DA06540EF72A4AA2C12FCA47D9D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.635 -0500", hash_original_field = "47B4A3B931CA77844EF31DD547DFA859", hash_generated_field = "9F287DA06540EF72A4AA2C12FCA47D9D")
 
 
         public final ArrayList<Permission> permissions = new ArrayList<Permission>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.928 -0500", hash_original_field = "DCE1DFEDDABF7519DDB7D8448576BC07", hash_generated_field = "44F464774678F54DEC4F24FE42619000")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.638 -0500", hash_original_field = "DCE1DFEDDABF7519DDB7D8448576BC07", hash_generated_field = "44F464774678F54DEC4F24FE42619000")
 
         public final ArrayList<PermissionGroup> permissionGroups = new ArrayList<PermissionGroup>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.929 -0500", hash_original_field = "A658F9195304A9CD7D019BBA5B079455", hash_generated_field = "FA37560F9C65320DAA508260F22AE66D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.640 -0500", hash_original_field = "A658F9195304A9CD7D019BBA5B079455", hash_generated_field = "FA37560F9C65320DAA508260F22AE66D")
 
         public final ArrayList<Activity> activities = new ArrayList<Activity>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.930 -0500", hash_original_field = "82F88F2B1EBE00F033DB18F62F1A387A", hash_generated_field = "9593D48EBFB86307D900AA7594B7FB40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.642 -0500", hash_original_field = "82F88F2B1EBE00F033DB18F62F1A387A", hash_generated_field = "9593D48EBFB86307D900AA7594B7FB40")
 
         public final ArrayList<Activity> receivers = new ArrayList<Activity>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.931 -0500", hash_original_field = "CC7FEF311A44F400C25AF05C23751A86", hash_generated_field = "BC5EE090E89F224AA377168513277DFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.645 -0500", hash_original_field = "CC7FEF311A44F400C25AF05C23751A86", hash_generated_field = "BC5EE090E89F224AA377168513277DFC")
 
         public final ArrayList<Provider> providers = new ArrayList<Provider>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.932 -0500", hash_original_field = "8D59DB826C9FFDDBD9A245313BC41397", hash_generated_field = "442AF6E4956588BEC9D95A4B568FDF37")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.648 -0500", hash_original_field = "8D59DB826C9FFDDBD9A245313BC41397", hash_generated_field = "442AF6E4956588BEC9D95A4B568FDF37")
 
         public final ArrayList<Service> services = new ArrayList<Service>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.932 -0500", hash_original_field = "B39D952B8C8A85FF0758DD181613C93A", hash_generated_field = "3F24774E8DFC500EA6EF7CB14E2DAE81")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.650 -0500", hash_original_field = "B39D952B8C8A85FF0758DD181613C93A", hash_generated_field = "3F24774E8DFC500EA6EF7CB14E2DAE81")
 
         public final ArrayList<Instrumentation> instrumentation = new ArrayList<Instrumentation>(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.933 -0500", hash_original_field = "63327953C5F8F95F591E69BA4245C045", hash_generated_field = "7D1FBB8E91439EB14277D7D8BA33F0DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.652 -0500", hash_original_field = "63327953C5F8F95F591E69BA4245C045", hash_generated_field = "7D1FBB8E91439EB14277D7D8BA33F0DA")
 
 
         public final ArrayList<String> requestedPermissions = new ArrayList<String>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.934 -0500", hash_original_field = "59AA6FD5BD3953B1A109F5899F927F46", hash_generated_field = "08EEF0A6E1D22D736BF2E545A29D8138")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.655 -0500", hash_original_field = "59AA6FD5BD3953B1A109F5899F927F46", hash_generated_field = "08EEF0A6E1D22D736BF2E545A29D8138")
 
 
         public ArrayList<String> protectedBroadcasts;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.935 -0500", hash_original_field = "2104ADE4423C190CC2AB868FB34DAD86", hash_generated_field = "38B8DDE984ADCEFBD679BD148096C90B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.657 -0500", hash_original_field = "2104ADE4423C190CC2AB868FB34DAD86", hash_generated_field = "38B8DDE984ADCEFBD679BD148096C90B")
 
         
         public ArrayList<String> usesLibraries = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.936 -0500", hash_original_field = "5A0FEAB2E786609C044623E4050A7E13", hash_generated_field = "B4E5B43916326236F7AC60FB6AA30ED0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.659 -0500", hash_original_field = "5A0FEAB2E786609C044623E4050A7E13", hash_generated_field = "B4E5B43916326236F7AC60FB6AA30ED0")
 
         public ArrayList<String> usesOptionalLibraries = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.937 -0500", hash_original_field = "CA48390E00F96BED80B29872962FEC16", hash_generated_field = "E256E3F26B890CB645F141CE43A19B9C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.662 -0500", hash_original_field = "CA48390E00F96BED80B29872962FEC16", hash_generated_field = "E256E3F26B890CB645F141CE43A19B9C")
 
         public String[] usesLibraryFiles = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.938 -0500", hash_original_field = "B54303611DA8B5FCAE76312932648A79", hash_generated_field = "E6599044F06DEA0FBD755EB8BE240A8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.664 -0500", hash_original_field = "B54303611DA8B5FCAE76312932648A79", hash_generated_field = "E6599044F06DEA0FBD755EB8BE240A8E")
 
 
         public ArrayList<String> mOriginalPackages = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.938 -0500", hash_original_field = "31396CEB1467C7077D0CD3C972D994B3", hash_generated_field = "04EBB67E52CE8E75294355C009EB60C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.667 -0500", hash_original_field = "31396CEB1467C7077D0CD3C972D994B3", hash_generated_field = "04EBB67E52CE8E75294355C009EB60C1")
 
         public String mRealPackage = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.939 -0500", hash_original_field = "99961B864715B7E5A04A013564B0BA19", hash_generated_field = "AEFDC3F9A7F5911D385620280B7625C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.669 -0500", hash_original_field = "99961B864715B7E5A04A013564B0BA19", hash_generated_field = "AEFDC3F9A7F5911D385620280B7625C2")
 
         public ArrayList<String> mAdoptPermissions = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.940 -0500", hash_original_field = "D513F11A2EAC2CF5E4DECD5266720C89", hash_generated_field = "07357F002FB731C049A7E8EF93488FAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.671 -0500", hash_original_field = "D513F11A2EAC2CF5E4DECD5266720C89", hash_generated_field = "07357F002FB731C049A7E8EF93488FAB")
 
         public Bundle mAppMetaData = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.941 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "305B7716861981204869144DBD3A202B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.674 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "305B7716861981204869144DBD3A202B")
 
         public String mPath;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.941 -0500", hash_original_field = "1E960C258E2A4355A370C5C64F4FF504", hash_generated_field = "2D25A57F98AA26067BCE62362DE0AEEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.676 -0500", hash_original_field = "1E960C258E2A4355A370C5C64F4FF504", hash_generated_field = "2D25A57F98AA26067BCE62362DE0AEEE")
 
         public int mVersionCode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.942 -0500", hash_original_field = "23DAA84A9C6026B24FE3860316B486A1", hash_generated_field = "AD0666B617F8EB374F674D223A151BE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.679 -0500", hash_original_field = "23DAA84A9C6026B24FE3860316B486A1", hash_generated_field = "AD0666B617F8EB374F674D223A151BE8")
 
         public String mVersionName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.943 -0500", hash_original_field = "ED1645516EE038D3DB78DCBA1689F0B7", hash_generated_field = "1BA8548AD03E92E8907935F23C7EC7DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.681 -0500", hash_original_field = "ED1645516EE038D3DB78DCBA1689F0B7", hash_generated_field = "1BA8548AD03E92E8907935F23C7EC7DC")
 
         public String mSharedUserId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.944 -0500", hash_original_field = "06C514DD9FB957B20F43BA7587125E41", hash_generated_field = "E426A46C5F8600102F790613EDFE2FA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.684 -0500", hash_original_field = "06C514DD9FB957B20F43BA7587125E41", hash_generated_field = "E426A46C5F8600102F790613EDFE2FA5")
 
         public int mSharedUserLabel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.945 -0500", hash_original_field = "225AF11886E9640A2B12CA1E79D051F9", hash_generated_field = "D0A761ADB8F3D08D19028AF26464A727")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.686 -0500", hash_original_field = "225AF11886E9640A2B12CA1E79D051F9", hash_generated_field = "D0A761ADB8F3D08D19028AF26464A727")
 
         public Signature mSignatures[];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:49.292 -0500", hash_original_field = "B406165913C2803A6EE477C3DAA2E26C", hash_generated_field = "DEE6C9BA5015D1DCFE4C7FA83DD7AD5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.688 -0500", hash_original_field = "B406165913C2803A6EE477C3DAA2E26C", hash_generated_field = "DEE6C9BA5015D1DCFE4C7FA83DD7AD5C")
 
         // preferred up order.
         public int mPreferredOrder = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:49.293 -0500", hash_original_field = "69D8AFB75553068A044A2C94D7C3AE03", hash_generated_field = "CC051FFA341F8CBB3F12D6D4A09F66CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.691 -0500", hash_original_field = "69D8AFB75553068A044A2C94D7C3AE03", hash_generated_field = "CC051FFA341F8CBB3F12D6D4A09F66CF")
 
         // file an app came from.
         public String mScanPath;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.947 -0500", hash_original_field = "63C12BF4ACFB916BB44A4D615929D107", hash_generated_field = "7D697318734FF4FCAC89EE6F12A79BBA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.693 -0500", hash_original_field = "63C12BF4ACFB916BB44A4D615929D107", hash_generated_field = "7D697318734FF4FCAC89EE6F12A79BBA")
 
         public boolean mDidDexOpt;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.948 -0500", hash_original_field = "B5AED6A0DBF577E28C24DFE9A18EC6E2", hash_generated_field = "01E3EC227D5D4747BBF3C8E007B87A8C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.695 -0500", hash_original_field = "B5AED6A0DBF577E28C24DFE9A18EC6E2", hash_generated_field = "01E3EC227D5D4747BBF3C8E007B87A8C")
 
         public int mSetEnabled = PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.948 -0500", hash_original_field = "67B7BD5F6C6585F57ED4C687E55056A2", hash_generated_field = "F2AF2DCB7F1AF550D0120E8A8EC3076A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.697 -0500", hash_original_field = "67B7BD5F6C6585F57ED4C687E55056A2", hash_generated_field = "F2AF2DCB7F1AF550D0120E8A8EC3076A")
 
         public boolean mSetStopped = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.949 -0500", hash_original_field = "9BDA8385E65123CE41EA2C3036B5A57A", hash_generated_field = "31FF094E094B19A5172EF65F93099B80")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.700 -0500", hash_original_field = "9BDA8385E65123CE41EA2C3036B5A57A", hash_generated_field = "31FF094E094B19A5172EF65F93099B80")
 
         public Object mExtras;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.951 -0500", hash_original_field = "DEBBE89FBB722DD6C604AD3AAF734AED", hash_generated_field = "006EB022C9A35AC652457AFB4C61156A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.702 -0500", hash_original_field = "DEBBE89FBB722DD6C604AD3AAF734AED", hash_generated_field = "006EB022C9A35AC652457AFB4C61156A")
 
         public boolean mOperationPending;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.951 -0500", hash_original_field = "B9BB599F0225EB2391F41B3287C92FCC", hash_generated_field = "4E89D4689FD45B6957FE611B20917965")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.704 -0500", hash_original_field = "B9BB599F0225EB2391F41B3287C92FCC", hash_generated_field = "4E89D4689FD45B6957FE611B20917965")
 
         public final ArrayList<ConfigurationInfo> configPreferences =
                 new ArrayList<ConfigurationInfo>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.952 -0500", hash_original_field = "C7466FC6905E5AC275F0B3B8D371A788", hash_generated_field = "56739470CD23739123AD6639F0ED5CDC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.707 -0500", hash_original_field = "C7466FC6905E5AC275F0B3B8D371A788", hash_generated_field = "56739470CD23739123AD6639F0ED5CDC")
 
         public ArrayList<FeatureInfo> reqFeatures = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.953 -0500", hash_original_field = "BF693F839564E9279728D50BEF7E118B", hash_generated_field = "30578A504DDEAA8F4E71E08EEE4589B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.709 -0500", hash_original_field = "BF693F839564E9279728D50BEF7E118B", hash_generated_field = "30578A504DDEAA8F4E71E08EEE4589B5")
 
 
         public int installLocation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.954 -0500", hash_original_field = "F09F502EBB949BAD3574E5F6C55E02A2", hash_generated_field = "7CE719961EFE13A323B2F3853261CD27")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.712 -0500", hash_original_field = "F09F502EBB949BAD3574E5F6C55E02A2", hash_generated_field = "7CE719961EFE13A323B2F3853261CD27")
 
         public ManifestDigest manifestDigest;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.955 -0500", hash_original_method = "8954AF7805FA48686FD1C5CD1B4EC95C", hash_generated_method = "65151307437E83AE24BCA52F2264E5AA")
-        public Package(String _name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.714 -0500", hash_original_method = "8954AF7805FA48686FD1C5CD1B4EC95C", hash_generated_method = "65151307437E83AE24BCA52F2264E5AA")
+        
+public Package(String _name) {
             packageName = _name;
             applicationInfo.packageName = _name;
             applicationInfo.uid = -1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.956 -0500", hash_original_method = "B05A09470669E629F210442116CDFAC5", hash_generated_method = "1F1AE6F6E025C5AB40ED6E2DFE704EF4")
-        public void setPackageName(String newName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.718 -0500", hash_original_method = "B05A09470669E629F210442116CDFAC5", hash_generated_method = "1F1AE6F6E025C5AB40ED6E2DFE704EF4")
+        
+public void setPackageName(String newName) {
             packageName = newName;
             applicationInfo.packageName = newName;
             for (int i=permissions.size()-1; i>=0; i--) {
@@ -1090,8 +1118,9 @@ public class PackageParser {
             }
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.957 -0500", hash_original_method = "7DFEBE5DF638D8804915FD110C0E2540", hash_generated_method = "D1144C82B8112237A29A16751CC92459")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.721 -0500", hash_original_method = "7DFEBE5DF638D8804915FD110C0E2540", hash_generated_method = "D1144C82B8112237A29A16751CC92459")
+        
+public String toString() {
             return "Package{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + packageName + "}";
@@ -1103,35 +1132,37 @@ public class PackageParser {
 
     
     public static class Component<II extends IntentInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.959 -0500", hash_original_field = "63E7E49220BEC65CFB906D3D26FF5320", hash_generated_field = "B7B17A6D136295F4EF656A6C2B786D1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.726 -0500", hash_original_field = "63E7E49220BEC65CFB906D3D26FF5320", hash_generated_field = "B7B17A6D136295F4EF656A6C2B786D1E")
 
         public  Package owner;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.960 -0500", hash_original_field = "C5329E3826FFAE51ACC45345B1E460B9", hash_generated_field = "D8DEE06C2E494DBB6667E43B6FBC365D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.729 -0500", hash_original_field = "C5329E3826FFAE51ACC45345B1E460B9", hash_generated_field = "D8DEE06C2E494DBB6667E43B6FBC365D")
 
         public  ArrayList<II> intents;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.961 -0500", hash_original_field = "CA6BE7A479C5F3E68F3687DBA3A4A48F", hash_generated_field = "868D31C10A710A0DF272DC0EA267B5A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.731 -0500", hash_original_field = "CA6BE7A479C5F3E68F3687DBA3A4A48F", hash_generated_field = "868D31C10A710A0DF272DC0EA267B5A9")
 
         public  String className;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.961 -0500", hash_original_field = "28705BB70A2AE2760BB13E62CB7CCF68", hash_generated_field = "94B83340D21CBE8DE8F4A432223AA875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.734 -0500", hash_original_field = "28705BB70A2AE2760BB13E62CB7CCF68", hash_generated_field = "94B83340D21CBE8DE8F4A432223AA875")
 
         public Bundle metaData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.962 -0500", hash_original_field = "E3D849549355C126FFF6430112CFAA0A", hash_generated_field = "E3D849549355C126FFF6430112CFAA0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.736 -0500", hash_original_field = "E3D849549355C126FFF6430112CFAA0A", hash_generated_field = "E3D849549355C126FFF6430112CFAA0A")
 
 
         ComponentName componentName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.963 -0500", hash_original_field = "A35E7838F783416409F7A19252F30415", hash_generated_field = "A35E7838F783416409F7A19252F30415")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.738 -0500", hash_original_field = "A35E7838F783416409F7A19252F30415", hash_generated_field = "A35E7838F783416409F7A19252F30415")
 
         String componentShortName;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.964 -0500", hash_original_method = "B544BED1308F0633C32173E605BDF8E5", hash_generated_method = "9DBDADADCE31B012143415ABB7971914")
-        public Component(Package _owner) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.740 -0500", hash_original_method = "B544BED1308F0633C32173E605BDF8E5", hash_generated_method = "9DBDADADCE31B012143415ABB7971914")
+        
+public Component(Package _owner) {
             owner = _owner;
             intents = null;
             className = null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.965 -0500", hash_original_method = "A43E20CDE8CCB4A62D1450265CBDCEF5", hash_generated_method = "29A4E0554219706CA3A529236BD6DF1C")
-        public Component(final ParsePackageItemArgs args, final PackageItemInfo outInfo) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.744 -0500", hash_original_method = "A43E20CDE8CCB4A62D1450265CBDCEF5", hash_generated_method = "29A4E0554219706CA3A529236BD6DF1C")
+        
+public Component(final ParsePackageItemArgs args, final PackageItemInfo outInfo) {
             owner = args.owner;
             intents = new ArrayList<II>(0);
             String name = args.sa.getNonConfigurationString(args.nameRes, 0);
@@ -1170,8 +1201,9 @@ public class PackageParser {
             outInfo.packageName = owner.packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.967 -0500", hash_original_method = "D9B47963B1B8ABE0F2CDFAC0BBD1CAD2", hash_generated_method = "883FEE44CB440155B5D452EEB5D3FD03")
-        public Component(final ParseComponentArgs args, final ComponentInfo outInfo) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.748 -0500", hash_original_method = "D9B47963B1B8ABE0F2CDFAC0BBD1CAD2", hash_generated_method = "883FEE44CB440155B5D452EEB5D3FD03")
+        
+public Component(final ParseComponentArgs args, final ComponentInfo outInfo) {
             this(args, (PackageItemInfo)outInfo);
             if (args.outError[0] != null) {
                 return;
@@ -1199,8 +1231,9 @@ public class PackageParser {
             outInfo.enabled = args.sa.getBoolean(args.enabledRes, true);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.968 -0500", hash_original_method = "7A30742503E7124B050658D7B849B524", hash_generated_method = "C83035846845601BB3398AD0D1362102")
-        public Component(Component<II> clone) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.750 -0500", hash_original_method = "7A30742503E7124B050658D7B849B524", hash_generated_method = "C83035846845601BB3398AD0D1362102")
+        
+public Component(Component<II> clone) {
             owner = clone.owner;
             intents = clone.intents;
             className = clone.className;
@@ -1208,8 +1241,9 @@ public class PackageParser {
             componentShortName = clone.componentShortName;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.968 -0500", hash_original_method = "BF1ED0A6C0ACE1EE7610EB0D74F5C800", hash_generated_method = "853DE9A1A7830A59FF04A72BC4DF77DA")
-        public ComponentName getComponentName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.753 -0500", hash_original_method = "BF1ED0A6C0ACE1EE7610EB0D74F5C800", hash_generated_method = "853DE9A1A7830A59FF04A72BC4DF77DA")
+        
+public ComponentName getComponentName() {
             if (componentName != null) {
                 return componentName;
             }
@@ -1220,8 +1254,9 @@ public class PackageParser {
             return componentName;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.969 -0500", hash_original_method = "3A4D7499A9518F3ABB20BEBAE6816B9D", hash_generated_method = "66AA47B485B4E3BFCC20DAE6203B219A")
-        public String getComponentShortName() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.755 -0500", hash_original_method = "3A4D7499A9518F3ABB20BEBAE6816B9D", hash_generated_method = "66AA47B485B4E3BFCC20DAE6203B219A")
+        
+public String getComponentShortName() {
             if (componentShortName != null) {
                 return componentShortName;
             }
@@ -1232,8 +1267,9 @@ public class PackageParser {
             return componentShortName;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.970 -0500", hash_original_method = "AFFE8B7215C15E45738BCB365FA520F8", hash_generated_method = "6CE8DD4518E7BC84467932004B12946D")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.759 -0500", hash_original_method = "AFFE8B7215C15E45738BCB365FA520F8", hash_generated_method = "6CE8DD4518E7BC84467932004B12946D")
+        
+public void setPackageName(String packageName) {
             componentName = null;
             componentShortName = null;
         }
@@ -1244,36 +1280,40 @@ public class PackageParser {
 
     
     public final static class Permission extends Component<IntentInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.972 -0500", hash_original_field = "4241C73A320D988CEDA8D0AE82D7ADA4", hash_generated_field = "44FAE9A36D6EBA187A54E941C96BA855")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.765 -0500", hash_original_field = "4241C73A320D988CEDA8D0AE82D7ADA4", hash_generated_field = "44FAE9A36D6EBA187A54E941C96BA855")
 
         public  PermissionInfo info;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.973 -0500", hash_original_field = "CB67E74A3CBC7C2266EC717F79263849", hash_generated_field = "EF09DBC8B27A53D0E48DDC50B1CFE266")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.767 -0500", hash_original_field = "CB67E74A3CBC7C2266EC717F79263849", hash_generated_field = "EF09DBC8B27A53D0E48DDC50B1CFE266")
 
         public boolean tree;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.974 -0500", hash_original_field = "1EFD468F8D4D2602A3DECFB32E972F0F", hash_generated_field = "81FA9670466619AF97D2F0A37093F67B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.769 -0500", hash_original_field = "1EFD468F8D4D2602A3DECFB32E972F0F", hash_generated_field = "81FA9670466619AF97D2F0A37093F67B")
 
         public PermissionGroup group;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.975 -0500", hash_original_method = "28D7021527B7BC8061929232C0A668B9", hash_generated_method = "E53F5C6B458AA36B104CB637B3C0A552")
-        public Permission(Package _owner) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.772 -0500", hash_original_method = "28D7021527B7BC8061929232C0A668B9", hash_generated_method = "E53F5C6B458AA36B104CB637B3C0A552")
+        
+public Permission(Package _owner) {
             super(_owner);
             info = new PermissionInfo();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.976 -0500", hash_original_method = "37E156160FC75CB3C9E2BA72594B754D", hash_generated_method = "1A345D54C71A0CC4DAD78AB38AE178D6")
-        public Permission(Package _owner, PermissionInfo _info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.775 -0500", hash_original_method = "37E156160FC75CB3C9E2BA72594B754D", hash_generated_method = "1A345D54C71A0CC4DAD78AB38AE178D6")
+        
+public Permission(Package _owner, PermissionInfo _info) {
             super(_owner);
             info = _info;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.977 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.777 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
+        
+public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.978 -0500", hash_original_method = "D70298090C91BEA7F3B1C7F9C9416449", hash_generated_method = "3E56225E2F2712FE7981B0CB083160F7")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.780 -0500", hash_original_method = "D70298090C91BEA7F3B1C7F9C9416449", hash_generated_method = "3E56225E2F2712FE7981B0CB083160F7")
+        
+public String toString() {
             return "Permission{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
@@ -1285,30 +1325,34 @@ public class PackageParser {
 
     
     public final static class PermissionGroup extends Component<IntentInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.980 -0500", hash_original_field = "8CC233C9F6CFC43C7F4E1C98E681317A", hash_generated_field = "4AEC0127E51446670A8F6715545F2FFD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.785 -0500", hash_original_field = "8CC233C9F6CFC43C7F4E1C98E681317A", hash_generated_field = "4AEC0127E51446670A8F6715545F2FFD")
 
         public  PermissionGroupInfo info;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.981 -0500", hash_original_method = "19A5AAAA7728282CABC960AB069F9E98", hash_generated_method = "0CE5244AE69F166813A6E14BEC97EE5B")
-        public PermissionGroup(Package _owner) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.787 -0500", hash_original_method = "19A5AAAA7728282CABC960AB069F9E98", hash_generated_method = "0CE5244AE69F166813A6E14BEC97EE5B")
+        
+public PermissionGroup(Package _owner) {
             super(_owner);
             info = new PermissionGroupInfo();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.982 -0500", hash_original_method = "8FB9374E9D85DC0253F34BC909070B56", hash_generated_method = "4504C25C2C0AE8BF8978FBBBF33DD5F8")
-        public PermissionGroup(Package _owner, PermissionGroupInfo _info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.790 -0500", hash_original_method = "8FB9374E9D85DC0253F34BC909070B56", hash_generated_method = "4504C25C2C0AE8BF8978FBBBF33DD5F8")
+        
+public PermissionGroup(Package _owner, PermissionGroupInfo _info) {
             super(_owner);
             info = _info;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.983 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.792 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
+        
+public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.984 -0500", hash_original_method = "5B6E9035FB2F0E9673597108CCAFFCEF", hash_generated_method = "E42B26C25273063D7962DB183E8E8149")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.794 -0500", hash_original_method = "5B6E9035FB2F0E9673597108CCAFFCEF", hash_generated_method = "E42B26C25273063D7962DB183E8E8149")
+        
+public String toString() {
             return "PermissionGroup{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
@@ -1320,25 +1364,28 @@ public class PackageParser {
 
     
     public final static class Activity extends Component<ActivityIntentInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.989 -0500", hash_original_field = "D6562EB0A3FC9B94476A16D5F303F058", hash_generated_field = "31C563E0B9BB4DA4F801727DD7960E99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.812 -0500", hash_original_field = "D6562EB0A3FC9B94476A16D5F303F058", hash_generated_field = "31C563E0B9BB4DA4F801727DD7960E99")
 
         public  ActivityInfo info;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.990 -0500", hash_original_method = "2916F6991906FCE3DAEE226AB756275F", hash_generated_method = "6CA386A7766CE9673988802FCF84C6A7")
-        public Activity(final ParseComponentArgs args, final ActivityInfo _info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.816 -0500", hash_original_method = "2916F6991906FCE3DAEE226AB756275F", hash_generated_method = "6CA386A7766CE9673988802FCF84C6A7")
+        
+public Activity(final ParseComponentArgs args, final ActivityInfo _info) {
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.991 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.818 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
+        
+public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.992 -0500", hash_original_method = "3ED5BAD5E29B5F8C3FFE202D917D91C6", hash_generated_method = "7CE213452BF93C3CE1C519974BF0AFC8")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.821 -0500", hash_original_method = "3ED5BAD5E29B5F8C3FFE202D917D91C6", hash_generated_method = "7CE213452BF93C3CE1C519974BF0AFC8")
+        
+public String toString() {
             return "Activity{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
@@ -1350,25 +1397,28 @@ public class PackageParser {
 
     
     public final static class Service extends Component<ServiceIntentInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.996 -0500", hash_original_field = "4AEE41877C99C71A9296A5C433E71F7C", hash_generated_field = "44442782625E786E51B742A3D7D5DE80")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.831 -0500", hash_original_field = "4AEE41877C99C71A9296A5C433E71F7C", hash_generated_field = "44442782625E786E51B742A3D7D5DE80")
 
         public  ServiceInfo info;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.997 -0500", hash_original_method = "2742F060EFDB78FDF4E4BA2659F1DC82", hash_generated_method = "164CB682681EA3DC7CFCDDF8D9DA9C96")
-        public Service(final ParseComponentArgs args, final ServiceInfo _info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.833 -0500", hash_original_method = "2742F060EFDB78FDF4E4BA2659F1DC82", hash_generated_method = "164CB682681EA3DC7CFCDDF8D9DA9C96")
+        
+public Service(final ParseComponentArgs args, final ServiceInfo _info) {
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.997 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.835 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
+        
+public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.998 -0500", hash_original_method = "983F0C4312E41963E910123205C22323", hash_generated_method = "20088CC99BD071A59D9E33F497EDFF1F")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.837 -0500", hash_original_method = "983F0C4312E41963E910123205C22323", hash_generated_method = "20088CC99BD071A59D9E33F497EDFF1F")
+        
+public String toString() {
             return "Service{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
@@ -1380,36 +1430,40 @@ public class PackageParser {
 
     
     public final static class Provider extends Component {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.001 -0500", hash_original_field = "5CDA2FBF2554178EE653F2BC5EB08EC7", hash_generated_field = "BF776B364C73D31E6B3B31185D6DF955")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.846 -0500", hash_original_field = "5CDA2FBF2554178EE653F2BC5EB08EC7", hash_generated_field = "BF776B364C73D31E6B3B31185D6DF955")
 
         public  ProviderInfo info;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.002 -0500", hash_original_field = "EE06816A8A51C4265B5577A9981B83CD", hash_generated_field = "8DCC80DE4F5A821BFB32172415658FEA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.849 -0500", hash_original_field = "EE06816A8A51C4265B5577A9981B83CD", hash_generated_field = "8DCC80DE4F5A821BFB32172415658FEA")
 
         public boolean syncable;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.003 -0500", hash_original_method = "EAE8B6AC135EBC96C8D24D047B180DE5", hash_generated_method = "A000375F699A81AD0EAC1F0703279BE0")
-        public Provider(final ParseComponentArgs args, final ProviderInfo _info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.852 -0500", hash_original_method = "EAE8B6AC135EBC96C8D24D047B180DE5", hash_generated_method = "A000375F699A81AD0EAC1F0703279BE0")
+        
+public Provider(final ParseComponentArgs args, final ProviderInfo _info) {
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
             syncable = false;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.004 -0500", hash_original_method = "7DA675634165C06E74013727D919E49C", hash_generated_method = "985457745BC38E0AF038AC58F528E846")
-        public Provider(Provider existingProvider) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.855 -0500", hash_original_method = "7DA675634165C06E74013727D919E49C", hash_generated_method = "985457745BC38E0AF038AC58F528E846")
+        
+public Provider(Provider existingProvider) {
             super(existingProvider);
             this.info = existingProvider.info;
             this.syncable = existingProvider.syncable;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.005 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.857 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
+        
+public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.005 -0500", hash_original_method = "68549008F1EBCA6BA1DE59DAB2FE7E3C", hash_generated_method = "7456EF1BE421AF203ED4C0B86DA93B62")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.859 -0500", hash_original_method = "68549008F1EBCA6BA1DE59DAB2FE7E3C", hash_generated_method = "7456EF1BE421AF203ED4C0B86DA93B62")
+        
+public String toString() {
             return "Provider{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
@@ -1421,24 +1475,27 @@ public class PackageParser {
 
     
     public final static class Instrumentation extends Component {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.008 -0500", hash_original_field = "AC2380494E7629FC05F61CD5269FE09A", hash_generated_field = "9E4A99D8D40782E1B858164167767C21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.867 -0500", hash_original_field = "AC2380494E7629FC05F61CD5269FE09A", hash_generated_field = "9E4A99D8D40782E1B858164167767C21")
 
         public  InstrumentationInfo info;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.009 -0500", hash_original_method = "CAE763D5DCD2DC693DEEA83AE92F98C5", hash_generated_method = "6F2641CF5E854BD1F2B782A855874529")
-        public Instrumentation(final ParsePackageItemArgs args, final InstrumentationInfo _info) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.871 -0500", hash_original_method = "CAE763D5DCD2DC693DEEA83AE92F98C5", hash_generated_method = "6F2641CF5E854BD1F2B782A855874529")
+        
+public Instrumentation(final ParsePackageItemArgs args, final InstrumentationInfo _info) {
             super(args, _info);
             info = _info;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.010 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
-        public void setPackageName(String packageName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.873 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
+        
+public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.011 -0500", hash_original_method = "CB405027A6A70334D830F0B5C698645E", hash_generated_method = "8AF7C2F06339D5FDF9CD9BEDED5D9B01")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.876 -0500", hash_original_method = "CB405027A6A70334D830F0B5C698645E", hash_generated_method = "8AF7C2F06339D5FDF9CD9BEDED5D9B01")
+        
+public String toString() {
             return "Instrumentation{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
@@ -1450,19 +1507,19 @@ public class PackageParser {
 
     
     public static class IntentInfo extends IntentFilter {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.014 -0500", hash_original_field = "FE46C49B5E51D32E88C8BD46819E9489", hash_generated_field = "27741E2F90129BA4D13424CA3120F0CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.882 -0500", hash_original_field = "FE46C49B5E51D32E88C8BD46819E9489", hash_generated_field = "27741E2F90129BA4D13424CA3120F0CA")
 
         public boolean hasDefault;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.015 -0500", hash_original_field = "72766807210949DB14E0A53D32EEFA42", hash_generated_field = "5CCBCEA64151325A8B45AD50EEEC958F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.884 -0500", hash_original_field = "72766807210949DB14E0A53D32EEFA42", hash_generated_field = "5CCBCEA64151325A8B45AD50EEEC958F")
 
         public int labelRes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.016 -0500", hash_original_field = "E41FD8D985C7C7980A3E63475B8D976E", hash_generated_field = "EEEEA3B26D8CB06153CCE64BF10C94B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.887 -0500", hash_original_field = "E41FD8D985C7C7980A3E63475B8D976E", hash_generated_field = "EEEEA3B26D8CB06153CCE64BF10C94B7")
 
         public CharSequence nonLocalizedLabel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.016 -0500", hash_original_field = "107298D9FB7BD66B47A702264D3B04F5", hash_generated_field = "CB969AD5516AE5767E5AFFB8BD6B4D43")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.890 -0500", hash_original_field = "107298D9FB7BD66B47A702264D3B04F5", hash_generated_field = "CB969AD5516AE5767E5AFFB8BD6B4D43")
 
         public int icon;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.017 -0500", hash_original_field = "40F1731F6DDC59241C091ACC1EFBC7B2", hash_generated_field = "922885A8A44FD4A4B2D8F0B49A2EDED6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.892 -0500", hash_original_field = "40F1731F6DDC59241C091ACC1EFBC7B2", hash_generated_field = "922885A8A44FD4A4B2D8F0B49A2EDED6")
 
         public int logo;
         
@@ -1478,17 +1535,19 @@ public class PackageParser {
 
     
     public final static class ActivityIntentInfo extends IntentInfo {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.019 -0500", hash_original_field = "A63B0916BD4AC2611D1AF746A2DF045C", hash_generated_field = "8EB481EDAD2FDE318A05890E655F5C10")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.896 -0500", hash_original_field = "A63B0916BD4AC2611D1AF746A2DF045C", hash_generated_field = "8EB481EDAD2FDE318A05890E655F5C10")
 
         public  Activity activity;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.020 -0500", hash_original_method = "4F41670063BD951D72DDB0235971893F", hash_generated_method = "C2A3F3A48843D2319495A781014EB5D7")
-        public ActivityIntentInfo(Activity _activity) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.899 -0500", hash_original_method = "4F41670063BD951D72DDB0235971893F", hash_generated_method = "C2A3F3A48843D2319495A781014EB5D7")
+        
+public ActivityIntentInfo(Activity _activity) {
             activity = _activity;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.021 -0500", hash_original_method = "7C91146E1C4D7077E2D0C55B0D43BF57", hash_generated_method = "A24CD2F8FC6E076CDD69BB140A302B53")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.901 -0500", hash_original_method = "7C91146E1C4D7077E2D0C55B0D43BF57", hash_generated_method = "A24CD2F8FC6E076CDD69BB140A302B53")
+        
+public String toString() {
             return "ActivityIntentInfo{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + activity.info.name + "}";
@@ -1500,17 +1559,19 @@ public class PackageParser {
 
     
     public final static class ServiceIntentInfo extends IntentInfo {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.023 -0500", hash_original_field = "DAF7782A22985FD2AACE76C8B2915B0A", hash_generated_field = "6630E432AFBDE1086EB9C8736D3C1E75")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.906 -0500", hash_original_field = "DAF7782A22985FD2AACE76C8B2915B0A", hash_generated_field = "6630E432AFBDE1086EB9C8736D3C1E75")
 
         public  Service service;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.024 -0500", hash_original_method = "2C256432D4530E0F15F4AED85D9A44A0", hash_generated_method = "8EF5E3E54913D94DA3A92574C6AB0AE5")
-        public ServiceIntentInfo(Service _service) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.909 -0500", hash_original_method = "2C256432D4530E0F15F4AED85D9A44A0", hash_generated_method = "8EF5E3E54913D94DA3A92574C6AB0AE5")
+        
+public ServiceIntentInfo(Service _service) {
             service = _service;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:06.024 -0500", hash_original_method = "32EA4E8A8FC07DAD01188F341ACB2C51", hash_generated_method = "6DBC2C25F40C263EE60C3F88A91AEA89")
-        public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.911 -0500", hash_original_method = "32EA4E8A8FC07DAD01188F341ACB2C51", hash_generated_method = "6DBC2C25F40C263EE60C3F88A91AEA89")
+        
+public String toString() {
             return "ServiceIntentInfo{"
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + service.info.name + "}";
@@ -1519,18 +1580,21 @@ public class PackageParser {
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.866 -0500", hash_original_method = "65A62D9388B66A4D9595CDAEE2873A09", hash_generated_method = "CC71CA105151E3A0E7A4629E80ADA1A8")
-    public void setSeparateProcesses(String[] procs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.475 -0500", hash_original_method = "65A62D9388B66A4D9595CDAEE2873A09", hash_generated_method = "CC71CA105151E3A0E7A4629E80ADA1A8")
+    
+public void setSeparateProcesses(String[] procs) {
         mSeparateProcesses = procs;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.867 -0500", hash_original_method = "14C9699FDDD05F8B9AF1818DB0942037", hash_generated_method = "29C23CEBD9882AF24DFDB89D5E196F86")
-    public void setOnlyCoreApps(boolean onlyCoreApps) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.477 -0500", hash_original_method = "14C9699FDDD05F8B9AF1818DB0942037", hash_generated_method = "29C23CEBD9882AF24DFDB89D5E196F86")
+    
+public void setOnlyCoreApps(boolean onlyCoreApps) {
         mOnlyCoreApps = onlyCoreApps;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.871 -0500", hash_original_method = "83F32E741E7740326FB3ACF1CABD2263", hash_generated_method = "EA7E84D1A3E04766A30C1A10508EB1C5")
-    private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.488 -0500", hash_original_method = "83F32E741E7740326FB3ACF1CABD2263", hash_generated_method = "EA7E84D1A3E04766A30C1A10508EB1C5")
+    
+private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
             byte[] readBuffer) {
         try {
             // We must read the stream for the JarEntry to retrieve
@@ -1551,13 +1615,15 @@ public class PackageParser {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.878 -0500", hash_original_method = "043AC7F11A9C5FD11FB43AEF955AD87D", hash_generated_method = "DE8BF7F7DCE49FE7538FB3BCFB426F39")
-    public int getParseError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.507 -0500", hash_original_method = "043AC7F11A9C5FD11FB43AEF955AD87D", hash_generated_method = "DE8BF7F7DCE49FE7538FB3BCFB426F39")
+    
+public int getParseError() {
         return mParseError;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.880 -0500", hash_original_method = "F8C0CFF9FE003FD5724E792D5942913B", hash_generated_method = "A47DDA58449A40160CE7B72AA0A61BBD")
-    public Package parsePackage(File sourceFile, String destCodePath,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.512 -0500", hash_original_method = "F8C0CFF9FE003FD5724E792D5942913B", hash_generated_method = "A47DDA58449A40160CE7B72AA0A61BBD")
+    
+public Package parsePackage(File sourceFile, String destCodePath,
             DisplayMetrics metrics, int flags) {
         mParseError = PackageManager.INSTALL_SUCCEEDED;
 
@@ -1651,8 +1717,9 @@ public class PackageParser {
         return pkg;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.882 -0500", hash_original_method = "19D0E628AA10FC207BA0D548739FDEDB", hash_generated_method = "21AB05D8E5D5949D816C1714D943A498")
-    public boolean collectCertificates(Package pkg, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.517 -0500", hash_original_method = "19D0E628AA10FC207BA0D548739FDEDB", hash_generated_method = "21AB05D8E5D5949D816C1714D943A498")
+    
+public boolean collectCertificates(Package pkg, int flags) {
         pkg.mSignatures = null;
 
         WeakReference<byte[]> readBufferRef;
@@ -1793,8 +1860,9 @@ public class PackageParser {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.893 -0500", hash_original_method = "91CC6CEE84025557458760F97B90CD2F", hash_generated_method = "C733FE6A9F635C74B2195608DF6B6962")
-    private Package parsePackage(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.545 -0500", hash_original_method = "91CC6CEE84025557458760F97B90CD2F", hash_generated_method = "C733FE6A9F635C74B2195608DF6B6962")
+    
+private Package parsePackage(
         Resources res, XmlResourceParser parser, int flags, String[] outError)
         throws XmlPullParserException, IOException {
         AttributeSet attrs = parser;
@@ -2242,8 +2310,9 @@ public class PackageParser {
         return pkg;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.898 -0500", hash_original_method = "E3395575DA3BE4CF83D20AFB0193668F", hash_generated_method = "5118BC338C07A7BCCD50EDD033433D16")
-    private PermissionGroup parsePermissionGroup(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.559 -0500", hash_original_method = "E3395575DA3BE4CF83D20AFB0193668F", hash_generated_method = "5118BC338C07A7BCCD50EDD033433D16")
+    
+private PermissionGroup parsePermissionGroup(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError)
         throws XmlPullParserException, IOException {
         PermissionGroup perm = new PermissionGroup(owner);
@@ -2279,8 +2348,9 @@ public class PackageParser {
         return perm;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.899 -0500", hash_original_method = "1D11570A32C6A271E593822206F9BD54", hash_generated_method = "B48AB1A7DC848D7C286E3798A1BD5884")
-    private Permission parsePermission(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.562 -0500", hash_original_method = "1D11570A32C6A271E593822206F9BD54", hash_generated_method = "B48AB1A7DC848D7C286E3798A1BD5884")
+    
+private Permission parsePermission(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError)
         throws XmlPullParserException, IOException {
         Permission perm = new Permission(owner);
@@ -2334,8 +2404,9 @@ public class PackageParser {
         return perm;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.900 -0500", hash_original_method = "BAA3C6F5A9B5CEE097497C276EDD624D", hash_generated_method = "9A3462B2AAB00D8B345E60990E32D35A")
-    private Permission parsePermissionTree(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.565 -0500", hash_original_method = "BAA3C6F5A9B5CEE097497C276EDD624D", hash_generated_method = "9A3462B2AAB00D8B345E60990E32D35A")
+    
+private Permission parsePermissionTree(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError)
         throws XmlPullParserException, IOException {
         Permission perm = new Permission(owner);
@@ -2382,8 +2453,9 @@ public class PackageParser {
         return perm;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.901 -0500", hash_original_method = "77B98478A5AAF7EC4E5B725BE9FDC9E7", hash_generated_method = "6F529F66FF8E579C76ED8B1597ED6FF8")
-    private Instrumentation parseInstrumentation(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.569 -0500", hash_original_method = "77B98478A5AAF7EC4E5B725BE9FDC9E7", hash_generated_method = "6F529F66FF8E579C76ED8B1597ED6FF8")
+    
+private Instrumentation parseInstrumentation(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError)
         throws XmlPullParserException, IOException {
         TypedArray sa = res.obtainAttributes(attrs,
@@ -2442,8 +2514,9 @@ public class PackageParser {
         return a;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.905 -0500", hash_original_method = "3784AF975EC3AF37D03EE1A91A900A73", hash_generated_method = "FA2001D6A612F74029CB0AB0E4C30083")
-    private boolean parseApplication(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.577 -0500", hash_original_method = "3784AF975EC3AF37D03EE1A91A900A73", hash_generated_method = "FA2001D6A612F74029CB0AB0E4C30083")
+    
+private boolean parseApplication(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError)
         throws XmlPullParserException, IOException {
         final ApplicationInfo ai = owner.applicationInfo;
@@ -2760,8 +2833,9 @@ public class PackageParser {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.906 -0500", hash_original_method = "63CFF58BE3C03EE3AAF09BEB17B3529D", hash_generated_method = "4A9A9E645FDBE614932224E799649AE5")
-    private boolean parsePackageItemInfo(Package owner, PackageItemInfo outInfo,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.581 -0500", hash_original_method = "63CFF58BE3C03EE3AAF09BEB17B3529D", hash_generated_method = "4A9A9E645FDBE614932224E799649AE5")
+    
+private boolean parsePackageItemInfo(Package owner, PackageItemInfo outInfo,
             String[] outError, String tag, TypedArray sa,
             int nameRes, int labelRes, int iconRes, int logoRes) {
         String name = sa.getNonConfigurationString(nameRes, 0);
@@ -2797,8 +2871,9 @@ public class PackageParser {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.909 -0500", hash_original_method = "5541C23C630FF3AC70030479982C4C1F", hash_generated_method = "61B2ABEDD1EBE5D9CA873F6DA7F29935")
-    private Activity parseActivity(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.587 -0500", hash_original_method = "5541C23C630FF3AC70030479982C4C1F", hash_generated_method = "61B2ABEDD1EBE5D9CA873F6DA7F29935")
+    
+private Activity parseActivity(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError,
             boolean receiver, boolean hardwareAccelerated)
             throws XmlPullParserException, IOException {
@@ -3012,8 +3087,9 @@ public class PackageParser {
         return a;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.911 -0500", hash_original_method = "2C553740AE22C20570EEFC51EEC11A38", hash_generated_method = "9B2C06CB9B32DFE92715E54D0C94747E")
-    private Activity parseActivityAlias(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.593 -0500", hash_original_method = "2C553740AE22C20570EEFC51EEC11A38", hash_generated_method = "9B2C06CB9B32DFE92715E54D0C94747E")
+    
+private Activity parseActivityAlias(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError)
             throws XmlPullParserException, IOException {
         TypedArray sa = res.obtainAttributes(attrs,
@@ -3160,8 +3236,9 @@ public class PackageParser {
         return a;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.912 -0500", hash_original_method = "CC761DF5515ACB2817B0A6BEDC12031E", hash_generated_method = "C3AEA733098AE437186D5A46D33CEBFA")
-    private Provider parseProvider(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.597 -0500", hash_original_method = "CC761DF5515ACB2817B0A6BEDC12031E", hash_generated_method = "C3AEA733098AE437186D5A46D33CEBFA")
+    
+private Provider parseProvider(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError)
             throws XmlPullParserException, IOException {
         TypedArray sa = res.obtainAttributes(attrs,
@@ -3260,8 +3337,9 @@ public class PackageParser {
         return p;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.915 -0500", hash_original_method = "05A16AA66DEB0B6B5120CEC23FE33532", hash_generated_method = "E70591A1E3D0FC13C8C615179A470058")
-    private boolean parseProviderTags(Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.603 -0500", hash_original_method = "05A16AA66DEB0B6B5120CEC23FE33532", hash_generated_method = "E70591A1E3D0FC13C8C615179A470058")
+    
+private boolean parseProviderTags(Resources res,
             XmlPullParser parser, AttributeSet attrs,
             Provider outInfo, String[] outError)
             throws XmlPullParserException, IOException {
@@ -3437,8 +3515,9 @@ public class PackageParser {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.917 -0500", hash_original_method = "1B6E257916FE773842F0B213D728DC29", hash_generated_method = "5D1DB58F3656CCEEAF6C8D3FC2B0679F")
-    private Service parseService(Package owner, Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.607 -0500", hash_original_method = "1B6E257916FE773842F0B213D728DC29", hash_generated_method = "5D1DB58F3656CCEEAF6C8D3FC2B0679F")
+    
+private Service parseService(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError)
             throws XmlPullParserException, IOException {
         TypedArray sa = res.obtainAttributes(attrs,
@@ -3541,8 +3620,9 @@ public class PackageParser {
         return s;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.918 -0500", hash_original_method = "99FE3F7E654A8DB168806DBE6C913C62", hash_generated_method = "C3733E937DF0E226D98FFAA94CCFCB95")
-    private boolean parseAllMetaData(Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.611 -0500", hash_original_method = "99FE3F7E654A8DB168806DBE6C913C62", hash_generated_method = "C3733E937DF0E226D98FFAA94CCFCB95")
+    
+private boolean parseAllMetaData(Resources res,
             XmlPullParser parser, AttributeSet attrs, String tag,
             Component outInfo, String[] outError)
             throws XmlPullParserException, IOException {
@@ -3576,8 +3656,9 @@ public class PackageParser {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.920 -0500", hash_original_method = "714C7ED1FC52C32A41D3A8C089BB2BEC", hash_generated_method = "9457877F7A7FC17587DF2BC9C919C113")
-    private Bundle parseMetaData(Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.614 -0500", hash_original_method = "714C7ED1FC52C32A41D3A8C089BB2BEC", hash_generated_method = "9457877F7A7FC17587DF2BC9C919C113")
+    
+private Bundle parseMetaData(Resources res,
             XmlPullParser parser, AttributeSet attrs,
             Bundle data, String[] outError)
             throws XmlPullParserException, IOException {
@@ -3642,8 +3723,9 @@ public class PackageParser {
         return data;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:05.924 -0500", hash_original_method = "B28F171FD6C00B48F648DC5DCFE3EFC1", hash_generated_method = "A9356700B66F9372A103C88AA36CA357")
-    private boolean parseIntent(Resources res,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.626 -0500", hash_original_method = "B28F171FD6C00B48F648DC5DCFE3EFC1", hash_generated_method = "A9356700B66F9372A103C88AA36CA357")
+    
+private boolean parseIntent(Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags,
             IntentInfo outInfo, String[] outError, boolean isActivity)
             throws XmlPullParserException, IOException {

@@ -26,53 +26,53 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     private static Object getFieldL(Object instance, Class<?> declaringClass, String fieldName, String fieldTypeName) {
     	return new Object();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.236 -0500", hash_original_field = "6D678B37997C992735BEA0DA965949BA", hash_generated_field = "EDEC464CFF602399479B5323240F3B9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.916 -0500", hash_original_field = "6D678B37997C992735BEA0DA965949BA", hash_generated_field = "EDEC464CFF602399479B5323240F3B9A")
 
 
     private static final Class<?>[] WRITE_UNSHARED_PARAM_TYPES = new Class[] { Object.class };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.237 -0500", hash_original_field = "7F7257B6D8C2424391077998CDA8F98C", hash_generated_field = "94B8CE0A3BE191EC240D9518A5C28538")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.919 -0500", hash_original_field = "7F7257B6D8C2424391077998CDA8F98C", hash_generated_field = "94B8CE0A3BE191EC240D9518A5C28538")
 
     private static final byte NOT_SC_BLOCK_DATA = (byte) (SC_BLOCK_DATA ^ 0xFF);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.238 -0500", hash_original_field = "71CE55750109EBB73E2456BE80AD82FD", hash_generated_field = "123C8BF62BBC79B951F58B358976C3FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.922 -0500", hash_original_field = "71CE55750109EBB73E2456BE80AD82FD", hash_generated_field = "123C8BF62BBC79B951F58B358976C3FF")
 
     private int nestedLevels;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.239 -0500", hash_original_field = "2855F0553474A8516BB60C3AB948195B", hash_generated_field = "590E14C0A9F44251F0FB79AFE6C14C40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.924 -0500", hash_original_field = "2855F0553474A8516BB60C3AB948195B", hash_generated_field = "590E14C0A9F44251F0FB79AFE6C14C40")
 
     private DataOutputStream output;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.240 -0500", hash_original_field = "EA41DAE3EA3A9463214580744E283D95", hash_generated_field = "F1F4A3D364C39A7A9A580E729A07A6BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.926 -0500", hash_original_field = "EA41DAE3EA3A9463214580744E283D95", hash_generated_field = "F1F4A3D364C39A7A9A580E729A07A6BB")
 
     private boolean enableReplace;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.241 -0500", hash_original_field = "F50226C4450D15DEB3DAF04AA8DD91E0", hash_generated_field = "6BF0D260FF82B6C05AF71BF5A37B87B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.929 -0500", hash_original_field = "F50226C4450D15DEB3DAF04AA8DD91E0", hash_generated_field = "6BF0D260FF82B6C05AF71BF5A37B87B5")
 
     private DataOutputStream primitiveTypes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.242 -0500", hash_original_field = "B345808D8C54A6DE41B064F86D48A94C", hash_generated_field = "C2484DFB497796B6143E78C11005E43D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.931 -0500", hash_original_field = "B345808D8C54A6DE41B064F86D48A94C", hash_generated_field = "C2484DFB497796B6143E78C11005E43D")
 
     private ByteArrayOutputStream primitiveTypesBuffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.242 -0500", hash_original_field = "6ABD8506E99DA36F288EACCC1D0AEA0D", hash_generated_field = "262F0B6D79DA047EE0A946998A1A0FC4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.933 -0500", hash_original_field = "6ABD8506E99DA36F288EACCC1D0AEA0D", hash_generated_field = "262F0B6D79DA047EE0A946998A1A0FC4")
 
     private SerializationHandleMap objectsWritten;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.243 -0500", hash_original_field = "9FE03646F63952E65E01B54C60826991", hash_generated_field = "C5955C97495D41B971B03A33B3C5833F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.935 -0500", hash_original_field = "9FE03646F63952E65E01B54C60826991", hash_generated_field = "C5955C97495D41B971B03A33B3C5833F")
 
     private int currentHandle;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.244 -0500", hash_original_field = "42C03588FC817F62832A17907DDFD79F", hash_generated_field = "76736C274255A46E2AEB2CE593A1B428")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.937 -0500", hash_original_field = "42C03588FC817F62832A17907DDFD79F", hash_generated_field = "76736C274255A46E2AEB2CE593A1B428")
 
     private Object currentObject;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.245 -0500", hash_original_field = "6A61A63E4AD81B568463523E7D82D010", hash_generated_field = "7035F4B44BC3AE389D42445F7A5655AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.940 -0500", hash_original_field = "6A61A63E4AD81B568463523E7D82D010", hash_generated_field = "7035F4B44BC3AE389D42445F7A5655AC")
 
     private ObjectStreamClass currentClass;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.246 -0500", hash_original_field = "473298EA5584430267AC431FE5045555", hash_generated_field = "12864838116848C83740597D611280DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.942 -0500", hash_original_field = "473298EA5584430267AC431FE5045555", hash_generated_field = "12864838116848C83740597D611280DC")
 
     private int protocolVersion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.247 -0500", hash_original_field = "ABFFAED613377BDFDDEDD7269BB487AF", hash_generated_field = "DC52C2D606BFFEEFCE39D0BD7D3DAA23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.944 -0500", hash_original_field = "ABFFAED613377BDFDDEDD7269BB487AF", hash_generated_field = "DC52C2D606BFFEEFCE39D0BD7D3DAA23")
 
     private StreamCorruptedException nestedException;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.247 -0500", hash_original_field = "014E542677EA8E3C6BC341F69FBDBFF6", hash_generated_field = "BAD28CAA59CF68A4E344ADB2A9F8D573")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.946 -0500", hash_original_field = "014E542677EA8E3C6BC341F69FBDBFF6", hash_generated_field = "BAD28CAA59CF68A4E344ADB2A9F8D573")
 
     private EmulatedFieldsForDumping currentPutField;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.248 -0500", hash_original_field = "78AB9CCAB960E71CE119A2107AA96FD8", hash_generated_field = "3690401F10D38FF2C8AB1C19B641B107")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.949 -0500", hash_original_field = "78AB9CCAB960E71CE119A2107AA96FD8", hash_generated_field = "3690401F10D38FF2C8AB1C19B641B107")
 
     private boolean subclassOverridingImplementation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.249 -0500", hash_original_field = "F353EDD7A07A76CACDC598B2AE00874D", hash_generated_field = "A52DE6D705A0478FBD8E858BFAC127CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.952 -0500", hash_original_field = "F353EDD7A07A76CACDC598B2AE00874D", hash_generated_field = "A52DE6D705A0478FBD8E858BFAC127CD")
 
     private final ObjectStreamClass proxyClassDesc = ObjectStreamClass.lookup(Proxy.class);
 
@@ -84,8 +84,9 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      * @throws IOException
      *             if an error occurs when creating this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.261 -0500", hash_original_method = "EA89A37EA944EE797F4A4E71C06BB807", hash_generated_method = "20201D6142A4F45AD52A1B42A23D1633")
-    protected ObjectOutputStream() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.985 -0500", hash_original_method = "EA89A37EA944EE797F4A4E71C06BB807", hash_generated_method = "20201D6142A4F45AD52A1B42A23D1633")
+    
+protected ObjectOutputStream() throws IOException {
         /*
          * WARNING - we should throw IOException if not called from a subclass
          * according to the JavaDoc. Add the test.
@@ -104,8 +105,9 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      *             if an error occurs while writing the object stream
      *             header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.262 -0500", hash_original_method = "C3742BF53888E5C7E36BAC1682B0BA91", hash_generated_method = "951FD3E615E51932C8B5A8C595B0B848")
-    public ObjectOutputStream(OutputStream output) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.989 -0500", hash_original_method = "C3742BF53888E5C7E36BAC1682B0BA91", hash_generated_method = "951FD3E615E51932C8B5A8C595B0B848")
+    
+public ObjectOutputStream(OutputStream output) throws IOException {
         this.output = (output instanceof DataOutputStream) ? (DataOutputStream) output
                 : new DataOutputStream(output);
         this.enableReplace = false;
@@ -134,8 +136,9 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      *             if an error occurs while writing to the target stream.
      * @see ObjectInputStream#resolveClass(ObjectStreamClass)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.263 -0500", hash_original_method = "2EE844E85177CE8B8519EE788449061C", hash_generated_method = "E662938EE1A3B497D28323D3A8E8F93E")
-    protected void annotateClass(Class<?> aClass) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.991 -0500", hash_original_method = "2EE844E85177CE8B8519EE788449061C", hash_generated_method = "E662938EE1A3B497D28323D3A8E8F93E")
+    
+protected void annotateClass(Class<?> aClass) throws IOException {
         // By default no extra info is saved. Subclasses can override
     }
 
@@ -150,8 +153,9 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      *             if an error occurs while writing to the target stream.
      * @see ObjectInputStream#resolveProxyClass(String[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.264 -0500", hash_original_method = "6D36FCC856EE4705ED65F6105201ADD2", hash_generated_method = "CF16920BE63D675EC370DF7716E85BA2")
-    protected void annotateProxyClass(Class<?> aClass) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.994 -0500", hash_original_method = "6D36FCC856EE4705ED65F6105201ADD2", hash_generated_method = "CF16920BE63D675EC370DF7716E85BA2")
+    
+protected void annotateProxyClass(Class<?> aClass) throws IOException {
         // By default no extra info is saved. Subclasses can override
     }
 
@@ -159,8 +163,9 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      * Do the necessary work to see if the receiver can be used to write
      * primitive types like int, char, etc.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.264 -0500", hash_original_method = "73D4A72122980F7DB50B81D978D62054", hash_generated_method = "2F1C9599127953E750BC0EC19183EDEB")
-    private void checkWritePrimitiveTypes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.996 -0500", hash_original_method = "73D4A72122980F7DB50B81D978D62054", hash_generated_method = "2F1C9599127953E750BC0EC19183EDEB")
+    
+private void checkWritePrimitiveTypes() {
         if (primitiveTypes == null) {
             // If we got here we have no Stream previously created
             // WARNING - if the stream does not grow, this code is wrong
@@ -176,9 +181,10 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.265 -0500", hash_original_method = "29115934C3EAEF8AC600D579304D0581", hash_generated_method = "8754A565F8570BE362F125849A8954C1")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.999 -0500", hash_original_method = "29115934C3EAEF8AC600D579304D0581", hash_generated_method = "8754A565F8570BE362F125849A8954C1")
+    
+@Override
+    public void close() throws IOException {
         // First flush what is needed (primitive data, etc)
         flush();
         output.close();
@@ -192,8 +198,9 @@ public void close() throws IOException {
      * @see #writeFields
      * @see #writeFieldValues(EmulatedFieldsForDumping)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.266 -0500", hash_original_method = "75FABBE0CA8F03B34490087B8F17BDC1", hash_generated_method = "F678F7495D32EE6D68B575867F8261E9")
-    private void computePutField() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.001 -0500", hash_original_method = "75FABBE0CA8F03B34490087B8F17BDC1", hash_generated_method = "F678F7495D32EE6D68B575867F8261E9")
+    
+private void computePutField() {
         currentPutField = new EmulatedFieldsForDumping(this, currentClass);
     }
 
@@ -208,8 +215,9 @@ public void close() throws IOException {
      *             if this method is not called from {@code writeObject()}.
      * @see ObjectInputStream#defaultReadObject
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.268 -0500", hash_original_method = "F6C293AC5437F7F079C554EABDD8D443", hash_generated_method = "DB15EE34976D43748FFB1795F8CC6575")
-    public void defaultWriteObject() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.003 -0500", hash_original_method = "F6C293AC5437F7F079C554EABDD8D443", hash_generated_method = "DB15EE34976D43748FFB1795F8CC6575")
+    
+public void defaultWriteObject() throws IOException {
         if (currentObject == null) {
             throw new NotActiveException();
         }
@@ -223,8 +231,9 @@ public void close() throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.269 -0500", hash_original_method = "A89FD6C60365B1028CEBCCFC3106EF9A", hash_generated_method = "CD210D47F9432627FD5EBAF140E81828")
-    protected void drain() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.006 -0500", hash_original_method = "A89FD6C60365B1028CEBCCFC3106EF9A", hash_generated_method = "CD210D47F9432627FD5EBAF140E81828")
+    
+protected void drain() throws IOException {
         if (primitiveTypes == null || primitiveTypesBuffer == null) {
             return;
         }
@@ -269,8 +278,9 @@ public void close() throws IOException {
      *             If an error occurs attempting to save {@code null} or
      *             a cyclic reference.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.270 -0500", hash_original_method = "3C81D15CCFEF1BE19C0E53EB7F3B0380", hash_generated_method = "E76FEAE3E540063408EA71EE3DC4EE79")
-    private int dumpCycle(Object obj) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.008 -0500", hash_original_method = "3C81D15CCFEF1BE19C0E53EB7F3B0380", hash_generated_method = "E76FEAE3E540063408EA71EE3DC4EE79")
+    
+private int dumpCycle(Object obj) throws IOException {
         // If the object has been saved already, save its handle only
         int handle = objectsWritten.get(obj);
         if (handle != -1) {
@@ -292,8 +302,9 @@ public void close() throws IOException {
      * @see #replaceObject
      * @see ObjectInputStream#enableResolveObject
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.270 -0500", hash_original_method = "7186A696463687F53D4FA37D2BB9631D", hash_generated_method = "C364514C3E192BD94155F54CC0692460")
-    protected boolean enableReplaceObject(boolean enable) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.011 -0500", hash_original_method = "7186A696463687F53D4FA37D2BB9631D", hash_generated_method = "C364514C3E192BD94155F54CC0692460")
+    
+protected boolean enableReplaceObject(boolean enable) {
         boolean originalValue = enableReplace;
         enableReplace = enable;
         return originalValue;
@@ -307,9 +318,10 @@ public void close() throws IOException {
      *             if an error occurs while writing to or flushing the output
      *             stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.271 -0500", hash_original_method = "117A95892DAF31A0926F2E917E5208CF", hash_generated_method = "133BE7A601CE39FEA947C8DB1F698213")
-    @Override
-public void flush() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.013 -0500", hash_original_method = "117A95892DAF31A0926F2E917E5208CF", hash_generated_method = "133BE7A601CE39FEA947C8DB1F698213")
+    
+@Override
+    public void flush() throws IOException {
         drain();
         output.flush();
     }
@@ -320,8 +332,9 @@ public void flush() throws IOException {
      *
      * @return the next handle to represent the next cyclic reference
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.273 -0500", hash_original_method = "3E8C44E06770B18C136965DDB10C163B", hash_generated_method = "ADE9A862360E55137AC5DB20D13240EE")
-    private int nextHandle() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.021 -0500", hash_original_method = "3E8C44E06770B18C136965DDB10C163B", hash_generated_method = "ADE9A862360E55137AC5DB20D13240EE")
+    
+private int nextHandle() {
         return currentHandle++;
     }
 
@@ -339,8 +352,9 @@ public void flush() throws IOException {
      *             if this method is not called from {@code writeObject()}.
      * @see ObjectInputStream#defaultReadObject
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.274 -0500", hash_original_method = "4F3CF2DA9583C39D0A0D02BEFFFE8C29", hash_generated_method = "5B804A30B4756F7E9BAADCADFCEC7BC4")
-    public PutField putFields() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.023 -0500", hash_original_method = "4F3CF2DA9583C39D0A0D02BEFFFE8C29", hash_generated_method = "5B804A30B4756F7E9BAADCADFCEC7BC4")
+    
+public PutField putFields() throws IOException {
         if (currentObject == null) {
             throw new NotActiveException();
         }
@@ -350,8 +364,9 @@ public void flush() throws IOException {
         return currentPutField;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.276 -0500", hash_original_method = "6CA6FC4D83D22ECC70837B9572B0E8EA", hash_generated_method = "595E1CC0C74AE5C25102927A0B177589")
-    private int registerObjectWritten(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.025 -0500", hash_original_method = "6CA6FC4D83D22ECC70837B9572B0E8EA", hash_generated_method = "595E1CC0C74AE5C25102927A0B177589")
+    
+private int registerObjectWritten(Object obj) {
         int handle = nextHandle();
         objectsWritten.put(obj, handle);
         return handle;
@@ -366,8 +381,9 @@ public void flush() throws IOException {
      * @param previousHandle
      *            The handle of the previous identical object dumped
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.277 -0500", hash_original_method = "37FD060D4B2DB7C3EC8F52EA51C77D72", hash_generated_method = "F3EEDD6F59E86AC74EA08641023D1986")
-    private void removeUnsharedReference(Object obj, int previousHandle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.028 -0500", hash_original_method = "37FD060D4B2DB7C3EC8F52EA51C77D72", hash_generated_method = "F3EEDD6F59E86AC74EA08641023D1986")
+    
+private void removeUnsharedReference(Object obj, int previousHandle) {
         if (previousHandle != -1) {
             objectsWritten.put(obj, previousHandle);
         } else {
@@ -391,8 +407,9 @@ public void flush() throws IOException {
      * @see ObjectInputStream#enableResolveObject
      * @see ObjectInputStream#resolveObject
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.278 -0500", hash_original_method = "C1DF94E02684AF79BBD267850463E92A", hash_generated_method = "11919EBF1AC3EF3451B4D3A963F1C4FE")
-    protected Object replaceObject(Object object) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.030 -0500", hash_original_method = "C1DF94E02684AF79BBD267850463E92A", hash_generated_method = "11919EBF1AC3EF3451B4D3A963F1C4FE")
+    
+protected Object replaceObject(Object object) throws IOException {
         // By default no object replacement. Subclasses can override
         return object;
     }
@@ -408,8 +425,9 @@ public void flush() throws IOException {
      *             if {@code reset()} is called during the serialization of an
      *             object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.279 -0500", hash_original_method = "4FDA9D292F9CB60FE54E9147043F29DF", hash_generated_method = "4431441FA79FA4403373900DAB21D756")
-    public void reset() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.033 -0500", hash_original_method = "4FDA9D292F9CB60FE54E9147043F29DF", hash_generated_method = "4431441FA79FA4403373900DAB21D756")
+    
+public void reset() throws IOException {
         // First we flush what we have
         drain();
         /*
@@ -427,8 +445,9 @@ public void flush() throws IOException {
      * again, instead of a handle (cyclic reference).
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.279 -0500", hash_original_method = "CB42E7CB8763CADF528182B203F4731A", hash_generated_method = "8A4CBC2C2D0258B0B956D5B7564FC1A5")
-    private void resetSeenObjects() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.035 -0500", hash_original_method = "CB42E7CB8763CADF528182B203F4731A", hash_generated_method = "8A4CBC2C2D0258B0B956D5B7564FC1A5")
+    
+private void resetSeenObjects() {
         objectsWritten = new SerializationHandleMap();
         currentHandle = baseWireHandle;
     }
@@ -439,8 +458,9 @@ public void flush() throws IOException {
      * receiver knows it is in a fresh clean state.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.280 -0500", hash_original_method = "27ED7D7B38D4C22EF7056E4BAF81440E", hash_generated_method = "401F5A1166683BAD2648FE717213E059")
-    private void resetState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.037 -0500", hash_original_method = "27ED7D7B38D4C22EF7056E4BAF81440E", hash_generated_method = "401F5A1166683BAD2648FE717213E059")
+    
+private void resetState() {
         resetSeenObjects();
         nestedLevels = 0;
     }
@@ -459,8 +479,9 @@ public void flush() throws IOException {
      * @see ObjectStreamConstants#PROTOCOL_VERSION_1
      * @see ObjectStreamConstants#PROTOCOL_VERSION_2
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.281 -0500", hash_original_method = "899849124785B3DAA2410A481AC243A4", hash_generated_method = "57E7E1D77037A30D6DDD99D7DF680B7A")
-    public void useProtocolVersion(int version) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.040 -0500", hash_original_method = "899849124785B3DAA2410A481AC243A4", hash_generated_method = "57E7E1D77037A30D6DDD99D7DF680B7A")
+    
+public void useProtocolVersion(int version) throws IOException {
         if (!objectsWritten.isEmpty()) {
             throw new IllegalStateException("Cannot set protocol version when stream in use");
         }
@@ -486,9 +507,10 @@ public void flush() throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.282 -0500", hash_original_method = "4335176A8BF0CB76C8983C14BE755AB0", hash_generated_method = "2396E7855518FCB39100A578F5EF0B6D")
-    @Override
-public void write(byte[] buffer, int offset, int length) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.043 -0500", hash_original_method = "4335176A8BF0CB76C8983C14BE755AB0", hash_generated_method = "2396E7855518FCB39100A578F5EF0B6D")
+    
+@Override
+    public void write(byte[] buffer, int offset, int length) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.write(buffer, offset, length);
     }
@@ -503,9 +525,10 @@ public void write(byte[] buffer, int offset, int length) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.283 -0500", hash_original_method = "890E7ADC76A0934752F791BA928637BD", hash_generated_method = "76EC2FE8B111D6EFD0C5161A9F8E6AE5")
-    @Override
-public void write(int value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.045 -0500", hash_original_method = "890E7ADC76A0934752F791BA928637BD", hash_generated_method = "76EC2FE8B111D6EFD0C5161A9F8E6AE5")
+    
+@Override
+    public void write(int value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.write(value);
     }
@@ -518,8 +541,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.284 -0500", hash_original_method = "253E21281D84BB4AEC7BC00A39E22928", hash_generated_method = "029F21A115C14D88BF09E962FA8E82B1")
-    public void writeBoolean(boolean value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.047 -0500", hash_original_method = "253E21281D84BB4AEC7BC00A39E22928", hash_generated_method = "029F21A115C14D88BF09E962FA8E82B1")
+    
+public void writeBoolean(boolean value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeBoolean(value);
     }
@@ -532,8 +556,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.285 -0500", hash_original_method = "DCBF5513EE5F9BB37CF570D282A66C5E", hash_generated_method = "B50D824F31325598242CF2A68080FEDA")
-    public void writeByte(int value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.049 -0500", hash_original_method = "DCBF5513EE5F9BB37CF570D282A66C5E", hash_generated_method = "B50D824F31325598242CF2A68080FEDA")
+    
+public void writeByte(int value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeByte(value);
     }
@@ -548,8 +573,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.286 -0500", hash_original_method = "2FD9E25E34EBC831C98FBB1774A09056", hash_generated_method = "3FC5B8F8F72A713B2C0960DBC8B0282B")
-    public void writeBytes(String value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.052 -0500", hash_original_method = "2FD9E25E34EBC831C98FBB1774A09056", hash_generated_method = "3FC5B8F8F72A713B2C0960DBC8B0282B")
+    
+public void writeBytes(String value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeBytes(value);
     }
@@ -562,8 +588,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.286 -0500", hash_original_method = "A70BC61472A0A40B7DA1B300459E269C", hash_generated_method = "3194C3B1826DCE69B6DA63887D9F90F5")
-    public void writeChar(int value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.054 -0500", hash_original_method = "A70BC61472A0A40B7DA1B300459E269C", hash_generated_method = "3194C3B1826DCE69B6DA63887D9F90F5")
+    
+public void writeChar(int value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeChar(value);
     }
@@ -577,8 +604,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.287 -0500", hash_original_method = "2819E1113D5EFA42F2CF8A185C5FE232", hash_generated_method = "B8C53EDFE2427B81C0D7CC5F8B84A55F")
-    public void writeChars(String value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.057 -0500", hash_original_method = "2819E1113D5EFA42F2CF8A185C5FE232", hash_generated_method = "B8C53EDFE2427B81C0D7CC5F8B84A55F")
+    
+public void writeChars(String value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeChars(value);
     }
@@ -598,8 +626,9 @@ public void write(int value) throws IOException {
      *             If an IO exception happened when writing the class
      *             descriptor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.289 -0500", hash_original_method = "D6DF6A35D187C3B8A220F04225A24DB7", hash_generated_method = "799C91B9EC343E3F85239B2925693FE3")
-    private int writeClassDesc(ObjectStreamClass classDesc, boolean unshared) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.061 -0500", hash_original_method = "D6DF6A35D187C3B8A220F04225A24DB7", hash_generated_method = "799C91B9EC343E3F85239B2925693FE3")
+    
+private int writeClassDesc(ObjectStreamClass classDesc, boolean unshared) throws IOException {
         if (classDesc == null) {
             writeNull();
             return -1;
@@ -662,8 +691,9 @@ public void write(int value) throws IOException {
      * Writes a handle representing a cyclic reference (object previously
      * dumped).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.290 -0500", hash_original_method = "6CD4D6A26A6EE5C2333CE9BAD2D29100", hash_generated_method = "681B800BE2C4C367C7E7CFF772D1CB6D")
-    private void writeCyclicReference(int handle) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.063 -0500", hash_original_method = "6CD4D6A26A6EE5C2333CE9BAD2D29100", hash_generated_method = "681B800BE2C4C367C7E7CFF772D1CB6D")
+    
+private void writeCyclicReference(int handle) throws IOException {
         output.writeByte(TC_REFERENCE);
         output.writeInt(handle);
     }
@@ -676,8 +706,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.290 -0500", hash_original_method = "02DC35912BAFF16550D8FBDB82DDCD50", hash_generated_method = "B0839B5ACE77F3E590FC761BCFCBBA2A")
-    public void writeDouble(double value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.065 -0500", hash_original_method = "02DC35912BAFF16550D8FBDB82DDCD50", hash_generated_method = "B0839B5ACE77F3E590FC761BCFCBBA2A")
+    
+public void writeDouble(double value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeDouble(value);
     }
@@ -699,8 +730,9 @@ public void write(int value) throws IOException {
      *
      * @see #writeObject(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.291 -0500", hash_original_method = "8DAE1373FC5F31DAE45B98A018C14CB9", hash_generated_method = "EA2E9DCCE3A72EA51BE3270C308A06E7")
-    private void writeFieldDescriptors(ObjectStreamClass classDesc, boolean externalizable) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.068 -0500", hash_original_method = "8DAE1373FC5F31DAE45B98A018C14CB9", hash_generated_method = "EA2E9DCCE3A72EA51BE3270C308A06E7")
+    
+private void writeFieldDescriptors(ObjectStreamClass classDesc, boolean externalizable) throws IOException {
         Class<?> loadedClass = classDesc.forClass();
         ObjectStreamField[] fields = null;
         int fieldCount = 0;
@@ -735,8 +767,9 @@ public void write(int value) throws IOException {
      *             if there are no fields to write to the target stream.
      * @see #putFields
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.292 -0500", hash_original_method = "851EC9DCB527C64AF85B9AAA86ABFF43", hash_generated_method = "7F9F322E1A455C229D38CE3200B4237A")
-    public void writeFields() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.071 -0500", hash_original_method = "851EC9DCB527C64AF85B9AAA86ABFF43", hash_generated_method = "7F9F322E1A455C229D38CE3200B4237A")
+    
+public void writeFields() throws IOException {
         // Has to have fields to write
         if (currentPutField == null) {
             throw new NotActiveException();
@@ -758,8 +791,9 @@ public void write(int value) throws IOException {
      * @see #writeFields
      * @see #writeObject(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.294 -0500", hash_original_method = "97B3D4C0A2A3E17C88F2E6B51B15BF4C", hash_generated_method = "5FCEBC6175574B4F2FE309D23F646844")
-    private void writeFieldValues(EmulatedFieldsForDumping emulatedFields) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.074 -0500", hash_original_method = "97B3D4C0A2A3E17C88F2E6B51B15BF4C", hash_generated_method = "5FCEBC6175574B4F2FE309D23F646844")
+    
+private void writeFieldValues(EmulatedFieldsForDumping emulatedFields) throws IOException {
         // Access internal fields which we can set/get. Users can't do this.
         EmulatedFields accessibleSimulatedFields = emulatedFields.emulatedFields();
         for (EmulatedFields.ObjectSlot slot : accessibleSimulatedFields.slots()) {
@@ -806,8 +840,9 @@ public void write(int value) throws IOException {
      *
      * @see #writeObject(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.295 -0500", hash_original_method = "3B2F054C3660B4FEDDE0689C3B0D847B", hash_generated_method = "F2C9D62B715F9CBA4A4AD1678D135095")
-    private void writeFieldValues(Object obj, ObjectStreamClass classDesc) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.077 -0500", hash_original_method = "3B2F054C3660B4FEDDE0689C3B0D847B", hash_generated_method = "F2C9D62B715F9CBA4A4AD1678D135095")
+    
+private void writeFieldValues(Object obj, ObjectStreamClass classDesc) throws IOException {
         for (ObjectStreamField fieldDesc : classDesc.fields()) {
             try {
                 Class<?> type = fieldDesc.getTypeInternal();
@@ -860,8 +895,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.296 -0500", hash_original_method = "2F0CF28A5E4A8655D2779BA683FB03E5", hash_generated_method = "97206FF0F5149E705B689D6DF50FE57D")
-    public void writeFloat(float value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.080 -0500", hash_original_method = "2F0CF28A5E4A8655D2779BA683FB03E5", hash_generated_method = "97206FF0F5149E705B689D6DF50FE57D")
+    
+public void writeFloat(float value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeFloat(value);
     }
@@ -890,8 +926,9 @@ public void write(int value) throws IOException {
      * @see #defaultWriteObject
      * @see #writeObject(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.297 -0500", hash_original_method = "6C93D0A9BF9141DB46D3843027575223", hash_generated_method = "74E4CF17C29E0267418363D1DF49854B")
-    private void writeHierarchy(Object object, ObjectStreamClass classDesc)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.084 -0500", hash_original_method = "6C93D0A9BF9141DB46D3843027575223", hash_generated_method = "74E4CF17C29E0267418363D1DF49854B")
+    
+private void writeHierarchy(Object object, ObjectStreamClass classDesc)
             throws IOException, NotActiveException {
         if (object == null) {
             throw new NotActiveException();
@@ -954,8 +991,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.298 -0500", hash_original_method = "4D560E72502C61E130F3258421731401", hash_generated_method = "DB98D19071CCC9064BAB18D4DCD03CE1")
-    public void writeInt(int value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.086 -0500", hash_original_method = "4D560E72502C61E130F3258421731401", hash_generated_method = "DB98D19071CCC9064BAB18D4DCD03CE1")
+    
+public void writeInt(int value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeInt(value);
     }
@@ -968,8 +1006,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.299 -0500", hash_original_method = "1C4CA2BE4C70907161A2CF485CB22A3E", hash_generated_method = "159023B26ABF7EB4239CF31CE78EA5AF")
-    public void writeLong(long value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.089 -0500", hash_original_method = "1C4CA2BE4C70907161A2CF485CB22A3E", hash_generated_method = "159023B26ABF7EB4239CF31CE78EA5AF")
+    
+public void writeLong(long value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeLong(value);
     }
@@ -993,8 +1032,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             If an IO exception happened when writing the array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.300 -0500", hash_original_method = "6EA4BE49540BA12319B9F5CA997917E6", hash_generated_method = "D80E359BDEF962005DD25D09A9598208")
-    private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass arrayClDesc,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.092 -0500", hash_original_method = "6EA4BE49540BA12319B9F5CA997917E6", hash_generated_method = "D80E359BDEF962005DD25D09A9598208")
+    
+private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass arrayClDesc,
             Class<?> componentType, boolean unshared) throws IOException {
         output.writeByte(TC_ARRAY);
         writeClassDesc(arrayClDesc, false);
@@ -1087,8 +1127,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             If an IO exception happened when writing the class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.301 -0500", hash_original_method = "EFEEB16087FF4E0EE92685A5C26C0D2A", hash_generated_method = "11AD60B7E0E9DA9AF48A09450772E69D")
-    private int writeNewClass(Class<?> object, boolean unshared) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.095 -0500", hash_original_method = "EFEEB16087FF4E0EE92685A5C26C0D2A", hash_generated_method = "11AD60B7E0E9DA9AF48A09450772E69D")
+    
+private int writeNewClass(Class<?> object, boolean unshared) throws IOException {
         output.writeByte(TC_CLASS);
 
         // Instances of java.lang.Class are always Serializable, even if their
@@ -1127,8 +1168,9 @@ public void write(int value) throws IOException {
      *             If an IO exception happened when writing the class
      *             descriptor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.302 -0500", hash_original_method = "8ED9B25450E87C39655806C7FB3946F8", hash_generated_method = "185422283A198BA0E9DC523EDB86FDE1")
-    private void writeNewClassDesc(ObjectStreamClass classDesc)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.098 -0500", hash_original_method = "8ED9B25450E87C39655806C7FB3946F8", hash_generated_method = "185422283A198BA0E9DC523EDB86FDE1")
+    
+private void writeNewClassDesc(ObjectStreamClass classDesc)
             throws IOException {
         output.writeUTF(classDesc.getName());
         output.writeLong(classDesc.getSerialVersionUID());
@@ -1162,8 +1204,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.303 -0500", hash_original_method = "641338D73905B8D6D3FE171A8894AADC", hash_generated_method = "9B1C0A79BFA0C4084EB7D72A72E7C5EC")
-    protected void writeClassDescriptor(ObjectStreamClass classDesc)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.101 -0500", hash_original_method = "641338D73905B8D6D3FE171A8894AADC", hash_generated_method = "9B1C0A79BFA0C4084EB7D72A72E7C5EC")
+    
+protected void writeClassDescriptor(ObjectStreamClass classDesc)
             throws IOException {
         writeNewClassDesc(classDesc);
     }
@@ -1187,8 +1230,9 @@ public void write(int value) throws IOException {
      *             If an IO exception happened when writing the exception
      *             object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.304 -0500", hash_original_method = "E088B51B3D25E92C7A08790C12EA9546", hash_generated_method = "54C1A98814C60E8C5F754CD30EED532C")
-    private void writeNewException(Exception ex) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.103 -0500", hash_original_method = "E088B51B3D25E92C7A08790C12EA9546", hash_generated_method = "54C1A98814C60E8C5F754CD30EED532C")
+    
+private void writeNewException(Exception ex) throws IOException {
         output.writeByte(TC_EXCEPTION);
         resetSeenObjects();
         writeObjectInternal(ex, false, false, false); // No replacements
@@ -1219,8 +1263,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             If an IO exception happened when writing the object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.306 -0500", hash_original_method = "AD17E67664AB2CFE5D575A9D2DBC90D0", hash_generated_method = "6C44F521E14CD6D680627A624B1A6196")
-    private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass clDesc,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.106 -0500", hash_original_method = "AD17E67664AB2CFE5D575A9D2DBC90D0", hash_generated_method = "6C44F521E14CD6D680627A624B1A6196")
+    
+private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass clDesc,
             boolean unshared) throws IOException {
         // Not String, not null, not array, not cyclic reference
 
@@ -1301,8 +1346,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             If an IO exception happened when writing the String.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.307 -0500", hash_original_method = "BE97C7FA5FB694719D79A72C051D442C", hash_generated_method = "CD49258FB0912708F891AF64058A753C")
-    private int writeNewString(String object, boolean unshared) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.109 -0500", hash_original_method = "BE97C7FA5FB694719D79A72C051D442C", hash_generated_method = "CD49258FB0912708F891AF64058A753C")
+    
+private int writeNewString(String object, boolean unshared) throws IOException {
         long count = ModifiedUtf8.countBytes(object, false);
         byte[] buffer;
         int offset = 0;
@@ -1336,8 +1382,9 @@ public void write(int value) throws IOException {
      *             If an IO exception happened when writing the tag for
      *             {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.308 -0500", hash_original_method = "631D52D34CFE4ABBA41E943E2B7FB044", hash_generated_method = "60BC8CB03B87340E315CB362518E95AD")
-    private void writeNull() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.112 -0500", hash_original_method = "631D52D34CFE4ABBA41E943E2B7FB044", hash_generated_method = "60BC8CB03B87340E315CB362518E95AD")
+    
+private void writeNull() throws IOException {
         output.writeByte(TC_NULL);
     }
 
@@ -1350,8 +1397,9 @@ public void write(int value) throws IOException {
      *             if an error occurs while writing to the target stream.
      * @see ObjectInputStream#readObject()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.309 -0500", hash_original_method = "D65EE5B0FE82553B53FE321A403242DE", hash_generated_method = "0F7F1300E84E4CF37EC57773C07CEC2E")
-    public final void writeObject(Object object) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.115 -0500", hash_original_method = "D65EE5B0FE82553B53FE321A403242DE", hash_generated_method = "0F7F1300E84E4CF37EC57773C07CEC2E")
+    
+public final void writeObject(Object object) throws IOException {
         writeObject(object, false);
     }
 
@@ -1367,13 +1415,15 @@ public void write(int value) throws IOException {
      *             if an error occurs while writing to the target stream.
      * @see ObjectInputStream#readUnshared()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.309 -0500", hash_original_method = "21591331F2C6632F1308070B9A9FAC52", hash_generated_method = "6217E9B52C34975907A5890969EFD0B0")
-    public void writeUnshared(Object object) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.117 -0500", hash_original_method = "21591331F2C6632F1308070B9A9FAC52", hash_generated_method = "6217E9B52C34975907A5890969EFD0B0")
+    
+public void writeUnshared(Object object) throws IOException {
         writeObject(object, true);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.310 -0500", hash_original_method = "6135D4458B19CC3120CAE3855FF2BEA8", hash_generated_method = "E5BDC9807B0FDC2792FD9C88BAFE44FB")
-    private void writeObject(Object object, boolean unshared) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.120 -0500", hash_original_method = "6135D4458B19CC3120CAE3855FF2BEA8", hash_generated_method = "E5BDC9807B0FDC2792FD9C88BAFE44FB")
+    
+private void writeObject(Object object, boolean unshared) throws IOException {
         boolean setOutput = (primitiveTypes == output);
         if (setOutput) {
             primitiveTypes = null;
@@ -1429,8 +1479,9 @@ public void write(int value) throws IOException {
      *
      * @see ObjectInputStream#readObject()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.312 -0500", hash_original_method = "AD80A9CFC14D0263A7F0CECDD085D8B1", hash_generated_method = "B4039A8ED683CBCBCE97D37B81B712C7")
-    private int writeObjectInternal(Object object, boolean unshared,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.124 -0500", hash_original_method = "AD80A9CFC14D0263A7F0CECDD085D8B1", hash_generated_method = "B4039A8ED683CBCBCE97D37B81B712C7")
+    
+private int writeObjectInternal(Object object, boolean unshared,
             boolean computeClassBasedReplacement,
             boolean computeStreamReplacement) throws IOException {
 
@@ -1552,8 +1603,9 @@ public void write(int value) throws IOException {
     }
 
     // write for Enum Class Desc only, which is different from other classes
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.313 -0500", hash_original_method = "23E7E12F7C58661823B132165D2AB697", hash_generated_method = "71F95F71B6017D2395370C5D48C61E5F")
-    private ObjectStreamClass writeEnumDesc(Class<?> theClass, ObjectStreamClass classDesc, boolean unshared)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.127 -0500", hash_original_method = "23E7E12F7C58661823B132165D2AB697", hash_generated_method = "71F95F71B6017D2395370C5D48C61E5F")
+    
+private ObjectStreamClass writeEnumDesc(Class<?> theClass, ObjectStreamClass classDesc, boolean unshared)
             throws IOException {
         // write classDesc, classDesc for enum is different
 
@@ -1604,8 +1656,9 @@ public void write(int value) throws IOException {
         return classDesc;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.314 -0500", hash_original_method = "C81760408EA928607A5B6FF41AD80929", hash_generated_method = "A85A7B2AA6A35C622237528541F0FF2D")
-    private int writeNewEnum(Object object, Class<?> theClass, boolean unshared) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.130 -0500", hash_original_method = "C81760408EA928607A5B6FF41AD80929", hash_generated_method = "A85A7B2AA6A35C622237528541F0FF2D")
+    
+private int writeNewEnum(Object object, Class<?> theClass, boolean unshared) throws IOException {
         // write new Enum
         EmulatedFieldsForDumping originalCurrentPutField = currentPutField; // save
         // null it, to make sure one will be computed if needed
@@ -1664,8 +1717,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.315 -0500", hash_original_method = "10EDB7023EA5060FBBA4CCA483056F88", hash_generated_method = "F09E759431A35BEADD68CCE30669D906")
-    protected void writeObjectOverride(Object object) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.133 -0500", hash_original_method = "10EDB7023EA5060FBBA4CCA483056F88", hash_generated_method = "F09E759431A35BEADD68CCE30669D906")
+    
+protected void writeObjectOverride(Object object) throws IOException {
         if (!subclassOverridingImplementation) {
             // Subclasses must override.
             throw new IOException();
@@ -1680,8 +1734,9 @@ public void write(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.316 -0500", hash_original_method = "F969E0C742AA855339F3D16852D29508", hash_generated_method = "56ACD159CD8C7DEAAF4C2A7416345641")
-    public void writeShort(int value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.136 -0500", hash_original_method = "F969E0C742AA855339F3D16852D29508", hash_generated_method = "56ACD159CD8C7DEAAF4C2A7416345641")
+    
+public void writeShort(int value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeShort(value);
     }
@@ -1703,8 +1758,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.250 -0500", hash_original_method = "667143831AF06F72EDD5FEF1B82AC2BB", hash_generated_method = "713E518839A493B91F7EDF964973EB24")
-        public abstract void put(String name, boolean value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.956 -0500", hash_original_method = "667143831AF06F72EDD5FEF1B82AC2BB", hash_generated_method = "713E518839A493B91F7EDF964973EB24")
+        
+public abstract void put(String name, boolean value);
 
         /**
          * Puts the value of the character field identified by {@code name} to
@@ -1715,8 +1771,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.251 -0500", hash_original_method = "7C6DB3901C2EC32B7D3F76BEC36ED2FA", hash_generated_method = "6B8CF0C48B409FCE4E2F599DD0AF969F")
-        public abstract void put(String name, char value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.958 -0500", hash_original_method = "7C6DB3901C2EC32B7D3F76BEC36ED2FA", hash_generated_method = "6B8CF0C48B409FCE4E2F599DD0AF969F")
+        
+public abstract void put(String name, char value);
 
         /**
          * Puts the value of the byte field identified by {@code name} to the
@@ -1727,8 +1784,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.252 -0500", hash_original_method = "8267BB8AA842B0888237742FBD358BBF", hash_generated_method = "36791ADD60CED0BCFCF9E7B51BBAB22F")
-        public abstract void put(String name, byte value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.960 -0500", hash_original_method = "8267BB8AA842B0888237742FBD358BBF", hash_generated_method = "36791ADD60CED0BCFCF9E7B51BBAB22F")
+        
+public abstract void put(String name, byte value);
 
         /**
          * Puts the value of the short field identified by {@code name} to the
@@ -1739,8 +1797,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.253 -0500", hash_original_method = "CBA96376FB419B0B0C65E2B95E9ED63A", hash_generated_method = "B523A6857C1D11FF3ECE97FCA157FF18")
-        public abstract void put(String name, short value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.963 -0500", hash_original_method = "CBA96376FB419B0B0C65E2B95E9ED63A", hash_generated_method = "B523A6857C1D11FF3ECE97FCA157FF18")
+        
+public abstract void put(String name, short value);
 
         /**
          * Puts the value of the integer field identified by {@code name} to the
@@ -1751,8 +1810,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.254 -0500", hash_original_method = "9B9614BEA4B72B476E99C6FF027511F4", hash_generated_method = "BACEC47DF65202FAFDEF28015B83D8E2")
-        public abstract void put(String name, int value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.966 -0500", hash_original_method = "9B9614BEA4B72B476E99C6FF027511F4", hash_generated_method = "BACEC47DF65202FAFDEF28015B83D8E2")
+        
+public abstract void put(String name, int value);
 
         /**
          * Puts the value of the long field identified by {@code name} to the
@@ -1763,8 +1823,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.255 -0500", hash_original_method = "9C30C7EB94A4F8FEC087934271AC1B02", hash_generated_method = "A3C8081D274479A5E2B870C629090ABA")
-        public abstract void put(String name, long value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.969 -0500", hash_original_method = "9C30C7EB94A4F8FEC087934271AC1B02", hash_generated_method = "A3C8081D274479A5E2B870C629090ABA")
+        
+public abstract void put(String name, long value);
 
         /**
          * Puts the value of the float field identified by {@code name} to the
@@ -1775,8 +1836,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.256 -0500", hash_original_method = "A8619D52CECE8ED9E2E87EBF2865ADF7", hash_generated_method = "26D9F3CC2BD44ABFFAAB294B70B8319E")
-        public abstract void put(String name, float value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.972 -0500", hash_original_method = "A8619D52CECE8ED9E2E87EBF2865ADF7", hash_generated_method = "26D9F3CC2BD44ABFFAAB294B70B8319E")
+        
+public abstract void put(String name, float value);
 
         /**
          * Puts the value of the double field identified by {@code name} to the
@@ -1787,8 +1849,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.257 -0500", hash_original_method = "6F29A03593273294969378EA099D54B1", hash_generated_method = "FA11B36702B36D0E536255B4F480FE89")
-        public abstract void put(String name, double value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.974 -0500", hash_original_method = "6F29A03593273294969378EA099D54B1", hash_generated_method = "FA11B36702B36D0E536255B4F480FE89")
+        
+public abstract void put(String name, double value);
 
         /**
          * Puts the value of the Object field identified by {@code name} to the
@@ -1799,8 +1862,9 @@ public void write(int value) throws IOException {
          * @param value
          *            the value that is put to the persistent field.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.258 -0500", hash_original_method = "87DAE3A3EEF2A5E508B82EA320203B18", hash_generated_method = "48D7FFE896B7A024B642F064C15A106B")
-        public abstract void put(String name, Object value);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.977 -0500", hash_original_method = "87DAE3A3EEF2A5E508B82EA320203B18", hash_generated_method = "48D7FFE896B7A024B642F064C15A106B")
+        
+public abstract void put(String name, Object value);
 
         /**
          * Writes the fields to the target stream {@code out}.
@@ -1812,9 +1876,10 @@ public void write(int value) throws IOException {
          * @deprecated This method is unsafe and may corrupt the target stream.
          *             Use ObjectOutputStream#writeFields() instead.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.259 -0500", hash_original_method = "57B108A1D82DAA665AF8E2E4B6F1A1B0", hash_generated_method = "9159849DB36EB4CE7059124897145AE6")
-        @Deprecated
-public abstract void write(ObjectOutput out) throws IOException;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.980 -0500", hash_original_method = "57B108A1D82DAA665AF8E2E4B6F1A1B0", hash_generated_method = "9159849DB36EB4CE7059124897145AE6")
+        
+@Deprecated
+        public abstract void write(ObjectOutput out) throws IOException;
 
         
     }
@@ -1825,8 +1890,9 @@ public abstract void write(ObjectOutput out) throws IOException;
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.317 -0500", hash_original_method = "EEF09F25018D316A37E59FEE3B6D335C", hash_generated_method = "4788FB538C94DF0CCBF16128BC4FDA78")
-    protected void writeStreamHeader() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.138 -0500", hash_original_method = "EEF09F25018D316A37E59FEE3B6D335C", hash_generated_method = "4788FB538C94DF0CCBF16128BC4FDA78")
+    
+protected void writeStreamHeader() throws IOException {
         output.writeShort(STREAM_MAGIC);
         output.writeShort(STREAM_VERSION);
     }
@@ -1840,8 +1906,9 @@ public abstract void write(ObjectOutput out) throws IOException;
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.318 -0500", hash_original_method = "BDFE9F98A4288C3F1994A443E4A70C5E", hash_generated_method = "CA676E9C31D6BA3A4A1446EAAB71FA96")
-    public void writeUTF(String value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.141 -0500", hash_original_method = "BDFE9F98A4288C3F1994A443E4A70C5E", hash_generated_method = "CA676E9C31D6BA3A4A1446EAAB71FA96")
+    
+public void writeUTF(String value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeUTF(value);
     }

@@ -18,53 +18,53 @@ import java.lang.reflect.Modifier;
 
 
 public abstract class NetObject extends GenericObject {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.173 -0500", hash_original_field = "783363F762E312FC7DC4F9A7F69E1386", hash_generated_field = "46C2887731A82D54499D991777D692CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.914 -0500", hash_original_field = "783363F762E312FC7DC4F9A7F69E1386", hash_generated_field = "46C2887731A82D54499D991777D692CF")
 
 
     protected static final String CORE_PACKAGE = PackageNames.CORE_PACKAGE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.174 -0500", hash_original_field = "928DF341A507E7600562A079BCA40233", hash_generated_field = "594D4223DA826D2239E3278060CF9C1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.917 -0500", hash_original_field = "928DF341A507E7600562A079BCA40233", hash_generated_field = "594D4223DA826D2239E3278060CF9C1D")
 
     protected static final String NET_PACKAGE = PackageNames.NET_PACKAGE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.175 -0500", hash_original_field = "8EC4059346EE0A9DAA6808EF798387E1", hash_generated_field = "F9F431553B7EF5ED564BB76D3511A1C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.920 -0500", hash_original_field = "8EC4059346EE0A9DAA6808EF798387E1", hash_generated_field = "F9F431553B7EF5ED564BB76D3511A1C4")
 
     protected static final String PARSER_PACKAGE = PackageNames.PARSER_PACKAGE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.176 -0500", hash_original_field = "C3FE4AA2D0A65F7FB2BCFABD2F7EA262", hash_generated_field = "E0F49F8A6EC1F0FC10D150214707E15F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.923 -0500", hash_original_field = "C3FE4AA2D0A65F7FB2BCFABD2F7EA262", hash_generated_field = "E0F49F8A6EC1F0FC10D150214707E15F")
 
     protected static final String UDP = "udp";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.176 -0500", hash_original_field = "68703AB10816D405D1396AB032A64065", hash_generated_field = "65B8023757C289C256D8CDF02D79EEAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.925 -0500", hash_original_field = "68703AB10816D405D1396AB032A64065", hash_generated_field = "65B8023757C289C256D8CDF02D79EEAB")
 
     protected static final String TCP = "tcp";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.177 -0500", hash_original_field = "724CDA95C5AAEE297506D48385EB0575", hash_generated_field = "10ACFD285BFF968264526433D33B1AB0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.928 -0500", hash_original_field = "724CDA95C5AAEE297506D48385EB0575", hash_generated_field = "10ACFD285BFF968264526433D33B1AB0")
 
     protected static final String TRANSPORT = "transport";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.178 -0500", hash_original_field = "BD65FD8EEC2E4D271EFF9026620D7EA7", hash_generated_field = "ADFC98A2AB6C9BE4ECB3DA0DC42944C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.931 -0500", hash_original_field = "BD65FD8EEC2E4D271EFF9026620D7EA7", hash_generated_field = "ADFC98A2AB6C9BE4ECB3DA0DC42944C8")
 
     protected static final String METHOD = "method";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.180 -0500", hash_original_field = "7623BEF341D152A0D4FEB02810549B81", hash_generated_field = "0BD3E85D4B799F1CA9E1ECA350C946CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.934 -0500", hash_original_field = "7623BEF341D152A0D4FEB02810549B81", hash_generated_field = "0BD3E85D4B799F1CA9E1ECA350C946CC")
 
     protected static final String USER = "user";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.181 -0500", hash_original_field = "C2C96E54A087EC878A0CE427960E2216", hash_generated_field = "F56AC3F2C0064F9B98AE234242186C42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.937 -0500", hash_original_field = "C2C96E54A087EC878A0CE427960E2216", hash_generated_field = "F56AC3F2C0064F9B98AE234242186C42")
 
     protected static final String PHONE = "phone";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.182 -0500", hash_original_field = "DACD0CFFAAFF1FFBDFC317BDCCDDBD8C", hash_generated_field = "7A87650302C67C9E28DB90C3D1ED745E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.940 -0500", hash_original_field = "DACD0CFFAAFF1FFBDFC317BDCCDDBD8C", hash_generated_field = "7A87650302C67C9E28DB90C3D1ED745E")
 
     protected static final String MADDR = "maddr";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.183 -0500", hash_original_field = "C825988851C285263CC7CE37BB173B0A", hash_generated_field = "9521875EFD450C64F6E61B84A224F274")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.943 -0500", hash_original_field = "C825988851C285263CC7CE37BB173B0A", hash_generated_field = "9521875EFD450C64F6E61B84A224F274")
 
     protected static final String TTL = "ttl";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.184 -0500", hash_original_field = "6AAE7998D4171BF8932B2515C7ED6328", hash_generated_field = "19B2449D5B180111495A6203819463E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.945 -0500", hash_original_field = "6AAE7998D4171BF8932B2515C7ED6328", hash_generated_field = "19B2449D5B180111495A6203819463E0")
 
     protected static final String LR = "lr";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.185 -0500", hash_original_field = "4BB498E684155A8F6B206B0766423FFA", hash_generated_field = "6F3518A2B8F324537D0A7D82E19056BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.948 -0500", hash_original_field = "4BB498E684155A8F6B206B0766423FFA", hash_generated_field = "6F3518A2B8F324537D0A7D82E19056BF")
 
     protected static final String SIP = "sip";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.186 -0500", hash_original_field = "3697685F85251A86BCFE64BAF2BF33E1", hash_generated_field = "2812DB6997C42C0FAEB5CA6CA624A89E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.950 -0500", hash_original_field = "3697685F85251A86BCFE64BAF2BF33E1", hash_generated_field = "2812DB6997C42C0FAEB5CA6CA624A89E")
 
     protected static final String SIPS = "sips";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.187 -0500", hash_original_field = "5B35D8051830BFBA2689666E17D62408", hash_generated_field = "9E085E7B626954040FA4C29E128B38D1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.953 -0500", hash_original_field = "5B35D8051830BFBA2689666E17D62408", hash_generated_field = "9E085E7B626954040FA4C29E128B38D1")
 
     protected static final String TLS = "tls";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.188 -0500", hash_original_field = "FA136764F19CDA4BBA56101A9C66E64B", hash_generated_field = "C0E0F676E4DB6DFC77F8911D9A0B95A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.956 -0500", hash_original_field = "FA136764F19CDA4BBA56101A9C66E64B", hash_generated_field = "C0E0F676E4DB6DFC77F8911D9A0B95A4")
 
     // params for outbound and gruu drafts
     protected static final String GRUU = "gr";
@@ -72,8 +72,9 @@ public abstract class NetObject extends GenericObject {
 
     /** Default constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.189 -0500", hash_original_method = "C4442EA667C9A2BEB67B2F1E6DC6F09B", hash_generated_method = "B6853C18CCFB456413C2D77962EC3F79")
-    public NetObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.959 -0500", hash_original_method = "C4442EA667C9A2BEB67B2F1E6DC6F09B", hash_generated_method = "B6853C18CCFB456413C2D77962EC3F79")
+    
+public NetObject() {
         super();
     }
 
@@ -81,8 +82,9 @@ public abstract class NetObject extends GenericObject {
      * An introspection based equality predicate for SIPObjects.
      *@param that is the other object to test against.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.190 -0500", hash_original_method = "26A4AB68F41643C912C51D77CC375C44", hash_generated_method = "02191E5A470E6246C40D89D3F1FC593B")
-    public boolean equals(Object that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.964 -0500", hash_original_method = "26A4AB68F41643C912C51D77CC375C44", hash_generated_method = "02191E5A470E6246C40D89D3F1FC593B")
+    
+public boolean equals(Object that) {
         if (!this.getClass().equals(that.getClass()))
             return false;
         Class<?> myclass = this.getClass();
@@ -166,8 +168,9 @@ public abstract class NetObject extends GenericObject {
      *@return true if match succeeds false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.192 -0500", hash_original_method = "8D936CCD11169852B60D86BE02120DB8", hash_generated_method = "84A17DE28E583D85A533C31812768C46")
-    public boolean match(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.968 -0500", hash_original_method = "8D936CCD11169852B60D86BE02120DB8", hash_generated_method = "84A17DE28E583D85A533C31812768C46")
+    
+public boolean match(Object other) {
         if (other == null)
             return true;
         if (!this.getClass().equals(other.getClass()))
@@ -283,8 +286,9 @@ public abstract class NetObject extends GenericObject {
      * of the other objects in this class.
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.194 -0500", hash_original_method = "8F6462E23806D652AB2FB8FE10D0061F", hash_generated_method = "3C7532443F0E1BCE055B73DA114D8A47")
-    public String debugDump() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.973 -0500", hash_original_method = "8F6462E23806D652AB2FB8FE10D0061F", hash_generated_method = "3C7532443F0E1BCE055B73DA114D8A47")
+    
+public String debugDump() {
         stringRepresentation = "";
         Class<?> myclass = getClass();
         sprint(myclass.getName());
@@ -386,8 +390,9 @@ public abstract class NetObject extends GenericObject {
      * @param indent int to set
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.196 -0500", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "17B15A15CB497DC07A940E8E9144F966")
-    public String debugDump(int indent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.976 -0500", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "17B15A15CB497DC07A940E8E9144F966")
+    
+public String debugDump(int indent) {
         int save = indentation;
         indentation = indent;
         String retval = this.debugDump();
@@ -399,8 +404,9 @@ public abstract class NetObject extends GenericObject {
      *
      *@return string representation for this object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.197 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.980 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
+    
+public String toString() {
         return this.encode();
     }
 }

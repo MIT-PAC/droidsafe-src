@@ -16,25 +16,25 @@ import android.util.DebugUtils;
 
 
 public class Loader<D> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.785 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.622 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
 
     int mId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.786 -0500", hash_original_field = "3E73DDB57866D56D9C2443D15644A1EA", hash_generated_field = "3E73DDB57866D56D9C2443D15644A1EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.624 -0500", hash_original_field = "3E73DDB57866D56D9C2443D15644A1EA", hash_generated_field = "3E73DDB57866D56D9C2443D15644A1EA")
 
     OnLoadCompleteListener<D> mListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.787 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.626 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
 
     Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.788 -0500", hash_original_field = "5D947BF952E8653BAADEA609028A78F9", hash_generated_field = "5D947BF952E8653BAADEA609028A78F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.628 -0500", hash_original_field = "5D947BF952E8653BAADEA609028A78F9", hash_generated_field = "5D947BF952E8653BAADEA609028A78F9")
 
     boolean mStarted = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.788 -0500", hash_original_field = "688AFAAD56F5DDB79630BAB635796C3C", hash_generated_field = "688AFAAD56F5DDB79630BAB635796C3C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.630 -0500", hash_original_field = "688AFAAD56F5DDB79630BAB635796C3C", hash_generated_field = "688AFAAD56F5DDB79630BAB635796C3C")
 
     boolean mAbandoned = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.789 -0500", hash_original_field = "359194BB54288CCCE4CAFE12392EC644", hash_generated_field = "359194BB54288CCCE4CAFE12392EC644")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.632 -0500", hash_original_field = "359194BB54288CCCE4CAFE12392EC644", hash_generated_field = "359194BB54288CCCE4CAFE12392EC644")
 
     boolean mReset = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.790 -0500", hash_original_field = "799325477E4C0AD32C3DFCC8D4F71211", hash_generated_field = "799325477E4C0AD32C3DFCC8D4F71211")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.634 -0500", hash_original_field = "799325477E4C0AD32C3DFCC8D4F71211", hash_generated_field = "799325477E4C0AD32C3DFCC8D4F71211")
 
     boolean mContentChanged = false;
 
@@ -48,8 +48,9 @@ public class Loader<D> {
      *
      * @param context used to retrieve the application context.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.795 -0500", hash_original_method = "6088A27F132FBE0E650A99C21779299A", hash_generated_method = "9F6ED2F092FC52CF1EF86EAB72AB0992")
-    public Loader(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.649 -0500", hash_original_method = "6088A27F132FBE0E650A99C21779299A", hash_generated_method = "9F6ED2F092FC52CF1EF86EAB72AB0992")
+    
+public Loader(Context context) {
         mContext = context.getApplicationContext();
     }
 
@@ -60,8 +61,9 @@ public class Loader<D> {
      *
      * @param data the result of the load
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.796 -0500", hash_original_method = "7AF94F59AC743CB047D54940F8BB69AC", hash_generated_method = "5FD77500856C7DA55A21EC1D34CDB499")
-    public void deliverResult(D data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.651 -0500", hash_original_method = "7AF94F59AC743CB047D54940F8BB69AC", hash_generated_method = "5FD77500856C7DA55A21EC1D34CDB499")
+    
+public void deliverResult(D data) {
         if (mListener != null) {
             mListener.onLoadComplete(this, data);
         }
@@ -70,16 +72,18 @@ public class Loader<D> {
     /**
      * @return an application context retrieved from the Context passed to the constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.797 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
-    public Context getContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.653 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
+    
+public Context getContext() {
         return mContext;
     }
 
     /**
      * @return the ID of this loader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.798 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
-    public int getId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.655 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
+    
+public int getId() {
         return mId;
     }
 
@@ -90,8 +94,9 @@ public class Loader<D> {
      *
      * <p>Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.798 -0500", hash_original_method = "F7FC6EAD1080F4315E95C53063FFE31D", hash_generated_method = "6F14E7D5CBB62D3846689962BA66AFE8")
-    public void registerListener(int id, OnLoadCompleteListener<D> listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.657 -0500", hash_original_method = "F7FC6EAD1080F4315E95C53063FFE31D", hash_generated_method = "6F14E7D5CBB62D3846689962BA66AFE8")
+    
+public void registerListener(int id, OnLoadCompleteListener<D> listener) {
         if (mListener != null) {
             throw new IllegalStateException("There is already a listener registered");
         }
@@ -104,8 +109,9 @@ public class Loader<D> {
      *
      * Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.799 -0500", hash_original_method = "F0B8962C538754B5FF8377ACC78D9441", hash_generated_method = "9F30B196EA73C4F76C09270F56611058")
-    public void unregisterListener(OnLoadCompleteListener<D> listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.659 -0500", hash_original_method = "F0B8962C538754B5FF8377ACC78D9441", hash_generated_method = "9F30B196EA73C4F76C09270F56611058")
+    
+public void unregisterListener(OnLoadCompleteListener<D> listener) {
         if (mListener == null) {
             throw new IllegalStateException("No listener register");
         }
@@ -120,8 +126,9 @@ public class Loader<D> {
      * has been called and no calls to {@link #stopLoading()} or
      * {@link #reset()} have yet been made.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.800 -0500", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "011F17A6E1B0A4655AC9CB141825EFD5")
-    public boolean isStarted() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.661 -0500", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "011F17A6E1B0A4655AC9CB141825EFD5")
+    
+public boolean isStarted() {
         return mStarted;
     }
 
@@ -130,8 +137,9 @@ public class Loader<D> {
      * loader <em>must not</em> report any new data, and <em>must</em> keep
      * its last reported data valid until it is finally reset.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.801 -0500", hash_original_method = "A2FBF2FF6E2191DA1A91C50D7F722DEF", hash_generated_method = "376AAACABE682930F4AC5377B5C459AD")
-    public boolean isAbandoned() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.664 -0500", hash_original_method = "A2FBF2FF6E2191DA1A91C50D7F722DEF", hash_generated_method = "376AAACABE682930F4AC5377B5C459AD")
+    
+public boolean isAbandoned() {
         return mAbandoned;
     }
 
@@ -140,8 +148,9 @@ public class Loader<D> {
      * has not yet been started for the first time, or its {@link #reset()}
      * has been called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.801 -0500", hash_original_method = "6F78AC76FABAE5B00729D2DF0B0C81EB", hash_generated_method = "BB9BBFFEC1CEA5136C58814820AD315E")
-    public boolean isReset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.666 -0500", hash_original_method = "6F78AC76FABAE5B00729D2DF0B0C81EB", hash_generated_method = "BB9BBFFEC1CEA5136C58814820AD315E")
+    
+public boolean isReset() {
         return mReset;
     }
 
@@ -166,8 +175,9 @@ public class Loader<D> {
      *
      * <p>Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.802 -0500", hash_original_method = "8E7A6B4B56209ADF45890FC32754A367", hash_generated_method = "A8FDC28840DC97D7B5C895BB675AFA80")
-    public final void startLoading() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.669 -0500", hash_original_method = "8E7A6B4B56209ADF45890FC32754A367", hash_generated_method = "A8FDC28840DC97D7B5C895BB675AFA80")
+    
+public final void startLoading() {
         mStarted = true;
         mReset = false;
         mAbandoned = false;
@@ -179,8 +189,9 @@ public class Loader<D> {
      * as per {@link #startLoading()}.  This is not called by clients directly,
      * but as a result of a call to {@link #startLoading()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.803 -0500", hash_original_method = "DA06EE0B2F861EB56F065785FCE355AD", hash_generated_method = "82A80F2F9384B501AB683D80A79AB3A5")
-    protected void onStartLoading() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.671 -0500", hash_original_method = "DA06EE0B2F861EB56F065785FCE355AD", hash_generated_method = "82A80F2F9384B501AB683D80A79AB3A5")
+    
+protected void onStartLoading() {
     }
 
     /**
@@ -191,8 +202,9 @@ public class Loader<D> {
      *
      * <p>Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.804 -0500", hash_original_method = "E102AD0C3BB2F8D5B106A9E25CAC340A", hash_generated_method = "7C65C609A676021DC6E00C13415FEFCD")
-    public void forceLoad() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.673 -0500", hash_original_method = "E102AD0C3BB2F8D5B106A9E25CAC340A", hash_generated_method = "7C65C609A676021DC6E00C13415FEFCD")
+    
+public void forceLoad() {
         onForceLoad();
     }
 
@@ -200,8 +212,9 @@ public class Loader<D> {
      * Subclasses must implement this to take care of requests to {@link #forceLoad()}.
      * This will always be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.804 -0500", hash_original_method = "FE3F333F9E40E18C50A63599879C8FC2", hash_generated_method = "0085AE78BD24D90851730D9CC9CFF4EA")
-    protected void onForceLoad() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.675 -0500", hash_original_method = "FE3F333F9E40E18C50A63599879C8FC2", hash_generated_method = "0085AE78BD24D90851730D9CC9CFF4EA")
+    
+protected void onForceLoad() {
     }
 
     /**
@@ -224,8 +237,9 @@ public class Loader<D> {
      *
      * <p>Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.805 -0500", hash_original_method = "98899B741F509D9E0CD920B3A41ABA16", hash_generated_method = "3F87F9E134A29D5D691BEA0A3D6F7DB5")
-    public void stopLoading() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.677 -0500", hash_original_method = "98899B741F509D9E0CD920B3A41ABA16", hash_generated_method = "3F87F9E134A29D5D691BEA0A3D6F7DB5")
+    
+public void stopLoading() {
         mStarted = false;
         onStopLoading();
     }
@@ -236,8 +250,9 @@ public class Loader<D> {
      * but as a result of a call to {@link #stopLoading()}.
      * This will always be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.806 -0500", hash_original_method = "61C04D3A0F64307AA142FA0229BCD9C9", hash_generated_method = "E65242F5E7BCCB09D085C1F6A436A2F7")
-    protected void onStopLoading() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.679 -0500", hash_original_method = "61C04D3A0F64307AA142FA0229BCD9C9", hash_generated_method = "E65242F5E7BCCB09D085C1F6A436A2F7")
+    
+protected void onStopLoading() {
     }
 
     /**
@@ -251,8 +266,9 @@ public class Loader<D> {
      * to {@link #reset} to have it retain its current data but not report
      * any new data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.806 -0500", hash_original_method = "ACB324D8F1768E7142E127CF7A1A7031", hash_generated_method = "48EA11BD72707F304B6A1EE7D8D93FD6")
-    public void abandon() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.681 -0500", hash_original_method = "ACB324D8F1768E7142E127CF7A1A7031", hash_generated_method = "48EA11BD72707F304B6A1EE7D8D93FD6")
+    
+public void abandon() {
         mAbandoned = true;
         onAbandon();
     }
@@ -266,8 +282,9 @@ public class Loader<D> {
      * {@link #onReset()} happens.  You can retrieve the current abandoned
      * state with {@link #isAbandoned}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.807 -0500", hash_original_method = "A161936916B264DFAEE5DB9D8DEA7F5D", hash_generated_method = "CBC00E77921BBCC552F1B3DA797F6D5F")
-    protected void onAbandon() {        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.683 -0500", hash_original_method = "A161936916B264DFAEE5DB9D8DEA7F5D", hash_generated_method = "CBC00E77921BBCC552F1B3DA797F6D5F")
+    
+protected void onAbandon() {        
     }
     
     /**
@@ -288,8 +305,9 @@ public class Loader<D> {
      *
      * <p>Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.808 -0500", hash_original_method = "1D7BF800397B2CC75C7600D5EBC7C29A", hash_generated_method = "E573CB7964BA333ED5A8B0E9DFBCEE8D")
-    public void reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.685 -0500", hash_original_method = "1D7BF800397B2CC75C7600D5EBC7C29A", hash_generated_method = "E573CB7964BA333ED5A8B0E9DFBCEE8D")
+    
+public void reset() {
         onReset();
         mReset = true;
         mStarted = false;
@@ -303,8 +321,9 @@ public class Loader<D> {
      * but as a result of a call to {@link #reset()}.
      * This will always be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.809 -0500", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "7263AB7619FC664C9743FCE8FF63E928")
-    protected void onReset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.687 -0500", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "7263AB7619FC664C9743FCE8FF63E928")
+    
+protected void onReset() {
     }
 
     /**
@@ -312,8 +331,9 @@ public class Loader<D> {
      * changed while it was stopped.  If it had, true is returned and the
      * flag is cleared.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.810 -0500", hash_original_method = "C55C1C662CB28045D31932504C1021C3", hash_generated_method = "FB79F93498345AEA72EC028E85462AAE")
-    public boolean takeContentChanged() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.689 -0500", hash_original_method = "C55C1C662CB28045D31932504C1021C3", hash_generated_method = "FB79F93498345AEA72EC028E85462AAE")
+    
+public boolean takeContentChanged() {
         boolean res = mContentChanged;
         mContentChanged = false;
         return res;
@@ -327,8 +347,9 @@ public class Loader<D> {
      *
      * <p>Must be called from the process's main thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.812 -0500", hash_original_method = "9CACF0CE278273BE0AB1B5F570D8CB20", hash_generated_method = "0BBB21E67670D69FBD1DFC64D6E42AA5")
-    public void onContentChanged() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.692 -0500", hash_original_method = "9CACF0CE278273BE0AB1B5F570D8CB20", hash_generated_method = "0BBB21E67670D69FBD1DFC64D6E42AA5")
+    
+public void onContentChanged() {
         if (mStarted) {
             forceLoad();
         } else {
@@ -343,17 +364,19 @@ public class Loader<D> {
      * For debugging, converts an instance of the Loader's data class to
      * a string that can be printed.  Must handle a null data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.812 -0500", hash_original_method = "F5B015CDDEBA6C005C6DD563385EE3D7", hash_generated_method = "F15119CA027EE50228CCEEB28B580515")
-    public String dataToString(D data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.694 -0500", hash_original_method = "F5B015CDDEBA6C005C6DD563385EE3D7", hash_generated_method = "F15119CA027EE50228CCEEB28B580515")
+    
+public String dataToString(D data) {
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(data, sb);
         sb.append("}");
         return sb.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.813 -0500", hash_original_method = "7AA2EFEA4BBA4CB5078AB2979053EAD3", hash_generated_method = "35579B681AC67154C4322D5C32537DDC")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.697 -0500", hash_original_method = "7AA2EFEA4BBA4CB5078AB2979053EAD3", hash_generated_method = "35579B681AC67154C4322D5C32537DDC")
+    
+@Override
+    public String toString() {
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(this, sb);
         sb.append(" id=");
@@ -370,8 +393,9 @@ public String toString() {
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.814 -0500", hash_original_method = "DC77AF55A2A9006E9EA4E79F1D0E0673", hash_generated_method = "96B5713FB4F642D42FB97E334FFFFC83")
-    public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.699 -0500", hash_original_method = "DC77AF55A2A9006E9EA4E79F1D0E0673", hash_generated_method = "96B5713FB4F642D42FB97E334FFFFC83")
+    
+public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
         writer.print(prefix); writer.print("mId="); writer.print(mId);
                 writer.print(" mListener="); writer.println(mListener);
         writer.print(prefix); writer.print("mStarted="); writer.print(mStarted);
@@ -382,20 +406,23 @@ public String toString() {
 
     
     public final class ForceLoadContentObserver extends ContentObserver {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.791 -0500", hash_original_method = "B9E73A5B4B60A8E0702AD317D1848844", hash_generated_method = "D97E27512932796789D4DE052DC12583")
-        public ForceLoadContentObserver() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.637 -0500", hash_original_method = "B9E73A5B4B60A8E0702AD317D1848844", hash_generated_method = "D97E27512932796789D4DE052DC12583")
+        
+public ForceLoadContentObserver() {
             super(new Handler());
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.792 -0500", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "11A1AD60FCFEC7497B90886D427B8601")
-        @Override
-public boolean deliverSelfNotifications() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.639 -0500", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "11A1AD60FCFEC7497B90886D427B8601")
+        
+@Override
+        public boolean deliverSelfNotifications() {
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.793 -0500", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "FE6E4E239777D858CE4B7F313EA96B2A")
-        @Override
-public void onChange(boolean selfChange) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.642 -0500", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "FE6E4E239777D858CE4B7F313EA96B2A")
+        
+@Override
+        public void onChange(boolean selfChange) {
             onContentChanged();
         }
 

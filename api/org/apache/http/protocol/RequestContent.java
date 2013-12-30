@@ -21,13 +21,15 @@ import org.apache.http.ProtocolVersion;
 
 public class RequestContent implements HttpRequestInterceptor {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.126 -0500", hash_original_method = "9AE5E648CA522092E457677BB79033D0", hash_generated_method = "62DAC680EB3AF0AA19FB0F5C6FD20DC4")
-    public RequestContent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.957 -0500", hash_original_method = "9AE5E648CA522092E457677BB79033D0", hash_generated_method = "62DAC680EB3AF0AA19FB0F5C6FD20DC4")
+    
+public RequestContent() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.127 -0500", hash_original_method = "2DAF25F14B8FE3908731654E049F044C", hash_generated_method = "99CF4FFFDC2CCBD65A125F674CB78954")
-    public void process(final HttpRequest request, final HttpContext context) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.961 -0500", hash_original_method = "2DAF25F14B8FE3908731654E049F044C", hash_generated_method = "99CF4FFFDC2CCBD65A125F674CB78954")
+    
+public void process(final HttpRequest request, final HttpContext context) 
             throws HttpException, IOException {
         if (request == null) {
             throw new IllegalArgumentException("HTTP request may not be null");

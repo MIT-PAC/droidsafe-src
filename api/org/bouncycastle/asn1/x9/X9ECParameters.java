@@ -22,31 +22,32 @@ import org.bouncycastle.math.ec.ECPoint;
 
 
 public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.900 -0500", hash_original_field = "8DD5DDCC4ACCF4574F580FF26B34E830", hash_generated_field = "A2EFE0CE5423F8076AF20D5B76F7D97A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.097 -0500", hash_original_field = "8DD5DDCC4ACCF4574F580FF26B34E830", hash_generated_field = "A2EFE0CE5423F8076AF20D5B76F7D97A")
 
     private static final BigInteger   ONE = BigInteger.valueOf(1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.901 -0500", hash_original_field = "541D95EB39FDD0674E273F2F406A3B8A", hash_generated_field = "161E0CD2A331703CED55991AA7670409")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.100 -0500", hash_original_field = "541D95EB39FDD0674E273F2F406A3B8A", hash_generated_field = "161E0CD2A331703CED55991AA7670409")
 
 
     private X9FieldID           fieldID;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.902 -0500", hash_original_field = "704A3581F062D90BBFC67E94998B89B2", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.102 -0500", hash_original_field = "704A3581F062D90BBFC67E94998B89B2", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
 
     private ECCurve             curve;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.902 -0500", hash_original_field = "B6F59EB5366D6E35184E3BC5DB947C8F", hash_generated_field = "1F461AF19CABD1B00959F9F3AD8297A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.104 -0500", hash_original_field = "B6F59EB5366D6E35184E3BC5DB947C8F", hash_generated_field = "1F461AF19CABD1B00959F9F3AD8297A2")
 
     private ECPoint             g;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.903 -0500", hash_original_field = "C5269AA669EF1E6636D1450EA530C9C5", hash_generated_field = "28997BC83DA18A620109895922F10617")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.106 -0500", hash_original_field = "C5269AA669EF1E6636D1450EA530C9C5", hash_generated_field = "28997BC83DA18A620109895922F10617")
 
     private BigInteger          n;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.904 -0500", hash_original_field = "FF6F1CE798488519FE43D7992CD2DB11", hash_generated_field = "2BC612FFF03C8C6BFD81D1617A7F7383")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.108 -0500", hash_original_field = "FF6F1CE798488519FE43D7992CD2DB11", hash_generated_field = "2BC612FFF03C8C6BFD81D1617A7F7383")
 
     private BigInteger          h;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.905 -0500", hash_original_field = "9ECAAC80561D5FC0A0D63F92F7BF0E17", hash_generated_field = "84A0CB03E1AA0B2A11E3988D98BBE452")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.111 -0500", hash_original_field = "9ECAAC80561D5FC0A0D63F92F7BF0E17", hash_generated_field = "84A0CB03E1AA0B2A11E3988D98BBE452")
 
     private byte[]              seed;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.906 -0500", hash_original_method = "38D6105F07283EB5F8B3605923A2D06B", hash_generated_method = "6789D865A6A09A044666E36225161EC6")
-    public X9ECParameters(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.114 -0500", hash_original_method = "38D6105F07283EB5F8B3605923A2D06B", hash_generated_method = "6789D865A6A09A044666E36225161EC6")
+    
+public X9ECParameters(
         ASN1Sequence  seq)
     {
         if (!(seq.getObjectAt(0) instanceof DERInteger)
@@ -70,8 +71,9 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.907 -0500", hash_original_method = "739112175432B7FC1F3897612DAEA859", hash_generated_method = "952993F25B94400F05278552F686CF2C")
-    public X9ECParameters(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.117 -0500", hash_original_method = "739112175432B7FC1F3897612DAEA859", hash_generated_method = "952993F25B94400F05278552F686CF2C")
+    
+public X9ECParameters(
         ECCurve     curve,
         ECPoint     g,
         BigInteger  n)
@@ -79,8 +81,9 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         this(curve, g, n, ONE, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.908 -0500", hash_original_method = "7F13F9D9B68D09FF2E2DEF2F93290D05", hash_generated_method = "10D639B694A17C9FBA354077B73315DC")
-    public X9ECParameters(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.120 -0500", hash_original_method = "7F13F9D9B68D09FF2E2DEF2F93290D05", hash_generated_method = "10D639B694A17C9FBA354077B73315DC")
+    
+public X9ECParameters(
         ECCurve     curve,
         ECPoint     g,
         BigInteger  n,
@@ -89,8 +92,9 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         this(curve, g, n, h, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.909 -0500", hash_original_method = "1843E539ACF8FE39D46257BC325E0DC6", hash_generated_method = "CC71A6608D971E8DC00AA2F26E223D31")
-    public X9ECParameters(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.124 -0500", hash_original_method = "1843E539ACF8FE39D46257BC325E0DC6", hash_generated_method = "CC71A6608D971E8DC00AA2F26E223D31")
+    
+public X9ECParameters(
         ECCurve     curve,
         ECPoint     g,
         BigInteger  n,
@@ -118,26 +122,30 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.910 -0500", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "B9031E139E03D127788DF39899FDE161")
-    public ECCurve getCurve()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.126 -0500", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "B9031E139E03D127788DF39899FDE161")
+    
+public ECCurve getCurve()
     {
         return curve;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.910 -0500", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "A94F4582DBDC30883F9BCB451B5811E0")
-    public ECPoint getG()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.128 -0500", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "A94F4582DBDC30883F9BCB451B5811E0")
+    
+public ECPoint getG()
     {
         return g;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.911 -0500", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "02928BD4257B76FF9B6C6F96BB0BD425")
-    public BigInteger getN()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.131 -0500", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "02928BD4257B76FF9B6C6F96BB0BD425")
+    
+public BigInteger getN()
     {
         return n;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.912 -0500", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "8EA7E3C758099DAC5519AEBE164A7EB5")
-    public BigInteger getH()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.133 -0500", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "8EA7E3C758099DAC5519AEBE164A7EB5")
+    
+public BigInteger getH()
     {
         if (h == null)
         {
@@ -147,8 +155,9 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         return h;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.913 -0500", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "B9121A38AE643366EC4B8CEEAF78AD62")
-    public byte[] getSeed()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.135 -0500", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "B9121A38AE643366EC4B8CEEAF78AD62")
+    
+public byte[] getSeed()
     {
         return seed;
     }
@@ -166,8 +175,9 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
      *  }
      * </pre>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.913 -0500", hash_original_method = "8FEF0683FB02574D7DCECBAD72741893", hash_generated_method = "061056F69E114EE8F0C344EE9295051F")
-    public DERObject toASN1Object()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.138 -0500", hash_original_method = "8FEF0683FB02574D7DCECBAD72741893", hash_generated_method = "061056F69E114EE8F0C344EE9295051F")
+    
+public DERObject toASN1Object()
     {
         ASN1EncodableVector v = new ASN1EncodableVector();
 

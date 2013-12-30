@@ -24,18 +24,20 @@ import org.apache.http.protocol.HttpContext;
 
 
 public class RequestTargetAuthentication implements HttpRequestInterceptor {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.474 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.991 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.475 -0500", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "33C74B2F0CAC4A51B51E1576F31D41A5")
-    public RequestTargetAuthentication() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.995 -0500", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "33C74B2F0CAC4A51B51E1576F31D41A5")
+    
+public RequestTargetAuthentication() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.476 -0500", hash_original_method = "08A305A51186E2C844540B93FF6C198C", hash_generated_method = "176162C55EA015B16F90979A5236A893")
-    public void process(final HttpRequest request, final HttpContext context) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.999 -0500", hash_original_method = "08A305A51186E2C844540B93FF6C198C", hash_generated_method = "176162C55EA015B16F90979A5236A893")
+    
+public void process(final HttpRequest request, final HttpContext context) 
             throws HttpException, IOException {
         if (request == null) {
             throw new IllegalArgumentException("HTTP request may not be null");

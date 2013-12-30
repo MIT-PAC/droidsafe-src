@@ -19,8 +19,9 @@ public class BestMatchSpecFactory implements CookieSpecFactory {
         //Synthesized constructor
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.159 -0500", hash_original_method = "2201EB1DC86453D4D2DD6749773278D9", hash_generated_method = "EBE1BA2A1E5E0435446E42F8F62CFA2D")
-    public CookieSpec newInstance(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.546 -0500", hash_original_method = "2201EB1DC86453D4D2DD6749773278D9", hash_generated_method = "EBE1BA2A1E5E0435446E42F8F62CFA2D")
+    
+public CookieSpec newInstance(final HttpParams params) {
         if (params != null) {
             return new BestMatchSpec(
                     (String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS), 

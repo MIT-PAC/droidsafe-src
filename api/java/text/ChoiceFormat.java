@@ -25,8 +25,9 @@ public class ChoiceFormat extends NumberFormat {
      *            a double value.
      * @return the next larger double value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.017 -0500", hash_original_method = "56A64FBC0E40A49398895D90D31F38E3", hash_generated_method = "779C3A233A5833DCABF81EFED0688FA6")
-    public static final double nextDouble(double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.839 -0500", hash_original_method = "56A64FBC0E40A49398895D90D31F38E3", hash_generated_method = "779C3A233A5833DCABF81EFED0688FA6")
+    
+public static final double nextDouble(double value) {
         if (value == Double.POSITIVE_INFINITY) {
             return value;
         }
@@ -51,8 +52,9 @@ public class ChoiceFormat extends NumberFormat {
      *            get the previous smaller value.
      * @return the next larger or smaller double value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.017 -0500", hash_original_method = "EB590363B29E0495CDDD74FB1BC0A86C", hash_generated_method = "27FD248C294DCBE13C71C3108FF8B5D5")
-    public static double nextDouble(double value, boolean increment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.842 -0500", hash_original_method = "EB590363B29E0495CDDD74FB1BC0A86C", hash_generated_method = "27FD248C294DCBE13C71C3108FF8B5D5")
+    
+public static double nextDouble(double value, boolean increment) {
         return increment ? nextDouble(value) : previousDouble(value);
     }
 
@@ -64,8 +66,9 @@ public class ChoiceFormat extends NumberFormat {
      *            a double value.
      * @return the next smaller double value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.019 -0500", hash_original_method = "8FBD80CA87526A3E9471194C397AFFA8", hash_generated_method = "AF58E0EE0F9F172D31B40E7C3E5F1D1B")
-    public static final double previousDouble(double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.847 -0500", hash_original_method = "8FBD80CA87526A3E9471194C397AFFA8", hash_generated_method = "AF58E0EE0F9F172D31B40E7C3E5F1D1B")
+    
+public static final double previousDouble(double value) {
         if (value == Double.NEGATIVE_INFINITY) {
             return value;
         }
@@ -78,15 +81,15 @@ public class ChoiceFormat extends NumberFormat {
         }
         return Double.longBitsToDouble(value <= 0 ? bits + 1 : bits - 1);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.004 -0500", hash_original_field = "3BF89E88CB72DE7A21FABBE3E2E23DE7", hash_generated_field = "74F3624CBC64496D38F62E5EDD514F89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.801 -0500", hash_original_field = "3BF89E88CB72DE7A21FABBE3E2E23DE7", hash_generated_field = "74F3624CBC64496D38F62E5EDD514F89")
 
 
     private static final long serialVersionUID = 1795184449645032964L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.005 -0500", hash_original_field = "385C660A7438388F4AAC0F402F17E811", hash_generated_field = "ED2D30C35903F5702DFA6B6B053F7D87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.803 -0500", hash_original_field = "385C660A7438388F4AAC0F402F17E811", hash_generated_field = "ED2D30C35903F5702DFA6B6B053F7D87")
 
 
     private double[] choiceLimits;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.005 -0500", hash_original_field = "CDF517F27851927B5C5ADD8084AE9F33", hash_generated_field = "05C2A4AC24967E0A070ABD8FDE0D9A95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.806 -0500", hash_original_field = "CDF517F27851927B5C5ADD8084AE9F33", hash_generated_field = "05C2A4AC24967E0A070ABD8FDE0D9A95")
 
 
     private String[] choiceFormats;
@@ -109,8 +112,9 @@ public class ChoiceFormat extends NumberFormat {
      *            limits}. The lower bound of the associated range is at the
      *            same index as the string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.006 -0500", hash_original_method = "6AA98ECEF055DFD6530181EFB704802A", hash_generated_method = "E02FD01E958226DF6093A985AE554776")
-    public ChoiceFormat(double[] limits, String[] formats) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.809 -0500", hash_original_method = "6AA98ECEF055DFD6530181EFB704802A", hash_generated_method = "E02FD01E958226DF6093A985AE554776")
+    
+public ChoiceFormat(double[] limits, String[] formats) {
         setChoices(limits, formats);
     }
 
@@ -123,8 +127,9 @@ public class ChoiceFormat extends NumberFormat {
      * @throws IllegalArgumentException
      *            if an error occurs while parsing the pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.007 -0500", hash_original_method = "7A22DFD5F0C8BF76D2134AD604327DD6", hash_generated_method = "4901BF97DF15B4A7B2C36C9BA69F9B95")
-    public ChoiceFormat(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.811 -0500", hash_original_method = "7A22DFD5F0C8BF76D2134AD604327DD6", hash_generated_method = "4901BF97DF15B4A7B2C36C9BA69F9B95")
+    
+public ChoiceFormat(String template) {
         applyPattern(template);
     }
 
@@ -137,8 +142,9 @@ public class ChoiceFormat extends NumberFormat {
      * @throws IllegalArgumentException
      *            if an error occurs while parsing the pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.009 -0500", hash_original_method = "61054E3E36618E298A5F058604E71A93", hash_generated_method = "B2F03782C34884D28DA28821550AA2A6")
-    public void applyPattern(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.815 -0500", hash_original_method = "61054E3E36618E298A5F058604E71A93", hash_generated_method = "B2F03782C34884D28DA28821550AA2A6")
+    
+public void applyPattern(String template) {
         double[] limits = new double[5];
         List<String> formats = new ArrayList<String>();
         int length = template.length(), limitCount = 0, index = 0;
@@ -208,9 +214,10 @@ public class ChoiceFormat extends NumberFormat {
      *
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.010 -0500", hash_original_method = "0E78DE057CBD16D1EEA99DBEA20DA3A1", hash_generated_method = "23543D2B0160711A7FD831421C479CCA")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.818 -0500", hash_original_method = "0E78DE057CBD16D1EEA99DBEA20DA3A1", hash_generated_method = "23543D2B0160711A7FD831421C479CCA")
+    
+@Override
+    public Object clone() {
         ChoiceFormat clone = (ChoiceFormat) super.clone();
         clone.choiceLimits = choiceLimits.clone();
         clone.choiceFormats = choiceFormats.clone();
@@ -228,9 +235,10 @@ public Object clone() {
      *         {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.011 -0500", hash_original_method = "F2D7C03023A3AAC9DFCE95AB2EC2A780", hash_generated_method = "F6C5ACF13148585DCE3804BB4BA541D9")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.821 -0500", hash_original_method = "F2D7C03023A3AAC9DFCE95AB2EC2A780", hash_generated_method = "F6C5ACF13148585DCE3804BB4BA541D9")
+    
+@Override
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }
@@ -254,9 +262,10 @@ public boolean equals(Object object) {
      *            a {@code FieldPosition} which is ignored.
      * @return the string buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.012 -0500", hash_original_method = "BC91D466505972771C623F66D301FB6D", hash_generated_method = "7C493D9A024EBA9C3DD4B1E2D6674691")
-    @Override
-public StringBuffer format(double value, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.824 -0500", hash_original_method = "BC91D466505972771C623F66D301FB6D", hash_generated_method = "7C493D9A024EBA9C3DD4B1E2D6674691")
+    
+@Override
+    public StringBuffer format(double value, StringBuffer buffer,
             FieldPosition field) {
         for (int i = choiceLimits.length - 1; i >= 0; i--) {
             if (choiceLimits[i] <= value) {
@@ -279,9 +288,10 @@ public StringBuffer format(double value, StringBuffer buffer,
      *            a {@code FieldPosition} which is ignored.
      * @return the string buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.013 -0500", hash_original_method = "F9B960B049B919C822FEECA2E3BD7537", hash_generated_method = "0F244610EE4E1DE2BBEE8C7AC9256CCA")
-    @Override
-public StringBuffer format(long value, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.827 -0500", hash_original_method = "F9B960B049B919C822FEECA2E3BD7537", hash_generated_method = "0F244610EE4E1DE2BBEE8C7AC9256CCA")
+    
+@Override
+    public StringBuffer format(long value, StringBuffer buffer,
             FieldPosition field) {
         return format((double) value, buffer, field);
     }
@@ -292,8 +302,9 @@ public StringBuffer format(long value, StringBuffer buffer,
      *
      * @return an array of format strings.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.014 -0500", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "5957C9D2934F4D28458980FA43F21FBD")
-    public Object[] getFormats() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.829 -0500", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "5957C9D2934F4D28458980FA43F21FBD")
+    
+public Object[] getFormats() {
         return choiceFormats;
     }
 
@@ -303,8 +314,9 @@ public StringBuffer format(long value, StringBuffer buffer,
      * @return the array of doubles which make up the limits of this {@code
      *         ChoiceFormat}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.015 -0500", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "4462B4ADD3CBA8B48052A73F3EA65136")
-    public double[] getLimits() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.832 -0500", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "4462B4ADD3CBA8B48052A73F3EA65136")
+    
+public double[] getLimits() {
         return choiceLimits;
     }
 
@@ -316,9 +328,10 @@ public StringBuffer format(long value, StringBuffer buffer,
      *
      * @see #equals
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.015 -0500", hash_original_method = "9AF9F658465E6920280B1655C8022A86", hash_generated_method = "2B6A38C70D9EB0CA23B980DC8F6B3D48")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.836 -0500", hash_original_method = "9AF9F658465E6920280B1655C8022A86", hash_generated_method = "2B6A38C70D9EB0CA23B980DC8F6B3D48")
+    
+@Override
+    public int hashCode() {
         int hashCode = 0;
         for (int i = 0; i < choiceLimits.length; i++) {
             long v = Double.doubleToLongBits(choiceLimits[i]);
@@ -359,9 +372,10 @@ public int hashCode() {
      * @return a Double resulting from the parse, or Double.NaN if there is an
      *         error
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.018 -0500", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "6E603FA1F2D9295D5AD0EFE6E369A8C2")
-    @Override
-public Number parse(String string, ParsePosition position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.845 -0500", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "6E603FA1F2D9295D5AD0EFE6E369A8C2")
+    
+@Override
+    public Number parse(String string, ParsePosition position) {
         int offset = position.getIndex();
         for (int i = 0; i < choiceFormats.length; i++) {
             if (string.startsWith(choiceFormats[i], offset)) {
@@ -391,8 +405,9 @@ public Number parse(String string, ParsePosition position) {
      *            limits}. The lower bound of the associated range is at the
      *            same index as the string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.020 -0500", hash_original_method = "A68DB2E05654867D5DABBF703FA90F00", hash_generated_method = "48FD31804241588464A37BDF825EAE7E")
-    public void setChoices(double[] limits, String[] formats) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.850 -0500", hash_original_method = "A68DB2E05654867D5DABBF703FA90F00", hash_generated_method = "48FD31804241588464A37BDF825EAE7E")
+    
+public void setChoices(double[] limits, String[] formats) {
         if (limits.length != formats.length) {
             throw new IllegalArgumentException();
         }
@@ -400,8 +415,9 @@ public Number parse(String string, ParsePosition position) {
         choiceFormats = formats;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.021 -0500", hash_original_method = "55E8B28E1CF4E8D52478B124E3FA683B", hash_generated_method = "3C2A0E91FFDA79693203BA4400F4E944")
-    private int skipWhitespace(String string, int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.852 -0500", hash_original_method = "55E8B28E1CF4E8D52478B124E3FA683B", hash_generated_method = "3C2A0E91FFDA79693203BA4400F4E944")
+    
+private int skipWhitespace(String string, int index) {
         int length = string.length();
         while (index < length && Character.isWhitespace(string.charAt(index))) {
             index++;
@@ -415,8 +431,9 @@ public Number parse(String string, ParsePosition position) {
      *
      * @return the pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.022 -0500", hash_original_method = "C892C3517E889BA7A99732103703F353", hash_generated_method = "A16188C800987A064F2D3C803BCB551C")
-    public String toPattern() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.855 -0500", hash_original_method = "C892C3517E889BA7A99732103703F353", hash_generated_method = "A16188C800987A064F2D3C803BCB551C")
+    
+public String toPattern() {
         StringBuilder buffer = new StringBuilder();
         for (int i = 0; i < choiceLimits.length; i++) {
             if (i != 0) {

@@ -22,7 +22,7 @@ import com.android.internal.telephony.Connection;
 
 
 public class CallLog {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.049 -0500", hash_original_field = "7D8B302CF1ACA6A4BAD6C21A54A8ACB5", hash_generated_field = "987F87B7D47FA52A14E198986D714BCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.790 -0500", hash_original_field = "7D8B302CF1ACA6A4BAD6C21A54A8ACB5", hash_generated_field = "987F87B7D47FA52A14E198986D714BCB")
 
     public static final String AUTHORITY = "call_log";
 
@@ -44,8 +44,9 @@ public class CallLog {
          *
          * {@hide}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.078 -0500", hash_original_method = "74620372DF35852D8DF70C07592BB0DB", hash_generated_method = "C57146249214A5E939B067E9007562C8")
-        public static Uri addCall(CallerInfo ci, Context context, String number,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.868 -0500", hash_original_method = "74620372DF35852D8DF70C07592BB0DB", hash_generated_method = "C57146249214A5E939B067E9007562C8")
+        
+public static Uri addCall(CallerInfo ci, Context context, String number,
                 int presentation, int callType, long start, int duration) {
             final ContentResolver resolver = context.getContentResolver();
 
@@ -133,8 +134,9 @@ public class CallLog {
          * @return The last phone number dialed (outgoing) or an empty
          * string if none exist yet.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.079 -0500", hash_original_method = "1042605925515703D39AFE4A37293EE2", hash_generated_method = "5200EB6B67949FD50EC02D2AADD3B16C")
-        public static String getLastOutgoingCall(Context context) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.871 -0500", hash_original_method = "1042605925515703D39AFE4A37293EE2", hash_generated_method = "5200EB6B67949FD50EC02D2AADD3B16C")
+        
+public static String getLastOutgoingCall(Context context) {
             final ContentResolver resolver = context.getContentResolver();
             Cursor c = null;
             try {
@@ -153,99 +155,100 @@ public class CallLog {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.080 -0500", hash_original_method = "E49FD2EBB5DF26A9EAF75051416A16BA", hash_generated_method = "E8D346CDF75EBA404884537B0949CB1C")
-        private static void removeExpiredEntries(Context context) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.873 -0500", hash_original_method = "E49FD2EBB5DF26A9EAF75051416A16BA", hash_generated_method = "E8D346CDF75EBA404884537B0949CB1C")
+        
+private static void removeExpiredEntries(Context context) {
             final ContentResolver resolver = context.getContentResolver();
             resolver.delete(CONTENT_URI, "_id IN " +
                     "(SELECT _id FROM calls ORDER BY " + DEFAULT_SORT_ORDER
                     + " LIMIT -1 OFFSET 500)", null);
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.051 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "CAC38F5D9603A51E678E221EBC178C48")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.797 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "CAC38F5D9603A51E678E221EBC178C48")
 
         public static final Uri CONTENT_URI =
                 Uri.parse("content://call_log/calls");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.051 -0500", hash_original_field = "DFB49FE4A5BA9FC1B5373D88A9D1C8CE", hash_generated_field = "45C94B037DAEB18A1DB94980F8E014D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.799 -0500", hash_original_field = "DFB49FE4A5BA9FC1B5373D88A9D1C8CE", hash_generated_field = "45C94B037DAEB18A1DB94980F8E014D6")
 
         public static final Uri CONTENT_FILTER_URI =
                 Uri.parse("content://call_log/calls/filter");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.052 -0500", hash_original_field = "0BC3C6386115851033A7F6B282841FD2", hash_generated_field = "EDB33797405798F7464E980CF780C594")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.802 -0500", hash_original_field = "0BC3C6386115851033A7F6B282841FD2", hash_generated_field = "EDB33797405798F7464E980CF780C594")
 
         public static final String ALLOW_VOICEMAILS_PARAM_KEY = "allow_voicemails";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.053 -0500", hash_original_field = "2EEAF9E91AB86033A78D46730D6F5C79", hash_generated_field = "38AF17981EA594ABC0FDE070BC7DF7DB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.804 -0500", hash_original_field = "2EEAF9E91AB86033A78D46730D6F5C79", hash_generated_field = "38AF17981EA594ABC0FDE070BC7DF7DB")
 
         public static final Uri CONTENT_URI_WITH_VOICEMAIL = CONTENT_URI.buildUpon()
                 .appendQueryParameter(ALLOW_VOICEMAILS_PARAM_KEY, "true")
                 .build();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.054 -0500", hash_original_field = "37DEDE1DCB9F6F6E9384B67BBEBF370B", hash_generated_field = "4926448D7594E8866DDEBE0B8E79C7BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.807 -0500", hash_original_field = "37DEDE1DCB9F6F6E9384B67BBEBF370B", hash_generated_field = "4926448D7594E8866DDEBE0B8E79C7BF")
 
         public static final String DEFAULT_SORT_ORDER = "date DESC";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.055 -0500", hash_original_field = "39C9151A03484B5A3E685DAA20C9B413", hash_generated_field = "1CDEC54DDEB2A49C77C7020C37521533")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.809 -0500", hash_original_field = "39C9151A03484B5A3E685DAA20C9B413", hash_generated_field = "1CDEC54DDEB2A49C77C7020C37521533")
 
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/calls";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.056 -0500", hash_original_field = "BBCF2A2F353DD878F7DD74BDE8678E1E", hash_generated_field = "6C744BC8399B88080C23AB7CE06EE249")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.812 -0500", hash_original_field = "BBCF2A2F353DD878F7DD74BDE8678E1E", hash_generated_field = "6C744BC8399B88080C23AB7CE06EE249")
 
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/calls";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.057 -0500", hash_original_field = "2280480E1208717EAE9778EC9DC63E6D", hash_generated_field = "A5BA88997B8C56325DBFED26CDB34D93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.814 -0500", hash_original_field = "2280480E1208717EAE9778EC9DC63E6D", hash_generated_field = "A5BA88997B8C56325DBFED26CDB34D93")
 
         public static final String TYPE = "type";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.058 -0500", hash_original_field = "28C420D38F99C7766184CE761CAF98BF", hash_generated_field = "F618762E05A7376181584B861DB937F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.817 -0500", hash_original_field = "28C420D38F99C7766184CE761CAF98BF", hash_generated_field = "F618762E05A7376181584B861DB937F5")
 
         public static final int INCOMING_TYPE = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.058 -0500", hash_original_field = "C07F20DC62FDBA6C651641ACE44DB609", hash_generated_field = "7808F2B3B097303F23C3B4C89BE9F7F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.819 -0500", hash_original_field = "C07F20DC62FDBA6C651641ACE44DB609", hash_generated_field = "7808F2B3B097303F23C3B4C89BE9F7F9")
 
         public static final int OUTGOING_TYPE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.060 -0500", hash_original_field = "7C7D90F1FC82E2B389604B9351D1E62D", hash_generated_field = "506E4A324171E52485D756458CBD610F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.822 -0500", hash_original_field = "7C7D90F1FC82E2B389604B9351D1E62D", hash_generated_field = "506E4A324171E52485D756458CBD610F")
 
         public static final int MISSED_TYPE = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.061 -0500", hash_original_field = "DA61705E10274AD2623AD4900D764F4D", hash_generated_field = "7BE55ED442F01B858859F78F23380EF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.824 -0500", hash_original_field = "DA61705E10274AD2623AD4900D764F4D", hash_generated_field = "7BE55ED442F01B858859F78F23380EF5")
 
         public static final int VOICEMAIL_TYPE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.062 -0500", hash_original_field = "4D0561A33768FC99239D229ECBB5E8EE", hash_generated_field = "3808C95497BF3A863D267480A226478B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.826 -0500", hash_original_field = "4D0561A33768FC99239D229ECBB5E8EE", hash_generated_field = "3808C95497BF3A863D267480A226478B")
 
         public static final String NUMBER = "number";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.063 -0500", hash_original_field = "E09580B942B4982C3EE90E27E00D1A6D", hash_generated_field = "0E793CB23992310CFA8613C8268614D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.828 -0500", hash_original_field = "E09580B942B4982C3EE90E27E00D1A6D", hash_generated_field = "0E793CB23992310CFA8613C8268614D8")
 
         public static final String COUNTRY_ISO = "countryiso";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.064 -0500", hash_original_field = "5B6FCEF8C44CB783DFFC37049083A6ED", hash_generated_field = "FDAA1E4DCD8393137807C1AA22ED16F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.831 -0500", hash_original_field = "5B6FCEF8C44CB783DFFC37049083A6ED", hash_generated_field = "FDAA1E4DCD8393137807C1AA22ED16F2")
 
         public static final String DATE = "date";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.065 -0500", hash_original_field = "DD3D3C287DEDDAA5E4CDB58BDA0563B7", hash_generated_field = "7EEDC36F9B355462B2B6A1B5716031CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.833 -0500", hash_original_field = "DD3D3C287DEDDAA5E4CDB58BDA0563B7", hash_generated_field = "7EEDC36F9B355462B2B6A1B5716031CA")
 
         public static final String DURATION = "duration";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.066 -0500", hash_original_field = "E539F1DEDB847A2CEDE31D51C69BB970", hash_generated_field = "22598556B347941265ECFCC804153EBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.836 -0500", hash_original_field = "E539F1DEDB847A2CEDE31D51C69BB970", hash_generated_field = "22598556B347941265ECFCC804153EBF")
 
         public static final String NEW = "new";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.066 -0500", hash_original_field = "9497D9A328A337B4BC414EE852B35CEE", hash_generated_field = "2412BCD310FC080CDF680C631DF994A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.839 -0500", hash_original_field = "9497D9A328A337B4BC414EE852B35CEE", hash_generated_field = "2412BCD310FC080CDF680C631DF994A9")
 
         public static final String CACHED_NAME = "name";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.067 -0500", hash_original_field = "F796590220A20DB7457A69E7FE0D24EF", hash_generated_field = "992804A4017175A6A3BFD0811656A9FD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.841 -0500", hash_original_field = "F796590220A20DB7457A69E7FE0D24EF", hash_generated_field = "992804A4017175A6A3BFD0811656A9FD")
 
         public static final String CACHED_NUMBER_TYPE = "numbertype";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.068 -0500", hash_original_field = "5B9F4A0A52B0BA8DBD9B832D6491818D", hash_generated_field = "4D1E26746BD4CBFF1B74FE54C0A587E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.845 -0500", hash_original_field = "5B9F4A0A52B0BA8DBD9B832D6491818D", hash_generated_field = "4D1E26746BD4CBFF1B74FE54C0A587E1")
 
         public static final String CACHED_NUMBER_LABEL = "numberlabel";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.069 -0500", hash_original_field = "92B1D6EAE13DD58DC0E6D4D95C960B2F", hash_generated_field = "93ED8118F1C5A0761F9FE4A032B6C8C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.847 -0500", hash_original_field = "92B1D6EAE13DD58DC0E6D4D95C960B2F", hash_generated_field = "93ED8118F1C5A0761F9FE4A032B6C8C1")
 
         public static final String VOICEMAIL_URI = "voicemail_uri";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.070 -0500", hash_original_field = "AF9A83ED95F6DAB436FDC341B1D2BB6E", hash_generated_field = "472C2B10CBB781F23780EBEBA3F15DAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.850 -0500", hash_original_field = "AF9A83ED95F6DAB436FDC341B1D2BB6E", hash_generated_field = "472C2B10CBB781F23780EBEBA3F15DAD")
 
         public static final String IS_READ = "is_read";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.071 -0500", hash_original_field = "950FB4C7F3865ADEA7A723AAE44911BC", hash_generated_field = "EFE1380E6C29C11B17E15016AD67FA7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.852 -0500", hash_original_field = "950FB4C7F3865ADEA7A723AAE44911BC", hash_generated_field = "EFE1380E6C29C11B17E15016AD67FA7C")
 
         public static final String GEOCODED_LOCATION = "geocoded_location";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.072 -0500", hash_original_field = "5A41AAF2353BB46F28C0CB3F4D1434B9", hash_generated_field = "F2C2B5EA743D3271A3CEEDF79ABB780F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.855 -0500", hash_original_field = "5A41AAF2353BB46F28C0CB3F4D1434B9", hash_generated_field = "F2C2B5EA743D3271A3CEEDF79ABB780F")
 
         public static final String CACHED_LOOKUP_URI = "lookup_uri";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.073 -0500", hash_original_field = "E6DA00D3AC646718154357E24B7693C5", hash_generated_field = "9A1A1943DD7E3F20EA4C2DD553CCAEBA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.857 -0500", hash_original_field = "E6DA00D3AC646718154357E24B7693C5", hash_generated_field = "9A1A1943DD7E3F20EA4C2DD553CCAEBA")
 
         public static final String CACHED_MATCHED_NUMBER = "matched_number";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.074 -0500", hash_original_field = "FE53F898A8DF7E23FB7112A874DC75A2", hash_generated_field = "ACEF105CFC56C22F33A0A761D63639F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.859 -0500", hash_original_field = "FE53F898A8DF7E23FB7112A874DC75A2", hash_generated_field = "ACEF105CFC56C22F33A0A761D63639F2")
 
         public static final String CACHED_NORMALIZED_NUMBER = "normalized_number";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.075 -0500", hash_original_field = "22C5C708114E95D2447F2913A7A786C5", hash_generated_field = "4CFA92B5C0FF40271E7526060762580E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.862 -0500", hash_original_field = "22C5C708114E95D2447F2913A7A786C5", hash_generated_field = "4CFA92B5C0FF40271E7526060762580E")
 
         public static final String CACHED_PHOTO_ID = "photo_id";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.076 -0500", hash_original_field = "1DD090F91133031097BFBBB2085C81E5", hash_generated_field = "D806B6D11CCD4F0CE94A125CFD3EA887")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.864 -0500", hash_original_field = "1DD090F91133031097BFBBB2085C81E5", hash_generated_field = "D806B6D11CCD4F0CE94A125CFD3EA887")
 
         public static final String CACHED_FORMATTED_NUMBER = "formatted_number";
         
@@ -255,7 +258,7 @@ public class CallLog {
             //Synthesized constructor
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.050 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "D118CEA06FF497F93B41482BB0D0564B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.793 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "D118CEA06FF497F93B41482BB0D0564B")
 
     public static final Uri CONTENT_URI =
         Uri.parse("content://" + AUTHORITY);

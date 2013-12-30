@@ -15,14 +15,15 @@ import java.util.TimeZone;
 
 public abstract class ASN1Time extends ASN1StringType {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.243 -0500", hash_original_method = "82E49EA5DBBF8DF43E60D041D8EADCBA", hash_generated_method = "CAF48723FCBF29B116EFEA04AB7A8424")
-    public ASN1Time(int tagNumber) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.544 -0500", hash_original_method = "82E49EA5DBBF8DF43E60D041D8EADCBA", hash_generated_method = "CAF48723FCBF29B116EFEA04AB7A8424")
+    
+public ASN1Time(int tagNumber) {
         super(tagNumber);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.244 -0500", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "57D628B029E551897A68C605BC923CD0")
-    @Override
-public Object getDecodedObject(BerInputStream in) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.546 -0500", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "57D628B029E551897A68C605BC923CD0")
+    
+@Override public Object getDecodedObject(BerInputStream in) throws IOException {
         GregorianCalendar c = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
         c.set(Calendar.YEAR, in.times[0]);
         c.set(Calendar.MONTH, in.times[1]-1);

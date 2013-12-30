@@ -15,8 +15,9 @@ public abstract class CharsetProvider {
     /**
      * Constructor for subclassing with concrete types.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.429 -0500", hash_original_method = "71B9A0846B394A5E85543A853F8CC262", hash_generated_method = "59DF855CF64856033BCC1CA3D13C2C92")
-    protected CharsetProvider() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.735 -0500", hash_original_method = "71B9A0846B394A5E85543A853F8CC262", hash_generated_method = "59DF855CF64856033BCC1CA3D13C2C92")
+    
+protected CharsetProvider() {
     }
 
     /**
@@ -24,8 +25,9 @@ public abstract class CharsetProvider {
      *
      * @return the iterator.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.430 -0500", hash_original_method = "709EC9B16996CA6DF02EC1EFC9088A58", hash_generated_method = "94B3EF507179C12F4E718B1D8C107E28")
-    public abstract Iterator<Charset> charsets();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.737 -0500", hash_original_method = "709EC9B16996CA6DF02EC1EFC9088A58", hash_generated_method = "94B3EF507179C12F4E718B1D8C107E28")
+    
+public abstract Iterator<Charset> charsets();
 
     /**
      * Returns the named charset.
@@ -37,8 +39,9 @@ public abstract class CharsetProvider {
      *            the canonical or alias name of a character set.
      * @return the charset, or <code>null</code> if unavailable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.431 -0500", hash_original_method = "BA31824ED4CC04936E987AEF123C88CF", hash_generated_method = "7483DA9550BEF926E3779E9C676D05E8")
-    public abstract Charset charsetForName(String charsetName);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.740 -0500", hash_original_method = "BA31824ED4CC04936E987AEF123C88CF", hash_generated_method = "7483DA9550BEF926E3779E9C676D05E8")
+    
+public abstract Charset charsetForName(String charsetName);
 
     
 }

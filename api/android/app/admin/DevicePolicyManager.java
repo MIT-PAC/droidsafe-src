@@ -31,83 +31,84 @@ import android.os.ServiceManager;
 public class DevicePolicyManager {
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.995 -0500", hash_original_method = "55AE6CA87895AD6E1A6D7E33BF40E1AD", hash_generated_method = "E46DC9ABD03A3356F5D1E8EF744443B9")
-    public static DevicePolicyManager create(Context context, Handler handler) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.663 -0500", hash_original_method = "55AE6CA87895AD6E1A6D7E33BF40E1AD", hash_generated_method = "E46DC9ABD03A3356F5D1E8EF744443B9")
+    
+public static DevicePolicyManager create(Context context, Handler handler) {
         DevicePolicyManager me = new DevicePolicyManager(context, handler);
         return me.mService != null ? me : null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.992 -0500", hash_original_field = "9190DF3EFF34FCEFD01405440D426757", hash_generated_field = "FF900525E51DBB3F6D9B2A6E08054C76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.653 -0500", hash_original_field = "9190DF3EFF34FCEFD01405440D426757", hash_generated_field = "FF900525E51DBB3F6D9B2A6E08054C76")
 
     private static String TAG = "DevicePolicyManager";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.996 -0500", hash_original_field = "21A07E75D2DAE150F905F6B9D4FCE5D3", hash_generated_field = "CDF0D3A915C96327043A2D40EDE2C92A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.666 -0500", hash_original_field = "21A07E75D2DAE150F905F6B9D4FCE5D3", hash_generated_field = "CDF0D3A915C96327043A2D40EDE2C92A")
 
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String ACTION_ADD_DEVICE_ADMIN
             = "android.app.action.ADD_DEVICE_ADMIN";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.997 -0500", hash_original_field = "937A07734998A09915E3E4D89CD33CF8", hash_generated_field = "5BDD43B8A0E93C7D4FDE8B1FA69FAF93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.668 -0500", hash_original_field = "937A07734998A09915E3E4D89CD33CF8", hash_generated_field = "5BDD43B8A0E93C7D4FDE8B1FA69FAF93")
 
     public static final String ACTION_DEVICE_POLICY_MANAGER_STATE_CHANGED
             = "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.998 -0500", hash_original_field = "2E843652564362F549937C95209A0BA8", hash_generated_field = "8C18FCF3FC885F2E0E13E7C006ED1A43")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.671 -0500", hash_original_field = "2E843652564362F549937C95209A0BA8", hash_generated_field = "8C18FCF3FC885F2E0E13E7C006ED1A43")
 
     public static final String EXTRA_DEVICE_ADMIN = "android.app.extra.DEVICE_ADMIN";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.999 -0500", hash_original_field = "F4F5EFD88A7C7FF2182E93D909B97406", hash_generated_field = "89CEC099D619C862DB69E018F3BFDC73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.673 -0500", hash_original_field = "F4F5EFD88A7C7FF2182E93D909B97406", hash_generated_field = "89CEC099D619C862DB69E018F3BFDC73")
 
     public static final String EXTRA_ADD_EXPLANATION = "android.app.extra.ADD_EXPLANATION";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.000 -0500", hash_original_field = "03F3617FA90788FC385BFAAA7A041CCE", hash_generated_field = "E3AD59906BAAA7B9E356941998879FE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.675 -0500", hash_original_field = "03F3617FA90788FC385BFAAA7A041CCE", hash_generated_field = "E3AD59906BAAA7B9E356941998879FE7")
 
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String ACTION_SET_NEW_PASSWORD
             = "android.app.action.SET_NEW_PASSWORD";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.005 -0500", hash_original_field = "6CCCDF5C22D3D3AD40D242B2086D02C3", hash_generated_field = "420ABA592DCBCC7FDBBD6984C905D379")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.689 -0500", hash_original_field = "6CCCDF5C22D3D3AD40D242B2086D02C3", hash_generated_field = "420ABA592DCBCC7FDBBD6984C905D379")
 
     public static final int PASSWORD_QUALITY_UNSPECIFIED = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.006 -0500", hash_original_field = "8E51C9045007C12E228AE1F0FB968491", hash_generated_field = "33A112A34C5C25DFBD5A157010E89532")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.691 -0500", hash_original_field = "8E51C9045007C12E228AE1F0FB968491", hash_generated_field = "33A112A34C5C25DFBD5A157010E89532")
 
     public static final int PASSWORD_QUALITY_BIOMETRIC_WEAK = 0x8000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.007 -0500", hash_original_field = "11DB6EF3D35BB23FEFDD4461959F1FB8", hash_generated_field = "7D590DB4720EE2DDFEFB4FFA71549D9C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.694 -0500", hash_original_field = "11DB6EF3D35BB23FEFDD4461959F1FB8", hash_generated_field = "7D590DB4720EE2DDFEFB4FFA71549D9C")
 
     public static final int PASSWORD_QUALITY_SOMETHING = 0x10000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.008 -0500", hash_original_field = "E32E5A174C17DA00C7D7104BEFD56CC6", hash_generated_field = "6079C1AD224868A1FD2E6C91F592E8E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.696 -0500", hash_original_field = "E32E5A174C17DA00C7D7104BEFD56CC6", hash_generated_field = "6079C1AD224868A1FD2E6C91F592E8E5")
 
     public static final int PASSWORD_QUALITY_NUMERIC = 0x20000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.009 -0500", hash_original_field = "9F11D95DC42EE5FA270A8B49D81D3649", hash_generated_field = "4CF28041A91E5136B4028DFC45BF43A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.698 -0500", hash_original_field = "9F11D95DC42EE5FA270A8B49D81D3649", hash_generated_field = "4CF28041A91E5136B4028DFC45BF43A2")
 
     public static final int PASSWORD_QUALITY_ALPHABETIC = 0x40000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.010 -0500", hash_original_field = "301E79E8B3BECA6431AAD1787688A804", hash_generated_field = "19D36D84D76399F2965778802906C5F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.701 -0500", hash_original_field = "301E79E8B3BECA6431AAD1787688A804", hash_generated_field = "19D36D84D76399F2965778802906C5F4")
 
     public static final int PASSWORD_QUALITY_ALPHANUMERIC = 0x50000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.011 -0500", hash_original_field = "52CC266791BE5DFC77FB5E19767C8E7D", hash_generated_field = "B6900B6DFFCE3EC3137AFAC8CDF141C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.704 -0500", hash_original_field = "52CC266791BE5DFC77FB5E19767C8E7D", hash_generated_field = "B6900B6DFFCE3EC3137AFAC8CDF141C8")
 
     public static final int PASSWORD_QUALITY_COMPLEX = 0x60000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.034 -0500", hash_original_field = "14498304BE487A48CFA7FCBD2961B4BF", hash_generated_field = "A25E572D19EAB5FC775D99C2E5CBD7F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.769 -0500", hash_original_field = "14498304BE487A48CFA7FCBD2961B4BF", hash_generated_field = "A25E572D19EAB5FC775D99C2E5CBD7F9")
 
     public static final int RESET_PASSWORD_REQUIRE_ENTRY = 0x0001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.038 -0500", hash_original_field = "BB0190315F212ABEC87FEE2FEF0285D5", hash_generated_field = "6DBBDEA2F83957970766E3EB7A360D87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.780 -0500", hash_original_field = "BB0190315F212ABEC87FEE2FEF0285D5", hash_generated_field = "6DBBDEA2F83957970766E3EB7A360D87")
 
     public static final int WIPE_EXTERNAL_STORAGE = 0x0001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.041 -0500", hash_original_field = "F6A79ACB642F68E0231ADEF36F08F5D9", hash_generated_field = "C963AC3E0F57998F2C6F71339C6345A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.791 -0500", hash_original_field = "F6A79ACB642F68E0231ADEF36F08F5D9", hash_generated_field = "C963AC3E0F57998F2C6F71339C6345A2")
 
     public static final int ENCRYPTION_STATUS_UNSUPPORTED = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.042 -0500", hash_original_field = "DCB533AE10ED5FEECFAD8E5F982D8F74", hash_generated_field = "9BC8B9B07F2BB6E9920B39CA1C7F82FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.793 -0500", hash_original_field = "DCB533AE10ED5FEECFAD8E5F982D8F74", hash_generated_field = "9BC8B9B07F2BB6E9920B39CA1C7F82FB")
 
     public static final int ENCRYPTION_STATUS_INACTIVE = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.043 -0500", hash_original_field = "273A71838109512D42735C89C0F45BC8", hash_generated_field = "5F4944DA22B7A103647F3EE380E7C7E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.795 -0500", hash_original_field = "273A71838109512D42735C89C0F45BC8", hash_generated_field = "5F4944DA22B7A103647F3EE380E7C7E1")
 
     public static final int ENCRYPTION_STATUS_ACTIVATING = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.044 -0500", hash_original_field = "50A233A8D95B2111069CC282A8501EB3", hash_generated_field = "4AECE9433F73E3025A1218697C4A55F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.798 -0500", hash_original_field = "50A233A8D95B2111069CC282A8501EB3", hash_generated_field = "4AECE9433F73E3025A1218697C4A55F7")
 
     public static final int ENCRYPTION_STATUS_ACTIVE = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.045 -0500", hash_original_field = "A052CD99A5D5FB1455AE5EC8C6134EF5", hash_generated_field = "D3A52877D04884CC38F2F15EF3C82C3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.800 -0500", hash_original_field = "A052CD99A5D5FB1455AE5EC8C6134EF5", hash_generated_field = "D3A52877D04884CC38F2F15EF3C82C3E")
 
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String ACTION_START_ENCRYPTION
             = "android.app.action.START_ENCRYPTION";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.993 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.656 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:24.993 -0500", hash_original_field = "7C2672154573FCF3BE1B466023E739FB", hash_generated_field = "E263D54C98D833F4BF6DB51617AA3116")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.658 -0500", hash_original_field = "7C2672154573FCF3BE1B466023E739FB", hash_generated_field = "E263D54C98D833F4BF6DB51617AA3116")
 
     private  IDevicePolicyManager mService;
     
@@ -141,8 +142,9 @@ public class DevicePolicyManager {
      * Return true if the given administrator component is currently
      * active (enabled) in the system.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.001 -0500", hash_original_method = "DEBAA688BC0765F8640468141F520924", hash_generated_method = "27BF5B51AAA4CF65F3AECBF647F40D39")
-    public boolean isAdminActive(ComponentName who) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.678 -0500", hash_original_method = "DEBAA688BC0765F8640468141F520924", hash_generated_method = "27BF5B51AAA4CF65F3AECBF647F40D39")
+    
+public boolean isAdminActive(ComponentName who) {
         if (mService != null) {
             try {
                 return mService.isAdminActive(who);
@@ -158,8 +160,9 @@ public class DevicePolicyManager {
      * names.  Note that if there are no administrators than null may be
      * returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.002 -0500", hash_original_method = "304202BD61CAAFAF35BBB8D3C8BC6AB8", hash_generated_method = "D03CA4F02C9F9CBC5C13F43C507A75A3")
-    public List<ComponentName> getActiveAdmins() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.680 -0500", hash_original_method = "304202BD61CAAFAF35BBB8D3C8BC6AB8", hash_generated_method = "D03CA4F02C9F9CBC5C13F43C507A75A3")
+    
+public List<ComponentName> getActiveAdmins() {
         if (mService != null) {
             try {
                 return mService.getActiveAdmins();
@@ -173,8 +176,9 @@ public class DevicePolicyManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.003 -0500", hash_original_method = "EE57BBE804AE4C87F4CB89ED9793C019", hash_generated_method = "E6F88F156CDC64E1A938C26BA56167FA")
-    public boolean packageHasActiveAdmins(String packageName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.682 -0500", hash_original_method = "EE57BBE804AE4C87F4CB89ED9793C019", hash_generated_method = "E6F88F156CDC64E1A938C26BA56167FA")
+    
+public boolean packageHasActiveAdmins(String packageName) {
         if (mService != null) {
             try {
                 return mService.packageHasActiveAdmins(packageName);
@@ -191,8 +195,9 @@ public class DevicePolicyManager {
      * try to remove someone else's component, a security exception will be
      * thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.004 -0500", hash_original_method = "260DBD46AB1A27EF2CC0A61E058D7901", hash_generated_method = "A34F6369DE54268FFED0D29DF5F4D187")
-    public void removeActiveAdmin(ComponentName who) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.684 -0500", hash_original_method = "260DBD46AB1A27EF2CC0A61E058D7901", hash_generated_method = "A34F6369DE54268FFED0D29DF5F4D187")
+    
+public void removeActiveAdmin(ComponentName who) {
         if (mService != null) {
             try {
                 mService.removeActiveAdmin(who);
@@ -211,8 +216,9 @@ public class DevicePolicyManager {
      * an active administrator, or an exception will be thrown.
      * @param usesPolicy Which uses-policy to check, as defined in {@link DeviceAdminInfo}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.004 -0500", hash_original_method = "23A835CF05C7A5BCBD423FD3E5C1A622", hash_generated_method = "D469B2833BA2D077E5FD498CA9DE392F")
-    public boolean hasGrantedPolicy(ComponentName admin, int usesPolicy) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.687 -0500", hash_original_method = "23A835CF05C7A5BCBD423FD3E5C1A622", hash_generated_method = "D469B2833BA2D077E5FD498CA9DE392F")
+    
+public boolean hasGrantedPolicy(ComponentName admin, int usesPolicy) {
         if (mService != null) {
             try {
                 return mService.hasGrantedPolicy(admin, usesPolicy);
@@ -247,8 +253,9 @@ public class DevicePolicyManager {
      * {@link #PASSWORD_QUALITY_NUMERIC}, {@link #PASSWORD_QUALITY_ALPHABETIC},
      * {@link #PASSWORD_QUALITY_ALPHANUMERIC} or {@link #PASSWORD_QUALITY_COMPLEX}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.012 -0500", hash_original_method = "59F8BF318650672CABE968E5789C79B4", hash_generated_method = "E4FDC421A930C78ABB10B0F505610904")
-    public void setPasswordQuality(ComponentName admin, int quality) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.706 -0500", hash_original_method = "59F8BF318650672CABE968E5789C79B4", hash_generated_method = "E4FDC421A930C78ABB10B0F505610904")
+    
+public void setPasswordQuality(ComponentName admin, int quality) {
         if (mService != null) {
             try {
                 mService.setPasswordQuality(admin, quality);
@@ -264,8 +271,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.013 -0500", hash_original_method = "953DAEE8D36D414E1ED2EDA688583D7B", hash_generated_method = "2C6B293E9B7AB9983F9B16E1AD95E00A")
-    public int getPasswordQuality(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.708 -0500", hash_original_method = "953DAEE8D36D414E1ED2EDA688583D7B", hash_generated_method = "2C6B293E9B7AB9983F9B16E1AD95E00A")
+    
+public int getPasswordQuality(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordQuality(admin);
@@ -297,8 +305,9 @@ public class DevicePolicyManager {
      * @param length The new desired minimum password length.  A value of 0
      * means there is no restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.013 -0500", hash_original_method = "F270559FB103FDDF70DB07978E6CE793", hash_generated_method = "8BAE076C0FA25459742B0C469F0B4148")
-    public void setPasswordMinimumLength(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.711 -0500", hash_original_method = "F270559FB103FDDF70DB07978E6CE793", hash_generated_method = "8BAE076C0FA25459742B0C469F0B4148")
+    
+public void setPasswordMinimumLength(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumLength(admin, length);
@@ -314,8 +323,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.014 -0500", hash_original_method = "0BF67C005C50195D588980E6F78FE344", hash_generated_method = "DBCE40106A43C0201EFDB697938390EF")
-    public int getPasswordMinimumLength(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.713 -0500", hash_original_method = "0BF67C005C50195D588980E6F78FE344", hash_generated_method = "DBCE40106A43C0201EFDB697938390EF")
+    
+public int getPasswordMinimumLength(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumLength(admin);
@@ -348,8 +358,9 @@ public class DevicePolicyManager {
      *            required in the password. A value of 0 means there is no
      *            restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.015 -0500", hash_original_method = "B0A7D811F24F382978794CAD91B66775", hash_generated_method = "475B1508F81885AACD1750F17D3741B5")
-    public void setPasswordMinimumUpperCase(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.715 -0500", hash_original_method = "B0A7D811F24F382978794CAD91B66775", hash_generated_method = "475B1508F81885AACD1750F17D3741B5")
+    
+public void setPasswordMinimumUpperCase(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumUpperCase(admin, length);
@@ -371,8 +382,9 @@ public class DevicePolicyManager {
      * @return The minimum number of upper case letters required in the
      *         password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.016 -0500", hash_original_method = "42E8A5AFC85991E9FFA780A53F7AB6A7", hash_generated_method = "EB6FB860F38272C8D5E477319E563294")
-    public int getPasswordMinimumUpperCase(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.717 -0500", hash_original_method = "42E8A5AFC85991E9FFA780A53F7AB6A7", hash_generated_method = "EB6FB860F38272C8D5E477319E563294")
+    
+public int getPasswordMinimumUpperCase(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumUpperCase(admin);
@@ -405,8 +417,9 @@ public class DevicePolicyManager {
      *            required in the password. A value of 0 means there is no
      *            restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.017 -0500", hash_original_method = "411E57E6ADFDEF4CCE60FF315FF9330B", hash_generated_method = "D0A36400D0E336E48CE052EE786103DC")
-    public void setPasswordMinimumLowerCase(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.719 -0500", hash_original_method = "411E57E6ADFDEF4CCE60FF315FF9330B", hash_generated_method = "D0A36400D0E336E48CE052EE786103DC")
+    
+public void setPasswordMinimumLowerCase(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumLowerCase(admin, length);
@@ -428,8 +441,9 @@ public class DevicePolicyManager {
      * @return The minimum number of lower case letters required in the
      *         password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.018 -0500", hash_original_method = "115CC4F3CDF24178A32FCDB4FA3C0CE3", hash_generated_method = "79DFB16A6010C875B95F508E4F4ECA00")
-    public int getPasswordMinimumLowerCase(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.722 -0500", hash_original_method = "115CC4F3CDF24178A32FCDB4FA3C0CE3", hash_generated_method = "79DFB16A6010C875B95F508E4F4ECA00")
+    
+public int getPasswordMinimumLowerCase(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumLowerCase(admin);
@@ -461,8 +475,9 @@ public class DevicePolicyManager {
      * @param length The new desired minimum number of letters required in the
      *            password. A value of 0 means there is no restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.018 -0500", hash_original_method = "14047A2F7D126C90FC5B2063BAF2E4A1", hash_generated_method = "D8C1F0AAAC2A113877CE35A3AB13ADD9")
-    public void setPasswordMinimumLetters(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.724 -0500", hash_original_method = "14047A2F7D126C90FC5B2063BAF2E4A1", hash_generated_method = "D8C1F0AAAC2A113877CE35A3AB13ADD9")
+    
+public void setPasswordMinimumLetters(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumLetters(admin, length);
@@ -483,8 +498,9 @@ public class DevicePolicyManager {
      *            aggregate all admins.
      * @return The minimum number of letters required in the password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.019 -0500", hash_original_method = "B7290C5B6AA0AFA6598FFFCBACAFA85A", hash_generated_method = "64429EBBF24BA57FD0661F530EA473CF")
-    public int getPasswordMinimumLetters(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.726 -0500", hash_original_method = "B7290C5B6AA0AFA6598FFFCBACAFA85A", hash_generated_method = "64429EBBF24BA57FD0661F530EA473CF")
+    
+public int getPasswordMinimumLetters(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumLetters(admin);
@@ -516,8 +532,9 @@ public class DevicePolicyManager {
      * @param length The new desired minimum number of numerical digits required
      *            in the password. A value of 0 means there is no restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.020 -0500", hash_original_method = "33FACE9A88EEFFC907427A4DE2511E88", hash_generated_method = "9EA2C9368E33C29479AF22723F246866")
-    public void setPasswordMinimumNumeric(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.728 -0500", hash_original_method = "33FACE9A88EEFFC907427A4DE2511E88", hash_generated_method = "9EA2C9368E33C29479AF22723F246866")
+    
+public void setPasswordMinimumNumeric(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumNumeric(admin, length);
@@ -538,8 +555,9 @@ public class DevicePolicyManager {
      *            aggregate all admins.
      * @return The minimum number of numerical digits required in the password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.021 -0500", hash_original_method = "55CECC6BB4262687B1FECD13F88E35AB", hash_generated_method = "9D9515B58E2E504EBEDA6D7C6359ABE2")
-    public int getPasswordMinimumNumeric(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.731 -0500", hash_original_method = "55CECC6BB4262687B1FECD13F88E35AB", hash_generated_method = "9D9515B58E2E504EBEDA6D7C6359ABE2")
+    
+public int getPasswordMinimumNumeric(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumNumeric(admin);
@@ -571,8 +589,9 @@ public class DevicePolicyManager {
      * @param length The new desired minimum number of symbols required in the
      *            password. A value of 0 means there is no restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.022 -0500", hash_original_method = "D86720687DC7C5B971FF240E5ADCEB58", hash_generated_method = "110913DA2CB88B38CEC0609BC70AB910")
-    public void setPasswordMinimumSymbols(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.733 -0500", hash_original_method = "D86720687DC7C5B971FF240E5ADCEB58", hash_generated_method = "110913DA2CB88B38CEC0609BC70AB910")
+    
+public void setPasswordMinimumSymbols(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumSymbols(admin, length);
@@ -593,8 +612,9 @@ public class DevicePolicyManager {
      *            aggregate all admins.
      * @return The minimum number of symbols required in the password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.023 -0500", hash_original_method = "97C1C4934ACB04DD5927B31B09CB55B5", hash_generated_method = "E861BE5402ABF5F6E67D4341563B3C14")
-    public int getPasswordMinimumSymbols(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.735 -0500", hash_original_method = "97C1C4934ACB04DD5927B31B09CB55B5", hash_generated_method = "E861BE5402ABF5F6E67D4341563B3C14")
+    
+public int getPasswordMinimumSymbols(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumSymbols(admin);
@@ -626,8 +646,9 @@ public class DevicePolicyManager {
      * @param length The new desired minimum number of letters required in the
      *            password. A value of 0 means there is no restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.024 -0500", hash_original_method = "8F226B24E69D209379BEE3195F22A7DC", hash_generated_method = "E615574F9EF7ADEA63048ED12239348A")
-    public void setPasswordMinimumNonLetter(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.737 -0500", hash_original_method = "8F226B24E69D209379BEE3195F22A7DC", hash_generated_method = "E615574F9EF7ADEA63048ED12239348A")
+    
+public void setPasswordMinimumNonLetter(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordMinimumNonLetter(admin, length);
@@ -648,8 +669,9 @@ public class DevicePolicyManager {
      *            aggregate all admins.
      * @return The minimum number of letters required in the password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.025 -0500", hash_original_method = "8ED1E73D193F12CF2F8CF85176FE9B97", hash_generated_method = "6C66EF3A44A86EC3057D1B7A99F3E408")
-    public int getPasswordMinimumNonLetter(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.739 -0500", hash_original_method = "8ED1E73D193F12CF2F8CF85176FE9B97", hash_generated_method = "6C66EF3A44A86EC3057D1B7A99F3E408")
+    
+public int getPasswordMinimumNonLetter(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordMinimumNonLetter(admin);
@@ -682,8 +704,9 @@ public class DevicePolicyManager {
    * @param length The new desired length of password history. A value of 0
    *        means there is no restriction.
    */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.025 -0500", hash_original_method = "56A45FF24A713BC35886C94CD936741A", hash_generated_method = "35DE2A00AA0D79BCB282660E1DEA9EB5")
-    public void setPasswordHistoryLength(ComponentName admin, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.741 -0500", hash_original_method = "56A45FF24A713BC35886C94CD936741A", hash_generated_method = "35DE2A00AA0D79BCB282660E1DEA9EB5")
+    
+public void setPasswordHistoryLength(ComponentName admin, int length) {
         if (mService != null) {
             try {
                 mService.setPasswordHistoryLength(admin, length);
@@ -712,8 +735,9 @@ public class DevicePolicyManager {
      * @param timeout The limit (in ms) that a password can remain in effect. A value of 0
      *        means there is no restriction (unlimited).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.026 -0500", hash_original_method = "A2F840E60969344CDBBA08F42E12EB97", hash_generated_method = "F1271CF92F6B3701D8E992F7EB492240")
-    public void setPasswordExpirationTimeout(ComponentName admin, long timeout) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.749 -0500", hash_original_method = "A2F840E60969344CDBBA08F42E12EB97", hash_generated_method = "F1271CF92F6B3701D8E992F7EB492240")
+    
+public void setPasswordExpirationTimeout(ComponentName admin, long timeout) {
         if (mService != null) {
             try {
                 mService.setPasswordExpirationTimeout(admin, timeout);
@@ -732,8 +756,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to aggregate all admins.
      * @return The timeout for the given admin or the minimum of all timeouts
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.027 -0500", hash_original_method = "31D7885DD1B838E718F93D593801E489", hash_generated_method = "72E49514A1125DF1E3AA246A2F2C4630")
-    public long getPasswordExpirationTimeout(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.751 -0500", hash_original_method = "31D7885DD1B838E718F93D593801E489", hash_generated_method = "72E49514A1125DF1E3AA246A2F2C4630")
+    
+public long getPasswordExpirationTimeout(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordExpirationTimeout(admin);
@@ -753,8 +778,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to aggregate all admins.
      * @return The password expiration time, in ms.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.028 -0500", hash_original_method = "F850BD1F4A684FFED232083DC78EC214", hash_generated_method = "F7B766CEAE434CB2D25557BF953CA8C2")
-    public long getPasswordExpiration(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.754 -0500", hash_original_method = "F850BD1F4A684FFED232083DC78EC214", hash_generated_method = "F7B766CEAE434CB2D25557BF953CA8C2")
+    
+public long getPasswordExpiration(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordExpiration(admin);
@@ -772,8 +798,9 @@ public class DevicePolicyManager {
      * all admins.
      * @return The length of the password history
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.029 -0500", hash_original_method = "6A25C50AEC7E714C844A4ACF270DA0EA", hash_generated_method = "C9B53D524D3260BE8DAC4587A13D27D3")
-    public int getPasswordHistoryLength(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.756 -0500", hash_original_method = "6A25C50AEC7E714C844A4ACF270DA0EA", hash_generated_method = "C9B53D524D3260BE8DAC4587A13D27D3")
+    
+public int getPasswordHistoryLength(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getPasswordHistoryLength(admin);
@@ -790,8 +817,9 @@ public class DevicePolicyManager {
      * @param quality The quality being interrogated.
      * @return Returns the maximum length that the user can enter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.029 -0500", hash_original_method = "B720364465717C512AF715245037D814", hash_generated_method = "A603C0BCB8D2995657F7D0CDB142F54F")
-    public int getPasswordMaximumLength(int quality) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.758 -0500", hash_original_method = "B720364465717C512AF715245037D814", hash_generated_method = "A603C0BCB8D2995657F7D0CDB142F54F")
+    
+public int getPasswordMaximumLength(int quality) {
         // Kind-of arbitrary.
         return 16;
     }
@@ -808,8 +836,9 @@ public class DevicePolicyManager {
      * @return Returns true if the password meets the current requirements,
      * else false.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.031 -0500", hash_original_method = "2B762200302C4E580602F331CF81E49C", hash_generated_method = "A1E8004CC69CBC7393C5A90D581E66F1")
-    public boolean isActivePasswordSufficient() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.760 -0500", hash_original_method = "2B762200302C4E580602F331CF81E49C", hash_generated_method = "A1E8004CC69CBC7393C5A90D581E66F1")
+    
+public boolean isActivePasswordSufficient() {
         if (mService != null) {
             try {
                 return mService.isActivePasswordSufficient();
@@ -828,8 +857,9 @@ public class DevicePolicyManager {
      * {@link DeviceAdminInfo#USES_POLICY_WATCH_LOGIN} to be able to call
      * this method; if it has not, a security exception will be thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.031 -0500", hash_original_method = "EACD63B4064B49538F5A848510A5F41A", hash_generated_method = "734273F3588C3554C5D91D6700B000CD")
-    public int getCurrentFailedPasswordAttempts() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.762 -0500", hash_original_method = "EACD63B4064B49538F5A848510A5F41A", hash_generated_method = "734273F3588C3554C5D91D6700B000CD")
+    
+public int getCurrentFailedPasswordAttempts() {
         if (mService != null) {
             try {
                 return mService.getCurrentFailedPasswordAttempts();
@@ -859,8 +889,9 @@ public class DevicePolicyManager {
      * @param num The number of failed password attempts at which point the
      * device will wipe its data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.032 -0500", hash_original_method = "386BE05045BF9977A6E5636AA6860E45", hash_generated_method = "7775E01C31B93481B29EE4669F2F1C05")
-    public void setMaximumFailedPasswordsForWipe(ComponentName admin, int num) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.764 -0500", hash_original_method = "386BE05045BF9977A6E5636AA6860E45", hash_generated_method = "7775E01C31B93481B29EE4669F2F1C05")
+    
+public void setMaximumFailedPasswordsForWipe(ComponentName admin, int num) {
         if (mService != null) {
             try {
                 mService.setMaximumFailedPasswordsForWipe(admin, num);
@@ -877,8 +908,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.033 -0500", hash_original_method = "2F7102BE4460977EBBF2224AD7A1647D", hash_generated_method = "8D68097D66C86010F25314B086CF6646")
-    public int getMaximumFailedPasswordsForWipe(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.767 -0500", hash_original_method = "2F7102BE4460977EBBF2224AD7A1647D", hash_generated_method = "8D68097D66C86010F25314B086CF6646")
+    
+public int getMaximumFailedPasswordsForWipe(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getMaximumFailedPasswordsForWipe(admin);
@@ -911,8 +943,9 @@ public class DevicePolicyManager {
      * @return Returns true if the password was applied, or false if it is
      * not acceptable for the current constraints.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.035 -0500", hash_original_method = "17E6FC8B97A136DE019ACBDDB18AEC37", hash_generated_method = "B1C17E0534D90353D42B964C5FA185BC")
-    public boolean resetPassword(String password, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.771 -0500", hash_original_method = "17E6FC8B97A136DE019ACBDDB18AEC37", hash_generated_method = "B1C17E0534D90353D42B964C5FA185BC")
+    
+public boolean resetPassword(String password, int flags) {
         if (mService != null) {
             try {
                 return mService.resetPassword(password, flags);
@@ -936,8 +969,9 @@ public class DevicePolicyManager {
      * @param timeMs The new desired maximum time to lock in milliseconds.
      * A value of 0 means there is no restriction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.035 -0500", hash_original_method = "063F6779A334FCBA41EF649C9EC5AECE", hash_generated_method = "CEAAC32104FE0682CFE5F6C6BB3F4B31")
-    public void setMaximumTimeToLock(ComponentName admin, long timeMs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.774 -0500", hash_original_method = "063F6779A334FCBA41EF649C9EC5AECE", hash_generated_method = "CEAAC32104FE0682CFE5F6C6BB3F4B31")
+    
+public void setMaximumTimeToLock(ComponentName admin, long timeMs) {
         if (mService != null) {
             try {
                 mService.setMaximumTimeToLock(admin, timeMs);
@@ -953,8 +987,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.036 -0500", hash_original_method = "236548EEF0B27F3ADB5D68074D378910", hash_generated_method = "B0D3A36DEAA47BFDC76EA4DEA2B2D379")
-    public long getMaximumTimeToLock(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.776 -0500", hash_original_method = "236548EEF0B27F3ADB5D68074D378910", hash_generated_method = "B0D3A36DEAA47BFDC76EA4DEA2B2D379")
+    
+public long getMaximumTimeToLock(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getMaximumTimeToLock(admin);
@@ -973,8 +1008,9 @@ public class DevicePolicyManager {
      * {@link DeviceAdminInfo#USES_POLICY_FORCE_LOCK} to be able to call
      * this method; if it has not, a security exception will be thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.037 -0500", hash_original_method = "1AD41EB1582F6A4A56913D2EEA649B59", hash_generated_method = "38C960AFB962E4F4A911599A242E23C4")
-    public void lockNow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.778 -0500", hash_original_method = "1AD41EB1582F6A4A56913D2EEA649B59", hash_generated_method = "38C960AFB962E4F4A911599A242E23C4")
+    
+public void lockNow() {
         if (mService != null) {
             try {
                 mService.lockNow();
@@ -995,8 +1031,9 @@ public class DevicePolicyManager {
      *
      * @param flags Bit mask of additional options: currently must be 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.039 -0500", hash_original_method = "6CEDCC268C3E709685447E15BC08FD3A", hash_generated_method = "9311530DA7B5928250FF41F628CC297A")
-    public void wipeData(int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.783 -0500", hash_original_method = "6CEDCC268C3E709685447E15BC08FD3A", hash_generated_method = "9311530DA7B5928250FF41F628CC297A")
+    
+public void wipeData(int flags) {
         if (mService != null) {
             try {
                 mService.wipeData(flags);
@@ -1029,8 +1066,9 @@ public class DevicePolicyManager {
      *            of the device admin that sets thew proxy otherwise.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.040 -0500", hash_original_method = "53AB2A6BFBDB5E04C8F47C30215E30C2", hash_generated_method = "1A54A3744E388310941FC928A9C9529B")
-    public ComponentName setGlobalProxy(ComponentName admin, Proxy proxySpec,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.786 -0500", hash_original_method = "53AB2A6BFBDB5E04C8F47C30215E30C2", hash_generated_method = "1A54A3744E388310941FC928A9C9529B")
+    
+public ComponentName setGlobalProxy(ComponentName admin, Proxy proxySpec,
             List<String> exclusionList ) {
         if (proxySpec == null) {
             throw new NullPointerException();
@@ -1083,8 +1121,9 @@ public class DevicePolicyManager {
      *            null if no admin has set the proxy.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.040 -0500", hash_original_method = "46A87FF58FD44FDC19B7F90436F7E978", hash_generated_method = "E3475CCE3B89C08A65BDEFD91857C79A")
-    public ComponentName getGlobalProxyAdmin() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.788 -0500", hash_original_method = "46A87FF58FD44FDC19B7F90436F7E978", hash_generated_method = "E3475CCE3B89C08A65BDEFD91857C79A")
+    
+public ComponentName getGlobalProxyAdmin() {
         if (mService != null) {
             try {
                 return mService.getGlobalProxyAdmin();
@@ -1127,8 +1166,9 @@ public class DevicePolicyManager {
      * {@link #ENCRYPTION_STATUS_ACTIVE}.  This is the value of the requests;  Use
      * {@link #getStorageEncryptionStatus()} to query the actual device state.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.046 -0500", hash_original_method = "17B73A4F954CB746271DADF07BB03245", hash_generated_method = "CB378D4C16DB2D05CDD662574A6FD08A")
-    public int setStorageEncryption(ComponentName admin, boolean encrypt) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.802 -0500", hash_original_method = "17B73A4F954CB746271DADF07BB03245", hash_generated_method = "CB378D4C16DB2D05CDD662574A6FD08A")
+    
+public int setStorageEncryption(ComponentName admin, boolean encrypt) {
         if (mService != null) {
             try {
                 return mService.setStorageEncryption(admin, encrypt);
@@ -1148,8 +1188,9 @@ public class DevicePolicyManager {
      * administrators.
      * @return true if the admin(s) are requesting encryption, false if not.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.047 -0500", hash_original_method = "9A4BD9BB365A613657C962C51C854645", hash_generated_method = "7D1FB93BDFD53D72AA0F1FB67290A1E5")
-    public boolean getStorageEncryption(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.805 -0500", hash_original_method = "9A4BD9BB365A613657C962C51C854645", hash_generated_method = "7D1FB93BDFD53D72AA0F1FB67290A1E5")
+    
+public boolean getStorageEncryption(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getStorageEncryption(admin);
@@ -1176,8 +1217,9 @@ public class DevicePolicyManager {
      * {@link #ENCRYPTION_STATUS_UNSUPPORTED}, {@link #ENCRYPTION_STATUS_INACTIVE},
      * {@link #ENCRYPTION_STATUS_ACTIVATING}, or{@link #ENCRYPTION_STATUS_ACTIVE}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.048 -0500", hash_original_method = "6CEE42CBFD4B02D7CAAADEA83FCF3486", hash_generated_method = "9AF9993874F734D8E3EC27D86C8753E8")
-    public int getStorageEncryptionStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.808 -0500", hash_original_method = "6CEE42CBFD4B02D7CAAADEA83FCF3486", hash_generated_method = "9AF9993874F734D8E3EC27D86C8753E8")
+    
+public int getStorageEncryptionStatus() {
         if (mService != null) {
             try {
                 return mService.getStorageEncryptionStatus();
@@ -1200,8 +1242,9 @@ public class DevicePolicyManager {
      * @param admin Which {@link DeviceAdminReceiver} this request is associated with.
      * @param disabled Whether or not the camera should be disabled.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.049 -0500", hash_original_method = "A5F298BC4842F29AB6F496D6FD4E07FD", hash_generated_method = "552B6290202768CA177AFF2BF574D8EB")
-    public void setCameraDisabled(ComponentName admin, boolean disabled) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.810 -0500", hash_original_method = "A5F298BC4842F29AB6F496D6FD4E07FD", hash_generated_method = "552B6290202768CA177AFF2BF574D8EB")
+    
+public void setCameraDisabled(ComponentName admin, boolean disabled) {
         if (mService != null) {
             try {
                 mService.setCameraDisabled(admin, disabled);
@@ -1217,8 +1260,9 @@ public class DevicePolicyManager {
      * @param admin The name of the admin component to check, or null to check if any admins
      * have disabled the camera
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.050 -0500", hash_original_method = "8D92C22AE776D4D287A7DAE7D5749852", hash_generated_method = "0B32DCBC7D85201363DCD17D0283A104")
-    public boolean getCameraDisabled(ComponentName admin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.812 -0500", hash_original_method = "8D92C22AE776D4D287A7DAE7D5749852", hash_generated_method = "0B32DCBC7D85201363DCD17D0283A104")
+    
+public boolean getCameraDisabled(ComponentName admin) {
         if (mService != null) {
             try {
                 return mService.getCameraDisabled(admin);
@@ -1232,8 +1276,9 @@ public class DevicePolicyManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.051 -0500", hash_original_method = "2E5C17164A00D32AA17FC960DDB2A30B", hash_generated_method = "E5F5AAA88F8BE1EE6ADEA4E3148EB40D")
-    public void setActiveAdmin(ComponentName policyReceiver, boolean refreshing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.814 -0500", hash_original_method = "2E5C17164A00D32AA17FC960DDB2A30B", hash_generated_method = "E5F5AAA88F8BE1EE6ADEA4E3148EB40D")
+    
+public void setActiveAdmin(ComponentName policyReceiver, boolean refreshing) {
         if (mService != null) {
             try {
                 mService.setActiveAdmin(policyReceiver, refreshing);
@@ -1247,8 +1292,9 @@ public class DevicePolicyManager {
      * Returns the DeviceAdminInfo as defined by the administrator's package info & meta-data
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.052 -0500", hash_original_method = "6B96BC98EC991BA4501EAC59D3A81719", hash_generated_method = "38D02163D17B96BBBAB39FCE2E56FEA2")
-    public DeviceAdminInfo getAdminInfo(ComponentName cn) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.817 -0500", hash_original_method = "6B96BC98EC991BA4501EAC59D3A81719", hash_generated_method = "38D02163D17B96BBBAB39FCE2E56FEA2")
+    
+public DeviceAdminInfo getAdminInfo(ComponentName cn) {
         ActivityInfo ai;
         try {
             ai = mContext.getPackageManager().getReceiverInfo(cn,
@@ -1275,8 +1321,9 @@ public class DevicePolicyManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.052 -0500", hash_original_method = "B78826B0ABC7DA178D8BC699F76B9B76", hash_generated_method = "1241EBD154ABFF3242B6A44433F7AF8C")
-    public void getRemoveWarning(ComponentName admin, RemoteCallback result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.819 -0500", hash_original_method = "B78826B0ABC7DA178D8BC699F76B9B76", hash_generated_method = "1241EBD154ABFF3242B6A44433F7AF8C")
+    
+public void getRemoveWarning(ComponentName admin, RemoteCallback result) {
         if (mService != null) {
             try {
                 mService.getRemoveWarning(admin, result);
@@ -1289,8 +1336,9 @@ public class DevicePolicyManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.053 -0500", hash_original_method = "6E15637B027827B7A463543C03AC9E11", hash_generated_method = "C4109B4074AC740F9F4460C19352F47C")
-    public void setActivePasswordState(int quality, int length, int letters, int uppercase,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.822 -0500", hash_original_method = "6E15637B027827B7A463543C03AC9E11", hash_generated_method = "C4109B4074AC740F9F4460C19352F47C")
+    
+public void setActivePasswordState(int quality, int length, int letters, int uppercase,
             int lowercase, int numbers, int symbols, int nonletter) {
         if (mService != null) {
             try {
@@ -1305,8 +1353,9 @@ public class DevicePolicyManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.054 -0500", hash_original_method = "7A06EB783FBF60A73CE8C82F7F508BC8", hash_generated_method = "D76CBB25191C33EE19CA7E31E984F48C")
-    public void reportFailedPasswordAttempt() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.824 -0500", hash_original_method = "7A06EB783FBF60A73CE8C82F7F508BC8", hash_generated_method = "D76CBB25191C33EE19CA7E31E984F48C")
+    
+public void reportFailedPasswordAttempt() {
         if (mService != null) {
             try {
                 mService.reportFailedPasswordAttempt();
@@ -1319,8 +1368,9 @@ public class DevicePolicyManager {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.055 -0500", hash_original_method = "715E68F4DA8529CFE0A9E396D6B5FAA4", hash_generated_method = "678D5FB26021E8B547917569322B6817")
-    public void reportSuccessfulPasswordAttempt() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.826 -0500", hash_original_method = "715E68F4DA8529CFE0A9E396D6B5FAA4", hash_generated_method = "678D5FB26021E8B547917569322B6817")
+    
+public void reportSuccessfulPasswordAttempt() {
         if (mService != null) {
             try {
                 mService.reportSuccessfulPasswordAttempt();

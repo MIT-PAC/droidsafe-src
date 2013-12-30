@@ -19,8 +19,9 @@ public class BlurMaskFilter extends MaskFilter {
      * @param style  The Blur to use
      * @return       The new blur maskfilter
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.450 -0500", hash_original_method = "E906BEDBA8C667F2A993849051C66540", hash_generated_method = "92A9E7A1C9812AD7226E5F9C6F28DDAE")
-    public BlurMaskFilter(float radius, Blur style) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.062 -0500", hash_original_method = "E906BEDBA8C667F2A993849051C66540", hash_generated_method = "92A9E7A1C9812AD7226E5F9C6F28DDAE")
+    
+public BlurMaskFilter(float radius, Blur style) {
         native_instance = nativeConstructor(radius, style.native_int);
     }
 
@@ -31,11 +32,12 @@ public class BlurMaskFilter extends MaskFilter {
         OUTER(2),   
         INNER(3);   //!< just blur inside the original border
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.447 -0500", hash_original_method = "48C9082C1B59E336FB6C242DE3A9C7D0", hash_generated_method = "48C9082C1B59E336FB6C242DE3A9C7D0")
-            Blur(int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.056 -0500", hash_original_method = "48C9082C1B59E336FB6C242DE3A9C7D0", hash_generated_method = "48C9082C1B59E336FB6C242DE3A9C7D0")
+            
+Blur(int value) {
             native_int = value;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.448 -0500", hash_original_field = "BADCEEE95FC21A56DEC673ECC42E1251", hash_generated_field = "BADCEEE95FC21A56DEC673ECC42E1251")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.058 -0500", hash_original_field = "BADCEEE95FC21A56DEC673ECC42E1251", hash_generated_field = "BADCEEE95FC21A56DEC673ECC42E1251")
 
          int native_int;
     }

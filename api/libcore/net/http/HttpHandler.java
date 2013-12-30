@@ -23,24 +23,24 @@ public final class HttpHandler extends URLStreamHandler {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:41.317 -0500", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "64F9A3A5C744015EB626E2A9F6179738")
-    @Override
-protected URLConnection openConnection(URL u) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.914 -0500", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "64F9A3A5C744015EB626E2A9F6179738")
+    
+@Override protected URLConnection openConnection(URL u) throws IOException {
         return new HttpURLConnectionImpl(u, getDefaultPort());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:41.318 -0500", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "6CC095EF61C829E693499CB90DD19A50")
-    @Override
-protected URLConnection openConnection(URL url, Proxy proxy) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.917 -0500", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "6CC095EF61C829E693499CB90DD19A50")
+    
+@Override protected URLConnection openConnection(URL url, Proxy proxy) throws IOException {
         if (url == null || proxy == null) {
             throw new IllegalArgumentException("url == null || proxy == null");
         }
         return new HttpURLConnectionImpl(url, getDefaultPort(), proxy);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:41.319 -0500", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "5299DDB2FBD4BF18E13EF23AD2F5F20F")
-    @Override
-protected int getDefaultPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.919 -0500", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "5299DDB2FBD4BF18E13EF23AD2F5F20F")
+    
+@Override protected int getDefaultPort() {
         return 80;
     }
 

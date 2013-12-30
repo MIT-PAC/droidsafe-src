@@ -30,8 +30,9 @@ public class DashPathEffect extends PathEffect {
      * @param intervals array of ON and OFF distances
      * @param phase offset into the intervals array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.463 -0500", hash_original_method = "302355CEB1EDA8CF763D5137DB0E93A1", hash_generated_method = "3D66E37A69227B620BE1EC89EE565D3E")
-    public DashPathEffect(float intervals[], float phase) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.096 -0500", hash_original_method = "302355CEB1EDA8CF763D5137DB0E93A1", hash_generated_method = "3D66E37A69227B620BE1EC89EE565D3E")
+    
+public DashPathEffect(float intervals[], float phase) {
         if (intervals.length < 2) {
             throw new ArrayIndexOutOfBoundsException();
         }

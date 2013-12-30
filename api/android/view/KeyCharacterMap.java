@@ -87,8 +87,9 @@ public class KeyCharacterMap {
      * could not be loaded because it was malformed or the default key character map
      * is missing from the system.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.377 -0500", hash_original_method = "55A25C535CCD0059748A82385B0A19D3", hash_generated_method = "A58F77895EF8459FD95FA9B4DF308629")
-    public static KeyCharacterMap load(int deviceId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.794 -0500", hash_original_method = "55A25C535CCD0059748A82385B0A19D3", hash_generated_method = "A58F77895EF8459FD95FA9B4DF308629")
+    
+public static KeyCharacterMap load(int deviceId) {
         synchronized (sInstances) {
             KeyCharacterMap map = sInstances.get(deviceId);
             if (map == null) {
@@ -118,8 +119,9 @@ public class KeyCharacterMap {
      * @param c The basic character.
      * @return The combined character, or 0 if the characters cannot be combined.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.383 -0500", hash_original_method = "C6F5470D92A32D0EFDBBA89CAC321185", hash_generated_method = "2AE83191FAC6404F3E8E4CE7A1860567")
-    public static int getDeadChar(int accent, int c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.812 -0500", hash_original_method = "C6F5470D92A32D0EFDBBA89CAC321185", hash_generated_method = "2AE83191FAC6404F3E8E4CE7A1860567")
+    
+public static int getDeadChar(int accent, int c) {
         return DEAD.get((accent << 16) | c);
     }
 
@@ -130,8 +132,9 @@ public class KeyCharacterMap {
      * @param keyCode The key code to query.
      * @return True if at least one attached keyboard supports the specified key code.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.393 -0500", hash_original_method = "5B0230A7CB9028DEE893C06E012A9969", hash_generated_method = "9D4ADA81181CFE7F31BF5887FFE36856")
-    public static boolean deviceHasKey(int keyCode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.841 -0500", hash_original_method = "5B0230A7CB9028DEE893C06E012A9969", hash_generated_method = "9D4ADA81181CFE7F31BF5887FFE36856")
+    
+public static boolean deviceHasKey(int keyCode) {
         int[] codeArray = new int[1];
         codeArray[0] = keyCode;
         boolean[] ret = deviceHasKeys(codeArray);
@@ -148,8 +151,9 @@ public class KeyCharacterMap {
      * are set to true if at least one attached keyboard supports the corresponding key code
      * at the same index in the key codes array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.394 -0500", hash_original_method = "52B0D1EECC647FA8F40C23BBC67E314D", hash_generated_method = "FE7E0E800654C4370BADD7C037353FD1")
-    public static boolean[] deviceHasKeys(int[] keyCodes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.844 -0500", hash_original_method = "52B0D1EECC647FA8F40C23BBC67E314D", hash_generated_method = "FE7E0E800654C4370BADD7C037353FD1")
+    
+public static boolean[] deviceHasKeys(int[] keyCodes) {
         boolean[] ret = new boolean[keyCodes.length];
         IWindowManager wm = Display.getWindowManager();
         try {
@@ -159,66 +163,66 @@ public class KeyCharacterMap {
         }
         return ret;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.351 -0500", hash_original_field = "463AF7F5F8CE67C03683C8FD97632C5A", hash_generated_field = "59B4829C2D65190B8B4C0FA33230C1E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.712 -0500", hash_original_field = "463AF7F5F8CE67C03683C8FD97632C5A", hash_generated_field = "59B4829C2D65190B8B4C0FA33230C1E4")
 
     @Deprecated
     public static final int BUILT_IN_KEYBOARD = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.352 -0500", hash_original_field = "CB4C464F7AB408B073C4B78261441C74", hash_generated_field = "C3770B577FF433B8BFF698D5F722014E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.715 -0500", hash_original_field = "CB4C464F7AB408B073C4B78261441C74", hash_generated_field = "C3770B577FF433B8BFF698D5F722014E")
 
     public static final int VIRTUAL_KEYBOARD = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.353 -0500", hash_original_field = "30E514E35C23C41C84769C8EA90336C5", hash_generated_field = "81DDA812F0A0EF21C694BF5A82F81EE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.718 -0500", hash_original_field = "30E514E35C23C41C84769C8EA90336C5", hash_generated_field = "81DDA812F0A0EF21C694BF5A82F81EE3")
 
     public static final int NUMERIC = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.354 -0500", hash_original_field = "A20FCA0A13AABAC57FC159D2BA60078E", hash_generated_field = "CD3F247AFA1F26ABAD74821769ACFB70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.721 -0500", hash_original_field = "A20FCA0A13AABAC57FC159D2BA60078E", hash_generated_field = "CD3F247AFA1F26ABAD74821769ACFB70")
 
     public static final int PREDICTIVE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.355 -0500", hash_original_field = "2011A20AE286D1676E7CB74BDBF9C864", hash_generated_field = "157B02842601F7C0DED5E95134F38522")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.723 -0500", hash_original_field = "2011A20AE286D1676E7CB74BDBF9C864", hash_generated_field = "157B02842601F7C0DED5E95134F38522")
 
     public static final int ALPHA = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.355 -0500", hash_original_field = "A60B0C81AEC721E3AB800B8FBA59A02D", hash_generated_field = "20E85A6090C38DE3E8C1E3AF96C136F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.726 -0500", hash_original_field = "A60B0C81AEC721E3AB800B8FBA59A02D", hash_generated_field = "20E85A6090C38DE3E8C1E3AF96C136F0")
 
     public static final int FULL = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.356 -0500", hash_original_field = "530A1F84DD0263B0F4DC21DC3F916DF9", hash_generated_field = "89216B40F08E21779835E6D1681D3FBA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.729 -0500", hash_original_field = "530A1F84DD0263B0F4DC21DC3F916DF9", hash_generated_field = "89216B40F08E21779835E6D1681D3FBA")
 
     public static final int SPECIAL_FUNCTION = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.357 -0500", hash_original_field = "8F28236648FFF8ADAC85BE9101D64D00", hash_generated_field = "E6D8ABAEC54AD7FE6AC0637BE6B60C20")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.732 -0500", hash_original_field = "8F28236648FFF8ADAC85BE9101D64D00", hash_generated_field = "E6D8ABAEC54AD7FE6AC0637BE6B60C20")
 
     public static final char HEX_INPUT = '\uEF00';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.358 -0500", hash_original_field = "8A8F71F7A3B876AA7C1BE39495FC5A81", hash_generated_field = "C292F8608784160E386A6728D1ED3563")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.734 -0500", hash_original_field = "8A8F71F7A3B876AA7C1BE39495FC5A81", hash_generated_field = "C292F8608784160E386A6728D1ED3563")
 
     public static final char PICKER_DIALOG_INPUT = '\uEF01';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.359 -0500", hash_original_field = "2A7FFB99AC9BE5CCECB3E11383771551", hash_generated_field = "B89E5758383255A9C827FA145DE8507A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.737 -0500", hash_original_field = "2A7FFB99AC9BE5CCECB3E11383771551", hash_generated_field = "B89E5758383255A9C827FA145DE8507A")
 
     public static final int MODIFIER_BEHAVIOR_CHORDED = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.360 -0500", hash_original_field = "F5AABE172D9059DED9949A5CA09AD407", hash_generated_field = "616FB0D0098A2547A5B190478FA72B55")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.739 -0500", hash_original_field = "F5AABE172D9059DED9949A5CA09AD407", hash_generated_field = "616FB0D0098A2547A5B190478FA72B55")
 
     public static final int MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.361 -0500", hash_original_field = "65E14CBA7CCCF9D8B2FCC49DA88A3227", hash_generated_field = "A41BDDB2AF8DD199AC0801E6FA90000D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.741 -0500", hash_original_field = "65E14CBA7CCCF9D8B2FCC49DA88A3227", hash_generated_field = "A41BDDB2AF8DD199AC0801E6FA90000D")
 
 
     private static SparseArray<KeyCharacterMap> sInstances = new SparseArray<KeyCharacterMap>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.394 -0500", hash_original_field = "4AF8DA2BCB82FF845E7161D3C609B79D", hash_generated_field = "11B1384F451F38AFF9AFE2392F709751")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.846 -0500", hash_original_field = "4AF8DA2BCB82FF845E7161D3C609B79D", hash_generated_field = "11B1384F451F38AFF9AFE2392F709751")
 
     private static SparseIntArray COMBINING = new SparseIntArray();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.395 -0500", hash_original_field = "34ACC00F8AB0D196C3E5A5718B2B4F47", hash_generated_field = "B76722FF851A78D583E0DFB3CE65DF2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.849 -0500", hash_original_field = "34ACC00F8AB0D196C3E5A5718B2B4F47", hash_generated_field = "B76722FF851A78D583E0DFB3CE65DF2C")
 
     private static SparseIntArray DEAD = new SparseIntArray();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.396 -0500", hash_original_field = "A854142F03CFDE8432625F3B51B2CDEB", hash_generated_field = "4F036169C638098B73313599D908CEB4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.852 -0500", hash_original_field = "A854142F03CFDE8432625F3B51B2CDEB", hash_generated_field = "4F036169C638098B73313599D908CEB4")
 
     private static final int ACUTE = '\u00B4' << 16;
 
     
     public static class KeyData {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.385 -0500", hash_original_field = "0CE8BAF2BE88BD999E28B3599817EA44", hash_generated_field = "B7B5BF1414600355D7BF1611E9967D65")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.815 -0500", hash_original_field = "0CE8BAF2BE88BD999E28B3599817EA44", hash_generated_field = "B7B5BF1414600355D7BF1611E9967D65")
 
         public static final int META_LENGTH = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.385 -0500", hash_original_field = "60A0E21E470E822C3C68798A3655C7D2", hash_generated_field = "10206615040C9B5E0B40E86C5E399A28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.817 -0500", hash_original_field = "60A0E21E470E822C3C68798A3655C7D2", hash_generated_field = "10206615040C9B5E0B40E86C5E399A28")
 
         public char displayLabel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.386 -0500", hash_original_field = "2A342E00BA82548C723595EA8F3EDFB2", hash_generated_field = "C53E6ECAD71F4994DDB600BCB7228E67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.819 -0500", hash_original_field = "2A342E00BA82548C723595EA8F3EDFB2", hash_generated_field = "C53E6ECAD71F4994DDB600BCB7228E67")
 
         public char number;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.387 -0500", hash_original_field = "0F417CC95B1717ED8F8F39877AC1E407", hash_generated_field = "B234B5BEA612AD563CF4084101F5BF63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.822 -0500", hash_original_field = "0F417CC95B1717ED8F8F39877AC1E407", hash_generated_field = "B234B5BEA612AD563CF4084101F5BF63")
 
         public char[] meta = new char[META_LENGTH];
         
@@ -232,8 +236,9 @@ public class KeyCharacterMap {
 
     
     public static class UnavailableException extends AndroidRuntimeException {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.403 -0500", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "C9A1C51EC97A12950DBCAD76008DE8A1")
-        public UnavailableException(String msg) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.877 -0500", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "C9A1C51EC97A12950DBCAD76008DE8A1")
+        
+public UnavailableException(String msg) {
             super(msg);
         }
 
@@ -243,10 +248,10 @@ public class KeyCharacterMap {
 
     
     public static final class FallbackAction {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.405 -0500", hash_original_field = "AF3F60A45836C339EA3C11B5C54720AC", hash_generated_field = "000F6935635EB02934CE0DE5E09F2D3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.882 -0500", hash_original_field = "AF3F60A45836C339EA3C11B5C54720AC", hash_generated_field = "000F6935635EB02934CE0DE5E09F2D3E")
 
         public int keyCode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.406 -0500", hash_original_field = "B181A1DE7DB05CE3DC182354F918E505", hash_generated_field = "5236106FD9BFBDE1EF13C213F3E14407")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.884 -0500", hash_original_field = "B181A1DE7DB05CE3DC182354F918E505", hash_generated_field = "5236106FD9BFBDE1EF13C213F3E14407")
 
         public int metaState;
         
@@ -258,41 +263,43 @@ public class KeyCharacterMap {
 
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.397 -0500", hash_original_field = "3F3BDB109C209513958B4A39E13F9DDC", hash_generated_field = "637F3AC3B0EEC3847F5FCA990AF1E992")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.854 -0500", hash_original_field = "3F3BDB109C209513958B4A39E13F9DDC", hash_generated_field = "637F3AC3B0EEC3847F5FCA990AF1E992")
 
     private static final int GRAVE = '`' << 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.398 -0500", hash_original_field = "5B8F676DFC9442F63A44A6C7D5E21B96", hash_generated_field = "0586C62B883B7B85634E30B0C82D3317")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.857 -0500", hash_original_field = "5B8F676DFC9442F63A44A6C7D5E21B96", hash_generated_field = "0586C62B883B7B85634E30B0C82D3317")
 
     private static final int CIRCUMFLEX = '^' << 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.399 -0500", hash_original_field = "8F2BE7DF37075299F090F74494A9ED9F", hash_generated_field = "CDA4A85433A132193E004843C63F5FED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.859 -0500", hash_original_field = "8F2BE7DF37075299F090F74494A9ED9F", hash_generated_field = "CDA4A85433A132193E004843C63F5FED")
 
     private static final int TILDE = '~' << 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.400 -0500", hash_original_field = "3E3C58EFD203A799486A2F88A03ADA38", hash_generated_field = "FA6505A20CF02AAC8A961E3468EEEFEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.863 -0500", hash_original_field = "3E3C58EFD203A799486A2F88A03ADA38", hash_generated_field = "FA6505A20CF02AAC8A961E3468EEEFEB")
 
     private static final int UMLAUT = '\u00A8' << 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.400 -0500", hash_original_field = "C5F0FFB6D5762CB9909F419C5D8F0A79", hash_generated_field = "0E06608D3648E37E5411DA551501463D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.868 -0500", hash_original_field = "C5F0FFB6D5762CB9909F419C5D8F0A79", hash_generated_field = "0E06608D3648E37E5411DA551501463D")
 
     public static final int COMBINING_ACCENT = 0x80000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.401 -0500", hash_original_field = "E5E5FA60D1294CE2E95676B2C8946565", hash_generated_field = "0F27E21C7E3F6FCD749479852C67E791")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.871 -0500", hash_original_field = "E5E5FA60D1294CE2E95676B2C8946565", hash_generated_field = "0F27E21C7E3F6FCD749479852C67E791")
 
     public static final int COMBINING_ACCENT_MASK = 0x7FFFFFFF;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.361 -0500", hash_original_field = "9C5D5B4697BA4F2BAA6617B930737C8B", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.744 -0500", hash_original_field = "9C5D5B4697BA4F2BAA6617B930737C8B", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
 
 
     private  int mDeviceId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.362 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.747 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
 
     private int mPtr;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.375 -0500", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "EF6675F56F37A7ADCCBF26107C109900")
-    private KeyCharacterMap(int deviceId, int ptr) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.788 -0500", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "EF6675F56F37A7ADCCBF26107C109900")
+    
+private KeyCharacterMap(int deviceId, int ptr) {
         mDeviceId = deviceId;
         mPtr = ptr;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.376 -0500", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "4E3AA0EA035CE457B89BA83140F5FD0C")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.791 -0500", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "4E3AA0EA035CE457B89BA83140F5FD0C")
+    
+@Override
+    protected void finalize() throws Throwable {
         if (mPtr != 0) {
             nativeDispose(mPtr);
             mPtr = 0;
@@ -320,8 +327,9 @@ protected void finalize() throws Throwable {
      * @param metaState The meta key modifier state.
      * @return The associated character or combining accent, or 0 if none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.378 -0500", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "95DBC8174377B728E7B9CD47D1EE7503")
-    public int get(int keyCode, int metaState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.796 -0500", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "95DBC8174377B728E7B9CD47D1EE7503")
+    
+public int get(int keyCode, int metaState) {
         metaState = KeyEvent.normalizeMetaState(metaState);
         char ch = nativeGetCharacter(mPtr, keyCode, metaState);
 
@@ -351,8 +359,9 @@ protected void finalize() throws Throwable {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.379 -0500", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "C8AD97FEFFAC4CC2809AEE9D3AC592B3")
-    public boolean getFallbackAction(int keyCode, int metaState,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.799 -0500", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "C8AD97FEFFAC4CC2809AEE9D3AC592B3")
+    
+public boolean getFallbackAction(int keyCode, int metaState,
             FallbackAction outFallbackAction) {
         if (outFallbackAction == null) {
             throw new IllegalArgumentException("fallbackAction must not be null");
@@ -383,8 +392,9 @@ protected void finalize() throws Throwable {
      * @param keyCode The key code.
      * @return The associated numeric or symbolic character, or 0 if none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.380 -0500", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "5F76969C0A8A0FCEADEFDE23621138C4")
-    public char getNumber(int keyCode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.801 -0500", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "5F76969C0A8A0FCEADEFDE23621138C4")
+    
+public char getNumber(int keyCode) {
         return nativeGetNumber(mPtr, keyCode);
     }
 
@@ -400,8 +410,9 @@ protected void finalize() throws Throwable {
      * @param chars The array of matching characters to consider.
      * @return The matching associated character, or 0 if none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.381 -0500", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "1E3A1D349365A4F4AD6D1A185C63C70D")
-    public char getMatch(int keyCode, char[] chars) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.804 -0500", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "1E3A1D349365A4F4AD6D1A185C63C70D")
+    
+public char getMatch(int keyCode, char[] chars) {
         return getMatch(keyCode, chars, 0);
     }
 
@@ -415,8 +426,9 @@ protected void finalize() throws Throwable {
      * @param metaState The preferred meta key modifier state.
      * @return The matching associated character, or 0 if none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.382 -0500", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "864F7C53F01A376E8CC647D468667FDF")
-    public char getMatch(int keyCode, char[] chars, int metaState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.807 -0500", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "864F7C53F01A376E8CC647D468667FDF")
+    
+public char getMatch(int keyCode, char[] chars, int metaState) {
         if (chars == null) {
             throw new IllegalArgumentException("chars must not be null.");
         }
@@ -432,8 +444,9 @@ protected void finalize() throws Throwable {
      * @param keyCode The key code.
      * @return The display label character, or 0 if none (eg. for non-printing keys).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.383 -0500", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "D5B10648A10DEBE7C9F0083D1A39CEE2")
-    public char getDisplayLabel(int keyCode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.809 -0500", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "D5B10648A10DEBE7C9F0083D1A39CEE2")
+    
+public char getDisplayLabel(int keyCode) {
         return nativeGetDisplayLabel(mPtr, keyCode);
     }
 
@@ -447,9 +460,10 @@ protected void finalize() throws Throwable {
      * @deprecated instead use {@link KeyCharacterMap#getDisplayLabel(int)},
      * {@link KeyCharacterMap#getNumber(int)} or {@link KeyCharacterMap#get(int, int)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.389 -0500", hash_original_method = "76D58BCFCDB16C229BEE46626C0804EB", hash_generated_method = "BA54A28691A5B4DF2F46BD4A7A5DC37B")
-    @Deprecated
-public boolean getKeyData(int keyCode, KeyData results) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.827 -0500", hash_original_method = "76D58BCFCDB16C229BEE46626C0804EB", hash_generated_method = "BA54A28691A5B4DF2F46BD4A7A5DC37B")
+    
+@Deprecated
+    public boolean getKeyData(int keyCode, KeyData results) {
         if (results.meta.length < KeyData.META_LENGTH) {
             throw new IndexOutOfBoundsException(
                     "results.meta.length must be >= " + KeyData.META_LENGTH);
@@ -491,8 +505,9 @@ public boolean getKeyData(int keyCode, KeyData results) {
      * @return An array of {@link KeyEvent} objects, or null if the given char array
      *         can not be generated using the current key character map.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.390 -0500", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "394B6C4094D20194266ECC24C5A8F978")
-    public KeyEvent[] getEvents(char[] chars) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.830 -0500", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "394B6C4094D20194266ECC24C5A8F978")
+    
+public KeyEvent[] getEvents(char[] chars) {
         if (chars == null) {
             throw new IllegalArgumentException("chars must not be null.");
         }
@@ -505,8 +520,9 @@ public boolean getKeyData(int keyCode, KeyData results) {
      * @param keyCode The key code.
      * @return True if the key is a printing key.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.390 -0500", hash_original_method = "3285F5CD7518CBF681F7E4DAED1719BF", hash_generated_method = "6622D8E9E7B498EBE1B33BBE19E6566A")
-    public boolean isPrintingKey(int keyCode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.832 -0500", hash_original_method = "3285F5CD7518CBF681F7E4DAED1719BF", hash_generated_method = "6622D8E9E7B498EBE1B33BBE19E6566A")
+    
+public boolean isPrintingKey(int keyCode) {
         int type = Character.getType(nativeGetDisplayLabel(mPtr, keyCode));
 
         switch (type)
@@ -532,8 +548,9 @@ public boolean getKeyData(int keyCode, KeyData results) {
      *
      * @return The keyboard type.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.391 -0500", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "FE100288A2D20E0D214B24C766084AAA")
-    public int getKeyboardType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.835 -0500", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "FE100288A2D20E0D214B24C766084AAA")
+    
+public int getKeyboardType() {
         return nativeGetKeyboardType(mPtr);
     }
 
@@ -569,8 +586,9 @@ public boolean getKeyData(int keyCode, KeyData results) {
      * @see {@link #MODIFIER_BEHAVIOR_CHORDED}
      * @see {@link #MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:08.392 -0500", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "C0C6529640A4872EA7A78E5ACE87222F")
-    public int getModifierBehavior() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.837 -0500", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "C0C6529640A4872EA7A78E5ACE87222F")
+    
+public int getModifierBehavior() {
         switch (getKeyboardType()) {
             case FULL:
             case SPECIAL_FUNCTION:

@@ -12,8 +12,9 @@ import droidsafe.helpers.DSUtils;
 
 class AndroidBidi {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:51.786 -0500", hash_original_method = "DB23AD6A2293348EF07677588101F4E4", hash_generated_method = "B0F3C7D1A6F56AB6F35CC0DC590F4952")
-    public static int bidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.363 -0500", hash_original_method = "DB23AD6A2293348EF07677588101F4E4", hash_generated_method = "B0F3C7D1A6F56AB6F35CC0DC590F4952")
+    
+public static int bidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
         if (chs == null || chInfo == null) {
             throw new NullPointerException();
         }
@@ -47,8 +48,9 @@ class AndroidBidi {
      * @param len the length of the line
      * @return the directions
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:51.788 -0500", hash_original_method = "436C9D0099097A3B81B94F60F0D8601A", hash_generated_method = "34648BFFFD77A54B488BF5811CA641A8")
-    public static Directions directions(int dir, byte[] levels, int lstart,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.368 -0500", hash_original_method = "436C9D0099097A3B81B94F60F0D8601A", hash_generated_method = "34648BFFFD77A54B488BF5811CA641A8")
+    
+public static Directions directions(int dir, byte[] levels, int lstart,
             char[] chars, int cstart, int len) {
 
         int baseLevel = dir == Layout.DIR_LEFT_TO_RIGHT ? 0 : 1;

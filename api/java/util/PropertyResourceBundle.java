@@ -14,18 +14,18 @@ import java.io.Reader;
 
 
 public class PropertyResourceBundle extends ResourceBundle {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.289 -0500", hash_original_field = "8C97A55243F1F4D2EF7A784DA96E106B", hash_generated_field = "8C97A55243F1F4D2EF7A784DA96E106B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.728 -0500", hash_original_field = "8C97A55243F1F4D2EF7A784DA96E106B", hash_generated_field = "8C97A55243F1F4D2EF7A784DA96E106B")
 
 
     Properties resources;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.294 -0500", hash_original_field = "975E55A4433F6ABC0D4D089A47474FE3", hash_generated_field = "975E55A4433F6ABC0D4D089A47474FE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.743 -0500", hash_original_field = "975E55A4433F6ABC0D4D089A47474FE3", hash_generated_field = "975E55A4433F6ABC0D4D089A47474FE3")
 
             Enumeration<String> local = getLocalKeys();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.296 -0500", hash_original_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9", hash_generated_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.745 -0500", hash_original_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9", hash_generated_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9")
 
 
             Enumeration<String> pEnum = parent.getKeys();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.296 -0500", hash_original_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F", hash_generated_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.748 -0500", hash_original_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F", hash_generated_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F")
 
 
             String nextElement;
@@ -40,8 +40,9 @@ public class PropertyResourceBundle extends ResourceBundle {
      *             if an error occurs during a read operation on the
      *             {@code InputStream}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.291 -0500", hash_original_method = "3D88428E114136417B3FF5D84DADF880", hash_generated_method = "3194B03B089A93D6463684DFC69D6F50")
-    public PropertyResourceBundle(InputStream stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.732 -0500", hash_original_method = "3D88428E114136417B3FF5D84DADF880", hash_generated_method = "3194B03B089A93D6463684DFC69D6F50")
+    
+public PropertyResourceBundle(InputStream stream) throws IOException {
         if (stream == null) {
             throw new NullPointerException();
         }
@@ -56,20 +57,23 @@ public class PropertyResourceBundle extends ResourceBundle {
      * @throws IOException
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.292 -0500", hash_original_method = "51B0205103DDC756BC77F911CC2E7B89", hash_generated_method = "CC37C88192FB4C086F7EC5BD6987157A")
-    public PropertyResourceBundle(Reader reader) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.735 -0500", hash_original_method = "51B0205103DDC756BC77F911CC2E7B89", hash_generated_method = "CC37C88192FB4C086F7EC5BD6987157A")
+    
+public PropertyResourceBundle(Reader reader) throws IOException {
         resources = new Properties();
         resources.load(reader);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.292 -0500", hash_original_method = "18F63E7C5AB3934B8351CB4BC2CE0CC3", hash_generated_method = "C72677F3EC58A35DD625E99528B9144E")
-    protected Set<String> handleKeySet(){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.737 -0500", hash_original_method = "18F63E7C5AB3934B8351CB4BC2CE0CC3", hash_generated_method = "C72677F3EC58A35DD625E99528B9144E")
+    
+protected Set<String> handleKeySet(){
         return resources.stringPropertyNames();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.293 -0500", hash_original_method = "94C0F4CF2CD414C406604EC575DAD3DD", hash_generated_method = "B78F2820BC5D9559917C4E7B0A6D4DBB")
-    @SuppressWarnings("unchecked")
-private Enumeration<String> getLocalKeys() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.740 -0500", hash_original_method = "94C0F4CF2CD414C406604EC575DAD3DD", hash_generated_method = "B78F2820BC5D9559917C4E7B0A6D4DBB")
+    
+@SuppressWarnings("unchecked")
+    private Enumeration<String> getLocalKeys() {
         return (Enumeration<String>) resources.propertyNames();
     }
 
@@ -91,8 +95,9 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075 =         new
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.508 -0400", hash_original_field = "597A00560349D4451A3F2269B8E761F0", hash_generated_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F")
         String nextElement;
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.297 -0500", hash_original_method = "7E529D209593DF12DACEC799F2DDAEB1", hash_generated_method = "C8EB56A16F0592A9C0229794EA62C50D")
-            private boolean findNext() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.751 -0500", hash_original_method = "7E529D209593DF12DACEC799F2DDAEB1", hash_generated_method = "C8EB56A16F0592A9C0229794EA62C50D")
+            
+private boolean findNext() {
                 if (nextElement != null) {
                     return true;
                 }
@@ -106,16 +111,18 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075 =         new
                 return false;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.298 -0500", hash_original_method = "0C8D02D40B56817F2309824D8D7773D2", hash_generated_method = "5ADB6DE9484CA7D74BE3178191CB527C")
-            public boolean hasMoreElements() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.753 -0500", hash_original_method = "0C8D02D40B56817F2309824D8D7773D2", hash_generated_method = "5ADB6DE9484CA7D74BE3178191CB527C")
+            
+public boolean hasMoreElements() {
                 if (local.hasMoreElements()) {
                     return true;
                 }
                 return findNext();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.299 -0500", hash_original_method = "BE1AA467D8342A7EF3FB49068D3D4458", hash_generated_method = "1C519444C9B1D12270F3414AC60E3B19")
-            public String nextElement() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.756 -0500", hash_original_method = "BE1AA467D8342A7EF3FB49068D3D4458", hash_generated_method = "1C519444C9B1D12270F3414AC60E3B19")
+            
+public String nextElement() {
                 if (local.hasMoreElements()) {
                     return local.nextElement();
                 }
@@ -134,9 +141,10 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075 =         new
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.301 -0500", hash_original_method = "23544B256E22E0E7C2784DAFEBE5A56C", hash_generated_method = "4E529C8B8C31521875714D968CBBB6E9")
-    @Override
-public Object handleGetObject(String key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.762 -0500", hash_original_method = "23544B256E22E0E7C2784DAFEBE5A56C", hash_generated_method = "4E529C8B8C31521875714D968CBBB6E9")
+    
+@Override
+    public Object handleGetObject(String key) {
         return resources.get(key);
     }
 

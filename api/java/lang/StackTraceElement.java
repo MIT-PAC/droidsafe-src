@@ -12,27 +12,27 @@ import java.io.Serializable;
 
 
 public final class StackTraceElement implements Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.396 -0500", hash_original_field = "68BFF6955FDB892FD8456F4D83C847D1", hash_generated_field = "26C66B155644317B8367FDF23AF4DB9B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.863 -0500", hash_original_field = "68BFF6955FDB892FD8456F4D83C847D1", hash_generated_field = "26C66B155644317B8367FDF23AF4DB9B")
 
 
     private static final long serialVersionUID = 6992337162326171013L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.397 -0500", hash_original_field = "3387D12AD9C393627295CAC355C106AA", hash_generated_field = "044B734A1D0D1997F7880A1DDED8AFF6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.866 -0500", hash_original_field = "3387D12AD9C393627295CAC355C106AA", hash_generated_field = "044B734A1D0D1997F7880A1DDED8AFF6")
 
 
     private static final int NATIVE_LINE_NUMBER = -2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.400 -0500", hash_original_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C", hash_generated_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.868 -0500", hash_original_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C", hash_generated_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C")
 
 
     String declaringClass;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.401 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.870 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
 
     String methodName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.402 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.873 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
 
 
     String fileName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.402 -0500", hash_original_field = "330B2760AA91CE77EFBAED3976D7655C", hash_generated_field = "330B2760AA91CE77EFBAED3976D7655C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.875 -0500", hash_original_field = "330B2760AA91CE77EFBAED3976D7655C", hash_generated_field = "330B2760AA91CE77EFBAED3976D7655C")
 
 
     int lineNumber;
@@ -54,8 +54,9 @@ public final class StackTraceElement implements Serializable {
      * @throws NullPointerException
      *             if {@code cls} or {@code method} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.403 -0500", hash_original_method = "DB2419D651C8F74CAA343D4DD61F23E8", hash_generated_method = "615FA1AFA3F4B97E7D05F8DBB57833F3")
-    public StackTraceElement(String cls, String method, String file, int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.878 -0500", hash_original_method = "DB2419D651C8F74CAA343D4DD61F23E8", hash_generated_method = "615FA1AFA3F4B97E7D05F8DBB57833F3")
+    
+public StackTraceElement(String cls, String method, String file, int line) {
         if (cls == null || method == null) {
             throw new NullPointerException();
         }
@@ -90,9 +91,10 @@ public final class StackTraceElement implements Serializable {
      *         {@code StackTraceElement}; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.405 -0500", hash_original_method = "7AAA9568018A0DD8A42BBFC0DF2D8ABE", hash_generated_method = "646E4E325280E4AC3712BC83C69CC404")
-    @Override
-public boolean equals(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.885 -0500", hash_original_method = "7AAA9568018A0DD8A42BBFC0DF2D8ABE", hash_generated_method = "646E4E325280E4AC3712BC83C69CC404")
+    
+@Override
+    public boolean equals(Object obj) {
         if (!(obj instanceof StackTraceElement)) {
             return false;
         }
@@ -135,8 +137,9 @@ public boolean equals(Object obj) {
      *
      * @return the fully qualified type name of the class
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.406 -0500", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "515F10678B5E0C1375183D39EA13494A")
-    public String getClassName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.887 -0500", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "515F10678B5E0C1375183D39EA13494A")
+    
+public String getClassName() {
         return (declaringClass == null) ? "<unknown class>" : declaringClass;
     }
 
@@ -147,8 +150,9 @@ public boolean equals(Object obj) {
      * @return the name of the file, or {@code null} if this information is not
      *         available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.407 -0500", hash_original_method = "0038085273B4122A69DA20E0B00D2EF2", hash_generated_method = "4A6B215A61D7F266A13F22833A21DA8B")
-    public String getFileName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.890 -0500", hash_original_method = "0038085273B4122A69DA20E0B00D2EF2", hash_generated_method = "4A6B215A61D7F266A13F22833A21DA8B")
+    
+public String getFileName() {
         return fileName;
     }
 
@@ -159,8 +163,9 @@ public boolean equals(Object obj) {
      * @return the line number, or a negative number if this information is not
      *         available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.408 -0500", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "CF4B4A3CBEDDB2EC6C0EA97DADAE4C2D")
-    public int getLineNumber() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.892 -0500", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "CF4B4A3CBEDDB2EC6C0EA97DADAE4C2D")
+    
+public int getLineNumber() {
         return lineNumber;
     }
 
@@ -171,14 +176,16 @@ public boolean equals(Object obj) {
      * @return the name of the method, or "<unknown method>" if this information
      *         is not available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.409 -0500", hash_original_method = "B15DF5174FD0E5C814CD72B1EE2ECDA2", hash_generated_method = "D7274D8666EBE92A154778213D7C33F4")
-    public String getMethodName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.895 -0500", hash_original_method = "B15DF5174FD0E5C814CD72B1EE2ECDA2", hash_generated_method = "D7274D8666EBE92A154778213D7C33F4")
+    
+public String getMethodName() {
         return (methodName == null) ? "<unknown method>" : methodName;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.410 -0500", hash_original_method = "4C3BE92C911A1E7C2FB757777265DE77", hash_generated_method = "1AB62DF0280440DAA5E83C1F594822E3")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.897 -0500", hash_original_method = "4C3BE92C911A1E7C2FB757777265DE77", hash_generated_method = "1AB62DF0280440DAA5E83C1F594822E3")
+    
+@Override
+    public int hashCode() {
         /*
          * Either both methodName and declaringClass are null, or neither are
          * null.
@@ -198,14 +205,16 @@ public int hashCode() {
      * @return {@code true} if the method in which this stack trace element is
      *         executing is a native method; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.410 -0500", hash_original_method = "9234CE459C30A5F4896C026CB51E3A9C", hash_generated_method = "AF9C5ABF854DFC57A5D4E6FB50B0F17A")
-    public boolean isNativeMethod() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.900 -0500", hash_original_method = "9234CE459C30A5F4896C026CB51E3A9C", hash_generated_method = "AF9C5ABF854DFC57A5D4E6FB50B0F17A")
+    
+public boolean isNativeMethod() {
         return lineNumber == NATIVE_LINE_NUMBER;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.411 -0500", hash_original_method = "6555BB21F7D49ABF8ADE43CA311A7DFA", hash_generated_method = "CDFE8E2F9ED097F72933396ED7533C74")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.903 -0500", hash_original_method = "6555BB21F7D49ABF8ADE43CA311A7DFA", hash_generated_method = "CDFE8E2F9ED097F72933396ED7533C74")
+    
+@Override
+    public String toString() {
         StringBuilder buf = new StringBuilder(80);
 
         buf.append(getClassName());

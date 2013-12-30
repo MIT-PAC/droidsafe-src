@@ -10,8 +10,9 @@ import droidsafe.annotations.*;
 
 public class Array {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.170 -0500", hash_original_method = "FA034E4EBC074D0021BF09B925B81D45", hash_generated_method = "378E379754A9699AAC53073DD4B4E1A8")
-    public static String getBytesAsString(byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.950 -0500", hash_original_method = "FA034E4EBC074D0021BF09B925B81D45", hash_generated_method = "378E379754A9699AAC53073DD4B4E1A8")
+    
+public static String getBytesAsString(byte[] data) {
         StringBuilder result = new StringBuilder(data.length * 3);
         for (int i = 0; i < data.length; ++i) {
             result.append(Byte.toHexString(data[i], false));
@@ -28,8 +29,9 @@ public class Array {
      *
      * @return <code>String</code> representation of the <code>array</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.171 -0500", hash_original_method = "A9B6ED6B9ACE659EADD4FA05AC05EB96", hash_generated_method = "BB852DBF9E1E9E06A227AF0903B04500")
-    public static String toString(byte[] array, String prefix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.953 -0500", hash_original_method = "A9B6ED6B9ACE659EADD4FA05AC05EB96", hash_generated_method = "BB852DBF9E1E9E06A227AF0903B04500")
+    
+public static String toString(byte[] array, String prefix) {
         // Prefixes to be added to the offset values
         // in <code>String toString(byte[], String)</code> method
         final String[] offsetPrefix = {
@@ -90,8 +92,9 @@ public class Array {
     }
 
     // No instances of this class
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.169 -0500", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "6D2788CE118EA61713C3B72F25526FFC")
-    private Array() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.947 -0500", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "6D2788CE118EA61713C3B72F25526FFC")
+    
+private Array() {
     }
 
     

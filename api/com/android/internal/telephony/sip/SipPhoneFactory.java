@@ -23,8 +23,9 @@ public class SipPhoneFactory {
      *      object
      * @return the {@code SipPhone} object or null if the SIP URI is not valid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.392 -0500", hash_original_method = "58A7161193CB0CF71FFF602E5D298512", hash_generated_method = "BC4BFACAF7BDFD62A8A1527DF38E7421")
-    public static SipPhone makePhone(String sipUri, Context context,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.134 -0500", hash_original_method = "58A7161193CB0CF71FFF602E5D298512", hash_generated_method = "BC4BFACAF7BDFD62A8A1527DF38E7421")
+    
+public static SipPhone makePhone(String sipUri, Context context,
             PhoneNotifier phoneNotifier) {
         try {
             SipProfile profile = new SipProfile.Builder(sipUri).build();

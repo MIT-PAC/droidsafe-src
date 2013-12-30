@@ -42,8 +42,9 @@ public final class Channels {
      *            the channel to be wrapped by an InputStream.
      * @return an InputStream that takes bytes from the given byte channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.308 -0500", hash_original_method = "88F1475DF42BBAD2885353B5129EE8B4", hash_generated_method = "7FE98A0EE099FC5D90AD341ED119B507")
-    public static InputStream newInputStream(ReadableByteChannel channel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.584 -0500", hash_original_method = "88F1475DF42BBAD2885353B5129EE8B4", hash_generated_method = "7FE98A0EE099FC5D90AD341ED119B507")
+    
+public static InputStream newInputStream(ReadableByteChannel channel) {
         return new ChannelInputStream(channel);
     }
 
@@ -63,8 +64,9 @@ public final class Channels {
      *            the channel to be wrapped by an OutputStream.
      * @return an OutputStream that puts bytes onto the given byte channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.309 -0500", hash_original_method = "FA0BE2C7D03335AB08651FAD2758394C", hash_generated_method = "73BBD40A18D6035D169AB503DD0453CA")
-    public static OutputStream newOutputStream(WritableByteChannel channel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.587 -0500", hash_original_method = "FA0BE2C7D03335AB08651FAD2758394C", hash_generated_method = "73BBD40A18D6035D169AB503DD0453CA")
+    
+public static OutputStream newOutputStream(WritableByteChannel channel) {
         return new ChannelOutputStream(channel);
     }
 
@@ -81,8 +83,9 @@ public final class Channels {
      *            the stream to be wrapped by a byte channel.
      * @return a byte channel that reads bytes from the input stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.310 -0500", hash_original_method = "10F29762DE0104F8A39064501FA4AE67", hash_generated_method = "AA1E1902CBC1C56C3259D6D39450828D")
-    public static ReadableByteChannel newChannel(InputStream inputStream) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.589 -0500", hash_original_method = "10F29762DE0104F8A39064501FA4AE67", hash_generated_method = "AA1E1902CBC1C56C3259D6D39450828D")
+    
+public static ReadableByteChannel newChannel(InputStream inputStream) {
         return new InputStreamChannel(inputStream);
     }
 
@@ -100,8 +103,9 @@ public final class Channels {
      *            the stream to be wrapped by a byte channel.
      * @return a byte channel that writes bytes to the output stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.311 -0500", hash_original_method = "0A26450DD89B99CDCEEC5300E1958D40", hash_generated_method = "4F67C407FEF8F96ABDC5077C62504DCB")
-    public static WritableByteChannel newChannel(OutputStream outputStream) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.593 -0500", hash_original_method = "0A26450DD89B99CDCEEC5300E1958D40", hash_generated_method = "4F67C407FEF8F96ABDC5077C62504DCB")
+    
+public static WritableByteChannel newChannel(OutputStream outputStream) {
         return new OutputStreamChannel(outputStream);
     }
 
@@ -117,8 +121,9 @@ public final class Channels {
      *            default size.
      * @return the reader.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.312 -0500", hash_original_method = "8B17794307AD8B81CB01594F41A7E2A7", hash_generated_method = "81847FD0050ED5980F3274ED23B91811")
-    public static Reader newReader(ReadableByteChannel channel,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.595 -0500", hash_original_method = "8B17794307AD8B81CB01594F41A7E2A7", hash_generated_method = "81847FD0050ED5980F3274ED23B91811")
+    
+public static Reader newReader(ReadableByteChannel channel,
             CharsetDecoder decoder, int minBufferCapacity) {
         /*
          * This method doesn't honor minBufferCapacity. Ignoring that parameter
@@ -139,8 +144,9 @@ public final class Channels {
      * @throws java.nio.charset.UnsupportedCharsetException
      *             if the given charset name is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.313 -0500", hash_original_method = "2872C03C93E375E914CDE964569312B4", hash_generated_method = "A7D0ACF98BAE1CA91A85DD756277A723")
-    public static Reader newReader(ReadableByteChannel channel,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.597 -0500", hash_original_method = "2872C03C93E375E914CDE964569312B4", hash_generated_method = "A7D0ACF98BAE1CA91A85DD756277A723")
+    
+public static Reader newReader(ReadableByteChannel channel,
             String charsetName) {
         if (charsetName == null) {
             throw new NullPointerException();
@@ -161,8 +167,9 @@ public final class Channels {
      *            default size.
      * @return the writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.314 -0500", hash_original_method = "FD10973356F78B3E626C8C5B6848E2EE", hash_generated_method = "F6022BB818DCCB86BB00DDCE0C345161")
-    public static Writer newWriter(WritableByteChannel channel,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.600 -0500", hash_original_method = "FD10973356F78B3E626C8C5B6848E2EE", hash_generated_method = "F6022BB818DCCB86BB00DDCE0C345161")
+    
+public static Writer newWriter(WritableByteChannel channel,
             CharsetEncoder encoder, int minBufferCapacity) {
         /*
          * This method doesn't honor minBufferCapacity. Ignoring that parameter
@@ -184,8 +191,9 @@ public final class Channels {
      * @throws java.nio.charset.UnsupportedCharsetException
      *             if the given charset name is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.315 -0500", hash_original_method = "80F939E48DA1586C250E69AEF3051568", hash_generated_method = "716DD37E878FAD6157B52D3DB032FC23")
-    public static Writer newWriter(WritableByteChannel channel,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.602 -0500", hash_original_method = "80F939E48DA1586C250E69AEF3051568", hash_generated_method = "716DD37E878FAD6157B52D3DB032FC23")
+    
+public static Writer newWriter(WritableByteChannel channel,
             String charsetName) {
         if (charsetName == null) {
             throw new NullPointerException();
@@ -193,48 +201,51 @@ public final class Channels {
         return newWriter(channel, Charset.forName(charsetName).newEncoder(), -1);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.328 -0500", hash_original_method = "206E2BE370D5671AA0C46024032F807A", hash_generated_method = "EEEBD9956AB1E83544984AEC538BE617")
-    static void checkBlocking(Channel channel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.644 -0500", hash_original_method = "206E2BE370D5671AA0C46024032F807A", hash_generated_method = "EEEBD9956AB1E83544984AEC538BE617")
+    
+static void checkBlocking(Channel channel) {
         if (channel instanceof SelectableChannel && !((SelectableChannel) channel).isBlocking()) {
             throw new IllegalBlockingModeException();
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.307 -0500", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "660D69849027ABCF1F216F5B02F3F5DA")
-    private Channels() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.581 -0500", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "660D69849027ABCF1F216F5B02F3F5DA")
+    
+private Channels() {}
 
     
     private static class ChannelInputStream extends InputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.316 -0500", hash_original_field = "55F1DC48D55A0A6FC4EA670FAAD152FE", hash_generated_field = "CAD34F506A7F52021B790F3A2404CE8C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.606 -0500", hash_original_field = "55F1DC48D55A0A6FC4EA670FAAD152FE", hash_generated_field = "CAD34F506A7F52021B790F3A2404CE8C")
 
 
         private  ReadableByteChannel channel;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.317 -0500", hash_original_method = "80B02113EE3067DF952BBE67BFAA654C", hash_generated_method = "80B02113EE3067DF952BBE67BFAA654C")
-        ChannelInputStream(ReadableByteChannel channel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.609 -0500", hash_original_method = "80B02113EE3067DF952BBE67BFAA654C", hash_generated_method = "80B02113EE3067DF952BBE67BFAA654C")
+        
+ChannelInputStream(ReadableByteChannel channel) {
             if (channel == null) {
                 throw new NullPointerException();
             }
             this.channel = channel;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.317 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "EDB147B342555EE99C070665ED7CE828")
-        @Override
-public synchronized int read() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.612 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "EDB147B342555EE99C070665ED7CE828")
+        
+@Override public synchronized int read() throws IOException {
             return Streams.readSingleByte(this);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.319 -0500", hash_original_method = "1AE7B72C96392B3D0D4F989CF18659AC", hash_generated_method = "14D88A8B061C1022E14CA983FBCF856E")
-        @Override
-public synchronized int read(byte[] target, int offset, int length) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.614 -0500", hash_original_method = "1AE7B72C96392B3D0D4F989CF18659AC", hash_generated_method = "14D88A8B061C1022E14CA983FBCF856E")
+        
+@Override public synchronized int read(byte[] target, int offset, int length) throws IOException {
             ByteBuffer buffer = ByteBuffer.wrap(target, offset, length);
             checkBlocking(channel);
             return channel.read(buffer);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.319 -0500", hash_original_method = "8AF6429D1717D8D7E12FE07FE6FDB12A", hash_generated_method = "032ACB1B9554E7BFD3B0CAB37D023878")
-        @Override
-public int available() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.617 -0500", hash_original_method = "8AF6429D1717D8D7E12FE07FE6FDB12A", hash_generated_method = "032ACB1B9554E7BFD3B0CAB37D023878")
+        
+@Override public int available() throws IOException {
             if (channel instanceof FileChannel) {
                 FileChannel fileChannel = (FileChannel) channel;
                 long result = fileChannel.size() - fileChannel.position();
@@ -244,9 +255,10 @@ public int available() throws IOException {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.320 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "6098CAE6D79FEEF35314C7AF3CC52F7E")
-        @Override
-public synchronized void close() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.623 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "6098CAE6D79FEEF35314C7AF3CC52F7E")
+        
+@Override
+        public synchronized void close() throws IOException {
             channel.close();
         }
 
@@ -256,29 +268,32 @@ public synchronized void close() throws IOException {
 
     
     private static class ChannelOutputStream extends OutputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.322 -0500", hash_original_field = "4CFEECC14753EB27873B0258AB92EF63", hash_generated_field = "F18845F3B98BBBDA823B047CD34AFB03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.628 -0500", hash_original_field = "4CFEECC14753EB27873B0258AB92EF63", hash_generated_field = "F18845F3B98BBBDA823B047CD34AFB03")
 
 
         private  WritableByteChannel channel;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.323 -0500", hash_original_method = "1089F5ED21B35830343C54EE52895DB5", hash_generated_method = "1089F5ED21B35830343C54EE52895DB5")
-        ChannelOutputStream(WritableByteChannel channel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.631 -0500", hash_original_method = "1089F5ED21B35830343C54EE52895DB5", hash_generated_method = "1089F5ED21B35830343C54EE52895DB5")
+        
+ChannelOutputStream(WritableByteChannel channel) {
             if (channel == null) {
                 throw new NullPointerException();
             }
             this.channel = channel;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.325 -0500", hash_original_method = "976097BC4C10B6759034E4B1EDA42187", hash_generated_method = "A2DC5F91B490FB6FF0B7BB1EE34B1473")
-        @Override
-public synchronized void write(int oneByte) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.634 -0500", hash_original_method = "976097BC4C10B6759034E4B1EDA42187", hash_generated_method = "A2DC5F91B490FB6FF0B7BB1EE34B1473")
+        
+@Override
+        public synchronized void write(int oneByte) throws IOException {
             byte[] wrappedByte = { (byte) oneByte };
             write(wrappedByte);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.326 -0500", hash_original_method = "BF3010B4A99B9EE523BF774883EC19AF", hash_generated_method = "4D16EB7F001ED787EAEAEADF10DB0A28")
-        @Override
-public synchronized void write(byte[] source, int offset, int length) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.637 -0500", hash_original_method = "BF3010B4A99B9EE523BF774883EC19AF", hash_generated_method = "4D16EB7F001ED787EAEAEADF10DB0A28")
+        
+@Override
+        public synchronized void write(byte[] source, int offset, int length) throws IOException {
             ByteBuffer buffer = ByteBuffer.wrap(source, offset, length);
             checkBlocking(channel);
             int total = 0;
@@ -287,9 +302,10 @@ public synchronized void write(byte[] source, int offset, int length) throws IOE
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.327 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "6098CAE6D79FEEF35314C7AF3CC52F7E")
-        @Override
-public synchronized void close() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.640 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "6098CAE6D79FEEF35314C7AF3CC52F7E")
+        
+@Override
+        public synchronized void close() throws IOException {
             channel.close();
         }
 
@@ -299,20 +315,22 @@ public synchronized void close() throws IOException {
 
     
     private static class InputStreamChannel extends AbstractInterruptibleChannel implements ReadableByteChannel {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.329 -0500", hash_original_field = "219F81106B069BE15533E4B7BAC5527C", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.647 -0500", hash_original_field = "219F81106B069BE15533E4B7BAC5527C", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
 
         private  InputStream inputStream;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.330 -0500", hash_original_method = "A25A8E5B09A21DDDF92BB065F8D65F54", hash_generated_method = "A25A8E5B09A21DDDF92BB065F8D65F54")
-        InputStreamChannel(InputStream inputStream) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.650 -0500", hash_original_method = "A25A8E5B09A21DDDF92BB065F8D65F54", hash_generated_method = "A25A8E5B09A21DDDF92BB065F8D65F54")
+        
+InputStreamChannel(InputStream inputStream) {
             if (inputStream == null) {
                 throw new NullPointerException();
             }
             this.inputStream = inputStream;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.332 -0500", hash_original_method = "34EE1F263C45AAE8882B54B20392574C", hash_generated_method = "00C5CF0C247E8A6B8E801896DB58BCCF")
-        public synchronized int read(ByteBuffer target) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.653 -0500", hash_original_method = "34EE1F263C45AAE8882B54B20392574C", hash_generated_method = "00C5CF0C247E8A6B8E801896DB58BCCF")
+        
+public synchronized int read(ByteBuffer target) throws IOException {
             if (!isOpen()) {
                 throw new ClosedChannelException();
             }
@@ -331,9 +349,10 @@ public synchronized void close() throws IOException {
             return readCount;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.333 -0500", hash_original_method = "1AEDCC092312326A1B846FAEB331BDCE", hash_generated_method = "699CD466FF51AF39DE58FAAC85355A3F")
-        @Override
-protected void implCloseChannel() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.655 -0500", hash_original_method = "1AEDCC092312326A1B846FAEB331BDCE", hash_generated_method = "699CD466FF51AF39DE58FAAC85355A3F")
+        
+@Override
+        protected void implCloseChannel() throws IOException {
             inputStream.close();
         }
 
@@ -343,20 +362,22 @@ protected void implCloseChannel() throws IOException {
 
     
     private static class OutputStreamChannel extends AbstractInterruptibleChannel implements WritableByteChannel {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.335 -0500", hash_original_field = "661AC26F0CF33AB40D90D727DEB87E17", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.661 -0500", hash_original_field = "661AC26F0CF33AB40D90D727DEB87E17", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
 
         private  OutputStream outputStream;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.336 -0500", hash_original_method = "E7CFE65BD19B3A8BD37EE9992015F72E", hash_generated_method = "E7CFE65BD19B3A8BD37EE9992015F72E")
-        OutputStreamChannel(OutputStream outputStream) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.664 -0500", hash_original_method = "E7CFE65BD19B3A8BD37EE9992015F72E", hash_generated_method = "E7CFE65BD19B3A8BD37EE9992015F72E")
+        
+OutputStreamChannel(OutputStream outputStream) {
             if (outputStream == null) {
                 throw new NullPointerException();
             }
             this.outputStream = outputStream;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.337 -0500", hash_original_method = "F8CFBFA38C000301E03B217F2F97CA8F", hash_generated_method = "4AF989810D5B85B30F3380D1C2BB8FCA")
-        public synchronized int write(ByteBuffer source) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.667 -0500", hash_original_method = "F8CFBFA38C000301E03B217F2F97CA8F", hash_generated_method = "4AF989810D5B85B30F3380D1C2BB8FCA")
+        
+public synchronized int write(ByteBuffer source) throws IOException {
             if (!isOpen()) {
                 throw new ClosedChannelException();
             }
@@ -375,9 +396,10 @@ protected void implCloseChannel() throws IOException {
             return bytesRemain;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.338 -0500", hash_original_method = "E7378E9CB2C67269427FA20438587EF6", hash_generated_method = "BD60E6259D7810C44ADBB6E883CA32AB")
-        @Override
-protected void implCloseChannel() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.669 -0500", hash_original_method = "E7378E9CB2C67269427FA20438587EF6", hash_generated_method = "BD60E6259D7810C44ADBB6E883CA32AB")
+        
+@Override
+        protected void implCloseChannel() throws IOException {
             outputStream.close();
         }
 

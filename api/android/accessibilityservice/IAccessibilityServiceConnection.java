@@ -10,15 +10,16 @@ public interface IAccessibilityServiceConnection extends android.os.IInterface
 
 public static abstract class Stub extends android.os.Binder implements android.accessibilityservice.IAccessibilityServiceConnection
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.569 -0500", hash_original_field = "18CE01CADE2952197A8644E7061D793B", hash_generated_field = "D8F142D52FAD4D9B2BD02A9F9AE9C673")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.978 -0500", hash_original_field = "18CE01CADE2952197A8644E7061D793B", hash_generated_field = "D8F142D52FAD4D9B2BD02A9F9AE9C673")
 
 private static final java.lang.String DESCRIPTOR = "android.accessibilityservice.IAccessibilityServiceConnection";
 /**
  * Cast an IBinder object into an android.accessibilityservice.IAccessibilityServiceConnection interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.572 -0500", hash_original_method = "ADC25E12C76CE0D88A285246579678E3", hash_generated_method = "AB6A7B6035CEB133F6E742E27BCF0450")
-        public static android.accessibilityservice.IAccessibilityServiceConnection asInterface(android.os.IBinder obj)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.985 -0500", hash_original_method = "ADC25E12C76CE0D88A285246579678E3", hash_generated_method = "AB6A7B6035CEB133F6E742E27BCF0450")
+        
+public static android.accessibilityservice.IAccessibilityServiceConnection asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -29,37 +30,41 @@ return ((android.accessibilityservice.IAccessibilityServiceConnection)iin);
 }
 return new android.accessibilityservice.IAccessibilityServiceConnection.Stub.Proxy(obj);
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.588 -0500", hash_original_field = "EA75BF14D5C6C705A702E7D7373D1114", hash_generated_field = "971BFDF1FF47EE59A0386CF4E0C62FDC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.030 -0500", hash_original_field = "EA75BF14D5C6C705A702E7D7373D1114", hash_generated_field = "971BFDF1FF47EE59A0386CF4E0C62FDC")
 
 static final int TRANSACTION_setServiceInfo = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.588 -0500", hash_original_field = "7B2D4AEDF5B29087A8D21E7B1B6437DF", hash_generated_field = "32F8DC5CB3EC27BD09B9A216B84E4921")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.033 -0500", hash_original_field = "7B2D4AEDF5B29087A8D21E7B1B6437DF", hash_generated_field = "32F8DC5CB3EC27BD09B9A216B84E4921")
 
 static final int TRANSACTION_findAccessibilityNodeInfoByAccessibilityId = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.589 -0500", hash_original_field = "D125C7654CD4A3E62C7B5D54781D8EF4", hash_generated_field = "32BAA65EB4B3C41ADB94633E431FEDC0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.035 -0500", hash_original_field = "D125C7654CD4A3E62C7B5D54781D8EF4", hash_generated_field = "32BAA65EB4B3C41ADB94633E431FEDC0")
 
 static final int TRANSACTION_findAccessibilityNodeInfosByViewText = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
 private static class Proxy implements android.accessibilityservice.IAccessibilityServiceConnection
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.575 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.996 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
 
 private android.os.IBinder mRemote;
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.576 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
-            Proxy(android.os.IBinder remote)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.999 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
+            
+Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.577 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
-            public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.001 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
+            
+public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.578 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
-            public java.lang.String getInterfaceDescriptor()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.004 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+            
+public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.579 -0500", hash_original_method = "B71E6CCB11408735438C09A7524030F7", hash_generated_method = "E01B7AAD6267FEB27984D4505EAB26D4")
-            public void setServiceInfo(android.accessibilityservice.AccessibilityServiceInfo info) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.007 -0500", hash_original_method = "B71E6CCB11408735438C09A7524030F7", hash_generated_method = "E01B7AAD6267FEB27984D4505EAB26D4")
+            
+public void setServiceInfo(android.accessibilityservice.AccessibilityServiceInfo info) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -90,8 +95,9 @@ _data.recycle();
      * @param threadId The id of the calling thread.
      * @return The current window scale, where zero means a failure.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.580 -0500", hash_original_method = "55BA2A755153D827DCAA91699E15E33F", hash_generated_method = "6AEFCAE9B5B5FC9AD1C47C632DAEEDC0")
-            public float findAccessibilityNodeInfoByAccessibilityId(int accessibilityWindowId, int accessibilityViewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.011 -0500", hash_original_method = "55BA2A755153D827DCAA91699E15E33F", hash_generated_method = "6AEFCAE9B5B5FC9AD1C47C632DAEEDC0")
+            
+public float findAccessibilityNodeInfoByAccessibilityId(int accessibilityWindowId, int accessibilityViewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -128,8 +134,9 @@ return _result;
      * @param threadId The id of the calling thread.
      * @return The current window scale, where zero means a failure.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.581 -0500", hash_original_method = "ED963318450B6659A077D14F574A167B", hash_generated_method = "7E220A2BE5430AD182083C343D293B84")
-            public float findAccessibilityNodeInfosByViewText(java.lang.String text, int accessibilityWindowId, int accessibilityViewId, int interractionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.014 -0500", hash_original_method = "ED963318450B6659A077D14F574A167B", hash_generated_method = "7E220A2BE5430AD182083C343D293B84")
+            
+public float findAccessibilityNodeInfosByViewText(java.lang.String text, int accessibilityWindowId, int accessibilityViewId, int interractionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -165,8 +172,9 @@ return _result;
      * @param threadId The id of the calling thread.
      * @return The current window scale, where zero means a failure.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.583 -0500", hash_original_method = "0D55FC0836B4177E84D20165B4035E88", hash_generated_method = "075F0E6BDA7A2D2B6DCC7377EE699386")
-            public float findAccessibilityNodeInfosByViewTextInActiveWindow(java.lang.String text, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.017 -0500", hash_original_method = "0D55FC0836B4177E84D20165B4035E88", hash_generated_method = "075F0E6BDA7A2D2B6DCC7377EE699386")
+            
+public float findAccessibilityNodeInfosByViewTextInActiveWindow(java.lang.String text, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -197,8 +205,9 @@ return _result;
      * @param threadId The id of the calling thread.
      * @return The current window scale, where zero means a failure.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.584 -0500", hash_original_method = "299E26B9A3F7DC05F4D51610C4322DA3", hash_generated_method = "708F863981BA1B8F2A54521CBFE09AE2")
-            public float findAccessibilityNodeInfoByViewIdInActiveWindow(int viewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.021 -0500", hash_original_method = "299E26B9A3F7DC05F4D51610C4322DA3", hash_generated_method = "708F863981BA1B8F2A54521CBFE09AE2")
+            
+public float findAccessibilityNodeInfoByViewIdInActiveWindow(int viewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -230,8 +239,9 @@ return _result;
      * @param threadId The id of the calling thread.
      * @return Whether the action was performed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.585 -0500", hash_original_method = "FFDFC033E7ECEBBE837B4A18FDB32156", hash_generated_method = "64AA1935329D21B1EE9FE30B6047E120")
-            public boolean performAccessibilityAction(int accessibilityWindowId, int accessibilityViewId, int action, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.024 -0500", hash_original_method = "FFDFC033E7ECEBBE837B4A18FDB32156", hash_generated_method = "64AA1935329D21B1EE9FE30B6047E120")
+            
+public boolean performAccessibilityAction(int accessibilityWindowId, int accessibilityViewId, int action, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -255,29 +265,31 @@ _data.recycle();
 return _result;
 }
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.590 -0500", hash_original_field = "906824C976D3A14BEF7BFA420F53693F", hash_generated_field = "713C1F885E36AAB5EFE825AB876507AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.038 -0500", hash_original_field = "906824C976D3A14BEF7BFA420F53693F", hash_generated_field = "713C1F885E36AAB5EFE825AB876507AB")
 
 static final int TRANSACTION_findAccessibilityNodeInfosByViewTextInActiveWindow = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.591 -0500", hash_original_field = "30B1AE758CA477D8D4582B2FE91A17FC", hash_generated_field = "4AB9A342DA91DFB056FD4834256C237A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.041 -0500", hash_original_field = "30B1AE758CA477D8D4582B2FE91A17FC", hash_generated_field = "4AB9A342DA91DFB056FD4834256C237A")
 
 static final int TRANSACTION_findAccessibilityNodeInfoByViewIdInActiveWindow = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.592 -0500", hash_original_field = "409E557A8232934B0800FD0595FE6F2A", hash_generated_field = "EFB6B5BD801D594626F1E7B3030FDA10")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.043 -0500", hash_original_field = "409E557A8232934B0800FD0595FE6F2A", hash_generated_field = "EFB6B5BD801D594626F1E7B3030FDA10")
 
 static final int TRANSACTION_performAccessibilityAction = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.571 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
-        public Stub()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.981 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        
+public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.572 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
-        public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.987 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+        
+public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:28.574 -0500", hash_original_method = "0322F731EE5DA7A046278E2394FC07DD", hash_generated_method = "7F91E7971566785E3C847F7ECEC56B57")
-        @Override
-public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.992 -0500", hash_original_method = "0322F731EE5DA7A046278E2394FC07DD", hash_generated_method = "7F91E7971566785E3C847F7ECEC56B57")
+        
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {

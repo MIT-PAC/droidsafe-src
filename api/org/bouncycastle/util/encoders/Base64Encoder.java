@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 
 public class Base64Encoder implements Encoder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.186 -0500", hash_original_field = "7D8F2FE1CCEB256677F2F8E9B55EA9C3", hash_generated_field = "477367DCA11A991FB18CE4EB6F2C01EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.752 -0500", hash_original_field = "7D8F2FE1CCEB256677F2F8E9B55EA9C3", hash_generated_field = "477367DCA11A991FB18CE4EB6F2C01EF")
 
     protected final byte[] encodingTable =
         {
@@ -30,22 +30,24 @@ public class Base64Encoder implements Encoder {
             (byte)'7', (byte)'8', (byte)'9',
             (byte)'+', (byte)'/'
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.187 -0500", hash_original_field = "964DEF16619AEC1A1F52C43393D47E4E", hash_generated_field = "6470484C1DBA83A435D7A06D16D20315")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.754 -0500", hash_original_field = "964DEF16619AEC1A1F52C43393D47E4E", hash_generated_field = "6470484C1DBA83A435D7A06D16D20315")
 
 
     protected byte    padding = (byte)'=';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.187 -0500", hash_original_field = "7BCD267FFEC083ECBC844975547427DE", hash_generated_field = "C5A9E5FA83A75FCB14FF277263CBAED5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.757 -0500", hash_original_field = "7BCD267FFEC083ECBC844975547427DE", hash_generated_field = "C5A9E5FA83A75FCB14FF277263CBAED5")
 
     protected final byte[] decodingTable = new byte[128];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.189 -0500", hash_original_method = "680D3875922DD4E67C0EE2E950D928BD", hash_generated_method = "B387633520154ABC53B389F20BADAA16")
-    public Base64Encoder()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.761 -0500", hash_original_method = "680D3875922DD4E67C0EE2E950D928BD", hash_generated_method = "B387633520154ABC53B389F20BADAA16")
+    
+public Base64Encoder()
     {
         initialiseDecodingTable();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.188 -0500", hash_original_method = "21DA0B3C66110012AEC4B0EF8A985DB1", hash_generated_method = "951194B60192112273282AAFACAAC758")
-    protected void initialiseDecodingTable()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.759 -0500", hash_original_method = "21DA0B3C66110012AEC4B0EF8A985DB1", hash_generated_method = "951194B60192112273282AAFACAAC758")
+    
+protected void initialiseDecodingTable()
     {
         for (int i = 0; i < encodingTable.length; i++)
         {
@@ -58,8 +60,9 @@ public class Base64Encoder implements Encoder {
      *
      * @return the number of bytes produced.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.190 -0500", hash_original_method = "9CA1F48AAB7841E0E0CBD16E0BA7D360", hash_generated_method = "C24E5F8DB02F00BA8662CCB70872BDB9")
-    public int encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.765 -0500", hash_original_method = "9CA1F48AAB7841E0E0CBD16E0BA7D360", hash_generated_method = "C24E5F8DB02F00BA8662CCB70872BDB9")
+    
+public int encode(
         byte[]                data,
         int                    off,
         int                    length,
@@ -120,8 +123,9 @@ public class Base64Encoder implements Encoder {
         return (dataLength / 3) * 4 + ((modulus == 0) ? 0 : 4);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.191 -0500", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "60BA6438BF0D7F2A1A9CF731E65332DE")
-    private boolean ignore(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.767 -0500", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "60BA6438BF0D7F2A1A9CF731E65332DE")
+    
+private boolean ignore(
         char    c)
     {
         return (c == '\n' || c =='\r' || c == '\t' || c == ' ');
@@ -133,8 +137,9 @@ public class Base64Encoder implements Encoder {
      *
      * @return the number of bytes produced.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.192 -0500", hash_original_method = "211C1414D28F35039504B68D95AB9ED9", hash_generated_method = "E118D82FD0BD87AB0C9285CEF8D7FAF6")
-    public int decode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.770 -0500", hash_original_method = "211C1414D28F35039504B68D95AB9ED9", hash_generated_method = "E118D82FD0BD87AB0C9285CEF8D7FAF6")
+    
+public int decode(
         byte[]          data,
         int             off,
         int             length,
@@ -191,8 +196,9 @@ public class Base64Encoder implements Encoder {
         return outLen;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.193 -0500", hash_original_method = "1225BA5A886EEC007862013ADD842450", hash_generated_method = "37957A74CE8A40AAEB855AC2EA497CE3")
-    private int nextI(byte[] data, int i, int finish)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.773 -0500", hash_original_method = "1225BA5A886EEC007862013ADD842450", hash_generated_method = "37957A74CE8A40AAEB855AC2EA497CE3")
+    
+private int nextI(byte[] data, int i, int finish)
     {
         while ((i < finish) && ignore((char)data[i]))
         {
@@ -207,8 +213,9 @@ public class Base64Encoder implements Encoder {
      *
      * @return the number of bytes produced.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.194 -0500", hash_original_method = "304E01512ABEE5D32E29AD105C8F9759", hash_generated_method = "E555224E61F1C778AAEA4DCB3127EC03")
-    public int decode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.776 -0500", hash_original_method = "304E01512ABEE5D32E29AD105C8F9759", hash_generated_method = "E555224E61F1C778AAEA4DCB3127EC03")
+    
+public int decode(
         String          data,
         OutputStream    out)
         throws IOException
@@ -263,8 +270,9 @@ public class Base64Encoder implements Encoder {
         return length;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.195 -0500", hash_original_method = "9E52D5CA91DB497317BE2B1E69827671", hash_generated_method = "B4F5DB34AA16E31D3C680C912806CC93")
-    private int decodeLastBlock(OutputStream out, char c1, char c2, char c3, char c4) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.779 -0500", hash_original_method = "9E52D5CA91DB497317BE2B1E69827671", hash_generated_method = "B4F5DB34AA16E31D3C680C912806CC93")
+    
+private int decodeLastBlock(OutputStream out, char c1, char c2, char c3, char c4) 
         throws IOException
     {
         byte    b1, b2, b3, b4;
@@ -304,8 +312,9 @@ public class Base64Encoder implements Encoder {
         } 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.196 -0500", hash_original_method = "4A002F2B2C5A42BB007C07A5E9BC2D50", hash_generated_method = "34DC841B1744328FA68084198AF9D2F3")
-    private int nextI(String data, int i, int finish)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.781 -0500", hash_original_method = "4A002F2B2C5A42BB007C07A5E9BC2D50", hash_generated_method = "34DC841B1744328FA68084198AF9D2F3")
+    
+private int nextI(String data, int i, int finish)
     {
         while ((i < finish) && ignore(data.charAt(i)))
         {

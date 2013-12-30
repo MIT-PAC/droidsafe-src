@@ -31,7 +31,7 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public abstract class AbstractAuthenticationHandler implements AuthenticationHandler {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.492 -0500", hash_original_field = "18C64D3F166235B368911445AC5F21BA", hash_generated_field = "E23A56881AF7D598302EFE0E841EEF54")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.448 -0500", hash_original_field = "18C64D3F166235B368911445AC5F21BA", hash_generated_field = "E23A56881AF7D598302EFE0E841EEF54")
 
     
     private static final List<String> DEFAULT_SCHEME_PRIORITY = Arrays.asList(new String[] {
@@ -39,18 +39,20 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
             "digest",
             "basic"
     });
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.491 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.446 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.493 -0500", hash_original_method = "E0C989328AEDF63A6A5F2E03C11F9A89", hash_generated_method = "AA720E0256E35353AA93C6E08668BD60")
-    public AbstractAuthenticationHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.451 -0500", hash_original_method = "E0C989328AEDF63A6A5F2E03C11F9A89", hash_generated_method = "AA720E0256E35353AA93C6E08668BD60")
+    
+public AbstractAuthenticationHandler() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.494 -0500", hash_original_method = "784665A0C5858E32179EE01DA6E7685F", hash_generated_method = "6F0389B56D81AE3D0BAB562883E70C1C")
-    protected Map<String, Header> parseChallenges(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.453 -0500", hash_original_method = "784665A0C5858E32179EE01DA6E7685F", hash_generated_method = "6F0389B56D81AE3D0BAB562883E70C1C")
+    
+protected Map<String, Header> parseChallenges(
             final Header[] headers) throws MalformedChallengeException {
         
         Map<String, Header> map = new HashMap<String, Header>(headers.length);
@@ -83,13 +85,15 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
         return map;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.495 -0500", hash_original_method = "8FECC262A845210AB3069E334FB88F27", hash_generated_method = "737B99A2509BDCEBDDD800C4E2F20747")
-    protected List<String> getAuthPreferences() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.456 -0500", hash_original_method = "8FECC262A845210AB3069E334FB88F27", hash_generated_method = "737B99A2509BDCEBDDD800C4E2F20747")
+    
+protected List<String> getAuthPreferences() {
         return DEFAULT_SCHEME_PRIORITY;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.496 -0500", hash_original_method = "D1D9EE92C2146B6CF626CD8981908A9B", hash_generated_method = "7474E9B513D198929219240DB9605A4C")
-    public AuthScheme selectScheme(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.459 -0500", hash_original_method = "D1D9EE92C2146B6CF626CD8981908A9B", hash_generated_method = "7474E9B513D198929219240DB9605A4C")
+    
+public AuthScheme selectScheme(
             final Map<String, Header> challenges, 
             final HttpResponse response,
             final HttpContext context) throws AuthenticationException {

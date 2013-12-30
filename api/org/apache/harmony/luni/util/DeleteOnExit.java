@@ -16,8 +16,9 @@ public class DeleteOnExit extends Thread {
     /**
      * Returns our singleton instance, creating it if necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.376 -0500", hash_original_method = "5F2B916DEBE9B88C4D0351AB645CF666", hash_generated_method = "D55E2D40C001CB12E806F853D6224C5F")
-    public static synchronized DeleteOnExit getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.371 -0500", hash_original_method = "5F2B916DEBE9B88C4D0351AB645CF666", hash_generated_method = "D55E2D40C001CB12E806F853D6224C5F")
+    
+public static synchronized DeleteOnExit getInstance() {
         if (instance == null) {
             instance = new DeleteOnExit();
             Runtime.getRuntime().addShutdownHook(instance);
@@ -25,10 +26,10 @@ public class DeleteOnExit extends Thread {
 
         return instance;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.374 -0500", hash_original_field = "0BEA44D5F2B89CA572382212D1CF04F1", hash_generated_field = "1D7484B2D124716E795B5B3B920FBF1B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.366 -0500", hash_original_field = "0BEA44D5F2B89CA572382212D1CF04F1", hash_generated_field = "1D7484B2D124716E795B5B3B920FBF1B")
 
     private static DeleteOnExit instance;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.375 -0500", hash_original_field = "F2EB16A1C1929D27AB9BB521B26E3A8A", hash_generated_field = "47F1474B6B515F8F9C9704A4267BE62A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.368 -0500", hash_original_field = "F2EB16A1C1929D27AB9BB521B26E3A8A", hash_generated_field = "47F1474B6B515F8F9C9704A4267BE62A")
 
     private ArrayList<String> files = new ArrayList<String>();
     
@@ -44,8 +45,9 @@ public class DeleteOnExit extends Thread {
      *
      * @param filename The file to delete.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.377 -0500", hash_original_method = "9511A18425627270E054955D67656A71", hash_generated_method = "0AB2DFAEA106666CF949B6C0829A17DD")
-    public void addFile(String filename) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.374 -0500", hash_original_method = "9511A18425627270E054955D67656A71", hash_generated_method = "0AB2DFAEA106666CF949B6C0829A17DD")
+    
+public void addFile(String filename) {
         synchronized(files) {
             if (!files.contains(filename)) {
                 files.add(filename);
@@ -58,9 +60,10 @@ public class DeleteOnExit extends Thread {
      * and then (b) delete them in reverse order. This is to make sure files
      * get deleted before their parent directories.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.377 -0500", hash_original_method = "557595D78AF878757FA1B104BCD5B60F", hash_generated_method = "E8CCDADFADCBC5BEA7486B573F3A1A3F")
-    @Override
-public void run() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.377 -0500", hash_original_method = "557595D78AF878757FA1B104BCD5B60F", hash_generated_method = "E8CCDADFADCBC5BEA7486B573F3A1A3F")
+    
+@Override
+    public void run() {
         Collections.sort(files);
         for (int i = files.size() - 1; i >= 0; i--) {
             new File(files.get(i)).delete();

@@ -29,7 +29,7 @@ import org.bouncycastle.util.Selector;
 
 
 public class AttributeCertificateIssuer implements CertSelector, Selector {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.899 -0500", hash_original_field = "F472E80F733CDF00E48AF589322F06BE", hash_generated_field = "F472E80F733CDF00E48AF589322F06BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.006 -0500", hash_original_field = "F472E80F733CDF00E48AF589322F06BE", hash_generated_field = "F472E80F733CDF00E48AF589322F06BE")
 
      ASN1Encodable form;
 
@@ -38,27 +38,31 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
      * 
      * @param issuer The issuer
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.900 -0500", hash_original_method = "BBF050FF37EED8F05F0CD887F679CFE4", hash_generated_method = "04ECA89011DBD82E72A31991912E536D")
-    public AttributeCertificateIssuer(AttCertIssuer issuer)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.008 -0500", hash_original_method = "BBF050FF37EED8F05F0CD887F679CFE4", hash_generated_method = "04ECA89011DBD82E72A31991912E536D")
+    
+public AttributeCertificateIssuer(AttCertIssuer issuer)
     {
         form = issuer.getIssuer();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.901 -0500", hash_original_method = "D6A3C71D8C78168F005DD976BB9D460A", hash_generated_method = "E346B61EA4016D264FB0D1E7983120F1")
-    public AttributeCertificateIssuer(X500Principal principal)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.012 -0500", hash_original_method = "D6A3C71D8C78168F005DD976BB9D460A", hash_generated_method = "E346B61EA4016D264FB0D1E7983120F1")
+    
+public AttributeCertificateIssuer(X500Principal principal)
         throws IOException
     {
         this(new X509Principal(principal.getEncoded()));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.902 -0500", hash_original_method = "6459F0ACD6C2225742DF42C099A35AAF", hash_generated_method = "968A5678DAF967AE3FA794662CB4448E")
-    public AttributeCertificateIssuer(X509Principal principal)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.015 -0500", hash_original_method = "6459F0ACD6C2225742DF42C099A35AAF", hash_generated_method = "968A5678DAF967AE3FA794662CB4448E")
+    
+public AttributeCertificateIssuer(X509Principal principal)
     {
         form = new V2Form(new GeneralNames(new DERSequence(new GeneralName(principal))));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.903 -0500", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "0A50B512A51F6F9ED9CD9C8DB79C5C1D")
-    private Object[] getNames()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.017 -0500", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "0A50B512A51F6F9ED9CD9C8DB79C5C1D")
+    
+private Object[] getNames()
     {
         GeneralNames name;
 
@@ -100,8 +104,9 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
      * 
      * @return an array of Principal objects (usually X500Principal)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.904 -0500", hash_original_method = "3DFD2537FFB449B5321668C577E5D216", hash_generated_method = "C58D3BD8E679A4CFDA03E05527619D76")
-    public Principal[] getPrincipals()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.020 -0500", hash_original_method = "3DFD2537FFB449B5321668C577E5D216", hash_generated_method = "C58D3BD8E679A4CFDA03E05527619D76")
+    
+public Principal[] getPrincipals()
     {
         Object[] p = this.getNames();
         List l = new ArrayList();
@@ -117,8 +122,9 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
         return (Principal[])l.toArray(new Principal[l.size()]);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.904 -0500", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "ADA157C70E1BD88F937B563160F12EED")
-    private boolean matchesDN(X500Principal subject, GeneralNames targets)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.022 -0500", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "ADA157C70E1BD88F937B563160F12EED")
+    
+private boolean matchesDN(X500Principal subject, GeneralNames targets)
     {
         GeneralName[] names = targets.getNames();
 
@@ -144,14 +150,16 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.906 -0500", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "95C1135E2B576437E98ABE50F6386AA5")
-    public Object clone()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.025 -0500", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "95C1135E2B576437E98ABE50F6386AA5")
+    
+public Object clone()
     {
         return new AttributeCertificateIssuer(AttCertIssuer.getInstance(form));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.907 -0500", hash_original_method = "743F0CF49EF8F89EFC9B72FE9124B1C1", hash_generated_method = "4C80225690BD963BD0A28770402768F3")
-    public boolean match(Certificate cert)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.027 -0500", hash_original_method = "743F0CF49EF8F89EFC9B72FE9124B1C1", hash_generated_method = "4C80225690BD963BD0A28770402768F3")
+    
+public boolean match(Certificate cert)
     {
         if (!(cert instanceof X509Certificate))
         {
@@ -187,8 +195,9 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.908 -0500", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "950E577FCAC1E0C0F13F96E3817B6171")
-    public boolean equals(Object obj)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.030 -0500", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "950E577FCAC1E0C0F13F96E3817B6171")
+    
+public boolean equals(Object obj)
     {
         if (obj == this)
         {
@@ -205,14 +214,16 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
         return this.form.equals(other.form);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.909 -0500", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "B596598D02F60D16A04AAAD4DE667F48")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.032 -0500", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "B596598D02F60D16A04AAAD4DE667F48")
+    
+public int hashCode()
     {
         return this.form.hashCode();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.909 -0500", hash_original_method = "A87301CDB1806806ACAD029929062C9D", hash_generated_method = "6E7E49F8C9AD7B022B606400C3B5F385")
-    public boolean match(Object obj)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.035 -0500", hash_original_method = "A87301CDB1806806ACAD029929062C9D", hash_generated_method = "6E7E49F8C9AD7B022B606400C3B5F385")
+    
+public boolean match(Object obj)
     {
         if (!(obj instanceof X509Certificate))
         {

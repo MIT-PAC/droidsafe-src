@@ -19,8 +19,9 @@ import java.util.TimeZone;
 
 public class ExifInterface {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.944 -0500", hash_original_method = "573AE63C3A0AF83AD37E730AD0812C4F", hash_generated_method = "676407259D5C96EB17D75B26EC89E30A")
-    private static float convertRationalLatLonToFloat(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.756 -0500", hash_original_method = "573AE63C3A0AF83AD37E730AD0812C4F", hash_generated_method = "676407259D5C96EB17D75B26EC89E30A")
+    
+private static float convertRationalLatLonToFloat(
             String rationalString, String ref) {
         try {
             String [] parts = rationalString.split(",");
@@ -51,122 +52,122 @@ public class ExifInterface {
             throw new IllegalArgumentException();
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.730 -0500", hash_original_field = "3CC4A026E7738551DD531DE5F0698516", hash_generated_field = "83FE172D8DA0FA66CAD2FB4DF239599F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.622 -0500", hash_original_field = "3CC4A026E7738551DD531DE5F0698516", hash_generated_field = "83FE172D8DA0FA66CAD2FB4DF239599F")
 
     /** Type is int. */
     public static final String TAG_ORIENTATION = "Orientation";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.892 -0500", hash_original_field = "47B43A56A558ACB2B0ACA6F59D1DBD76", hash_generated_field = "101A4811FB668EE545E803D4B2370414")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.625 -0500", hash_original_field = "47B43A56A558ACB2B0ACA6F59D1DBD76", hash_generated_field = "101A4811FB668EE545E803D4B2370414")
 
     public static final String TAG_DATETIME = "DateTime";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.893 -0500", hash_original_field = "FB73D20ACC9203DB9E0898297BC533FE", hash_generated_field = "F5B4CCDFC0D8EFD9F3AC4F9488B0D71B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.627 -0500", hash_original_field = "FB73D20ACC9203DB9E0898297BC533FE", hash_generated_field = "F5B4CCDFC0D8EFD9F3AC4F9488B0D71B")
 
     public static final String TAG_MAKE = "Make";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.894 -0500", hash_original_field = "EE204466692033B71AA19527104AC324", hash_generated_field = "AC99FF0E4EB2B3E4FB5AA4C43F8A93CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.630 -0500", hash_original_field = "EE204466692033B71AA19527104AC324", hash_generated_field = "AC99FF0E4EB2B3E4FB5AA4C43F8A93CA")
 
     public static final String TAG_MODEL = "Model";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.895 -0500", hash_original_field = "CB0D07551BEFFE9D6D6F7E5F43030D15", hash_generated_field = "EA7B55740EC30EB732D48A803CE452BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.633 -0500", hash_original_field = "CB0D07551BEFFE9D6D6F7E5F43030D15", hash_generated_field = "EA7B55740EC30EB732D48A803CE452BC")
 
     public static final String TAG_FLASH = "Flash";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.896 -0500", hash_original_field = "A9D3B5F35179772E22E2BB8E69387728", hash_generated_field = "8982FA0FF6512270E69C2B8FEA0CAF23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.636 -0500", hash_original_field = "A9D3B5F35179772E22E2BB8E69387728", hash_generated_field = "8982FA0FF6512270E69C2B8FEA0CAF23")
 
     public static final String TAG_IMAGE_WIDTH = "ImageWidth";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.897 -0500", hash_original_field = "93B75453E30051FF3F1288ECB0C1433C", hash_generated_field = "58C324851FDD00E78AF846838584294E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.638 -0500", hash_original_field = "93B75453E30051FF3F1288ECB0C1433C", hash_generated_field = "58C324851FDD00E78AF846838584294E")
 
     public static final String TAG_IMAGE_LENGTH = "ImageLength";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.897 -0500", hash_original_field = "F5329069B9DC18F76D830883198816B6", hash_generated_field = "41F724F8F6F98D90757BF1466FD76129")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.640 -0500", hash_original_field = "F5329069B9DC18F76D830883198816B6", hash_generated_field = "41F724F8F6F98D90757BF1466FD76129")
 
     public static final String TAG_GPS_LATITUDE = "GPSLatitude";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.898 -0500", hash_original_field = "700C644577DFD63ED06E24283684D047", hash_generated_field = "ED3A990B9E868F1814D6920EC24E08EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.644 -0500", hash_original_field = "700C644577DFD63ED06E24283684D047", hash_generated_field = "ED3A990B9E868F1814D6920EC24E08EA")
 
     public static final String TAG_GPS_LONGITUDE = "GPSLongitude";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.899 -0500", hash_original_field = "9F4194948628C140C01C5D7BAA59FA35", hash_generated_field = "1A3E61A746842C1094B89575A74BFD92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.647 -0500", hash_original_field = "9F4194948628C140C01C5D7BAA59FA35", hash_generated_field = "1A3E61A746842C1094B89575A74BFD92")
 
     public static final String TAG_GPS_LATITUDE_REF = "GPSLatitudeRef";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.900 -0500", hash_original_field = "56BE365C877AE7C38B5DC630D4C44AF4", hash_generated_field = "C5807D784A8E59EAC1424EA8776264C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.651 -0500", hash_original_field = "56BE365C877AE7C38B5DC630D4C44AF4", hash_generated_field = "C5807D784A8E59EAC1424EA8776264C1")
 
     public static final String TAG_GPS_LONGITUDE_REF = "GPSLongitudeRef";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.901 -0500", hash_original_field = "A8CEF633E9A4AB236BA9CC3FAB66F046", hash_generated_field = "1CCC79689319C47C6C7438DED9018AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.654 -0500", hash_original_field = "A8CEF633E9A4AB236BA9CC3FAB66F046", hash_generated_field = "1CCC79689319C47C6C7438DED9018AD3")
 
     public static final String TAG_EXPOSURE_TIME = "ExposureTime";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.902 -0500", hash_original_field = "B39E60518544E2E8ACA89CC416721C2A", hash_generated_field = "45BD3451CD1F1F4DB012EAD31AC691D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.657 -0500", hash_original_field = "B39E60518544E2E8ACA89CC416721C2A", hash_generated_field = "45BD3451CD1F1F4DB012EAD31AC691D8")
 
     public static final String TAG_APERTURE = "FNumber";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.903 -0500", hash_original_field = "41A04928C5BA073A6D0C28DDA2867072", hash_generated_field = "ED69C3EB609C7CAD68276A6B680BD60A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.660 -0500", hash_original_field = "41A04928C5BA073A6D0C28DDA2867072", hash_generated_field = "ED69C3EB609C7CAD68276A6B680BD60A")
 
     public static final String TAG_ISO = "ISOSpeedRatings";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.903 -0500", hash_original_field = "4C91D984AB18809DA4628784A3398720", hash_generated_field = "0B96888F82A229E243E899C454C727B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.663 -0500", hash_original_field = "4C91D984AB18809DA4628784A3398720", hash_generated_field = "0B96888F82A229E243E899C454C727B4")
 
     public static final String TAG_GPS_ALTITUDE = "GPSAltitude";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.904 -0500", hash_original_field = "69F932C89B5FA66051C5E24ED33B85D3", hash_generated_field = "054F22B1CC2AE0A217DF80B4C3A95E7B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.665 -0500", hash_original_field = "69F932C89B5FA66051C5E24ED33B85D3", hash_generated_field = "054F22B1CC2AE0A217DF80B4C3A95E7B")
 
     public static final String TAG_GPS_ALTITUDE_REF = "GPSAltitudeRef";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.906 -0500", hash_original_field = "78D583521737A40B3E40C394C62EC757", hash_generated_field = "0118A9D9F173B0AD9487E5789584216A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.668 -0500", hash_original_field = "78D583521737A40B3E40C394C62EC757", hash_generated_field = "0118A9D9F173B0AD9487E5789584216A")
 
     public static final String TAG_GPS_TIMESTAMP = "GPSTimeStamp";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.907 -0500", hash_original_field = "4644E0333C7A3AF51F5221E6816D5B92", hash_generated_field = "87F4328C4767CB618220915C7AF478D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.670 -0500", hash_original_field = "4644E0333C7A3AF51F5221E6816D5B92", hash_generated_field = "87F4328C4767CB618220915C7AF478D2")
 
     public static final String TAG_GPS_DATESTAMP = "GPSDateStamp";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.908 -0500", hash_original_field = "D94852C58A544AFA66EC05DA774069C3", hash_generated_field = "75039B8014C6D5CC1737F639D29E129F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.673 -0500", hash_original_field = "D94852C58A544AFA66EC05DA774069C3", hash_generated_field = "75039B8014C6D5CC1737F639D29E129F")
 
     public static final String TAG_WHITE_BALANCE = "WhiteBalance";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.908 -0500", hash_original_field = "2AA3B25A89489AE2DCC9E1C599126140", hash_generated_field = "DA1EF2B43E7BDFD590A00A3AE2544CEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.675 -0500", hash_original_field = "2AA3B25A89489AE2DCC9E1C599126140", hash_generated_field = "DA1EF2B43E7BDFD590A00A3AE2544CEF")
 
     public static final String TAG_FOCAL_LENGTH = "FocalLength";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.909 -0500", hash_original_field = "F6432F41A95FC8195058E63B95B97E36", hash_generated_field = "58503EE4AC4AE6D30017F4D27495295A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.678 -0500", hash_original_field = "F6432F41A95FC8195058E63B95B97E36", hash_generated_field = "58503EE4AC4AE6D30017F4D27495295A")
 
     public static final String TAG_GPS_PROCESSING_METHOD = "GPSProcessingMethod";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.910 -0500", hash_original_field = "FF61189BB21652B1AA647AF4366BE51A", hash_generated_field = "C828CE7228710CDEF23518F65ADADABD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.681 -0500", hash_original_field = "FF61189BB21652B1AA647AF4366BE51A", hash_generated_field = "C828CE7228710CDEF23518F65ADADABD")
 
     public static final int ORIENTATION_UNDEFINED = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.911 -0500", hash_original_field = "3A017F49ECE76E8A85EA17C941CBEE70", hash_generated_field = "DF8B31ED1507AAAE9E833B86C92C48C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.683 -0500", hash_original_field = "3A017F49ECE76E8A85EA17C941CBEE70", hash_generated_field = "DF8B31ED1507AAAE9E833B86C92C48C1")
 
     public static final int ORIENTATION_NORMAL = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.912 -0500", hash_original_field = "A6C3ED3FE9E3E39F3F81002767B6F253", hash_generated_field = "19DB606936AFDB2CFE79DA536B7268A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.685 -0500", hash_original_field = "A6C3ED3FE9E3E39F3F81002767B6F253", hash_generated_field = "19DB606936AFDB2CFE79DA536B7268A8")
 
     public static final int ORIENTATION_FLIP_HORIZONTAL = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.913 -0500", hash_original_field = "727BA6CFAF093C5695385FAECC98B405", hash_generated_field = "D87FC37D76084597EF17327A76A0DA5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.689 -0500", hash_original_field = "727BA6CFAF093C5695385FAECC98B405", hash_generated_field = "D87FC37D76084597EF17327A76A0DA5E")
 
     public static final int ORIENTATION_ROTATE_180 = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.914 -0500", hash_original_field = "42666579CDE698D2402791B92DE97239", hash_generated_field = "DD16462B5D89FFC4AAE4BBF19C1BD4AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.691 -0500", hash_original_field = "42666579CDE698D2402791B92DE97239", hash_generated_field = "DD16462B5D89FFC4AAE4BBF19C1BD4AA")
 
     public static final int ORIENTATION_FLIP_VERTICAL = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.915 -0500", hash_original_field = "4D25F8EBA1FBF12138CC1A2A90DFC0BF", hash_generated_field = "C9236C8E90CCA328179ED4C661D671A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.693 -0500", hash_original_field = "4D25F8EBA1FBF12138CC1A2A90DFC0BF", hash_generated_field = "C9236C8E90CCA328179ED4C661D671A2")
 
     public static final int ORIENTATION_TRANSPOSE = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.916 -0500", hash_original_field = "2ACCC10BBF3C1D4B96E6A0F6B2C229ED", hash_generated_field = "80D13CEDB605688612C65FA5CEE5DA14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.696 -0500", hash_original_field = "2ACCC10BBF3C1D4B96E6A0F6B2C229ED", hash_generated_field = "80D13CEDB605688612C65FA5CEE5DA14")
 
     public static final int ORIENTATION_ROTATE_90 = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.916 -0500", hash_original_field = "20612EE535EF24DBFB784F07A3390D97", hash_generated_field = "4113D50874321B71BF0E5153D80BE028")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.699 -0500", hash_original_field = "20612EE535EF24DBFB784F07A3390D97", hash_generated_field = "4113D50874321B71BF0E5153D80BE028")
 
     public static final int ORIENTATION_TRANSVERSE = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.917 -0500", hash_original_field = "F04305995809A555107C8A776C1EB55C", hash_generated_field = "71E617FEA6C0DC38205F4142DA4B0602")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.701 -0500", hash_original_field = "F04305995809A555107C8A776C1EB55C", hash_generated_field = "71E617FEA6C0DC38205F4142DA4B0602")
 
     public static final int ORIENTATION_ROTATE_270 = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.760 -0500", hash_original_field = "A7E86E86F1AA0EDAD59C65F62597F9E9", hash_generated_field = "9B8E4CF6290372C2BA9E2BF3FF429632")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.704 -0500", hash_original_field = "A7E86E86F1AA0EDAD59C65F62597F9E9", hash_generated_field = "9B8E4CF6290372C2BA9E2BF3FF429632")
 
 
     // Constants used for white balance
     public static final int WHITEBALANCE_AUTO = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.919 -0500", hash_original_field = "5823096C798F429609DD7E20D3E371BB", hash_generated_field = "5D553B9F3B502118D7C36B75FB6B44A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.707 -0500", hash_original_field = "5823096C798F429609DD7E20D3E371BB", hash_generated_field = "5D553B9F3B502118D7C36B75FB6B44A4")
 
     public static final int WHITEBALANCE_MANUAL = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.920 -0500", hash_original_field = "83F58B816019C4A4F4CC55BDA66B326F", hash_generated_field = "7067D659FE2825B749E741BAA734664B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.709 -0500", hash_original_field = "83F58B816019C4A4F4CC55BDA66B326F", hash_generated_field = "7067D659FE2825B749E741BAA734664B")
 
     private static SimpleDateFormat sFormatter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.766 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "EB5BE1AEE301CB28647A518EF65E7402")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.718 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "EB5BE1AEE301CB28647A518EF65E7402")
 
     // there can only be one user at a time for the native functions (and
     // they cannot keep state in the native code across function calls). We
     // use sLock to serialize the accesses.
     private static Object sLock = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.921 -0500", hash_original_field = "01856C66627D09247F481E00F22C2A41", hash_generated_field = "85FF07821F4F75AB23CF084EAB4F73FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.712 -0500", hash_original_field = "01856C66627D09247F481E00F22C2A41", hash_generated_field = "85FF07821F4F75AB23CF084EAB4F73FE")
 
 
     private String mFilename;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.921 -0500", hash_original_field = "3850CCEF5B1FE87BBC3EDADD93876182", hash_generated_field = "B2443E5A90D740226468DBF2C0CBD314")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.714 -0500", hash_original_field = "3850CCEF5B1FE87BBC3EDADD93876182", hash_generated_field = "B2443E5A90D740226468DBF2C0CBD314")
 
     private HashMap<String, String> mAttributes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.925 -0500", hash_original_field = "CF96104384A174E2BC812B72BE58EC64", hash_generated_field = "FD5958CEDB1B93550749B4BC88A0BB63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.716 -0500", hash_original_field = "CF96104384A174E2BC812B72BE58EC64", hash_generated_field = "FD5958CEDB1B93550749B4BC88A0BB63")
 
     private boolean mHasThumbnail;
     
@@ -209,8 +210,9 @@ public class ExifInterface {
      * @param tag the name of the tag.
      * @param defaultValue the value to return if the tag is not available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.933 -0500", hash_original_method = "2C50E27E79C50FB255BC7327C78A0595", hash_generated_method = "BBB74CB96CAF937FBBCB988AF143A519")
-    public double getAttributeDouble(String tag, double defaultValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.729 -0500", hash_original_method = "2C50E27E79C50FB255BC7327C78A0595", hash_generated_method = "BBB74CB96CAF937FBBCB988AF143A519")
+    
+public double getAttributeDouble(String tag, double defaultValue) {
         String value = mAttributes.get(tag);
         if (value == null) return defaultValue;
         try {
@@ -231,8 +233,9 @@ public class ExifInterface {
      * @param tag the name of the tag.
      * @param value the value of the tag.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.934 -0500", hash_original_method = "B68A317BC0B14013541CB1D016F585DF", hash_generated_method = "E5B7A4C2160F0B1762C23311F5766F9A")
-    public void setAttribute(String tag, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.731 -0500", hash_original_method = "B68A317BC0B14013541CB1D016F585DF", hash_generated_method = "E5B7A4C2160F0B1762C23311F5766F9A")
+    
+public void setAttribute(String tag, String value) {
         mAttributes.put(tag, value);
     }
 
@@ -251,8 +254,9 @@ public class ExifInterface {
      * to set all attributes to write and make a single call rather than multiple
      * calls for each attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.937 -0500", hash_original_method = "E3F12D245EF9212C63C10D7ABFFE8DE6", hash_generated_method = "C8FC7776E9E5EE1A9137DA1A47203F40")
-    public void saveAttributes() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.737 -0500", hash_original_method = "E3F12D245EF9212C63C10D7ABFFE8DE6", hash_generated_method = "C8FC7776E9E5EE1A9137DA1A47203F40")
+    
+public void saveAttributes() throws IOException {
         // format of string passed to native C code:
         // "attrCnt attr1=valueLen value1attr2=value2Len value2..."
         // example:
@@ -284,8 +288,9 @@ public class ExifInterface {
     /**
      * Returns true if the JPEG file has a thumbnail.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.938 -0500", hash_original_method = "8ADD93432A1FBC3F2D5AE95E2101E8B1", hash_generated_method = "5B95961678D1CE45A2252124B8A179F4")
-    public boolean hasThumbnail() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.739 -0500", hash_original_method = "8ADD93432A1FBC3F2D5AE95E2101E8B1", hash_generated_method = "5B95961678D1CE45A2252124B8A179F4")
+    
+public boolean hasThumbnail() {
         return mHasThumbnail;
     }
 
@@ -294,8 +299,9 @@ public class ExifInterface {
      * The returned data is in JPEG format and can be decoded using
      * {@link android.graphics.BitmapFactory#decodeByteArray(byte[],int,int)}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.938 -0500", hash_original_method = "EEA91D6F373CFE491F29E5705A223E24", hash_generated_method = "7D87F6AF051C0C4F5DECB547D74A174C")
-    public byte[] getThumbnail() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.742 -0500", hash_original_method = "EEA91D6F373CFE491F29E5705A223E24", hash_generated_method = "7D87F6AF051C0C4F5DECB547D74A174C")
+    
+public byte[] getThumbnail() {
         synchronized (sLock) {
             return getThumbnailNative(mFilename);
         }
@@ -306,8 +312,9 @@ public class ExifInterface {
      * the latitude, and the second element is the longitude. Returns false if the
      * Exif tags are not available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.939 -0500", hash_original_method = "E57539251757696DAF9B1A2137150B59", hash_generated_method = "4EF1C3E6E9DC7AFCCD00387EE25E6D6E")
-    public boolean getLatLong(float output[]) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.745 -0500", hash_original_method = "E57539251757696DAF9B1A2137150B59", hash_generated_method = "4EF1C3E6E9DC7AFCCD00387EE25E6D6E")
+    
+public boolean getLatLong(float output[]) {
         String latValue = mAttributes.get(ExifInterface.TAG_GPS_LATITUDE);
         String latRef = mAttributes.get(ExifInterface.TAG_GPS_LATITUDE_REF);
         String lngValue = mAttributes.get(ExifInterface.TAG_GPS_LONGITUDE);
@@ -332,8 +339,9 @@ public class ExifInterface {
      *
      * @param defaultValue the value to return if the tag is not available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.941 -0500", hash_original_method = "7FF577F1262A20E1F7C9D9D9BE845A85", hash_generated_method = "455BC0CAADB360D042876898A2EAEE37")
-    public double getAltitude(double defaultValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.747 -0500", hash_original_method = "7FF577F1262A20E1F7C9D9D9BE845A85", hash_generated_method = "455BC0CAADB360D042876898A2EAEE37")
+    
+public double getAltitude(double defaultValue) {
         double altitude = getAttributeDouble(TAG_GPS_ALTITUDE, -1);
         int ref = getAttributeInt(TAG_GPS_ALTITUDE_REF, -1);
 
@@ -349,8 +357,9 @@ public class ExifInterface {
      * Returns -1 if the date time information if not available.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.942 -0500", hash_original_method = "E8E77BF544503216344BBA6B3C85FE94", hash_generated_method = "A268731B6306C3B5642516836FC513B1")
-    public long getDateTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.750 -0500", hash_original_method = "E8E77BF544503216344BBA6B3C85FE94", hash_generated_method = "A268731B6306C3B5642516836FC513B1")
+    
+public long getDateTime() {
         String dateTimeString = mAttributes.get(TAG_DATETIME);
         if (dateTimeString == null) return -1;
 
@@ -369,8 +378,9 @@ public class ExifInterface {
      * Returns -1 if the date time information if not available.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.942 -0500", hash_original_method = "E20B898080FF0A84D7C05898F2A9273F", hash_generated_method = "469395D0EE5FE02AFD07DEC668A58A91")
-    public long getGpsDateTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.753 -0500", hash_original_method = "E20B898080FF0A84D7C05898F2A9273F", hash_generated_method = "469395D0EE5FE02AFD07DEC668A58A91")
+    
+public long getGpsDateTime() {
         String date = mAttributes.get(TAG_GPS_DATESTAMP);
         String time = mAttributes.get(TAG_GPS_TIMESTAMP);
         if (date == null || time == null) return -1;
@@ -388,23 +398,47 @@ public class ExifInterface {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.780 -0500", hash_original_method = "10F8297A0D98F2707B10E874747B53C0", hash_generated_method = "90628B937B986544BE88FE904F65CAF5")
-    private native boolean appendThumbnailNative(String fileName,
-            String thumbnailFileName);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.760 -0500", hash_original_method = "10F8297A0D98F2707B10E874747B53C0", hash_generated_method = "90628B937B986544BE88FE904F65CAF5")
+    
+    private boolean appendThumbnailNative(String fileName,
+                String thumbnailFileName){
+    	//Formerly a native method
+    	addTaint(fileName.getTaint());
+    	addTaint(thumbnailFileName.getTaint());
+    	return getTaintBoolean();
+    }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.782 -0500", hash_original_method = "1943C005EEA560A6DA7650C63E13B4C3", hash_generated_method = "EA5F35D637E602509C693931F9B6A33F")
-    private native void saveAttributesNative(String fileName,
-            String compressedAttributes);
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.785 -0500", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "80E74A688A748996FA3E2A2FEFB9B353")
-    private native void commitChangesNative(String fileName);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.764 -0500", hash_original_method = "1943C005EEA560A6DA7650C63E13B4C3", hash_generated_method = "EA5F35D637E602509C693931F9B6A33F")
+    
+    private void saveAttributesNative(String fileName,
+                String compressedAttributes){
+    	//Formerly a native method
+    	addTaint(fileName.getTaint());
+    	addTaint(compressedAttributes.getTaint());
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.772 -0500", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "80E74A688A748996FA3E2A2FEFB9B353")
+    
+    private void commitChangesNative(String fileName){
+    	//Formerly a native method
+    	addTaint(fileName.getTaint());
+    }
+
     static {
         System.loadLibrary("exif");
         sFormatter = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
         sFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.786 -0500", hash_original_method = "EE2CC310FEF6D1380D04E187818EEB60", hash_generated_method = "BD46D056B3CB5158CCA64FB57C0A5E4E")
-    private native byte[] getThumbnailNative(String fileName);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.776 -0500", hash_original_method = "EE2CC310FEF6D1380D04E187818EEB60", hash_generated_method = "BD46D056B3CB5158CCA64FB57C0A5E4E")
+    
+    private byte[] getThumbnailNative(String fileName){
+    	//Formerly a native method
+    	addTaint(fileName.getTaint());
+    	return new byte[]{getTaintByte(),};
+    }
+
 }
 

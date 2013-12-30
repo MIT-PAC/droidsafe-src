@@ -25,7 +25,7 @@ public class BitmapShader extends Shader {
             int shaderTileModeX, int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.456 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "ABC07C2755FD81F115C0C28144D66BB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.177 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "ABC07C2755FD81F115C0C28144D66BB3")
 
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"})
     public  Bitmap mBitmap;
@@ -37,8 +37,9 @@ public class BitmapShader extends Shader {
      * @param tileX             The tiling mode for x to draw the bitmap in.
      * @param tileY             The tiling mode for y to draw the bitmap in.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.457 -0500", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "71297A08305F3A63904ABFBBCA6DDC5C")
-    public BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.181 -0500", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "71297A08305F3A63904ABFBBCA6DDC5C")
+    
+public BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
         mBitmap = bitmap;
         final int b = bitmap.ni();
         native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);

@@ -34,28 +34,29 @@ import javax.sip.message.Response;
 
 
 class EventScanner implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.068 -0500", hash_original_field = "028C4EA5C52309C2DE6D499D1B3E3FEF", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.193 -0500", hash_original_field = "028C4EA5C52309C2DE6D499D1B3E3FEF", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
 
 
     private boolean isStopped;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.070 -0500", hash_original_field = "11FA541DFC204F75CB36FDDB52ABFC51", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.195 -0500", hash_original_field = "11FA541DFC204F75CB36FDDB52ABFC51", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
 
 
     private int refCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.071 -0500", hash_original_field = "4CF73E35276C2E18559F95BDB74A21C4", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.198 -0500", hash_original_field = "4CF73E35276C2E18559F95BDB74A21C4", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
 
     private LinkedList pendingEvents = new LinkedList();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.073 -0500", hash_original_field = "0919A27EA1347E2B8BF180BE7E741D38", hash_generated_field = "467BA1CC5CE0750BC552D8D3070838DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.201 -0500", hash_original_field = "0919A27EA1347E2B8BF180BE7E741D38", hash_generated_field = "467BA1CC5CE0750BC552D8D3070838DC")
 
 
     private int[] eventMutex = { 0 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.074 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.204 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
 
     private SipStackImpl sipStack;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.076 -0500", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "BC9AA7CB98DD4C3C92FF8D5A0058083F")
-    public EventScanner(SipStackImpl sipStackImpl) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.210 -0500", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "BC9AA7CB98DD4C3C92FF8D5A0058083F")
+    
+public EventScanner(SipStackImpl sipStackImpl) {
         this.pendingEvents = new LinkedList();
         Thread myThread = new Thread(this);
         // This needs to be set to false else the
@@ -70,15 +71,17 @@ class EventScanner implements Runnable {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.075 -0500", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "2FFC30AF5AA015252C3F0BF71309F00D")
-    public void incrementRefcount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.207 -0500", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "2FFC30AF5AA015252C3F0BF71309F00D")
+    
+public void incrementRefcount() {
         synchronized (eventMutex) {
             this.refCount++;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.077 -0500", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "FCF5B860CD02396C92316E386081BE0E")
-    public void addEvent(EventWrapper eventWrapper) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.214 -0500", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "FCF5B860CD02396C92316E386081BE0E")
+    
+public void addEvent(EventWrapper eventWrapper) {
     	if (sipStack.isLoggingEnabled())
     		sipStack.getStackLogger().logDebug("addEvent " + eventWrapper);
         synchronized (this.eventMutex) {
@@ -97,8 +100,9 @@ class EventScanner implements Runnable {
      * scanner thread if the ref count goes to 0.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.078 -0500", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "CB4C0906D3BAE20BA6638CD5E104CC6B")
-    public void stop() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.217 -0500", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "CB4C0906D3BAE20BA6638CD5E104CC6B")
+    
+public void stop() {
         synchronized (eventMutex) {
 
             if (this.refCount > 0)
@@ -117,8 +121,9 @@ class EventScanner implements Runnable {
      * go to 0.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.079 -0500", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "A0A42509F3805F589A9CF13C272D1360")
-    public void forceStop() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.220 -0500", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "A0A42509F3805F589A9CF13C272D1360")
+    
+public void forceStop() {
         synchronized (this.eventMutex) {
             this.isStopped = true;
             this.refCount = 0;
@@ -127,8 +132,9 @@ class EventScanner implements Runnable {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.083 -0500", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "F039D07B9DEF47FA6A6A240BF6071529")
-    public void deliverEvent(EventWrapper eventWrapper) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.228 -0500", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "F039D07B9DEF47FA6A6A240BF6071529")
+    
+public void deliverEvent(EventWrapper eventWrapper) {
         EventObject sipEvent = eventWrapper.sipEvent;
         if (sipStack.isLoggingEnabled())
             sipStack.getStackLogger().logDebug(
@@ -457,8 +463,9 @@ class EventScanner implements Runnable {
      * calls the deliverEvent method above.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.085 -0500", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "C673673F7FA2F5C78C4D05886458027F")
-    public void run() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.234 -0500", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "C673673F7FA2F5C78C4D05886458027F")
+    
+public void run() {
         try {
             // Ask the auditor to monitor this thread
             ThreadAuditor.ThreadHandle threadHandle = sipStack.getThreadAuditor().addCurrentThread();

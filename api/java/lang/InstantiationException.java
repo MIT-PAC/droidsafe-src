@@ -10,7 +10,7 @@ import droidsafe.annotations.*;
 
 
 public class InstantiationException extends Exception {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.715 -0500", hash_original_field = "D10ACE1DDA78E9447F5C27832B5E3CDA", hash_generated_field = "57E92CFED008DEE9CBA7BDD040519D1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.229 -0500", hash_original_field = "D10ACE1DDA78E9447F5C27832B5E3CDA", hash_generated_field = "57E92CFED008DEE9CBA7BDD040519D1D")
 
     private static final long serialVersionUID = -8441929162975509110L;
 
@@ -18,8 +18,9 @@ public class InstantiationException extends Exception {
      * Constructs a new {@code InstantiationException} that includes the current
      * stack trace.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.716 -0500", hash_original_method = "4FE52ED96718E49A2C12E29EB6D41BB1", hash_generated_method = "CB14AF0C86D4D9D695ABB5BA23BB8A90")
-    public InstantiationException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.232 -0500", hash_original_method = "4FE52ED96718E49A2C12E29EB6D41BB1", hash_generated_method = "CB14AF0C86D4D9D695ABB5BA23BB8A90")
+    
+public InstantiationException() {
     }
 
     /**
@@ -29,8 +30,9 @@ public class InstantiationException extends Exception {
      * @param detailMessage
      *            the detail message for this exception.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.717 -0500", hash_original_method = "5F54417A31BE783961475C78B79DF3BE", hash_generated_method = "3557293837D1FC0F7C5D9E2B00C64DA3")
-    public InstantiationException(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.235 -0500", hash_original_method = "5F54417A31BE783961475C78B79DF3BE", hash_generated_method = "3557293837D1FC0F7C5D9E2B00C64DA3")
+    
+public InstantiationException(String detailMessage) {
         super(detailMessage);
     }
 
@@ -41,8 +43,9 @@ public class InstantiationException extends Exception {
      * @param clazz
      *            the class that can not be instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.718 -0500", hash_original_method = "6F408C13CB22C61379FA2022EB73B671", hash_generated_method = "6F408C13CB22C61379FA2022EB73B671")
-    InstantiationException(Class<?> clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.237 -0500", hash_original_method = "6F408C13CB22C61379FA2022EB73B671", hash_generated_method = "6F408C13CB22C61379FA2022EB73B671")
+    
+InstantiationException(Class<?> clazz) {
         super(clazz.getName());
     }
 }

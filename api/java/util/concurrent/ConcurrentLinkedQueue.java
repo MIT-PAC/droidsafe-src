@@ -23,14 +23,16 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      *
      * @param v the element
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.317 -0500", hash_original_method = "BBA8F566F6EBBAE4E624DE5E2288492A", hash_generated_method = "5E8CAC32EF86836AAB409F83647A3C3E")
-    private static void checkNotNull(Object v) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.814 -0500", hash_original_method = "BBA8F566F6EBBAE4E624DE5E2288492A", hash_generated_method = "5E8CAC32EF86836AAB409F83647A3C3E")
+    
+private static void checkNotNull(Object v) {
         if (v == null)
             throw new NullPointerException();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.323 -0500", hash_original_method = "AB96ED97F4B21B8760238DEC7BD056B4", hash_generated_method = "2DEA2A5047BC334C40FA23467D30FC1B")
-    static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.829 -0500", hash_original_method = "AB96ED97F4B21B8760238DEC7BD056B4", hash_generated_method = "2DEA2A5047BC334C40FA23467D30FC1B")
+    
+static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
                                   String field, Class<?> klazz) {
         try {
             return UNSAFE.objectFieldOffset(klazz.getDeclaredField(field));
@@ -41,25 +43,25 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
             throw error;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.279 -0500", hash_original_field = "2DC2000B89BA4649105478D1A83FB5CA", hash_generated_field = "552079242BF4D3962F1F3E89C3B525FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.707 -0500", hash_original_field = "2DC2000B89BA4649105478D1A83FB5CA", hash_generated_field = "552079242BF4D3962F1F3E89C3B525FA")
 
     private static final long serialVersionUID = 196745693267521676L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.318 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.816 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
 
 
     private static final sun.misc.Unsafe UNSAFE = sun.misc.Unsafe.getUnsafe();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.319 -0500", hash_original_field = "CAC71C97168C08066A0751C53920A8EA", hash_generated_field = "9EFA27FCA31FFA33F7E605E12104104C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.819 -0500", hash_original_field = "CAC71C97168C08066A0751C53920A8EA", hash_generated_field = "9EFA27FCA31FFA33F7E605E12104104C")
 
     private static final long headOffset =
         objectFieldOffset(UNSAFE, "head", ConcurrentLinkedQueue.class);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.320 -0500", hash_original_field = "4A8772D2EA45DDC4EE7E990E1E9D8562", hash_generated_field = "B885C4C60FF837953D19E1C9D06EABC1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.821 -0500", hash_original_field = "4A8772D2EA45DDC4EE7E990E1E9D8562", hash_generated_field = "B885C4C60FF837953D19E1C9D06EABC1")
 
     private static final long tailOffset =
         objectFieldOffset(UNSAFE, "tail", ConcurrentLinkedQueue.class);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.288 -0500", hash_original_field = "AF17874DDDE4597EF645F8BFBDDE5272", hash_generated_field = "B57EDCA0C5D8B188A31356A19160405D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.735 -0500", hash_original_field = "AF17874DDDE4597EF645F8BFBDDE5272", hash_generated_field = "B57EDCA0C5D8B188A31356A19160405D")
 
     private transient volatile Node<E> head;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.289 -0500", hash_original_field = "A5E4BAC07874F33303440A161800C0F9", hash_generated_field = "44C1E7DD6E43696E7B1931FD10B83ECF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.737 -0500", hash_original_field = "A5E4BAC07874F33303440A161800C0F9", hash_generated_field = "44C1E7DD6E43696E7B1931FD10B83ECF")
 
     private transient volatile Node<E> tail;
 
@@ -67,8 +69,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
     /**
      * Creates a {@code ConcurrentLinkedQueue} that is initially empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.291 -0500", hash_original_method = "6A57FB745E5D860E38239AF0DB1591EF", hash_generated_method = "D1746736EE12BF8D23599CAA7240438E")
-    public ConcurrentLinkedQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.740 -0500", hash_original_method = "6A57FB745E5D860E38239AF0DB1591EF", hash_generated_method = "D1746736EE12BF8D23599CAA7240438E")
+    
+public ConcurrentLinkedQueue() {
         head = tail = new Node<E>(null);
     }
 
@@ -81,8 +84,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * @throws NullPointerException if the specified collection or any
      *         of its elements are null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.292 -0500", hash_original_method = "6F01EA166BC3601049062B90A5587D9E", hash_generated_method = "37A1684F14F56F9CBFB4E509295953F6")
-    public ConcurrentLinkedQueue(Collection<? extends E> c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.743 -0500", hash_original_method = "6F01EA166BC3601049062B90A5587D9E", hash_generated_method = "37A1684F14F56F9CBFB4E509295953F6")
+    
+public ConcurrentLinkedQueue(Collection<? extends E> c) {
         Node<E> h = null, t = null;
         for (E e : c) {
             checkNotNull(e);
@@ -110,8 +114,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * @return {@code true} (as specified by {@link Collection#add})
      * @throws NullPointerException if the specified element is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.293 -0500", hash_original_method = "F77A4F330ECF7476CC7AF200B57EFA7F", hash_generated_method = "5AEDC89A183EF5E6538093DA8AE2F21F")
-    public boolean add(E e) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.746 -0500", hash_original_method = "F77A4F330ECF7476CC7AF200B57EFA7F", hash_generated_method = "5AEDC89A183EF5E6538093DA8AE2F21F")
+    
+public boolean add(E e) {
         return offer(e);
     }
 
@@ -119,8 +124,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * Try to CAS head to p. If successful, repoint old head to itself
      * as sentinel for succ(), below.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.294 -0500", hash_original_method = "73F32BBDAFE1515404B45EC2F1869A3A", hash_generated_method = "FCD28EBA9B9CE91E3996D097D38A8FA2")
-    final void updateHead(Node<E> h, Node<E> p) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.748 -0500", hash_original_method = "73F32BBDAFE1515404B45EC2F1869A3A", hash_generated_method = "FCD28EBA9B9CE91E3996D097D38A8FA2")
+    
+final void updateHead(Node<E> h, Node<E> p) {
         if (h != p && casHead(h, p))
             h.lazySetNext(h);
     }
@@ -130,8 +136,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * linked to self, which will only be true if traversing with a
      * stale pointer that is now off the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.295 -0500", hash_original_method = "FA81D040C1BC0670D20AF3D93B255BE4", hash_generated_method = "034E9B15950FC1F0DC2137E90D14CF99")
-    final Node<E> succ(Node<E> p) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.751 -0500", hash_original_method = "FA81D040C1BC0670D20AF3D93B255BE4", hash_generated_method = "034E9B15950FC1F0DC2137E90D14CF99")
+    
+final Node<E> succ(Node<E> p) {
         Node<E> next = p.next;
         return (p == next) ? head : next;
     }
@@ -143,8 +150,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * @return {@code true} (as specified by {@link Queue#offer})
      * @throws NullPointerException if the specified element is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.296 -0500", hash_original_method = "6C2ABD9F3905A9D98C3CBF8AF5320B8C", hash_generated_method = "AB60E658250AACAEC31816F45BA0E150")
-    public boolean offer(E e) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.753 -0500", hash_original_method = "6C2ABD9F3905A9D98C3CBF8AF5320B8C", hash_generated_method = "AB60E658250AACAEC31816F45BA0E150")
+    
+public boolean offer(E e) {
         checkNotNull(e);
         final Node<E> newNode = new Node<E>(e);
 
@@ -174,8 +182,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.297 -0500", hash_original_method = "1F662EFABD15CE7BE1315E55CBBE7D30", hash_generated_method = "9AF7B22733C69CCDE065F58231731D12")
-    public E poll() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.756 -0500", hash_original_method = "1F662EFABD15CE7BE1315E55CBBE7D30", hash_generated_method = "9AF7B22733C69CCDE065F58231731D12")
+    
+public E poll() {
         restartFromHead:
         for (;;) {
             for (Node<E> h = head, p = h, q;;) {
@@ -200,8 +209,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.298 -0500", hash_original_method = "61FBF64CA94D04AD27A6643CEF7D7285", hash_generated_method = "B27BEF2FCBE36929DB44B2C40A3A3C09")
-    public E peek() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.758 -0500", hash_original_method = "61FBF64CA94D04AD27A6643CEF7D7285", hash_generated_method = "B27BEF2FCBE36929DB44B2C40A3A3C09")
+    
+public E peek() {
         restartFromHead:
         for (;;) {
             for (Node<E> h = head, p = h, q;;) {
@@ -226,8 +236,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * and the need to add a retry loop to deal with the possibility
      * of losing a race to a concurrent poll().
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.299 -0500", hash_original_method = "0B74804F51F2B061D3EF3D31C957BAFB", hash_generated_method = "0B74804F51F2B061D3EF3D31C957BAFB")
-    Node<E> first() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.761 -0500", hash_original_method = "0B74804F51F2B061D3EF3D31C957BAFB", hash_generated_method = "0B74804F51F2B061D3EF3D31C957BAFB")
+    
+Node<E> first() {
         restartFromHead:
         for (;;) {
             for (Node<E> h = head, p = h, q;;) {
@@ -249,8 +260,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      *
      * @return {@code true} if this queue contains no elements
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.300 -0500", hash_original_method = "5BBCBCAD5CC8F01475F9C33B1A8BDA76", hash_generated_method = "4E85F053E74AB3FEF852FB2933EBC4F7")
-    public boolean isEmpty() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.763 -0500", hash_original_method = "5BBCBCAD5CC8F01475F9C33B1A8BDA76", hash_generated_method = "4E85F053E74AB3FEF852FB2933EBC4F7")
+    
+public boolean isEmpty() {
         return first() == null;
     }
 
@@ -270,8 +282,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      *
      * @return the number of elements in this queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.301 -0500", hash_original_method = "8378A4BA724609F4EE8D701FE95A4146", hash_generated_method = "B3986D8D35FCEA705CE19E049D534B6B")
-    public int size() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.766 -0500", hash_original_method = "8378A4BA724609F4EE8D701FE95A4146", hash_generated_method = "B3986D8D35FCEA705CE19E049D534B6B")
+    
+public int size() {
         int count = 0;
         for (Node<E> p = first(); p != null; p = succ(p))
             if (p.item != null)
@@ -289,8 +302,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * @param o object to be checked for containment in this queue
      * @return {@code true} if this queue contains the specified element
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.302 -0500", hash_original_method = "D3CFD955C2206E78AC2D6D0AA96542FF", hash_generated_method = "A8666B247011B410F30626CB4D5504E0")
-    public boolean contains(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.768 -0500", hash_original_method = "D3CFD955C2206E78AC2D6D0AA96542FF", hash_generated_method = "A8666B247011B410F30626CB4D5504E0")
+    
+public boolean contains(Object o) {
         if (o == null) return false;
         for (Node<E> p = first(); p != null; p = succ(p)) {
             E item = p.item;
@@ -311,8 +325,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      * @param o element to be removed from this queue, if present
      * @return {@code true} if this queue changed as a result of the call
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.303 -0500", hash_original_method = "47B1B9EE8A66BF6628AC85F9580DDA03", hash_generated_method = "9580346F405E36F21A2BEFA78B3E0A5C")
-    public boolean remove(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.772 -0500", hash_original_method = "47B1B9EE8A66BF6628AC85F9580DDA03", hash_generated_method = "9580346F405E36F21A2BEFA78B3E0A5C")
+    
+public boolean remove(Object o) {
         if (o == null) return false;
         Node<E> pred = null;
         for (Node<E> p = first(); p != null; p = succ(p)) {
@@ -342,8 +357,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      *         of its elements are null
      * @throws IllegalArgumentException if the collection is this queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.304 -0500", hash_original_method = "C76E29CF6BEEA629C4456D9BD8199C10", hash_generated_method = "7386589E0B4ABFD0CC3B008A28998348")
-    public boolean addAll(Collection<? extends E> c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.775 -0500", hash_original_method = "C76E29CF6BEEA629C4456D9BD8199C10", hash_generated_method = "7386589E0B4ABFD0CC3B008A28998348")
+    
+public boolean addAll(Collection<? extends E> c) {
         if (c == this)
             // As historically specified in AbstractQueue#addAll
             throw new IllegalArgumentException();
@@ -407,8 +423,9 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
      *
      * @return an array containing all of the elements in this queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.305 -0500", hash_original_method = "9AE75EDD15A5D634A14FDDC5ABF53B75", hash_generated_method = "385399E68448223FBC64104F00D1AF03")
-    public Object[] toArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.777 -0500", hash_original_method = "9AE75EDD15A5D634A14FDDC5ABF53B75", hash_generated_method = "385399E68448223FBC64104F00D1AF03")
+    
+public Object[] toArray() {
         // Use ArrayList to deal with resizing.
         ArrayList<E> al = new ArrayList<E>();
         for (Node<E> p = first(); p != null; p = succ(p)) {
@@ -486,30 +503,31 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
      *
      * @return an iterator over the elements in this queue in proper sequence
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.307 -0500", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "B0FB44010E28764F5FA2B4AB0E8E15C1")
-    public Iterator<E> iterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.782 -0500", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "B0FB44010E28764F5FA2B4AB0E8E15C1")
+    
+public Iterator<E> iterator() {
         return new Itr();
     }
 
     
     private static class Node<E> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.285 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.725 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
 
 
         private static final sun.misc.Unsafe UNSAFE =
             sun.misc.Unsafe.getUnsafe();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.286 -0500", hash_original_field = "C5B47A2E9B21336EE0021DE6B943B18F", hash_generated_field = "D9FDE22F87B42653A7025C63A9991763")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.728 -0500", hash_original_field = "C5B47A2E9B21336EE0021DE6B943B18F", hash_generated_field = "D9FDE22F87B42653A7025C63A9991763")
 
         private static final long nextOffset =
             objectFieldOffset(UNSAFE, "next", Node.class);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.287 -0500", hash_original_field = "9281F58398F24BD492C4B8262E2CA8E9", hash_generated_field = "E138439E2B895339EC3451FCFE9CA960")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.731 -0500", hash_original_field = "9281F58398F24BD492C4B8262E2CA8E9", hash_generated_field = "E138439E2B895339EC3451FCFE9CA960")
 
         private static final long itemOffset =
             objectFieldOffset(UNSAFE, "item", Node.class);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.280 -0500", hash_original_field = "25C1B4BE35B7528A52E74D8E56CE9F0B", hash_generated_field = "10095ABA73A923383E44F968C6C62945")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.710 -0500", hash_original_field = "25C1B4BE35B7528A52E74D8E56CE9F0B", hash_generated_field = "10095ABA73A923383E44F968C6C62945")
 
         volatile E item;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.281 -0500", hash_original_field = "A089DAAEF049057EDB97CA1342EE38E4", hash_generated_field = "7BB4D15B501C737F5EC180DC75EDF910")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.712 -0500", hash_original_field = "A089DAAEF049057EDB97CA1342EE38E4", hash_generated_field = "7BB4D15B501C737F5EC180DC75EDF910")
 
         volatile Node<E> next;
 
@@ -517,23 +535,27 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
          * Constructs a new node.  Uses relaxed write because item can
          * only be seen after publication via casNext.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.282 -0500", hash_original_method = "368F2FAFC4A206C09EED76798A5342BA", hash_generated_method = "368F2FAFC4A206C09EED76798A5342BA")
-        Node(E item) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.715 -0500", hash_original_method = "368F2FAFC4A206C09EED76798A5342BA", hash_generated_method = "368F2FAFC4A206C09EED76798A5342BA")
+        
+Node(E item) {
             UNSAFE.putObject(this, itemOffset, item);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.283 -0500", hash_original_method = "51A0AA76262E736F2E39BE7CE12CF006", hash_generated_method = "51A0AA76262E736F2E39BE7CE12CF006")
-        boolean casItem(E cmp, E val) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.717 -0500", hash_original_method = "51A0AA76262E736F2E39BE7CE12CF006", hash_generated_method = "51A0AA76262E736F2E39BE7CE12CF006")
+        
+boolean casItem(E cmp, E val) {
             return UNSAFE.compareAndSwapObject(this, itemOffset, cmp, val);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.283 -0500", hash_original_method = "E78DBD679DC5F596F67B7449AE69FAB3", hash_generated_method = "E78DBD679DC5F596F67B7449AE69FAB3")
-        void lazySetNext(Node<E> val) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.720 -0500", hash_original_method = "E78DBD679DC5F596F67B7449AE69FAB3", hash_generated_method = "E78DBD679DC5F596F67B7449AE69FAB3")
+        
+void lazySetNext(Node<E> val) {
             UNSAFE.putOrderedObject(this, nextOffset, val);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.284 -0500", hash_original_method = "C86D1E5E3D7752CB8E68445595A8E8EC", hash_generated_method = "C86D1E5E3D7752CB8E68445595A8E8EC")
-        boolean casNext(Node<E> cmp, Node<E> val) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.722 -0500", hash_original_method = "C86D1E5E3D7752CB8E68445595A8E8EC", hash_generated_method = "C86D1E5E3D7752CB8E68445595A8E8EC")
+        
+boolean casNext(Node<E> cmp, Node<E> val) {
             return UNSAFE.compareAndSwapObject(this, nextOffset, cmp, val);
         }
     }
@@ -541,18 +563,19 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
 
     
     private class Itr implements Iterator<E> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.308 -0500", hash_original_field = "138F1A36912062F45403BBEDD9B8281D", hash_generated_field = "BD45C7FA08D8C17CC087E2A8B9D2DBAA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.785 -0500", hash_original_field = "138F1A36912062F45403BBEDD9B8281D", hash_generated_field = "BD45C7FA08D8C17CC087E2A8B9D2DBAA")
 
         private Node<E> nextNode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.308 -0500", hash_original_field = "FC047D97EB4DD102072D6594B14B8B33", hash_generated_field = "97D8B84DA75A48FD27623CFC43E53C30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.788 -0500", hash_original_field = "FC047D97EB4DD102072D6594B14B8B33", hash_generated_field = "97D8B84DA75A48FD27623CFC43E53C30")
 
         private E nextItem;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.309 -0500", hash_original_field = "93698314F06F14B80EF688D146BA679D", hash_generated_field = "9782A09877DFB4D434246B92A2C403C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.791 -0500", hash_original_field = "93698314F06F14B80EF688D146BA679D", hash_generated_field = "9782A09877DFB4D434246B92A2C403C0")
 
         private Node<E> lastRet;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.310 -0500", hash_original_method = "A56873641F7861FCF92703A510E041DF", hash_generated_method = "A56873641F7861FCF92703A510E041DF")
-        Itr() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.793 -0500", hash_original_method = "A56873641F7861FCF92703A510E041DF", hash_generated_method = "A56873641F7861FCF92703A510E041DF")
+        
+Itr() {
             advance();
         }
 
@@ -560,8 +583,9 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
          * Moves to next valid node and returns item to return for
          * next(), or null if no such.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.311 -0500", hash_original_method = "530B75A5B8DF2D5033AF3BE4C3DEE1C2", hash_generated_method = "C5553EAD5AC36701780B043AC98912EE")
-        private E advance() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.796 -0500", hash_original_method = "530B75A5B8DF2D5033AF3BE4C3DEE1C2", hash_generated_method = "C5553EAD5AC36701780B043AC98912EE")
+        
+private E advance() {
             lastRet = nextNode;
             E x = nextItem;
 
@@ -595,19 +619,22 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.312 -0500", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "0CE7AB64F14A3A8431434F0197BFFCA6")
-        public boolean hasNext() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.798 -0500", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "0CE7AB64F14A3A8431434F0197BFFCA6")
+        
+public boolean hasNext() {
             return nextNode != null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.313 -0500", hash_original_method = "0C68CBDEA1D7969059001FABF149348A", hash_generated_method = "DB69FF76B32A8E8E884F805DCD7E6FB7")
-        public E next() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.801 -0500", hash_original_method = "0C68CBDEA1D7969059001FABF149348A", hash_generated_method = "DB69FF76B32A8E8E884F805DCD7E6FB7")
+        
+public E next() {
             if (nextNode == null) throw new NoSuchElementException();
             return advance();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.314 -0500", hash_original_method = "4D06856C6560F115B6FF7F073DDF82B7", hash_generated_method = "78A2193CDF1ABB9F4A5B94F29BE9C278")
-        public void remove() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.803 -0500", hash_original_method = "4D06856C6560F115B6FF7F073DDF82B7", hash_generated_method = "78A2193CDF1ABB9F4A5B94F29BE9C278")
+        
+public void remove() {
             Node<E> l = lastRet;
             if (l == null) throw new IllegalStateException();
             // rely on a future traversal to relink.
@@ -625,8 +652,9 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
      * the proper order, followed by a null
      * @param s the stream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.316 -0500", hash_original_method = "2DB3995911F14A1266042DB21211C241", hash_generated_method = "450A8DC28F0797E0CC68180DE79FD145")
-    private void writeObject(java.io.ObjectOutputStream s)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.808 -0500", hash_original_method = "2DB3995911F14A1266042DB21211C241", hash_generated_method = "450A8DC28F0797E0CC68180DE79FD145")
+    
+private void writeObject(java.io.ObjectOutputStream s)
         throws java.io.IOException {
 
         // Write out any hidden stuff
@@ -647,8 +675,9 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
      * Reconstitutes the instance from a stream (that is, deserializes it).
      * @param s the stream
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.317 -0500", hash_original_method = "4C4E4F1C2555347B7DA11DAA134BF488", hash_generated_method = "98812E5EC8FF51B6B8FADC4EC4D13DA0")
-    private void readObject(java.io.ObjectInputStream s)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.811 -0500", hash_original_method = "4C4E4F1C2555347B7DA11DAA134BF488", hash_generated_method = "98812E5EC8FF51B6B8FADC4EC4D13DA0")
+    
+private void readObject(java.io.ObjectInputStream s)
         throws java.io.IOException, ClassNotFoundException {
         s.defaultReadObject();
 
@@ -671,13 +700,15 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
         tail = t;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.321 -0500", hash_original_method = "691EF799FFE1B91CC4D8DBAB0EEF43D5", hash_generated_method = "A93F53BA0D8A63AFA1FA8565CC11D3B2")
-    private boolean casTail(Node<E> cmp, Node<E> val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.824 -0500", hash_original_method = "691EF799FFE1B91CC4D8DBAB0EEF43D5", hash_generated_method = "A93F53BA0D8A63AFA1FA8565CC11D3B2")
+    
+private boolean casTail(Node<E> cmp, Node<E> val) {
         return UNSAFE.compareAndSwapObject(this, tailOffset, cmp, val);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.322 -0500", hash_original_method = "BC5855BB8BED9A25EA66B96BB6A04937", hash_generated_method = "3B755D3C35A6E32CBB6B8B9A8AD6318E")
-    private boolean casHead(Node<E> cmp, Node<E> val) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.826 -0500", hash_original_method = "BC5855BB8BED9A25EA66B96BB6A04937", hash_generated_method = "3B755D3C35A6E32CBB6B8B9A8AD6318E")
+    
+private boolean casHead(Node<E> cmp, Node<E> val) {
         return UNSAFE.compareAndSwapObject(this, headOffset, cmp, val);
     }
 }

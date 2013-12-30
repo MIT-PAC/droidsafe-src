@@ -42,8 +42,9 @@ public abstract class TransformerFactory {
      * @throws TransformerFactoryConfigurationError never. Included for API
      *     compatibility with other Java implementations.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.571 -0500", hash_original_method = "3E8CF5BE620708FB4FC89BA0D72DFBF3", hash_generated_method = "E9E99C08522096EAB8AEE9B1103F39F1")
-    public static TransformerFactory newInstance()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.647 -0500", hash_original_method = "3E8CF5BE620708FB4FC89BA0D72DFBF3", hash_generated_method = "E9E99C08522096EAB8AEE9B1103F39F1")
+    
+public static TransformerFactory newInstance()
             throws TransformerFactoryConfigurationError {
         String className = "org.apache.xalan.processor.TransformerFactoryImpl";
         try {
@@ -60,8 +61,9 @@ public abstract class TransformerFactory {
      *     cannot be instantiated.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.572 -0500", hash_original_method = "6FA4A0F1E073073328F38FFF57DD4777", hash_generated_method = "7D3E50DC537C6FEC101FA796E7EDD515")
-    public static TransformerFactory newInstance(String factoryClassName, ClassLoader classLoader)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.649 -0500", hash_original_method = "6FA4A0F1E073073328F38FFF57DD4777", hash_generated_method = "7D3E50DC537C6FEC101FA796E7EDD515")
+    
+public static TransformerFactory newInstance(String factoryClassName, ClassLoader classLoader)
             throws TransformerFactoryConfigurationError {
         if (factoryClassName == null) {
             throw new TransformerFactoryConfigurationError("factoryClassName == null");
@@ -86,8 +88,9 @@ public abstract class TransformerFactory {
     /**
      * Default constructor is protected on purpose.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.571 -0500", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "BA555873591AEA4A7BD8800DE10FD6DF")
-    protected TransformerFactory() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.644 -0500", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "BA555873591AEA4A7BD8800DE10FD6DF")
+    
+protected TransformerFactory() { }
 
     /**
      * <p>Process the <code>Source</code> into a <code>Transformer</code>
@@ -117,8 +120,9 @@ public abstract class TransformerFactory {
      * @see <a href="http://www.w3.org/TR/xslt">
      *   XSL Transformations (XSLT) Version 1.0</a>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.573 -0500", hash_original_method = "7CFFE0D07DE19EFE36A2168B5E01BE0F", hash_generated_method = "7E298EB6618BE31C32B2A96DFF5964F5")
-    public abstract Transformer newTransformer(Source source)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.652 -0500", hash_original_method = "7CFFE0D07DE19EFE36A2168B5E01BE0F", hash_generated_method = "7E298EB6618BE31C32B2A96DFF5964F5")
+    
+public abstract Transformer newTransformer(Source source)
         throws TransformerConfigurationException;
 
     /**
@@ -132,8 +136,9 @@ public abstract class TransformerFactory {
      * @exception TransformerConfigurationException Thrown if it is not
      *   possible to create a <code>Transformer</code> instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.574 -0500", hash_original_method = "A7E101C00A1C217438F3BE7E289CE40B", hash_generated_method = "A1935FF0124FA744285AB7B7640F5A3C")
-    public abstract Transformer newTransformer()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.654 -0500", hash_original_method = "A7E101C00A1C217438F3BE7E289CE40B", hash_generated_method = "A1935FF0124FA744285AB7B7640F5A3C")
+    
+public abstract Transformer newTransformer()
         throws TransformerConfigurationException;
 
     /**
@@ -152,8 +157,9 @@ public abstract class TransformerFactory {
      * @exception TransformerConfigurationException May throw this during the
      * parse when it is constructing the Templates object and fails.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.575 -0500", hash_original_method = "6DDA9A6B38EBB085BA9246E69DC7D314", hash_generated_method = "C98609D8472335F319F5C31E8519E651")
-    public abstract Templates newTemplates(Source source)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.656 -0500", hash_original_method = "6DDA9A6B38EBB085BA9246E69DC7D314", hash_generated_method = "C98609D8472335F319F5C31E8519E651")
+    
+public abstract Templates newTemplates(Source source)
         throws TransformerConfigurationException;
 
     /**
@@ -181,8 +187,9 @@ public abstract class TransformerFactory {
      * @see <a href="http://www.w3.org/TR/xml-stylesheet/">
      *   Associating Style Sheets with XML documents Version 1.0</a>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.576 -0500", hash_original_method = "AC64DFCF0A27375D6209F59A727182FD", hash_generated_method = "DCC4D85A37E001CFAD8CAA59DC5E4213")
-    public abstract Source getAssociatedStylesheet(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.658 -0500", hash_original_method = "AC64DFCF0A27375D6209F59A727182FD", hash_generated_method = "DCC4D85A37E001CFAD8CAA59DC5E4213")
+    
+public abstract Source getAssociatedStylesheet(
         Source source,
         String media,
         String title,
@@ -196,8 +203,9 @@ public abstract class TransformerFactory {
      * @param resolver An object that implements the URIResolver interface,
      * or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.577 -0500", hash_original_method = "68C7DB370C1ABE5011980426FA88EE59", hash_generated_method = "E0850D782E0B8F1232A8CCE32737D8FE")
-    public abstract void setURIResolver(URIResolver resolver);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.661 -0500", hash_original_method = "68C7DB370C1ABE5011980426FA88EE59", hash_generated_method = "E0850D782E0B8F1232A8CCE32737D8FE")
+    
+public abstract void setURIResolver(URIResolver resolver);
 
     /**
      * Get the object that is used by default during the transformation
@@ -205,8 +213,9 @@ public abstract class TransformerFactory {
      *
      * @return The URIResolver that was set with setURIResolver.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.577 -0500", hash_original_method = "44193455267193A7FE520C9B388F539C", hash_generated_method = "34A19FFFC82864A6AE939F9AE846EC5E")
-    public abstract URIResolver getURIResolver();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.663 -0500", hash_original_method = "44193455267193A7FE520C9B388F539C", hash_generated_method = "34A19FFFC82864A6AE939F9AE846EC5E")
+    
+public abstract URIResolver getURIResolver();
 
     //======= CONFIGURATION METHODS =======
 
@@ -246,8 +255,9 @@ public abstract class TransformerFactory {
      *   or the <code>Transformer</code>s or <code>Template</code>s it creates cannot support this feature.
      * @throws NullPointerException If the <code>name</code> parameter is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.578 -0500", hash_original_method = "40FCB3E3CD3FB013549732CEBE9C1204", hash_generated_method = "D34E0E0FA1D28E259D6538C3B1416EB0")
-    public abstract void setFeature(String name, boolean value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.666 -0500", hash_original_method = "40FCB3E3CD3FB013549732CEBE9C1204", hash_generated_method = "D34E0E0FA1D28E259D6538C3B1416EB0")
+    
+public abstract void setFeature(String name, boolean value)
         throws TransformerConfigurationException;
 
     /**
@@ -267,8 +277,9 @@ public abstract class TransformerFactory {
      *
      * @throws NullPointerException If the <code>name</code> parameter is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.579 -0500", hash_original_method = "CD1E8A8E5BE38D8FE83E386A1AF3EF5D", hash_generated_method = "044D77551BF25958775D184470F6A817")
-    public abstract boolean getFeature(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.668 -0500", hash_original_method = "CD1E8A8E5BE38D8FE83E386A1AF3EF5D", hash_generated_method = "044D77551BF25958775D184470F6A817")
+    
+public abstract boolean getFeature(String name);
 
     /**
      * Allows the user to set specific attributes on the underlying
@@ -280,8 +291,9 @@ public abstract class TransformerFactory {
      * @param name The name of the attribute.
      * @param value The value of the attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.580 -0500", hash_original_method = "1F863C3C4F056307A6C164B0CC924493", hash_generated_method = "AFB2A798D58B4DB15FE29BA9093D5023")
-    public abstract void setAttribute(String name, Object value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.676 -0500", hash_original_method = "1F863C3C4F056307A6C164B0CC924493", hash_generated_method = "AFB2A798D58B4DB15FE29BA9093D5023")
+    
+public abstract void setAttribute(String name, Object value);
 
     /**
      * Allows the user to retrieve specific attributes on the underlying
@@ -292,8 +304,9 @@ public abstract class TransformerFactory {
      * @param name The name of the attribute.
      * @return value The value of the attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.581 -0500", hash_original_method = "FCC4022F9438D02A03EAF9E0461B0B3B", hash_generated_method = "9607117A4C58FE37636FB3C445473F6C")
-    public abstract Object getAttribute(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.678 -0500", hash_original_method = "FCC4022F9438D02A03EAF9E0461B0B3B", hash_generated_method = "9607117A4C58FE37636FB3C445473F6C")
+    
+public abstract Object getAttribute(String name);
 
     /**
      * Set the error event listener for the TransformerFactory, which
@@ -304,16 +317,18 @@ public abstract class TransformerFactory {
      *
      * @param listener The new error listener.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.582 -0500", hash_original_method = "7CF8399D4B45816FFBAD8DB2D1BBD730", hash_generated_method = "8FF808FAAE24D38EC3BAD61ABE5FE9E5")
-    public abstract void setErrorListener(ErrorListener listener);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.681 -0500", hash_original_method = "7CF8399D4B45816FFBAD8DB2D1BBD730", hash_generated_method = "8FF808FAAE24D38EC3BAD61ABE5FE9E5")
+    
+public abstract void setErrorListener(ErrorListener listener);
 
     /**
      * Get the error event handler for the TransformerFactory.
      *
      * @return The current error handler, which should never be null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.582 -0500", hash_original_method = "A69DC36A610F5E9CC88DC70E49C46EE7", hash_generated_method = "AE4BF0F77687929F0842F0F0E1A9FE70")
-    public abstract ErrorListener getErrorListener();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.683 -0500", hash_original_method = "A69DC36A610F5E9CC88DC70E49C46EE7", hash_generated_method = "AE4BF0F77687929F0842F0F0E1A9FE70")
+    
+public abstract ErrorListener getErrorListener();
 
     
 }

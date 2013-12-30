@@ -15,18 +15,19 @@ import javax.sip.header.AcceptEncodingHeader;
 
 
 public final class AcceptEncoding extends ParametersHeader implements AcceptEncodingHeader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.975 -0500", hash_original_field = "6EAE0317E22E23A400E78CD4BC4E325D", hash_generated_field = "4930A84A156D9023318126D844288C58")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.234 -0500", hash_original_field = "6EAE0317E22E23A400E78CD4BC4E325D", hash_generated_field = "4930A84A156D9023318126D844288C58")
 
     private static final long serialVersionUID = -1476807565552873525L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.977 -0500", hash_original_field = "5EFF5DEE90403490A265438B990AF073", hash_generated_field = "984A82245D6D3FDFD20ECFB9ACF6FE25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.236 -0500", hash_original_field = "5EFF5DEE90403490A265438B990AF073", hash_generated_field = "984A82245D6D3FDFD20ECFB9ACF6FE25")
 
     protected String contentCoding;
 
     /**
      * default constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.978 -0500", hash_original_method = "45FBA71B6A8F004018F3CEEA4ED1F1C4", hash_generated_method = "E9BA953A1356F68167BEB2C6A48B09A0")
-    public AcceptEncoding() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.239 -0500", hash_original_method = "45FBA71B6A8F004018F3CEEA4ED1F1C4", hash_generated_method = "E9BA953A1356F68167BEB2C6A48B09A0")
+    
+public AcceptEncoding() {
         super(NAME);
     }
 
@@ -35,13 +36,15 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
      *
      * @return the value of this header encoded into a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.979 -0500", hash_original_method = "D7FA4A0D1D7B133EC4C2E19C83590E19", hash_generated_method = "E7B620457F2845A330A89D6C1E735AA1")
-    protected String encodeBody() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.242 -0500", hash_original_method = "D7FA4A0D1D7B133EC4C2E19C83590E19", hash_generated_method = "E7B620457F2845A330A89D6C1E735AA1")
+    
+protected String encodeBody() {
         return encode(new StringBuffer()).toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.980 -0500", hash_original_method = "98075621BFB1005208DC6FCAC63FC820", hash_generated_method = "1A92CE5A737BA0AFBD24555D9744EA34")
-    protected StringBuffer encodeBody(StringBuffer buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.245 -0500", hash_original_method = "98075621BFB1005208DC6FCAC63FC820", hash_generated_method = "1A92CE5A737BA0AFBD24555D9744EA34")
+    
+protected StringBuffer encodeBody(StringBuffer buffer) {
         if (contentCoding != null) {
             buffer.append(contentCoding);
         }
@@ -56,8 +59,9 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
      *
      * @return float
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.981 -0500", hash_original_method = "6B0931DE2FCF1641F5A5332B85279714", hash_generated_method = "A0A867CA28AD6FE1753111449C70A72C")
-    public float getQValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.248 -0500", hash_original_method = "6B0931DE2FCF1641F5A5332B85279714", hash_generated_method = "A0A867CA28AD6FE1753111449C70A72C")
+    
+public float getQValue() {
         return getParameterAsFloat("q");
     }
 
@@ -66,8 +70,9 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
      *
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.982 -0500", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "D5E75F502117767332C80F541C2D5ACA")
-    public String getEncoding() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.251 -0500", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "D5E75F502117767332C80F541C2D5ACA")
+    
+public String getEncoding() {
         return contentCoding;
     }
 
@@ -77,8 +82,9 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
      * @param q
      *            double to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.983 -0500", hash_original_method = "76C27BE10969A23E1C16A937029760DA", hash_generated_method = "D2DFEF4188403CE62B3FDEC5F1DC109A")
-    public void setQValue(float q) throws InvalidArgumentException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.253 -0500", hash_original_method = "76C27BE10969A23E1C16A937029760DA", hash_generated_method = "D2DFEF4188403CE62B3FDEC5F1DC109A")
+    
+public void setQValue(float q) throws InvalidArgumentException {
         if (q < 0.0 || q > 1.0)
             throw new InvalidArgumentException("qvalue out of range!");
         super.setParameter("q", q);
@@ -94,8 +100,9 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
      *             while parsing the encoding value.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.984 -0500", hash_original_method = "F19AC8B3279BF898A8AFB974FE7AAE2D", hash_generated_method = "1D26ACC2D3AE2B50FB22B35F56F5A5F3")
-    public void setEncoding(String encoding) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.256 -0500", hash_original_method = "F19AC8B3279BF898A8AFB974FE7AAE2D", hash_generated_method = "1D26ACC2D3AE2B50FB22B35F56F5A5F3")
+    
+public void setEncoding(String encoding) throws ParseException {
         if (encoding == null)
             throw new NullPointerException(" encoding parameter is null");
         contentCoding = encoding;

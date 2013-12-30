@@ -18,8 +18,9 @@ class Multiplication {
      * @param factor a positive {@code int} number
      * @return {@code val * factor}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.112 -0500", hash_original_method = "D1D350F2DDD3147BCAFA3C9F1D37A8D5", hash_generated_method = "69BD9BFC77D63852CB66187408365DAF")
-    static BigInteger multiplyByPositiveInt(BigInteger val, int factor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.021 -0500", hash_original_method = "D1D350F2DDD3147BCAFA3C9F1D37A8D5", hash_generated_method = "69BD9BFC77D63852CB66187408365DAF")
+    
+static BigInteger multiplyByPositiveInt(BigInteger val, int factor) {
         BigInt bi = val.getBigInt().copy();
         bi.multiplyByPositiveInt(factor);
         return new BigInteger(bi);
@@ -32,8 +33,9 @@ class Multiplication {
      * @param exp a positive {@code long} exponent
      * @return {@code val * 10<sup>exp</sup>}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.112 -0500", hash_original_method = "546ADD18DFC665D3BFD1EC85F053ED92", hash_generated_method = "9625348A961D86F15E58A5E05C374BB1")
-    static BigInteger multiplyByTenPow(BigInteger val, long exp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.024 -0500", hash_original_method = "546ADD18DFC665D3BFD1EC85F053ED92", hash_generated_method = "9625348A961D86F15E58A5E05C374BB1")
+    
+static BigInteger multiplyByTenPow(BigInteger val, long exp) {
         // PRE: exp >= 0
         return ((exp < tenPows.length)
         ? multiplyByPositiveInt(val, tenPows[(int)exp])
@@ -47,8 +49,9 @@ class Multiplication {
      * @param exp the exponent of power of ten, it must be positive.
      * @return a {@code BigInteger} with value {@code 10<sup>exp</sup>}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.114 -0500", hash_original_method = "2834F7E1D24878B9AB4D87659676BBDC", hash_generated_method = "41389D46E9EA9428D832026CA4A66826")
-    static BigInteger powerOf10(long exp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.027 -0500", hash_original_method = "2834F7E1D24878B9AB4D87659676BBDC", hash_generated_method = "41389D46E9EA9428D832026CA4A66826")
+    
+static BigInteger powerOf10(long exp) {
         // PRE: exp >= 0
         int intExp = (int)exp;
         // "SMALL POWERS"
@@ -111,8 +114,9 @@ class Multiplication {
      * @param exp a positive {@code int} exponent
      * @return {@code val * 5<sup>exp</sup>}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.114 -0500", hash_original_method = "DACF258463E816AF2E85D9BE7940A118", hash_generated_method = "1CDECBF10F6A15E44A7BD3691A4DDB13")
-    static BigInteger multiplyByFivePow(BigInteger val, int exp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.030 -0500", hash_original_method = "DACF258463E816AF2E85D9BE7940A118", hash_generated_method = "1CDECBF10F6A15E44A7BD3691A4DDB13")
+    
+static BigInteger multiplyByFivePow(BigInteger val, int exp) {
         // PRE: exp >= 0
         if (exp < fivePows.length) {
             return multiplyByPositiveInt(val, fivePows[exp]);
@@ -122,7 +126,7 @@ class Multiplication {
             return val.multiply(bigFivePows[1].pow(exp));
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.108 -0500", hash_original_field = "1850E48814F4623DD9E50F0CC854E005", hash_generated_field = "C62E9E46C29087DCE458B5F6F490C3C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.010 -0500", hash_original_field = "1850E48814F4623DD9E50F0CC854E005", hash_generated_field = "C62E9E46C29087DCE458B5F6F490C3C3")
 
     // /**
     //  * Break point in digits (number of {@code int} elements)
@@ -138,22 +142,23 @@ class Multiplication {
     static final int[] tenPows = {
         1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.109 -0500", hash_original_field = "9137FA2EA0A151E9BB637201953058C3", hash_generated_field = "D326483DE454C972EE7633CD9D18E72D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.013 -0500", hash_original_field = "9137FA2EA0A151E9BB637201953058C3", hash_generated_field = "D326483DE454C972EE7633CD9D18E72D")
 
     static final int[] fivePows = {
         1, 5, 25, 125, 625, 3125, 15625, 78125, 390625,
         1953125, 9765625, 48828125, 244140625, 1220703125
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.110 -0500", hash_original_field = "8FBC6B3C74CCA7314360D25104ECC6C6", hash_generated_field = "EB8D9193DD0597CA202E65272FAA716C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.015 -0500", hash_original_field = "8FBC6B3C74CCA7314360D25104ECC6C6", hash_generated_field = "EB8D9193DD0597CA202E65272FAA716C")
 
     static final BigInteger[] bigTenPows = new BigInteger[32];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.110 -0500", hash_original_field = "707B82BF5B5C4D56BFC99F1D55C0BF60", hash_generated_field = "E7F9D2BF2ACA064B6E42E8C0B0CF0EF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.018 -0500", hash_original_field = "707B82BF5B5C4D56BFC99F1D55C0BF60", hash_generated_field = "E7F9D2BF2ACA064B6E42E8C0B0CF0EF9")
 
     static final BigInteger bigFivePows[] = new BigInteger[32];
 
     /** Just to denote that this class can't be instantiated. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.107 -0500", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "3C7B22114503E6EA0B68A72F303C2BF0")
-    private Multiplication() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.008 -0500", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "3C7B22114503E6EA0B68A72F303C2BF0")
+    
+private Multiplication() {}
     static {
         int i;
         long fivePow = 1L;

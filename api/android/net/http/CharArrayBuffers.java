@@ -22,8 +22,9 @@ class CharArrayBuffers {
      * @param beginIndex index at which we should start
      * @param str to search for
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.662 -0500", hash_original_method = "14BDAF38F8E4DBDB46D640654A4FD3CD", hash_generated_method = "EE0E5D5A8B29129E0A019FCBD0E7A8E6")
-    static boolean containsIgnoreCaseTrimmed(CharArrayBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.594 -0500", hash_original_method = "14BDAF38F8E4DBDB46D640654A4FD3CD", hash_generated_method = "EE0E5D5A8B29129E0A019FCBD0E7A8E6")
+    
+static boolean containsIgnoreCaseTrimmed(CharArrayBuffer buffer,
             int beginIndex, final String str) {
         int len = buffer.length();
         char[] chars = buffer.buffer();
@@ -48,8 +49,9 @@ class CharArrayBuffers {
      * Returns index of first occurence ch. Lower cases characters leading up
      * to first occurrence of ch.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.663 -0500", hash_original_method = "4CADF077932F3A8A3D23326E66B54935", hash_generated_method = "6F88683D6B19460AB98E6529FA6AC33B")
-    static int setLowercaseIndexOf(CharArrayBuffer buffer, final int ch) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.597 -0500", hash_original_method = "4CADF077932F3A8A3D23326E66B54935", hash_generated_method = "6F88683D6B19460AB98E6529FA6AC33B")
+    
+static int setLowercaseIndexOf(CharArrayBuffer buffer, final int ch) {
 
         int beginIndex = 0;
         int endIndex = buffer.length();
@@ -68,14 +70,15 @@ class CharArrayBuffers {
         return -1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.664 -0500", hash_original_method = "29B6D57F0C4C946FE15B5F16943E4D7D", hash_generated_method = "D08A8C824654082C89BE8A224FBB07F1")
-    private static char toLower(char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.599 -0500", hash_original_method = "29B6D57F0C4C946FE15B5F16943E4D7D", hash_generated_method = "D08A8C824654082C89BE8A224FBB07F1")
+    
+private static char toLower(char c) {
         if (c >= 'A' && c <= 'Z'){
             c += uppercaseAddon;
         }
         return c;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.661 -0500", hash_original_field = "3816CC3E335E581DB7D1A94C7707CF43", hash_generated_field = "B3E115C5CFE77FCACE5B31A27B8BA562")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.592 -0500", hash_original_field = "3816CC3E335E581DB7D1A94C7707CF43", hash_generated_field = "B3E115C5CFE77FCACE5B31A27B8BA562")
 
 
     static final char uppercaseAddon = 'a' - 'A';

@@ -40,8 +40,9 @@ public class CallerInfo {
      * @return the CallerInfo which contains the caller id for the given
      * number. The returned CallerInfo is null if no number is supplied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.081 -0500", hash_original_method = "5A41265338B441253D84C904D0572F1D", hash_generated_method = "D527D4D2440A499A7FDB9223A8D1728A")
-    public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.400 -0500", hash_original_method = "5A41265338B441253D84C904D0572F1D", hash_generated_method = "D527D4D2440A499A7FDB9223A8D1728A")
+    
+public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
         CallerInfo info = new CallerInfo();
         info.photoResource = 0;
         info.phoneLabel = null;
@@ -139,8 +140,9 @@ public class CallerInfo {
      * @return the CallerInfo which contains the caller id for the given
      * number. The returned CallerInfo is null if no number is supplied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.082 -0500", hash_original_method = "C8DFF2D0C3894E1B9175858C5EE3D3BB", hash_generated_method = "237AEB559BC360557812F8BE65E7FC45")
-    public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.403 -0500", hash_original_method = "C8DFF2D0C3894E1B9175858C5EE3D3BB", hash_generated_method = "237AEB559BC360557812F8BE65E7FC45")
+    
+public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
 
         return getCallerInfo(context, contactRef,
                 context.getContentResolver().query(contactRef, null, null, null, null));
@@ -156,8 +158,9 @@ public class CallerInfo {
      * a matching number is not found, then a generic caller info is returned,
      * with all relevant fields empty or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.083 -0500", hash_original_method = "B6705B43DEEA0F2192B48F9F777B01B4", hash_generated_method = "FE8D81ECCCA8A8D5C94A6A43ADF78785")
-    public static CallerInfo getCallerInfo(Context context, String number) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.406 -0500", hash_original_method = "B6705B43DEEA0F2192B48F9F777B01B4", hash_generated_method = "FE8D81ECCCA8A8D5C94A6A43ADF78785")
+    
+public static CallerInfo getCallerInfo(Context context, String number) {
         if (VDBG) Log.v(TAG, "getCallerInfo() based on number...");
 
         if (TextUtils.isEmpty(number)) {
@@ -197,8 +200,9 @@ public class CallerInfo {
      * @param previousResult the result of previous lookup
      * @return previousResult if it's not the case
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.083 -0500", hash_original_method = "2C00C7AAB5402D365DFE9454D01A448E", hash_generated_method = "7E78560CD6C15B30DB0177E24FE61CB0")
-    static CallerInfo doSecondaryLookupIfNecessary(Context context,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.408 -0500", hash_original_method = "2C00C7AAB5402D365DFE9454D01A448E", hash_generated_method = "7E78560CD6C15B30DB0177E24FE61CB0")
+    
+static CallerInfo doSecondaryLookupIfNecessary(Context context,
             String number, CallerInfo previousResult) {
         if (!previousResult.contactExists
                 && PhoneNumberUtils.isUriNumber(number)) {
@@ -228,8 +232,9 @@ public class CallerInfo {
      *   2. android.provider.Telephony.Sms.getDisplayAddress()
      * We may not need to make the change.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.085 -0500", hash_original_method = "AE0F6FD0A3800B899159B72DD57AA38C", hash_generated_method = "88815FCB5523578FB3BBEA604044CB5D")
-    public static String getCallerId(Context context, String number) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.411 -0500", hash_original_method = "AE0F6FD0A3800B899159B72DD57AA38C", hash_generated_method = "88815FCB5523578FB3BBEA604044CB5D")
+    
+public static String getCallerId(Context context, String number) {
         CallerInfo info = getCallerInfo(context, number);
         String callerID = null;
 
@@ -246,8 +251,9 @@ public class CallerInfo {
         return callerID;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.090 -0500", hash_original_method = "71A6B1217E93364C7D01FED08EAA4DA2", hash_generated_method = "45B1D7824A9F151C89386B31B7CDCF36")
-    private static String normalize(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.423 -0500", hash_original_method = "71A6B1217E93364C7D01FED08EAA4DA2", hash_generated_method = "45B1D7824A9F151C89386B31B7CDCF36")
+    
+private static String normalize(String s) {
         if (s == null || s.length() > 0) {
             return s;
         } else {
@@ -279,8 +285,9 @@ public class CallerInfo {
      * can at least make sure we handle all the URI patterns we claim to,
      * and that the mime types match what we expect...)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.094 -0500", hash_original_method = "97B5B13CD9531D9C33606FD55C18B289", hash_generated_method = "708E7269CAE868800938544CD9E20D21")
-    private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.426 -0500", hash_original_method = "97B5B13CD9531D9C33606FD55C18B289", hash_generated_method = "708E7269CAE868800938544CD9E20D21")
+    
+private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
         // TODO: This is pretty ugly now, see bug 2269240 for
         // more details. The column to use depends upon the type of URL:
         // - content://com.android.contacts/data/phones ==> use the "contact_id" column
@@ -337,8 +344,9 @@ public class CallerInfo {
      * @return a geographical description string for the specified number.
      * @see com.android.i18n.phonenumbers.PhoneNumberOfflineGeocoder
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.096 -0500", hash_original_method = "4B8F82068E1A8ACD295433986C1E11C8", hash_generated_method = "E14D0297110973E7DC1BD55768C4078F")
-    private static String getGeoDescription(Context context, String number) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.433 -0500", hash_original_method = "4B8F82068E1A8ACD295433986C1E11C8", hash_generated_method = "E14D0297110973E7DC1BD55768C4078F")
+    
+private static String getGeoDescription(Context context, String number) {
         if (VDBG) Log.v(TAG, "getGeoDescription('" + number + "')...");
 
         if (TextUtils.isEmpty(number)) {
@@ -373,8 +381,9 @@ public class CallerInfo {
      * @return The ISO 3166-1 two letters country code of the country the user
      *         is in.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.097 -0500", hash_original_method = "0D5401F0D97863706C064268E937371A", hash_generated_method = "0C80639C06ED731977181720804DDAFB")
-    private static String getCurrentCountryIso(Context context, Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.436 -0500", hash_original_method = "0D5401F0D97863706C064268E937371A", hash_generated_method = "0C80639C06ED731977181720804DDAFB")
+    
+private static String getCurrentCountryIso(Context context, Locale locale) {
       String countryIso;
       CountryDetector detector = (CountryDetector) context.getSystemService(
           Context.COUNTRY_DETECTOR);
@@ -387,94 +396,95 @@ public class CallerInfo {
       }
       return countryIso;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.059 -0500", hash_original_field = "24F2322836AB1B8A7BD0513635DB2C39", hash_generated_field = "C5F3F4D6C7BF19031224AC54C88CAD76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.332 -0500", hash_original_field = "24F2322836AB1B8A7BD0513635DB2C39", hash_generated_field = "C5F3F4D6C7BF19031224AC54C88CAD76")
 
     private static final String TAG = "CallerInfo";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.060 -0500", hash_original_field = "D5BCFD9D55F5E2FDD0A34ACE949618EF", hash_generated_field = "CD7C09194C67AD23C544256A6D8EFBB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.334 -0500", hash_original_field = "D5BCFD9D55F5E2FDD0A34ACE949618EF", hash_generated_field = "CD7C09194C67AD23C544256A6D8EFBB5")
 
     private static final boolean VDBG = Log.isLoggable(TAG, Log.VERBOSE);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.061 -0500", hash_original_field = "88E44D205DD4CD062C11D9A9EBE039D4", hash_generated_field = "14B5286CD5D74D78D60A61E8C23808CE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.337 -0500", hash_original_field = "88E44D205DD4CD062C11D9A9EBE039D4", hash_generated_field = "14B5286CD5D74D78D60A61E8C23808CE")
 
 
     public static final String UNKNOWN_NUMBER = "-1";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.062 -0500", hash_original_field = "400A8812536EC2D8A5A82ED8FC0A8857", hash_generated_field = "F1BFDCCA16CC5317696C3F332263F25D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.340 -0500", hash_original_field = "400A8812536EC2D8A5A82ED8FC0A8857", hash_generated_field = "F1BFDCCA16CC5317696C3F332263F25D")
 
     public static final String PRIVATE_NUMBER = "-2";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.063 -0500", hash_original_field = "572D897123F626D02CFB052CCD7E3FAB", hash_generated_field = "AD763B8C4A748AFE8A010B8438E44320")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.343 -0500", hash_original_field = "572D897123F626D02CFB052CCD7E3FAB", hash_generated_field = "AD763B8C4A748AFE8A010B8438E44320")
 
     public static final String PAYPHONE_NUMBER = "-3";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.063 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.345 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
 
     public String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.064 -0500", hash_original_field = "A04F843FCA6ED01F4CA0662FF1DB199D", hash_generated_field = "440AA77A6AFE31BB4A89DD3D69494FCC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.348 -0500", hash_original_field = "A04F843FCA6ED01F4CA0662FF1DB199D", hash_generated_field = "440AA77A6AFE31BB4A89DD3D69494FCC")
 
     public String phoneNumber;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.065 -0500", hash_original_field = "E21455718ED54AF9066F8010A3E5E3B6", hash_generated_field = "1FCAC956C55CA8FE65CE95314F7F25A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.350 -0500", hash_original_field = "E21455718ED54AF9066F8010A3E5E3B6", hash_generated_field = "1FCAC956C55CA8FE65CE95314F7F25A5")
 
     public String normalizedNumber;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.066 -0500", hash_original_field = "8BCBB81FE2872579625B63FCCBF9BA9B", hash_generated_field = "B0F47A76CE370376335E2E3B255A2766")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.352 -0500", hash_original_field = "8BCBB81FE2872579625B63FCCBF9BA9B", hash_generated_field = "B0F47A76CE370376335E2E3B255A2766")
 
     public String geoDescription;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.066 -0500", hash_original_field = "A86CFAAA1D8CDA1D974D232F92D46C54", hash_generated_field = "B239E8D02EB187DB23B68D6C87ACA90A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.354 -0500", hash_original_field = "A86CFAAA1D8CDA1D974D232F92D46C54", hash_generated_field = "B239E8D02EB187DB23B68D6C87ACA90A")
 
 
     public String cnapName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.067 -0500", hash_original_field = "091FFF931E0CD34BE4923BA987466B67", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.357 -0500", hash_original_field = "091FFF931E0CD34BE4923BA987466B67", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
 
     public int numberPresentation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.068 -0500", hash_original_field = "721EAC59B6591E31E8992E203B2B56AC", hash_generated_field = "7E759DEFD9070D930A5C3E6F52204FE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.360 -0500", hash_original_field = "721EAC59B6591E31E8992E203B2B56AC", hash_generated_field = "7E759DEFD9070D930A5C3E6F52204FE3")
 
     public int namePresentation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.069 -0500", hash_original_field = "FEA319BCF25E7974B5CF54A6AB87B266", hash_generated_field = "BA5FDC53005F54B6481D897E9773C1AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.362 -0500", hash_original_field = "FEA319BCF25E7974B5CF54A6AB87B266", hash_generated_field = "BA5FDC53005F54B6481D897E9773C1AD")
 
     public boolean contactExists;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.070 -0500", hash_original_field = "95C16318AFD6918358C801BB8461E342", hash_generated_field = "B16EA2F1B36E8F31FFFDD25645C62D92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.364 -0500", hash_original_field = "95C16318AFD6918358C801BB8461E342", hash_generated_field = "B16EA2F1B36E8F31FFFDD25645C62D92")
 
 
     public String phoneLabel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.070 -0500", hash_original_field = "E16E5C9061E3FE5EA676B56B8F3FE12A", hash_generated_field = "CB2493E4DE6F750739F3F00C76D6A18B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.366 -0500", hash_original_field = "E16E5C9061E3FE5EA676B56B8F3FE12A", hash_generated_field = "CB2493E4DE6F750739F3F00C76D6A18B")
 
     public int    numberType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.071 -0500", hash_original_field = "AC150EDA039E39FC33F6127CA31D7746", hash_generated_field = "DC003E91EAF2F383F99FD982D8286299")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.369 -0500", hash_original_field = "AC150EDA039E39FC33F6127CA31D7746", hash_generated_field = "DC003E91EAF2F383F99FD982D8286299")
 
     public String numberLabel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.072 -0500", hash_original_field = "E040943544417634A9F8730D6BF32FF4", hash_generated_field = "7D7BB200679F8010347C035166402B92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.371 -0500", hash_original_field = "E040943544417634A9F8730D6BF32FF4", hash_generated_field = "7D7BB200679F8010347C035166402B92")
 
 
     public int photoResource;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.073 -0500", hash_original_field = "D890AD54D13DB50B764EDF26A6912FAE", hash_generated_field = "FDDDE3BF3B641EAA1034B3C7122F3126")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.373 -0500", hash_original_field = "D890AD54D13DB50B764EDF26A6912FAE", hash_generated_field = "FDDDE3BF3B641EAA1034B3C7122F3126")
 
     public long person_id;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.073 -0500", hash_original_field = "E7876C24AC2FEF19279BE93301995D9B", hash_generated_field = "17EB7188E1B1D845DEEC396DC31CC981")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.376 -0500", hash_original_field = "E7876C24AC2FEF19279BE93301995D9B", hash_generated_field = "17EB7188E1B1D845DEEC396DC31CC981")
 
     public boolean needUpdate;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.074 -0500", hash_original_field = "E6FE2C85BD8AED1A45E92536CB58EF94", hash_generated_field = "612D6F5E16D520A8FBC35209D3A929E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.379 -0500", hash_original_field = "E6FE2C85BD8AED1A45E92536CB58EF94", hash_generated_field = "612D6F5E16D520A8FBC35209D3A929E0")
 
     public Uri contactRefUri;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.075 -0500", hash_original_field = "97C454826C52D464945775EACEF122CD", hash_generated_field = "9866CCD528FD6B9BE8BC0A1FABA8076F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.381 -0500", hash_original_field = "97C454826C52D464945775EACEF122CD", hash_generated_field = "9866CCD528FD6B9BE8BC0A1FABA8076F")
 
     // including the send to voicemail flag and the ringtone
     // uri reference.
     public Uri contactRingtoneUri;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.076 -0500", hash_original_field = "30A988FA21E597576878E9B257F59B69", hash_generated_field = "B5047F13B9C79DABFA54CBD97E311123")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.384 -0500", hash_original_field = "30A988FA21E597576878E9B257F59B69", hash_generated_field = "B5047F13B9C79DABFA54CBD97E311123")
 
     public boolean shouldSendToVoicemail;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.076 -0500", hash_original_field = "7C3670BB92C33909031315997ABEA84E", hash_generated_field = "BD5B69D3766879CD2CBA19452914957C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.386 -0500", hash_original_field = "7C3670BB92C33909031315997ABEA84E", hash_generated_field = "BD5B69D3766879CD2CBA19452914957C")
 
     public Drawable cachedPhoto;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.077 -0500", hash_original_field = "AD8B69B9C3B44F0BDE9948BD83993F25", hash_generated_field = "BAFA7F448C3A70043BC325312AF1D8E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.388 -0500", hash_original_field = "AD8B69B9C3B44F0BDE9948BD83993F25", hash_generated_field = "BAFA7F448C3A70043BC325312AF1D8E9")
 
     public boolean isCachedPhotoCurrent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.078 -0500", hash_original_field = "79ACDEE21348FCBA838FCD3882A1E1F2", hash_generated_field = "A071CE64713D0CEBE0F796AE77A242C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.391 -0500", hash_original_field = "79ACDEE21348FCBA838FCD3882A1E1F2", hash_generated_field = "A071CE64713D0CEBE0F796AE77A242C0")
 
 
     private boolean mIsEmergency;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.078 -0500", hash_original_field = "FC816548BA48F427434856E62F32DAFD", hash_generated_field = "FDF7722A08FE4E08F4285E4AC4744B13")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.393 -0500", hash_original_field = "FC816548BA48F427434856E62F32DAFD", hash_generated_field = "FDF7722A08FE4E08F4285E4AC4744B13")
 
     private boolean mIsVoiceMail;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.079 -0500", hash_original_method = "35A0AB919675AC2E6DFA09874C99CFA1", hash_generated_method = "3203BA7BAB90011193C0ECF77A188AB3")
-    public CallerInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.395 -0500", hash_original_method = "35A0AB919675AC2E6DFA09874C99CFA1", hash_generated_method = "3203BA7BAB90011193C0ECF77A188AB3")
+    
+public CallerInfo() {
         // TODO: Move all the basic initialization here?
         mIsEmergency = false;
         mIsVoiceMail = false;
@@ -485,16 +495,18 @@ public class CallerInfo {
     /**
      * @return true if the caller info is an emergency number.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.086 -0500", hash_original_method = "949F12A508ED637C7BFB9FE80F3ED419", hash_generated_method = "02824529B8E2768EC15C370229C0E676")
-    public boolean isEmergencyNumber() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.414 -0500", hash_original_method = "949F12A508ED637C7BFB9FE80F3ED419", hash_generated_method = "02824529B8E2768EC15C370229C0E676")
+    
+public boolean isEmergencyNumber() {
         return mIsEmergency;
     }
 
     /**
      * @return true if the caller info is a voicemail number.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.086 -0500", hash_original_method = "61436A0A05C2AD638DF9E2E803CA6155", hash_generated_method = "84A96A2BC608CC5A2D95B9C31C7E5E7D")
-    public boolean isVoiceMailNumber() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.416 -0500", hash_original_method = "61436A0A05C2AD638DF9E2E803CA6155", hash_generated_method = "84A96A2BC608CC5A2D95B9C31C7E5E7D")
+    
+public boolean isVoiceMailNumber() {
         return mIsVoiceMail;
     }
 
@@ -510,8 +522,9 @@ public class CallerInfo {
     // should set the phone number to the dialed number and name to
     // 'Emergency Number' and let the UI make the decision about what
     // should be displayed.
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.088 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
-    CallerInfo markAsEmergency(Context context) {
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.418 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
+    
+CallerInfo markAsEmergency(Context context) {
         phoneNumber = context.getString(
             com.android.internal.R.string.emergency_call_dialog_number_for_display);
         photoResource = com.android.internal.R.drawable.picture_emergency;
@@ -529,8 +542,9 @@ public class CallerInfo {
      */
     // TODO: As in the emergency number handling, we end up writing a
     // string in the phone number field.
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.089 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
-    CallerInfo markAsVoiceMail() {
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.421 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
+    
+CallerInfo markAsVoiceMail() {
         mIsVoiceMail = true;
 
         try {
@@ -563,8 +577,9 @@ public class CallerInfo {
      * @param fallbackNumber if this CallerInfo's phoneNumber field is empty,
      *        this specifies a fallback number to use instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.095 -0500", hash_original_method = "3180F1E37BC19852F53F68E8E13D968F", hash_generated_method = "142D116AA6B903156CA8D0D1CDF95D3B")
-    public void updateGeoDescription(Context context, String fallbackNumber) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.429 -0500", hash_original_method = "3180F1E37BC19852F53F68E8E13D968F", hash_generated_method = "142D116AA6B903156CA8D0D1CDF95D3B")
+    
+public void updateGeoDescription(Context context, String fallbackNumber) {
         String number = TextUtils.isEmpty(phoneNumber) ? fallbackNumber : phoneNumber;
         geoDescription = getGeoDescription(context, number);
     }
@@ -572,8 +587,9 @@ public class CallerInfo {
     /**
      * @return a string debug representation of this instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.098 -0500", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "7A65E4C100BDD67B7E46680E057873AC")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.440 -0500", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "7A65E4C100BDD67B7E46680E057873AC")
+    
+public String toString() {
         // Warning: never check in this file with VERBOSE_DEBUG = true
         // because that will result in PII in the system log.
         final boolean VERBOSE_DEBUG = false;

@@ -14,79 +14,79 @@ import java.io.ObjectOutputStream;
 
 
 public class GregorianCalendar extends Calendar {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.556 -0500", hash_original_field = "2AEF9994CA92EDBF78CF161F830ED6AD", hash_generated_field = "B9386A44E9BFA9A5ED8D3E7882B2C9E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.292 -0500", hash_original_field = "2AEF9994CA92EDBF78CF161F830ED6AD", hash_generated_field = "B9386A44E9BFA9A5ED8D3E7882B2C9E1")
 
 
     private static final long serialVersionUID = -8125100834729963327L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.557 -0500", hash_original_field = "8F18B7E25931F3F020A38D92250DBC58", hash_generated_field = "93BFF7C10A82D9138EF2CEC785C901D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.296 -0500", hash_original_field = "8F18B7E25931F3F020A38D92250DBC58", hash_generated_field = "93BFF7C10A82D9138EF2CEC785C901D2")
 
     public static final int BC = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.558 -0500", hash_original_field = "14044B627C1BE79FBC4B0CF60A89B14F", hash_generated_field = "BC845EBD4DA20DC255F4737CB21267E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.299 -0500", hash_original_field = "14044B627C1BE79FBC4B0CF60A89B14F", hash_generated_field = "BC845EBD4DA20DC255F4737CB21267E2")
 
     public static final int AD = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.559 -0500", hash_original_field = "6D017D6AC78BE66FCF363B178D70A5E6", hash_generated_field = "23BA66807055EDC52580EFE8B68EA6D9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.301 -0500", hash_original_field = "6D017D6AC78BE66FCF363B178D70A5E6", hash_generated_field = "23BA66807055EDC52580EFE8B68EA6D9")
 
 
     private static final long defaultGregorianCutover = -12219292800000l;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.562 -0500", hash_original_field = "C710FC910AD6EEE7024665E4E1306978", hash_generated_field = "D109403F40DEAA9D96D5485CCE288282")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.310 -0500", hash_original_field = "C710FC910AD6EEE7024665E4E1306978", hash_generated_field = "D109403F40DEAA9D96D5485CCE288282")
 
 
     static byte[] DaysInMonth = new byte[] { 31, 28, 31, 30, 31, 30, 31, 31,
             30, 31, 30, 31 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.563 -0500", hash_original_field = "3964D1A3597A89E7D22F1ED4946E1C6E", hash_generated_field = "0A4DD57D0556CD2CAD7A071A46A83584")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.313 -0500", hash_original_field = "3964D1A3597A89E7D22F1ED4946E1C6E", hash_generated_field = "0A4DD57D0556CD2CAD7A071A46A83584")
 
 
     private static int[] DaysInYear = new int[] { 0, 31, 59, 90, 120, 151, 181,
             212, 243, 273, 304, 334 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.564 -0500", hash_original_field = "3D6D2EAD2325BFBC091903FED8C6BDDD", hash_generated_field = "9C039D691AF795C6B392702421AF992F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.315 -0500", hash_original_field = "3D6D2EAD2325BFBC091903FED8C6BDDD", hash_generated_field = "9C039D691AF795C6B392702421AF992F")
 
 
     private static int[] maximums = new int[] { 1, 292278994, 11, 53, 6, 31,
             366, 7, 6, 1, 11, 23, 59, 59, 999, 14 * 3600 * 1000, 7200000 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.565 -0500", hash_original_field = "5898DF6E9360F94F2965C8DBDD3A60FE", hash_generated_field = "34197BE97C1359ACB541F3CFF4B6D197")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.318 -0500", hash_original_field = "5898DF6E9360F94F2965C8DBDD3A60FE", hash_generated_field = "34197BE97C1359ACB541F3CFF4B6D197")
 
 
     private static int[] minimums = new int[] { 0, 1, 0, 1, 0, 1, 1, 1, 1, 0,
             0, 0, 0, 0, 0, -13 * 3600 * 1000, 0 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.566 -0500", hash_original_field = "F896471ADDEB35A649148FC6116CF846", hash_generated_field = "72A42F262CE1CA8E4E3156D2F2A817C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.320 -0500", hash_original_field = "F896471ADDEB35A649148FC6116CF846", hash_generated_field = "72A42F262CE1CA8E4E3156D2F2A817C5")
 
 
     private static int[] leastMaximums = new int[] { 1, 292269054, 11, 50, 3,
             28, 355, 7, 3, 1, 11, 23, 59, 59, 999, 50400000, 1200000 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.560 -0500", hash_original_field = "062786F3914B87EA492F5CD0ADF5D8B8", hash_generated_field = "EA14FB63AF074345B169453863E64EC4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.303 -0500", hash_original_field = "062786F3914B87EA492F5CD0ADF5D8B8", hash_generated_field = "EA14FB63AF074345B169453863E64EC4")
 
 
     private long gregorianCutover = defaultGregorianCutover;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.561 -0500", hash_original_field = "B32171748BA84798392B75BE3D1CAB8A", hash_generated_field = "A0B8CA27149DD74350CDB7EC98C60162")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.306 -0500", hash_original_field = "B32171748BA84798392B75BE3D1CAB8A", hash_generated_field = "A0B8CA27149DD74350CDB7EC98C60162")
 
 
     private transient int changeYear = 1582;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.562 -0500", hash_original_field = "A2A1BF323C469790B379905EA1AE037F", hash_generated_field = "2808C9DD640CD873EE96A55ECDBB8D85")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.308 -0500", hash_original_field = "A2A1BF323C469790B379905EA1AE037F", hash_generated_field = "2808C9DD640CD873EE96A55ECDBB8D85")
 
 
     private transient int julianSkew = ((changeYear - 2000) / 400)
             + julianError() - ((changeYear - 2000) / 100);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.566 -0500", hash_original_field = "BD96B1F139C8EA198B3A1B2CA97B93E5", hash_generated_field = "4B7219F27A11B1E89794219BC39393A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.323 -0500", hash_original_field = "BD96B1F139C8EA198B3A1B2CA97B93E5", hash_generated_field = "4B7219F27A11B1E89794219BC39393A8")
 
 
     private boolean isCached;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.567 -0500", hash_original_field = "29EB5956BF6CB7E2028BB92FA0793412", hash_generated_field = "7AF7C45B7A2B45D012327222457CC902")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.325 -0500", hash_original_field = "29EB5956BF6CB7E2028BB92FA0793412", hash_generated_field = "7AF7C45B7A2B45D012327222457CC902")
 
 
     private int[] cachedFields = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.568 -0500", hash_original_field = "09F8159258A9D84329045A944EE71E7B", hash_generated_field = "EAB4464060441E8E83529F625B8AC792")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.327 -0500", hash_original_field = "09F8159258A9D84329045A944EE71E7B", hash_generated_field = "EAB4464060441E8E83529F625B8AC792")
 
 
     private long nextMidnightMillis = 0L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.569 -0500", hash_original_field = "F99CA18E41E7D3E217421BBFA1B856C6", hash_generated_field = "A139545ACF978509DA3F6AC55F657D39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.330 -0500", hash_original_field = "F99CA18E41E7D3E217421BBFA1B856C6", hash_generated_field = "A139545ACF978509DA3F6AC55F657D39")
 
 
     private long lastMidnightMillis = 0L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.569 -0500", hash_original_field = "665D368DAE9B1850F1AA60EADBCFC3A0", hash_generated_field = "657D9B61D3147BAB9300368D7E5B963D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.332 -0500", hash_original_field = "665D368DAE9B1850F1AA60EADBCFC3A0", hash_generated_field = "657D9B61D3147BAB9300368D7E5B963D")
 
 
     private int currentYearSkew = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.570 -0500", hash_original_field = "8CF3BB1297E7C57B5F8A17186009E762", hash_generated_field = "A15FC9D51CCB159121982FD9BA383E19")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.334 -0500", hash_original_field = "8CF3BB1297E7C57B5F8A17186009E762", hash_generated_field = "A15FC9D51CCB159121982FD9BA383E19")
 
 
     private int lastYearSkew = 0;
@@ -95,8 +95,9 @@ public class GregorianCalendar extends Calendar {
      * Constructs a new {@code GregorianCalendar} initialized to the current date and
      * time with the default {@code Locale} and {@code TimeZone}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.571 -0500", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "8106811364876E1FB5FEFEAB5E247D55")
-    public GregorianCalendar() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.336 -0500", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "8106811364876E1FB5FEFEAB5E247D55")
+    
+public GregorianCalendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
     }
 
@@ -111,8 +112,9 @@ public class GregorianCalendar extends Calendar {
      * @param day
      *            the day of the month.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.572 -0500", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "C6FBC74FDA42BFD4E322BD6205A6B3F8")
-    public GregorianCalendar(int year, int month, int day) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.339 -0500", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "C6FBC74FDA42BFD4E322BD6205A6B3F8")
+    
+public GregorianCalendar(int year, int month, int day) {
         super(TimeZone.getDefault(), Locale.getDefault());
         set(year, month, day);
     }
@@ -132,8 +134,9 @@ public class GregorianCalendar extends Calendar {
      * @param minute
      *            the minute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.573 -0500", hash_original_method = "D6C72587979F1136CC7CF710B2F32D12", hash_generated_method = "200C889D405CFA31C11B19F22D850B0F")
-    public GregorianCalendar(int year, int month, int day, int hour, int minute) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.342 -0500", hash_original_method = "D6C72587979F1136CC7CF710B2F32D12", hash_generated_method = "200C889D405CFA31C11B19F22D850B0F")
+    
+public GregorianCalendar(int year, int month, int day, int hour, int minute) {
         super(TimeZone.getDefault(), Locale.getDefault());
         set(year, month, day, hour, minute);
     }
@@ -155,15 +158,17 @@ public class GregorianCalendar extends Calendar {
      * @param second
      *            the second.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.574 -0500", hash_original_method = "BC793B84C6DC2AD69827C6FC0D0FCEDD", hash_generated_method = "D808C8A13F245E0033CFCF0DD01629DC")
-    public GregorianCalendar(int year, int month, int day, int hour,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.345 -0500", hash_original_method = "BC793B84C6DC2AD69827C6FC0D0FCEDD", hash_generated_method = "D808C8A13F245E0033CFCF0DD01629DC")
+    
+public GregorianCalendar(int year, int month, int day, int hour,
             int minute, int second) {
         super(TimeZone.getDefault(), Locale.getDefault());
         set(year, month, day, hour, minute, second);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.575 -0500", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "63C34121AB8507D7813FBAF0F269A9D2")
-    GregorianCalendar(long milliseconds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.348 -0500", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "63C34121AB8507D7813FBAF0F269A9D2")
+    
+GregorianCalendar(long milliseconds) {
         this(false);
         setTimeInMillis(milliseconds);
     }
@@ -175,8 +180,9 @@ public class GregorianCalendar extends Calendar {
      * @param locale
      *            the {@code Locale}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.575 -0500", hash_original_method = "56E3B8EB09DD30B0731434891C29D1A4", hash_generated_method = "B220926F77A1F0594A80803E8231CBF7")
-    public GregorianCalendar(Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.351 -0500", hash_original_method = "56E3B8EB09DD30B0731434891C29D1A4", hash_generated_method = "B220926F77A1F0594A80803E8231CBF7")
+    
+public GregorianCalendar(Locale locale) {
         this(TimeZone.getDefault(), locale);
     }
 
@@ -187,8 +193,9 @@ public class GregorianCalendar extends Calendar {
      * @param timezone
      *            the {@code TimeZone}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.576 -0500", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "989AD10C10424F4CEEDD7483BF5F80CF")
-    public GregorianCalendar(TimeZone timezone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.354 -0500", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "989AD10C10424F4CEEDD7483BF5F80CF")
+    
+public GregorianCalendar(TimeZone timezone) {
         this(timezone, Locale.getDefault());
     }
 
@@ -201,14 +208,16 @@ public class GregorianCalendar extends Calendar {
      * @param locale
      *            the {@code Locale}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.577 -0500", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "35023E300DC55B5BD1545BFDF63CDBB8")
-    public GregorianCalendar(TimeZone timezone, Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.357 -0500", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "35023E300DC55B5BD1545BFDF63CDBB8")
+    
+public GregorianCalendar(TimeZone timezone, Locale locale) {
         super(timezone, locale);
         setTimeInMillis(System.currentTimeMillis());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.578 -0500", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "0CE38BA4675BDF22B153CA671467EBE6")
-    GregorianCalendar(boolean ignored) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.359 -0500", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "0CE38BA4675BDF22B153CA671467EBE6")
+    
+GregorianCalendar(boolean ignored) {
         super(TimeZone.getDefault());
         setFirstDayOfWeek(SUNDAY);
         setMinimalDaysInFirstWeek(1);
@@ -225,9 +234,10 @@ public class GregorianCalendar extends Calendar {
      * @throws IllegalArgumentException
      *                if the specified field is DST_OFFSET or ZONE_OFFSET.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.580 -0500", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "CD6B180F0015465F27DC84FCF52538BA")
-    @Override
-public void add(int field, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.363 -0500", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "CD6B180F0015465F27DC84FCF52538BA")
+    
+@Override
+    public void add(int field, int value) {
         if (value == 0) {
             return;
         }
@@ -343,16 +353,18 @@ public void add(int field, int value) {
      *
      * @return a shallow copy of this {@code GregorianCalendar}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.581 -0500", hash_original_method = "4451E97BB30CB152B3F7FF3125B7AC95", hash_generated_method = "1D341620BC27492BCFC6A3EA3DD92D1C")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.366 -0500", hash_original_method = "4451E97BB30CB152B3F7FF3125B7AC95", hash_generated_method = "1D341620BC27492BCFC6A3EA3DD92D1C")
+    
+@Override
+    public Object clone() {
         GregorianCalendar thisClone = (GregorianCalendar) super.clone();
         thisClone.cachedFields = cachedFields.clone();
         return thisClone;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.583 -0500", hash_original_method = "005B3A99F85903E106454DD8B0079421", hash_generated_method = "5D5AAECD5714EBB5693CDBC5A5741949")
-    private final void fullFieldsCalc(long timeVal, int millis, int zoneOffset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.371 -0500", hash_original_method = "005B3A99F85903E106454DD8B0079421", hash_generated_method = "5D5AAECD5714EBB5693CDBC5A5741949")
+    
+private final void fullFieldsCalc(long timeVal, int millis, int zoneOffset) {
         long days = timeVal / 86400000;
 
         if (millis < 0) {
@@ -455,8 +467,9 @@ public Object clone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.584 -0500", hash_original_method = "2E866A22E927A34EE822F5C0BBDFB40C", hash_generated_method = "8133CEC61DDB2546B7D27B25AB48C621")
-    private final void cachedFieldsCheckAndGet(long timeVal,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.374 -0500", hash_original_method = "2E866A22E927A34EE822F5C0BBDFB40C", hash_generated_method = "8133CEC61DDB2546B7D27B25AB48C621")
+    
+private final void cachedFieldsCheckAndGet(long timeVal,
             long newTimeMillis, long newTimeMillisAdjusted, int millis,
             int zoneOffset) {
         int dstOffset = fields[DST_OFFSET];
@@ -481,9 +494,10 @@ public Object clone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.586 -0500", hash_original_method = "B0DF08CEBB1EE730F98FF9762C9FEBD4", hash_generated_method = "5C58DD3E66D4E1C008C906C62C5D9263")
-    @Override
-protected void computeFields() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.378 -0500", hash_original_method = "B0DF08CEBB1EE730F98FF9762C9FEBD4", hash_generated_method = "5C58DD3E66D4E1C008C906C62C5D9263")
+    
+@Override
+    protected void computeFields() {
         TimeZone timeZone = getTimeZone();
         int dstOffset = timeZone.inDaylightTime(new Date(time)) ? timeZone.getDSTSavings() : 0;
         int zoneOffset = timeZone.getRawOffset();
@@ -585,9 +599,10 @@ protected void computeFields() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.589 -0500", hash_original_method = "2C41A89AB92A41E731883E58EB4B865A", hash_generated_method = "022959F13365F46FF73CCF558677F2AC")
-    @Override
-protected void computeTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.384 -0500", hash_original_method = "2C41A89AB92A41E731883E58EB4B865A", hash_generated_method = "022959F13365F46FF73CCF558677F2AC")
+    
+@Override
+    protected void computeTime() {
         if (!isLenient()) {
             if (isSet[HOUR_OF_DAY]) {
                 if (fields[HOUR_OF_DAY] < 0 || fields[HOUR_OF_DAY] > 23) {
@@ -794,8 +809,9 @@ protected void computeTime() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.590 -0500", hash_original_method = "2A644CA75A846A9F294F6A7DE0BAB232", hash_generated_method = "8E73AB6637D824B9FAA3816A317AC3E0")
-    private int computeYearAndDay(long dayCount, long localTime) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.387 -0500", hash_original_method = "2A644CA75A846A9F294F6A7DE0BAB232", hash_generated_method = "8E73AB6637D824B9FAA3816A317AC3E0")
+    
+private int computeYearAndDay(long dayCount, long localTime) {
         int year = 1970;
         long days = dayCount;
         if (localTime < gregorianCutover) {
@@ -815,8 +831,9 @@ protected void computeTime() {
         return (int) days + 1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.591 -0500", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "C78D61EDBA01C546F088DF888225FF91")
-    private long daysFromBaseYear(int iyear) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.390 -0500", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "C78D61EDBA01C546F088DF888225FF91")
+    
+private long daysFromBaseYear(int iyear) {
         long year = iyear;
 
         if (year >= 1970) {
@@ -840,13 +857,15 @@ protected void computeTime() {
                 - ((year - 2000) / 100) + ((year - 2000) / 400);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.592 -0500", hash_original_method = "B393AFA9309B3ECCDD74469F481095BD", hash_generated_method = "3D80089CAC945F7D85B5EBE0BD6A19BE")
-    private int daysInMonth() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.392 -0500", hash_original_method = "B393AFA9309B3ECCDD74469F481095BD", hash_generated_method = "3D80089CAC945F7D85B5EBE0BD6A19BE")
+    
+private int daysInMonth() {
         return daysInMonth(isLeapYear(fields[YEAR]), fields[MONTH]);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.593 -0500", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "B76702503A4E8E0C89A90CF13CA4C1F7")
-    private int daysInMonth(boolean leapYear, int month) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.395 -0500", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "B76702503A4E8E0C89A90CF13CA4C1F7")
+    
+private int daysInMonth(boolean leapYear, int month) {
         if (leapYear && month == FEBRUARY) {
             return DaysInMonth[month] + 1;
         }
@@ -854,8 +873,9 @@ protected void computeTime() {
         return DaysInMonth[month];
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.594 -0500", hash_original_method = "643B799339D2A3831DACB9C12752109A", hash_generated_method = "DBDC23FEAAD1342B28D6E8FF18631D90")
-    private int daysInYear(int year) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.397 -0500", hash_original_method = "643B799339D2A3831DACB9C12752109A", hash_generated_method = "DBDC23FEAAD1342B28D6E8FF18631D90")
+    
+private int daysInYear(int year) {
         int daysInYear = isLeapYear(year) ? 366 : 365;
         if (year == changeYear) {
             daysInYear -= currentYearSkew;
@@ -866,8 +886,9 @@ protected void computeTime() {
         return daysInYear;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.595 -0500", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "0C8FD76949EE8694052989880C69E55A")
-    private int daysInYear(boolean leapYear, int month) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.400 -0500", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "0C8FD76949EE8694052989880C69E55A")
+    
+private int daysInYear(boolean leapYear, int month) {
         if (leapYear && month > FEBRUARY) {
             return DaysInYear[month] + 1;
         }
@@ -889,9 +910,10 @@ protected void computeTime() {
      *                from the current field values.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.595 -0500", hash_original_method = "61C11EDCA3B03978A14421C2440916AB", hash_generated_method = "638BA54CFC73F2DB62C2F1DAB15463EE")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.403 -0500", hash_original_method = "61C11EDCA3B03978A14421C2440916AB", hash_generated_method = "638BA54CFC73F2DB62C2F1DAB15463EE")
+    
+@Override
+    public boolean equals(Object object) {
         if (!(object instanceof GregorianCalendar)) {
             return false;
         }
@@ -910,9 +932,10 @@ public boolean equals(Object object) {
      *            the field.
      * @return the maximum value of the specified field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.597 -0500", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "913FDEF5112DA93F0557A07043E98A89")
-    @Override
-public int getActualMaximum(int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.406 -0500", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "913FDEF5112DA93F0557A07043E98A89")
+    
+@Override
+    public int getActualMaximum(int field) {
         int value;
         if ((value = maximums[field]) == leastMaximums[field]) {
             return value;
@@ -982,9 +1005,10 @@ public int getActualMaximum(int field) {
      *            the field.
      * @return the minimum value of the specified field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.597 -0500", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "9859DA9E3BF6480B52F971E718B8EF8F")
-    @Override
-public int getActualMinimum(int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.409 -0500", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "9859DA9E3BF6480B52F971E718B8EF8F")
+    
+@Override
+    public int getActualMinimum(int field) {
         return getMinimum(field);
     }
 
@@ -996,9 +1020,10 @@ public int getActualMinimum(int field) {
      *            the field.
      * @return the greatest minimum value of the specified field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.598 -0500", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "06503E779DF1AAE63FA9E76A736474C4")
-    @Override
-public int getGreatestMinimum(int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.411 -0500", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "06503E779DF1AAE63FA9E76A736474C4")
+    
+@Override
+    public int getGreatestMinimum(int field) {
         return minimums[field];
     }
 
@@ -1008,8 +1033,9 @@ public int getGreatestMinimum(int field) {
      *
      * @return a {@code Date} which represents the gregorian change date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.599 -0500", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "6F349129557415586896680515720B93")
-    public final Date getGregorianChange() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.414 -0500", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "6F349129557415586896680515720B93")
+    
+public final Date getGregorianChange() {
         return new Date(gregorianCutover);
     }
 
@@ -1021,9 +1047,10 @@ public int getGreatestMinimum(int field) {
      *            the field.
      * @return the smallest maximum value of the specified field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.600 -0500", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "7B78DAC75A84381CCBABA20E70062944")
-    @Override
-public int getLeastMaximum(int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.417 -0500", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "7B78DAC75A84381CCBABA20E70062944")
+    
+@Override
+    public int getLeastMaximum(int field) {
         // return value for WEEK_OF_YEAR should make corresponding changes when
         // the gregorian change date have been reset.
         if (gregorianCutover != defaultGregorianCutover
@@ -1045,9 +1072,10 @@ public int getLeastMaximum(int field) {
      *            the field.
      * @return the greatest maximum value of the specified field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.601 -0500", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "FB0DD220BDF24E9F0F24D7EAE89D9387")
-    @Override
-public int getMaximum(int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.419 -0500", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "FB0DD220BDF24E9F0F24D7EAE89D9387")
+    
+@Override
+    public int getMaximum(int field) {
         return maximums[field];
     }
 
@@ -1058,14 +1086,16 @@ public int getMaximum(int field) {
      *            the field.
      * @return the smallest minimum value of the specified field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.601 -0500", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "D44877A6918017B79756798A76B891F2")
-    @Override
-public int getMinimum(int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.421 -0500", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "D44877A6918017B79756798A76B891F2")
+    
+@Override
+    public int getMinimum(int field) {
         return minimums[field];
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.602 -0500", hash_original_method = "A5F3F970AF018D82525827EF3879E8F1", hash_generated_method = "7CC64E6D1EDC82187803C698D4A4A318")
-    private int getOffset(long localTime) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.424 -0500", hash_original_method = "A5F3F970AF018D82525827EF3879E8F1", hash_generated_method = "7CC64E6D1EDC82187803C698D4A4A318")
+    
+private int getOffset(long localTime) {
         TimeZone timeZone = getTimeZone();
 
         long dayCount = localTime / 86400000;
@@ -1119,9 +1149,10 @@ public int getMinimum(int field) {
      *
      * @see #equals
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.603 -0500", hash_original_method = "6907F2ED2DF57E219AB70EADED509565", hash_generated_method = "30C160E12136D4D4A9C2EA4D3CA5489B")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.427 -0500", hash_original_method = "6907F2ED2DF57E219AB70EADED509565", hash_generated_method = "30C160E12136D4D4A9C2EA4D3CA5489B")
+    
+@Override
+    public int hashCode() {
         return super.hashCode()
                 + ((int) (gregorianCutover >>> 32) ^ (int) gregorianCutover);
     }
@@ -1134,8 +1165,9 @@ public int hashCode() {
      * @return {@code true} if the specified year is a leap year, {@code false}
      *         otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.604 -0500", hash_original_method = "FD1210B9D1DAC87CC2975B1EB57E42AE", hash_generated_method = "35D84B3A7B789FBCDB9B49955EBD6A56")
-    public boolean isLeapYear(int year) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.429 -0500", hash_original_method = "FD1210B9D1DAC87CC2975B1EB57E42AE", hash_generated_method = "35D84B3A7B789FBCDB9B49955EBD6A56")
+    
+public boolean isLeapYear(int year) {
         if (year > changeYear) {
             return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
         }
@@ -1143,13 +1175,15 @@ public int hashCode() {
         return year % 4 == 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.605 -0500", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "63AF018498F6022012D2F2CC4CF10B85")
-    private int julianError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.432 -0500", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "63AF018498F6022012D2F2CC4CF10B85")
+    
+private int julianError() {
         return changeYear / 100 - changeYear / 400 - 2;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.606 -0500", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "2EDCB797D9AC2A54F5D65E61E61FBCC1")
-    private int mod(int value, int mod) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.434 -0500", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "2EDCB797D9AC2A54F5D65E61E61FBCC1")
+    
+private int mod(int value, int mod) {
         int rem = value % mod;
         if (value < 0 && rem < 0) {
             return rem + mod;
@@ -1157,8 +1191,9 @@ public int hashCode() {
         return rem;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.607 -0500", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "F83C9883192187F90C92BB45D63524AE")
-    private int mod7(long num1) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.436 -0500", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "F83C9883192187F90C92BB45D63524AE")
+    
+private int mod7(long num1) {
         int rem = (int) (num1 % 7);
         if (num1 < 0 && rem < 0) {
             return rem + 7;
@@ -1180,9 +1215,10 @@ public int hashCode() {
      * @throws IllegalArgumentException
      *                if an invalid field is specified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.609 -0500", hash_original_method = "B265969ED1D5B160D0AFF42D0A073F4D", hash_generated_method = "6947F0FF708D447C444AC79188FF3E12")
-    @Override
-public void roll(int field, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.441 -0500", hash_original_method = "B265969ED1D5B160D0AFF42D0A073F4D", hash_generated_method = "6947F0FF708D447C444AC79188FF3E12")
+    
+@Override
+    public void roll(int field, int value) {
         if (value == 0) {
             return;
         }
@@ -1299,9 +1335,10 @@ public void roll(int field, int value) {
      * @throws IllegalArgumentException
      *                if an invalid field is specified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.610 -0500", hash_original_method = "011BFEF6AF7823592586BFF14A1F0FAF", hash_generated_method = "FE5BCB66CD01CF31C39790EAE8AB2B56")
-    @Override
-public void roll(int field, boolean increment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.444 -0500", hash_original_method = "011BFEF6AF7823592586BFF14A1F0FAF", hash_generated_method = "FE5BCB66CD01CF31C39790EAE8AB2B56")
+    
+@Override
+    public void roll(int field, boolean increment) {
         roll(field, increment ? 1 : -1);
     }
 
@@ -1311,8 +1348,9 @@ public void roll(int field, boolean increment) {
      * @param date
      *            a {@code Date} which represents the gregorian change date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.615 -0500", hash_original_method = "BBA926F39AADCD3D723F5CC72B7A16F3", hash_generated_method = "4AA7C83623817997BC8747FF5A0196F8")
-    public void setGregorianChange(Date date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.447 -0500", hash_original_method = "BBA926F39AADCD3D723F5CC72B7A16F3", hash_generated_method = "4AA7C83623817997BC8747FF5A0196F8")
+    
+public void setGregorianChange(Date date) {
         gregorianCutover = date.getTime();
         GregorianCalendar cal = new GregorianCalendar(TimeZone.GMT);
         cal.setTime(date);
@@ -1334,13 +1372,15 @@ public void roll(int field, boolean increment) {
         isCached = false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.616 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "0D892AC32B11DE8523EBE22E891255E4")
-    private void writeObject(ObjectOutputStream stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.449 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "0D892AC32B11DE8523EBE22E891255E4")
+    
+private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.defaultWriteObject();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.617 -0500", hash_original_method = "6812E7459A56AAC638E0A1455D3A3623", hash_generated_method = "0244D1DF1EB7DAAD65F12CB1E37D37C9")
-    private void readObject(ObjectInputStream stream) throws IOException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.451 -0500", hash_original_method = "6812E7459A56AAC638E0A1455D3A3623", hash_generated_method = "0244D1DF1EB7DAAD65F12CB1E37D37C9")
+    
+private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
 
         stream.defaultReadObject();
@@ -1348,16 +1388,18 @@ public void roll(int field, boolean increment) {
         isCached = false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.618 -0500", hash_original_method = "803EF27234E46811EE9F1109A1277F23", hash_generated_method = "E0B037C32A61FEE0F752C4B043F555ED")
-    @Override
-public void setFirstDayOfWeek(int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.454 -0500", hash_original_method = "803EF27234E46811EE9F1109A1277F23", hash_generated_method = "E0B037C32A61FEE0F752C4B043F555ED")
+    
+@Override
+    public void setFirstDayOfWeek(int value) {
         super.setFirstDayOfWeek(value);
         isCached = false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.619 -0500", hash_original_method = "77A4B23D11FEBAAF4DA5B074DBE88F4F", hash_generated_method = "3B6A66061E8C274F79CCF8B7B203E082")
-    @Override
-public void setMinimalDaysInFirstWeek(int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.456 -0500", hash_original_method = "77A4B23D11FEBAAF4DA5B074DBE88F4F", hash_generated_method = "3B6A66061E8C274F79CCF8B7B203E082")
+    
+@Override
+    public void setMinimalDaysInFirstWeek(int value) {
         super.setMinimalDaysInFirstWeek(value);
         isCached = false;
     }

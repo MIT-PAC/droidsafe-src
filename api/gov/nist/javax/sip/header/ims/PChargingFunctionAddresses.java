@@ -23,8 +23,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
     /**
      * Defaul Constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.069 -0500", hash_original_method = "8D7038EECA0B07E6CABE7C4563FEE1B0", hash_generated_method = "97630B1F07A042D4DB456E7449447A07")
-    public PChargingFunctionAddresses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.501 -0500", hash_original_method = "8D7038EECA0B07E6CABE7C4563FEE1B0", hash_generated_method = "97630B1F07A042D4DB456E7449447A07")
+    
+public PChargingFunctionAddresses() {
 
         super(P_CHARGING_FUNCTION_ADDRESSES);
     }
@@ -32,8 +33,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.ParametersHeader#encodeBody()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.070 -0500", hash_original_method = "B754CD465EC1221F70524778BEB24E59", hash_generated_method = "0D8CD1DFC338CFF567B92C8951BDD5B4")
-    protected String encodeBody() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.504 -0500", hash_original_method = "B754CD465EC1221F70524778BEB24E59", hash_generated_method = "0D8CD1DFC338CFF567B92C8951BDD5B4")
+    
+protected String encodeBody() {
 
         StringBuffer encoding = new StringBuffer();
 
@@ -53,8 +55,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param ccfAddress - the address to set in the CCF parameter
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.072 -0500", hash_original_method = "04146A3594153EB2EF0E88997B90AD38", hash_generated_method = "C700A3AD4CD92E6DEBD6737A1995ACE4")
-    public void setChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.508 -0500", hash_original_method = "04146A3594153EB2EF0E88997B90AD38", hash_generated_method = "C700A3AD4CD92E6DEBD6737A1995ACE4")
+    
+public void setChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
 
         if (ccfAddress == null)
             throw new NullPointerException(
@@ -72,8 +75,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param ccfAddress - the address to set in the CCF parameter
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.073 -0500", hash_original_method = "4EBC089EFA4A412FF008399341976E93", hash_generated_method = "9DB37741C3C76B607492F3B78C073BA3")
-    public void addChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.511 -0500", hash_original_method = "4EBC089EFA4A412FF008399341976E93", hash_generated_method = "9DB37741C3C76B607492F3B78C073BA3")
+    
+public void addChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
 
         if (ccfAddress == null)
             throw new NullPointerException(
@@ -90,8 +94,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param ccfAddress - the address in the CCF parameter to remove
      * @throws ParseException if the address was not removed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.074 -0500", hash_original_method = "E4304895721C991E07562D8775709E0E", hash_generated_method = "4DEA8A7D31FCA622334591A054AF24E7")
-    public void removeChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.515 -0500", hash_original_method = "E4304895721C991E07562D8775709E0E", hash_generated_method = "4DEA8A7D31FCA622334591A054AF24E7")
+    
+public void removeChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
 
         if (ccfAddress == null)
             throw new NullPointerException(
@@ -111,8 +116,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      *
      * @return ListIterator that constains all CCF addresses of this header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.076 -0500", hash_original_method = "3FA3BC1EE35C4A614E59F8D80CF072BA", hash_generated_method = "AFC032E688605C4C14805F458A686D07")
-    public ListIterator getChargingCollectionFunctionAddresses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.519 -0500", hash_original_method = "3FA3BC1EE35C4A614E59F8D80CF072BA", hash_generated_method = "AFC032E688605C4C14805F458A686D07")
+    
+public ListIterator getChargingCollectionFunctionAddresses() {
 
         Iterator li = this.parameters.iterator();
         LinkedList ccfLIST = new LinkedList();
@@ -140,8 +146,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param ecfAddress - the address to set in the ECF parameter
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.077 -0500", hash_original_method = "E0FB708D70424943E5DFB76554EEFAC9", hash_generated_method = "6F808E4ECFAF495ADBC0E2678B1E7E9E")
-    public void setEventChargingFunctionAddress(String ecfAddress) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.522 -0500", hash_original_method = "E0FB708D70424943E5DFB76554EEFAC9", hash_generated_method = "6F808E4ECFAF495ADBC0E2678B1E7E9E")
+    
+public void setEventChargingFunctionAddress(String ecfAddress) throws ParseException {
 
         if (ecfAddress == null)
             throw new NullPointerException(
@@ -159,8 +166,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param ecfAddress - the address to set in the ECF parameter
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.078 -0500", hash_original_method = "A5F62C761E9F9A46D1D6185CEC65084F", hash_generated_method = "E40F5F22E972A72C70D03CD93ED05067")
-    public void addEventChargingFunctionAddress(String ecfAddress) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.525 -0500", hash_original_method = "A5F62C761E9F9A46D1D6185CEC65084F", hash_generated_method = "E40F5F22E972A72C70D03CD93ED05067")
+    
+public void addEventChargingFunctionAddress(String ecfAddress) throws ParseException {
 
         if (ecfAddress == null)
             throw new NullPointerException(
@@ -177,8 +185,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param ecfAddress - the address in the ECF parameter to remove
      * @throws ParseException if the address was not removed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.079 -0500", hash_original_method = "55FFD36C944B472AFBDD2C5B98B03BCA", hash_generated_method = "31B8408597A4DC1E734B781A9374793B")
-    public void removeEventChargingFunctionAddress(String ecfAddress) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.529 -0500", hash_original_method = "55FFD36C944B472AFBDD2C5B98B03BCA", hash_generated_method = "31B8408597A4DC1E734B781A9374793B")
+    
+public void removeEventChargingFunctionAddress(String ecfAddress) throws ParseException {
 
         if (ecfAddress == null)
             throw new NullPointerException(
@@ -198,8 +207,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      *
      * @return ListIterator that constains all CCF addresses of this header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.081 -0500", hash_original_method = "1CFCD9DC9A311745B4AD8E988ADAF97A", hash_generated_method = "53F0AE1C267060557FBA77960B0D35E1")
-    public ListIterator<NameValue> getEventChargingFunctionAddresses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.533 -0500", hash_original_method = "1CFCD9DC9A311745B4AD8E988ADAF97A", hash_generated_method = "53F0AE1C267060557FBA77960B0D35E1")
+    
+public ListIterator<NameValue> getEventChargingFunctionAddresses() {
 
     	LinkedList<NameValue> listw = new LinkedList<NameValue>();
    
@@ -231,8 +241,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
      * @param name - of the parameter
      * @return true if parameter was removed, and false if not
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.082 -0500", hash_original_method = "CC3F97A616116EB8BC182A6988C81981", hash_generated_method = "617B242448321408D09B83A0C2142957")
-    public boolean delete(String value, String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.537 -0500", hash_original_method = "CC3F97A616116EB8BC182A6988C81981", hash_generated_method = "617B242448321408D09B83A0C2142957")
+    
+public boolean delete(String value, String name) {
         Iterator li = this.parameters.iterator();
         NameValue nv;
         boolean removed = false;
@@ -248,8 +259,9 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.083 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
-    public void setValue(String value) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.540 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
+    
+public void setValue(String value) throws ParseException {
         throw new ParseException ( value,0);
 
     }

@@ -23,8 +23,9 @@ public class RFC2396UrlDecoder {
      * @param uri the path to decode
      * @return the decoded path
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.856 -0500", hash_original_method = "A5A2A9811677715038BAC786167B8765", hash_generated_method = "9C82F7C6B7E76163BD81250FB611C32C")
-    public static String decode(String uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.904 -0500", hash_original_method = "A5A2A9811677715038BAC786167B8765", hash_generated_method = "9C82F7C6B7E76163BD81250FB611C32C")
+    
+public static String decode(String uri) {
         StringBuffer translatedUri = new StringBuffer(uri.length());
         byte[] encodedchars = new byte[uri.length() / 3];
         int i = 0;

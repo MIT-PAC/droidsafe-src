@@ -23,23 +23,23 @@ import libcore.net.UriCodec;
 
 
 public class FileURLConnection extends URLConnection {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.394 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.733 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
 
 
     String fileName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.395 -0500", hash_original_field = "B25CAE9BF82BA95FEFAA4B1FEB647560", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.736 -0500", hash_original_field = "B25CAE9BF82BA95FEFAA4B1FEB647560", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
 
 
     private InputStream is;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.396 -0500", hash_original_field = "D3B99DC683EC7129FDE7A2B083451139", hash_generated_field = "99508BAC072434E4BF52703BB1174C03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.738 -0500", hash_original_field = "D3B99DC683EC7129FDE7A2B083451139", hash_generated_field = "99508BAC072434E4BF52703BB1174C03")
 
 
     private int length = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.397 -0500", hash_original_field = "573F3B96CAE1F14BBB393D8A61A5FCF9", hash_generated_field = "3949ABAC0B1DE58EC6BD730E294BB79C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.741 -0500", hash_original_field = "573F3B96CAE1F14BBB393D8A61A5FCF9", hash_generated_field = "3949ABAC0B1DE58EC6BD730E294BB79C")
 
 
     private boolean isDir;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.398 -0500", hash_original_field = "F5BE3F21BE616634ABE5A879B8634A13", hash_generated_field = "96BA6FFE95348C93D489804764910CBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.743 -0500", hash_original_field = "F5BE3F21BE616634ABE5A879B8634A13", hash_generated_field = "96BA6FFE95348C93D489804764910CBE")
 
 
     private FilePermission permission;
@@ -50,8 +50,9 @@ public class FileURLConnection extends URLConnection {
      *
      * @param url The URL this connection is connected to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.398 -0500", hash_original_method = "ECDCE15AD3E40A66FECAA373F1AD69DD", hash_generated_method = "B6D4BCB8D87317739197DB0702F9771D")
-    public FileURLConnection(URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.746 -0500", hash_original_method = "ECDCE15AD3E40A66FECAA373F1AD69DD", hash_generated_method = "B6D4BCB8D87317739197DB0702F9771D")
+    
+public FileURLConnection(URL url) {
         super(url);
         fileName = url.getFile();
         if (fileName == null) {
@@ -68,9 +69,10 @@ public class FileURLConnection extends URLConnection {
      * @throws IOException
      *             if an IO error occurs while connecting
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.399 -0500", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "7D1CD524014605854B17C58503824E09")
-    @Override
-public void connect() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.748 -0500", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "7D1CD524014605854B17C58503824E09")
+    
+@Override
+    public void connect() throws IOException {
         File f = new File(fileName);
         if (f.isDirectory()) {
             isDir = true;
@@ -91,9 +93,10 @@ public void connect() throws IOException {
      *
      * @see #getContentType()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.400 -0500", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "4491F4E7160E2DD1A82D3BE7C3F4358F")
-    @Override
-public int getContentLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.751 -0500", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "4491F4E7160E2DD1A82D3BE7C3F4358F")
+    
+@Override
+    public int getContentLength() {
         try {
             if (!connected) {
                 connect();
@@ -110,9 +113,10 @@ public int getContentLength() {
      *
      * @return the content type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.401 -0500", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "F09D5D637327E65D0812C66AE5A178F1")
-    @Override
-public String getContentType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.753 -0500", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "F09D5D637327E65D0812C66AE5A178F1")
+    
+@Override
+    public String getContentType() {
         try {
             if (!connected) {
                 connect();
@@ -145,8 +149,9 @@ public String getContentType() {
      *
      * @return the input stream of the directory listing
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.402 -0500", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "AA1A1EEA3CEC0EE1432CD48663B52191")
-    private InputStream getDirectoryListing(File f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.755 -0500", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "AA1A1EEA3CEC0EE1432CD48663B52191")
+    
+private InputStream getDirectoryListing(File f) {
         String fileList[] = f.list();
         ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
         PrintStream out = new PrintStream(bytes);
@@ -176,9 +181,10 @@ public String getContentType() {
      * @throws IOException
      *             if an IO error occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.403 -0500", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "ED2775841B5F9FBCF8526B5C47FF6631")
-    @Override
-public InputStream getInputStream() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.758 -0500", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "ED2775841B5F9FBCF8526B5C47FF6631")
+    
+@Override
+    public InputStream getInputStream() throws IOException {
         if (!connected) {
             connect();
         }
@@ -195,9 +201,10 @@ public InputStream getInputStream() throws IOException {
      * @throws IOException
      *             if an IO exception occurs while creating the permission.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.404 -0500", hash_original_method = "FD3C5E750D9B5BE3AE6CD98B1BC8C55C", hash_generated_method = "DC376D2D4AD943413E6FE605E18999B5")
-    @Override
-public java.security.Permission getPermission() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.761 -0500", hash_original_method = "FD3C5E750D9B5BE3AE6CD98B1BC8C55C", hash_generated_method = "DC376D2D4AD943413E6FE605E18999B5")
+    
+@Override
+    public java.security.Permission getPermission() throws IOException {
         if (permission == null) {
             String path = fileName;
             if (File.separatorChar != '/') {

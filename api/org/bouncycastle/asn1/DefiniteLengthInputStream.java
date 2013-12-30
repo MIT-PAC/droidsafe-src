@@ -16,19 +16,20 @@ import org.bouncycastle.util.io.Streams;
 
 
 class DefiniteLengthInputStream extends LimitedInputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.894 -0500", hash_original_field = "FA9F5D306967EDE285ED41554EF4C64B", hash_generated_field = "24B4EEE1E95392A851171438FBC625E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.849 -0500", hash_original_field = "FA9F5D306967EDE285ED41554EF4C64B", hash_generated_field = "24B4EEE1E95392A851171438FBC625E7")
 
     private static final byte[] EMPTY_BYTES = new byte[0];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.895 -0500", hash_original_field = "58B9D9227A2F3C41909AC4D1C83E292D", hash_generated_field = "1665FC1E3CFF38838A5E1CB7D836EA25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.851 -0500", hash_original_field = "58B9D9227A2F3C41909AC4D1C83E292D", hash_generated_field = "1665FC1E3CFF38838A5E1CB7D836EA25")
 
 
     private  int _originalLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.895 -0500", hash_original_field = "82D86337DAD7E6B44E8285FF023DF02A", hash_generated_field = "46A946FCA3AF0E5717A8BBE27253E4C6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.854 -0500", hash_original_field = "82D86337DAD7E6B44E8285FF023DF02A", hash_generated_field = "46A946FCA3AF0E5717A8BBE27253E4C6")
 
     private int _remaining;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.896 -0500", hash_original_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57", hash_generated_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57")
-    DefiniteLengthInputStream(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.856 -0500", hash_original_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57", hash_generated_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57")
+    
+DefiniteLengthInputStream(
         InputStream in,
         int         length)
     {
@@ -48,14 +49,16 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.897 -0500", hash_original_method = "D30FA562EE05AC3CB636487C62BCEE80", hash_generated_method = "D30FA562EE05AC3CB636487C62BCEE80")
-    int getRemaining()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.859 -0500", hash_original_method = "D30FA562EE05AC3CB636487C62BCEE80", hash_generated_method = "D30FA562EE05AC3CB636487C62BCEE80")
+    
+int getRemaining()
     {
         return _remaining;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.898 -0500", hash_original_method = "472AD8364CD714087B8FB4AA07B9D0D1", hash_generated_method = "FACEEB51C917595EE003E5CC52AC793A")
-    public int read()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.864 -0500", hash_original_method = "472AD8364CD714087B8FB4AA07B9D0D1", hash_generated_method = "FACEEB51C917595EE003E5CC52AC793A")
+    
+public int read()
         throws IOException
     {
         if (_remaining == 0)
@@ -78,8 +81,9 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         return b;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.899 -0500", hash_original_method = "A08D5ADC8470447FAA8F1F7D6ED59D8F", hash_generated_method = "67EBC3DF45850592C2B8D3FCBC4DB713")
-    public int read(byte[] buf, int off, int len)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.869 -0500", hash_original_method = "A08D5ADC8470447FAA8F1F7D6ED59D8F", hash_generated_method = "67EBC3DF45850592C2B8D3FCBC4DB713")
+    
+public int read(byte[] buf, int off, int len)
         throws IOException
     {
         if (_remaining == 0)
@@ -103,8 +107,9 @@ class DefiniteLengthInputStream extends LimitedInputStream {
         return numRead;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.900 -0500", hash_original_method = "2B4E4858B5FC3F43B2D34DE081975A19", hash_generated_method = "2B4E4858B5FC3F43B2D34DE081975A19")
-    byte[] toByteArray()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.873 -0500", hash_original_method = "2B4E4858B5FC3F43B2D34DE081975A19", hash_generated_method = "2B4E4858B5FC3F43B2D34DE081975A19")
+    
+byte[] toByteArray()
         throws IOException
     {
         if (_remaining == 0)

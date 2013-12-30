@@ -17,46 +17,49 @@ public class SyncStats implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.769 -0400", hash_original_field = "55F2D29CBE234779B1FDF539D493D020", hash_generated_field = "17E16BE7064CEFEFD5C68A11BA2D5E7F")
 
     public static final Creator<SyncStats> CREATOR = new Creator<SyncStats>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.373 -0500", hash_original_method = "C2645D5BA9D9FCCEB63132F3E7AAEA49", hash_generated_method = "AE16B33C3F0D3A0C2E4B5D1E33802719")
-        public SyncStats createFromParcel(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.203 -0500", hash_original_method = "C2645D5BA9D9FCCEB63132F3E7AAEA49", hash_generated_method = "AE16B33C3F0D3A0C2E4B5D1E33802719")
+        
+public SyncStats createFromParcel(Parcel in) {
             return new SyncStats(in);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.374 -0500", hash_original_method = "F2454254615F13F768A13C331B8D3123", hash_generated_method = "79CBA3857A99A23E703D04724DF53888")
-        public SyncStats[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.206 -0500", hash_original_method = "F2454254615F13F768A13C331B8D3123", hash_generated_method = "79CBA3857A99A23E703D04724DF53888")
+        
+public SyncStats[] newArray(int size) {
             return new SyncStats[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.360 -0500", hash_original_field = "D8485F351CB9CAA5138E591C77601B48", hash_generated_field = "BDB1B90CA7DB793AAF5432BA8C758FAF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.168 -0500", hash_original_field = "D8485F351CB9CAA5138E591C77601B48", hash_generated_field = "BDB1B90CA7DB793AAF5432BA8C758FAF")
 
     public long numAuthExceptions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.361 -0500", hash_original_field = "9E5A54A2281E61DEE0CE463EB7032292", hash_generated_field = "A3FF633E4E96FA5FC86A9EC6664E93C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.170 -0500", hash_original_field = "9E5A54A2281E61DEE0CE463EB7032292", hash_generated_field = "A3FF633E4E96FA5FC86A9EC6664E93C1")
 
     public long numIoExceptions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.361 -0500", hash_original_field = "86A79B28BC28A9176A7C08A86CCC6002", hash_generated_field = "8D71B8B2B6402AE1755ED9C82A8672E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.172 -0500", hash_original_field = "86A79B28BC28A9176A7C08A86CCC6002", hash_generated_field = "8D71B8B2B6402AE1755ED9C82A8672E5")
 
     public long numParseExceptions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.362 -0500", hash_original_field = "5729767CC2214D41F83F141AB9AE51D3", hash_generated_field = "9BE31FAD49A3630028560BD5EEDDCAE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.174 -0500", hash_original_field = "5729767CC2214D41F83F141AB9AE51D3", hash_generated_field = "9BE31FAD49A3630028560BD5EEDDCAE4")
 
     public long numConflictDetectedExceptions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.363 -0500", hash_original_field = "1D6FA2EFA2FB95829064AA4A7839CDDF", hash_generated_field = "198BCFC3BE411FDA379AABCED6A3DCC0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.177 -0500", hash_original_field = "1D6FA2EFA2FB95829064AA4A7839CDDF", hash_generated_field = "198BCFC3BE411FDA379AABCED6A3DCC0")
 
     public long numInserts;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.364 -0500", hash_original_field = "4702DECA2FF0BC9F21AB2DBF8CF53859", hash_generated_field = "E3241C984FAFA64FFD8373F935845026")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.179 -0500", hash_original_field = "4702DECA2FF0BC9F21AB2DBF8CF53859", hash_generated_field = "E3241C984FAFA64FFD8373F935845026")
 
     public long numUpdates;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.364 -0500", hash_original_field = "DA58016584C80157BBFB58A448DCA3A8", hash_generated_field = "8F8FA0231416101828398E30FD14C0D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.181 -0500", hash_original_field = "DA58016584C80157BBFB58A448DCA3A8", hash_generated_field = "8F8FA0231416101828398E30FD14C0D5")
 
     public long numDeletes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.365 -0500", hash_original_field = "21292EBDD2D2AA2409496C9CAC2F5D0B", hash_generated_field = "440A6357CB8B6502A76172CE2E833894")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.183 -0500", hash_original_field = "21292EBDD2D2AA2409496C9CAC2F5D0B", hash_generated_field = "440A6357CB8B6502A76172CE2E833894")
 
     public long numEntries;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.366 -0500", hash_original_field = "274417E55959CCE5B360BE34981D93BC", hash_generated_field = "BEDE6C478C5CF4979A6294A473E9E9F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.185 -0500", hash_original_field = "274417E55959CCE5B360BE34981D93BC", hash_generated_field = "BEDE6C478C5CF4979A6294A473E9E9F1")
 
     public long numSkippedEntries;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.367 -0500", hash_original_method = "AD75EEB91F0DE3327218E1B3E5E5D264", hash_generated_method = "243FB9DD19779AAF19CB4B2AD5A5C3A3")
-    public SyncStats() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.187 -0500", hash_original_method = "AD75EEB91F0DE3327218E1B3E5E5D264", hash_generated_method = "243FB9DD19779AAF19CB4B2AD5A5C3A3")
+    
+public SyncStats() {
         numAuthExceptions = 0;
         numIoExceptions = 0;
         numParseExceptions = 0;
@@ -68,8 +71,9 @@ public class SyncStats implements Parcelable {
         numSkippedEntries = 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.368 -0500", hash_original_method = "260AFEEBBB5524547C0B494C2066E7B3", hash_generated_method = "CC3D24B9070A64FDF6C4F04E0E970488")
-    public SyncStats(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.190 -0500", hash_original_method = "260AFEEBBB5524547C0B494C2066E7B3", hash_generated_method = "CC3D24B9070A64FDF6C4F04E0E970488")
+    
+public SyncStats(Parcel in) {
         numAuthExceptions = in.readLong();
         numIoExceptions = in.readLong();
         numParseExceptions = in.readLong();
@@ -81,9 +85,10 @@ public class SyncStats implements Parcelable {
         numSkippedEntries = in.readLong();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.369 -0500", hash_original_method = "2B2EA245A3AB4724B2781C31270E76F8", hash_generated_method = "E85C6836B6E8D17E5DF3DF000EDE6EA4")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.193 -0500", hash_original_method = "2B2EA245A3AB4724B2781C31270E76F8", hash_generated_method = "E85C6836B6E8D17E5DF3DF000EDE6EA4")
+    
+@Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(" stats [");
         if (numAuthExceptions > 0) sb.append(" numAuthExceptions: ").append(numAuthExceptions);
@@ -103,8 +108,9 @@ public String toString() {
     /**
      * Reset all the counters to 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.369 -0500", hash_original_method = "1DD335886100A2D5B4563E7A7FCB1E25", hash_generated_method = "38B64ED35408E53105D19C6AADAB23EF")
-    public void clear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.195 -0500", hash_original_method = "1DD335886100A2D5B4563E7A7FCB1E25", hash_generated_method = "38B64ED35408E53105D19C6AADAB23EF")
+    
+public void clear() {
         numAuthExceptions = 0;
         numIoExceptions = 0;
         numParseExceptions = 0;
@@ -116,13 +122,15 @@ public String toString() {
         numSkippedEntries = 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.371 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.197 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.372 -0500", hash_original_method = "E0866F8CBFAFA913559B9596FBB866BC", hash_generated_method = "D56621CF3A07B62BA1471D0B59947C84")
-    public void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.200 -0500", hash_original_method = "E0866F8CBFAFA913559B9596FBB866BC", hash_generated_method = "D56621CF3A07B62BA1471D0B59947C84")
+    
+public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(numAuthExceptions);
         dest.writeLong(numIoExceptions);
         dest.writeLong(numParseExceptions);

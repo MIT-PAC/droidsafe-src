@@ -15,17 +15,17 @@ import android.util.Log;
 
 
 public class RestoreSession {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.356 -0500", hash_original_field = "572DB331C1E9E94335EF137CE4D9301B", hash_generated_field = "95A135350987A8A35D57A3465B636A5F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.470 -0500", hash_original_field = "572DB331C1E9E94335EF137CE4D9301B", hash_generated_field = "95A135350987A8A35D57A3465B636A5F")
 
     static final String TAG = "RestoreSession";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.357 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.472 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
 
 
      Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.357 -0500", hash_original_field = "7A6145C040AB8C4767279CC3AE6AB5D4", hash_generated_field = "7A6145C040AB8C4767279CC3AE6AB5D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.475 -0500", hash_original_field = "7A6145C040AB8C4767279CC3AE6AB5D4", hash_generated_field = "7A6145C040AB8C4767279CC3AE6AB5D4")
 
     IRestoreSession mBinder;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.359 -0500", hash_original_field = "968F7FFCD0ED9347FEBCC336042661C5", hash_generated_field = "968F7FFCD0ED9347FEBCC336042661C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.477 -0500", hash_original_field = "968F7FFCD0ED9347FEBCC336042661C5", hash_generated_field = "968F7FFCD0ED9347FEBCC336042661C5")
 
     RestoreObserverWrapper mObserver = null;
 
@@ -33,8 +33,9 @@ public class RestoreSession {
      * Nonpublic implementation here
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.364 -0500", hash_original_method = "603F247D543111CC62EE9EB2C3201E30", hash_generated_method = "603F247D543111CC62EE9EB2C3201E30")
-    RestoreSession(Context context, IRestoreSession binder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.493 -0500", hash_original_method = "603F247D543111CC62EE9EB2C3201E30", hash_generated_method = "603F247D543111CC62EE9EB2C3201E30")
+    
+RestoreSession(Context context, IRestoreSession binder) {
         mContext = context;
         mBinder = binder;
     }
@@ -49,8 +50,9 @@ public class RestoreSession {
      * @return Zero on success, nonzero on error.  The observer's restoreSetsAvailable()
      *   method will only be called if this method returned zero.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.359 -0500", hash_original_method = "85E5CD06982622FBF40B882974335BE2", hash_generated_method = "F88AB1159CB48AD9123BACF633596C0B")
-    public int getAvailableRestoreSets(RestoreObserver observer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.479 -0500", hash_original_method = "85E5CD06982622FBF40B882974335BE2", hash_generated_method = "F88AB1159CB48AD9123BACF633596C0B")
+    
+public int getAvailableRestoreSets(RestoreObserver observer) {
         int err = -1;
         RestoreObserverWrapper obsWrapper = new RestoreObserverWrapper(mContext, observer);
         try {
@@ -74,8 +76,9 @@ public class RestoreSession {
      * @param observer If non-null, this binder points to an object that will receive
      *   progress callbacks during the restore operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.360 -0500", hash_original_method = "C8DAB2ADB788499C67FF0E8E9408ECE5", hash_generated_method = "643D65C3E0FADDCD503AC887A11DE305")
-    public int restoreAll(long token, RestoreObserver observer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.483 -0500", hash_original_method = "C8DAB2ADB788499C67FF0E8E9408ECE5", hash_generated_method = "643D65C3E0FADDCD503AC887A11DE305")
+    
+public int restoreAll(long token, RestoreObserver observer) {
         int err = -1;
         if (mObserver != null) {
             Log.d(TAG, "restoreAll() called during active restore");
@@ -109,8 +112,9 @@ public class RestoreSession {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.361 -0500", hash_original_method = "F5EFDD74303F049C8AACBA4BE897E134", hash_generated_method = "11A6EA209A7DC274BF9B69BE19754CAD")
-    public int restoreSome(long token, RestoreObserver observer, String[] packages) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.486 -0500", hash_original_method = "F5EFDD74303F049C8AACBA4BE897E134", hash_generated_method = "11A6EA209A7DC274BF9B69BE19754CAD")
+    
+public int restoreSome(long token, RestoreObserver observer, String[] packages) {
         int err = -1;
         if (mObserver != null) {
             Log.d(TAG, "restoreAll() called during active restore");
@@ -140,8 +144,9 @@ public class RestoreSession {
      * @param observer If non-null, this binder points to an object that will receive
      *   progress callbacks during the restore operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.362 -0500", hash_original_method = "45656BEA7940AC3102C43782877B83F7", hash_generated_method = "14B8BD2AD5AE0301F8239686BB8B06C7")
-    public int restorePackage(String packageName, RestoreObserver observer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.488 -0500", hash_original_method = "45656BEA7940AC3102C43782877B83F7", hash_generated_method = "14B8BD2AD5AE0301F8239686BB8B06C7")
+    
+public int restorePackage(String packageName, RestoreObserver observer) {
         int err = -1;
         if (mObserver != null) {
             Log.d(TAG, "restorePackage() called during active restore");
@@ -172,15 +177,16 @@ public class RestoreSession {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.816 -0400", hash_original_field = "6712CCE62254369D8B798E8F6D0F7F36", hash_generated_field = "5A0B39F513E3B588CEB49A68D560A7F8")
 
         static final int MSG_RESTORE_SETS_AVAILABLE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.365 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.497 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
          Handler mHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.366 -0500", hash_original_field = "005F4DF6C8F6B731652C05EB1AE4CFEE", hash_generated_field = "005F4DF6C8F6B731652C05EB1AE4CFEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.500 -0500", hash_original_field = "005F4DF6C8F6B731652C05EB1AE4CFEE", hash_generated_field = "005F4DF6C8F6B731652C05EB1AE4CFEE")
 
          RestoreObserver mAppObserver;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.372 -0500", hash_original_method = "A8439BCE69D3AC67FEB783862C52DBDA", hash_generated_method = "A8439BCE69D3AC67FEB783862C52DBDA")
-        RestoreObserverWrapper(Context context, RestoreObserver appObserver) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.519 -0500", hash_original_method = "A8439BCE69D3AC67FEB783862C52DBDA", hash_generated_method = "A8439BCE69D3AC67FEB783862C52DBDA")
+        
+RestoreObserverWrapper(Context context, RestoreObserver appObserver) {
             mHandler = new Handler(context.getMainLooper()) {
                 @Override
                 public void handleMessage(Message msg) {
@@ -204,26 +210,30 @@ public class RestoreSession {
         }
 
         // Binder calls into this object just enqueue on the main-thread handler
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.372 -0500", hash_original_method = "856BC446A8E3590AAA97D30784AFC7AF", hash_generated_method = "4B63F674D5A1AABC1043935E5ED2D796")
-        public void restoreSetsAvailable(RestoreSet[] result) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.521 -0500", hash_original_method = "856BC446A8E3590AAA97D30784AFC7AF", hash_generated_method = "4B63F674D5A1AABC1043935E5ED2D796")
+        
+public void restoreSetsAvailable(RestoreSet[] result) {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_SETS_AVAILABLE, result));
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.373 -0500", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "02EBF0481B3FA6FA91C2DAACE271B53E")
-        public void restoreStarting(int numPackages) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.524 -0500", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "02EBF0481B3FA6FA91C2DAACE271B53E")
+        
+public void restoreStarting(int numPackages) {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_STARTING, numPackages, 0));
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.374 -0500", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "90769D759157D223623BC8A20D0D9F57")
-        public void onUpdate(int nowBeingRestored, String currentPackage) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.527 -0500", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "90769D759157D223623BC8A20D0D9F57")
+        
+public void onUpdate(int nowBeingRestored, String currentPackage) {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_UPDATE, nowBeingRestored, 0, currentPackage));
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.375 -0500", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "3E5ABAB0B146B5775FA89C324FCFBDA6")
-        public void restoreFinished(int error) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.529 -0500", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "3E5ABAB0B146B5775FA89C324FCFBDA6")
+        
+public void restoreFinished(int error) {
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_FINISHED, error, 0));
         }
@@ -236,8 +246,9 @@ public class RestoreSession {
      * <p><b>Note:</b> The caller <i>must</i> invoke this method to end the restore session,
      *   even if {@link #restorePackage(String, RestoreObserver)} failed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.363 -0500", hash_original_method = "97A09429CDECAD0EA89948A618DDD793", hash_generated_method = "BD3295FCEBD243797146C5A37BF0B514")
-    public void endRestoreSession() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.491 -0500", hash_original_method = "97A09429CDECAD0EA89948A618DDD793", hash_generated_method = "BD3295FCEBD243797146C5A37BF0B514")
+    
+public void endRestoreSession() {
         try {
             mBinder.endRestoreSession();
         } catch (RemoteException e) {

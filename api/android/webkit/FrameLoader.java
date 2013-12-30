@@ -20,8 +20,9 @@ import android.webkit.CacheManager.CacheResult;
 
 class FrameLoader {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.585 -0500", hash_original_method = "0F090DDEC88C4F6DDE49E0CF19F424EB", hash_generated_method = "FD66A4B52C3F94D32976AC193BD637CB")
-    private static boolean handleLocalFile(String url, LoadListener loadListener,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.920 -0500", hash_original_method = "0F090DDEC88C4F6DDE49E0CF19F424EB", hash_generated_method = "FD66A4B52C3F94D32976AC193BD637CB")
+    
+private static boolean handleLocalFile(String url, LoadListener loadListener,
             WebSettings settings) {
         assert !JniUtil.useChromiumHttpStack();
 
@@ -98,65 +99,66 @@ class FrameLoader {
         }
         return false;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.573 -0500", hash_original_field = "4336C241816DDA6167F38455E1A2AB46", hash_generated_field = "EB2ACDA5CCC677A93D03B81217EE2CA1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.887 -0500", hash_original_field = "4336C241816DDA6167F38455E1A2AB46", hash_generated_field = "EB2ACDA5CCC677A93D03B81217EE2CA1")
 
 
     private static final int URI_PROTOCOL = 0x100;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.573 -0500", hash_original_field = "8CC4B91D16E4C3BAC489D34D5D74C806", hash_generated_field = "E9E9985B4D9BEACB3E20B77FBDAC6013")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.890 -0500", hash_original_field = "8CC4B91D16E4C3BAC489D34D5D74C806", hash_generated_field = "E9E9985B4D9BEACB3E20B77FBDAC6013")
 
 
     private static final String CONTENT_TYPE = "content-type";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.574 -0500", hash_original_field = "FA0EBEF2A159D7573F9A9C0E88256609", hash_generated_field = "36FEC7407939A642CEE5B978BA5EE272")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.893 -0500", hash_original_field = "FA0EBEF2A159D7573F9A9C0E88256609", hash_generated_field = "36FEC7407939A642CEE5B978BA5EE272")
 
     private static final String mAboutBlank =
             "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EB\">" +
             "<html><head><title>about:blank</title></head><body></body></html>";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.576 -0500", hash_original_field = "7DF962FCBF88FDCD826B3B2B6F608E65", hash_generated_field = "0A81A03C8AD82EEC7F102EB79209347D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.895 -0500", hash_original_field = "7DF962FCBF88FDCD826B3B2B6F608E65", hash_generated_field = "0A81A03C8AD82EEC7F102EB79209347D")
 
 
     static final String HEADER_STR = "text/xml, text/html, " +
             "application/xhtml+xml, image/png, text/plain, */*;q=0.8";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.577 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.897 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
 
     private static final String LOGTAG = "webkit";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.564 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "D7FBD6A4D07A65117411BC8C01652773")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.863 -0500", hash_original_field = "6F634748B2632997CFA3BD470A985F63", hash_generated_field = "D7FBD6A4D07A65117411BC8C01652773")
 
 
     private  LoadListener mListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.565 -0500", hash_original_field = "FB63EE61CA76D9C9913EC87AD6B942C6", hash_generated_field = "46D356CEC2B798E53528C0BD5F09C873")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.866 -0500", hash_original_field = "FB63EE61CA76D9C9913EC87AD6B942C6", hash_generated_field = "46D356CEC2B798E53528C0BD5F09C873")
 
     private  String mMethod;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.566 -0500", hash_original_field = "A5E24FAE08D22101EAD3684EE47BCBA3", hash_generated_field = "D4F7B9B886C1ADC785C82D3DD8AF3DFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.868 -0500", hash_original_field = "A5E24FAE08D22101EAD3684EE47BCBA3", hash_generated_field = "D4F7B9B886C1ADC785C82D3DD8AF3DFF")
 
     private  WebSettings mSettings;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.567 -0500", hash_original_field = "A7D525FA609C0F6270055E985F097B79", hash_generated_field = "A366B1C8ECA0EA3E5C2DAE5F1AFFA05D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.871 -0500", hash_original_field = "A7D525FA609C0F6270055E985F097B79", hash_generated_field = "A366B1C8ECA0EA3E5C2DAE5F1AFFA05D")
 
     private Map<String, String> mHeaders;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.567 -0500", hash_original_field = "2D2347367D31A512EEC0E8D215ED2DBD", hash_generated_field = "C5200C1F2575A09491B18B8CE6E6A375")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.873 -0500", hash_original_field = "2D2347367D31A512EEC0E8D215ED2DBD", hash_generated_field = "C5200C1F2575A09491B18B8CE6E6A375")
 
     private byte[] mPostData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.568 -0500", hash_original_field = "C72A50F72B23F13DD3F117A7D73CF25A", hash_generated_field = "E0FAA2A6C497494B58133B8740B95CC3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.875 -0500", hash_original_field = "C72A50F72B23F13DD3F117A7D73CF25A", hash_generated_field = "E0FAA2A6C497494B58133B8740B95CC3")
 
     private Network mNetwork;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.569 -0500", hash_original_field = "F01A8831B95EC0E82D0909C20A93CC55", hash_generated_field = "8C07F09E694B2A8054749812D7A11348")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.877 -0500", hash_original_field = "F01A8831B95EC0E82D0909C20A93CC55", hash_generated_field = "8C07F09E694B2A8054749812D7A11348")
 
     private int mCacheMode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.569 -0500", hash_original_field = "3A88C05BE1665FA9AE31BE79D7D88287", hash_generated_field = "D80C103FF159A690060174B576F408C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.879 -0500", hash_original_field = "3A88C05BE1665FA9AE31BE79D7D88287", hash_generated_field = "D80C103FF159A690060174B576F408C0")
 
     private String mReferrer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.570 -0500", hash_original_field = "608DAE159C1CB591E99EAE76FAB7334E", hash_generated_field = "1F620CC4F21CDF80833E6AB697F4F4F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.880 -0500", hash_original_field = "608DAE159C1CB591E99EAE76FAB7334E", hash_generated_field = "1F620CC4F21CDF80833E6AB697F4F4F7")
 
     private String mContentType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.571 -0500", hash_original_field = "01D1C2FCC57D945AED696F76D49D181E", hash_generated_field = "DC5ABF50AC0DEDF84B387D0BCB7F8F31")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.883 -0500", hash_original_field = "01D1C2FCC57D945AED696F76D49D181E", hash_generated_field = "DC5ABF50AC0DEDF84B387D0BCB7F8F31")
 
     private  String mUaprofHeader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.572 -0500", hash_original_field = "3F1DC37EB8CF345B321349ACB9BE13E3", hash_generated_field = "1E5C1AADABD2F96959CCC93C619B3FFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.885 -0500", hash_original_field = "3F1DC37EB8CF345B321349ACB9BE13E3", hash_generated_field = "1E5C1AADABD2F96959CCC93C619B3FFF")
 
     private  WebResourceResponse mInterceptResponse;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.578 -0500", hash_original_method = "E604BA5F97EB5A21051EE698F8A56155", hash_generated_method = "E604BA5F97EB5A21051EE698F8A56155")
-    FrameLoader(LoadListener listener, WebSettings settings,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.901 -0500", hash_original_method = "E604BA5F97EB5A21051EE698F8A56155", hash_generated_method = "E604BA5F97EB5A21051EE698F8A56155")
+    
+FrameLoader(LoadListener listener, WebSettings settings,
             String method, WebResourceResponse interceptResponse) {
         assert !JniUtil.useChromiumHttpStack();
 
@@ -170,34 +172,40 @@ class FrameLoader {
                 com.android.internal.R.string.config_useragentprofile_url, Build.MODEL);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.578 -0500", hash_original_method = "DAE08684530294543D6392896259C957", hash_generated_method = "09D80A1F9DDC4E1F4D3B6A849078AEAD")
-    public void setReferrer(String ref) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.903 -0500", hash_original_method = "DAE08684530294543D6392896259C957", hash_generated_method = "09D80A1F9DDC4E1F4D3B6A849078AEAD")
+    
+public void setReferrer(String ref) {
         // only set referrer for http or https
         if (URLUtil.isNetworkUrl(ref)) mReferrer = ref;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.579 -0500", hash_original_method = "D2C8C4DED03F288D6E8AB32DB5451075", hash_generated_method = "DF8AE15CA0D7E8B5BFBD1E77DCEA2A85")
-    public void setPostData(byte[] postData) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.905 -0500", hash_original_method = "D2C8C4DED03F288D6E8AB32DB5451075", hash_generated_method = "DF8AE15CA0D7E8B5BFBD1E77DCEA2A85")
+    
+public void setPostData(byte[] postData) {
         mPostData = postData;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.580 -0500", hash_original_method = "E910F46151D172102331975C2568BBCE", hash_generated_method = "54BAB93111DAA1A43649AD0B815DF76B")
-    public void setContentTypeForPost(String postContentType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.907 -0500", hash_original_method = "E910F46151D172102331975C2568BBCE", hash_generated_method = "54BAB93111DAA1A43649AD0B815DF76B")
+    
+public void setContentTypeForPost(String postContentType) {
         mContentType = postContentType;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.581 -0500", hash_original_method = "4FD1C5F2E68FCD3B6425DADD4042F496", hash_generated_method = "49CDBD057E7164DCE326D7A2DE87FF77")
-    public void setCacheMode(int cacheMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.909 -0500", hash_original_method = "4FD1C5F2E68FCD3B6425DADD4042F496", hash_generated_method = "49CDBD057E7164DCE326D7A2DE87FF77")
+    
+public void setCacheMode(int cacheMode) {
         mCacheMode = cacheMode;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.581 -0500", hash_original_method = "E0E34456BA61E1D94659FB0013B44B13", hash_generated_method = "04A12AB70FFD8B8D87C839701B3561B5")
-    public void setHeaders(HashMap headers) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.912 -0500", hash_original_method = "E0E34456BA61E1D94659FB0013B44B13", hash_generated_method = "04A12AB70FFD8B8D87C839701B3561B5")
+    
+public void setHeaders(HashMap headers) {
         mHeaders = headers;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.582 -0500", hash_original_method = "C430EEAE75F5C9BA4DF5580B50F4FE67", hash_generated_method = "1BFFB41D68420761D8117A8EC09AF1BA")
-    public LoadListener getLoadListener() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.914 -0500", hash_original_method = "C430EEAE75F5C9BA4DF5580B50F4FE67", hash_generated_method = "1BFFB41D68420761D8117A8EC09AF1BA")
+    
+public LoadListener getLoadListener() {
         return mListener;
     }
 
@@ -209,8 +217,9 @@ class FrameLoader {
      *
      * @return true if the load is reasonable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.583 -0500", hash_original_method = "C44DBC63D87836D797664A5A599046E9", hash_generated_method = "7149B29A53D042BA7D3F427E1203C70A")
-    public boolean executeLoad() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.917 -0500", hash_original_method = "C44DBC63D87836D797664A5A599046E9", hash_generated_method = "7149B29A53D042BA7D3F427E1203C70A")
+    
+public boolean executeLoad() {
         String url = mListener.url();
 
         // Process intercepted requests first as they could be any url.
@@ -259,8 +268,9 @@ class FrameLoader {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.586 -0500", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "1C30F7F32746647A05A19AC4A9C30F54")
-    boolean handleHTTPLoad() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.923 -0500", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "1C30F7F32746647A05A19AC4A9C30F54")
+    
+boolean handleHTTPLoad() {
         if (mHeaders == null) {
             mHeaders = new HashMap<String, String>();
         }
@@ -306,8 +316,9 @@ class FrameLoader {
      * This function is used by handleCache to
      * setup a load from the byte stream in a CacheResult.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.587 -0500", hash_original_method = "D628211A63EBF198D6007A9671F95672", hash_generated_method = "1089CAC15093A387E6F2BA5D7BC48F43")
-    private void startCacheLoad(CacheResult result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.925 -0500", hash_original_method = "D628211A63EBF198D6007A9671F95672", hash_generated_method = "1089CAC15093A387E6F2BA5D7BC48F43")
+    
+private void startCacheLoad(CacheResult result) {
         if (DebugFlags.FRAME_LOADER) {
             Log.v(LOGTAG, "FrameLoader: loading from cache: "
                   + mListener.url());
@@ -330,8 +341,9 @@ class FrameLoader {
      * correctly.
      * Returns true if the response was handled from the cache
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.588 -0500", hash_original_method = "ED6284595A2927F289F312ED71C4BF2D", hash_generated_method = "6E7D654569B43B2A03FAE01DE6FAA9B3")
-    private boolean handleCache() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.929 -0500", hash_original_method = "ED6284595A2927F289F312ED71C4BF2D", hash_generated_method = "6E7D654569B43B2A03FAE01DE6FAA9B3")
+    
+private boolean handleCache() {
         switch (mCacheMode) {
             // This mode is normally used for a reload, it instructs the http
             // loader to not use the cached content.
@@ -394,8 +406,9 @@ class FrameLoader {
     /**
      * Add the static headers that don't change with each request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.589 -0500", hash_original_method = "2D0BB20A4C7261DEBC8826658FC12230", hash_generated_method = "C58F7F6A51A3BB84E758653BC0F7704F")
-    private void populateStaticHeaders() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.931 -0500", hash_original_method = "2D0BB20A4C7261DEBC8826658FC12230", hash_generated_method = "C58F7F6A51A3BB84E758653BC0F7704F")
+    
+private void populateStaticHeaders() {
         // Accept header should already be there as they are built by WebCore,
         // but in the case they are missing, add some.
         String accept = mHeaders.get("Accept");
@@ -421,8 +434,9 @@ class FrameLoader {
      * Add the content related headers. These headers contain user private data
      * and is not used when we are proxying an untrusted request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.590 -0500", hash_original_method = "FC5DAD276D63BF9B93BD19919189EAE8", hash_generated_method = "39104EE62728A8993DD70EB39437F698")
-    private void populateHeaders() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.934 -0500", hash_original_method = "FC5DAD276D63BF9B93BD19919189EAE8", hash_generated_method = "39104EE62728A8993DD70EB39437F698")
+    
+private void populateHeaders() {
         
         if (mReferrer != null) mHeaders.put("Referer", mReferrer);
         if (mContentType != null) mHeaders.put(CONTENT_TYPE, mContentType);

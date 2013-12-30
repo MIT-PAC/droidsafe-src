@@ -20,20 +20,20 @@ import java.util.concurrent.locks.ReentrantLock;
 
 
 public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements ScheduledExecutorService {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.814 -0500", hash_original_field = "4E0BEBC3D3501BB2B76D034A8EFB299C", hash_generated_field = "09EC8D93792C347004E9D906B28CD479")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.975 -0500", hash_original_field = "4E0BEBC3D3501BB2B76D034A8EFB299C", hash_generated_field = "09EC8D93792C347004E9D906B28CD479")
 
     private static final AtomicLong sequencer = new AtomicLong(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.811 -0500", hash_original_field = "AA1A6DFC0A9DF3A217B9D3AC88B61125", hash_generated_field = "B67CDA7A6617E68750D7D9507E18E1D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.968 -0500", hash_original_field = "AA1A6DFC0A9DF3A217B9D3AC88B61125", hash_generated_field = "B67CDA7A6617E68750D7D9507E18E1D5")
 
 
     /**
      * False if should cancel/suppress periodic tasks on shutdown.
      */
     private volatile boolean continueExistingPeriodicTasksAfterShutdown;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.812 -0500", hash_original_field = "3B5443B7C004C2B1C06B3F37C2BE3FD6", hash_generated_field = "D4D52A1567899065AB02C507D671256E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.970 -0500", hash_original_field = "3B5443B7C004C2B1C06B3F37C2BE3FD6", hash_generated_field = "D4D52A1567899065AB02C507D671256E")
 
     private volatile boolean executeExistingDelayedTasksAfterShutdown = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.813 -0500", hash_original_field = "3277AE3927ABC3A3E8A8D2199A3CDD29", hash_generated_field = "396CDA7B171456B549FE026890B28734")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.973 -0500", hash_original_field = "3277AE3927ABC3A3E8A8D2199A3CDD29", hash_generated_field = "396CDA7B171456B549FE026890B28734")
 
     private volatile boolean removeOnCancel = false;
 
@@ -45,8 +45,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      *        if they are idle, unless {@code allowCoreThreadTimeOut} is set
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.835 -0500", hash_original_method = "D36047D4322FE6F8EBCA30AB15266BC6", hash_generated_method = "C6D051EFB4F60DCEAE37DBBD3B0B07F6")
-    public ScheduledThreadPoolExecutor(int corePoolSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.036 -0500", hash_original_method = "D36047D4322FE6F8EBCA30AB15266BC6", hash_generated_method = "C6D051EFB4F60DCEAE37DBBD3B0B07F6")
+    
+public ScheduledThreadPoolExecutor(int corePoolSize) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
               new DelayedWorkQueue());
     }
@@ -62,8 +63,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @throws NullPointerException if {@code threadFactory} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.836 -0500", hash_original_method = "ABDCD4F10C893856EFE26F2C021D677A", hash_generated_method = "892194900DE3EA2EBEB941F9ECC2BB94")
-    public ScheduledThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.039 -0500", hash_original_method = "ABDCD4F10C893856EFE26F2C021D677A", hash_generated_method = "892194900DE3EA2EBEB941F9ECC2BB94")
+    
+public ScheduledThreadPoolExecutor(int corePoolSize,
                                        ThreadFactory threadFactory) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
               new DelayedWorkQueue(), threadFactory);
@@ -80,8 +82,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      * @throws NullPointerException if {@code handler} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.837 -0500", hash_original_method = "15AFC792EAFAB8847ABF7F7AA1CDCAAC", hash_generated_method = "98D5DA14F077B7BB106076B3A41BFB2D")
-    public ScheduledThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.042 -0500", hash_original_method = "15AFC792EAFAB8847ABF7F7AA1CDCAAC", hash_generated_method = "98D5DA14F077B7BB106076B3A41BFB2D")
+    
+public ScheduledThreadPoolExecutor(int corePoolSize,
                                        RejectedExecutionHandler handler) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
               new DelayedWorkQueue(), handler);
@@ -101,8 +104,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      * @throws NullPointerException if {@code threadFactory} or
      *         {@code handler} is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.838 -0500", hash_original_method = "FA0219710575675561B4DC7EAFAB1D1D", hash_generated_method = "F65B3DEBD2C9206A45EB1AC4993FE24B")
-    public ScheduledThreadPoolExecutor(int corePoolSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.045 -0500", hash_original_method = "FA0219710575675561B4DC7EAFAB1D1D", hash_generated_method = "F65B3DEBD2C9206A45EB1AC4993FE24B")
+    
+public ScheduledThreadPoolExecutor(int corePoolSize,
                                        ThreadFactory threadFactory,
                                        RejectedExecutionHandler handler) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
@@ -112,8 +116,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     /**
      * Returns current nanosecond time.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.815 -0500", hash_original_method = "5D4518F727B3B1C5CE98EBC039D9AF6B", hash_generated_method = "5086D8F7DF5A22081C0AACC30CB43003")
-    final long now() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.978 -0500", hash_original_method = "5D4518F727B3B1C5CE98EBC039D9AF6B", hash_generated_method = "5086D8F7DF5A22081C0AACC30CB43003")
+    
+final long now() {
         return System.nanoTime();
     }
 
@@ -123,8 +128,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      *
      * @param periodic true if this task periodic, false if delayed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.829 -0500", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "43122228A318CAFA2BE5FD8EB8B7119A")
-    boolean canRunInCurrentRunState(boolean periodic) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.021 -0500", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "43122228A318CAFA2BE5FD8EB8B7119A")
+    
+boolean canRunInCurrentRunState(boolean periodic) {
         return isRunningOrShutdown(periodic ?
                                    continueExistingPeriodicTasksAfterShutdown :
                                    executeExistingDelayedTasksAfterShutdown);
@@ -141,8 +147,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      *
      * @param task the task
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.830 -0500", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "A12A0E4E338A558BFD3C45A30B84EC64")
-    private void delayedExecute(RunnableScheduledFuture<?> task) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.023 -0500", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "A12A0E4E338A558BFD3C45A30B84EC64")
+    
+private void delayedExecute(RunnableScheduledFuture<?> task) {
         if (isShutdown())
             reject(task);
         else {
@@ -162,8 +169,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      *
      * @param task the task
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.831 -0500", hash_original_method = "0C685B50A598B045820F5EF901D2AED6", hash_generated_method = "0C685B50A598B045820F5EF901D2AED6")
-    void reExecutePeriodic(RunnableScheduledFuture<?> task) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.026 -0500", hash_original_method = "0C685B50A598B045820F5EF901D2AED6", hash_generated_method = "0C685B50A598B045820F5EF901D2AED6")
+    
+void reExecutePeriodic(RunnableScheduledFuture<?> task) {
         if (canRunInCurrentRunState(true)) {
             super.getQueue().add(task);
             if (!canRunInCurrentRunState(true) && remove(task))
@@ -177,9 +185,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      * Cancels and clears the queue of all tasks that should not be run
      * due to shutdown policy.  Invoked within super.shutdown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.832 -0500", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "0EA178E08FD7931EFBC285084C821B60")
-    @Override
-void onShutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.029 -0500", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "0EA178E08FD7931EFBC285084C821B60")
+    
+@Override void onShutdown() {
         BlockingQueue<Runnable> q = super.getQueue();
         boolean keepDelayed =
             getExecuteExistingDelayedTasksAfterShutdownPolicy();
@@ -238,16 +246,18 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
     /**
      * Returns the trigger time of a delayed action.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.839 -0500", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "1563039CF8B017832FF7961F544396AE")
-    private long triggerTime(long delay, TimeUnit unit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.047 -0500", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "1563039CF8B017832FF7961F544396AE")
+    
+private long triggerTime(long delay, TimeUnit unit) {
         return triggerTime(unit.toNanos((delay < 0) ? 0 : delay));
     }
 
     /**
      * Returns the trigger time of a delayed action.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.839 -0500", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "43548DFC0EE197F487A673EC89A4A123")
-    long triggerTime(long delay) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.049 -0500", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "43548DFC0EE197F487A673EC89A4A123")
+    
+long triggerTime(long delay) {
         return now() +
             ((delay < (Long.MAX_VALUE >> 1)) ? delay : overflowFree(delay));
     }
@@ -259,8 +269,9 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
      * not yet been, while some other task is added with a delay of
      * Long.MAX_VALUE.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.840 -0500", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "F5F77E79FD679044009DB5ACA7481F3F")
-    private long overflowFree(long delay) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.051 -0500", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "F5F77E79FD679044009DB5ACA7481F3F")
+    
+private long overflowFree(long delay) {
         Delayed head = (Delayed) super.getQueue().peek();
         if (head != null) {
             long headDelay = head.getDelay(TimeUnit.NANOSECONDS);
@@ -274,8 +285,9 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
      * @throws RejectedExecutionException {@inheritDoc}
      * @throws NullPointerException       {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.841 -0500", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "70153009D30555822A21DF4C467D0B90")
-    public ScheduledFuture<?> schedule(Runnable command,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.054 -0500", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "70153009D30555822A21DF4C467D0B90")
+    
+public ScheduledFuture<?> schedule(Runnable command,
                                        long delay,
                                        TimeUnit unit) {
         if (command == null || unit == null)
@@ -324,8 +336,9 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
      * @throws NullPointerException       {@inheritDoc}
      * @throws IllegalArgumentException   {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.843 -0500", hash_original_method = "8D8E5BFEEBAD4838EB16FA502AD719D4", hash_generated_method = "3EA20E3F4382D0EDE6092893EF206FDF")
-    public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.060 -0500", hash_original_method = "8D8E5BFEEBAD4838EB16FA502AD719D4", hash_generated_method = "3EA20E3F4382D0EDE6092893EF206FDF")
+    
+public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,
                                                   long initialDelay,
                                                   long period,
                                                   TimeUnit unit) {
@@ -349,8 +362,9 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
      * @throws NullPointerException       {@inheritDoc}
      * @throws IllegalArgumentException   {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.844 -0500", hash_original_method = "F8BFEFA210F26533C5765CF5137E2FD3", hash_generated_method = "80657F904A418F9ACEEDC8127E1116FB")
-    public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.062 -0500", hash_original_method = "F8BFEFA210F26533C5765CF5137E2FD3", hash_generated_method = "80657F904A418F9ACEEDC8127E1116FB")
+    
+public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
                                                      long initialDelay,
                                                      long delay,
                                                      TimeUnit unit) {
@@ -389,8 +403,9 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
      *         executor has been shut down
      * @throws NullPointerException {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.845 -0500", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "E3A52ADE61F54682CF44ABE8A3326258")
-    public void execute(Runnable command) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.065 -0500", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "E3A52ADE61F54682CF44ABE8A3326258")
+    
+public void execute(Runnable command) {
         schedule(command, 0, TimeUnit.NANOSECONDS);
     }
 
@@ -400,8 +415,9 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
      * @throws RejectedExecutionException {@inheritDoc}
      * @throws NullPointerException       {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.845 -0500", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "3800342DFE8696C11E2AE454E3078C85")
-    public Future<?> submit(Runnable task) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.067 -0500", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "3800342DFE8696C11E2AE454E3078C85")
+    
+public Future<?> submit(Runnable task) {
         return schedule(task, 0, TimeUnit.NANOSECONDS);
     }
 
@@ -443,8 +459,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @param value if {@code true}, continue after shutdown, else don't.
      * @see #getContinueExistingPeriodicTasksAfterShutdownPolicy
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.848 -0500", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "18143D52445CCB29F3A9E20F56652FF9")
-    public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.074 -0500", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "18143D52445CCB29F3A9E20F56652FF9")
+    
+public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
         continueExistingPeriodicTasksAfterShutdown = value;
         if (!value && isShutdown())
             onShutdown();
@@ -461,8 +478,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @return {@code true} if will continue after shutdown
      * @see #setContinueExistingPeriodicTasksAfterShutdownPolicy
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.848 -0500", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "3948A3ACE4F6203C67D666D3E68B424A")
-    public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.077 -0500", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "3948A3ACE4F6203C67D666D3E68B424A")
+    
+public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
         return continueExistingPeriodicTasksAfterShutdown;
     }
 
@@ -477,8 +495,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @param value if {@code true}, execute after shutdown, else don't.
      * @see #getExecuteExistingDelayedTasksAfterShutdownPolicy
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.849 -0500", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "A2675CE46F6B5D3F768DE6C6745F7621")
-    public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.079 -0500", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "A2675CE46F6B5D3F768DE6C6745F7621")
+    
+public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
         executeExistingDelayedTasksAfterShutdown = value;
         if (!value && isShutdown())
             onShutdown();
@@ -495,8 +514,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @return {@code true} if will execute after shutdown
      * @see #setExecuteExistingDelayedTasksAfterShutdownPolicy
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.851 -0500", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "D15EDED9EC9A06D04D037B40461AB525")
-    public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.081 -0500", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "D15EDED9EC9A06D04D037B40461AB525")
+    
+public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
         return executeExistingDelayedTasksAfterShutdown;
     }
 
@@ -509,8 +529,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @see #getRemoveOnCancelPolicy
      * @since 1.7
      */
-    /*public*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.851 -0500", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "E2D3F1695A01B0F9F9B0921F1BAF9960")
-    void setRemoveOnCancelPolicy(boolean value) { // android-changed
+    /*public*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.084 -0500", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "E2D3F1695A01B0F9F9B0921F1BAF9960")
+    
+void setRemoveOnCancelPolicy(boolean value) { // android-changed
         removeOnCancel = value;
     }
 
@@ -524,8 +545,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @see #setRemoveOnCancelPolicy
      * @since 1.7
      */
-    /*public*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.852 -0500", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "5620BD1526ADD0251D340D253A9E0017")
-    boolean getRemoveOnCancelPolicy() { // android-changed
+    /*public*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.086 -0500", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "5620BD1526ADD0251D340D253A9E0017")
+    
+boolean getRemoveOnCancelPolicy() { // android-changed
         return removeOnCancel;
     }
 
@@ -547,8 +569,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      *
      * @throws SecurityException {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.853 -0500", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "EECA67464F24515745E21751DF906EFD")
-    public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.089 -0500", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "EECA67464F24515745E21751DF906EFD")
+    
+public void shutdown() {
         super.shutdown();
     }
 
@@ -573,34 +596,36 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      *         zero-delay {@code ScheduledFuture}.
      * @throws SecurityException {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.854 -0500", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "4310F6E0C68CEDEE4A0BB22C75A7B842")
-    public List<Runnable> shutdownNow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.091 -0500", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "4310F6E0C68CEDEE4A0BB22C75A7B842")
+    
+public List<Runnable> shutdownNow() {
         return super.shutdownNow();
     }
 
     
     private class ScheduledFutureTask<V> extends FutureTask<V> implements RunnableScheduledFuture<V> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.816 -0500", hash_original_field = "581F60A6D443ADFC2ED9EAB5D0FA287B", hash_generated_field = "BC5948EFF55F237F777F173C3B803F01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.981 -0500", hash_original_field = "581F60A6D443ADFC2ED9EAB5D0FA287B", hash_generated_field = "BC5948EFF55F237F777F173C3B803F01")
 
         private  long sequenceNumber;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.816 -0500", hash_original_field = "FB68C26D0BB5DD6577F61578B9AE66A8", hash_generated_field = "2D21F2B1A6174F407FDE900F8B752B4F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.983 -0500", hash_original_field = "FB68C26D0BB5DD6577F61578B9AE66A8", hash_generated_field = "2D21F2B1A6174F407FDE900F8B752B4F")
 
         private long time;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.817 -0500", hash_original_field = "21C6B258F031958D40A6DAC5279E0EE8", hash_generated_field = "9B4C1F15D97D513A97EBCE4E8EF81345")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.986 -0500", hash_original_field = "21C6B258F031958D40A6DAC5279E0EE8", hash_generated_field = "9B4C1F15D97D513A97EBCE4E8EF81345")
 
         private  long period;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.818 -0500", hash_original_field = "98CF25F8111133A7EC779F1A91CDBA76", hash_generated_field = "98CF25F8111133A7EC779F1A91CDBA76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.988 -0500", hash_original_field = "98CF25F8111133A7EC779F1A91CDBA76", hash_generated_field = "98CF25F8111133A7EC779F1A91CDBA76")
 
         RunnableScheduledFuture<V> outerTask = this;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.819 -0500", hash_original_field = "B9E65256978F8C0BE4352922F453397A", hash_generated_field = "B9E65256978F8C0BE4352922F453397A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.991 -0500", hash_original_field = "B9E65256978F8C0BE4352922F453397A", hash_generated_field = "B9E65256978F8C0BE4352922F453397A")
 
         int heapIndex;
 
         /**
          * Creates a one-shot action with given nanoTime-based trigger time.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.820 -0500", hash_original_method = "6D6FE21BC02E4EEDE50A66A758AADBC3", hash_generated_method = "6D6FE21BC02E4EEDE50A66A758AADBC3")
-        ScheduledFutureTask(Runnable r, V result, long ns) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.994 -0500", hash_original_method = "6D6FE21BC02E4EEDE50A66A758AADBC3", hash_generated_method = "6D6FE21BC02E4EEDE50A66A758AADBC3")
+        
+ScheduledFutureTask(Runnable r, V result, long ns) {
             super(r, result);
             this.time = ns;
             this.period = 0;
@@ -610,8 +635,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
         /**
          * Creates a periodic action with given nano time and period.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.821 -0500", hash_original_method = "E04B804C1814B5C9E0689952B28AE769", hash_generated_method = "E04B804C1814B5C9E0689952B28AE769")
-        ScheduledFutureTask(Runnable r, V result, long ns, long period) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.997 -0500", hash_original_method = "E04B804C1814B5C9E0689952B28AE769", hash_generated_method = "E04B804C1814B5C9E0689952B28AE769")
+        
+ScheduledFutureTask(Runnable r, V result, long ns, long period) {
             super(r, result);
             this.time = ns;
             this.period = period;
@@ -621,21 +647,24 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
         /**
          * Creates a one-shot action with given nanoTime-based trigger.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.822 -0500", hash_original_method = "E88D028A2F4D25267A398506CBA854E6", hash_generated_method = "E88D028A2F4D25267A398506CBA854E6")
-        ScheduledFutureTask(Callable<V> callable, long ns) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.000 -0500", hash_original_method = "E88D028A2F4D25267A398506CBA854E6", hash_generated_method = "E88D028A2F4D25267A398506CBA854E6")
+        
+ScheduledFutureTask(Callable<V> callable, long ns) {
             super(callable);
             this.time = ns;
             this.period = 0;
             this.sequenceNumber = sequencer.getAndIncrement();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.823 -0500", hash_original_method = "EA844DF3AD76AAE2032057524EEDD497", hash_generated_method = "47A643D671F395286C05C1E1DFD7C686")
-        public long getDelay(TimeUnit unit) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.002 -0500", hash_original_method = "EA844DF3AD76AAE2032057524EEDD497", hash_generated_method = "47A643D671F395286C05C1E1DFD7C686")
+        
+public long getDelay(TimeUnit unit) {
             return unit.convert(time - now(), TimeUnit.NANOSECONDS);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.824 -0500", hash_original_method = "3DDFB5C452DB9F58801DAD45AC132180", hash_generated_method = "06CD2249C487800DED7B1BE8D3707E6E")
-        public int compareTo(Delayed other) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.005 -0500", hash_original_method = "3DDFB5C452DB9F58801DAD45AC132180", hash_generated_method = "06CD2249C487800DED7B1BE8D3707E6E")
+        
+public int compareTo(Delayed other) {
             if (other == this) // compare zero ONLY if same object
                 return 0;
             if (other instanceof ScheduledFutureTask) {
@@ -660,16 +689,18 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
          *
          * @return true if periodic
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.825 -0500", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "A43046EEA3EDBAE0E71246E123FF2A01")
-        public boolean isPeriodic() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.008 -0500", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "A43046EEA3EDBAE0E71246E123FF2A01")
+        
+public boolean isPeriodic() {
             return period != 0;
         }
 
         /**
          * Sets the next time to run for a periodic task.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.826 -0500", hash_original_method = "AD0F8B1CE8B17F01519D37E93CCE792B", hash_generated_method = "84CD17B038E98EC06CAE4DFAB9D41BCD")
-        private void setNextRunTime() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.011 -0500", hash_original_method = "AD0F8B1CE8B17F01519D37E93CCE792B", hash_generated_method = "84CD17B038E98EC06CAE4DFAB9D41BCD")
+        
+private void setNextRunTime() {
             long p = period;
             if (p > 0)
                 time += p;
@@ -677,8 +708,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
                 time = triggerTime(-p);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.827 -0500", hash_original_method = "A46BB14AFBF2EAB15C2BA654B07B241E", hash_generated_method = "C04EF1B521A1B72CD11AF6E937E1C11E")
-        public boolean cancel(boolean mayInterruptIfRunning) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.013 -0500", hash_original_method = "A46BB14AFBF2EAB15C2BA654B07B241E", hash_generated_method = "C04EF1B521A1B72CD11AF6E937E1C11E")
+        
+public boolean cancel(boolean mayInterruptIfRunning) {
             boolean cancelled = super.cancel(mayInterruptIfRunning);
             if (cancelled && removeOnCancel && heapIndex >= 0)
                 remove(this);
@@ -688,8 +720,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
         /**
          * Overrides FutureTask version so as to reset/requeue if periodic.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.828 -0500", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "E25D2BC752A0A896AEF831675748C4CA")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.016 -0500", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "E25D2BC752A0A896AEF831675748C4CA")
+        
+public void run() {
             boolean periodic = isPeriodic();
             if (!canRunInCurrentRunState(periodic))
                 cancel(false);
@@ -707,24 +740,24 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
 
     
     static class DelayedWorkQueue extends AbstractQueue<Runnable> implements BlockingQueue<Runnable> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.855 -0500", hash_original_field = "F46BD29C6E17578C395874054BC81C6E", hash_generated_field = "3F2F6BC48DD22A811C2EB325F2D915D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.096 -0500", hash_original_field = "F46BD29C6E17578C395874054BC81C6E", hash_generated_field = "3F2F6BC48DD22A811C2EB325F2D915D6")
 
 
         private static final int INITIAL_CAPACITY = 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.856 -0500", hash_original_field = "63B93331B2A7B37C520F2D8D1A4B6AD0", hash_generated_field = "7E3ECE26F4AF2143E2D648A19C272D90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.099 -0500", hash_original_field = "63B93331B2A7B37C520F2D8D1A4B6AD0", hash_generated_field = "7E3ECE26F4AF2143E2D648A19C272D90")
 
         private RunnableScheduledFuture[] queue =
             new RunnableScheduledFuture[INITIAL_CAPACITY];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.857 -0500", hash_original_field = "1400DAF04929C6FE417E223B70E97891", hash_generated_field = "8AC82AC4B8DAC99417915B9333B3E7C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.103 -0500", hash_original_field = "1400DAF04929C6FE417E223B70E97891", hash_generated_field = "8AC82AC4B8DAC99417915B9333B3E7C3")
 
         private final ReentrantLock lock = new ReentrantLock();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.858 -0500", hash_original_field = "689FC3CB9A887B5817C15E9CFDD066DB", hash_generated_field = "C5D9FEC4EFB462C8A221F2C08D178643")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.106 -0500", hash_original_field = "689FC3CB9A887B5817C15E9CFDD066DB", hash_generated_field = "C5D9FEC4EFB462C8A221F2C08D178643")
 
         private int size = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.859 -0500", hash_original_field = "32BD64945396C441E3F4E832CE5F820D", hash_generated_field = "F986E3D55ACB2544F93BB697B2C53FDD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.108 -0500", hash_original_field = "32BD64945396C441E3F4E832CE5F820D", hash_generated_field = "F986E3D55ACB2544F93BB697B2C53FDD")
 
         private Thread leader = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.860 -0500", hash_original_field = "04965D14F491494D58AA489186AE0DED", hash_generated_field = "8F68EB44F62428E1E0B61A4952227D3F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.111 -0500", hash_original_field = "04965D14F491494D58AA489186AE0DED", hash_generated_field = "8F68EB44F62428E1E0B61A4952227D3F")
 
         private final Condition available = lock.newCondition();
         
@@ -737,8 +770,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
         /**
          * Set f's heapIndex if it is a ScheduledFutureTask.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.860 -0500", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "18070A55AC6452590B1CFCDCCF04E6BB")
-        private void setIndex(RunnableScheduledFuture f, int idx) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.113 -0500", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "18070A55AC6452590B1CFCDCCF04E6BB")
+        
+private void setIndex(RunnableScheduledFuture f, int idx) {
             if (f instanceof ScheduledFutureTask)
                 ((ScheduledFutureTask)f).heapIndex = idx;
         }
@@ -747,8 +781,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
          * Sift element added at bottom up to its heap-ordered spot.
          * Call only when holding lock.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.861 -0500", hash_original_method = "82039C4DF7CA25BEE85708617CA17C0A", hash_generated_method = "BBE1D43AB052D751607921804C6D353A")
-        private void siftUp(int k, RunnableScheduledFuture key) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.116 -0500", hash_original_method = "82039C4DF7CA25BEE85708617CA17C0A", hash_generated_method = "BBE1D43AB052D751607921804C6D353A")
+        
+private void siftUp(int k, RunnableScheduledFuture key) {
             while (k > 0) {
                 int parent = (k - 1) >>> 1;
                 RunnableScheduledFuture e = queue[parent];
@@ -766,8 +801,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
          * Sift element added at top down to its heap-ordered spot.
          * Call only when holding lock.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.862 -0500", hash_original_method = "2B1F11A0F086CDEBFE52E8E81BF54F43", hash_generated_method = "9B6FC43D5E854AA12235EBDC0D9134EC")
-        private void siftDown(int k, RunnableScheduledFuture key) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.119 -0500", hash_original_method = "2B1F11A0F086CDEBFE52E8E81BF54F43", hash_generated_method = "9B6FC43D5E854AA12235EBDC0D9134EC")
+        
+private void siftDown(int k, RunnableScheduledFuture key) {
             int half = size >>> 1;
             while (k < half) {
                 int child = (k << 1) + 1;
@@ -788,8 +824,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
         /**
          * Resize the heap array.  Call only when holding lock.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.863 -0500", hash_original_method = "A3FC13DF1E683960EBCF25B1C68B6117", hash_generated_method = "30891C70FD2F977FC1621D90F9DB3D9C")
-        private void grow() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.121 -0500", hash_original_method = "A3FC13DF1E683960EBCF25B1C68B6117", hash_generated_method = "30891C70FD2F977FC1621D90F9DB3D9C")
+        
+private void grow() {
             int oldCapacity = queue.length;
             int newCapacity = oldCapacity + (oldCapacity >> 1); // grow 50%
             if (newCapacity < 0) // overflow
@@ -800,8 +837,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
         /**
          * Find index of given object, or -1 if absent
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.865 -0500", hash_original_method = "C580641A4A2388B58215BACCB42FFCE3", hash_generated_method = "EFFB58FCEBC512A5D266AB90B7608F70")
-        private int indexOf(Object x) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.124 -0500", hash_original_method = "C580641A4A2388B58215BACCB42FFCE3", hash_generated_method = "EFFB58FCEBC512A5D266AB90B7608F70")
+        
+private int indexOf(Object x) {
             if (x != null) {
                 if (x instanceof ScheduledFutureTask) {
                     int i = ((ScheduledFutureTask) x).heapIndex;
@@ -818,8 +856,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             return -1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.866 -0500", hash_original_method = "5E09E7103DB0A49A13B2DDAFBB485D60", hash_generated_method = "216ADB959F030AF53493922AF9B0DA76")
-        public boolean contains(Object x) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.127 -0500", hash_original_method = "5E09E7103DB0A49A13B2DDAFBB485D60", hash_generated_method = "216ADB959F030AF53493922AF9B0DA76")
+        
+public boolean contains(Object x) {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -829,8 +868,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.867 -0500", hash_original_method = "BE80A65233BEEC20C44EE13577B8F6B3", hash_generated_method = "081C631E4CD8E775DAE7DFF253834F3F")
-        public boolean remove(Object x) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.129 -0500", hash_original_method = "BE80A65233BEEC20C44EE13577B8F6B3", hash_generated_method = "081C631E4CD8E775DAE7DFF253834F3F")
+        
+public boolean remove(Object x) {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -853,8 +893,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.867 -0500", hash_original_method = "FB53A461CD3B1BACC3DB27D415F5CC64", hash_generated_method = "B56E45E790072F25BF00ED5C82A3937D")
-        public int size() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.133 -0500", hash_original_method = "FB53A461CD3B1BACC3DB27D415F5CC64", hash_generated_method = "B56E45E790072F25BF00ED5C82A3937D")
+        
+public int size() {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -864,18 +905,21 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.868 -0500", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "256A93293017E0D3462837D06A518E42")
-        public boolean isEmpty() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.135 -0500", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "256A93293017E0D3462837D06A518E42")
+        
+public boolean isEmpty() {
             return size() == 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.869 -0500", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "33BD29B45C0B302F31D1F275110E0FF5")
-        public int remainingCapacity() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.138 -0500", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "33BD29B45C0B302F31D1F275110E0FF5")
+        
+public int remainingCapacity() {
             return Integer.MAX_VALUE;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.870 -0500", hash_original_method = "71D771244E4BD1C0173C42068DB81D51", hash_generated_method = "4A3670E928D2014D2B82EDD165E0BA3E")
-        public RunnableScheduledFuture peek() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.140 -0500", hash_original_method = "71D771244E4BD1C0173C42068DB81D51", hash_generated_method = "4A3670E928D2014D2B82EDD165E0BA3E")
+        
+public RunnableScheduledFuture peek() {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -885,8 +929,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.871 -0500", hash_original_method = "A5863DDF2D55F0A792F5570CB9552D10", hash_generated_method = "C57E67538FFFE9DF9BACEF49FAF500DE")
-        public boolean offer(Runnable x) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.143 -0500", hash_original_method = "A5863DDF2D55F0A792F5570CB9552D10", hash_generated_method = "C57E67538FFFE9DF9BACEF49FAF500DE")
+        
+public boolean offer(Runnable x) {
             if (x == null)
                 throw new NullPointerException();
             RunnableScheduledFuture e = (RunnableScheduledFuture)x;
@@ -913,18 +958,21 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.872 -0500", hash_original_method = "4080BF206CA14D39406126FB9F6C27D2", hash_generated_method = "A69DA435D04D9547DAD0E800C49751A1")
-        public void put(Runnable e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.146 -0500", hash_original_method = "4080BF206CA14D39406126FB9F6C27D2", hash_generated_method = "A69DA435D04D9547DAD0E800C49751A1")
+        
+public void put(Runnable e) {
             offer(e);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.873 -0500", hash_original_method = "AD0F5DE8A091A43B7107BCF4BE0853B5", hash_generated_method = "3911745853F8759B8217277BA7FB95FB")
-        public boolean add(Runnable e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.148 -0500", hash_original_method = "AD0F5DE8A091A43B7107BCF4BE0853B5", hash_generated_method = "3911745853F8759B8217277BA7FB95FB")
+        
+public boolean add(Runnable e) {
             return offer(e);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.874 -0500", hash_original_method = "C6567B4A0AA1C7B283CF9843CADA74F7", hash_generated_method = "C992739CC8D27680B9B33505533DE685")
-        public boolean offer(Runnable e, long timeout, TimeUnit unit) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.151 -0500", hash_original_method = "C6567B4A0AA1C7B283CF9843CADA74F7", hash_generated_method = "C992739CC8D27680B9B33505533DE685")
+        
+public boolean offer(Runnable e, long timeout, TimeUnit unit) {
             return offer(e);
         }
 
@@ -934,8 +982,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
          * holding lock.
          * @param f the task to remove and return
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.876 -0500", hash_original_method = "95AFA75D0998C104C226840186514FC9", hash_generated_method = "A4C2EED943B41B751F9ED084A5D45341")
-        private RunnableScheduledFuture finishPoll(RunnableScheduledFuture f) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.153 -0500", hash_original_method = "95AFA75D0998C104C226840186514FC9", hash_generated_method = "A4C2EED943B41B751F9ED084A5D45341")
+        
+private RunnableScheduledFuture finishPoll(RunnableScheduledFuture f) {
             int s = --size;
             RunnableScheduledFuture x = queue[s];
             queue[s] = null;
@@ -945,8 +994,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             return f;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.877 -0500", hash_original_method = "8EBCD245EA652A524E679A63C787A99C", hash_generated_method = "0C6444231D8803864F44A89D449E3521")
-        public RunnableScheduledFuture poll() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.156 -0500", hash_original_method = "8EBCD245EA652A524E679A63C787A99C", hash_generated_method = "0C6444231D8803864F44A89D449E3521")
+        
+public RunnableScheduledFuture poll() {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -960,8 +1010,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.878 -0500", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "EAD227B6DEC0BF18B08A7940F1BAA829")
-        public RunnableScheduledFuture take() throws InterruptedException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.160 -0500", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "EAD227B6DEC0BF18B08A7940F1BAA829")
+        
+public RunnableScheduledFuture take() throws InterruptedException {
             final ReentrantLock lock = this.lock;
             lock.lockInterruptibly();
             try {
@@ -994,8 +1045,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.879 -0500", hash_original_method = "72DE523456D313A78DBDBA042B83CE23", hash_generated_method = "6E04C9D6A79DC43E11C8384AD88A31CF")
-        public RunnableScheduledFuture poll(long timeout, TimeUnit unit)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.163 -0500", hash_original_method = "72DE523456D313A78DBDBA042B83CE23", hash_generated_method = "6E04C9D6A79DC43E11C8384AD88A31CF")
+        
+public RunnableScheduledFuture poll(long timeout, TimeUnit unit)
             throws InterruptedException {
             long nanos = unit.toNanos(timeout);
             final ReentrantLock lock = this.lock;
@@ -1036,8 +1088,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.880 -0500", hash_original_method = "B7A92D7F07FC88CC462E2031E3EC4D97", hash_generated_method = "A5013E936BFCBC1CCBA88FD69D609D33")
-        public void clear() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.165 -0500", hash_original_method = "B7A92D7F07FC88CC462E2031E3EC4D97", hash_generated_method = "A5013E936BFCBC1CCBA88FD69D609D33")
+        
+public void clear() {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -1058,16 +1111,18 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
          * Return and remove first element only if it is expired.
          * Used only by drainTo.  Call only when holding lock.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.881 -0500", hash_original_method = "2FE630D35A7B40B0A6753A3386B27535", hash_generated_method = "84F92E20F9A31E5E6E1F47A404965C54")
-        private RunnableScheduledFuture pollExpired() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.168 -0500", hash_original_method = "2FE630D35A7B40B0A6753A3386B27535", hash_generated_method = "84F92E20F9A31E5E6E1F47A404965C54")
+        
+private RunnableScheduledFuture pollExpired() {
             RunnableScheduledFuture first = queue[0];
             if (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0)
                 return null;
             return finishPoll(first);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.882 -0500", hash_original_method = "A0CF55F6497A110CDDFF356DE0AE8664", hash_generated_method = "CC1EECF0CA9F5BE88A87C537E0EE218E")
-        public int drainTo(Collection<? super Runnable> c) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.170 -0500", hash_original_method = "A0CF55F6497A110CDDFF356DE0AE8664", hash_generated_method = "CC1EECF0CA9F5BE88A87C537E0EE218E")
+        
+public int drainTo(Collection<? super Runnable> c) {
             if (c == null)
                 throw new NullPointerException();
             if (c == this)
@@ -1087,8 +1142,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.883 -0500", hash_original_method = "0279366BCBF84614051CBA5B08204A0A", hash_generated_method = "A1D4E25C904A65FFBC36870A29413B77")
-        public int drainTo(Collection<? super Runnable> c, int maxElements) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.173 -0500", hash_original_method = "0279366BCBF84614051CBA5B08204A0A", hash_generated_method = "A1D4E25C904A65FFBC36870A29413B77")
+        
+public int drainTo(Collection<? super Runnable> c, int maxElements) {
             if (c == null)
                 throw new NullPointerException();
             if (c == this)
@@ -1110,8 +1166,9 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.884 -0500", hash_original_method = "7408B58852530A87736A5AD8CAD9599F", hash_generated_method = "76FFD2DB2227DB664664E22C9C3E0846")
-        public Object[] toArray() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.176 -0500", hash_original_method = "7408B58852530A87736A5AD8CAD9599F", hash_generated_method = "76FFD2DB2227DB664664E22C9C3E0846")
+        
+public Object[] toArray() {
             final ReentrantLock lock = this.lock;
             lock.lock();
             try {
@@ -1164,36 +1221,40 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_99574316 =                 a;
 
         
         private class Itr implements Iterator<Runnable> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.886 -0500", hash_original_field = "81254B9FC545B41C37906F59020B61EA", hash_generated_field = "81254B9FC545B41C37906F59020B61EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.184 -0500", hash_original_field = "81254B9FC545B41C37906F59020B61EA", hash_generated_field = "81254B9FC545B41C37906F59020B61EA")
 
              RunnableScheduledFuture[] array;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.887 -0500", hash_original_field = "EF6EF07B89CC96321B7CFBEF54BCF418", hash_generated_field = "EF6EF07B89CC96321B7CFBEF54BCF418")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.187 -0500", hash_original_field = "EF6EF07B89CC96321B7CFBEF54BCF418", hash_generated_field = "EF6EF07B89CC96321B7CFBEF54BCF418")
 
             int cursor = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.888 -0500", hash_original_field = "9128B9A3EF0151CBF070702BF3C62C66", hash_generated_field = "9128B9A3EF0151CBF070702BF3C62C66")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.189 -0500", hash_original_field = "9128B9A3EF0151CBF070702BF3C62C66", hash_generated_field = "9128B9A3EF0151CBF070702BF3C62C66")
 
             int lastRet = -1;   // index of last element, or -1 if no such
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.889 -0500", hash_original_method = "78BE11BC04A59F667BA3E745B91EA864", hash_generated_method = "78BE11BC04A59F667BA3E745B91EA864")
-            Itr(RunnableScheduledFuture[] array) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.193 -0500", hash_original_method = "78BE11BC04A59F667BA3E745B91EA864", hash_generated_method = "78BE11BC04A59F667BA3E745B91EA864")
+            
+Itr(RunnableScheduledFuture[] array) {
                 this.array = array;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.890 -0500", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "CDE3CA7472C460360713EEDFAECC9D23")
-            public boolean hasNext() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.195 -0500", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "CDE3CA7472C460360713EEDFAECC9D23")
+            
+public boolean hasNext() {
                 return cursor < array.length;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.891 -0500", hash_original_method = "3D0866C62F631AE1F3281A9951BE6C06", hash_generated_method = "4B6DACAD5F05336E081AADDDA2E83D77")
-            public Runnable next() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.198 -0500", hash_original_method = "3D0866C62F631AE1F3281A9951BE6C06", hash_generated_method = "4B6DACAD5F05336E081AADDDA2E83D77")
+            
+public Runnable next() {
                 if (cursor >= array.length)
                     throw new NoSuchElementException();
                 lastRet = cursor;
                 return array[cursor++];
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.892 -0500", hash_original_method = "560EEAA350DF5EAA4CBD4C138A91D642", hash_generated_method = "BC30726115F8B70642607811DF4303C7")
-            public void remove() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.201 -0500", hash_original_method = "560EEAA350DF5EAA4CBD4C138A91D642", hash_generated_method = "BC30726115F8B70642607811DF4303C7")
+            
+public void remove() {
                 if (lastRet < 0)
                     throw new IllegalStateException();
                 DelayedWorkQueue.this.remove(array[lastRet]);
@@ -1203,8 +1264,9 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_99574316 =                 a;
             
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.885 -0500", hash_original_method = "46B1FB64DFD489BA9D84B29257E9B6C6", hash_generated_method = "965D27A073ACACB5FE04A64C9147DBC4")
-        public Iterator<Runnable> iterator() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.181 -0500", hash_original_method = "46B1FB64DFD489BA9D84B29257E9B6C6", hash_generated_method = "965D27A073ACACB5FE04A64C9147DBC4")
+        
+public Iterator<Runnable> iterator() {
             return new Itr(Arrays.copyOf(queue, size));
         }
     }
@@ -1220,8 +1282,9 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_99574316 =                 a;
      *
      * @return the task queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:42.854 -0500", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "14F2FC0C0EDEB99502501B879860D8E2")
-    public BlockingQueue<Runnable> getQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.093 -0500", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "14F2FC0C0EDEB99502501B879860D8E2")
+    
+public BlockingQueue<Runnable> getQueue() {
         return super.getQueue();
     }
 }

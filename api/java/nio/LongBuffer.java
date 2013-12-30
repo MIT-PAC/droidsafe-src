@@ -21,8 +21,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      * @throws IllegalArgumentException
      *             if {@code capacity} is less than zero.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.520 -0500", hash_original_method = "0C0E2AE77B5CB5772EEF14C1E96752F1", hash_generated_method = "41B900FC32E92D7485603843911F59C9")
-    public static LongBuffer allocate(int capacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.383 -0500", hash_original_method = "0C0E2AE77B5CB5772EEF14C1E96752F1", hash_generated_method = "41B900FC32E92D7485603843911F59C9")
+    
+public static LongBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -39,8 +40,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      *            the long array which the new buffer will be based on.
      * @return the created long buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.521 -0500", hash_original_method = "0F4E3A8DE685937C5DC7D885D0EC8B3B", hash_generated_method = "E806624605C75DA25A16D8F61B5E4565")
-    public static LongBuffer wrap(long[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.385 -0500", hash_original_method = "0F4E3A8DE685937C5DC7D885D0EC8B3B", hash_generated_method = "E806624605C75DA25A16D8F61B5E4565")
+    
+public static LongBuffer wrap(long[] array) {
         return wrap(array, 0, array.length);
     }
 
@@ -62,8 +64,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      * @exception IndexOutOfBoundsException
      *                if either {@code start} or {@code longCount} is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.522 -0500", hash_original_method = "2C18A8A89F26B75BE1B7CF107BBA9D37", hash_generated_method = "C31498A59734DB7B53C2A59176111A03")
-    public static LongBuffer wrap(long[] array, int start, int longCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.388 -0500", hash_original_method = "2C18A8A89F26B75BE1B7CF107BBA9D37", hash_generated_method = "C31498A59734DB7B53C2A59176111A03")
+    
+public static LongBuffer wrap(long[] array, int start, int longCount) {
         Arrays.checkOffsetAndCount(array.length, start, longCount);
         LongBuffer buf = new ReadWriteLongArrayBuffer(array);
         buf.position = start;
@@ -71,18 +74,21 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
         return buf;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.523 -0500", hash_original_method = "3A9B5F2A82543AF360E63C0F2EA35C03", hash_generated_method = "3A9B5F2A82543AF360E63C0F2EA35C03")
-    LongBuffer(int capacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.390 -0500", hash_original_method = "3A9B5F2A82543AF360E63C0F2EA35C03", hash_generated_method = "3A9B5F2A82543AF360E63C0F2EA35C03")
+    
+LongBuffer(int capacity) {
         super(3, capacity, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.524 -0500", hash_original_method = "4BA44AB0CDCB187F799C2188A053FC10", hash_generated_method = "61678AFA55A37005D6880AA1685C19D4")
-    public final long[] array() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.393 -0500", hash_original_method = "4BA44AB0CDCB187F799C2188A053FC10", hash_generated_method = "61678AFA55A37005D6880AA1685C19D4")
+    
+public final long[] array() {
         return protectedArray();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.525 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
-    public final int arrayOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.395 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
+    
+public final int arrayOffset() {
         return protectedArrayOffset();
     }
 
@@ -99,8 +105,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      *
      * @return a read-only version of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.526 -0500", hash_original_method = "EA84EE94947A1E6B3D4BCBC4BC97B98C", hash_generated_method = "BDC2F35BBF6E91E07D767F7EBB3D436C")
-    public abstract LongBuffer asReadOnlyBuffer();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.398 -0500", hash_original_method = "EA84EE94947A1E6B3D4BCBC4BC97B98C", hash_generated_method = "BDC2F35BBF6E91E07D767F7EBB3D436C")
+    
+public abstract LongBuffer asReadOnlyBuffer();
 
     /**
      * Compacts this long buffer.
@@ -113,8 +120,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.526 -0500", hash_original_method = "65B1173EDE8F0277AB549EB0B9AC970A", hash_generated_method = "B25497F8A60157F3846369E8D9A5E02E")
-    public abstract LongBuffer compact();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.401 -0500", hash_original_method = "65B1173EDE8F0277AB549EB0B9AC970A", hash_generated_method = "B25497F8A60157F3846369E8D9A5E02E")
+    
+public abstract LongBuffer compact();
 
     /**
      * Compare the remaining longs of this buffer to another long buffer's
@@ -128,8 +136,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      * @exception ClassCastException
      *                if {@code otherBuffer} is not a long buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.527 -0500", hash_original_method = "FEA629F677F50B81610B0F350A8DD419", hash_generated_method = "6362DD160C15E6F35EEC5A1808917F88")
-    public int compareTo(LongBuffer otherBuffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.404 -0500", hash_original_method = "FEA629F677F50B81610B0F350A8DD419", hash_generated_method = "6362DD160C15E6F35EEC5A1808917F88")
+    
+public int compareTo(LongBuffer otherBuffer) {
         int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 : otherBuffer.remaining();
         int thisPos = position;
@@ -161,8 +170,9 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      *
      * @return a duplicated buffer that shares its content with this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.528 -0500", hash_original_method = "5413D30CD3EBC90F68D9250237276737", hash_generated_method = "5420BC50C6D8AEF499023FF16803CE85")
-    public abstract LongBuffer duplicate();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.406 -0500", hash_original_method = "5413D30CD3EBC90F68D9250237276737", hash_generated_method = "5420BC50C6D8AEF499023FF16803CE85")
+    
+public abstract LongBuffer duplicate();
 
     /**
      * Checks whether this long buffer is equal to another object.
@@ -176,9 +186,10 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
      * @return {@code true} if this long buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.529 -0500", hash_original_method = "D82E6566C9B77850C7E0596D73483706", hash_generated_method = "5306D08342CFA40C8D6A07D919BFFB19")
-    @Override
-public boolean equals(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.409 -0500", hash_original_method = "D82E6566C9B77850C7E0596D73483706", hash_generated_method = "5306D08342CFA40C8D6A07D919BFFB19")
+    
+@Override
+    public boolean equals(Object other) {
         if (!(other instanceof LongBuffer)) {
             return false;
         }
@@ -205,8 +216,9 @@ public boolean equals(Object other) {
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.531 -0500", hash_original_method = "DFBC8484A449FE298AE7B323A63CA550", hash_generated_method = "35C8D264EA201FE7C778D2FA1BB835F4")
-    public abstract long get();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.411 -0500", hash_original_method = "DFBC8484A449FE298AE7B323A63CA550", hash_generated_method = "35C8D264EA201FE7C778D2FA1BB835F4")
+    
+public abstract long get();
 
     /**
      * Reads longs from the current position into the specified long array and
@@ -221,8 +233,9 @@ public boolean equals(Object other) {
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.531 -0500", hash_original_method = "D4B2A0425DC120EC01BAEA51D6880E08", hash_generated_method = "FB57FEAA659B88E7B68C17793F0541F1")
-    public LongBuffer get(long[] dst) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.413 -0500", hash_original_method = "D4B2A0425DC120EC01BAEA51D6880E08", hash_generated_method = "FB57FEAA659B88E7B68C17793F0541F1")
+    
+public LongBuffer get(long[] dst) {
         return get(dst, 0, dst.length);
     }
 
@@ -245,8 +258,9 @@ public boolean equals(Object other) {
      * @exception BufferUnderflowException
      *                if {@code longCount} is greater than {@code remaining()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.532 -0500", hash_original_method = "22F3DDD60BBBE627A1DDE8F148E9CD33", hash_generated_method = "E4E1AB0551FD8F7547378AA85A60AA0C")
-    public LongBuffer get(long[] dst, int dstOffset, int longCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.416 -0500", hash_original_method = "22F3DDD60BBBE627A1DDE8F148E9CD33", hash_generated_method = "E4E1AB0551FD8F7547378AA85A60AA0C")
+    
+public LongBuffer get(long[] dst, int dstOffset, int longCount) {
         Arrays.checkOffsetAndCount(dst.length, dstOffset, longCount);
         if (longCount > remaining()) {
             throw new BufferUnderflowException();
@@ -266,11 +280,13 @@ public boolean equals(Object other) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.533 -0500", hash_original_method = "39F5D2B49059340DBB0B6DEF4C7EEFE5", hash_generated_method = "07D3CC36CE8EAB5897CED617E22A3CAB")
-    public abstract long get(int index);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.419 -0500", hash_original_method = "39F5D2B49059340DBB0B6DEF4C7EEFE5", hash_generated_method = "07D3CC36CE8EAB5897CED617E22A3CAB")
+    
+public abstract long get(int index);
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.534 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
-    public final boolean hasArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.421 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
+    
+public final boolean hasArray() {
         return protectedHasArray();
     }
 
@@ -280,9 +296,10 @@ public boolean equals(Object other) {
      *
      * @return the hash code calculated from the remaining longs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.535 -0500", hash_original_method = "5C7ADDF6CA5903C3487F2A9B009FDDB4", hash_generated_method = "BCACA7378872C9AF8EB23DB3A327D381")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.424 -0500", hash_original_method = "5C7ADDF6CA5903C3487F2A9B009FDDB4", hash_generated_method = "BCACA7378872C9AF8EB23DB3A327D381")
+    
+@Override
+    public int hashCode() {
         int myPosition = position;
         int hash = 0;
         long l;
@@ -303,8 +320,9 @@ public int hashCode() {
      *
      * @return {@code true} if this buffer is direct, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.535 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
-    public abstract boolean isDirect();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.426 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
+    
+public abstract boolean isDirect();
 
     /**
      * Returns the byte order used by this buffer when converting longs from/to
@@ -316,32 +334,36 @@ public int hashCode() {
      * @return the byte order used by this buffer when converting longs from/to
      *         bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.536 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
-    public abstract ByteOrder order();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.429 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
+    
+public abstract ByteOrder order();
 
     /**
      * Child class implements this method to realize {@code array()}.
      *
      * @return see {@code array()}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.537 -0500", hash_original_method = "871DA11A9DF08881A9FCDFF81EB530B5", hash_generated_method = "9D9537D982E8FFAE67CB8A094717C2BF")
-    abstract long[] protectedArray();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.431 -0500", hash_original_method = "871DA11A9DF08881A9FCDFF81EB530B5", hash_generated_method = "9D9537D982E8FFAE67CB8A094717C2BF")
+    
+abstract long[] protectedArray();
 
     /**
      * Child class implements this method to realize {@code arrayOffset()}.
      *
      * @return see {@code arrayOffset()}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.538 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
-    abstract int protectedArrayOffset();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.433 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
+    
+abstract int protectedArrayOffset();
 
     /**
      * Child class implements this method to realize {@code hasArray()}.
      *
      * @return see {@code hasArray()}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.539 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
-    abstract boolean protectedHasArray();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.435 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
+    
+abstract boolean protectedHasArray();
 
     /**
      * Writes the given long to the current position and increases the position
@@ -355,8 +377,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.539 -0500", hash_original_method = "7DF6B4F8DA8FBE6F4C17DBAB06D0ACEA", hash_generated_method = "616336DC89E45A8294CA98BF1EE3C04B")
-    public abstract LongBuffer put(long l);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.438 -0500", hash_original_method = "7DF6B4F8DA8FBE6F4C17DBAB06D0ACEA", hash_generated_method = "616336DC89E45A8294CA98BF1EE3C04B")
+    
+public abstract LongBuffer put(long l);
 
     /**
      * Writes longs from the given long array to the current position and
@@ -373,8 +396,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.540 -0500", hash_original_method = "5A5A365AB2651722CE67CD635F8A83E0", hash_generated_method = "C68A334C05EEA585255BFA8884131842")
-    public final LongBuffer put(long[] src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.440 -0500", hash_original_method = "5A5A365AB2651722CE67CD635F8A83E0", hash_generated_method = "C68A334C05EEA585255BFA8884131842")
+    
+public final LongBuffer put(long[] src) {
         return put(src, 0, src.length);
     }
 
@@ -399,8 +423,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.541 -0500", hash_original_method = "B57657AA1D79DC46C889A6E8179D7A18", hash_generated_method = "A42CE20F6CCDAFADB828534D5EAB68CB")
-    public LongBuffer put(long[] src, int srcOffset, int longCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.444 -0500", hash_original_method = "B57657AA1D79DC46C889A6E8179D7A18", hash_generated_method = "A42CE20F6CCDAFADB828534D5EAB68CB")
+    
+public LongBuffer put(long[] src, int srcOffset, int longCount) {
         Arrays.checkOffsetAndCount(src.length, srcOffset, longCount);
         if (longCount > remaining()) {
             throw new BufferOverflowException();
@@ -427,8 +452,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.542 -0500", hash_original_method = "268B2EFE55B01F54F51A1709DBD7F8C3", hash_generated_method = "51BDBE1A008BC7D0C190929A809AF87A")
-    public LongBuffer put(LongBuffer src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.446 -0500", hash_original_method = "268B2EFE55B01F54F51A1709DBD7F8C3", hash_generated_method = "51BDBE1A008BC7D0C190929A809AF87A")
+    
+public LongBuffer put(LongBuffer src) {
         if (src == this) {
             throw new IllegalArgumentException();
         }
@@ -455,8 +481,9 @@ public int hashCode() {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.543 -0500", hash_original_method = "4B297CAE32B3CDD427A17908B0003281", hash_generated_method = "FB0108677215A3CB2224A852D9C187E0")
-    public abstract LongBuffer put(int index, long l);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.449 -0500", hash_original_method = "4B297CAE32B3CDD427A17908B0003281", hash_generated_method = "FB0108677215A3CB2224A852D9C187E0")
+    
+public abstract LongBuffer put(int index, long l);
 
     /**
      * Returns a sliced buffer that shares its content with this buffer.
@@ -473,8 +500,9 @@ public int hashCode() {
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:35.544 -0500", hash_original_method = "9887614DC21CB1EE57B05B261C33E0E7", hash_generated_method = "133C5A8A8A658D91F61868C12755449D")
-    public abstract LongBuffer slice();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.451 -0500", hash_original_method = "9887614DC21CB1EE57B05B261C33E0E7", hash_generated_method = "133C5A8A8A658D91F61868C12755449D")
+    
+public abstract LongBuffer slice();
 
     
 }

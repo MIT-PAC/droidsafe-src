@@ -18,8 +18,9 @@ public class DigestSchemeFactory implements AuthSchemeFactory {
         //Synthesized constructor
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.280 -0500", hash_original_method = "C297ADB7309AAFCCA05FBFAFBC517584", hash_generated_method = "87F0C5A46DCD6079A8ACD0C2D1290490")
-    public AuthScheme newInstance(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.132 -0500", hash_original_method = "C297ADB7309AAFCCA05FBFAFBC517584", hash_generated_method = "87F0C5A46DCD6079A8ACD0C2D1290490")
+    
+public AuthScheme newInstance(final HttpParams params) {
         return new DigestScheme();
     }
 

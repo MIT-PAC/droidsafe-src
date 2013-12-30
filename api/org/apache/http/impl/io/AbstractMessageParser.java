@@ -43,8 +43,9 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
      * @throws HttpException
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.666 -0500", hash_original_method = "2B984335CEDFCBC69AB5F6A3D7DB39C1", hash_generated_method = "0BA1FC05FC31962F32B373ABA2C04A84")
-    public static Header[] parseHeaders(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.694 -0500", hash_original_method = "2B984335CEDFCBC69AB5F6A3D7DB39C1", hash_generated_method = "0BA1FC05FC31962F32B373ABA2C04A84")
+    
+public static Header[] parseHeaders(
             final SessionInputBuffer inbuffer,
             int maxHeaderCount,
             int maxLineLen,
@@ -112,23 +113,24 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         }
         return headers;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.661 -0500", hash_original_field = "13B47FDB2E79FE6CD90882D9DA95C973", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.681 -0500", hash_original_field = "13B47FDB2E79FE6CD90882D9DA95C973", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
 
 
     private  SessionInputBuffer sessionBuffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.662 -0500", hash_original_field = "F0C13102950DF6DEECC29E1050A6EEE7", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.683 -0500", hash_original_field = "F0C13102950DF6DEECC29E1050A6EEE7", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
 
     private  int maxHeaderCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.663 -0500", hash_original_field = "392877A4EDCAD2EFA855A1EA0D8967B1", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.686 -0500", hash_original_field = "392877A4EDCAD2EFA855A1EA0D8967B1", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
 
     private  int maxLineLen;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.664 -0500", hash_original_field = "723ECC87F42B3213E8B9AE9AA3CD7937", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.688 -0500", hash_original_field = "723ECC87F42B3213E8B9AE9AA3CD7937", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
 
     protected  LineParser lineParser;
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.665 -0500", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "C56EDB0284C9BDBC66929A015DE95D08")
-    public AbstractMessageParser(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.691 -0500", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "C56EDB0284C9BDBC66929A015DE95D08")
+    
+public AbstractMessageParser(
             final SessionInputBuffer buffer,
             final LineParser parser,
             final HttpParams params) {
@@ -147,12 +149,14 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.667 -0500", hash_original_method = "6A5FF6AE0D3937AC48619DDFC949CE62", hash_generated_method = "D56D0B4E2D705C17713E8B3E7801723D")
-    protected abstract HttpMessage parseHead(SessionInputBuffer sessionBuffer) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.697 -0500", hash_original_method = "6A5FF6AE0D3937AC48619DDFC949CE62", hash_generated_method = "D56D0B4E2D705C17713E8B3E7801723D")
+    
+protected abstract HttpMessage parseHead(SessionInputBuffer sessionBuffer) 
         throws IOException, HttpException, ParseException;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.668 -0500", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "41264974E91E9340349EE60460B9AC40")
-    public HttpMessage parse() throws IOException, HttpException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.699 -0500", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "41264974E91E9340349EE60460B9AC40")
+    
+public HttpMessage parse() throws IOException, HttpException {
         HttpMessage message = null;
         try {
             message = parseHead(this.sessionBuffer);

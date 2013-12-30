@@ -25,8 +25,9 @@ public class Package implements AnnotatedElement {
      * @return the requested package, or {@code null}.
      * @see ClassLoader#getPackage(java.lang.String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.203 -0500", hash_original_method = "10159562E7C8BDDC782B1B1B486A12DE", hash_generated_method = "2F903CA5C20B82E314630C58709650B7")
-    public static Package getPackage(String packageName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.159 -0500", hash_original_method = "10159562E7C8BDDC782B1B1B486A12DE", hash_generated_method = "2F903CA5C20B82E314630C58709650B7")
+    
+public static Package getPackage(String packageName) {
         ClassLoader classloader = VMStack.getCallingClassLoader();
         if (classloader == null) {
             classloader = ClassLoader.getSystemClassLoader();
@@ -40,45 +41,47 @@ public class Package implements AnnotatedElement {
      * @return all the packages known to the caller's class loader.
      * @see ClassLoader#getPackages
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.204 -0500", hash_original_method = "E96D25DC605E56517EDAA8421D2114F6", hash_generated_method = "47BBFCFD51DD607E08A11B0100E37F4D")
-    public static Package[] getPackages() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.162 -0500", hash_original_method = "E96D25DC605E56517EDAA8421D2114F6", hash_generated_method = "47BBFCFD51DD607E08A11B0100E37F4D")
+    
+public static Package[] getPackages() {
         ClassLoader classloader = VMStack.getCallingClassLoader();
         if (classloader == null) {
             classloader = ClassLoader.getSystemClassLoader();
         }
         return classloader.getPackages();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.187 -0500", hash_original_field = "0C73BE0651CF116606278017BBAFA70A", hash_generated_field = "D584CD4D5524F6C731424F703C29B84F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.113 -0500", hash_original_field = "0C73BE0651CF116606278017BBAFA70A", hash_generated_field = "D584CD4D5524F6C731424F703C29B84F")
 
     private static final Annotation[] NO_ANNOTATIONS = new Annotation[0];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.188 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.116 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
 
     private  String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.189 -0500", hash_original_field = "9329AD5B2A0CEB786C4A9564E64F4187", hash_generated_field = "AE81573D9500136C0B4AD5C6FB30BF01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.119 -0500", hash_original_field = "9329AD5B2A0CEB786C4A9564E64F4187", hash_generated_field = "AE81573D9500136C0B4AD5C6FB30BF01")
 
     private  String specTitle;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.190 -0500", hash_original_field = "0BDF4FC10D526FCE633543481DD62AB3", hash_generated_field = "8AC9ABDDED2DE61D44AD918D71798BCD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.121 -0500", hash_original_field = "0BDF4FC10D526FCE633543481DD62AB3", hash_generated_field = "8AC9ABDDED2DE61D44AD918D71798BCD")
 
     private  String specVersion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.191 -0500", hash_original_field = "D3F6EEA6B78DFA77F9AFCBE434B3B6DD", hash_generated_field = "09287EC9275D23DEE889105D11CDB13B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.124 -0500", hash_original_field = "D3F6EEA6B78DFA77F9AFCBE434B3B6DD", hash_generated_field = "09287EC9275D23DEE889105D11CDB13B")
 
     private  String specVendor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.192 -0500", hash_original_field = "FC3978EDCC62658BE59859801191DF4E", hash_generated_field = "85F560479896D7F78D6BB28FAF454380")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.126 -0500", hash_original_field = "FC3978EDCC62658BE59859801191DF4E", hash_generated_field = "85F560479896D7F78D6BB28FAF454380")
 
     private  String implTitle;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.193 -0500", hash_original_field = "464BEF3FFC4F7C33EE53785987288A8B", hash_generated_field = "D5CDC04B85CD9B13DDD14861DBF2473C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.128 -0500", hash_original_field = "464BEF3FFC4F7C33EE53785987288A8B", hash_generated_field = "D5CDC04B85CD9B13DDD14861DBF2473C")
 
     private  String implVersion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.194 -0500", hash_original_field = "4A3CEF10B78E7804D3EAD96358D386BE", hash_generated_field = "3329CC794A5B24A56B07AB39A5F7B7A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.131 -0500", hash_original_field = "4A3CEF10B78E7804D3EAD96358D386BE", hash_generated_field = "3329CC794A5B24A56B07AB39A5F7B7A7")
 
     private  String implVendor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.194 -0500", hash_original_field = "39F51311234D72CC082A21B6047FFBC5", hash_generated_field = "E6323554A81EBA1D12B93E5F630D84CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.133 -0500", hash_original_field = "39F51311234D72CC082A21B6047FFBC5", hash_generated_field = "E6323554A81EBA1D12B93E5F630D84CC")
 
     private  URL sealBase;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.195 -0500", hash_original_method = "374156791F3AAF85E275A2925DC8F66C", hash_generated_method = "374156791F3AAF85E275A2925DC8F66C")
-    Package(String name, String specTitle, String specVersion, String specVendor,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.136 -0500", hash_original_method = "374156791F3AAF85E275A2925DC8F66C", hash_generated_method = "374156791F3AAF85E275A2925DC8F66C")
+    
+Package(String name, String specTitle, String specVersion, String specVendor,
             String implTitle, String implVersion, String implVendor, URL sealBase) {
         this.name = name;
         this.specTitle = specTitle;
@@ -120,16 +123,18 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
     /**
      * Returns an empty array. Package annotations are not supported on Android.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.197 -0500", hash_original_method = "CE9406711F7ECFD943F53415A91A4AFB", hash_generated_method = "CB29FE8C680345CB2328C2BD219C5B28")
-    public Annotation[] getAnnotations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.141 -0500", hash_original_method = "CE9406711F7ECFD943F53415A91A4AFB", hash_generated_method = "CB29FE8C680345CB2328C2BD219C5B28")
+    
+public Annotation[] getAnnotations() {
         return NO_ANNOTATIONS;
     }
 
     /**
      * Returns an empty array. Package annotations are not supported on Android.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.198 -0500", hash_original_method = "85F9B8C255479693ABE2E35CFE49FA4D", hash_generated_method = "6CBAC098254AA46C825713EB23ADAD70")
-    public Annotation[] getDeclaredAnnotations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.143 -0500", hash_original_method = "85F9B8C255479693ABE2E35CFE49FA4D", hash_generated_method = "6CBAC098254AA46C825713EB23ADAD70")
+    
+public Annotation[] getDeclaredAnnotations() {
         return NO_ANNOTATIONS;
     }
 
@@ -142,8 +147,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *         otherwise.
      * @see java.lang.reflect.AnnotatedElement#isAnnotationPresent(java.lang.Class)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.199 -0500", hash_original_method = "5232C7D94E7B41515E39CA253236284F", hash_generated_method = "225772F708D97128A8DAA5A4D24733D0")
-    public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.146 -0500", hash_original_method = "5232C7D94E7B41515E39CA253236284F", hash_generated_method = "225772F708D97128A8DAA5A4D24733D0")
+    
+public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         return getAnnotation(annotationType) != null;
     }
 
@@ -153,8 +159,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the implementation title, may be {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.200 -0500", hash_original_method = "E42A840611E51BD44AB9A8F4763E49C9", hash_generated_method = "0FC7754DFEEEEFD9AE99629F95509E10")
-    public String getImplementationTitle() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.148 -0500", hash_original_method = "E42A840611E51BD44AB9A8F4763E49C9", hash_generated_method = "0FC7754DFEEEEFD9AE99629F95509E10")
+    
+public String getImplementationTitle() {
         return implTitle;
     }
 
@@ -165,8 +172,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the implementation vendor name, may be {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.201 -0500", hash_original_method = "D69197AE643082D750CA7D47C00F7B92", hash_generated_method = "CF0E3C9C03130A8D32D2CC9215AE7B81")
-    public String getImplementationVendor() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.151 -0500", hash_original_method = "D69197AE643082D750CA7D47C00F7B92", hash_generated_method = "CF0E3C9C03130A8D32D2CC9215AE7B81")
+    
+public String getImplementationVendor() {
         return implVendor;
     }
 
@@ -176,8 +184,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the implementation version, may be {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.202 -0500", hash_original_method = "B250FD1AF223F79726E50E96D0BA0340", hash_generated_method = "55329D98772649FAC10085F7E5A19C24")
-    public String getImplementationVersion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.154 -0500", hash_original_method = "B250FD1AF223F79726E50E96D0BA0340", hash_generated_method = "55329D98772649FAC10085F7E5A19C24")
+    
+public String getImplementationVersion() {
         return implVersion;
     }
 
@@ -187,8 +196,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the name of this package.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.202 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
-    public String getName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.156 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
+    
+public String getName() {
         return name;
     }
 
@@ -198,8 +208,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the specification title, may be {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.205 -0500", hash_original_method = "C2759232E597756D73053EF3F23A361A", hash_generated_method = "EEEBBADB40D376E8C7074DF9EB541A94")
-    public String getSpecificationTitle() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.164 -0500", hash_original_method = "C2759232E597756D73053EF3F23A361A", hash_generated_method = "EEEBBADB40D376E8C7074DF9EB541A94")
+    
+public String getSpecificationTitle() {
         return specTitle;
     }
 
@@ -210,8 +221,9 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the specification vendor name, may be {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.206 -0500", hash_original_method = "973AEF12B2769D423D9BB1FEC4D6C13E", hash_generated_method = "65DAAC27E879FA1D2D5E4C65B67E4EB8")
-    public String getSpecificationVendor() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.167 -0500", hash_original_method = "973AEF12B2769D423D9BB1FEC4D6C13E", hash_generated_method = "65DAAC27E879FA1D2D5E4C65B67E4EB8")
+    
+public String getSpecificationVendor() {
         return specVendor;
     }
 
@@ -222,14 +234,16 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
      *
      * @return the specification version string, may be {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.207 -0500", hash_original_method = "1669663C0689EAEF8399B71C607499D9", hash_generated_method = "F88B4A3035BA3CCD1ED01E8E42B8326D")
-    public String getSpecificationVersion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.169 -0500", hash_original_method = "1669663C0689EAEF8399B71C607499D9", hash_generated_method = "F88B4A3035BA3CCD1ED01E8E42B8326D")
+    
+public String getSpecificationVersion() {
         return specVersion;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.207 -0500", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "79AB96931D4D2744C8AC02B11E3A7517")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.171 -0500", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "79AB96931D4D2744C8AC02B11E3A7517")
+    
+@Override
+    public int hashCode() {
         return name.hashCode();
     }
 
@@ -246,8 +260,9 @@ public int hashCode() {
      *             if this package's version string or the one provided are not
      *             in the correct format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.208 -0500", hash_original_method = "FB75035D423229FA706BBCEA41A373A6", hash_generated_method = "ECDA8D54C75B27EB12F90F5381C51966")
-    public boolean isCompatibleWith(String version) throws NumberFormatException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.174 -0500", hash_original_method = "FB75035D423229FA706BBCEA41A373A6", hash_generated_method = "ECDA8D54C75B27EB12F90F5381C51966")
+    
+public boolean isCompatibleWith(String version) throws NumberFormatException {
         String[] requested = version.split("\\.");
         String[] provided = specVersion.split("\\.");
 
@@ -274,8 +289,9 @@ public int hashCode() {
      *
      * @return {@code true} if this package is sealed; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.209 -0500", hash_original_method = "8B9E9C35AFB855740620C92F002E4A38", hash_generated_method = "D93A43812A9CA0B98209947C6F6A18EE")
-    public boolean isSealed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.176 -0500", hash_original_method = "8B9E9C35AFB855740620C92F002E4A38", hash_generated_method = "D93A43812A9CA0B98209947C6F6A18EE")
+    
+public boolean isSealed() {
         return sealBase != null;
     }
 
@@ -288,14 +304,16 @@ public int hashCode() {
      * @return {@code true} if this package is sealed with {@code url}; {@code
      *         false} otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.210 -0500", hash_original_method = "55B8ABCD808682E10A2965544061F7A5", hash_generated_method = "287EF2A604F94B823DCF0CE559604AFE")
-    public boolean isSealed(URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.178 -0500", hash_original_method = "55B8ABCD808682E10A2965544061F7A5", hash_generated_method = "287EF2A604F94B823DCF0CE559604AFE")
+    
+public boolean isSealed(URL url) {
         return sealBase != null && sealBase.sameFile(url);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.211 -0500", hash_original_method = "8B76FC83381F276BB56C5A0620FC8DEC", hash_generated_method = "0BD90C291C1F2BCF1D5C382F021941D5")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.181 -0500", hash_original_method = "8B76FC83381F276BB56C5A0620FC8DEC", hash_generated_method = "0BD90C291C1F2BCF1D5C382F021941D5")
+    
+@Override
+    public String toString() {
         return "package " + name;
     }
 }

@@ -13,15 +13,15 @@ import libcore.util.SneakyThrow;
 
 
 public class BufferedWriter extends Writer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.239 -0500", hash_original_field = "EBCE22DD0E30FF0E4040ABB2E7F29C97", hash_generated_field = "0251D9C19BD1379B95D6A9A5D4A8C80D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.393 -0500", hash_original_field = "EBCE22DD0E30FF0E4040ABB2E7F29C97", hash_generated_field = "0251D9C19BD1379B95D6A9A5D4A8C80D")
 
 
     private Writer out;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.240 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.396 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
 
 
     private char[] buf;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.241 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.398 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
 
     private int pos;
@@ -32,8 +32,9 @@ public class BufferedWriter extends Writer {
      *
      * @param out the {@code Writer} the buffer writes to.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.242 -0500", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "FAED49220CE1BA4E9A3247C527651C59")
-    public BufferedWriter(Writer out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.401 -0500", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "FAED49220CE1BA4E9A3247C527651C59")
+    
+public BufferedWriter(Writer out) {
         this(out, 8192);
     }
 
@@ -45,8 +46,9 @@ public class BufferedWriter extends Writer {
      * @param size the size of buffer in bytes.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.243 -0500", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "F1E03926A4E3DA844CAF0FC8D59F2B35")
-    public BufferedWriter(Writer out, int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.404 -0500", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "F1E03926A4E3DA844CAF0FC8D59F2B35")
+    
+public BufferedWriter(Writer out, int size) {
         super(out);
         if (size <= 0) {
             throw new IllegalArgumentException("size <= 0");
@@ -63,9 +65,10 @@ public class BufferedWriter extends Writer {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.244 -0500", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "127F1A20360C713C7F1AB5B9AF7B63D3")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.407 -0500", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "127F1A20360C713C7F1AB5B9AF7B63D3")
+    
+@Override
+    public void close() throws IOException {
         synchronized (lock) {
             if (isClosed()) {
                 return;
@@ -101,9 +104,10 @@ public void close() throws IOException {
      * @throws IOException
      *             if an error occurs while flushing this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.245 -0500", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "EE62E3FF899BD2828946937B2BAF16E5")
-    @Override
-public void flush() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.410 -0500", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "EE62E3FF899BD2828946937B2BAF16E5")
+    
+@Override
+    public void flush() throws IOException {
         synchronized (lock) {
             checkNotClosed();
             flushInternal();
@@ -111,8 +115,9 @@ public void flush() throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.246 -0500", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "5E7823C8E0E8B576442E72FE23F39A88")
-    private void checkNotClosed() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.413 -0500", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "5E7823C8E0E8B576442E72FE23F39A88")
+    
+private void checkNotClosed() throws IOException {
         if (isClosed()) {
             throw new IOException("BufferedWriter is closed");
         }
@@ -121,8 +126,9 @@ public void flush() throws IOException {
     /**
      * Flushes the internal buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.247 -0500", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "44F53CF6742339CE56733D4953AB5880")
-    private void flushInternal() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.415 -0500", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "44F53CF6742339CE56733D4953AB5880")
+    
+private void flushInternal() throws IOException {
         if (pos > 0) {
             out.write(buf, 0, pos);
         }
@@ -134,8 +140,9 @@ public void flush() throws IOException {
      *
      * @return {@code true} if this writer is closed, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.248 -0500", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "49B5D6BDDF3744E41E97B3326CF144AB")
-    private boolean isClosed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.418 -0500", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "49B5D6BDDF3744E41E97B3326CF144AB")
+    
+private boolean isClosed() {
         return out == null;
     }
 
@@ -146,8 +153,9 @@ public void flush() throws IOException {
      * @throws IOException
      *             if an error occurs attempting to write to this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.248 -0500", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "3A13DB33FEE4E58AA5B65F7DD55F0264")
-    public void newLine() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.420 -0500", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "3A13DB33FEE4E58AA5B65F7DD55F0264")
+    
+public void newLine() throws IOException {
         write(System.lineSeparator());
     }
 
@@ -170,9 +178,10 @@ public void flush() throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.250 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
-    @Override
-public void write(char[] cbuf, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.424 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
+    
+@Override
+    public void write(char[] cbuf, int offset, int count) throws IOException {
         synchronized (lock) {
             checkNotClosed();
             if (cbuf == null) {
@@ -219,9 +228,10 @@ public void write(char[] cbuf, int offset, int count) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.251 -0500", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "5754A8963C9C380CBB2742943A30E3F9")
-    @Override
-public void write(int oneChar) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.427 -0500", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "5754A8963C9C380CBB2742943A30E3F9")
+    
+@Override
+    public void write(int oneChar) throws IOException {
         synchronized (lock) {
             checkNotClosed();
             if (pos >= buf.length) {
@@ -252,9 +262,10 @@ public void write(int oneChar) throws IOException {
      *             if {@code offset < 0} or {@code offset + count} is greater
      *             than the length of {@code str}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.252 -0500", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "CC19827EBE9A9C4E7EA3C6B136BC89B1")
-    @Override
-public void write(String str, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.432 -0500", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "CC19827EBE9A9C4E7EA3C6B136BC89B1")
+    
+@Override
+    public void write(String str, int offset, int count) throws IOException {
         synchronized (lock) {
             checkNotClosed();
             if (count <= 0) {

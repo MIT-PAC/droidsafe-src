@@ -18,26 +18,29 @@ import android.os.FileUtils;
 
 
 public class AtomicFile {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.048 -0500", hash_original_field = "0EF2CCD9F04729765DB1F68752E0F610", hash_generated_field = "AB7EB62D4846E04C9549A0F948CCC84A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.284 -0500", hash_original_field = "0EF2CCD9F04729765DB1F68752E0F610", hash_generated_field = "AB7EB62D4846E04C9549A0F948CCC84A")
 
     private  File mBaseName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.048 -0500", hash_original_field = "28F1ABD789DDE37ACEB8C5F11FA1328F", hash_generated_field = "05FBF0A6813A8D6E5E2596945AF63AA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.287 -0500", hash_original_field = "28F1ABD789DDE37ACEB8C5F11FA1328F", hash_generated_field = "05FBF0A6813A8D6E5E2596945AF63AA3")
 
     private  File mBackupName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.049 -0500", hash_original_method = "4B5AD0CA4BAB4787DEF9E50D606D6D18", hash_generated_method = "B8BF78A2C42DF8A207F0CE28FF8926A5")
-    public AtomicFile(File baseName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.289 -0500", hash_original_method = "4B5AD0CA4BAB4787DEF9E50D606D6D18", hash_generated_method = "B8BF78A2C42DF8A207F0CE28FF8926A5")
+    
+public AtomicFile(File baseName) {
         mBaseName = baseName;
         mBackupName = new File(baseName.getPath() + ".bak");
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.050 -0500", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "E09F7B21F8463E6D961987C1D71EC0B8")
-    public File getBaseFile() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.291 -0500", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "E09F7B21F8463E6D961987C1D71EC0B8")
+    
+public File getBaseFile() {
         return mBaseName;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.051 -0500", hash_original_method = "3A4012A9534B3FE136043C6A101CE434", hash_generated_method = "0C5E2D28995D10BD57413E594FF90D47")
-    public FileOutputStream startWrite() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.295 -0500", hash_original_method = "3A4012A9534B3FE136043C6A101CE434", hash_generated_method = "0C5E2D28995D10BD57413E594FF90D47")
+    
+public FileOutputStream startWrite() throws IOException {
         // Rename the current file so it may be used as a backup during the next read
         if (mBaseName.exists()) {
             if (!mBackupName.exists()) {
@@ -70,8 +73,9 @@ public class AtomicFile {
         return str;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.052 -0500", hash_original_method = "D04158B1AAD606E61A919B5845F356D0", hash_generated_method = "E9EF6869C45210F9694BD7A340EB367E")
-    public void finishWrite(FileOutputStream str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.297 -0500", hash_original_method = "D04158B1AAD606E61A919B5845F356D0", hash_generated_method = "E9EF6869C45210F9694BD7A340EB367E")
+    
+public void finishWrite(FileOutputStream str) {
         if (str != null) {
             FileUtils.sync(str);
             try {
@@ -83,8 +87,9 @@ public class AtomicFile {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.053 -0500", hash_original_method = "4F4EB111C51C134B2301DB792D42BE44", hash_generated_method = "8500917FC369FE80172E61E1136EEA8C")
-    public void failWrite(FileOutputStream str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.300 -0500", hash_original_method = "4F4EB111C51C134B2301DB792D42BE44", hash_generated_method = "8500917FC369FE80172E61E1136EEA8C")
+    
+public void failWrite(FileOutputStream str) {
         if (str != null) {
             FileUtils.sync(str);
             try {
@@ -97,8 +102,9 @@ public class AtomicFile {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.054 -0500", hash_original_method = "9D6541EF95DD6CE6D6599F106C94D734", hash_generated_method = "559993A72B384FB6EEB7CE268F3590A5")
-    public FileOutputStream openAppend() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.302 -0500", hash_original_method = "9D6541EF95DD6CE6D6599F106C94D734", hash_generated_method = "559993A72B384FB6EEB7CE268F3590A5")
+    
+public FileOutputStream openAppend() throws IOException {
         try {
             return new FileOutputStream(mBaseName, true);
         } catch (FileNotFoundException e) {
@@ -106,8 +112,9 @@ public class AtomicFile {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.055 -0500", hash_original_method = "057A1C42B6EC5037516E78678BBEEE23", hash_generated_method = "4418F3D6EF001028221D4E2CB6F95ABF")
-    public void truncate() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.304 -0500", hash_original_method = "057A1C42B6EC5037516E78678BBEEE23", hash_generated_method = "4418F3D6EF001028221D4E2CB6F95ABF")
+    
+public void truncate() throws IOException {
         try {
             FileOutputStream fos = new FileOutputStream(mBaseName);
             FileUtils.sync(fos);
@@ -118,8 +125,9 @@ public class AtomicFile {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.056 -0500", hash_original_method = "1A78B3BB099030EABAF4D8DEC5E5F129", hash_generated_method = "F1099AF04C67A26CC31E5F75C97D05A4")
-    public FileInputStream openRead() throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.307 -0500", hash_original_method = "1A78B3BB099030EABAF4D8DEC5E5F129", hash_generated_method = "F1099AF04C67A26CC31E5F75C97D05A4")
+    
+public FileInputStream openRead() throws FileNotFoundException {
         if (mBackupName.exists()) {
             mBaseName.delete();
             mBackupName.renameTo(mBaseName);
@@ -127,8 +135,9 @@ public class AtomicFile {
         return new FileInputStream(mBaseName);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.057 -0500", hash_original_method = "69475477B3077359758F883E80DC53D4", hash_generated_method = "38F70CCCEE755E1F4C3094935B1F75BA")
-    public byte[] readFully() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.309 -0500", hash_original_method = "69475477B3077359758F883E80DC53D4", hash_generated_method = "38F70CCCEE755E1F4C3094935B1F75BA")
+    
+public byte[] readFully() throws IOException {
         FileInputStream stream = openRead();
         try {
             int pos = 0;

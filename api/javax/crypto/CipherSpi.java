@@ -22,8 +22,9 @@ public abstract class CipherSpi {
     /**
      * Creates a new {@code CipherSpi} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.951 -0500", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "D1A563210D3C3C201F22771993828D27")
-    public CipherSpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.455 -0500", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "D1A563210D3C3C201F22771993828D27")
+    
+public CipherSpi() {
     }
 
     /**
@@ -35,8 +36,9 @@ public abstract class CipherSpi {
      *             if the specified cipher mode is not supported by this
      *             provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.952 -0500", hash_original_method = "5BCE3040B50603B6E5AFB112956881FA", hash_generated_method = "11F5F8B6D33F450534A39EA214C06937")
-    protected abstract void engineSetMode(String mode)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.458 -0500", hash_original_method = "5BCE3040B50603B6E5AFB112956881FA", hash_generated_method = "11F5F8B6D33F450534A39EA214C06937")
+    
+protected abstract void engineSetMode(String mode)
             throws NoSuchAlgorithmException;
 
     /**
@@ -48,8 +50,9 @@ public abstract class CipherSpi {
      *             if the specified padding method is not supported by this
      *             cipher.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.953 -0500", hash_original_method = "E0B5BC1F917F2BE5EA0D3771E8033578", hash_generated_method = "D255588F11E98ACF90802C4B1CB1DAD9")
-    protected abstract void engineSetPadding(String padding)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.460 -0500", hash_original_method = "E0B5BC1F917F2BE5EA0D3771E8033578", hash_generated_method = "D255588F11E98ACF90802C4B1CB1DAD9")
+    
+protected abstract void engineSetPadding(String padding)
             throws NoSuchPaddingException;
 
     /**
@@ -58,8 +61,9 @@ public abstract class CipherSpi {
      * @return the block size of this cipher, or zero if this cipher is not a
      *         block cipher.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.954 -0500", hash_original_method = "3ACC05EE7DE432C9B56A86A9FE86D8EC", hash_generated_method = "CE4C83C1C504CE70BA1D20D9F6BF5975")
-    protected abstract int engineGetBlockSize();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.462 -0500", hash_original_method = "3ACC05EE7DE432C9B56A86A9FE86D8EC", hash_generated_method = "CE4C83C1C504CE70BA1D20D9F6BF5975")
+    
+protected abstract int engineGetBlockSize();
 
     /**
      * Returns the size for a buffer (in bytes), that the next call to {@code
@@ -73,8 +77,9 @@ public abstract class CipherSpi {
      *            the length of the input (in bytes).
      * @return the size for a buffer (in bytes).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.955 -0500", hash_original_method = "7019972DECB97481B99961B906CB605E", hash_generated_method = "A247EE90853D8ACC344BA5A6B50542CC")
-    protected abstract int engineGetOutputSize(int inputLen);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.465 -0500", hash_original_method = "7019972DECB97481B99961B906CB605E", hash_generated_method = "A247EE90853D8ACC344BA5A6B50542CC")
+    
+protected abstract int engineGetOutputSize(int inputLen);
 
     /**
      * Returns the Initialization Vector (IV) that was used to initialize this
@@ -82,8 +87,9 @@ public abstract class CipherSpi {
      *
      * @return the Initialization Vector (IV), or {@code null} if none was used.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.955 -0500", hash_original_method = "C5141BE3C0DBACFB99BE4E20F3121758", hash_generated_method = "2A81A6576CF9913F0EDB74F9968F99A3")
-    protected abstract byte[] engineGetIV();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.468 -0500", hash_original_method = "C5141BE3C0DBACFB99BE4E20F3121758", hash_generated_method = "2A81A6576CF9913F0EDB74F9968F99A3")
+    
+protected abstract byte[] engineGetIV();
 
     /**
      * Returns the parameters that where used to create this cipher instance.
@@ -96,8 +102,9 @@ public abstract class CipherSpi {
      *         {@code null} if this cipher instance does not have any parameters
      *         at all.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.956 -0500", hash_original_method = "F437E8F38ACE5E40323D54CF433424BE", hash_generated_method = "10476EECE572B4A92BCBC8968F86BA74")
-    protected abstract AlgorithmParameters engineGetParameters();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.472 -0500", hash_original_method = "F437E8F38ACE5E40323D54CF433424BE", hash_generated_method = "10476EECE572B4A92BCBC8968F86BA74")
+    
+protected abstract AlgorithmParameters engineGetParameters();
 
     /**
      * Initializes this cipher instance with the specified key and a source of
@@ -129,8 +136,9 @@ public abstract class CipherSpi {
      *             if the specified key cannot be used to initialize this cipher
      *             instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.957 -0500", hash_original_method = "15D0BECC17BB45C6B91C0893B86C3D1B", hash_generated_method = "D1F579C24D10F21BFDA6B3319806F8F8")
-    protected abstract void engineInit(int opmode, Key key, SecureRandom random)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.474 -0500", hash_original_method = "15D0BECC17BB45C6B91C0893B86C3D1B", hash_generated_method = "D1F579C24D10F21BFDA6B3319806F8F8")
+    
+protected abstract void engineInit(int opmode, Key key, SecureRandom random)
             throws InvalidKeyException;
 
     /**
@@ -167,8 +175,9 @@ public abstract class CipherSpi {
      *             it the specified parameters are inappropriate for this
      *             cipher.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.958 -0500", hash_original_method = "B8FFCDB05448A33CA2433E0C98E9F38B", hash_generated_method = "2A193111E0E207ACB6CA2A72E530D15A")
-    protected abstract void engineInit(int opmode, Key key,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.476 -0500", hash_original_method = "B8FFCDB05448A33CA2433E0C98E9F38B", hash_generated_method = "2A193111E0E207ACB6CA2A72E530D15A")
+    
+protected abstract void engineInit(int opmode, Key key,
             AlgorithmParameterSpec params, SecureRandom random)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
@@ -206,8 +215,9 @@ public abstract class CipherSpi {
      *             if the specified parameters are inappropriate for this
      *             cipher.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.959 -0500", hash_original_method = "E8247AA39E1B9CCC8596EAFC45AE0E11", hash_generated_method = "64D5B0AD53E48EA0684BDCD2ACE2CCE3")
-    protected abstract void engineInit(int opmode, Key key,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.479 -0500", hash_original_method = "E8247AA39E1B9CCC8596EAFC45AE0E11", hash_generated_method = "64D5B0AD53E48EA0684BDCD2ACE2CCE3")
+    
+protected abstract void engineInit(int opmode, Key key,
             AlgorithmParameters params, SecureRandom random)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
@@ -230,8 +240,9 @@ public abstract class CipherSpi {
      *             if the input is null, or if {@code inputOffset} and {@code
      *             inputLen} do not specify a valid chunk in the input buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.960 -0500", hash_original_method = "81313172ABED23D45251C078F61F50A7", hash_generated_method = "CFA448C23C6FB2BCA9F484C302BA2856")
-    protected abstract byte[] engineUpdate(byte[] input, int inputOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.481 -0500", hash_original_method = "81313172ABED23D45251C078F61F50A7", hash_generated_method = "CFA448C23C6FB2BCA9F484C302BA2856")
+    
+protected abstract byte[] engineUpdate(byte[] input, int inputOffset,
             int inputLen);
 
     /**
@@ -257,8 +268,9 @@ public abstract class CipherSpi {
      * @throws ShortBufferException
      *             if the size of the {@code output} buffer is too small.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.960 -0500", hash_original_method = "61BC6ED49CB8D34B55A936DFEB746437", hash_generated_method = "E5AE46DB5118504CAD77DB34E1A26081")
-    protected abstract int engineUpdate(byte[] input, int inputOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.483 -0500", hash_original_method = "61BC6ED49CB8D34B55A936DFEB746437", hash_generated_method = "E5AE46DB5118504CAD77DB34E1A26081")
+    
+protected abstract int engineUpdate(byte[] input, int inputOffset,
             int inputLen, byte[] output, int outputOffset)
             throws ShortBufferException;
 
@@ -280,8 +292,9 @@ public abstract class CipherSpi {
      * @throws ShortBufferException
      *             if the size of the {@code output} buffer is too small.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.961 -0500", hash_original_method = "A2736EFE3A54B9C2C8D99150445AC571", hash_generated_method = "5494D7FC63B418129C8C3F9728521910")
-    protected int engineUpdate(ByteBuffer input, ByteBuffer output)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.486 -0500", hash_original_method = "A2736EFE3A54B9C2C8D99150445AC571", hash_generated_method = "5494D7FC63B418129C8C3F9728521910")
+    
+protected int engineUpdate(ByteBuffer input, ByteBuffer output)
             throws ShortBufferException {
         if (input == null) {
             throw new NullPointerException("input == null");
@@ -340,8 +353,9 @@ public abstract class CipherSpi {
      * @throws BadPaddingException
      *             if the padding of the data does not match the padding scheme.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.962 -0500", hash_original_method = "C26828CB49B064507C61439FD3E111AC", hash_generated_method = "A71484D50D37071EB4267DF764C25B3D")
-    protected abstract byte[] engineDoFinal(byte[] input, int inputOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.489 -0500", hash_original_method = "C26828CB49B064507C61439FD3E111AC", hash_generated_method = "A71484D50D37071EB4267DF764C25B3D")
+    
+protected abstract byte[] engineDoFinal(byte[] input, int inputOffset,
             int inputLen) throws IllegalBlockSizeException, BadPaddingException;
 
     /**
@@ -370,8 +384,9 @@ public abstract class CipherSpi {
      * @throws BadPaddingException
      *             if the padding of the data does not match the padding scheme.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.963 -0500", hash_original_method = "88DB39159701BC244ED5DAF1D466344A", hash_generated_method = "25F835FAA2D0CBEDC58369D0BD5A5C5D")
-    protected abstract int engineDoFinal(byte[] input, int inputOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.492 -0500", hash_original_method = "88DB39159701BC244ED5DAF1D466344A", hash_generated_method = "25F835FAA2D0CBEDC58369D0BD5A5C5D")
+    
+protected abstract int engineDoFinal(byte[] input, int inputOffset,
             int inputLen, byte[] output, int outputOffset)
             throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException;
@@ -403,8 +418,9 @@ public abstract class CipherSpi {
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.964 -0500", hash_original_method = "EB2370CFCF7CAD7D2D42FF2FD39E8FD0", hash_generated_method = "DE9670D093F36576A122315C9C27A377")
-    protected int engineDoFinal(ByteBuffer input, ByteBuffer output)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.495 -0500", hash_original_method = "EB2370CFCF7CAD7D2D42FF2FD39E8FD0", hash_generated_method = "DE9670D093F36576A122315C9C27A377")
+    
+protected int engineDoFinal(ByteBuffer input, ByteBuffer output)
             throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {
         if (input == null) {
@@ -458,8 +474,9 @@ public abstract class CipherSpi {
      * @throws InvalidKeyException
      *             if this cipher instance cannot wrap this key.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.965 -0500", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "A39FAFF0CA4B5C1E46D0446E9EDEBB62")
-    protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.497 -0500", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "A39FAFF0CA4B5C1E46D0446E9EDEBB62")
+    
+protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
         throw new UnsupportedOperationException();
     }
 
@@ -486,8 +503,9 @@ public abstract class CipherSpi {
      *             if no provider can be found that can create a key of type
      *             {@code wrappedKeyType} for the {@code wrappedKeyAlgorithm}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.966 -0500", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "EC8CF541C3B3A85029364FDDAEC36441")
-    protected Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.499 -0500", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "EC8CF541C3B3A85029364FDDAEC36441")
+    
+protected Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException, NoSuchAlgorithmException {
         throw new UnsupportedOperationException();
     }
@@ -505,8 +523,9 @@ public abstract class CipherSpi {
      *             if the size of the key cannot be determined by this
      *             implementation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.967 -0500", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "67134DB4B966FE23A047A0AE5B5E379C")
-    protected int engineGetKeySize(Key key) throws InvalidKeyException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.501 -0500", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "67134DB4B966FE23A047A0AE5B5E379C")
+    
+protected int engineGetKeySize(Key key) throws InvalidKeyException {
         throw new UnsupportedOperationException();
     }
 

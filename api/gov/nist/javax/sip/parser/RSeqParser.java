@@ -22,8 +22,9 @@ public class RSeqParser extends HeaderParser {
      * Creates a new instance of RSeqParser
      * @param rseq the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.450 -0500", hash_original_method = "B348DC5283F0EBC54D9A2FF780CFD084", hash_generated_method = "188C7C000A6810285121AA6072D42B88")
-    public RSeqParser(String rseq) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.249 -0500", hash_original_method = "B348DC5283F0EBC54D9A2FF780CFD084", hash_generated_method = "188C7C000A6810285121AA6072D42B88")
+    
+public RSeqParser(String rseq) {
         super(rseq);
     }
 
@@ -31,8 +32,9 @@ public class RSeqParser extends HeaderParser {
      * Constructor
      * param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.451 -0500", hash_original_method = "5126E3858C9B58BEE1E09B9D0E5DEFC7", hash_generated_method = "52C17028BE9BD792DC9A8A38FCEFD704")
-    protected RSeqParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.252 -0500", hash_original_method = "5126E3858C9B58BEE1E09B9D0E5DEFC7", hash_generated_method = "52C17028BE9BD792DC9A8A38FCEFD704")
+    
+protected RSeqParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class RSeqParser extends HeaderParser {
      * @return SIPHeader ( RSeq object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.452 -0500", hash_original_method = "AB1A0262C7314394004DEB16F5DFE46A", hash_generated_method = "D1762E0FE3A1ABFA34284B038EB5FB15")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.255 -0500", hash_original_method = "AB1A0262C7314394004DEB16F5DFE46A", hash_generated_method = "D1762E0FE3A1ABFA34284B038EB5FB15")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("RSeqParser.parse");

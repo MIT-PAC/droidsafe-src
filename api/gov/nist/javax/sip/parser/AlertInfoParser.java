@@ -22,8 +22,9 @@ public class AlertInfoParser extends ParametersParser {
      * Creates a new instance of AlertInfo Parser
      * @param alertInfo  the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.265 -0500", hash_original_method = "D981F7025F52BA8E1CEDC583E21B710C", hash_generated_method = "73D70348B5426E6EBABB75233918596A")
-    public AlertInfoParser(String alertInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.732 -0500", hash_original_method = "D981F7025F52BA8E1CEDC583E21B710C", hash_generated_method = "73D70348B5426E6EBABB75233918596A")
+    
+public AlertInfoParser(String alertInfo) {
         super(alertInfo);
     }
 
@@ -31,8 +32,9 @@ public class AlertInfoParser extends ParametersParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.266 -0500", hash_original_method = "FBB9329DBFDB9634284D1CD105BFF940", hash_generated_method = "C79A8175C763825EB46434CC8CBFE342")
-    protected AlertInfoParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.735 -0500", hash_original_method = "FBB9329DBFDB9634284D1CD105BFF940", hash_generated_method = "C79A8175C763825EB46434CC8CBFE342")
+    
+protected AlertInfoParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class AlertInfoParser extends ParametersParser {
      * @return SIPHeader (AlertInfoList  object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.267 -0500", hash_original_method = "01178CDB4B591AEEFEAB9C463FFB7ADD", hash_generated_method = "418D49F31C51CDC7D2171D64670F814D")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.738 -0500", hash_original_method = "01178CDB4B591AEEFEAB9C463FFB7ADD", hash_generated_method = "418D49F31C51CDC7D2171D64670F814D")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("AlertInfoParser.parse");

@@ -26,27 +26,27 @@ import org.apache.http.params.HttpParams;
 
 
 public class ConnPoolByRoute extends AbstractConnPool {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.595 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.248 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
         
     private final Log log = LogFactory.getLog(getClass());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.596 -0500", hash_original_field = "5ECDF9140F933CD067B24AED705BDC40", hash_generated_field = "026614D17D2D565C77517B2D71C2A557")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.250 -0500", hash_original_field = "5ECDF9140F933CD067B24AED705BDC40", hash_generated_field = "026614D17D2D565C77517B2D71C2A557")
 
     protected  ClientConnectionOperator operator;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.597 -0500", hash_original_field = "517E1AF3F20473F418CDD5D509A852FD", hash_generated_field = "E964A63E9B82E3DD4DC47C59FAE8DE45")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.252 -0500", hash_original_field = "517E1AF3F20473F418CDD5D509A852FD", hash_generated_field = "E964A63E9B82E3DD4DC47C59FAE8DE45")
 
     protected Queue<BasicPoolEntry> freeConnections;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.597 -0500", hash_original_field = "BDF0A61E4197385E0D2E24DFD51B36B8", hash_generated_field = "E267A7FAC4E8E5B414A36EEBC5A1B7B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.255 -0500", hash_original_field = "BDF0A61E4197385E0D2E24DFD51B36B8", hash_generated_field = "E267A7FAC4E8E5B414A36EEBC5A1B7B4")
 
     protected Queue<WaitingThread> waitingThreads;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.598 -0500", hash_original_field = "FBF07056504D45C56ED67579F5AABB78", hash_generated_field = "CC1DA54842268F916A1617EAB82AA607")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.257 -0500", hash_original_field = "FBF07056504D45C56ED67579F5AABB78", hash_generated_field = "CC1DA54842268F916A1617EAB82AA607")
 
     protected  Map<HttpRoute, RouteSpecificPool> routeToPool;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.599 -0500", hash_original_field = "9593BFDFA77F7CEC9E2DEF7153A8A474", hash_generated_field = "72497F1614BF1540B1D26A1572D9E5CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.259 -0500", hash_original_field = "9593BFDFA77F7CEC9E2DEF7153A8A474", hash_generated_field = "72497F1614BF1540B1D26A1572D9E5CA")
 
 
     protected  int maxTotalConnections;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.600 -0500", hash_original_field = "4F999BC70044645838F3F4E2114A0BFC", hash_generated_field = "9E9F031DEF0505CA4E19FEFFE7AAAD7E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.262 -0500", hash_original_field = "4F999BC70044645838F3F4E2114A0BFC", hash_generated_field = "9E9F031DEF0505CA4E19FEFFE7AAAD7E")
 
     
     private  ConnPerRoute connPerRoute;
@@ -54,8 +54,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
     /**
      * Creates a new connection pool, managed by route.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.601 -0500", hash_original_method = "66E0A8FBF49ECB21297BEFDE183D53F0", hash_generated_method = "6FAF55943B44526C037FBE5D40EDF4C6")
-    public ConnPoolByRoute(final ClientConnectionOperator operator, final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.265 -0500", hash_original_method = "66E0A8FBF49ECB21297BEFDE183D53F0", hash_generated_method = "6FAF55943B44526C037FBE5D40EDF4C6")
+    
+public ConnPoolByRoute(final ClientConnectionOperator operator, final HttpParams params) {
         super();
         if (operator == null) {
             throw new IllegalArgumentException("Connection operator may not be null");
@@ -78,8 +79,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
      *
      * @return  a queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.601 -0500", hash_original_method = "5727338124A1E72B6395110A48913E3E", hash_generated_method = "8336F85EC4456F5E84A7B4216D92B008")
-    protected Queue<BasicPoolEntry> createFreeConnQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.267 -0500", hash_original_method = "5727338124A1E72B6395110A48913E3E", hash_generated_method = "8336F85EC4456F5E84A7B4216D92B008")
+    
+protected Queue<BasicPoolEntry> createFreeConnQueue() {
         return new LinkedList<BasicPoolEntry>();
     }
 
@@ -89,8 +91,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
      *
      * @return  a queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.602 -0500", hash_original_method = "6DAD2F123996401C30A0886A4B729895", hash_generated_method = "C303012397C1CFEC345256FC35AB2A22")
-    protected Queue<WaitingThread> createWaitingThreadQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.269 -0500", hash_original_method = "6DAD2F123996401C30A0886A4B729895", hash_generated_method = "C303012397C1CFEC345256FC35AB2A22")
+    
+protected Queue<WaitingThread> createWaitingThreadQueue() {
         return new LinkedList<WaitingThread>();
     }
 
@@ -100,8 +103,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
      *
      * @return  a map
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.603 -0500", hash_original_method = "2238A516ECCEA4A16F09E10B17DA5B4C", hash_generated_method = "3A4D0585B195E0B08364B295F1ABF353")
-    protected Map<HttpRoute, RouteSpecificPool> createRouteToPoolMap() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.272 -0500", hash_original_method = "2238A516ECCEA4A16F09E10B17DA5B4C", hash_generated_method = "3A4D0585B195E0B08364B295F1ABF353")
+    
+protected Map<HttpRoute, RouteSpecificPool> createRouteToPoolMap() {
         return new HashMap<HttpRoute, RouteSpecificPool>();
     }
 
@@ -114,8 +118,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
      *
      * @return  the new pool
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.604 -0500", hash_original_method = "5DDB8B45F189660D50400B7C32F12F31", hash_generated_method = "6592B93F88A363C7E41FBD1C5A6C9416")
-    protected RouteSpecificPool newRouteSpecificPool(HttpRoute route) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.274 -0500", hash_original_method = "5DDB8B45F189660D50400B7C32F12F31", hash_generated_method = "6592B93F88A363C7E41FBD1C5A6C9416")
+    
+protected RouteSpecificPool newRouteSpecificPool(HttpRoute route) {
         return new RouteSpecificPool(route, connPerRoute.getMaxForRoute(route));
     }
 
@@ -129,8 +134,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
      *
      * @return  a waiting thread representation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.605 -0500", hash_original_method = "92724E0FC2C28E5538F8325CDCFB2338", hash_generated_method = "65784DF194E2AC5D199AF672A4193A2F")
-    protected WaitingThread newWaitingThread(Condition cond,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.277 -0500", hash_original_method = "92724E0FC2C28E5538F8325CDCFB2338", hash_generated_method = "65784DF194E2AC5D199AF672A4193A2F")
+    
+protected WaitingThread newWaitingThread(Condition cond,
                                              RouteSpecificPool rospl) {
         return new WaitingThread(cond, rospl);
     }
@@ -145,8 +151,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
      * @return  the pool for the argument route,
      *     never <code>null</code> if <code>create</code> is <code>true</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.606 -0500", hash_original_method = "2DA0D144EE94C06AE8D1ED191B4BB0F6", hash_generated_method = "B25413AC7ABE939B0C0783C46AFD556E")
-    protected RouteSpecificPool getRoutePool(HttpRoute route,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.279 -0500", hash_original_method = "2DA0D144EE94C06AE8D1ED191B4BB0F6", hash_generated_method = "B25413AC7ABE939B0C0783C46AFD556E")
+    
+protected RouteSpecificPool getRoutePool(HttpRoute route,
                                              boolean create) {
         RouteSpecificPool rospl = null;
         poolLock.lock();
@@ -168,8 +175,9 @@ public class ConnPoolByRoute extends AbstractConnPool {
 
 
     //@@@ consider alternatives for gathering statistics
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.606 -0500", hash_original_method = "BC602BD8B10C5776DF65F2D8A63D167D", hash_generated_method = "1F8CB93833AC002F19CB03C0E120A93D")
-    public int getConnectionsInPool(HttpRoute route) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.282 -0500", hash_original_method = "BC602BD8B10C5776DF65F2D8A63D167D", hash_generated_method = "1F8CB93833AC002F19CB03C0E120A93D")
+    
+public int getConnectionsInPool(HttpRoute route) {
 
         poolLock.lock();
         try {
@@ -182,9 +190,10 @@ public class ConnPoolByRoute extends AbstractConnPool {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.609 -0500", hash_original_method = "E2BAF1ACE5FFF01DCEE8A821FE8A73A0", hash_generated_method = "BC642E2C466CF994C6A5B39EE8582DA1")
-    @Override
-public PoolEntryRequest requestPoolEntry(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.289 -0500", hash_original_method = "E2BAF1ACE5FFF01DCEE8A821FE8A73A0", hash_generated_method = "BC642E2C466CF994C6A5B39EE8582DA1")
+    
+@Override
+    public PoolEntryRequest requestPoolEntry(
             final HttpRoute route,
             final Object state) {
         
@@ -229,8 +238,9 @@ public PoolEntryRequest requestPoolEntry(
      * @throws InterruptedException
      *         if the calling thread was interrupted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.611 -0500", hash_original_method = "0255BF16791796767BBFE4AD753EF26D", hash_generated_method = "42AE41691B0A6F52ED435ADF2A60DA17")
-    protected BasicPoolEntry getEntryBlocking(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.293 -0500", hash_original_method = "0255BF16791796767BBFE4AD753EF26D", hash_generated_method = "42AE41691B0A6F52ED435ADF2A60DA17")
+    
+protected BasicPoolEntry getEntryBlocking(
                                    HttpRoute route, Object state,
                                    long timeout, TimeUnit tunit,
                                    WaitingThreadAborter aborter)
@@ -337,9 +347,10 @@ public PoolEntryRequest requestPoolEntry(
 
 
     // non-javadoc, see base class AbstractConnPool
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.612 -0500", hash_original_method = "459D6C1E2796BA157345E479FDD43BC9", hash_generated_method = "A0C57248EFBB8ED1117CA62640C63DEE")
-    @Override
-public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration, TimeUnit timeUnit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.297 -0500", hash_original_method = "459D6C1E2796BA157345E479FDD43BC9", hash_generated_method = "A0C57248EFBB8ED1117CA62640C63DEE")
+    
+@Override
+    public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration, TimeUnit timeUnit) {
 
         HttpRoute route = entry.getPlannedRoute();
         if (log.isDebugEnabled()) {
@@ -388,8 +399,9 @@ public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration
      * @return  an available pool entry for the given route, or
      *          <code>null</code> if none is available
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.613 -0500", hash_original_method = "962CBFF1A83D816E79E3DF7051655A88", hash_generated_method = "4C168A3B7F5D96148AAB429AAB5A5A94")
-    protected BasicPoolEntry getFreeEntry(RouteSpecificPool rospl, Object state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.300 -0500", hash_original_method = "962CBFF1A83D816E79E3DF7051655A88", hash_generated_method = "4C168A3B7F5D96148AAB429AAB5A5A94")
+    
+protected BasicPoolEntry getFreeEntry(RouteSpecificPool rospl, Object state) {
 
         BasicPoolEntry entry = null;
         poolLock.lock();
@@ -450,8 +462,9 @@ public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration
      *
      * @return  the new pool entry for a new connection
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.614 -0500", hash_original_method = "97D909B421F8D92376760AF2E5C3347E", hash_generated_method = "75335BCEFB3A3540B523AEC1175349E1")
-    protected BasicPoolEntry createEntry(RouteSpecificPool rospl,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.302 -0500", hash_original_method = "97D909B421F8D92376760AF2E5C3347E", hash_generated_method = "75335BCEFB3A3540B523AEC1175349E1")
+    
+protected BasicPoolEntry createEntry(RouteSpecificPool rospl,
                                          ClientConnectionOperator op) {
 
         if (log.isDebugEnabled()) {
@@ -489,8 +502,9 @@ public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration
      * 
      * @param entry         the pool entry for the connection to delete
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.615 -0500", hash_original_method = "D62BEFFDBE1A81D3681FD693CE298CE1", hash_generated_method = "DE69742049282C79EB47EDF398873D01")
-    protected void deleteEntry(BasicPoolEntry entry) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.305 -0500", hash_original_method = "D62BEFFDBE1A81D3681FD693CE298CE1", hash_generated_method = "DE69742049282C79EB47EDF398873D01")
+    
+protected void deleteEntry(BasicPoolEntry entry) {
 
         HttpRoute route = entry.getPlannedRoute();
 
@@ -523,8 +537,9 @@ public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration
      * Delete an old, free pool entry to make room for a new one.
      * Used to replace pool entries with ones for a different route.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.616 -0500", hash_original_method = "55BF8FCE42D97AAB2D67412B08D832BA", hash_generated_method = "632817AFA767493BA72EC19BBB90A656")
-    protected void deleteLeastUsedEntry() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.307 -0500", hash_original_method = "55BF8FCE42D97AAB2D67412B08D832BA", hash_generated_method = "632817AFA767493BA72EC19BBB90A656")
+    
+protected void deleteLeastUsedEntry() {
 
         try {
             poolLock.lock();
@@ -546,9 +561,10 @@ public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration
 
 
     // non-javadoc, see base class AbstractConnPool
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.617 -0500", hash_original_method = "DA32210354F9DB856361268717BF05AF", hash_generated_method = "3C6C7543468A7B5C7B2199850FCEAB03")
-    @Override
-protected void handleLostEntry(HttpRoute route) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.309 -0500", hash_original_method = "DA32210354F9DB856361268717BF05AF", hash_generated_method = "3C6C7543468A7B5C7B2199850FCEAB03")
+    
+@Override
+    protected void handleLostEntry(HttpRoute route) {
 
         poolLock.lock();
         try {
@@ -576,8 +592,9 @@ protected void handleLostEntry(HttpRoute route) {
      * 
      * @param rospl     the pool in which to notify, or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.618 -0500", hash_original_method = "31234679312EA392475BCCB545DA6E40", hash_generated_method = "3B04045FA1A9995CA2B6266B7957485C")
-    protected void notifyWaitingThread(RouteSpecificPool rospl) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.313 -0500", hash_original_method = "31234679312EA392475BCCB545DA6E40", hash_generated_method = "3B04045FA1A9995CA2B6266B7957485C")
+    
+protected void notifyWaitingThread(RouteSpecificPool rospl) {
 
         //@@@ while this strategy provides for best connection re-use,
         //@@@ is it fair? only do this if the connection is open?
@@ -617,9 +634,10 @@ protected void handleLostEntry(HttpRoute route) {
     //@@@ revise this cleanup stuff
     //@@@ move method to base class when deleteEntry() is fixed
     // non-javadoc, see base class AbstractConnPool
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.619 -0500", hash_original_method = "0A72C49DF2696A5ACE45DBE2BAC53FC3", hash_generated_method = "D89F88E44A7129FBD75F19970B372D36")
-    @Override
-public void deleteClosedConnections() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.315 -0500", hash_original_method = "0A72C49DF2696A5ACE45DBE2BAC53FC3", hash_generated_method = "D89F88E44A7129FBD75F19970B372D36")
+    
+@Override
+    public void deleteClosedConnections() {
 
         poolLock.lock();
         try {
@@ -640,9 +658,10 @@ public void deleteClosedConnections() {
 
 
     // non-javadoc, see base class AbstractConnPool
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.620 -0500", hash_original_method = "38D5175483A246D837BDBD9602C30A7F", hash_generated_method = "AA4704DDF720BECB14BF1C3FD1807862")
-    @Override
-public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.318 -0500", hash_original_method = "38D5175483A246D837BDBD9602C30A7F", hash_generated_method = "AA4704DDF720BECB14BF1C3FD1807862")
+    
+@Override
+    public void shutdown() {
 
         poolLock.lock();
         try {

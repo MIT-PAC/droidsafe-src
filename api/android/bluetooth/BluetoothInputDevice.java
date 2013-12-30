@@ -21,44 +21,45 @@ import android.util.Log;
 
 public final class BluetoothInputDevice implements BluetoothProfile {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.333 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
-    private static void log(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.403 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
+    
+private static void log(String msg) {
       Log.d(TAG, msg);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.314 -0500", hash_original_field = "76AFA513717428DDC84DF2B14430121D", hash_generated_field = "16F686E671E5BDDF6BD9132F0996D923")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.348 -0500", hash_original_field = "76AFA513717428DDC84DF2B14430121D", hash_generated_field = "16F686E671E5BDDF6BD9132F0996D923")
 
     private static final String TAG = "BluetoothInputDevice";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.315 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.350 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
     private static final boolean DBG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.316 -0500", hash_original_field = "DB711659EBB0F5F45B5E75E643E91B15", hash_generated_field = "540FA7B1A4B71D9C1548B07010E971E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.353 -0500", hash_original_field = "DB711659EBB0F5F45B5E75E643E91B15", hash_generated_field = "540FA7B1A4B71D9C1548B07010E971E4")
 
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String ACTION_CONNECTION_STATE_CHANGED =
         "android.bluetooth.input.profile.action.CONNECTION_STATE_CHANGED";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.317 -0500", hash_original_field = "971C6903332D4B6A089275D8FD336627", hash_generated_field = "F3CEDA651E220ABE5BBA1C470DA54607")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.355 -0500", hash_original_field = "971C6903332D4B6A089275D8FD336627", hash_generated_field = "F3CEDA651E220ABE5BBA1C470DA54607")
 
     public static final int INPUT_DISCONNECT_FAILED_NOT_CONNECTED = 5000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.318 -0500", hash_original_field = "9F1937912939824C568459F154DFE6B3", hash_generated_field = "3F7EC65F15367682B88A8F4F54E9D835")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.358 -0500", hash_original_field = "9F1937912939824C568459F154DFE6B3", hash_generated_field = "3F7EC65F15367682B88A8F4F54E9D835")
 
     public static final int INPUT_CONNECT_FAILED_ALREADY_CONNECTED = 5001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.319 -0500", hash_original_field = "0DF1488F1C0AACF3BD3C055E0AB77B83", hash_generated_field = "A8C836966ADCA47BE0B2F2EF173A7A16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.361 -0500", hash_original_field = "0DF1488F1C0AACF3BD3C055E0AB77B83", hash_generated_field = "A8C836966ADCA47BE0B2F2EF173A7A16")
 
     public static final int INPUT_CONNECT_FAILED_ATTEMPT_FAILED = 5002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.320 -0500", hash_original_field = "EDBD1EA36D77D86864948DE164E99121", hash_generated_field = "631F101B700A8DBC14A6F825543E0B75")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.363 -0500", hash_original_field = "EDBD1EA36D77D86864948DE164E99121", hash_generated_field = "631F101B700A8DBC14A6F825543E0B75")
 
     public static final int INPUT_OPERATION_GENERIC_FAILURE = 5003;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.320 -0500", hash_original_field = "656F17C409F8D6CFCE86239401241D1F", hash_generated_field = "A95D73195DF54CA791FD7F8B04A8FACC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.365 -0500", hash_original_field = "656F17C409F8D6CFCE86239401241D1F", hash_generated_field = "A95D73195DF54CA791FD7F8B04A8FACC")
 
     public static final int INPUT_OPERATION_SUCCESS = 5004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.321 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.367 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
 
 
     private ServiceListener mServiceListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.322 -0500", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.369 -0500", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
 
     private BluetoothAdapter mAdapter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.323 -0500", hash_original_field = "E6C68E4A2725AB507547EA6B7D87DBDC", hash_generated_field = "40876FBB70C48F89ADB2F95E8DF8AB42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.371 -0500", hash_original_field = "E6C68E4A2725AB507547EA6B7D87DBDC", hash_generated_field = "40876FBB70C48F89ADB2F95E8DF8AB42")
 
     private IBluetooth mService;
 
@@ -67,8 +68,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
      * Bluetooth Service which handles the InputDevice profile
      *
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.323 -0500", hash_original_method = "97D7A1AD2A2B5CF8AA634AC52F7EF42D", hash_generated_method = "1F32A28347F2361A06AF9FAEFCDD0E14")
-    BluetoothInputDevice(Context mContext, ServiceListener l) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.374 -0500", hash_original_method = "97D7A1AD2A2B5CF8AA634AC52F7EF42D", hash_generated_method = "1F32A28347F2361A06AF9FAEFCDD0E14")
+    
+BluetoothInputDevice(Context mContext, ServiceListener l) {
         IBinder b = ServiceManager.getService(BluetoothAdapter.BLUETOOTH_SERVICE);
         mServiceListener = l;
         mAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -86,8 +88,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.324 -0500", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "D3BF3BAE58FFF66435185BE94948ED76")
-    void close() {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.376 -0500", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "D3BF3BAE58FFF66435185BE94948ED76")
+    
+void close() {
         mServiceListener = null;
     }
 
@@ -111,8 +114,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
      *               true otherwise
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.325 -0500", hash_original_method = "F2019F4C3E8629A52034D770ECD44393", hash_generated_method = "1E9FE9CFC77F109ACB30DA9AF866908B")
-    public boolean connect(BluetoothDevice device) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.379 -0500", hash_original_method = "F2019F4C3E8629A52034D770ECD44393", hash_generated_method = "1E9FE9CFC77F109ACB30DA9AF866908B")
+    
+public boolean connect(BluetoothDevice device) {
         if (DBG) log("connect(" + device + ")");
         if (mService != null && isEnabled() &&
             isValidDevice(device)) {
@@ -153,8 +157,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
      *               true otherwise
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.326 -0500", hash_original_method = "9415AEF5C20AF4D988D1F3F693875D2E", hash_generated_method = "6B8CBF6B7D93371F243369DA1F5EE71F")
-    public boolean disconnect(BluetoothDevice device) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.381 -0500", hash_original_method = "9415AEF5C20AF4D988D1F3F693875D2E", hash_generated_method = "6B8CBF6B7D93371F243369DA1F5EE71F")
+    
+public boolean disconnect(BluetoothDevice device) {
         if (DBG) log("disconnect(" + device + ")");
         if (mService != null && isEnabled() &&
             isValidDevice(device)) {
@@ -172,8 +177,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.327 -0500", hash_original_method = "DD11A5A037066B819B09B91F048A8292", hash_generated_method = "9A391AB1E165D2D7F2E66AC2620DEF01")
-    public List<BluetoothDevice> getConnectedDevices() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.383 -0500", hash_original_method = "DD11A5A037066B819B09B91F048A8292", hash_generated_method = "9A391AB1E165D2D7F2E66AC2620DEF01")
+    
+public List<BluetoothDevice> getConnectedDevices() {
         if (DBG) log("getConnectedDevices()");
         if (mService != null && isEnabled()) {
             try {
@@ -190,8 +196,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.328 -0500", hash_original_method = "8CAF8E68108C6561E50EE464A6851A15", hash_generated_method = "03574918D113C09013F0D3C047AAFCC2")
-    public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.386 -0500", hash_original_method = "8CAF8E68108C6561E50EE464A6851A15", hash_generated_method = "03574918D113C09013F0D3C047AAFCC2")
+    
+public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
         if (DBG) log("getDevicesMatchingStates()");
         if (mService != null && isEnabled()) {
             try {
@@ -208,8 +215,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.328 -0500", hash_original_method = "97B42C809342D6C6DAC05DB0DA17D1EC", hash_generated_method = "24265A9A95147640E29D2FCD09078EEF")
-    public int getConnectionState(BluetoothDevice device) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.388 -0500", hash_original_method = "97B42C809342D6C6DAC05DB0DA17D1EC", hash_generated_method = "24265A9A95147640E29D2FCD09078EEF")
+    
+public int getConnectionState(BluetoothDevice device) {
         if (DBG) log("getState(" + device + ")");
         if (mService != null && isEnabled()
             && isValidDevice(device)) {
@@ -239,8 +247,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
      * @return true if priority is set, false on error
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.329 -0500", hash_original_method = "9373326E4AC064A071DC5CD973E0011C", hash_generated_method = "8E8F921B7B28BA6EBCCAD2894B168149")
-    public boolean setPriority(BluetoothDevice device, int priority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.391 -0500", hash_original_method = "9373326E4AC064A071DC5CD973E0011C", hash_generated_method = "8E8F921B7B28BA6EBCCAD2894B168149")
+    
+public boolean setPriority(BluetoothDevice device, int priority) {
         if (DBG) log("setPriority(" + device + ", " + priority + ")");
         if (mService != null && isEnabled()
             && isValidDevice(device)) {
@@ -272,8 +281,9 @@ public final class BluetoothInputDevice implements BluetoothProfile {
      * @return priority of the device
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.331 -0500", hash_original_method = "1D1EE6052242ABD7AAF16EB7DF8BA827", hash_generated_method = "3B2B8C63890F6885E484B7D7B9CDEE0D")
-    public int getPriority(BluetoothDevice device) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.395 -0500", hash_original_method = "1D1EE6052242ABD7AAF16EB7DF8BA827", hash_generated_method = "3B2B8C63890F6885E484B7D7B9CDEE0D")
+    
+public int getPriority(BluetoothDevice device) {
         if (DBG) log("getPriority(" + device + ")");
         if (mService != null && isEnabled()
             && isValidDevice(device)) {
@@ -288,14 +298,16 @@ public final class BluetoothInputDevice implements BluetoothProfile {
         return BluetoothProfile.PRIORITY_OFF;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.332 -0500", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "199CD6721D66E41745A6F0D547B34AF7")
-    private boolean isEnabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.398 -0500", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "199CD6721D66E41745A6F0D547B34AF7")
+    
+private boolean isEnabled() {
        if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
        return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.332 -0500", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "3EEE3A9E12DCA4A453C7F11E3F959C9B")
-    private boolean isValidDevice(BluetoothDevice device) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.400 -0500", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "3EEE3A9E12DCA4A453C7F11E3F959C9B")
+    
+private boolean isValidDevice(BluetoothDevice device) {
        if (device == null) return false;
 
        if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;

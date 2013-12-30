@@ -27,8 +27,9 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.680 -0500", hash_original_method = "1C22500DDD1A1C4CBFF296D433984138", hash_generated_method = "BD5E389F8FE3DF580E59B07FBB199E75")
-    public static SocketChannel open() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.628 -0500", hash_original_method = "1C22500DDD1A1C4CBFF296D433984138", hash_generated_method = "BD5E389F8FE3DF580E59B07FBB199E75")
+    
+public static SocketChannel open() throws IOException {
         return SelectorProvider.provider().openSocketChannel();
     }
 
@@ -55,8 +56,9 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.681 -0500", hash_original_method = "AC2B95C5BDC217F19851C0632D37B5EC", hash_generated_method = "034337553752947731A0C6353DC0D7E3")
-    public static SocketChannel open(SocketAddress address) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.630 -0500", hash_original_method = "AC2B95C5BDC217F19851C0632D37B5EC", hash_generated_method = "034337553752947731A0C6353DC0D7E3")
+    
+public static SocketChannel open(SocketAddress address) throws IOException {
         SocketChannel socketChannel = open();
         if (socketChannel != null) {
             socketChannel.connect(address);
@@ -70,8 +72,9 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
      * @param selectorProvider
      *            an instance of SelectorProvider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.679 -0500", hash_original_method = "2E5B32673A9DF9A621D8F99910F278C2", hash_generated_method = "6761A3A6167403F79607C19EA6E441EE")
-    protected SocketChannel(SelectorProvider selectorProvider) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.625 -0500", hash_original_method = "2E5B32673A9DF9A621D8F99910F278C2", hash_generated_method = "6761A3A6167403F79607C19EA6E441EE")
+    
+protected SocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
     }
 
@@ -83,9 +86,10 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
      * @return the operations supported by this channel.
      * @see java.nio.channels.SelectableChannel#validOps()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.682 -0500", hash_original_method = "329D33F04038C44D432D32526ECC7D14", hash_generated_method = "8FA2845B599AAD6756C1718F012079B6")
-    @Override
-public final int validOps() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.633 -0500", hash_original_method = "329D33F04038C44D432D32526ECC7D14", hash_generated_method = "8FA2845B599AAD6756C1718F012079B6")
+    
+@Override
+    public final int validOps() {
         return (SelectionKey.OP_CONNECT | SelectionKey.OP_READ | SelectionKey.OP_WRITE);
     }
 
@@ -95,8 +99,9 @@ public final int validOps() {
      *
      * @return the socket assigned to this channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.683 -0500", hash_original_method = "D13CC21BE3BC4EA472CA63F894296CE7", hash_generated_method = "9838D871440061866DFAA20C4E5401B9")
-    public abstract Socket socket();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.636 -0500", hash_original_method = "D13CC21BE3BC4EA472CA63F894296CE7", hash_generated_method = "9838D871440061866DFAA20C4E5401B9")
+    
+public abstract Socket socket();
 
     /**
      * Indicates whether this channel's socket is connected.
@@ -104,8 +109,9 @@ public final int validOps() {
      * @return {@code true} if this channel's socket is connected, {@code false}
      *         otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.683 -0500", hash_original_method = "EF2DCF0240DCDAB71A78C6BD0371BA93", hash_generated_method = "640ACF0B46AF152682CD460E4AF1D091")
-    public abstract boolean isConnected();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.638 -0500", hash_original_method = "EF2DCF0240DCDAB71A78C6BD0371BA93", hash_generated_method = "640ACF0B46AF152682CD460E4AF1D091")
+    
+public abstract boolean isConnected();
 
     /**
      * Indicates whether this channel's socket is still trying to connect.
@@ -113,8 +119,9 @@ public final int validOps() {
      * @return {@code true} if the connection is initiated but not finished;
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.684 -0500", hash_original_method = "BE9EA5DF5228F76E2C0F080F812385E5", hash_generated_method = "516528913B2C11CF701C827F6429BDAE")
-    public abstract boolean isConnectionPending();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.641 -0500", hash_original_method = "BE9EA5DF5228F76E2C0F080F812385E5", hash_generated_method = "516528913B2C11CF701C827F6429BDAE")
+    
+public abstract boolean isConnectionPending();
 
     /**
      * Connects this channel's socket with a remote address.
@@ -154,8 +161,9 @@ public final int validOps() {
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.685 -0500", hash_original_method = "EF042CD430999BAF5A1AF2158097F6BB", hash_generated_method = "84563A591A56E321A1FB21BE663EFF3F")
-    public abstract boolean connect(SocketAddress address) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.644 -0500", hash_original_method = "EF042CD430999BAF5A1AF2158097F6BB", hash_generated_method = "84563A591A56E321A1FB21BE663EFF3F")
+    
+public abstract boolean connect(SocketAddress address) throws IOException;
 
     /**
      * Completes the connection process initiated by a call of {@code
@@ -189,8 +197,9 @@ public final int validOps() {
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.686 -0500", hash_original_method = "81C54D102AA55CD30CE0569D1C7BBF90", hash_generated_method = "16F3CFA8A040FF11376537FFBD2C2C0C")
-    public abstract boolean finishConnect() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.646 -0500", hash_original_method = "81C54D102AA55CD30CE0569D1C7BBF90", hash_generated_method = "16F3CFA8A040FF11376537FFBD2C2C0C")
+    
+public abstract boolean finishConnect() throws IOException;
 
     /**
      * Reads bytes from this socket channel into the given buffer.
@@ -222,8 +231,9 @@ public final int validOps() {
      *             if another I/O error occurs.
      * @see java.nio.channels.ReadableByteChannel#read(java.nio.ByteBuffer)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.687 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
-    public abstract int read(ByteBuffer target) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.649 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
+    
+public abstract int read(ByteBuffer target) throws IOException;
 
     /**
      * Reads bytes from this socket channel into a subset of the given buffers.
@@ -260,8 +270,9 @@ public final int validOps() {
      * @see java.nio.channels.ScatteringByteChannel#read(java.nio.ByteBuffer[],
      *      int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.688 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
-    public abstract long read(ByteBuffer[] targets, int offset, int length) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.651 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
+    
+public abstract long read(ByteBuffer[] targets, int offset, int length) throws IOException;
 
     /**
      * Reads bytes from this socket channel and stores them in the specified
@@ -292,8 +303,9 @@ public final int validOps() {
      * @throws NotYetConnectedException
      *             if this channel is not yet connected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.689 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
-    public synchronized final long read(ByteBuffer[] targets) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.654 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
+    
+public synchronized final long read(ByteBuffer[] targets) throws IOException {
         return read(targets, 0, targets.length);
     }
 
@@ -326,8 +338,9 @@ public final int validOps() {
      *             if this channel is not connected yet.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.690 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
-    public abstract int write(ByteBuffer source) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.657 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
+    
+public abstract int write(ByteBuffer source) throws IOException;
 
     /**
      * Attempts to write a subset of the given bytes from the buffers to this
@@ -366,8 +379,9 @@ public final int validOps() {
      * @see java.nio.channels.GatheringByteChannel#write(java.nio.ByteBuffer[],
      *      int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.690 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
-    public abstract long write(ByteBuffer[] sources, int offset, int length) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.659 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
+    
+public abstract long write(ByteBuffer[] sources, int offset, int length) throws IOException;
 
     /**
      * Writes bytes from all the given byte buffers to this socket channel.
@@ -393,8 +407,9 @@ public final int validOps() {
      *             if this channel is not yet connected.
      * @see java.nio.channels.GatheringByteChannel#write(java.nio.ByteBuffer[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.691 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
-    public synchronized final long write(ByteBuffer[] sources) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.662 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
+    
+public synchronized final long write(ByteBuffer[] sources) throws IOException {
         return write(sources, 0, sources.length);
     }
 

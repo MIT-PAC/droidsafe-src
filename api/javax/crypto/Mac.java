@@ -36,8 +36,9 @@ public class Mac implements Cloneable {
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.020 -0500", hash_original_method = "3E4BC559FFF8F8BDA507B13EF8AF490F", hash_generated_method = "14D7DD9047E39E52B5B033CEE35BB241")
-    public static final Mac getInstance(String algorithm)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.665 -0500", hash_original_method = "3E4BC559FFF8F8BDA507B13EF8AF490F", hash_generated_method = "14D7DD9047E39E52B5B033CEE35BB241")
+    
+public static final Mac getInstance(String algorithm)
             throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -66,8 +67,9 @@ public class Mac implements Cloneable {
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.021 -0500", hash_original_method = "C36E3B39C5242D2DC122D797569C3E46", hash_generated_method = "E9261B2D7224D6220A041C3242BFAB74")
-    public static final Mac getInstance(String algorithm, String provider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.668 -0500", hash_original_method = "C36E3B39C5242D2DC122D797569C3E46", hash_generated_method = "E9261B2D7224D6220A041C3242BFAB74")
+    
+public static final Mac getInstance(String algorithm, String provider)
             throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException("Provider is null or empty");
@@ -97,8 +99,9 @@ public class Mac implements Cloneable {
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.022 -0500", hash_original_method = "9F8E4A6494CB361657567F0DE6275A17", hash_generated_method = "C113D69E0F2931D2076D5442F6A65023")
-    public static final Mac getInstance(String algorithm, Provider provider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.671 -0500", hash_original_method = "9F8E4A6494CB361657567F0DE6275A17", hash_generated_method = "C113D69E0F2931D2076D5442F6A65023")
+    
+public static final Mac getInstance(String algorithm, Provider provider)
             throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("provider == null");
@@ -109,19 +112,19 @@ public class Mac implements Cloneable {
         Object spi = ENGINE.getInstance(algorithm, provider, null);
         return new Mac((MacSpi) spi, provider, algorithm);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.013 -0500", hash_original_field = "2653E60AD4168F29BCBE957ABC770C28", hash_generated_field = "806BD6BDD2ABE5FBF629090CA696D2F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.646 -0500", hash_original_field = "2653E60AD4168F29BCBE957ABC770C28", hash_generated_field = "806BD6BDD2ABE5FBF629090CA696D2F6")
 
     private static final Engine ENGINE = new Engine("Mac");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.014 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.648 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
     private  Provider provider;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.015 -0500", hash_original_field = "D5C6D39FF8B0FEC373455E53108A464C", hash_generated_field = "0128BA68CF49937E6689B3B2ABC40132")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.651 -0500", hash_original_field = "D5C6D39FF8B0FEC373455E53108A464C", hash_generated_field = "0128BA68CF49937E6689B3B2ABC40132")
 
     private  MacSpi spiImpl;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.016 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.653 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
     private  String algorithm;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.017 -0500", hash_original_field = "7199DD0121DF2A6DCD548D72E04D0A40", hash_generated_field = "3ABD1385745F27F79CF607C339AD7462")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.655 -0500", hash_original_field = "7199DD0121DF2A6DCD548D72E04D0A40", hash_generated_field = "3ABD1385745F27F79CF607C339AD7462")
 
     private boolean isInitMac;
 
@@ -135,8 +138,9 @@ public class Mac implements Cloneable {
      * @param algorithm
      *            the name of the MAC algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.018 -0500", hash_original_method = "41257A854336509F555FDEC12089036E", hash_generated_method = "C350962D3304BAFED070EA865DB853EC")
-    protected Mac(MacSpi macSpi, Provider provider, String algorithm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.658 -0500", hash_original_method = "41257A854336509F555FDEC12089036E", hash_generated_method = "C350962D3304BAFED070EA865DB853EC")
+    
+protected Mac(MacSpi macSpi, Provider provider, String algorithm) {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = macSpi;
@@ -148,8 +152,9 @@ public class Mac implements Cloneable {
      *
      * @return the name of the MAC algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.018 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
-    public final String getAlgorithm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.661 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
+    
+public final String getAlgorithm() {
         return algorithm;
     }
 
@@ -158,8 +163,9 @@ public class Mac implements Cloneable {
      *
      * @return the provider of this {@code Mac} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.019 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
-    public final Provider getProvider() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.663 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
+    
+public final Provider getProvider() {
         return provider;
     }
 
@@ -168,8 +174,9 @@ public class Mac implements Cloneable {
      *
      * @return the length of this MAC (in bytes).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.023 -0500", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "656E9EB0E4DD43379A7E6E6A9ECA9FA5")
-    public final int getMacLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.673 -0500", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "656E9EB0E4DD43379A7E6E6A9ECA9FA5")
+    
+public final int getMacLength() {
         return spiImpl.engineGetMacLength();
     }
 
@@ -188,8 +195,9 @@ public class Mac implements Cloneable {
      *             if the specified parameters cannot be used to initialize this
      *             algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.024 -0500", hash_original_method = "9228EAA32885A066BE953E8B5AE4C236", hash_generated_method = "E4A49B851F58AB4C9EBD03CD9A957F1A")
-    public final void init(Key key, AlgorithmParameterSpec params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.676 -0500", hash_original_method = "9228EAA32885A066BE953E8B5AE4C236", hash_generated_method = "E4A49B851F58AB4C9EBD03CD9A957F1A")
+    
+public final void init(Key key, AlgorithmParameterSpec params)
             throws InvalidKeyException, InvalidAlgorithmParameterException {
         if (key == null) {
             throw new InvalidKeyException("key == null");
@@ -210,8 +218,9 @@ public class Mac implements Cloneable {
      *             if the specified key cannot be used to initialize this
      *             algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.025 -0500", hash_original_method = "874C36BA9BA67506DF1E27339862DC05", hash_generated_method = "C5C2C8365CA2E2386B03EF357C9A23D3")
-    public final void init(Key key) throws InvalidKeyException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.679 -0500", hash_original_method = "874C36BA9BA67506DF1E27339862DC05", hash_generated_method = "C5C2C8365CA2E2386B03EF357C9A23D3")
+    
+public final void init(Key key) throws InvalidKeyException {
         if (key == null) {
             throw new InvalidKeyException("key == null");
         }
@@ -231,8 +240,9 @@ public class Mac implements Cloneable {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.026 -0500", hash_original_method = "CE2C32417AC34B9F04F350B6B83BA3FB", hash_generated_method = "C7EFEC23D4621DF0A643E6D009872FA4")
-    public final void update(byte input) throws IllegalStateException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.681 -0500", hash_original_method = "CE2C32417AC34B9F04F350B6B83BA3FB", hash_generated_method = "C7EFEC23D4621DF0A643E6D009872FA4")
+    
+public final void update(byte input) throws IllegalStateException {
         if (!isInitMac) {
             throw new IllegalStateException();
         }
@@ -255,8 +265,9 @@ public class Mac implements Cloneable {
      *             if {@code offset} and {@code len} do not specified a valid
      *             chunk in {@code input} buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.027 -0500", hash_original_method = "715302E1C20F57A2A8D63A54A99663FC", hash_generated_method = "F3D72487E7A5A494D889A8EDFD1CF1E6")
-    public final void update(byte[] input, int offset, int len) throws IllegalStateException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.684 -0500", hash_original_method = "715302E1C20F57A2A8D63A54A99663FC", hash_generated_method = "F3D72487E7A5A494D889A8EDFD1CF1E6")
+    
+public final void update(byte[] input, int offset, int len) throws IllegalStateException {
         if (!isInitMac) {
             throw new IllegalStateException();
         }
@@ -277,8 +288,9 @@ public class Mac implements Cloneable {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.028 -0500", hash_original_method = "3D6841DD3321DF543EE186C2C08CA7E2", hash_generated_method = "F8C03B01875AE3EA2298F5B7496851FE")
-    public final void update(byte[] input) throws IllegalStateException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.687 -0500", hash_original_method = "3D6841DD3321DF543EE186C2C08CA7E2", hash_generated_method = "F8C03B01875AE3EA2298F5B7496851FE")
+    
+public final void update(byte[] input) throws IllegalStateException {
         if (!isInitMac) {
             throw new IllegalStateException();
         }
@@ -297,8 +309,9 @@ public class Mac implements Cloneable {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.028 -0500", hash_original_method = "A1BB43A6E7623A403344D1C2F2A132EB", hash_generated_method = "ADC74FDD8ACFD2F4407DF33AE46D9F42")
-    public final void update(ByteBuffer input) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.689 -0500", hash_original_method = "A1BB43A6E7623A403344D1C2F2A132EB", hash_generated_method = "ADC74FDD8ACFD2F4407DF33AE46D9F42")
+    
+public final void update(ByteBuffer input) {
         if (!isInitMac) {
             throw new IllegalStateException();
         }
@@ -321,8 +334,9 @@ public class Mac implements Cloneable {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.029 -0500", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "BBBC3271E7BF877707A76B4510A43D2F")
-    public final byte[] doFinal() throws IllegalStateException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.692 -0500", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "BBBC3271E7BF877707A76B4510A43D2F")
+    
+public final byte[] doFinal() throws IllegalStateException {
         if (!isInitMac) {
             throw new IllegalStateException();
         }
@@ -350,8 +364,9 @@ public class Mac implements Cloneable {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.030 -0500", hash_original_method = "3A73D46F22DAF7149F49DD945D0B4F9C", hash_generated_method = "653C16F6A05A5770FF3136B1C69F8005")
-    public final void doFinal(byte[] output, int outOffset)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.694 -0500", hash_original_method = "3A73D46F22DAF7149F49DD945D0B4F9C", hash_generated_method = "653C16F6A05A5770FF3136B1C69F8005")
+    
+public final void doFinal(byte[] output, int outOffset)
             throws ShortBufferException, IllegalStateException {
         if (!isInitMac) {
             throw new IllegalStateException();
@@ -386,8 +401,9 @@ public class Mac implements Cloneable {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.031 -0500", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "397FF92AD1E3086CF78C1865ECC76522")
-    public final byte[] doFinal(byte[] input) throws IllegalStateException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.697 -0500", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "397FF92AD1E3086CF78C1865ECC76522")
+    
+public final byte[] doFinal(byte[] input) throws IllegalStateException {
         if (!isInitMac) {
             throw new IllegalStateException();
         }
@@ -404,8 +420,9 @@ public class Mac implements Cloneable {
      * used to start the next MAC computation with the same parameters or
      * initialized with different parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.032 -0500", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "5B38A2D1110748DB3AFA8347F5147BA3")
-    public final void reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.699 -0500", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "5B38A2D1110748DB3AFA8347F5147BA3")
+    
+public final void reset() {
         spiImpl.engineReset();
     }
 
@@ -416,9 +433,10 @@ public class Mac implements Cloneable {
      * @throws CloneNotSupportedException
      *             if the underlying implementation does not support cloning.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.033 -0500", hash_original_method = "D491B3C29A973D07513DEBD79BD84B18", hash_generated_method = "85156C9FA9461F9D0DB3DC1A0A2A08A2")
-    @Override
-public final Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.702 -0500", hash_original_method = "D491B3C29A973D07513DEBD79BD84B18", hash_generated_method = "85156C9FA9461F9D0DB3DC1A0A2A08A2")
+    
+@Override
+    public final Object clone() throws CloneNotSupportedException {
         MacSpi newSpiImpl = (MacSpi)spiImpl.clone();
         Mac mac = new Mac(newSpiImpl, this.provider, this.algorithm);
         mac.isInitMac = this.isInitMac;

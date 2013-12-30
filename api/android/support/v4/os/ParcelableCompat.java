@@ -28,24 +28,27 @@ public class ParcelableCompat {
 
     
     static class CompatCreator<T> implements Parcelable.Creator<T> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:36.551 -0500", hash_original_field = "BE8C2310A42C4AF4CAB9F639C1E3BDCF", hash_generated_field = "BE8C2310A42C4AF4CAB9F639C1E3BDCF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.615 -0500", hash_original_field = "BE8C2310A42C4AF4CAB9F639C1E3BDCF", hash_generated_field = "BE8C2310A42C4AF4CAB9F639C1E3BDCF")
 
          ParcelableCompatCreatorCallbacks<T> mCallbacks;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:36.552 -0500", hash_original_method = "89A37E66A919C0F4D6C87A6FE2ED98DC", hash_generated_method = "D88771461059AFB898DEF1ADA74E7B50")
-        public CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.617 -0500", hash_original_method = "89A37E66A919C0F4D6C87A6FE2ED98DC", hash_generated_method = "D88771461059AFB898DEF1ADA74E7B50")
+        
+public CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
             mCallbacks = callbacks;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:36.553 -0500", hash_original_method = "BC4263EA8B5E453C51CC1CF339ED2394", hash_generated_method = "4EA354AA332798A65F22A475A247ABD1")
-        @Override
-public T createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.620 -0500", hash_original_method = "BC4263EA8B5E453C51CC1CF339ED2394", hash_generated_method = "4EA354AA332798A65F22A475A247ABD1")
+        
+@Override
+        public T createFromParcel(Parcel source) {
             return mCallbacks.createFromParcel(source, null);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:36.554 -0500", hash_original_method = "5AB872DFD1AEB45ECC63ABABFF71FE11", hash_generated_method = "1B909DEC21427718B5B3E4E5F7397BE3")
-        @Override
-public T[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.623 -0500", hash_original_method = "5AB872DFD1AEB45ECC63ABABFF71FE11", hash_generated_method = "1B909DEC21427718B5B3E4E5F7397BE3")
+        
+@Override
+        public T[] newArray(int size) {
             return mCallbacks.newArray(size);
         }
 

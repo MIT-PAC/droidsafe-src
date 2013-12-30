@@ -23,14 +23,16 @@ public final class DirectoryString {
            ASN1StringType.UTF8STRING,
            ASN1StringType.BMPSTRING }) {
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.743 -0500", hash_original_method = "B50919D6E7CA13884A6C9F096964941D", hash_generated_method = "2DAEED78DFC2C3E9F8119D345D247A3C")
-        public int getIndex(java.lang.Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.783 -0500", hash_original_method = "B50919D6E7CA13884A6C9F096964941D", hash_generated_method = "2DAEED78DFC2C3E9F8119D345D247A3C")
+        
+public int getIndex(java.lang.Object object) {
             return 1; // always code as ASN1 printableString
             //return 4; // always code as ASN1 utf8String
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.744 -0500", hash_original_method = "75F68B3A16DBDA02F9B0A49BA52B584E", hash_generated_method = "C5D20895330F23B0CE04BF0739FBC835")
-        public Object getObjectToEncode(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.785 -0500", hash_original_method = "75F68B3A16DBDA02F9B0A49BA52B584E", hash_generated_method = "C5D20895330F23B0CE04BF0739FBC835")
+        
+public Object getObjectToEncode(Object object) {
             return /*(String)*/ object;
         }
     };

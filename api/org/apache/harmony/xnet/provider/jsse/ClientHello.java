@@ -16,19 +16,19 @@ import libcore.util.EmptyArray;
 
 
 public class ClientHello extends Message {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.271 -0500", hash_original_field = "87AFE8194BC492AFC7167BB3A54122B9", hash_generated_field = "87AFE8194BC492AFC7167BB3A54122B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.679 -0500", hash_original_field = "87AFE8194BC492AFC7167BB3A54122B9", hash_generated_field = "87AFE8194BC492AFC7167BB3A54122B9")
 
      byte[] client_version;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.272 -0500", hash_original_field = "99091ADCC73FE81C2F7FCEF8EA8CC707", hash_generated_field = "D668480B0E83A7483DCEBA9C8392548F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.681 -0500", hash_original_field = "99091ADCC73FE81C2F7FCEF8EA8CC707", hash_generated_field = "D668480B0E83A7483DCEBA9C8392548F")
 
     final byte[] random = new byte[32];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.273 -0500", hash_original_field = "464E487327E8A3D68CAEEB2871FE01AA", hash_generated_field = "464E487327E8A3D68CAEEB2871FE01AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.683 -0500", hash_original_field = "464E487327E8A3D68CAEEB2871FE01AA", hash_generated_field = "464E487327E8A3D68CAEEB2871FE01AA")
 
      byte[] session_id;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.274 -0500", hash_original_field = "A0A44A96F6DB28A1A612B3ED93B5B66F", hash_generated_field = "A0A44A96F6DB28A1A612B3ED93B5B66F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.686 -0500", hash_original_field = "A0A44A96F6DB28A1A612B3ED93B5B66F", hash_generated_field = "A0A44A96F6DB28A1A612B3ED93B5B66F")
 
      CipherSuite[] cipher_suites;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.275 -0500", hash_original_field = "47F40258F3E60116F552FCA9A35A3742", hash_generated_field = "47F40258F3E60116F552FCA9A35A3742")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.688 -0500", hash_original_field = "47F40258F3E60116F552FCA9A35A3742", hash_generated_field = "47F40258F3E60116F552FCA9A35A3742")
 
      byte[] compression_methods;
 
@@ -39,8 +39,9 @@ public class ClientHello extends Message {
      * @param ses_id
      * @param cipher_suite
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.276 -0500", hash_original_method = "B360A744DA2558AEF3A4AD32A9DD66E9", hash_generated_method = "44A00FDBD3345690E803FCDCD1070EBA")
-    public ClientHello(SecureRandom sr, byte[] version, byte[] ses_id,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.691 -0500", hash_original_method = "B360A744DA2558AEF3A4AD32A9DD66E9", hash_generated_method = "44A00FDBD3345690E803FCDCD1070EBA")
+    
+public ClientHello(SecureRandom sr, byte[] version, byte[] ses_id,
             CipherSuite[] cipher_suite) {
         client_version = version;
         long gmt_unix_time = System.currentTimeMillis()/1000;
@@ -62,8 +63,9 @@ public class ClientHello extends Message {
      * @param length
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.277 -0500", hash_original_method = "9848891785B38B606D088EC36D49C2E1", hash_generated_method = "8B4BF0E099EE1300CAA8E1C5765A42E3")
-    public ClientHello(HandshakeIODataStream in, int length) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.695 -0500", hash_original_method = "9848891785B38B606D088EC36D49C2E1", hash_generated_method = "8B4BF0E099EE1300CAA8E1C5765A42E3")
+    
+public ClientHello(HandshakeIODataStream in, int length) throws IOException {
         client_version = new byte[2];
         client_version[0] = (byte) in.readUint8();
         client_version[1] = (byte) in.readUint8();
@@ -103,8 +105,9 @@ public class ClientHello extends Message {
      * @param in
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.278 -0500", hash_original_method = "092EDC6A6C17B41B7BF7C969F19C771C", hash_generated_method = "C8C109FB41D5F2E9226B52F3558A6543")
-    public ClientHello(HandshakeIODataStream in) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.699 -0500", hash_original_method = "092EDC6A6C17B41B7BF7C969F19C771C", hash_generated_method = "C8C109FB41D5F2E9226B52F3558A6543")
+    
+public ClientHello(HandshakeIODataStream in) throws IOException {
         if (in.readUint8() != 1) {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect V2ClientHello");
         }
@@ -151,9 +154,10 @@ public class ClientHello extends Message {
      * Sends message
      * @param out
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.279 -0500", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "F559B8261FD2194AE0F350904CF8D9A2")
-    @Override
-public void send(HandshakeIODataStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.701 -0500", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "F559B8261FD2194AE0F350904CF8D9A2")
+    
+@Override
+    public void send(HandshakeIODataStream out) {
         out.write(client_version);
         out.write(random);
         out.writeUint8(session_id.length);
@@ -173,8 +177,9 @@ public void send(HandshakeIODataStream out) {
      * Returns client random
      * @return client random
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.280 -0500", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "AD106D7FEAE26F7078E90292C4E75999")
-    public byte[] getRandom() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.703 -0500", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "AD106D7FEAE26F7078E90292C4E75999")
+    
+public byte[] getRandom() {
         return random;
     }
 
@@ -182,9 +187,10 @@ public void send(HandshakeIODataStream out) {
      * Returns message type
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.281 -0500", hash_original_method = "CF19DA1ECE12A56ABD61504AAFBBFE23", hash_generated_method = "C44D983FE807C92DDF6B5DA9B9582AC6")
-    @Override
-public int getType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.706 -0500", hash_original_method = "CF19DA1ECE12A56ABD61504AAFBBFE23", hash_generated_method = "C44D983FE807C92DDF6B5DA9B9582AC6")
+    
+@Override
+    public int getType() {
         return Handshake.CLIENT_HELLO;
     }
 

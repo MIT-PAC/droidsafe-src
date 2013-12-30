@@ -17,9 +17,10 @@ public class ContentObservable extends Observable<ContentObserver> {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.660 -0500", hash_original_method = "4478BB946B12E492F4CEF86404F7FDB4", hash_generated_method = "34DE4A87BCB1B618F11967568623B645")
-    @Override
-public void registerObserver(ContentObserver observer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.829 -0500", hash_original_method = "4478BB946B12E492F4CEF86404F7FDB4", hash_generated_method = "34DE4A87BCB1B618F11967568623B645")
+    
+@Override
+    public void registerObserver(ContentObserver observer) {
         super.registerObserver(observer);
     }
 
@@ -28,8 +29,9 @@ public void registerObserver(ContentObserver observer) {
      * self-notifications and the update is from a self-notification
      * @param selfChange
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.661 -0500", hash_original_method = "2404EE3C179A56E4FBB403E872AACE69", hash_generated_method = "726453482F3669E41225D0560A9371CC")
-    public void dispatchChange(boolean selfChange) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.832 -0500", hash_original_method = "2404EE3C179A56E4FBB403E872AACE69", hash_generated_method = "726453482F3669E41225D0560A9371CC")
+    
+public void dispatchChange(boolean selfChange) {
         synchronized(mObservers) {
             for (ContentObserver observer : mObservers) {
                 if (!selfChange || observer.deliverSelfNotifications()) {
@@ -43,8 +45,9 @@ public void registerObserver(ContentObserver observer) {
      * invokes onChange on each observer
      * @param selfChange
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.661 -0500", hash_original_method = "6E785AECA168F3220756C0C7D730B7FB", hash_generated_method = "EEEAAD5A170D7CCE5625A72FA61DF131")
-    public void notifyChange(boolean selfChange) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.834 -0500", hash_original_method = "6E785AECA168F3220756C0C7D730B7FB", hash_generated_method = "EEEAAD5A170D7CCE5625A72FA61DF131")
+    
+public void notifyChange(boolean selfChange) {
         synchronized(mObservers) {
             for (ContentObserver observer : mObservers) {
                 observer.onChange(selfChange);

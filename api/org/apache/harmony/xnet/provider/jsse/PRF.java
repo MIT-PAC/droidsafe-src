@@ -18,8 +18,9 @@ import javax.net.ssl.SSLException;
 
 public class PRF {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.366 -0500", hash_original_method = "9013907446D1B3B1BEF728F3AAC98F14", hash_generated_method = "E9294A72F7A271A4930025976E1BC853")
-    static private void init() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.640 -0500", hash_original_method = "9013907446D1B3B1BEF728F3AAC98F14", hash_generated_method = "E9294A72F7A271A4930025976E1BC853")
+    
+static private void init() {
         try {
             md5_mac = Mac.getInstance("HmacMD5");
             sha_mac = Mac.getInstance("HmacSHA1");
@@ -47,8 +48,9 @@ public class PRF {
      * @param   secret: the buffer containing the secret value to generate prf.
      * @param   seed:   the seed to be used.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.367 -0500", hash_original_method = "06B09237572FDBACE4B91CD9A5DB4A4A", hash_generated_method = "14C1CE767CE584FF5B151067AFB17C61")
-    static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.644 -0500", hash_original_method = "06B09237572FDBACE4B91CD9A5DB4A4A", hash_generated_method = "14C1CE767CE584FF5B151067AFB17C61")
+    
+static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
         if (sha == null) {
             init();
         }
@@ -81,8 +83,9 @@ public class PRF {
      * @param   str_bytes:  the label bytes to be used.
      * @param   seed:   the seed to be used.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.368 -0500", hash_original_method = "1178A5AAEAFD3956E42497222F39B739", hash_generated_method = "1E775A118847D9F735DCABC8A65D2104")
-    synchronized static void computePRF(byte[] out, byte[] secret,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.647 -0500", hash_original_method = "1178A5AAEAFD3956E42497222F39B739", hash_generated_method = "1E775A118847D9F735DCABC8A65D2104")
+    
+synchronized static void computePRF(byte[] out, byte[] secret,
             byte[] str_byts, byte[] seed) throws GeneralSecurityException {
         if (sha_mac == null) {
             init();
@@ -176,26 +179,26 @@ public class PRF {
             logger.printAsHex(sha_mac_length, "", " ", out);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.360 -0500", hash_original_field = "28271B1AF1D2D581210181C4029CF145", hash_generated_field = "C3F45E78FDFD4A7B65124F3B5EABEA83")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.624 -0500", hash_original_field = "28271B1AF1D2D581210181C4029CF145", hash_generated_field = "C3F45E78FDFD4A7B65124F3B5EABEA83")
 
     private static Logger.Stream logger = Logger.getStream("prf");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.361 -0500", hash_original_field = "26BBB8E702B9EBF3795D483832DA0664", hash_generated_field = "A5684AE7706FA9ECD61E6D3EA8256C34")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.626 -0500", hash_original_field = "26BBB8E702B9EBF3795D483832DA0664", hash_generated_field = "A5684AE7706FA9ECD61E6D3EA8256C34")
 
 
     private static Mac md5_mac;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.361 -0500", hash_original_field = "F944C092FFC61EAF52CACD16A5BFB7A4", hash_generated_field = "390D99310B8B23E117E0ACB370C8F537")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.628 -0500", hash_original_field = "F944C092FFC61EAF52CACD16A5BFB7A4", hash_generated_field = "390D99310B8B23E117E0ACB370C8F537")
 
     private static Mac sha_mac;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.362 -0500", hash_original_field = "7CC4ADADCF5B81E1EEBC5F8C930336A6", hash_generated_field = "D5F014887D4A79E166510A4FA421D08B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.631 -0500", hash_original_field = "7CC4ADADCF5B81E1EEBC5F8C930336A6", hash_generated_field = "D5F014887D4A79E166510A4FA421D08B")
 
     protected static MessageDigest md5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.363 -0500", hash_original_field = "592D6316376DEACF69E66590DC353E6F", hash_generated_field = "2E9E9E85A50E6935D767AA6B9691EC63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.633 -0500", hash_original_field = "592D6316376DEACF69E66590DC353E6F", hash_generated_field = "2E9E9E85A50E6935D767AA6B9691EC63")
 
     protected static MessageDigest sha;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.364 -0500", hash_original_field = "D4E10FD210A87F88E82946B3C3C2AFB9", hash_generated_field = "2C9D0114C1AC2794837DE00C523B4889")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.635 -0500", hash_original_field = "D4E10FD210A87F88E82946B3C3C2AFB9", hash_generated_field = "2C9D0114C1AC2794837DE00C523B4889")
 
     private static int md5_mac_length;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.365 -0500", hash_original_field = "48A97EEB1C81E96FFC60E879F3BDD3F9", hash_generated_field = "05BC0A15A688E18C1BE91C143F82353B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.637 -0500", hash_original_field = "48A97EEB1C81E96FFC60E879F3BDD3F9", hash_generated_field = "05BC0A15A688E18C1BE91C143F82353B")
 
     private static int sha_mac_length;
     

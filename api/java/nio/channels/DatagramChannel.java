@@ -27,8 +27,9 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
      * @throws IOException
      *             if some I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.070 -0500", hash_original_method = "FF19FCAA1AEEA14F76CE4D3DFB2AA57C", hash_generated_method = "9FAF3ABF2C27F02B828E01EB0D389166")
-    public static DatagramChannel open() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.920 -0500", hash_original_method = "FF19FCAA1AEEA14F76CE4D3DFB2AA57C", hash_generated_method = "9FAF3ABF2C27F02B828E01EB0D389166")
+    
+public static DatagramChannel open() throws IOException {
         return SelectorProvider.provider().openDatagramChannel();
     }
 
@@ -38,8 +39,9 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
      * @param selectorProvider
      *            an instance of SelectorProvider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.069 -0500", hash_original_method = "CB53873E4EB950556D4A1D46A395181D", hash_generated_method = "29FA237341F05A5965CAC8483EE8F415")
-    protected DatagramChannel(SelectorProvider selectorProvider) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.917 -0500", hash_original_method = "CB53873E4EB950556D4A1D46A395181D", hash_generated_method = "29FA237341F05A5965CAC8483EE8F415")
+    
+protected DatagramChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
     }
 
@@ -51,9 +53,10 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
      * @see java.nio.channels.SelectableChannel#validOps()
      * @return valid operations in bit-set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.071 -0500", hash_original_method = "389104566E9179427B49B1E6618B4C60", hash_generated_method = "38EA401FA74CEAC162FDD56053D91382")
-    @Override
-public final int validOps() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.927 -0500", hash_original_method = "389104566E9179427B49B1E6618B4C60", hash_generated_method = "38EA401FA74CEAC162FDD56053D91382")
+    
+@Override
+    public final int validOps() {
         return (SelectionKey.OP_READ | SelectionKey.OP_WRITE);
     }
 
@@ -64,8 +67,9 @@ public final int validOps() {
      *
      * @return the related DatagramSocket instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.072 -0500", hash_original_method = "2C680381B2A0B364EA275FD0233249E2", hash_generated_method = "7C0A48313FA8CEA7B17B7E452A98F7DE")
-    public abstract DatagramSocket socket();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.929 -0500", hash_original_method = "2C680381B2A0B364EA275FD0233249E2", hash_generated_method = "7C0A48313FA8CEA7B17B7E452A98F7DE")
+    
+public abstract DatagramSocket socket();
 
     /**
      * Returns whether this channel's socket is connected or not.
@@ -73,8 +77,9 @@ public final int validOps() {
      * @return <code>true</code> if this channel's socket is connected;
      *         <code>false</code> otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.073 -0500", hash_original_method = "EF2DCF0240DCDAB71A78C6BD0371BA93", hash_generated_method = "640ACF0B46AF152682CD460E4AF1D091")
-    public abstract boolean isConnected();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.932 -0500", hash_original_method = "EF2DCF0240DCDAB71A78C6BD0371BA93", hash_generated_method = "640ACF0B46AF152682CD460E4AF1D091")
+    
+public abstract boolean isConnected();
 
     /**
      * Connects the socket of this channel to a remote address, which is the
@@ -104,8 +109,9 @@ public final int validOps() {
      * @throws IOException
      *             if some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.074 -0500", hash_original_method = "0E4CC7391FC9E92A64FAEFA761F4AAC5", hash_generated_method = "1CE4307E43A0C02A4C52A1D038C4A2B1")
-    public abstract DatagramChannel connect(SocketAddress address)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.934 -0500", hash_original_method = "0E4CC7391FC9E92A64FAEFA761F4AAC5", hash_generated_method = "1CE4307E43A0C02A4C52A1D038C4A2B1")
+    
+public abstract DatagramChannel connect(SocketAddress address)
             throws IOException;
 
     /**
@@ -120,8 +126,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.075 -0500", hash_original_method = "9AFA5E12D12D53FA9DBFCD022CA98D9B", hash_generated_method = "7BE8E7106E65749D5B400F04F6E52E0D")
-    public abstract DatagramChannel disconnect() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.936 -0500", hash_original_method = "9AFA5E12D12D53FA9DBFCD022CA98D9B", hash_generated_method = "7BE8E7106E65749D5B400F04F6E52E0D")
+    
+public abstract DatagramChannel disconnect() throws IOException;
 
     /**
      * Gets a datagram from this channel.
@@ -157,8 +164,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.077 -0500", hash_original_method = "B41EF45D98E15F133EA4E8FF99F0E4E8", hash_generated_method = "BAEA6C7BCEB17A7C3D9E4EBF76E62D5D")
-    public abstract SocketAddress receive(ByteBuffer target) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.939 -0500", hash_original_method = "B41EF45D98E15F133EA4E8FF99F0E4E8", hash_generated_method = "BAEA6C7BCEB17A7C3D9E4EBF76E62D5D")
+    
+public abstract SocketAddress receive(ByteBuffer target) throws IOException;
 
     /**
      * Sends a datagram through this channel. The datagram consists of the
@@ -196,8 +204,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.078 -0500", hash_original_method = "E3E32B28E031752D65B6134794224EFD", hash_generated_method = "918195DEDBE3EE1A477A192CDBF1BF97")
-    public abstract int send(ByteBuffer source, SocketAddress address) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.941 -0500", hash_original_method = "E3E32B28E031752D65B6134794224EFD", hash_generated_method = "918195DEDBE3EE1A477A192CDBF1BF97")
+    
+public abstract int send(ByteBuffer source, SocketAddress address) throws IOException;
 
     /**
      * Reads a datagram from this channel into the byte buffer.
@@ -228,8 +237,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.079 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
-    public abstract int read(ByteBuffer target) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.943 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
+    
+public abstract int read(ByteBuffer target) throws IOException;
 
     /**
      * Reads a datagram from this channel into an array of byte buffers.
@@ -269,8 +279,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.080 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
-    public abstract long read(ByteBuffer[] targets, int offset, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.946 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
+    
+public abstract long read(ByteBuffer[] targets, int offset, int length)
             throws IOException;
 
     /**
@@ -302,8 +313,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.081 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
-    public synchronized final long read(ByteBuffer[] targets)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.949 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
+    
+public synchronized final long read(ByteBuffer[] targets)
             throws IOException {
         return read(targets, 0, targets.length);
     }
@@ -334,8 +346,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.082 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
-    public abstract int write(ByteBuffer source) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.951 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
+    
+public abstract int write(ByteBuffer source) throws IOException;
 
     /**
      * Writes a datagram from the byte buffers to this channel.
@@ -375,8 +388,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.083 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
-    public abstract long write(ByteBuffer[] sources, int offset, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.954 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
+    
+public abstract long write(ByteBuffer[] sources, int offset, int length)
             throws IOException;
 
     /**
@@ -408,8 +422,9 @@ public final int validOps() {
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.084 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
-    public synchronized final long write(ByteBuffer[] sources)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.956 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
+    
+public synchronized final long write(ByteBuffer[] sources)
             throws IOException {
         return write(sources, 0, sources.length);
     }

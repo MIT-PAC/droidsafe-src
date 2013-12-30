@@ -30,8 +30,9 @@ import java.text.ParseException;
 
 public class StringMsgParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.093 -0500", hash_original_method = "E55ED4E8D45A4ED321FE77BA414F4370", hash_generated_method = "078D6A91AF2AFA0E63B3A8F35C2A98A2")
-    public static void setComputeContentLengthFromMessage(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.470 -0500", hash_original_method = "E55ED4E8D45A4ED321FE77BA414F4370", hash_generated_method = "078D6A91AF2AFA0E63B3A8F35C2A98A2")
+    
+public static void setComputeContentLengthFromMessage(
             boolean computeContentLengthFromMessage) {
         StringMsgParser.computeContentLengthFromMessage = computeContentLengthFromMessage;
     }
@@ -41,8 +42,9 @@ public class StringMsgParser {
     /**
      * Test code.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.098 -0500", hash_original_method = "CDBF913024B5ED71496AB91FB35DA8A0", hash_generated_method = "4092FD4E8B5AF5D9204A3378F2BA7E37")
-    public static void main(String[] args) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.483 -0500", hash_original_method = "CDBF913024B5ED71496AB91FB35DA8A0", hash_generated_method = "4092FD4E8B5AF5D9204A3378F2BA7E37")
+    
+public static void main(String[] args) throws ParseException {
         String messages[] = {
                 "SIP/2.0 200 OK\r\n"
                         + "To: \"The Little Blister\" <sip:LittleGuy@there.com>;tag=469bc066\r\n"
@@ -121,29 +123,30 @@ public class StringMsgParser {
         }
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.075 -0500", hash_original_field = "F0B5F632149A7F653D7F41A22A1ADA42", hash_generated_field = "A4CB644B81B9880592D43A90E29E3123")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.422 -0500", hash_original_field = "F0B5F632149A7F653D7F41A22A1ADA42", hash_generated_field = "A4CB644B81B9880592D43A90E29E3123")
 
 
     private static boolean computeContentLengthFromMessage = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.072 -0500", hash_original_field = "634C12985CE6ECEC1246829FA58BCD72", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.412 -0500", hash_original_field = "634C12985CE6ECEC1246829FA58BCD72", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")
 
 
     protected boolean readBody;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.073 -0500", hash_original_field = "39B3B432102584B1DCF65A99D4A9A6D5", hash_generated_field = "1B834CF99672F368DBE005CE727DA4BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.414 -0500", hash_original_field = "39B3B432102584B1DCF65A99D4A9A6D5", hash_generated_field = "1B834CF99672F368DBE005CE727DA4BD")
 
     private ParseExceptionListener parseExceptionListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.074 -0500", hash_original_field = "3818BE182D2E52DDE9CA4F5353E06BDA", hash_generated_field = "71F8C7FC9A6DFE4A45B8B3445B6FC291")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.417 -0500", hash_original_field = "3818BE182D2E52DDE9CA4F5353E06BDA", hash_generated_field = "71F8C7FC9A6DFE4A45B8B3445B6FC291")
 
     private String rawStringMessage;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.074 -0500", hash_original_field = "BDC54631C4936EA236C85607E0FD63F5", hash_generated_field = "02B827874E8744100DF748B4791EB7C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.419 -0500", hash_original_field = "BDC54631C4936EA236C85607E0FD63F5", hash_generated_field = "02B827874E8744100DF748B4791EB7C5")
 
     private boolean strict;
 
     /**
      * @since v0.9
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.076 -0500", hash_original_method = "03434E90443FF3CC6928C5F00042D419", hash_generated_method = "35B29D519ACA0C846314797028EE4DBC")
-    public StringMsgParser() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.424 -0500", hash_original_method = "03434E90443FF3CC6928C5F00042D419", hash_generated_method = "35B29D519ACA0C846314797028EE4DBC")
+    
+public StringMsgParser() {
         super();
         readBody = true;
     }
@@ -155,8 +158,9 @@ public class StringMsgParser {
      * @param exhandler
      *            is the parse exception listener for the message parser.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.077 -0500", hash_original_method = "84F5B97F6353CE6241343807C31ED063", hash_generated_method = "13B9C917064301EEF4F07E7D56C012A4")
-    public StringMsgParser(ParseExceptionListener exhandler) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.427 -0500", hash_original_method = "84F5B97F6353CE6241343807C31ED063", hash_generated_method = "13B9C917064301EEF4F07E7D56C012A4")
+    
+public StringMsgParser(ParseExceptionListener exhandler) {
         this();
         parseExceptionListener = exhandler;
     }
@@ -168,8 +172,9 @@ public class StringMsgParser {
      *            is a class that implements the ParseExceptionListener
      *            interface.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.078 -0500", hash_original_method = "E7BB96D94C72A71CC55D419208731E5E", hash_generated_method = "8980EFE71B5236DBD0827B78269A5B06")
-    public void setParseExceptionListener(ParseExceptionListener pexhandler) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.430 -0500", hash_original_method = "E7BB96D94C72A71CC55D419208731E5E", hash_generated_method = "8980EFE71B5236DBD0827B78269A5B06")
+    
+public void setParseExceptionListener(ParseExceptionListener pexhandler) {
         parseExceptionListener = pexhandler;
     }
 
@@ -189,8 +194,9 @@ public class StringMsgParser {
      *                (and the rest of the buffer is discarded).
      * @see ParseExceptionListener
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.080 -0500", hash_original_method = "9C5089EA8774478643AAED9197A2D229", hash_generated_method = "1B419A4432CD72352E4A475FF0C7FEE9")
-    public SIPMessage parseSIPMessage(byte[] msgBuffer) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.433 -0500", hash_original_method = "9C5089EA8774478643AAED9197A2D229", hash_generated_method = "1B419A4432CD72352E4A475FF0C7FEE9")
+    
+public SIPMessage parseSIPMessage(byte[] msgBuffer) throws ParseException {
         if (msgBuffer == null || msgBuffer.length == 0)
             return null;
 
@@ -301,8 +307,9 @@ public class StringMsgParser {
      *                (and the rest of the buffer is discarded).
      * @see ParseExceptionListener
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.081 -0500", hash_original_method = "2180FC72509B511C247A77608998B3E2", hash_generated_method = "193C2A5F2CCEEBF10DEAD42BE7FAD8A5")
-    public SIPMessage parseSIPMessage(String msgString) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.438 -0500", hash_original_method = "2180FC72509B511C247A77608998B3E2", hash_generated_method = "193C2A5F2CCEEBF10DEAD42BE7FAD8A5")
+    
+public SIPMessage parseSIPMessage(String msgString) throws ParseException {
         if (msgString == null || msgString.length() == 0)
             return null;
 
@@ -402,8 +409,9 @@ public class StringMsgParser {
         return message;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.082 -0500", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "6AB5AD0FEFC47BFD85BB51F416D0C5F0")
-    private String trimEndOfLine(String line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.441 -0500", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "6AB5AD0FEFC47BFD85BB51F416D0C5F0")
+    
+private String trimEndOfLine(String line) {
         if (line == null)
             return line;
 
@@ -420,8 +428,9 @@ public class StringMsgParser {
         return line.substring(0, i+1);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.083 -0500", hash_original_method = "E1A152A7092436D65484E6472132234E", hash_generated_method = "1EA560A8F950937693E119DE7973E4CA")
-    private SIPMessage processFirstLine(String firstLine) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.444 -0500", hash_original_method = "E1A152A7092436D65484E6472132234E", hash_generated_method = "1EA560A8F950937693E119DE7973E4CA")
+    
+private SIPMessage processFirstLine(String firstLine) throws ParseException {
         SIPMessage message;
         if (!firstLine.startsWith(SIPConstants.SIP_VERSION_STRING)) {
             message = new SIPRequest();
@@ -454,8 +463,9 @@ public class StringMsgParser {
         return message;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.085 -0500", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "E884BF3BFFEBA037ADB951B9BCD4A7ED")
-    private void processHeader(String header, SIPMessage message) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.447 -0500", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "E884BF3BFFEBA037ADB951B9BCD4A7ED")
+    
+private void processHeader(String header, SIPMessage message) throws ParseException {
         if (header == null || header.length() == 0)
             return;
 
@@ -497,8 +507,9 @@ public class StringMsgParser {
      * @exception ParseException
      *                when the address is badly formatted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.086 -0500", hash_original_method = "049BA210A39AB5443B08132FD51D457E", hash_generated_method = "67E667399F88AE435AF274DA2626B05F")
-    public AddressImpl parseAddress(String address) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.449 -0500", hash_original_method = "049BA210A39AB5443B08132FD51D457E", hash_generated_method = "67E667399F88AE435AF274DA2626B05F")
+    
+public AddressImpl parseAddress(String address) throws ParseException {
         AddressParser addressParser = new AddressParser(address);
         return addressParser.address(true);
     }
@@ -530,8 +541,9 @@ public class StringMsgParser {
      * @exception ParseException
      *                a ParseException when the hostname is badly formatted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.086 -0500", hash_original_method = "6E5629CC68B4185F1ADA3485008A15B3", hash_generated_method = "3757B6D1F18269421988179AE69EAB05")
-    public Host parseHost(String host) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.451 -0500", hash_original_method = "6E5629CC68B4185F1ADA3485008A15B3", hash_generated_method = "3757B6D1F18269421988179AE69EAB05")
+    
+public Host parseHost(String host) throws ParseException {
         Lexer lexer = new Lexer("charLexer", host);
         return new HostNameParser(lexer).host();
 
@@ -547,8 +559,9 @@ public class StringMsgParser {
      * @exception ParseException
      *                a ParseException when the address is badly formatted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.087 -0500", hash_original_method = "FA67D7760B995854EEA852AD4B17EA85", hash_generated_method = "EFBC73C8AAB088A9FB92BE8F4CD8B42C")
-    public TelephoneNumber parseTelephoneNumber(String telephone_number)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.454 -0500", hash_original_method = "FA67D7760B995854EEA852AD4B17EA85", hash_generated_method = "EFBC73C8AAB088A9FB92BE8F4CD8B42C")
+    
+public TelephoneNumber parseTelephoneNumber(String telephone_number)
             throws ParseException {
         // Bug fix contributed by Will Scullin
         return new URLParser(telephone_number).parseTelephoneNumber(true);
@@ -565,8 +578,9 @@ public class StringMsgParser {
      *                if there was an error parsing the message.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.088 -0500", hash_original_method = "F49AF4817F29179E4378A66D59AF945F", hash_generated_method = "0BDFB16238344617095C12C55C0809DF")
-    public SipUri parseSIPUrl(String url) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.456 -0500", hash_original_method = "F49AF4817F29179E4378A66D59AF945F", hash_generated_method = "0BDFB16238344617095C12C55C0809DF")
+    
+public SipUri parseSIPUrl(String url) throws ParseException {
         try {
             return new URLParser(url).sipURL(true);
         } catch (ClassCastException ex) {
@@ -584,8 +598,9 @@ public class StringMsgParser {
      *                if there was an error parsing the message.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.089 -0500", hash_original_method = "40F3B3649F989E59FAF074C2858F6B9B", hash_generated_method = "26A0276884CC044487B07E4402CDD314")
-    public GenericURI parseUrl(String url) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.458 -0500", hash_original_method = "40F3B3649F989E59FAF074C2858F6B9B", hash_generated_method = "26A0276884CC044487B07E4402CDD314")
+    
+public GenericURI parseUrl(String url) throws ParseException {
         return new URLParser(url).parse();
     }
 
@@ -598,8 +613,9 @@ public class StringMsgParser {
      * @exception ParseException
      *                if there was an error parsing the message.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.091 -0500", hash_original_method = "6152413E77E62620D4330DAF5944A1B1", hash_generated_method = "08F4CAC237F3618F93B18A9A4E1E9CA1")
-    public SIPHeader parseSIPHeader(String header) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.462 -0500", hash_original_method = "6152413E77E62620D4330DAF5944A1B1", hash_generated_method = "08F4CAC237F3618F93B18A9A4E1E9CA1")
+    
+public SIPHeader parseSIPHeader(String header) throws ParseException {
         int start = 0;
         int end = header.length() - 1;
         try {
@@ -662,8 +678,9 @@ public class StringMsgParser {
      *                if there was an error parsing the requestLine.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.092 -0500", hash_original_method = "C661D43CA4BEB0154AFD6A7B8492896F", hash_generated_method = "8964EBEF8322BD4922C3A52D42F0D038")
-    public RequestLine parseSIPRequestLine(String requestLine)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.464 -0500", hash_original_method = "C661D43CA4BEB0154AFD6A7B8492896F", hash_generated_method = "8964EBEF8322BD4922C3A52D42F0D038")
+    
+public RequestLine parseSIPRequestLine(String requestLine)
             throws ParseException {
         requestLine += "\n";
         return new RequestLineParser(requestLine).parse();
@@ -680,15 +697,17 @@ public class StringMsgParser {
      * @see StatusLine
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.092 -0500", hash_original_method = "9FDE6314AF63D7F1DD1D0AE258CFAA9B", hash_generated_method = "CEF177E2B1177F4D9C650F330300EDD2")
-    public StatusLine parseSIPStatusLine(String statusLine)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.468 -0500", hash_original_method = "9FDE6314AF63D7F1DD1D0AE258CFAA9B", hash_generated_method = "CEF177E2B1177F4D9C650F330300EDD2")
+    
+public StatusLine parseSIPStatusLine(String statusLine)
             throws ParseException {
         statusLine += "\n";
         return new StatusLineParser(statusLine).parse();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.099 -0500", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "A576CD55F5552CD6C33C357CE066752B")
-    public void setStrict(boolean strict) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.485 -0500", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "A576CD55F5552CD6C33C357CE066752B")
+    
+public void setStrict(boolean strict) {
        this.strict = strict;
         
     }

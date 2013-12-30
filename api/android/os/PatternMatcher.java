@@ -11,8 +11,9 @@ import droidsafe.annotations.*;
 
 public class PatternMatcher implements Parcelable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.789 -0500", hash_original_method = "0DACC851FA271C064A5A12BE9D7B9A0B", hash_generated_method = "E4A178A455D5F4EC8C76C9D0D71455CB")
-    static boolean matchPattern(String pattern, String match, int type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.381 -0500", hash_original_method = "0DACC851FA271C064A5A12BE9D7B9A0B", hash_generated_method = "E4A178A455D5F4EC8C76C9D0D71455CB")
+    
+static boolean matchPattern(String pattern, String match, int type) {
         if (match == null) return false;
         if (type == PATTERN_LITERAL) {
             return pattern.equals(match);
@@ -100,66 +101,74 @@ public class PatternMatcher implements Parcelable {
         
         return false;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.774 -0500", hash_original_field = "5D1D7C326F36BC145B5E45422E0F494F", hash_generated_field = "88FD9CAFD6BAA31BED99FDC6C75F201F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.342 -0500", hash_original_field = "5D1D7C326F36BC145B5E45422E0F494F", hash_generated_field = "88FD9CAFD6BAA31BED99FDC6C75F201F")
 
     public static final int PATTERN_LITERAL = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.776 -0500", hash_original_field = "B1C5AB05971A546D19930A544157B830", hash_generated_field = "AD9FE4CF9D9159CCE6CCF13FBDDA10E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.345 -0500", hash_original_field = "B1C5AB05971A546D19930A544157B830", hash_generated_field = "AD9FE4CF9D9159CCE6CCF13FBDDA10E9")
 
     public static final int PATTERN_PREFIX = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.776 -0500", hash_original_field = "A15DEA3CB6746A4118C1E764BE98FF8E", hash_generated_field = "DCA7FDC47426EB3AC212F1972B5D2FF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.347 -0500", hash_original_field = "A15DEA3CB6746A4118C1E764BE98FF8E", hash_generated_field = "DCA7FDC47426EB3AC212F1972B5D2FF5")
 
     public static final int PATTERN_SIMPLE_GLOB = 2;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.208 -0400", hash_original_field = "AF10CCA919E83B7FE09F2ADC78079C25", hash_generated_field = "67838E58B9F5097A89987486B2279E8E")
 
     public static final Parcelable.Creator<PatternMatcher> CREATOR
             = new Parcelable.Creator<PatternMatcher>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.786 -0500", hash_original_method = "FD3047E64A944595CFD464C3A36DC690", hash_generated_method = "2A939E89149C05B7DDC26C0EF7DEBCB1")
-        public PatternMatcher createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.373 -0500", hash_original_method = "FD3047E64A944595CFD464C3A36DC690", hash_generated_method = "2A939E89149C05B7DDC26C0EF7DEBCB1")
+        
+public PatternMatcher createFromParcel(Parcel source) {
             return new PatternMatcher(source);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.787 -0500", hash_original_method = "2D634B6780229A213F59B3C199AB2608", hash_generated_method = "C8A4A562E27286D3F9EF48EA90345EEA")
-        public PatternMatcher[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.376 -0500", hash_original_method = "2D634B6780229A213F59B3C199AB2608", hash_generated_method = "C8A4A562E27286D3F9EF48EA90345EEA")
+        
+public PatternMatcher[] newArray(int size) {
             return new PatternMatcher[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.777 -0500", hash_original_field = "321647A6112621E87F809E4508D12401", hash_generated_field = "3CD87C11C7A58085FB84E25F889274B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.349 -0500", hash_original_field = "321647A6112621E87F809E4508D12401", hash_generated_field = "3CD87C11C7A58085FB84E25F889274B8")
 
     
     private  String mPattern;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.778 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.352 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
 
     private  int mType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.779 -0500", hash_original_method = "1FC2431316C42DE0C3D46C9188020DE6", hash_generated_method = "F601521677CE36FC91C3778E01E51E0C")
-    public PatternMatcher(String pattern, int type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.354 -0500", hash_original_method = "1FC2431316C42DE0C3D46C9188020DE6", hash_generated_method = "F601521677CE36FC91C3778E01E51E0C")
+    
+public PatternMatcher(String pattern, int type) {
         mPattern = pattern;
         mType = type;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.785 -0500", hash_original_method = "B901ADD56C5DD849BD7E8046FFB1F0D3", hash_generated_method = "C5F8DEE2EB1178FFE35B3121EE1B5D6E")
-    public PatternMatcher(Parcel src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.370 -0500", hash_original_method = "B901ADD56C5DD849BD7E8046FFB1F0D3", hash_generated_method = "C5F8DEE2EB1178FFE35B3121EE1B5D6E")
+    
+public PatternMatcher(Parcel src) {
         mPattern = src.readString();
         mType = src.readInt();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.780 -0500", hash_original_method = "05EB8C992FD149B44BBE0FC11E651762", hash_generated_method = "CD24450B41F8C51C8EDB097A7D2BA07A")
-    public final String getPath() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.356 -0500", hash_original_method = "05EB8C992FD149B44BBE0FC11E651762", hash_generated_method = "CD24450B41F8C51C8EDB097A7D2BA07A")
+    
+public final String getPath() {
         return mPattern;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.781 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "C3B6FFD7CB013DE0A3DF1A9A4C66A54A")
-    public final int getType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.359 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "C3B6FFD7CB013DE0A3DF1A9A4C66A54A")
+    
+public final int getType() {
         return mType;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.781 -0500", hash_original_method = "62F8B077957CE70BF92EA7EF3ACCE61D", hash_generated_method = "B983538E39EFD5A045C0B7BCAC2EA3A8")
-    public boolean match(String str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.361 -0500", hash_original_method = "62F8B077957CE70BF92EA7EF3ACCE61D", hash_generated_method = "B983538E39EFD5A045C0B7BCAC2EA3A8")
+    
+public boolean match(String str) {
         return matchPattern(mPattern, str, mType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.782 -0500", hash_original_method = "4D68435646F5279408D2A4F2A408DED4", hash_generated_method = "757F4636B2E1DD790C8287C7BC15C9D2")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.363 -0500", hash_original_method = "4D68435646F5279408D2A4F2A408DED4", hash_generated_method = "757F4636B2E1DD790C8287C7BC15C9D2")
+    
+public String toString() {
         String type = "? ";
         switch (mType) {
             case PATTERN_LITERAL:
@@ -175,13 +184,15 @@ public class PatternMatcher implements Parcelable {
         return "PatternMatcher{" + type + mPattern + "}";
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.783 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.365 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.784 -0500", hash_original_method = "ECBD3AB9E3B58368B577D8D9D90A2091", hash_generated_method = "72FDFA96E430C045EBD67255F75C94F2")
-    public void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.367 -0500", hash_original_method = "ECBD3AB9E3B58368B577D8D9D90A2091", hash_generated_method = "72FDFA96E430C045EBD67255F75C94F2")
+    
+public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mPattern);
         dest.writeInt(mType);
     }

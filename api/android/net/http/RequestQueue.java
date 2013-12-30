@@ -28,26 +28,26 @@ import android.util.Log;
 
 
 public class RequestQueue implements RequestFeeder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.186 -0500", hash_original_field = "3B336A0182CCCB8357C14CA1832B3D52", hash_generated_field = "37BB035DE4DBFD177A6ADC5B8C105D95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.229 -0500", hash_original_field = "3B336A0182CCCB8357C14CA1832B3D52", hash_generated_field = "37BB035DE4DBFD177A6ADC5B8C105D95")
 
     private static final int CONNECTION_COUNT = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.181 -0500", hash_original_field = "CC5B30229A6F0F76FACE40C38D357746", hash_generated_field = "1758DBA360E4E3B600ADDDCE5E66E218")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.216 -0500", hash_original_field = "CC5B30229A6F0F76FACE40C38D357746", hash_generated_field = "1758DBA360E4E3B600ADDDCE5E66E218")
 
     private  LinkedHashMap<HttpHost, LinkedList<Request>> mPending;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.182 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.218 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.183 -0500", hash_original_field = "DD9A4A5CCD55A305148DD79BD0EEA840", hash_generated_field = "7E2C9159191DF9FFA295FC8E90223677")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.220 -0500", hash_original_field = "DD9A4A5CCD55A305148DD79BD0EEA840", hash_generated_field = "7E2C9159191DF9FFA295FC8E90223677")
 
     private  ActivePool mActivePool;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.184 -0500", hash_original_field = "CA1A36F4D12176AE64160855BE8A2913", hash_generated_field = "7F6315533CCAF46DEA5C0B5CCAC3EBAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.222 -0500", hash_original_field = "CA1A36F4D12176AE64160855BE8A2913", hash_generated_field = "7F6315533CCAF46DEA5C0B5CCAC3EBAB")
 
     private  ConnectivityManager mConnectivityManager;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.185 -0500", hash_original_field = "D1D639C5596FCF5BCCB2D8DE2062557E", hash_generated_field = "99742757777505E14871D3515FDC7109")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.224 -0500", hash_original_field = "D1D639C5596FCF5BCCB2D8DE2062557E", hash_generated_field = "99742757777505E14871D3515FDC7109")
 
 
     private HttpHost mProxyHost = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.185 -0500", hash_original_field = "BBC3BB7DCD4ABB1C5FDFA673C3A087C1", hash_generated_field = "EAF3975B1E21B046C1D30C80F39B0ACA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.227 -0500", hash_original_field = "BBC3BB7DCD4ABB1C5FDFA673C3A087C1", hash_generated_field = "EAF3975B1E21B046C1D30C80F39B0ACA")
 
     private BroadcastReceiver mProxyChangeReceiver;
 
@@ -60,8 +60,9 @@ public class RequestQueue implements RequestFeeder {
      *
      * @param context application context
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.202 -0500", hash_original_method = "7E78DB3349CECCEABE79A47BDE45F2E4", hash_generated_method = "9B988754EC24B3F7C80BCEEDCF39E762")
-    public RequestQueue(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.274 -0500", hash_original_method = "7E78DB3349CECCEABE79A47BDE45F2E4", hash_generated_method = "9B988754EC24B3F7C80BCEEDCF39E762")
+    
+public RequestQueue(Context context) {
         this(context, CONNECTION_COUNT);
     }
 
@@ -75,8 +76,9 @@ public class RequestQueue implements RequestFeeder {
      * @param context application context
      * @param connectionCount The number of simultaneous connections 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.203 -0500", hash_original_method = "A7CEC9D1667C71B6ADD3849E74F98CAD", hash_generated_method = "7824C06A57E6DCD8D51C71251CBFC6DE")
-    public RequestQueue(Context context, int connectionCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.277 -0500", hash_original_method = "A7CEC9D1667C71B6ADD3849E74F98CAD", hash_generated_method = "7824C06A57E6DCD8D51C71251CBFC6DE")
+    
+public RequestQueue(Context context, int connectionCount) {
         mContext = context;
 
         mPending = new LinkedHashMap<HttpHost, LinkedList<Request>>(32);
@@ -97,9 +99,10 @@ public class RequestQueue implements RequestFeeder {
         {
             mProxyChangeReceiver =
                     new BroadcastReceiver() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.205 -0500", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "C33F7949724EF2C6F408910899572C6C")
-                @Override
-public void onReceive(Context ctx, Intent intent) {
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.280 -0500", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "C33F7949724EF2C6F408910899572C6C")
+                
+@Override
+                        public void onReceive(Context ctx, Intent intent) {
                             setProxyConfig();
                         }
 };
@@ -127,8 +130,9 @@ public void onReceive(Context ctx, Intent intent) {
      * If platform notifications have been enabled, call this method
      * to disable before destroying RequestQueue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.207 -0500", hash_original_method = "B133918A77AADD577D84EC4FDA196DDC", hash_generated_method = "9CC67D9F424BC4790695BD844B065BAE")
-    public synchronized void disablePlatformNotifications() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.285 -0500", hash_original_method = "B133918A77AADD577D84EC4FDA196DDC", hash_generated_method = "9CC67D9F424BC4790695BD844B065BAE")
+    
+public synchronized void disablePlatformNotifications() {
         if (HttpLog.LOGV) HttpLog.v("RequestQueue.disablePlatformNotifications() network");
 
         if (mProxyChangeReceiver != null) {
@@ -141,8 +145,9 @@ public void onReceive(Context ctx, Intent intent) {
      * Because our IntentReceiver can run within a different thread,
      * synchronize setting the proxy
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.208 -0500", hash_original_method = "381746B4CF404D7B9FDB43420AECD746", hash_generated_method = "401A74B2C59723BB96BCE7B323DDB294")
-    private synchronized void setProxyConfig() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.287 -0500", hash_original_method = "381746B4CF404D7B9FDB43420AECD746", hash_generated_method = "401A74B2C59723BB96BCE7B323DDB294")
+    
+private synchronized void setProxyConfig() {
         NetworkInfo info = mConnectivityManager.getActiveNetworkInfo();
         if (info != null && info.getType() == ConnectivityManager.TYPE_WIFI) {
             mProxyHost = null;
@@ -162,8 +167,9 @@ public void onReceive(Context ctx, Intent intent) {
      * used by webkit
      * @return proxy host if set, null otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.208 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
-    public HttpHost getProxyHost() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.289 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
+    
+public HttpHost getProxyHost() {
         return mProxyHost;
     }
 
@@ -177,8 +183,9 @@ public void onReceive(Context ctx, Intent intent) {
      * @param bodyProvider InputStream providing HTTP body, null if none
      * @param bodyLength length of body, must be 0 if bodyProvider is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.209 -0500", hash_original_method = "D4465F27265450A81D8D5C54F66A3578", hash_generated_method = "3A6E42FB1521BD32472E1B8D14D5F154")
-    public RequestHandle queueRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.292 -0500", hash_original_method = "D4465F27265450A81D8D5C54F66A3578", hash_generated_method = "3A6E42FB1521BD32472E1B8D14D5F154")
+    
+public RequestHandle queueRequest(
             String url, String method,
             Map<String, String> headers, EventHandler eventHandler,
             InputStream bodyProvider, int bodyLength) {
@@ -198,8 +205,9 @@ public void onReceive(Context ctx, Intent intent) {
      * @param bodyProvider InputStream providing HTTP body, null if none
      * @param bodyLength length of body, must be 0 if bodyProvider is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.210 -0500", hash_original_method = "5EE74AB0AE90D0DA727E01E7B767B670", hash_generated_method = "B8937CF203BE98232FA77F52D93F9C1D")
-    public RequestHandle queueRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.295 -0500", hash_original_method = "5EE74AB0AE90D0DA727E01E7B767B670", hash_generated_method = "B8937CF203BE98232FA77F52D93F9C1D")
+    
+public RequestHandle queueRequest(
             String url, WebAddress uri, String method, Map<String, String> headers,
             EventHandler eventHandler,
             InputStream bodyProvider, int bodyLength) {
@@ -231,8 +239,9 @@ public void onReceive(Context ctx, Intent intent) {
                 req);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.217 -0500", hash_original_method = "5ADB9D7A6CBFB38DBDB876B33452D400", hash_generated_method = "CB1B5F93CAE15BABBDB2E8095587B0BC")
-    public RequestHandle queueSynchronousRequest(String url, WebAddress uri,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.313 -0500", hash_original_method = "5ADB9D7A6CBFB38DBDB876B33452D400", hash_generated_method = "CB1B5F93CAE15BABBDB2E8095587B0BC")
+    
+public RequestHandle queueSynchronousRequest(String url, WebAddress uri,
             String method, Map<String, String> headers,
             EventHandler eventHandler, InputStream bodyProvider,
             int bodyLength) {
@@ -259,8 +268,9 @@ public void onReceive(Context ctx, Intent intent) {
     }
 
     // Chooses between the proxy and the request's host.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.218 -0500", hash_original_method = "19FC52B8DC895C49DAE0ECA4EB6CA639", hash_generated_method = "1FB9EE31513A97342E093BC26F601324")
-    private HttpHost determineHost(HttpHost host) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.316 -0500", hash_original_method = "19FC52B8DC895C49DAE0ECA4EB6CA639", hash_generated_method = "1FB9EE31513A97342E093BC26F601324")
+    
+private HttpHost determineHost(HttpHost host) {
         // There used to be a comment in ConnectionThread about t-mob's proxy
         // being really bad about https. But, HttpsConnection actually looks
         // for a proxy and connects through it anyway. I think that this check
@@ -274,8 +284,9 @@ public void onReceive(Context ctx, Intent intent) {
     /**
      * @return true iff there are any non-active requests pending
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.218 -0500", hash_original_method = "EFE82EE341DC6BD22EFE3AAE27ABB231", hash_generated_method = "4731BE1B4112D1C43085365BEE4FB6A3")
-    synchronized boolean requestsPending() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.318 -0500", hash_original_method = "EFE82EE341DC6BD22EFE3AAE27ABB231", hash_generated_method = "4731BE1B4112D1C43085365BEE4FB6A3")
+    
+synchronized boolean requestsPending() {
         return !mPending.isEmpty();
     }
 
@@ -283,8 +294,9 @@ public void onReceive(Context ctx, Intent intent) {
     /**
      * debug tool: prints request queue to log
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.219 -0500", hash_original_method = "5E944A5C3AFB2FB0842C37E33C83D8D2", hash_generated_method = "F8482D0B2DB6C94B3879481A48D509CB")
-    synchronized void dump() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.321 -0500", hash_original_method = "5E944A5C3AFB2FB0842C37E33C83D8D2", hash_generated_method = "F8482D0B2DB6C94B3879481A48D509CB")
+    
+synchronized void dump() {
         HttpLog.v("dump()");
         StringBuilder dump = new StringBuilder();
         int count = 0;
@@ -315,8 +327,9 @@ public void onReceive(Context ctx, Intent intent) {
     /*
      * RequestFeeder implementation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.221 -0500", hash_original_method = "8F04B443A564D50EFFE076AEA97295A7", hash_generated_method = "C5662E3D0008E6019496C6C0594DABDB")
-    public synchronized Request getRequest() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.323 -0500", hash_original_method = "8F04B443A564D50EFFE076AEA97295A7", hash_generated_method = "C5662E3D0008E6019496C6C0594DABDB")
+    
+public synchronized Request getRequest() {
         Request ret = null;
 
         if (!mPending.isEmpty()) {
@@ -329,8 +342,9 @@ public void onReceive(Context ctx, Intent intent) {
     /**
      * @return a request for given host if possible
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.222 -0500", hash_original_method = "871E1F4E9BD2BA7BA6F72CE2CEEFAC66", hash_generated_method = "68016E68CF819C1B2617E31465E380F1")
-    public synchronized Request getRequest(HttpHost host) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.326 -0500", hash_original_method = "871E1F4E9BD2BA7BA6F72CE2CEEFAC66", hash_generated_method = "68016E68CF819C1B2617E31465E380F1")
+    
+public synchronized Request getRequest(HttpHost host) {
         Request ret = null;
 
         if (mPending.containsKey(host)) {
@@ -347,29 +361,33 @@ public void onReceive(Context ctx, Intent intent) {
     /**
      * @return true if a request for this host is available
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.222 -0500", hash_original_method = "A6996F44457236E27DB2C5C55302FCBE", hash_generated_method = "9F2D86667C70BE0CC819723EB92B8E24")
-    public synchronized boolean haveRequest(HttpHost host) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.328 -0500", hash_original_method = "A6996F44457236E27DB2C5C55302FCBE", hash_generated_method = "9F2D86667C70BE0CC819723EB92B8E24")
+    
+public synchronized boolean haveRequest(HttpHost host) {
         return mPending.containsKey(host);
     }
 
     /**
      * Put request back on head of queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.223 -0500", hash_original_method = "5DF1C437E9ED58A9D928A0798F1B9425", hash_generated_method = "CC7A054AA0A68649C978C241FCBC25A6")
-    public void requeueRequest(Request request) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.330 -0500", hash_original_method = "5DF1C437E9ED58A9D928A0798F1B9425", hash_generated_method = "CC7A054AA0A68649C978C241FCBC25A6")
+    
+public void requeueRequest(Request request) {
         queueRequest(request, true);
     }
 
     /**
      * This must be called to cleanly shutdown RequestQueue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.224 -0500", hash_original_method = "36DEBCDEC4EFDB8CF8346CFD81066CDA", hash_generated_method = "BF70AD9076074D5BD40DC7300E29BE75")
-    public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.332 -0500", hash_original_method = "36DEBCDEC4EFDB8CF8346CFD81066CDA", hash_generated_method = "BF70AD9076074D5BD40DC7300E29BE75")
+    
+public void shutdown() {
         mActivePool.shutdown();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.225 -0500", hash_original_method = "99743D8700F7CD0272109FAA55D49D1A", hash_generated_method = "352B9F00E36246627B621AEAD7D6FEC1")
-    protected synchronized void queueRequest(Request request, boolean head) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.335 -0500", hash_original_method = "99743D8700F7CD0272109FAA55D49D1A", hash_generated_method = "352B9F00E36246627B621AEAD7D6FEC1")
+    
+protected synchronized void queueRequest(Request request, boolean head) {
         HttpHost host = request.mProxyHost == null ? request.mHost : request.mProxyHost;
         LinkedList<Request> reqList;
         if (mPending.containsKey(host)) {
@@ -386,38 +404,41 @@ public void onReceive(Context ctx, Intent intent) {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.226 -0500", hash_original_method = "D615BD22372BF27837008A0B674B3672", hash_generated_method = "54286DD993225353067BB88F7051F1F0")
-    public void startTiming() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.337 -0500", hash_original_method = "D615BD22372BF27837008A0B674B3672", hash_generated_method = "54286DD993225353067BB88F7051F1F0")
+    
+public void startTiming() {
         mActivePool.startTiming();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.227 -0500", hash_original_method = "93BD6698DCB4A99EC2C52A706270C860", hash_generated_method = "4C4409DEDF51FBF2C545B06B5245AF82")
-    public void stopTiming() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.339 -0500", hash_original_method = "93BD6698DCB4A99EC2C52A706270C860", hash_generated_method = "4C4409DEDF51FBF2C545B06B5245AF82")
+    
+public void stopTiming() {
         mActivePool.stopTiming();
     }
 
     
     class ActivePool implements ConnectionManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.187 -0500", hash_original_field = "A911064E545F525658232640AFA7D0B9", hash_generated_field = "A911064E545F525658232640AFA7D0B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.232 -0500", hash_original_field = "A911064E545F525658232640AFA7D0B9", hash_generated_field = "A911064E545F525658232640AFA7D0B9")
 
         ConnectionThread[] mThreads;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.188 -0500", hash_original_field = "448266124930497935AABDA6EA3530AA", hash_generated_field = "448266124930497935AABDA6EA3530AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.234 -0500", hash_original_field = "448266124930497935AABDA6EA3530AA", hash_generated_field = "448266124930497935AABDA6EA3530AA")
 
 
         IdleCache mIdleCache;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.189 -0500", hash_original_field = "5D14188A729D4F2635BB53973FC26F5B", hash_generated_field = "04EBA439DE54BE9E4E88BA35E3F14E1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.236 -0500", hash_original_field = "5D14188A729D4F2635BB53973FC26F5B", hash_generated_field = "04EBA439DE54BE9E4E88BA35E3F14E1F")
 
 
         private int mTotalRequest;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.189 -0500", hash_original_field = "29B740AAB1531020789DC6ED7C636BBB", hash_generated_field = "75F51D982E39DA7109E095FB57E24560")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.238 -0500", hash_original_field = "29B740AAB1531020789DC6ED7C636BBB", hash_generated_field = "75F51D982E39DA7109E095FB57E24560")
 
         private int mTotalConnection;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.190 -0500", hash_original_field = "51B542A005E95DBCFE4B0C39F78FEBF7", hash_generated_field = "3B7FD818552FF5D0D780F585667ED47F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.240 -0500", hash_original_field = "51B542A005E95DBCFE4B0C39F78FEBF7", hash_generated_field = "3B7FD818552FF5D0D780F585667ED47F")
 
         private int mConnectionCount;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.191 -0500", hash_original_method = "EC748BA333F005CC68E7979CEA362A8D", hash_generated_method = "EC748BA333F005CC68E7979CEA362A8D")
-        ActivePool(int connectionCount) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.244 -0500", hash_original_method = "EC748BA333F005CC68E7979CEA362A8D", hash_generated_method = "EC748BA333F005CC68E7979CEA362A8D")
+        
+ActivePool(int connectionCount) {
             mIdleCache = new IdleCache();
             mConnectionCount = connectionCount;
             mThreads = new ConnectionThread[mConnectionCount];
@@ -428,29 +449,33 @@ public void onReceive(Context ctx, Intent intent) {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.192 -0500", hash_original_method = "1219F5054D15C8BA85E10250B0465A48", hash_generated_method = "1219F5054D15C8BA85E10250B0465A48")
-        void startup() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.246 -0500", hash_original_method = "1219F5054D15C8BA85E10250B0465A48", hash_generated_method = "1219F5054D15C8BA85E10250B0465A48")
+        
+void startup() {
             for (int i = 0; i < mConnectionCount; i++) {
                 mThreads[i].start();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.193 -0500", hash_original_method = "3DBC0C51372089E9236025C3C2E89B00", hash_generated_method = "3DBC0C51372089E9236025C3C2E89B00")
-        void shutdown() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.248 -0500", hash_original_method = "3DBC0C51372089E9236025C3C2E89B00", hash_generated_method = "3DBC0C51372089E9236025C3C2E89B00")
+        
+void shutdown() {
             for (int i = 0; i < mConnectionCount; i++) {
                 mThreads[i].requestStop();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.194 -0500", hash_original_method = "918E02281CDA2E4E4F9A4B76A9977FCD", hash_generated_method = "918E02281CDA2E4E4F9A4B76A9977FCD")
-        void startConnectionThread() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.250 -0500", hash_original_method = "918E02281CDA2E4E4F9A4B76A9977FCD", hash_generated_method = "918E02281CDA2E4E4F9A4B76A9977FCD")
+        
+void startConnectionThread() {
             synchronized (RequestQueue.this) {
                 RequestQueue.this.notify();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.194 -0500", hash_original_method = "D2A094DDB6185336258EAA22554B8B48", hash_generated_method = "D95F1D6CAAAB43B5AFB93B1D0A546232")
-        public void startTiming() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.253 -0500", hash_original_method = "D2A094DDB6185336258EAA22554B8B48", hash_generated_method = "D95F1D6CAAAB43B5AFB93B1D0A546232")
+        
+public void startTiming() {
             for (int i = 0; i < mConnectionCount; i++) {
                 ConnectionThread rt = mThreads[i];
                 rt.mCurrentThreadTime = -1;
@@ -460,8 +485,9 @@ public void onReceive(Context ctx, Intent intent) {
             mTotalConnection = 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.195 -0500", hash_original_method = "24B30AFE4309F082BC585F8C48779E08", hash_generated_method = "FAB46EE208B5B4B4942B4BBF57426E64")
-        public void stopTiming() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.255 -0500", hash_original_method = "24B30AFE4309F082BC585F8C48779E08", hash_generated_method = "FAB46EE208B5B4B4942B4BBF57426E64")
+        
+public void stopTiming() {
             int totalTime = 0;
             for (int i = 0; i < mConnectionCount; i++) {
                 ConnectionThread rt = mThreads[i];
@@ -475,8 +501,9 @@ public void onReceive(Context ctx, Intent intent) {
                     + " new connections");
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.196 -0500", hash_original_method = "D3242BE060800C50D95BDC78717491BA", hash_generated_method = "D3242BE060800C50D95BDC78717491BA")
-        void logState() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.258 -0500", hash_original_method = "D3242BE060800C50D95BDC78717491BA", hash_generated_method = "D3242BE060800C50D95BDC78717491BA")
+        
+void logState() {
             StringBuilder dump = new StringBuilder();
             for (int i = 0; i < mConnectionCount; i++) {
                 dump.append(mThreads[i] + "\n");
@@ -485,16 +512,18 @@ public void onReceive(Context ctx, Intent intent) {
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.197 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
-        public HttpHost getProxyHost() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.260 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
+        
+public HttpHost getProxyHost() {
             return mProxyHost;
         }
 
         /**
          * Turns off persistence on all live connections
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.198 -0500", hash_original_method = "0E1F656010AA811F93614A0AAB8C062E", hash_generated_method = "0E1F656010AA811F93614A0AAB8C062E")
-        void disablePersistence() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.262 -0500", hash_original_method = "0E1F656010AA811F93614A0AAB8C062E", hash_generated_method = "0E1F656010AA811F93614A0AAB8C062E")
+        
+void disablePersistence() {
             for (int i = 0; i < mConnectionCount; i++) {
                 Connection connection = mThreads[i].mConnection;
                 if (connection != null) connection.setCanPersist(false);
@@ -505,8 +534,9 @@ public void onReceive(Context ctx, Intent intent) {
         /* Linear lookup -- okay for small thread counts.  Might use
            private HashMap<HttpHost, LinkedList<ConnectionThread>> mActiveMap;
            if this turns out to be a hotspot */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.199 -0500", hash_original_method = "4350BDA0BFA960DC6ECB5B267907B720", hash_generated_method = "4350BDA0BFA960DC6ECB5B267907B720")
-        ConnectionThread getThread(HttpHost host) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.264 -0500", hash_original_method = "4350BDA0BFA960DC6ECB5B267907B720", hash_generated_method = "4350BDA0BFA960DC6ECB5B267907B720")
+        
+ConnectionThread getThread(HttpHost host) {
             synchronized(RequestQueue.this) {
                 for (int i = 0; i < mThreads.length; i++) {
                     ConnectionThread ct = mThreads[i];
@@ -519,8 +549,9 @@ public void onReceive(Context ctx, Intent intent) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.200 -0500", hash_original_method = "FFEAD5D96A31C5526086E61D15C11F62", hash_generated_method = "5ECF59203E07C45B00F91B0521BC4B5D")
-        public Connection getConnection(Context context, HttpHost host) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.266 -0500", hash_original_method = "FFEAD5D96A31C5526086E61D15C11F62", hash_generated_method = "5ECF59203E07C45B00F91B0521BC4B5D")
+        
+public Connection getConnection(Context context, HttpHost host) {
             host = RequestQueue.this.determineHost(host);
             Connection con = mIdleCache.getConnection(host);
             if (con == null) {
@@ -530,8 +561,9 @@ public void onReceive(Context ctx, Intent intent) {
             }
             return con;
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.200 -0500", hash_original_method = "3E0E4C6417BA7E6D1B1D779C38F1AA9A", hash_generated_method = "C254158E655D6CCB04C5662DF25E1C10")
-        public boolean recycleConnection(Connection connection) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.268 -0500", hash_original_method = "3E0E4C6417BA7E6D1B1D779C38F1AA9A", hash_generated_method = "C254158E655D6CCB04C5662DF25E1C10")
+        
+public boolean recycleConnection(Connection connection) {
             return mIdleCache.cacheConnection(connection.getHost(), connection);
         }
 
@@ -541,29 +573,34 @@ public void onReceive(Context ctx, Intent intent) {
 
     
     private static class SyncFeeder implements RequestFeeder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:23.824 -0500", hash_original_field = "480419B6BBB9A26A6DD8401352CF0FEE", hash_generated_field = "CD1358C024850E376AE84FBA2FC6F2A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.297 -0500", hash_original_field = "480419B6BBB9A26A6DD8401352CF0FEE", hash_generated_field = "CD1358C024850E376AE84FBA2FC6F2A1")
 
         // requeued into the RequestFeeder.
         private Request mRequest;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.212 -0500", hash_original_method = "4463F8298E503AEAFD22486DF3099826", hash_generated_method = "4463F8298E503AEAFD22486DF3099826")
-        SyncFeeder() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.300 -0500", hash_original_method = "4463F8298E503AEAFD22486DF3099826", hash_generated_method = "4463F8298E503AEAFD22486DF3099826")
+        
+SyncFeeder() {
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.213 -0500", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "C74EDD87A503CBBE7FA9739CE06E1684")
-        public Request getRequest() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.303 -0500", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "C74EDD87A503CBBE7FA9739CE06E1684")
+        
+public Request getRequest() {
             Request r = mRequest;
             mRequest = null;
             return r;
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.214 -0500", hash_original_method = "DE8B4E1CA9B86F476AFDBAF1FF7FD442", hash_generated_method = "8784B9E19CB677C96570406E17C21CA8")
-        public Request getRequest(HttpHost host) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.305 -0500", hash_original_method = "DE8B4E1CA9B86F476AFDBAF1FF7FD442", hash_generated_method = "8784B9E19CB677C96570406E17C21CA8")
+        
+public Request getRequest(HttpHost host) {
             return getRequest();
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.215 -0500", hash_original_method = "30BE3F23DCE5F30BFE4C540BF8AE4D20", hash_generated_method = "E010020BF5DDEF5F7A71F33D94A57257")
-        public boolean haveRequest(HttpHost host) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.307 -0500", hash_original_method = "30BE3F23DCE5F30BFE4C540BF8AE4D20", hash_generated_method = "E010020BF5DDEF5F7A71F33D94A57257")
+        
+public boolean haveRequest(HttpHost host) {
             return mRequest != null;
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.215 -0500", hash_original_method = "D0AA652C1F1A28EE12BADC892C348224", hash_generated_method = "29897C1614521FB8AA91A4D3E1AAEE23")
-        public void requeueRequest(Request r) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.309 -0500", hash_original_method = "D0AA652C1F1A28EE12BADC892C348224", hash_generated_method = "29897C1614521FB8AA91A4D3E1AAEE23")
+        
+public void requeueRequest(Request r) {
             mRequest = r;
         }
 
@@ -579,8 +616,9 @@ public void onReceive(Context ctx, Intent intent) {
     }
 
     /* helper */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.227 -0500", hash_original_method = "F363C5354CB9B81208E7FAC033526D24", hash_generated_method = "815D37DEB1C4D2F5ECFD6CB9AC1080AB")
-    private Request removeFirst(LinkedHashMap<HttpHost, LinkedList<Request>> requestQueue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.341 -0500", hash_original_method = "F363C5354CB9B81208E7FAC033526D24", hash_generated_method = "815D37DEB1C4D2F5ECFD6CB9AC1080AB")
+    
+private Request removeFirst(LinkedHashMap<HttpHost, LinkedList<Request>> requestQueue) {
         Request ret = null;
         Iterator<Map.Entry<HttpHost, LinkedList<Request>>> iter = requestQueue.entrySet().iterator();
         if (iter.hasNext()) {

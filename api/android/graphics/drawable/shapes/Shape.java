@@ -12,10 +12,10 @@ import android.graphics.Paint;
 
 
 public abstract class Shape implements Cloneable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.465 -0500", hash_original_field = "8BEDDF49B8B9212E63E741BD6656B2A4", hash_generated_field = "08D9327CB0A0089C173FB95F7B57B648")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.793 -0500", hash_original_field = "8BEDDF49B8B9212E63E741BD6656B2A4", hash_generated_field = "08D9327CB0A0089C173FB95F7B57B648")
 
     private float mWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.466 -0500", hash_original_field = "2674BC94EE6F0A8B8E52BD7CB368BD8B", hash_generated_field = "AB7D3C8140C4809E830D256F2E315AC4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.795 -0500", hash_original_field = "2674BC94EE6F0A8B8E52BD7CB368BD8B", hash_generated_field = "AB7D3C8140C4809E830D256F2E315AC4")
 
     private float mHeight;
     
@@ -29,16 +29,18 @@ public abstract class Shape implements Cloneable {
     /**
      * Returns the width of the Shape.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.467 -0500", hash_original_method = "AE68E159D936DCF4407D65307DCA00BB", hash_generated_method = "2EBC100F8EEA435FCFB1D71DF02003DC")
-    public final float getWidth() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.797 -0500", hash_original_method = "AE68E159D936DCF4407D65307DCA00BB", hash_generated_method = "2EBC100F8EEA435FCFB1D71DF02003DC")
+    
+public final float getWidth() {
         return mWidth;
     }
     
     /**
      * Returns the height of the Shape.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.468 -0500", hash_original_method = "DE764EE6028A1B0E9211313F1870FFB9", hash_generated_method = "CE68295D107697A1A2FEF1CEA5826C51")
-    public final float getHeight() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.799 -0500", hash_original_method = "DE764EE6028A1B0E9211313F1870FFB9", hash_generated_method = "CE68295D107697A1A2FEF1CEA5826C51")
+    
+public final float getHeight() {
         return mHeight;
     }
 
@@ -50,8 +52,9 @@ public abstract class Shape implements Cloneable {
      * @param canvas the Canvas within which this shape should be drawn
      * @param paint  the Paint object that defines this shape's characteristics
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.468 -0500", hash_original_method = "4FF66B2B9CB8872729DAA8331BAA7F65", hash_generated_method = "186226CA2153FE9A17149A68400BA41E")
-    public abstract void draw(Canvas canvas, Paint paint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.801 -0500", hash_original_method = "4FF66B2B9CB8872729DAA8331BAA7F65", hash_generated_method = "186226CA2153FE9A17149A68400BA41E")
+    
+public abstract void draw(Canvas canvas, Paint paint);
     
 
     /**
@@ -61,8 +64,9 @@ public abstract class Shape implements Cloneable {
      * @param width the width of the shape (in pixels)
      * @param height the height of the shape (in pixels)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.469 -0500", hash_original_method = "479131B2F6B84573C2C45F62E9B9CD93", hash_generated_method = "A96EE469A7660E14176DAC899CD05FF0")
-    public final void resize(float width, float height) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.804 -0500", hash_original_method = "479131B2F6B84573C2C45F62E9B9CD93", hash_generated_method = "A96EE469A7660E14176DAC899CD05FF0")
+    
+public final void resize(float width, float height) {
         if (width < 0) {
             width = 0;
         }
@@ -82,8 +86,9 @@ public abstract class Shape implements Cloneable {
      * 
      * @return true if any part of the drawable is <em>not</em> opaque. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.470 -0500", hash_original_method = "E1C0EB5C360EF4564AFB59E1743F2057", hash_generated_method = "DF84950A2941C3F2A1543A61F396C2BD")
-    public boolean hasAlpha() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.806 -0500", hash_original_method = "E1C0EB5C360EF4564AFB59E1743F2057", hash_generated_method = "DF84950A2941C3F2A1543A61F396C2BD")
+    
+public boolean hasAlpha() {
         return true;
     }
     
@@ -93,12 +98,14 @@ public abstract class Shape implements Cloneable {
      * @param width the new width of the Shape
      * @param height the new height of the Shape
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.471 -0500", hash_original_method = "BE42972290D2C4FCDE54C91B730EEF2B", hash_generated_method = "10737606103A81DBA34BDDD300C5ED40")
-    protected void onResize(float width, float height) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.808 -0500", hash_original_method = "BE42972290D2C4FCDE54C91B730EEF2B", hash_generated_method = "10737606103A81DBA34BDDD300C5ED40")
+    
+protected void onResize(float width, float height) {}
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.472 -0500", hash_original_method = "581DCFE006AA020FE949D9FFE91E7EA5", hash_generated_method = "9FCC5714555E11C6EA6BBEBB14179B05")
-    @Override
-public Shape clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.810 -0500", hash_original_method = "581DCFE006AA020FE949D9FFE91E7EA5", hash_generated_method = "9FCC5714555E11C6EA6BBEBB14179B05")
+    
+@Override
+    public Shape clone() throws CloneNotSupportedException {
         return (Shape) super.clone();
     }
 

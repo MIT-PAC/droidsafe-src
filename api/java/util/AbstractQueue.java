@@ -13,8 +13,9 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
     /**
      * Constructor for use by subclasses.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.345 -0500", hash_original_method = "898E1AC4CE228AED7FA804DCD29D86E1", hash_generated_method = "4C8E29CF93249ABC307875B8F7EAF6A3")
-    protected AbstractQueue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.067 -0500", hash_original_method = "898E1AC4CE228AED7FA804DCD29D86E1", hash_generated_method = "4C8E29CF93249ABC307875B8F7EAF6A3")
+    
+protected AbstractQueue() {
     }
 
     /**
@@ -37,8 +38,9 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
      * @throws IllegalArgumentException if some property of this element
      *         prevents it from being added to this queue
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.345 -0500", hash_original_method = "1A50CFE77F83A9D61A2F23666507E72F", hash_generated_method = "9301EF03F4097022CBB38B7C603C1D58")
-    public boolean add(E e) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.070 -0500", hash_original_method = "1A50CFE77F83A9D61A2F23666507E72F", hash_generated_method = "9301EF03F4097022CBB38B7C603C1D58")
+    
+public boolean add(E e) {
         if (offer(e))
             return true;
         else
@@ -56,8 +58,9 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
      * @return the head of this queue
      * @throws NoSuchElementException if this queue is empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.346 -0500", hash_original_method = "9DCDFDCD4BD0DA1BA6AE29C07F6D5161", hash_generated_method = "51202F7E3A2AD9476298446EFBB72638")
-    public E remove() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.072 -0500", hash_original_method = "9DCDFDCD4BD0DA1BA6AE29C07F6D5161", hash_generated_method = "51202F7E3A2AD9476298446EFBB72638")
+    
+public E remove() {
         E x = poll();
         if (x != null)
             return x;
@@ -76,8 +79,9 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
      * @return the head of this queue
      * @throws NoSuchElementException if this queue is empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.347 -0500", hash_original_method = "25B2B6020E0E758714C2C5A3E37A85D5", hash_generated_method = "F95746A63D42A09181D76B9F8FFB9607")
-    public E element() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.074 -0500", hash_original_method = "25B2B6020E0E758714C2C5A3E37A85D5", hash_generated_method = "F95746A63D42A09181D76B9F8FFB9607")
+    
+public E element() {
         E x = peek();
         if (x != null)
             return x;
@@ -92,8 +96,9 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
      * <p>This implementation repeatedly invokes {@link #poll poll} until it
      * returns <tt>null</tt>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.348 -0500", hash_original_method = "01DAFC6C5F0E6FF4922B6201FE3DA7B9", hash_generated_method = "750390753AA794A653442C7ECC78CFD3")
-    public void clear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.077 -0500", hash_original_method = "01DAFC6C5F0E6FF4922B6201FE3DA7B9", hash_generated_method = "750390753AA794A653442C7ECC78CFD3")
+    
+public void clear() {
         while (poll() != null)
             ;
     }
@@ -127,8 +132,9 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
      *         this time due to insertion restrictions
      * @see #add(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.349 -0500", hash_original_method = "E3DD503D765939306C71AF759AB54F6B", hash_generated_method = "188E3C1641DB9ED9F0D08995BAA63E36")
-    public boolean addAll(Collection<? extends E> c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.079 -0500", hash_original_method = "E3DD503D765939306C71AF759AB54F6B", hash_generated_method = "188E3C1641DB9ED9F0D08995BAA63E36")
+    
+public boolean addAll(Collection<? extends E> c) {
         if (c == null)
             throw new NullPointerException();
         if (c == this)

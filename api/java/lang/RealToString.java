@@ -12,13 +12,15 @@ import libcore.math.MathUtils;
 
 final class RealToString {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.103 -0500", hash_original_method = "30D5D492EADCC746F56566F6C51DBFB8", hash_generated_method = "6210D16B0A5F121D177C5A787BA02E44")
-    public static RealToString getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.672 -0500", hash_original_method = "30D5D492EADCC746F56566F6C51DBFB8", hash_generated_method = "6210D16B0A5F121D177C5A787BA02E44")
+    
+public static RealToString getInstance() {
         return INSTANCE.get();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.104 -0500", hash_original_method = "A3C59A2427D4266EFD936A5ED960D197", hash_generated_method = "0F4C501A9B62AFB41F5015526CA43006")
-    private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.675 -0500", hash_original_method = "A3C59A2427D4266EFD936A5ED960D197", hash_generated_method = "0F4C501A9B62AFB41F5015526CA43006")
+    
+private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
         if (sb != null) {
             sb.append0(s);
             return null;
@@ -44,37 +46,41 @@ final class RealToString {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.099 -0500", hash_original_field = "DDCFC4BA9A320738A311B6CDFAC04909", hash_generated_field = "CB87C311F6043A6FA9F065A81B47C7CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.660 -0500", hash_original_field = "DDCFC4BA9A320738A311B6CDFAC04909", hash_generated_field = "CB87C311F6043A6FA9F065A81B47C7CD")
 
 
     private static final double invLogOfTenBaseTwo = Math.log(2.0) / Math.log(10.0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.100 -0500", hash_original_field = "7B483AA2F3A8F35DB64B8F104D661A1E", hash_generated_field = "6D9BB978CBD3D3FD82983DAB50AF5B36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.662 -0500", hash_original_field = "7B483AA2F3A8F35DB64B8F104D661A1E", hash_generated_field = "6D9BB978CBD3D3FD82983DAB50AF5B36")
 
 
     private int firstK;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.101 -0500", hash_original_field = "43D0909B7EC78B784A77E0B7A5D12574", hash_generated_field = "50690E06A9DD54E798BAB9384D861132")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.664 -0500", hash_original_field = "43D0909B7EC78B784A77E0B7A5D12574", hash_generated_field = "50690E06A9DD54E798BAB9384D861132")
 
     private final int[] digits = new int[64];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.101 -0500", hash_original_field = "DA306FBA251AF5817D2AA075E284A0EC", hash_generated_field = "A3250AF80A97B4CAE044DFA388B9EA6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.667 -0500", hash_original_field = "DA306FBA251AF5817D2AA075E284A0EC", hash_generated_field = "A3250AF80A97B4CAE044DFA388B9EA6A")
 
     private int digitCount;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.102 -0500", hash_original_method = "F7A95644C563B2D2A217A4C43DE10AFD", hash_generated_method = "51776C658104A660CFC7D2506C25B592")
-    private RealToString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.669 -0500", hash_original_method = "F7A95644C563B2D2A217A4C43DE10AFD", hash_generated_method = "51776C658104A660CFC7D2506C25B592")
+    
+private RealToString() {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.105 -0500", hash_original_method = "1884E8ED6DAC8970F9D7F2BC46F506BE", hash_generated_method = "C5A77350F7EC45269ABE48122B95663D")
-    public String doubleToString(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.677 -0500", hash_original_method = "1884E8ED6DAC8970F9D7F2BC46F506BE", hash_generated_method = "C5A77350F7EC45269ABE48122B95663D")
+    
+public String doubleToString(double d) {
         return convertDouble(null, d);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.106 -0500", hash_original_method = "60FFADFBFC8614534238C3F90209FDC5", hash_generated_method = "CD9EC8ED1D84EEF20DEB8AFBCD0E782C")
-    public void appendDouble(AbstractStringBuilder sb, double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.679 -0500", hash_original_method = "60FFADFBFC8614534238C3F90209FDC5", hash_generated_method = "CD9EC8ED1D84EEF20DEB8AFBCD0E782C")
+    
+public void appendDouble(AbstractStringBuilder sb, double d) {
         convertDouble(sb, d);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.107 -0500", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "5848186623705B9B0A9C31305748F30C")
-    private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.683 -0500", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "5848186623705B9B0A9C31305748F30C")
+    
+private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
         long inputNumberBits = Double.doubleToRawLongBits(inputNumber);
         boolean positive = (inputNumberBits & Double.SIGN_MASK) == 0;
         int e = (int) ((inputNumberBits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS);
@@ -133,18 +139,21 @@ final class RealToString {
         return (sb != null) ? null : dst.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.108 -0500", hash_original_method = "2E0F3580AFBA548A22C88B300D06F425", hash_generated_method = "0226850FC0A373006994FC1BF3B248F6")
-    public String floatToString(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.685 -0500", hash_original_method = "2E0F3580AFBA548A22C88B300D06F425", hash_generated_method = "0226850FC0A373006994FC1BF3B248F6")
+    
+public String floatToString(float f) {
         return convertFloat(null, f);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.109 -0500", hash_original_method = "A5528970A4B6C3EDBBDAB69CF73AE9A3", hash_generated_method = "8FABAB0166BFE09DCEC037AE095C10A4")
-    public void appendFloat(AbstractStringBuilder sb, float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.688 -0500", hash_original_method = "A5528970A4B6C3EDBBDAB69CF73AE9A3", hash_generated_method = "8FABAB0166BFE09DCEC037AE095C10A4")
+    
+public void appendFloat(AbstractStringBuilder sb, float f) {
         convertFloat(sb, f);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.110 -0500", hash_original_method = "E5DE8038B72ADC299B522ADF153A4152", hash_generated_method = "B2A7C1F6A2239EC1955869A0760FC556")
-    public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.692 -0500", hash_original_method = "E5DE8038B72ADC299B522ADF153A4152", hash_generated_method = "B2A7C1F6A2239EC1955869A0760FC556")
+    
+public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
         int inputNumberBits = Float.floatToRawIntBits(inputNumber);
         boolean positive = (inputNumberBits & Float.SIGN_MASK) == 0;
         int e = (inputNumberBits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
@@ -202,8 +211,9 @@ final class RealToString {
         return (sb != null) ? null : dst.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.111 -0500", hash_original_method = "C9139C7071A5044040591AD73A0078E9", hash_generated_method = "46EC5F47320CB4889A37E8F8FCB7C1B6")
-    private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.695 -0500", hash_original_method = "C9139C7071A5044040591AD73A0078E9", hash_generated_method = "46EC5F47320CB4889A37E8F8FCB7C1B6")
+    
+private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
         int digitIndex = 0;
         if (!positive) {
             sb.append0('-');
@@ -228,8 +238,9 @@ final class RealToString {
         IntegralToString.appendInt(sb, exponent);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.112 -0500", hash_original_method = "81B49BC2D9465FB81325CD1E0D55DA15", hash_generated_method = "D73E1B369B32FBCBFEDAC49BEE1134F1")
-    private void freeFormat(AbstractStringBuilder sb, boolean positive) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.698 -0500", hash_original_method = "81B49BC2D9465FB81325CD1E0D55DA15", hash_generated_method = "D73E1B369B32FBCBFEDAC49BEE1134F1")
+    
+private void freeFormat(AbstractStringBuilder sb, boolean positive) {
         int digitIndex = 0;
         if (!positive) {
             sb.append0('-');
@@ -257,11 +268,20 @@ final class RealToString {
         } while (U != -1 || k >= -1);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.114 -0500", hash_original_method = "83E7E0138396E030AA4AE60F27CCD6BF", hash_generated_method = "CE87286F710EAF6BF35F0A28E4FD7CB6")
-    private native void bigIntDigitGenerator(long f, int e, boolean isDenormalized, int p);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.702 -0500", hash_original_method = "83E7E0138396E030AA4AE60F27CCD6BF", hash_generated_method = "CE87286F710EAF6BF35F0A28E4FD7CB6")
+    
+    private void bigIntDigitGenerator(long f, int e, boolean isDenormalized, int p){
+    	//Formerly a native method
+    	addTaint(f);
+    	addTaint(e);
+    	addTaint(isDenormalized);
+    	addTaint(p);
+    }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.116 -0500", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "6CC7C02F98A2E528A75F213DFC3EA7C7")
-    private void longDigitGenerator(long f, int e, boolean isDenormalized,
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.705 -0500", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "6CC7C02F98A2E528A75F213DFC3EA7C7")
+    
+private void longDigitGenerator(long f, int e, boolean isDenormalized,
             boolean mantissaIsZero, int p) {
         long R, S, M;
         if (e >= 0) {

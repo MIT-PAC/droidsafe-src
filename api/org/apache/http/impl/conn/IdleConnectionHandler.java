@@ -18,17 +18,18 @@ import org.apache.http.HttpConnection;
 
 
 public class IdleConnectionHandler {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.504 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.989 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.505 -0500", hash_original_field = "5A16A1D9253FD3EC2F774F243B01F532", hash_generated_field = "2F5EF38A07EA6A9636288F530673294A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.992 -0500", hash_original_field = "5A16A1D9253FD3EC2F774F243B01F532", hash_generated_field = "2F5EF38A07EA6A9636288F530673294A")
 
     private  Map<HttpConnection,TimeValues> connectionToTimes;
     
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.506 -0500", hash_original_method = "3E916BA1101D3583C84AA90CF4FC67D4", hash_generated_method = "A9AAD52CD1E2DDD3F31EE212EFDACC40")
-    public IdleConnectionHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.994 -0500", hash_original_method = "3E916BA1101D3583C84AA90CF4FC67D4", hash_generated_method = "A9AAD52CD1E2DDD3F31EE212EFDACC40")
+    
+public IdleConnectionHandler() {
         super();
         connectionToTimes = new HashMap<HttpConnection,TimeValues>();
     }
@@ -41,8 +42,9 @@ public class IdleConnectionHandler {
      * 
      * @see #remove
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.506 -0500", hash_original_method = "3D4804DC68DE62BE888340914D1164A1", hash_generated_method = "24F97BFD87C3C334E62698C68465E51A")
-    public void add(HttpConnection connection, long validDuration, TimeUnit unit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.997 -0500", hash_original_method = "3D4804DC68DE62BE888340914D1164A1", hash_generated_method = "24F97BFD87C3C334E62698C68465E51A")
+    
+public void add(HttpConnection connection, long validDuration, TimeUnit unit) {
         
         Long timeAdded = Long.valueOf(System.currentTimeMillis());
         
@@ -61,8 +63,9 @@ public class IdleConnectionHandler {
      * @param connection
      * @return True if the connection is still valid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.507 -0500", hash_original_method = "1D31D4C3FCFC5F71DF82BB85794AF70A", hash_generated_method = "EDDC5D76963B1276225BF29A01A54E44")
-    public boolean remove(HttpConnection connection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.999 -0500", hash_original_method = "1D31D4C3FCFC5F71DF82BB85794AF70A", hash_generated_method = "EDDC5D76963B1276225BF29A01A54E44")
+    
+public boolean remove(HttpConnection connection) {
         TimeValues times = connectionToTimes.remove(connection);
         if(times == null) {
             log.warn("Removing a connection that never existed!");
@@ -75,8 +78,9 @@ public class IdleConnectionHandler {
     /**
      * Removes all connections referenced by this handler.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.508 -0500", hash_original_method = "7AF66332DEC016DA2AA9D0945D3022F8", hash_generated_method = "05D689D3D04565F34680EC799289CFC7")
-    public void removeAll() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.002 -0500", hash_original_method = "7AF66332DEC016DA2AA9D0945D3022F8", hash_generated_method = "05D689D3D04565F34680EC799289CFC7")
+    
+public void removeAll() {
         this.connectionToTimes.clear();
     }
     
@@ -86,8 +90,9 @@ public class IdleConnectionHandler {
      * @param idleTime the minimum idle time, in milliseconds, for connections to be closed
      */
     //@@@ add TimeUnit argument here?
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.509 -0500", hash_original_method = "1B5843932F53A941705DBD73966AF816", hash_generated_method = "863FDB4C491566D032833131B577C955")
-    public void closeIdleConnections(long idleTime) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.004 -0500", hash_original_method = "1B5843932F53A941705DBD73966AF816", hash_generated_method = "863FDB4C491566D032833131B577C955")
+    
+public void closeIdleConnections(long idleTime) {
         
         // the latest time for which connections will be closed
         long idleTimeout = System.currentTimeMillis() - idleTime;
@@ -118,8 +123,9 @@ public class IdleConnectionHandler {
     }
     
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.510 -0500", hash_original_method = "1F224929907ADC4A2755470D6C0EBC61", hash_generated_method = "0B4C5F9F88954254E42F6C9DF984799D")
-    public void closeExpiredConnections() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.008 -0500", hash_original_method = "1F224929907ADC4A2755470D6C0EBC61", hash_generated_method = "0B4C5F9F88954254E42F6C9DF984799D")
+    
+public void closeExpiredConnections() {
         long now = System.currentTimeMillis();
         if (log.isDebugEnabled()) {
             log.debug("Checking for expired connections, now: "  + now);
@@ -147,10 +153,10 @@ public class IdleConnectionHandler {
 
     
     private static class TimeValues {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.511 -0500", hash_original_field = "BBD74564EFA9375FCDE743AD03A476CE", hash_generated_field = "40BAAF0C7A31F5A05875046903303AFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.011 -0500", hash_original_field = "BBD74564EFA9375FCDE743AD03A476CE", hash_generated_field = "40BAAF0C7A31F5A05875046903303AFA")
 
         private  long timeAdded;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.512 -0500", hash_original_field = "20845878310D2108675058988FE13017", hash_generated_field = "AB9F405E92086F3B1BDE350A1E939FA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.013 -0500", hash_original_field = "20845878310D2108675058988FE13017", hash_generated_field = "AB9F405E92086F3B1BDE350A1E939FA3")
 
         private  long timeExpires;
 
@@ -159,8 +165,9 @@ public class IdleConnectionHandler {
          * @param validDuration The duration this connection is valid for
          * @param validUnit The unit of time the duration is specified in.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.513 -0500", hash_original_method = "3DD4099178F08AFF793AFE03575649DF", hash_generated_method = "3DD4099178F08AFF793AFE03575649DF")
-        TimeValues(long now, long validDuration, TimeUnit validUnit) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.016 -0500", hash_original_method = "3DD4099178F08AFF793AFE03575649DF", hash_generated_method = "3DD4099178F08AFF793AFE03575649DF")
+        
+TimeValues(long now, long validDuration, TimeUnit validUnit) {
             this.timeAdded = now;
             if(validDuration > 0) {
                 this.timeExpires = now + validUnit.toMillis(validDuration);

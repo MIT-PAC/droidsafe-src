@@ -16,8 +16,9 @@ public class BERTaggedObject extends DERTaggedObject {
      * @param tagNo the tag number for this object.
      * @param obj the tagged object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.509 -0500", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "231C96219E146238CAC8F275EC80286F")
-    public BERTaggedObject(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.038 -0500", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "231C96219E146238CAC8F275EC80286F")
+    
+public BERTaggedObject(
         int             tagNo,
         DEREncodable    obj)
     {
@@ -29,8 +30,9 @@ public class BERTaggedObject extends DERTaggedObject {
      * @param tagNo the tag number for this object.
      * @param obj the tagged object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.510 -0500", hash_original_method = "F5B7A80AD1A003D34ED6FD9BD184C1A3", hash_generated_method = "741EF45117E7DB0D8CC373BD84C73EB0")
-    public BERTaggedObject(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.041 -0500", hash_original_method = "F5B7A80AD1A003D34ED6FD9BD184C1A3", hash_generated_method = "741EF45117E7DB0D8CC373BD84C73EB0")
+    
+public BERTaggedObject(
         boolean         explicit,
         int             tagNo,
         DEREncodable    obj)
@@ -42,15 +44,17 @@ public class BERTaggedObject extends DERTaggedObject {
      * create an implicitly tagged object that contains a zero
      * length sequence.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.511 -0500", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "6E8D1564353F1F57F1DB4C1958DE215F")
-    public BERTaggedObject(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.044 -0500", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "6E8D1564353F1F57F1DB4C1958DE215F")
+    
+public BERTaggedObject(
         int             tagNo)
     {
         super(false, tagNo, new BERSequence());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.512 -0500", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "7D1415DBFEACA82B062C25744BEBEEC4")
-    void encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.047 -0500", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "7D1415DBFEACA82B062C25744BEBEEC4")
+    
+void encode(
         DEROutputStream  out)
         throws IOException
     {

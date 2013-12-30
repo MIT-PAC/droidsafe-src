@@ -16,12 +16,14 @@ import android.util.AttributeSet;
 
 public class PaintDrawable extends ShapeDrawable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.782 -0500", hash_original_method = "35894A2FD0CE190FC6DCE9F697221056", hash_generated_method = "EB239EA7E3A1C7969BCE1D083693AE7F")
-    public PaintDrawable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.206 -0500", hash_original_method = "35894A2FD0CE190FC6DCE9F697221056", hash_generated_method = "EB239EA7E3A1C7969BCE1D083693AE7F")
+    
+public PaintDrawable() {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.783 -0500", hash_original_method = "51DC0DAE916B0D4375C00567B21115B1", hash_generated_method = "66B5361B947C282388A1F9D3FC07FE15")
-    public PaintDrawable(int color) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.208 -0500", hash_original_method = "51DC0DAE916B0D4375C00567B21115B1", hash_generated_method = "66B5361B947C282388A1F9D3FC07FE15")
+    
+public PaintDrawable(int color) {
         getPaint().setColor(color);
     }
     
@@ -30,8 +32,9 @@ public class PaintDrawable extends ShapeDrawable {
      * drawable is drawn in a round-rectangle, rather than a rectangle.
      * @param radius the radius for the corners of the rectangle
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.784 -0500", hash_original_method = "29D687C39F10D3A684C3799EDBB48EFB", hash_generated_method = "6F40AA935AB00B671F6C53CB6B863A7E")
-    public void setCornerRadius(float radius) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.210 -0500", hash_original_method = "29D687C39F10D3A684C3799EDBB48EFB", hash_generated_method = "6F40AA935AB00B671F6C53CB6B863A7E")
+    
+public void setCornerRadius(float radius) {
         float[] radii = null;
         if (radius > 0) {
             radii = new float[8];
@@ -48,8 +51,9 @@ public class PaintDrawable extends ShapeDrawable {
      * top-left, top-right, bottom-right, bottom-left
      * @param radii the x and y radii of the corners
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.785 -0500", hash_original_method = "458539BDB31F16A86FED0FC05CC292D2", hash_generated_method = "83779F66102631002C7FEC9547C188FF")
-    public void setCornerRadii(float[] radii) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.212 -0500", hash_original_method = "458539BDB31F16A86FED0FC05CC292D2", hash_generated_method = "83779F66102631002C7FEC9547C188FF")
+    
+public void setCornerRadii(float[] radii) {
         if (radii == null) {
             if (getShape() != null) {
                 setShape(null);
@@ -60,9 +64,10 @@ public class PaintDrawable extends ShapeDrawable {
         invalidateSelf();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.786 -0500", hash_original_method = "B0701038A568952969848F330DE56979", hash_generated_method = "006E78934D7584D196C67FAA0E072C15")
-    @Override
-protected boolean inflateTag(String name, Resources r, XmlPullParser parser,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.215 -0500", hash_original_method = "B0701038A568952969848F330DE56979", hash_generated_method = "006E78934D7584D196C67FAA0E072C15")
+    
+@Override
+    protected boolean inflateTag(String name, Resources r, XmlPullParser parser,
                                  AttributeSet attrs) {
         if (name.equals("corners")) {
             TypedArray a = r.obtainAttributes(attrs,

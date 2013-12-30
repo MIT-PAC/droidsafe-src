@@ -24,14 +24,15 @@ public final class ASN1GeneralizedTime extends ASN1Time {
      *
      * @return ASN.1 GeneralizedTime type default implementation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.061 -0500", hash_original_method = "8C714A8F61C5AA4D080377A3ECF44F36", hash_generated_method = "23CB860EA884CD854F12985D41D3CDB1")
-    public static ASN1GeneralizedTime getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.047 -0500", hash_original_method = "8C714A8F61C5AA4D080377A3ECF44F36", hash_generated_method = "23CB860EA884CD854F12985D41D3CDB1")
+    
+public static ASN1GeneralizedTime getInstance() {
         return ASN1;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.059 -0500", hash_original_field = "C37D96DDD2E632639E9745E4517FB7FE", hash_generated_field = "239E9CA407C152785E67097B54E8268F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.042 -0500", hash_original_field = "C37D96DDD2E632639E9745E4517FB7FE", hash_generated_field = "239E9CA407C152785E67097B54E8268F")
 
     private static final ASN1GeneralizedTime ASN1 = new ASN1GeneralizedTime();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.063 -0500", hash_original_field = "144ED8D455E2A7FA64D051C0A7B8F483", hash_generated_field = "91A8801F993CA23EA31856C634AC2077")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.054 -0500", hash_original_field = "144ED8D455E2A7FA64D051C0A7B8F483", hash_generated_field = "91A8801F993CA23EA31856C634AC2077")
 
     //
     // According to X.680:
@@ -48,13 +49,15 @@ public final class ASN1GeneralizedTime extends ASN1Time {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.060 -0500", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "867C6ED7D91667F6ECC9996437FF15A5")
-    public ASN1GeneralizedTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.045 -0500", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "867C6ED7D91667F6ECC9996437FF15A5")
+    
+public ASN1GeneralizedTime() {
         super(TAG_GENERALIZEDTIME);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.062 -0500", hash_original_method = "9601D88CE03A72C3505152153428ACD0", hash_generated_method = "0016126B69B7A43E346A7E14AC6C4091")
-    public Object decode(BerInputStream in) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.049 -0500", hash_original_method = "9601D88CE03A72C3505152153428ACD0", hash_generated_method = "0016126B69B7A43E346A7E14AC6C4091")
+    
+public Object decode(BerInputStream in) throws IOException {
         in.readGeneralizedTime();
 
         if (in.isVerify) {
@@ -63,13 +66,15 @@ public final class ASN1GeneralizedTime extends ASN1Time {
         return getDecodedObject(in);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.063 -0500", hash_original_method = "815E5B13588CE775C73F05D1D7B36D43", hash_generated_method = "823C90829B0E887FFAB1B233DE0EF4A6")
-    public void encodeContent(BerOutputStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.052 -0500", hash_original_method = "815E5B13588CE775C73F05D1D7B36D43", hash_generated_method = "823C90829B0E887FFAB1B233DE0EF4A6")
+    
+public void encodeContent(BerOutputStream out) {
         out.encodeGeneralizedTime();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.064 -0500", hash_original_method = "D33B8806BE3331999BE0A247A6FB02E4", hash_generated_method = "339EC8F2E12EB153158245B8A7C0B1E2")
-    public void setEncodingContent(BerOutputStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.057 -0500", hash_original_method = "D33B8806BE3331999BE0A247A6FB02E4", hash_generated_method = "339EC8F2E12EB153158245B8A7C0B1E2")
+    
+public void setEncodingContent(BerOutputStream out) {
         SimpleDateFormat sdf = new SimpleDateFormat(GEN_PATTERN);
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         String temp = sdf.format(out.content);

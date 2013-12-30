@@ -25,13 +25,14 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
      * @param status    the status code for which to define the phrase
      * @param reason    the reason phrase for this status code
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.297 -0500", hash_original_method = "B27E2E37F6B3FC851CE3E6D12D897D85", hash_generated_method = "A2AC6B10722D96F29BEA07C5A03A7B42")
-    private static void setReason(int status, String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.181 -0500", hash_original_method = "B27E2E37F6B3FC851CE3E6D12D897D85", hash_generated_method = "A2AC6B10722D96F29BEA07C5A03A7B42")
+    
+private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;
         REASON_PHRASES[category][subcode] = reason;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.293 -0500", hash_original_field = "3F04E5126E1D1968D1E674ED94439EAD", hash_generated_field = "28FD85E5B9D69DCFAD3C72A1C0490DAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.171 -0500", hash_original_field = "3F04E5126E1D1968D1E674ED94439EAD", hash_generated_field = "28FD85E5B9D69DCFAD3C72A1C0490DAE")
 
 
     /**
@@ -41,7 +42,7 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
      */
     public final static EnglishReasonPhraseCatalog INSTANCE =
         new EnglishReasonPhraseCatalog();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.296 -0500", hash_original_field = "F9E44CBC77D75AAB579C584FD87CD166", hash_generated_field = "422C0F7E284A61F03AE9A1E35BA8BAB2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.178 -0500", hash_original_field = "F9E44CBC77D75AAB579C584FD87CD166", hash_generated_field = "422C0F7E284A61F03AE9A1E35BA8BAB2")
 
     private static final String[][] REASON_PHRASES = new String[][]{
         null,
@@ -57,8 +58,9 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
      * Restricted default constructor, for derived classes.
      * If you need an instance of this class, use {@link #INSTANCE INSTANCE}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.294 -0500", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "72ADC483D87ABD7A7321DAAD98293FF1")
-    protected EnglishReasonPhraseCatalog() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.173 -0500", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "72ADC483D87ABD7A7321DAAD98293FF1")
+    
+protected EnglishReasonPhraseCatalog() {
         // no body
     }
 
@@ -71,8 +73,9 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
      *
      * @return  the reason phrase, or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.295 -0500", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "D8BA9FE692BA584DC67C4A9211465EE3")
-    public String getReason(int status, Locale loc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.176 -0500", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "D8BA9FE692BA584DC67C4A9211465EE3")
+    
+public String getReason(int status, Locale loc) {
         if ((status < 100) || (status >= 600)) {
             throw new IllegalArgumentException
                 ("Unknown category for status code " + status + ".");

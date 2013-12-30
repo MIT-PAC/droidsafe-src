@@ -21,8 +21,9 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultUserTokenHandler implements UserTokenHandler {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.410 -0500", hash_original_method = "014F1AE5D382F95DB9F2CCB7F72FA9B6", hash_generated_method = "FB75E729A5E78AD3D12831F68EE97C53")
-    private static Principal getAuthPrincipal(final AuthState authState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.225 -0500", hash_original_method = "014F1AE5D382F95DB9F2CCB7F72FA9B6", hash_generated_method = "FB75E729A5E78AD3D12831F68EE97C53")
+    
+private static Principal getAuthPrincipal(final AuthState authState) {
         AuthScheme scheme = authState.getAuthScheme();
         if (scheme != null && scheme.isComplete() && scheme.isConnectionBased()) {
             Credentials creds = authState.getCredentials();
@@ -39,8 +40,9 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.409 -0500", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "4E2C31EABE33D9596F636C49FCF12292")
-    public Object getUserToken(final HttpContext context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.223 -0500", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "4E2C31EABE33D9596F636C49FCF12292")
+    
+public Object getUserToken(final HttpContext context) {
         
         Principal userPrincipal = null;
         

@@ -49,8 +49,9 @@ class JarVerifier {
      * @return all of the {@code Certificate} entries for the signer of the JAR
      *         whose actions led to the creation of the named signature file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.728 -0500", hash_original_method = "7076E38A2129A6111F64A5E586BC8201", hash_generated_method = "A3ACF8B97210B63D516427CC61673029")
-    public static Vector<Certificate> getSignerCertificates(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.414 -0500", hash_original_method = "7076E38A2129A6111F64A5E586BC8201", hash_generated_method = "A3ACF8B97210B63D516427CC61673029")
+    
+public static Vector<Certificate> getSignerCertificates(
             String signatureFileName, Map<String, Certificate[]> certificates) {
         Vector<Certificate> result = new Vector<Certificate>();
         Certificate[] certChain = certificates.get(signatureFileName);
@@ -61,33 +62,33 @@ class JarVerifier {
         }
         return result;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.704 -0500", hash_original_field = "88AD73F6C62A39F120982A1969BB094D", hash_generated_field = "9E85BB611D3EE89CADB45020535E6B11")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.339 -0500", hash_original_field = "88AD73F6C62A39F120982A1969BB094D", hash_generated_field = "9E85BB611D3EE89CADB45020535E6B11")
 
 
     private  String jarName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.705 -0500", hash_original_field = "78860F2A6A7B3C54CFA9242D05478E45", hash_generated_field = "1E6BF158A9ED964E950A909DB5592C82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.341 -0500", hash_original_field = "78860F2A6A7B3C54CFA9242D05478E45", hash_generated_field = "1E6BF158A9ED964E950A909DB5592C82")
 
 
     private Manifest man;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.706 -0500", hash_original_field = "5063FF266DB0B8DEC600BC2A9CBDDE6C", hash_generated_field = "7597311A3575323E247960656BDFED83")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.344 -0500", hash_original_field = "5063FF266DB0B8DEC600BC2A9CBDDE6C", hash_generated_field = "7597311A3575323E247960656BDFED83")
 
 
     private HashMap<String, byte[]> metaEntries = new HashMap<String, byte[]>(5);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.707 -0500", hash_original_field = "F43783B6B696E02FC14D6A7D650AD5D8", hash_generated_field = "EBE3D14483DFDBD581E4922AC5C6EF8C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.347 -0500", hash_original_field = "F43783B6B696E02FC14D6A7D650AD5D8", hash_generated_field = "EBE3D14483DFDBD581E4922AC5C6EF8C")
 
 
     private final Hashtable<String, HashMap<String, Attributes>> signatures = new Hashtable<String, HashMap<String, Attributes>>(
             5);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.708 -0500", hash_original_field = "A37D8BF86D510C4A7476BA0DF8506801", hash_generated_field = "F2823AD67EF4110598FC3B6AEAEBB2CE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.349 -0500", hash_original_field = "A37D8BF86D510C4A7476BA0DF8506801", hash_generated_field = "F2823AD67EF4110598FC3B6AEAEBB2CE")
 
 
     private final Hashtable<String, Certificate[]> certificates = new Hashtable<String, Certificate[]>(
             5);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.708 -0500", hash_original_field = "C3F2C899B61AB23CACE8C24C191D7DDE", hash_generated_field = "60F30BC5BC981A97975947915771AEC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.352 -0500", hash_original_field = "C3F2C899B61AB23CACE8C24C191D7DDE", hash_generated_field = "60F30BC5BC981A97975947915771AEC9")
 
 
     private final Hashtable<String, Certificate[]> verifiedEntries = new Hashtable<String, Certificate[]>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.709 -0500", hash_original_field = "6B8C7E29F08A08768A13067ED2CA8C6A", hash_generated_field = "6B8C7E29F08A08768A13067ED2CA8C6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.354 -0500", hash_original_field = "6B8C7E29F08A08768A13067ED2CA8C6A", hash_generated_field = "6B8C7E29F08A08768A13067ED2CA8C6A")
 
 
     int mainAttributesEnd;
@@ -98,19 +99,22 @@ class JarVerifier {
      * @param name
      *            the name of the JAR file being verified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.719 -0500", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "4436059C4E8276439A6065FE93A5DE5F")
-    JarVerifier(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.384 -0500", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "4436059C4E8276439A6065FE93A5DE5F")
+    
+JarVerifier(String name) {
         jarName = name;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.718 -0500", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "EAC500B4D4C6E3E60265AC7DB475A82C")
-    private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.379 -0500", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "EAC500B4D4C6E3E60265AC7DB475A82C")
+    
+private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
         throw new SecurityException(signatureFile + " has invalid digest for " + name +
                 " in " + jarName);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.718 -0500", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "F5CE810BEF717ECE24D592E956941563")
-    private SecurityException failedVerification(String jarName, String signatureFile) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.381 -0500", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "F5CE810BEF717ECE24D592E956941563")
+    
+private SecurityException failedVerification(String jarName, String signatureFile) {
         throw new SecurityException(jarName + " failed verification of " + signatureFile);
     }
 
@@ -126,8 +130,9 @@ class JarVerifier {
      * @return a new instance of {@link VerifierEntry} which can be used by
      *         callers as an {@link OutputStream}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.720 -0500", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "ECABF68918E30DC7AE663DB563868B1E")
-    VerifierEntry initEntry(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.388 -0500", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "ECABF68918E30DC7AE663DB563868B1E")
+    
+VerifierEntry initEntry(String name) {
         // If no manifest is present by the time an entry is found,
         // verification cannot occur. If no signature files have
         // been found, do not verify.
@@ -195,8 +200,9 @@ class JarVerifier {
      *            the file bytes for the file called {@code name}.
      * @see #removeMetaEntries()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.721 -0500", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "B24E46A89F6B78A5F74DC1F8899F1D36")
-    void addMetaEntry(String name, byte[] buf) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.390 -0500", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "B24E46A89F6B78A5F74DC1F8899F1D36")
+    
+void addMetaEntry(String name, byte[] buf) {
         metaEntries.put(name.toUpperCase(Locale.US), buf);
     }
 
@@ -217,8 +223,9 @@ class JarVerifier {
      *             signature block file contains an invalid signature for the
      *             corresponding signature file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.722 -0500", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "8A6C9CCF0D097FF838DD1FBE220DAD25")
-    synchronized boolean readCertificates() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.393 -0500", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "8A6C9CCF0D097FF838DD1FBE220DAD25")
+    
+synchronized boolean readCertificates() {
         if (metaEntries == null) {
             return false;
         }
@@ -240,8 +247,9 @@ class JarVerifier {
     /**
      * @param certFile
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.723 -0500", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "6D4AE1E3F1E817737EC4190C3E6EB66E")
-    private void verifyCertificate(String certFile) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.398 -0500", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "6D4AE1E3F1E817737EC4190C3E6EB66E")
+    
+private void verifyCertificate(String certFile) {
         // Found Digital Sig, .SF should already have been read
         String signatureFile = certFile.substring(0, certFile.lastIndexOf('.'))
                 + ".SF";
@@ -333,8 +341,9 @@ class JarVerifier {
      * @param mf
      *            a {@code java.util.jar.Manifest} object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.724 -0500", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "5E96175D15755C77B9F4C5D6341FECA1")
-    void setManifest(Manifest mf) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.400 -0500", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "5E96175D15755C77B9F4C5D6341FECA1")
+    
+void setManifest(Manifest mf) {
         man = mf;
     }
 
@@ -345,13 +354,15 @@ class JarVerifier {
      * @return {@code true} if the JAR is signed, {@code false}
      *         otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.725 -0500", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "61D9EDAFD8C0E1537C8EF2C7E942A904")
-    boolean isSignedJar() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.402 -0500", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "61D9EDAFD8C0E1537C8EF2C7E942A904")
+    
+boolean isSignedJar() {
         return certificates.size() > 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.726 -0500", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "B6619677E7320A9972188585FDF7BA18")
-    private boolean verify(Attributes attributes, String entry, byte[] data,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.406 -0500", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "B6619677E7320A9972188585FDF7BA18")
+    
+private boolean verify(Attributes attributes, String entry, byte[] data,
             int start, int end, boolean ignoreSecondEndline, boolean ignorable) {
         String algorithms = attributes.getValue("Digest-Algorithms");
         if (algorithms == null) {
@@ -393,8 +404,9 @@ class JarVerifier {
      *            the name of a JAR entry.
      * @return an array of {@link java.security.cert.Certificate}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.726 -0500", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "4AB9D8996D4C7F856FC4CD4DD096303E")
-    Certificate[] getCertificates(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.408 -0500", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "4AB9D8996D4C7F856FC4CD4DD096303E")
+    
+Certificate[] getCertificates(String name) {
         Certificate[] verifiedCerts = verifiedEntries.get(name);
         if (verifiedCerts == null) {
             return null;
@@ -408,32 +420,34 @@ class JarVerifier {
      *
      * @see #addMetaEntry(String, byte[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.727 -0500", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E")
-    void removeMetaEntries() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.411 -0500", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E")
+    
+void removeMetaEntries() {
         metaEntries = null;
     }
 
     
     class VerifierEntry extends OutputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.710 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.357 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
 
         private String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.711 -0500", hash_original_field = "6490B74EBA547C3BEF2402BDE5E0FF43", hash_generated_field = "145A8FD0EC1911E7DDCA25F923899831")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.359 -0500", hash_original_field = "6490B74EBA547C3BEF2402BDE5E0FF43", hash_generated_field = "145A8FD0EC1911E7DDCA25F923899831")
 
 
         private MessageDigest digest;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.712 -0500", hash_original_field = "6195FCC77BFDBC9D95F3A31F9C19748F", hash_generated_field = "670F24B05EDED2247F0B4CD66AB4EE15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.361 -0500", hash_original_field = "6195FCC77BFDBC9D95F3A31F9C19748F", hash_generated_field = "670F24B05EDED2247F0B4CD66AB4EE15")
 
 
         private byte[] hash;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.712 -0500", hash_original_field = "DACE6ADA4B412D57FB31B18C159744DA", hash_generated_field = "6029E7C21A5106D4483252478B646415")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.363 -0500", hash_original_field = "DACE6ADA4B412D57FB31B18C159744DA", hash_generated_field = "6029E7C21A5106D4483252478B646415")
 
 
         private Certificate[] certificates;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.713 -0500", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "519B899FEA5DD6CF74252B8A7E9BDF9B")
-        VerifierEntry(String name, MessageDigest digest, byte[] hash,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.367 -0500", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "519B899FEA5DD6CF74252B8A7E9BDF9B")
+        
+VerifierEntry(String name, MessageDigest digest, byte[] hash,
                 Certificate[] certificates) {
             this.name = name;
             this.digest = digest;
@@ -444,18 +458,20 @@ class JarVerifier {
         /**
          * Updates a digest with one byte.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.714 -0500", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "30B825BE9CB2E300173C549DFAB6AC4A")
-        @Override
-public void write(int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.369 -0500", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "30B825BE9CB2E300173C549DFAB6AC4A")
+        
+@Override
+        public void write(int value) {
             digest.update((byte) value);
         }
 
         /**
          * Updates a digest with byte array.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.716 -0500", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "49397E41D8BCC7E685ABB904DB99146B")
-        @Override
-public void write(byte[] buf, int off, int nbytes) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.372 -0500", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "49397E41D8BCC7E685ABB904DB99146B")
+        
+@Override
+        public void write(byte[] buf, int off, int nbytes) {
             digest.update(buf, off, nbytes);
         }
 

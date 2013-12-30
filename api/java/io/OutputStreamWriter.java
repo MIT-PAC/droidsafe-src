@@ -16,15 +16,15 @@ import java.util.Arrays;
 
 
 public class OutputStreamWriter extends Writer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.297 -0500", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.566 -0500", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
 
 
     private  OutputStream out;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.298 -0500", hash_original_field = "35DE68BB49761C7459EF0234F6EAB1B7", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.568 -0500", hash_original_field = "35DE68BB49761C7459EF0234F6EAB1B7", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
 
 
     private CharsetEncoder encoder;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.299 -0500", hash_original_field = "D75566C09E1648987D573E04AE908DE5", hash_generated_field = "A3FC74598F816F44A8E790B9843EEF7E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.571 -0500", hash_original_field = "D75566C09E1648987D573E04AE908DE5", hash_generated_field = "A3FC74598F816F44A8E790B9843EEF7E")
 
 
     private ByteBuffer bytes = ByteBuffer.allocate(8192);
@@ -37,8 +37,9 @@ public class OutputStreamWriter extends Writer {
      * @param out
      *            the non-null target stream to write converted bytes to.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.300 -0500", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "842F6B6710D3A66CF876DB8E7DB54F66")
-    public OutputStreamWriter(OutputStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.574 -0500", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "842F6B6710D3A66CF876DB8E7DB54F66")
+    
+public OutputStreamWriter(OutputStream out) {
         this(out, Charset.defaultCharset());
     }
 
@@ -57,8 +58,9 @@ public class OutputStreamWriter extends Writer {
      * @throws UnsupportedEncodingException
      *             if the encoding specified by {@code enc} cannot be found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.301 -0500", hash_original_method = "FE2D64915F756E150E2359224C906A4F", hash_generated_method = "3EEBA5BDED2B81E569A17044B94159D1")
-    public OutputStreamWriter(OutputStream out, final String enc)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.577 -0500", hash_original_method = "FE2D64915F756E150E2359224C906A4F", hash_generated_method = "3EEBA5BDED2B81E569A17044B94159D1")
+    
+public OutputStreamWriter(OutputStream out, final String enc)
             throws UnsupportedEncodingException {
         super(out);
         if (enc == null) {
@@ -84,8 +86,9 @@ public class OutputStreamWriter extends Writer {
      * @param cs
      *            the {@code Charset} that specifies the character encoding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.302 -0500", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "C388739C3AC44331B56B35FBA1B88BA7")
-    public OutputStreamWriter(OutputStream out, Charset cs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.580 -0500", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "C388739C3AC44331B56B35FBA1B88BA7")
+    
+public OutputStreamWriter(OutputStream out, Charset cs) {
         super(out);
         this.out = out;
         encoder = cs.newEncoder();
@@ -103,8 +106,9 @@ public class OutputStreamWriter extends Writer {
      * @param enc
      *            the character encoder used for character conversion.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.302 -0500", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "8CD38A4A4B1FF7E5F7207AD626AB27C7")
-    public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.583 -0500", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "8CD38A4A4B1FF7E5F7207AD626AB27C7")
+    
+public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
         super(out);
         enc.charset();
         this.out = out;
@@ -122,9 +126,10 @@ public class OutputStreamWriter extends Writer {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.303 -0500", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "5D0388D5AAD5F0793DE2F1E9322C0CED")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.585 -0500", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "5D0388D5AAD5F0793DE2F1E9322C0CED")
+    
+@Override
+    public void close() throws IOException {
         synchronized (lock) {
             if (encoder != null) {
                 drainEncoder();
@@ -144,14 +149,16 @@ public void close() throws IOException {
      * @throws IOException
      *             if an error occurs while flushing this writer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.304 -0500", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "5472256256B480FB5B4336E5277791E6")
-    @Override
-public void flush() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.587 -0500", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "5472256256B480FB5B4336E5277791E6")
+    
+@Override
+    public void flush() throws IOException {
         flushBytes(true);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.305 -0500", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "C8FACB662842DE898FFC39C3594E5611")
-    private void flushBytes(boolean flushUnderlyingStream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.590 -0500", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "C8FACB662842DE898FFC39C3594E5611")
+    
+private void flushBytes(boolean flushUnderlyingStream) throws IOException {
         synchronized (lock) {
             checkStatus();
             int position = bytes.position();
@@ -166,8 +173,9 @@ public void flush() throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.306 -0500", hash_original_method = "5FDBBBBEF70B98878F7238A71245F3A5", hash_generated_method = "4A911564E9A859C4A6028B8201CF47CB")
-    private void convert(CharBuffer chars) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.592 -0500", hash_original_method = "5FDBBBBEF70B98878F7238A71245F3A5", hash_generated_method = "4A911564E9A859C4A6028B8201CF47CB")
+    
+private void convert(CharBuffer chars) throws IOException {
         while (true) {
             CoderResult result = encoder.encode(chars, bytes, false);
             if (result.isOverflow()) {
@@ -181,8 +189,9 @@ public void flush() throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.307 -0500", hash_original_method = "17AF81F5CD218F57FFE1053C07491E0D", hash_generated_method = "524D4A956EFD1F9DD96E8962610F3BDB")
-    private void drainEncoder() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.596 -0500", hash_original_method = "17AF81F5CD218F57FFE1053C07491E0D", hash_generated_method = "524D4A956EFD1F9DD96E8962610F3BDB")
+    
+private void drainEncoder() throws IOException {
         // Strictly speaking, I think it's part of the CharsetEncoder contract that you call
         // encode with endOfInput true before flushing. Our ICU-based implementations don't
         // actually need this, and you'd hope that any reasonable implementation wouldn't either.
@@ -213,8 +222,9 @@ public void flush() throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.308 -0500", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "714C39594B4787E56AA58C1A1ACFBD74")
-    private void checkStatus() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.598 -0500", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "714C39594B4787E56AA58C1A1ACFBD74")
+    
+private void checkStatus() throws IOException {
         if (encoder == null) {
             throw new IOException("OutputStreamWriter is closed");
         }
@@ -226,8 +236,9 @@ public void flush() throws IOException {
      * track of the String or Charset they passed in; this method may not return the same
      * name.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.309 -0500", hash_original_method = "A69A1F1EB2BFDD0474AAD9460630967D", hash_generated_method = "0FF93F2101F36D1283DE60FF400C16CB")
-    public String getEncoding() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.601 -0500", hash_original_method = "A69A1F1EB2BFDD0474AAD9460630967D", hash_generated_method = "0FF93F2101F36D1283DE60FF400C16CB")
+    
+public String getEncoding() {
         if (encoder == null) {
             return null;
         }
@@ -254,9 +265,10 @@ public void flush() throws IOException {
      *             if this writer has already been closed or another I/O error
      *             occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.310 -0500", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "A96B07B6EEBAA8EA2F682CB1A720ECE7")
-    @Override
-public void write(char[] buffer, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.603 -0500", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "A96B07B6EEBAA8EA2F682CB1A720ECE7")
+    
+@Override
+    public void write(char[] buffer, int offset, int count) throws IOException {
         synchronized (lock) {
             checkStatus();
             Arrays.checkOffsetAndCount(buffer.length, offset, count);
@@ -276,9 +288,10 @@ public void write(char[] buffer, int offset, int count) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.311 -0500", hash_original_method = "9F78C67C90A8F7A084F2E3084DB157FE", hash_generated_method = "20C055F9C168D000FD8A3145FD191358")
-    @Override
-public void write(int oneChar) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.607 -0500", hash_original_method = "9F78C67C90A8F7A084F2E3084DB157FE", hash_generated_method = "20C055F9C168D000FD8A3145FD191358")
+    
+@Override
+    public void write(int oneChar) throws IOException {
         synchronized (lock) {
             checkStatus();
             CharBuffer chars = CharBuffer.wrap(new char[] { (char) oneChar });
@@ -306,9 +319,10 @@ public void write(int oneChar) throws IOException {
      *             {@code offset + count} is bigger than the length of
      *             {@code str}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.312 -0500", hash_original_method = "720362548945B36884470AD2C6B99C23", hash_generated_method = "00265FCA2186A6FA0C1C9C2C49A9AE91")
-    @Override
-public void write(String str, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.610 -0500", hash_original_method = "720362548945B36884470AD2C6B99C23", hash_generated_method = "00265FCA2186A6FA0C1C9C2C49A9AE91")
+    
+@Override
+    public void write(String str, int offset, int count) throws IOException {
         synchronized (lock) {
             if (count < 0) {
                 throw new StringIndexOutOfBoundsException(str, offset, count);
@@ -325,9 +339,9 @@ public void write(String str, int offset, int count) throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.313 -0500", hash_original_method = "E279B5931B3E4ADEA2A691FE75B2536D", hash_generated_method = "69A9C9DFC45715CCC07CA531016E0080")
-    @Override
-boolean checkError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.612 -0500", hash_original_method = "E279B5931B3E4ADEA2A691FE75B2536D", hash_generated_method = "69A9C9DFC45715CCC07CA531016E0080")
+    
+@Override boolean checkError() {
         return out.checkError();
     }
 

@@ -45,8 +45,9 @@ public class ZygoteInit {
      * @param className Fully-qualified class name
      * @param argv Argument vector for main()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.222 -0500", hash_original_method = "92C0302C214CF8B39DC3046063D57663", hash_generated_method = "72463FCEC06525819F43BD0A022D2598")
-    static void invokeStaticMain(ClassLoader loader,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.746 -0500", hash_original_method = "92C0302C214CF8B39DC3046063D57663", hash_generated_method = "72463FCEC06525819F43BD0A022D2598")
+    
+static void invokeStaticMain(ClassLoader loader,
             String className, String[] argv)
             throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
@@ -90,8 +91,9 @@ public class ZygoteInit {
      *
      * @throws RuntimeException when open fails
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.223 -0500", hash_original_method = "33238DBDD3EE10AC78A38524A4B30B45", hash_generated_method = "EB06F1DC315B21A9C36C419617D2C322")
-    private static void registerZygoteSocket() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.748 -0500", hash_original_method = "33238DBDD3EE10AC78A38524A4B30B45", hash_generated_method = "EB06F1DC315B21A9C36C419617D2C322")
+    
+private static void registerZygoteSocket() {
         if (sServerSocket == null) {
             int fileDesc;
             try {
@@ -116,8 +118,9 @@ public class ZygoteInit {
      * Waits for and accepts a single command connection. Throws
      * RuntimeException on failure.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.224 -0500", hash_original_method = "045B5F1BFA94DC7C2BFF459F85DF0833", hash_generated_method = "104DA174A6EFC5A4FFC070905649B9FB")
-    private static ZygoteConnection acceptCommandPeer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.751 -0500", hash_original_method = "045B5F1BFA94DC7C2BFF459F85DF0833", hash_generated_method = "104DA174A6EFC5A4FFC070905649B9FB")
+    
+private static ZygoteConnection acceptCommandPeer() {
         try {
             return new ZygoteConnection(sServerSocket.accept());
         } catch (IOException ex) {
@@ -130,8 +133,9 @@ public class ZygoteInit {
      * Close and clean up zygote sockets. Called on shutdown and on the
      * child's exit path.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.224 -0500", hash_original_method = "E08E603F610DF9EAD1243BA93888D718", hash_generated_method = "5797599B65945F2B2406534D8E8A3524")
-    static void closeServerSocket() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.753 -0500", hash_original_method = "E08E603F610DF9EAD1243BA93888D718", hash_generated_method = "5797599B65945F2B2406534D8E8A3524")
+    
+static void closeServerSocket() {
         try {
             if (sServerSocket != null) {
                 sServerSocket.close();
@@ -146,8 +150,9 @@ public class ZygoteInit {
     /**
      * Sets effective user ID.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.229 -0500", hash_original_method = "E2A3189629A3C133F0ED36D24E845649", hash_generated_method = "728808F2947D3F3FB44DBE3A16D200F5")
-    private static void setEffectiveUser(int uid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.767 -0500", hash_original_method = "E2A3189629A3C133F0ED36D24E845649", hash_generated_method = "728808F2947D3F3FB44DBE3A16D200F5")
+    
+private static void setEffectiveUser(int uid) {
         int errno = setreuid(ROOT_UID, uid);
         if (errno != 0) {
             Log.e(TAG, "setreuid() failed. errno: " + errno);
@@ -157,16 +162,18 @@ public class ZygoteInit {
     /**
      * Sets effective group ID.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.229 -0500", hash_original_method = "18751F68EA30125352914BAC8CA8F1CD", hash_generated_method = "3F7975C5C0F71BC71D4C9DB6435E3592")
-    private static void setEffectiveGroup(int gid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.770 -0500", hash_original_method = "18751F68EA30125352914BAC8CA8F1CD", hash_generated_method = "3F7975C5C0F71BC71D4C9DB6435E3592")
+    
+private static void setEffectiveGroup(int gid) {
         int errno = setregid(ROOT_GID, gid);
         if (errno != 0) {
             Log.e(TAG, "setregid() failed. errno: " + errno);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.230 -0500", hash_original_method = "31986CD3550679EB088D2B62322D5418", hash_generated_method = "47797ED3E0A3374C574CB8E5BF4443E2")
-    static void preload() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.772 -0500", hash_original_method = "31986CD3550679EB088D2B62322D5418", hash_generated_method = "47797ED3E0A3374C574CB8E5BF4443E2")
+    
+static void preload() {
         preloadClasses();
         preloadResources();
     }
@@ -178,8 +185,9 @@ public class ZygoteInit {
      * Most classes only cause a few hundred bytes to be allocated, but
      * a few will allocate a dozen Kbytes (in one case, 500+K).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.232 -0500", hash_original_method = "8C4C1B59B00A9C1FB0F98F7424B5199F", hash_generated_method = "D96DD0F25F76242E105CF187E0E2089A")
-    private static void preloadClasses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.776 -0500", hash_original_method = "8C4C1B59B00A9C1FB0F98F7424B5199F", hash_generated_method = "D96DD0F25F76242E105CF187E0E2089A")
+    
+private static void preloadClasses() {
         final VMRuntime runtime = VMRuntime.getRuntime();
 
         InputStream is = ZygoteInit.class.getClassLoader().getResourceAsStream(
@@ -271,8 +279,9 @@ public class ZygoteInit {
      * These tend to be a few Kbytes, but are frequently in the 20-40K
      * range, and occasionally even larger.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.233 -0500", hash_original_method = "DE60FEC0184A03FE71EDAD4972871A6E", hash_generated_method = "55B4C0F1C018E7FD9AD76020CEE221A3")
-    private static void preloadResources() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.779 -0500", hash_original_method = "DE60FEC0184A03FE71EDAD4972871A6E", hash_generated_method = "55B4C0F1C018E7FD9AD76020CEE221A3")
+    
+private static void preloadResources() {
         final VMRuntime runtime = VMRuntime.getRuntime();
 
         Debug.startAllocCounting();
@@ -306,8 +315,9 @@ public class ZygoteInit {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.234 -0500", hash_original_method = "642EA9DEA1CC6BEC041E0008EC6088E4", hash_generated_method = "5AD30E9ACD7D186E85D5864B6934EE8F")
-    private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.782 -0500", hash_original_method = "642EA9DEA1CC6BEC041E0008EC6088E4", hash_generated_method = "5AD30E9ACD7D186E85D5864B6934EE8F")
+    
+private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
         int N = ar.length();
         for (int i=0; i<N; i++) {
             if (Debug.getGlobalAllocSize() > PRELOAD_GC_THRESHOLD) {
@@ -330,8 +340,9 @@ public class ZygoteInit {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.235 -0500", hash_original_method = "CD535216A85FF51D7A90936E24E9BD83", hash_generated_method = "5FF12C82422C0D3DFEB27DFE42C007C7")
-    private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.785 -0500", hash_original_method = "CD535216A85FF51D7A90936E24E9BD83", hash_generated_method = "5FF12C82422C0D3DFEB27DFE42C007C7")
+    
+private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
         int N = ar.length();
         for (int i=0; i<N; i++) {
             if (Debug.getGlobalAllocSize() > PRELOAD_GC_THRESHOLD) {
@@ -363,8 +374,9 @@ public class ZygoteInit {
      * softly- and final-reachable objects, along with any other garbage.
      * This is only useful just before a fork().
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.236 -0500", hash_original_method = "70491B88332D9FF72DEC0D53EB9B78BC", hash_generated_method = "8AD32AC07D7EC8740371A827D7EBA3E2")
-    static void gc() {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.787 -0500", hash_original_method = "70491B88332D9FF72DEC0D53EB9B78BC", hash_generated_method = "8AD32AC07D7EC8740371A827D7EBA3E2")
+    
+static void gc() {
         final VMRuntime runtime = VMRuntime.getRuntime();
 
         /* runFinalizationSync() lets finalizers be called in Zygote,
@@ -381,8 +393,9 @@ public class ZygoteInit {
     /**
      * Finish remaining work for the newly forked system server process.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.237 -0500", hash_original_method = "EACAEF5EE9C7C8D5FCD8F40349D2EBF4", hash_generated_method = "8EDF06F06332D4082644557CE1DF5CCF")
-    private static void handleSystemServerProcess(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.789 -0500", hash_original_method = "EACAEF5EE9C7C8D5FCD8F40349D2EBF4", hash_generated_method = "8EDF06F06332D4082644557CE1DF5CCF")
+    
+private static void handleSystemServerProcess(
             ZygoteConnection.Arguments parsedArgs)
             throws ZygoteInit.MethodAndArgsCaller {
 
@@ -412,8 +425,9 @@ public class ZygoteInit {
     /**
      * Prepare the arguments and fork for the system server process.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.238 -0500", hash_original_method = "297E5C10002C80959BC209EA8C0A1D06", hash_generated_method = "D969800986D3E41FCEFAFED18B3D4C66")
-    private static boolean startSystemServer()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.792 -0500", hash_original_method = "297E5C10002C80959BC209EA8C0A1D06", hash_generated_method = "D969800986D3E41FCEFAFED18B3D4C66")
+    
+private static boolean startSystemServer()
             throws MethodAndArgsCaller, RuntimeException {
         /* Hardcoded command line to start the system server */
         String args[] = {
@@ -454,8 +468,9 @@ public class ZygoteInit {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.239 -0500", hash_original_method = "DB2C972552964C908550DBCEA0720EAD", hash_generated_method = "9FD6317B1EC0E80E51D476EA7766A252")
-    public static void main(String argv[]) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.796 -0500", hash_original_method = "DB2C972552964C908550DBCEA0720EAD", hash_generated_method = "9FD6317B1EC0E80E51D476EA7766A252")
+    
+public static void main(String argv[]) {
         try {
             // Start profiling the zygote initialization.
             SamplingProfilerIntegration.start();
@@ -510,8 +525,9 @@ public class ZygoteInit {
      * @throws MethodAndArgsCaller in a child process when a main() should
      * be executed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.240 -0500", hash_original_method = "3C215F763D4714C2B1E8B4A6445CBFDE", hash_generated_method = "DAAA573F0655E75EC0107C9511603F80")
-    private static void runForkMode() throws MethodAndArgsCaller {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.799 -0500", hash_original_method = "3C215F763D4714C2B1E8B4A6445CBFDE", hash_generated_method = "DAAA573F0655E75EC0107C9511603F80")
+    
+private static void runForkMode() throws MethodAndArgsCaller {
         while (true) {
             ZygoteConnection peer = acceptCommandPeer();
 
@@ -549,8 +565,9 @@ public class ZygoteInit {
      * @throws MethodAndArgsCaller in a child process when a main() should
      * be executed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.241 -0500", hash_original_method = "4F451180FF9E93B0119857AFE5ACD842", hash_generated_method = "BD30B724511D9D00629B0F664C7C7B3C")
-    private static void runSelectLoopMode() throws MethodAndArgsCaller {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.802 -0500", hash_original_method = "4F451180FF9E93B0119857AFE5ACD842", hash_generated_method = "BD30B724511D9D00629B0F664C7C7B3C")
+    
+private static void runSelectLoopMode() throws MethodAndArgsCaller {
         ArrayList<FileDescriptor> fds = new ArrayList();
         ArrayList<ZygoteConnection> peers = new ArrayList();
         FileDescriptor[] fdArray = new FileDescriptor[4];
@@ -669,28 +686,30 @@ public class ZygoteInit {
     static FileDescriptor createFileDescriptor(int fd) throws IOException {
     	return new FileDescriptor();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.211 -0500", hash_original_field = "CA9104072FF1AE74E9853C2A46401BC7", hash_generated_field = "2A664B91B7AF4DD6DD39F407BBDAB91B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.715 -0500", hash_original_field = "CA9104072FF1AE74E9853C2A46401BC7", hash_generated_field = "2A664B91B7AF4DD6DD39F407BBDAB91B")
 
 
     private static final String TAG = "Zygote";
 
     
     public static class MethodAndArgsCaller extends Exception implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.258 -0500", hash_original_field = "1AE782A3C6D55F3EEA9985EDCF6719E3", hash_generated_field = "B855DD63C0CF0451E81317C9109F465D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.846 -0500", hash_original_field = "1AE782A3C6D55F3EEA9985EDCF6719E3", hash_generated_field = "B855DD63C0CF0451E81317C9109F465D")
 
         private  Method mMethod;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.258 -0500", hash_original_field = "FD5D103D9ACC39E94EFB314A70CF23CE", hash_generated_field = "36A0BDC0E98A86654E4FB41A74F823AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.849 -0500", hash_original_field = "FD5D103D9ACC39E94EFB314A70CF23CE", hash_generated_field = "36A0BDC0E98A86654E4FB41A74F823AC")
 
         private  String[] mArgs;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.260 -0500", hash_original_method = "B7C77C284F7B165702F670BC703A8A6B", hash_generated_method = "C0BAC984101ECBD13F18FC352003EB7B")
-        public MethodAndArgsCaller(Method method, String[] args) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.851 -0500", hash_original_method = "B7C77C284F7B165702F670BC703A8A6B", hash_generated_method = "C0BAC984101ECBD13F18FC352003EB7B")
+        
+public MethodAndArgsCaller(Method method, String[] args) {
             mMethod = method;
             mArgs = args;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.261 -0500", hash_original_method = "9C4F25D836A229393F13206C69120090", hash_generated_method = "48EB695FC8742900F4B756B96C8623C2")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.854 -0500", hash_original_method = "9C4F25D836A229393F13206C69120090", hash_generated_method = "48EB695FC8742900F4B756B96C8623C2")
+        
+public void run() {
             try {
                 mMethod.invoke(null, new Object[] { mArgs });
             } catch (IllegalAccessException ex) {
@@ -708,64 +727,65 @@ public class ZygoteInit {
 
         
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.212 -0500", hash_original_field = "FE64A8F9D190EA3489BA8CB96F558915", hash_generated_field = "21A14DBCE7B0B42B26E0AE4D21BE6374")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.717 -0500", hash_original_field = "FE64A8F9D190EA3489BA8CB96F558915", hash_generated_field = "21A14DBCE7B0B42B26E0AE4D21BE6374")
 
 
     private static final String ANDROID_SOCKET_ENV = "ANDROID_SOCKET_zygote";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.213 -0500", hash_original_field = "C431609858C64BFFA661CA0287DC05DC", hash_generated_field = "72D0A8D066088F349825C90FFD278BF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.720 -0500", hash_original_field = "C431609858C64BFFA661CA0287DC05DC", hash_generated_field = "72D0A8D066088F349825C90FFD278BF3")
 
 
     private static final int LOG_BOOT_PROGRESS_PRELOAD_START = 3020;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.214 -0500", hash_original_field = "A323195975FD5A55072EBE2E7DEBA678", hash_generated_field = "36D14AFABA880F6F31DEC33191D862C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.722 -0500", hash_original_field = "A323195975FD5A55072EBE2E7DEBA678", hash_generated_field = "36D14AFABA880F6F31DEC33191D862C7")
 
     private static final int LOG_BOOT_PROGRESS_PRELOAD_END = 3030;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.215 -0500", hash_original_field = "3D370AF0C07CC4EE5CCE091FAF80F5EF", hash_generated_field = "1C4BDCB10C814E5E5C1E121F3CFFB398")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.725 -0500", hash_original_field = "3D370AF0C07CC4EE5CCE091FAF80F5EF", hash_generated_field = "1C4BDCB10C814E5E5C1E121F3CFFB398")
 
     private static final int PRELOAD_GC_THRESHOLD = 50000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.216 -0500", hash_original_field = "AFA88C4B9C552005A41BC8F13A42D38A", hash_generated_field = "11B5CFA86B8C286EFBAA6F7566AACF92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.727 -0500", hash_original_field = "AFA88C4B9C552005A41BC8F13A42D38A", hash_generated_field = "11B5CFA86B8C286EFBAA6F7566AACF92")
 
 
     public static final String USAGE_STRING =
             " <\"start-system-server\"|\"\" for startSystemServer>";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.216 -0500", hash_original_field = "FB40507F157D3BB1B2B7C526354E4B1D", hash_generated_field = "9E17DF7A35B42830EDB580D52F5D2BFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.730 -0500", hash_original_field = "FB40507F157D3BB1B2B7C526354E4B1D", hash_generated_field = "9E17DF7A35B42830EDB580D52F5D2BFC")
 
 
     private static LocalServerSocket sServerSocket;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.217 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "F35B055A0E956F42EA68C0747FE25322")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.733 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "F35B055A0E956F42EA68C0747FE25322")
 
     private static Resources mResources;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.218 -0500", hash_original_field = "0FB803D08C387DD7F5E90B682D47E9AB", hash_generated_field = "CC8FEE4337ADDACC7ADB7DFDC231F802")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.736 -0500", hash_original_field = "0FB803D08C387DD7F5E90B682D47E9AB", hash_generated_field = "CC8FEE4337ADDACC7ADB7DFDC231F802")
 
     static final int GC_LOOP_COUNT = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.219 -0500", hash_original_field = "5966F2060418C690B415DAA37BB4AE45", hash_generated_field = "470965EC21BC0250593F36CAC4C56B5B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.738 -0500", hash_original_field = "5966F2060418C690B415DAA37BB4AE45", hash_generated_field = "470965EC21BC0250593F36CAC4C56B5B")
 
     private static final boolean ZYGOTE_FORK_MODE = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.220 -0500", hash_original_field = "93C663FC0CD18592E50B655709C7FC73", hash_generated_field = "D971A35E1DDB9EC284B93F8A315DE174")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.740 -0500", hash_original_field = "93C663FC0CD18592E50B655709C7FC73", hash_generated_field = "D971A35E1DDB9EC284B93F8A315DE174")
 
     private static final String PRELOADED_CLASSES = "preloaded-classes";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.221 -0500", hash_original_field = "A3A03410B52CF696F44F5D5A3235C4CD", hash_generated_field = "217E927B066193DC32AE01A97B64A06F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.743 -0500", hash_original_field = "A3A03410B52CF696F44F5D5A3235C4CD", hash_generated_field = "217E927B066193DC32AE01A97B64A06F")
 
     private static final boolean PRELOAD_RESOURCES = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.225 -0500", hash_original_field = "8C294BAB038DFDC08F17C2CFBEBC8659", hash_generated_field = "B7C284A979FDA8DD7A1E86E6B13F83B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.756 -0500", hash_original_field = "8C294BAB038DFDC08F17C2CFBEBC8659", hash_generated_field = "B7C284A979FDA8DD7A1E86E6B13F83B4")
 
 
     private static final int UNPRIVILEGED_UID = 9999;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.226 -0500", hash_original_field = "3FF8B3A0A59668361FB36720ECE174AB", hash_generated_field = "20022E96E92B292F7F27BAE668605B1C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.759 -0500", hash_original_field = "3FF8B3A0A59668361FB36720ECE174AB", hash_generated_field = "20022E96E92B292F7F27BAE668605B1C")
 
     private static final int UNPRIVILEGED_GID = 9999;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.227 -0500", hash_original_field = "AF039FE22D668EF9032DD7891D998BA1", hash_generated_field = "AA8F959796928F28B5B6310780704CB2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.762 -0500", hash_original_field = "AF039FE22D668EF9032DD7891D998BA1", hash_generated_field = "AA8F959796928F28B5B6310780704CB2")
 
 
     private static final int ROOT_UID = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.228 -0500", hash_original_field = "DB8DF0CE5F8A8D6410843EB3BF32E1E3", hash_generated_field = "1A2EF32D420BCC0E5CC1DF0ABF44BE23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.765 -0500", hash_original_field = "DB8DF0CE5F8A8D6410843EB3BF32E1E3", hash_generated_field = "1A2EF32D420BCC0E5CC1DF0ABF44BE23")
 
     private static final int ROOT_GID = 0;
 
     /**
      * Class not instantiable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.256 -0500", hash_original_method = "428A10BCE5663B72CCCACBE02D386E37", hash_generated_method = "11CAD4ECB2F6D27A77FF1A5A5E2B3963")
-    private ZygoteInit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.843 -0500", hash_original_method = "428A10BCE5663B72CCCACBE02D386E37", hash_generated_method = "11CAD4ECB2F6D27A77FF1A5A5E2B3963")
+    
+private ZygoteInit() {
     }
 }
 

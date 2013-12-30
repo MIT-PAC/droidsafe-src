@@ -10,11 +10,11 @@ import droidsafe.annotations.*;
 
 
 public final class PasswordAuthentication {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.549 -0500", hash_original_field = "603671BF518F3A411771AE6211095177", hash_generated_field = "4011AE72656FEC39CB60833262E361C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.452 -0500", hash_original_field = "603671BF518F3A411771AE6211095177", hash_generated_field = "4011AE72656FEC39CB60833262E361C8")
 
 
     private String userName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.551 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.454 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
 
 
     private char[] password;
@@ -28,8 +28,9 @@ public final class PasswordAuthentication {
      * @param password
      *            the associated password to store.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.552 -0500", hash_original_method = "5D7214C35F0B8EFCD4776395D10A0F27", hash_generated_method = "29ACC9DE2D8A4C1B8CFCE6AA59A2D59D")
-    public PasswordAuthentication(String userName, char[] password) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.457 -0500", hash_original_method = "5D7214C35F0B8EFCD4776395D10A0F27", hash_generated_method = "29ACC9DE2D8A4C1B8CFCE6AA59A2D59D")
+    
+public PasswordAuthentication(String userName, char[] password) {
         this.userName = userName;
         this.password = password.clone();
     }
@@ -41,8 +42,9 @@ public final class PasswordAuthentication {
      *
      * @return the copied password.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.552 -0500", hash_original_method = "79A6CAB64FA4B390A39CA60FAD9B839D", hash_generated_method = "C814E988AE5D6DF03B812A5ABE48A46E")
-    public char[] getPassword() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.459 -0500", hash_original_method = "79A6CAB64FA4B390A39CA60FAD9B839D", hash_generated_method = "C814E988AE5D6DF03B812A5ABE48A46E")
+    
+public char[] getPassword() {
         return password.clone();
     }
 
@@ -51,8 +53,9 @@ public final class PasswordAuthentication {
      *
      * @return the stored username.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:03.553 -0500", hash_original_method = "AE8C8ADC981355D9DAA86F7D72E53644", hash_generated_method = "A531C69D4F950205F39A1FFF6AFE3034")
-    public String getUserName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.461 -0500", hash_original_method = "AE8C8ADC981355D9DAA86F7D72E53644", hash_generated_method = "A531C69D4F950205F39A1FFF6AFE3034")
+    
+public String getUserName() {
         return userName;
     }
 
