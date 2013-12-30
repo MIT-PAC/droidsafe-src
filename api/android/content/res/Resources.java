@@ -130,41 +130,41 @@ public class Resources {
 		*/
 		//Return nothing
 	}
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.886 -0500", hash_original_field = "E26F9411AF04540E7F8A629F86F8CC50", hash_generated_field = "5C5F00C441325249E30C64C6E802A217")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.208 -0500", hash_original_field = "E26F9411AF04540E7F8A629F86F8CC50", hash_generated_field = "5C5F00C441325249E30C64C6E802A217")
 
     static final String TAG = "Resources";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.887 -0500", hash_original_field = "5C480BABD4D983BC732ACE8DE1F28D24", hash_generated_field = "AF24F38B7F7C1BFCBE31FAF56BF34CB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.211 -0500", hash_original_field = "5C480BABD4D983BC732ACE8DE1F28D24", hash_generated_field = "AF24F38B7F7C1BFCBE31FAF56BF34CB6")
 
     private static final boolean DEBUG_LOAD = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.888 -0500", hash_original_field = "213A17133C5D24030072519BA98B7C42", hash_generated_field = "131175486DA42E2C78B20447DB22788A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.213 -0500", hash_original_field = "213A17133C5D24030072519BA98B7C42", hash_generated_field = "131175486DA42E2C78B20447DB22788A")
 
     private static final boolean DEBUG_CONFIG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.888 -0500", hash_original_field = "CDFFE01919EB427E474F0463DF60058C", hash_generated_field = "ED55101D7A3C371E9777857F76A372CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.216 -0500", hash_original_field = "CDFFE01919EB427E474F0463DF60058C", hash_generated_field = "ED55101D7A3C371E9777857F76A372CF")
 
     private static final boolean DEBUG_ATTRIBUTES_CACHE = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.889 -0500", hash_original_field = "9045193D3112C823411A5E917FD8B531", hash_generated_field = "FE0143F1FA8AEE992FE6EE3E360B86DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.218 -0500", hash_original_field = "9045193D3112C823411A5E917FD8B531", hash_generated_field = "FE0143F1FA8AEE992FE6EE3E360B86DA")
 
     private static final boolean TRACE_FOR_PRELOAD = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.890 -0500", hash_original_field = "8F29DF0FE1722971037E487B7FD1D63D", hash_generated_field = "4CD3842605BE6EE30BF77207C2F75B29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.221 -0500", hash_original_field = "8F29DF0FE1722971037E487B7FD1D63D", hash_generated_field = "4CD3842605BE6EE30BF77207C2F75B29")
 
     private static final boolean TRACE_FOR_MISS_PRELOAD = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.891 -0500", hash_original_field = "C9CA7C26E8EB9FE4811FE950D2640279", hash_generated_field = "C862CC81028DD3AA6BB9CABD701825FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.223 -0500", hash_original_field = "C9CA7C26E8EB9FE4811FE950D2640279", hash_generated_field = "C862CC81028DD3AA6BB9CABD701825FB")
 
 
     private static final int ID_OTHER = 0x01000004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.892 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "F668D47897E28620543685D1E68BB2A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.225 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "F668D47897E28620543685D1E68BB2A5")
 
 
     private static final Object mSync = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.893 -0500", hash_original_field = "2B10381FAC408B00D7EEB9F47F3BA009", hash_generated_field = "B0DD5DC72B0C526323B11A6CF67A9E4F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.228 -0500", hash_original_field = "2B10381FAC408B00D7EEB9F47F3BA009", hash_generated_field = "B0DD5DC72B0C526323B11A6CF67A9E4F")
  static Resources mSystem = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:53.676 -0500", hash_original_field = "D431C2F709CB1E937443230B6EA54F75", hash_generated_field = "2B5D012CFA7A004E497CE506CF5AD619")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.230 -0500", hash_original_field = "D431C2F709CB1E937443230B6EA54F75", hash_generated_field = "2B5D012CFA7A004E497CE506CF5AD619")
 
     // protected by a lock, because while preloading in zygote we are all
     // single-threaded, and after that these are immutable.
     private static final LongSparseArray<Drawable.ConstantState> sPreloadedDrawables
             = new LongSparseArray<Drawable.ConstantState>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.894 -0500", hash_original_field = "5601BAA9C3F19C65D800B3301467DA51", hash_generated_field = "7BD9FC30967896FB869451238EE23A0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.233 -0500", hash_original_field = "5601BAA9C3F19C65D800B3301467DA51", hash_generated_field = "7BD9FC30967896FB869451238EE23A0C")
 
     private static final SparseArray<ColorStateList> mPreloadedColorStateLists
             = new SparseArray<ColorStateList>();
@@ -175,59 +175,59 @@ public class Resources {
             //super(size);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.895 -0500", hash_original_field = "9099E42B2BF11313F2D793DD368CD27E", hash_generated_field = "235E8CAB2CC01C0FEFA2A60D1BF91B25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.235 -0500", hash_original_field = "9099E42B2BF11313F2D793DD368CD27E", hash_generated_field = "235E8CAB2CC01C0FEFA2A60D1BF91B25")
 
     private static final LongSparseArray<Drawable.ConstantState> sPreloadedColorDrawables
             = new LongSparseArray<Drawable.ConstantState>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.896 -0500", hash_original_field = "91D7834328963FA66F96844F0C5FE85F", hash_generated_field = "C895D84621E3994464E604D55CAE67F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.237 -0500", hash_original_field = "91D7834328963FA66F96844F0C5FE85F", hash_generated_field = "C895D84621E3994464E604D55CAE67F1")
 
     private static boolean mPreloaded;
     private static final LongSparseArray<Object> EMPTY_ARRAY = new MyEmptyArray(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.897 -0500", hash_original_field = "3E9DE2CC62973C980770A1C51776F761", hash_generated_field = "F4896FA60EAF46F89D1B23DB39A94469")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.239 -0500", hash_original_field = "3E9DE2CC62973C980770A1C51776F761", hash_generated_field = "F4896FA60EAF46F89D1B23DB39A94469")
  final TypedValue mTmpValue = new TypedValue();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.898 -0500", hash_original_field = "9D24B7F34F84AC01BB0E89B30BBD1790", hash_generated_field = "914D1123EB75F882952E0A98C7FB0DC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.241 -0500", hash_original_field = "9D24B7F34F84AC01BB0E89B30BBD1790", hash_generated_field = "914D1123EB75F882952E0A98C7FB0DC2")
  final Configuration mTmpConfig = new Configuration();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.898 -0500", hash_original_field = "A8A412581C53DE1E92331A7A2342642F", hash_generated_field = "2497447FAB09A4CFB8FC865DC436A822")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.244 -0500", hash_original_field = "A8A412581C53DE1E92331A7A2342642F", hash_generated_field = "2497447FAB09A4CFB8FC865DC436A822")
 
     private final LongSparseArray<WeakReference<Drawable.ConstantState> > mDrawableCache
             = new LongSparseArray<WeakReference<Drawable.ConstantState> >();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.899 -0500", hash_original_field = "2A70ACFE3CA39CC9D47B2F426EDC20F3", hash_generated_field = "933772720D2EC5433FC43B2D14875AB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.246 -0500", hash_original_field = "2A70ACFE3CA39CC9D47B2F426EDC20F3", hash_generated_field = "933772720D2EC5433FC43B2D14875AB3")
 
     private final SparseArray<WeakReference<ColorStateList> > mColorStateListCache
             = new SparseArray<WeakReference<ColorStateList> >();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.900 -0500", hash_original_field = "D8425D2288D0FBFD7EEA253DF7C08ED4", hash_generated_field = "7B6BE91A39836F0EC0472965B013125A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.248 -0500", hash_original_field = "D8425D2288D0FBFD7EEA253DF7C08ED4", hash_generated_field = "7B6BE91A39836F0EC0472965B013125A")
 
     private final LongSparseArray<WeakReference<Drawable.ConstantState> > mColorDrawableCache
             = new LongSparseArray<WeakReference<Drawable.ConstantState> >();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.901 -0500", hash_original_field = "77C83110B6565866F474BD7941A8BA75", hash_generated_field = "5259D7DBB68DFBC3AE42A15C0065F5F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.251 -0500", hash_original_field = "77C83110B6565866F474BD7941A8BA75", hash_generated_field = "5259D7DBB68DFBC3AE42A15C0065F5F7")
 
     private boolean mPreloading;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.902 -0500", hash_original_field = "7F4C1E655952669DB05D0D7D3EE40E92", hash_generated_field = "7F4C1E655952669DB05D0D7D3EE40E92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.253 -0500", hash_original_field = "7F4C1E655952669DB05D0D7D3EE40E92", hash_generated_field = "7F4C1E655952669DB05D0D7D3EE40E92")
  TypedArray mCachedStyledAttributes = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.902 -0500", hash_original_field = "BB3486733E348C9268582EB8BBF07AF9", hash_generated_field = "BB3486733E348C9268582EB8BBF07AF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.255 -0500", hash_original_field = "BB3486733E348C9268582EB8BBF07AF9", hash_generated_field = "BB3486733E348C9268582EB8BBF07AF9")
 
     RuntimeException mLastRetrievedAttrs = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.903 -0500", hash_original_field = "A4A22804FE49495B5F278DEBA7A03C59", hash_generated_field = "D7E7153558BB8F6EF13392C958C199F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.257 -0500", hash_original_field = "A4A22804FE49495B5F278DEBA7A03C59", hash_generated_field = "D7E7153558BB8F6EF13392C958C199F3")
 
 
     private int mLastCachedXmlBlockIndex = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.904 -0500", hash_original_field = "7A670BEAB8E9FBBA8553AF66CADA72C6", hash_generated_field = "279259CEA3B9EA7BE3315FDEF65F4C2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.259 -0500", hash_original_field = "7A670BEAB8E9FBBA8553AF66CADA72C6", hash_generated_field = "279259CEA3B9EA7BE3315FDEF65F4C2B")
 
     private final int[] mCachedXmlBlockIds = { 0, 0, 0, 0 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.905 -0500", hash_original_field = "B9E7CC3A90DC133D911CD28FFFCADAC1", hash_generated_field = "8B8D941C6918446EE4A5194B99D8AA93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.261 -0500", hash_original_field = "B9E7CC3A90DC133D911CD28FFFCADAC1", hash_generated_field = "8B8D941C6918446EE4A5194B99D8AA93")
 
     private final XmlBlock[] mCachedXmlBlocks = new XmlBlock[4];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.905 -0500", hash_original_field = "4C5448F642D7E098FE1B989A50398568", hash_generated_field = "4C5448F642D7E098FE1B989A50398568")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.263 -0500", hash_original_field = "4C5448F642D7E098FE1B989A50398568", hash_generated_field = "4C5448F642D7E098FE1B989A50398568")
   AssetManager mAssets;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.906 -0500", hash_original_field = "3C4DD425CF8419EC4E2481AF19CC253D", hash_generated_field = "A59DFC0CAA3A3B58227151AEDB308CC4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.266 -0500", hash_original_field = "3C4DD425CF8419EC4E2481AF19CC253D", hash_generated_field = "A59DFC0CAA3A3B58227151AEDB308CC4")
 
     private final Configuration mConfiguration = new Configuration();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.907 -0500", hash_original_field = "86B3BC57B90084EEB437023CD43EAEE3", hash_generated_field = "67B89A314350924017B72D96E300AA50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.268 -0500", hash_original_field = "86B3BC57B90084EEB437023CD43EAEE3", hash_generated_field = "67B89A314350924017B72D96E300AA50")
  final DisplayMetrics mMetrics = new DisplayMetrics();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.908 -0500", hash_original_field = "654E5071906E3AA77B36C631DC4D739E", hash_generated_field = "818136B22260098E65F6ED2716C3D72D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.270 -0500", hash_original_field = "654E5071906E3AA77B36C631DC4D739E", hash_generated_field = "818136B22260098E65F6ED2716C3D72D")
 
     private NativePluralRules mPluralRule;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.909 -0500", hash_original_field = "EC831B49FC8A431DBFEE3F5043766966", hash_generated_field = "D59F4BA3BF864567D7F711BF240A9A65")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.272 -0500", hash_original_field = "EC831B49FC8A431DBFEE3F5043766966", hash_generated_field = "D59F4BA3BF864567D7F711BF240A9A65")
 
     
     private CompatibilityInfo mCompatibilityInfo;
@@ -242,8 +242,9 @@ public class Resources {
      * @param config Desired device configuration to consider when 
      *               selecting/computing resource values (optional).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.918 -0500", hash_original_method = "A1A5E1FE4CAABF0AED8ED513B68BEBB1", hash_generated_method = "19A8799E1FA0C65A24990C8EC07E917D")
-    public Resources(AssetManager assets, DisplayMetrics metrics,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.297 -0500", hash_original_method = "A1A5E1FE4CAABF0AED8ED513B68BEBB1", hash_generated_method = "19A8799E1FA0C65A24990C8EC07E917D")
+    
+public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config) {
         this(assets, metrics, config, (CompatibilityInfo) null);
     }
@@ -873,8 +874,9 @@ public class Resources {
      * 
      * @return The resource's current configuration. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.970 -0500", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "EE9863339B6D3DC9E206378BA342F32D")
-    public Configuration getConfiguration() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.440 -0500", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "EE9863339B6D3DC9E206378BA342F32D")
+    
+public Configuration getConfiguration() {
         return mConfiguration;
     }
 
@@ -968,12 +970,14 @@ public class Resources {
 
     
     public static class NotFoundException extends RuntimeException {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.915 -0500", hash_original_method = "16646BE2B605A836CC81C1207D23548C", hash_generated_method = "6D902CC3B723F053FD21F8F6EC56EB38")
-        public NotFoundException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.291 -0500", hash_original_method = "16646BE2B605A836CC81C1207D23548C", hash_generated_method = "6D902CC3B723F053FD21F8F6EC56EB38")
+        
+public NotFoundException() {
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.916 -0500", hash_original_method = "4E6E00F1F6EDF0AE5B66F6F35CDBCBD1", hash_generated_method = "CC1F9D086F58D5BFF08FBA17AA171A6F")
-        public NotFoundException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.294 -0500", hash_original_method = "4E6E00F1F6EDF0AE5B66F6F35CDBCBD1", hash_generated_method = "CC1F9D086F58D5BFF08FBA17AA171A6F")
+        
+public NotFoundException(String name) {
             super(name);
         }
         
@@ -1147,8 +1151,9 @@ public class Resources {
     /**
      * Retrieve underlying AssetManager storage for these resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:09.979 -0500", hash_original_method = "B655DEE21C3816C25C0AC2AC9EDD1950", hash_generated_method = "8214F1367B54F9887420B22D5E3D96C5")
-    public final AssetManager getAssets() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.464 -0500", hash_original_method = "B655DEE21C3816C25C0AC2AC9EDD1950", hash_generated_method = "8214F1367B54F9887420B22D5E3D96C5")
+    
+public final AssetManager getAssets() {
         return mAssets;
     }
 

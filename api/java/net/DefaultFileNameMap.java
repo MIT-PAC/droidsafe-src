@@ -16,8 +16,9 @@ class DefaultFileNameMap implements FileNameMap {
     {
         //Synthesized constructor
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.741 -0500", hash_original_method = "CD3BB5C1D36DDF595D7942DB441DE716", hash_generated_method = "383DA40FA4C20B646270A71CD8C2DB89")
-    public String getContentTypeFor(String filename) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.535 -0500", hash_original_method = "CD3BB5C1D36DDF595D7942DB441DE716", hash_generated_method = "383DA40FA4C20B646270A71CD8C2DB89")
+    
+public String getContentTypeFor(String filename) {
         if (filename.endsWith("/")) {
             // a directory, return html
             return MimeUtils.guessMimeTypeFromExtension("html");

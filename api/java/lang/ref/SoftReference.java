@@ -14,8 +14,9 @@ public class SoftReference<T> extends Reference<T> {
      *
      * @param r the referent to track
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.562 -0500", hash_original_method = "580748AA620617AA151344F4D11AC7C2", hash_generated_method = "150253DAD26A10AB954083587CB2FFDD")
-    public SoftReference(T r) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.957 -0500", hash_original_method = "580748AA620617AA151344F4D11AC7C2", hash_generated_method = "150253DAD26A10AB954083587CB2FFDD")
+    
+public SoftReference(T r) {
         super(r, null);
     }
 
@@ -28,8 +29,9 @@ public class SoftReference<T> extends Reference<T> {
      *          results in a weak reference that is not associated with any
      *          queue.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.563 -0500", hash_original_method = "123F9816B0FED05FA5B253267B81F032", hash_generated_method = "A8DF8D86A10B68C4CE29EE706C113C2D")
-    public SoftReference(T r, ReferenceQueue<? super T> q) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.961 -0500", hash_original_method = "123F9816B0FED05FA5B253267B81F032", hash_generated_method = "A8DF8D86A10B68C4CE29EE706C113C2D")
+    
+public SoftReference(T r, ReferenceQueue<? super T> q) {
         super(r, q);
     }
 

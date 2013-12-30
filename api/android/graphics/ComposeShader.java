@@ -39,11 +39,11 @@ public class ComposeShader extends Shader {
             int native_skiaShaderB, int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.359 -0500", hash_original_field = "27E69BFD969C4FEF73690310ABD89FC4", hash_generated_field = "9D1A193A171A566C28715B3DF9829B6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.871 -0500", hash_original_field = "27E69BFD969C4FEF73690310ABD89FC4", hash_generated_field = "9D1A193A171A566C28715B3DF9829B6D")
 
     @SuppressWarnings({"UnusedDeclaration"})
     private  Shader mShaderA;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.360 -0500", hash_original_field = "09FD3D72269AD2B4025D8BB544F1EF34", hash_generated_field = "0BC17BE1D67AE4FB7B6930A577FEA85A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.874 -0500", hash_original_field = "09FD3D72269AD2B4025D8BB544F1EF34", hash_generated_field = "0BC17BE1D67AE4FB7B6930A577FEA85A")
 
     @SuppressWarnings({"UnusedDeclaration"})
     private  Shader mShaderB;
@@ -56,8 +56,9 @@ public class ComposeShader extends Shader {
         @param mode     The mode that combines the colors from the two shaders. If mode
                         is null, then SRC_OVER is assumed.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.361 -0500", hash_original_method = "54479FEAF5918A2D0015420E3AF1868D", hash_generated_method = "70A6BE8E028F56F9FFA10E60669FE620")
-    public ComposeShader(Shader shaderA, Shader shaderB, Xfermode mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.876 -0500", hash_original_method = "54479FEAF5918A2D0015420E3AF1868D", hash_generated_method = "70A6BE8E028F56F9FFA10E60669FE620")
+    
+public ComposeShader(Shader shaderA, Shader shaderB, Xfermode mode) {
         mShaderA = shaderA;
         mShaderB = shaderB;
         native_instance = nativeCreate1(shaderA.native_instance, shaderB.native_instance,
@@ -79,8 +80,9 @@ public class ComposeShader extends Shader {
         @param shaderB  The colors from this shader are seen as the "src" by the mode
         @param mode     The PorterDuff mode that combines the colors from the two shaders.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.362 -0500", hash_original_method = "6DA3793B1F4C3B72942152784A23C545", hash_generated_method = "A66B37B2F23E2B67959A8F5C71554A72")
-    public ComposeShader(Shader shaderA, Shader shaderB, PorterDuff.Mode mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.879 -0500", hash_original_method = "6DA3793B1F4C3B72942152784A23C545", hash_generated_method = "A66B37B2F23E2B67959A8F5C71554A72")
+    
+public ComposeShader(Shader shaderA, Shader shaderB, PorterDuff.Mode mode) {
         mShaderA = shaderA;
         mShaderB = shaderB;
         native_instance = nativeCreate2(shaderA.native_instance, shaderB.native_instance,

@@ -6,29 +6,31 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import android.util.Log;
 public class BaseObj {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.826 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "B318151FF40ADE16FE6B3D1CFBCF936A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.592 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "B318151FF40ADE16FE6B3D1CFBCF936A")
 
 
     private int mID;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.827 -0500", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "1C64CB399BFF718CD14799195853AA6E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.594 -0500", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "1C64CB399BFF718CD14799195853AA6E")
 
     private boolean mDestroyed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.828 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.597 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
 
     private String mName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.828 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.600 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
 
     RenderScript mRS;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.823 -0500", hash_original_method = "C8BB1F812AF2F94B259A1E5D31EF6D41", hash_generated_method = "C8BB1F812AF2F94B259A1E5D31EF6D41")
-    BaseObj(int id, RenderScript rs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.584 -0500", hash_original_method = "C8BB1F812AF2F94B259A1E5D31EF6D41", hash_generated_method = "C8BB1F812AF2F94B259A1E5D31EF6D41")
+    
+BaseObj(int id, RenderScript rs) {
         rs.validate();
         mRS = rs;
         mID = id;
         mDestroyed = false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.824 -0500", hash_original_method = "092163F994B2BA343A828C1CA6CB67EF", hash_generated_method = "092163F994B2BA343A828C1CA6CB67EF")
-    void setID(int id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.586 -0500", hash_original_method = "092163F994B2BA343A828C1CA6CB67EF", hash_generated_method = "092163F994B2BA343A828C1CA6CB67EF")
+    
+void setID(int id) {
         if (mID != 0) {
             throw new RSRuntimeException("Internal Error, reset of object ID.");
         }
@@ -42,8 +44,9 @@ public class BaseObj {
      *
      * @return int
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.825 -0500", hash_original_method = "070330937CB15D09BB5E296631EB884D", hash_generated_method = "070330937CB15D09BB5E296631EB884D")
-    int getID() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.588 -0500", hash_original_method = "070330937CB15D09BB5E296631EB884D", hash_generated_method = "070330937CB15D09BB5E296631EB884D")
+    
+int getID() {
         if (mDestroyed) {
             throw new RSInvalidStateException("using a destroyed object.");
         }
@@ -53,8 +56,9 @@ public class BaseObj {
         return mID;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.825 -0500", hash_original_method = "B7F1DAC6FB0A90239CE3626781D0AB2E", hash_generated_method = "B7F1DAC6FB0A90239CE3626781D0AB2E")
-    void checkValid() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.590 -0500", hash_original_method = "B7F1DAC6FB0A90239CE3626781D0AB2E", hash_generated_method = "B7F1DAC6FB0A90239CE3626781D0AB2E")
+    
+void checkValid() {
         if (mID == 0) {
             throw new RSIllegalArgumentException("Invalid object.");
         }
@@ -67,8 +71,9 @@ public class BaseObj {
      *
      * @param name The name to assign to the object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.829 -0500", hash_original_method = "1123E46F9FC56B053C2DA43752023478", hash_generated_method = "D4A755E3B396C03321547607F95D63DF")
-    public void setName(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.602 -0500", hash_original_method = "1123E46F9FC56B053C2DA43752023478", hash_generated_method = "D4A755E3B396C03321547607F95D63DF")
+    
+public void setName(String name) {
         if (name == null) {
             throw new RSIllegalArgumentException(
                 "setName requires a string of non-zero length.");
@@ -94,13 +99,15 @@ public class BaseObj {
     /**
      * @return name of the renderscript object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.830 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
-    public String getName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.605 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
+    
+public String getName() {
         return mName;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.831 -0500", hash_original_method = "FF2533C9D3CAE2C033B0095CDF311C3A", hash_generated_method = "97E99162245CF60BE105276AB1EEC25D")
-    protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.607 -0500", hash_original_method = "FF2533C9D3CAE2C033B0095CDF311C3A", hash_generated_method = "97E99162245CF60BE105276AB1EEC25D")
+    
+protected void finalize() throws Throwable {
         if (!mDestroyed) {
             if(mID != 0 && mRS.isAlive()) {
                 mRS.nObjDestroy(mID);
@@ -120,8 +127,9 @@ public class BaseObj {
      * cleanup of resources when it is believed the GC will not respond quickly
      * enough.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.832 -0500", hash_original_method = "48EC2BD0914D5724BE75C18442D4A6A2", hash_generated_method = "7FE30A244080FE3DFA9FBCE6A1C0F05D")
-    synchronized public void destroy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.610 -0500", hash_original_method = "48EC2BD0914D5724BE75C18442D4A6A2", hash_generated_method = "7FE30A244080FE3DFA9FBCE6A1C0F05D")
+    
+synchronized public void destroy() {
         if(mDestroyed) {
             throw new RSInvalidStateException("Object already destroyed.");
         }
@@ -133,8 +141,9 @@ public class BaseObj {
      * If an object came from an a3d file, java fields need to be
      * created with objects from the native layer
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.832 -0500", hash_original_method = "AB3B4827E233BF1789642230E2C32EC4", hash_generated_method = "AB3B4827E233BF1789642230E2C32EC4")
-    void updateFromNative() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.612 -0500", hash_original_method = "AB3B4827E233BF1789642230E2C32EC4", hash_generated_method = "AB3B4827E233BF1789642230E2C32EC4")
+    
+void updateFromNative() {
         mRS.validate();
         mName = mRS.nGetName(getID());
     }
@@ -144,9 +153,10 @@ public class BaseObj {
      *
      * @return int
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.833 -0500", hash_original_method = "399A2DDCEE4C827B87F141BE75C58C17", hash_generated_method = "F7736150B11B3F6FB6A6BC4E4FE9CAB4")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.614 -0500", hash_original_method = "399A2DDCEE4C827B87F141BE75C58C17", hash_generated_method = "F7736150B11B3F6FB6A6BC4E4FE9CAB4")
+    
+@Override
+    public int hashCode() {
         return mID;
     }
 
@@ -157,9 +167,10 @@ public int hashCode() {
      *
      * @return boolean
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.834 -0500", hash_original_method = "60FC0B8BE57466D21B9D49483A61B23F", hash_generated_method = "F915E46001B4749FC6EB32B77CE142F9")
-    @Override
-public boolean equals(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.617 -0500", hash_original_method = "60FC0B8BE57466D21B9D49483A61B23F", hash_generated_method = "F915E46001B4749FC6EB32B77CE142F9")
+    
+@Override
+    public boolean equals(Object obj) {
         // Early-out check to see if both BaseObjs are actually the same
         if (this == obj)
             return true;

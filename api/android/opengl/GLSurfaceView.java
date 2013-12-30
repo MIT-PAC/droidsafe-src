@@ -29,81 +29,81 @@ import android.view.SurfaceView;
 
 
 public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.008 -0500", hash_original_field = "B2B0A61E120CF69A740A0EBBEFCB0DCC", hash_generated_field = "4034EC823D59F85BB049B0361EB812F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.444 -0500", hash_original_field = "B2B0A61E120CF69A740A0EBBEFCB0DCC", hash_generated_field = "4034EC823D59F85BB049B0361EB812F4")
 
     private final static String TAG = "GLSurfaceView";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.009 -0500", hash_original_field = "74D8DC872CDC0A5418D3946243C9EF50", hash_generated_field = "1EE3A05D4667F28D82E3A91570ACECC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.447 -0500", hash_original_field = "74D8DC872CDC0A5418D3946243C9EF50", hash_generated_field = "1EE3A05D4667F28D82E3A91570ACECC2")
 
     private final static boolean LOG_ATTACH_DETACH = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.010 -0500", hash_original_field = "BEDC3182AA02377BAFE05B8E3F2ECA81", hash_generated_field = "7A59CB5BFE26193256ADA36CA0D612E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.450 -0500", hash_original_field = "BEDC3182AA02377BAFE05B8E3F2ECA81", hash_generated_field = "7A59CB5BFE26193256ADA36CA0D612E2")
 
     private final static boolean LOG_THREADS = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.011 -0500", hash_original_field = "012C3D1DB78EF88A1D9A6DBE2EB7F0EE", hash_generated_field = "FBAB33E8D4FA0CCAEA6311BEFEA4806A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.453 -0500", hash_original_field = "012C3D1DB78EF88A1D9A6DBE2EB7F0EE", hash_generated_field = "FBAB33E8D4FA0CCAEA6311BEFEA4806A")
 
     private final static boolean LOG_PAUSE_RESUME = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.012 -0500", hash_original_field = "8E477B533CDEB596B04BC8AF900C5AD3", hash_generated_field = "0509E45F538814A0914CCDF76BF039B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.456 -0500", hash_original_field = "8E477B533CDEB596B04BC8AF900C5AD3", hash_generated_field = "0509E45F538814A0914CCDF76BF039B0")
 
     private final static boolean LOG_SURFACE = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.013 -0500", hash_original_field = "9A775B4DE0004C2C3744E696050D95F7", hash_generated_field = "7733B6AF262A325B4E3B0B3F5F6ABFD4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.458 -0500", hash_original_field = "9A775B4DE0004C2C3744E696050D95F7", hash_generated_field = "7733B6AF262A325B4E3B0B3F5F6ABFD4")
 
     private final static boolean LOG_RENDERER = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.013 -0500", hash_original_field = "174AA4313CFF31E253F621931DE828F1", hash_generated_field = "9767E7A30553B720521176A0B1C7A7DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.461 -0500", hash_original_field = "174AA4313CFF31E253F621931DE828F1", hash_generated_field = "9767E7A30553B720521176A0B1C7A7DF")
 
     private final static boolean LOG_RENDERER_DRAW_FRAME = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.014 -0500", hash_original_field = "FF78D40B79676A0EA92769F105FB2F53", hash_generated_field = "6374488C33DF12121CA7B9425BE95249")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.463 -0500", hash_original_field = "FF78D40B79676A0EA92769F105FB2F53", hash_generated_field = "6374488C33DF12121CA7B9425BE95249")
 
     private final static boolean LOG_EGL = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.015 -0500", hash_original_field = "FAA8A58D3C445652D1BA1207ADEA87BC", hash_generated_field = "0E2BD5A2E10A5705ABDA8B3F88084518")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.467 -0500", hash_original_field = "FAA8A58D3C445652D1BA1207ADEA87BC", hash_generated_field = "0E2BD5A2E10A5705ABDA8B3F88084518")
 
     private final static boolean DRAW_TWICE_AFTER_SIZE_CHANGED = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.016 -0500", hash_original_field = "36BAAA78AB5A9CADAC22299820165F35", hash_generated_field = "14B58EB967907A856FA213C29C42BA45")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.469 -0500", hash_original_field = "36BAAA78AB5A9CADAC22299820165F35", hash_generated_field = "14B58EB967907A856FA213C29C42BA45")
 
     public final static int RENDERMODE_WHEN_DIRTY = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.017 -0500", hash_original_field = "467DA93F8632EB029733DA0EC5C267E4", hash_generated_field = "560E958618800A224F6FD592043FEB61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.472 -0500", hash_original_field = "467DA93F8632EB029733DA0EC5C267E4", hash_generated_field = "560E958618800A224F6FD592043FEB61")
 
     public final static int RENDERMODE_CONTINUOUSLY = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.018 -0500", hash_original_field = "49459274F7DBAEA0C9B45D9BFEA099C4", hash_generated_field = "5D4C6365859FA1400C6019E0BBDAC737")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.474 -0500", hash_original_field = "49459274F7DBAEA0C9B45D9BFEA099C4", hash_generated_field = "5D4C6365859FA1400C6019E0BBDAC737")
 
     public final static int DEBUG_CHECK_GL_ERROR = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.019 -0500", hash_original_field = "6D17F4B316F5AE5DED33C87AEE1BF3BE", hash_generated_field = "D663A579D7909EF5537DE06901903309")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.477 -0500", hash_original_field = "6D17F4B316F5AE5DED33C87AEE1BF3BE", hash_generated_field = "D663A579D7909EF5537DE06901903309")
 
     public final static int DEBUG_LOG_GL_CALLS = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.145 -0500", hash_original_field = "87E37158AC15E4B0BB0B2135E699EE13", hash_generated_field = "2A611276FE9639F8735EA60D1E43AEA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.833 -0500", hash_original_field = "87E37158AC15E4B0BB0B2135E699EE13", hash_generated_field = "2A611276FE9639F8735EA60D1E43AEA3")
 
 
     private static final GLThreadManager sGLThreadManager = new GLThreadManager();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.145 -0500", hash_original_field = "B8B7EF20A31F9D80C8061C2901F9F992", hash_generated_field = "E80A115172E1CADCEDB95343305F31F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.836 -0500", hash_original_field = "B8B7EF20A31F9D80C8061C2901F9F992", hash_generated_field = "E80A115172E1CADCEDB95343305F31F8")
 
     private boolean mSizeChanged = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.146 -0500", hash_original_field = "19D0003F4E4380ADE49769B81A6E13CA", hash_generated_field = "2E75A75105E7522B16840413392C2719")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.838 -0500", hash_original_field = "19D0003F4E4380ADE49769B81A6E13CA", hash_generated_field = "2E75A75105E7522B16840413392C2719")
 
 
     private GLThread mGLThread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.147 -0500", hash_original_field = "720EF707169F06701CBF89E969BC03B3", hash_generated_field = "655D7742BDF0154D755D8012DFB26E60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.841 -0500", hash_original_field = "720EF707169F06701CBF89E969BC03B3", hash_generated_field = "655D7742BDF0154D755D8012DFB26E60")
 
     private Renderer mRenderer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.148 -0500", hash_original_field = "F0A7088DB55E87649B19609F5563F724", hash_generated_field = "40F295D8807CAB798532DFEA849C6F06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.843 -0500", hash_original_field = "F0A7088DB55E87649B19609F5563F724", hash_generated_field = "40F295D8807CAB798532DFEA849C6F06")
 
     private boolean mDetached;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.148 -0500", hash_original_field = "0918EAC64CBD4B4254784C02F0E8C22B", hash_generated_field = "0D06A0983D993F273B4D8ECA63328176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.845 -0500", hash_original_field = "0918EAC64CBD4B4254784C02F0E8C22B", hash_generated_field = "0D06A0983D993F273B4D8ECA63328176")
 
     private EGLConfigChooser mEGLConfigChooser;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.149 -0500", hash_original_field = "5C8EB01BDEE335ECCE23DD3AB6592AC9", hash_generated_field = "22ED109E5D19AE599E44288A7242C1E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.848 -0500", hash_original_field = "5C8EB01BDEE335ECCE23DD3AB6592AC9", hash_generated_field = "22ED109E5D19AE599E44288A7242C1E5")
 
     private EGLContextFactory mEGLContextFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.150 -0500", hash_original_field = "D678752BAA5DEB5572FC6E782E63D8A0", hash_generated_field = "E3117B1108AE650B6C49E72DB2814A93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.850 -0500", hash_original_field = "D678752BAA5DEB5572FC6E782E63D8A0", hash_generated_field = "E3117B1108AE650B6C49E72DB2814A93")
 
     private EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.151 -0500", hash_original_field = "EA2FF7843754FD0B03744F9DA24AEBE0", hash_generated_field = "AB1795361F8C868AADE39F41E168626E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.852 -0500", hash_original_field = "EA2FF7843754FD0B03744F9DA24AEBE0", hash_generated_field = "AB1795361F8C868AADE39F41E168626E")
 
     private GLWrapper mGLWrapper;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.152 -0500", hash_original_field = "D7CF670418C964679B827E373E26BC89", hash_generated_field = "9496F66E2598A164065A99C1FFE9527C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.855 -0500", hash_original_field = "D7CF670418C964679B827E373E26BC89", hash_generated_field = "9496F66E2598A164065A99C1FFE9527C")
 
     private int mDebugFlags;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.152 -0500", hash_original_field = "C09C18F578C27CE95961BD2B765DC819", hash_generated_field = "AB21D5DA668CEB71C5BE53180E39D9DB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.857 -0500", hash_original_field = "C09C18F578C27CE95961BD2B765DC819", hash_generated_field = "AB21D5DA668CEB71C5BE53180E39D9DB")
 
     private int mEGLContextClientVersion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.153 -0500", hash_original_field = "318533DB197A141C90A19653639140A1", hash_generated_field = "B7274B6FEDA290C84C4C186237763B86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.859 -0500", hash_original_field = "318533DB197A141C90A19653639140A1", hash_generated_field = "B7274B6FEDA290C84C4C186237763B86")
 
     private boolean mPreserveEGLContextOnPause;
 
@@ -111,8 +111,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * Standard View constructor. In order to render something, you
      * must call {@link #setRenderer} to register a renderer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.020 -0500", hash_original_method = "2049D028AED77772C0EF08D2BBAE876F", hash_generated_method = "0B9876CB69076368282CCF3E5F778061")
-    public GLSurfaceView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.479 -0500", hash_original_method = "2049D028AED77772C0EF08D2BBAE876F", hash_generated_method = "0B9876CB69076368282CCF3E5F778061")
+    
+public GLSurfaceView(Context context) {
         super(context);
         init();
     }
@@ -121,14 +122,16 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * Standard View constructor. In order to render something, you
      * must call {@link #setRenderer} to register a renderer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.021 -0500", hash_original_method = "93DD44BF6C3B90D77E42FC0AB73B1708", hash_generated_method = "88C0E6A2ABE0F69B7804229BCC880863")
-    public GLSurfaceView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.482 -0500", hash_original_method = "93DD44BF6C3B90D77E42FC0AB73B1708", hash_generated_method = "88C0E6A2ABE0F69B7804229BCC880863")
+    
+public GLSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.021 -0500", hash_original_method = "E27264F3583A6717A4BE0996AD22B7A6", hash_generated_method = "BBFB4A66C22BD7ED9F5426D3679A0B9F")
-    private void init() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.485 -0500", hash_original_method = "E27264F3583A6717A4BE0996AD22B7A6", hash_generated_method = "BBFB4A66C22BD7ED9F5426D3679A0B9F")
+    
+private void init() {
         // Install a SurfaceHolder.Callback so we get notified when the
         // underlying surface is created and destroyed
         SurfaceHolder holder = getHolder();
@@ -155,8 +158,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * The default value is null.
      * @param glWrapper the new GLWrapper
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.022 -0500", hash_original_method = "62AADEA51F1A9BF5575F2E5A0791202E", hash_generated_method = "77657B2994DE7DC1177BF6FFE564238B")
-    public void setGLWrapper(GLWrapper glWrapper) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.487 -0500", hash_original_method = "62AADEA51F1A9BF5575F2E5A0791202E", hash_generated_method = "77657B2994DE7DC1177BF6FFE564238B")
+    
+public void setGLWrapper(GLWrapper glWrapper) {
         mGLWrapper = glWrapper;
     }
 
@@ -169,8 +173,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * @see #DEBUG_CHECK_GL_ERROR
      * @see #DEBUG_LOG_GL_CALLS
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.023 -0500", hash_original_method = "95CD067D63C131003FD4FBBE7098897E", hash_generated_method = "9261BD1612C1499767F68F30239E960D")
-    public void setDebugFlags(int debugFlags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.489 -0500", hash_original_method = "95CD067D63C131003FD4FBBE7098897E", hash_generated_method = "9261BD1612C1499767F68F30239E960D")
+    
+public void setDebugFlags(int debugFlags) {
         mDebugFlags = debugFlags;
     }
 
@@ -178,8 +183,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * Get the current value of the debug flags.
      * @return the current value of the debug flags.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.024 -0500", hash_original_method = "6993850204A95232CAB55D0CCC1BAFCE", hash_generated_method = "5B8569C0D13F507F30A669044C905414")
-    public int getDebugFlags() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.492 -0500", hash_original_method = "6993850204A95232CAB55D0CCC1BAFCE", hash_generated_method = "5B8569C0D13F507F30A669044C905414")
+    
+public int getDebugFlags() {
         return mDebugFlags;
     }
 
@@ -201,16 +207,18 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      *
      * @param preserveOnPause preserve the EGL context when paused
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.024 -0500", hash_original_method = "717A951DD1F3691DEF19A2756D2824F8", hash_generated_method = "1E69CC3A9974E31AB26DB2643D08D99D")
-    public void setPreserveEGLContextOnPause(boolean preserveOnPause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.494 -0500", hash_original_method = "717A951DD1F3691DEF19A2756D2824F8", hash_generated_method = "1E69CC3A9974E31AB26DB2643D08D99D")
+    
+public void setPreserveEGLContextOnPause(boolean preserveOnPause) {
         mPreserveEGLContextOnPause = preserveOnPause;
     }
 
     /**
      * @return true if the EGL context will be preserved when paused
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.025 -0500", hash_original_method = "60238A7236A689DEF9712C11E43803DE", hash_generated_method = "10C6F477746D24D894FB8556AED5D14D")
-    public boolean getPreserveEGLContextOnPause() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.496 -0500", hash_original_method = "60238A7236A689DEF9712C11E43803DE", hash_generated_method = "10C6F477746D24D894FB8556AED5D14D")
+    
+public boolean getPreserveEGLContextOnPause() {
         return mPreserveEGLContextOnPause;
     }
 
@@ -240,8 +248,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      *
      * @param renderer the renderer to use to perform OpenGL drawing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.026 -0500", hash_original_method = "64481B8066824EA776B6FC67FACE8B51", hash_generated_method = "6D4F0DDF00C28B1487EA8661D8C652E0")
-    public void setRenderer(Renderer renderer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.499 -0500", hash_original_method = "64481B8066824EA776B6FC67FACE8B51", hash_generated_method = "6D4F0DDF00C28B1487EA8661D8C652E0")
+    
+public void setRenderer(Renderer renderer) {
         checkRenderThreadState();
         if (mEGLConfigChooser == null) {
             mEGLConfigChooser = new SimpleEGLConfigChooser(true);
@@ -267,8 +276,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * a context will be created with no shared context and
      * with a null attribute list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.027 -0500", hash_original_method = "6F22CFBD5A9926728BF6F0008FB33425", hash_generated_method = "DC9E8D32C039787D64519715E40CE49F")
-    public void setEGLContextFactory(EGLContextFactory factory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.501 -0500", hash_original_method = "6F22CFBD5A9926728BF6F0008FB33425", hash_generated_method = "DC9E8D32C039787D64519715E40CE49F")
+    
+public void setEGLContextFactory(EGLContextFactory factory) {
         checkRenderThreadState();
         mEGLContextFactory = factory;
     }
@@ -282,8 +292,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * If this method is not called, then by default
      * a window surface will be created with a null attribute list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.028 -0500", hash_original_method = "1FB2F696FFEAFBF78B8CE4F0AE52B72E", hash_generated_method = "F074732CBE39BE2ECCCEAEC1A3CF39C3")
-    public void setEGLWindowSurfaceFactory(EGLWindowSurfaceFactory factory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.504 -0500", hash_original_method = "1FB2F696FFEAFBF78B8CE4F0AE52B72E", hash_generated_method = "F074732CBE39BE2ECCCEAEC1A3CF39C3")
+    
+public void setEGLWindowSurfaceFactory(EGLWindowSurfaceFactory factory) {
         checkRenderThreadState();
         mEGLWindowSurfaceFactory = factory;
     }
@@ -300,8 +311,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * at least 16 bits.
      * @param configChooser
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.028 -0500", hash_original_method = "95299B7816E92BC747285D3C263BF3C6", hash_generated_method = "2C35C576067D769596C73CCDB4367EE8")
-    public void setEGLConfigChooser(EGLConfigChooser configChooser) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.507 -0500", hash_original_method = "95299B7816E92BC747285D3C263BF3C6", hash_generated_method = "2C35C576067D769596C73CCDB4367EE8")
+    
+public void setEGLConfigChooser(EGLConfigChooser configChooser) {
         checkRenderThreadState();
         mEGLConfigChooser = configChooser;
     }
@@ -320,14 +332,15 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      *
      * @param needDepth
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.029 -0500", hash_original_method = "226B740D6DC98E22518E0EAB23B55B9E", hash_generated_method = "A3548541304921EF9B9451C8624E09B4")
-    public void setEGLConfigChooser(boolean needDepth) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.509 -0500", hash_original_method = "226B740D6DC98E22518E0EAB23B55B9E", hash_generated_method = "A3548541304921EF9B9451C8624E09B4")
+    
+public void setEGLConfigChooser(boolean needDepth) {
         setEGLConfigChooser(new SimpleEGLConfigChooser(needDepth));
     }
 
     
     private class DefaultContextFactory implements EGLContextFactory {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.044 -0500", hash_original_field = "05ED6095C69105CABAB5DA8E1FBF3493", hash_generated_field = "A15829C68F3F8F197FCD7108E0FB196F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.551 -0500", hash_original_field = "05ED6095C69105CABAB5DA8E1FBF3493", hash_generated_field = "A15829C68F3F8F197FCD7108E0FB196F")
 
         private int EGL_CONTEXT_CLIENT_VERSION = 0x3098;
         
@@ -337,8 +350,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.045 -0500", hash_original_method = "97605796E723B11DCDEB6F529D20F6F4", hash_generated_method = "5A7BAE0B43A11C48A761B3B3B9563853")
-        public EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig config) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.553 -0500", hash_original_method = "97605796E723B11DCDEB6F529D20F6F4", hash_generated_method = "5A7BAE0B43A11C48A761B3B3B9563853")
+        
+public EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig config) {
             int[] attrib_list = {EGL_CONTEXT_CLIENT_VERSION, mEGLContextClientVersion,
                     EGL10.EGL_NONE };
 
@@ -346,8 +360,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
                     mEGLContextClientVersion != 0 ? attrib_list : null);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.046 -0500", hash_original_method = "737CCA85FA60476B1E480C5B63FFDFD8", hash_generated_method = "7F4AE3067E58018C42D724910F1EAC0F")
-        public void destroyContext(EGL10 egl, EGLDisplay display,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.556 -0500", hash_original_method = "737CCA85FA60476B1E480C5B63FFDFD8", hash_generated_method = "7F4AE3067E58018C42D724910F1EAC0F")
+        
+public void destroyContext(EGL10 egl, EGLDisplay display,
                 EGLContext context) {
             if (!egl.eglDestroyContext(display, context)) {
                 Log.e("DefaultContextFactory", "display:" + display + " context: " + context);
@@ -373,8 +388,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.049 -0500", hash_original_method = "B3EF23184592B8D563E81FEA0BB94777", hash_generated_method = "CB969D3F2147F995491B63D875F72A04")
-        public EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.564 -0500", hash_original_method = "B3EF23184592B8D563E81FEA0BB94777", hash_generated_method = "CB969D3F2147F995491B63D875F72A04")
+        
+public EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display,
                 EGLConfig config, Object nativeWindow) {
             EGLSurface result = null;
             try {
@@ -391,8 +407,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.050 -0500", hash_original_method = "E501A8DBEBAA16077B860412B23D22C3", hash_generated_method = "1FEC7822EBA1B2276B6683869996FF4E")
-        public void destroySurface(EGL10 egl, EGLDisplay display,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.566 -0500", hash_original_method = "E501A8DBEBAA16077B860412B23D22C3", hash_generated_method = "1FEC7822EBA1B2276B6683869996FF4E")
+        
+public void destroySurface(EGL10 egl, EGLDisplay display,
                 EGLSurface surface) {
             egl.eglDestroySurface(display, surface);
         }
@@ -403,17 +420,19 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
     
     private abstract class BaseConfigChooser implements EGLConfigChooser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.055 -0500", hash_original_field = "EB34F51E7132820858554B010CC454CD", hash_generated_field = "0A6C46FF0E4A8D427534A13E3913B826")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.583 -0500", hash_original_field = "EB34F51E7132820858554B010CC454CD", hash_generated_field = "0A6C46FF0E4A8D427534A13E3913B826")
 
 
         protected int[] mConfigSpec;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.052 -0500", hash_original_method = "A0DBF051E13A9D28CAE6FB3EFED45483", hash_generated_method = "A5E974EEC38C0E7B12397A24785B6534")
-        public BaseConfigChooser(int[] configSpec) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.575 -0500", hash_original_method = "A0DBF051E13A9D28CAE6FB3EFED45483", hash_generated_method = "A5E974EEC38C0E7B12397A24785B6534")
+        
+public BaseConfigChooser(int[] configSpec) {
             mConfigSpec = filterConfigSpec(configSpec);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.053 -0500", hash_original_method = "8324D0F818B008780D6764BA3D123E5B", hash_generated_method = "63CBED63AE12116AE7A5F601F1A89B78")
-        public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.578 -0500", hash_original_method = "8324D0F818B008780D6764BA3D123E5B", hash_generated_method = "63CBED63AE12116AE7A5F601F1A89B78")
+        
+public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
             int[] num_config = new int[1];
             if (!egl.eglChooseConfig(display, mConfigSpec, null, 0,
                     num_config)) {
@@ -439,12 +458,14 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
             return config;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.054 -0500", hash_original_method = "D5AA0DE9B25FCCF7DFB660A22AA5E818", hash_generated_method = "2C8C09C7C8206FCEC2227CEC3F964AB2")
-        abstract EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.580 -0500", hash_original_method = "D5AA0DE9B25FCCF7DFB660A22AA5E818", hash_generated_method = "2C8C09C7C8206FCEC2227CEC3F964AB2")
+        
+abstract EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
                 EGLConfig[] configs);
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.056 -0500", hash_original_method = "A5ED2D6BA80622A09257A565CA0B4B3A", hash_generated_method = "0FC5EAFD7C70887E6B3AD3B7AA4E313F")
-        private int[] filterConfigSpec(int[] configSpec) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.585 -0500", hash_original_method = "A5ED2D6BA80622A09257A565CA0B4B3A", hash_generated_method = "0FC5EAFD7C70887E6B3AD3B7AA4E313F")
+        
+private int[] filterConfigSpec(int[] configSpec) {
             if (mEGLContextClientVersion != 2) {
                 return configSpec;
             }
@@ -466,30 +487,31 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
     
     private class ComponentSizeChooser extends BaseConfigChooser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.061 -0500", hash_original_field = "3CB28337EDF97BC7A43DE559FAEFBE0E", hash_generated_field = "3B2CE6613BAAB11EC6605CC6BD87C453")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.600 -0500", hash_original_field = "3CB28337EDF97BC7A43DE559FAEFBE0E", hash_generated_field = "3B2CE6613BAAB11EC6605CC6BD87C453")
 
 
         private int[] mValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.062 -0500", hash_original_field = "2E964ADEC9C377671C9C69464FED0F0B", hash_generated_field = "DFB29A4DE6CC3A6F59EEA72256CA1B07")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.602 -0500", hash_original_field = "2E964ADEC9C377671C9C69464FED0F0B", hash_generated_field = "DFB29A4DE6CC3A6F59EEA72256CA1B07")
 
         protected int mRedSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.062 -0500", hash_original_field = "B99BED964E3D6E1F5940B8B9C6501E93", hash_generated_field = "F004205D5ECD51A712961F597706D420")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.604 -0500", hash_original_field = "B99BED964E3D6E1F5940B8B9C6501E93", hash_generated_field = "F004205D5ECD51A712961F597706D420")
 
         protected int mGreenSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.063 -0500", hash_original_field = "853877738747565CA1E7BAF1CEB7DE5D", hash_generated_field = "10FEF4227DE2E0FF5A7B93D82D802C38")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.607 -0500", hash_original_field = "853877738747565CA1E7BAF1CEB7DE5D", hash_generated_field = "10FEF4227DE2E0FF5A7B93D82D802C38")
 
         protected int mBlueSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.064 -0500", hash_original_field = "67CC59656EF994BD3A684B6FCB15A59F", hash_generated_field = "4D595AB931725F0489E385B7FCCFFE15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.609 -0500", hash_original_field = "67CC59656EF994BD3A684B6FCB15A59F", hash_generated_field = "4D595AB931725F0489E385B7FCCFFE15")
 
         protected int mAlphaSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.065 -0500", hash_original_field = "C55E8B9E6FC4A0DD23042A52ED0D0342", hash_generated_field = "069D7DB749F1CA74392E9E3B7C7F6E2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.611 -0500", hash_original_field = "C55E8B9E6FC4A0DD23042A52ED0D0342", hash_generated_field = "069D7DB749F1CA74392E9E3B7C7F6E2C")
 
         protected int mDepthSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.066 -0500", hash_original_field = "8E37C0699655984CBBA9D7CD249DDE16", hash_generated_field = "2F511AB8225415A379DBE2BACDAB208A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.613 -0500", hash_original_field = "8E37C0699655984CBBA9D7CD249DDE16", hash_generated_field = "2F511AB8225415A379DBE2BACDAB208A")
 
         protected int mStencilSize;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.058 -0500", hash_original_method = "E977E3948EFA9E2BABD91C89238414B6", hash_generated_method = "21E8C4EC8FE1C345989AAE24213D41E2")
-        public ComponentSizeChooser(int redSize, int greenSize, int blueSize,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.591 -0500", hash_original_method = "E977E3948EFA9E2BABD91C89238414B6", hash_generated_method = "21E8C4EC8FE1C345989AAE24213D41E2")
+        
+public ComponentSizeChooser(int redSize, int greenSize, int blueSize,
                 int alphaSize, int depthSize, int stencilSize) {
             super(new int[] {
                     EGL10.EGL_RED_SIZE, redSize,
@@ -508,9 +530,10 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
             mStencilSize = stencilSize;
        }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.059 -0500", hash_original_method = "90A4D31D410952CF994E4BDBA2A25F67", hash_generated_method = "84D5B4E82932F44C4E83D513B83E26CF")
-        @Override
-public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.595 -0500", hash_original_method = "90A4D31D410952CF994E4BDBA2A25F67", hash_generated_method = "84D5B4E82932F44C4E83D513B83E26CF")
+        
+@Override
+        public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
                 EGLConfig[] configs) {
             for (EGLConfig config : configs) {
                 int d = findConfigAttrib(egl, display, config,
@@ -535,8 +558,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.060 -0500", hash_original_method = "97DBBE0DC2E33C941B4CF19B7BAFBD1F", hash_generated_method = "205CF82AC1FF7710F62C76CA25FE446E")
-        private int findConfigAttrib(EGL10 egl, EGLDisplay display,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.597 -0500", hash_original_method = "97DBBE0DC2E33C941B4CF19B7BAFBD1F", hash_generated_method = "205CF82AC1FF7710F62C76CA25FE446E")
+        
+private int findConfigAttrib(EGL10 egl, EGLDisplay display,
                 EGLConfig config, int attribute, int defaultValue) {
 
             if (egl.eglGetConfigAttrib(display, config, attribute, mValue)) {
@@ -551,8 +575,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
 
     
     private class SimpleEGLConfigChooser extends ComponentSizeChooser {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.068 -0500", hash_original_method = "5A2D4186FEBB3CAA35FAB0BA469AA3FD", hash_generated_method = "AE238B0832C01983744DC20A0CAD79BF")
-        public SimpleEGLConfigChooser(boolean withDepthBuffer) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.620 -0500", hash_original_method = "5A2D4186FEBB3CAA35FAB0BA469AA3FD", hash_generated_method = "AE238B0832C01983744DC20A0CAD79BF")
+        
+public SimpleEGLConfigChooser(boolean withDepthBuffer) {
             super(5, 6, 5, 0, withDepthBuffer ? 16 : 0, 0);
         }
 
@@ -562,24 +587,25 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
 
     
     private class EglHelper {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.078 -0500", hash_original_field = "3F30F83F3D104993379AD92B39AFB83D", hash_generated_field = "3F30F83F3D104993379AD92B39AFB83D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.650 -0500", hash_original_field = "3F30F83F3D104993379AD92B39AFB83D", hash_generated_field = "3F30F83F3D104993379AD92B39AFB83D")
 
 
         EGL10 mEgl;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.078 -0500", hash_original_field = "7AE477A3032DB5EA7015A0F83A2F2E86", hash_generated_field = "7AE477A3032DB5EA7015A0F83A2F2E86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.652 -0500", hash_original_field = "7AE477A3032DB5EA7015A0F83A2F2E86", hash_generated_field = "7AE477A3032DB5EA7015A0F83A2F2E86")
 
         EGLDisplay mEglDisplay;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.079 -0500", hash_original_field = "3BCE51A04A846FE71AD218CCB7DF9B47", hash_generated_field = "3BCE51A04A846FE71AD218CCB7DF9B47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.654 -0500", hash_original_field = "3BCE51A04A846FE71AD218CCB7DF9B47", hash_generated_field = "3BCE51A04A846FE71AD218CCB7DF9B47")
 
         EGLSurface mEglSurface;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.080 -0500", hash_original_field = "0645CA46F08494E04FEDB68893B6F495", hash_generated_field = "0645CA46F08494E04FEDB68893B6F495")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.656 -0500", hash_original_field = "0645CA46F08494E04FEDB68893B6F495", hash_generated_field = "0645CA46F08494E04FEDB68893B6F495")
 
         EGLConfig mEglConfig;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.081 -0500", hash_original_field = "75D18A698C8C0156FC372CC4CDC659FD", hash_generated_field = "75D18A698C8C0156FC372CC4CDC659FD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.658 -0500", hash_original_field = "75D18A698C8C0156FC372CC4CDC659FD", hash_generated_field = "75D18A698C8C0156FC372CC4CDC659FD")
 
         EGLContext mEglContext;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.069 -0500", hash_original_method = "83AF3D46DA70FB835D7CAB893AE219D0", hash_generated_method = "B7FD75A300B866ED8F1391BE46EE8008")
-        public EglHelper() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.625 -0500", hash_original_method = "83AF3D46DA70FB835D7CAB893AE219D0", hash_generated_method = "B7FD75A300B866ED8F1391BE46EE8008")
+        
+public EglHelper() {
 
         }
 
@@ -587,8 +613,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
          * Initialize EGL for a given configuration spec.
          * @param configSpec
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.070 -0500", hash_original_method = "E1120F549D6F6E96023A6A07CACEFA1B", hash_generated_method = "C5E6E6E23C1F8C5EAA10C4F8EDA199B8")
-        public void start() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.628 -0500", hash_original_method = "E1120F549D6F6E96023A6A07CACEFA1B", hash_generated_method = "C5E6E6E23C1F8C5EAA10C4F8EDA199B8")
+        
+public void start() {
             if (LOG_EGL) {
                 Log.w("EglHelper", "start() tid=" + Thread.currentThread().getId());
             }
@@ -635,8 +662,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
          * React to the creation of a new surface by creating and returning an
          * OpenGL interface that renders to that surface.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.072 -0500", hash_original_method = "E9F7F165780F6F468D822EAA5675F636", hash_generated_method = "350FA8ADBA2DBCE3A9F65BF5139A3C62")
-        public GL createSurface(SurfaceHolder holder) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.631 -0500", hash_original_method = "E9F7F165780F6F468D822EAA5675F636", hash_generated_method = "350FA8ADBA2DBCE3A9F65BF5139A3C62")
+        
+public GL createSurface(SurfaceHolder holder) {
             if (LOG_EGL) {
                 Log.w("EglHelper", "createSurface()  tid=" + Thread.currentThread().getId());
             }
@@ -708,8 +736,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
             return gl;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.073 -0500", hash_original_method = "009805D54505405E7F35DCDF643A7FC6", hash_generated_method = "F5EA51A6054E87567498BD10AA803184")
-        public void purgeBuffers() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.634 -0500", hash_original_method = "009805D54505405E7F35DCDF643A7FC6", hash_generated_method = "F5EA51A6054E87567498BD10AA803184")
+        
+public void purgeBuffers() {
             mEgl.eglMakeCurrent(mEglDisplay,
                     EGL10.EGL_NO_SURFACE, EGL10.EGL_NO_SURFACE,
                     EGL10.EGL_NO_CONTEXT);
@@ -722,8 +751,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
          * Display the current render surface.
          * @return false if the context has been lost.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.073 -0500", hash_original_method = "9C95ED348041927E683F703A784FA97A", hash_generated_method = "401190BEF3C7CF9EC9C55DEB6D70B31A")
-        public boolean swap() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.637 -0500", hash_original_method = "9C95ED348041927E683F703A784FA97A", hash_generated_method = "401190BEF3C7CF9EC9C55DEB6D70B31A")
+        
+public boolean swap() {
             if (! mEgl.eglSwapBuffers(mEglDisplay, mEglSurface)) {
 
                 /*
@@ -749,8 +779,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.074 -0500", hash_original_method = "F4390E64E142A92962AFFCA2A868DB1D", hash_generated_method = "4467A4AE58B12C1C089A88B4A1332EB8")
-        public void destroySurface() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.640 -0500", hash_original_method = "F4390E64E142A92962AFFCA2A868DB1D", hash_generated_method = "4467A4AE58B12C1C089A88B4A1332EB8")
+        
+public void destroySurface() {
             if (LOG_EGL) {
                 Log.w("EglHelper", "destroySurface()  tid=" + Thread.currentThread().getId());
             }
@@ -763,8 +794,9 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.075 -0500", hash_original_method = "75E7D06EEC93D6B21DBAB7382B0AE2AF", hash_generated_method = "6BA63A62B72351656F543C21719C04D0")
-        public void finish() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.643 -0500", hash_original_method = "75E7D06EEC93D6B21DBAB7382B0AE2AF", hash_generated_method = "6BA63A62B72351656F543C21719C04D0")
+        
+public void finish() {
             if (LOG_EGL) {
                 Log.w("EglHelper", "finish() tid=" + Thread.currentThread().getId());
             }
@@ -778,13 +810,15 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.076 -0500", hash_original_method = "BBFD946D1E92713A8E3F246C64816A5E", hash_generated_method = "576651A4AA863B1D7BF5137C0EBAA7D6")
-        private void throwEglException(String function) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.645 -0500", hash_original_method = "BBFD946D1E92713A8E3F246C64816A5E", hash_generated_method = "576651A4AA863B1D7BF5137C0EBAA7D6")
+        
+private void throwEglException(String function) {
             throwEglException(function, mEgl.eglGetError());
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.077 -0500", hash_original_method = "F35384FC419606847EA5AA038D9E6031", hash_generated_method = "2DE54EEC147895E03717DD9D459446BD")
-        private void throwEglException(String function, int error) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.648 -0500", hash_original_method = "F35384FC419606847EA5AA038D9E6031", hash_generated_method = "2DE54EEC147895E03717DD9D459446BD")
+        
+private void throwEglException(String function, int error) {
             String message = function + " failed: " + EGLLogWrapper.getErrorString(error);
             if (LOG_THREADS) {
                 Log.e("EglHelper", "throwEglException tid=" + Thread.currentThread().getId() + " " + message);
@@ -798,61 +832,62 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
 
     
     class GLThread extends Thread {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:55.539 -0500", hash_original_field = "B999E08569F60578F2C6EEC297448896", hash_generated_field = "FBAEA3980C3C0B3ACDB6B73A2BC269A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.719 -0500", hash_original_field = "B999E08569F60578F2C6EEC297448896", hash_generated_field = "FBAEA3980C3C0B3ACDB6B73A2BC269A5")
 
         // variables are protected by the sGLThreadManager monitor
         private boolean mShouldExit;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.102 -0500", hash_original_field = "9D5BBD948F81BA103405D452D2629FA5", hash_generated_field = "44F266F0432C0EFD235C8183DD0B51A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.721 -0500", hash_original_field = "9D5BBD948F81BA103405D452D2629FA5", hash_generated_field = "44F266F0432C0EFD235C8183DD0B51A1")
 
         private boolean mExited;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.103 -0500", hash_original_field = "06C30C40FD4237095E84581C2D7A3E86", hash_generated_field = "99FD2263A5DF98BA94E8C373CDA953C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.723 -0500", hash_original_field = "06C30C40FD4237095E84581C2D7A3E86", hash_generated_field = "99FD2263A5DF98BA94E8C373CDA953C3")
 
         private boolean mRequestPaused;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.104 -0500", hash_original_field = "D0FCBA7E15DDDC88C32E39FCFFF456DB", hash_generated_field = "9B834AB9E5C00250542F8DEB91ED0E2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.726 -0500", hash_original_field = "D0FCBA7E15DDDC88C32E39FCFFF456DB", hash_generated_field = "9B834AB9E5C00250542F8DEB91ED0E2F")
 
         private boolean mPaused;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.105 -0500", hash_original_field = "1BE3066D2E55A4CBD16D3D1DDBF1E4CD", hash_generated_field = "514F0E2FF657C1E2926C625EE0C2A55C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.729 -0500", hash_original_field = "1BE3066D2E55A4CBD16D3D1DDBF1E4CD", hash_generated_field = "514F0E2FF657C1E2926C625EE0C2A55C")
 
         private boolean mHasSurface;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.105 -0500", hash_original_field = "E1AE13BEEB8CE2FA4DC95EBBF27E6119", hash_generated_field = "F1D840BEC01E65E93A488E3A6D14D736")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.731 -0500", hash_original_field = "E1AE13BEEB8CE2FA4DC95EBBF27E6119", hash_generated_field = "F1D840BEC01E65E93A488E3A6D14D736")
 
         private boolean mWaitingForSurface;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.106 -0500", hash_original_field = "A04C3B5D15EB8FF1626C8B7AE96E4912", hash_generated_field = "4A2A91067D7B18BAA9311207F028FEDC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.734 -0500", hash_original_field = "A04C3B5D15EB8FF1626C8B7AE96E4912", hash_generated_field = "4A2A91067D7B18BAA9311207F028FEDC")
 
         private boolean mHaveEglContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.107 -0500", hash_original_field = "984E31C6C60CB31A223EBE22C6D087AF", hash_generated_field = "A6F3B75A3C62BDC269D81AE3192A2B1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.736 -0500", hash_original_field = "984E31C6C60CB31A223EBE22C6D087AF", hash_generated_field = "A6F3B75A3C62BDC269D81AE3192A2B1E")
 
         private boolean mHaveEglSurface;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.108 -0500", hash_original_field = "8A9EDC3DDD9BF33F5ED4BAB25B51FA21", hash_generated_field = "AEDBAD4E651BFDC4A3C0A200EA9340E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.739 -0500", hash_original_field = "8A9EDC3DDD9BF33F5ED4BAB25B51FA21", hash_generated_field = "AEDBAD4E651BFDC4A3C0A200EA9340E8")
 
         private boolean mShouldReleaseEglContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.109 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.741 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
 
         private int mWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.110 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.743 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
 
         private int mHeight;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.111 -0500", hash_original_field = "E53CE01192FE55D66BB84697D6A15AEC", hash_generated_field = "E7653EB9F9A1926DBAF869454A58408B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.745 -0500", hash_original_field = "E53CE01192FE55D66BB84697D6A15AEC", hash_generated_field = "E7653EB9F9A1926DBAF869454A58408B")
 
         private int mRenderMode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.112 -0500", hash_original_field = "EE0FCE1EAD5CB5E619945A31530AAFAD", hash_generated_field = "04D0EE4906FBC2F004DE3C4AF5DBCC4F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.748 -0500", hash_original_field = "EE0FCE1EAD5CB5E619945A31530AAFAD", hash_generated_field = "04D0EE4906FBC2F004DE3C4AF5DBCC4F")
 
         private boolean mRequestRender;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.112 -0500", hash_original_field = "B01C205B4ACBCB6103F5C7F6EC748F58", hash_generated_field = "1E19E103716E35A6AED458C0663993A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.751 -0500", hash_original_field = "B01C205B4ACBCB6103F5C7F6EC748F58", hash_generated_field = "1E19E103716E35A6AED458C0663993A3")
 
         private boolean mRenderComplete;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.113 -0500", hash_original_field = "8C1D82BE6E35D39F764DF9852E1AB5CF", hash_generated_field = "B5F71D74E6909FCC5E419B53FBFAF01C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.753 -0500", hash_original_field = "8C1D82BE6E35D39F764DF9852E1AB5CF", hash_generated_field = "B5F71D74E6909FCC5E419B53FBFAF01C")
 
         private ArrayList<Runnable> mEventQueue = new ArrayList<Runnable>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.114 -0500", hash_original_field = "720EF707169F06701CBF89E969BC03B3", hash_generated_field = "655D7742BDF0154D755D8012DFB26E60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.756 -0500", hash_original_field = "720EF707169F06701CBF89E969BC03B3", hash_generated_field = "655D7742BDF0154D755D8012DFB26E60")
 
 
         private Renderer mRenderer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.115 -0500", hash_original_field = "F4A98CA9FF1C1FFD4423D035B7A414C6", hash_generated_field = "643AE0FAB78B60A315CA9AB4E93467B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.758 -0500", hash_original_field = "F4A98CA9FF1C1FFD4423D035B7A414C6", hash_generated_field = "643AE0FAB78B60A315CA9AB4E93467B6")
 
         private EglHelper mEglHelper;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.083 -0500", hash_original_method = "6338646405C7F70E0BB13ECBAEE65220", hash_generated_method = "6338646405C7F70E0BB13ECBAEE65220")
-        GLThread(Renderer renderer) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.667 -0500", hash_original_method = "6338646405C7F70E0BB13ECBAEE65220", hash_generated_method = "6338646405C7F70E0BB13ECBAEE65220")
+        
+GLThread(Renderer renderer) {
             super();
             mWidth = 0;
             mHeight = 0;
@@ -861,9 +896,10 @@ public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
             mRenderer = renderer;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.084 -0500", hash_original_method = "4EBF7F6B9BB16BE66D221453F245DA46", hash_generated_method = "1653E32386D466C1F718F4265D118D53")
-        @Override
-public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.669 -0500", hash_original_method = "4EBF7F6B9BB16BE66D221453F245DA46", hash_generated_method = "1653E32386D466C1F718F4265D118D53")
+        
+@Override
+        public void run() {
             setName("GLThread " + getId());
             if (LOG_THREADS) {
                 Log.i("GLThread", "starting tid=" + getId());
@@ -882,8 +918,9 @@ public void run() {
          * This private method should only be called inside a
          * synchronized(sGLThreadManager) block.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.085 -0500", hash_original_method = "1FA739F1ECF9B8C719EEC300CFB94B99", hash_generated_method = "52444CA2211C1A24BDC91B06E5337381")
-        private void stopEglSurfaceLocked() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.672 -0500", hash_original_method = "1FA739F1ECF9B8C719EEC300CFB94B99", hash_generated_method = "52444CA2211C1A24BDC91B06E5337381")
+        
+private void stopEglSurfaceLocked() {
             if (mHaveEglSurface) {
                 mHaveEglSurface = false;
                 mEglHelper.destroySurface();
@@ -894,16 +931,18 @@ public void run() {
          * This private method should only be called inside a
          * synchronized(sGLThreadManager) block.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.086 -0500", hash_original_method = "08753DB570F3FF0DFFEC96C08E49FCF2", hash_generated_method = "6356F0F56CBBD764359507E658715010")
-        private void stopEglContextLocked() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.675 -0500", hash_original_method = "08753DB570F3FF0DFFEC96C08E49FCF2", hash_generated_method = "6356F0F56CBBD764359507E658715010")
+        
+private void stopEglContextLocked() {
             if (mHaveEglContext) {
                 mEglHelper.finish();
                 mHaveEglContext = false;
                 sGLThreadManager.releaseEglContextLocked(this);
             }
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.089 -0500", hash_original_method = "711FE3C53AF4E351881864AF0E3340A2", hash_generated_method = "B13447098E0AD2EE755FA704D1A400DA")
-        private void guardedRun() throws InterruptedException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.682 -0500", hash_original_method = "711FE3C53AF4E351881864AF0E3340A2", hash_generated_method = "B13447098E0AD2EE755FA704D1A400DA")
+        
+private void guardedRun() throws InterruptedException {
             mEglHelper = new EglHelper();
             mHaveEglContext = false;
             mHaveEglSurface = false;
@@ -1143,20 +1182,23 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.090 -0500", hash_original_method = "9F067F2F4ACE6678B9A9189C7770DD17", hash_generated_method = "4FF3ECBFF9C668577D888A352C512B82")
-        public boolean ableToDraw() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.684 -0500", hash_original_method = "9F067F2F4ACE6678B9A9189C7770DD17", hash_generated_method = "4FF3ECBFF9C668577D888A352C512B82")
+        
+public boolean ableToDraw() {
             return mHaveEglContext && mHaveEglSurface && readyToDraw();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.091 -0500", hash_original_method = "0EE68488D52C3628D006C7323CA4E5A0", hash_generated_method = "577848DF83F2720EAE848E5E2B72B3F6")
-        private boolean readyToDraw() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.687 -0500", hash_original_method = "0EE68488D52C3628D006C7323CA4E5A0", hash_generated_method = "577848DF83F2720EAE848E5E2B72B3F6")
+        
+private boolean readyToDraw() {
             return (!mPaused) && mHasSurface
                 && (mWidth > 0) && (mHeight > 0)
                 && (mRequestRender || (mRenderMode == RENDERMODE_CONTINUOUSLY));
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.091 -0500", hash_original_method = "DBFC9FD50E90875659CDDCEC9AA517CD", hash_generated_method = "097B35F7570163BDDDC11135B25B7DEF")
-        public void setRenderMode(int renderMode) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.689 -0500", hash_original_method = "DBFC9FD50E90875659CDDCEC9AA517CD", hash_generated_method = "097B35F7570163BDDDC11135B25B7DEF")
+        
+public void setRenderMode(int renderMode) {
             if ( !((RENDERMODE_WHEN_DIRTY <= renderMode) && (renderMode <= RENDERMODE_CONTINUOUSLY)) ) {
                 throw new IllegalArgumentException("renderMode");
             }
@@ -1166,23 +1208,26 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.092 -0500", hash_original_method = "FE0099A91432BFCACE7C52B0FC1032B6", hash_generated_method = "7EE3F7FE94B63E26C6FCF8CCB2CE038E")
-        public int getRenderMode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.692 -0500", hash_original_method = "FE0099A91432BFCACE7C52B0FC1032B6", hash_generated_method = "7EE3F7FE94B63E26C6FCF8CCB2CE038E")
+        
+public int getRenderMode() {
             synchronized(sGLThreadManager) {
                 return mRenderMode;
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.093 -0500", hash_original_method = "7D299D0786810F42249F0484E8A25CD9", hash_generated_method = "E8E3A1891256BE65BCA478970C7D6608")
-        public void requestRender() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.695 -0500", hash_original_method = "7D299D0786810F42249F0484E8A25CD9", hash_generated_method = "E8E3A1891256BE65BCA478970C7D6608")
+        
+public void requestRender() {
             synchronized(sGLThreadManager) {
                 mRequestRender = true;
                 sGLThreadManager.notifyAll();
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.094 -0500", hash_original_method = "E700922CB1559E30A5B5551273407803", hash_generated_method = "639B37422F2B0FF3CB80ECB7479685E0")
-        public void surfaceCreated() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.697 -0500", hash_original_method = "E700922CB1559E30A5B5551273407803", hash_generated_method = "639B37422F2B0FF3CB80ECB7479685E0")
+        
+public void surfaceCreated() {
             synchronized(sGLThreadManager) {
                 if (LOG_THREADS) {
                     Log.i("GLThread", "surfaceCreated tid=" + getId());
@@ -1199,8 +1244,9 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.095 -0500", hash_original_method = "CF6F3A984F95B50FF50C1BADBEA0D748", hash_generated_method = "C988229BFE395757F26A1234F60D5C37")
-        public void surfaceDestroyed() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.700 -0500", hash_original_method = "CF6F3A984F95B50FF50C1BADBEA0D748", hash_generated_method = "C988229BFE395757F26A1234F60D5C37")
+        
+public void surfaceDestroyed() {
             synchronized(sGLThreadManager) {
                 if (LOG_THREADS) {
                     Log.i("GLThread", "surfaceDestroyed tid=" + getId());
@@ -1217,8 +1263,9 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.096 -0500", hash_original_method = "C67CE20F9EC18CF1CF416A1853C3B589", hash_generated_method = "4BFB9756215BC99E8A25D8F7587F7E79")
-        public void onPause() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.702 -0500", hash_original_method = "C67CE20F9EC18CF1CF416A1853C3B589", hash_generated_method = "4BFB9756215BC99E8A25D8F7587F7E79")
+        
+public void onPause() {
             synchronized (sGLThreadManager) {
                 if (LOG_PAUSE_RESUME) {
                     Log.i("GLThread", "onPause tid=" + getId());
@@ -1238,8 +1285,9 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.097 -0500", hash_original_method = "8E5DEB2C9B7EC152BCE3E0DC74768ADB", hash_generated_method = "CC3AFE76D78A8C3F1F7F5ABE444960BD")
-        public void onResume() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.705 -0500", hash_original_method = "8E5DEB2C9B7EC152BCE3E0DC74768ADB", hash_generated_method = "CC3AFE76D78A8C3F1F7F5ABE444960BD")
+        
+public void onResume() {
             synchronized (sGLThreadManager) {
                 if (LOG_PAUSE_RESUME) {
                     Log.i("GLThread", "onResume tid=" + getId());
@@ -1261,8 +1309,9 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.098 -0500", hash_original_method = "E1DF3790FCF903F4369120E3C31DD321", hash_generated_method = "24A41C72CDB2E979DB7DCEE409EBA6B5")
-        public void onWindowResize(int w, int h) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.708 -0500", hash_original_method = "E1DF3790FCF903F4369120E3C31DD321", hash_generated_method = "24A41C72CDB2E979DB7DCEE409EBA6B5")
+        
+public void onWindowResize(int w, int h) {
             synchronized (sGLThreadManager) {
                 mWidth = w;
                 mHeight = h;
@@ -1286,8 +1335,9 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.099 -0500", hash_original_method = "B658ED85C2522980AFFC21FA75A8FE5F", hash_generated_method = "77151B01F6603C1965F5D818087260A1")
-        public void requestExitAndWait() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.711 -0500", hash_original_method = "B658ED85C2522980AFFC21FA75A8FE5F", hash_generated_method = "77151B01F6603C1965F5D818087260A1")
+        
+public void requestExitAndWait() {
             // don't call this from GLThread thread or it is a guaranteed
             // deadlock!
             synchronized(sGLThreadManager) {
@@ -1303,8 +1353,9 @@ public void run() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.100 -0500", hash_original_method = "9327C398D00F21C8F0D3A5F602389F52", hash_generated_method = "3456EDA931BC4662AE4E4193DDCB3CBC")
-        public void requestReleaseEglContextLocked() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.714 -0500", hash_original_method = "9327C398D00F21C8F0D3A5F602389F52", hash_generated_method = "3456EDA931BC4662AE4E4193DDCB3CBC")
+        
+public void requestReleaseEglContextLocked() {
             mShouldReleaseEglContext = true;
             sGLThreadManager.notifyAll();
         }
@@ -1313,8 +1364,9 @@ public void run() {
          * Queue an "event" to be run on the GL rendering thread.
          * @param r the runnable to be run on the GL rendering thread.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.101 -0500", hash_original_method = "8F41524AB3CEE2918675BC83BF3CC490", hash_generated_method = "4B9EF4ACF8F97C90CD4452F99244B87E")
-        public void queueEvent(Runnable r) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.716 -0500", hash_original_method = "8F41524AB3CEE2918675BC83BF3CC490", hash_generated_method = "4B9EF4ACF8F97C90CD4452F99244B87E")
+        
+public void queueEvent(Runnable r) {
             if (r == null) {
                 throw new IllegalArgumentException("r must not be null");
             }
@@ -1330,7 +1382,7 @@ public void run() {
 
     
     static class LogWriter extends Writer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.122 -0500", hash_original_field = "128476B88E78A1761DD1201459C9F3EF", hash_generated_field = "93EF782A08ECBADA45732AEB26C05023")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.778 -0500", hash_original_field = "128476B88E78A1761DD1201459C9F3EF", hash_generated_field = "93EF782A08ECBADA45732AEB26C05023")
 
 
         private StringBuilder mBuilder = new StringBuilder();
@@ -1341,21 +1393,21 @@ public void run() {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.118 -0500", hash_original_method = "651C3299C6098C5206251D3395E7F56C", hash_generated_method = "1CD08D4D2256B0899718D98755C4D248")
-        @Override
-public void close() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.768 -0500", hash_original_method = "651C3299C6098C5206251D3395E7F56C", hash_generated_method = "1CD08D4D2256B0899718D98755C4D248")
+        
+@Override public void close() {
             flushBuilder();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.119 -0500", hash_original_method = "4397D4B6CC585AD9A2FABC1DB1031654", hash_generated_method = "64C92D353792C9C77A9951308C9A0855")
-        @Override
-public void flush() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.771 -0500", hash_original_method = "4397D4B6CC585AD9A2FABC1DB1031654", hash_generated_method = "64C92D353792C9C77A9951308C9A0855")
+        
+@Override public void flush() {
             flushBuilder();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.120 -0500", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "72F623F59FC9F90F70CCD532565A22B3")
-        @Override
-public void write(char[] buf, int offset, int count) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.773 -0500", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "72F623F59FC9F90F70CCD532565A22B3")
+        
+@Override public void write(char[] buf, int offset, int count) {
             for(int i = 0; i < count; i++) {
                 char c = buf[offset + i];
                 if ( c == '\n') {
@@ -1367,8 +1419,9 @@ public void write(char[] buf, int offset, int count) {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.121 -0500", hash_original_method = "E3A61F648C50A4FD42F02D92C137403F", hash_generated_method = "B0C190A9FB0367232B9AD8C1B6CE3B2B")
-        private void flushBuilder() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.776 -0500", hash_original_method = "E3A61F648C50A4FD42F02D92C137403F", hash_generated_method = "B0C190A9FB0367232B9AD8C1B6CE3B2B")
+        
+private void flushBuilder() {
             if (mBuilder.length() > 0) {
                 Log.v("GLSurfaceView", mBuilder.toString());
                 mBuilder.delete(0, mBuilder.length());
@@ -1381,36 +1434,36 @@ public void write(char[] buf, int offset, int count) {
 
     
     private static class GLThreadManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.125 -0500", hash_original_field = "4814D7F8160EC08AEDB25F1C634E1282", hash_generated_field = "9D735A32CC6365416B5A8B54E94812D1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.786 -0500", hash_original_field = "4814D7F8160EC08AEDB25F1C634E1282", hash_generated_field = "9D735A32CC6365416B5A8B54E94812D1")
 
         private static String TAG = "GLThreadManager";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.137 -0500", hash_original_field = "F20944801182C113CCC28806BA95AB62", hash_generated_field = "44145C195E85BF38DA0FFB2AC8BB4311")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.820 -0500", hash_original_field = "F20944801182C113CCC28806BA95AB62", hash_generated_field = "44145C195E85BF38DA0FFB2AC8BB4311")
 
         private static final int kGLES_20 = 0x20000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.138 -0500", hash_original_field = "E474A5AC8CFE0FC4C1392759014366B3", hash_generated_field = "3621160A8F7B1BD84A2A6958E68DD5EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.823 -0500", hash_original_field = "E474A5AC8CFE0FC4C1392759014366B3", hash_generated_field = "3621160A8F7B1BD84A2A6958E68DD5EA")
 
         private static final String kMSM7K_RENDERER_PREFIX =
             "Q3Dimension MSM7500 ";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.139 -0500", hash_original_field = "575D4A5E7228D562E7428BA629F3C09D", hash_generated_field = "F329DF17B4230EF2C98D0E995B680386")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.826 -0500", hash_original_field = "575D4A5E7228D562E7428BA629F3C09D", hash_generated_field = "F329DF17B4230EF2C98D0E995B680386")
 
         private static final String kADRENO = "Adreno";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.133 -0500", hash_original_field = "F1062F8A09DE0C18156FD20E3B44CAEE", hash_generated_field = "F73A6B8127F542A081B6A62FA30A43F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.808 -0500", hash_original_field = "F1062F8A09DE0C18156FD20E3B44CAEE", hash_generated_field = "F73A6B8127F542A081B6A62FA30A43F7")
 
 
         private boolean mGLESVersionCheckComplete;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.133 -0500", hash_original_field = "FECFCAB227B687BE4CCD868AA303C14E", hash_generated_field = "B4C54A4CB01F0BC9B76DECECD129FF44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.810 -0500", hash_original_field = "FECFCAB227B687BE4CCD868AA303C14E", hash_generated_field = "B4C54A4CB01F0BC9B76DECECD129FF44")
 
         private int mGLESVersion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.134 -0500", hash_original_field = "5057EE1F3B73F3882984E3EAD62788CB", hash_generated_field = "446C076A6568D35915B8ED59A92E0AA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.812 -0500", hash_original_field = "5057EE1F3B73F3882984E3EAD62788CB", hash_generated_field = "446C076A6568D35915B8ED59A92E0AA9")
 
         private boolean mGLESDriverCheckComplete;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.135 -0500", hash_original_field = "008570E2208BBB807AE651CB73ACE059", hash_generated_field = "682D31F8601D77498A0A2F017F5AF89E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.815 -0500", hash_original_field = "008570E2208BBB807AE651CB73ACE059", hash_generated_field = "682D31F8601D77498A0A2F017F5AF89E")
 
         private boolean mMultipleGLESContextsAllowed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.136 -0500", hash_original_field = "176ADADD3197C6FD58F69EB0EB55F510", hash_generated_field = "34CA86E2F3B4D626596C357B4FA1E7A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.817 -0500", hash_original_field = "176ADADD3197C6FD58F69EB0EB55F510", hash_generated_field = "34CA86E2F3B4D626596C357B4FA1E7A5")
 
         private boolean mLimitedGLESContexts;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.140 -0500", hash_original_field = "18DB0C067795818817897BF2B4F3125F", hash_generated_field = "648BA99AC2147F67E5271F329D877F61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.828 -0500", hash_original_field = "18DB0C067795818817897BF2B4F3125F", hash_generated_field = "648BA99AC2147F67E5271F329D877F61")
 
         private GLThread mEglOwner;
         
@@ -1421,8 +1474,9 @@ public void write(char[] buf, int offset, int count) {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.126 -0500", hash_original_method = "FE8705658DEAD61621738F4D8A2A7147", hash_generated_method = "70038F4DF24A8D37458F27C5DD63FECD")
-        public synchronized void threadExiting(GLThread thread) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.788 -0500", hash_original_method = "FE8705658DEAD61621738F4D8A2A7147", hash_generated_method = "70038F4DF24A8D37458F27C5DD63FECD")
+        
+public synchronized void threadExiting(GLThread thread) {
             if (LOG_THREADS) {
                 Log.i("GLThread", "exiting tid=" +  thread.getId());
             }
@@ -1440,8 +1494,9 @@ public void write(char[] buf, int offset, int count) {
          *
          * @return true if the right to use an EGL context was acquired.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.127 -0500", hash_original_method = "BB464B3FFF506A1CF7A316246B2050CF", hash_generated_method = "90BD7E9D98A0CCEA1443C3AA9881E8CE")
-        public boolean tryAcquireEglContextLocked(GLThread thread) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.791 -0500", hash_original_method = "BB464B3FFF506A1CF7A316246B2050CF", hash_generated_method = "90BD7E9D98A0CCEA1443C3AA9881E8CE")
+        
+public boolean tryAcquireEglContextLocked(GLThread thread) {
             if (mEglOwner == thread || mEglOwner == null) {
                 mEglOwner = thread;
                 notifyAll();
@@ -1465,30 +1520,34 @@ public void write(char[] buf, int offset, int count) {
          * Releases the EGL context. Requires that we are already in the
          * sGLThreadManager monitor when this is called.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.128 -0500", hash_original_method = "3F74D4F9D098B5B4B240AE885DDBE7E6", hash_generated_method = "EC7FA1688629C127FC51A4B672C53C76")
-        public void releaseEglContextLocked(GLThread thread) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.794 -0500", hash_original_method = "3F74D4F9D098B5B4B240AE885DDBE7E6", hash_generated_method = "EC7FA1688629C127FC51A4B672C53C76")
+        
+public void releaseEglContextLocked(GLThread thread) {
             if (mEglOwner == thread) {
                 mEglOwner = null;
             }
             notifyAll();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.129 -0500", hash_original_method = "12EA186A7F5CD9C6E3046A2A0BD2DF68", hash_generated_method = "E779D3A9F464D2CE0A848D4D0F20E77A")
-        public synchronized boolean shouldReleaseEGLContextWhenPausing() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.797 -0500", hash_original_method = "12EA186A7F5CD9C6E3046A2A0BD2DF68", hash_generated_method = "E779D3A9F464D2CE0A848D4D0F20E77A")
+        
+public synchronized boolean shouldReleaseEGLContextWhenPausing() {
             // Release the EGL context when pausing even if
             // the hardware supports multiple EGL contexts.
             // Otherwise the device could run out of EGL contexts.
             return mLimitedGLESContexts;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.130 -0500", hash_original_method = "BB392C65C3FB4BE472C770A6388E6483", hash_generated_method = "CE1C667E55371022BD6FC45EDAE0F1ED")
-        public synchronized boolean shouldTerminateEGLWhenPausing() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.800 -0500", hash_original_method = "BB392C65C3FB4BE472C770A6388E6483", hash_generated_method = "CE1C667E55371022BD6FC45EDAE0F1ED")
+        
+public synchronized boolean shouldTerminateEGLWhenPausing() {
             checkGLESVersion();
             return !mMultipleGLESContextsAllowed;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.131 -0500", hash_original_method = "3071AD09B063784236EDA64AF3B8A081", hash_generated_method = "B6D682DC5095AE670F7016D27838F27C")
-        public synchronized void checkGLDriver(GL10 gl) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.803 -0500", hash_original_method = "3071AD09B063784236EDA64AF3B8A081", hash_generated_method = "B6D682DC5095AE670F7016D27838F27C")
+        
+public synchronized void checkGLDriver(GL10 gl) {
             if (! mGLESDriverCheckComplete) {
                 checkGLESVersion();
                 String renderer = gl.glGetString(GL10.GL_RENDERER);
@@ -1507,8 +1566,9 @@ public void write(char[] buf, int offset, int count) {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.132 -0500", hash_original_method = "6DFB699ADC87072E31136271B3768D35", hash_generated_method = "73AD1AB53516B33CCEA37E2F43A568D7")
-        private void checkGLESVersion() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.805 -0500", hash_original_method = "6DFB699ADC87072E31136271B3768D35", hash_generated_method = "73AD1AB53516B33CCEA37E2F43A568D7")
+        
+private void checkGLESVersion() {
             if (! mGLESVersionCheckComplete) {
                 mGLESVersion = SystemProperties.getInt(
                         "ro.opengles.version",
@@ -1573,8 +1633,9 @@ public void write(char[] buf, int offset, int count) {
      * at least 16 bits.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.030 -0500", hash_original_method = "091BCCF8C091A3C39DC981548CC7F874", hash_generated_method = "DE1CE08963BE100CB3B0C5C0C11035D5")
-    public void setEGLConfigChooser(int redSize, int greenSize, int blueSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.512 -0500", hash_original_method = "091BCCF8C091A3C39DC981548CC7F874", hash_generated_method = "DE1CE08963BE100CB3B0C5C0C11035D5")
+    
+public void setEGLConfigChooser(int redSize, int greenSize, int blueSize,
             int alphaSize, int depthSize, int stencilSize) {
         setEGLConfigChooser(new ComponentSizeChooser(redSize, greenSize,
                 blueSize, alphaSize, depthSize, stencilSize));
@@ -1606,8 +1667,9 @@ public void write(char[] buf, int offset, int count) {
      * EGLConfigChooser is responsible for choosing an OpenGL ES 2.0-compatible config.
      * @param version The EGLContext client version to choose. Use 2 for OpenGL ES 2.0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.031 -0500", hash_original_method = "50689A18B452A2797F4096E269807A99", hash_generated_method = "5092F2744009E50C24A10025D45C3888")
-    public void setEGLContextClientVersion(int version) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.515 -0500", hash_original_method = "50689A18B452A2797F4096E269807A99", hash_generated_method = "5092F2744009E50C24A10025D45C3888")
+    
+public void setEGLContextClientVersion(int version) {
         checkRenderThreadState();
         mEGLContextClientVersion = version;
     }
@@ -1628,8 +1690,9 @@ public void write(char[] buf, int offset, int count) {
      * @see #RENDERMODE_CONTINUOUSLY
      * @see #RENDERMODE_WHEN_DIRTY
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.031 -0500", hash_original_method = "F401D8CE2ED637FA8D91B0F6CF1DA9F1", hash_generated_method = "2D988EB6111E0CA99DC5A816C3D4AB0C")
-    public void setRenderMode(int renderMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.517 -0500", hash_original_method = "F401D8CE2ED637FA8D91B0F6CF1DA9F1", hash_generated_method = "2D988EB6111E0CA99DC5A816C3D4AB0C")
+    
+public void setRenderMode(int renderMode) {
         mGLThread.setRenderMode(renderMode);
     }
 
@@ -1640,8 +1703,9 @@ public void write(char[] buf, int offset, int count) {
      * @see #RENDERMODE_CONTINUOUSLY
      * @see #RENDERMODE_WHEN_DIRTY
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.032 -0500", hash_original_method = "A90B80ACC894289C502B7717EBA7E101", hash_generated_method = "513590CAC4C4ABCB2A8A546DFCEA97AA")
-    public int getRenderMode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.519 -0500", hash_original_method = "A90B80ACC894289C502B7717EBA7E101", hash_generated_method = "513590CAC4C4ABCB2A8A546DFCEA97AA")
+    
+public int getRenderMode() {
         return mGLThread.getRenderMode();
     }
 
@@ -1652,8 +1716,9 @@ public void write(char[] buf, int offset, int count) {
      * May be called
      * from any thread. Must not be called before a renderer has been set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.033 -0500", hash_original_method = "CFFBC35659E0BA943A055CA80830B728", hash_generated_method = "1CE087568ADBD7245540BA0F63AF1A84")
-    public void requestRender() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.521 -0500", hash_original_method = "CFFBC35659E0BA943A055CA80830B728", hash_generated_method = "1CE087568ADBD7245540BA0F63AF1A84")
+    
+public void requestRender() {
         mGLThread.requestRender();
     }
 
@@ -1661,8 +1726,9 @@ public void write(char[] buf, int offset, int count) {
      * This method is part of the SurfaceHolder.Callback interface, and is
      * not normally called or subclassed by clients of GLSurfaceView.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.033 -0500", hash_original_method = "CA97146B18E855EC440A54EE624F6B33", hash_generated_method = "17EC2D9CF7721941F6C98E81D23D0F5D")
-    public void surfaceCreated(SurfaceHolder holder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.523 -0500", hash_original_method = "CA97146B18E855EC440A54EE624F6B33", hash_generated_method = "17EC2D9CF7721941F6C98E81D23D0F5D")
+    
+public void surfaceCreated(SurfaceHolder holder) {
         mGLThread.surfaceCreated();
     }
 
@@ -1670,8 +1736,9 @@ public void write(char[] buf, int offset, int count) {
      * This method is part of the SurfaceHolder.Callback interface, and is
      * not normally called or subclassed by clients of GLSurfaceView.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.035 -0500", hash_original_method = "EA7799B476DE689FE2FFBF9C597A98F4", hash_generated_method = "FA25EF53341F1B47140917DA971CCBC7")
-    public void surfaceDestroyed(SurfaceHolder holder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.526 -0500", hash_original_method = "EA7799B476DE689FE2FFBF9C597A98F4", hash_generated_method = "FA25EF53341F1B47140917DA971CCBC7")
+    
+public void surfaceDestroyed(SurfaceHolder holder) {
         // Surface will be destroyed when we return
         mGLThread.surfaceDestroyed();
     }
@@ -1680,8 +1747,9 @@ public void write(char[] buf, int offset, int count) {
      * This method is part of the SurfaceHolder.Callback interface, and is
      * not normally called or subclassed by clients of GLSurfaceView.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.036 -0500", hash_original_method = "30B95CA79378BAE34CA752354751401C", hash_generated_method = "4497200DEF0BA5323B87E4E7E101B714")
-    public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.528 -0500", hash_original_method = "30B95CA79378BAE34CA752354751401C", hash_generated_method = "4497200DEF0BA5323B87E4E7E101B714")
+    
+public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
         mGLThread.onWindowResize(w, h);
     }
 
@@ -1691,8 +1759,9 @@ public void write(char[] buf, int offset, int count) {
      * pause the rendering thread.
      * Must not be called before a renderer has been set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.037 -0500", hash_original_method = "0214E3A2798E907A5B7DAC32A4EC375B", hash_generated_method = "AC35EA4EB7E4739DCF7C0D3E3C4344FE")
-    public void onPause() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.531 -0500", hash_original_method = "0214E3A2798E907A5B7DAC32A4EC375B", hash_generated_method = "AC35EA4EB7E4739DCF7C0D3E3C4344FE")
+    
+public void onPause() {
         mGLThread.onPause();
     }
 
@@ -1703,8 +1772,9 @@ public void write(char[] buf, int offset, int count) {
      * thread.
      * Must not be called before a renderer has been set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.038 -0500", hash_original_method = "FF9EAD78F8E3B3945B5E32D8491EF212", hash_generated_method = "2041042B986B68EBD4503ECF6F9F5FE9")
-    public void onResume() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.533 -0500", hash_original_method = "FF9EAD78F8E3B3945B5E32D8491EF212", hash_generated_method = "2041042B986B68EBD4503ECF6F9F5FE9")
+    
+public void onResume() {
         mGLThread.onResume();
     }
 
@@ -1714,8 +1784,9 @@ public void write(char[] buf, int offset, int count) {
      * Must not be called before a renderer has been set.
      * @param r the runnable to be run on the GL rendering thread.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.039 -0500", hash_original_method = "BC25E256895D25AFE996AA7797074D1E", hash_generated_method = "76CBE1CA618D7F9DE04FD1115F110264")
-    public void queueEvent(Runnable r) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.535 -0500", hash_original_method = "BC25E256895D25AFE996AA7797074D1E", hash_generated_method = "76CBE1CA618D7F9DE04FD1115F110264")
+    
+public void queueEvent(Runnable r) {
         mGLThread.queueEvent(r);
     }
 
@@ -1723,9 +1794,10 @@ public void write(char[] buf, int offset, int count) {
      * This method is used as part of the View class and is not normally
      * called or subclassed by clients of GLSurfaceView.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.039 -0500", hash_original_method = "B3264BCF0DBD2F88E8CFEB8E1785CF85", hash_generated_method = "24B5B91E7E9F71B7C9FF6AC694BFEB5F")
-    @Override
-protected void onAttachedToWindow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.538 -0500", hash_original_method = "B3264BCF0DBD2F88E8CFEB8E1785CF85", hash_generated_method = "24B5B91E7E9F71B7C9FF6AC694BFEB5F")
+    
+@Override
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (LOG_ATTACH_DETACH) {
             Log.d(TAG, "onAttachedToWindow reattach =" + mDetached);
@@ -1749,9 +1821,10 @@ protected void onAttachedToWindow() {
      * called or subclassed by clients of GLSurfaceView.
      * Must not be called before a renderer has been set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.040 -0500", hash_original_method = "783D43AC66E879A98C2CBDD1B113996E", hash_generated_method = "E952790FDFDFFFD1534A80BB986A0716")
-    @Override
-protected void onDetachedFromWindow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.541 -0500", hash_original_method = "783D43AC66E879A98C2CBDD1B113996E", hash_generated_method = "E952790FDFDFFFD1534A80BB986A0716")
+    
+@Override
+    protected void onDetachedFromWindow() {
         if (LOG_ATTACH_DETACH) {
             Log.d(TAG, "onDetachedFromWindow");
         }
@@ -1763,8 +1836,9 @@ protected void onDetachedFromWindow() {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:29.124 -0500", hash_original_method = "D0DDFF21B511089DC22A6A0EC54D9B69", hash_generated_method = "B1E3905F5083642D143059CB46FC0A14")
-    private void checkRenderThreadState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.783 -0500", hash_original_method = "D0DDFF21B511089DC22A6A0EC54D9B69", hash_generated_method = "B1E3905F5083642D143059CB46FC0A14")
+    
+private void checkRenderThreadState() {
         if (mGLThread != null) {
             throw new IllegalStateException(
                     "setRenderer has already been called for this instance.");

@@ -15,8 +15,9 @@ public abstract class OutputStream implements Closeable, Flushable {
     /**
      * Default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.110 -0500", hash_original_method = "5995752F91892DAFA432449AA7A2BB76", hash_generated_method = "1D6DCD4069A5099E588E31C568880D1D")
-    public OutputStream() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.823 -0500", hash_original_method = "5995752F91892DAFA432449AA7A2BB76", hash_generated_method = "1D6DCD4069A5099E588E31C568880D1D")
+    
+public OutputStream() {
     }
 
     /**
@@ -26,8 +27,9 @@ public abstract class OutputStream implements Closeable, Flushable {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.111 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "BDB80A0BA0CE964F390B74B4F78F39D0")
-    public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.825 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "BDB80A0BA0CE964F390B74B4F78F39D0")
+    
+public void close() throws IOException {
         /* empty */
     }
 
@@ -38,16 +40,18 @@ public abstract class OutputStream implements Closeable, Flushable {
      * @throws IOException
      *             if an error occurs while flushing this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.112 -0500", hash_original_method = "1521992F8E9F05A9FDFB0E59716E3E93", hash_generated_method = "243C0871CD5D1DDEC1C9766742E8A0B7")
-    public void flush() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.827 -0500", hash_original_method = "1521992F8E9F05A9FDFB0E59716E3E93", hash_generated_method = "243C0871CD5D1DDEC1C9766742E8A0B7")
+    
+public void flush() throws IOException {
         /* empty */
     }
 
     /**
      * Equivalent to {@code write(buffer, 0, buffer.length)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.113 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
-    public void write(byte[] buffer) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.829 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
+    
+public void write(byte[] buffer) throws IOException {
         write(buffer, 0, buffer.length);
     }
 
@@ -69,8 +73,9 @@ public abstract class OutputStream implements Closeable, Flushable {
      *             {@code offset + count} is bigger than the length of
      *             {@code buffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.114 -0500", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "CDD044E99B9A9B3DC054F6D500C9D2DA")
-    public void write(byte[] buffer, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.832 -0500", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "CDD044E99B9A9B3DC054F6D500C9D2DA")
+    
+public void write(byte[] buffer, int offset, int count) throws IOException {
         Arrays.checkOffsetAndCount(buffer.length, offset, count);
         for (int i = offset; i < offset + count; i++) {
             write(buffer[i]);
@@ -86,15 +91,17 @@ public abstract class OutputStream implements Closeable, Flushable {
      * @throws IOException
      *             if an error occurs while writing to this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.115 -0500", hash_original_method = "6F952A0997C9C7FC75CA00C51592E230", hash_generated_method = "EFF3C84F96B0F410A6246A434AA1C3DB")
-    public abstract void write(int oneByte) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.835 -0500", hash_original_method = "6F952A0997C9C7FC75CA00C51592E230", hash_generated_method = "EFF3C84F96B0F410A6246A434AA1C3DB")
+    
+public abstract void write(int oneByte) throws IOException;
 
     /**
      * Returns true if this writer has encountered and suppressed an error. Used
      * by PrintStreams as an alternative to checked exceptions.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.116 -0500", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8")
-    boolean checkError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.837 -0500", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8")
+    
+boolean checkError() {
         return false;
     }
 

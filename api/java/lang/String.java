@@ -36,8 +36,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws NullPointerException
      *             if {@code data} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.032 -0500", hash_original_method = "5D1D071EC3D763C118809FF93B3AD7D2", hash_generated_method = "54629D8B18A57A2E1721D58027EED67E")
-    public static String copyValueOf(char[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.866 -0500", hash_original_method = "5D1D071EC3D763C118809FF93B3AD7D2", hash_generated_method = "54629D8B18A57A2E1721D58027EED67E")
+    
+public static String copyValueOf(char[] data) {
         return new String(data, 0, data.length);
     }
 
@@ -59,8 +60,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *             if {@code length < 0, start < 0} or {@code start + length >
      *             data.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.033 -0500", hash_original_method = "3093818BF79083B0FD2B917354862E11", hash_generated_method = "1C060EFB703FE482F85284AE10D6F2E9")
-    public static String copyValueOf(char[] data, int start, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.868 -0500", hash_original_method = "3093818BF79083B0FD2B917354862E11", hash_generated_method = "1C060EFB703FE482F85284AE10D6F2E9")
+    
+public static String copyValueOf(char[] data, int start, int length) {
         return new String(data, start, length);
     }
 
@@ -75,8 +77,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws NullPointerException
      *             if {@code data} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.074 -0500", hash_original_method = "2AD282CF508D37D852086ADCE714282E", hash_generated_method = "776F4278129F815F7D3D233435C9582D")
-    public static String valueOf(char[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.979 -0500", hash_original_method = "2AD282CF508D37D852086ADCE714282E", hash_generated_method = "776F4278129F815F7D3D233435C9582D")
+    
+public static String valueOf(char[] data) {
         return new String(data, 0, data.length);
     }
 
@@ -98,8 +101,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @throws NullPointerException
      *             if {@code data} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.074 -0500", hash_original_method = "1671E7A24B213A5C550B79186B0002D8", hash_generated_method = "D8D832B7B9642A12311BA120932EEB0C")
-    public static String valueOf(char[] data, int start, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.981 -0500", hash_original_method = "1671E7A24B213A5C550B79186B0002D8", hash_generated_method = "D8D832B7B9642A12311BA120932EEB0C")
+    
+public static String valueOf(char[] data, int start, int length) {
         return new String(data, start, length);
     }
 
@@ -110,8 +114,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the character.
      * @return the character converted to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.075 -0500", hash_original_method = "E7EDEB2BF9CD79B50B8CB74658BC8C20", hash_generated_method = "839E58FC55C9841E5D7E21929ABC3E81")
-    public static String valueOf(char value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.984 -0500", hash_original_method = "E7EDEB2BF9CD79B50B8CB74658BC8C20", hash_generated_method = "839E58FC55C9841E5D7E21929ABC3E81")
+    
+public static String valueOf(char value) {
         String s;
         if (value < 128) {
             s = new String(value, 1, ASCII);
@@ -129,8 +134,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the double.
      * @return the double converted to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.076 -0500", hash_original_method = "4A643EE28A4F78CB638222A80F5F07F5", hash_generated_method = "C8C2AA6B7D7DE849B5B81FEC769496B0")
-    public static String valueOf(double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.986 -0500", hash_original_method = "4A643EE28A4F78CB638222A80F5F07F5", hash_generated_method = "C8C2AA6B7D7DE849B5B81FEC769496B0")
+    
+public static String valueOf(double value) {
         return Double.toString(value);
     }
 
@@ -141,8 +147,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the float.
      * @return the float converted to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.077 -0500", hash_original_method = "A7339CF0A1845E47429F861771033D8B", hash_generated_method = "CF7DB5FFCBA3D0CB08B7AE31583B8A92")
-    public static String valueOf(float value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.989 -0500", hash_original_method = "A7339CF0A1845E47429F861771033D8B", hash_generated_method = "CF7DB5FFCBA3D0CB08B7AE31583B8A92")
+    
+public static String valueOf(float value) {
         return Float.toString(value);
     }
 
@@ -153,8 +160,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the integer.
      * @return the integer converted to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.078 -0500", hash_original_method = "7472D0A01C250CDB4203128D331B50ED", hash_generated_method = "AE763BADC02EAD29BBA2436A031207CD")
-    public static String valueOf(int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.991 -0500", hash_original_method = "7472D0A01C250CDB4203128D331B50ED", hash_generated_method = "AE763BADC02EAD29BBA2436A031207CD")
+    
+public static String valueOf(int value) {
         return Integer.toString(value);
     }
 
@@ -165,8 +173,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the long.
      * @return the long converted to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.079 -0500", hash_original_method = "D1AF4635F236F26EDAA4AC997AD8C09A", hash_generated_method = "2288A665FEBE4EF35DE6B0C0BF9BCD7C")
-    public static String valueOf(long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.993 -0500", hash_original_method = "D1AF4635F236F26EDAA4AC997AD8C09A", hash_generated_method = "2288A665FEBE4EF35DE6B0C0BF9BCD7C")
+    
+public static String valueOf(long value) {
         return Long.toString(value);
     }
 
@@ -179,8 +188,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the object.
      * @return the object converted to a string, or the string {@code "null"}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.080 -0500", hash_original_method = "29C79BCB300036CC1B9D463111BC50FD", hash_generated_method = "8DAED21ABAC747A4DC39D23D809B5F9B")
-    public static String valueOf(Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.996 -0500", hash_original_method = "29C79BCB300036CC1B9D463111BC50FD", hash_generated_method = "8DAED21ABAC747A4DC39D23D809B5F9B")
+    
+public static String valueOf(Object value) {
         return value != null ? value.toString() : "null";
     }
 
@@ -193,8 +203,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *            the boolean.
      * @return the boolean converted to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.081 -0500", hash_original_method = "B6848F35FD27983F085C8CD99AB771A5", hash_generated_method = "1CFE3D87A36EDF4565701FA2D6B59E4A")
-    public static String valueOf(boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.998 -0500", hash_original_method = "B6848F35FD27983F085C8CD99AB771A5", hash_generated_method = "1CFE3D87A36EDF4565701FA2D6B59E4A")
+    
+public static String valueOf(boolean value) {
         return value ? "true" : "false";
     }
 
@@ -218,8 +229,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *             if the format is invalid.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.093 -0500", hash_original_method = "4C2FD221C22BC395CCF88A6A55BE98AD", hash_generated_method = "E5991F4FE9E9869A1E27A9D3B810AA76")
-    public static String format(String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.033 -0500", hash_original_method = "4C2FD221C22BC395CCF88A6A55BE98AD", hash_generated_method = "E5991F4FE9E9869A1E27A9D3B810AA76")
+    
+public static String format(String format, Object... args) {
         return format(Locale.getDefault(), format, args);
     }
 
@@ -240,8 +252,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *             if the format is invalid.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.095 -0500", hash_original_method = "E957BA4807F1E0C30CA952954DA50144", hash_generated_method = "28E9802C1EC3687D9B95807B64B944A8")
-    public static String format(Locale locale, String format, Object... args) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.036 -0500", hash_original_method = "E957BA4807F1E0C30CA952954DA50144", hash_generated_method = "28E9802C1EC3687D9B95807B64B944A8")
+    
+public static String format(Locale locale, String format, Object... args) {
         if (format == null) {
             throw new NullPointerException("null format argument");
         }
@@ -259,10 +272,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * where the needle is a constant string, may compute the values cache, md2
      * and lastChar, and change the call to the following method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.097 -0500", hash_original_method = "22B32FEEB55C55BB6E6C36B65473E566", hash_generated_method = "D7CB1AC8FEA0128C6B82B8491B1759C5")
-    @FindBugsSuppressWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-@SuppressWarnings("unused")
-private static int indexOf(String haystackString, String needleString,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.039 -0500", hash_original_method = "22B32FEEB55C55BB6E6C36B65473E566", hash_generated_method = "D7CB1AC8FEA0128C6B82B8491B1759C5")
+    
+@FindBugsSuppressWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    @SuppressWarnings("unused")
+    private static int indexOf(String haystackString, String needleString,
             int cache, int md2, char lastChar) {
         char[] haystack = haystackString.value;
         int haystackOffset = haystackString.offset;
@@ -295,34 +309,34 @@ private static int indexOf(String haystackString, String needleString,
         }
         return -1;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.990 -0500", hash_original_field = "FD3FEDA6C0FA798616493B49961CBA92", hash_generated_field = "94C8E35BF1C6D0DCD0C640C5B7214BD5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.754 -0500", hash_original_field = "FD3FEDA6C0FA798616493B49961CBA92", hash_generated_field = "94C8E35BF1C6D0DCD0C640C5B7214BD5")
 
 
     private static final long serialVersionUID = -6849794470754667710L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.991 -0500", hash_original_field = "6043FA7459F5A202FA1BB308F3CA1020", hash_generated_field = "44CEA20EA4711232CF026CC7232D685C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.757 -0500", hash_original_field = "6043FA7459F5A202FA1BB308F3CA1020", hash_generated_field = "44CEA20EA4711232CF026CC7232D685C")
 
 
     private static final char REPLACEMENT_CHAR = (char) 0xfffd;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.995 -0500", hash_original_field = "4A935136612EAA09E31702F46C8876CF", hash_generated_field = "A2069D0DAA8806E284E1501E715FFAC8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.767 -0500", hash_original_field = "4A935136612EAA09E31702F46C8876CF", hash_generated_field = "A2069D0DAA8806E284E1501E715FFAC8")
 
     public static final Comparator<String> CASE_INSENSITIVE_ORDER = new CaseInsensitiveComparator();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.996 -0500", hash_original_field = "C14595FF670F012A0483206D218F5442", hash_generated_field = "6699F3B26E20D4AC1415724EB8FB9705")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.770 -0500", hash_original_field = "C14595FF670F012A0483206D218F5442", hash_generated_field = "6699F3B26E20D4AC1415724EB8FB9705")
 
 
     private static  char[] ASCII;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.997 -0500", hash_original_field = "CA3CEF12FBB39E8368D4DC357E1B2764", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.772 -0500", hash_original_field = "CA3CEF12FBB39E8368D4DC357E1B2764", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
 
 
     private  char[] value;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.998 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.774 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
 
 
     private  int offset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.998 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.777 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
 
 
     private  int count;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.999 -0500", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "38607001336EF9DE010EF92F750652A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.780 -0500", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "38607001336EF9DE010EF92F750652A2")
 
 
     private int hashCode;
@@ -330,8 +344,9 @@ private static int indexOf(String haystackString, String needleString,
     /**
      * Creates an empty string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.000 -0500", hash_original_method = "F65E96A775698E2C256BB1E903F5D8A6", hash_generated_method = "2D4827908F7D1AE19B6B75D4111BE4B4")
-    public String() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.783 -0500", hash_original_method = "F65E96A775698E2C256BB1E903F5D8A6", hash_generated_method = "2D4827908F7D1AE19B6B75D4111BE4B4")
+    
+public String() {
         value = EmptyArray.CHAR;
         offset = 0;
         count = 0;
@@ -340,9 +355,10 @@ private static int indexOf(String haystackString, String needleString,
     /*
      * Private constructor used for JIT optimization.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.001 -0500", hash_original_method = "8A258D0AF74DE6E118252D0EA5531366", hash_generated_method = "992FEE8CDB9ADFFB8D24FE457F6620ED")
-    @SuppressWarnings("unused")
-private String(String s, char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.785 -0500", hash_original_method = "8A258D0AF74DE6E118252D0EA5531366", hash_generated_method = "992FEE8CDB9ADFFB8D24FE457F6620ED")
+    
+@SuppressWarnings("unused")
+    private String(String s, char c) {
         offset = 0;
         value = new char[s.count + 1];
         count = s.count + 1;
@@ -354,9 +370,10 @@ private String(String s, char c) {
      * Converts the byte array to a string using the system's
      * {@link java.nio.charset.Charset#defaultCharset default charset}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.002 -0500", hash_original_method = "3CF6472F1EAFF36B200903831BC9D282", hash_generated_method = "03F81E410607AF83FE1129895E924F03")
-    @FindBugsSuppressWarnings("DM_DEFAULT_ENCODING")
-public String(byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.788 -0500", hash_original_method = "3CF6472F1EAFF36B200903831BC9D282", hash_generated_method = "03F81E410607AF83FE1129895E924F03")
+    
+@FindBugsSuppressWarnings("DM_DEFAULT_ENCODING")
+    public String(byte[] data) {
         this(data, 0, data.length);
     }
 
@@ -372,9 +389,10 @@ public String(byte[] data) {
      *             if {@code data == null}.
      * @deprecated Use {@link #String(byte[])} or {@link #String(byte[], String)} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.003 -0500", hash_original_method = "94FE9BFA8A903BE49DF8F4E82A84C713", hash_generated_method = "870FACBA9900B05E8ED3F9B0D2FDFB44")
-    @Deprecated
-public String(byte[] data, int high) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.791 -0500", hash_original_method = "94FE9BFA8A903BE49DF8F4E82A84C713", hash_generated_method = "870FACBA9900B05E8ED3F9B0D2FDFB44")
+    
+@Deprecated
+    public String(byte[] data, int high) {
         this(data, high, 0, data.length);
     }
 
@@ -460,8 +478,9 @@ for(int i = 0;i < count;i++)
      * @throws UnsupportedEncodingException
      *             if the named charset is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.007 -0500", hash_original_method = "D35F458D65648B05442A41C1A12F30CA", hash_generated_method = "4A2E2E5B578D26BC53ADEAE92430F57A")
-    public String(byte[] data, int offset, int byteCount, String charsetName) throws UnsupportedEncodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.800 -0500", hash_original_method = "D35F458D65648B05442A41C1A12F30CA", hash_generated_method = "4A2E2E5B578D26BC53ADEAE92430F57A")
+    
+public String(byte[] data, int offset, int byteCount, String charsetName) throws UnsupportedEncodingException {
         this(data, offset, byteCount, Charset.forNameUEE(charsetName));
     }
 
@@ -476,8 +495,9 @@ for(int i = 0;i < count;i++)
      * @throws UnsupportedEncodingException
      *             if {@code charsetName} is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.008 -0500", hash_original_method = "11FE032D0B0EBCDEFC4E4C2065489303", hash_generated_method = "0F260EFB114087F1784BF1AB863C49ED")
-    public String(byte[] data, String charsetName) throws UnsupportedEncodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.803 -0500", hash_original_method = "11FE032D0B0EBCDEFC4E4C2065489303", hash_generated_method = "0F260EFB114087F1784BF1AB863C49ED")
+    
+public String(byte[] data, String charsetName) throws UnsupportedEncodingException {
         this(data, 0, data.length, Charset.forNameUEE(charsetName));
     }
 
@@ -630,8 +650,9 @@ for(int i = 0;i < utfCount;i++)
      * @throws NullPointerException if {@code data == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.011 -0500", hash_original_method = "9D77FFE69AA84BF1048ED5CBD8EE386C", hash_generated_method = "14BE1B47B3BDFB19FC4452BDB9ABB0DE")
-    public String(byte[] data, Charset charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.811 -0500", hash_original_method = "9D77FFE69AA84BF1048ED5CBD8EE386C", hash_generated_method = "14BE1B47B3BDFB19FC4452BDB9ABB0DE")
+    
+public String(byte[] data, Charset charset) {
         this(data, 0, data.length, charset);
     }
 
@@ -642,8 +663,9 @@ for(int i = 0;i < utfCount;i++)
      *
      * @throws NullPointerException if {@code data == null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.012 -0500", hash_original_method = "84FF2A14EA759DC7C1F299809C55E832", hash_generated_method = "F6B2AA4C452966F0A0FC1D5FF2BE0A93")
-    public String(char[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.814 -0500", hash_original_method = "84FF2A14EA759DC7C1F299809C55E832", hash_generated_method = "F6B2AA4C452966F0A0FC1D5FF2BE0A93")
+    
+public String(char[] data) {
         this(data, 0, data.length);
     }
 
@@ -676,8 +698,9 @@ for(int i = 0;i < utfCount;i++)
      * Internal version of the String(char[], int, int) constructor.
      * Does not range check, null check, or copy the character array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.014 -0500", hash_original_method = "6AA52B72AD5521C733ED3E9463435DD5", hash_generated_method = "6AA52B72AD5521C733ED3E9463435DD5")
-    String(int offset, int charCount, char[] chars) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.819 -0500", hash_original_method = "6AA52B72AD5521C733ED3E9463435DD5", hash_generated_method = "6AA52B72AD5521C733ED3E9463435DD5")
+    
+String(int offset, int charCount, char[] chars) {
         this.value = chars;
         this.offset = offset;
         this.count = charCount;
@@ -688,8 +711,9 @@ for(int i = 0;i < utfCount;i++)
      * toCopy}. The returned string's <a href="#backing_array">backing array</a>
      * is no larger than necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.015 -0500", hash_original_method = "7D7AE898849737A5DE2F771028ADD293", hash_generated_method = "1067742A918A0414BA56DD0E157F3286")
-    public String(String toCopy) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.822 -0500", hash_original_method = "7D7AE898849737A5DE2F771028ADD293", hash_generated_method = "1067742A918A0414BA56DD0E157F3286")
+    
+public String(String toCopy) {
         value = (toCopy.value.length == toCopy.count)
                 ? toCopy.value
                 : Arrays.copyOfRange(toCopy.value, toCopy.offset, toCopy.offset + toCopy.length());
@@ -700,9 +724,10 @@ for(int i = 0;i < utfCount;i++)
     /*
      * Private constructor useful for JIT optimization.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.016 -0500", hash_original_method = "8B59C74FD130D5556CE63A5F3CE74139", hash_generated_method = "9EFDB51BAE8337F1F69E4DE1C793F289")
-    @SuppressWarnings( { "unused", "nls" })
-private String(String s1, String s2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.825 -0500", hash_original_method = "8B59C74FD130D5556CE63A5F3CE74139", hash_generated_method = "9EFDB51BAE8337F1F69E4DE1C793F289")
+    
+@SuppressWarnings( { "unused", "nls" })
+    private String(String s1, String s2) {
         if (s1 == null) {
             s1 = "null";
         }
@@ -719,9 +744,10 @@ private String(String s1, String s2) {
     /*
      * Private constructor useful for JIT optimization.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.017 -0500", hash_original_method = "E07460C3146BC4727C3E888CAC21772A", hash_generated_method = "AB6303DBA3D4B890C7485A0A9A814A89")
-    @SuppressWarnings( { "unused", "nls" })
-private String(String s1, String s2, String s3) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.829 -0500", hash_original_method = "E07460C3146BC4727C3E888CAC21772A", hash_generated_method = "AB6303DBA3D4B890C7485A0A9A814A89")
+    
+@SuppressWarnings( { "unused", "nls" })
+    private String(String s1, String s2, String s3) {
         if (s1 == null) {
             s1 = "null";
         }
@@ -743,8 +769,9 @@ private String(String s1, String s2, String s3) {
      * Creates a {@code String} from the contents of the specified
      * {@code StringBuffer}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.019 -0500", hash_original_method = "C3DEF5F256BD0FFA01404830FE1A0B0E", hash_generated_method = "3229E36585BD2E2901FD01AB77B2E7F3")
-    public String(StringBuffer stringBuffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.831 -0500", hash_original_method = "C3DEF5F256BD0FFA01404830FE1A0B0E", hash_generated_method = "3229E36585BD2E2901FD01AB77B2E7F3")
+    
+public String(StringBuffer stringBuffer) {
         offset = 0;
         synchronized (stringBuffer) {
             value = stringBuffer.shareValue();
@@ -803,8 +830,9 @@ for(int i = offset;i < end;i++)
      *             if {@code stringBuilder == null}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.021 -0500", hash_original_method = "1A43E0983F964C9F4090DA81181B802F", hash_generated_method = "1EFA5C7DF66501B4E9300FC7A3F11922")
-    public String(StringBuilder stringBuilder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.837 -0500", hash_original_method = "1A43E0983F964C9F4090DA81181B802F", hash_generated_method = "1EFA5C7DF66501B4E9300FC7A3F11922")
+    
+public String(StringBuilder stringBuilder) {
         if (stringBuilder == null) {
             throw new NullPointerException("stringBuilder == null");
         }
@@ -817,9 +845,10 @@ for(int i = offset;i < end;i++)
     /*
      * Creates a {@code String} that is s1 + v1. May be used by JIT code.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.022 -0500", hash_original_method = "8767608BAC25DDC267BEC70B13CF72A3", hash_generated_method = "72074810184A2393C111BF6D8ED3EA45")
-    @SuppressWarnings("unused")
-private String(String s1, int v1) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.840 -0500", hash_original_method = "8767608BAC25DDC267BEC70B13CF72A3", hash_generated_method = "72074810184A2393C111BF6D8ED3EA45")
+    
+@SuppressWarnings("unused")
+    private String(String s1, int v1) {
         if (s1 == null) {
             s1 = "null";
         }
@@ -841,21 +870,30 @@ private String(String s1, int v1) {
      * @throws IndexOutOfBoundsException
      *             if {@code index < 0} or {@code index >= length()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.024 -0500", hash_original_method = "87185450AF15BAF9DFFE5741D5928D9B", hash_generated_method = "272AD850E35F32A66C440BDE6E73AF76")
-    public native char charAt(int index);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.844 -0500", hash_original_method = "87185450AF15BAF9DFFE5741D5928D9B", hash_generated_method = "272AD850E35F32A66C440BDE6E73AF76")
+    
+    public char charAt(int index){
+    	//Formerly a native method
+    	addTaint(index);
+    	return getTaintChar();
+    }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.025 -0500", hash_original_method = "00E4125D0AA58BE2E1232BB5FC2C4846", hash_generated_method = "B1159EE4C7B906D7F8C1FC8C15EB0D6B")
-    private StringIndexOutOfBoundsException indexAndLength(int index) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.847 -0500", hash_original_method = "00E4125D0AA58BE2E1232BB5FC2C4846", hash_generated_method = "B1159EE4C7B906D7F8C1FC8C15EB0D6B")
+    
+private StringIndexOutOfBoundsException indexAndLength(int index) {
         throw new StringIndexOutOfBoundsException(this, index);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.026 -0500", hash_original_method = "C5BE1ED07127E02665146DD0ACED99A5", hash_generated_method = "FB9D4ABD48FCEC7C8540B108B1A60F24")
-    private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.849 -0500", hash_original_method = "C5BE1ED07127E02665146DD0ACED99A5", hash_generated_method = "FB9D4ABD48FCEC7C8540B108B1A60F24")
+    
+private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
         throw new StringIndexOutOfBoundsException(this, start, end - start);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.027 -0500", hash_original_method = "FABF855F22C4847A4FF9FC56E0D56C67", hash_generated_method = "2123D70BF7727C5EDBF7D1832FE04260")
-    private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.852 -0500", hash_original_method = "FABF855F22C4847A4FF9FC56E0D56C67", hash_generated_method = "2123D70BF7727C5EDBF7D1832FE04260")
+    
+private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int offset, int count) {
         throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
     }
 
@@ -863,8 +901,9 @@ private String(String s1, int v1) {
      * This isn't equivalent to either of ICU's u_foldCase case folds, and thus any of the Unicode
      * case folds, but it's what the RI uses.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.027 -0500", hash_original_method = "1D42C2C4BD065BE4935C25058CB25A0E", hash_generated_method = "1FA0F03FEC4C1822C6D78194D6620044")
-    private char foldCase(char ch) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.855 -0500", hash_original_method = "1D42C2C4BD065BE4935C25058CB25A0E", hash_generated_method = "1FA0F03FEC4C1822C6D78194D6620044")
+    
+private char foldCase(char ch) {
         if (ch < 128) {
             if ('A' <= ch && ch <= 'Z') {
                 return (char) (ch + ('a' - 'A'));
@@ -894,8 +933,14 @@ private String(String s1, int v1) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.029 -0500", hash_original_method = "E601A465E2566ECC4B972E253D5CFD79", hash_generated_method = "57FA755FC26750AD99632FC2AFFBA3C3")
-    public native int compareTo(String string);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.858 -0500", hash_original_method = "E601A465E2566ECC4B972E253D5CFD79", hash_generated_method = "57FA755FC26750AD99632FC2AFFBA3C3")
+    
+    public int compareTo(String string){
+    	//Formerly a native method
+    	addTaint(string.getTaint());
+    	return getTaintInt();
+    }
+
 
     /**
      * Compares the specified string to this string using the Unicode values of
@@ -917,8 +962,9 @@ private String(String s1, int v1) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.030 -0500", hash_original_method = "1A9A71EFE325E55C19A2B451F1A9B9E2", hash_generated_method = "F7E005DD24A38F96E3E071826A6E3889")
-    public int compareToIgnoreCase(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.860 -0500", hash_original_method = "1A9A71EFE325E55C19A2B451F1A9B9E2", hash_generated_method = "F7E005DD24A38F96E3E071826A6E3889")
+    
+public int compareToIgnoreCase(String string) {
         int o1 = offset, o2 = string.offset, result;
         int end = offset + (count < string.count ? count : string.count);
         char c1, c2;
@@ -944,8 +990,9 @@ private String(String s1, int v1) {
      * @return a new string which is the concatenation of this string and the
      *         specified string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.031 -0500", hash_original_method = "F488471D994E6AC017026A4A172508CF", hash_generated_method = "21A9CBF4CE60BC5F74030C540EEF2812")
-    public String concat(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.863 -0500", hash_original_method = "F488471D994E6AC017026A4A172508CF", hash_generated_method = "21A9CBF4CE60BC5F74030C540EEF2812")
+    
+public String concat(String string) {
         if (string.count > 0 && count > 0) {
             char[] buffer = new char[count + string.count];
             System.arraycopy(value, offset, buffer, 0, count);
@@ -966,8 +1013,9 @@ private String(String s1, int v1) {
      * @throws NullPointerException
      *             if {@code suffix} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.034 -0500", hash_original_method = "3B37EFF40C149A7A244BFEF0002B2C93", hash_generated_method = "2C24111E3C33F98C179B82A67E3EFE53")
-    public boolean endsWith(String suffix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.871 -0500", hash_original_method = "3B37EFF40C149A7A244BFEF0002B2C93", hash_generated_method = "2C24111E3C33F98C179B82A67E3EFE53")
+    
+public boolean endsWith(String suffix) {
         return regionMatches(count - suffix.count, suffix, 0, suffix.count);
     }
 
@@ -982,9 +1030,15 @@ private String(String s1, int v1) {
      *         {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.036 -0500", hash_original_method = "84733F87EF08EE029ED9292B40928CC1", hash_generated_method = "F0F3281614602C65EE2A4BACD0B9E7C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.875 -0500", hash_original_method = "84733F87EF08EE029ED9292B40928CC1", hash_generated_method = "F0F3281614602C65EE2A4BACD0B9E7C9")
+    
     @Override
-public native boolean equals(Object object);
+    public boolean equals(Object object){
+    	//Formerly a native method
+    	addTaint(object.getTaint());
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Compares the specified string to this string ignoring the case of the
@@ -995,9 +1049,10 @@ public native boolean equals(Object object);
      * @return {@code true} if the specified string is equal to this string,
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.037 -0500", hash_original_method = "2D6A09B1457D58571ED784483A3E54F2", hash_generated_method = "8B92707DD4A71374670A5694D30393A6")
-    @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
-public boolean equalsIgnoreCase(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.877 -0500", hash_original_method = "2D6A09B1457D58571ED784483A3E54F2", hash_generated_method = "8B92707DD4A71374670A5694D30393A6")
+    
+@FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
+    public boolean equalsIgnoreCase(String string) {
         if (string == this) {
             return true;
         }
@@ -1072,8 +1127,9 @@ for(int i = offset + start;i < end;i++)
      * is unspecified. In practice, when the default charset is UTF-8 (as it is on Android),
      * all strings can be encoded.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.038 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
-    public byte[] getBytes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.883 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
+    
+public byte[] getBytes() {
         return getBytes(Charset.defaultCharset());
     }
 
@@ -1086,8 +1142,9 @@ for(int i = offset + start;i < end;i++)
      *
      * @throws UnsupportedEncodingException if the charset is not supported
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.039 -0500", hash_original_method = "D1476A765D84241818C22751CEBD7DE3", hash_generated_method = "DC158139A24E25D529425729D16D0CBF")
-    public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.886 -0500", hash_original_method = "D1476A765D84241818C22751CEBD7DE3", hash_generated_method = "DC158139A24E25D529425729D16D0CBF")
+    
+public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
         return getBytes(Charset.forNameUEE(charsetName));
     }
 
@@ -1101,8 +1158,9 @@ for(int i = offset + start;i < end;i++)
      *
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.040 -0500", hash_original_method = "56FDAE3B6641018546E6C6674268142D", hash_generated_method = "B122503E334C5D64C92FAC8F5D7C7C64")
-    public byte[] getBytes(Charset charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.888 -0500", hash_original_method = "56FDAE3B6641018546E6C6674268142D", hash_generated_method = "B122503E334C5D64C92FAC8F5D7C7C64")
+    
+public byte[] getBytes(Charset charset) {
         String canonicalCharsetName = charset.name();
         if (canonicalCharsetName.equals("UTF-8")) {
             return Charsets.toUtf8Bytes(value, offset, count);
@@ -1152,15 +1210,16 @@ for(int i = offset + start;i < end;i++)
      * within the java.lang package only.  The caller is responsible for
      * ensuring that start >= 0 && start <= end && end <= count.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.042 -0500", hash_original_method = "25FFBBE7056EE87BB826458DBC43764C", hash_generated_method = "238DD3FC86386D3311138731220E8FD2")
-    void _getChars(int start, int end, char[] buffer, int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.893 -0500", hash_original_method = "25FFBBE7056EE87BB826458DBC43764C", hash_generated_method = "238DD3FC86386D3311138731220E8FD2")
+    
+void _getChars(int start, int end, char[] buffer, int index) {
         // NOTE last character not copied!
         System.arraycopy(value, start + offset, buffer, index, end - start);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.043 -0500", hash_original_method = "19D1106FC463FB90112A6C6293D6F5CF", hash_generated_method = "AB31E2FB551110250A6FEC92F9C5DCA2")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.896 -0500", hash_original_method = "19D1106FC463FB90112A6C6293D6F5CF", hash_generated_method = "AB31E2FB551110250A6FEC92F9C5DCA2")
+    
+@Override public int hashCode() {
         int hash = hashCode;
         if (hash == 0) {
             if (count == 0) {
@@ -1186,8 +1245,9 @@ public int hashCode() {
      * @return the index in this string of the specified character, -1 if the
      *         character isn't found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.044 -0500", hash_original_method = "C183CC13D668537DB52873A8A3264758", hash_generated_method = "EF3ED02C218F9DCEE08DD51AAB959F02")
-    public int indexOf(int c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.898 -0500", hash_original_method = "C183CC13D668537DB52873A8A3264758", hash_generated_method = "EF3ED02C218F9DCEE08DD51AAB959F02")
+    
+public int indexOf(int c) {
         // TODO: just "return indexOf(c, 0);" when the JIT can inline that deep.
         if (c > 0xffff) {
             return indexOfSupplementary(c, 0);
@@ -1207,19 +1267,28 @@ public int hashCode() {
      * @return the index in this string of the specified character, -1 if the
      *         character isn't found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.044 -0500", hash_original_method = "A9B16E70D2A4A056B33DA4268AACFBA9", hash_generated_method = "F50F2C459FB5069F52492E2F1C167523")
-    public int indexOf(int c, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.900 -0500", hash_original_method = "A9B16E70D2A4A056B33DA4268AACFBA9", hash_generated_method = "F50F2C459FB5069F52492E2F1C167523")
+    
+public int indexOf(int c, int start) {
         if (c > 0xffff) {
             return indexOfSupplementary(c, start);
         }
         return fastIndexOf(c, start);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.046 -0500", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "50A62FB275EDAD928891334122C78843")
-    private native int fastIndexOf(int c, int start);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.904 -0500", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "50A62FB275EDAD928891334122C78843")
+    
+    private int fastIndexOf(int c, int start){
+    	//Formerly a native method
+    	addTaint(c);
+    	addTaint(start);
+    	return getTaintInt();
+    }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.047 -0500", hash_original_method = "9DA1418F8A10F302F688A26755CAB088", hash_generated_method = "6D78EED33ED21368534C2D933E989ED8")
-    private int indexOfSupplementary(int c, int start) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.906 -0500", hash_original_method = "9DA1418F8A10F302F688A26755CAB088", hash_generated_method = "6D78EED33ED21368534C2D933E989ED8")
+    
+private int indexOfSupplementary(int c, int start) {
         if (!Character.isSupplementaryCodePoint(c)) {
             return -1;
         }
@@ -1240,8 +1309,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.048 -0500", hash_original_method = "AC187DA6A9C2600FBA62EFD5097D8F4D", hash_generated_method = "0D57523B1B110B3F4F960ABB598D0797")
-    public int indexOf(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.909 -0500", hash_original_method = "AC187DA6A9C2600FBA62EFD5097D8F4D", hash_generated_method = "0D57523B1B110B3F4F960ABB598D0797")
+    
+public int indexOf(String string) {
         int start = 0;
         int subCount = string.count;
         int _count = count;
@@ -1286,8 +1356,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code subString} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.049 -0500", hash_original_method = "30C77F2F1070D21229A0301D2E3C23FC", hash_generated_method = "7B5C852FA9A1DF46DDC4AC013C96E720")
-    public int indexOf(String subString, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.912 -0500", hash_original_method = "30C77F2F1070D21229A0301D2E3C23FC", hash_generated_method = "7B5C852FA9A1DF46DDC4AC013C96E720")
+    
+public int indexOf(String subString, int start) {
         if (start < 0) {
             start = 0;
         }
@@ -1332,16 +1403,22 @@ public int hashCode() {
      *
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.052 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "9EFBA24431943EE0CA752566A6372B65")
-    public native boolean isEmpty();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.921 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "9EFBA24431943EE0CA752566A6372B65")
+    
+    public boolean isEmpty(){
+    	//Formerly a native method
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Returns the last index of the code point {@code c}, or -1.
      * The search for the character starts at the end and moves towards the
      * beginning of this string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.053 -0500", hash_original_method = "B7458CFA700437DC398BF47C5A311056", hash_generated_method = "4ABC1CA75C51E38C8A7EC35525D60FD3")
-    public int lastIndexOf(int c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.923 -0500", hash_original_method = "B7458CFA700437DC398BF47C5A311056", hash_generated_method = "4ABC1CA75C51E38C8A7EC35525D60FD3")
+    
+public int lastIndexOf(int c) {
         if (c > 0xffff) {
             return lastIndexOfSupplementary(c, Integer.MAX_VALUE);
         }
@@ -1361,8 +1438,9 @@ public int hashCode() {
      * The search for the character starts at offset {@code start} and moves towards
      * the beginning of this string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.054 -0500", hash_original_method = "438C7E0E01B0881067FA33086AF4D678", hash_generated_method = "8DBC195876C77C52FE93414465403496")
-    public int lastIndexOf(int c, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.926 -0500", hash_original_method = "438C7E0E01B0881067FA33086AF4D678", hash_generated_method = "8DBC195876C77C52FE93414465403496")
+    
+public int lastIndexOf(int c, int start) {
         if (c > 0xffff) {
             return lastIndexOfSupplementary(c, start);
         }
@@ -1382,8 +1460,9 @@ public int hashCode() {
         return -1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.055 -0500", hash_original_method = "ECC6B0EDCC4F01358439BB31BFF21134", hash_generated_method = "EB35337649F216A80A16127A0A991E05")
-    private int lastIndexOfSupplementary(int c, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.928 -0500", hash_original_method = "ECC6B0EDCC4F01358439BB31BFF21134", hash_generated_method = "EB35337649F216A80A16127A0A991E05")
+    
+private int lastIndexOfSupplementary(int c, int start) {
         if (!Character.isSupplementaryCodePoint(c)) {
             return -1;
         }
@@ -1404,8 +1483,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.056 -0500", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "FEF0BFF9BA9E8F1DA2DE7F055FC99EC3")
-    public int lastIndexOf(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.931 -0500", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "FEF0BFF9BA9E8F1DA2DE7F055FC99EC3")
+    
+public int lastIndexOf(String string) {
         // Use count instead of count - 1 so lastIndexOf("") returns count
         return lastIndexOf(string, count);
     }
@@ -1424,8 +1504,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code subString} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.057 -0500", hash_original_method = "08D5FBAA11FAAE0244D1BD87258C05E0", hash_generated_method = "EEF14964EDF3E0241435E51BAF061B2D")
-    public int lastIndexOf(String subString, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.934 -0500", hash_original_method = "08D5FBAA11FAAE0244D1BD87258C05E0", hash_generated_method = "EEF14964EDF3E0241435E51BAF061B2D")
+    
+public int lastIndexOf(String subString, int start) {
         int subCount = subString.count;
         if (subCount <= count && start >= 0) {
             if (subCount > 0) {
@@ -1462,8 +1543,13 @@ public int hashCode() {
      *
      * @return the number of characters in this string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.058 -0500", hash_original_method = "026D3AE6EA7284BA85CF864429138595", hash_generated_method = "41F61E755A7C3306650DE1A02239C8F3")
-    public native int length();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.937 -0500", hash_original_method = "026D3AE6EA7284BA85CF864429138595", hash_generated_method = "41F61E755A7C3306650DE1A02239C8F3")
+    
+    public int length(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
 
     /**
      * Compares the specified string to this string and compares the specified
@@ -1482,8 +1568,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.059 -0500", hash_original_method = "8EA3BFAB97A4D4877FC2554FB493C6C0", hash_generated_method = "91E7B8B05EA1C3F175A3139FD889C65C")
-    public boolean regionMatches(int thisStart, String string, int start, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.940 -0500", hash_original_method = "8EA3BFAB97A4D4877FC2554FB493C6C0", hash_generated_method = "91E7B8B05EA1C3F175A3139FD889C65C")
+    
+public boolean regionMatches(int thisStart, String string, int start, int length) {
         if (string == null) {
             throw new NullPointerException();
         }
@@ -1527,8 +1614,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.060 -0500", hash_original_method = "5098FC46543D7D1A735E08AA962F8003", hash_generated_method = "88F17216AA2E98FA881DE372CE6364E6")
-    public boolean regionMatches(boolean ignoreCase, int thisStart, String string, int start, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.943 -0500", hash_original_method = "5098FC46543D7D1A735E08AA962F8003", hash_generated_method = "88F17216AA2E98FA881DE372CE6364E6")
+    
+public boolean regionMatches(boolean ignoreCase, int thisStart, String string, int start, int length) {
         if (!ignoreCase) {
             return regionMatches(thisStart, string, start, length);
         }
@@ -1565,8 +1653,9 @@ public int hashCode() {
      *            the replacement character.
      * @return a new string with occurrences of oldChar replaced by newChar.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.061 -0500", hash_original_method = "52751D07523F52C15F0E15149B768BF7", hash_generated_method = "6DD64A04FC7BC7DC0050E5B221454760")
-    public String replace(char oldChar, char newChar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.946 -0500", hash_original_method = "52751D07523F52C15F0E15149B768BF7", hash_generated_method = "6DD64A04FC7BC7DC0050E5B221454760")
+    
+public String replace(char oldChar, char newChar) {
         char[] buffer = value;
         int _offset = offset;
         int _count = count;
@@ -1605,8 +1694,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code target} or {@code replacement} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.063 -0500", hash_original_method = "226EAAC156D556D42E48670E64FEC4E8", hash_generated_method = "BAA289D8CF1FC3382A99E9306635F827")
-    public String replace(CharSequence target, CharSequence replacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.949 -0500", hash_original_method = "226EAAC156D556D42E48670E64FEC4E8", hash_generated_method = "BAA289D8CF1FC3382A99E9306635F827")
+    
+public String replace(CharSequence target, CharSequence replacement) {
         if (target == null) {
             throw new NullPointerException("target == null");
         }
@@ -1662,8 +1752,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code prefix} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.063 -0500", hash_original_method = "8508513C5D9E5D7A42B020CFB91803A3", hash_generated_method = "CE66BF7B4E46285328F82EC9849A383E")
-    public boolean startsWith(String prefix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.951 -0500", hash_original_method = "8508513C5D9E5D7A42B020CFB91803A3", hash_generated_method = "CE66BF7B4E46285328F82EC9849A383E")
+    
+public boolean startsWith(String prefix) {
         return startsWith(prefix, 0);
     }
 
@@ -1680,8 +1771,9 @@ public int hashCode() {
      * @throws NullPointerException
      *             if {@code prefix} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.064 -0500", hash_original_method = "DCA59D254EE64B3144EDF9B3ACB43A45", hash_generated_method = "3003C39C59D3032711D80AD8F78AAB14")
-    public boolean startsWith(String prefix, int start) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.953 -0500", hash_original_method = "DCA59D254EE64B3144EDF9B3ACB43A45", hash_generated_method = "3003C39C59D3032711D80AD8F78AAB14")
+    
+public boolean startsWith(String prefix, int start) {
         return regionMatches(start, prefix, 0, prefix.count);
     }
 
@@ -1751,8 +1843,9 @@ String var2511EA3E5FEAAD0D48B436EB1999CC85_1798446020 =             new String(o
      *
      * @return a character array containing the characters of this string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.067 -0500", hash_original_method = "66BAEF040BB5FDC80731F9B16CD33C32", hash_generated_method = "F8512EE67F64CE701F309692817A9311")
-    public char[] toCharArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.961 -0500", hash_original_method = "66BAEF040BB5FDC80731F9B16CD33C32", hash_generated_method = "F8512EE67F64CE701F309692817A9311")
+    
+public char[] toCharArray() {
         char[] buffer = new char[count];
         System.arraycopy(value, offset, buffer, 0, count);
         return buffer;
@@ -1764,8 +1857,9 @@ String var2511EA3E5FEAAD0D48B436EB1999CC85_1798446020 =             new String(o
      *
      * @return a new lower case string, or {@code this} if it's already all lower case.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.068 -0500", hash_original_method = "1FBB4BF6938E55C9E24FEC1EE0A95252", hash_generated_method = "E97C0644499688529C3BF08E85BC65DF")
-    public String toLowerCase() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.964 -0500", hash_original_method = "1FBB4BF6938E55C9E24FEC1EE0A95252", hash_generated_method = "E97C0644499688529C3BF08E85BC65DF")
+    
+public String toLowerCase() {
         return CaseMapper.toLowerCase(Locale.getDefault(), this, value, offset, count);
     }
 
@@ -1782,17 +1876,19 @@ String var2511EA3E5FEAAD0D48B436EB1999CC85_1798446020 =             new String(o
      *
      * @return a new lower case string, or {@code this} if it's already all lower case.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.069 -0500", hash_original_method = "3BCA227A64DF8F05552679E5E357BCF1", hash_generated_method = "5FD4747EA9A442FB66B7E27AF997C7EF")
-    public String toLowerCase(Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.967 -0500", hash_original_method = "3BCA227A64DF8F05552679E5E357BCF1", hash_generated_method = "5FD4747EA9A442FB66B7E27AF997C7EF")
+    
+public String toLowerCase(Locale locale) {
         return CaseMapper.toLowerCase(locale, this, value, offset, count);
     }
 
     /**
      * Returns this string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.070 -0500", hash_original_method = "068E2EE4236B85776135405F1B66AD49", hash_generated_method = "28DD1B4FF5D0D981D70F8CACE98B810E")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.969 -0500", hash_original_method = "068E2EE4236B85776135405F1B66AD49", hash_generated_method = "28DD1B4FF5D0D981D70F8CACE98B810E")
+    
+@Override
+    public String toString() {
         return this;
     }
 
@@ -1802,8 +1898,9 @@ public String toString() {
      *
      * @return a new upper case string, or {@code this} if it's already all upper case.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.071 -0500", hash_original_method = "8DEC33A26AFC2829CCCCE108ECEB9551", hash_generated_method = "CD069DB34D6C0A6A177A7F24AFE5CA91")
-    public String toUpperCase() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.971 -0500", hash_original_method = "8DEC33A26AFC2829CCCCE108ECEB9551", hash_generated_method = "CD069DB34D6C0A6A177A7F24AFE5CA91")
+    
+public String toUpperCase() {
         return CaseMapper.toUpperCase(Locale.getDefault(), this, value, offset, count);
     }
 
@@ -1820,8 +1917,9 @@ public String toString() {
      *
      * @return a new upper case string, or {@code this} if it's already all upper case.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.072 -0500", hash_original_method = "11C711663B7D81E6BD865533BF51B442", hash_generated_method = "4E7E51E15F7C29846F15EFA5377AAAED")
-    public String toUpperCase(Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.973 -0500", hash_original_method = "11C711663B7D81E6BD865533BF51B442", hash_generated_method = "4E7E51E15F7C29846F15EFA5377AAAED")
+    
+public String toUpperCase(Locale locale) {
         return CaseMapper.toUpperCase(locale, this, value, offset, count);
     }
 
@@ -1832,8 +1930,9 @@ public String toString() {
      * @return a new string with characters <code><= \\u0020</code> removed from
      *         the beginning and the end.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.073 -0500", hash_original_method = "5AB01C88F799E5B54FF71EE82B91E811", hash_generated_method = "EC72A69BD5DAA2B233102023BAFFC2D1")
-    public String trim() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.976 -0500", hash_original_method = "5AB01C88F799E5B54FF71EE82B91E811", hash_generated_method = "EC72A69BD5DAA2B233102023BAFFC2D1")
+    
+public String trim() {
         int start = offset, last = offset + count - 1;
         int end = last;
         while ((start <= end) && (value[start] <= ' ')) {
@@ -1861,8 +1960,9 @@ public String toString() {
      *             if {@code strbuf} is {@code null}.
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.082 -0500", hash_original_method = "233CB676C051D9EE76740A9343D1B467", hash_generated_method = "4B95AEE813CA7CAF74C1B96B4257E04D")
-    public boolean contentEquals(StringBuffer strbuf) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.001 -0500", hash_original_method = "233CB676C051D9EE76740A9343D1B467", hash_generated_method = "4B95AEE813CA7CAF74C1B96B4257E04D")
+    
+public boolean contentEquals(StringBuffer strbuf) {
         synchronized (strbuf) {
             int size = strbuf.length();
             if (count != size) {
@@ -1882,8 +1982,9 @@ public String toString() {
      * @return {@code true} if equal, otherwise {@code false}
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.083 -0500", hash_original_method = "733340B51AD84F3351AE4177729AE631", hash_generated_method = "002CA0AA9437153C4069C729DA94CA0D")
-    public boolean contentEquals(CharSequence cs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.004 -0500", hash_original_method = "733340B51AD84F3351AE4177729AE631", hash_generated_method = "002CA0AA9437153C4069C729DA94CA0D")
+    
+public boolean contentEquals(CharSequence cs) {
         if (cs == null) {
             throw new NullPointerException();
         }
@@ -1917,8 +2018,9 @@ public String toString() {
      * @throws NullPointerException if {@code regularExpression == null}
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.084 -0500", hash_original_method = "54546B1154273B2EF815CC4641C4AF95", hash_generated_method = "31150CC120132529E2C554553C68A957")
-    public boolean matches(String regularExpression) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.007 -0500", hash_original_method = "54546B1154273B2EF815CC4641C4AF95", hash_generated_method = "31150CC120132529E2C554553C68A957")
+    
+public boolean matches(String regularExpression) {
         return Pattern.matches(regularExpression, this);
     }
 
@@ -1937,8 +2039,9 @@ public String toString() {
      * @see Pattern
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.085 -0500", hash_original_method = "85FB9291CC087326BB42DD27D5FF2770", hash_generated_method = "39E48D55E8E4F9E59F58690640BB29E5")
-    public String replaceAll(String regularExpression, String replacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.009 -0500", hash_original_method = "85FB9291CC087326BB42DD27D5FF2770", hash_generated_method = "39E48D55E8E4F9E59F58690640BB29E5")
+    
+public String replaceAll(String regularExpression, String replacement) {
         return Pattern.compile(regularExpression).matcher(this).replaceAll(replacement);
     }
 
@@ -1957,8 +2060,9 @@ public String toString() {
      * @see Pattern
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.085 -0500", hash_original_method = "B1F6469D7EA429A7B60DE2A4BC9D1B18", hash_generated_method = "E6B964A174237D2BB7F3EA8A25C91AB3")
-    public String replaceFirst(String regularExpression, String replacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.012 -0500", hash_original_method = "B1F6469D7EA429A7B60DE2A4BC9D1B18", hash_generated_method = "E6B964A174237D2BB7F3EA8A25C91AB3")
+    
+public String replaceFirst(String regularExpression, String replacement) {
         return Pattern.compile(regularExpression).matcher(this).replaceFirst(replacement);
     }
 
@@ -1978,8 +2082,9 @@ public String toString() {
      * @see Pattern
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.086 -0500", hash_original_method = "0ADD043F2AA11242F9B6645F9D3630BF", hash_generated_method = "E1341A3A010CA709FCD2C88E1FF85169")
-    public String[] split(String regularExpression) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.014 -0500", hash_original_method = "0ADD043F2AA11242F9B6645F9D3630BF", hash_generated_method = "E1341A3A010CA709FCD2C88E1FF85169")
+    
+public String[] split(String regularExpression) {
         return split(regularExpression, 0);
     }
 
@@ -1997,8 +2102,9 @@ public String toString() {
      *             valid.
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.087 -0500", hash_original_method = "4FB3AE192250E9EE292BE09F829C7FA4", hash_generated_method = "C2609287AD57B7D934CE6820CFD38AD3")
-    public String[] split(String regularExpression, int limit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.016 -0500", hash_original_method = "4FB3AE192250E9EE292BE09F829C7FA4", hash_generated_method = "C2609287AD57B7D934CE6820CFD38AD3")
+    
+public String[] split(String regularExpression, int limit) {
         String[] result = java.util.regex.Splitter.fastSplit(regularExpression, this, limit);
         return result != null ? result : Pattern.compile(regularExpression).split(this, limit);
     }
@@ -2018,8 +2124,9 @@ public String toString() {
      * @see java.lang.CharSequence#subSequence(int, int)
      * @since 1.4
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.088 -0500", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "31F89698891865DDF37976A5038C7055")
-    public CharSequence subSequence(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.019 -0500", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "31F89698891865DDF37976A5038C7055")
+    
+public CharSequence subSequence(int start, int end) {
         return substring(start, end);
     }
 
@@ -2046,7 +2153,7 @@ public String toString() {
 
     
     private static final class CaseInsensitiveComparator implements Comparator<String>, Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.993 -0500", hash_original_field = "B7203C3971CD9B594DE7FEBB21441635", hash_generated_field = "094B85F4F683BB296AFE95E1161C88EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.761 -0500", hash_original_field = "B7203C3971CD9B594DE7FEBB21441635", hash_generated_field = "094B85F4F683BB296AFE95E1161C88EE")
 
         private static final long serialVersionUID = 8575799808933029326L;
         
@@ -2070,8 +2177,9 @@ public String toString() {
          * @exception ClassCastException
          *                if objects are not the correct type
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.993 -0500", hash_original_method = "10AFFFE45F62C15CA0052EB0BB14A8D3", hash_generated_method = "3D313DA5441FEBF36B8C87503DF1A73A")
-        public int compare(String o1, String o2) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.763 -0500", hash_original_method = "10AFFFE45F62C15CA0052EB0BB14A8D3", hash_generated_method = "3D313DA5441FEBF36B8C87503DF1A73A")
+        
+public int compare(String o1, String o2) {
             return o1.compareToIgnoreCase(o2);
         }
     }
@@ -2129,8 +2237,9 @@ public String toString() {
      *         string, otherwise {@code false}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.091 -0500", hash_original_method = "994533EB4329C14FF0C3B68A297AD053", hash_generated_method = "B306D1B94E8E09DC82F103510417208B")
-    public boolean contains(CharSequence cs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.028 -0500", hash_original_method = "994533EB4329C14FF0C3B68A297AD053", hash_generated_method = "B306D1B94E8E09DC82F103510417208B")
+    
+public boolean contains(CharSequence cs) {
         if (cs == null) {
             throw new NullPointerException();
         }
@@ -2152,8 +2261,9 @@ public String toString() {
      *             index} to match {@code codePointOffset}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.092 -0500", hash_original_method = "3AF353F7691F77FE6437135BD27DAE4A", hash_generated_method = "BC45D9282C0FD11E84D0B3CB63D25ECA")
-    public int offsetByCodePoints(int index, int codePointOffset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.031 -0500", hash_original_method = "3AF353F7691F77FE6437135BD27DAE4A", hash_generated_method = "BC45D9282C0FD11E84D0B3CB63D25ECA")
+    
+public int offsetByCodePoints(int index, int codePointOffset) {
         int s = index + offset;
         int r = Character.offsetByCodePoints(value, offset, count, s, codePointOffset);
         return r - offset;

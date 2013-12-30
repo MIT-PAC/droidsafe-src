@@ -12,29 +12,29 @@ import com.android.internal.telephony.IccCardStatus.PinState;
 
 
 public class IccCardApplication {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.247 -0500", hash_original_field = "89FE741B258C985E1314B428A9F949A8", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.169 -0500", hash_original_field = "89FE741B258C985E1314B428A9F949A8", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
 
 
     public AppType        app_type;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.248 -0500", hash_original_field = "B0F0924A203A6481753FB7FEE92E263F", hash_generated_field = "D6FD5E302DD93A741A4A2C8F944FB4B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.171 -0500", hash_original_field = "B0F0924A203A6481753FB7FEE92E263F", hash_generated_field = "D6FD5E302DD93A741A4A2C8F944FB4B8")
 
     public AppState       app_state;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.249 -0500", hash_original_field = "653753E7032A71534C9A63542AD28521", hash_generated_field = "F6947369300AACC14A8C15A941199F8B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.173 -0500", hash_original_field = "653753E7032A71534C9A63542AD28521", hash_generated_field = "F6947369300AACC14A8C15A941199F8B")
 
     public PersoSubState  perso_substate;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.250 -0500", hash_original_field = "F5A5D5912ABD3FC1CFE753B13648FE53", hash_generated_field = "69AACDBD897395F7281C96A5B387BF26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.175 -0500", hash_original_field = "F5A5D5912ABD3FC1CFE753B13648FE53", hash_generated_field = "69AACDBD897395F7281C96A5B387BF26")
 
     public String         aid;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.251 -0500", hash_original_field = "64B084A20FC040547CC485D64B9D5ABD", hash_generated_field = "303AB67C284933C802A1515B0E391E83")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.178 -0500", hash_original_field = "64B084A20FC040547CC485D64B9D5ABD", hash_generated_field = "303AB67C284933C802A1515B0E391E83")
 
     public String         app_label;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.251 -0500", hash_original_field = "115834CBAFFFDBE6958D6F14BFB2A8F6", hash_generated_field = "59893490E117577C680150A765F6F72D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.180 -0500", hash_original_field = "115834CBAFFFDBE6958D6F14BFB2A8F6", hash_generated_field = "59893490E117577C680150A765F6F72D")
 
     public int            pin1_replaced;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.252 -0500", hash_original_field = "3B52B615B76B44701F54ACC0D8FC940C", hash_generated_field = "7F505812D44B04DDE37A77ABBF13CD96")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.182 -0500", hash_original_field = "3B52B615B76B44701F54ACC0D8FC940C", hash_generated_field = "7F505812D44B04DDE37A77ABBF13CD96")
 
     public PinState            pin1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.253 -0500", hash_original_field = "FB9B7FB481C594E032A97686393F322B", hash_generated_field = "63EED535159D554E4C526C446FD3803B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.184 -0500", hash_original_field = "FB9B7FB481C594E032A97686393F322B", hash_generated_field = "63EED535159D554E4C526C446FD3803B")
 
     public PinState            pin2;
     
@@ -44,8 +44,9 @@ public class IccCardApplication {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.254 -0500", hash_original_method = "1116744B87B74A8B1F94F0BFA362A158", hash_generated_method = "C1D25D6C420B7257D1B02E366679F956")
-    AppType AppTypeFromRILInt(int type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.187 -0500", hash_original_method = "1116744B87B74A8B1F94F0BFA362A158", hash_generated_method = "C1D25D6C420B7257D1B02E366679F956")
+    
+AppType AppTypeFromRILInt(int type) {
         AppType newType;
         /* RIL_AppType ril.h */
         switch(type) {
@@ -62,8 +63,9 @@ public class IccCardApplication {
         return newType;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.255 -0500", hash_original_method = "9534088223FA9637F4929B2D2CEDDB5A", hash_generated_method = "2A323CFB968322038DC00D2CF87AD145")
-    AppState AppStateFromRILInt(int state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.190 -0500", hash_original_method = "9534088223FA9637F4929B2D2CEDDB5A", hash_generated_method = "2A323CFB968322038DC00D2CF87AD145")
+    
+AppState AppStateFromRILInt(int state) {
         AppState newState;
         /* RIL_AppState ril.h */
         switch(state) {
@@ -80,8 +82,9 @@ public class IccCardApplication {
         return newState;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.256 -0500", hash_original_method = "17A43E5E3170BC2C3023BB14299D6F08", hash_generated_method = "2582E20B2AE2FF10E42D93AF798052C6")
-    PersoSubState PersoSubstateFromRILInt(int substate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.193 -0500", hash_original_method = "17A43E5E3170BC2C3023BB14299D6F08", hash_generated_method = "2582E20B2AE2FF10E42D93AF798052C6")
+    
+PersoSubState PersoSubstateFromRILInt(int substate) {
         PersoSubState newSubState;
         /* RIL_PeroSubstate ril.h */
         switch(substate) {
@@ -117,8 +120,9 @@ public class IccCardApplication {
         return newSubState;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.257 -0500", hash_original_method = "691AF073265032051E58110F3AF07370", hash_generated_method = "691AF073265032051E58110F3AF07370")
-    PinState PinStateFromRILInt(int state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.196 -0500", hash_original_method = "691AF073265032051E58110F3AF07370", hash_generated_method = "691AF073265032051E58110F3AF07370")
+    
+PinState PinStateFromRILInt(int state) {
         PinState newPinState;
         switch(state) {
             case 0:
@@ -145,9 +149,10 @@ public class IccCardApplication {
         return newPinState;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.258 -0500", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "596343BF45EF1C82CA18BEB071345D76")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.198 -0500", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "596343BF45EF1C82CA18BEB071345D76")
+    
+@Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("{").append(app_type).append(",").append(app_state);
@@ -183,28 +188,33 @@ public String toString() {
         APPSTATE_SUBSCRIPTION_PERSO,
         APPSTATE_READY;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.241 -0500", hash_original_method = "2E6B69DE72FA4C9BD23004C1BF4BEA60", hash_generated_method = "2E6B69DE72FA4C9BD23004C1BF4BEA60")
-            boolean isPinRequired() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.152 -0500", hash_original_method = "2E6B69DE72FA4C9BD23004C1BF4BEA60", hash_generated_method = "2E6B69DE72FA4C9BD23004C1BF4BEA60")
+            
+boolean isPinRequired() {
             return this == APPSTATE_PIN;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.241 -0500", hash_original_method = "4DBCBD17869052A33CDEC13C582680B8", hash_generated_method = "4DBCBD17869052A33CDEC13C582680B8")
-            boolean isPukRequired() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.154 -0500", hash_original_method = "4DBCBD17869052A33CDEC13C582680B8", hash_generated_method = "4DBCBD17869052A33CDEC13C582680B8")
+            
+boolean isPukRequired() {
             return this == APPSTATE_PUK;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.242 -0500", hash_original_method = "285D6BC14CD1BBE21D829C0F15FFA0AC", hash_generated_method = "285D6BC14CD1BBE21D829C0F15FFA0AC")
-            boolean isSubscriptionPersoEnabled() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.156 -0500", hash_original_method = "285D6BC14CD1BBE21D829C0F15FFA0AC", hash_generated_method = "285D6BC14CD1BBE21D829C0F15FFA0AC")
+            
+boolean isSubscriptionPersoEnabled() {
             return this == APPSTATE_SUBSCRIPTION_PERSO;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.243 -0500", hash_original_method = "68C3E9D5343F7F67C611D19661C13C3D", hash_generated_method = "68C3E9D5343F7F67C611D19661C13C3D")
-            boolean isAppReady() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.158 -0500", hash_original_method = "68C3E9D5343F7F67C611D19661C13C3D", hash_generated_method = "68C3E9D5343F7F67C611D19661C13C3D")
+            
+boolean isAppReady() {
             return this == APPSTATE_READY;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.244 -0500", hash_original_method = "89AC63621BEA206B932952C5477BDE27", hash_generated_method = "89AC63621BEA206B932952C5477BDE27")
-            boolean isAppNotReady() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.160 -0500", hash_original_method = "89AC63621BEA206B932952C5477BDE27", hash_generated_method = "89AC63621BEA206B932952C5477BDE27")
+            
+boolean isAppNotReady() {
             return this == APPSTATE_UNKNOWN  ||
                    this == APPSTATE_DETECTED;
         }
@@ -238,8 +248,9 @@ public String toString() {
         PERSOSUBSTATE_RUIM_SERVICE_PROVIDER_PUK,
         PERSOSUBSTATE_RUIM_RUIM_PUK;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:32.245 -0500", hash_original_method = "E00A6ACB825F604CFE3801927570E3CD", hash_generated_method = "E00A6ACB825F604CFE3801927570E3CD")
-            boolean isPersoSubStateUnknown() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.164 -0500", hash_original_method = "E00A6ACB825F604CFE3801927570E3CD", hash_generated_method = "E00A6ACB825F604CFE3801927570E3CD")
+            
+boolean isPersoSubStateUnknown() {
             return this == PERSOSUBSTATE_UNKNOWN;
         }
     }

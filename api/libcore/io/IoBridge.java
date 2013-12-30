@@ -78,8 +78,9 @@ import libcore.util.MutableInt;
 
 public final class IoBridge {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.837 -0500", hash_original_method = "F5E1297626E5726FCF09E7D108051912", hash_generated_method = "5752EC3E1B8F0583083618205851C532")
-    public static int available(FileDescriptor fd) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.717 -0500", hash_original_method = "F5E1297626E5726FCF09E7D108051912", hash_generated_method = "5752EC3E1B8F0583083618205851C532")
+    
+public static int available(FileDescriptor fd) throws IOException {
         try {
             MutableInt available = new MutableInt(0);
             Libcore.os.ioctlInt(fd, FIONREAD, available);
@@ -103,8 +104,9 @@ public final class IoBridge {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.838 -0500", hash_original_method = "4065E166A2EE8DF2180E214A3A00FE79", hash_generated_method = "A1E16A208351B7B64AD7AAC2BAD3A0AE")
-    public static void bind(FileDescriptor fd, InetAddress address, int port) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.720 -0500", hash_original_method = "4065E166A2EE8DF2180E214A3A00FE79", hash_generated_method = "A1E16A208351B7B64AD7AAC2BAD3A0AE")
+    
+public static void bind(FileDescriptor fd, InetAddress address, int port) throws SocketException {
         if (address instanceof Inet6Address && ((Inet6Address) address).getScopeId() == 0) {
             // Linux won't let you bind a link-local address without a scope id. Find one.
             NetworkInterface nif = NetworkInterface.getByInetAddress(address);
@@ -129,8 +131,9 @@ public final class IoBridge {
      * Connects socket 'fd' to 'inetAddress' on 'port', with no timeout. The lack of a timeout
      * means this method won't throw SocketTimeoutException.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.839 -0500", hash_original_method = "CFD2CAFE811694E54D31D080F34F41AF", hash_generated_method = "3BBF4E6B7528C23676F8E83FB2D106FC")
-    public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int port) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.723 -0500", hash_original_method = "CFD2CAFE811694E54D31D080F34F41AF", hash_generated_method = "3BBF4E6B7528C23676F8E83FB2D106FC")
+    
+public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int port) throws SocketException {
         try {
             return IoBridge.connect(fd, inetAddress, port, 0);
         } catch (SocketTimeoutException ex) {
@@ -142,8 +145,9 @@ public final class IoBridge {
      * Connects socket 'fd' to 'inetAddress' on 'port', with a the given 'timeoutMs'.
      * Use timeoutMs == 0 for a blocking connect with no timeout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.839 -0500", hash_original_method = "FE64C515B6E8C2636E66195448D35A64", hash_generated_method = "DF1124E6ECD8BECEB7DCB4164CF0A34C")
-    public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws SocketException, SocketTimeoutException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.726 -0500", hash_original_method = "FE64C515B6E8C2636E66195448D35A64", hash_generated_method = "DF1124E6ECD8BECEB7DCB4164CF0A34C")
+    
+public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws SocketException, SocketTimeoutException {
         try {
             return connectErrno(fd, inetAddress, port, timeoutMs);
         } catch (ErrnoException errnoException) {
@@ -157,8 +161,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.840 -0500", hash_original_method = "D7BE365D78251E41BD99D05443E2B07E", hash_generated_method = "F38DEB8DDFFF37CFA95B96C84EB39457")
-    private static boolean connectErrno(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws ErrnoException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.729 -0500", hash_original_method = "D7BE365D78251E41BD99D05443E2B07E", hash_generated_method = "F38DEB8DDFFF37CFA95B96C84EB39457")
+    
+private static boolean connectErrno(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws ErrnoException, IOException {
         // With no timeout, just call connect(2) directly.
         if (timeoutMs == 0) {
             Libcore.os.connect(fd, inetAddress, port);
@@ -193,8 +198,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.841 -0500", hash_original_method = "F8F4A8068EB086BE493EBCFD9E087B18", hash_generated_method = "18945ED2BF4D73CCE15F0ED9659D949A")
-    private static String connectDetail(InetAddress inetAddress, int port, int timeoutMs, ErrnoException cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.731 -0500", hash_original_method = "F8F4A8068EB086BE493EBCFD9E087B18", hash_generated_method = "18945ED2BF4D73CCE15F0ED9659D949A")
+    
+private static String connectDetail(InetAddress inetAddress, int port, int timeoutMs, ErrnoException cause) {
         String detail = "failed to connect to " + inetAddress + " (port " + port + ")";
         if (timeoutMs > 0) {
             detail += " after " + timeoutMs + "ms";
@@ -205,8 +211,9 @@ public final class IoBridge {
         return detail;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.842 -0500", hash_original_method = "8FBEDC9FEAFA167FF6B1B5BC4C663DCF", hash_generated_method = "373859AAA45D6C421C5ACC7035EAF466")
-    public static void closeSocket(FileDescriptor fd) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.734 -0500", hash_original_method = "8FBEDC9FEAFA167FF6B1B5BC4C663DCF", hash_generated_method = "373859AAA45D6C421C5ACC7035EAF466")
+    
+public static void closeSocket(FileDescriptor fd) throws IOException {
         if (!fd.valid()) {
             // Socket.close doesn't throw if you try to close an already-closed socket.
             return;
@@ -223,8 +230,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.843 -0500", hash_original_method = "AB1F161A5DBE44D4F56A55EEECA1C0FE", hash_generated_method = "099B1943543A7660D7ED4855766A6E00")
-    public static boolean isConnected(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs, int remainingTimeoutMs) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.737 -0500", hash_original_method = "AB1F161A5DBE44D4F56A55EEECA1C0FE", hash_generated_method = "099B1943543A7660D7ED4855766A6E00")
+    
+public static boolean isConnected(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs, int remainingTimeoutMs) throws IOException {
         ErrnoException cause;
         try {
             StructPollfd[] pollFds = new StructPollfd[] { new StructPollfd() };
@@ -264,8 +272,9 @@ public final class IoBridge {
      * java.net has its own socket options similar to the underlying Unix ones. We paper over the
      * differences here.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.846 -0500", hash_original_method = "74DA8B934B42DF1434422A79C632FDCA", hash_generated_method = "B62EE3B4242D7FAA79A003F0B21082F4")
-    public static Object getSocketOption(FileDescriptor fd, int option) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.748 -0500", hash_original_method = "74DA8B934B42DF1434422A79C632FDCA", hash_generated_method = "B62EE3B4242D7FAA79A003F0B21082F4")
+    
+public static Object getSocketOption(FileDescriptor fd, int option) throws SocketException {
         try {
             return getSocketOptionErrno(fd, option);
         } catch (ErrnoException errnoException) {
@@ -273,8 +282,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.848 -0500", hash_original_method = "974AC57B647B0E19683F9AD29B934025", hash_generated_method = "A0A39A1D233B5968E89045F7EEE79078")
-    private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.752 -0500", hash_original_method = "974AC57B647B0E19683F9AD29B934025", hash_generated_method = "A0A39A1D233B5968E89045F7EEE79078")
+    
+private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
         switch (option) {
         case SocketOptions.IP_MULTICAST_IF:
             // This is IPv4-only.
@@ -321,13 +331,15 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.848 -0500", hash_original_method = "B7A8C0409E1035F8EAF6BD618B4E651E", hash_generated_method = "015524567A417EF0175B246905795F4B")
-    private static boolean booleanFromInt(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.754 -0500", hash_original_method = "B7A8C0409E1035F8EAF6BD618B4E651E", hash_generated_method = "015524567A417EF0175B246905795F4B")
+    
+private static boolean booleanFromInt(int i) {
         return (i != 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.849 -0500", hash_original_method = "364F2FBD8F3B46F38D29C27DFFD25B74", hash_generated_method = "2DE4623BBCBF4C0B24219C736E3A31D8")
-    private static int booleanToInt(boolean b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.757 -0500", hash_original_method = "364F2FBD8F3B46F38D29C27DFFD25B74", hash_generated_method = "2DE4623BBCBF4C0B24219C736E3A31D8")
+    
+private static int booleanToInt(boolean b) {
         return b ? 1 : 0;
     }
 
@@ -335,8 +347,9 @@ public final class IoBridge {
      * java.net has its own socket options similar to the underlying Unix ones. We paper over the
      * differences here.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.851 -0500", hash_original_method = "D1D4E8DBA6D654F543011AA2E0693355", hash_generated_method = "E819F22DACDD5354471A4540582C3197")
-    public static void setSocketOption(FileDescriptor fd, int option, Object value) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.759 -0500", hash_original_method = "D1D4E8DBA6D654F543011AA2E0693355", hash_generated_method = "E819F22DACDD5354471A4540582C3197")
+    
+public static void setSocketOption(FileDescriptor fd, int option, Object value) throws SocketException {
         try {
             setSocketOptionErrno(fd, option, value);
         } catch (ErrnoException errnoException) {
@@ -344,8 +357,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.852 -0500", hash_original_method = "3019B6668B365ECF8A5509168D80A8D7", hash_generated_method = "EBCEE6D43E56F95799483902CD7FC603")
-    private static void setSocketOptionErrno(FileDescriptor fd, int option, Object value) throws ErrnoException, SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.763 -0500", hash_original_method = "3019B6668B365ECF8A5509168D80A8D7", hash_generated_method = "EBCEE6D43E56F95799483902CD7FC603")
+    
+private static void setSocketOptionErrno(FileDescriptor fd, int option, Object value) throws ErrnoException, SocketException {
         switch (option) {
         case SocketOptions.IP_MULTICAST_IF:
             throw new UnsupportedOperationException("Use IP_MULTICAST_IF2 on Android");
@@ -423,8 +437,9 @@ public final class IoBridge {
      * directories: POSIX says read-only is okay, but java.io doesn't even allow that. We also
      * have an Android-specific hack to alter the default permissions.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.853 -0500", hash_original_method = "7DCDC5B075D765D7A58F6B283FA65BC0", hash_generated_method = "062FA83EFBFB4204B55A8B00490D8079")
-    public static FileDescriptor open(String path, int flags) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.766 -0500", hash_original_method = "7DCDC5B075D765D7A58F6B283FA65BC0", hash_generated_method = "062FA83EFBFB4204B55A8B00490D8079")
+    
+public static FileDescriptor open(String path, int flags) throws FileNotFoundException {
         FileDescriptor fd = null;
         try {
             // On Android, we don't want default permissions to allow global access.
@@ -455,8 +470,9 @@ public final class IoBridge {
      * java.io thinks that a read at EOF is an error and should return -1, contrary to traditional
      * Unix practice where you'd read until you got 0 bytes (and any future read would return -1).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.854 -0500", hash_original_method = "48F4ACED9715A443A4F67526A289B023", hash_generated_method = "9204FD780FAA06D7A6E45B04FF62978B")
-    public static int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.769 -0500", hash_original_method = "48F4ACED9715A443A4F67526A289B023", hash_generated_method = "9204FD780FAA06D7A6E45B04FF62978B")
+    
+public static int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(bytes.length, byteOffset, byteCount);
         if (byteCount == 0) {
             return 0;
@@ -480,8 +496,9 @@ public final class IoBridge {
      * java.io always writes every byte it's asked to, or fails with an error. (That is, unlike
      * Unix it never just writes as many bytes as happens to be convenient.)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.855 -0500", hash_original_method = "11CB195F3B96E0AC481420CD2EA50370", hash_generated_method = "F9701C25E71A197B713A220C3D33D83B")
-    public static void write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.773 -0500", hash_original_method = "11CB195F3B96E0AC481420CD2EA50370", hash_generated_method = "F9701C25E71A197B713A220C3D33D83B")
+    
+public static void write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(bytes.length, byteOffset, byteCount);
         if (byteCount == 0) {
             return;
@@ -497,8 +514,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.856 -0500", hash_original_method = "84DABDA1F34253D93066BE07C9B186E6", hash_generated_method = "42FC2CE952C7C17B3BEDF0B7F3649432")
-    public static int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.775 -0500", hash_original_method = "84DABDA1F34253D93066BE07C9B186E6", hash_generated_method = "42FC2CE952C7C17B3BEDF0B7F3649432")
+    
+public static int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws IOException {
         boolean isDatagram = (inetAddress != null);
         if (!isDatagram && byteCount <= 0) {
             return 0;
@@ -512,8 +530,9 @@ public final class IoBridge {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.857 -0500", hash_original_method = "E255F65F53E0BAB1C0BBB756BEB3B433", hash_generated_method = "4BB845D641E4FE065B812012172F527E")
-    public static int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.778 -0500", hash_original_method = "E255F65F53E0BAB1C0BBB756BEB3B433", hash_generated_method = "4BB845D641E4FE065B812012172F527E")
+    
+public static int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws IOException {
         boolean isDatagram = (inetAddress != null);
         if (!isDatagram && buffer.remaining() == 0) {
             return 0;
@@ -527,8 +546,9 @@ public final class IoBridge {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.858 -0500", hash_original_method = "2165269B00818F46FED78FE25D6C5FC5", hash_generated_method = "1AF24301DE48F3A9B717B1A856C0A8A4")
-    private static int maybeThrowAfterSendto(boolean isDatagram, ErrnoException errnoException) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.780 -0500", hash_original_method = "2165269B00818F46FED78FE25D6C5FC5", hash_generated_method = "1AF24301DE48F3A9B717B1A856C0A8A4")
+    
+private static int maybeThrowAfterSendto(boolean isDatagram, ErrnoException errnoException) throws SocketException {
         if (isDatagram) {
             if (errnoException.errno == ECONNRESET || errnoException.errno == ECONNREFUSED) {
                 return 0;
@@ -543,8 +563,9 @@ public final class IoBridge {
         throw errnoException.rethrowAsSocketException();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.859 -0500", hash_original_method = "AFBD3A85749E86AD3EF48FC5D53DDD1F", hash_generated_method = "CC90FB83DC5DB415C0F089F925B663BA")
-    public static int recvfrom(boolean isRead, FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.783 -0500", hash_original_method = "AFBD3A85749E86AD3EF48FC5D53DDD1F", hash_generated_method = "CC90FB83DC5DB415C0F089F925B663BA")
+    
+public static int recvfrom(boolean isRead, FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
         int result;
         try {
             InetSocketAddress srcAddress = (packet != null && !isConnected) ? new InetSocketAddress() : null;
@@ -556,8 +577,9 @@ public final class IoBridge {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.860 -0500", hash_original_method = "EE4E0AF55AE0825B406855AC92D8BF63", hash_generated_method = "9420D8DAB64E52D2D9225D7568203A34")
-    public static int recvfrom(boolean isRead, FileDescriptor fd, ByteBuffer buffer, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.786 -0500", hash_original_method = "EE4E0AF55AE0825B406855AC92D8BF63", hash_generated_method = "9420D8DAB64E52D2D9225D7568203A34")
+    
+public static int recvfrom(boolean isRead, FileDescriptor fd, ByteBuffer buffer, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
         int result;
         try {
             InetSocketAddress srcAddress = (packet != null && !isConnected) ? new InetSocketAddress() : null;
@@ -569,8 +591,9 @@ public final class IoBridge {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.861 -0500", hash_original_method = "871255B3F9D40210CAC4049FA8DF4788", hash_generated_method = "D55FC9DECF6127591DC3F65FAEDE437A")
-    private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean isConnected, InetSocketAddress srcAddress, int byteCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.789 -0500", hash_original_method = "871255B3F9D40210CAC4049FA8DF4788", hash_generated_method = "D55FC9DECF6127591DC3F65FAEDE437A")
+    
+private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean isConnected, InetSocketAddress srcAddress, int byteCount) {
         if (isRead && byteCount == 0) {
             return -1;
         }
@@ -584,8 +607,9 @@ public final class IoBridge {
         return byteCount;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.862 -0500", hash_original_method = "AB9706571F1180FC3B99F722D1F9358A", hash_generated_method = "CB8AF36A3AFB4168861DF6C0CC9A6B19")
-    private static int maybeThrowAfterRecvfrom(boolean isRead, boolean isConnected, ErrnoException errnoException) throws SocketException, SocketTimeoutException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.791 -0500", hash_original_method = "AB9706571F1180FC3B99F722D1F9358A", hash_generated_method = "CB8AF36A3AFB4168861DF6C0CC9A6B19")
+    
+private static int maybeThrowAfterRecvfrom(boolean isRead, boolean isConnected, ErrnoException errnoException) throws SocketException, SocketTimeoutException {
         if (isRead) {
             if (errnoException.errno == EAGAIN || errnoException.errno == EWOULDBLOCK) {
                 return 0;
@@ -603,8 +627,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.863 -0500", hash_original_method = "BA69B6664814E592B6F888BA7B6D1FB8", hash_generated_method = "C38E5D8C84E55FE5BB447C08A49F0534")
-    public static FileDescriptor socket(boolean stream) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.795 -0500", hash_original_method = "BA69B6664814E592B6F888BA7B6D1FB8", hash_generated_method = "C38E5D8C84E55FE5BB447C08A49F0534")
+    
+public static FileDescriptor socket(boolean stream) throws SocketException {
         FileDescriptor fd;
         try {
             fd = Libcore.os.socket(AF_INET6, stream ? SOCK_STREAM : SOCK_DGRAM, 0);
@@ -626,8 +651,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.864 -0500", hash_original_method = "BF91E659ADCCEA5E83B593E3412077DF", hash_generated_method = "ACE4CC37C7327B704B665A55B9FBFBDF")
-    public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.797 -0500", hash_original_method = "BF91E659ADCCEA5E83B593E3412077DF", hash_generated_method = "ACE4CC37C7327B704B665A55B9FBFBDF")
+    
+public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
         try {
             SocketAddress sa = Libcore.os.getsockname(fd);
             InetSocketAddress isa = (InetSocketAddress) sa;
@@ -637,8 +663,9 @@ public final class IoBridge {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.865 -0500", hash_original_method = "935731650AFF466956FA2EB59931508E", hash_generated_method = "AE1F49FB6A56778B936D57D0C7372D6F")
-    public static int getSocketLocalPort(FileDescriptor fd) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.800 -0500", hash_original_method = "935731650AFF466956FA2EB59931508E", hash_generated_method = "AE1F49FB6A56778B936D57D0C7372D6F")
+    
+public static int getSocketLocalPort(FileDescriptor fd) {
         try {
             SocketAddress sa = Libcore.os.getsockname(fd);
             InetSocketAddress isa = (InetSocketAddress) sa;
@@ -647,18 +674,19 @@ public final class IoBridge {
             throw new AssertionError(errnoException);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.844 -0500", hash_original_field = "3875EFB4F02031E13030C41FE5F361FB", hash_generated_field = "D17A14E38001E033C6CF0435284406CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.740 -0500", hash_original_field = "3875EFB4F02031E13030C41FE5F361FB", hash_generated_field = "D17A14E38001E033C6CF0435284406CD")
 
     public static final int JAVA_MCAST_JOIN_GROUP = 19;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.845 -0500", hash_original_field = "92C96E6BC9AFF73FA7C627C743CFE46C", hash_generated_field = "9C4097429B3752CDC227A02807A933CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.743 -0500", hash_original_field = "92C96E6BC9AFF73FA7C627C743CFE46C", hash_generated_field = "9C4097429B3752CDC227A02807A933CC")
 
     public static final int JAVA_MCAST_LEAVE_GROUP = 20;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.846 -0500", hash_original_field = "4A7EF7D027853A7D2D0F26817DCEBEF9", hash_generated_field = "0B9C57C378DB16A9B350E5C837748819")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.746 -0500", hash_original_field = "4A7EF7D027853A7D2D0F26817DCEBEF9", hash_generated_field = "0B9C57C378DB16A9B350E5C837748819")
 
     public static final int JAVA_IP_MULTICAST_TTL = 17;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:39.836 -0500", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "A6F2BD253663EF887CBF40C0C63E065C")
-    private IoBridge() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.714 -0500", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "A6F2BD253663EF887CBF40C0C63E065C")
+    
+private IoBridge() {
     }
 }
 

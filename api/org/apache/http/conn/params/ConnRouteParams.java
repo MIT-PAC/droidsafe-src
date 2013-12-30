@@ -27,8 +27,9 @@ public class ConnRouteParams implements ConnRoutePNames {
      * @return  the default proxy set in the argument parameters, or
      *          <code>null</code> if not set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.727 -0500", hash_original_method = "E75D121FDB3E170AE23E7EDECAF29000", hash_generated_method = "2285199BA93C1A8FCE16B62C1DB51DBB")
-    public static HttpHost getDefaultProxy(HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.396 -0500", hash_original_method = "E75D121FDB3E170AE23E7EDECAF29000", hash_generated_method = "2285199BA93C1A8FCE16B62C1DB51DBB")
+    
+public static HttpHost getDefaultProxy(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
         }
@@ -52,8 +53,9 @@ public class ConnRouteParams implements ConnRoutePNames {
      *                  <code>null</code> by {@link #getDefaultProxy},
      *                  to allow for explicit unsetting in hierarchies.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.727 -0500", hash_original_method = "49317954D5EBD5F28B2656B10CFB38A3", hash_generated_method = "81B11DD955AF9B9880F88DC4851DCDC3")
-    public static void setDefaultProxy(HttpParams params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.399 -0500", hash_original_method = "49317954D5EBD5F28B2656B10CFB38A3", hash_generated_method = "81B11DD955AF9B9880F88DC4851DCDC3")
+    
+public static void setDefaultProxy(HttpParams params,
                                              HttpHost proxy) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
@@ -73,8 +75,9 @@ public class ConnRouteParams implements ConnRoutePNames {
      * @return  the forced route set in the argument parameters, or
      *          <code>null</code> if not set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.728 -0500", hash_original_method = "5DAC36E561A1B4897EACF2D00E5FE007", hash_generated_method = "7287A29AD6F21E390C22B9647437B0C5")
-    public static HttpRoute getForcedRoute(HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.401 -0500", hash_original_method = "5DAC36E561A1B4897EACF2D00E5FE007", hash_generated_method = "7287A29AD6F21E390C22B9647437B0C5")
+    
+public static HttpRoute getForcedRoute(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
         }
@@ -98,8 +101,9 @@ public class ConnRouteParams implements ConnRoutePNames {
      *                  <code>null</code> by {@link #getForcedRoute},
      *                  to allow for explicit unsetting in hierarchies.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.729 -0500", hash_original_method = "07DB9F0458B5079746CBE9BE59C5E99C", hash_generated_method = "835399968526A6E79409D748AB4D1B44")
-    public static void setForcedRoute(HttpParams params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.405 -0500", hash_original_method = "07DB9F0458B5079746CBE9BE59C5E99C", hash_generated_method = "835399968526A6E79409D748AB4D1B44")
+    
+public static void setForcedRoute(HttpParams params,
                                             HttpRoute route) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
@@ -120,8 +124,9 @@ public class ConnRouteParams implements ConnRoutePNames {
      * @return  the local address set in the argument parameters, or
      *          <code>null</code> if not set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.730 -0500", hash_original_method = "34B1651D44BDD2A6852C4B7591C5FF46", hash_generated_method = "C5700D76F513F5FBA42726FCEC28F83B")
-    public static InetAddress getLocalAddress(HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.408 -0500", hash_original_method = "34B1651D44BDD2A6852C4B7591C5FF46", hash_generated_method = "C5700D76F513F5FBA42726FCEC28F83B")
+    
+public static InetAddress getLocalAddress(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
         }
@@ -139,26 +144,28 @@ public class ConnRouteParams implements ConnRoutePNames {
      * @param params    the parameters in which to set the value
      * @param local     the value to set, may be <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.731 -0500", hash_original_method = "DD9D8CA6968C4F4E34A4098B9D14DC8D", hash_generated_method = "87730081EB8B7527793B3AB51E2E539E")
-    public static void setLocalAddress(HttpParams params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.412 -0500", hash_original_method = "DD9D8CA6968C4F4E34A4098B9D14DC8D", hash_generated_method = "87730081EB8B7527793B3AB51E2E539E")
+    
+public static void setLocalAddress(HttpParams params,
                                              InetAddress local) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
         }
         params.setParameter(LOCAL_ADDRESS, local);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.724 -0500", hash_original_field = "6E1BC6DD450B3EFB2F846587AA84B117", hash_generated_field = "FAE323EF23E9AD73D7AF5D28E86E6ED7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.388 -0500", hash_original_field = "6E1BC6DD450B3EFB2F846587AA84B117", hash_generated_field = "FAE323EF23E9AD73D7AF5D28E86E6ED7")
 
     public static final HttpHost NO_HOST =
         new HttpHost("127.0.0.255", 0, "no-host");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.725 -0500", hash_original_field = "2C7F2094748B6CA054A1E6E8226B6E9C", hash_generated_field = "21C3B0F0B6993EB3CF4E0DF755BE9E2A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.391 -0500", hash_original_field = "2C7F2094748B6CA054A1E6E8226B6E9C", hash_generated_field = "21C3B0F0B6993EB3CF4E0DF755BE9E2A")
 
     public static final HttpRoute NO_ROUTE = new HttpRoute(NO_HOST);
 
 
     /** Disabled default constructor. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.726 -0500", hash_original_method = "2F583F6C69B80DBD9155194B569BE764", hash_generated_method = "04E64CF0AA4E52F9C34273875D7B7927")
-    private ConnRouteParams() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.394 -0500", hash_original_method = "2F583F6C69B80DBD9155194B569BE764", hash_generated_method = "04E64CF0AA4E52F9C34273875D7B7927")
+    
+private ConnRouteParams() {
         // no body
     }
 }

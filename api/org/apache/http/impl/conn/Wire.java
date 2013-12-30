@@ -16,18 +16,20 @@ import org.apache.commons.logging.Log;
 
 
 public class Wire {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.183 -0500", hash_original_field = "9928E38BCEFDA1EEA4B4B3BA7730094E", hash_generated_field = "B44E589F36524A8564E741C819F5943D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.563 -0500", hash_original_field = "9928E38BCEFDA1EEA4B4B3BA7730094E", hash_generated_field = "B44E589F36524A8564E741C819F5943D")
 
 
     private  Log log;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.184 -0500", hash_original_method = "B4B1AB4B499B8A15063D0CC014BEC991", hash_generated_method = "232A8B2A2D69411C0F4B0DFA7DA84F28")
-    public Wire(Log log) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.566 -0500", hash_original_method = "B4B1AB4B499B8A15063D0CC014BEC991", hash_generated_method = "232A8B2A2D69411C0F4B0DFA7DA84F28")
+    
+public Wire(Log log) {
         this.log = log;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.185 -0500", hash_original_method = "8AB487D8D5FB9334AB649D48E9DFB74A", hash_generated_method = "129627B3F223330EC78D4BA01BEA0271")
-    private void wire(String header, InputStream instream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.568 -0500", hash_original_method = "8AB487D8D5FB9334AB649D48E9DFB74A", hash_generated_method = "129627B3F223330EC78D4BA01BEA0271")
+    
+private void wire(String header, InputStream instream)
       throws IOException {
         StringBuilder buffer = new StringBuilder();
         int ch;
@@ -57,13 +59,15 @@ public class Wire {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.186 -0500", hash_original_method = "3293A063039621258FD717F75AAE20F6", hash_generated_method = "7429CF7FB1ECB3C33D1AD16DB24C713B")
-    public boolean enabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.571 -0500", hash_original_method = "3293A063039621258FD717F75AAE20F6", hash_generated_method = "7429CF7FB1ECB3C33D1AD16DB24C713B")
+    
+public boolean enabled() {
         return log.isDebugEnabled();
     }    
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.186 -0500", hash_original_method = "41909751022A9CA66D19EAE8E0D21F96", hash_generated_method = "E7C108C60829EC6D59683354FF91AFCF")
-    public void output(InputStream outstream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.573 -0500", hash_original_method = "41909751022A9CA66D19EAE8E0D21F96", hash_generated_method = "E7C108C60829EC6D59683354FF91AFCF")
+    
+public void output(InputStream outstream)
       throws IOException {
         if (outstream == null) {
             throw new IllegalArgumentException("Output may not be null"); 
@@ -71,8 +75,9 @@ public class Wire {
         wire(">> ", outstream);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.187 -0500", hash_original_method = "9B3D263B2ABEC36BE45DD8B457A2FB5F", hash_generated_method = "417301DC12574F64755A6D014BDC8492")
-    public void input(InputStream instream)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.575 -0500", hash_original_method = "9B3D263B2ABEC36BE45DD8B457A2FB5F", hash_generated_method = "417301DC12574F64755A6D014BDC8492")
+    
+public void input(InputStream instream)
       throws IOException {
         if (instream == null) {
             throw new IllegalArgumentException("Input may not be null"); 
@@ -80,8 +85,9 @@ public class Wire {
         wire("<< ", instream);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.188 -0500", hash_original_method = "FC3E92A1F886275998FB021C6804D6A9", hash_generated_method = "94BF3CD80B044F4C766D23DCA3433D6B")
-    public void output(byte[] b, int off, int len)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.578 -0500", hash_original_method = "FC3E92A1F886275998FB021C6804D6A9", hash_generated_method = "94BF3CD80B044F4C766D23DCA3433D6B")
+    
+public void output(byte[] b, int off, int len)
       throws IOException {
         if (b == null) {
             throw new IllegalArgumentException("Output may not be null"); 
@@ -89,8 +95,9 @@ public class Wire {
         wire(">> ", new ByteArrayInputStream(b, off, len));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.189 -0500", hash_original_method = "7AB6B9BAC192F7B379ECF2E9CAEC39DE", hash_generated_method = "93EEFBEB7BA93F760EB2070D94D1BB19")
-    public void input(byte[] b, int off, int len)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.581 -0500", hash_original_method = "7AB6B9BAC192F7B379ECF2E9CAEC39DE", hash_generated_method = "93EEFBEB7BA93F760EB2070D94D1BB19")
+    
+public void input(byte[] b, int off, int len)
       throws IOException {
         if (b == null) {
             throw new IllegalArgumentException("Input may not be null"); 
@@ -98,8 +105,9 @@ public class Wire {
         wire("<< ", new ByteArrayInputStream(b, off, len));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.189 -0500", hash_original_method = "C456100C17A97A0094094ACD8A59EB30", hash_generated_method = "A41956EF7230EFF56518145157E1CFEB")
-    public void output(byte[] b)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.583 -0500", hash_original_method = "C456100C17A97A0094094ACD8A59EB30", hash_generated_method = "A41956EF7230EFF56518145157E1CFEB")
+    
+public void output(byte[] b)
       throws IOException {
         if (b == null) {
             throw new IllegalArgumentException("Output may not be null"); 
@@ -107,8 +115,9 @@ public class Wire {
         wire(">> ", new ByteArrayInputStream(b));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.190 -0500", hash_original_method = "CACCE18D78F1F755698157152E4CF23A", hash_generated_method = "4F964A276C53AEC92E1A8274CF28A6FD")
-    public void input(byte[] b)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.585 -0500", hash_original_method = "CACCE18D78F1F755698157152E4CF23A", hash_generated_method = "4F964A276C53AEC92E1A8274CF28A6FD")
+    
+public void input(byte[] b)
       throws IOException {
         if (b == null) {
             throw new IllegalArgumentException("Input may not be null"); 
@@ -116,20 +125,23 @@ public class Wire {
         wire("<< ", new ByteArrayInputStream(b));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.191 -0500", hash_original_method = "98C5B0073473ADAA98ACDF73DE6F6267", hash_generated_method = "63AE11186EAD6B7C1E94BBB63125F85C")
-    public void output(int b)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.587 -0500", hash_original_method = "98C5B0073473ADAA98ACDF73DE6F6267", hash_generated_method = "63AE11186EAD6B7C1E94BBB63125F85C")
+    
+public void output(int b)
       throws IOException {
         output(new byte[] {(byte) b});
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.192 -0500", hash_original_method = "95BA17E717E6FE2824B7813CA2829BC6", hash_generated_method = "4C16FFADA7A2D78CA73A2512FAA47B9D")
-    public void input(int b)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.590 -0500", hash_original_method = "95BA17E717E6FE2824B7813CA2829BC6", hash_generated_method = "4C16FFADA7A2D78CA73A2512FAA47B9D")
+    
+public void input(int b)
       throws IOException {
         input(new byte[] {(byte) b});
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.192 -0500", hash_original_method = "F3C5064419E81BE1694ED79F4A4E0F84", hash_generated_method = "F9951302DABB6767C4AAFE559D013B33")
-    public void output(final String s)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.592 -0500", hash_original_method = "F3C5064419E81BE1694ED79F4A4E0F84", hash_generated_method = "F9951302DABB6767C4AAFE559D013B33")
+    
+public void output(final String s)
       throws IOException {
         if (s == null) {
             throw new IllegalArgumentException("Output may not be null"); 
@@ -137,8 +149,9 @@ public class Wire {
         output(s.getBytes());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.193 -0500", hash_original_method = "A406219181E10CB21A7EC7720CD1AF08", hash_generated_method = "0E4D8B439D30B7D49744D92EBFD06FE9")
-    public void input(final String s)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.594 -0500", hash_original_method = "A406219181E10CB21A7EC7720CD1AF08", hash_generated_method = "0E4D8B439D30B7D49744D92EBFD06FE9")
+    
+public void input(final String s)
       throws IOException {
         if (s == null) {
             throw new IllegalArgumentException("Input may not be null"); 

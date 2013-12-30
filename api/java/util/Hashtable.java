@@ -19,27 +19,27 @@ import java.io.Serializable;
 
 
 public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Cloneable, Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.430 -0500", hash_original_field = "9C9C52C3044A64A1683A2865C14D4656", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.272 -0500", hash_original_field = "9C9C52C3044A64A1683A2865C14D4656", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
 
     private static final int MINIMUM_CAPACITY = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.431 -0500", hash_original_field = "8450B9285BE1BB97BF823A8DA56CC45D", hash_generated_field = "C94813E6F46C48A83BBFCFA3C9862983")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.275 -0500", hash_original_field = "8450B9285BE1BB97BF823A8DA56CC45D", hash_generated_field = "C94813E6F46C48A83BBFCFA3C9862983")
 
     private static final int MAXIMUM_CAPACITY = 1 << 30;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.432 -0500", hash_original_field = "BC5DB75EFD28A0C0128F36A7288DD7BF", hash_generated_field = "BC3AFA3625EEAFE404B4E2EE0E75EE0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.277 -0500", hash_original_field = "BC5DB75EFD28A0C0128F36A7288DD7BF", hash_generated_field = "BC3AFA3625EEAFE404B4E2EE0E75EE0F")
 
     private static final Entry[] EMPTY_TABLE
             = new HashtableEntry[MINIMUM_CAPACITY >>> 1];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.433 -0500", hash_original_field = "69E9667A37D40729A72B55AC0A75E1FE", hash_generated_field = "41B5CEA68D112450CD83A4199938FEF0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.280 -0500", hash_original_field = "69E9667A37D40729A72B55AC0A75E1FE", hash_generated_field = "41B5CEA68D112450CD83A4199938FEF0")
 
     private static final float DEFAULT_LOAD_FACTOR = .75F;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.503 -0500", hash_original_field = "50E6753055F9DE382EADDC4CC1672596", hash_generated_field = "46C6C9B52666C02F378F5368FD774F43")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.467 -0500", hash_original_field = "50E6753055F9DE382EADDC4CC1672596", hash_generated_field = "46C6C9B52666C02F378F5368FD774F43")
 
     private static final int CHARS_PER_ENTRY = 15;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.542 -0500", hash_original_field = "5869819C603EB25B9D81226C26F9CB6F", hash_generated_field = "C70DCA64D7F48D81CC1FCEA91128ADE1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.571 -0500", hash_original_field = "5869819C603EB25B9D81226C26F9CB6F", hash_generated_field = "C70DCA64D7F48D81CC1FCEA91128ADE1")
 
 
     private static final long serialVersionUID = 1421746759512286392L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.543 -0500", hash_original_field = "CF235C5C020AE737E73C6D9BA948DD23", hash_generated_field = "BED226748EC460106938E3D870C7138F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.573 -0500", hash_original_field = "CF235C5C020AE737E73C6D9BA948DD23", hash_generated_field = "BED226748EC460106938E3D870C7138F")
 
 
     private static final ObjectStreamField[] serialPersistentFields = {
@@ -297,8 +297,9 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
      * Increases the capacity of this {@code Hashtable}. This method is called
      * when the size of this {@code Hashtable} exceeds the load factor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.458 -0500", hash_original_method = "CC28673E29B73787492CFDC805600F5D", hash_generated_method = "14708CA3A1941121C6C0D608E6FFAA7C")
-    protected void rehash() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.346 -0500", hash_original_method = "CC28673E29B73787492CFDC805600F5D", hash_generated_method = "14708CA3A1941121C6C0D608E6FFAA7C")
+    
+protected void rehash() {
         /*
          * This method has no testable semantics, other than that it gets
          * called from time to time.
@@ -407,39 +408,43 @@ Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new Value
 
     
     private static class HashtableEntry<K, V> implements Entry<K, V> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.468 -0500", hash_original_field = "F780C5984CF24E477CB9559E91475987", hash_generated_field = "F780C5984CF24E477CB9559E91475987")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.372 -0500", hash_original_field = "F780C5984CF24E477CB9559E91475987", hash_generated_field = "F780C5984CF24E477CB9559E91475987")
 
          K key;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.469 -0500", hash_original_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.375 -0500", hash_original_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
 
         V value;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.470 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "5ED776CD81502BA181156D7F28EBC9C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.377 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "5ED776CD81502BA181156D7F28EBC9C8")
 
          int hash;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.470 -0500", hash_original_field = "A5AC9F76C2A7B9F6F79010A5F4A3B4B7", hash_generated_field = "A5AC9F76C2A7B9F6F79010A5F4A3B4B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.379 -0500", hash_original_field = "A5AC9F76C2A7B9F6F79010A5F4A3B4B7", hash_generated_field = "A5AC9F76C2A7B9F6F79010A5F4A3B4B7")
 
         HashtableEntry<K, V> next;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.471 -0500", hash_original_method = "FCC59894C2665A76D7100104D46402EE", hash_generated_method = "FCC59894C2665A76D7100104D46402EE")
-        HashtableEntry(K key, V value, int hash, HashtableEntry<K, V> next) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.382 -0500", hash_original_method = "FCC59894C2665A76D7100104D46402EE", hash_generated_method = "FCC59894C2665A76D7100104D46402EE")
+        
+HashtableEntry(K key, V value, int hash, HashtableEntry<K, V> next) {
             this.key = key;
             this.value = value;
             this.hash = hash;
             this.next = next;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.472 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "9EABD2522EB9D2E4218C9F5D70610D46")
-        public final K getKey() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.384 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "9EABD2522EB9D2E4218C9F5D70610D46")
+        
+public final K getKey() {
             return key;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.473 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "F012337EC034D28D12FEB60EC691650B")
-        public final V getValue() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.387 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "F012337EC034D28D12FEB60EC691650B")
+        
+public final V getValue() {
             return value;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.474 -0500", hash_original_method = "09EE506DF55191FF6B72960EEA25D181", hash_generated_method = "CE8BA28B53D9C36EF199302D5DBCDDC7")
-        public final V setValue(V value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.390 -0500", hash_original_method = "09EE506DF55191FF6B72960EEA25D181", hash_generated_method = "CE8BA28B53D9C36EF199302D5DBCDDC7")
+        
+public final V setValue(V value) {
             if (value == null) {
                 throw new NullPointerException();
             }
@@ -448,9 +453,9 @@ Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new Value
             return oldValue;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.475 -0500", hash_original_method = "509D67FA76563438156B3275F90914F5", hash_generated_method = "B7AB8038537E8D2F748C3F9D5E76A1F7")
-        @Override
-public final boolean equals(Object o) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.392 -0500", hash_original_method = "509D67FA76563438156B3275F90914F5", hash_generated_method = "B7AB8038537E8D2F748C3F9D5E76A1F7")
+        
+@Override public final boolean equals(Object o) {
             if (!(o instanceof Entry)) {
                 return false;
             }
@@ -458,15 +463,15 @@ public final boolean equals(Object o) {
             return key.equals(e.getKey()) && value.equals(e.getValue());
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.476 -0500", hash_original_method = "28D407F854479314A0A7C3BE1F12A9AB", hash_generated_method = "9F324F0EFF4E854AF4EF08A4B5EB550F")
-        @Override
-public final int hashCode() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.395 -0500", hash_original_method = "28D407F854479314A0A7C3BE1F12A9AB", hash_generated_method = "9F324F0EFF4E854AF4EF08A4B5EB550F")
+        
+@Override public final int hashCode() {
             return key.hashCode() ^ value.hashCode();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.476 -0500", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "1C713F1AABEB092283314E1A4F2FE9EE")
-        @Override
-public final String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.398 -0500", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "1C713F1AABEB092283314E1A4F2FE9EE")
+        
+@Override public final String toString() {
             return key + "=" + value;
         }
 
@@ -537,16 +542,16 @@ public final String toString() {
      *         {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.501 -0500", hash_original_method = "9BC17AC5DA957A9C0A07708C3D3A3E68", hash_generated_method = "BB68B78A0F70D5B11399D7C204F4FCAF")
-    @Override
-public synchronized boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.462 -0500", hash_original_method = "9BC17AC5DA957A9C0A07708C3D3A3E68", hash_generated_method = "BB68B78A0F70D5B11399D7C204F4FCAF")
+    
+@Override public synchronized boolean equals(Object object) {
         return (object instanceof Map) &&
                 entrySet().equals(((Map<?, ?>)object).entrySet());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.503 -0500", hash_original_method = "0904BEF2CA25AF4229493E32A4F8928E", hash_generated_method = "395D69B6EB953B7D8BA4EDDE2AD97E1F")
-    @Override
-public synchronized int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.465 -0500", hash_original_method = "0904BEF2CA25AF4229493E32A4F8928E", hash_generated_method = "395D69B6EB953B7D8BA4EDDE2AD97E1F")
+    
+@Override public synchronized int hashCode() {
         int result = 0;
         for (Entry<K, V> e : entrySet()) {
             K key = e.getKey();

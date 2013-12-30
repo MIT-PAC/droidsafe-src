@@ -35,8 +35,9 @@ public class ECUtil {
      * @return the sorted array of middle terms of the reduction polynomial.
      * This array always has length 3.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.048 -0500", hash_original_method = "F61560D6410770019EFCEB5BB2747D12", hash_generated_method = "0BD637A5C843FA735D6186DCA29E94AF")
-    static int[] convertMidTerms(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.936 -0500", hash_original_method = "F61560D6410770019EFCEB5BB2747D12", hash_generated_method = "0BD637A5C843FA735D6186DCA29E94AF")
+    
+static int[] convertMidTerms(
         int[] k)
     {
         int[] res = new int[3];
@@ -99,8 +100,9 @@ public class ECUtil {
         return res;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.049 -0500", hash_original_method = "8A09C41342945B0A3D4C640CD2728034", hash_generated_method = "0FBF73609C3F6366E6DEBFBEE94338EB")
-    public static AsymmetricKeyParameter generatePublicKeyParameter(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.939 -0500", hash_original_method = "8A09C41342945B0A3D4C640CD2728034", hash_generated_method = "0FBF73609C3F6366E6DEBFBEE94338EB")
+    
+public static AsymmetricKeyParameter generatePublicKeyParameter(
         PublicKey    key)
         throws InvalidKeyException
     {
@@ -136,8 +138,9 @@ public class ECUtil {
         throw new InvalidKeyException("cannot identify EC public key.");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.050 -0500", hash_original_method = "D78C8BC2AB778E36C16A199AE31942DC", hash_generated_method = "6940C76D7E79F1CAA8340262E8BCED43")
-    public static AsymmetricKeyParameter generatePrivateKeyParameter(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.942 -0500", hash_original_method = "D78C8BC2AB778E36C16A199AE31942DC", hash_generated_method = "6940C76D7E79F1CAA8340262E8BCED43")
+    
+public static AsymmetricKeyParameter generatePrivateKeyParameter(
         PrivateKey    key)
         throws InvalidKeyException
     {
@@ -159,8 +162,9 @@ public class ECUtil {
         throw new InvalidKeyException("can't identify EC private key.");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.051 -0500", hash_original_method = "B09318820B1BB1E7BF65E456E65CCDF4", hash_generated_method = "A46C330A84CCA63D66D0E1963B1E4054")
-    public static DERObjectIdentifier getNamedCurveOid(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.944 -0500", hash_original_method = "B09318820B1BB1E7BF65E456E65CCDF4", hash_generated_method = "A46C330A84CCA63D66D0E1963B1E4054")
+    
+public static DERObjectIdentifier getNamedCurveOid(
         String name)
     {
         DERObjectIdentifier oid = X962NamedCurves.getOID(name);
@@ -187,8 +191,9 @@ public class ECUtil {
         return oid;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.052 -0500", hash_original_method = "99D54083A5A2CE9260B377C5AE531596", hash_generated_method = "E4BE302DDA7101436330F3001BD8FDA6")
-    public static X9ECParameters getNamedCurveByOid(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.947 -0500", hash_original_method = "99D54083A5A2CE9260B377C5AE531596", hash_generated_method = "E4BE302DDA7101436330F3001BD8FDA6")
+    
+public static X9ECParameters getNamedCurveByOid(
         DERObjectIdentifier oid)
     {
         X9ECParameters params = X962NamedCurves.getByOID(oid);
@@ -211,8 +216,9 @@ public class ECUtil {
         return params;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.053 -0500", hash_original_method = "F9131D554D124B354B6D5A9BCCAADA2B", hash_generated_method = "19AA32B5282C3D869916AD5D5C6D72C0")
-    public static String getCurveName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.950 -0500", hash_original_method = "F9131D554D124B354B6D5A9BCCAADA2B", hash_generated_method = "19AA32B5282C3D869916AD5D5C6D72C0")
+    
+public static String getCurveName(
         DERObjectIdentifier oid)
     {
         String name = X962NamedCurves.getName(oid);

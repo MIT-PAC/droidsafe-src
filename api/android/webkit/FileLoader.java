@@ -22,29 +22,29 @@ import com.android.internal.R;
 
 
 class FileLoader extends StreamLoader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:06.521 -0500", hash_original_field = "EB9F0DA7226F09B1BEBAFC8B7084A19D", hash_generated_field = "2386E910C23CC098E2AFE444C68F6B86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.123 -0500", hash_original_field = "EB9F0DA7226F09B1BEBAFC8B7084A19D", hash_generated_field = "2386E910C23CC098E2AFE444C68F6B86")
 
 
     // used for files under asset directory
     static final int TYPE_ASSET = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.012 -0500", hash_original_field = "A87C2B8F0CB69BF64123B6643C5678CC", hash_generated_field = "37CFCBEAA36971A1B22E497F54B484AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.125 -0500", hash_original_field = "A87C2B8F0CB69BF64123B6643C5678CC", hash_generated_field = "37CFCBEAA36971A1B22E497F54B484AC")
 
     static final int TYPE_RES = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.013 -0500", hash_original_field = "5242112E61C91F63D0C4250E69D4424B", hash_generated_field = "9E507F10BB893E2897D9DF437CDF3C57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.127 -0500", hash_original_field = "5242112E61C91F63D0C4250E69D4424B", hash_generated_field = "9E507F10BB893E2897D9DF437CDF3C57")
 
     static final int TYPE_FILE = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.013 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.130 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
 
     private static final String LOGTAG = "webkit";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.009 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.117 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
 
 
     private String mPath;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.009 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.119 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
 
     private int mType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.010 -0500", hash_original_field = "20CA612BF24253CD0FC221B1AD7F740F", hash_generated_field = "B054B0568675CAED6B0FC902EBB17D6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.121 -0500", hash_original_field = "20CA612BF24253CD0FC221B1AD7F740F", hash_generated_field = "B054B0568675CAED6B0FC902EBB17D6A")
 
     private boolean mAllowFileAccess;
 
@@ -58,8 +58,9 @@ class FileLoader extends StreamLoader {
      * @param allowFileAccess true if this WebView is allowed to access files
      *                        on the file system.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.014 -0500", hash_original_method = "0A468BF2FF018C04A055F46D2001401C", hash_generated_method = "030E5997862439D9E8876001FF164B61")
-    FileLoader(String url, LoadListener loadListener, int type,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.133 -0500", hash_original_method = "0A468BF2FF018C04A055F46D2001401C", hash_generated_method = "030E5997862439D9E8876001FF164B61")
+    
+FileLoader(String url, LoadListener loadListener, int type,
             boolean allowFileAccess) {
         super(loadListener);
         mType = type;
@@ -85,8 +86,9 @@ class FileLoader extends StreamLoader {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.015 -0500", hash_original_method = "987DD890C3289D23A785AB1F430BD4A8", hash_generated_method = "363217D5C0B22809618E324C1C500FBA")
-    private String errString(Exception ex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.135 -0500", hash_original_method = "987DD890C3289D23A785AB1F430BD4A8", hash_generated_method = "363217D5C0B22809618E324C1C500FBA")
+    
+private String errString(Exception ex) {
         String exMessage = ex.getMessage();
         String errString = mContext.getString(R.string.httpErrorFileNotFound);
         if (exMessage != null) {
@@ -95,9 +97,10 @@ class FileLoader extends StreamLoader {
         return errString;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.017 -0500", hash_original_method = "97D1B11BE7CB4BE78107ED00EAAEAEA4", hash_generated_method = "D57BC4C86CF32169C758589F5117BE81")
-    @Override
-protected boolean setupStreamAndSendStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.140 -0500", hash_original_method = "97D1B11BE7CB4BE78107ED00EAAEAEA4", hash_generated_method = "D57BC4C86CF32169C758589F5117BE81")
+    
+@Override
+    protected boolean setupStreamAndSendStatus() {
         try {
             if (mType == TYPE_ASSET) {
                 try {
@@ -185,9 +188,10 @@ protected boolean setupStreamAndSendStatus() {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.017 -0500", hash_original_method = "EECFC31B2787C18B03F2C6B112B9990D", hash_generated_method = "D8D690A91D5C6417F488AAAE5C24337C")
-    @Override
-protected void buildHeaders(Headers headers) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.142 -0500", hash_original_method = "EECFC31B2787C18B03F2C6B112B9990D", hash_generated_method = "D8D690A91D5C6417F488AAAE5C24337C")
+    
+@Override
+    protected void buildHeaders(Headers headers) {
         // do nothing.
     }
 }

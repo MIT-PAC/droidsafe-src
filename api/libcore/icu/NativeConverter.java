@@ -193,8 +193,9 @@ public final class NativeConverter {
     }
 
     // Translates from Java's enum to the magic numbers #defined in "NativeConverter.cpp".
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:30.320 -0500", hash_original_method = "E4DEB0C107DDB25A537EF0E89F1C04F8", hash_generated_method = "2E76AFD8C90588F5139C0C2D28CAEA05")
-    private static int translateCodingErrorAction(CodingErrorAction action) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.534 -0500", hash_original_method = "E4DEB0C107DDB25A537EF0E89F1C04F8", hash_generated_method = "2E76AFD8C90588F5139C0C2D28CAEA05")
+    
+private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;
         } else if (action == CodingErrorAction.IGNORE) {
@@ -206,8 +207,9 @@ public final class NativeConverter {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:30.321 -0500", hash_original_method = "1ECDF97E0F5711F64AED893C5903CD77", hash_generated_method = "6AD673FE560AB907D663F74DF6336835")
-    public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.537 -0500", hash_original_method = "1ECDF97E0F5711F64AED893C5903CD77", hash_generated_method = "6AD673FE560AB907D663F74DF6336835")
+    
+public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
         return setCallbackDecode(converterHandle,
                 translateCodingErrorAction(decoder.malformedInputAction()),
                 translateCodingErrorAction(decoder.unmappableCharacterAction()),
@@ -221,8 +223,9 @@ public final class NativeConverter {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385874043;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:30.323 -0500", hash_original_method = "C9EC92733E72FDFF26006CD6BB2B521C", hash_generated_method = "E0EEB07D09DCA82B0AC3252F2CCCFCC5")
-    public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.543 -0500", hash_original_method = "C9EC92733E72FDFF26006CD6BB2B521C", hash_generated_method = "E0EEB07D09DCA82B0AC3252F2CCCFCC5")
+    
+public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
         return setCallbackEncode(converterHandle,
                 translateCodingErrorAction(encoder.malformedInputAction()),
                 translateCodingErrorAction(encoder.unmappableCharacterAction()),

@@ -12,8 +12,9 @@ import android.text.Editable;
 
 class JapanesePhoneNumberFormatter {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.759 -0500", hash_original_method = "45AAE50F2C13E8232A931CE1D4B77E29", hash_generated_method = "16CB798AD9EDD6C0FEAD1F9310F1D7EA")
-    public static void format(Editable text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.093 -0500", hash_original_method = "45AAE50F2C13E8232A931CE1D4B77E29", hash_generated_method = "16CB798AD9EDD6C0FEAD1F9310F1D7EA")
+    
+public static void format(Editable text) {
         // Here, "root" means the position of "'":
         // 0'3, 0'90, and +81'-90
         // (dash will be deleted soon, so it is actually +81'90).
@@ -74,7 +75,7 @@ class JapanesePhoneNumberFormatter {
             text.insert(rootIndex, "-");
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.758 -0500", hash_original_field = "A718B0EA0BB26C2544F499EBA8B47E4F", hash_generated_field = "A41ED4450E04BDA3A5345586D1E8DE2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.087 -0500", hash_original_field = "A718B0EA0BB26C2544F499EBA8B47E4F", hash_generated_field = "A41ED4450E04BDA3A5345586D1E8DE2E")
 
     private static short FORMAT_MAP[] = {
     -100, 10, 220, -15, 410, 530, 1200, 670, 780, 1060,

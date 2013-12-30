@@ -34,18 +34,20 @@ public interface AppInterface {
         SET_UP_MENU(0x25),
         SET_UP_CALL(0x10),
         PROVIDE_LOCAL_INFORMATION(0x26);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.234 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "1FE26AAF0F7068BF50C3FDD7D6BD850D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.657 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "1FE26AAF0F7068BF50C3FDD7D6BD850D")
 
 
         private int mValue;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.235 -0500", hash_original_method = "6F7266DBE7D20F5D2808BEB812EAA6BB", hash_generated_method = "6F7266DBE7D20F5D2808BEB812EAA6BB")
-            CommandType(int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.659 -0500", hash_original_method = "6F7266DBE7D20F5D2808BEB812EAA6BB", hash_generated_method = "6F7266DBE7D20F5D2808BEB812EAA6BB")
+            
+CommandType(int value) {
             mValue = value;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.236 -0500", hash_original_method = "27017A4BB2548485661BB15426A7D88C", hash_generated_method = "830F464825E9198C7936F8382B630542")
-            public int value() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.661 -0500", hash_original_method = "27017A4BB2548485661BB15426A7D88C", hash_generated_method = "830F464825E9198C7936F8382B630542")
+            
+public int value() {
             return mValue;
         }
 
@@ -57,8 +59,9 @@ public interface AppInterface {
          *         value}. If no CommandType object has that value, null is
          *         returned.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.237 -0500", hash_original_method = "1F19DA1C6CBA846FE2FCDE89F2B2BD0C", hash_generated_method = "C65E8D2A280FF7728EC3A8053627318B")
-            public static CommandType fromInt(int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.664 -0500", hash_original_method = "1F19DA1C6CBA846FE2FCDE89F2B2BD0C", hash_generated_method = "C65E8D2A280FF7728EC3A8053627318B")
+            
+public static CommandType fromInt(int value) {
             for (CommandType e : CommandType.values()) {
                 if (e.mValue == value) {
                     return e;

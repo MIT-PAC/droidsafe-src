@@ -15,15 +15,15 @@ import com.android.internal.telephony.SmsAddress;
 
 
 public class GsmSmsAddress extends SmsAddress {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.076 -0500", hash_original_field = "18DA9B883CBAF7214F059A4E280D4E9A", hash_generated_field = "BAEAAA3B1617171D1C1E99BC0FAB1BFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.633 -0500", hash_original_field = "18DA9B883CBAF7214F059A4E280D4E9A", hash_generated_field = "BAEAAA3B1617171D1C1E99BC0FAB1BFC")
 
 
     static final int OFFSET_ADDRESS_LENGTH = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.077 -0500", hash_original_field = "9E47FBBB53AF74FDF2F28F097B14D2E3", hash_generated_field = "7FDA3A692BC2298A10BEE7791ED6AD24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.636 -0500", hash_original_field = "9E47FBBB53AF74FDF2F28F097B14D2E3", hash_generated_field = "7FDA3A692BC2298A10BEE7791ED6AD24")
 
 
     static final int OFFSET_TOA = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.078 -0500", hash_original_field = "E8F4F7484EB3F156514A17792BA2EDD6", hash_generated_field = "E0E5804158D85D8E1B3FA048EFDDDD90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.638 -0500", hash_original_field = "E8F4F7484EB3F156514A17792BA2EDD6", hash_generated_field = "E0E5804158D85D8E1B3FA048EFDDDD90")
 
 
     static final int OFFSET_ADDRESS_VALUE = 2;
@@ -36,8 +36,9 @@ public class GsmSmsAddress extends SmsAddress {
      *        (addressLength + 1) / 2"
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.079 -0500", hash_original_method = "A0B07CD6AB37B7B30863E7D1CAF36981", hash_generated_method = "5DFF62CE6B9C14D1C45D38C7C356DD12")
-    public GsmSmsAddress(byte[] data, int offset, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.641 -0500", hash_original_method = "A0B07CD6AB37B7B30863E7D1CAF36981", hash_generated_method = "5DFF62CE6B9C14D1C45D38C7C356DD12")
+    
+public GsmSmsAddress(byte[] data, int offset, int length) {
         origBytes = new byte[length];
         System.arraycopy(data, offset, origBytes, 0, length);
 
@@ -77,21 +78,24 @@ public class GsmSmsAddress extends SmsAddress {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.080 -0500", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "16A98D98BF22E2226CA4E552EBC9B9DF")
-    public String getAddressString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.644 -0500", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "16A98D98BF22E2226CA4E552EBC9B9DF")
+    
+public String getAddressString() {
         return address;
     }
 
     /**
      * Returns true if this is an alphanumeric address
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.081 -0500", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "94FCF7D6584B29E11994CD05B47D594C")
-    public boolean isAlphanumeric() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.646 -0500", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "94FCF7D6584B29E11994CD05B47D594C")
+    
+public boolean isAlphanumeric() {
         return ton == TON_ALPHANUMERIC;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.082 -0500", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "4702E1F913E3FD9A825CCD513A01703B")
-    public boolean isNetworkSpecific() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.648 -0500", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "4702E1F913E3FD9A825CCD513A01703B")
+    
+public boolean isNetworkSpecific() {
         return ton == TON_NETWORK;
     }
 
@@ -99,8 +103,9 @@ public class GsmSmsAddress extends SmsAddress {
      * Returns true of this is a valid CPHS voice message waiting indicator
      * address
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.082 -0500", hash_original_method = "7BECB9552858FA87C7AFE2E5228279B4", hash_generated_method = "A92CF9911E7F488800E294D71D407FCD")
-    public boolean isCphsVoiceMessageIndicatorAddress() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.651 -0500", hash_original_method = "7BECB9552858FA87C7AFE2E5228279B4", hash_generated_method = "A92CF9911E7F488800E294D71D407FCD")
+    
+public boolean isCphsVoiceMessageIndicatorAddress() {
         // CPHS-style MWI message
         // See CPHS 4.7 B.4.2.1
         //
@@ -131,8 +136,9 @@ public class GsmSmsAddress extends SmsAddress {
      * address indicating a "set" of "indicator 1" of type "voice message
      * waiting"
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.083 -0500", hash_original_method = "4D79B8C2A51115F6F438822C99644146", hash_generated_method = "86F79CBB124E16917B7A1AE7C11CD87B")
-    public boolean isCphsVoiceMessageSet() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.654 -0500", hash_original_method = "4D79B8C2A51115F6F438822C99644146", hash_generated_method = "86F79CBB124E16917B7A1AE7C11CD87B")
+    
+public boolean isCphsVoiceMessageSet() {
         // 0x11 means "set" "voice message waiting" "indicator 1"
         return isCphsVoiceMessageIndicatorAddress()
                 && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x11;
@@ -144,8 +150,9 @@ public class GsmSmsAddress extends SmsAddress {
      * address indicating a "clear" of "indicator 1" of type "voice message
      * waiting"
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.084 -0500", hash_original_method = "4C77C20AE3A5F3CC1A1FB56D13643756", hash_generated_method = "3C47A8B9F98A0EC35EE39FB32875C58F")
-    public boolean isCphsVoiceMessageClear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.657 -0500", hash_original_method = "4C77C20AE3A5F3CC1A1FB56D13643756", hash_generated_method = "3C47A8B9F98A0EC35EE39FB32875C58F")
+    
+public boolean isCphsVoiceMessageClear() {
         // 0x10 means "clear" "voice message waiting" "indicator 1"
         return isCphsVoiceMessageIndicatorAddress()
                 && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x10;

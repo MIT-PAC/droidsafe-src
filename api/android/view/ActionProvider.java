@@ -11,7 +11,7 @@ import android.content.Context;
 
 
 public abstract class ActionProvider {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.317 -0500", hash_original_field = "0CC45A8F2A3DE3D79B6417F1C5FAF5C0", hash_generated_field = "B0B6D637F5D44582200E582C4D2D6000")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.115 -0500", hash_original_field = "0CC45A8F2A3DE3D79B6417F1C5FAF5C0", hash_generated_field = "B0B6D637F5D44582200E582C4D2D6000")
 
     private SubUiVisibilityListener mSubUiVisibilityListener;
 
@@ -20,8 +20,9 @@ public abstract class ActionProvider {
      *
      * @param context Context for accessing resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.318 -0500", hash_original_method = "AD51B37569819E728EA786F52DA39151", hash_generated_method = "01703FE4B54B2BD302FDF7CE9511AF87")
-    public ActionProvider(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.118 -0500", hash_original_method = "AD51B37569819E728EA786F52DA39151", hash_generated_method = "01703FE4B54B2BD302FDF7CE9511AF87")
+    
+public ActionProvider(Context context) {
     }
 
     /**
@@ -29,8 +30,9 @@ public abstract class ActionProvider {
      *
      * @return A new action view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.318 -0500", hash_original_method = "D34B37B54FEE3A61B3F2EC9EB9350036", hash_generated_method = "A1917FF468BF52201E55304E949C12BA")
-    public abstract View onCreateActionView();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.121 -0500", hash_original_method = "D34B37B54FEE3A61B3F2EC9EB9350036", hash_generated_method = "A1917FF468BF52201E55304E949C12BA")
+    
+public abstract View onCreateActionView();
 
     /**
      * Performs an optional default action.
@@ -67,8 +69,9 @@ public abstract class ActionProvider {
      * The default implementation does not perform any action and returns false.
      * </p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.319 -0500", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "8E69AA43F8FD02823DF2F04092FB421C")
-    public boolean onPerformDefaultAction() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.124 -0500", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "8E69AA43F8FD02823DF2F04092FB421C")
+    
+public boolean onPerformDefaultAction() {
         return false;
     }
 
@@ -82,8 +85,9 @@ public abstract class ActionProvider {
      *
      * @return true if the item backed by this provider should have an associated submenu
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.320 -0500", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "C47A8DBA8C06C24113E67B7BE29255AD")
-    public boolean hasSubMenu() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.126 -0500", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "C47A8DBA8C06C24113E67B7BE29255AD")
+    
+public boolean hasSubMenu() {
         return false;
     }
 
@@ -96,8 +100,9 @@ public abstract class ActionProvider {
      *
      * @param subMenu Submenu that will be displayed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.321 -0500", hash_original_method = "F59137EC2C0A4379BE18A71AFD20A9D8", hash_generated_method = "50D6E1FB8293636D3A3A82EEB44F6E67")
-    public void onPrepareSubMenu(SubMenu subMenu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.129 -0500", hash_original_method = "F59137EC2C0A4379BE18A71AFD20A9D8", hash_generated_method = "50D6E1FB8293636D3A3A82EEB44F6E67")
+    
+public void onPrepareSubMenu(SubMenu subMenu) {
     }
 
     /**
@@ -107,8 +112,9 @@ public abstract class ActionProvider {
      *
      * @hide Pending future API approval
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.321 -0500", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "DB9BE510AE24969A41145DFA8A4FE64E")
-    public void subUiVisibilityChanged(boolean isVisible) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.131 -0500", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "DB9BE510AE24969A41145DFA8A4FE64E")
+    
+public void subUiVisibilityChanged(boolean isVisible) {
         if (mSubUiVisibilityListener != null) {
             mSubUiVisibilityListener.onSubUiVisibilityChanged(isVisible);
         }
@@ -117,8 +123,9 @@ public abstract class ActionProvider {
     /**
      * @hide Internal use only
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.322 -0500", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "4AF91025E5612C10D13FC03AB2FFE231")
-    public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.133 -0500", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "4AF91025E5612C10D13FC03AB2FFE231")
+    
+public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
         mSubUiVisibilityListener = listener;
     }
 

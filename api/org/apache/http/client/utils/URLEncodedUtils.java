@@ -34,8 +34,9 @@ public class URLEncodedUtils {
      * @param encoding
      *            encoding to use while parsing the query
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.284 -0500", hash_original_method = "75763A91BDF0B02A517E106BC03551A8", hash_generated_method = "9C1AB2355DE68597D0C7FD33A48C9930")
-    public static List <NameValuePair> parse (final URI uri, final String encoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.452 -0500", hash_original_method = "75763A91BDF0B02A517E106BC03551A8", hash_generated_method = "9C1AB2355DE68597D0C7FD33A48C9930")
+    
+public static List <NameValuePair> parse (final URI uri, final String encoding) {
         List <NameValuePair> result = Collections.emptyList();
         final String query = uri.getRawQuery();
         if (query != null && query.length() > 0) {
@@ -57,8 +58,9 @@ public class URLEncodedUtils {
      * @throws IOException
      *             If there was an exception getting the entity's data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.284 -0500", hash_original_method = "3125ACC43E08755650BD72975049DA9D", hash_generated_method = "57408A403AC39C54BE0F6AE05B140555")
-    public static List <NameValuePair> parse (
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.455 -0500", hash_original_method = "3125ACC43E08755650BD72975049DA9D", hash_generated_method = "57408A403AC39C54BE0F6AE05B140555")
+    
+public static List <NameValuePair> parse (
             final HttpEntity entity) throws IOException {
         List <NameValuePair> result = Collections.emptyList();
         if (isEncoded(entity)) {
@@ -77,8 +79,9 @@ public class URLEncodedUtils {
      * Returns true if the entity's Content-Type header is
      * <code>application/x-www-form-urlencoded</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.285 -0500", hash_original_method = "0BF3228161F0ACF43C700CE7A2BBAA2E", hash_generated_method = "8503EA47287EAF38F5D4E4E943CADED1")
-    public static boolean isEncoded (final HttpEntity entity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.457 -0500", hash_original_method = "0BF3228161F0ACF43C700CE7A2BBAA2E", hash_generated_method = "8503EA47287EAF38F5D4E4E943CADED1")
+    
+public static boolean isEncoded (final HttpEntity entity) {
         final Header contentType = entity.getContentType();
         return (contentType != null && contentType.getValue().equalsIgnoreCase(CONTENT_TYPE));
     }
@@ -97,8 +100,9 @@ public class URLEncodedUtils {
      * @param encoding
      *            Encoding to use when decoding the parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.286 -0500", hash_original_method = "B9E5E74932B9B651CCE1D167217476AF", hash_generated_method = "769E1F0F23499A6643A99990D4159254")
-    public static void parse (
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.460 -0500", hash_original_method = "B9E5E74932B9B651CCE1D167217476AF", hash_generated_method = "769E1F0F23499A6643A99990D4159254")
+    
+public static void parse (
             final List <NameValuePair> parameters, 
             final Scanner scanner, 
             final String encoding) {
@@ -123,8 +127,9 @@ public class URLEncodedUtils {
      * @param parameters  The parameters to include.
      * @param encoding The encoding to use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.287 -0500", hash_original_method = "FC50720DD3E5D2157039A2F08974D046", hash_generated_method = "DDE2DF273A0113D2EC3E0F3A3C8BCEAE")
-    public static String format (
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.463 -0500", hash_original_method = "FC50720DD3E5D2157039A2F08974D046", hash_generated_method = "DDE2DF273A0113D2EC3E0F3A3C8BCEAE")
+    
+public static String format (
             final List <? extends NameValuePair> parameters, 
             final String encoding) {
         final StringBuilder result = new StringBuilder();
@@ -141,8 +146,9 @@ public class URLEncodedUtils {
         return result.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.288 -0500", hash_original_method = "2D8FF71055D97FB508B18FFC2F549496", hash_generated_method = "A47935A13B462B47CC4711B15FE69EA3")
-    private static String decode (final String content, final String encoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.465 -0500", hash_original_method = "2D8FF71055D97FB508B18FFC2F549496", hash_generated_method = "A47935A13B462B47CC4711B15FE69EA3")
+    
+private static String decode (final String content, final String encoding) {
         try {
             return URLDecoder.decode(content, 
                     encoding != null ? encoding : HTTP.DEFAULT_CONTENT_CHARSET);
@@ -151,8 +157,9 @@ public class URLEncodedUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.289 -0500", hash_original_method = "7FB0AA8AD7FE2622360A7CF15E75172B", hash_generated_method = "51DC5F03E25D5BBF34576DFBFE9D90DB")
-    private static String encode (final String content, final String encoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.468 -0500", hash_original_method = "7FB0AA8AD7FE2622360A7CF15E75172B", hash_generated_method = "51DC5F03E25D5BBF34576DFBFE9D90DB")
+    
+private static String encode (final String content, final String encoding) {
         try {
             return URLEncoder.encode(content, 
                     encoding != null ? encoding : HTTP.DEFAULT_CONTENT_CHARSET);
@@ -160,14 +167,14 @@ public class URLEncodedUtils {
             throw new IllegalArgumentException(problem);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.281 -0500", hash_original_field = "8CE1BE1F9E7F5E0ECDCE17C227A60463", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.444 -0500", hash_original_field = "8CE1BE1F9E7F5E0ECDCE17C227A60463", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
 
 
     public static final String CONTENT_TYPE = "application/x-www-form-urlencoded";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.282 -0500", hash_original_field = "BE30E2F1EF3EC80109603C450CC5D69C", hash_generated_field = "EADEDF186CBE5B5EA18ADAA5F38884BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.447 -0500", hash_original_field = "BE30E2F1EF3EC80109603C450CC5D69C", hash_generated_field = "EADEDF186CBE5B5EA18ADAA5F38884BA")
 
     private static final String PARAMETER_SEPARATOR = "&";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.283 -0500", hash_original_field = "9B0CF78B002510056630BB2C521EBA47", hash_generated_field = "14E97C4E5722F77DC637C17244547DAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.449 -0500", hash_original_field = "9B0CF78B002510056630BB2C521EBA47", hash_generated_field = "14E97C4E5722F77DC637C17244547DAD")
 
     private static final String NAME_VALUE_SEPARATOR = "=";
     

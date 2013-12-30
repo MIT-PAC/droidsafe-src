@@ -18,19 +18,21 @@ public abstract class ResponseCache {
     /**
      * Returns the system's default response cache, or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.229 -0500", hash_original_method = "5D4B10CEEF902A15EE482FB7322F92B2", hash_generated_method = "05EA587265C5DA8650C5DD9F2E66D93D")
-    public static ResponseCache getDefault() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.194 -0500", hash_original_method = "5D4B10CEEF902A15EE482FB7322F92B2", hash_generated_method = "05EA587265C5DA8650C5DD9F2E66D93D")
+    
+public static ResponseCache getDefault() {
         return defaultResponseCache;
     }
 
     /**
      * Sets the system's default response cache. Use null to remove the response cache.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.230 -0500", hash_original_method = "A6312AA15E9F855E4D8376956298FCD0", hash_generated_method = "CEC571B0C62F629A8E3121E8BCD5722A")
-    public static void setDefault(ResponseCache responseCache) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.196 -0500", hash_original_method = "A6312AA15E9F855E4D8376956298FCD0", hash_generated_method = "CEC571B0C62F629A8E3121E8BCD5722A")
+    
+public static void setDefault(ResponseCache responseCache) {
         defaultResponseCache = responseCache;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.229 -0500", hash_original_field = "9B2F073A0D6F42DE90512B4B2699D03D", hash_generated_field = "977723D7A34AC2663C01851D0C5635D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.191 -0500", hash_original_field = "9B2F073A0D6F42DE90512B4B2699D03D", hash_generated_field = "977723D7A34AC2663C01851D0C5635D6")
 
     private static ResponseCache defaultResponseCache = null;
     
@@ -56,8 +58,9 @@ public abstract class ResponseCache {
      * @throws IllegalArgumentException
      *             if any one of the parameters is set to {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.231 -0500", hash_original_method = "1EDD2E6CBFE8528F203F73FF29C1DE1D", hash_generated_method = "CA4D91334F9FE7CDA25A7203F5064D8C")
-    public abstract CacheResponse get(URI uri, String requestMethod,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.200 -0500", hash_original_method = "1EDD2E6CBFE8528F203F73FF29C1DE1D", hash_generated_method = "CA4D91334F9FE7CDA25A7203F5064D8C")
+    
+public abstract CacheResponse get(URI uri, String requestMethod,
             Map<String, List<String>> requestHeaders) throws IOException;
 
     /**
@@ -77,7 +80,8 @@ public abstract class ResponseCache {
      * @throws IllegalArgumentException
      *             if any one of the parameters is set to {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.232 -0500", hash_original_method = "7E0EF9B048C955B193FDF9F90BC94741", hash_generated_method = "DC40A35C7A23A4FEF98B3168BB2F5EE1")
-    public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.202 -0500", hash_original_method = "7E0EF9B048C955B193FDF9F90BC94741", hash_generated_method = "DC40A35C7A23A4FEF98B3168BB2F5EE1")
+    
+public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;
 }
 

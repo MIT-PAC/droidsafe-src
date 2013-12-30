@@ -16,23 +16,25 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public class HeaderGroup implements Cloneable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.013 -0500", hash_original_field = "2E4A517DF74BC5A5A497BA92F88228C9", hash_generated_field = "144EBE63A318E4E8C50ABA547D9431E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.684 -0500", hash_original_field = "2E4A517DF74BC5A5A497BA92F88228C9", hash_generated_field = "144EBE63A318E4E8C50ABA547D9431E1")
 
     private List headers;
 
     /**
      * Constructor for HeaderGroup.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.014 -0500", hash_original_method = "04659297943FDC7530B5F805B712786E", hash_generated_method = "80BF1020C905672ED39C1585D02A9065")
-    public HeaderGroup() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.687 -0500", hash_original_method = "04659297943FDC7530B5F805B712786E", hash_generated_method = "80BF1020C905672ED39C1585D02A9065")
+    
+public HeaderGroup() {
         this.headers = new ArrayList(16);
     }
     
     /**
      * Removes any contained headers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.015 -0500", hash_original_method = "DD1F10463F473A3E036D58A6099CEA6B", hash_generated_method = "7069691769D07F3822B320ECD25C6539")
-    public void clear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.690 -0500", hash_original_method = "DD1F10463F473A3E036D58A6099CEA6B", hash_generated_method = "7069691769D07F3822B320ECD25C6539")
+    
+public void clear() {
         headers.clear();
     }
     
@@ -42,8 +44,9 @@ public class HeaderGroup implements Cloneable {
      * 
      * @param header the header to add
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.016 -0500", hash_original_method = "975CD35AA91822366EBBB59081D175D2", hash_generated_method = "72D7D347D6291763DE249E123E7FE4E9")
-    public void addHeader(Header header) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.692 -0500", hash_original_method = "975CD35AA91822366EBBB59081D175D2", hash_generated_method = "72D7D347D6291763DE249E123E7FE4E9")
+    
+public void addHeader(Header header) {
         if (header == null) {
             return;
         }
@@ -55,8 +58,9 @@ public class HeaderGroup implements Cloneable {
      *
      * @param header the header to remove
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.017 -0500", hash_original_method = "FC1D35A98936766B0E3F368A26829970", hash_generated_method = "A695EF67F50A2FB4C68804D7D2441400")
-    public void removeHeader(Header header) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.694 -0500", hash_original_method = "FC1D35A98936766B0E3F368A26829970", hash_generated_method = "A695EF67F50A2FB4C68804D7D2441400")
+    
+public void removeHeader(Header header) {
         if (header == null) {
             return;
         }
@@ -70,8 +74,9 @@ public class HeaderGroup implements Cloneable {
      * @param header the new header that should replace the first header with the same 
      * name if present in the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.017 -0500", hash_original_method = "6490900761BA3EE42006578E9056D699", hash_generated_method = "DEEE9EFEBB86898438641885D5FFE254")
-    public void updateHeader(Header header) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.697 -0500", hash_original_method = "6490900761BA3EE42006578E9056D699", hash_generated_method = "DEEE9EFEBB86898438641885D5FFE254")
+    
+public void updateHeader(Header header) {
         if (header == null) {
             return;
         }
@@ -92,8 +97,9 @@ public class HeaderGroup implements Cloneable {
      * 
      * @param headers the headers to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.018 -0500", hash_original_method = "21A092A9E4BD805516734B366EB966A8", hash_generated_method = "1983362DCCA6E8EF783A08E5B3EAA075")
-    public void setHeaders(Header[] headers) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.700 -0500", hash_original_method = "21A092A9E4BD805516734B366EB966A8", hash_generated_method = "1983362DCCA6E8EF783A08E5B3EAA075")
+    
+public void setHeaders(Header[] headers) {
         clear();
         if (headers == null) {
             return;
@@ -114,8 +120,9 @@ public class HeaderGroup implements Cloneable {
      * @return a header with a condensed value or <code>null</code> if no
      * headers by the given name are present
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.019 -0500", hash_original_method = "401EFCB61975E058185EEB3D46A8D6DB", hash_generated_method = "17F3700C3F9D9282BC3E697F5474C783")
-    public Header getCondensedHeader(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.703 -0500", hash_original_method = "401EFCB61975E058185EEB3D46A8D6DB", hash_generated_method = "17F3700C3F9D9282BC3E697F5474C783")
+    
+public Header getCondensedHeader(String name) {
         Header[] headers = getHeaders(name);
         
         if (headers.length == 0) {
@@ -144,8 +151,9 @@ public class HeaderGroup implements Cloneable {
      * 
      * @return an array of length >= 0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.020 -0500", hash_original_method = "C3B2FF3CCB5B189FEFC22CBF4687F83D", hash_generated_method = "A9F2B5A82F6968B911F5F0EBD08FBDDB")
-    public Header[] getHeaders(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.706 -0500", hash_original_method = "C3B2FF3CCB5B189FEFC22CBF4687F83D", hash_generated_method = "A9F2B5A82F6968B911F5F0EBD08FBDDB")
+    
+public Header[] getHeaders(String name) {
         ArrayList headersFound = new ArrayList();
         
         for (int i = 0; i < headers.size(); i++) {
@@ -166,8 +174,9 @@ public class HeaderGroup implements Cloneable {
      * @param name the name of the header to get
      * @return the first header or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.021 -0500", hash_original_method = "1B5D001D749637B235D3368FA2C6DC92", hash_generated_method = "F35F2A4913636C76F8DC70536FD5AF2B")
-    public Header getFirstHeader(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.709 -0500", hash_original_method = "1B5D001D749637B235D3368FA2C6DC92", hash_generated_method = "F35F2A4913636C76F8DC70536FD5AF2B")
+    
+public Header getFirstHeader(String name) {
         for (int i = 0; i < headers.size(); i++) {
             Header header = (Header) headers.get(i);
             if (header.getName().equalsIgnoreCase(name)) {
@@ -185,8 +194,9 @@ public class HeaderGroup implements Cloneable {
      * @param name the name of the header to get
      * @return the last header or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.021 -0500", hash_original_method = "F097824BB9F324FCD125DCECBE8EB60F", hash_generated_method = "534C6B0FE21792E4C5117DE7A0A24EFB")
-    public Header getLastHeader(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.712 -0500", hash_original_method = "F097824BB9F324FCD125DCECBE8EB60F", hash_generated_method = "534C6B0FE21792E4C5117DE7A0A24EFB")
+    
+public Header getLastHeader(String name) {
         // start at the end of the list and work backwards
         for (int i = headers.size() - 1; i >= 0; i--) {
             Header header = (Header) headers.get(i);
@@ -203,8 +213,9 @@ public class HeaderGroup implements Cloneable {
      * 
      * @return an array of length >= 0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.022 -0500", hash_original_method = "51A146DC1B834742F5A648A6C7C2FBE7", hash_generated_method = "3FBF8A33AF0B807B8E3CE9C8312BD52A")
-    public Header[] getAllHeaders() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.715 -0500", hash_original_method = "51A146DC1B834742F5A648A6C7C2FBE7", hash_generated_method = "3FBF8A33AF0B807B8E3CE9C8312BD52A")
+    
+public Header[] getAllHeaders() {
         return (Header[]) headers.toArray(new Header[headers.size()]);
     }
     
@@ -217,8 +228,9 @@ public class HeaderGroup implements Cloneable {
      * @return <code>true</code> if at least one header with the name is
      * contained, <code>false</code> otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.023 -0500", hash_original_method = "8F463ADE51DCD8AE5187274242206DA5", hash_generated_method = "C72D96C65490338F57465927F7F16D28")
-    public boolean containsHeader(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.717 -0500", hash_original_method = "8F463ADE51DCD8AE5187274242206DA5", hash_generated_method = "C72D96C65490338F57465927F7F16D28")
+    
+public boolean containsHeader(String name) {
         for (int i = 0; i < headers.size(); i++) {
             Header header = (Header) headers.get(i);
             if (header.getName().equalsIgnoreCase(name)) {
@@ -236,8 +248,9 @@ public class HeaderGroup implements Cloneable {
      * 
      * @since 4.0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.024 -0500", hash_original_method = "216CA9BCEE6B2216E69E554CBCCBB21C", hash_generated_method = "179E52FF784C1E5BDEE0266C9CB06A11")
-    public HeaderIterator iterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.719 -0500", hash_original_method = "216CA9BCEE6B2216E69E554CBCCBB21C", hash_generated_method = "179E52FF784C1E5BDEE0266C9CB06A11")
+    
+public HeaderIterator iterator() {
         return new BasicListHeaderIterator(this.headers, null); 
     }
 
@@ -251,8 +264,9 @@ public class HeaderGroup implements Cloneable {
      * 
      * @since 4.0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.024 -0500", hash_original_method = "DFA4A10C9A5AF888C1AA8746F1A85305", hash_generated_method = "1545E9812E7EBED1F33C8B8846F343C2")
-    public HeaderIterator iterator(final String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.722 -0500", hash_original_method = "DFA4A10C9A5AF888C1AA8746F1A85305", hash_generated_method = "1545E9812E7EBED1F33C8B8846F343C2")
+    
+public HeaderIterator iterator(final String name) {
         return new BasicListHeaderIterator(this.headers, name);
     }
     
@@ -261,15 +275,17 @@ public class HeaderGroup implements Cloneable {
      * 
      * @return copy of this object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.025 -0500", hash_original_method = "5B227975880483464D857E333DC9323C", hash_generated_method = "0C39C85BC19025CB510FC9F307AE3C08")
-    public HeaderGroup copy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.724 -0500", hash_original_method = "5B227975880483464D857E333DC9323C", hash_generated_method = "0C39C85BC19025CB510FC9F307AE3C08")
+    
+public HeaderGroup copy() {
         HeaderGroup clone = new HeaderGroup();
         clone.headers.addAll(this.headers);
         return clone;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.026 -0500", hash_original_method = "A187915CF1AFFDE7143E028BA9E9F5A2", hash_generated_method = "57896E141642EF4108BBA152F7A67F9A")
-    public Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.726 -0500", hash_original_method = "A187915CF1AFFDE7143E028BA9E9F5A2", hash_generated_method = "57896E141642EF4108BBA152F7A67F9A")
+    
+public Object clone() throws CloneNotSupportedException {
         HeaderGroup clone = (HeaderGroup) super.clone();
         clone.headers = new ArrayList(this.headers);
         return clone;

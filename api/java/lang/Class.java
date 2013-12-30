@@ -63,8 +63,9 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
      *             if an exception occurs during static initialization of a
      *             class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.191 -0500", hash_original_method = "9BF97E3639356761488C43790786ED6D", hash_generated_method = "22AAAEA8B777BEFA6A0FBF037144BB50")
-    public static Class<?> forName(String className) throws ClassNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.871 -0500", hash_original_method = "9BF97E3639356761488C43790786ED6D", hash_generated_method = "22AAAEA8B777BEFA6A0FBF037144BB50")
+    
+public static Class<?> forName(String className) throws ClassNotFoundException {
         return forName(className, true, VMStack.getCallingClassLoader());
     }
 
@@ -96,8 +97,9 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
      *             if an exception occurs during static initialization of a
      *             class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.192 -0500", hash_original_method = "007FA0806960DEBB516C0AC4BBAC43FF", hash_generated_method = "96F9103EAAF63D703BB0D402C06D3482")
-    public static Class<?> forName(String className, boolean initializeBoolean,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.874 -0500", hash_original_method = "007FA0806960DEBB516C0AC4BBAC43FF", hash_generated_method = "96F9103EAAF63D703BB0D402C06D3482")
+    
+public static Class<?> forName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
 
         if (classLoader == null) {
@@ -207,11 +209,11 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
         System.arraycopy(tail, 0, result, head.length, tail.length);
         return result;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.186 -0500", hash_original_field = "5345B2523025935E4E520B1555936347", hash_generated_field = "A2E36971CC30DE91D1AF4E9C02F420A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.857 -0500", hash_original_field = "5345B2523025935E4E520B1555936347", hash_generated_field = "A2E36971CC30DE91D1AF4E9C02F420A3")
 
 
     private static final long serialVersionUID = 3206093459760846163L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.187 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.860 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
 
     private transient String name;
     
@@ -224,8 +226,9 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     /**
      * Get the Signature attribute for this class.  Returns null if not found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.189 -0500", hash_original_method = "D48BE9AB17D8906757B56E4D680A2C57", hash_generated_method = "B78AD642016FCC1825F3A1A209AE1A79")
-    private String getSignatureAttribute() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.865 -0500", hash_original_method = "D48BE9AB17D8906757B56E4D680A2C57", hash_generated_method = "B78AD642016FCC1825F3A1A209AE1A79")
+    
+private String getSignatureAttribute() {
         Object[] annotation = getSignatureAnnotation();
 
         if (annotation == null) {
@@ -253,8 +256,9 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
      *
      * @return the public class members of the class represented by this object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.195 -0500", hash_original_method = "0A5E0D64FA55612B299C6956628C149D", hash_generated_method = "D7203C509B77A1072C11ED193F651546")
-    public Class<?>[] getClasses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.881 -0500", hash_original_method = "0A5E0D64FA55612B299C6956628C149D", hash_generated_method = "D7203C509B77A1072C11ED193F651546")
+    
+public Class<?>[] getClasses() {
         return getFullListOfClasses(true);
     }
 
@@ -318,8 +322,9 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
      * @return a copy of the array containing this class' annotations.
      * @see #getDeclaredAnnotations()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.197 -0500", hash_original_method = "214E042C121A5AA68E2A99AA55DE15AA", hash_generated_method = "6FD3E304A8DF098A20CB6436606F5062")
-    public Annotation[] getAnnotations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.887 -0500", hash_original_method = "214E042C121A5AA68E2A99AA55DE15AA", hash_generated_method = "6FD3E304A8DF098A20CB6436606F5062")
+    
+public Annotation[] getAnnotations() {
         /*
          * We need to get the annotations declared on this class, plus the
          * annotations from superclasses that have the "@Inherited" annotation
@@ -360,8 +365,9 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
      * @return this class' canonical name, or {@code null} if it does not have a
      *         canonical name.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.198 -0500", hash_original_method = "79C3FAE0B22F6799153600E0BD41AE53", hash_generated_method = "D53A66E2D95F9FCB432551D2F3BDDC4D")
-    public String getCanonicalName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.889 -0500", hash_original_method = "79C3FAE0B22F6799153600E0BD41AE53", hash_generated_method = "D53A66E2D95F9FCB432551D2F3BDDC4D")
+    
+public String getCanonicalName() {
         if (isLocalClass() || isAnonymousClass())
             return null;
 
@@ -407,8 +413,9 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
      * @return the class loader for the represented class.
      * @see ClassLoader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.199 -0500", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "B0FEF2208E9859EF6D970383264412F7")
-    public ClassLoader getClassLoader() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.892 -0500", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "B0FEF2208E9859EF6D970383264412F7")
+    
+public ClassLoader getClassLoader() {
         if (this.isPrimitive()) {
             return null;
         }
@@ -431,8 +438,9 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
      *
      * @return the ClassLoader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.199 -0500", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "CA71AD82665CF5FC19F2861C6018C612")
-    ClassLoader getClassLoaderImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.894 -0500", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "CA71AD82665CF5FC19F2861C6018C612")
+    
+ClassLoader getClassLoaderImpl() {
         ClassLoader loader = getClassLoader(this);
         return loader == null ? BootClassLoader.getInstance() : loader;
     }
@@ -458,9 +466,10 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
      *             if the constructor can not be found.
      * @see #getDeclaredConstructor(Class[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.203 -0500", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "2060266FA2D0F6DCF32A8D8414835B9B")
-    @SuppressWarnings("unchecked")
-public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.905 -0500", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "2060266FA2D0F6DCF32A8D8414835B9B")
+    
+@SuppressWarnings("unchecked")
+    public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
         return (Constructor) getConstructorOrMethod("<init>", false, true, parameterTypes);
     }
 
@@ -470,8 +479,9 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
      * @param name the method name, or "<init>" to return a constructor.
      * @param recursive true to search supertypes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.204 -0500", hash_original_method = "4EF95E7321A9A3F23E7914021D1D63A7", hash_generated_method = "98A59BB2F64617285B92F7E1C4D1EF02")
-    private Member getConstructorOrMethod(String name, boolean recursive,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.908 -0500", hash_original_method = "4EF95E7321A9A3F23E7914021D1D63A7", hash_generated_method = "98A59BB2F64617285B92F7E1C4D1EF02")
+    
+private Member getConstructorOrMethod(String name, boolean recursive,
             boolean publicOnly, Class<?>[] parameterTypes) throws NoSuchMethodException {
         if (recursive && !publicOnly) {
             throw new AssertionError(); // can't lookup non-public members recursively
@@ -496,8 +506,9 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.205 -0500", hash_original_method = "388841491B60993DDBB0AE9912E3B4BA", hash_generated_method = "619CFCA5B6AB6934299A174E960CA98B")
-    private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] parameterTypes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.912 -0500", hash_original_method = "388841491B60993DDBB0AE9912E3B4BA", hash_generated_method = "619CFCA5B6AB6934299A174E960CA98B")
+    
+private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] parameterTypes) {
         // search superclasses
         for (Class<?> c = this; c != null; c = c.getSuperclass()) {
             Member result = Class.getDeclaredConstructorOrMethod(c, name, parameterTypes);
@@ -529,8 +540,9 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
      *         this {@code Class}.
      * @see #getDeclaredConstructors()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.206 -0500", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "C6285A2293FC0FC9E24ABE031CAEAF52")
-    public Constructor<?>[] getConstructors() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.914 -0500", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "C6285A2293FC0FC9E24ABE031CAEAF52")
+    
+public Constructor<?>[] getConstructors() {
         return getDeclaredConstructors(this, true);
     }
 
@@ -554,8 +566,14 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
     /**
      * Returns true if the annotation exists.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.211 -0500", hash_original_method = "172017F5B780130A5E2B4C50427437CE", hash_generated_method = "BAF0A1CF7EF8BA29691E3C8313FFA064")
-    native private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.924 -0500", hash_original_method = "172017F5B780130A5E2B4C50427437CE", hash_generated_method = "BAF0A1CF7EF8BA29691E3C8313FFA064")
+    
+    private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass){
+    	//Formerly a native method
+    	addTaint(annotationClass.getTaint());
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Returns an array containing {@code Class} objects for all classes and
@@ -567,8 +585,9 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
      * @return an array with {@code Class} objects for all the classes and
      *         interfaces that are used in member declarations.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.211 -0500", hash_original_method = "0C6BF22DB8EB38DEB860C0E90FF64AEC", hash_generated_method = "7AE1F5EBD013B58268EBCB9E63397A2E")
-    public Class<?>[] getDeclaredClasses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.928 -0500", hash_original_method = "0C6BF22DB8EB38DEB860C0E90FF64AEC", hash_generated_method = "7AE1F5EBD013B58268EBCB9E63397A2E")
+    
+public Class<?>[] getDeclaredClasses() {
         return getDeclaredClasses(this, false);
     }
 
@@ -580,8 +599,9 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
      * @param publicOnly reflects whether we want only public members or all of them
      * @return the list of classes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.212 -0500", hash_original_method = "11EF0E91CA4D1D0CA140D53473DE14D1", hash_generated_method = "741370FF0451A2D498B788FAEA4EB5D6")
-    private Class<?>[] getFullListOfClasses(boolean publicOnly) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.930 -0500", hash_original_method = "11EF0E91CA4D1D0CA140D53473DE14D1", hash_generated_method = "741370FF0451A2D498B788FAEA4EB5D6")
+    
+private Class<?>[] getFullListOfClasses(boolean publicOnly) {
         Class<?>[] result = getDeclaredClasses(this, publicOnly);
 
         // Traverse all superclasses
@@ -611,9 +631,10 @@ public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMe
      *             if the requested constructor can not be found.
      * @see #getConstructor(Class[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.215 -0500", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "D0D731FB6821D6C0AB12837A56C6FE11")
-    @SuppressWarnings("unchecked")
-public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.937 -0500", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "D0D731FB6821D6C0AB12837A56C6FE11")
+    
+@SuppressWarnings("unchecked")
+    public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
             throws NoSuchMethodException {
         return (Constructor) getConstructorOrMethod("<init>", false, false, parameterTypes);
     }
@@ -628,8 +649,9 @@ public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
      *         by this {@code Class}.
      * @see #getConstructors()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.216 -0500", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "A5160AEFF05AA595A8F6FC2468B59CF6")
-    public Constructor<?>[] getDeclaredConstructors() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.939 -0500", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "A5160AEFF05AA595A8F6FC2468B59CF6")
+    
+public Constructor<?>[] getDeclaredConstructors() {
         return getDeclaredConstructors(this, false);
     }
 
@@ -642,8 +664,9 @@ public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
      * @throws NoSuchFieldException if the requested field can not be found.
      * @see #getField(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.218 -0500", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "C66D19B472FEF5D13D7F4877F2BBF29A")
-    public Field getDeclaredField(String name) throws NoSuchFieldException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.945 -0500", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "C66D19B472FEF5D13D7F4877F2BBF29A")
+    
+public Field getDeclaredField(String name) throws NoSuchFieldException {
         if (name == null) {
             throw new NullPointerException("name == null");
         }
@@ -664,8 +687,9 @@ public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
      *         this class.
      * @see #getFields()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.219 -0500", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "28B58F0009A6BCAB227105536EC99296")
-    public Field[] getDeclaredFields() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.948 -0500", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "28B58F0009A6BCAB227105536EC99296")
+    
+public Field[] getDeclaredFields() {
         return getDeclaredFields(this, false);
     }
 
@@ -686,8 +710,9 @@ public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
      *             if {@code name} is {@code null}.
      * @see #getMethod(String, Class[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.222 -0500", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D43A7411BC634182976F9568E4280AC1")
-    public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.959 -0500", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D43A7411BC634182976F9568E4280AC1")
+    
+public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
             throws NoSuchMethodException {
         Member member = getConstructorOrMethod(name, false, false, parameterTypes);
         if (member instanceof Constructor) {
@@ -706,8 +731,9 @@ public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
      *         this {@code Class}.
      * @see #getMethods()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.223 -0500", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "C0886B96300C43CFB5185B9FE17032D3")
-    public Method[] getDeclaredMethods() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.961 -0500", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "C0886B96300C43CFB5185B9FE17032D3")
+    
+public Method[] getDeclaredMethods() {
         return getDeclaredMethods(this, false);
     }
 
@@ -750,9 +776,10 @@ public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
      *
      * @return an array with the {@code enum} constants or {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.233 -0500", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "501C2BA0B65CD7CC10B3624A12BF9703")
-    @SuppressWarnings("unchecked")
-public T[] getEnumConstants() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.987 -0500", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "501C2BA0B65CD7CC10B3624A12BF9703")
+    
+@SuppressWarnings("unchecked") // we only cast after confirming that this class is an enum
+    public T[] getEnumConstants() {
         if (!isEnum()) {
             return null;
         }
@@ -772,8 +799,9 @@ public T[] getEnumConstants() {
      *             if the field can not be found.
      * @see #getDeclaredField(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.234 -0500", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "DFB95ADC3E3E5C8B3666944FA264C214")
-    public Field getField(String name) throws NoSuchFieldException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.990 -0500", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "DFB95ADC3E3E5C8B3666944FA264C214")
+    
+public Field getField(String name) throws NoSuchFieldException {
         if (name == null) {
             throw new NullPointerException("name == null");
         }
@@ -784,8 +812,9 @@ public T[] getEnumConstants() {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.235 -0500", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "F3676BC6F341EBA853F3C761606E9195")
-    private Field getPublicFieldRecursive(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.992 -0500", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "F3676BC6F341EBA853F3C761606E9195")
+    
+private Field getPublicFieldRecursive(String name) {
         // search superclasses
         for (Class<?> c = this; c != null; c = c.getSuperclass()) {
             Field result = Class.getDeclaredField(c, name);
@@ -820,8 +849,9 @@ public T[] getEnumConstants() {
      *         {@code Class}.
      * @see #getDeclaredFields()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.236 -0500", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B8AF57BF684DA5AEB97D474BC198A0CA")
-    public Field[] getFields() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.995 -0500", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B8AF57BF684DA5AEB97D474BC198A0CA")
+    
+public Field[] getFields() {
         List<Field> fields = new ArrayList<Field>();
         getPublicFieldsRecursive(fields);
 
@@ -837,8 +867,9 @@ public T[] getEnumConstants() {
      * Populates {@code result} with public fields defined by this class, its
      * superclasses, and all implemented interfaces.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.237 -0500", hash_original_method = "CCD964C4509A9C827773CB1F1BD75566", hash_generated_method = "22B82B382902708AC3C30359D5ED8391")
-    private void getPublicFieldsRecursive(List<Field> result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.998 -0500", hash_original_method = "CCD964C4509A9C827773CB1F1BD75566", hash_generated_method = "22B82B382902708AC3C30359D5ED8391")
+    
+private void getPublicFieldsRecursive(List<Field> result) {
         // search superclasses
         for (Class<?> c = this; c != null; c = c.getSuperclass()) {
             for (Field field : Class.getDeclaredFields(c, true)) {
@@ -862,8 +893,9 @@ public T[] getEnumConstants() {
      * @return an array of {@link Type} instances directly implemented by the
      *         class represented by this {@code class}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.238 -0500", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "A29F8C52D29EEC64FFAED8E112A51280")
-    public Type[] getGenericInterfaces() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.001 -0500", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "A29F8C52D29EEC64FFAED8E112A51280")
+    
+public Type[] getGenericInterfaces() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
         parser.parseForClass(this, getSignatureAttribute());
         return Types.getClonedTypeArray(parser.interfaceTypes);
@@ -875,8 +907,9 @@ public T[] getEnumConstants() {
      *
      * @return an instance of {@code Type} representing the superclass.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.239 -0500", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "F60C4EB1F233218BED00254491D8F23F")
-    public Type getGenericSuperclass() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.003 -0500", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "F60C4EB1F233218BED00254491D8F23F")
+    
+public Type getGenericSuperclass() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
         parser.parseForClass(this, getSignatureAttribute());
         return Types.getType(parser.superclassType);
@@ -907,8 +940,9 @@ public T[] getEnumConstants() {
      *             if the method can not be found.
      * @see #getDeclaredMethod(String, Class[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.241 -0500", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "F6FE7925D7C8D66FCFBB28D88158DAE4")
-    public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.010 -0500", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "F6FE7925D7C8D66FCFBB28D88158DAE4")
+    
+public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
         Member member = getConstructorOrMethod(name, true, true, parameterTypes);
         if (member instanceof Constructor) {
             throw new NoSuchMethodException(name);
@@ -930,8 +964,9 @@ public T[] getEnumConstants() {
      *         {@code Class}.
      * @see #getDeclaredMethods()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.242 -0500", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "16F5EFC638AA638137B136FC5EE069E5")
-    public Method[] getMethods() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.012 -0500", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "16F5EFC638AA638137B136FC5EE069E5")
+    
+public Method[] getMethods() {
         List<Method> methods = new ArrayList<Method>();
         getPublicMethodsRecursive(methods);
 
@@ -947,8 +982,9 @@ public T[] getEnumConstants() {
      * Populates {@code result} with public methods defined by {@code clazz}, its
      * superclasses, and all implemented interfaces, including overridden methods.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.243 -0500", hash_original_method = "99CBF7E189E92697D7579B92856775ED", hash_generated_method = "F7C8E7FB5A1E5F59BD59B5D6B127FD35")
-    private void getPublicMethodsRecursive(List<Method> result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.015 -0500", hash_original_method = "99CBF7E189E92697D7579B92856775ED", hash_generated_method = "F7C8E7FB5A1E5F59BD59B5D6B127FD35")
+    
+private void getPublicMethodsRecursive(List<Method> result) {
         // search superclasses
         for (Class<?> c = this; c != null; c = c.getSuperclass()) {
             for (Method method : Class.getDeclaredMethods(c, true)) {
@@ -971,8 +1007,9 @@ public T[] getEnumConstants() {
      *
      * @return the modifiers of the class represented by this {@code Class}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.244 -0500", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "41DF567D91CEAD08F40DC4816EDC53B5")
-    public int getModifiers() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.018 -0500", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "41DF567D91CEAD08F40DC4816EDC53B5")
+    
+public int getModifiers() {
         return getModifiers(this, false);
     }
 
@@ -983,8 +1020,9 @@ public T[] getEnumConstants() {
      *
      * @return the name of the class represented by this {@code Class}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.246 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
-    public String getName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
+    
+public String getName() {
         String result = name;
         return (result == null) ? (name = getNameNative()) : result;
     }
@@ -1006,8 +1044,9 @@ public T[] getEnumConstants() {
      *
      * @return the simple name of the class represented by this {@code Class}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.249 -0500", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "5F5DA6A35D4A0CEBE565D4944B684DD0")
-    public String getSimpleName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.030 -0500", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "5F5DA6A35D4A0CEBE565D4944B684DD0")
+    
+public String getSimpleName() {
         if (isArray()) {
             return getComponentType().getSimpleName() + "[]";
         }
@@ -1041,8 +1080,9 @@ public T[] getEnumConstants() {
     /**
      * Returns null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.251 -0500", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "8028A3F866A0CBD6BC2B22F8EEDAE4A1")
-    public ProtectionDomain getProtectionDomain() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.036 -0500", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "8028A3F866A0CBD6BC2B22F8EEDAE4A1")
+    
+public ProtectionDomain getProtectionDomain() {
         return null;
     }
 
@@ -1057,8 +1097,9 @@ public T[] getEnumConstants() {
      *         the resource can not be found.
      * @see ClassLoader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.252 -0500", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "473C6F76FA3F6B45C570D7E720A53585")
-    public URL getResource(String resName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.040 -0500", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "473C6F76FA3F6B45C570D7E720A53585")
+    
+public URL getResource(String resName) {
         // Get absolute resource name, but without the leading slash
         if (resName.startsWith("/")) {
             resName = resName.substring(1);
@@ -1094,8 +1135,9 @@ public T[] getEnumConstants() {
      *         resource with the specified name can be found.
      * @see ClassLoader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.253 -0500", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "86CEEF39D17B80ED6EB9C612DF444F82")
-    public InputStream getResourceAsStream(String resName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.042 -0500", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "86CEEF39D17B80ED6EB9C612DF444F82")
+    
+public InputStream getResourceAsStream(String resName) {
         // Get absolute resource name, but without the leading slash
         if (resName.startsWith("/")) {
             resName = resName.substring(1);
@@ -1128,8 +1170,9 @@ public T[] getEnumConstants() {
      *
      * @return null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.254 -0500", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "0FEDCEA57B2FDA4E2741434B8D686EE1")
-    public Object[] getSigners() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.045 -0500", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "0FEDCEA57B2FDA4E2741434B8D686EE1")
+    
+public Object[] getSigners() {
         // See http://code.google.com/p/android/issues/detail?id=1766.
         return null;
     }
@@ -1150,9 +1193,10 @@ public T[] getEnumConstants() {
      * @return an array with the type variables of the class represented by this
      *         class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.257 -0500", hash_original_method = "6787AAB5FB05E26F36F8582CB719E4B5", hash_generated_method = "FB368A623C43001AF0F281EC8C9BB200")
-    @SuppressWarnings("unchecked")
-public synchronized TypeVariable<Class<T>>[] getTypeParameters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.051 -0500", hash_original_method = "6787AAB5FB05E26F36F8582CB719E4B5", hash_generated_method = "FB368A623C43001AF0F281EC8C9BB200")
+    
+@SuppressWarnings("unchecked")
+    public synchronized TypeVariable<Class<T>>[] getTypeParameters() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
         parser.parseForClass(this, getSignatureAttribute());
         return parser.formalTypeParameters.clone();
@@ -1164,16 +1208,17 @@ public synchronized TypeVariable<Class<T>>[] getTypeParameters() {
      * @return {@code true} if this {@code Class} represents an annotation
      *         class; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.257 -0500", hash_original_method = "4ABCCCB32AED1EA36AB75BC1C1D6F00F", hash_generated_method = "0B1CE4556A32614313477B12988F56FD")
-    public boolean isAnnotation() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.054 -0500", hash_original_method = "4ABCCCB32AED1EA36AB75BC1C1D6F00F", hash_generated_method = "0B1CE4556A32614313477B12988F56FD")
+    
+public boolean isAnnotation() {
         final int ACC_ANNOTATION = 0x2000;  // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
         return (mod & ACC_ANNOTATION) != 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.258 -0500", hash_original_method = "0543735514B2514B55E5A7CA82A68F41", hash_generated_method = "16BE0F77EC97D1B9B2C1E188F15C5E73")
-    @Override
-public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.056 -0500", hash_original_method = "0543735514B2514B55E5A7CA82A68F41", hash_generated_method = "16BE0F77EC97D1B9B2C1E188F15C5E73")
+    
+@Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         if (annotationType == null) {
             throw new NullPointerException("annotationType == null");
         }
@@ -1200,8 +1245,13 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if the class represented by this {@code Class} is
      *         anonymous; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.260 -0500", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "6890CE8E012769B06F8E5B2F096E744B")
-    native public boolean isAnonymousClass();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.060 -0500", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "6890CE8E012769B06F8E5B2F096E744B")
+    
+    public boolean isAnonymousClass(){
+    	//Formerly a native method
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Indicates whether the class represented by this {@code Class} is an array
@@ -1210,8 +1260,9 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if the class represented by this {@code Class} is an
      *         array class; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.261 -0500", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "295B3FD7BCB14D1F140029116A5683AB")
-    public boolean isArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.063 -0500", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "295B3FD7BCB14D1F140029116A5683AB")
+    
+public boolean isArray() {
         return getComponentType() != null;
     }
 
@@ -1229,8 +1280,14 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @throws NullPointerException
      *             if {@code cls} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.262 -0500", hash_original_method = "A1982F53FFC7DDA0FE0A72AB5EB8A2B7", hash_generated_method = "7D4144660EDDFA20785744BA037E6F04")
-    public native boolean isAssignableFrom(Class<?> cls);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.067 -0500", hash_original_method = "A1982F53FFC7DDA0FE0A72AB5EB8A2B7", hash_generated_method = "7D4144660EDDFA20785744BA037E6F04")
+    
+    public boolean isAssignableFrom(Class<?> cls){
+    	//Formerly a native method
+    	addTaint(cls.getTaint());
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Indicates whether the class represented by this {@code Class} is an
@@ -1239,8 +1296,9 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if the class represented by this {@code Class} is an
      *         {@code enum}; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.263 -0500", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "433854292DBBE11D1B7A199C41DDB4FD")
-    public boolean isEnum() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.069 -0500", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "433854292DBBE11D1B7A199C41DDB4FD")
+    
+public boolean isEnum() {
         return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
     }
 
@@ -1255,8 +1313,14 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      *         represented by this {@code Class}; {@code false} if {@code
      *         object} is {@code null} or cannot be cast.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.264 -0500", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "A26710A54E7215882856758239B85A71")
-    public native boolean isInstance(Object object);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.073 -0500", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "A26710A54E7215882856758239B85A71")
+    
+    public boolean isInstance(Object object){
+    	//Formerly a native method
+    	addTaint(object.getTaint());
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Indicates whether this {@code Class} represents an interface.
@@ -1264,8 +1328,13 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if this {@code Class} represents an interface;
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.265 -0500", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "08D704271A4540C93EEA278831C40C7C")
-    public native boolean isInterface();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.076 -0500", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "08D704271A4540C93EEA278831C40C7C")
+    
+    public boolean isInterface(){
+    	//Formerly a native method
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Indicates whether the class represented by this {@code Class} is defined
@@ -1274,8 +1343,9 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if the class represented by this {@code Class} is
      *         defined locally; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.266 -0500", hash_original_method = "3F7BF71CE24DC5396B729F24C64FF6F5", hash_generated_method = "106134B6F1D2F0617972FF12F0A7C885")
-    public boolean isLocalClass() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.079 -0500", hash_original_method = "3F7BF71CE24DC5396B729F24C64FF6F5", hash_generated_method = "106134B6F1D2F0617972FF12F0A7C885")
+    
+public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
         return enclosed && !isAnonymousClass();
@@ -1288,8 +1358,9 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if the class represented by this {@code Class} is a
      *         member class; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.267 -0500", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "ED77BF92668C44C3CF8FD9420EB90C99")
-    public boolean isMemberClass() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.081 -0500", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "ED77BF92668C44C3CF8FD9420EB90C99")
+    
+public boolean isMemberClass() {
         return getDeclaringClass() != null;
     }
 
@@ -1299,8 +1370,13 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if this {@code Class} represents a primitive type;
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.268 -0500", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "5DA70992F03DF30911CCCBF32E05030B")
-    public native boolean isPrimitive();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.085 -0500", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "5DA70992F03DF30911CCCBF32E05030B")
+    
+    public boolean isPrimitive(){
+    	//Formerly a native method
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Indicates whether this {@code Class} represents a synthetic type.
@@ -1308,8 +1384,9 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @return {@code true} if this {@code Class} represents a synthetic type;
      *         {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.270 -0500", hash_original_method = "022E776606079BC3CFEA0634201C3D50", hash_generated_method = "610ED7C0D1FA396EDA2EE5DFF7D56D3A")
-    public boolean isSynthetic() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.088 -0500", hash_original_method = "022E776606079BC3CFEA0634201C3D50", hash_generated_method = "610ED7C0D1FA396EDA2EE5DFF7D56D3A")
+    
+public boolean isSynthetic() {
         final int ACC_SYNTHETIC = 0x1000;   // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
         return (mod & ACC_SYNTHETIC) != 0;
@@ -1330,8 +1407,9 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      * @throws InstantiationException
      *             if the instance can not be created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.271 -0500", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "FDDB42B0D188A0B956339356BF11732B")
-    public T newInstance() throws InstantiationException, IllegalAccessException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.091 -0500", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "FDDB42B0D188A0B956339356BF11732B")
+    
+public T newInstance() throws InstantiationException, IllegalAccessException {
         return newInstanceImpl();
     }
 
@@ -1343,9 +1421,10 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
     	return ret;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.273 -0500", hash_original_method = "EB1BF1C423B147859F4E7C903D1661B8", hash_generated_method = "7292E9E5EDF7CF3E16FDA7C8739C03F9")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.097 -0500", hash_original_method = "EB1BF1C423B147859F4E7C903D1661B8", hash_generated_method = "7292E9E5EDF7CF3E16FDA7C8739C03F9")
+    
+@Override
+    public String toString() {
         if (isPrimitive()) {
             return getSimpleName();
         } else {
@@ -1361,8 +1440,9 @@ public String toString() {
      * @return Package the {@code Package} of which this {@code Class} is a
      *         member or {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.274 -0500", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "99264132046FF3CADEE61A42634D3476")
-    public Package getPackage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.099 -0500", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "99264132046FF3CADEE61A42634D3476")
+    
+public Package getPackage() {
         // TODO This might be a hack, but the VM doesn't have the necessary info.
         ClassLoader loader = getClassLoader();
         if (loader != null) {
@@ -1381,8 +1461,13 @@ public String toString() {
      * @return the assertion status for the class represented by this {@code
      *         Class}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.275 -0500", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "550D874087B9E936358B5AA79DF78671")
-    public native boolean desiredAssertionStatus();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.102 -0500", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "550D874087B9E936358B5AA79DF78671")
+    
+    public boolean desiredAssertionStatus(){
+    	//Formerly a native method
+    	return getTaintBoolean();
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -1420,9 +1505,10 @@ Class<? extends U> var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090 =             
      * @throws ClassCastException
      *             if the object cannot be cast to the specified type.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.277 -0500", hash_original_method = "E0CC08D19733748B74C939DEAB4797E1", hash_generated_method = "66593E0828C148F6EA2B3EEA96365AB6")
-    @SuppressWarnings("unchecked")
-public T cast(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.108 -0500", hash_original_method = "E0CC08D19733748B74C939DEAB4797E1", hash_generated_method = "66593E0828C148F6EA2B3EEA96365AB6")
+    
+@SuppressWarnings("unchecked")
+    public T cast(Object obj) {
         if (obj == null) {
             return null;
         } else if (this.isInstance(obj)) {

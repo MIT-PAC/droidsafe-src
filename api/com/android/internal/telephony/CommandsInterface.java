@@ -22,8 +22,9 @@ public interface CommandsInterface {
         NV_NOT_READY(3),      
         NV_READY(3);          /* Radio is on and the NV interface is available */
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.282 -0500", hash_original_method = "E5010F6EF5A2495E4DE760511B116A8A", hash_generated_method = "98E9D7C79585D1B26572E5C39183F60D")
-            public boolean isOn() /* and available...*/ {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.391 -0500", hash_original_method = "E5010F6EF5A2495E4DE760511B116A8A", hash_generated_method = "98E9D7C79585D1B26572E5C39183F60D")
+            
+public boolean isOn() /* and available...*/ {
             return this == SIM_NOT_READY
                     || this == SIM_LOCKED_OR_ABSENT
                     || this == SIM_READY
@@ -33,41 +34,48 @@ public interface CommandsInterface {
                     || this == NV_NOT_READY
                     || this == NV_READY;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.283 -0500", hash_original_field = "BD6E19A2A5BADB982C30B02146671E4A", hash_generated_field = "C29DB35AA70BAFD85AC3718E0519E0FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.394 -0500", hash_original_field = "BD6E19A2A5BADB982C30B02146671E4A", hash_generated_field = "C29DB35AA70BAFD85AC3718E0519E0FE")
 
         private int stateType;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.284 -0500", hash_original_method = "5E10BE796CE6D84489BE2723CB5CF436", hash_generated_method = "1D3DB49C8AD90C85C8FE58248B3DD6BA")
-            private RadioState (int type) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.397 -0500", hash_original_method = "5E10BE796CE6D84489BE2723CB5CF436", hash_generated_method = "1D3DB49C8AD90C85C8FE58248B3DD6BA")
+            
+private RadioState (int type) {
             stateType = type;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.285 -0500", hash_original_method = "6C859BFA41165BDDFEC05C5EB312B247", hash_generated_method = "95F6AA9758CCC486B6D5700E959B8C51")
-            public int getType() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.400 -0500", hash_original_method = "6C859BFA41165BDDFEC05C5EB312B247", hash_generated_method = "95F6AA9758CCC486B6D5700E959B8C51")
+            
+public int getType() {
             return stateType;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.286 -0500", hash_original_method = "E21BD661A7E7F117EDA570407AD8378D", hash_generated_method = "BB9403B02B1B48EC8484D84995EAE5F3")
-            public boolean isAvailable() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.402 -0500", hash_original_method = "E21BD661A7E7F117EDA570407AD8378D", hash_generated_method = "BB9403B02B1B48EC8484D84995EAE5F3")
+            
+public boolean isAvailable() {
             return this != RADIO_UNAVAILABLE;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.286 -0500", hash_original_method = "173D20585B19562DB80ACD7D2C7B83A9", hash_generated_method = "0A10D3979B700D8B549DCB123419E1D8")
-            public boolean isSIMReady() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.404 -0500", hash_original_method = "173D20585B19562DB80ACD7D2C7B83A9", hash_generated_method = "0A10D3979B700D8B549DCB123419E1D8")
+            
+public boolean isSIMReady() {
             return this == SIM_READY;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.287 -0500", hash_original_method = "8D143A627C38698CBC2839D3093715FC", hash_generated_method = "500B1CAC885A20A169B5AE1F68CB1648")
-            public boolean isRUIMReady() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.407 -0500", hash_original_method = "8D143A627C38698CBC2839D3093715FC", hash_generated_method = "500B1CAC885A20A169B5AE1F68CB1648")
+            
+public boolean isRUIMReady() {
             return this == RUIM_READY;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.288 -0500", hash_original_method = "F10A87FAE4F6E5E3D2E6FF8444F28BBF", hash_generated_method = "1BC54279674074293EC8F5D0BB150045")
-            public boolean isNVReady() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.410 -0500", hash_original_method = "F10A87FAE4F6E5E3D2E6FF8444F28BBF", hash_generated_method = "1BC54279674074293EC8F5D0BB150045")
+            
+public boolean isNVReady() {
             return this == NV_READY;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.289 -0500", hash_original_method = "64FE87CCA8362EF6215C6BF08A2B7063", hash_generated_method = "F80F56187CE9659E3FD45FBA1C48AFE1")
-            public boolean isGsm() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.412 -0500", hash_original_method = "64FE87CCA8362EF6215C6BF08A2B7063", hash_generated_method = "F80F56187CE9659E3FD45FBA1C48AFE1")
+            
+public boolean isGsm() {
             if (BaseCommands.getLteOnCdmaModeStatic() == Phone.LTE_ON_CDMA_TRUE) {
                 return false;
             } else {
@@ -77,8 +85,9 @@ public interface CommandsInterface {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:15.290 -0500", hash_original_method = "5372058641134AE7BF537BAA7A3ED2B2", hash_generated_method = "A2D4A9281A1FC1F1C45B89B0558DA7AA")
-            public boolean isCdma() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.415 -0500", hash_original_method = "5372058641134AE7BF537BAA7A3ED2B2", hash_generated_method = "A2D4A9281A1FC1F1C45B89B0558DA7AA")
+            
+public boolean isCdma() {
             if (BaseCommands.getLteOnCdmaModeStatic() == Phone.LTE_ON_CDMA_TRUE) {
                 return true;
             } else {

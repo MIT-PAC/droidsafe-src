@@ -55,8 +55,9 @@ public class Html {
      *
      * <p>This uses TagSoup to handle real HTML, including all of the brokenness found in the wild.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.279 -0500", hash_original_method = "2170F2D984B5CE2ED3159C43C15AA321", hash_generated_method = "63BED86CB6FEA06941CEE8D4AD7409D4")
-    public static Spanned fromHtml(String source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.457 -0500", hash_original_method = "2170F2D984B5CE2ED3159C43C15AA321", hash_generated_method = "63BED86CB6FEA06941CEE8D4AD7409D4")
+    
+public static Spanned fromHtml(String source) {
         return fromHtml(source, null, null);
     }
 
@@ -69,8 +70,9 @@ public class Html {
      *
      * <p>This uses TagSoup to handle real HTML, including all of the brokenness found in the wild.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.282 -0500", hash_original_method = "496EFA2446255A7AD2E06A2E8CF61A20", hash_generated_method = "9CF480D24E2573CBB0B4131BAA26BEB9")
-    public static Spanned fromHtml(String source, ImageGetter imageGetter,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.466 -0500", hash_original_method = "496EFA2446255A7AD2E06A2E8CF61A20", hash_generated_method = "9CF480D24E2573CBB0B4131BAA26BEB9")
+    
+public static Spanned fromHtml(String source, ImageGetter imageGetter,
                                    TagHandler tagHandler) {
         Parser parser = new Parser();
         try {
@@ -92,15 +94,17 @@ public class Html {
     /**
      * Returns an HTML representation of the provided Spanned text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.283 -0500", hash_original_method = "55061C70DD51EC053B0AA41C4CB33E42", hash_generated_method = "0BF18BF8D881A0BF9F0DF169B9377AEC")
-    public static String toHtml(Spanned text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.469 -0500", hash_original_method = "55061C70DD51EC053B0AA41C4CB33E42", hash_generated_method = "0BF18BF8D881A0BF9F0DF169B9377AEC")
+    
+public static String toHtml(Spanned text) {
         StringBuilder out = new StringBuilder();
         withinHtml(out, text);
         return out.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.284 -0500", hash_original_method = "EB1C92AF9B222E7DE929025AF49140FD", hash_generated_method = "A5A19CCB97B3B92C189AF9263480E11F")
-    private static void withinHtml(StringBuilder out, Spanned text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.473 -0500", hash_original_method = "EB1C92AF9B222E7DE929025AF49140FD", hash_generated_method = "A5A19CCB97B3B92C189AF9263480E11F")
+    
+private static void withinHtml(StringBuilder out, Spanned text) {
         int len = text.length();
 
         int next;
@@ -136,8 +140,9 @@ public class Html {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.285 -0500", hash_original_method = "F382AF7FDB12AD68B8D02C5E127692D3", hash_generated_method = "5E94E882B83C565CBAC623B6284A9587")
-    private static void withinDiv(StringBuilder out, Spanned text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.476 -0500", hash_original_method = "F382AF7FDB12AD68B8D02C5E127692D3", hash_generated_method = "5E94E882B83C565CBAC623B6284A9587")
+    
+private static void withinDiv(StringBuilder out, Spanned text,
             int start, int end) {
         int next;
         for (int i = start; i < end; i = next) {
@@ -156,8 +161,9 @@ public class Html {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.286 -0500", hash_original_method = "DB25603DA8C920722F3B423EB60D838A", hash_generated_method = "E1D39A50DFE8AE74C51BF7180242E354")
-    private static void withinBlockquote(StringBuilder out, Spanned text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.479 -0500", hash_original_method = "DB25603DA8C920722F3B423EB60D838A", hash_generated_method = "E1D39A50DFE8AE74C51BF7180242E354")
+    
+private static void withinBlockquote(StringBuilder out, Spanned text,
                                          int start, int end) {
         out.append("<p>");
 
@@ -181,8 +187,9 @@ public class Html {
         out.append("</p>\n");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.288 -0500", hash_original_method = "88B1299859CC2E15DC7E18EC2362793A", hash_generated_method = "082EAC3DAA0C1E1B4D22DC964B081941")
-    private static void withinParagraph(StringBuilder out, Spanned text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.483 -0500", hash_original_method = "88B1299859CC2E15DC7E18EC2362793A", hash_generated_method = "082EAC3DAA0C1E1B4D22DC964B081941")
+    
+private static void withinParagraph(StringBuilder out, Spanned text,
                                         int start, int end, int nl,
                                         boolean last) {
         int next;
@@ -310,8 +317,9 @@ public class Html {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.289 -0500", hash_original_method = "2AC4943ECAA15853A29ECA04FDD429B8", hash_generated_method = "D7B339400DD55BE52D483BFFA78F2880")
-    private static void withinStyle(StringBuilder out, Spanned text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.488 -0500", hash_original_method = "2AC4943ECAA15853A29ECA04FDD429B8", hash_generated_method = "D7B339400DD55BE52D483BFFA78F2880")
+    
+private static void withinStyle(StringBuilder out, Spanned text,
                                     int start, int end) {
         for (int i = start; i < end; i++) {
             char c = text.charAt(i);
@@ -337,12 +345,13 @@ public class Html {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.278 -0500", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "66BACEE4EF369FF07BE91C8A29315219")
-    private Html() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.455 -0500", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "66BACEE4EF369FF07BE91C8A29315219")
+    
+private Html() { }
 
     
     private static class HtmlParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.281 -0500", hash_original_field = "4CF8027A098BE602ACFE5727834EDCA4", hash_generated_field = "BAC597DD251A1106E8D35E0F6302B278")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.461 -0500", hash_original_field = "4CF8027A098BE602ACFE5727834EDCA4", hash_generated_field = "BAC597DD251A1106E8D35E0F6302B278")
 
         private static final HTMLSchema schema = new HTMLSchema();
         
@@ -371,8 +380,9 @@ public class Html {
 
 class HtmlToSpannedConverter implements ContentHandler {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.300 -0500", hash_original_method = "89908122B67E7ED74BEFE84E9574F9C5", hash_generated_method = "ACADF25298C24E3FBB8B039D281A06D0")
-    private static void handleP(SpannableStringBuilder text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.524 -0500", hash_original_method = "89908122B67E7ED74BEFE84E9574F9C5", hash_generated_method = "ACADF25298C24E3FBB8B039D281A06D0")
+    
+private static void handleP(SpannableStringBuilder text) {
         int len = text.length();
 
         if (len >= 1 && text.charAt(len - 1) == '\n') {
@@ -389,13 +399,15 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.301 -0500", hash_original_method = "B20251B909AC74466B1525FFE1522E65", hash_generated_method = "CD7D5966EB011950DF937C812ACA068A")
-    private static void handleBr(SpannableStringBuilder text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.527 -0500", hash_original_method = "B20251B909AC74466B1525FFE1522E65", hash_generated_method = "CD7D5966EB011950DF937C812ACA068A")
+    
+private static void handleBr(SpannableStringBuilder text) {
         text.append("\n");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.302 -0500", hash_original_method = "8E7CF3657B664CC0BCEA7EC0B00A7368", hash_generated_method = "A63B9ABD635ED45A2F3EB5D2898297F8")
-    private static Object getLast(Spanned text, Class kind) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.529 -0500", hash_original_method = "8E7CF3657B664CC0BCEA7EC0B00A7368", hash_generated_method = "A63B9ABD635ED45A2F3EB5D2898297F8")
+    
+private static Object getLast(Spanned text, Class kind) {
         /*
          * This knows that the last returned object from getSpans()
          * will be the most recently added.
@@ -409,14 +421,16 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.303 -0500", hash_original_method = "06C47A85433566C8AA9B606EA88E17F5", hash_generated_method = "ABFE692440BAFF014AD87EBEE22A9C0B")
-    private static void start(SpannableStringBuilder text, Object mark) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.532 -0500", hash_original_method = "06C47A85433566C8AA9B606EA88E17F5", hash_generated_method = "ABFE692440BAFF014AD87EBEE22A9C0B")
+    
+private static void start(SpannableStringBuilder text, Object mark) {
         int len = text.length();
         text.setSpan(mark, len, len, Spannable.SPAN_MARK_MARK);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.304 -0500", hash_original_method = "1AFF6246133DBE503673E9E32962CE3F", hash_generated_method = "414FB94C5FF49F6D8F3AD2728648AF3B")
-    private static void end(SpannableStringBuilder text, Class kind,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.536 -0500", hash_original_method = "1AFF6246133DBE503673E9E32962CE3F", hash_generated_method = "414FB94C5FF49F6D8F3AD2728648AF3B")
+    
+private static void end(SpannableStringBuilder text, Class kind,
                             Object repl) {
         int len = text.length();
         Object obj = getLast(text, kind);
@@ -431,8 +445,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         return;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.305 -0500", hash_original_method = "F391082EFC3A98AB46204F5D586F8CF1", hash_generated_method = "13B955C0F8513CCB1E9E1FCE762459D8")
-    private static void startImg(SpannableStringBuilder text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.539 -0500", hash_original_method = "F391082EFC3A98AB46204F5D586F8CF1", hash_generated_method = "13B955C0F8513CCB1E9E1FCE762459D8")
+    
+private static void startImg(SpannableStringBuilder text,
                                  Attributes attributes, Html.ImageGetter img) {
         String src = attributes.getValue("", "src");
         Drawable d = null;
@@ -454,8 +469,9 @@ class HtmlToSpannedConverter implements ContentHandler {
                      Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.306 -0500", hash_original_method = "3CBE117D15D8506010E516A2B0560478", hash_generated_method = "162F690831E3BE8D95561F2915512741")
-    private static void startFont(SpannableStringBuilder text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.542 -0500", hash_original_method = "3CBE117D15D8506010E516A2B0560478", hash_generated_method = "162F690831E3BE8D95561F2915512741")
+    
+private static void startFont(SpannableStringBuilder text,
                                   Attributes attributes) {
         String color = attributes.getValue("", "color");
         String face = attributes.getValue("", "face");
@@ -464,8 +480,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         text.setSpan(new Font(color, face), len, len, Spannable.SPAN_MARK_MARK);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.307 -0500", hash_original_method = "46336ED5A98702309685C24DD27BC7C0", hash_generated_method = "87A8BAC26EF1A474253FA8EEF14968B4")
-    private static void endFont(SpannableStringBuilder text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.545 -0500", hash_original_method = "46336ED5A98702309685C24DD27BC7C0", hash_generated_method = "87A8BAC26EF1A474253FA8EEF14968B4")
+    
+private static void endFont(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Font.class);
         int where = text.getSpanStart(obj);
@@ -503,16 +520,18 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.308 -0500", hash_original_method = "8CACC249ACFD0F9F81DE53C472676E5D", hash_generated_method = "F4A00EBC1951B1E0E837EA82471AF40B")
-    private static void startA(SpannableStringBuilder text, Attributes attributes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.549 -0500", hash_original_method = "8CACC249ACFD0F9F81DE53C472676E5D", hash_generated_method = "F4A00EBC1951B1E0E837EA82471AF40B")
+    
+private static void startA(SpannableStringBuilder text, Attributes attributes) {
         String href = attributes.getValue("", "href");
 
         int len = text.length();
         text.setSpan(new Href(href), len, len, Spannable.SPAN_MARK_MARK);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.309 -0500", hash_original_method = "76171A28B2C1BF0E1A1E59270D083F1C", hash_generated_method = "260E945340D5203E337D17455D3A78B0")
-    private static void endA(SpannableStringBuilder text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.551 -0500", hash_original_method = "76171A28B2C1BF0E1A1E59270D083F1C", hash_generated_method = "260E945340D5203E337D17455D3A78B0")
+    
+private static void endA(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Href.class);
         int where = text.getSpanStart(obj);
@@ -529,8 +548,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.310 -0500", hash_original_method = "847D065436E53F39D70018C4A6278B70", hash_generated_method = "00A68C02B9AF6D61342F90EC5CCCFBA2")
-    private static void endHeader(SpannableStringBuilder text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.555 -0500", hash_original_method = "847D065436E53F39D70018C4A6278B70", hash_generated_method = "00A68C02B9AF6D61342F90EC5CCCFBA2")
+    
+private static void endHeader(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Header.class);
 
@@ -553,8 +573,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.337 -0500", hash_original_method = "63DDE3C4E069F21E7B7E5A560EA48DA7", hash_generated_method = "BEDD72FF3080E540C3FB5F544494ABB3")
-    private static HashMap<String,Integer> buildColorMap() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.640 -0500", hash_original_method = "63DDE3C4E069F21E7B7E5A560EA48DA7", hash_generated_method = "BEDD72FF3080E540C3FB5F544494ABB3")
+    
+private static HashMap<String,Integer> buildColorMap() {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
         map.put("aqua", 0x00FFFF);
         map.put("black", 0x000000);
@@ -581,8 +602,9 @@ class HtmlToSpannedConverter implements ContentHandler {
      * @param color Non-null color string.
      * @return A color value, or {@code -1} if the color string could not be interpreted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.338 -0500", hash_original_method = "9706741A6E261E9C7CA75A548C6FB80F", hash_generated_method = "230351E3B2462D4B4F512E085FE12FCE")
-    private static int getHtmlColor(String color) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.643 -0500", hash_original_method = "9706741A6E261E9C7CA75A548C6FB80F", hash_generated_method = "230351E3B2462D4B4F512E085FE12FCE")
+    
+private static int getHtmlColor(String color) {
         Integer i = COLORS.get(color.toLowerCase());
         if (i != null) {
             return i;
@@ -594,35 +616,36 @@ class HtmlToSpannedConverter implements ContentHandler {
             }
         }
       }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.290 -0500", hash_original_field = "ABE450B11CD8E0C578FDA20701DC957F", hash_generated_field = "86AF0AEED37DBA73030BAFAE6316F8A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.492 -0500", hash_original_field = "ABE450B11CD8E0C578FDA20701DC957F", hash_generated_field = "86AF0AEED37DBA73030BAFAE6316F8A7")
 
 
     private static final float[] HEADER_SIZES = {
         1.5f, 1.4f, 1.3f, 1.2f, 1.1f, 1f,
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.336 -0500", hash_original_field = "0A595EF804A27439EB351F6F0752C256", hash_generated_field = "B4FEF6E9838FF422A3FE4BD8FF30796B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.637 -0500", hash_original_field = "0A595EF804A27439EB351F6F0752C256", hash_generated_field = "B4FEF6E9838FF422A3FE4BD8FF30796B")
 
 
     private static HashMap<String,Integer> COLORS = buildColorMap();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.291 -0500", hash_original_field = "1AEA727B3BB073E5F13ED3E9E384638B", hash_generated_field = "5EB2E77F51594E2C1DE90F3545DAFA8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.495 -0500", hash_original_field = "1AEA727B3BB073E5F13ED3E9E384638B", hash_generated_field = "5EB2E77F51594E2C1DE90F3545DAFA8A")
 
 
     private String mSource;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.292 -0500", hash_original_field = "DB7D7D8754E011EB4DD52281A8F9D500", hash_generated_field = "9F664E317A344F99238051D2F1903E54")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.497 -0500", hash_original_field = "DB7D7D8754E011EB4DD52281A8F9D500", hash_generated_field = "9F664E317A344F99238051D2F1903E54")
 
     private XMLReader mReader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.293 -0500", hash_original_field = "0EA8E0435AB1DDFE7C3AC59073F39CFD", hash_generated_field = "F52BFE7C8AABC90420173998C2780B6F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.500 -0500", hash_original_field = "0EA8E0435AB1DDFE7C3AC59073F39CFD", hash_generated_field = "F52BFE7C8AABC90420173998C2780B6F")
 
     private SpannableStringBuilder mSpannableStringBuilder;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.293 -0500", hash_original_field = "B2681E3A1D4E4844B9F02FEDCE2C0F9F", hash_generated_field = "BEF214E2C597894208A5D89455A16592")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.502 -0500", hash_original_field = "B2681E3A1D4E4844B9F02FEDCE2C0F9F", hash_generated_field = "BEF214E2C597894208A5D89455A16592")
 
     private Html.ImageGetter mImageGetter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.294 -0500", hash_original_field = "C7A5D7DE2E337E40D072AFB33794179B", hash_generated_field = "11FCD8A3816FE593E534934FCEA6171D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.505 -0500", hash_original_field = "C7A5D7DE2E337E40D072AFB33794179B", hash_generated_field = "11FCD8A3816FE593E534934FCEA6171D")
 
     private Html.TagHandler mTagHandler;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.295 -0500", hash_original_method = "BFBE9CD4145DCE3991FF308298481129", hash_generated_method = "93540C26C0CDB8151982BB122F1A93FC")
-    public HtmlToSpannedConverter(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.508 -0500", hash_original_method = "BFBE9CD4145DCE3991FF308298481129", hash_generated_method = "93540C26C0CDB8151982BB122F1A93FC")
+    
+public HtmlToSpannedConverter(
             String source, Html.ImageGetter imageGetter, Html.TagHandler tagHandler,
             Parser parser) {
         mSource = source;
@@ -632,8 +655,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         mReader = parser;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.296 -0500", hash_original_method = "E9DCA093295E5055C16F068195A6DE9F", hash_generated_method = "0D9340609E775B0C8B59222CFF056714")
-    public Spanned convert() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.512 -0500", hash_original_method = "E9DCA093295E5055C16F068195A6DE9F", hash_generated_method = "0D9340609E775B0C8B59222CFF056714")
+    
+public Spanned convert() {
 
         mReader.setContentHandler(this);
         try {
@@ -670,8 +694,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         return mSpannableStringBuilder;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.298 -0500", hash_original_method = "D9F0F9B119583626825989DD5C2C535C", hash_generated_method = "5647B6FE80D3CE6893AA39BA09EFE4D6")
-    private void handleStartTag(String tag, Attributes attributes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.516 -0500", hash_original_method = "D9F0F9B119583626825989DD5C2C535C", hash_generated_method = "5647B6FE80D3CE6893AA39BA09EFE4D6")
+    
+private void handleStartTag(String tag, Attributes attributes) {
         if (tag.equalsIgnoreCase("br")) {
             // We don't need to handle this. TagSoup will ensure that there's a </br> for each <br>
             // so we can safely emite the linebreaks when we handle the close tag.
@@ -722,8 +747,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.299 -0500", hash_original_method = "6B986DC33BF60A186B7109194B660A70", hash_generated_method = "1AFEDDE948D5D1AD0DE6851971DC83B0")
-    private void handleEndTag(String tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.521 -0500", hash_original_method = "6B986DC33BF60A186B7109194B660A70", hash_generated_method = "1AFEDDE948D5D1AD0DE6851971DC83B0")
+    
+private void handleEndTag(String tag) {
         if (tag.equalsIgnoreCase("br")) {
             handleBr(mSpannableStringBuilder);
         } else if (tag.equalsIgnoreCase("p")) {
@@ -772,39 +798,47 @@ class HtmlToSpannedConverter implements ContentHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.311 -0500", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "2A03485A9C7E9AF053D0769877C42163")
-    public void setDocumentLocator(Locator locator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.557 -0500", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "2A03485A9C7E9AF053D0769877C42163")
+    
+public void setDocumentLocator(Locator locator) {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.312 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "B7DDED468AEC81414C9CDB2776677119")
-    public void startDocument() throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.559 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "B7DDED468AEC81414C9CDB2776677119")
+    
+public void startDocument() throws SAXException {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.312 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "A9ABD2A5021523FC16E194481B7E8959")
-    public void endDocument() throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.563 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "A9ABD2A5021523FC16E194481B7E8959")
+    
+public void endDocument() throws SAXException {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.313 -0500", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "B995952A1DAC319BF5A213B6DF1E548E")
-    public void startPrefixMapping(String prefix, String uri) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.565 -0500", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "B995952A1DAC319BF5A213B6DF1E548E")
+    
+public void startPrefixMapping(String prefix, String uri) throws SAXException {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.314 -0500", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "C57BA1B797F9B6AF7FE79D44FF6640CA")
-    public void endPrefixMapping(String prefix) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.568 -0500", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "C57BA1B797F9B6AF7FE79D44FF6640CA")
+    
+public void endPrefixMapping(String prefix) throws SAXException {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.315 -0500", hash_original_method = "5AB19A89F0F12F22375CE28650E01E88", hash_generated_method = "EEB34E4BC7E2135972C09B998ACE88E7")
-    public void startElement(String uri, String localName, String qName, Attributes attributes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.570 -0500", hash_original_method = "5AB19A89F0F12F22375CE28650E01E88", hash_generated_method = "EEB34E4BC7E2135972C09B998ACE88E7")
+    
+public void startElement(String uri, String localName, String qName, Attributes attributes)
             throws SAXException {
         handleStartTag(localName, attributes);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.315 -0500", hash_original_method = "56FD9F5B493653CBD1D9C50AD3B3D114", hash_generated_method = "DEC53067435C7B0D7315864E9FFBF178")
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.573 -0500", hash_original_method = "56FD9F5B493653CBD1D9C50AD3B3D114", hash_generated_method = "DEC53067435C7B0D7315864E9FFBF178")
+    
+public void endElement(String uri, String localName, String qName) throws SAXException {
         handleEndTag(localName);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.316 -0500", hash_original_method = "CA8066E430EFB34465AFA28815B509C0", hash_generated_method = "5159EA9DCAFD266C57C1E6D864F644AB")
-    public void characters(char ch[], int start, int length) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.576 -0500", hash_original_method = "CA8066E430EFB34465AFA28815B509C0", hash_generated_method = "5159EA9DCAFD266C57C1E6D864F644AB")
+    
+public void characters(char ch[], int start, int length) throws SAXException {
         StringBuilder sb = new StringBuilder();
 
         /*
@@ -842,8 +876,9 @@ class HtmlToSpannedConverter implements ContentHandler {
         mSpannableStringBuilder.append(sb);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.317 -0500", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "28683B49E8A2A72CC7342BCDF85B7668")
-    public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.579 -0500", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "28683B49E8A2A72CC7342BCDF85B7668")
+    
+public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
     }
 
     
@@ -974,15 +1009,16 @@ class HtmlToSpannedConverter implements ContentHandler {
 
     
     private static class Font {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.327 -0500", hash_original_field = "8BCF8DD77ADDC3ED575CE3475F69B41B", hash_generated_field = "2C22DB162080CAE82C8D78A913DED9F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.611 -0500", hash_original_field = "8BCF8DD77ADDC3ED575CE3475F69B41B", hash_generated_field = "2C22DB162080CAE82C8D78A913DED9F7")
 
         public String mColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.328 -0500", hash_original_field = "5C1AE124EAAD012376020415B0313D6E", hash_generated_field = "9EF83681A7C49CB0E73C741AE3D0F05C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.613 -0500", hash_original_field = "5C1AE124EAAD012376020415B0313D6E", hash_generated_field = "9EF83681A7C49CB0E73C741AE3D0F05C")
 
         public String mFace;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.329 -0500", hash_original_method = "C4B068F2F67D5AD4645AF1A9761F50CA", hash_generated_method = "0F495DF9EB1AAE94E1DC7388BC13F82B")
-        public Font(String color, String face) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.616 -0500", hash_original_method = "C4B068F2F67D5AD4645AF1A9761F50CA", hash_generated_method = "0F495DF9EB1AAE94E1DC7388BC13F82B")
+        
+public Font(String color, String face) {
             mColor = color;
             mFace = face;
         }
@@ -993,12 +1029,13 @@ class HtmlToSpannedConverter implements ContentHandler {
 
     
     private static class Href {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.331 -0500", hash_original_field = "B7EDD7A2BA61A5CCE7B044868FD918E8", hash_generated_field = "2F16E5D3AF055919B45CF87232A38369")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.621 -0500", hash_original_field = "B7EDD7A2BA61A5CCE7B044868FD918E8", hash_generated_field = "2F16E5D3AF055919B45CF87232A38369")
 
         public String mHref;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.332 -0500", hash_original_method = "1859394720661AA4B03D475EFD821F3A", hash_generated_method = "C16E56AE9245477C2FD84D286DB48616")
-        public Href(String href) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.624 -0500", hash_original_method = "1859394720661AA4B03D475EFD821F3A", hash_generated_method = "C16E56AE9245477C2FD84D286DB48616")
+        
+public Href(String href) {
             mHref = href;
         }
 
@@ -1008,24 +1045,27 @@ class HtmlToSpannedConverter implements ContentHandler {
 
     
     private static class Header {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.333 -0500", hash_original_field = "C8DEDD237F9EE364033563355DA2A90C", hash_generated_field = "75109DE7AA3B41B03299C7AED8804A2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.630 -0500", hash_original_field = "C8DEDD237F9EE364033563355DA2A90C", hash_generated_field = "75109DE7AA3B41B03299C7AED8804A2F")
 
         private int mLevel;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.334 -0500", hash_original_method = "9C6EFC5AFAADDC937EF8FD6D30D1EF2D", hash_generated_method = "307C899B9F73E7362DCAEF7C78C4E89F")
-        public Header(int level) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.632 -0500", hash_original_method = "9C6EFC5AFAADDC937EF8FD6D30D1EF2D", hash_generated_method = "307C899B9F73E7362DCAEF7C78C4E89F")
+        
+public Header(int level) {
             mLevel = level;
         }
 
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.318 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "45AC10770063FD8AACDBA2638FD23FD0")
-    public void processingInstruction(String target, String data) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.581 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "45AC10770063FD8AACDBA2638FD23FD0")
+    
+public void processingInstruction(String target, String data) throws SAXException {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:54.319 -0500", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "A990924CA217DA9AB88497E28F935EE3")
-    public void skippedEntity(String name) throws SAXException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.584 -0500", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "A990924CA217DA9AB88497E28F935EE3")
+    
+public void skippedEntity(String name) throws SAXException {
     }
 }
 

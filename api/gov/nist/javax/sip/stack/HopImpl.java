@@ -12,20 +12,20 @@ import java.io.Serializable;
 
 
 public final class HopImpl extends Object implements javax.sip.address.Hop, Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.184 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "B7178EBD81D0CF23E79BD79FD4385F5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.500 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "B7178EBD81D0CF23E79BD79FD4385F5A")
 
     protected String host;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.185 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "C021A045CC358C8C262F3483738B3278")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.503 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "C021A045CC358C8C262F3483738B3278")
 
     protected int port;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.186 -0500", hash_original_field = "852FD1938B4FCA59C0635E9D670A8D0B", hash_generated_field = "B1CF55BB145913C3C7A70130704FABEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.506 -0500", hash_original_field = "852FD1938B4FCA59C0635E9D670A8D0B", hash_generated_field = "B1CF55BB145913C3C7A70130704FABEE")
 
     protected String transport;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.187 -0500", hash_original_field = "F3E57CC0F4AB52C671E49FF0AA34F97D", hash_generated_field = "507947F99EFE636A32340E3AA843BB3D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.508 -0500", hash_original_field = "F3E57CC0F4AB52C671E49FF0AA34F97D", hash_generated_field = "507947F99EFE636A32340E3AA843BB3D")
 
 
     protected boolean defaultRoute;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.188 -0500", hash_original_field = "23977287DDC38735EB863B08ABDBBD4E", hash_generated_field = "F6D3A083A27E3AA80C885284DEF016AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.511 -0500", hash_original_field = "23977287DDC38735EB863B08ABDBBD4E", hash_generated_field = "F6D3A083A27E3AA80C885284DEF016AB")
 
     protected boolean uriRoute;
 
@@ -35,8 +35,9 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
      * @param portNumber port
      * @param trans transport
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.190 -0500", hash_original_method = "0B5C776E3038172CE320CE66ECCB4725", hash_generated_method = "F1E8DD31974A88EA2B2A7C28D7F65EC3")
-    public HopImpl(String hostName, int portNumber, String trans) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.517 -0500", hash_original_method = "0B5C776E3038172CE320CE66ECCB4725", hash_generated_method = "F1E8DD31974A88EA2B2A7C28D7F65EC3")
+    
+public HopImpl(String hostName, int portNumber, String trans) {
         host = hostName;
 
         // Added by Daniel J. Martinez Manzano <dani@dif.um.es>
@@ -55,8 +56,9 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
      * @param hop is a hop string in the form of host:port/Transport
      * @throws IllegalArgument exception if string is not properly formatted or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.192 -0500", hash_original_method = "54879B5E9B62042FEEDC1EE4ADCFBB66", hash_generated_method = "019781F3234A40E57E115A2ACF307C37")
-    HopImpl(String hop) throws IllegalArgumentException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.521 -0500", hash_original_method = "54879B5E9B62042FEEDC1EE4ADCFBB66", hash_generated_method = "019781F3234A40E57E115A2ACF307C37")
+    
+HopImpl(String hop) throws IllegalArgumentException {
 
         if (hop == null)
             throw new IllegalArgumentException("Null arg!");
@@ -116,8 +118,9 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
     /**
      * Debugging println.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.189 -0500", hash_original_method = "E930BE940ED709A9E92F64EC28520C28", hash_generated_method = "1DACE3572478DC85AF10A7AB44445DA6")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.513 -0500", hash_original_method = "E930BE940ED709A9E92F64EC28520C28", hash_generated_method = "1DACE3572478DC85AF10A7AB44445DA6")
+    
+public String toString() {
         return host + ":" + port + "/" + transport;
     }
 
@@ -125,8 +128,9 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
      * Retruns the host string.
      * @return host String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.193 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
-    public String getHost() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.524 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
+    
+public String getHost() {
         return host;
     }
 
@@ -134,15 +138,17 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
      * Returns the port.
      * @return port integer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.194 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
-    public int getPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.528 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
+    
+public int getPort() {
         return port;
     }
 
     /** returns the transport string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.195 -0500", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "00BA105A025E226F3C987987A5F86CDE")
-    public String getTransport() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.530 -0500", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "00BA105A025E226F3C987987A5F86CDE")
+    
+public String getTransport() {
         return transport;
     }
 
@@ -150,15 +156,17 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
 
     /** Return true if this is uriRoute
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.196 -0500", hash_original_method = "7B7F5CA7C760A6206185BE96F86E54F2", hash_generated_method = "A35E3DDDC5BAEC620248E657DBB8D9F5")
-    public boolean isURIRoute() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.533 -0500", hash_original_method = "7B7F5CA7C760A6206185BE96F86E54F2", hash_generated_method = "A35E3DDDC5BAEC620248E657DBB8D9F5")
+    
+public boolean isURIRoute() {
         return uriRoute;
     }
 
     /** Set the URIRoute flag.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:57.196 -0500", hash_original_method = "4D177A2C7A5E9A8C62FF46DC5D4CFB65", hash_generated_method = "176A878D304771B2B25F8A3AEA362701")
-    public void setURIRouteFlag() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.536 -0500", hash_original_method = "4D177A2C7A5E9A8C62FF46DC5D4CFB65", hash_generated_method = "176A878D304771B2B25F8A3AEA362701")
+    
+public void setURIRouteFlag() {
         uriRoute = true;
     }
 

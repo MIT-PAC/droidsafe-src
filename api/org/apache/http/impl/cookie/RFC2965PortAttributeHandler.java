@@ -29,8 +29,9 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
      * @throws MalformedCookieException if there is a problem in
      *          parsing due to invalid portValue.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.034 -0500", hash_original_method = "B760B570F2C2CE8C78B1C4B9AE67037F", hash_generated_method = "F657FCFE78415ACE6587EA6D62EB320C")
-    private static int[] parsePortAttribute(final String portValue)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.207 -0500", hash_original_method = "B760B570F2C2CE8C78B1C4B9AE67037F", hash_generated_method = "F657FCFE78415ACE6587EA6D62EB320C")
+    
+private static int[] parsePortAttribute(final String portValue)
             throws MalformedCookieException {
         StringTokenizer st = new StringTokenizer(portValue, ",");
         int[] ports = new int[st.countTokens()];
@@ -59,8 +60,9 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
      * @return true returns <tt>true</tt> if the given port exists in
      *         the given ports list; <tt>false</tt> otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.035 -0500", hash_original_method = "0B3635DA28D858C95C4C22FD8015492F", hash_generated_method = "5295B2FA1B13FD60058F0714D4624A49")
-    private static boolean portMatch(int port, int[] ports) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.209 -0500", hash_original_method = "0B3635DA28D858C95C4C22FD8015492F", hash_generated_method = "5295B2FA1B13FD60058F0714D4624A49")
+    
+private static boolean portMatch(int port, int[] ports) {
         boolean portInList = false;
         for (int i = 0, len = ports.length; i < len; i++) {
             if (port == ports[i]) {
@@ -71,16 +73,18 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
         return portInList;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.033 -0500", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "D94E788DC5A68180A8234C1DA7C81D8C")
-    public RFC2965PortAttributeHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.204 -0500", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "D94E788DC5A68180A8234C1DA7C81D8C")
+    
+public RFC2965PortAttributeHandler() {
         super();
     }
 
     /**
      * Parse cookie port attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.036 -0500", hash_original_method = "681AF804F244AC355854B5C9066D8457", hash_generated_method = "75B8F32279746472E2F7526E56846850")
-    public void parse(final SetCookie cookie, final String portValue)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.212 -0500", hash_original_method = "681AF804F244AC355854B5C9066D8457", hash_generated_method = "75B8F32279746472E2F7526E56846850")
+    
+public void parse(final SetCookie cookie, final String portValue)
             throws MalformedCookieException {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
@@ -98,8 +102,9 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
      * Validate cookie port attribute. If the Port attribute was specified
      * in header, the request port must be in cookie's port list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.039 -0500", hash_original_method = "9E12D702FFAE2715567401C9ACEBCA90", hash_generated_method = "8358D50C4B7C04EB808FFE375B4844F2")
-    public void validate(final Cookie cookie, final CookieOrigin origin)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.215 -0500", hash_original_method = "9E12D702FFAE2715567401C9ACEBCA90", hash_generated_method = "8358D50C4B7C04EB808FFE375B4844F2")
+    
+public void validate(final Cookie cookie, final CookieOrigin origin)
             throws MalformedCookieException {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
@@ -123,8 +128,9 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
      * in header, the cookie can be sent to any port. Otherwise, the request port
      * must be in the cookie's port list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.040 -0500", hash_original_method = "DF68EC2DBEDB1856460C90C9AF4C7622", hash_generated_method = "B64734F5844BCD4345193A892466A394")
-    public boolean match(final Cookie cookie, final CookieOrigin origin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.218 -0500", hash_original_method = "DF68EC2DBEDB1856460C90C9AF4C7622", hash_generated_method = "B64734F5844BCD4345193A892466A394")
+    
+public boolean match(final Cookie cookie, final CookieOrigin origin) {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
         }

@@ -17,11 +17,12 @@ public class ViewConfigurationCompat {
      * If running on a pre-{@link android.os.Build.VERSION_CODES#FROYO} device,
      * returns {@link ViewConfiguration#getScaledTouchSlop()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.168 -0500", hash_original_method = "3528C0183AFB79CCB68AA739BEF357FF", hash_generated_method = "1BC52F06F2C8ECA5BEC4194ED7F7B291")
-    public static int getScaledPagingTouchSlop(ViewConfiguration config) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.438 -0500", hash_original_method = "3528C0183AFB79CCB68AA739BEF357FF", hash_generated_method = "1BC52F06F2C8ECA5BEC4194ED7F7B291")
+    
+public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         return IMPL.getScaledPagingTouchSlop(config);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.167 -0500", hash_original_field = "757E23C6B8816B26A38274C90DED08B4", hash_generated_field = "4BAEFA1DBA6789946690ACEDFD86419E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.436 -0500", hash_original_field = "757E23C6B8816B26A38274C90DED08B4", hash_generated_field = "4BAEFA1DBA6789946690ACEDFD86419E")
 
     static  ViewConfigurationVersionImpl IMPL;
 
@@ -34,9 +35,10 @@ public class ViewConfigurationCompat {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.163 -0500", hash_original_method = "40A95D8EF0A43B6ED733EDF4744F0469", hash_generated_method = "1D7E3EB014AE3CF651A36DC6CE49B7BB")
-        @Override
-public int getScaledPagingTouchSlop(ViewConfiguration config) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.426 -0500", hash_original_method = "40A95D8EF0A43B6ED733EDF4744F0469", hash_generated_method = "1D7E3EB014AE3CF651A36DC6CE49B7BB")
+        
+@Override
+        public int getScaledPagingTouchSlop(ViewConfiguration config) {
             return config.getScaledTouchSlop();
         }
 
@@ -53,9 +55,10 @@ public int getScaledPagingTouchSlop(ViewConfiguration config) {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.165 -0500", hash_original_method = "5FB3C1F49AB507E1F7081F1E34699ECD", hash_generated_method = "36E3FC06272A4B4387BED92E9254E9DD")
-        @Override
-public int getScaledPagingTouchSlop(ViewConfiguration config) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.432 -0500", hash_original_method = "5FB3C1F49AB507E1F7081F1E34699ECD", hash_generated_method = "36E3FC06272A4B4387BED92E9254E9DD")
+        
+@Override
+        public int getScaledPagingTouchSlop(ViewConfiguration config) {
             return ViewConfigurationCompatFroyo.getScaledPagingTouchSlop(config);
         }
 

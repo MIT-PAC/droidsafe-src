@@ -16,8 +16,9 @@ import android.text.format.Time;
 
 public final class HttpDateTime {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.187 -0500", hash_original_method = "E4B152074829BA57285EA96C40C0EF3C", hash_generated_method = "043C6A7B9943BFC8EAD1243FD9CEA784")
-    public static long parse(String timeString)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.669 -0500", hash_original_method = "E4B152074829BA57285EA96C40C0EF3C", hash_generated_method = "043C6A7B9943BFC8EAD1243FD9CEA784")
+    
+public static long parse(String timeString)
             throws IllegalArgumentException {
 
         int date = 1;
@@ -56,8 +57,9 @@ public final class HttpDateTime {
         return time.toMillis(false /* use isDst */);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.188 -0500", hash_original_method = "30B6FF51139E27406DD1403F4EBB1DD0", hash_generated_method = "3F0E1EA038483742D9B631FF8B6BBA5E")
-    private static int getDate(String dateString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.671 -0500", hash_original_method = "30B6FF51139E27406DD1403F4EBB1DD0", hash_generated_method = "3F0E1EA038483742D9B631FF8B6BBA5E")
+    
+private static int getDate(String dateString) {
         if (dateString.length() == 2) {
             return (dateString.charAt(0) - '0') * 10
                     + (dateString.charAt(1) - '0');
@@ -80,8 +82,9 @@ public final class HttpDateTime {
      * nov = 13 + 14 + 21 = 48
      * dec = 3 + 4 + 2 = 9
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.189 -0500", hash_original_method = "0A426422E428E0144F4BE4D097CCF45E", hash_generated_method = "56BC5656E9D4416F406A8512030AA642")
-    private static int getMonth(String monthString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.674 -0500", hash_original_method = "0A426422E428E0144F4BE4D097CCF45E", hash_generated_method = "56BC5656E9D4416F406A8512030AA642")
+    
+private static int getMonth(String monthString) {
         int hash = Character.toLowerCase(monthString.charAt(0)) +
                 Character.toLowerCase(monthString.charAt(1)) +
                 Character.toLowerCase(monthString.charAt(2)) - 3 * 'a';
@@ -115,8 +118,9 @@ public final class HttpDateTime {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.190 -0500", hash_original_method = "94B20CBAF1BF7E8BAB0748EC1D668BD7", hash_generated_method = "FFB9AB22F7CE2366C68ACBC5B0DF0569")
-    private static int getYear(String yearString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.676 -0500", hash_original_method = "94B20CBAF1BF7E8BAB0748EC1D668BD7", hash_generated_method = "FFB9AB22F7CE2366C68ACBC5B0DF0569")
+    
+private static int getYear(String yearString) {
         if (yearString.length() == 2) {
             int year = (yearString.charAt(0) - '0') * 10
                     + (yearString.charAt(1) - '0');
@@ -141,8 +145,9 @@ public final class HttpDateTime {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.191 -0500", hash_original_method = "8BD5B80F119DF5823EBA332CB5B94E39", hash_generated_method = "F4FA7F7DD350DBDD7BB2D2CBD873DAAC")
-    private static TimeOfDay getTime(String timeString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.680 -0500", hash_original_method = "8BD5B80F119DF5823EBA332CB5B94E39", hash_generated_method = "F4FA7F7DD350DBDD7BB2D2CBD873DAAC")
+    
+private static TimeOfDay getTime(String timeString) {
         // HH might be H
         int i = 0;
         int hour = timeString.charAt(i++) - '0';
@@ -161,7 +166,7 @@ public final class HttpDateTime {
 
         return new TimeOfDay(hour, minute, second);        
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.179 -0500", hash_original_field = "614692C4FDE08663AC3A0512C3873EFC", hash_generated_field = "FE6052786411ADD829D604593BDDCE6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.644 -0500", hash_original_field = "614692C4FDE08663AC3A0512C3873EFC", hash_generated_field = "FE6052786411ADD829D604593BDDCE6D")
 
     private static final String HTTP_DATE_RFC_REGEXP =
             "([0-9]{1,2})[- ]([A-Za-z]{3,9})[- ]([0-9]{2,4})[ ]"
@@ -169,18 +174,19 @@ public final class HttpDateTime {
 
     
     private static class TimeOfDay {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.184 -0500", hash_original_field = "6CAA30872566AAC3D8208DA318F04BBD", hash_generated_field = "6CAA30872566AAC3D8208DA318F04BBD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.658 -0500", hash_original_field = "6CAA30872566AAC3D8208DA318F04BBD", hash_generated_field = "6CAA30872566AAC3D8208DA318F04BBD")
 
         
         int hour;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.185 -0500", hash_original_field = "56A69BE5A6B1DCF64B7123BACE74483B", hash_generated_field = "56A69BE5A6B1DCF64B7123BACE74483B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.661 -0500", hash_original_field = "56A69BE5A6B1DCF64B7123BACE74483B", hash_generated_field = "56A69BE5A6B1DCF64B7123BACE74483B")
 
         int minute;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.186 -0500", hash_original_field = "662760B0A001432CFE4D3F18F01B3CEF", hash_generated_field = "662760B0A001432CFE4D3F18F01B3CEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.663 -0500", hash_original_field = "662760B0A001432CFE4D3F18F01B3CEF", hash_generated_field = "662760B0A001432CFE4D3F18F01B3CEF")
 
         int second;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.183 -0500", hash_original_method = "C386336929F1995213D1FEE1C093D027", hash_generated_method = "C386336929F1995213D1FEE1C093D027")
-        TimeOfDay(int h, int m, int s) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.656 -0500", hash_original_method = "C386336929F1995213D1FEE1C093D027", hash_generated_method = "C386336929F1995213D1FEE1C093D027")
+        
+TimeOfDay(int h, int m, int s) {
             this.hour = h;
             this.minute = m;
             this.second = s;
@@ -188,17 +194,17 @@ public final class HttpDateTime {
 
         
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.180 -0500", hash_original_field = "206191F7C4755BCD8025FA103E8BF230", hash_generated_field = "F1E0087178140CE39B35BFDC4DBACEA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.646 -0500", hash_original_field = "206191F7C4755BCD8025FA103E8BF230", hash_generated_field = "F1E0087178140CE39B35BFDC4DBACEA5")
 
 
     private static final String HTTP_DATE_ANSIC_REGEXP =
             "[ ]([A-Za-z]{3,9})[ ]+([0-9]{1,2})[ ]"
             + "([0-9]{1,2}:[0-9][0-9]:[0-9][0-9])[ ]([0-9]{2,4})";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.181 -0500", hash_original_field = "79413240D59D2F2FD43648E9947CFB11", hash_generated_field = "3B350C6486922908E05EA0A76E649786")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.649 -0500", hash_original_field = "79413240D59D2F2FD43648E9947CFB11", hash_generated_field = "3B350C6486922908E05EA0A76E649786")
 
     private static final Pattern HTTP_DATE_RFC_PATTERN =
             Pattern.compile(HTTP_DATE_RFC_REGEXP);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.182 -0500", hash_original_field = "8AE1C74BD667CC6AFF09B3F107E94003", hash_generated_field = "33F3085379241401481069397DBA78FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.653 -0500", hash_original_field = "8AE1C74BD667CC6AFF09B3F107E94003", hash_generated_field = "33F3085379241401481069397DBA78FE")
 
     private static final Pattern HTTP_DATE_ANSIC_PATTERN =
             Pattern.compile(HTTP_DATE_ANSIC_REGEXP);

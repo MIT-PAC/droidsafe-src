@@ -17,40 +17,44 @@ import android.os.RemoteException;
 
 
 abstract class BasicTagTechnology implements TagTechnology {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.985 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.939 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
 
     private static final String TAG = "NFC";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.985 -0500", hash_original_field = "26F2563105474DD2A79B3C79190EB5BE", hash_generated_field = "26F2563105474DD2A79B3C79190EB5BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.941 -0500", hash_original_field = "26F2563105474DD2A79B3C79190EB5BE", hash_generated_field = "26F2563105474DD2A79B3C79190EB5BE")
   Tag mTag;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.986 -0500", hash_original_field = "C55D9286978463BA48249377B65E8F9B", hash_generated_field = "C55D9286978463BA48249377B65E8F9B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.943 -0500", hash_original_field = "C55D9286978463BA48249377B65E8F9B", hash_generated_field = "C55D9286978463BA48249377B65E8F9B")
  boolean mIsConnected;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.987 -0500", hash_original_field = "14A56D04133B1EA444C84A98B6F4BAF8", hash_generated_field = "14A56D04133B1EA444C84A98B6F4BAF8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.945 -0500", hash_original_field = "14A56D04133B1EA444C84A98B6F4BAF8", hash_generated_field = "14A56D04133B1EA444C84A98B6F4BAF8")
  int mSelectedTechnology;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.988 -0500", hash_original_method = "D572C74E7520ED5167A849EF718161FC", hash_generated_method = "D572C74E7520ED5167A849EF718161FC")
-    BasicTagTechnology(Tag tag, int tech) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.948 -0500", hash_original_method = "D572C74E7520ED5167A849EF718161FC", hash_generated_method = "D572C74E7520ED5167A849EF718161FC")
+    
+BasicTagTechnology(Tag tag, int tech) throws RemoteException {
         mTag = tag;
         mSelectedTechnology = tech;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.989 -0500", hash_original_method = "FC84E29499397B8918F938A8205313A1", hash_generated_method = "509C94592268C673EF77C66918B38D54")
-    @Override
-public Tag getTag() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.950 -0500", hash_original_method = "FC84E29499397B8918F938A8205313A1", hash_generated_method = "509C94592268C673EF77C66918B38D54")
+    
+@Override
+    public Tag getTag() {
         return mTag;
     }
 
     /** Internal helper to throw IllegalStateException if the technology isn't connected */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.991 -0500", hash_original_method = "740AD223006A949AE0C5FC9EABD0A7B2", hash_generated_method = "740AD223006A949AE0C5FC9EABD0A7B2")
-    void checkConnected() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.952 -0500", hash_original_method = "740AD223006A949AE0C5FC9EABD0A7B2", hash_generated_method = "740AD223006A949AE0C5FC9EABD0A7B2")
+    
+void checkConnected() {
        if ((mTag.getConnectedTechnology() != mSelectedTechnology) ||
                (mTag.getConnectedTechnology() == -1)) {
            throw new IllegalStateException("Call connect() first!");
        }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.992 -0500", hash_original_method = "627518FDA5BCF854C6C8A282AA02DD65", hash_generated_method = "2CF5AC6A9AA8D850AF0F2948A33A1BBB")
-    @Override
-public boolean isConnected() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.954 -0500", hash_original_method = "627518FDA5BCF854C6C8A282AA02DD65", hash_generated_method = "2CF5AC6A9AA8D850AF0F2948A33A1BBB")
+    
+@Override
+    public boolean isConnected() {
         if (!mIsConnected) {
             return false;
         }
@@ -63,9 +67,10 @@ public boolean isConnected() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.993 -0500", hash_original_method = "804D2A1436436AD53D4E3C21667A8A7D", hash_generated_method = "56A6598857DDBB1E31119C2682BDD7F1")
-    @Override
-public void connect() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.957 -0500", hash_original_method = "804D2A1436436AD53D4E3C21667A8A7D", hash_generated_method = "56A6598857DDBB1E31119C2682BDD7F1")
+    
+@Override
+    public void connect() throws IOException {
         try {
             int errorCode = mTag.getTagService().connect(mTag.getServiceHandle(),
                     mSelectedTechnology);
@@ -88,9 +93,10 @@ public void connect() throws IOException {
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.994 -0500", hash_original_method = "9693ABC23B7E982FA8E766A116B1D439", hash_generated_method = "7114F971726AE8B77FBABB277A3AC7C8")
-    @Override
-public void reconnect() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.959 -0500", hash_original_method = "9693ABC23B7E982FA8E766A116B1D439", hash_generated_method = "7114F971726AE8B77FBABB277A3AC7C8")
+    
+@Override
+    public void reconnect() throws IOException {
         if (!mIsConnected) {
             throw new IllegalStateException("Technology not connected yet");
         }
@@ -111,9 +117,10 @@ public void reconnect() throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.995 -0500", hash_original_method = "DDF274A17EF36B6492A33A14797987DB", hash_generated_method = "581A73B3DE4AC015F592D8F37409570F")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.962 -0500", hash_original_method = "DDF274A17EF36B6492A33A14797987DB", hash_generated_method = "581A73B3DE4AC015F592D8F37409570F")
+    
+@Override
+    public void close() throws IOException {
         try {
             /* Note that we don't want to physically disconnect the tag,
              * but just reconnect to it to reset its state
@@ -129,8 +136,9 @@ public void close() throws IOException {
     }
 
     /** Internal getMaxTransceiveLength() */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.995 -0500", hash_original_method = "34B3E57F39840A6B37FC716C1405DA5D", hash_generated_method = "34B3E57F39840A6B37FC716C1405DA5D")
-    int getMaxTransceiveLengthInternal() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.965 -0500", hash_original_method = "34B3E57F39840A6B37FC716C1405DA5D", hash_generated_method = "34B3E57F39840A6B37FC716C1405DA5D")
+    
+int getMaxTransceiveLengthInternal() {
         try {
             return mTag.getTagService().getMaxTransceiveLength(mSelectedTechnology);
         } catch (RemoteException e) {
@@ -139,8 +147,9 @@ public void close() throws IOException {
         }
     }
     /** Internal transceive */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.996 -0500", hash_original_method = "8FB7A232CD74B358E0C2332FDF0D5629", hash_generated_method = "8FB7A232CD74B358E0C2332FDF0D5629")
-    byte[] transceive(byte[] data, boolean raw) throws IOException {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.967 -0500", hash_original_method = "8FB7A232CD74B358E0C2332FDF0D5629", hash_generated_method = "8FB7A232CD74B358E0C2332FDF0D5629")
+    
+byte[] transceive(byte[] data, boolean raw) throws IOException {
         checkConnected();
 
         try {

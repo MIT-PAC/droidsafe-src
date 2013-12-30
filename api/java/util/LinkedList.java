@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Queue<E>, Cloneable, Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.416 -0500", hash_original_field = "D4754C466E323241A04755DA938EB9AF", hash_generated_field = "5F23BECC14072AFC76D2F21910086550")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.281 -0500", hash_original_field = "D4754C466E323241A04755DA938EB9AF", hash_generated_field = "5F23BECC14072AFC76D2F21910086550")
 
 
     private static final long serialVersionUID = 876323262645176354L;
@@ -32,8 +32,9 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
      * @param collection
      *            the collection of elements to add.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.444 -0500", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "99A0B50156378254E3DBEB1D97EE7EF1")
-    public LinkedList(Collection<? extends E> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.370 -0500", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "99A0B50156378254E3DBEB1D97EE7EF1")
+    
+public LinkedList(Collection<? extends E> collection) {
         this();
         addAll(collection);
     }
@@ -273,8 +274,9 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.476 -0500", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "DDEABE8AC9FFECDA965CB2DE2681E456")
-    private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.477 -0500", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "DDEABE8AC9FFECDA965CB2DE2681E456")
+    
+private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         while (iter.hasNext()) {
             E element = iter.next();
             if (o == null ? element == null : o.equals(element)) {

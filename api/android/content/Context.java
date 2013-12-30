@@ -89,170 +89,170 @@ import android.view.textservice.TextServicesManager;
 
 
 public abstract class Context {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.975 -0500", hash_original_field = "B80BB7E1AAC59D39E6DD058233EE4B25", hash_generated_field = "E0534FAE410858BE0239A90CB81A3C3C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.822 -0500", hash_original_field = "B80BB7E1AAC59D39E6DD058233EE4B25", hash_generated_field = "E0534FAE410858BE0239A90CB81A3C3C")
 
     public static final int MODE_PRIVATE = 0x0000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.976 -0500", hash_original_field = "C5CBD2C336D676643DB09CAF116D05C8", hash_generated_field = "C00A6D34EDBF9E60AF33C96D65B15E93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.825 -0500", hash_original_field = "C5CBD2C336D676643DB09CAF116D05C8", hash_generated_field = "C00A6D34EDBF9E60AF33C96D65B15E93")
 
     public static final int MODE_WORLD_READABLE = 0x0001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.977 -0500", hash_original_field = "8DD23C806F6F509AEA8997B1404DD850", hash_generated_field = "61F4EE1E1FDEEECA23996E2131E557AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.827 -0500", hash_original_field = "8DD23C806F6F509AEA8997B1404DD850", hash_generated_field = "61F4EE1E1FDEEECA23996E2131E557AF")
 
     public static final int MODE_WORLD_WRITEABLE = 0x0002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.978 -0500", hash_original_field = "350DA9323F0A3B99E29C18D9361835FF", hash_generated_field = "A1D4701EDB7C2CF32DB6D704DB64F158")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.829 -0500", hash_original_field = "350DA9323F0A3B99E29C18D9361835FF", hash_generated_field = "A1D4701EDB7C2CF32DB6D704DB64F158")
 
     public static final int MODE_APPEND = 0x8000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.979 -0500", hash_original_field = "0EAA3F037618F0ACFE8F4DF57CC00F8F", hash_generated_field = "8D32186E1C1FBA644B75AB8D6BD319D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.832 -0500", hash_original_field = "0EAA3F037618F0ACFE8F4DF57CC00F8F", hash_generated_field = "8D32186E1C1FBA644B75AB8D6BD319D0")
 
     public static final int MODE_MULTI_PROCESS = 0x0004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.979 -0500", hash_original_field = "FE44B77D28FEABCCEA28D5BCF7C92FB2", hash_generated_field = "3F719DF33B5D38DBF9EDA5459690E1E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.834 -0500", hash_original_field = "FE44B77D28FEABCCEA28D5BCF7C92FB2", hash_generated_field = "3F719DF33B5D38DBF9EDA5459690E1E3")
 
     public static final int BIND_AUTO_CREATE = 0x0001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.980 -0500", hash_original_field = "C83B7C813DFA9C91BDCE33013EEDCC8A", hash_generated_field = "95934930F85186A3FEB58D687D9B608A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.836 -0500", hash_original_field = "C83B7C813DFA9C91BDCE33013EEDCC8A", hash_generated_field = "95934930F85186A3FEB58D687D9B608A")
 
     public static final int BIND_DEBUG_UNBIND = 0x0002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.981 -0500", hash_original_field = "CBAA59870D8B73A5F47AECDD4DF69362", hash_generated_field = "0C5F5CEFA5733E1C296DEE1B15C8D39A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.838 -0500", hash_original_field = "CBAA59870D8B73A5F47AECDD4DF69362", hash_generated_field = "0C5F5CEFA5733E1C296DEE1B15C8D39A")
 
     public static final int BIND_NOT_FOREGROUND = 0x0004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.982 -0500", hash_original_field = "44A2E68FEDC8773ACFEED7497799EAF9", hash_generated_field = "8D5736F032682672BB446A94C97B4AB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.841 -0500", hash_original_field = "44A2E68FEDC8773ACFEED7497799EAF9", hash_generated_field = "8D5736F032682672BB446A94C97B4AB9")
 
     public static final int BIND_ABOVE_CLIENT = 0x0008;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.983 -0500", hash_original_field = "E0D1E7F4091A0A16AAC3B48D54155CE9", hash_generated_field = "7BB1BA1A9DEA67D07B6CE17297E5641E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.844 -0500", hash_original_field = "E0D1E7F4091A0A16AAC3B48D54155CE9", hash_generated_field = "7BB1BA1A9DEA67D07B6CE17297E5641E")
 
     public static final int BIND_ALLOW_OOM_MANAGEMENT = 0x0010;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.984 -0500", hash_original_field = "5765DE9522693DE9AD769FFEDF8577BD", hash_generated_field = "2656EBD430F847F35F9423E52425B3EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.846 -0500", hash_original_field = "5765DE9522693DE9AD769FFEDF8577BD", hash_generated_field = "2656EBD430F847F35F9423E52425B3EA")
 
     public static final int BIND_WAIVE_PRIORITY = 0x0020;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.985 -0500", hash_original_field = "3AAFFD2B085C6D19407C82B7CE1B7793", hash_generated_field = "9CFD13BAA284CD7299FCD1B7145F9D86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.848 -0500", hash_original_field = "3AAFFD2B085C6D19407C82B7CE1B7793", hash_generated_field = "9CFD13BAA284CD7299FCD1B7145F9D86")
 
     public static final int BIND_IMPORTANT = 0x0040;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.986 -0500", hash_original_field = "1F8B15296A5703F173B445B3BFE91EA2", hash_generated_field = "7AACFEB8F1B496D355C0E0064BF3AB29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.851 -0500", hash_original_field = "1F8B15296A5703F173B445B3BFE91EA2", hash_generated_field = "7AACFEB8F1B496D355C0E0064BF3AB29")
 
     public static final int BIND_ADJUST_WITH_ACTIVITY = 0x0080;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.987 -0500", hash_original_field = "3DC8E392084E4F800E07258CAEE9DC22", hash_generated_field = "36952676B0F348321AD0B80A350F64B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.853 -0500", hash_original_field = "3DC8E392084E4F800E07258CAEE9DC22", hash_generated_field = "36952676B0F348321AD0B80A350F64B3")
 
     public static final int BIND_NOT_VISIBLE = 0x40000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.043 -0500", hash_original_field = "D157F14F92FEBEE86A021706BE52DF01", hash_generated_field = "E8416ECCEA5BEAC114B2264DD2931CB7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.006 -0500", hash_original_field = "D157F14F92FEBEE86A021706BE52DF01", hash_generated_field = "E8416ECCEA5BEAC114B2264DD2931CB7")
 
     public static final String POWER_SERVICE = "power";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.043 -0500", hash_original_field = "D5854A4572E21104782CC83F24F5C646", hash_generated_field = "222B9B08FA09921EAC11E4F59C058863")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.008 -0500", hash_original_field = "D5854A4572E21104782CC83F24F5C646", hash_generated_field = "222B9B08FA09921EAC11E4F59C058863")
 
     public static final String WINDOW_SERVICE = "window";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.044 -0500", hash_original_field = "C8A330A465BA96A4D78B046EEBCB3EE3", hash_generated_field = "38CC5AF191EBD0DB2A5766B331DEFAD9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.011 -0500", hash_original_field = "C8A330A465BA96A4D78B046EEBCB3EE3", hash_generated_field = "38CC5AF191EBD0DB2A5766B331DEFAD9")
 
     public static final String LAYOUT_INFLATER_SERVICE = "layout_inflater";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.046 -0500", hash_original_field = "671462DA63AA1C6E3A8AA72EF1C046C6", hash_generated_field = "C0101BF00244F413D0C290959C084A6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.013 -0500", hash_original_field = "671462DA63AA1C6E3A8AA72EF1C046C6", hash_generated_field = "C0101BF00244F413D0C290959C084A6C")
 
     public static final String ACCOUNT_SERVICE = "account";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.046 -0500", hash_original_field = "BFA50B845F97B299EEC461F9BDEBA848", hash_generated_field = "8BB3D3D67FF9811DEABA28412034BF1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.015 -0500", hash_original_field = "BFA50B845F97B299EEC461F9BDEBA848", hash_generated_field = "8BB3D3D67FF9811DEABA28412034BF1F")
 
     public static final String ACTIVITY_SERVICE = "activity";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.047 -0500", hash_original_field = "D7EFF7C7A31CA915C225135583DAF0BB", hash_generated_field = "E5AF97C7B0EB125B7B2BD44F6B682371")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.017 -0500", hash_original_field = "D7EFF7C7A31CA915C225135583DAF0BB", hash_generated_field = "E5AF97C7B0EB125B7B2BD44F6B682371")
 
     public static final String ALARM_SERVICE = "alarm";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.048 -0500", hash_original_field = "17975098D6E77AE5AB9164D97538184B", hash_generated_field = "EE887814E737E14F594C651614CE16DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.020 -0500", hash_original_field = "17975098D6E77AE5AB9164D97538184B", hash_generated_field = "EE887814E737E14F594C651614CE16DF")
 
     public static final String NOTIFICATION_SERVICE = "notification";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.049 -0500", hash_original_field = "6BCB4B55259993FC66B43480F3BB4A84", hash_generated_field = "C6CE03AB8349C616824A7FCE6CC045BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.022 -0500", hash_original_field = "6BCB4B55259993FC66B43480F3BB4A84", hash_generated_field = "C6CE03AB8349C616824A7FCE6CC045BF")
 
     public static final String ACCESSIBILITY_SERVICE = "accessibility";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.050 -0500", hash_original_field = "0D1178E80E4A6B45560C7D154F8B5363", hash_generated_field = "A2124D9C2882A3B61AA3F18DE08940F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.025 -0500", hash_original_field = "0D1178E80E4A6B45560C7D154F8B5363", hash_generated_field = "A2124D9C2882A3B61AA3F18DE08940F6")
 
     public static final String KEYGUARD_SERVICE = "keyguard";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.050 -0500", hash_original_field = "F0A8DC43D14A6342209B2BA7D45C2365", hash_generated_field = "0A2D92FCA78EDAD178265457397CBFBB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.027 -0500", hash_original_field = "F0A8DC43D14A6342209B2BA7D45C2365", hash_generated_field = "0A2D92FCA78EDAD178265457397CBFBB")
 
     public static final String LOCATION_SERVICE = "location";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.051 -0500", hash_original_field = "01035F613EB5040376DED968E0FF7E94", hash_generated_field = "3E584B95026E0B9C77A1D4775A4F38F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.029 -0500", hash_original_field = "01035F613EB5040376DED968E0FF7E94", hash_generated_field = "3E584B95026E0B9C77A1D4775A4F38F1")
 
     public static final String COUNTRY_DETECTOR = "country_detector";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.052 -0500", hash_original_field = "79C5ACA4AEDB4D6459E4FBDC65AFF8AA", hash_generated_field = "5CDA85362325A86F1D959503F08F9304")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.032 -0500", hash_original_field = "79C5ACA4AEDB4D6459E4FBDC65AFF8AA", hash_generated_field = "5CDA85362325A86F1D959503F08F9304")
 
     public static final String SEARCH_SERVICE = "search";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.053 -0500", hash_original_field = "A492C05E74BFD225F0998AADFFE2D3FF", hash_generated_field = "0708D01C0AB8CCDBBBEBA4E8C60C1860")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.035 -0500", hash_original_field = "A492C05E74BFD225F0998AADFFE2D3FF", hash_generated_field = "0708D01C0AB8CCDBBBEBA4E8C60C1860")
 
     public static final String SENSOR_SERVICE = "sensor";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.053 -0500", hash_original_field = "C8F9295E51AE21B0D1882A87B591D437", hash_generated_field = "683D409858DB0534C1F3F8C1B86A84ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.037 -0500", hash_original_field = "C8F9295E51AE21B0D1882A87B591D437", hash_generated_field = "683D409858DB0534C1F3F8C1B86A84ED")
 
     public static final String STORAGE_SERVICE = "storage";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.054 -0500", hash_original_field = "870A09418A1972037CA6178DA27FFF75", hash_generated_field = "4AC7C0CE09AEC0002A651C7949FB84DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.039 -0500", hash_original_field = "870A09418A1972037CA6178DA27FFF75", hash_generated_field = "4AC7C0CE09AEC0002A651C7949FB84DC")
 
     public static final String WALLPAPER_SERVICE = "wallpaper";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.055 -0500", hash_original_field = "E51D6AB8AD1F12F73D634C3754CF2667", hash_generated_field = "39726A4B89909A265FD047CC4D56AEB8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.041 -0500", hash_original_field = "E51D6AB8AD1F12F73D634C3754CF2667", hash_generated_field = "39726A4B89909A265FD047CC4D56AEB8")
 
     public static final String VIBRATOR_SERVICE = "vibrator";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.056 -0500", hash_original_field = "4EAA61CDE85421448F5630ED152906B7", hash_generated_field = "DACE3B8B9B06D14717640DFBD64CB027")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.044 -0500", hash_original_field = "4EAA61CDE85421448F5630ED152906B7", hash_generated_field = "DACE3B8B9B06D14717640DFBD64CB027")
 
     public static final String STATUS_BAR_SERVICE = "statusbar";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.057 -0500", hash_original_field = "C16093489DFF215824042ED412850E06", hash_generated_field = "2F45F5AD93952D9D29432D95F2452092")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.046 -0500", hash_original_field = "C16093489DFF215824042ED412850E06", hash_generated_field = "2F45F5AD93952D9D29432D95F2452092")
 
     public static final String CONNECTIVITY_SERVICE = "connectivity";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.057 -0500", hash_original_field = "C2635A6291CE3B1174483B5247C5F067", hash_generated_field = "3AD0A3355544924E513A0BC3052EFC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.049 -0500", hash_original_field = "C2635A6291CE3B1174483B5247C5F067", hash_generated_field = "3AD0A3355544924E513A0BC3052EFC4B")
 
     public static final String THROTTLE_SERVICE = "throttle";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.058 -0500", hash_original_field = "3CA97717367ED14770A227E93CF79EAC", hash_generated_field = "A450F3546D814B85E8397541C578F3CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.051 -0500", hash_original_field = "3CA97717367ED14770A227E93CF79EAC", hash_generated_field = "A450F3546D814B85E8397541C578F3CF")
 
     public static final String NETWORKMANAGEMENT_SERVICE = "network_management";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.059 -0500", hash_original_field = "D6E7DDC63B52CED1DE875A637D665DEA", hash_generated_field = "454E71FC4584A535C801D683C68A25ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.053 -0500", hash_original_field = "D6E7DDC63B52CED1DE875A637D665DEA", hash_generated_field = "454E71FC4584A535C801D683C68A25ED")
 
     public static final String NETWORK_STATS_SERVICE = "netstats";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.061 -0500", hash_original_field = "1E654133481635B7422AB17D1B6F0E1E", hash_generated_field = "5A58323C773F04B7B62244D04564F5D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.056 -0500", hash_original_field = "1E654133481635B7422AB17D1B6F0E1E", hash_generated_field = "5A58323C773F04B7B62244D04564F5D5")
 
     public static final String NETWORK_POLICY_SERVICE = "netpolicy";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.061 -0500", hash_original_field = "43448CFE4D69506B7EABD105C66A4970", hash_generated_field = "99A842CA1318F2E11F6BE58707AB118F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.058 -0500", hash_original_field = "43448CFE4D69506B7EABD105C66A4970", hash_generated_field = "99A842CA1318F2E11F6BE58707AB118F")
 
     public static final String WIFI_SERVICE = "wifi";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.062 -0500", hash_original_field = "65742807EF37F5AF9551367DF51F7C99", hash_generated_field = "C3BF0421487E50A24AE2947C35E56E7D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.060 -0500", hash_original_field = "65742807EF37F5AF9551367DF51F7C99", hash_generated_field = "C3BF0421487E50A24AE2947C35E56E7D")
 
     public static final String WIFI_P2P_SERVICE = "wifip2p";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.063 -0500", hash_original_field = "D40EDB45F161E0C6EC435578FA253E30", hash_generated_field = "F28252FD322AD74524DADB8BBEF2D288")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.062 -0500", hash_original_field = "D40EDB45F161E0C6EC435578FA253E30", hash_generated_field = "F28252FD322AD74524DADB8BBEF2D288")
 
     public static final String AUDIO_SERVICE = "audio";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.064 -0500", hash_original_field = "55A255B436D370E68240D0B8C06E70EF", hash_generated_field = "F10E72BCA2F3F12ECFBC4AD688887010")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.065 -0500", hash_original_field = "55A255B436D370E68240D0B8C06E70EF", hash_generated_field = "F10E72BCA2F3F12ECFBC4AD688887010")
 
     public static final String TELEPHONY_SERVICE = "phone";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.065 -0500", hash_original_field = "F5CF1B308494A1BF0FE8A371F7DB980A", hash_generated_field = "1A766B47E950410C3F30F8C050ED10B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.067 -0500", hash_original_field = "F5CF1B308494A1BF0FE8A371F7DB980A", hash_generated_field = "1A766B47E950410C3F30F8C050ED10B5")
 
     public static final String CLIPBOARD_SERVICE = "clipboard";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.066 -0500", hash_original_field = "A611F6EE0B928B1E19C4BEEF4A175A4E", hash_generated_field = "86CBA0398F780670874BEBBE962A4234")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.070 -0500", hash_original_field = "A611F6EE0B928B1E19C4BEEF4A175A4E", hash_generated_field = "86CBA0398F780670874BEBBE962A4234")
 
     public static final String INPUT_METHOD_SERVICE = "input_method";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.067 -0500", hash_original_field = "C12C439F39AD358AA7ACDC99B8C9951E", hash_generated_field = "3D0F48743A480272F049F93E42ADFD28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.072 -0500", hash_original_field = "C12C439F39AD358AA7ACDC99B8C9951E", hash_generated_field = "3D0F48743A480272F049F93E42ADFD28")
 
     public static final String TEXT_SERVICES_MANAGER_SERVICE = "textservices";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.067 -0500", hash_original_field = "3636CE7D6EE0B26E1CBAA9149D6B9DBB", hash_generated_field = "532AB440378B09C3B6064E442DF5F1B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.074 -0500", hash_original_field = "3636CE7D6EE0B26E1CBAA9149D6B9DBB", hash_generated_field = "532AB440378B09C3B6064E442DF5F1B7")
 
     public static final String APPWIDGET_SERVICE = "appwidget";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.068 -0500", hash_original_field = "55280FF9190560C60B00BE59CB86AB86", hash_generated_field = "FA86164719D55F0E711FE6BC871180E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.077 -0500", hash_original_field = "55280FF9190560C60B00BE59CB86AB86", hash_generated_field = "FA86164719D55F0E711FE6BC871180E8")
 
     public static final String BACKUP_SERVICE = "backup";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.069 -0500", hash_original_field = "8B7B3D4F9BE12F4E34A50BD1154FB82A", hash_generated_field = "DB9BF2C988EFDA8B74A602487DB98892")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.079 -0500", hash_original_field = "8B7B3D4F9BE12F4E34A50BD1154FB82A", hash_generated_field = "DB9BF2C988EFDA8B74A602487DB98892")
 
     public static final String DROPBOX_SERVICE = "dropbox";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.070 -0500", hash_original_field = "97AF284060B72AE1AD4EF284B27C07EA", hash_generated_field = "A27547CDFB697E9207929038781E5413")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.081 -0500", hash_original_field = "97AF284060B72AE1AD4EF284B27C07EA", hash_generated_field = "A27547CDFB697E9207929038781E5413")
 
     public static final String DEVICE_POLICY_SERVICE = "device_policy";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.071 -0500", hash_original_field = "C3FDDB3446E05B52A969571CA536217B", hash_generated_field = "093487E6D98CF2E55BA893689E4AD09D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.084 -0500", hash_original_field = "C3FDDB3446E05B52A969571CA536217B", hash_generated_field = "093487E6D98CF2E55BA893689E4AD09D")
 
     public static final String UI_MODE_SERVICE = "uimode";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.072 -0500", hash_original_field = "1460D16082DC9EC15D254242944A7043", hash_generated_field = "2878DC56FA5E2F9F330CB8BDE2ACF22A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.086 -0500", hash_original_field = "1460D16082DC9EC15D254242944A7043", hash_generated_field = "2878DC56FA5E2F9F330CB8BDE2ACF22A")
 
     public static final String DOWNLOAD_SERVICE = "download";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.072 -0500", hash_original_field = "EA480B5C26C0B35721FE2E9E3967057A", hash_generated_field = "5831D684985AAEA831FADFDAE47A65F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.088 -0500", hash_original_field = "EA480B5C26C0B35721FE2E9E3967057A", hash_generated_field = "5831D684985AAEA831FADFDAE47A65F0")
 
     public static final String NFC_SERVICE = "nfc";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:40.946 -0500", hash_original_field = "93C6A9BF52ED2321819A900CD60C4AC0", hash_generated_field = "57C5762094E6BFBECA6E66DC4A6D5370")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.090 -0500", hash_original_field = "93C6A9BF52ED2321819A900CD60C4AC0", hash_generated_field = "57C5762094E6BFBECA6E66DC4A6D5370")
 
     /** @hide */
     public static final String SIP_SERVICE = "sip";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.074 -0500", hash_original_field = "CD1646E97619281D86FD8162843B9DAF", hash_generated_field = "8067BA11AD1BFB38AB9ECD2EA5D0F04C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.093 -0500", hash_original_field = "CD1646E97619281D86FD8162843B9DAF", hash_generated_field = "8067BA11AD1BFB38AB9ECD2EA5D0F04C")
 
     public static final String USB_SERVICE = "usb";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.088 -0500", hash_original_field = "03BD76E398287234977B3D68A882C905", hash_generated_field = "2531CFB911E7B5DA453B0D35880BAB90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.132 -0500", hash_original_field = "03BD76E398287234977B3D68A882C905", hash_generated_field = "2531CFB911E7B5DA453B0D35880BAB90")
 
     public static final int CONTEXT_INCLUDE_CODE = 0x00000001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.089 -0500", hash_original_field = "FE150DE8C849D8A50E5721A40988727B", hash_generated_field = "EA43A38A5281FECBBE69A8378CDA10EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.134 -0500", hash_original_field = "FE150DE8C849D8A50E5721A40988727B", hash_generated_field = "EA43A38A5281FECBBE69A8378CDA10EC")
 
     public static final int CONTEXT_IGNORE_SECURITY = 0x00000002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.090 -0500", hash_original_field = "70FCA06F476C88210D13457871671AF1", hash_generated_field = "F3D4B86861C416E9BCDD00F4D43AA6B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.136 -0500", hash_original_field = "70FCA06F476C88210D13457871671AF1", hash_generated_field = "F3D4B86861C416E9BCDD00F4D43AA6B2")
 
     public static final int CONTEXT_RESTRICTED = 0x00000004;
     
@@ -265,28 +265,33 @@ public abstract class Context {
 	}
 
     /** Return an AssetManager instance for your application's package. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.988 -0500", hash_original_method = "3D9F192E32E991AE3314DE7A1AFABF9B", hash_generated_method = "64818D2C9943C784FC5AD2D35E83F009")
-    public abstract AssetManager getAssets();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.856 -0500", hash_original_method = "3D9F192E32E991AE3314DE7A1AFABF9B", hash_generated_method = "64818D2C9943C784FC5AD2D35E83F009")
+    
+public abstract AssetManager getAssets();
 
     /** Return a Resources instance for your application's package. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.989 -0500", hash_original_method = "DDC03F44FA955FC312F0B392013F0650", hash_generated_method = "FCB6897E52684952F018239BD74C6494")
-    public abstract Resources getResources();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.858 -0500", hash_original_method = "DDC03F44FA955FC312F0B392013F0650", hash_generated_method = "FCB6897E52684952F018239BD74C6494")
+    
+public abstract Resources getResources();
 
     /** Return PackageManager instance to find global package information. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.989 -0500", hash_original_method = "79CAABBA68FB074205B16005189B326D", hash_generated_method = "FCD846236522A06EEDB2DBD77E2946E2")
-    public abstract PackageManager getPackageManager();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.860 -0500", hash_original_method = "79CAABBA68FB074205B16005189B326D", hash_generated_method = "FCD846236522A06EEDB2DBD77E2946E2")
+    
+public abstract PackageManager getPackageManager();
 
     /** Return a ContentResolver instance for your application's package. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.990 -0500", hash_original_method = "1D00732668B8C897D38BE7A141172873", hash_generated_method = "A7D8728F3BE00D5CDB00368E816A20AC")
-    public abstract ContentResolver getContentResolver();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.862 -0500", hash_original_method = "1D00732668B8C897D38BE7A141172873", hash_generated_method = "A7D8728F3BE00D5CDB00368E816A20AC")
+    
+public abstract ContentResolver getContentResolver();
 
     /**
      * Return the Looper for the main thread of the current process.  This is
      * the thread used to dispatch calls to application components (activities,
      * services, etc).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.991 -0500", hash_original_method = "2273432F36EEE4336A286768A4295592", hash_generated_method = "D221AC1129500C9E83799580297114B8")
-    public abstract Looper getMainLooper();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.865 -0500", hash_original_method = "2273432F36EEE4336A286768A4295592", hash_generated_method = "D221AC1129500C9E83799580297114B8")
+    
+public abstract Looper getMainLooper();
 
     /**
      * Return the context of the single, global Application object of the
@@ -313,8 +318,9 @@ public abstract class Context {
      * if you forget to unregister, unbind, etc.
      * </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.992 -0500", hash_original_method = "4BFA2CD701CE85242491E38EAA80F5E1", hash_generated_method = "52427EC0AE341980B3A33AF47042782C")
-    public abstract Context getApplicationContext();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.867 -0500", hash_original_method = "4BFA2CD701CE85242491E38EAA80F5E1", hash_generated_method = "52427EC0AE341980B3A33AF47042782C")
+    
+public abstract Context getApplicationContext();
 
     /**
      * Add a new {@link ComponentCallbacks} to the base application of the
@@ -326,8 +332,9 @@ public abstract class Context {
      * @param callback The interface to call.  This can be either a
      * {@link ComponentCallbacks} or {@link ComponentCallbacks2} interface.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.992 -0500", hash_original_method = "CA41FDFA6BB6EC9A7DA4C7864F293E89", hash_generated_method = "E5E2788341808E62206638EFC3698CF5")
-    public void registerComponentCallbacks(ComponentCallbacks callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.869 -0500", hash_original_method = "CA41FDFA6BB6EC9A7DA4C7864F293E89", hash_generated_method = "E5E2788341808E62206638EFC3698CF5")
+    
+public void registerComponentCallbacks(ComponentCallbacks callback) {
         getApplicationContext().registerComponentCallbacks(callback);
     }
 
@@ -335,8 +342,9 @@ public abstract class Context {
      * Remove a {@link ComponentCallbacks} objec that was previously registered
      * with {@link #registerComponentCallbacks(ComponentCallbacks)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.993 -0500", hash_original_method = "494D7366CDA5CBFD506341B295742C11", hash_generated_method = "76B9ED3DB9C96637173C301628B1E341")
-    public void unregisterComponentCallbacks(ComponentCallbacks callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.871 -0500", hash_original_method = "494D7366CDA5CBFD506341B295742C11", hash_generated_method = "76B9ED3DB9C96637173C301628B1E341")
+    
+public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         getApplicationContext().unregisterComponentCallbacks(callback);
     }
 
@@ -361,8 +369,9 @@ public abstract class Context {
      *
      * @param resId Resource id for the string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.995 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
-    public final String getString(int resId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
+    
+public final String getString(int resId) {
         return getResources().getString(resId);
     }
 
@@ -375,8 +384,9 @@ public abstract class Context {
      * @param formatArgs The format arguments that will be used for substitution.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.996 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
-    public final String getString(int resId, Object... formatArgs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
+    
+public final String getString(int resId, Object... formatArgs) {
         return getResources().getString(resId, formatArgs);
     }
 
@@ -388,21 +398,24 @@ public abstract class Context {
      *
      * @param resid The style resource describing the theme.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.997 -0500", hash_original_method = "0DB49DE87B157A2C4B2935D58BBA65E3", hash_generated_method = "AB34B36F040D23DC72475F0814E8DA5B")
-    public abstract void setTheme(int resid);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.879 -0500", hash_original_method = "0DB49DE87B157A2C4B2935D58BBA65E3", hash_generated_method = "AB34B36F040D23DC72475F0814E8DA5B")
+    
+public abstract void setTheme(int resid);
 
     /** @hide Needed for some internal implementation...  not public because
      * you can't assume this actually means anything. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.997 -0500", hash_original_method = "50CDF7EE4EA4E2BC75FC99DEA1DDCB11", hash_generated_method = "1272D7E9D68672649ADFD8FAF1BD64C2")
-    public int getThemeResId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.881 -0500", hash_original_method = "50CDF7EE4EA4E2BC75FC99DEA1DDCB11", hash_generated_method = "1272D7E9D68672649ADFD8FAF1BD64C2")
+    
+public int getThemeResId() {
         return 0;
     }
 
     /**
      * Return the Theme object associated with this Context.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.998 -0500", hash_original_method = "7ACE2B655A5B877874BCA55245CA4650", hash_generated_method = "CF306A85F4EDB21EEEBC87F9574CE37E")
-    public abstract Resources.Theme getTheme();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.883 -0500", hash_original_method = "7ACE2B655A5B877874BCA55245CA4650", hash_generated_method = "CF306A85F4EDB21EEEBC87F9574CE37E")
+    
+public abstract Resources.Theme getTheme();
 
     /**
      * Retrieve styled attribute information in this Context's theme.  See
@@ -411,8 +424,9 @@ public abstract class Context {
      *
      * @see Resources.Theme#obtainStyledAttributes(int[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.999 -0500", hash_original_method = "FF26021DC793B4DE3C0383ED66D7E1E8", hash_generated_method = "8263BAB3FE93E96AF6816141E1709550")
-    public final TypedArray obtainStyledAttributes(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.886 -0500", hash_original_method = "FF26021DC793B4DE3C0383ED66D7E1E8", hash_generated_method = "8263BAB3FE93E96AF6816141E1709550")
+    
+public final TypedArray obtainStyledAttributes(
             int[] attrs) {
         return getTheme().obtainStyledAttributes(attrs);
     }
@@ -424,8 +438,9 @@ public abstract class Context {
      *
      * @see Resources.Theme#obtainStyledAttributes(int, int[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.000 -0500", hash_original_method = "C05CBF641E41D370531BE7FED84BE5CE", hash_generated_method = "643F335630EFA85BB93672A12259C8AF")
-    public final TypedArray obtainStyledAttributes(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.888 -0500", hash_original_method = "C05CBF641E41D370531BE7FED84BE5CE", hash_generated_method = "643F335630EFA85BB93672A12259C8AF")
+    
+public final TypedArray obtainStyledAttributes(
             int resid, int[] attrs) throws Resources.NotFoundException {
         return getTheme().obtainStyledAttributes(resid, attrs);
     }
@@ -437,8 +452,9 @@ public abstract class Context {
      *
      * @see Resources.Theme#obtainStyledAttributes(AttributeSet, int[], int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.001 -0500", hash_original_method = "C594E5E7DCFBB517BAAED03BB3D45896", hash_generated_method = "5BA5A74A13CBB0188C9E74882C49861E")
-    public final TypedArray obtainStyledAttributes(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.891 -0500", hash_original_method = "C594E5E7DCFBB517BAAED03BB3D45896", hash_generated_method = "5BA5A74A13CBB0188C9E74882C49861E")
+    
+public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs) {
         return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
     }
@@ -450,8 +466,9 @@ public abstract class Context {
      *
      * @see Resources.Theme#obtainStyledAttributes(AttributeSet, int[], int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.002 -0500", hash_original_method = "23F3A3F4901D9D1C9DD21EEAA884561D", hash_generated_method = "4422D6DA26647847CA530D1B3929C7F8")
-    public final TypedArray obtainStyledAttributes(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.894 -0500", hash_original_method = "23F3A3F4901D9D1C9DD21EEAA884561D", hash_generated_method = "4422D6DA26647847CA530D1B3929C7F8")
+    
+public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs, int defStyleAttr, int defStyleRes) {
         return getTheme().obtainStyledAttributes(
             set, attrs, defStyleAttr, defStyleRes);
@@ -460,16 +477,19 @@ public abstract class Context {
     /**
      * Return a class loader you can use to retrieve classes in this package.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.003 -0500", hash_original_method = "8A810E4DE3086C301A9EB2A3F9E45FA2", hash_generated_method = "488BD79C00E2507C7A9C8DB8CE74E57B")
-    public abstract ClassLoader getClassLoader();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.896 -0500", hash_original_method = "8A810E4DE3086C301A9EB2A3F9E45FA2", hash_generated_method = "488BD79C00E2507C7A9C8DB8CE74E57B")
+    
+public abstract ClassLoader getClassLoader();
 
     /** Return the name of this application's package. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.003 -0500", hash_original_method = "0AEBC7BE6AC5D73669D5E786F8C71C2E", hash_generated_method = "D1A5857F6911C9DA4EF7356D04CCA9DB")
-    public abstract String getPackageName();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.898 -0500", hash_original_method = "0AEBC7BE6AC5D73669D5E786F8C71C2E", hash_generated_method = "D1A5857F6911C9DA4EF7356D04CCA9DB")
+    
+public abstract String getPackageName();
 
     /** Return the full application info for this context's package. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.004 -0500", hash_original_method = "0853F0BFD0AB024B1B62857AD01DAF33", hash_generated_method = "219D0318B08C94A31B6C8672DAC137FD")
-    public abstract ApplicationInfo getApplicationInfo();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.900 -0500", hash_original_method = "0853F0BFD0AB024B1B62857AD01DAF33", hash_generated_method = "219D0318B08C94A31B6C8672DAC137FD")
+    
+public abstract ApplicationInfo getApplicationInfo();
 
     /**
      * Return the full path to this context's primary Android package.
@@ -481,8 +501,9 @@ public abstract class Context {
      *
      * @return String Path to the resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.005 -0500", hash_original_method = "BF39A82633B6D5EA73EDAC0764AC8933", hash_generated_method = "91C4A9E8ADEC54954EB83B6E892EF32C")
-    public abstract String getPackageResourcePath();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.902 -0500", hash_original_method = "BF39A82633B6D5EA73EDAC0764AC8933", hash_generated_method = "91C4A9E8ADEC54954EB83B6E892EF32C")
+    
+public abstract String getPackageResourcePath();
 
     /**
      * Return the full path to this context's primary Android package.
@@ -494,8 +515,9 @@ public abstract class Context {
      *
      * @return String Path to the code and assets.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.006 -0500", hash_original_method = "6883772254278B57804CBB75A8D1016A", hash_generated_method = "192FAF5BA6A5431FBE320A1DFDB8763F")
-    public abstract String getPackageCodePath();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.904 -0500", hash_original_method = "6883772254278B57804CBB75A8D1016A", hash_generated_method = "192FAF5BA6A5431FBE320A1DFDB8763F")
+    
+public abstract String getPackageCodePath();
 
     /**
      * {@hide}
@@ -504,8 +526,9 @@ public abstract class Context {
      * <p>Note: this is not generally useful for applications, since they should
      * not be directly accessing the file system.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.006 -0500", hash_original_method = "948D6AA8DF4CE395FB14E27B4191DFFF", hash_generated_method = "ABF5EEA2AAE09C560A31B873B03F83B5")
-    public abstract File getSharedPrefsFile(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.906 -0500", hash_original_method = "948D6AA8DF4CE395FB14E27B4191DFFF", hash_generated_method = "ABF5EEA2AAE09C560A31B873B03F83B5")
+    
+public abstract File getSharedPrefsFile(String name);
 
     /**
      * Retrieve and hold the contents of the preferences file 'name', returning
@@ -533,8 +556,9 @@ public abstract class Context {
      * @see #MODE_WORLD_WRITEABLE
      * @see #MODE_MULTI_PROCESS
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.007 -0500", hash_original_method = "0A32AB6B1755B7A435A6F215DDF3C5B4", hash_generated_method = "58E69BCA38F976DBC2163BAC4DCC28FE")
-    public abstract SharedPreferences getSharedPreferences(String name,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.909 -0500", hash_original_method = "0A32AB6B1755B7A435A6F215DDF3C5B4", hash_generated_method = "58E69BCA38F976DBC2163BAC4DCC28FE")
+    
+public abstract SharedPreferences getSharedPreferences(String name,
             int mode);
 
     /**
@@ -551,8 +575,9 @@ public abstract class Context {
      * @see #deleteFile
      * @see java.io.FileInputStream#FileInputStream(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.008 -0500", hash_original_method = "EBAD68309D7C43CA53D7A0B7FB063D1D", hash_generated_method = "7CE8EA82F68F3012E1BE2EA8D2202B3E")
-    public abstract FileInputStream openFileInput(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.911 -0500", hash_original_method = "EBAD68309D7C43CA53D7A0B7FB063D1D", hash_generated_method = "7CE8EA82F68F3012E1BE2EA8D2202B3E")
+    
+public abstract FileInputStream openFileInput(String name)
         throws FileNotFoundException;
 
     /**
@@ -577,8 +602,9 @@ public abstract class Context {
      * @see #deleteFile
      * @see java.io.FileOutputStream#FileOutputStream(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.009 -0500", hash_original_method = "BEE63DE917C6EB7327F3CD638CB5E201", hash_generated_method = "C3F3F1D5E8BA5B4F3D287ECFD48EBDEA")
-    public abstract FileOutputStream openFileOutput(String name, int mode)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.913 -0500", hash_original_method = "BEE63DE917C6EB7327F3CD638CB5E201", hash_generated_method = "C3F3F1D5E8BA5B4F3D287ECFD48EBDEA")
+    
+public abstract FileOutputStream openFileOutput(String name, int mode)
         throws FileNotFoundException;
 
     /**
@@ -596,8 +622,9 @@ public abstract class Context {
      * @see #fileList
      * @see java.io.File#delete()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.010 -0500", hash_original_method = "5C79B5C96938E780ED6DA72B2F25F47B", hash_generated_method = "7F6FD058AC0AA16AA498D9C8AAE3B078")
-    public abstract boolean deleteFile(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.916 -0500", hash_original_method = "5C79B5C96938E780ED6DA72B2F25F47B", hash_generated_method = "7F6FD058AC0AA16AA498D9C8AAE3B078")
+    
+public abstract boolean deleteFile(String name);
 
     /**
      * Returns the absolute path on the filesystem where a file created with
@@ -612,8 +639,9 @@ public abstract class Context {
      * @see #getFilesDir
      * @see #getDir
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.010 -0500", hash_original_method = "9A353D6569C6BEC86434D076A37F5A65", hash_generated_method = "434EA32C2C62DB5DD54141843080A7D3")
-    public abstract File getFileStreamPath(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.918 -0500", hash_original_method = "9A353D6569C6BEC86434D076A37F5A65", hash_generated_method = "434EA32C2C62DB5DD54141843080A7D3")
+    
+public abstract File getFileStreamPath(String name);
 
     /**
      * Returns the absolute path to the directory on the filesystem where
@@ -625,8 +653,9 @@ public abstract class Context {
      * @see #getFileStreamPath
      * @see #getDir
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.011 -0500", hash_original_method = "876DBAEF3446A3BCF806918F15973E79", hash_generated_method = "1B23CBD89B8D00392FABFF3F660464F2")
-    public abstract File getFilesDir();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.920 -0500", hash_original_method = "876DBAEF3446A3BCF806918F15973E79", hash_generated_method = "1B23CBD89B8D00392FABFF3F660464F2")
+    
+public abstract File getFilesDir();
 
     /**
      * Returns the absolute path to the directory on the external filesystem
@@ -695,16 +724,18 @@ public abstract class Context {
      * @see #getFilesDir
      * @see android.os.Environment#getExternalStoragePublicDirectory
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.012 -0500", hash_original_method = "0A68A7ED4304E520C4C4BE1D85F1E40A", hash_generated_method = "AB6B043865C07D01667A23CF19BC158B")
-    public abstract File getExternalFilesDir(String type);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.922 -0500", hash_original_method = "0A68A7ED4304E520C4C4BE1D85F1E40A", hash_generated_method = "AB6B043865C07D01667A23CF19BC158B")
+    
+public abstract File getExternalFilesDir(String type);
 
     /**
      * Return the directory where this application's OBB files (if there
      * are any) can be found.  Note if the application does not have any OBB
      * files, this directory may not exist.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.013 -0500", hash_original_method = "A938DDE28A8E328C810E5D63E9AF5380", hash_generated_method = "1D4A7FAD43E05DE74E01D9C6EAFF4AC7")
-    public abstract File getObbDir();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.924 -0500", hash_original_method = "A938DDE28A8E328C810E5D63E9AF5380", hash_generated_method = "1D4A7FAD43E05DE74E01D9C6EAFF4AC7")
+    
+public abstract File getObbDir();
 
     /**
      * Returns the absolute path to the application specific cache directory
@@ -723,8 +754,9 @@ public abstract class Context {
      * @see #getFileStreamPath
      * @see #getDir
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.013 -0500", hash_original_method = "E360556E62C838AA9E622386657A8DBC", hash_generated_method = "F778C1CABF9FB77070025876201F1166")
-    public abstract File getCacheDir();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.926 -0500", hash_original_method = "E360556E62C838AA9E622386657A8DBC", hash_generated_method = "F778C1CABF9FB77070025876201F1166")
+    
+public abstract File getCacheDir();
 
     /**
      * Returns the absolute path to the directory on the external filesystem
@@ -755,8 +787,9 @@ public abstract class Context {
      *
      * @see #getCacheDir
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.014 -0500", hash_original_method = "DC9C00B30E2B2D99DE9CCC7273B6CAC5", hash_generated_method = "9934C57497FC9CC239AA3AEAA11356D7")
-    public abstract File getExternalCacheDir();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.928 -0500", hash_original_method = "DC9C00B30E2B2D99DE9CCC7273B6CAC5", hash_generated_method = "9934C57497FC9CC239AA3AEAA11356D7")
+    
+public abstract File getExternalCacheDir();
 
     /**
      * Returns an array of strings naming the private files associated with
@@ -768,8 +801,9 @@ public abstract class Context {
      * @see #openFileOutput
      * @see #deleteFile
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.016 -0500", hash_original_method = "3846BDAC7C805AA359AC3AB66D267D1A", hash_generated_method = "D5AD25458EAB14444E66F9DC72E2FD10")
-    public abstract String[] fileList();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.930 -0500", hash_original_method = "3846BDAC7C805AA359AC3AB66D267D1A", hash_generated_method = "D5AD25458EAB14444E66F9DC72E2FD10")
+    
+public abstract String[] fileList();
 
     /**
      * Retrieve, creating if needed, a new directory in which the application
@@ -790,8 +824,9 @@ public abstract class Context {
      *
      * @see #openFileOutput(String, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.016 -0500", hash_original_method = "0748EFF5A7B0F4DE21AD9D483062B85E", hash_generated_method = "BE5DE3DCA54F7B36439CA2C4C3243FFD")
-    public abstract File getDir(String name, int mode);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.933 -0500", hash_original_method = "0748EFF5A7B0F4DE21AD9D483062B85E", hash_generated_method = "BE5DE3DCA54F7B36439CA2C4C3243FFD")
+    
+public abstract File getDir(String name, int mode);
 
     /**
      * Open a new private SQLiteDatabase associated with this Context's
@@ -812,8 +847,9 @@ public abstract class Context {
      * @see #MODE_WORLD_WRITEABLE
      * @see #deleteDatabase
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.017 -0500", hash_original_method = "BFF57F85E236CAFF9ED2A22B4F6E2D76", hash_generated_method = "B8D74B054158D9D916C437F4D1E303B4")
-    public abstract SQLiteDatabase openOrCreateDatabase(String name,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.935 -0500", hash_original_method = "BFF57F85E236CAFF9ED2A22B4F6E2D76", hash_generated_method = "B8D74B054158D9D916C437F4D1E303B4")
+    
+public abstract SQLiteDatabase openOrCreateDatabase(String name,
             int mode, CursorFactory factory);
 
     /**
@@ -839,8 +875,9 @@ public abstract class Context {
      * @see #MODE_WORLD_WRITEABLE
      * @see #deleteDatabase
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.018 -0500", hash_original_method = "CFF138C98810AAFA3C986D948D608695", hash_generated_method = "AD10CBC6F1D9E099B1D84A094353EE98")
-    public abstract SQLiteDatabase openOrCreateDatabase(String name,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.937 -0500", hash_original_method = "CFF138C98810AAFA3C986D948D608695", hash_generated_method = "AD10CBC6F1D9E099B1D84A094353EE98")
+    
+public abstract SQLiteDatabase openOrCreateDatabase(String name,
             int mode, CursorFactory factory, DatabaseErrorHandler errorHandler);
 
     /**
@@ -854,8 +891,9 @@ public abstract class Context {
      *
      * @see #openOrCreateDatabase
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.019 -0500", hash_original_method = "1752316DB0D9A8E81BD94E2CBBA178EF", hash_generated_method = "54E202FF29C8ED4DA7B3D196BAE2C3F3")
-    public abstract boolean deleteDatabase(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.940 -0500", hash_original_method = "1752316DB0D9A8E81BD94E2CBBA178EF", hash_generated_method = "54E202FF29C8ED4DA7B3D196BAE2C3F3")
+    
+public abstract boolean deleteDatabase(String name);
 
     /**
      * Returns the absolute path on the filesystem where a database created with
@@ -868,8 +906,9 @@ public abstract class Context {
      *
      * @see #openOrCreateDatabase
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.020 -0500", hash_original_method = "583C17FC6B7E3DFFAAC0FC45F39C8AC8", hash_generated_method = "BC032AB9741AD2FF24A24A1FBCBE105C")
-    public abstract File getDatabasePath(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.942 -0500", hash_original_method = "583C17FC6B7E3DFFAAC0FC45F39C8AC8", hash_generated_method = "BC032AB9741AD2FF24A24A1FBCBE105C")
+    
+public abstract File getDatabasePath(String name);
 
     /**
      * Returns an array of strings naming the private databases associated with
@@ -880,64 +919,72 @@ public abstract class Context {
      * @see #openOrCreateDatabase
      * @see #deleteDatabase
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.020 -0500", hash_original_method = "B8230282CF48DD10A0E383A5447D91F5", hash_generated_method = "6F1F0DDAE14858816E53036B48A64355")
-    public abstract String[] databaseList();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.944 -0500", hash_original_method = "B8230282CF48DD10A0E383A5447D91F5", hash_generated_method = "6F1F0DDAE14858816E53036B48A64355")
+    
+public abstract String[] databaseList();
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#getDrawable
      * WallpaperManager.get()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.021 -0500", hash_original_method = "182231136535D970944A9B258D915F9F", hash_generated_method = "589709498287BB248804743F73FCA22E")
-    @Deprecated
-public abstract Drawable getWallpaper();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.947 -0500", hash_original_method = "182231136535D970944A9B258D915F9F", hash_generated_method = "589709498287BB248804743F73FCA22E")
+    
+@Deprecated
+    public abstract Drawable getWallpaper();
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#peekDrawable
      * WallpaperManager.peek()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.022 -0500", hash_original_method = "726650C1ADA39FFA8794A1993404CF02", hash_generated_method = "A0AC3D831F075845E73FAF1EE2B8634E")
-    @Deprecated
-public abstract Drawable peekWallpaper();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.949 -0500", hash_original_method = "726650C1ADA39FFA8794A1993404CF02", hash_generated_method = "A0AC3D831F075845E73FAF1EE2B8634E")
+    
+@Deprecated
+    public abstract Drawable peekWallpaper();
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#getDesiredMinimumWidth()
      * WallpaperManager.getDesiredMinimumWidth()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.023 -0500", hash_original_method = "928FC8C975BE0E1A39B3739458516914", hash_generated_method = "89162B3A7B68544F63F98A859579E10F")
-    @Deprecated
-public abstract int getWallpaperDesiredMinimumWidth();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.951 -0500", hash_original_method = "928FC8C975BE0E1A39B3739458516914", hash_generated_method = "89162B3A7B68544F63F98A859579E10F")
+    
+@Deprecated
+    public abstract int getWallpaperDesiredMinimumWidth();
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#getDesiredMinimumHeight()
      * WallpaperManager.getDesiredMinimumHeight()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.024 -0500", hash_original_method = "42509641D6B1A0F324345BEAFC0B38ED", hash_generated_method = "67208C119AA23A017985B117412CC4D2")
-    @Deprecated
-public abstract int getWallpaperDesiredMinimumHeight();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.953 -0500", hash_original_method = "42509641D6B1A0F324345BEAFC0B38ED", hash_generated_method = "67208C119AA23A017985B117412CC4D2")
+    
+@Deprecated
+    public abstract int getWallpaperDesiredMinimumHeight();
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#setBitmap(Bitmap)
      * WallpaperManager.set()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.024 -0500", hash_original_method = "775F800C43A170AB1D94B9DE3EB73A03", hash_generated_method = "FC834CE53A3C8F15A47F34306A05660C")
-    @Deprecated
-public abstract void setWallpaper(Bitmap bitmap) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.956 -0500", hash_original_method = "775F800C43A170AB1D94B9DE3EB73A03", hash_generated_method = "FC834CE53A3C8F15A47F34306A05660C")
+    
+@Deprecated
+    public abstract void setWallpaper(Bitmap bitmap) throws IOException;
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#setStream(InputStream)
      * WallpaperManager.set()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.025 -0500", hash_original_method = "0CE3AC6E229A689146C2AE2160D4B98D", hash_generated_method = "BC1C1B5E0500197919BCDC640B5E2B15")
-    @Deprecated
-public abstract void setWallpaper(InputStream data) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.958 -0500", hash_original_method = "0CE3AC6E229A689146C2AE2160D4B98D", hash_generated_method = "BC1C1B5E0500197919BCDC640B5E2B15")
+    
+@Deprecated
+    public abstract void setWallpaper(InputStream data) throws IOException;
 
     /**
      * @deprecated Use {@link android.app.WallpaperManager#clear
      * WallpaperManager.clear()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.026 -0500", hash_original_method = "C306CC7DBE60ED06767F2017979CF098", hash_generated_method = "7F82426C2707E5A28633D9A28B10B23C")
-    @Deprecated
-public abstract void clearWallpaper() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.961 -0500", hash_original_method = "C306CC7DBE60ED06767F2017979CF098", hash_generated_method = "7F82426C2707E5A28633D9A28B10B23C")
+    
+@Deprecated
+    public abstract void clearWallpaper() throws IOException;
 
     /**
      * Launch a new activity.  You will not receive any information about when
@@ -959,8 +1006,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see PackageManager#resolveActivity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.027 -0500", hash_original_method = "06B12B71B896DBD5D7C902DA38D16681", hash_generated_method = "BC85A3AAC104AF5786AD1DC454AD7A2D")
-    public abstract void startActivity(Intent intent);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.963 -0500", hash_original_method = "06B12B71B896DBD5D7C902DA38D16681", hash_generated_method = "BC85A3AAC104AF5786AD1DC454AD7A2D")
+    
+public abstract void startActivity(Intent intent);
 
     /**
      * Launch multiple new activities.  This is generally the same as calling
@@ -982,8 +1030,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see PackageManager#resolveActivity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.028 -0500", hash_original_method = "805B1869BDFCE06BF619D5A658DF064F", hash_generated_method = "A0E9D7EE9D2E9CF7F658AE830D92157B")
-    public abstract void startActivities(Intent[] intents);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.965 -0500", hash_original_method = "805B1869BDFCE06BF619D5A658DF064F", hash_generated_method = "A0E9D7EE9D2E9CF7F658AE830D92157B")
+    
+public abstract void startActivities(Intent[] intents);
 
     /**
      * Like {@link #startActivity(Intent)}, but taking a IntentSender
@@ -1002,8 +1051,9 @@ public abstract void clearWallpaper() throws IOException;
      * <var>flagsMask</var>
      * @param extraFlags Always set to 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.029 -0500", hash_original_method = "8B78B83B6D3FFF1A93A5438E593C534B", hash_generated_method = "4F9ECCA0303DC7065C10CDBCBFA92195")
-    public abstract void startIntentSender(IntentSender intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.967 -0500", hash_original_method = "8B78B83B6D3FFF1A93A5438E593C534B", hash_generated_method = "4F9ECCA0303DC7065C10CDBCBFA92195")
+    
+public abstract void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
             throws IntentSender.SendIntentException;
 
@@ -1027,8 +1077,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.029 -0500", hash_original_method = "758F82A7831A3E63BFA33BC1D51204CD", hash_generated_method = "562685EAD67DEDBF8ECDCC3E48DED167")
-    public abstract void sendBroadcast(Intent intent);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.969 -0500", hash_original_method = "758F82A7831A3E63BFA33BC1D51204CD", hash_generated_method = "562685EAD67DEDBF8ECDCC3E48DED167")
+    
+public abstract void sendBroadcast(Intent intent);
 
     /**
      * Broadcast the given intent to all interested BroadcastReceivers, allowing
@@ -1054,8 +1105,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.030 -0500", hash_original_method = "BD64097323B630BD418E3BBAB8229A5A", hash_generated_method = "99A1B49845C72E86D3E83EC3A7954E4F")
-    public abstract void sendBroadcast(Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.971 -0500", hash_original_method = "BD64097323B630BD418E3BBAB8229A5A", hash_generated_method = "99A1B49845C72E86D3E83EC3A7954E4F")
+    
+public abstract void sendBroadcast(Intent intent,
             String receiverPermission);
 
     /**
@@ -1078,8 +1130,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #sendBroadcast(Intent)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.031 -0500", hash_original_method = "4819235453B1EB0A02E9B2B19D176EA5", hash_generated_method = "C8A50F78D35C84BBE5A0A5E97023628C")
-    public abstract void sendOrderedBroadcast(Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.973 -0500", hash_original_method = "4819235453B1EB0A02E9B2B19D176EA5", hash_generated_method = "C8A50F78D35C84BBE5A0A5E97023628C")
+    
+public abstract void sendOrderedBroadcast(Intent intent,
             String receiverPermission);
 
     /**
@@ -1124,8 +1177,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #registerReceiver
      * @see android.app.Activity#RESULT_OK
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.032 -0500", hash_original_method = "F7F06BF835757EA8F337533771196C96", hash_generated_method = "66B9FEF66D5275FE598D2CA96213915A")
-    public abstract void sendOrderedBroadcast(Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.976 -0500", hash_original_method = "F7F06BF835757EA8F337533771196C96", hash_generated_method = "66B9FEF66D5275FE598D2CA96213915A")
+    
+public abstract void sendOrderedBroadcast(Intent intent,
             String receiverPermission, BroadcastReceiver resultReceiver,
             Handler scheduler, int initialCode, String initialData,
             Bundle initialExtras);
@@ -1149,8 +1203,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #sendBroadcast(Intent)
      * @see #sendStickyOrderedBroadcast(Intent, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.033 -0500", hash_original_method = "EBC415C0B4A9F508CD7CFAFD71BBCC4E", hash_generated_method = "72631BAFAFE1DEE59543EA72FA63139E")
-    public abstract void sendStickyBroadcast(Intent intent);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.978 -0500", hash_original_method = "EBC415C0B4A9F508CD7CFAFD71BBCC4E", hash_generated_method = "72631BAFAFE1DEE59543EA72FA63139E")
+    
+public abstract void sendStickyBroadcast(Intent intent);
 
     /**
      * Version of {@link #sendStickyBroadcast} that allows you to
@@ -1192,8 +1247,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #registerReceiver
      * @see android.app.Activity#RESULT_OK
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.034 -0500", hash_original_method = "93DED7B582D7EACDC4FD6F46909C6664", hash_generated_method = "ACA4150575708078A8D06985E00FFB4B")
-    public abstract void sendStickyOrderedBroadcast(Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.980 -0500", hash_original_method = "93DED7B582D7EACDC4FD6F46909C6664", hash_generated_method = "ACA4150575708078A8D06985E00FFB4B")
+    
+public abstract void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver,
             Handler scheduler, int initialCode, String initialData,
             Bundle initialExtras);
@@ -1211,8 +1267,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #sendStickyBroadcast
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.034 -0500", hash_original_method = "B56100FC007C9CF0EE28A7BE5317FB3F", hash_generated_method = "A2505F97015E7AB0FAE481D35AF7E281")
-    public abstract void removeStickyBroadcast(Intent intent);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.983 -0500", hash_original_method = "B56100FC007C9CF0EE28A7BE5317FB3F", hash_generated_method = "A2505F97015E7AB0FAE481D35AF7E281")
+    
+public abstract void removeStickyBroadcast(Intent intent);
 
     /**
      * Register a BroadcastReceiver to be run in the main activity thread.  The
@@ -1262,8 +1319,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #sendBroadcast
      * @see #unregisterReceiver
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.035 -0500", hash_original_method = "A6B23878A18269BFB006C7A17DB19C65", hash_generated_method = "51315EAC9DE25C2EDA33324D2830C956")
-    public abstract Intent registerReceiver(BroadcastReceiver receiver,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.985 -0500", hash_original_method = "A6B23878A18269BFB006C7A17DB19C65", hash_generated_method = "51315EAC9DE25C2EDA33324D2830C956")
+    
+public abstract Intent registerReceiver(BroadcastReceiver receiver,
                                             IntentFilter filter);
 
     /**
@@ -1297,8 +1355,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #sendBroadcast
      * @see #unregisterReceiver
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.036 -0500", hash_original_method = "43BFB7B71F28DFD8E995A19B52DAC398", hash_generated_method = "EA7684A5E9DC86281F4D7A6AE2E42DED")
-    public abstract Intent registerReceiver(BroadcastReceiver receiver,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.987 -0500", hash_original_method = "43BFB7B71F28DFD8E995A19B52DAC398", hash_generated_method = "EA7684A5E9DC86281F4D7A6AE2E42DED")
+    
+public abstract Intent registerReceiver(BroadcastReceiver receiver,
                                             IntentFilter filter,
                                             String broadcastPermission,
                                             Handler scheduler);
@@ -1312,8 +1371,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #registerReceiver
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.037 -0500", hash_original_method = "A9535E587929A917D1046B408007AAB8", hash_generated_method = "B1E9C90A32AC9A1F8ABA260A8A39EB87")
-    public abstract void unregisterReceiver(BroadcastReceiver receiver);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.990 -0500", hash_original_method = "A9535E587929A917D1046B408007AAB8", hash_generated_method = "B1E9C90A32AC9A1F8ABA260A8A39EB87")
+    
+public abstract void unregisterReceiver(BroadcastReceiver receiver);
 
     /**
      * Request that a given application service be started.  The Intent
@@ -1361,8 +1421,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #stopService
      * @see #bindService
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.038 -0500", hash_original_method = "299DC35BFC98468366A24298AABF9029", hash_generated_method = "9E29465F9BF8E95E0E1D32A7BC59A66B")
-    public abstract ComponentName startService(Intent service);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.992 -0500", hash_original_method = "299DC35BFC98468366A24298AABF9029", hash_generated_method = "9E29465F9BF8E95E0E1D32A7BC59A66B")
+    
+public abstract ComponentName startService(Intent service);
 
     /**
      * Request that a given application service be stopped.  If the service is
@@ -1391,8 +1452,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #startService
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.038 -0500", hash_original_method = "C04E26FF6D7273574E38F7525B1B5BFE", hash_generated_method = "D1BBC18DADDAD8020B4B7AF9615658E7")
-    public abstract boolean stopService(Intent service);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.994 -0500", hash_original_method = "C04E26FF6D7273574E38F7525B1B5BFE", hash_generated_method = "D1BBC18DADDAD8020B4B7AF9615658E7")
+    
+public abstract boolean stopService(Intent service);
 
     /**
      * Connect to an application service, creating it if needed.  This defines
@@ -1440,8 +1502,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #BIND_DEBUG_UNBIND
      * @see #BIND_NOT_FOREGROUND
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.039 -0500", hash_original_method = "BF9EC72D463D2576E4637238C7B5F8A3", hash_generated_method = "4F1CE20356B579F43B07AF5AA56DEB85")
-    public abstract boolean bindService(Intent service, ServiceConnection conn,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.997 -0500", hash_original_method = "BF9EC72D463D2576E4637238C7B5F8A3", hash_generated_method = "4F1CE20356B579F43B07AF5AA56DEB85")
+    
+public abstract boolean bindService(Intent service, ServiceConnection conn,
             int flags);
 
     /**
@@ -1454,8 +1517,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #bindService
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.040 -0500", hash_original_method = "AD50D89FB73F95E5DD03D493BB040603", hash_generated_method = "7E573E5A290A954C1D1A58189D55F91E")
-    public abstract void unbindService(ServiceConnection conn);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.999 -0500", hash_original_method = "AD50D89FB73F95E5DD03D493BB040603", hash_generated_method = "7E573E5A290A954C1D1A58189D55F91E")
+    
+public abstract void unbindService(ServiceConnection conn);
 
     /**
      * Start executing an {@link android.app.Instrumentation} class.  The given
@@ -1480,8 +1544,9 @@ public abstract void clearWallpaper() throws IOException;
      * @return Returns true if the instrumentation was successfully started,
      * else false if it could not be found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.041 -0500", hash_original_method = "3C9955724D7C03F7ACC1E0BE919D98ED", hash_generated_method = "0DBFD3D71F36926811CCCD08EE1A8C4E")
-    public abstract boolean startInstrumentation(ComponentName className,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.001 -0500", hash_original_method = "3C9955724D7C03F7ACC1E0BE919D98ED", hash_generated_method = "0DBFD3D71F36926811CCCD08EE1A8C4E")
+    
+public abstract boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments);
 
     
@@ -1704,8 +1769,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see PackageManager#checkPermission(String, String)
      * @see #checkCallingPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.075 -0500", hash_original_method = "D082A88B633CDD955121276C7960A1D2", hash_generated_method = "1A9A760C3F34E8BF41431C8FE359FD71")
-    public abstract int checkPermission(String permission, int pid, int uid);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.096 -0500", hash_original_method = "D082A88B633CDD955121276C7960A1D2", hash_generated_method = "1A9A760C3F34E8BF41431C8FE359FD71")
+    
+public abstract int checkPermission(String permission, int pid, int uid);
 
     /**
      * Determine whether the calling process of an IPC you are handling has been
@@ -1728,8 +1794,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #checkPermission
      * @see #checkCallingOrSelfPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.076 -0500", hash_original_method = "2FE84AD3C8A7AFA7A1E0B323E24D90CD", hash_generated_method = "B8B1FBDB366F09EB9BA4DA6C5F1B52A6")
-    public abstract int checkCallingPermission(String permission);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.098 -0500", hash_original_method = "2FE84AD3C8A7AFA7A1E0B323E24D90CD", hash_generated_method = "B8B1FBDB366F09EB9BA4DA6C5F1B52A6")
+    
+public abstract int checkCallingPermission(String permission);
 
     /**
      * Determine whether the calling process of an IPC <em>or you</em> have been
@@ -1747,8 +1814,9 @@ public abstract void clearWallpaper() throws IOException;
      * @see #checkPermission
      * @see #checkCallingPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.077 -0500", hash_original_method = "D24832CC3F7AAF93206CABCBAC5A8475", hash_generated_method = "50D229540B7CE715B77F6F1CB606E6D0")
-    public abstract int checkCallingOrSelfPermission(String permission);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.100 -0500", hash_original_method = "D24832CC3F7AAF93206CABCBAC5A8475", hash_generated_method = "50D229540B7CE715B77F6F1CB606E6D0")
+    
+public abstract int checkCallingOrSelfPermission(String permission);
 
     /**
      * If the given permission is not allowed for a particular process
@@ -1762,8 +1830,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkPermission(String, int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.078 -0500", hash_original_method = "79F5C1924154B5416B1D25C64505B4AE", hash_generated_method = "D02FC49536099055A9657497D2941335")
-    public abstract void enforcePermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.102 -0500", hash_original_method = "79F5C1924154B5416B1D25C64505B4AE", hash_generated_method = "D02FC49536099055A9657497D2941335")
+    
+public abstract void enforcePermission(
             String permission, int pid, int uid, String message);
 
     /**
@@ -1784,8 +1853,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkCallingPermission(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.078 -0500", hash_original_method = "03E6A01992433D9A651C0CF7DB0FD356", hash_generated_method = "B35E69822C060BFFFFCBF4D3662F1B47")
-    public abstract void enforceCallingPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.104 -0500", hash_original_method = "03E6A01992433D9A651C0CF7DB0FD356", hash_generated_method = "B35E69822C060BFFFFCBF4D3662F1B47")
+    
+public abstract void enforceCallingPermission(
             String permission, String message);
 
     /**
@@ -1801,8 +1871,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkCallingOrSelfPermission(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.079 -0500", hash_original_method = "41A9367C5CFF83D503396F4DCCE577EA", hash_generated_method = "029DAD1BE59665EC9DBD3CCAF314BC23")
-    public abstract void enforceCallingOrSelfPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.106 -0500", hash_original_method = "41A9367C5CFF83D503396F4DCCE577EA", hash_generated_method = "029DAD1BE59665EC9DBD3CCAF314BC23")
+    
+public abstract void enforceCallingOrSelfPermission(
             String permission, String message);
 
     /**
@@ -1838,8 +1909,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #revokeUriPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.080 -0500", hash_original_method = "7DA1D740B3E06BF786612D7F97203CBE", hash_generated_method = "1C0E75C2DCD187AD957D55FDE4C9D629")
-    public abstract void grantUriPermission(String toPackage, Uri uri,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.108 -0500", hash_original_method = "7DA1D740B3E06BF786612D7F97203CBE", hash_generated_method = "1C0E75C2DCD187AD957D55FDE4C9D629")
+    
+public abstract void grantUriPermission(String toPackage, Uri uri,
             int modeFlags);
 
     /**
@@ -1859,8 +1931,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #grantUriPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.081 -0500", hash_original_method = "0306B947BBF857241429E2E85B01DB78", hash_generated_method = "8192A9BD34FB57FA552809171B926DDD")
-    public abstract void revokeUriPermission(Uri uri, int modeFlags);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.111 -0500", hash_original_method = "0306B947BBF857241429E2E85B01DB78", hash_generated_method = "8192A9BD34FB57FA552809171B926DDD")
+    
+public abstract void revokeUriPermission(Uri uri, int modeFlags);
 
     /**
      * Determine whether a particular process and user ID has been granted
@@ -1883,8 +1956,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkCallingUriPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.082 -0500", hash_original_method = "1757A8458C42B7C8D1A9F485BF64EDA3", hash_generated_method = "3557B40505AF6FD102044B31A129F3E7")
-    public abstract int checkUriPermission(Uri uri, int pid, int uid, int modeFlags);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.113 -0500", hash_original_method = "1757A8458C42B7C8D1A9F485BF64EDA3", hash_generated_method = "3557B40505AF6FD102044B31A129F3E7")
+    
+public abstract int checkUriPermission(Uri uri, int pid, int uid, int modeFlags);
 
     /**
      * Determine whether the calling process and user ID has been
@@ -1907,8 +1981,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkUriPermission(Uri, int, int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.083 -0500", hash_original_method = "0615EBE9BDAF897A2BD15403E828839B", hash_generated_method = "8200FB2F1C4C720580D19F3C9F8ACD99")
-    public abstract int checkCallingUriPermission(Uri uri, int modeFlags);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.115 -0500", hash_original_method = "0615EBE9BDAF897A2BD15403E828839B", hash_generated_method = "8200FB2F1C4C720580D19F3C9F8ACD99")
+    
+public abstract int checkCallingUriPermission(Uri uri, int modeFlags);
 
     /**
      * Determine whether the calling process of an IPC <em>or you</em> has been granted
@@ -1927,8 +2002,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkCallingUriPermission
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.083 -0500", hash_original_method = "ED277C304B3725DB9F517B507BDBD439", hash_generated_method = "632F3A5C67A65EC30FCDFEDF3607B7C3")
-    public abstract int checkCallingOrSelfUriPermission(Uri uri, int modeFlags);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.118 -0500", hash_original_method = "ED277C304B3725DB9F517B507BDBD439", hash_generated_method = "632F3A5C67A65EC30FCDFEDF3607B7C3")
+    
+public abstract int checkCallingOrSelfUriPermission(Uri uri, int modeFlags);
 
     /**
      * Check both a Uri and normal permission.  This allows you to perform
@@ -1952,8 +2028,9 @@ public abstract void clearWallpaper() throws IOException;
      * is allowed to access that uri or holds one of the given permissions, or
      * {@link PackageManager#PERMISSION_DENIED} if it is not.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.084 -0500", hash_original_method = "EE95A7B4E97764158E7FDB1CC97A0FB6", hash_generated_method = "44619D0DE6DDE5EEC9789A4F163EB2BF")
-    public abstract int checkUriPermission(Uri uri, String readPermission,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.120 -0500", hash_original_method = "EE95A7B4E97764158E7FDB1CC97A0FB6", hash_generated_method = "44619D0DE6DDE5EEC9789A4F163EB2BF")
+    
+public abstract int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags);
 
     /**
@@ -1975,8 +2052,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkUriPermission(Uri, int, int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.085 -0500", hash_original_method = "33D5D121AB2E9803842E10640EE4CED1", hash_generated_method = "86E3442483CEB1D81E720E648E522F7B")
-    public abstract void enforceUriPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.122 -0500", hash_original_method = "33D5D121AB2E9803842E10640EE4CED1", hash_generated_method = "86E3442483CEB1D81E720E648E522F7B")
+    
+public abstract void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message);
 
     /**
@@ -1998,8 +2076,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkCallingUriPermission(Uri, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.086 -0500", hash_original_method = "4DCC378B9BE44D8B9024F5ADE533C126", hash_generated_method = "3A99395B330707793FEDF1B9CE0E1EAF")
-    public abstract void enforceCallingUriPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.124 -0500", hash_original_method = "4DCC378B9BE44D8B9024F5ADE533C126", hash_generated_method = "3A99395B330707793FEDF1B9CE0E1EAF")
+    
+public abstract void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message);
 
     /**
@@ -2018,8 +2097,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkCallingOrSelfUriPermission(Uri, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.087 -0500", hash_original_method = "2585E253391DA96EC43FD98AE09B8F05", hash_generated_method = "0319F16FA5F8C6E503F65CBE90B82709")
-    public abstract void enforceCallingOrSelfUriPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.127 -0500", hash_original_method = "2585E253391DA96EC43FD98AE09B8F05", hash_generated_method = "0319F16FA5F8C6E503F65CBE90B82709")
+    
+public abstract void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message);
 
     /**
@@ -2043,8 +2123,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #checkUriPermission(Uri, String, String, int, int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.087 -0500", hash_original_method = "67DE4ABCCDAFBFC79BE2B9C2FB827578", hash_generated_method = "BBD85522911302A8A5EEC69E3D851BE3")
-    public abstract void enforceUriPermission(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.129 -0500", hash_original_method = "67DE4ABCCDAFBFC79BE2B9C2FB827578", hash_generated_method = "BBD85522911302A8A5EEC69E3D851BE3")
+    
+public abstract void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
             int pid, int uid, int modeFlags, String message);
 
@@ -2073,8 +2154,9 @@ public abstract void clearWallpaper() throws IOException;
      * @throws PackageManager.NameNotFoundException if there is no application with
      * the given package name
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.091 -0500", hash_original_method = "A3579BABAE7FBC221E5B34E715DFD559", hash_generated_method = "588C9ADBC456FB841F9114D12A7471C3")
-    public abstract Context createPackageContext(String packageName,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.139 -0500", hash_original_method = "A3579BABAE7FBC221E5B34E715DFD559", hash_generated_method = "588C9ADBC456FB841F9114D12A7471C3")
+    
+public abstract Context createPackageContext(String packageName,
             int flags) throws PackageManager.NameNotFoundException;
 
     /**
@@ -2084,8 +2166,9 @@ public abstract void clearWallpaper() throws IOException;
      *
      * @see #CONTEXT_RESTRICTED
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.092 -0500", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "5F09F86AB7736674ADD7B4B91DD7FE80")
-    public boolean isRestricted() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.141 -0500", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "5F09F86AB7736674ADD7B4B91DD7FE80")
+    
+public boolean isRestricted() {
         return false;
     }
 	

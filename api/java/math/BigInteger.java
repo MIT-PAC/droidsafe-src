@@ -18,8 +18,9 @@ import java.util.Random;
 public class BigInteger extends Number implements Comparable<BigInteger>, Serializable {
 
     /** Returns a {@code BigInteger} whose value is equal to {@code value}. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.767 -0500", hash_original_method = "C2FDE5DE76618A54A899B2942400B087", hash_generated_method = "8E297D69B9A8CF458E31251DBFCB859D")
-    public static BigInteger valueOf(long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.051 -0500", hash_original_method = "C2FDE5DE76618A54A899B2942400B087", hash_generated_method = "8E297D69B9A8CF458E31251DBFCB859D")
+    
+public static BigInteger valueOf(long value) {
         if (value < 0) {
             if (value != -1) {
                 return new BigInteger(-1, -value);
@@ -44,14 +45,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @return probably prime random {@code BigInteger} instance.
      * @throws IllegalArgumentException if {@code bitLength < 2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.806 -0500", hash_original_method = "6FBA03CFDD0A41CE705B7E15E5C549E4", hash_generated_method = "1DEA6F01370CA61EAEFEF50084B76202")
-    public static BigInteger probablePrime(int bitLength, Random unused) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.160 -0500", hash_original_method = "6FBA03CFDD0A41CE705B7E15E5C549E4", hash_generated_method = "1DEA6F01370CA61EAEFEF50084B76202")
+    
+public static BigInteger probablePrime(int bitLength, Random unused) {
         return new BigInteger(bitLength, 100, unused);
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.808 -0500", hash_original_method = "C7B24549F3F38126668B66F80A32808B", hash_generated_method = "D8C015B8260638A2E20D10D80BC5B8F4")
-    static int multiplyByInt(int[] res, int[] a, int aSize, int factor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.171 -0500", hash_original_method = "C7B24549F3F38126668B66F80A32808B", hash_generated_method = "D8C015B8260638A2E20D10D80BC5B8F4")
+    
+static int multiplyByInt(int[] res, int[] a, int aSize, int factor) {
         long carry = 0;
 
         for (int i = 0; i < aSize; i++) {
@@ -62,8 +65,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         return (int) carry;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.809 -0500", hash_original_method = "705008DE67289C90705C837DB37F4C4C", hash_generated_method = "D38AAE882AD3DFA5EF106DD87127C5A3")
-    static int inplaceAdd(int[] a, int aSize, int addend) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.173 -0500", hash_original_method = "705008DE67289C90705C837DB37F4C4C", hash_generated_method = "D38AAE882AD3DFA5EF106DD87127C5A3")
+    
+static int inplaceAdd(int[] a, int aSize, int addend) {
         long carry = addend & 0xFFFFFFFFL;
 
         for (int i = 0; (carry != 0) && (i < aSize); i++) {
@@ -75,8 +79,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     /** @see BigInteger#BigInteger(String, int) */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.810 -0500", hash_original_method = "31C70867F91FE3CA68BF0BEC64F970DB", hash_generated_method = "46CFFD1E7ED44ACF51128B6AB195E08E")
-    private static void parseFromString(BigInteger bi, String value, int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.177 -0500", hash_original_method = "31C70867F91FE3CA68BF0BEC64F970DB", hash_generated_method = "46CFFD1E7ED44ACF51128B6AB195E08E")
+    
+private static void parseFromString(BigInteger bi, String value, int radix) {
         int stringLength = value.length();
         int endChar = stringLength;
 
@@ -123,72 +128,74 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         int numberLength = digitIndex;
         bi.setJavaRepresentation(sign, numberLength, digits);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.739 -0500", hash_original_field = "B01E34841DA096139E10133167649900", hash_generated_field = "ED603E28013A68CF87DC39EDA9672B96")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.977 -0500", hash_original_field = "B01E34841DA096139E10133167649900", hash_generated_field = "ED603E28013A68CF87DC39EDA9672B96")
 
     private static final long serialVersionUID = -8287574255936472291L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.746 -0500", hash_original_field = "CA50B9D0BCD5064BDD77FC670208B1F5", hash_generated_field = "26A57E8798A6CA862A91D3C87254CE3F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.993 -0500", hash_original_field = "CA50B9D0BCD5064BDD77FC670208B1F5", hash_generated_field = "26A57E8798A6CA862A91D3C87254CE3F")
 
     public static final BigInteger ZERO = new BigInteger(0, 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.747 -0500", hash_original_field = "1AADE90F051788EB1DD85F8A6A319562", hash_generated_field = "61E4C0227042D85901BA98B2F2CD52C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.996 -0500", hash_original_field = "1AADE90F051788EB1DD85F8A6A319562", hash_generated_field = "61E4C0227042D85901BA98B2F2CD52C4")
 
     public static final BigInteger ONE = new BigInteger(1, 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.748 -0500", hash_original_field = "FFC69B899AC608F823E147067B44A5DF", hash_generated_field = "7A2B2FAA86270609C420795EB3DF7501")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.998 -0500", hash_original_field = "FFC69B899AC608F823E147067B44A5DF", hash_generated_field = "7A2B2FAA86270609C420795EB3DF7501")
 
     public static final BigInteger TEN = new BigInteger(1, 10);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.749 -0500", hash_original_field = "7C78BE1CDCF527B68CDE94B4D7113B40", hash_generated_field = "3BE0BD039FD8F547BF6DF239E6C29295")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.001 -0500", hash_original_field = "7C78BE1CDCF527B68CDE94B4D7113B40", hash_generated_field = "3BE0BD039FD8F547BF6DF239E6C29295")
 
     static final BigInteger MINUS_ONE = new BigInteger(-1, 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.750 -0500", hash_original_field = "0EAB5AFB684812FC0F688B1DFE4F6FE5", hash_generated_field = "17509E6A3C7F1A18AC1574943921E065")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.003 -0500", hash_original_field = "0EAB5AFB684812FC0F688B1DFE4F6FE5", hash_generated_field = "17509E6A3C7F1A18AC1574943921E065")
 
     static final BigInteger[] SMALL_VALUES = { ZERO, ONE, new BigInteger(1, 2),
             new BigInteger(1, 3), new BigInteger(1, 4), new BigInteger(1, 5),
             new BigInteger(1, 6), new BigInteger(1, 7), new BigInteger(1, 8),
             new BigInteger(1, 9), TEN };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.741 -0500", hash_original_field = "8B1F11A189C33308C17EAC9DE1D9EB40", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.979 -0500", hash_original_field = "8B1F11A189C33308C17EAC9DE1D9EB40", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
 
 
     private transient BigInt bigInt;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.742 -0500", hash_original_field = "30712829ABEB3E05826E08646BCD372A", hash_generated_field = "B1CF9FA5CC5896A14634587A7438CDD0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.981 -0500", hash_original_field = "30712829ABEB3E05826E08646BCD372A", hash_generated_field = "B1CF9FA5CC5896A14634587A7438CDD0")
 
 
     private transient boolean nativeIsValid = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.743 -0500", hash_original_field = "7D97B0F2E07AB4DED8E5B5C3EBD340B7", hash_generated_field = "36EDDB91E81C2B3A992259BBDA560C8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.983 -0500", hash_original_field = "7D97B0F2E07AB4DED8E5B5C3EBD340B7", hash_generated_field = "36EDDB91E81C2B3A992259BBDA560C8D")
 
 
     private transient boolean javaIsValid = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.743 -0500", hash_original_field = "F3BACA7431BCD9B2A0C7C12B903D5C71", hash_generated_field = "EF92B8843E3664BCE02DEF9DAE8B81D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.985 -0500", hash_original_field = "F3BACA7431BCD9B2A0C7C12B903D5C71", hash_generated_field = "EF92B8843E3664BCE02DEF9DAE8B81D8")
 
     transient int[] digits;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.744 -0500", hash_original_field = "2F63ECB6611EB1219270D2FB208812B3", hash_generated_field = "49E386B29ED8E51F4B9308F78ED67301")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.988 -0500", hash_original_field = "2F63ECB6611EB1219270D2FB208812B3", hash_generated_field = "49E386B29ED8E51F4B9308F78ED67301")
 
     transient int numberLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.745 -0500", hash_original_field = "D65D12C3CC2152F78FB95A1E5A36C1C1", hash_generated_field = "92BF56588B083F4EFC932B66DB92601C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.990 -0500", hash_original_field = "D65D12C3CC2152F78FB95A1E5A36C1C1", hash_generated_field = "92BF56588B083F4EFC932B66DB92601C")
 
     transient int sign;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.751 -0500", hash_original_field = "75D237340EE54C075A6ACF28486040A5", hash_generated_field = "6063015DEF6F532F83AE577B35CA2F93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.006 -0500", hash_original_field = "75D237340EE54C075A6ACF28486040A5", hash_generated_field = "6063015DEF6F532F83AE577B35CA2F93")
 
 
     private transient int firstNonzeroDigit = -2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.751 -0500", hash_original_field = "E1768AECDAE6AFB2AD0365352B89B842", hash_generated_field = "9E963B134F5112D99A51A8B2403DC06B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.009 -0500", hash_original_field = "E1768AECDAE6AFB2AD0365352B89B842", hash_generated_field = "9E963B134F5112D99A51A8B2403DC06B")
 
     private int signum;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.752 -0500", hash_original_field = "71109E1D8D34C5788914959F000A8066", hash_generated_field = "62EEE6A49B1745E7CDFD636319A9ED04")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.011 -0500", hash_original_field = "71109E1D8D34C5788914959F000A8066", hash_generated_field = "62EEE6A49B1745E7CDFD636319A9ED04")
 
     private byte[] magnitude;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.753 -0500", hash_original_field = "2257B8AF42139E78B9EB6F31816249E1", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.013 -0500", hash_original_field = "2257B8AF42139E78B9EB6F31816249E1", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
 
     private transient int hashCode = 0;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.754 -0500", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "E2046ACAAE3FADB78A197B33030B87EF")
-    BigInteger(BigInt bigInt) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.016 -0500", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "E2046ACAAE3FADB78A197B33030B87EF")
+    
+BigInteger(BigInt bigInt) {
         if (bigInt == null || bigInt.getNativeBIGNUM() == 0) {
             throw new AssertionError();
         }
         setBigInt(bigInt);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.755 -0500", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "6A0326FFA4F8DFD22C6BE505D4303A06")
-    BigInteger(int sign, long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.019 -0500", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "6A0326FFA4F8DFD22C6BE505D4303A06")
+    
+BigInteger(int sign, long value) {
         BigInt bigInt = new BigInt();
         bigInt.putULongInt(value, (sign < 0));
         setBigInt(bigInt);
@@ -202,8 +209,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param numberLength the length of the internal array.
      * @param digits a reference of some array created before.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.756 -0500", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "8FE766A630C587CF3D36C6776BEC57AB")
-    BigInteger(int sign, int numberLength, int[] digits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.022 -0500", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "8FE766A630C587CF3D36C6776BEC57AB")
+    
+BigInteger(int sign, int numberLength, int[] digits) {
         setJavaRepresentation(sign, numberLength, digits);
     }
 
@@ -215,8 +223,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param random is the random number generator to be used.
      * @throws IllegalArgumentException if {@code numBits} < 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.757 -0500", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "2F7712F0158E44CE9F92A42841FE1AB4")
-    public BigInteger(int numBits, Random random) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.025 -0500", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "2F7712F0158E44CE9F92A42841FE1AB4")
+    
+public BigInteger(int numBits, Random random) {
         if (numBits < 0) {
             throw new IllegalArgumentException("numBits < 0: " + numBits);
         }
@@ -252,8 +261,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @see <a href="http://www.openssl.org/docs/crypto/BN_rand.html">
      *      Specification of random generator used from OpenSSL library</a>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.758 -0500", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "7FC5B6E46A83DACD171636A0E51EB749")
-    public BigInteger(int bitLength, int certainty, Random unused) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.028 -0500", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "7FC5B6E46A83DACD171636A0E51EB749")
+    
+public BigInteger(int bitLength, int certainty, Random unused) {
         if (bitLength < 2) {
             throw new ArithmeticException("bitLength < 2: " + bitLength);
         }
@@ -271,8 +281,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @throws NumberFormatException if {@code value} is not a valid
      *     representation of a {@code BigInteger}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.759 -0500", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "A6981D88CADD3487404EAED79DA2A6AB")
-    public BigInteger(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.030 -0500", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "A6981D88CADD3487404EAED79DA2A6AB")
+    
+public BigInteger(String value) {
         BigInt bigInt = new BigInt();
         bigInt.putDecString(value);
         setBigInt(bigInt);
@@ -291,8 +302,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      *     representation of a {@code BigInteger} or if {@code radix <
      *     Character.MIN_RADIX} or {@code radix > Character.MAX_RADIX}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.760 -0500", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "512F685274ADAFAD6DD6C70AAD154DA0")
-    public BigInteger(String value, int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.033 -0500", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "512F685274ADAFAD6DD6C70AAD154DA0")
+    
+public BigInteger(String value, int radix) {
         if (value == null) {
             throw new NullPointerException("value == null");
         }
@@ -327,8 +339,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @throws NumberFormatException if the sign is not one of -1, 0, 1 or if
      *     the sign is zero and the magnitude contains non-zero entries.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.761 -0500", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "B96FD7194735C121EFA04CE68919A4EF")
-    public BigInteger(int signum, byte[] magnitude) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.037 -0500", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "B96FD7194735C121EFA04CE68919A4EF")
+    
+public BigInteger(int signum, byte[] magnitude) {
         if (magnitude == null) {
             throw new NullPointerException("magnitude == null");
         }
@@ -358,8 +371,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @throws NullPointerException if {@code value == null}.
      * @throws NumberFormatException if the length of {@code value} is zero.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.762 -0500", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "7618596B4E57DE2491B9082339F7E9E1")
-    public BigInteger(byte[] value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.039 -0500", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "7618596B4E57DE2491B9082339F7E9E1")
+    
+public BigInteger(byte[] value) {
         if (value.length == 0) {
             throw new NumberFormatException("value.length == 0");
         }
@@ -372,8 +386,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * Returns the internal native representation of this big integer, computing
      * it if necessary.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.763 -0500", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "7B92331634E6E3BE19D048B912B09B7F")
-    BigInt getBigInt() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.042 -0500", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "7B92331634E6E3BE19D048B912B09B7F")
+    
+BigInt getBigInt() {
         if (nativeIsValid) {
             return bigInt;
         }
@@ -389,14 +404,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.764 -0500", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "F99F31624AA27DC230F423194AAF8792")
-    private void setBigInt(BigInt bigInt) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.044 -0500", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "F99F31624AA27DC230F423194AAF8792")
+    
+private void setBigInt(BigInt bigInt) {
         this.bigInt = bigInt;
         this.nativeIsValid = true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.765 -0500", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "D7289D75A154A3BB4CB7F91CC59A7131")
-    private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.047 -0500", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "D7289D75A154A3BB4CB7F91CC59A7131")
+    
+private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
         // decrement numberLength to drop leading zeroes...
         while (numberLength > 0 && digits[--numberLength] == 0) {
             ;
@@ -411,8 +428,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         this.javaIsValid = true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.766 -0500", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "E11A76F306D885B62849938EE7ACFF1F")
-    void prepareJavaRepresentation() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.049 -0500", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "E11A76F306D885B62849938EE7ACFF1F")
+    
+void prepareJavaRepresentation() {
         if (javaIsValid) {
             return;
         }
@@ -431,8 +449,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * Returns the two's complement representation of this {@code BigInteger} in
      * a byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.768 -0500", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "892F82226DA47F44D2E09C61D62E2B3B")
-    public byte[] toByteArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.054 -0500", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "892F82226DA47F44D2E09C61D62E2B3B")
+    
+public byte[] toByteArray() {
         return twosComplement();
     }
 
@@ -440,8 +459,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * Returns a {@code BigInteger} whose value is the absolute value of {@code
      * this}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.769 -0500", hash_original_method = "4D099B3B9B18238917CAE07611FC89C9", hash_generated_method = "F267A5704272BE89EA3F7C35E712A701")
-    public BigInteger abs() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.057 -0500", hash_original_method = "4D099B3B9B18238917CAE07611FC89C9", hash_generated_method = "F267A5704272BE89EA3F7C35E712A701")
+    
+public BigInteger abs() {
         BigInt bigInt = getBigInt();
         if (bigInt.sign() >= 0) {
             return this;
@@ -454,8 +474,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     /**
      * Returns a {@code BigInteger} whose value is the {@code -this}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.769 -0500", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "0DAADEE6B9A5717095A88BAABC31792C")
-    public BigInteger negate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.059 -0500", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "0DAADEE6B9A5717095A88BAABC31792C")
+    
+public BigInteger negate() {
         BigInt bigInt = getBigInt();
         int sign = bigInt.sign();
         if (sign == 0) {
@@ -469,8 +490,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     /**
      * Returns a {@code BigInteger} whose value is {@code this + value}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.771 -0500", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "103D8A482482E26FF5F1931171C13AE9")
-    public BigInteger add(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.062 -0500", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "103D8A482482E26FF5F1931171C13AE9")
+    
+public BigInteger add(BigInteger value) {
         BigInt lhs = getBigInt();
         BigInt rhs = value.getBigInt();
         if (rhs.sign() == 0) {
@@ -485,8 +507,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     /**
      * Returns a {@code BigInteger} whose value is {@code this - value}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.771 -0500", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "3DF9F62B067C971AA066D993B101E311")
-    public BigInteger subtract(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.064 -0500", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "3DF9F62B067C971AA066D993B101E311")
+    
+public BigInteger subtract(BigInteger value) {
         BigInt lhs = getBigInt();
         BigInt rhs = value.getBigInt();
         if (rhs.sign() == 0) {
@@ -501,8 +524,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @return {@code -1} if {@code this < 0}, {@code 0} if {@code this == 0},
      *     {@code 1} if {@code this > 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.772 -0500", hash_original_method = "0A534AADB97A9D37B49476B54B03D66A", hash_generated_method = "856FCB7A4FE9E3AA13F89CE08BE69761")
-    public int signum() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.067 -0500", hash_original_method = "0A534AADB97A9D37B49476B54B03D66A", hash_generated_method = "856FCB7A4FE9E3AA13F89CE08BE69761")
+    
+public int signum() {
         if (javaIsValid) {
             return sign;
         }
@@ -521,8 +545,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @return {@code this >> n} if {@code n >= 0}; {@code this << (-n)}
      *     otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.773 -0500", hash_original_method = "1B97FA7BE1DE29423609E814DD90E66F", hash_generated_method = "656588917C69CA3E141F8FDB7B44B04D")
-    public BigInteger shiftRight(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.069 -0500", hash_original_method = "1B97FA7BE1DE29423609E814DD90E66F", hash_generated_method = "656588917C69CA3E141F8FDB7B44B04D")
+    
+public BigInteger shiftRight(int n) {
         return shiftLeft(-n);
     }
 
@@ -539,8 +564,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @return {@code this << n} if {@code n >= 0}; {@code this >> (-n)}.
      *     otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.774 -0500", hash_original_method = "3E0E92A5CC7CF6FE74FD251028917DBB", hash_generated_method = "E6946BA63A0F030FD3EA901FC686AE89")
-    public BigInteger shiftLeft(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.071 -0500", hash_original_method = "3E0E92A5CC7CF6FE74FD251028917DBB", hash_generated_method = "E6946BA63A0F030FD3EA901FC686AE89")
+    
+public BigInteger shiftLeft(int n) {
         if (n == 0) {
             return this;
         }
@@ -558,8 +584,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.775 -0500", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "3F948826829C47AB028976261F4B8D55")
-    BigInteger shiftLeftOneBit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.073 -0500", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "3F948826829C47AB028976261F4B8D55")
+    
+BigInteger shiftLeftOneBit() {
         return (signum() == 0) ? this : BitLevel.shiftLeftOneBit(this);
     }
 
@@ -577,8 +604,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @return the length of the minimal two's complement representation for
      *     {@code this} without the sign bit.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.775 -0500", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "192E350244C455B1F1EE9AC859003D57")
-    public int bitLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.075 -0500", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "192E350244C455B1F1EE9AC859003D57")
+    
+public int bitLength() {
         // Optimization to avoid unnecessary duplicate representation:
         if (!nativeIsValid && javaIsValid) {
             return BitLevel.bitLength(this);
@@ -596,8 +624,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param n position where the bit in {@code this} has to be inspected.
      * @throws ArithmeticException if {@code n < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.776 -0500", hash_original_method = "22DB08B3CA9DDA99CEE301218284C513", hash_generated_method = "42D93F7A18894E577C30E77098DC5ACF")
-    public boolean testBit(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.079 -0500", hash_original_method = "22DB08B3CA9DDA99CEE301218284C513", hash_generated_method = "42D93F7A18894E577C30E77098DC5ACF")
+    
+public boolean testBit(int n) {
         if (n < 0) {
             throw new ArithmeticException("n < 0: " + n);
         }
@@ -643,8 +672,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param n position where the bit in {@code this} has to be set.
      * @throws ArithmeticException if {@code n < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.777 -0500", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "ACAC396F94B806A4371B9CBF03A7E39C")
-    public BigInteger setBit(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.082 -0500", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "ACAC396F94B806A4371B9CBF03A7E39C")
+    
+public BigInteger setBit(int n) {
         prepareJavaRepresentation();
         if (!testBit(n)) {
             return BitLevel.flipBit(this, n);
@@ -664,8 +694,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param n position where the bit in {@code this} has to be cleared.
      * @throws ArithmeticException if {@code n < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.778 -0500", hash_original_method = "8D8C5374E542B708B8A1B41B31DCBF03", hash_generated_method = "1F3A4BBB87B20B5332690F48A5AD38BB")
-    public BigInteger clearBit(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.084 -0500", hash_original_method = "8D8C5374E542B708B8A1B41B31DCBF03", hash_generated_method = "1F3A4BBB87B20B5332690F48A5AD38BB")
+    
+public BigInteger clearBit(int n) {
         prepareJavaRepresentation();
         if (testBit(n)) {
             return BitLevel.flipBit(this, n);
@@ -685,8 +716,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param n position where the bit in {@code this} has to be flipped.
      * @throws ArithmeticException if {@code n < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.779 -0500", hash_original_method = "F1D37134A8936EE90081AD78D8487F59", hash_generated_method = "C7DADDCBCCB465B23BD13D33D74B5811")
-    public BigInteger flipBit(int n) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.087 -0500", hash_original_method = "F1D37134A8936EE90081AD78D8487F59", hash_generated_method = "C7DADDCBCCB465B23BD13D33D74B5811")
+    
+public BigInteger flipBit(int n) {
         prepareJavaRepresentation();
         if (n < 0) {
             throw new ArithmeticException("n < 0: " + n);
@@ -702,8 +734,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * <p><b>Implementation Note:</b> Usage of this method is not recommended as
      * the current implementation is not efficient.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.780 -0500", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "0240D4D544EB0AB147B86F0291658CBB")
-    public int getLowestSetBit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.089 -0500", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "0240D4D544EB0AB147B86F0291658CBB")
+    
+public int getLowestSetBit() {
         prepareJavaRepresentation();
         if (sign == 0) {
             return -1;
@@ -725,8 +758,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * <p><b>Implementation Note:</b> Usage of this method is not recommended as
      * the current implementation is not efficient.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.781 -0500", hash_original_method = "2461573222D281ABCA9F3F34AA40AFB9", hash_generated_method = "F64C7C88C7C41750523497099266D5F6")
-    public int bitCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.092 -0500", hash_original_method = "2461573222D281ABCA9F3F34AA40AFB9", hash_generated_method = "F64C7C88C7C41750523497099266D5F6")
+    
+public int bitCount() {
         prepareJavaRepresentation();
         return BitLevel.bitCount(this);
     }
@@ -738,8 +772,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * <p><b>Implementation Note:</b> Usage of this method is not recommended as
      * the current implementation is not efficient.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.781 -0500", hash_original_method = "CD87C1AB82AE5BD1BDB1D71C1F7F211A", hash_generated_method = "1B04ABA877CCBD0E1E575DF189246C8A")
-    public BigInteger not() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.094 -0500", hash_original_method = "CD87C1AB82AE5BD1BDB1D71C1F7F211A", hash_generated_method = "1B04ABA877CCBD0E1E575DF189246C8A")
+    
+public BigInteger not() {
         this.prepareJavaRepresentation();
         return Logical.not(this);
     }
@@ -753,8 +788,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param value value to be and'ed with {@code this}.
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.782 -0500", hash_original_method = "B57E8848F50ED2CEFC86EA20A70D185D", hash_generated_method = "E390F221FD3B6EFB2D6B188269692DED")
-    public BigInteger and(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.096 -0500", hash_original_method = "B57E8848F50ED2CEFC86EA20A70D185D", hash_generated_method = "E390F221FD3B6EFB2D6B188269692DED")
+    
+public BigInteger and(BigInteger value) {
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
         return Logical.and(this, value);
@@ -769,8 +805,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param value value to be or'ed with {@code this}.
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.783 -0500", hash_original_method = "AED35BC9F3B39A40B35087479AE4F222", hash_generated_method = "AA97662B74EE0B943FFB5E59B870DADB")
-    public BigInteger or(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.098 -0500", hash_original_method = "AED35BC9F3B39A40B35087479AE4F222", hash_generated_method = "AA97662B74EE0B943FFB5E59B870DADB")
+    
+public BigInteger or(BigInteger value) {
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
         return Logical.or(this, value);
@@ -785,8 +822,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param value value to be xor'ed with {@code this}
      * @throws NullPointerException if {@code value == null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.784 -0500", hash_original_method = "0162D315FD06686CC7830A3D5D5A796E", hash_generated_method = "0A09580D6374A9ABE6FD31506656DCA0")
-    public BigInteger xor(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.101 -0500", hash_original_method = "0162D315FD06686CC7830A3D5D5A796E", hash_generated_method = "0A09580D6374A9ABE6FD31506656DCA0")
+    
+public BigInteger xor(BigInteger value) {
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
         return Logical.xor(this, value);
@@ -803,8 +841,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * @param value value to be not'ed and then and'ed with {@code this}.
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.785 -0500", hash_original_method = "A8A90B9F7EBADE4F51C070D1C780A515", hash_generated_method = "5C70BF6C4CC5266A2BD636C7E48B453C")
-    public BigInteger andNot(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.103 -0500", hash_original_method = "A8A90B9F7EBADE4F51C070D1C780A515", hash_generated_method = "5C70BF6C4CC5266A2BD636C7E48B453C")
+    
+public BigInteger andNot(BigInteger value) {
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
         return Logical.andNot(this, value);
@@ -815,9 +854,10 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
      * big to be represented as an int, then {@code this % (1 << 32)} is
      * returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.786 -0500", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "9DDA6B2A2F12A4C05D253F20B9180AC4")
-    @Override
-public int intValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.106 -0500", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "9DDA6B2A2F12A4C05D253F20B9180AC4")
+    
+@Override
+    public int intValue() {
         if (nativeIsValid && bigInt.twosCompFitsIntoBytes(4)) {
             return (int) bigInt.longInt();
         }
@@ -830,9 +870,10 @@ public int intValue() {
      * big to be represented as a long, then {@code this % pow(2, 64)} is
      * returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.787 -0500", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "1610A53DFCD3ED2ADE18A93892CE371C")
-    @Override
-public long longValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.108 -0500", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "1610A53DFCD3ED2ADE18A93892CE371C")
+    
+@Override
+    public long longValue() {
         if (nativeIsValid && bigInt.twosCompFitsIntoBytes(8)) {
             return bigInt.longInt();
         }
@@ -850,9 +891,10 @@ public long longValue() {
      * in the range {@code [-Float.MAX_VALUE, Float.MAX_VALUE]} can be exactly
      * represented as a float.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.788 -0500", hash_original_method = "85C514A29B5895D821780B89C4F747B0", hash_generated_method = "EB9D0F74036E443D5420C7383738933B")
-    @Override
-public float floatValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.112 -0500", hash_original_method = "85C514A29B5895D821780B89C4F747B0", hash_generated_method = "EB9D0F74036E443D5420C7383738933B")
+    
+@Override
+    public float floatValue() {
         return (float) doubleValue();
     }
 
@@ -863,9 +905,10 @@ public float floatValue() {
      * in the range {@code [-Double.MAX_VALUE, Double.MAX_VALUE]} can be exactly
      * represented as a double.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.789 -0500", hash_original_method = "3D8E394E07D4F37AF2C6D72F08026A5D", hash_generated_method = "D629396A6EDE505B81D8E6B8EB7F3814")
-    @Override
-public double doubleValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.114 -0500", hash_original_method = "3D8E394E07D4F37AF2C6D72F08026A5D", hash_generated_method = "D629396A6EDE505B81D8E6B8EB7F3814")
+    
+@Override
+    public double doubleValue() {
         return Conversion.bigInteger2Double(this);
     }
 
@@ -877,8 +920,9 @@ public double doubleValue() {
      * @param value value to be compared with {@code this}.
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.790 -0500", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "C21FCBEDF67AB8AF884268698F8718F2")
-    public int compareTo(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.116 -0500", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "C21FCBEDF67AB8AF884268698F8718F2")
+    
+public int compareTo(BigInteger value) {
         return BigInt.cmp(getBigInt(), value.getBigInt());
     }
 
@@ -888,8 +932,9 @@ public double doubleValue() {
      * @param value value to be used to compute the minimum with {@code this}.
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.791 -0500", hash_original_method = "909F517DD4A19D55540D3A4577FBCF84", hash_generated_method = "5C92EFF1C1F33A8EB1F4975CD77C3033")
-    public BigInteger min(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.118 -0500", hash_original_method = "909F517DD4A19D55540D3A4577FBCF84", hash_generated_method = "5C92EFF1C1F33A8EB1F4975CD77C3033")
+    
+public BigInteger min(BigInteger value) {
         return this.compareTo(value) == -1 ? this : value;
     }
 
@@ -899,14 +944,16 @@ public double doubleValue() {
      * @param value value to be used to compute the maximum with {@code this}
      * @throws NullPointerException if {@code value == null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.792 -0500", hash_original_method = "6C03178B5A42138223A2B4814CF874FD", hash_generated_method = "C116E93F93ABE46D26A06EE08621C6DB")
-    public BigInteger max(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.120 -0500", hash_original_method = "6C03178B5A42138223A2B4814CF874FD", hash_generated_method = "C116E93F93ABE46D26A06EE08621C6DB")
+    
+public BigInteger max(BigInteger value) {
         return this.compareTo(value) == 1 ? this : value;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.793 -0500", hash_original_method = "8BD8EE457DCE4BEA017BA4C9967BFC77", hash_generated_method = "BE401F1820219CC55E21186E99D412C6")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.123 -0500", hash_original_method = "8BD8EE457DCE4BEA017BA4C9967BFC77", hash_generated_method = "BE401F1820219CC55E21186E99D412C6")
+    
+@Override
+    public int hashCode() {
         if (hashCode != 0) {
             return hashCode;
         }
@@ -918,9 +965,10 @@ public int hashCode() {
         return hashCode;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.794 -0500", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "0CC9EA60E16D743DDB1F6BE2883A119A")
-    @Override
-public boolean equals(Object x) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.126 -0500", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "0CC9EA60E16D743DDB1F6BE2883A119A")
+    
+@Override
+    public boolean equals(Object x) {
         if (this == x) {
             return true;
         }
@@ -934,9 +982,10 @@ public boolean equals(Object x) {
      * Returns a string representation of this {@code BigInteger} in decimal
      * form.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.794 -0500", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "421A441E6AA1D509DDF5FF8DAE96CB1F")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.128 -0500", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "421A441E6AA1D509DDF5FF8DAE96CB1F")
+    
+@Override
+    public String toString() {
         return getBigInt().decString();
     }
 
@@ -949,8 +998,9 @@ public String toString() {
      *
      * @param radix base to be used for the string representation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.795 -0500", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "8F8708D79161CA0122992C46410E050E")
-    public String toString(int radix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.131 -0500", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "8F8708D79161CA0122992C46410E050E")
+    
+public String toString(int radix) {
         if (radix == 10) {
             return getBigInt().decString();
         } else {
@@ -967,8 +1017,9 @@ public String toString() {
      * @param value value with which the greatest common divisor is computed.
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.796 -0500", hash_original_method = "DF6919CA8C1CE81A76193FCEFAE3FDAA", hash_generated_method = "CDBE34B46DA158574080440C88EE831F")
-    public BigInteger gcd(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.133 -0500", hash_original_method = "DF6919CA8C1CE81A76193FCEFAE3FDAA", hash_generated_method = "CDBE34B46DA158574080440C88EE831F")
+    
+public BigInteger gcd(BigInteger value) {
         return new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt()));
     }
 
@@ -977,8 +1028,9 @@ public String toString() {
      *
      * @throws NullPointerException if {@code value == null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.797 -0500", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "30866C3D584C9FD0D8E1E20331A054D1")
-    public BigInteger multiply(BigInteger value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.135 -0500", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "30866C3D584C9FD0D8E1E20331A054D1")
+    
+public BigInteger multiply(BigInteger value) {
         return new BigInteger(BigInt.product(getBigInt(), value.getBigInt()));
     }
 
@@ -987,8 +1039,9 @@ public String toString() {
      *
      * @throws ArithmeticException if {@code exp < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.798 -0500", hash_original_method = "670CEDEE32713500748765AA85174DA4", hash_generated_method = "61938CAEE76221E16000670B67270984")
-    public BigInteger pow(int exp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.138 -0500", hash_original_method = "670CEDEE32713500748765AA85174DA4", hash_generated_method = "61938CAEE76221E16000670B67270984")
+    
+public BigInteger pow(int exp) {
         if (exp < 0) {
             throw new ArithmeticException("exp < 0: " + exp);
         }
@@ -1005,8 +1058,9 @@ public String toString() {
      * @see #divide
      * @see #remainder
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.799 -0500", hash_original_method = "0021B26ACCFD58807A129BEBBFC75B78", hash_generated_method = "E00BFCA0776B1CA9E1F471AB2D0D4B41")
-    public BigInteger[] divideAndRemainder(BigInteger divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.140 -0500", hash_original_method = "0021B26ACCFD58807A129BEBBFC75B78", hash_generated_method = "E00BFCA0776B1CA9E1F471AB2D0D4B41")
+    
+public BigInteger[] divideAndRemainder(BigInteger divisor) {
         BigInt divisorBigInt = divisor.getBigInt();
         BigInt quotient = new BigInt();
         BigInt remainder = new BigInt();
@@ -1022,8 +1076,9 @@ public String toString() {
      * @throws NullPointerException if {@code divisor == null}.
      * @throws ArithmeticException if {@code divisor == 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.800 -0500", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "D5D26022F0F6A11E4AF524D9EEDC2535")
-    public BigInteger divide(BigInteger divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.142 -0500", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "D5D26022F0F6A11E4AF524D9EEDC2535")
+    
+public BigInteger divide(BigInteger divisor) {
         BigInt quotient = new BigInt();
         BigInt.division(getBigInt(), divisor.getBigInt(), quotient, null);
         return new BigInteger(quotient);
@@ -1038,8 +1093,9 @@ public String toString() {
      * @throws NullPointerException if {@code divisor == null}.
      * @throws ArithmeticException if {@code divisor == 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.801 -0500", hash_original_method = "FFD2A7C70BA79F9B512531A9A18B49EF", hash_generated_method = "FEA3D5B4B405A1B443FCFE74B856F0D9")
-    public BigInteger remainder(BigInteger divisor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.145 -0500", hash_original_method = "FFD2A7C70BA79F9B512531A9A18B49EF", hash_generated_method = "FEA3D5B4B405A1B443FCFE74B856F0D9")
+    
+public BigInteger remainder(BigInteger divisor) {
         BigInt remainder = new BigInt();
         BigInt.division(getBigInt(), divisor.getBigInt(), null, remainder);
         return new BigInteger(remainder);
@@ -1056,8 +1112,9 @@ public String toString() {
      * @throws ArithmeticException if {@code m < 0 or} if {@code this} is not
      *     relatively prime to {@code m}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.801 -0500", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "C0A22361EA7D0B8CF8F11B6A6CE200D2")
-    public BigInteger modInverse(BigInteger m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.147 -0500", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "C0A22361EA7D0B8CF8F11B6A6CE200D2")
+    
+public BigInteger modInverse(BigInteger m) {
         if (m.signum() <= 0) {
             throw new ArithmeticException("modulus not positive");
         }
@@ -1080,8 +1137,9 @@ public String toString() {
      * @throws ArithmeticException if {@code m < 0} or if {@code exponent<0} and
      *     this is not relatively prime to {@code m}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.802 -0500", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "AF4A51DDF39A18F0E3B3D580E15CA1E0")
-    public BigInteger modPow(BigInteger exponent, BigInteger m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.150 -0500", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "AF4A51DDF39A18F0E3B3D580E15CA1E0")
+    
+public BigInteger modPow(BigInteger exponent, BigInteger m) {
         if (m.signum() <= 0) {
             throw new ArithmeticException("m.signum() <= 0");
         }
@@ -1101,8 +1159,9 @@ public String toString() {
      * @throws NullPointerException if {@code m == null}.
      * @throws ArithmeticException if {@code m < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.803 -0500", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "2A32F2698B2E1BF4EF5F20921E427818")
-    public BigInteger mod(BigInteger m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.153 -0500", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "2A32F2698B2E1BF4EF5F20921E427818")
+    
+public BigInteger mod(BigInteger m) {
         if (m.signum() <= 0) {
             throw new ArithmeticException("m.signum() <= 0");
         }
@@ -1120,8 +1179,9 @@ public String toString() {
      * @return {@code true}, if {@code this} is probably prime, {@code false}
      *     otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.804 -0500", hash_original_method = "718D211034BAE1DECACA1D72CB4CBB13", hash_generated_method = "9014EEE3DE13F78749233CE2CB1EE311")
-    public boolean isProbablePrime(int certainty) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.155 -0500", hash_original_method = "718D211034BAE1DECACA1D72CB4CBB13", hash_generated_method = "9014EEE3DE13F78749233CE2CB1EE311")
+    
+public boolean isProbablePrime(int certainty) {
         if (certainty <= 0) {
             return true;
         }
@@ -1136,8 +1196,9 @@ public String toString() {
      * @return smallest integer > {@code this} which is probably prime.
      * @throws ArithmeticException if {@code this < 0}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.805 -0500", hash_original_method = "BB43921F4E806BD72B6F518E8CD8937B", hash_generated_method = "781AC6B567CB4C8CBD356ED7D329BD87")
-    public BigInteger nextProbablePrime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.158 -0500", hash_original_method = "BB43921F4E806BD72B6F518E8CD8937B", hash_generated_method = "781AC6B567CB4C8CBD356ED7D329BD87")
+    
+public BigInteger nextProbablePrime() {
         if (sign < 0) {
             throw new ArithmeticException("sign < 0");
         }
@@ -1152,8 +1213,9 @@ public String toString() {
      *
      * @return two's complement representation of {@code this}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.807 -0500", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "578DBC5A309B191CCA3B03F182C709DB")
-    private byte[] twosComplement() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.168 -0500", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "578DBC5A309B191CCA3B03F182C709DB")
+    
+private byte[] twosComplement() {
         prepareJavaRepresentation();
         if (this.sign == 0) {
             return new byte[] { 0 };
@@ -1216,8 +1278,9 @@ public String toString() {
         return bytes;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.811 -0500", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "4BA60B28A036933466CC713B9C7854B3")
-    int getFirstNonzeroDigit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.179 -0500", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "4BA60B28A036933466CC713B9C7854B3")
+    
+int getFirstNonzeroDigit() {
         if (firstNonzeroDigit == -2) {
             int i;
             if (this.sign == 0) {
@@ -1235,8 +1298,9 @@ public String toString() {
     /**
      * Returns a copy of the current instance to achieve immutability
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.812 -0500", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "FABC86F56C336DE2152BE8F133BAAD74")
-    BigInteger copy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.182 -0500", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "FABC86F56C336DE2152BE8F133BAAD74")
+    
+BigInteger copy() {
         prepareJavaRepresentation();
         int[] copyDigits = new int[numberLength];
         System.arraycopy(digits, 0, copyDigits, 0, numberLength);
@@ -1247,8 +1311,9 @@ public String toString() {
      * Assigns all transient fields upon deserialization of a {@code BigInteger}
      * instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.813 -0500", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "AFBDC3B47733A92EEE74A03B880D61E5")
-    private void readObject(ObjectInputStream in)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.184 -0500", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "AFBDC3B47733A92EEE74A03B880D61E5")
+    
+private void readObject(ObjectInputStream in)
             throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         BigInt bigInt = new BigInt();
@@ -1260,8 +1325,9 @@ public String toString() {
      * Prepares this {@code BigInteger} for serialization, i.e. the
      * non-transient fields {@code signum} and {@code magnitude} are assigned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:29.814 -0500", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "117E8CA6F67089DBC4DFDF974A3BB8D1")
-    private void writeObject(ObjectOutputStream out) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.188 -0500", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "117E8CA6F67089DBC4DFDF974A3BB8D1")
+    
+private void writeObject(ObjectOutputStream out) throws IOException {
         BigInt bigInt = getBigInt();
         signum = bigInt.sign();
         magnitude = bigInt.bigEndianMagnitude();

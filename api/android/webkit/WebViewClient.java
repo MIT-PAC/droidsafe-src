@@ -14,50 +14,50 @@ import android.view.KeyEvent;
 
 
 public class WebViewClient {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:59.204 -0500", hash_original_field = "58067C0F689D3D13A2C5D55E20398B61", hash_generated_field = "AFF2A8FAA6EFD814083D0A1774C9B3B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.241 -0500", hash_original_field = "58067C0F689D3D13A2C5D55E20398B61", hash_generated_field = "AFF2A8FAA6EFD814083D0A1774C9B3B4")
 
     /** Generic error */
     public static final int ERROR_UNKNOWN = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.139 -0500", hash_original_field = "DE15D2873B1837F1E3D6DFAAD78E1879", hash_generated_field = "72239920351FC89D2ED57BDF97EBFA27")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.243 -0500", hash_original_field = "DE15D2873B1837F1E3D6DFAAD78E1879", hash_generated_field = "72239920351FC89D2ED57BDF97EBFA27")
 
     public static final int ERROR_HOST_LOOKUP = -2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.140 -0500", hash_original_field = "79245F0C793A98776A14F328BBCD7D79", hash_generated_field = "2CFCC24523B105163373EB236FD30AFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.245 -0500", hash_original_field = "79245F0C793A98776A14F328BBCD7D79", hash_generated_field = "2CFCC24523B105163373EB236FD30AFF")
 
     public static final int ERROR_UNSUPPORTED_AUTH_SCHEME = -3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.141 -0500", hash_original_field = "6B403171A3248200E4C42EA45F219CDA", hash_generated_field = "22F331898A9FC0AAD055DD27C6091C1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.248 -0500", hash_original_field = "6B403171A3248200E4C42EA45F219CDA", hash_generated_field = "22F331898A9FC0AAD055DD27C6091C1F")
 
     public static final int ERROR_AUTHENTICATION = -4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.142 -0500", hash_original_field = "9F6142F744093494639F31E5E0E4A802", hash_generated_field = "42008B6C2004A121650BFE6D956C7E51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.250 -0500", hash_original_field = "9F6142F744093494639F31E5E0E4A802", hash_generated_field = "42008B6C2004A121650BFE6D956C7E51")
 
     public static final int ERROR_PROXY_AUTHENTICATION = -5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.143 -0500", hash_original_field = "CB54D1BC409E18F191C144CC8C1659A6", hash_generated_field = "4A1B38F17D7BF96C7FEDDB20F79EBE0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.253 -0500", hash_original_field = "CB54D1BC409E18F191C144CC8C1659A6", hash_generated_field = "4A1B38F17D7BF96C7FEDDB20F79EBE0E")
 
     public static final int ERROR_CONNECT = -6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.143 -0500", hash_original_field = "50240939AEB6FFD0C26E18A2C762F866", hash_generated_field = "65780D7E0E775F00FF76AD01C9AC4497")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.256 -0500", hash_original_field = "50240939AEB6FFD0C26E18A2C762F866", hash_generated_field = "65780D7E0E775F00FF76AD01C9AC4497")
 
     public static final int ERROR_IO = -7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.144 -0500", hash_original_field = "5303E1F08E6DFA2868F54631196A6DB7", hash_generated_field = "7B06DE861E1953168CA194164D2C3176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.258 -0500", hash_original_field = "5303E1F08E6DFA2868F54631196A6DB7", hash_generated_field = "7B06DE861E1953168CA194164D2C3176")
 
     public static final int ERROR_TIMEOUT = -8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.145 -0500", hash_original_field = "88E12AB21C6319BF7CCA902347AA8F4E", hash_generated_field = "9DC0E6B5D6D9C05608115C117DB82C7B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.260 -0500", hash_original_field = "88E12AB21C6319BF7CCA902347AA8F4E", hash_generated_field = "9DC0E6B5D6D9C05608115C117DB82C7B")
 
     public static final int ERROR_REDIRECT_LOOP = -9;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.146 -0500", hash_original_field = "4A0B061312CAA8B9A9AD6C135D6F53BA", hash_generated_field = "674701B720681268494C1D44A8AD2ECE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.262 -0500", hash_original_field = "4A0B061312CAA8B9A9AD6C135D6F53BA", hash_generated_field = "674701B720681268494C1D44A8AD2ECE")
 
     public static final int ERROR_UNSUPPORTED_SCHEME = -10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.147 -0500", hash_original_field = "4B2D9F431780CF5A9F8F857156B07789", hash_generated_field = "AB0D31876B9EF21E506ABB893C746DF4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.265 -0500", hash_original_field = "4B2D9F431780CF5A9F8F857156B07789", hash_generated_field = "AB0D31876B9EF21E506ABB893C746DF4")
 
     public static final int ERROR_FAILED_SSL_HANDSHAKE = -11;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.148 -0500", hash_original_field = "4BB84FBE23B584443664FAE72163AFAF", hash_generated_field = "1E1D729D38F527DC3DEA2A962F063F30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.267 -0500", hash_original_field = "4BB84FBE23B584443664FAE72163AFAF", hash_generated_field = "1E1D729D38F527DC3DEA2A962F063F30")
 
     public static final int ERROR_BAD_URL = -12;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.149 -0500", hash_original_field = "F7132EE08F28E0ACFA7920F5E9B4E441", hash_generated_field = "CCBDCDB5E74CEE9466B80982792E4DDE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.269 -0500", hash_original_field = "F7132EE08F28E0ACFA7920F5E9B4E441", hash_generated_field = "CCBDCDB5E74CEE9466B80982792E4DDE")
 
     public static final int ERROR_FILE = -13;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.149 -0500", hash_original_field = "606BDBFBA5ECFE709988FA11865CF95C", hash_generated_field = "38983ACBF2E5A0C5628CCCB24B08A301")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.271 -0500", hash_original_field = "606BDBFBA5ECFE709988FA11865CF95C", hash_generated_field = "38983ACBF2E5A0C5628CCCB24B08A301")
 
     public static final int ERROR_FILE_NOT_FOUND = -14;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.151 -0500", hash_original_field = "37862605CF7163DE694157F43886B2D1", hash_generated_field = "B4EED3D9F39A49A72568F053E1CC61F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.274 -0500", hash_original_field = "37862605CF7163DE694157F43886B2D1", hash_generated_field = "B4EED3D9F39A49A72568F053E1CC61F2")
 
     public static final int ERROR_TOO_MANY_REQUESTS = -15;
     
@@ -80,8 +80,9 @@ public class WebViewClient {
      * @return True if the host application wants to leave the current WebView
      *         and handle the url itself, otherwise return false.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.133 -0500", hash_original_method = "B25B5EE312C01437108EEEF8D289ECD3", hash_generated_method = "C63E892A6BA4EC792C3677F2364FB69A")
-    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.228 -0500", hash_original_method = "B25B5EE312C01437108EEEF8D289ECD3", hash_generated_method = "C63E892A6BA4EC792C3677F2364FB69A")
+    
+public boolean shouldOverrideUrlLoading(WebView view, String url) {
         return false;
     }
 
@@ -97,8 +98,9 @@ public class WebViewClient {
      * @param favicon The favicon for this page if it already exists in the
      *            database.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.134 -0500", hash_original_method = "5314B6B2031A7AB7127460792C15BEA8", hash_generated_method = "2AA0E4E4C205535EE1A0DA0AD75AB630")
-    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.230 -0500", hash_original_method = "5314B6B2031A7AB7127460792C15BEA8", hash_generated_method = "2AA0E4E4C205535EE1A0DA0AD75AB630")
+    
+public void onPageStarted(WebView view, String url, Bitmap favicon) {
     }
 
     /**
@@ -110,8 +112,9 @@ public class WebViewClient {
      * @param view The WebView that is initiating the callback.
      * @param url The url of the page.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.135 -0500", hash_original_method = "3C74EFC6CC5DEEE74470BD61275572DD", hash_generated_method = "4F00DD59B5B3BE95C41F7A52C4687657")
-    public void onPageFinished(WebView view, String url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.232 -0500", hash_original_method = "3C74EFC6CC5DEEE74470BD61275572DD", hash_generated_method = "4F00DD59B5B3BE95C41F7A52C4687657")
+    
+public void onPageFinished(WebView view, String url) {
     }
 
     /**
@@ -121,8 +124,9 @@ public class WebViewClient {
      * @param view The WebView that is initiating the callback.
      * @param url The url of the resource the WebView will load.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.136 -0500", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "131BF72B6B1D1DE1F995D238334481A4")
-    public void onLoadResource(WebView view, String url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.234 -0500", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "131BF72B6B1D1DE1F995D238334481A4")
+    
+public void onLoadResource(WebView view, String url) {
     }
 
     /**
@@ -140,8 +144,9 @@ public class WebViewClient {
      *         response information or null if the WebView should load the
      *         resource itself.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.136 -0500", hash_original_method = "B5801BDD799BA7062410BD396AAB4B71", hash_generated_method = "EEA7EB5F4B366192F4A7B398038D92DF")
-    public WebResourceResponse shouldInterceptRequest(WebView view,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.236 -0500", hash_original_method = "B5801BDD799BA7062410BD396AAB4B71", hash_generated_method = "EEA7EB5F4B366192F4A7B398038D92DF")
+    
+public WebResourceResponse shouldInterceptRequest(WebView view,
             String url) {
         return null;
     }
@@ -158,9 +163,10 @@ public class WebViewClient {
      * @deprecated This method is no longer called. When the WebView encounters
      *             a redirect loop, it will cancel the load.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.137 -0500", hash_original_method = "79CA4CDBF662362D6AFDE76E65301125", hash_generated_method = "0E064EBAC524F2DDC3D586E1517D4F20")
-    @Deprecated
-public void onTooManyRedirects(WebView view, Message cancelMsg,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.239 -0500", hash_original_method = "79CA4CDBF662362D6AFDE76E65301125", hash_generated_method = "0E064EBAC524F2DDC3D586E1517D4F20")
+    
+@Deprecated
+    public void onTooManyRedirects(WebView view, Message cancelMsg,
             Message continueMsg) {
         cancelMsg.sendToTarget();
     }
@@ -174,8 +180,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @param description A String describing the error.
      * @param failingUrl The url that failed to load.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.151 -0500", hash_original_method = "12ABA78EBE10E417F0C1B2A97120946D", hash_generated_method = "75FC56698A2AEE9B834045C27A0DF3DE")
-    public void onReceivedError(WebView view, int errorCode,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.276 -0500", hash_original_method = "12ABA78EBE10E417F0C1B2A97120946D", hash_generated_method = "75FC56698A2AEE9B834045C27A0DF3DE")
+    
+public void onReceivedError(WebView view, int errorCode,
             String description, String failingUrl) {
     }
 
@@ -188,8 +195,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @param dontResend The message to send if the browser should not resend
      * @param resend The message to send if the browser should resend data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.152 -0500", hash_original_method = "F404DEEFBF7AA691DD4FBAFA7C65E80C", hash_generated_method = "5C022222B5B6AA1F11824DDE7B1E59F6")
-    public void onFormResubmission(WebView view, Message dontResend,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.278 -0500", hash_original_method = "F404DEEFBF7AA691DD4FBAFA7C65E80C", hash_generated_method = "5C022222B5B6AA1F11824DDE7B1E59F6")
+    
+public void onFormResubmission(WebView view, Message dontResend,
             Message resend) {
         dontResend.sendToTarget();
     }
@@ -201,8 +209,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @param url The url being visited.
      * @param isReload True if this url is being reloaded.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.153 -0500", hash_original_method = "17353DC9A8A29F2A1F6857B45DCA3F35", hash_generated_method = "A0B5CDDAE904CD93941B6BE702AD818C")
-    public void doUpdateVisitedHistory(WebView view, String url,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.280 -0500", hash_original_method = "17353DC9A8A29F2A1F6857B45DCA3F35", hash_generated_method = "A0B5CDDAE904CD93941B6BE702AD818C")
+    
+public void doUpdateVisitedHistory(WebView view, String url,
             boolean isReload) {
     }
 
@@ -218,8 +227,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      *            response.
      * @param error The SSL error object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.153 -0500", hash_original_method = "292FE6324BA8FDA19777928FD16DC874", hash_generated_method = "3F3BDBC2BEF8856EB2F4C11C1936C0CB")
-    public void onReceivedSslError(WebView view, SslErrorHandler handler,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.282 -0500", hash_original_method = "292FE6324BA8FDA19777928FD16DC874", hash_generated_method = "3F3BDBC2BEF8856EB2F4C11C1936C0CB")
+    
+public void onReceivedSslError(WebView view, SslErrorHandler handler,
             SslError error) {
         handler.cancel();
     }
@@ -230,8 +240,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * decision retained from a previous response to onReceivedSslError().
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.154 -0500", hash_original_method = "B2EE2F5677BCC95DB5D614A683A4C62D", hash_generated_method = "9A1B96AA867156E1AB7A89966D62E473")
-    public void onProceededAfterSslError(WebView view, SslError error) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.284 -0500", hash_original_method = "B2EE2F5677BCC95DB5D614A683A4C62D", hash_generated_method = "9A1B96AA867156E1AB7A89966D62E473")
+    
+public void onProceededAfterSslError(WebView view, SslError error) {
     }
 
     /**
@@ -249,8 +260,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.155 -0500", hash_original_method = "C5A42222BD6D7B11B03E8E8DC75486E5", hash_generated_method = "5784B78D0998794D552EC7C822640647")
-    public void onReceivedClientCertRequest(WebView view,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.287 -0500", hash_original_method = "C5A42222BD6D7B11B03E8E8DC75486E5", hash_generated_method = "5784B78D0998794D552EC7C822640647")
+    
+public void onReceivedClientCertRequest(WebView view,
             ClientCertRequestHandler handler, String host_and_port) {
         handler.cancel();
     }
@@ -265,8 +277,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @param realm A description to help store user credentials for future
      *            visits.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.156 -0500", hash_original_method = "99DC3611344E7F5F6B557A987ADB25FE", hash_generated_method = "8561BB81A1CC84CFC1E6D202A95DD914")
-    public void onReceivedHttpAuthRequest(WebView view,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.289 -0500", hash_original_method = "99DC3611344E7F5F6B557A987ADB25FE", hash_generated_method = "8561BB81A1CC84CFC1E6D202A95DD914")
+    
+public void onReceivedHttpAuthRequest(WebView view,
             HttpAuthHandler handler, String host, String realm) {
         handler.cancel();
     }
@@ -283,8 +296,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @return True if the host application wants to handle the key event
      *         itself, otherwise return false
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.156 -0500", hash_original_method = "1014277FB075F3AB2B83403F67794F88", hash_generated_method = "5D76AFF5D2F6192231E91D760493C620")
-    public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.291 -0500", hash_original_method = "1014277FB075F3AB2B83403F67794F88", hash_generated_method = "5D76AFF5D2F6192231E91D760493C620")
+    
+public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
         return false;
     }
 
@@ -298,8 +312,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @param view The WebView that is initiating the callback.
      * @param event The key event.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.157 -0500", hash_original_method = "0A322E8BE1639A0DBED358F3919BFB99", hash_generated_method = "4FA970995E386E899113863905242C0C")
-    public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.293 -0500", hash_original_method = "0A322E8BE1639A0DBED358F3919BFB99", hash_generated_method = "4FA970995E386E899113863905242C0C")
+    
+public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
     }
 
     /**
@@ -310,8 +325,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      * @param oldScale The old scale factor
      * @param newScale The new scale factor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.158 -0500", hash_original_method = "E786223707BD58A877E8AD07E09750F2", hash_generated_method = "65A678B85D05DA1494C62416913CD072")
-    public void onScaleChanged(WebView view, float oldScale, float newScale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.296 -0500", hash_original_method = "E786223707BD58A877E8AD07E09750F2", hash_generated_method = "65A678B85D05DA1494C62416913CD072")
+    
+public void onScaleChanged(WebView view, float oldScale, float newScale) {
     }
 
     /**
@@ -324,8 +340,9 @@ public void onTooManyRedirects(WebView view, Message cancelMsg,
      *                account, it should be used to log in the user.
      * @param args Authenticator specific arguments used to log in the user.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:22.159 -0500", hash_original_method = "61AD7355C99E5A8A7ACA8AE385985070", hash_generated_method = "459DDE1CE49277A1F7FB97704F993D16")
-    public void onReceivedLoginRequest(WebView view, String realm,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.298 -0500", hash_original_method = "61AD7355C99E5A8A7ACA8AE385985070", hash_generated_method = "459DDE1CE49277A1F7FB97704F993D16")
+    
+public void onReceivedLoginRequest(WebView view, String realm,
             String account, String args) {
     }
 }

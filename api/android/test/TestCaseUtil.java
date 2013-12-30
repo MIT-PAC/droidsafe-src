@@ -23,9 +23,10 @@ import com.google.android.collect.Lists;
 
 public class TestCaseUtil {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.121 -0500", hash_original_method = "9FD0A32684FA5B186B09F654C84A8024", hash_generated_method = "8583F188CF9ABDA2A9AEA4FB05F61321")
-    @SuppressWarnings("unchecked")
-public static List<String> getTestCaseNames(Test test, boolean flatten) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.921 -0500", hash_original_method = "9FD0A32684FA5B186B09F654C84A8024", hash_generated_method = "8583F188CF9ABDA2A9AEA4FB05F61321")
+    
+@SuppressWarnings("unchecked")
+    public static List<String> getTestCaseNames(Test test, boolean flatten) {
         List<Test> tests = (List<Test>) getTests(test, flatten);
         List<String> testCaseNames = Lists.newArrayList();
         for (Test aTest : tests) {
@@ -34,13 +35,15 @@ public static List<String> getTestCaseNames(Test test, boolean flatten) {
         return testCaseNames;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.122 -0500", hash_original_method = "F9058D2EEE3D64E57AC774484E353F75", hash_generated_method = "7E46271B3240B5396AC43213DC1EA004")
-    public static List<? extends Test> getTests(Test test, boolean flatten) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.923 -0500", hash_original_method = "F9058D2EEE3D64E57AC774484E353F75", hash_generated_method = "7E46271B3240B5396AC43213DC1EA004")
+    
+public static List<? extends Test> getTests(Test test, boolean flatten) {
         return getTests(test, flatten, new HashSet<Class<?>>());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.123 -0500", hash_original_method = "93C00521577F44DF8D41C1C2AB9E3721", hash_generated_method = "A1EC84F7C511943ACFE06B3A227A5FB3")
-    private static List<? extends Test> getTests(Test test, boolean flatten,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.926 -0500", hash_original_method = "93C00521577F44DF8D41C1C2AB9E3721", hash_generated_method = "A1EC84F7C511943ACFE06B3A227A5FB3")
+    
+private static List<? extends Test> getTests(Test test, boolean flatten,
             Set<Class<?>> seen) {
         List<Test> testCases = Lists.newArrayList();
         if (test != null) {
@@ -78,8 +81,9 @@ public static List<String> getTestCaseNames(Test test, boolean flatten) {
         return testCases;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.124 -0500", hash_original_method = "07EFA854A074D722E08D831AD0F2F1EC", hash_generated_method = "0F7E3AA6F9D62473B1826F25DB363314")
-    private static Test invokeSuiteMethodIfPossible(Class testClass,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.929 -0500", hash_original_method = "07EFA854A074D722E08D831AD0F2F1EC", hash_generated_method = "0F7E3AA6F9D62473B1826F25DB363314")
+    
+private static Test invokeSuiteMethodIfPossible(Class testClass,
             Set<Class<?>> seen) {
         try {
             Method suiteMethod = testClass.getMethod(
@@ -107,8 +111,9 @@ public static List<String> getTestCaseNames(Test test, boolean flatten) {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.125 -0500", hash_original_method = "9868F99DCBE3725E4578898EE3F79492", hash_generated_method = "B1D6B98C30AE527A55CBFBE8BF18C2FB")
-    public static String getTestName(Test test) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.931 -0500", hash_original_method = "9868F99DCBE3725E4578898EE3F79492", hash_generated_method = "B1D6B98C30AE527A55CBFBE8BF18C2FB")
+    
+public static String getTestName(Test test) {
         if (test instanceof TestCase) {
             TestCase testCase = (TestCase) test;
             return testCase.getName();
@@ -127,8 +132,9 @@ public static List<String> getTestCaseNames(Test test, boolean flatten) {
         return "";
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.126 -0500", hash_original_method = "C0E28B9E1910A5B87AFB6DE955A6FC6B", hash_generated_method = "E7E3587A76B8DC569DC9ABC1A0B71663")
-    public static Test getTestAtIndex(TestSuite testSuite, int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.934 -0500", hash_original_method = "C0E28B9E1910A5B87AFB6DE955A6FC6B", hash_generated_method = "E7E3587A76B8DC569DC9ABC1A0B71663")
+    
+public static Test getTestAtIndex(TestSuite testSuite, int position) {
         int index = 0;
         Enumeration enumeration = testSuite.tests();
         while (enumeration.hasMoreElements()) {
@@ -141,8 +147,9 @@ public static List<String> getTestCaseNames(Test test, boolean flatten) {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.127 -0500", hash_original_method = "0FC87DD09556C7A3A66C16C79F06C6C6", hash_generated_method = "3EC4F0F067459BDBA56326D853499C85")
-    public static TestSuite createTestSuite(Class<? extends Test> testClass)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.937 -0500", hash_original_method = "0FC87DD09556C7A3A66C16C79F06C6C6", hash_generated_method = "3EC4F0F067459BDBA56326D853499C85")
+    
+public static TestSuite createTestSuite(Class<? extends Test> testClass)
             throws InstantiationException, IllegalAccessException {
 
         Test test = invokeSuiteMethodIfPossible(testClass, 
@@ -159,8 +166,9 @@ public static List<String> getTestCaseNames(Test test, boolean flatten) {
         return (TestSuite) test;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.120 -0500", hash_original_method = "8B3FB0DB9AA59378E1F246FBF0E78671", hash_generated_method = "293D39CFE11433CB90AB76BE88A51C65")
-    private TestCaseUtil() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.918 -0500", hash_original_method = "8B3FB0DB9AA59378E1F246FBF0E78671", hash_generated_method = "293D39CFE11433CB90AB76BE88A51C65")
+    
+private TestCaseUtil() {
     }
 
     

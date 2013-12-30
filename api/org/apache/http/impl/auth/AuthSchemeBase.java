@@ -18,12 +18,13 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public abstract class AuthSchemeBase implements AuthScheme {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.225 -0500", hash_original_field = "2AAD7409AD7FA5435AA4F922538A3E61", hash_generated_field = "90A6DE2E00E635760A3B1A224459E469")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.986 -0500", hash_original_field = "2AAD7409AD7FA5435AA4F922538A3E61", hash_generated_field = "90A6DE2E00E635760A3B1A224459E469")
 
     private boolean proxy;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.226 -0500", hash_original_method = "7082ED5A83D0EFFA08BB77E1EC0EBD1E", hash_generated_method = "1D5E2B500DFB12B2C729D4BF7177F556")
-    public AuthSchemeBase() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.989 -0500", hash_original_method = "7082ED5A83D0EFFA08BB77E1EC0EBD1E", hash_generated_method = "1D5E2B500DFB12B2C729D4BF7177F556")
+    
+public AuthSchemeBase() {
         super();
     }
 
@@ -37,8 +38,9 @@ public abstract class AuthSchemeBase implements AuthScheme {
      * @throws MalformedChallengeException is thrown if the authentication challenge
      * is malformed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.228 -0500", hash_original_method = "59A8005652A60A6022050E43FD761E80", hash_generated_method = "D5FD8D04281B535F31ED5D9A45F7DC76")
-    public void processChallenge(final Header header) throws MalformedChallengeException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.992 -0500", hash_original_method = "59A8005652A60A6022050E43FD761E80", hash_generated_method = "D5FD8D04281B535F31ED5D9A45F7DC76")
+    
+public void processChallenge(final Header header) throws MalformedChallengeException {
         if (header == null) {
             throw new IllegalArgumentException("Header may not be null");
         }
@@ -81,8 +83,9 @@ public abstract class AuthSchemeBase implements AuthScheme {
         parseChallenge(buffer, pos, buffer.length());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.228 -0500", hash_original_method = "FFBAC1C6075229BDA5A37E6F58B15A5E", hash_generated_method = "794E6C93C312F0457E48A52E868D8A82")
-    protected abstract void parseChallenge(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.995 -0500", hash_original_method = "FFBAC1C6075229BDA5A37E6F58B15A5E", hash_generated_method = "794E6C93C312F0457E48A52E868D8A82")
+    
+protected abstract void parseChallenge(
             CharArrayBuffer buffer, int pos, int len) throws MalformedChallengeException;
 
     /**
@@ -92,8 +95,9 @@ public abstract class AuthSchemeBase implements AuthScheme {
      * @return <code>true</code> if authenticating against a proxy, <code>false</code>
      * otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.229 -0500", hash_original_method = "268F84420EF1E9954B4C291A99275A1C", hash_generated_method = "2CBB9F882839F10E785D840AB6226E0D")
-    public boolean isProxy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.997 -0500", hash_original_method = "268F84420EF1E9954B4C291A99275A1C", hash_generated_method = "2CBB9F882839F10E785D840AB6226E0D")
+    
+public boolean isProxy() {
         return this.proxy;
     }
 

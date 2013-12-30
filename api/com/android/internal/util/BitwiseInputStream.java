@@ -10,13 +10,13 @@ import droidsafe.annotations.*;
 
 
 public class BitwiseInputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.041 -0500", hash_original_field = "CCCDB98A97C1303EEF1EDB8DB6C44807", hash_generated_field = "29FB82D1D2E75901C37B9EDD1B81BDDE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.734 -0500", hash_original_field = "CCCDB98A97C1303EEF1EDB8DB6C44807", hash_generated_field = "29FB82D1D2E75901C37B9EDD1B81BDDE")
 
     private byte[] mBuf;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.042 -0500", hash_original_field = "25A5DEAC26D49039381CEC3AC02D8D8E", hash_generated_field = "649CC94BF1D5A5FECFE4D2F006B35728")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.737 -0500", hash_original_field = "25A5DEAC26D49039381CEC3AC02D8D8E", hash_generated_field = "649CC94BF1D5A5FECFE4D2F006B35728")
 
     private int mPos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.043 -0500", hash_original_field = "6FAA56F5628A0F1DAAFED98EBDB1C99E", hash_generated_field = "EA295975CAF8E42F4C28A87EADB358DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.739 -0500", hash_original_field = "6FAA56F5628A0F1DAAFED98EBDB1C99E", hash_generated_field = "EA295975CAF8E42F4C28A87EADB358DF")
 
     private int mEnd;
 
@@ -25,8 +25,9 @@ public class BitwiseInputStream {
      *
      * @param buf a byte array containing data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.047 -0500", hash_original_method = "5532B5125C79E9957D47EEEDDF5375E5", hash_generated_method = "69BFF5261DA4E74D25F3305A2DDF6A46")
-    public BitwiseInputStream(byte buf[]) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.747 -0500", hash_original_method = "5532B5125C79E9957D47EEEDDF5375E5", hash_generated_method = "69BFF5261DA4E74D25F3305A2DDF6A46")
+    
+public BitwiseInputStream(byte buf[]) {
         mBuf = buf;
         mEnd = buf.length << 3;
         mPos = 0;
@@ -35,8 +36,9 @@ public class BitwiseInputStream {
     /**
      * Return the number of bit still available for reading.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.047 -0500", hash_original_method = "66AE1F5CE6A7D22DCB733CBBD166C2BB", hash_generated_method = "2EA6E3EF05C1CC57312D79304A74B402")
-    public int available() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.749 -0500", hash_original_method = "66AE1F5CE6A7D22DCB733CBBD166C2BB", hash_generated_method = "2EA6E3EF05C1CC57312D79304A74B402")
+    
+public int available() {
         return mEnd - mPos;
     }
 
@@ -49,8 +51,9 @@ public class BitwiseInputStream {
      * @param bits the amount of data to read (gte 0, lte 8)
      * @return byte of read data (possibly partially filled, from lsb)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.049 -0500", hash_original_method = "D3779E30F0E2824C817E23A6212C6A73", hash_generated_method = "67A585DB033E1032E265A2F415C5FE45")
-    public int read(int bits) throws AccessException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.751 -0500", hash_original_method = "D3779E30F0E2824C817E23A6212C6A73", hash_generated_method = "67A585DB033E1032E265A2F415C5FE45")
+    
+public int read(int bits) throws AccessException {
         int index = mPos >>> 3;
         int offset = 16 - (mPos & 0x07) - bits;  // &7==%8
         if ((bits < 0) || (bits > 8) || ((mPos + bits) > mEnd)) {
@@ -71,8 +74,9 @@ public class BitwiseInputStream {
      * @param bits the amount of data to read
      * @return newly allocated byte array of read data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.050 -0500", hash_original_method = "6BC73F7388CF8F913A045B88BC2AD5D8", hash_generated_method = "02D1E84EDD88A1B1D8D962D865C80497")
-    public byte[] readByteArray(int bits) throws AccessException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.754 -0500", hash_original_method = "6BC73F7388CF8F913A045B88BC2AD5D8", hash_generated_method = "02D1E84EDD88A1B1D8D962D865C80497")
+    
+public byte[] readByteArray(int bits) throws AccessException {
         int bytes = (bits >>> 3) + ((bits & 0x07) > 0 ? 1 : 0);  // &7==%8
         byte[] arr = new byte[bytes];
         for (int i = 0; i < bytes; i++) {
@@ -87,8 +91,9 @@ public class BitwiseInputStream {
      *
      * @param bits the amount by which to increment the position
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.051 -0500", hash_original_method = "2B3CAB6B00B171A015C7D4103C2B529C", hash_generated_method = "46464080E4EC25A4875686809D40D7DD")
-    public void skip(int bits) throws AccessException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.756 -0500", hash_original_method = "2B3CAB6B00B171A015C7D4103C2B529C", hash_generated_method = "46464080E4EC25A4875686809D40D7DD")
+    
+public void skip(int bits) throws AccessException {
         if ((mPos + bits) > mEnd) {
             throw new AccessException("illegal skip " +
                 "(pos " + mPos + ", end " + mEnd + ", bits " + bits + ")");
@@ -98,8 +103,9 @@ public class BitwiseInputStream {
 
     
     public static class AccessException extends Exception {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.045 -0500", hash_original_method = "52F4B42001DB417C9537E4FCBE00DA44", hash_generated_method = "E3D542A3BCC80436D82FFEC6A5EDB18E")
-        public AccessException(String s) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.742 -0500", hash_original_method = "52F4B42001DB417C9537E4FCBE00DA44", hash_generated_method = "E3D542A3BCC80436D82FFEC6A5EDB18E")
+        
+public AccessException(String s) {
             super("BitwiseInputStream access failed: " + s);
         }
 

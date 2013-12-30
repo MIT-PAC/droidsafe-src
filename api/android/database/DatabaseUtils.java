@@ -44,8 +44,9 @@ public class DatabaseUtils {
      * @see Parcel#writeNoException
      * @see Parcel#writeException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.365 -0500", hash_original_method = "664E69D53BABC0BD392ABB3CB5A666E2", hash_generated_method = "F4D1F0DC18534DC85E2667018E84D6C0")
-    public static final void writeExceptionToParcel(Parcel reply, Exception e) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.264 -0500", hash_original_method = "664E69D53BABC0BD392ABB3CB5A666E2", hash_generated_method = "F4D1F0DC18534DC85E2667018E84D6C0")
+    
+public static final void writeExceptionToParcel(Parcel reply, Exception e) {
         int code = 0;
         boolean logException = true;
         if (e instanceof FileNotFoundException) {
@@ -91,16 +92,18 @@ public class DatabaseUtils {
      * @see Parcel#writeNoException
      * @see Parcel#readException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.366 -0500", hash_original_method = "99279A6650B0C93FCFD173D39A34CB97", hash_generated_method = "BDA53A6D76765E123EF8FE96139CAA8D")
-    public static final void readExceptionFromParcel(Parcel reply) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.266 -0500", hash_original_method = "99279A6650B0C93FCFD173D39A34CB97", hash_generated_method = "BDA53A6D76765E123EF8FE96139CAA8D")
+    
+public static final void readExceptionFromParcel(Parcel reply) {
         int code = reply.readExceptionCode();
         if (code == 0) return;
         String msg = reply.readString();
         DatabaseUtils.readExceptionFromParcel(reply, msg, code);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.367 -0500", hash_original_method = "3CD1B88164A3210A879F7432B20509CE", hash_generated_method = "548BF6F317BD985E216EA6512CA8EC62")
-    public static void readExceptionWithFileNotFoundExceptionFromParcel(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.269 -0500", hash_original_method = "3CD1B88164A3210A879F7432B20509CE", hash_generated_method = "548BF6F317BD985E216EA6512CA8EC62")
+    
+public static void readExceptionWithFileNotFoundExceptionFromParcel(
             Parcel reply) throws FileNotFoundException {
         int code = reply.readExceptionCode();
         if (code == 0) return;
@@ -112,8 +115,9 @@ public class DatabaseUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.368 -0500", hash_original_method = "2492E7AEC13D0FFFB95F298C13FF8172", hash_generated_method = "7D74DE0A7BAB80D9D5E2D83D96A256AC")
-    public static void readExceptionWithOperationApplicationExceptionFromParcel(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.272 -0500", hash_original_method = "2492E7AEC13D0FFFB95F298C13FF8172", hash_generated_method = "7D74DE0A7BAB80D9D5E2D83D96A256AC")
+    
+public static void readExceptionWithOperationApplicationExceptionFromParcel(
             Parcel reply) throws OperationApplicationException {
         int code = reply.readExceptionCode();
         if (code == 0) return;
@@ -125,8 +129,9 @@ public class DatabaseUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.369 -0500", hash_original_method = "7C5917B72662210A19A77F7241EE9613", hash_generated_method = "F38ED1D49B1B724ADD3CC2D9E4EA4904")
-    private static final void readExceptionFromParcel(Parcel reply, String msg, int code) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.275 -0500", hash_original_method = "7C5917B72662210A19A77F7241EE9613", hash_generated_method = "F38ED1D49B1B724ADD3CC2D9E4EA4904")
+    
+private static final void readExceptionFromParcel(Parcel reply, String msg, int code) {
         switch (code) {
             case 2:
                 throw new IllegalArgumentException(msg);
@@ -158,8 +163,9 @@ public class DatabaseUtils {
      * @param index the 1-based index to bind at
      * @param value the value to bind
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.370 -0500", hash_original_method = "336103AA7A2D233179336448C933A29F", hash_generated_method = "21FE3D0EE05FB1E77838C07BDFA9BA55")
-    public static void bindObjectToProgram(SQLiteProgram prog, int index,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.278 -0500", hash_original_method = "336103AA7A2D233179336448C933A29F", hash_generated_method = "21FE3D0EE05FB1E77838C07BDFA9BA55")
+    
+public static void bindObjectToProgram(SQLiteProgram prog, int index,
             Object value) {
         if (value == null) {
             prog.bindNull(index);
@@ -198,8 +204,9 @@ public class DatabaseUtils {
      * @return object value type
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.371 -0500", hash_original_method = "4F212FF7EF5441857670A3D4278A69D1", hash_generated_method = "806E2AB1FCF1B6B9FFFEC177C4F4A9EE")
-    public static int getTypeOfObject(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.280 -0500", hash_original_method = "4F212FF7EF5441857670A3D4278A69D1", hash_generated_method = "806E2AB1FCF1B6B9FFFEC177C4F4A9EE")
+    
+public static int getTypeOfObject(Object obj) {
         if (obj == null) {
             return Cursor.FIELD_TYPE_NULL;
         } else if (obj instanceof byte[]) {
@@ -226,8 +233,9 @@ public class DatabaseUtils {
      * @param window The window to fill.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.372 -0500", hash_original_method = "528BFFCDF2670C473C5EA8B806C4B8BC", hash_generated_method = "C00E472BAE58224EBBCCC1ED36C0A685")
-    public static void cursorFillWindow(final Cursor cursor,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.284 -0500", hash_original_method = "528BFFCDF2670C473C5EA8B806C4B8BC", hash_generated_method = "C00E472BAE58224EBBCCC1ED36C0A685")
+    
+public static void cursorFillWindow(final Cursor cursor,
             int position, final CursorWindow window) {
         if (position < 0 || position >= cursor.getCount()) {
             return;
@@ -310,8 +318,9 @@ public class DatabaseUtils {
      * @param sqlString the raw string to be appended, which may contain single
      *                  quotes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.373 -0500", hash_original_method = "80FE207FA2FD7B3EC5D1B03F798F20EC", hash_generated_method = "1C849907C54C6142A002D3424F672FE5")
-    public static void appendEscapedSQLString(StringBuilder sb, String sqlString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.287 -0500", hash_original_method = "80FE207FA2FD7B3EC5D1B03F798F20EC", hash_generated_method = "1C849907C54C6142A002D3424F672FE5")
+    
+public static void appendEscapedSQLString(StringBuilder sb, String sqlString) {
         sb.append('\'');
         if (sqlString.indexOf('\'') != -1) {
             int length = sqlString.length();
@@ -330,8 +339,9 @@ public class DatabaseUtils {
     /**
      * SQL-escape a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.374 -0500", hash_original_method = "7552DB2CB2D2F1A34A98DAA2372BF735", hash_generated_method = "AF0FA82A7D6CD7394EBC331BCBC5D65F")
-    public static String sqlEscapeString(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.290 -0500", hash_original_method = "7552DB2CB2D2F1A34A98DAA2372BF735", hash_generated_method = "AF0FA82A7D6CD7394EBC331BCBC5D65F")
+    
+public static String sqlEscapeString(String value) {
         StringBuilder escaper = new StringBuilder();
 
         DatabaseUtils.appendEscapedSQLString(escaper, value);
@@ -342,8 +352,9 @@ public class DatabaseUtils {
     /**
      * Appends an Object to an SQL string with the proper escaping, etc.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.375 -0500", hash_original_method = "CC26B336023F985FDD8C05D7EFF5A607", hash_generated_method = "586BF1DA188E33E34D10874FF1ED58A4")
-    public static final void appendValueToSql(StringBuilder sql, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.292 -0500", hash_original_method = "CC26B336023F985FDD8C05D7EFF5A607", hash_generated_method = "586BF1DA188E33E34D10874FF1ED58A4")
+    
+public static final void appendValueToSql(StringBuilder sql, Object value) {
         if (value == null) {
             sql.append("NULL");
         } else if (value instanceof Boolean) {
@@ -361,8 +372,9 @@ public class DatabaseUtils {
     /**
      * Concatenates two SQL WHERE clauses, handling empty or null values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.376 -0500", hash_original_method = "456400F7FD34BEA9F412D24A9889C2FB", hash_generated_method = "F28E65C77F981D5409FFCCEB8ED4757B")
-    public static String concatenateWhere(String a, String b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.296 -0500", hash_original_method = "456400F7FD34BEA9F412D24A9889C2FB", hash_generated_method = "F28E65C77F981D5409FFCCEB8ED4757B")
+    
+public static String concatenateWhere(String a, String b) {
         if (TextUtils.isEmpty(a)) {
             return b;
         }
@@ -378,8 +390,9 @@ public class DatabaseUtils {
      * @param name
      * @return the collation key
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.377 -0500", hash_original_method = "2277D1FB24406F696FA05FFD0730F1E8", hash_generated_method = "ADC942F1075E4624D53E8C7FC47A2431")
-    public static String getCollationKey(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.298 -0500", hash_original_method = "2277D1FB24406F696FA05FFD0730F1E8", hash_generated_method = "ADC942F1075E4624D53E8C7FC47A2431")
+    
+public static String getCollationKey(String name) {
         byte [] arr = getCollationKeyInBytes(name);
         try {
             return new String(arr, 0, getKeyLen(arr), "ISO8859_1");
@@ -393,15 +406,17 @@ public class DatabaseUtils {
      * @param name
      * @return the collation key in hex format
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.378 -0500", hash_original_method = "3EFAF0E286C0E5ABBA5F444CC372591A", hash_generated_method = "95EF173F526EFF87C03956708A63348D")
-    public static String getHexCollationKey(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.301 -0500", hash_original_method = "3EFAF0E286C0E5ABBA5F444CC372591A", hash_generated_method = "95EF173F526EFF87C03956708A63348D")
+    
+public static String getHexCollationKey(String name) {
         byte [] arr = getCollationKeyInBytes(name);
         char[] keys = Hex.encodeHex(arr);
         return new String(keys, 0, getKeyLen(arr) * 2);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.379 -0500", hash_original_method = "E001715DE6DB9ED11A90575B61782D8F", hash_generated_method = "07862CFEE74330FBA1F29FDFF781FE97")
-    private static int getKeyLen(byte[] arr) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.303 -0500", hash_original_method = "E001715DE6DB9ED11A90575B61782D8F", hash_generated_method = "07862CFEE74330FBA1F29FDFF781FE97")
+    
+private static int getKeyLen(byte[] arr) {
         if (arr[arr.length - 1] != 0) {
             return arr.length;
         } else {
@@ -410,8 +425,9 @@ public class DatabaseUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.379 -0500", hash_original_method = "2BC34B911946491978F698EBA40659C2", hash_generated_method = "423078A74724516E937E06DC31D1854C")
-    private static byte[] getCollationKeyInBytes(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.306 -0500", hash_original_method = "2BC34B911946491978F698EBA40659C2", hash_generated_method = "423078A74724516E937E06DC31D1854C")
+    
+private static byte[] getCollationKeyInBytes(String name) {
         if (mColl == null) {
             mColl = Collator.getInstance();
             mColl.setStrength(Collator.PRIMARY);
@@ -424,8 +440,9 @@ public class DatabaseUtils {
      *
      * @param cursor the cursor to print
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.381 -0500", hash_original_method = "A430190530104247A836CC3C4CF00C2B", hash_generated_method = "3168EBC3DC3D190D018250C829F5256A")
-    public static void dumpCursor(Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.310 -0500", hash_original_method = "A430190530104247A836CC3C4CF00C2B", hash_generated_method = "3168EBC3DC3D190D018250C829F5256A")
+    
+public static void dumpCursor(Cursor cursor) {
         dumpCursor(cursor, System.out);
     }
 
@@ -436,8 +453,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to print
      * @param stream the stream to print to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.382 -0500", hash_original_method = "01F1FC91F82BFD6DF4E4443B37052042", hash_generated_method = "168BE30C6BAF90C59363528B60B8C592")
-    public static void dumpCursor(Cursor cursor, PrintStream stream) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.313 -0500", hash_original_method = "01F1FC91F82BFD6DF4E4443B37052042", hash_generated_method = "168BE30C6BAF90C59363528B60B8C592")
+    
+public static void dumpCursor(Cursor cursor, PrintStream stream) {
         stream.println(">>>>> Dumping cursor " + cursor);
         if (cursor != null) {
             int startPos = cursor.getPosition();
@@ -458,8 +476,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to print
      * @param sb the StringBuilder to print to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.383 -0500", hash_original_method = "744CF515CE666C072F4911092C5B89B3", hash_generated_method = "C6D78A0A40069B7F3CB3B55D859F95B0")
-    public static void dumpCursor(Cursor cursor, StringBuilder sb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.316 -0500", hash_original_method = "744CF515CE666C072F4911092C5B89B3", hash_generated_method = "C6D78A0A40069B7F3CB3B55D859F95B0")
+    
+public static void dumpCursor(Cursor cursor, StringBuilder sb) {
         sb.append(">>>>> Dumping cursor " + cursor + "\n");
         if (cursor != null) {
             int startPos = cursor.getPosition();
@@ -480,8 +499,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to print
      * @return a String that contains the dumped cursor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.383 -0500", hash_original_method = "1F4DCB5CD8846A0745009D1673525F1B", hash_generated_method = "C6B834E5E9ECD1C45D294C7A6620C669")
-    public static String dumpCursorToString(Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.319 -0500", hash_original_method = "1F4DCB5CD8846A0745009D1673525F1B", hash_generated_method = "C6B834E5E9ECD1C45D294C7A6620C669")
+    
+public static String dumpCursorToString(Cursor cursor) {
         StringBuilder sb = new StringBuilder();
         dumpCursor(cursor, sb);
         return sb.toString();
@@ -492,8 +512,9 @@ public class DatabaseUtils {
      *
      * @param cursor the cursor to print from
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.384 -0500", hash_original_method = "B7C67E2F179AF8C301D4B2ED36DBCCCA", hash_generated_method = "DD966B6BB8C95D0083472B88ABFFF454")
-    public static void dumpCurrentRow(Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.321 -0500", hash_original_method = "B7C67E2F179AF8C301D4B2ED36DBCCCA", hash_generated_method = "DD966B6BB8C95D0083472B88ABFFF454")
+    
+public static void dumpCurrentRow(Cursor cursor) {
         dumpCurrentRow(cursor, System.out);
     }
 
@@ -503,8 +524,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to print
      * @param stream the stream to print to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.385 -0500", hash_original_method = "D0996D4DFB9F5585E3927B19545BE3E4", hash_generated_method = "BA24E7C3A8B18A175AD4E4B71A2B86FC")
-    public static void dumpCurrentRow(Cursor cursor, PrintStream stream) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.324 -0500", hash_original_method = "D0996D4DFB9F5585E3927B19545BE3E4", hash_generated_method = "BA24E7C3A8B18A175AD4E4B71A2B86FC")
+    
+public static void dumpCurrentRow(Cursor cursor, PrintStream stream) {
         String[] cols = cursor.getColumnNames();
         stream.println("" + cursor.getPosition() + " {");
         int length = cols.length;
@@ -528,8 +550,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to print
      * @param sb the StringBuilder to print to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.386 -0500", hash_original_method = "BBC7B52EA680791B1ED24327B6650764", hash_generated_method = "2090B7A89F94B4327FE79244B9EB4BB6")
-    public static void dumpCurrentRow(Cursor cursor, StringBuilder sb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.327 -0500", hash_original_method = "BBC7B52EA680791B1ED24327B6650764", hash_generated_method = "2090B7A89F94B4327FE79244B9EB4BB6")
+    
+public static void dumpCurrentRow(Cursor cursor, StringBuilder sb) {
         String[] cols = cursor.getColumnNames();
         sb.append("" + cursor.getPosition() + " {\n");
         int length = cols.length;
@@ -553,8 +576,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to print
      * @return a String that contains the dumped cursor row
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.387 -0500", hash_original_method = "6CF6D9D2DF58623C9FADAD3A1D1AF7CA", hash_generated_method = "7DDCB78FFD6A496EB6AB9A2913FA3D32")
-    public static String dumpCurrentRowToString(Cursor cursor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.329 -0500", hash_original_method = "6CF6D9D2DF58623C9FADAD3A1D1AF7CA", hash_generated_method = "7DDCB78FFD6A496EB6AB9A2913FA3D32")
+    
+public static String dumpCurrentRowToString(Cursor cursor) {
         StringBuilder sb = new StringBuilder();
         dumpCurrentRow(cursor, sb);
         return sb.toString();
@@ -567,8 +591,9 @@ public class DatabaseUtils {
      * @param field The TEXT field to read
      * @param values The {@link ContentValues} to put the value into, with the field as the key
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.388 -0500", hash_original_method = "5576E8CFBC652E677E2E7A2A7B8415A7", hash_generated_method = "8FA831EA5EA31CC4BA7DA39826A1D483")
-    public static void cursorStringToContentValues(Cursor cursor, String field,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.332 -0500", hash_original_method = "5576E8CFBC652E677E2E7A2A7B8415A7", hash_generated_method = "8FA831EA5EA31CC4BA7DA39826A1D483")
+    
+public static void cursorStringToContentValues(Cursor cursor, String field,
             ContentValues values) {
         cursorStringToContentValues(cursor, field, values, field);
     }
@@ -581,8 +606,9 @@ public class DatabaseUtils {
      * @param inserter The InsertHelper to bind into
      * @param index the index of the bind entry in the InsertHelper
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.388 -0500", hash_original_method = "C2854E9815730958E1E62BF3BEF2BE82", hash_generated_method = "4F1E1CBAC3FB5DB4FC16487167CA2CDC")
-    public static void cursorStringToInsertHelper(Cursor cursor, String field,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.334 -0500", hash_original_method = "C2854E9815730958E1E62BF3BEF2BE82", hash_generated_method = "4F1E1CBAC3FB5DB4FC16487167CA2CDC")
+    
+public static void cursorStringToInsertHelper(Cursor cursor, String field,
             InsertHelper inserter, int index) {
         inserter.bind(index, cursor.getString(cursor.getColumnIndexOrThrow(field)));
     }
@@ -595,8 +621,9 @@ public class DatabaseUtils {
      * @param values The {@link ContentValues} to put the value into, with the field as the key
      * @param key The key to store the value with in the map
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.390 -0500", hash_original_method = "C45BF775ACB085D4AB34759EE5B8F1A2", hash_generated_method = "62C206B2D6FE9173EE75BB173DDBCBFA")
-    public static void cursorStringToContentValues(Cursor cursor, String field,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.337 -0500", hash_original_method = "C45BF775ACB085D4AB34759EE5B8F1A2", hash_generated_method = "62C206B2D6FE9173EE75BB173DDBCBFA")
+    
+public static void cursorStringToContentValues(Cursor cursor, String field,
             ContentValues values, String key) {
         values.put(key, cursor.getString(cursor.getColumnIndexOrThrow(field)));
     }
@@ -608,8 +635,9 @@ public class DatabaseUtils {
      * @param field The INTEGER field to read
      * @param values The {@link ContentValues} to put the value into, with the field as the key
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.391 -0500", hash_original_method = "7E775FC9F6A4D9C80906C236555098C0", hash_generated_method = "BD7058BF2ECD242BC1E243CF5F2162F9")
-    public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.339 -0500", hash_original_method = "7E775FC9F6A4D9C80906C236555098C0", hash_generated_method = "BD7058BF2ECD242BC1E243CF5F2162F9")
+    
+public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values) {
         cursorIntToContentValues(cursor, field, values, field);
     }
 
@@ -621,8 +649,9 @@ public class DatabaseUtils {
      * @param values The {@link ContentValues} to put the value into, with the field as the key
      * @param key The key to store the value with in the map
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.392 -0500", hash_original_method = "D26DF74C9E797B538D6D01C69F8C39EB", hash_generated_method = "9F23384B40E9CEBA3B49A12206B6C84E")
-    public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.342 -0500", hash_original_method = "D26DF74C9E797B538D6D01C69F8C39EB", hash_generated_method = "9F23384B40E9CEBA3B49A12206B6C84E")
+    
+public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values,
             String key) {
         int colIndex = cursor.getColumnIndex(field);
         if (!cursor.isNull(colIndex)) {
@@ -639,8 +668,9 @@ public class DatabaseUtils {
      * @param field The INTEGER field to read
      * @param values The {@link ContentValues} to put the value into, with the field as the key
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.392 -0500", hash_original_method = "ADCC890B33FED57666957B09D938712A", hash_generated_method = "067860CEF2731268BF82E79DD06A1655")
-    public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.345 -0500", hash_original_method = "ADCC890B33FED57666957B09D938712A", hash_generated_method = "067860CEF2731268BF82E79DD06A1655")
+    
+public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values)
     {
         cursorLongToContentValues(cursor, field, values, field);
     }
@@ -653,8 +683,9 @@ public class DatabaseUtils {
      * @param values The {@link ContentValues} to put the value into
      * @param key The key to store the value with in the map
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.393 -0500", hash_original_method = "0E5EFEE954A1F8E1BF28B3DC3574519C", hash_generated_method = "350A6E6B222DD9E41B1BE938B448060F")
-    public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.347 -0500", hash_original_method = "0E5EFEE954A1F8E1BF28B3DC3574519C", hash_generated_method = "350A6E6B222DD9E41B1BE938B448060F")
+    
+public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values,
             String key) {
         int colIndex = cursor.getColumnIndex(field);
         if (!cursor.isNull(colIndex)) {
@@ -672,8 +703,9 @@ public class DatabaseUtils {
      * @param field The REAL field to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.394 -0500", hash_original_method = "923751B615B712D23E3EDA9B1C0C5364", hash_generated_method = "361E83401346E716FFE65F2C9B0886CD")
-    public static void cursorDoubleToCursorValues(Cursor cursor, String field, ContentValues values)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.350 -0500", hash_original_method = "923751B615B712D23E3EDA9B1C0C5364", hash_generated_method = "361E83401346E716FFE65F2C9B0886CD")
+    
+public static void cursorDoubleToCursorValues(Cursor cursor, String field, ContentValues values)
     {
         cursorDoubleToContentValues(cursor, field, values, field);
     }
@@ -686,8 +718,9 @@ public class DatabaseUtils {
      * @param values The {@link ContentValues} to put the value into
      * @param key The key to store the value with in the map
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.395 -0500", hash_original_method = "C3A5E8A0EB9514669B9D33BF4F941F8F", hash_generated_method = "26B8BE5F6403E0CBE1CB70D001532533")
-    public static void cursorDoubleToContentValues(Cursor cursor, String field,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.354 -0500", hash_original_method = "C3A5E8A0EB9514669B9D33BF4F941F8F", hash_generated_method = "26B8BE5F6403E0CBE1CB70D001532533")
+    
+public static void cursorDoubleToContentValues(Cursor cursor, String field,
             ContentValues values, String key) {
         int colIndex = cursor.getColumnIndex(field);
         if (!cursor.isNull(colIndex)) {
@@ -703,8 +736,9 @@ public class DatabaseUtils {
      * @param cursor the cursor to read from.
      * @param values the {@link ContentValues} to put the row into.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.396 -0500", hash_original_method = "F572ACA797E9B5093DE86C276E160FEC", hash_generated_method = "4948083AE7295EE51565758E9569E48A")
-    public static void cursorRowToContentValues(Cursor cursor, ContentValues values) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.356 -0500", hash_original_method = "F572ACA797E9B5093DE86C276E160FEC", hash_generated_method = "4948083AE7295EE51565758E9569E48A")
+    
+public static void cursorRowToContentValues(Cursor cursor, ContentValues values) {
         AbstractWindowedCursor awc =
                 (cursor instanceof AbstractWindowedCursor) ? (AbstractWindowedCursor) cursor : null;
 
@@ -725,8 +759,9 @@ public class DatabaseUtils {
      * @param table the name of the table to query
      * @return the number of rows in the table
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.397 -0500", hash_original_method = "929DBC7A90DC227FF2B26E4E72D12B70", hash_generated_method = "8CC78C93660BD02E2DF389D10B4F12B7")
-    public static long queryNumEntries(SQLiteDatabase db, String table) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.359 -0500", hash_original_method = "929DBC7A90DC227FF2B26E4E72D12B70", hash_generated_method = "8CC78C93660BD02E2DF389D10B4F12B7")
+    
+public static long queryNumEntries(SQLiteDatabase db, String table) {
         return queryNumEntries(db, table, null, null);
     }
 
@@ -739,8 +774,9 @@ public class DatabaseUtils {
      *              Passing null will count all rows for the given table
      * @return the number of rows in the table filtered by the selection
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.398 -0500", hash_original_method = "14DB54E29D400149A38978E82860E0D6", hash_generated_method = "87854038149496693F499F6CC5631C59")
-    public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.363 -0500", hash_original_method = "14DB54E29D400149A38978E82860E0D6", hash_generated_method = "87854038149496693F499F6CC5631C59")
+    
+public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
         return queryNumEntries(db, table, selection, null);
     }
 
@@ -757,8 +793,9 @@ public class DatabaseUtils {
      *              The values will be bound as Strings.
      * @return the number of rows in the table filtered by the selection
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.399 -0500", hash_original_method = "B4D6325E78B6FA18E9BDD75F37F7F7A7", hash_generated_method = "BC0B7A6C7758DC73C629DDD9DF9A80E6")
-    public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.365 -0500", hash_original_method = "B4D6325E78B6FA18E9BDD75F37F7F7A7", hash_generated_method = "BC0B7A6C7758DC73C629DDD9DF9A80E6")
+    
+public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
             String[] selectionArgs) {
         String s = (!TextUtils.isEmpty(selection)) ? " where " + selection : "";
         return longForQuery(db, "select count(*) from " + table + s,
@@ -769,8 +806,9 @@ public class DatabaseUtils {
      * Utility method to run the query on the db and return the value in the
      * first column of the first row.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.399 -0500", hash_original_method = "1138F251ECE80366C448CEE3E6C39D34", hash_generated_method = "879FB01B5B511D9EAD2D3BA54F086F68")
-    public static long longForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.367 -0500", hash_original_method = "1138F251ECE80366C448CEE3E6C39D34", hash_generated_method = "879FB01B5B511D9EAD2D3BA54F086F68")
+    
+public static long longForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
             return longForQuery(prog, selectionArgs);
@@ -783,8 +821,9 @@ public class DatabaseUtils {
      * Utility method to run the pre-compiled query and return the value in the
      * first column of the first row.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.400 -0500", hash_original_method = "FD2C3250D9E68CC4AB6807C768E508FC", hash_generated_method = "2E5050873F38E2B1C5B23668BF8B665D")
-    public static long longForQuery(SQLiteStatement prog, String[] selectionArgs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.370 -0500", hash_original_method = "FD2C3250D9E68CC4AB6807C768E508FC", hash_generated_method = "2E5050873F38E2B1C5B23668BF8B665D")
+    
+public static long longForQuery(SQLiteStatement prog, String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForLong();
     }
@@ -793,8 +832,9 @@ public class DatabaseUtils {
      * Utility method to run the query on the db and return the value in the
      * first column of the first row.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.401 -0500", hash_original_method = "DB160943F37161615396A718C828E921", hash_generated_method = "641D680EFB949033DE6F2B2B75BBE8E1")
-    public static String stringForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.372 -0500", hash_original_method = "DB160943F37161615396A718C828E921", hash_generated_method = "641D680EFB949033DE6F2B2B75BBE8E1")
+    
+public static String stringForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
             return stringForQuery(prog, selectionArgs);
@@ -807,8 +847,9 @@ public class DatabaseUtils {
      * Utility method to run the pre-compiled query and return the value in the
      * first column of the first row.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.402 -0500", hash_original_method = "F5C8CCF0AB5FDE49DF63CF243C328D9F", hash_generated_method = "2CE099AC4E18C8F8257DDF5B3D90A566")
-    public static String stringForQuery(SQLiteStatement prog, String[] selectionArgs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.376 -0500", hash_original_method = "F5C8CCF0AB5FDE49DF63CF243C328D9F", hash_generated_method = "2CE099AC4E18C8F8257DDF5B3D90A566")
+    
+public static String stringForQuery(SQLiteStatement prog, String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForString();
     }
@@ -819,8 +860,9 @@ public class DatabaseUtils {
      *
      * @return A read-only file descriptor for a copy of the blob value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.403 -0500", hash_original_method = "540FA090BA73BF75B1FC7EFF0B0F30DC", hash_generated_method = "D9F8EA265EE06DE480D47EA486025147")
-    public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteDatabase db,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.378 -0500", hash_original_method = "540FA090BA73BF75B1FC7EFF0B0F30DC", hash_generated_method = "D9F8EA265EE06DE480D47EA486025147")
+    
+public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteDatabase db,
             String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
@@ -836,8 +878,9 @@ public class DatabaseUtils {
      *
      * @return A read-only file descriptor for a copy of the blob value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.404 -0500", hash_original_method = "198371BAE7EE824416E49767A8F3C5A9", hash_generated_method = "1AB70714505EA6375498FD84B14C7444")
-    public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteStatement prog,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.381 -0500", hash_original_method = "198371BAE7EE824416E49767A8F3C5A9", hash_generated_method = "1AB70714505EA6375498FD84B14C7444")
+    
+public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteStatement prog,
             String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForBlobFileDescriptor();
@@ -851,8 +894,9 @@ public class DatabaseUtils {
      * @param column The column to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.405 -0500", hash_original_method = "E4819D88C72BF817469C24E1569426A4", hash_generated_method = "A135DD36A4708ECA00C9664FCC332131")
-    public static void cursorStringToContentValuesIfPresent(Cursor cursor, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.384 -0500", hash_original_method = "E4819D88C72BF817469C24E1569426A4", hash_generated_method = "A135DD36A4708ECA00C9664FCC332131")
+    
+public static void cursorStringToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
         if (index != -1 && !cursor.isNull(index)) {
@@ -868,8 +912,9 @@ public class DatabaseUtils {
      * @param column The column to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.406 -0500", hash_original_method = "360B190BBB89421C9CB5EC1082F87452", hash_generated_method = "5175FC265C12B410D802C28516887E7F")
-    public static void cursorLongToContentValuesIfPresent(Cursor cursor, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.386 -0500", hash_original_method = "360B190BBB89421C9CB5EC1082F87452", hash_generated_method = "5175FC265C12B410D802C28516887E7F")
+    
+public static void cursorLongToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
         if (index != -1 && !cursor.isNull(index)) {
@@ -885,8 +930,9 @@ public class DatabaseUtils {
      * @param column The column to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.406 -0500", hash_original_method = "E3916159B459B4D862132868895E3375", hash_generated_method = "59C3AF75A47101C071B91073FA092953")
-    public static void cursorShortToContentValuesIfPresent(Cursor cursor, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.389 -0500", hash_original_method = "E3916159B459B4D862132868895E3375", hash_generated_method = "59C3AF75A47101C071B91073FA092953")
+    
+public static void cursorShortToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
         if (index != -1 && !cursor.isNull(index)) {
@@ -902,8 +948,9 @@ public class DatabaseUtils {
      * @param column The column to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.407 -0500", hash_original_method = "9220AC3EDC51213CD50D1AE5DD6068EA", hash_generated_method = "B2C3788E779EF96C95BB7720C0B4E432")
-    public static void cursorIntToContentValuesIfPresent(Cursor cursor, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.393 -0500", hash_original_method = "9220AC3EDC51213CD50D1AE5DD6068EA", hash_generated_method = "B2C3788E779EF96C95BB7720C0B4E432")
+    
+public static void cursorIntToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
         if (index != -1 && !cursor.isNull(index)) {
@@ -919,8 +966,9 @@ public class DatabaseUtils {
      * @param column The column to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.408 -0500", hash_original_method = "AC6018F42404EC47E77B301174745A45", hash_generated_method = "BB8D8D43C66405027B782098B2A65121")
-    public static void cursorFloatToContentValuesIfPresent(Cursor cursor, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.395 -0500", hash_original_method = "AC6018F42404EC47E77B301174745A45", hash_generated_method = "BB8D8D43C66405027B782098B2A65121")
+    
+public static void cursorFloatToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
         if (index != -1 && !cursor.isNull(index)) {
@@ -936,8 +984,9 @@ public class DatabaseUtils {
      * @param column The column to read
      * @param values The {@link ContentValues} to put the value into
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.409 -0500", hash_original_method = "5A46FFBB11F835A1D00E2D177236CED3", hash_generated_method = "E02F64B417EC6DD2CB66DF18177B431F")
-    public static void cursorDoubleToContentValuesIfPresent(Cursor cursor, ContentValues values,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.397 -0500", hash_original_method = "5A46FFBB11F835A1D00E2D177236CED3", hash_generated_method = "E02F64B417EC6DD2CB66DF18177B431F")
+    
+public static void cursorDoubleToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
         if (index != -1 && !cursor.isNull(index)) {
@@ -955,8 +1004,9 @@ public class DatabaseUtils {
      *   of the form returned by sqlite3's <tt>.dump</tt> command (statements separated by
      *   semicolons)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.439 -0500", hash_original_method = "BF59FB26E066BD2B7E2B2FCD96B9B9F3", hash_generated_method = "982BE1730A7A2D298BBB05287D16F5B6")
-    static public void createDbFromSqlStatements(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.480 -0500", hash_original_method = "BF59FB26E066BD2B7E2B2FCD96B9B9F3", hash_generated_method = "982BE1730A7A2D298BBB05287D16F5B6")
+    
+static public void createDbFromSqlStatements(
             Context context, String dbName, int dbVersion, String sqlStatements) {
         SQLiteDatabase db = context.openOrCreateDatabase(dbName, 0, null);
         // TODO: this is not quite safe since it assumes that all semicolons at the end of a line
@@ -985,8 +1035,9 @@ public class DatabaseUtils {
      * @param sql the SQL statement whose type is returned by this method
      * @return one of the values listed above
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.440 -0500", hash_original_method = "9A85F93995D1DF0410A040FACCE7AB6C", hash_generated_method = "E846D354E5324A8741E8DFC00E3B273B")
-    public static int getSqlStatementType(String sql) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.483 -0500", hash_original_method = "9A85F93995D1DF0410A040FACCE7AB6C", hash_generated_method = "E846D354E5324A8741E8DFC00E3B273B")
+    
+public static int getSqlStatementType(String sql) {
         sql = sql.trim();
         if (sql.length() < 3) {
             return STATEMENT_OTHER;
@@ -1024,8 +1075,9 @@ public class DatabaseUtils {
      * Appends one set of selection args to another. This is useful when adding a selection
      * argument to a user provided set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.441 -0500", hash_original_method = "0E268DF7E77D68AC976AB928986A09DD", hash_generated_method = "2BECFD958CA5727B8248577B0B44C684")
-    public static String[] appendSelectionArgs(String[] originalValues, String[] newValues) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.485 -0500", hash_original_method = "0E268DF7E77D68AC976AB928986A09DD", hash_generated_method = "2BECFD958CA5727B8248577B0B44C684")
+    
+public static String[] appendSelectionArgs(String[] originalValues, String[] newValues) {
         if (originalValues == null || originalValues.length == 0) {
             return newValues;
         }
@@ -1034,37 +1086,37 @@ public class DatabaseUtils {
         System.arraycopy(newValues, 0, result, originalValues.length, newValues.length);
         return result;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.353 -0500", hash_original_field = "AC243BB121DEEDBC2ED7D027B8D07447", hash_generated_field = "1FE3C375C216F1A5BEF4D0C706AC2FD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.227 -0500", hash_original_field = "AC243BB121DEEDBC2ED7D027B8D07447", hash_generated_field = "1FE3C375C216F1A5BEF4D0C706AC2FD3")
 
     private static final String TAG = "DatabaseUtils";
 
     
     public static class InsertHelper {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.417 -0500", hash_original_field = "BFE8FED17723302566445D7C51E513E3", hash_generated_field = "65A2F50AB6F61733B444F32A68BCAC15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.419 -0500", hash_original_field = "BFE8FED17723302566445D7C51E513E3", hash_generated_field = "65A2F50AB6F61733B444F32A68BCAC15")
 
         public static final int TABLE_INFO_PRAGMA_COLUMNNAME_INDEX = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.418 -0500", hash_original_field = "3B7B95FAC283376853F3CD76E448CDFF", hash_generated_field = "E75F8B45A4A09AC1C6BBD56421B4EB2A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.422 -0500", hash_original_field = "3B7B95FAC283376853F3CD76E448CDFF", hash_generated_field = "E75F8B45A4A09AC1C6BBD56421B4EB2A")
 
         public static final int TABLE_INFO_PRAGMA_DEFAULT_INDEX = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.410 -0500", hash_original_field = "F34517A3CF2A339F68B081C837324DA1", hash_generated_field = "92D26B03BAC08A535924894FFC21F4C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.400 -0500", hash_original_field = "F34517A3CF2A339F68B081C837324DA1", hash_generated_field = "92D26B03BAC08A535924894FFC21F4C1")
 
         private  SQLiteDatabase mDb;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.411 -0500", hash_original_field = "A3641A59D25DF1C754B32221EB159084", hash_generated_field = "92B06808D569C2D663D953BC8B279336")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.403 -0500", hash_original_field = "A3641A59D25DF1C754B32221EB159084", hash_generated_field = "92B06808D569C2D663D953BC8B279336")
 
         private  String mTableName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.412 -0500", hash_original_field = "E32B697CE1D8597823633036CE4E7CA2", hash_generated_field = "5AFDB64706963E9A447E7450FF8702D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.406 -0500", hash_original_field = "E32B697CE1D8597823633036CE4E7CA2", hash_generated_field = "5AFDB64706963E9A447E7450FF8702D2")
 
         private HashMap<String, Integer> mColumns;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.413 -0500", hash_original_field = "B120FE9F65296E8324FFD29D76DC0550", hash_generated_field = "09FBB1AE74AFBED9E0ABEDDB238A177E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.409 -0500", hash_original_field = "B120FE9F65296E8324FFD29D76DC0550", hash_generated_field = "09FBB1AE74AFBED9E0ABEDDB238A177E")
 
         private String mInsertSQL = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.414 -0500", hash_original_field = "5BF14E1BB0E063898EC0DDB0092386BE", hash_generated_field = "AAD873AB78403BAA5279E14A19451412")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.412 -0500", hash_original_field = "5BF14E1BB0E063898EC0DDB0092386BE", hash_generated_field = "AAD873AB78403BAA5279E14A19451412")
 
         private SQLiteStatement mInsertStatement = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.415 -0500", hash_original_field = "0E83806F77015B3F862A0E1AB5E53DC9", hash_generated_field = "62935F14EC8B4C3549EF440E40AC46A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.414 -0500", hash_original_field = "0E83806F77015B3F862A0E1AB5E53DC9", hash_generated_field = "62935F14EC8B4C3549EF440E40AC46A5")
 
         private SQLiteStatement mReplaceStatement = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.416 -0500", hash_original_field = "69FE0755F972174C65D9CAE9E47C5C39", hash_generated_field = "90581E4B6149E61FC27485A9D17C51E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.417 -0500", hash_original_field = "69FE0755F972174C65D9CAE9E47C5C39", hash_generated_field = "90581E4B6149E61FC27485A9D17C51E2")
 
         private SQLiteStatement mPreparedStatement = null;
 
@@ -1072,14 +1124,16 @@ public class DatabaseUtils {
          * @param db the SQLiteDatabase to insert into
          * @param tableName the name of the table to insert into
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.419 -0500", hash_original_method = "24A3E628A21DF3387C7E8AFA040BF2F9", hash_generated_method = "5279D8FEEDD13B0C62914870C5D603D2")
-        public InsertHelper(SQLiteDatabase db, String tableName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.425 -0500", hash_original_method = "24A3E628A21DF3387C7E8AFA040BF2F9", hash_generated_method = "5279D8FEEDD13B0C62914870C5D603D2")
+        
+public InsertHelper(SQLiteDatabase db, String tableName) {
             mDb = db;
             mTableName = tableName;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.421 -0500", hash_original_method = "C9A601B53671BC96A8E157301601DE92", hash_generated_method = "E5EA1E12A1537CF74E7BFAF3D2FE6D1E")
-        private void buildSQL() throws SQLException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.428 -0500", hash_original_method = "C9A601B53671BC96A8E157301601DE92", hash_generated_method = "E5EA1E12A1537CF74E7BFAF3D2FE6D1E")
+        
+private void buildSQL() throws SQLException {
             StringBuilder sb = new StringBuilder(128);
             sb.append("INSERT INTO ");
             sb.append(mTableName);
@@ -1124,8 +1178,9 @@ public class DatabaseUtils {
             if (LOCAL_LOGV) Log.v(TAG, "insert statement is " + mInsertSQL);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.422 -0500", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "2042BE993FAEE612AB01109525A826F1")
-        private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.431 -0500", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "2042BE993FAEE612AB01109525A826F1")
+        
+private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
             if (allowReplace) {
                 if (mReplaceStatement == null) {
                     if (mInsertSQL == null) buildSQL();
@@ -1155,8 +1210,9 @@ public class DatabaseUtils {
          * @return the row ID of the newly inserted row, or -1 if an
          * error occurred
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.423 -0500", hash_original_method = "13ED4597857164B01AAF7D1C6E2C9384", hash_generated_method = "CCBE22CE3839C3F0D1FFDCDB80A9C33B")
-        private synchronized long insertInternal(ContentValues values, boolean allowReplace) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.434 -0500", hash_original_method = "13ED4597857164B01AAF7D1C6E2C9384", hash_generated_method = "CCBE22CE3839C3F0D1FFDCDB80A9C33B")
+        
+private synchronized long insertInternal(ContentValues values, boolean allowReplace) {
             try {
                 SQLiteStatement stmt = getStatement(allowReplace);
                 stmt.clearBindings();
@@ -1183,8 +1239,9 @@ public class DatabaseUtils {
          * @param key the column name
          * @return the index of the column
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.424 -0500", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "F083CAABF23AF09216F669BFCD72D367")
-        public int getColumnIndex(String key) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.437 -0500", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "F083CAABF23AF09216F669BFCD72D367")
+        
+public int getColumnIndex(String key) {
             getStatement(false);
             final Integer index = mColumns.get(key);
             if (index == null) {
@@ -1199,8 +1256,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.424 -0500", hash_original_method = "898F1EFFAEB546E6A9657A001F4AE1E8", hash_generated_method = "F9C40C81C68344DF4C359DF8BF2FBEE9")
-        public void bind(int index, double value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.440 -0500", hash_original_method = "898F1EFFAEB546E6A9657A001F4AE1E8", hash_generated_method = "F9C40C81C68344DF4C359DF8BF2FBEE9")
+        
+public void bind(int index, double value) {
             mPreparedStatement.bindDouble(index, value);
         }
 
@@ -1210,8 +1268,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.425 -0500", hash_original_method = "85D356AA3C69D35869973C25B38955EB", hash_generated_method = "51159D6A6BCA645A9FECFE7044BCE2E6")
-        public void bind(int index, float value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.442 -0500", hash_original_method = "85D356AA3C69D35869973C25B38955EB", hash_generated_method = "51159D6A6BCA645A9FECFE7044BCE2E6")
+        
+public void bind(int index, float value) {
             mPreparedStatement.bindDouble(index, value);
         }
 
@@ -1221,8 +1280,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.426 -0500", hash_original_method = "76F2FAC154909632438A49671F5D33A8", hash_generated_method = "9398ED4569F070ECF144AEEF7742700F")
-        public void bind(int index, long value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.444 -0500", hash_original_method = "76F2FAC154909632438A49671F5D33A8", hash_generated_method = "9398ED4569F070ECF144AEEF7742700F")
+        
+public void bind(int index, long value) {
             mPreparedStatement.bindLong(index, value);
         }
 
@@ -1232,8 +1292,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.427 -0500", hash_original_method = "A73EABD891E538A0A03C5C4A49C29503", hash_generated_method = "1A141A934B3EFEF0FC0BE64726DE55FA")
-        public void bind(int index, int value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.446 -0500", hash_original_method = "A73EABD891E538A0A03C5C4A49C29503", hash_generated_method = "1A141A934B3EFEF0FC0BE64726DE55FA")
+        
+public void bind(int index, int value) {
             mPreparedStatement.bindLong(index, value);
         }
 
@@ -1243,8 +1304,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.428 -0500", hash_original_method = "D4E75DDD13795169D0FEAC83726F0F45", hash_generated_method = "C7371512E5E8EE49D9DEB2147152339E")
-        public void bind(int index, boolean value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.449 -0500", hash_original_method = "D4E75DDD13795169D0FEAC83726F0F45", hash_generated_method = "C7371512E5E8EE49D9DEB2147152339E")
+        
+public void bind(int index, boolean value) {
             mPreparedStatement.bindLong(index, value ? 1 : 0);
         }
 
@@ -1253,8 +1315,9 @@ public class DatabaseUtils {
          * without a matching execute() must have already have been called.
          * @param index the index of the slot to which to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.428 -0500", hash_original_method = "27990C90801E0788D0DEC119EA5D904E", hash_generated_method = "D44D088758A5484E469199565F51B0BB")
-        public void bindNull(int index) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.452 -0500", hash_original_method = "27990C90801E0788D0DEC119EA5D904E", hash_generated_method = "D44D088758A5484E469199565F51B0BB")
+        
+public void bindNull(int index) {
             mPreparedStatement.bindNull(index);
         }
 
@@ -1264,8 +1327,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.429 -0500", hash_original_method = "B7B8BDC3019EC6DD4050CE3C3C2D0B33", hash_generated_method = "F7A9BFB62194C0AAA6AC372A893B199F")
-        public void bind(int index, byte[] value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.454 -0500", hash_original_method = "B7B8BDC3019EC6DD4050CE3C3C2D0B33", hash_generated_method = "F7A9BFB62194C0AAA6AC372A893B199F")
+        
+public void bind(int index, byte[] value) {
             if (value == null) {
                 mPreparedStatement.bindNull(index);
             } else {
@@ -1279,8 +1343,9 @@ public class DatabaseUtils {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.430 -0500", hash_original_method = "70AF33973781662CA48B1120B9D51D5F", hash_generated_method = "3AA8A3379FD3EF5E8F74AFA39939EA2C")
-        public void bind(int index, String value) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.457 -0500", hash_original_method = "70AF33973781662CA48B1120B9D51D5F", hash_generated_method = "3AA8A3379FD3EF5E8F74AFA39939EA2C")
+        
+public void bind(int index, String value) {
             if (value == null) {
                 mPreparedStatement.bindNull(index);
             } else {
@@ -1299,8 +1364,9 @@ public class DatabaseUtils {
          * @return the row ID of the newly inserted row, or -1 if an
          * error occurred
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.431 -0500", hash_original_method = "9556B578266975E5A98CFEB0C2204667", hash_generated_method = "B0F6AB4EB61F7A86F4C78599925651CF")
-        public long insert(ContentValues values) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.459 -0500", hash_original_method = "9556B578266975E5A98CFEB0C2204667", hash_generated_method = "B0F6AB4EB61F7A86F4C78599925651CF")
+        
+public long insert(ContentValues values) {
             return insertInternal(values, false);
         }
 
@@ -1314,8 +1380,9 @@ public class DatabaseUtils {
          * @return the row ID of the newly inserted row, or -1 if an
          * error occurred
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.432 -0500", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "DD7ECBBE06923C0BEC652FE851DDA82B")
-        public long execute() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.462 -0500", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "DD7ECBBE06923C0BEC652FE851DDA82B")
+        
+public long execute() {
             if (mPreparedStatement == null) {
                 throw new IllegalStateException("you must prepare this inserter before calling "
                         + "execute");
@@ -1343,8 +1410,9 @@ public class DatabaseUtils {
          * <li>execute();
          * </ul>
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.433 -0500", hash_original_method = "BEDC7093698B9136E99447F456E9608C", hash_generated_method = "CDE373DF2B92F0C86FB3B28296D008D6")
-        public void prepareForInsert() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.464 -0500", hash_original_method = "BEDC7093698B9136E99447F456E9608C", hash_generated_method = "CDE373DF2B92F0C86FB3B28296D008D6")
+        
+public void prepareForInsert() {
             mPreparedStatement = getStatement(false);
             mPreparedStatement.clearBindings();
         }
@@ -1360,8 +1428,9 @@ public class DatabaseUtils {
          * <li>execute();
          * </ul>
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.434 -0500", hash_original_method = "2DC72BFF923FF55EA48E8D651F79AFBE", hash_generated_method = "C104F51FC01594EFD5D80ED444738FFE")
-        public void prepareForReplace() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.468 -0500", hash_original_method = "2DC72BFF923FF55EA48E8D651F79AFBE", hash_generated_method = "C104F51FC01594EFD5D80ED444738FFE")
+        
+public void prepareForReplace() {
             mPreparedStatement = getStatement(true);
             mPreparedStatement.clearBindings();
         }
@@ -1377,8 +1446,9 @@ public class DatabaseUtils {
          * @return the row ID of the newly inserted row, or -1 if an
          * error occurred
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.436 -0500", hash_original_method = "C177E80799F9F51057A5F361D4C5571B", hash_generated_method = "BA62DAC4F150FFE24970E26679C6A589")
-        public long replace(ContentValues values) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.470 -0500", hash_original_method = "C177E80799F9F51057A5F361D4C5571B", hash_generated_method = "BA62DAC4F150FFE24970E26679C6A589")
+        
+public long replace(ContentValues values) {
             return insertInternal(values, true);
         }
 
@@ -1387,8 +1457,9 @@ public class DatabaseUtils {
          * it.  The behavior of calling <code>insert()</code> after
          * calling this method is undefined.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.437 -0500", hash_original_method = "21909697F743246FF7034BA444D2FBF0", hash_generated_method = "174EA5B3EE24112A639E97FE39E5B1D6")
-        public void close() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.473 -0500", hash_original_method = "21909697F743246FF7034BA444D2FBF0", hash_generated_method = "174EA5B3EE24112A639E97FE39E5B1D6")
+        
+public void close() {
             if (mInsertStatement != null) {
                 mInsertStatement.close();
                 mInsertStatement = null;
@@ -1401,48 +1472,48 @@ public class DatabaseUtils {
             mColumns = null;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.353 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.229 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
 
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.354 -0500", hash_original_field = "745FE27F6621B49CB7F0165D799C0855", hash_generated_field = "626038DAE6BB26944A3CF12B5D6F74EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.232 -0500", hash_original_field = "745FE27F6621B49CB7F0165D799C0855", hash_generated_field = "626038DAE6BB26944A3CF12B5D6F74EE")
 
     private static final boolean LOCAL_LOGV = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.355 -0500", hash_original_field = "060FF946F44F82F24E670763EBDB7BBF", hash_generated_field = "A9BB21413E0B9FDB529AF62765E841A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.234 -0500", hash_original_field = "060FF946F44F82F24E670763EBDB7BBF", hash_generated_field = "A9BB21413E0B9FDB529AF62765E841A5")
 
 
     private static final String[] countProjection = new String[]{"count(*)"};
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.356 -0500", hash_original_field = "6ABE43256BEF3B310419381B16620618", hash_generated_field = "4648C235C26E35A03693F2CCB0369012")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.237 -0500", hash_original_field = "6ABE43256BEF3B310419381B16620618", hash_generated_field = "4648C235C26E35A03693F2CCB0369012")
 
     public static final int STATEMENT_SELECT = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.357 -0500", hash_original_field = "AEB3A38F380069FFC2A5CB55942E59DD", hash_generated_field = "6B2A4824744946252E51300EBC79E592")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.240 -0500", hash_original_field = "AEB3A38F380069FFC2A5CB55942E59DD", hash_generated_field = "6B2A4824744946252E51300EBC79E592")
 
     public static final int STATEMENT_UPDATE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.358 -0500", hash_original_field = "A1C7BF2806CD8885FE947DD85FE52756", hash_generated_field = "2ACC3D548878CC219AA49F7804828063")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.242 -0500", hash_original_field = "A1C7BF2806CD8885FE947DD85FE52756", hash_generated_field = "2ACC3D548878CC219AA49F7804828063")
 
     public static final int STATEMENT_ATTACH = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.359 -0500", hash_original_field = "CF60954E1C8FE84B67F701F8D38B6C37", hash_generated_field = "02A421ACB07995DB47634279A2479B60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.245 -0500", hash_original_field = "CF60954E1C8FE84B67F701F8D38B6C37", hash_generated_field = "02A421ACB07995DB47634279A2479B60")
 
     public static final int STATEMENT_BEGIN = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.359 -0500", hash_original_field = "56E00AEB39B07E6243594B7020E4D3A3", hash_generated_field = "A6C603A158EA8E9046E04946D4516AA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.247 -0500", hash_original_field = "56E00AEB39B07E6243594B7020E4D3A3", hash_generated_field = "A6C603A158EA8E9046E04946D4516AA3")
 
     public static final int STATEMENT_COMMIT = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.360 -0500", hash_original_field = "DA79C3684466C0CDEBCAEFAB7A85556C", hash_generated_field = "8F86283F91FE4F97606CB017F6364760")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.250 -0500", hash_original_field = "DA79C3684466C0CDEBCAEFAB7A85556C", hash_generated_field = "8F86283F91FE4F97606CB017F6364760")
 
     public static final int STATEMENT_ABORT = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.361 -0500", hash_original_field = "8F0AF4CB9BF30EBFB3C94DDBC65ACD15", hash_generated_field = "C15D3B7768DE951957CC8DFC9D19405B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.252 -0500", hash_original_field = "8F0AF4CB9BF30EBFB3C94DDBC65ACD15", hash_generated_field = "C15D3B7768DE951957CC8DFC9D19405B")
 
     public static final int STATEMENT_PRAGMA = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.362 -0500", hash_original_field = "DA2710D140E368D151D362881924C233", hash_generated_field = "8DC2B7B4CA8DB7D59D8A5F9177912461")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.256 -0500", hash_original_field = "DA2710D140E368D151D362881924C233", hash_generated_field = "8DC2B7B4CA8DB7D59D8A5F9177912461")
 
     public static final int STATEMENT_DDL = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.363 -0500", hash_original_field = "C71E98C72EF4342FD939F1D674BE2130", hash_generated_field = "52E7CCF3D2536FB7A3368B1F5E5546C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.258 -0500", hash_original_field = "C71E98C72EF4342FD939F1D674BE2130", hash_generated_field = "52E7CCF3D2536FB7A3368B1F5E5546C4")
 
     public static final int STATEMENT_UNPREPARED = 9;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.364 -0500", hash_original_field = "9F4E9F2BE74050E9E88F6D994BFCF990", hash_generated_field = "5F2F4749E3B45E10482F4E32EAB579F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.261 -0500", hash_original_field = "9F4E9F2BE74050E9E88F6D994BFCF990", hash_generated_field = "5F2F4749E3B45E10482F4E32EAB579F5")
 
     public static final int STATEMENT_OTHER = 99;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.380 -0500", hash_original_field = "30509007D4B85CC0C448607239B0E0D3", hash_generated_field = "64EC00AB4BE1B864318AEBC676ADD327")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.308 -0500", hash_original_field = "30509007D4B85CC0C448607239B0E0D3", hash_generated_field = "64EC00AB4BE1B864318AEBC676ADD327")
 
 
     private static Collator mColl = null;

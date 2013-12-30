@@ -50,30 +50,32 @@ import org.bouncycastle.x509.X509V2AttributeCertificate;
 
 
 public class MiscPEMGenerator implements PemObjectGenerator {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.329 -0500", hash_original_field = "B907C3B1813ED5337E8F8B30F31ED00A", hash_generated_field = "03657E147A117C299E988405DFDF1FE0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.985 -0500", hash_original_field = "B907C3B1813ED5337E8F8B30F31ED00A", hash_generated_field = "03657E147A117C299E988405DFDF1FE0")
 
     private Object obj;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.330 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.988 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
     private String algorithm;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.331 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.990 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
 
     private char[] password;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.332 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "47462950F1DBF0D228B8D6FE202BDA9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.993 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "47462950F1DBF0D228B8D6FE202BDA9F")
 
     private SecureRandom random;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.332 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.995 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
     private Provider provider;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.333 -0500", hash_original_method = "C02D6ACBF889CF35766B7871B784307D", hash_generated_method = "83E66DD4663D34B7986388DED6A1A999")
-    public MiscPEMGenerator(Object o)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.997 -0500", hash_original_method = "C02D6ACBF889CF35766B7871B784307D", hash_generated_method = "83E66DD4663D34B7986388DED6A1A999")
+    
+public MiscPEMGenerator(Object o)
     {
         this.obj = o;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.334 -0500", hash_original_method = "AD2D21FAE267AE7BA19486B70A7A435E", hash_generated_method = "2CB8B0A31B891B2C60F90A47AE4A44A9")
-    public MiscPEMGenerator(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.000 -0500", hash_original_method = "AD2D21FAE267AE7BA19486B70A7A435E", hash_generated_method = "2CB8B0A31B891B2C60F90A47AE4A44A9")
+    
+public MiscPEMGenerator(
         Object       obj,
         String       algorithm,
         char[]       password,
@@ -87,8 +89,9 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         this.provider = provider;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.335 -0500", hash_original_method = "FC3CFC06395928A5BA1B88C136A7A3A1", hash_generated_method = "73E94ACE9E6622E323C58C3F7C1FB891")
-    public MiscPEMGenerator(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.003 -0500", hash_original_method = "FC3CFC06395928A5BA1B88C136A7A3A1", hash_generated_method = "73E94ACE9E6622E323C58C3F7C1FB891")
+    
+public MiscPEMGenerator(
         Object       obj,
         String       algorithm,
         char[]       password,
@@ -111,8 +114,9 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.337 -0500", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "3AEB8909C5A200208CB372EF0268B583")
-    private PemObject createPemObject(Object o)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.007 -0500", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "3AEB8909C5A200208CB372EF0268B583")
+    
+private PemObject createPemObject(Object o)
         throws IOException
     {
         String  type;
@@ -225,8 +229,9 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         return new PemObject(type, encoding);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.338 -0500", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "1D93C79278F5017273720A49FCC5B60F")
-    private String getHexEncoded(byte[] bytes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.009 -0500", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "1D93C79278F5017273720A49FCC5B60F")
+    
+private String getHexEncoded(byte[] bytes)
         throws IOException
     {
         bytes = Hex.encode(bytes);
@@ -241,8 +246,9 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         return new String(chars);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.339 -0500", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "EA647454FDF684924F3C52BFCE4D5E0C")
-    private PemObject createPemObject(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.013 -0500", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "EA647454FDF684924F3C52BFCE4D5E0C")
+    
+private PemObject createPemObject(
         Object       obj,
         String       algorithm,
         char[]       password,
@@ -335,8 +341,9 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         return new PemObject(type, headers, encData);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.340 -0500", hash_original_method = "E9B86B455C150CA2FE6340A6ABEAFEB2", hash_generated_method = "C4AA593FA33881BD50DF03D069DF3D15")
-    public PemObject generate()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.015 -0500", hash_original_method = "E9B86B455C150CA2FE6340A6ABEAFEB2", hash_generated_method = "C4AA593FA33881BD50DF03D069DF3D15")
+    
+public PemObject generate()
         throws PemGenerationException
     {
         try

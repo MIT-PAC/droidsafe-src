@@ -17,17 +17,17 @@ final class AllPermissionCollection extends PermissionCollection {
     {
         //Synthesized constructor
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.838 -0500", hash_original_method = "4200EBEC7A86784BE2F7368AF2D9C4EB", hash_generated_method = "2081635398ECBDAECDDEF289F86B0B3A")
-    @Override
-public void add(Permission permission) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.104 -0500", hash_original_method = "4200EBEC7A86784BE2F7368AF2D9C4EB", hash_generated_method = "2081635398ECBDAECDDEF289F86B0B3A")
+    
+@Override public void add(Permission permission) { }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.839 -0500", hash_original_method = "9354983A4C01BAC9D52E1AE4692A1F83", hash_generated_method = "1FD87B31768971C715431B639D6A127C")
-    @Override
-public Enumeration<Permission> elements() { return null; }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.108 -0500", hash_original_method = "9354983A4C01BAC9D52E1AE4692A1F83", hash_generated_method = "1FD87B31768971C715431B639D6A127C")
+    
+@Override public Enumeration<Permission> elements() { return null; }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.840 -0500", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "7028504695C2B07EE227E4A73DB8D42F")
-    @Override
-public boolean implies(Permission permission) { return true; }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.113 -0500", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "7028504695C2B07EE227E4A73DB8D42F")
+    
+@Override public boolean implies(Permission permission) { return true; }
 
     
 }

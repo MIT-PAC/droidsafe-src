@@ -12,16 +12,16 @@ import java.util.HashMap;
 
 
 public class RemoteCallbackList<E extends IInterface> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.677 -0500", hash_original_field = "A3014188D001ACE7213D971AD3B4EFAD", hash_generated_field = "A3014188D001ACE7213D971AD3B4EFAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.311 -0500", hash_original_field = "A3014188D001ACE7213D971AD3B4EFAD", hash_generated_field = "A3014188D001ACE7213D971AD3B4EFAD")
  HashMap<IBinder, Callback> mCallbacks
             = new HashMap<IBinder, Callback>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.678 -0500", hash_original_field = "29E32C0259DD425589A0C9B8D055C676", hash_generated_field = "B75B95317849640E22DFE7A92A9E9DF6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.313 -0500", hash_original_field = "29E32C0259DD425589A0C9B8D055C676", hash_generated_field = "B75B95317849640E22DFE7A92A9E9DF6")
 
     private Object[] mActiveBroadcast;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.679 -0500", hash_original_field = "380B3FC98996D421223AC5094D5B2552", hash_generated_field = "CB5FB74014BCEB13346A3C70AF8D1481")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.317 -0500", hash_original_field = "380B3FC98996D421223AC5094D5B2552", hash_generated_field = "CB5FB74014BCEB13346A3C70AF8D1481")
 
     private int mBroadcastCount = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.680 -0500", hash_original_field = "344D596E5F0D6CDFF41A591F61670A78", hash_generated_field = "9A32E5255010279867B3E477F7AB34C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.319 -0500", hash_original_field = "344D596E5F0D6CDFF41A591F61670A78", hash_generated_field = "9A32E5255010279867B3E477F7AB34C4")
 
     private boolean mKilled = false;
     
@@ -35,8 +35,9 @@ public class RemoteCallbackList<E extends IInterface> {
      * Simple version of {@link RemoteCallbackList#register(E, Object)}
      * that does not take a cookie object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.685 -0500", hash_original_method = "46F1FD6FBAE5A826BE086BA154A601C8", hash_generated_method = "9226C971F9CA03B5EB718A21EE05AADA")
-    public boolean register(E callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.332 -0500", hash_original_method = "46F1FD6FBAE5A826BE086BA154A601C8", hash_generated_method = "9226C971F9CA03B5EB718A21EE05AADA")
+    
+public boolean register(E callback) {
         return register(callback, null);
     }
     
@@ -66,8 +67,9 @@ public class RemoteCallbackList<E extends IInterface> {
      * @see #kill
      * @see #onCallbackDied
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.686 -0500", hash_original_method = "228836B43DD98CF5855A1427021AF94C", hash_generated_method = "17E6C693B5A4FF59FE09A0C3148A1939")
-    public boolean register(E callback, Object cookie) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.335 -0500", hash_original_method = "228836B43DD98CF5855A1427021AF94C", hash_generated_method = "17E6C693B5A4FF59FE09A0C3148A1939")
+    
+public boolean register(E callback, Object cookie) {
         synchronized (mCallbacks) {
             if (mKilled) {
                 return false;
@@ -101,8 +103,9 @@ public class RemoteCallbackList<E extends IInterface> {
      *
      * @see #register
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.687 -0500", hash_original_method = "E94D872448628F2BAA0FD192A750EA6D", hash_generated_method = "0327530A3110BD11C7A6CB6CD2CDC1B4")
-    public boolean unregister(E callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.337 -0500", hash_original_method = "E94D872448628F2BAA0FD192A750EA6D", hash_generated_method = "0327530A3110BD11C7A6CB6CD2CDC1B4")
+    
+public boolean unregister(E callback) {
         synchronized (mCallbacks) {
             Callback cb = mCallbacks.remove(callback.asBinder());
             if (cb != null) {
@@ -121,8 +124,9 @@ public class RemoteCallbackList<E extends IInterface> {
      *
      * @see #register
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.687 -0500", hash_original_method = "143F9A34B740B6676238190B04E5358A", hash_generated_method = "07483B072732FDDAC6FA92D7B47E0CDF")
-    public void kill() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.339 -0500", hash_original_method = "143F9A34B740B6676238190B04E5358A", hash_generated_method = "07483B072732FDDAC6FA92D7B47E0CDF")
+    
+public void kill() {
         synchronized (mCallbacks) {
             for (Callback cb : mCallbacks.values()) {
                 cb.mCallback.asBinder().unlinkToDeath(cb, 0);
@@ -136,8 +140,9 @@ public class RemoteCallbackList<E extends IInterface> {
      * Old version of {@link #onCallbackDied(E, Object)} that
      * does not provide a cookie.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.688 -0500", hash_original_method = "B434989CEB936B9194BF8BFB60F8F696", hash_generated_method = "4BF54ACB8774850DB1D58D7E4879FA70")
-    public void onCallbackDied(E callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.341 -0500", hash_original_method = "B434989CEB936B9194BF8BFB60F8F696", hash_generated_method = "4BF54ACB8774850DB1D58D7E4879FA70")
+    
+public void onCallbackDied(E callback) {
     }
     
     /**
@@ -154,8 +159,9 @@ public class RemoteCallbackList<E extends IInterface> {
      * 
      * @see #register
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.689 -0500", hash_original_method = "0963A4798BF8140F1109AA736DE1F9A0", hash_generated_method = "A747490DF63CD54980667B186064A343")
-    public void onCallbackDied(E callback, Object cookie) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.343 -0500", hash_original_method = "0963A4798BF8140F1109AA736DE1F9A0", hash_generated_method = "A747490DF63CD54980667B186064A343")
+    
+public void onCallbackDied(E callback, Object cookie) {
         onCallbackDied(callback);
     }
 
@@ -190,8 +196,9 @@ public class RemoteCallbackList<E extends IInterface> {
      * @see #getBroadcastItem
      * @see #finishBroadcast
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.690 -0500", hash_original_method = "1FD0E6F07E109275C9353B8621589475", hash_generated_method = "B29A2068DAA53EA10AD23A77E668F10C")
-    public int beginBroadcast() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.346 -0500", hash_original_method = "1FD0E6F07E109275C9353B8621589475", hash_generated_method = "B29A2068DAA53EA10AD23A77E668F10C")
+    
+public int beginBroadcast() {
         synchronized (mCallbacks) {
             if (mBroadcastCount > 0) {
                 throw new IllegalStateException(
@@ -235,8 +242,9 @@ public class RemoteCallbackList<E extends IInterface> {
      *
      * @see #beginBroadcast
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.690 -0500", hash_original_method = "C48AB0BBF7A76319F21B51268A720A67", hash_generated_method = "4FC1E5B77D827E51A022888487CE19C4")
-    public E getBroadcastItem(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.348 -0500", hash_original_method = "C48AB0BBF7A76319F21B51268A720A67", hash_generated_method = "4FC1E5B77D827E51A022888487CE19C4")
+    
+public E getBroadcastItem(int index) {
         return ((Callback)mActiveBroadcast[index]).mCallback;
     }
     
@@ -246,8 +254,9 @@ public class RemoteCallbackList<E extends IInterface> {
      * 
      * @see #getBroadcastItem
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.691 -0500", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "A8AC5A173DE5A6BAB66262097C68072D")
-    public Object getBroadcastCookie(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.350 -0500", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "A8AC5A173DE5A6BAB66262097C68072D")
+    
+public Object getBroadcastCookie(int index) {
         return ((Callback)mActiveBroadcast[index]).mCookie;
     }
 
@@ -258,8 +267,9 @@ public class RemoteCallbackList<E extends IInterface> {
      *
      * @see #beginBroadcast
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.692 -0500", hash_original_method = "2675E2000594C860776B6FA43AA81FEA", hash_generated_method = "1CB566FA9DD36805AAE6D7444664087E")
-    public void finishBroadcast() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.352 -0500", hash_original_method = "2675E2000594C860776B6FA43AA81FEA", hash_generated_method = "1CB566FA9DD36805AAE6D7444664087E")
+    
+public void finishBroadcast() {
         if (mBroadcastCount < 0) {
             throw new IllegalStateException(
                     "finishBroadcast() called outside of a broadcast");
@@ -278,21 +288,23 @@ public class RemoteCallbackList<E extends IInterface> {
 
     
     private final class Callback implements IBinder.DeathRecipient {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.681 -0500", hash_original_field = "C5FF175C3C7088F24551555CDBB26192", hash_generated_field = "C5FF175C3C7088F24551555CDBB26192")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.322 -0500", hash_original_field = "C5FF175C3C7088F24551555CDBB26192", hash_generated_field = "C5FF175C3C7088F24551555CDBB26192")
 
          E mCallback;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.681 -0500", hash_original_field = "3AD67F45247C091A10339EB1DB868D56", hash_generated_field = "3AD67F45247C091A10339EB1DB868D56")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.324 -0500", hash_original_field = "3AD67F45247C091A10339EB1DB868D56", hash_generated_field = "3AD67F45247C091A10339EB1DB868D56")
 
          Object mCookie;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.682 -0500", hash_original_method = "C2984F09CEF5592866E406A38791BD39", hash_generated_method = "C2984F09CEF5592866E406A38791BD39")
-        Callback(E callback, Object cookie) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.326 -0500", hash_original_method = "C2984F09CEF5592866E406A38791BD39", hash_generated_method = "C2984F09CEF5592866E406A38791BD39")
+        
+Callback(E callback, Object cookie) {
             mCallback = callback;
             mCookie = cookie;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.683 -0500", hash_original_method = "984D7C16BA519E420EB37CE7E59C8134", hash_generated_method = "C2B995AE0E880DCC2FE38C4DFAEC460E")
-        public void binderDied() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.329 -0500", hash_original_method = "984D7C16BA519E420EB37CE7E59C8134", hash_generated_method = "C2B995AE0E880DCC2FE38C4DFAEC460E")
+        
+public void binderDied() {
             synchronized (mCallbacks) {
                 mCallbacks.remove(mCallback.asBinder());
             }

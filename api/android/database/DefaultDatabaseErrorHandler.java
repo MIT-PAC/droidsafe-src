@@ -17,7 +17,7 @@ import android.util.Pair;
 
 
 public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.359 -0500", hash_original_field = "7A43BE15E30AAB677E00CA000B61133A", hash_generated_field = "23BA72495E1959CF9D5D5CA8183FBE7E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.943 -0500", hash_original_field = "7A43BE15E30AAB677E00CA000B61133A", hash_generated_field = "23BA72495E1959CF9D5D5CA8183FBE7E")
 
 
     private static final String TAG = "DefaultDatabaseErrorHandler";
@@ -34,8 +34,9 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
      * @param dbObj the {@link SQLiteDatabase} object representing the database on which corruption
      * is detected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.360 -0500", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "A534DEC657F3794646B757D69A82EF0B")
-    public void onCorruption(SQLiteDatabase dbObj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.947 -0500", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "A534DEC657F3794646B757D69A82EF0B")
+    
+public void onCorruption(SQLiteDatabase dbObj) {
         Log.e(TAG, "Corruption reported by sqlite on database: " + dbObj.getPath());
 
         // is the corruption detected even before database could be 'opened'?
@@ -78,8 +79,9 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.361 -0500", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "39FC2F2C866EDC4F25097633E0CD189C")
-    private void deleteDatabaseFile(String fileName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.949 -0500", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "39FC2F2C866EDC4F25097633E0CD189C")
+    
+private void deleteDatabaseFile(String fileName) {
         if (fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0) {
             return;
         }

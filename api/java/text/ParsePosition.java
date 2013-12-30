@@ -23,8 +23,9 @@ public class ParsePosition {
      * @param index
      *            the index to begin parsing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.544 -0500", hash_original_method = "DC50BCA5F95CF2B530ABA250C6125033", hash_generated_method = "D2C67F25DF78C8DD8CC7C58EB94A8913")
-    public ParsePosition(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.826 -0500", hash_original_method = "DC50BCA5F95CF2B530ABA250C6125033", hash_generated_method = "D2C67F25DF78C8DD8CC7C58EB94A8913")
+    
+public ParsePosition(int index) {
         currentPosition = index;
     }
 
@@ -40,9 +41,10 @@ public class ParsePosition {
      *         {@code ParsePosition}; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.545 -0500", hash_original_method = "7A2CC483DDAB3EA409EA20ED7AF6932E", hash_generated_method = "CAB7203C3A085DE7F4B65C2136C19B16")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.829 -0500", hash_original_method = "7A2CC483DDAB3EA409EA20ED7AF6932E", hash_generated_method = "CAB7203C3A085DE7F4B65C2136C19B16")
+    
+@Override
+    public boolean equals(Object object) {
         if (!(object instanceof ParsePosition)) {
             return false;
         }
@@ -56,8 +58,9 @@ public boolean equals(Object object) {
      *
      * @return the index of the parse error or -1 if there is no error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.546 -0500", hash_original_method = "251F29749A0D498AD09891D5409959A9", hash_generated_method = "8513B758071D7BF28FC97A139C41AD8C")
-    public int getErrorIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.831 -0500", hash_original_method = "251F29749A0D498AD09891D5409959A9", hash_generated_method = "8513B758071D7BF28FC97A139C41AD8C")
+    
+public int getErrorIndex() {
         return errorIndex;
     }
 
@@ -66,14 +69,16 @@ public boolean equals(Object object) {
      *
      * @return the current position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.547 -0500", hash_original_method = "1CFE76DD95166F56A240763AD86BFFF6", hash_generated_method = "65114281D83995728CC54A5781A616A4")
-    public int getIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.834 -0500", hash_original_method = "1CFE76DD95166F56A240763AD86BFFF6", hash_generated_method = "65114281D83995728CC54A5781A616A4")
+    
+public int getIndex() {
         return currentPosition;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.548 -0500", hash_original_method = "78BEA0F92DBA8060A51AB3A3D8273064", hash_generated_method = "34759ADCBA6D0B2C6986E711CEEDEC4B")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.836 -0500", hash_original_method = "78BEA0F92DBA8060A51AB3A3D8273064", hash_generated_method = "34759ADCBA6D0B2C6986E711CEEDEC4B")
+    
+@Override
+    public int hashCode() {
         return currentPosition + errorIndex;
     }
 
@@ -83,8 +88,9 @@ public int hashCode() {
      * @param index
      *            the index of the parse error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.549 -0500", hash_original_method = "F3EA9276CC48A5113CA1E4D2C48DC7D4", hash_generated_method = "DA015261131ACB466C6FBA56A13F6CF9")
-    public void setErrorIndex(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.839 -0500", hash_original_method = "F3EA9276CC48A5113CA1E4D2C48DC7D4", hash_generated_method = "DA015261131ACB466C6FBA56A13F6CF9")
+    
+public void setErrorIndex(int index) {
         errorIndex = index;
     }
 
@@ -94,8 +100,9 @@ public int hashCode() {
      * @param index
      *            the current parse position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.549 -0500", hash_original_method = "1C6C7B20133CCF9092C9B321C0CF7A81", hash_generated_method = "2460B67C707C219B342228AEF66DA5EF")
-    public void setIndex(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.841 -0500", hash_original_method = "1C6C7B20133CCF9092C9B321C0CF7A81", hash_generated_method = "2460B67C707C219B342228AEF66DA5EF")
+    
+public void setIndex(int index) {
         currentPosition = index;
     }
 
@@ -104,9 +111,10 @@ public int hashCode() {
      *
      * @return the string representation of this parse position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.550 -0500", hash_original_method = "EA803D38773CA0193E1AA7C91AAA6A50", hash_generated_method = "AEB38833E430D517AABC28F6D901BEA1")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.844 -0500", hash_original_method = "EA803D38773CA0193E1AA7C91AAA6A50", hash_generated_method = "AEB38833E430D517AABC28F6D901BEA1")
+    
+@Override
+    public String toString() {
         return getClass().getName() + "[index=" + currentPosition
                 + ", errorIndex=" + errorIndex + "]";
     }

@@ -19,8 +19,9 @@ public class ServerParser extends HeaderParser {
      * Creates a new instance of ServerParser
      * @param server the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.151 -0500", hash_original_method = "34ED7286D2A920D6CAAB19B69F1E2272", hash_generated_method = "A3A9DCA8F9A15F41B8A594761AC6AC9B")
-    public ServerParser(String server) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.413 -0500", hash_original_method = "34ED7286D2A920D6CAAB19B69F1E2272", hash_generated_method = "A3A9DCA8F9A15F41B8A594761AC6AC9B")
+    
+public ServerParser(String server) {
         super(server);
     }
 
@@ -28,8 +29,9 @@ public class ServerParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.152 -0500", hash_original_method = "D6FF2C5B569C35FFD38E06BDFF6C27A4", hash_generated_method = "534724306C9EF4ABB5A0DE79B21507A8")
-    protected ServerParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.416 -0500", hash_original_method = "D6FF2C5B569C35FFD38E06BDFF6C27A4", hash_generated_method = "534724306C9EF4ABB5A0DE79B21507A8")
+    
+protected ServerParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -38,8 +40,9 @@ public class ServerParser extends HeaderParser {
      * @return SIPHeader (Server object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.153 -0500", hash_original_method = "F7C094FE7E8356B9E6B34E820636D434", hash_generated_method = "127D5A8E6D4BFFA2632A9B26A95B3888")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.419 -0500", hash_original_method = "F7C094FE7E8356B9E6B34E820636D434", hash_generated_method = "127D5A8E6D4BFFA2632A9B26A95B3888")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("ServerParser.parse");

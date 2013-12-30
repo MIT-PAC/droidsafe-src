@@ -17,14 +17,14 @@ import org.bouncycastle.util.encoders.Base64;
 
 
 public class PemWriter extends BufferedWriter {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.347 -0500", hash_original_field = "2703D5EA5438FFBD051A78AF908B80A3", hash_generated_field = "EDD822F24FA43922022593BF50854718")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.640 -0500", hash_original_field = "2703D5EA5438FFBD051A78AF908B80A3", hash_generated_field = "EDD822F24FA43922022593BF50854718")
 
     private static final int LINE_LENGTH = 64;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.347 -0500", hash_original_field = "08690A93D50AD3D36BE35AD299FEA207", hash_generated_field = "B698C3A4519A55108C89592990062E26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.643 -0500", hash_original_field = "08690A93D50AD3D36BE35AD299FEA207", hash_generated_field = "B698C3A4519A55108C89592990062E26")
 
 
     private  int nlLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.348 -0500", hash_original_field = "6A72737E6CE4840CF1721E5C8565ED98", hash_generated_field = "4AE54445A000A5FDAE606F6B2655F1C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.645 -0500", hash_original_field = "6A72737E6CE4840CF1721E5C8565ED98", hash_generated_field = "4AE54445A000A5FDAE606F6B2655F1C8")
 
     private char[]  buf = new char[LINE_LENGTH];
 
@@ -33,8 +33,9 @@ public class PemWriter extends BufferedWriter {
      *
      * @param out output stream to use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.349 -0500", hash_original_method = "FE3DCCF7A57AE41AA2B9ABB8B6650E80", hash_generated_method = "22D2ABCA7296FD2295DAB4E5937CF45B")
-    public PemWriter(Writer out)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.648 -0500", hash_original_method = "FE3DCCF7A57AE41AA2B9ABB8B6650E80", hash_generated_method = "22D2ABCA7296FD2295DAB4E5937CF45B")
+    
+public PemWriter(Writer out)
     {
         super(out);
 
@@ -56,8 +57,9 @@ public class PemWriter extends BufferedWriter {
      * @param obj pem object to be output
      * @return an estimate of the number of bytes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.350 -0500", hash_original_method = "1011C811490561236947BE193FC22C40", hash_generated_method = "EB8B5526AAFB256FC296BE1E2F228FFD")
-    public int getOutputSize(PemObject obj)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.651 -0500", hash_original_method = "1011C811490561236947BE193FC22C40", hash_generated_method = "EB8B5526AAFB256FC296BE1E2F228FFD")
+    
+public int getOutputSize(PemObject obj)
     {
         // BEGIN and END boundaries.
         int size = (2 * (obj.getType().length() + 10 + nlLength)) + 6 + 4;
@@ -82,8 +84,9 @@ public class PemWriter extends BufferedWriter {
         return size;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.351 -0500", hash_original_method = "7DC9EFDB066BC03515C2F692EE0CAAF1", hash_generated_method = "129EED88BE3D45AB79B1AFDF81CACA3A")
-    public void writeObject(PemObjectGenerator objGen)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.654 -0500", hash_original_method = "7DC9EFDB066BC03515C2F692EE0CAAF1", hash_generated_method = "129EED88BE3D45AB79B1AFDF81CACA3A")
+    
+public void writeObject(PemObjectGenerator objGen)
         throws IOException
     {
         PemObject obj = objGen.generate();
@@ -109,8 +112,9 @@ public class PemWriter extends BufferedWriter {
         writePostEncapsulationBoundary(obj.getType());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.352 -0500", hash_original_method = "68336F0D98EECA9F6E841F3ED0087F4A", hash_generated_method = "165608343CF68BD2BCBF23DFC04C7E28")
-    private void writeEncoded(byte[] bytes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.656 -0500", hash_original_method = "68336F0D98EECA9F6E841F3ED0087F4A", hash_generated_method = "165608343CF68BD2BCBF23DFC04C7E28")
+    
+private void writeEncoded(byte[] bytes)
         throws IOException
     {
         bytes = Base64.encode(bytes);
@@ -133,8 +137,9 @@ public class PemWriter extends BufferedWriter {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.353 -0500", hash_original_method = "B0C6E0FE046A2BB4F1EE412D60500B94", hash_generated_method = "ED83F0DC50D604EDC069A4D127BCC5CD")
-    private void writePreEncapsulationBoundary(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.658 -0500", hash_original_method = "B0C6E0FE046A2BB4F1EE412D60500B94", hash_generated_method = "ED83F0DC50D604EDC069A4D127BCC5CD")
+    
+private void writePreEncapsulationBoundary(
         String type)
         throws IOException
     {
@@ -142,8 +147,9 @@ public class PemWriter extends BufferedWriter {
         this.newLine();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.353 -0500", hash_original_method = "F04AE80D2D9D0D11E28641848118BF80", hash_generated_method = "FE467242A9A358FC5A524E5E8A2A30D1")
-    private void writePostEncapsulationBoundary(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.660 -0500", hash_original_method = "F04AE80D2D9D0D11E28641848118BF80", hash_generated_method = "FE467242A9A358FC5A524E5E8A2A30D1")
+    
+private void writePostEncapsulationBoundary(
         String type)
         throws IOException
     {

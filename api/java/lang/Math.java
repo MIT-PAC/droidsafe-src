@@ -152,8 +152,9 @@ public final class Math {
      *            the second argument.
      * @return the larger of {@code d1} and {@code d2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.524 -0500", hash_original_method = "44DF249E8533183B21D14B39E826B28E", hash_generated_method = "380B6602028EB9350F7E15749FFDEB86")
-    public static double max(double d1, double d2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.675 -0500", hash_original_method = "44DF249E8533183B21D14B39E826B28E", hash_generated_method = "380B6602028EB9350F7E15749FFDEB86")
+    
+public static double max(double d1, double d2) {
         if (d1 > d2) {
             return d1;
         }
@@ -190,8 +191,9 @@ public final class Math {
      *            the second argument.
      * @return the larger of {@code f1} and {@code f2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.524 -0500", hash_original_method = "9AEE96235CF6352E912E5660F1DE7C95", hash_generated_method = "52E191849024F1F783651368968A056F")
-    public static float max(float f1, float f2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.678 -0500", hash_original_method = "9AEE96235CF6352E912E5660F1DE7C95", hash_generated_method = "52E191849024F1F783651368968A056F")
+    
+public static float max(float f1, float f2) {
         if (f1 > f2) {
             return f1;
         }
@@ -226,8 +228,9 @@ public final class Math {
      *            the second argument.
      * @return the larger of {@code l1} and {@code l2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.528 -0500", hash_original_method = "233BD25D9E931F9CFFEABFD8C1F7AD8D", hash_generated_method = "89BE60C16A0FDC38DA060BFBC44C081F")
-    public static long max(long l1, long l2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.686 -0500", hash_original_method = "233BD25D9E931F9CFFEABFD8C1F7AD8D", hash_generated_method = "89BE60C16A0FDC38DA060BFBC44C081F")
+    
+public static long max(long l1, long l2) {
         return l1 > l2 ? l1 : l2;
     }
 
@@ -249,8 +252,9 @@ public final class Math {
      *            the second argument.
      * @return the smaller of {@code d1} and {@code d2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.529 -0500", hash_original_method = "8BB4E1970CF2E6F84A22C0B200AB3D65", hash_generated_method = "2DB2C5BF5971C12A102AAB53BED6CBE8")
-    public static double min(double d1, double d2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.689 -0500", hash_original_method = "8BB4E1970CF2E6F84A22C0B200AB3D65", hash_generated_method = "2DB2C5BF5971C12A102AAB53BED6CBE8")
+    
+public static double min(double d1, double d2) {
         if (d1 > d2) {
             return d2;
         }
@@ -287,8 +291,9 @@ public final class Math {
      *            the second argument.
      * @return the smaller of {@code f1} and {@code f2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.530 -0500", hash_original_method = "2C0167268EE64CB5B5506FBA30CD6B47", hash_generated_method = "E261F8D8CD79B72EAF5E86F7A6A28E3D")
-    public static float min(float f1, float f2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.691 -0500", hash_original_method = "2C0167268EE64CB5B5506FBA30CD6B47", hash_generated_method = "E261F8D8CD79B72EAF5E86F7A6A28E3D")
+    
+public static float min(float f1, float f2) {
         if (f1 > f2) {
             return f2;
         }
@@ -323,8 +328,9 @@ public final class Math {
      *            the second argument.
      * @return the smaller of {@code l1} and {@code l2}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.532 -0500", hash_original_method = "5570DD5E3DA486C8E4D5DC9CDBA5E092", hash_generated_method = "B73400D0D4481274464946AB0B36C034")
-    public static long min(long l1, long l2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.699 -0500", hash_original_method = "5570DD5E3DA486C8E4D5DC9CDBA5E092", hash_generated_method = "B73400D0D4481274464946AB0B36C034")
+    
+public static long min(long l1, long l2) {
         return l1 < l2 ? l1 : l2;
     }
 
@@ -359,8 +365,9 @@ public final class Math {
      *            the value to be rounded.
      * @return the closest integer to the argument.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.536 -0500", hash_original_method = "F31023BEAA17C26F61A8FAFF1293674E", hash_generated_method = "072077AC89CC90DD70D1ADC526A4DCC6")
-    public static long round(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.710 -0500", hash_original_method = "F31023BEAA17C26F61A8FAFF1293674E", hash_generated_method = "072077AC89CC90DD70D1ADC526A4DCC6")
+    
+public static long round(double d) {
         // check for NaN
         if (d != d) {
             return 0L;
@@ -387,8 +394,9 @@ public final class Math {
      *            the value to be rounded.
      * @return the closest integer to the argument.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.537 -0500", hash_original_method = "E7A3BD9CEF3664A05F97B7EE40F06764", hash_generated_method = "B4CE0EC04834B45CEA43F2C462779E4A")
-    public static int round(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.712 -0500", hash_original_method = "E7A3BD9CEF3664A05F97B7EE40F06764", hash_generated_method = "B4CE0EC04834B45CEA43F2C462779E4A")
+    
+public static int round(float f) {
         // check for NaN
         if (f != f) {
             return 0;
@@ -415,8 +423,9 @@ public final class Math {
      *            the value whose signum has to be computed.
      * @return the value of the signum function.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.538 -0500", hash_original_method = "D0C7BA71432AEC4F38A3BB94348D4F09", hash_generated_method = "0EE2C3EEAB3C8DF5C363E5A7D4532DE5")
-    public static double signum(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.715 -0500", hash_original_method = "D0C7BA71432AEC4F38A3BB94348D4F09", hash_generated_method = "0EE2C3EEAB3C8DF5C363E5A7D4532DE5")
+    
+public static double signum(double d) {
         if (Double.isNaN(d)) {
             return Double.NaN;
         }
@@ -448,8 +457,9 @@ public final class Math {
      *            the value whose signum has to be computed.
      * @return the value of the signum function.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.539 -0500", hash_original_method = "51588EB5370FA34884D982F539C5410D", hash_generated_method = "A023E61233CE7EB3C06C7F6C1C7BB8A3")
-    public static float signum(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.718 -0500", hash_original_method = "51588EB5370FA34884D982F539C5410D", hash_generated_method = "A023E61233CE7EB3C06C7F6C1C7BB8A3")
+    
+public static float signum(float f) {
         if (Float.isNaN(f)) {
             return Float.NaN;
         }
@@ -501,8 +511,9 @@ public final class Math {
      *
      * @return a pseudo-random number.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.547 -0500", hash_original_method = "22576C597930F29271BE56A4EEB59899", hash_generated_method = "7228F28FDE792D02717F7FA9021FFDC1")
-    public static synchronized double random() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.742 -0500", hash_original_method = "22576C597930F29271BE56A4EEB59899", hash_generated_method = "7228F28FDE792D02717F7FA9021FFDC1")
+    
+public static synchronized double random() {
         if (random == null) {
             random = new Random();
         }
@@ -526,8 +537,9 @@ public final class Math {
      *            an angle in degrees.
      * @return the radian measure of the angle.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.548 -0500", hash_original_method = "8DABF7F6D42535B5D2AB5BAB7ED39309", hash_generated_method = "C6FBC8B2019816B31A04818178A89723")
-    public static double toRadians(double angdeg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.745 -0500", hash_original_method = "8DABF7F6D42535B5D2AB5BAB7ED39309", hash_generated_method = "C6FBC8B2019816B31A04818178A89723")
+    
+public static double toRadians(double angdeg) {
         return angdeg / 180d * PI;
     }
 
@@ -548,8 +560,9 @@ public final class Math {
      *            an angle in radians.
      * @return the degree measure of the angle.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.549 -0500", hash_original_method = "502B50A67A0624ED7AF2A492E09480AA", hash_generated_method = "4AC6332E722A6F45208C9B436E0A8222")
-    public static double toDegrees(double angrad) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.748 -0500", hash_original_method = "502B50A67A0624ED7AF2A492E09480AA", hash_generated_method = "4AC6332E722A6F45208C9B436E0A8222")
+    
+public static double toDegrees(double angrad) {
         return angrad * 180d / PI;
     }
 
@@ -572,8 +585,9 @@ public final class Math {
      *            the floating-point value to compute ulp of.
      * @return the size of a ulp of the argument.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.550 -0500", hash_original_method = "2D28F1AD865BB966E30C11192290FAD6", hash_generated_method = "3794E08E03A0440B35D500AF8231457C")
-    public static double ulp(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.751 -0500", hash_original_method = "2D28F1AD865BB966E30C11192290FAD6", hash_generated_method = "3794E08E03A0440B35D500AF8231457C")
+    
+public static double ulp(double d) {
         // special cases
         if (Double.isInfinite(d)) {
             return Double.POSITIVE_INFINITY;
@@ -609,8 +623,9 @@ public final class Math {
      *            the floating-point value to compute ulp of.
      * @return the size of a ulp of the argument.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.552 -0500", hash_original_method = "21C6C2BCBE003FB0A77A1E9EFAE42634", hash_generated_method = "FAB09916BE1DD446B169D420203290FB")
-    public static float ulp(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.758 -0500", hash_original_method = "21C6C2BCBE003FB0A77A1E9EFAE42634", hash_generated_method = "FAB09916BE1DD446B169D420203290FB")
+    
+public static float ulp(float f) {
         // special cases
         if (Float.isNaN(f)) {
             return Float.NaN;
@@ -640,8 +655,9 @@ public final class Math {
      * If you need a determinate sign in such cases, use {@code StrictMath.copySign}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.553 -0500", hash_original_method = "15C215F29F042865F85D52F4B5FD8DEC", hash_generated_method = "4A76309A7F79AD6F51982D57C30438A6")
-    public static double copySign(double magnitude, double sign) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.761 -0500", hash_original_method = "15C215F29F042865F85D52F4B5FD8DEC", hash_generated_method = "4A76309A7F79AD6F51982D57C30438A6")
+    
+public static double copySign(double magnitude, double sign) {
         long magnitudeBits = Double.doubleToRawLongBits(magnitude);
         long signBits = Double.doubleToRawLongBits(sign);
         magnitudeBits = (magnitudeBits & ~Double.SIGN_MASK) | (signBits & Double.SIGN_MASK);
@@ -654,8 +670,9 @@ public final class Math {
      * If you need a determinate sign in such cases, use {@code StrictMath.copySign}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.554 -0500", hash_original_method = "35AECC28C40D46AAA2C600AE0D4B90F6", hash_generated_method = "2CB8DD010CFA47DCE071C17BA226E85D")
-    public static float copySign(float magnitude, float sign) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.763 -0500", hash_original_method = "35AECC28C40D46AAA2C600AE0D4B90F6", hash_generated_method = "2CB8DD010CFA47DCE071C17BA226E85D")
+    
+public static float copySign(float magnitude, float sign) {
         int magnitudeBits = Float.floatToRawIntBits(magnitude);
         int signBits = Float.floatToRawIntBits(sign);
         magnitudeBits = (magnitudeBits & ~Float.SIGN_MASK) | (signBits & Float.SIGN_MASK);
@@ -666,8 +683,9 @@ public final class Math {
      * Returns the unbiased base-2 exponent of float {@code f}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.555 -0500", hash_original_method = "97012FE7C9870A29CEA8A2EDD34265B2", hash_generated_method = "985C9E866BA90774D180385CF000AF5B")
-    public static int getExponent(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.766 -0500", hash_original_method = "97012FE7C9870A29CEA8A2EDD34265B2", hash_generated_method = "985C9E866BA90774D180385CF000AF5B")
+    
+public static int getExponent(float f) {
         int bits = Float.floatToRawIntBits(f);
         bits = (bits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
         return bits - Float.EXPONENT_BIAS;
@@ -677,8 +695,9 @@ public final class Math {
      * Returns the unbiased base-2 exponent of double {@code d}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.556 -0500", hash_original_method = "19989C21DEF6CFA455C891A862B03E8C", hash_generated_method = "5D6AE80AF25A6EA9088CF469827CA904")
-    public static int getExponent(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.768 -0500", hash_original_method = "19989C21DEF6CFA455C891A862B03E8C", hash_generated_method = "5D6AE80AF25A6EA9088CF469827CA904")
+    
+public static int getExponent(double d) {
         long bits = Double.doubleToRawLongBits(d);
         bits = (bits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS;
         return (int) bits - Double.EXPONENT_BIAS;
@@ -688,8 +707,9 @@ public final class Math {
      * Returns the next double after {@code start} in the given {@code direction}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.557 -0500", hash_original_method = "D2D482B3D86CB8EF8A4CC5B9C45F68F0", hash_generated_method = "461C005C705E50F80E2022CDE544BF62")
-    public static double nextAfter(double start, double direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.772 -0500", hash_original_method = "D2D482B3D86CB8EF8A4CC5B9C45F68F0", hash_generated_method = "461C005C705E50F80E2022CDE544BF62")
+    
+public static double nextAfter(double start, double direction) {
         if (start == 0 && direction == 0) {
             return direction;
         }
@@ -700,8 +720,9 @@ public final class Math {
      * Returns the next float after {@code start} in the given {@code direction}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.558 -0500", hash_original_method = "2E9F27F6AE2FE55081770F69E2F60829", hash_generated_method = "6DECAE837D531B483F47DAC581A6C932")
-    public static float nextAfter(float start, double direction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.775 -0500", hash_original_method = "2E9F27F6AE2FE55081770F69E2F60829", hash_generated_method = "6DECAE837D531B483F47DAC581A6C932")
+    
+public static float nextAfter(float start, double direction) {
         if (Float.isNaN(start) || Double.isNaN(direction)) {
             return Float.NaN;
         }
@@ -745,8 +766,9 @@ public final class Math {
      * Returns the next double larger than {@code d}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.559 -0500", hash_original_method = "C896DE85CFE9A8E858A973A7CAE05394", hash_generated_method = "2B1EC91962A669B47E637A6AD08DAE4A")
-    public static double nextUp(double d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.778 -0500", hash_original_method = "C896DE85CFE9A8E858A973A7CAE05394", hash_generated_method = "2B1EC91962A669B47E637A6AD08DAE4A")
+    
+public static double nextUp(double d) {
         if (Double.isNaN(d)) {
             return Double.NaN;
         }
@@ -766,8 +788,9 @@ public final class Math {
      * Returns the next float larger than {@code f}.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.560 -0500", hash_original_method = "5F4A09591A5352832C5CA256EEF7C3E6", hash_generated_method = "BE36B2B4C13664CDD1EE9080481079CE")
-    public static float nextUp(float f) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.781 -0500", hash_original_method = "5F4A09591A5352832C5CA256EEF7C3E6", hash_generated_method = "BE36B2B4C13664CDD1EE9080481079CE")
+    
+public static float nextUp(float f) {
         if (Float.isNaN(f)) {
             return Float.NaN;
         }
@@ -787,8 +810,9 @@ public final class Math {
      * Returns {@code d} * 2^{@code scaleFactor}. The result may be rounded.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.561 -0500", hash_original_method = "CE7FEED34E827FAEBA93BA76C027047F", hash_generated_method = "7E07A06B36AFE408B936BCD429A07040")
-    public static double scalb(double d, int scaleFactor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.785 -0500", hash_original_method = "CE7FEED34E827FAEBA93BA76C027047F", hash_generated_method = "7E07A06B36AFE408B936BCD429A07040")
+    
+public static double scalb(double d, int scaleFactor) {
         if (Double.isNaN(d) || Double.isInfinite(d) || d == 0) {
             return d;
         }
@@ -843,8 +867,9 @@ public final class Math {
      * Returns {@code d} * 2^{@code scaleFactor}. The result may be rounded.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.563 -0500", hash_original_method = "8B2B282A6266695E06D45999219304F1", hash_generated_method = "B93174FD452796C4850B3F2CC588FFF4")
-    public static float scalb(float d, int scaleFactor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.789 -0500", hash_original_method = "8B2B282A6266695E06D45999219304F1", hash_generated_method = "B93174FD452796C4850B3F2CC588FFF4")
+    
+public static float scalb(float d, int scaleFactor) {
         if (Float.isNaN(d) || Float.isInfinite(d) || d == 0) {
             return d;
         }
@@ -893,8 +918,9 @@ public final class Math {
 
     // Shifts integer bits as float, if the digits is positive, left-shift; if
     // not, shift to right and calculate its carry.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.564 -0500", hash_original_method = "F851BF8D27456D38F9F1CC4D6CA88124", hash_generated_method = "655A4B2CCDDDE310E233C503E72B85F6")
-    private static int shiftIntBits(int bits, int digits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.792 -0500", hash_original_method = "F851BF8D27456D38F9F1CC4D6CA88124", hash_generated_method = "655A4B2CCDDDE310E233C503E72B85F6")
+    
+private static int shiftIntBits(int bits, int digits) {
         if (digits > 0) {
             return bits << digits;
         }
@@ -920,8 +946,9 @@ public final class Math {
 
     // Shifts long bits as double, if the digits is positive, left-shift; if
     // not, shift to right and calculate its carry.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.565 -0500", hash_original_method = "C9C8604677F0F22473B2353C70CE16C1", hash_generated_method = "F757253C1789525BED2F1C512436BB86")
-    private static long shiftLongBits(long bits, long digits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.795 -0500", hash_original_method = "C9C8604677F0F22473B2353C70CE16C1", hash_generated_method = "F757253C1789525BED2F1C512436BB86")
+    
+private static long shiftLongBits(long bits, long digits) {
         if (digits > 0) {
             return bits << digits;
         }
@@ -946,13 +973,13 @@ public final class Math {
         }
         return ret;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.491 -0500", hash_original_field = "01D392B075974AFA31089D621F15567C", hash_generated_field = "76C0B861A937FF04B12C48BD79B20BDE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.579 -0500", hash_original_field = "01D392B075974AFA31089D621F15567C", hash_generated_field = "76C0B861A937FF04B12C48BD79B20BDE")
 
     public static final double E = 2.718281828459045;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.492 -0500", hash_original_field = "5A719DC86B4D65885D539BB11DE23B94", hash_generated_field = "FDBC076D774B74F039A18556D6342FEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.582 -0500", hash_original_field = "5A719DC86B4D65885D539BB11DE23B94", hash_generated_field = "FDBC076D774B74F039A18556D6342FEC")
 
     public static final double PI = 3.141592653589793;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.493 -0500", hash_original_field = "DC2327CCB95C5C902D526E5238316B9A", hash_generated_field = "4574226C6A992CD5F43E1273AEA83087")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.585 -0500", hash_original_field = "DC2327CCB95C5C902D526E5238316B9A", hash_generated_field = "4574226C6A992CD5F43E1273AEA83087")
 
 
     private static Random random;
@@ -960,8 +987,9 @@ public final class Math {
     /**
      * Prevents this class from being instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.494 -0500", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "FA4C376A124A9FB7E96B70642915FF5D")
-    private Math() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.588 -0500", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "FA4C376A124A9FB7E96B70642915FF5D")
+    
+private Math() {
     }
 }
 

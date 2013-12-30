@@ -10,13 +10,15 @@ import java.lang.reflect.Type;
 
 public class Types {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.999 -0500", hash_original_method = "FE711A690BFEA310062513D9F7BBC1B7", hash_generated_method = "791549CCA3F40BCAC475218C2EE092DE")
-    public static Type[] getClonedTypeArray(ListOfTypes types) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.334 -0500", hash_original_method = "FE711A690BFEA310062513D9F7BBC1B7", hash_generated_method = "791549CCA3F40BCAC475218C2EE092DE")
+    
+public static Type[] getClonedTypeArray(ListOfTypes types) {
         return types.getResolvedTypes().clone();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.999 -0500", hash_original_method = "54B4B3680CC50F86109F2F537C471955", hash_generated_method = "33A028F7297D2B3871BBFEC64AA70029")
-    public static Type getType(Type type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.337 -0500", hash_original_method = "54B4B3680CC50F86109F2F537C471955", hash_generated_method = "33A028F7297D2B3871BBFEC64AA70029")
+    
+public static Type getType(Type type) {
         if (type instanceof ImplForType) {
             return ((ImplForType)type).getResolvedType();
         } else {

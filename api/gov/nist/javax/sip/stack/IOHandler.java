@@ -29,51 +29,56 @@ import javax.net.ssl.SSLSocket;
 
 class IOHandler {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.471 -0500", hash_original_method = "4B1CA4C3CA931CD3E3AFB484B6B8381F", hash_generated_method = "88A9B49895794BEEF7CE060C07F9E314")
-    protected static String makeKey(InetAddress addr, int port) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.051 -0500", hash_original_method = "4B1CA4C3CA931CD3E3AFB484B6B8381F", hash_generated_method = "88A9B49895794BEEF7CE060C07F9E314")
+    
+protected static String makeKey(InetAddress addr, int port) {
         return addr.getHostAddress() + ":" + port;
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.467 -0500", hash_original_field = "68703AB10816D405D1396AB032A64065", hash_generated_field = "2A19A36B452D88CDD5B3F26D17F7563A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.042 -0500", hash_original_field = "68703AB10816D405D1396AB032A64065", hash_generated_field = "2A19A36B452D88CDD5B3F26D17F7563A")
 
 
     private static String TCP = "tcp";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.468 -0500", hash_original_field = "5B35D8051830BFBA2689666E17D62408", hash_generated_field = "1AD174C59CE89A66B72D18168F821A73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.045 -0500", hash_original_field = "5B35D8051830BFBA2689666E17D62408", hash_generated_field = "1AD174C59CE89A66B72D18168F821A73")
 
     private static String TLS = "tls";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.465 -0500", hash_original_field = "9D08B66A2720241C8C7031CEECD4BB7E", hash_generated_field = "7C78FF5476489511BDB7D6F9C761D492")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.036 -0500", hash_original_field = "9D08B66A2720241C8C7031CEECD4BB7E", hash_generated_field = "7C78FF5476489511BDB7D6F9C761D492")
 
 
     private Semaphore ioSemaphore = new Semaphore(1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.466 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.039 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
 
     private SipStackImpl sipStack;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.469 -0500", hash_original_field = "016E5301717F28BDAE1198DDAD121AC8", hash_generated_field = "109FC548DB903A00E753C207C6D25B9B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.048 -0500", hash_original_field = "016E5301717F28BDAE1198DDAD121AC8", hash_generated_field = "109FC548DB903A00E753C207C6D25B9B")
 
     // sending tcp messages.
     private ConcurrentHashMap<String, Socket> socketTable;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.472 -0500", hash_original_method = "9386B11A19881B80900AAECD631287FD", hash_generated_method = "A54ED3EED49DCB200EE2FFA1183108CB")
-    protected IOHandler(SIPTransactionStack sipStack) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.054 -0500", hash_original_method = "9386B11A19881B80900AAECD631287FD", hash_generated_method = "A54ED3EED49DCB200EE2FFA1183108CB")
+    
+protected IOHandler(SIPTransactionStack sipStack) {
         this.sipStack = (SipStackImpl) sipStack;
         this.socketTable = new ConcurrentHashMap<String, Socket>();
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.473 -0500", hash_original_method = "C27932DA9A29AAAE15A518DF16F6A526", hash_generated_method = "CBA62305F873B952EADFD55881A64CBD")
-    protected void putSocket(String key, Socket sock) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.057 -0500", hash_original_method = "C27932DA9A29AAAE15A518DF16F6A526", hash_generated_method = "CBA62305F873B952EADFD55881A64CBD")
+    
+protected void putSocket(String key, Socket sock) {
         socketTable.put(key, sock);
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.474 -0500", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "263EA2C66CEBA537DDB2AB15A23D13F5")
-    protected Socket getSocket(String key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.059 -0500", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "263EA2C66CEBA537DDB2AB15A23D13F5")
+    
+protected Socket getSocket(String key) {
         return (Socket) socketTable.get(key);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.475 -0500", hash_original_method = "92816C2E9E6D943B13D719E81BC3AA88", hash_generated_method = "514B5D2733335CA9417491AF648674E1")
-    protected void removeSocket(String key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.063 -0500", hash_original_method = "92816C2E9E6D943B13D719E81BC3AA88", hash_generated_method = "514B5D2733335CA9417491AF648674E1")
+    
+protected void removeSocket(String key) {
         socketTable.remove(key);
     }
 
@@ -82,8 +87,9 @@ class IOHandler {
      * from multiple threads. We write in chunks to allow the other side to synchronize for large
      * sized writes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.476 -0500", hash_original_method = "F53BBC08C4AFCA76781E5C2EA0968907", hash_generated_method = "1470972030CEE1CDA08B198406DF9EBA")
-    private void writeChunks(OutputStream outputStream, byte[] bytes, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.066 -0500", hash_original_method = "F53BBC08C4AFCA76781E5C2EA0968907", hash_generated_method = "1470972030CEE1CDA08B198406DF9EBA")
+    
+private void writeChunks(OutputStream outputStream, byte[] bytes, int length)
             throws IOException {
         // Chunk size is 16K - this hack is for large
         // writes over slow connections.
@@ -112,8 +118,9 @@ class IOHandler {
      * 
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.477 -0500", hash_original_method = "175D748D3B44D56B75F881FF6379A368", hash_generated_method = "0662F4A3A7CAF843B9C43E85E8EEC9A3")
-    public SocketAddress obtainLocalAddress(InetAddress dst, int dstPort,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.069 -0500", hash_original_method = "175D748D3B44D56B75F881FF6379A368", hash_generated_method = "0662F4A3A7CAF843B9C43E85E8EEC9A3")
+    
+public SocketAddress obtainLocalAddress(InetAddress dst, int dstPort,
             InetAddress localAddress, int localPort) throws IOException {
         String key = makeKey(dst, dstPort);
 
@@ -139,8 +146,9 @@ class IOHandler {
      * @throws IOException -- if there is an IO exception sending message.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.479 -0500", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "CE65233D6945B45F5217A055FCCED981")
-    public Socket sendBytes(InetAddress senderAddress, InetAddress receiverAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.074 -0500", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "CE65233D6945B45F5217A055FCCED981")
+    
+public Socket sendBytes(InetAddress senderAddress, InetAddress receiverAddress,
             int contactPort, String transport, byte[] bytes, boolean retry,
             MessageChannel messageChannel) throws IOException {
         int retry_count = 0;
@@ -310,8 +318,9 @@ class IOHandler {
     /**
      * Close all the cached connections.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.480 -0500", hash_original_method = "1D520544B315CDC75D81B88E4BB64341", hash_generated_method = "60A75AFC705A685BCC44264D1862E84A")
-    public void closeAll() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.077 -0500", hash_original_method = "1D520544B315CDC75D81B88E4BB64341", hash_generated_method = "60A75AFC705A685BCC44264D1862E84A")
+    
+public void closeAll() {
         for (Enumeration<Socket> values = socketTable.elements(); values.hasMoreElements();) {
             Socket s = (Socket) values.nextElement();
             try {

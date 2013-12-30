@@ -17,10 +17,10 @@ import org.apache.http.entity.HttpEntityWrapper;
 
 
 public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionReleaseTrigger, EofSensorWatcher {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.787 -0500", hash_original_field = "ECC1A1A1F3BB31DE20717F98D44EFC60", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.586 -0500", hash_original_field = "ECC1A1A1F3BB31DE20717F98D44EFC60", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
 
     protected ManagedClientConnection managedConn;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.788 -0500", hash_original_field = "F6FDC975DEEC1249FFD0EA5446B40A56", hash_generated_field = "E3C3E883F50FA4994DDE044495909683")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.589 -0500", hash_original_field = "F6FDC975DEEC1249FFD0EA5446B40A56", hash_generated_field = "E3C3E883F50FA4994DDE044495909683")
 
     protected  boolean attemptReuse;
 
@@ -35,8 +35,9 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
      * @param conn      the connection to release
      * @param reuse     whether the connection should be re-used
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.789 -0500", hash_original_method = "75E41BB014942CF37AED72804C2A632B", hash_generated_method = "10B699F6AD62C54BA3EF01A04EA8563B")
-    public BasicManagedEntity(HttpEntity entity,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.591 -0500", hash_original_method = "75E41BB014942CF37AED72804C2A632B", hash_generated_method = "10B699F6AD62C54BA3EF01A04EA8563B")
+    
+public BasicManagedEntity(HttpEntity entity,
                               ManagedClientConnection conn,
                               boolean reuse) {
         super(entity);
@@ -51,26 +52,29 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
 
 
     // non-javadoc, see interface HttpEntity
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.790 -0500", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "47668CDFF1A9B2EE068B1E9BA916D5E5")
-    @Override
-public boolean isRepeatable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.594 -0500", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "47668CDFF1A9B2EE068B1E9BA916D5E5")
+    
+@Override
+    public boolean isRepeatable() {
         return false;
     }
 
 
     // non-javadoc, see interface HttpEntity
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.790 -0500", hash_original_method = "5A535D8BC3EB290E639D312782FBEB37", hash_generated_method = "90F1E79E69DFB56FB823CA4316A9689D")
-    @Override
-public InputStream getContent() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.596 -0500", hash_original_method = "5A535D8BC3EB290E639D312782FBEB37", hash_generated_method = "90F1E79E69DFB56FB823CA4316A9689D")
+    
+@Override
+    public InputStream getContent() throws IOException {
 
         return new EofSensorInputStream(wrappedEntity.getContent(), this);
     }
 
 
     // non-javadoc, see interface HttpEntity
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.791 -0500", hash_original_method = "58D11A845FE872643BE2CB7CB3DAF1D5", hash_generated_method = "F15A6B3C510AB5FB5DADA0E286F65EBE")
-    @Override
-public void consumeContent() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.599 -0500", hash_original_method = "58D11A845FE872643BE2CB7CB3DAF1D5", hash_generated_method = "F15A6B3C510AB5FB5DADA0E286F65EBE")
+    
+@Override
+    public void consumeContent() throws IOException {
 
         if (managedConn == null)
             return;
@@ -88,17 +92,19 @@ public void consumeContent() throws IOException {
 
     
     // non-javadoc, see interface HttpEntity
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.792 -0500", hash_original_method = "7A0C9BF6AEBE62A6A7FD18951D7BE860", hash_generated_method = "11C367E33E31870466F18902685DDE85")
-    @Override
-public void writeTo(final OutputStream outstream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.601 -0500", hash_original_method = "7A0C9BF6AEBE62A6A7FD18951D7BE860", hash_generated_method = "11C367E33E31870466F18902685DDE85")
+    
+@Override
+    public void writeTo(final OutputStream outstream) throws IOException {
         super.writeTo(outstream);
         consumeContent();
     }
 
 
     // non-javadoc, see interface ConnectionReleaseTrigger
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.793 -0500", hash_original_method = "4116E5CDB1EF6E698D2E6ADBA9E28033", hash_generated_method = "9AF32D04EE78CE1862893894E8F33CA9")
-    public void releaseConnection()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.603 -0500", hash_original_method = "4116E5CDB1EF6E698D2E6ADBA9E28033", hash_generated_method = "9AF32D04EE78CE1862893894E8F33CA9")
+    
+public void releaseConnection()
         throws IOException {
 
         this.consumeContent();
@@ -106,8 +112,9 @@ public void writeTo(final OutputStream outstream) throws IOException {
 
 
     // non-javadoc, see interface ConnectionReleaseTrigger
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.793 -0500", hash_original_method = "09E9D1BA9D6B3D57F6131522158659B5", hash_generated_method = "86A1D2DA47C2A83DAA24927F9C4902F8")
-    public void abortConnection()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.605 -0500", hash_original_method = "09E9D1BA9D6B3D57F6131522158659B5", hash_generated_method = "86A1D2DA47C2A83DAA24927F9C4902F8")
+    
+public void abortConnection()
         throws IOException {
 
         if (managedConn != null) {
@@ -121,8 +128,9 @@ public void writeTo(final OutputStream outstream) throws IOException {
 
 
     // non-javadoc, see interface EofSensorWatcher
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.794 -0500", hash_original_method = "5A64D16D6F2B869D7FBA53B05FD87C82", hash_generated_method = "5F8B1813E47A177890C2FFA6FB13A1BC")
-    public boolean eofDetected(InputStream wrapped)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.608 -0500", hash_original_method = "5A64D16D6F2B869D7FBA53B05FD87C82", hash_generated_method = "5F8B1813E47A177890C2FFA6FB13A1BC")
+    
+public boolean eofDetected(InputStream wrapped)
         throws IOException {
 
         try {
@@ -140,8 +148,9 @@ public void writeTo(final OutputStream outstream) throws IOException {
 
 
     // non-javadoc, see interface EofSensorWatcher
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.795 -0500", hash_original_method = "317830EACA4241C6C1785BE58FAD1AFA", hash_generated_method = "1B854B0A0646232CE31EB499FA13E306")
-    public boolean streamClosed(InputStream wrapped)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.610 -0500", hash_original_method = "317830EACA4241C6C1785BE58FAD1AFA", hash_generated_method = "1B854B0A0646232CE31EB499FA13E306")
+    
+public boolean streamClosed(InputStream wrapped)
         throws IOException {
 
         try {
@@ -159,8 +168,9 @@ public void writeTo(final OutputStream outstream) throws IOException {
 
 
     // non-javadoc, see interface EofSensorWatcher
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.796 -0500", hash_original_method = "BAB258C2D5F3651DF9A25667D27EF99D", hash_generated_method = "39E33C173783F5A2873CE6B781025A7A")
-    public boolean streamAbort(InputStream wrapped)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.613 -0500", hash_original_method = "BAB258C2D5F3651DF9A25667D27EF99D", hash_generated_method = "39E33C173783F5A2873CE6B781025A7A")
+    
+public boolean streamAbort(InputStream wrapped)
         throws IOException {
 
         if (managedConn != null) {
@@ -178,8 +188,9 @@ public void writeTo(final OutputStream outstream) throws IOException {
      * @throws IOException      in case of an IO problem.
      *         The connection attribute will be nullified anyway.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.796 -0500", hash_original_method = "713B19D560033B1B50E26BAD17DD5FF2", hash_generated_method = "A5AC41D84F7549396CE8AAD5A06BF8E9")
-    protected void releaseManagedConnection()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.615 -0500", hash_original_method = "713B19D560033B1B50E26BAD17DD5FF2", hash_generated_method = "A5AC41D84F7549396CE8AAD5A06BF8E9")
+    
+protected void releaseManagedConnection()
         throws IOException {
 
         if (managedConn != null) {

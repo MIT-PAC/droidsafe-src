@@ -12,67 +12,68 @@ import java.util.HashMap;
 
 
 public class WspTypeDecoder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.857 -0500", hash_original_field = "737486A8B0400610DB3B9B68519E2368", hash_generated_field = "4F6BB777BDC875F4310534E9146342C6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.522 -0500", hash_original_field = "737486A8B0400610DB3B9B68519E2368", hash_generated_field = "4F6BB777BDC875F4310534E9146342C6")
 
 
     private static final int WAP_PDU_SHORT_LENGTH_MAX = 30;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.858 -0500", hash_original_field = "88D3C32E1E4A3284B0997AAAF15399D1", hash_generated_field = "46631EBD41809AE082E75C1CC8779D4E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.524 -0500", hash_original_field = "88D3C32E1E4A3284B0997AAAF15399D1", hash_generated_field = "46631EBD41809AE082E75C1CC8779D4E")
 
     private static final int WAP_PDU_LENGTH_QUOTE = 31;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.859 -0500", hash_original_field = "E4D95AA773739B7024BA2FFC4086E4AC", hash_generated_field = "F67180C752D65206BDD9E13836C7D7DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.528 -0500", hash_original_field = "E4D95AA773739B7024BA2FFC4086E4AC", hash_generated_field = "F67180C752D65206BDD9E13836C7D7DA")
 
 
     public static final int PDU_TYPE_PUSH = 0x06;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.860 -0500", hash_original_field = "E9DDFB52C3378A97044BB3F1F85F604E", hash_generated_field = "8B50E6D79FF4EAAE11A4EAFF8CB9C391")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.530 -0500", hash_original_field = "E9DDFB52C3378A97044BB3F1F85F604E", hash_generated_field = "8B50E6D79FF4EAAE11A4EAFF8CB9C391")
 
     public static final int PDU_TYPE_CONFIRMED_PUSH = 0x07;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.861 -0500", hash_original_field = "DBCDD39ABEEF6F2F5891FB7B82AF1A7F", hash_generated_field = "74BC2112327D6DF2EED1706E173921EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.533 -0500", hash_original_field = "DBCDD39ABEEF6F2F5891FB7B82AF1A7F", hash_generated_field = "74BC2112327D6DF2EED1706E173921EA")
 
 
     private final static HashMap<Integer, String> WELL_KNOWN_MIME_TYPES =
             new HashMap<Integer, String>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.862 -0500", hash_original_field = "88994EF51CCC3960392A8C20028A8D26", hash_generated_field = "D895CB481798D1C8E4ED40299841B480")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.535 -0500", hash_original_field = "88994EF51CCC3960392A8C20028A8D26", hash_generated_field = "D895CB481798D1C8E4ED40299841B480")
 
 
     private final static HashMap<Integer, String> WELL_KNOWN_PARAMETERS =
             new HashMap<Integer, String>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.863 -0500", hash_original_field = "9E09D4415292D41724E07C4096349A66", hash_generated_field = "BC518E54BB1177BA8736BADC7A57ED44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.538 -0500", hash_original_field = "9E09D4415292D41724E07C4096349A66", hash_generated_field = "BC518E54BB1177BA8736BADC7A57ED44")
 
 
     public static final int PARAMETER_ID_X_WAP_APPLICATION_ID = 0x2f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.864 -0500", hash_original_field = "307B2CE28D7704E7E09432614B17877C", hash_generated_field = "64F5379E14B56A016C5EE441C8ABE3C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.540 -0500", hash_original_field = "307B2CE28D7704E7E09432614B17877C", hash_generated_field = "64F5379E14B56A016C5EE441C8ABE3C3")
 
     private static final int Q_VALUE = 0x00;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.865 -0500", hash_original_field = "F97EFCA811D8DB37C1EAFBD9041DAA74", hash_generated_field = "14E991E823DE7ACB83EEE5DC7F027D18")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.544 -0500", hash_original_field = "F97EFCA811D8DB37C1EAFBD9041DAA74", hash_generated_field = "14E991E823DE7ACB83EEE5DC7F027D18")
 
 
     public static final String CONTENT_TYPE_B_PUSH_CO = "application/vnd.wap.coc";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.866 -0500", hash_original_field = "30E4373950A64E1C033B12557F4B7189", hash_generated_field = "5F0B8A7CFD7D9E331890C88C73AA57E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.547 -0500", hash_original_field = "30E4373950A64E1C033B12557F4B7189", hash_generated_field = "5F0B8A7CFD7D9E331890C88C73AA57E8")
 
     public static final String CONTENT_TYPE_B_MMS = "application/vnd.wap.mms-message";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.867 -0500", hash_original_field = "5DB804ADB8BBB28FF7C33330A8285EBC", hash_generated_field = "C046414E5CAA77A1305073B53831F037")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.549 -0500", hash_original_field = "5DB804ADB8BBB28FF7C33330A8285EBC", hash_generated_field = "C046414E5CAA77A1305073B53831F037")
 
     public static final String CONTENT_TYPE_B_PUSH_SYNCML_NOTI = "application/vnd.syncml.notification";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.867 -0500", hash_original_field = "8290EB0F02CFA38CB47A5B024440BD48", hash_generated_field = "8290EB0F02CFA38CB47A5B024440BD48")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.551 -0500", hash_original_field = "8290EB0F02CFA38CB47A5B024440BD48", hash_generated_field = "8290EB0F02CFA38CB47A5B024440BD48")
 
 
     byte[] wspData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.868 -0500", hash_original_field = "C2C63300DBA8596D9F7506F440BE0C4D", hash_generated_field = "C2C63300DBA8596D9F7506F440BE0C4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.553 -0500", hash_original_field = "C2C63300DBA8596D9F7506F440BE0C4D", hash_generated_field = "C2C63300DBA8596D9F7506F440BE0C4D")
 
     int    dataLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.869 -0500", hash_original_field = "3CB5D92C1A42DDEDB166C653EEBE8D94", hash_generated_field = "3CB5D92C1A42DDEDB166C653EEBE8D94")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.555 -0500", hash_original_field = "3CB5D92C1A42DDEDB166C653EEBE8D94", hash_generated_field = "3CB5D92C1A42DDEDB166C653EEBE8D94")
 
     long   unsigned32bit;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.869 -0500", hash_original_field = "E14F733129C447B5EE9E173FE8A7AECF", hash_generated_field = "E14F733129C447B5EE9E173FE8A7AECF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.557 -0500", hash_original_field = "E14F733129C447B5EE9E173FE8A7AECF", hash_generated_field = "E14F733129C447B5EE9E173FE8A7AECF")
 
     String stringValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.870 -0500", hash_original_field = "99E7FB2AD756216059D191866E496D5B", hash_generated_field = "99E7FB2AD756216059D191866E496D5B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.560 -0500", hash_original_field = "99E7FB2AD756216059D191866E496D5B", hash_generated_field = "99E7FB2AD756216059D191866E496D5B")
 
 
     HashMap<String, String> contentParameters;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.871 -0500", hash_original_method = "5272930664D9B8230407C0BE43B28A37", hash_generated_method = "16987D918092E4ED2FA7E1E136912642")
-    public WspTypeDecoder(byte[] pdu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.563 -0500", hash_original_method = "5272930664D9B8230407C0BE43B28A37", hash_generated_method = "16987D918092E4ED2FA7E1E136912642")
+    
+public WspTypeDecoder(byte[] pdu) {
         wspData = pdu;
     }
 
@@ -85,8 +86,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValueString() method length of data in pdu can be
      *         retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.872 -0500", hash_original_method = "AD9CBD08D1B6621762343776ED03C203", hash_generated_method = "7A6A239677F491BDCBE9E262C9CB9B12")
-    public boolean decodeTextString(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.566 -0500", hash_original_method = "AD9CBD08D1B6621762343776ED03C203", hash_generated_method = "7A6A239677F491BDCBE9E262C9CB9B12")
+    
+public boolean decodeTextString(int startIndex) {
         int index = startIndex;
         while (wspData[index] != 0) {
             index++;
@@ -109,8 +111,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValueString() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.873 -0500", hash_original_method = "3D6D7F94DFC73BF2A0EB1C158A6FC357", hash_generated_method = "D1E57725ACE8F38B9709E328D5A54E89")
-    public boolean decodeTokenText(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.568 -0500", hash_original_method = "3D6D7F94DFC73BF2A0EB1C158A6FC357", hash_generated_method = "D1E57725ACE8F38B9709E328D5A54E89")
+    
+public boolean decodeTokenText(int startIndex) {
         int index = startIndex;
         while (wspData[index] != 0) {
             index++;
@@ -130,8 +133,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.874 -0500", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "667DA670555A625D54C35C40EDD4F8D3")
-    public boolean decodeShortInteger(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.571 -0500", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "667DA670555A625D54C35C40EDD4F8D3")
+    
+public boolean decodeShortInteger(int startIndex) {
         if ((wspData[startIndex] & 0x80) == 0) {
             return false;
         }
@@ -149,8 +153,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.876 -0500", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "E9BDD5CAF80A503C8D79391D18792CDB")
-    public boolean decodeLongInteger(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.573 -0500", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "E9BDD5CAF80A503C8D79391D18792CDB")
+    
+public boolean decodeLongInteger(int startIndex) {
         int lengthMultiOctet = wspData[startIndex] & 0xff;
 
         if (lengthMultiOctet > WAP_PDU_SHORT_LENGTH_MAX) {
@@ -173,8 +178,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.876 -0500", hash_original_method = "7B23A3D94A21E730AAD2DD6C619E091C", hash_generated_method = "3904AA6CD229FA5F21A9875D29E03EE1")
-    public boolean decodeIntegerValue(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.576 -0500", hash_original_method = "7B23A3D94A21E730AAD2DD6C619E091C", hash_generated_method = "3904AA6CD229FA5F21A9875D29E03EE1")
+    
+public boolean decodeIntegerValue(int startIndex) {
         if (decodeShortInteger(startIndex) == true) {
             return true;
         }
@@ -190,8 +196,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.877 -0500", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "A0943E9334B8AE3796A872F9E87CEFEF")
-    public boolean decodeUintvarInteger(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.578 -0500", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "A0943E9334B8AE3796A872F9E87CEFEF")
+    
+public boolean decodeUintvarInteger(int startIndex) {
         int index = startIndex;
 
         unsigned32bit = 0;
@@ -216,8 +223,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.878 -0500", hash_original_method = "EAB4DD919BF3841A91E98F99540A239A", hash_generated_method = "ACC2704BDE86D228E5A53B7C188ADD0F")
-    public boolean decodeValueLength(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.581 -0500", hash_original_method = "EAB4DD919BF3841A91E98F99540A239A", hash_generated_method = "ACC2704BDE86D228E5A53B7C188ADD0F")
+    
+public boolean decodeValueLength(int startIndex) {
         if ((wspData[startIndex] & 0xff) > WAP_PDU_LENGTH_QUOTE) {
             return false;
         }
@@ -241,8 +249,9 @@ public class WspTypeDecoder {
      *         getValueString()), which will be null on error. The length of the
      *         data in the PDU is available with getValue32(), 0 on error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.879 -0500", hash_original_method = "EF88FEA15C53B4BFAD6A7F9FD25E8828", hash_generated_method = "486441A28B73DDFD8C18DA2A95D30528")
-    public boolean decodeExtensionMedia(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.583 -0500", hash_original_method = "EF88FEA15C53B4BFAD6A7F9FD25E8828", hash_generated_method = "486441A28B73DDFD8C18DA2A95D30528")
+    
+public boolean decodeExtensionMedia(int startIndex) {
         int index = startIndex;
         dataLength = 0;
         stringValue = null;
@@ -268,8 +277,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved first by getValueString() and second by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.880 -0500", hash_original_method = "996125374865CC4B3A630D89D596F543", hash_generated_method = "A60FFFB131D50C2EE9D271EAFE3CB41A")
-    public boolean decodeConstrainedEncoding(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.585 -0500", hash_original_method = "996125374865CC4B3A630D89D596F543", hash_generated_method = "A60FFFB131D50C2EE9D271EAFE3CB41A")
+    
+public boolean decodeConstrainedEncoding(int startIndex) {
         if (decodeShortInteger(startIndex) == true) {
             stringValue = null;
             return true;
@@ -290,8 +300,9 @@ public class WspTypeDecoder {
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      *         Any content type parameters will be accessible via getContentParameters()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.881 -0500", hash_original_method = "DFA72F248348DAACE561F2A4664CE110", hash_generated_method = "F7C2C4B56BB86CA97C3085B3DFE0A0F2")
-    public boolean decodeContentType(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.588 -0500", hash_original_method = "DFA72F248348DAACE561F2A4664CE110", hash_generated_method = "F7C2C4B56BB86CA97C3085B3DFE0A0F2")
+    
+public boolean decodeContentType(int startIndex) {
         int mediaPrefixLength;
         contentParameters = new HashMap<String, String>();
 
@@ -342,8 +353,9 @@ public class WspTypeDecoder {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.882 -0500", hash_original_method = "C75EA04BE4FCD731CE2D1E2104C2BFC7", hash_generated_method = "8FFE0978AA2F6BF0B07EB701B20A6D97")
-    private boolean readContentParameters(int startIndex, int leftToRead, int accumulator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.592 -0500", hash_original_method = "C75EA04BE4FCD731CE2D1E2104C2BFC7", hash_generated_method = "8FFE0978AA2F6BF0B07EB701B20A6D97")
+    
+private boolean readContentParameters(int startIndex, int leftToRead, int accumulator) {
 
         int totalRead = 0;
 
@@ -417,8 +429,9 @@ public class WspTypeDecoder {
      *
      * @return true if and only if the next byte is 0x00
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.883 -0500", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "DD6AFDA8080022B03F0CD64EB972EE57")
-    private boolean decodeNoValue(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.595 -0500", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "DD6AFDA8080022B03F0CD64EB972EE57")
+    
+private boolean decodeNoValue(int startIndex) {
         if (wspData[startIndex] == 0) {
             dataLength = 1;
             return true;
@@ -432,8 +445,9 @@ public class WspTypeDecoder {
      *
      * Sets unsigned32bit to -1 if stringValue is already populated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.884 -0500", hash_original_method = "CE7AFD5926883ED0297E0E8EC7A7D731", hash_generated_method = "39DC581202F3DDC089AFACD3A40F9668")
-    private void expandWellKnownMimeType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.598 -0500", hash_original_method = "CE7AFD5926883ED0297E0E8EC7A7D731", hash_generated_method = "39DC581202F3DDC089AFACD3A40F9668")
+    
+private void expandWellKnownMimeType() {
         if (stringValue == null) {
             int binaryContentType = (int) unsigned32bit;
             stringValue = WELL_KNOWN_MIME_TYPES.get(binaryContentType);
@@ -451,8 +465,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValue32() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.885 -0500", hash_original_method = "6DB17C60367E4FD9EA73FA0EFFFEAB7B", hash_generated_method = "293C7EAF90EF82E175C90ED5777290CA")
-    public boolean decodeContentLength(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.600 -0500", hash_original_method = "6DB17C60367E4FD9EA73FA0EFFFEAB7B", hash_generated_method = "293C7EAF90EF82E175C90ED5777290CA")
+    
+public boolean decodeContentLength(int startIndex) {
         return decodeIntegerValue(startIndex);
     }
 
@@ -465,8 +480,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValueString() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.886 -0500", hash_original_method = "B28E495795E9250815D18C95A5C9BAB3", hash_generated_method = "BE47B1335DEB2B492ACCC080BDC577FE")
-    public boolean decodeContentLocation(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.602 -0500", hash_original_method = "B28E495795E9250815D18C95A5C9BAB3", hash_generated_method = "BE47B1335DEB2B492ACCC080BDC577FE")
+    
+public boolean decodeContentLocation(int startIndex) {
         return decodeTextString(startIndex);
     }
 
@@ -480,8 +496,9 @@ public class WspTypeDecoder {
      *         method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.887 -0500", hash_original_method = "AEF025906C652297B5F2A3BDE834B061", hash_generated_method = "4021A63D2D7B5DC7A8CB5BB56CA6A347")
-    public boolean decodeXWapApplicationId(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.605 -0500", hash_original_method = "AEF025906C652297B5F2A3BDE834B061", hash_generated_method = "4021A63D2D7B5DC7A8CB5BB56CA6A347")
+    
+public boolean decodeXWapApplicationId(int startIndex) {
         if (decodeIntegerValue(startIndex) == true) {
             stringValue = null;
             return true;
@@ -498,8 +515,9 @@ public class WspTypeDecoder {
      * @return false when error(not a X-Wap-Application-Id) occur
      *         return value can be retrieved by getValue32()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.888 -0500", hash_original_method = "BA996E98F19E8451E86BBFBC5F7B64F6", hash_generated_method = "7506DB28380DFC1375932D9C5FB7929C")
-    public boolean seekXWapApplicationId(int startIndex, int endIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.608 -0500", hash_original_method = "BA996E98F19E8451E86BBFBC5F7B64F6", hash_generated_method = "7506DB28380DFC1375932D9C5FB7929C")
+    
+public boolean seekXWapApplicationId(int startIndex, int endIndex) {
         int index = startIndex;
 
         try {
@@ -563,8 +581,9 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValueString() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.889 -0500", hash_original_method = "ABD97DC4CA444BF0EFE71949DA3B86E2", hash_generated_method = "EEFBD9DB49C2D0B1EE317844A5A57725")
-    public boolean decodeXWapContentURI(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.610 -0500", hash_original_method = "ABD97DC4CA444BF0EFE71949DA3B86E2", hash_generated_method = "EEFBD9DB49C2D0B1EE317844A5A57725")
+    
+public boolean decodeXWapContentURI(int startIndex) {
         return decodeTextString(startIndex);
     }
 
@@ -577,16 +596,18 @@ public class WspTypeDecoder {
      *         return value can be retrieved by getValueString() method
      *         length of data in pdu can be retrieved by getDecodedDataLength() method
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.889 -0500", hash_original_method = "E928D18936C3E8793DB3C75F90F53AE7", hash_generated_method = "5BDA2AC05092C85B7B80EFD5084E8B80")
-    public boolean decodeXWapInitiatorURI(int startIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.612 -0500", hash_original_method = "E928D18936C3E8793DB3C75F90F53AE7", hash_generated_method = "5BDA2AC05092C85B7B80EFD5084E8B80")
+    
+public boolean decodeXWapInitiatorURI(int startIndex) {
         return decodeTextString(startIndex);
     }
 
     /**
      * The data length of latest operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.890 -0500", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "EC9F5ADC14F341FBC07C2F35981FE3DF")
-    public int getDecodedDataLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.614 -0500", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "EC9F5ADC14F341FBC07C2F35981FE3DF")
+    
+public int getDecodedDataLength() {
         return dataLength;
     }
     static {
@@ -742,16 +763,18 @@ public class WspTypeDecoder {
     /**
      * The 32-bits result of latest operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.891 -0500", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "AC69C7C36273AF6F057F89D981224EAB")
-    public long getValue32() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.617 -0500", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "AC69C7C36273AF6F057F89D981224EAB")
+    
+public long getValue32() {
         return unsigned32bit;
     }
 
     /**
      * The String result of latest operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.892 -0500", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "98A308431A618363FBF44E7348C16BD5")
-    public String getValueString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.619 -0500", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "98A308431A618363FBF44E7348C16BD5")
+    
+public String getValueString() {
         return stringValue;
     }
 
@@ -765,8 +788,9 @@ public class WspTypeDecoder {
      *         unassigned parameter.  If a parameter has No-Value the value will be null.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:29.893 -0500", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "935124A4CF397E53F7FFD7156B3259CA")
-    public HashMap<String, String> getContentParameters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.621 -0500", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "935124A4CF397E53F7FFD7156B3259CA")
+    
+public HashMap<String, String> getContentParameters() {
         return contentParameters;
     }
 }

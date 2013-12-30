@@ -28,8 +28,9 @@ public final class ZoneInfoDB {
     /**
      * Reads the file indicating the database version in use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.544 -0500", hash_original_method = "20BE396DAB95918DA62C140FCD4BD874", hash_generated_method = "28C47D9E2EBF624C6615213B8BB557A5")
-    private static String readVersion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.734 -0500", hash_original_method = "20BE396DAB95918DA62C140FCD4BD874", hash_generated_method = "28C47D9E2EBF624C6615213B8BB557A5")
+    
+private static String readVersion() {
         try {
             byte[] bytes = IoUtils.readFileAsByteArray(ZONE_DIRECTORY_NAME + "zoneinfo.version");
             return new String(bytes, 0, bytes.length, Charsets.ISO_8859_1).trim();
@@ -38,8 +39,9 @@ public final class ZoneInfoDB {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.545 -0500", hash_original_method = "603C00D789F9F2C664CA8CF3ACA627B8", hash_generated_method = "8A7D1A6F2D2F629E94B107C6F9D7F7CC")
-    private static MemoryMappedFile mapData() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.737 -0500", hash_original_method = "603C00D789F9F2C664CA8CF3ACA627B8", hash_generated_method = "8A7D1A6F2D2F629E94B107C6F9D7F7CC")
+    
+private static MemoryMappedFile mapData() {
         try {
             return MemoryMappedFile.mmapRO(ZONE_FILE_NAME);
         } catch (ErrnoException errnoException) {
@@ -57,8 +59,9 @@ public final class ZoneInfoDB {
      *
      * All this code assumes strings are US-ASCII.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.546 -0500", hash_original_method = "880C6B6FFD6476FB4BC9E8F8AE296E97", hash_generated_method = "3770FEFFBAC67FD1905A83F293D6AE9F")
-    private static void readIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.740 -0500", hash_original_method = "880C6B6FFD6476FB4BC9E8F8AE296E97", hash_generated_method = "3770FEFFBAC67FD1905A83F293D6AE9F")
+    
+private static void readIndex() {
         MemoryMappedFile mappedFile = null;
         try {
             mappedFile = MemoryMappedFile.mmapRO(INDEX_FILE_NAME);
@@ -70,8 +73,9 @@ public final class ZoneInfoDB {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.547 -0500", hash_original_method = "8ADB7A707EA8ED75C4748B3AFCE85217", hash_generated_method = "55DA8CCF299EFDB37DDD4013334EE5E9")
-    private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.744 -0500", hash_original_method = "8ADB7A707EA8ED75C4748B3AFCE85217", hash_generated_method = "55DA8CCF299EFDB37DDD4013334EE5E9")
+    
+private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException, IOException {
         BufferIterator it = mappedFile.bigEndianIterator();
 
         // The database reserves 40 bytes for each id.
@@ -119,8 +123,9 @@ public final class ZoneInfoDB {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.548 -0500", hash_original_method = "A9F0A2BED5BA3B6592EEADCCDFB17984", hash_generated_method = "E39079190DC539FF1ACAE60F8F633B16")
-    private static TimeZone makeTimeZone(String id) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.747 -0500", hash_original_method = "A9F0A2BED5BA3B6592EEADCCDFB17984", hash_generated_method = "E39079190DC539FF1ACAE60F8F633B16")
+    
+private static TimeZone makeTimeZone(String id) throws IOException {
         // Work out where in the big data file this time zone is.
         int index = Arrays.binarySearch(ids, id);
         if (index < 0) {
@@ -169,13 +174,15 @@ public final class ZoneInfoDB {
         return new ZoneInfo(id, transitions, type, gmtOffsets, isDsts);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.549 -0500", hash_original_method = "659D0293BDF51E54E117CD011B6D5569", hash_generated_method = "4E4D93DDC3024AC09E6B60611D266549")
-    public static String[] getAvailableIDs() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.750 -0500", hash_original_method = "659D0293BDF51E54E117CD011B6D5569", hash_generated_method = "4E4D93DDC3024AC09E6B60611D266549")
+    
+public static String[] getAvailableIDs() {
         return ids.clone();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.550 -0500", hash_original_method = "91B44B1DD587FF59D37E00614C5C4739", hash_generated_method = "B9911AE44E980EDBB56D169BD081B9A3")
-    public static String[] getAvailableIDs(int rawOffset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.752 -0500", hash_original_method = "91B44B1DD587FF59D37E00614C5C4739", hash_generated_method = "B9911AE44E980EDBB56D169BD081B9A3")
+    
+public static String[] getAvailableIDs(int rawOffset) {
         List<String> matches = new ArrayList<String>();
         for (int i = 0, end = rawUtcOffsets.length; i < end; i++) {
             if (rawUtcOffsets[i] == rawOffset) {
@@ -185,8 +192,9 @@ public final class ZoneInfoDB {
         return matches.toArray(new String[matches.size()]);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.551 -0500", hash_original_method = "AF44A55E6688F7315D6A27422073E89E", hash_generated_method = "FDDDE13339454F68759F52C88F9D59B8")
-    public static TimeZone getSystemDefault() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.755 -0500", hash_original_method = "AF44A55E6688F7315D6A27422073E89E", hash_generated_method = "FDDDE13339454F68759F52C88F9D59B8")
+    
+public static TimeZone getSystemDefault() {
         synchronized (LOCK) {
             TimezoneGetter tzGetter = TimezoneGetter.getInstance();
             String zoneName = tzGetter != null ? tzGetter.getId() : null;
@@ -202,8 +210,9 @@ public final class ZoneInfoDB {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.552 -0500", hash_original_method = "8DE7908FF133C8748934019B6455568E", hash_generated_method = "F221F71F3E58C301D3AEAAEE17106F8E")
-    public static TimeZone getTimeZone(String id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.757 -0500", hash_original_method = "8DE7908FF133C8748934019B6455568E", hash_generated_method = "F221F71F3E58C301D3AEAAEE17106F8E")
+    
+public static TimeZone getTimeZone(String id) {
         if (id == null) {
             return null;
         }
@@ -214,43 +223,45 @@ public final class ZoneInfoDB {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.552 -0500", hash_original_method = "6B53A6B84DE76124A7D6E4541A96BDC2", hash_generated_method = "C17ED04FA3DE2D235A10F84B36CF8827")
-    public static String getVersion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.760 -0500", hash_original_method = "6B53A6B84DE76124A7D6E4541A96BDC2", hash_generated_method = "C17ED04FA3DE2D235A10F84B36CF8827")
+    
+public static String getVersion() {
         return VERSION;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.536 -0500", hash_original_field = "97C1EDE550098D2F933B57040BF84EB8", hash_generated_field = "49C9C23C9B258E6AEE8FF33EFFF6AFCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.708 -0500", hash_original_field = "97C1EDE550098D2F933B57040BF84EB8", hash_generated_field = "49C9C23C9B258E6AEE8FF33EFFF6AFCA")
 
     private static final String ZONE_DIRECTORY_NAME =
             System.getenv("ANDROID_ROOT") + "/usr/share/zoneinfo/";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.536 -0500", hash_original_field = "AD32EF9AA783B9B400D0C7B433091C9C", hash_generated_field = "A85D935C13B0C5A5348159650F09B6E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.711 -0500", hash_original_field = "AD32EF9AA783B9B400D0C7B433091C9C", hash_generated_field = "A85D935C13B0C5A5348159650F09B6E9")
 
     private static final String ZONE_FILE_NAME = ZONE_DIRECTORY_NAME + "zoneinfo.dat";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.537 -0500", hash_original_field = "B7C1C412D7C1AC01120B57511B68429D", hash_generated_field = "466D82FF903CFF65EF00654F896B6CB1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.714 -0500", hash_original_field = "B7C1C412D7C1AC01120B57511B68429D", hash_generated_field = "466D82FF903CFF65EF00654F896B6CB1")
 
     private static final String INDEX_FILE_NAME = ZONE_DIRECTORY_NAME + "zoneinfo.idx";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.538 -0500", hash_original_field = "D74064F1D3C26A0EAAF918907141DE73", hash_generated_field = "74DA88035CA3F88FC209C28C65A412F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.716 -0500", hash_original_field = "D74064F1D3C26A0EAAF918907141DE73", hash_generated_field = "74DA88035CA3F88FC209C28C65A412F9")
 
 
     private static final Object LOCK = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.539 -0500", hash_original_field = "4DD44DF12EC46BFBF873E89F996D361D", hash_generated_field = "14C7FABB4A49B8997B9A7A85BB588B5F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.719 -0500", hash_original_field = "4DD44DF12EC46BFBF873E89F996D361D", hash_generated_field = "14C7FABB4A49B8997B9A7A85BB588B5F")
 
 
     private static final String VERSION = readVersion();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.540 -0500", hash_original_field = "904CF02D60C2F852BA2909B4024131BC", hash_generated_field = "8F51E99D7858B694EBA77A8D099C5E8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.722 -0500", hash_original_field = "904CF02D60C2F852BA2909B4024131BC", hash_generated_field = "8F51E99D7858B694EBA77A8D099C5E8A")
 
     private static final MemoryMappedFile ALL_ZONE_DATA = mapData();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.541 -0500", hash_original_field = "46357F5F50E8370D8C2E58985F53C30A", hash_generated_field = "32AE8609238F038B3D4A7AF42E97A34A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.724 -0500", hash_original_field = "46357F5F50E8370D8C2E58985F53C30A", hash_generated_field = "32AE8609238F038B3D4A7AF42E97A34A")
 
     private static String[] ids;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.542 -0500", hash_original_field = "8D1B0318FD06B82E1FD7A3AA87035715", hash_generated_field = "BBB14D36BADD097A53587E02DEE74F4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.726 -0500", hash_original_field = "8D1B0318FD06B82E1FD7A3AA87035715", hash_generated_field = "BBB14D36BADD097A53587E02DEE74F4B")
 
     private static int[] byteOffsets;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.543 -0500", hash_original_field = "555308CE4E457FEEDD70B63F753E9C09", hash_generated_field = "11E6859EA7C3A97FDEE418858A2BF997")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.729 -0500", hash_original_field = "555308CE4E457FEEDD70B63F753E9C09", hash_generated_field = "11E6859EA7C3A97FDEE418858A2BF997")
 
     private static int[] rawUtcOffsets;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.543 -0500", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "AD9962427B97AE7A53554E3AAB13AE6D")
-    private ZoneInfoDB() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.732 -0500", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "AD9962427B97AE7A53554E3AAB13AE6D")
+    
+private ZoneInfoDB() {
     }
     static {
         readIndex();

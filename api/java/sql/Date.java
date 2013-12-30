@@ -22,8 +22,9 @@ public class Date extends java.util.Date {
      *             if the format of the supplied string does not match the SQL
      *             format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.971 -0500", hash_original_method = "FC7C79FC527809241DADD4534B95BE5B", hash_generated_method = "19DF358F7CC2DBEF4A33710192D3BA9D")
-    public static Date valueOf(String dateString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.285 -0500", hash_original_method = "FC7C79FC527809241DADD4534B95BE5B", hash_generated_method = "19DF358F7CC2DBEF4A33710192D3BA9D")
+    
+public static Date valueOf(String dateString) {
         if (dateString == null) {
             throw new IllegalArgumentException();
         }
@@ -53,15 +54,16 @@ public class Date extends java.util.Date {
      * hours, so that the returned Time value corresponds to 00:00:00 GMT on a
      * particular day.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.972 -0500", hash_original_method = "01A3FB6B1C784C6B589498BF3E72AF89", hash_generated_method = "39FC440E592AD958D3DA1840FF8C82F1")
-    private static long normalizeTime(long theTime) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.288 -0500", hash_original_method = "01A3FB6B1C784C6B589498BF3E72AF89", hash_generated_method = "39FC440E592AD958D3DA1840FF8C82F1")
+    
+private static long normalizeTime(long theTime) {
         return theTime;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.959 -0500", hash_original_field = "5D55247CCC38757754CBD23F9C238832", hash_generated_field = "AB50B4CB64B1076350F49E3C7CD4E9DD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.251 -0500", hash_original_field = "5D55247CCC38757754CBD23F9C238832", hash_generated_field = "AB50B4CB64B1076350F49E3C7CD4E9DD")
 
 
     private static final long serialVersionUID = 1511598038487230103L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.969 -0500", hash_original_field = "6B63AE749ABE3056A4CC87C225475479", hash_generated_field = "E91DD4FD05D62E2720598D28C18C7C9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.280 -0500", hash_original_field = "6B63AE749ABE3056A4CC87C225475479", hash_generated_field = "E91DD4FD05D62E2720598D28C18C7C9E")
 
 
     private static final String PADDING = "0000";
@@ -80,9 +82,10 @@ public class Date extends java.util.Date {
      * @param theDay
      *            the day in the month. Must be in the range {@code [1,31]}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.960 -0500", hash_original_method = "54033E67BCAF2131C1DBBD633092C516", hash_generated_method = "C8C4841D2C7D069BC9CC87A5545C4A0A")
-    @Deprecated
-public Date(int theYear, int theMonth, int theDay) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.254 -0500", hash_original_method = "54033E67BCAF2131C1DBBD633092C516", hash_generated_method = "C8C4841D2C7D069BC9CC87A5545C4A0A")
+    
+@Deprecated
+    public Date(int theYear, int theMonth, int theDay) {
         super(theYear, theMonth, theDay);
     }
 
@@ -97,8 +100,9 @@ public Date(int theYear, int theMonth, int theDay) {
      *            correspond to 00:00:00 GMT on the day determined by the supplied
      *            time value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.961 -0500", hash_original_method = "0597C0984A3A8E2CF9C870E073A794F7", hash_generated_method = "652642F15E965BBB7E5FD61A824E4250")
-    public Date(long theDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.256 -0500", hash_original_method = "0597C0984A3A8E2CF9C870E073A794F7", hash_generated_method = "652642F15E965BBB7E5FD61A824E4250")
+    
+public Date(long theDate) {
         super(normalizeTime(theDate));
     }
 
@@ -109,10 +113,11 @@ public Date(int theYear, int theMonth, int theDay) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.962 -0500", hash_original_method = "9D3BFA18991740345E9C4B50C3BC1C7B", hash_generated_method = "B6CC43AFE75FBF41D2D4659E1E0D1F48")
-    @Deprecated
-@Override
-public int getHours() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.259 -0500", hash_original_method = "9D3BFA18991740345E9C4B50C3BC1C7B", hash_generated_method = "B6CC43AFE75FBF41D2D4659E1E0D1F48")
+    
+@Deprecated
+    @Override
+    public int getHours() {
         throw new IllegalArgumentException();
     }
 
@@ -123,10 +128,11 @@ public int getHours() {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.963 -0500", hash_original_method = "20D35DA199D26861EF3B1850BF9B2C7B", hash_generated_method = "58BF9117E986858BF62F057055FD3040")
-    @Deprecated
-@Override
-public int getMinutes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.262 -0500", hash_original_method = "20D35DA199D26861EF3B1850BF9B2C7B", hash_generated_method = "58BF9117E986858BF62F057055FD3040")
+    
+@Deprecated
+    @Override
+    public int getMinutes() {
         throw new IllegalArgumentException();
     }
 
@@ -137,10 +143,11 @@ public int getMinutes() {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.964 -0500", hash_original_method = "5B3A8174ABF60BC4DD674AADB526CA5F", hash_generated_method = "7D47E178A24671905EFC2BF8A7641B44")
-    @Deprecated
-@Override
-public int getSeconds() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.264 -0500", hash_original_method = "5B3A8174ABF60BC4DD674AADB526CA5F", hash_generated_method = "7D47E178A24671905EFC2BF8A7641B44")
+    
+@Deprecated
+    @Override
+    public int getSeconds() {
         throw new IllegalArgumentException();
     }
 
@@ -152,10 +159,11 @@ public int getSeconds() {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.965 -0500", hash_original_method = "8AEDCDA359475E67EC180A6BBC9EA00B", hash_generated_method = "4677C451B586B55518155F6083ED075A")
-    @Deprecated
-@Override
-public void setHours(int theHours) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.267 -0500", hash_original_method = "8AEDCDA359475E67EC180A6BBC9EA00B", hash_generated_method = "4677C451B586B55518155F6083ED075A")
+    
+@Deprecated
+    @Override
+    public void setHours(int theHours) {
         throw new IllegalArgumentException();
     }
 
@@ -167,10 +175,11 @@ public void setHours(int theHours) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.965 -0500", hash_original_method = "C3170E6698742DBDFB0C085047CF3D73", hash_generated_method = "27DE06E63346B337DEAC08462741A1B4")
-    @Deprecated
-@Override
-public void setMinutes(int theMinutes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.269 -0500", hash_original_method = "C3170E6698742DBDFB0C085047CF3D73", hash_generated_method = "27DE06E63346B337DEAC08462741A1B4")
+    
+@Deprecated
+    @Override
+    public void setMinutes(int theMinutes) {
         throw new IllegalArgumentException();
     }
 
@@ -182,10 +191,11 @@ public void setMinutes(int theMinutes) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.967 -0500", hash_original_method = "90D475806A3C76BA7C308DE5A81BA772", hash_generated_method = "3CFC7943A6A6DD444A1E4FC2D2547F87")
-    @Deprecated
-@Override
-public void setSeconds(int theSeconds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.272 -0500", hash_original_method = "90D475806A3C76BA7C308DE5A81BA772", hash_generated_method = "3CFC7943A6A6DD444A1E4FC2D2547F87")
+    
+@Deprecated
+    @Override
+    public void setSeconds(int theSeconds) {
         throw new IllegalArgumentException();
     }
 
@@ -196,9 +206,10 @@ public void setSeconds(int theSeconds) {
      * @param theTime
      *            the time in milliseconds since the Epoch.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.967 -0500", hash_original_method = "58DD96CFC8DDA00016DEC24CC6519017", hash_generated_method = "1F810C618BA62488684578EB05C3C6A1")
-    @Override
-public void setTime(long theTime) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.275 -0500", hash_original_method = "58DD96CFC8DDA00016DEC24CC6519017", hash_generated_method = "1F810C618BA62488684578EB05C3C6A1")
+    
+@Override
+    public void setTime(long theTime) {
         /*
          * Store the Date based on the supplied time after removing any time
          * elements finer than the day based on zero GMT
@@ -211,9 +222,10 @@ public void setTime(long theTime) {
      *
      * @return a string representation of the date in SQL format - {@code "yyyy-MM-dd"}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.968 -0500", hash_original_method = "F7971D7A9962AA78000A8292B336C43C", hash_generated_method = "C4F82B04518E944139744F728FE1B9E7")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.277 -0500", hash_original_method = "F7971D7A9962AA78000A8292B336C43C", hash_generated_method = "C4F82B04518E944139744F728FE1B9E7")
+    
+@Override
+    public String toString() {
         StringBuilder sb = new StringBuilder(10);
 
         format((getYear() + 1900), 4, sb);
@@ -228,8 +240,9 @@ public String toString() {
     /*
     * Private method to format the time
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:19.970 -0500", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "42C4F2A798161F88780A237C678B7BD2")
-    private void format(int date, int digits, StringBuilder sb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.282 -0500", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "42C4F2A798161F88780A237C678B7BD2")
+    
+private void format(int date, int digits, StringBuilder sb) {
         String str = String.valueOf(date);
         if (digits - str.length() > 0) {
             sb.append(PADDING.substring(0, digits - str.length()));

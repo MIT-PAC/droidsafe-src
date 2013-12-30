@@ -16,34 +16,35 @@ import java.net.SocketOptions;
 
 
 class LocalSocketImpl {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.393 -0500", hash_original_field = "2E69C796FF6BAD53C79A467DE3BC8E3D", hash_generated_field = "355E2A769FEE7E54D6F0256760F338B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.261 -0500", hash_original_field = "2E69C796FF6BAD53C79A467DE3BC8E3D", hash_generated_field = "355E2A769FEE7E54D6F0256760F338B6")
 
     private SocketInputStream fis;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.394 -0500", hash_original_field = "552BC59F43395032D4325FD66EF9333D", hash_generated_field = "8156E266B6831DBC7B3771E7C35EF804")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.263 -0500", hash_original_field = "552BC59F43395032D4325FD66EF9333D", hash_generated_field = "8156E266B6831DBC7B3771E7C35EF804")
 
     private SocketOutputStream fos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.394 -0500", hash_original_field = "9D5A947E961D94B570F8A7277DB09B59", hash_generated_field = "201F2893E6616F00DF8FC16933452C93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.265 -0500", hash_original_field = "9D5A947E961D94B570F8A7277DB09B59", hash_generated_field = "201F2893E6616F00DF8FC16933452C93")
 
     private Object readMonitor = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.395 -0500", hash_original_field = "2BB68BEB056ABF539B644ED112FA8AFD", hash_generated_field = "3AEEFF96894C6EA6FF9C01F76A902604")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.267 -0500", hash_original_field = "2BB68BEB056ABF539B644ED112FA8AFD", hash_generated_field = "3AEEFF96894C6EA6FF9C01F76A902604")
 
     private Object writeMonitor = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.396 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.270 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
     private FileDescriptor fd;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.885 -0500", hash_original_field = "9CF2319FEDB29C1E6FE6830C6EF0FC50", hash_generated_field = "ED9E888FFF51174497B2AEAE0992D2B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.272 -0500", hash_original_field = "9CF2319FEDB29C1E6FE6830C6EF0FC50", hash_generated_field = "ED9E888FFF51174497B2AEAE0992D2B7")
 
     /** file descriptor array received during a previous read */
     FileDescriptor[] inboundFileDescriptors;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.397 -0500", hash_original_field = "5C2DA72A39F5E44715644D1AB34D0887", hash_generated_field = "5C2DA72A39F5E44715644D1AB34D0887")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.274 -0500", hash_original_field = "5C2DA72A39F5E44715644D1AB34D0887", hash_generated_field = "5C2DA72A39F5E44715644D1AB34D0887")
 
     FileDescriptor[] outboundFileDescriptors;
 
     /**
      * Create a new instance.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.429 -0500", hash_original_method = "EB46FEA2FE489ABD86FB64E17870F7D5", hash_generated_method = "EB46FEA2FE489ABD86FB64E17870F7D5")
-    LocalSocketImpl()
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.358 -0500", hash_original_method = "EB46FEA2FE489ABD86FB64E17870F7D5", hash_generated_method = "EB46FEA2FE489ABD86FB64E17870F7D5")
+    
+LocalSocketImpl()
     {
     }
 
@@ -54,33 +55,88 @@ class LocalSocketImpl {
      *
      * @param fd non-null; bound file descriptor
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.431 -0500", hash_original_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5", hash_generated_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5")
-    LocalSocketImpl(FileDescriptor fd) throws IOException
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.360 -0500", hash_original_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5", hash_generated_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5")
+    
+LocalSocketImpl(FileDescriptor fd) throws IOException
     {
         this.fd = fd;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.897 -0500", hash_original_method = "2758981D1030A8FDA90CA71A02304595", hash_generated_method = "322BB37FF722A58BB18D2DD8EAADCCB4")
-    private native int available_native(FileDescriptor fd) throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.898 -0500", hash_original_method = "C4F1C4509B0A008CEB1A520A33B1432C", hash_generated_method = "0BFB7D9CE40F5048B9859812C60A147E")
-    private native void close_native(FileDescriptor fd) throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.900 -0500", hash_original_method = "C5E1B2BCA848D2C54F079D7825712FAA", hash_generated_method = "A13C1097AE2EBE781454EF6A4EF629C5")
-    private native int read_native(FileDescriptor fd) throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.901 -0500", hash_original_method = "6C0CD8F9940E6252A80F192C7FCEF247", hash_generated_method = "AE77DEEB20B582CDED5DF51CEB0BCE60")
-    private native int readba_native(byte[] b, int off, int len,
-            FileDescriptor fd) throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.902 -0500", hash_original_method = "411B6D80F43D59E374103A18918D197B", hash_generated_method = "79B65129E58ACA13031F891365D948B8")
-    private native void writeba_native(byte[] b, int off, int len,
-            FileDescriptor fd) throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.904 -0500", hash_original_method = "EC6860394B0EC0B22E9CA8C353E6B2CD", hash_generated_method = "B030B14DF820690DE3A9F7798B1447FC")
-    private native void write_native(int b, FileDescriptor fd)
-            throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.905 -0500", hash_original_method = "FB81706A2E5D939365DC1E11BB4FE7D5", hash_generated_method = "EE262E1FDADAEC621A39F51506C3E6DA")
-    private native void connectLocal(FileDescriptor fd, String name,
-            int namespace) throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.906 -0500", hash_original_method = "62C617B37F715EB0C7D8B05FC6062D1C", hash_generated_method = "CE48C7AFB77AF7187A6547FCD34D998B")
-    private native void bindLocal(FileDescriptor fd, String name, int namespace)
-            throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.305 -0500", hash_original_method = "2758981D1030A8FDA90CA71A02304595", hash_generated_method = "322BB37FF722A58BB18D2DD8EAADCCB4")
+    
+    private int available_native(FileDescriptor fd) throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	return getTaintInt();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.308 -0500", hash_original_method = "C4F1C4509B0A008CEB1A520A33B1432C", hash_generated_method = "0BFB7D9CE40F5048B9859812C60A147E")
+    
+    private void close_native(FileDescriptor fd) throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.312 -0500", hash_original_method = "C5E1B2BCA848D2C54F079D7825712FAA", hash_generated_method = "A13C1097AE2EBE781454EF6A4EF629C5")
+    
+    private int read_native(FileDescriptor fd) throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	return getTaintInt();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.316 -0500", hash_original_method = "6C0CD8F9940E6252A80F192C7FCEF247", hash_generated_method = "AE77DEEB20B582CDED5DF51CEB0BCE60")
+    
+    private int readba_native(byte[] b, int off, int len,
+                FileDescriptor fd) throws IOException{
+    	//Formerly a native method
+    	addTaint(b[0]);
+    	addTaint(off);
+    	addTaint(len);
+    	addTaint(fd.getTaint());
+    	return getTaintInt();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.319 -0500", hash_original_method = "411B6D80F43D59E374103A18918D197B", hash_generated_method = "79B65129E58ACA13031F891365D948B8")
+    
+    private void writeba_native(byte[] b, int off, int len,
+                FileDescriptor fd) throws IOException{
+    	//Formerly a native method
+    	addTaint(b[0]);
+    	addTaint(off);
+    	addTaint(len);
+    	addTaint(fd.getTaint());
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.323 -0500", hash_original_method = "EC6860394B0EC0B22E9CA8C353E6B2CD", hash_generated_method = "B030B14DF820690DE3A9F7798B1447FC")
+    
+    private void write_native(int b, FileDescriptor fd)
+                throws IOException{
+    	//Formerly a native method
+    	addTaint(b);
+    	addTaint(fd.getTaint());
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.326 -0500", hash_original_method = "FB81706A2E5D939365DC1E11BB4FE7D5", hash_generated_method = "EE262E1FDADAEC621A39F51506C3E6DA")
+    
+    private void connectLocal(FileDescriptor fd, String name,
+                int namespace) throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	addTaint(name.getTaint());
+    	addTaint(namespace);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.330 -0500", hash_original_method = "62C617B37F715EB0C7D8B05FC6062D1C", hash_generated_method = "CE48C7AFB77AF7187A6547FCD34D998B")
+    
+    private void bindLocal(FileDescriptor fd, String name, int namespace)
+                throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	addTaint(name.getTaint());
+    	addTaint(namespace);
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -90,11 +146,23 @@ class LocalSocketImpl {
         fd.addTaint(this.taint);
         return fd;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.909 -0500", hash_original_method = "565F45EE1777149341C55D43CF68422B", hash_generated_method = "DA50784D3A2A11405647175C8DFB1DDE")
-    private native void listen_native(FileDescriptor fd, int backlog)
-            throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.910 -0500", hash_original_method = "AE79C436903413982C1AAE7FD29B4B48", hash_generated_method = "369C1532C460807B4DB74051FBE9C4F9")
-    private native void shutdown(FileDescriptor fd, boolean shutdownInput);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.337 -0500", hash_original_method = "565F45EE1777149341C55D43CF68422B", hash_generated_method = "DA50784D3A2A11405647175C8DFB1DDE")
+    
+    private void listen_native(FileDescriptor fd, int backlog)
+                throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	addTaint(backlog);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.341 -0500", hash_original_method = "AE79C436903413982C1AAE7FD29B4B48", hash_generated_method = "369C1532C460807B4DB74051FBE9C4F9")
+    
+    private void shutdown(FileDescriptor fd, boolean shutdownInput){
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	addTaint(shutdownInput);
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -105,12 +173,27 @@ class LocalSocketImpl {
     	creds.addTaint(this.taint);
     	return creds;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.913 -0500", hash_original_method = "57547C3595B23A135CCDE37FD7052F1D", hash_generated_method = "0C8D608554554E90ADE360CC50CEEE96")
-    private native int getOption_native(FileDescriptor fd, int optID)
-            throws IOException;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:18.914 -0500", hash_original_method = "DE678D0521D206818FAC33E612ECDEF9", hash_generated_method = "08C25418222347227013F52740105F39")
-    private native void setOption_native(FileDescriptor fd, int optID,
-            int b, int value) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.349 -0500", hash_original_method = "57547C3595B23A135CCDE37FD7052F1D", hash_generated_method = "0C8D608554554E90ADE360CC50CEEE96")
+    
+    private int getOption_native(FileDescriptor fd, int optID)
+                throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	addTaint(optID);
+    	return getTaintInt();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.352 -0500", hash_original_method = "DE678D0521D206818FAC33E612ECDEF9", hash_generated_method = "08C25418222347227013F52740105F39")
+    
+    private void setOption_native(FileDescriptor fd, int optID,
+                int b, int value) throws IOException{
+    	//Formerly a native method
+    	addTaint(fd.getTaint());
+    	addTaint(optID);
+    	addTaint(b);
+    	addTaint(value);
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -121,8 +204,9 @@ class LocalSocketImpl {
         return fd2;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.432 -0500", hash_original_method = "910906868F2A4F19B7D2844E1F779346", hash_generated_method = "40FFCDDF45EF3AA1E9C1A0DE5B81F59B")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.362 -0500", hash_original_method = "910906868F2A4F19B7D2844E1F779346", hash_generated_method = "40FFCDDF45EF3AA1E9C1A0DE5B81F59B")
+    
+public String toString() {
         return super.toString() + " fd:" + fd;
     }
 
@@ -133,8 +217,9 @@ class LocalSocketImpl {
      * datagram.
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.433 -0500", hash_original_method = "C69FBA5615AE4C555A8E605188FC5D70", hash_generated_method = "9529B15B91709FA3F46AA05F5D5D1C6A")
-    public void create (boolean stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.364 -0500", hash_original_method = "C69FBA5615AE4C555A8E605188FC5D70", hash_generated_method = "9529B15B91709FA3F46AA05F5D5D1C6A")
+    
+public void create (boolean stream) throws IOException {
         // no error if socket already created
         // need this for LocalServerSocket.accept()
         if (fd == null) {
@@ -147,8 +232,9 @@ class LocalSocketImpl {
      *
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.433 -0500", hash_original_method = "ABF18B5E6666C8F5D8A2BB5F41F5792B", hash_generated_method = "1495D91B7F701DFBD52DE5E640C10B6D")
-    public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.367 -0500", hash_original_method = "ABF18B5E6666C8F5D8A2BB5F41F5792B", hash_generated_method = "1495D91B7F701DFBD52DE5E640C10B6D")
+    
+public void close() throws IOException {
         synchronized (LocalSocketImpl.this) {
             if (fd == null) return;
             close_native(fd);
@@ -157,8 +243,9 @@ class LocalSocketImpl {
     }
 
     /** note timeout presently ignored */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.434 -0500", hash_original_method = "425C245C15643B6C00C58E49D6A6C651", hash_generated_method = "C2258CD53F30B7AF255CD975E6523897")
-    protected void connect(LocalSocketAddress address, int timeout)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.369 -0500", hash_original_method = "425C245C15643B6C00C58E49D6A6C651", hash_generated_method = "C2258CD53F30B7AF255CD975E6523897")
+    
+protected void connect(LocalSocketAddress address, int timeout)
                         throws IOException
     {        
         if (fd == null) {
@@ -175,8 +262,9 @@ class LocalSocketImpl {
      * @param endpoint endpoint address
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.435 -0500", hash_original_method = "D301FBD428349B466ACCB27339A08D2F", hash_generated_method = "1EF36E0E81A21E092BB79644E67D0F14")
-    public void bind(LocalSocketAddress endpoint) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.371 -0500", hash_original_method = "D301FBD428349B466ACCB27339A08D2F", hash_generated_method = "1EF36E0E81A21E092BB79644E67D0F14")
+    
+public void bind(LocalSocketAddress endpoint) throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -185,8 +273,9 @@ class LocalSocketImpl {
         bindLocal(fd, endpoint.getName(), endpoint.getNamespace().getId());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.436 -0500", hash_original_method = "A6DEE76A07DA4242CC30FE3245F17D51", hash_generated_method = "9D29C411A79A57E8E61C79D82CF3B991")
-    protected void listen(int backlog) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.373 -0500", hash_original_method = "A6DEE76A07DA4242CC30FE3245F17D51", hash_generated_method = "9D29C411A79A57E8E61C79D82CF3B991")
+    
+protected void listen(int backlog) throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -202,8 +291,9 @@ class LocalSocketImpl {
      * @param s a socket that will be used to represent the new connection.
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.436 -0500", hash_original_method = "E2D863498299C9CF5B0AE6150A21C675", hash_generated_method = "55529CB19A733293335AFAE2A6F95874")
-    protected void accept(LocalSocketImpl s) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.376 -0500", hash_original_method = "E2D863498299C9CF5B0AE6150A21C675", hash_generated_method = "55529CB19A733293335AFAE2A6F95874")
+    
+protected void accept(LocalSocketImpl s) throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -218,8 +308,9 @@ class LocalSocketImpl {
      * @return input stream
      * @throws IOException if socket has been closed or cannot be created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.437 -0500", hash_original_method = "D37322C17A1B9B191A9C32D9BD81E000", hash_generated_method = "6FD9301C4C1D3F08AEF60AB79F19C5D3")
-    protected InputStream getInputStream() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.378 -0500", hash_original_method = "D37322C17A1B9B191A9C32D9BD81E000", hash_generated_method = "6FD9301C4C1D3F08AEF60AB79F19C5D3")
+    
+protected InputStream getInputStream() throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -240,8 +331,9 @@ class LocalSocketImpl {
      * @return output stream
      * @throws IOException if socket has been closed or cannot be created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.438 -0500", hash_original_method = "2E8F2E95CF2F6CF40AEA3B38F9B68B34", hash_generated_method = "F020EBF0AD51BA094F15DE6ECA348FD7")
-    protected OutputStream getOutputStream() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.380 -0500", hash_original_method = "2E8F2E95CF2F6CF40AEA3B38F9B68B34", hash_generated_method = "F020EBF0AD51BA094F15DE6ECA348FD7")
+    
+protected OutputStream getOutputStream() throws IOException
     { 
         if (fd == null) {
             throw new IOException("socket not created");
@@ -262,8 +354,9 @@ class LocalSocketImpl {
      * @return >= 0 count bytes available
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.439 -0500", hash_original_method = "A7CC818E7F384DAEC54D76069E9C5019", hash_generated_method = "E8FCEBA0D995DB6EE22CA1B5390C8697")
-    protected int available() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.382 -0500", hash_original_method = "A7CC818E7F384DAEC54D76069E9C5019", hash_generated_method = "E8FCEBA0D995DB6EE22CA1B5390C8697")
+    
+protected int available() throws IOException
     {
         return getInputStream().available();
     }
@@ -273,8 +366,9 @@ class LocalSocketImpl {
      *
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.440 -0500", hash_original_method = "CED8C1FFBDBF9F9E7A40EC2B2E6DD909", hash_generated_method = "56C8F96BF000F0F44095BF73C52F23CD")
-    protected void shutdownInput() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.384 -0500", hash_original_method = "CED8C1FFBDBF9F9E7A40EC2B2E6DD909", hash_generated_method = "56C8F96BF000F0F44095BF73C52F23CD")
+    
+protected void shutdownInput() throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -288,8 +382,9 @@ class LocalSocketImpl {
      *
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.440 -0500", hash_original_method = "DE98B1F2C9FD8DEEFDCE620E4EB90078", hash_generated_method = "6D1117DFD61BC43538CCCF7511692C33")
-    protected void shutdownOutput() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.387 -0500", hash_original_method = "DE98B1F2C9FD8DEEFDCE620E4EB90078", hash_generated_method = "6D1117DFD61BC43538CCCF7511692C33")
+    
+protected void shutdownOutput() throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -298,26 +393,30 @@ class LocalSocketImpl {
         shutdown(fd, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.441 -0500", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "C8664C638E6E7676776FC905B50F6CA8")
-    protected FileDescriptor getFileDescriptor()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.389 -0500", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "C8664C638E6E7676776FC905B50F6CA8")
+    
+protected FileDescriptor getFileDescriptor()
     {
         return fd;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.442 -0500", hash_original_method = "84442B2358C6BD30716C7D72481FD8C4", hash_generated_method = "3435B1388EBB6C0D83AB9F72304C63D8")
-    protected boolean supportsUrgentData()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.391 -0500", hash_original_method = "84442B2358C6BD30716C7D72481FD8C4", hash_generated_method = "3435B1388EBB6C0D83AB9F72304C63D8")
+    
+protected boolean supportsUrgentData()
     {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.443 -0500", hash_original_method = "EC21D6BA9A1DE1709D242100460B4B8C", hash_generated_method = "D6EA5B8B738754F7655D6E287D58060A")
-    protected void sendUrgentData(int data) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.394 -0500", hash_original_method = "EC21D6BA9A1DE1709D242100460B4B8C", hash_generated_method = "D6EA5B8B738754F7655D6E287D58060A")
+    
+protected void sendUrgentData(int data) throws IOException
     {
         throw new RuntimeException ("not impled");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.444 -0500", hash_original_method = "02CEF5E6368D2209C8707863BE147BD2", hash_generated_method = "74EFBAA0E814C92024470C9BA113EC79")
-    public Object getOption(int optID) throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.396 -0500", hash_original_method = "02CEF5E6368D2209C8707863BE147BD2", hash_generated_method = "74EFBAA0E814C92024470C9BA113EC79")
+    
+public Object getOption(int optID) throws IOException
     {
         if (fd == null) {
             throw new IOException("socket not created");
@@ -339,8 +438,9 @@ class LocalSocketImpl {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.445 -0500", hash_original_method = "A0313708A2FB484B7104FAC62F0E39B4", hash_generated_method = "88D277497D8007967B2FDCAA44913C24")
-    public void setOption(int optID, Object value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.398 -0500", hash_original_method = "A0313708A2FB484B7104FAC62F0E39B4", hash_generated_method = "88D277497D8007967B2FDCAA44913C24")
+    
+public void setOption(int optID, Object value)
             throws IOException {
         /*
          * Boolean.FALSE is used to disable some options, so it
@@ -375,8 +475,9 @@ class LocalSocketImpl {
      * @param fds non-null; file descriptors to send.
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.448 -0500", hash_original_method = "AEC4AD692525702323537BC369199B7F", hash_generated_method = "4A891BE68D75308B131997586EE23B05")
-    public void setFileDescriptorsForSend(FileDescriptor[] fds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.400 -0500", hash_original_method = "AEC4AD692525702323537BC369199B7F", hash_generated_method = "4A891BE68D75308B131997586EE23B05")
+    
+public void setFileDescriptorsForSend(FileDescriptor[] fds) {
         synchronized(writeMonitor) {
             outboundFileDescriptors = fds;
         }
@@ -392,8 +493,9 @@ class LocalSocketImpl {
      * @return null or file descriptor array
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.449 -0500", hash_original_method = "D444308F286D853D2E5F97ACF37B86DF", hash_generated_method = "36DAF8135E7E0ABE09E6A4524064A836")
-    public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.403 -0500", hash_original_method = "D444308F286D853D2E5F97ACF37B86DF", hash_generated_method = "36DAF8135E7E0ABE09E6A4524064A836")
+    
+public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
         synchronized(readMonitor) {
             FileDescriptor[] result = inboundFileDescriptors;
 
@@ -409,8 +511,9 @@ class LocalSocketImpl {
      * @return non-null; peer credentials
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.450 -0500", hash_original_method = "3E3240E544229F6BEFF619755963B808", hash_generated_method = "CF858812CA4F6308F56B0B5E8D38BD13")
-    public Credentials getPeerCredentials() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.405 -0500", hash_original_method = "3E3240E544229F6BEFF619755963B808", hash_generated_method = "CF858812CA4F6308F56B0B5E8D38BD13")
+    
+public Credentials getPeerCredentials() throws IOException
     {
         return getPeerCredentials_native(fd);
     }
@@ -421,17 +524,19 @@ class LocalSocketImpl {
      * @return non-null; socket name
      * @throws IOException on failure
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.453 -0500", hash_original_method = "C6AD39B00524B9355CA4153DB07C4B13", hash_generated_method = "D8218971A0D58DC34787D527528E6156")
-    public LocalSocketAddress getSockAddress() throws IOException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.406 -0500", hash_original_method = "C6AD39B00524B9355CA4153DB07C4B13", hash_generated_method = "D8218971A0D58DC34787D527528E6156")
+    
+public LocalSocketAddress getSockAddress() throws IOException
     {
         return null;
         //TODO implement this
         //return getSockName_native(fd);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.454 -0500", hash_original_method = "CA22E17CA63436350E75BC7DD678FC6C", hash_generated_method = "1437CF8B9AA89AA1DD5C1019A36E2B47")
-    @Override
-protected void finalize() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.408 -0500", hash_original_method = "CA22E17CA63436350E75BC7DD678FC6C", hash_generated_method = "1437CF8B9AA89AA1DD5C1019A36E2B47")
+    
+@Override
+    protected void finalize() throws IOException {
         close();
     }
 
@@ -444,23 +549,26 @@ protected void finalize() throws IOException {
             //Synthesized constructor
         }
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.398 -0500", hash_original_method = "8F92B1C37F1E7B064EB55148DFA3D6F8", hash_generated_method = "13FE18489CE7D80AD7769190047FA841")
-        @Override
-public int available() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.277 -0500", hash_original_method = "8F92B1C37F1E7B064EB55148DFA3D6F8", hash_generated_method = "13FE18489CE7D80AD7769190047FA841")
+        
+@Override
+        public int available() throws IOException {
             return available_native(fd);
         }
 
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.400 -0500", hash_original_method = "C23E504E812AF14B0F4062FED57A7B1E", hash_generated_method = "1ACBAB8B5A6705B56494966CD922491C")
-        @Override
-public void close() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.279 -0500", hash_original_method = "C23E504E812AF14B0F4062FED57A7B1E", hash_generated_method = "1ACBAB8B5A6705B56494966CD922491C")
+        
+@Override
+        public void close() throws IOException {
             LocalSocketImpl.this.close();
         }
 
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.401 -0500", hash_original_method = "395E06403A9BB7E16A5F2E3FCA2C1758", hash_generated_method = "50FEC6D2F5EEB194633B0219A38358AA")
-        @Override
-public int read() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.281 -0500", hash_original_method = "395E06403A9BB7E16A5F2E3FCA2C1758", hash_generated_method = "50FEC6D2F5EEB194633B0219A38358AA")
+        
+@Override
+        public int read() throws IOException {
             int ret;
             synchronized (readMonitor) {
                 FileDescriptor myFd = fd;
@@ -472,16 +580,18 @@ public int read() throws IOException {
         }
 
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.401 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "CFD5B18414297C5D63F6DE9EDDF7232C")
-        @Override
-public int read(byte[] b) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.284 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "CFD5B18414297C5D63F6DE9EDDF7232C")
+        
+@Override
+        public int read(byte[] b) throws IOException {
             return read(b, 0, b.length);
         }
 
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.402 -0500", hash_original_method = "554DCEA621C79251D4E71F6BA8C4411B", hash_generated_method = "32C6E525B1BE064854CD72B345699AD5")
-        @Override
-public int read(byte[] b, int off, int len) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.286 -0500", hash_original_method = "554DCEA621C79251D4E71F6BA8C4411B", hash_generated_method = "32C6E525B1BE064854CD72B345699AD5")
+        
+@Override
+        public int read(byte[] b, int off, int len) throws IOException {
             synchronized (readMonitor) {
                 FileDescriptor myFd = fd;
                 if (myFd == null) throw new IOException("socket closed");
@@ -509,23 +619,26 @@ public int read(byte[] b, int off, int len) throws IOException {
             //Synthesized constructor
         }
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.404 -0500", hash_original_method = "C23E504E812AF14B0F4062FED57A7B1E", hash_generated_method = "1ACBAB8B5A6705B56494966CD922491C")
-        @Override
-public void close() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.291 -0500", hash_original_method = "C23E504E812AF14B0F4062FED57A7B1E", hash_generated_method = "1ACBAB8B5A6705B56494966CD922491C")
+        
+@Override
+        public void close() throws IOException {
             LocalSocketImpl.this.close();
         }
 
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.405 -0500", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
-        @Override
-public void write (byte[] b) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.294 -0500", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
+        
+@Override
+        public void write (byte[] b) throws IOException {
             write(b, 0, b.length);
         }
         
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.406 -0500", hash_original_method = "EBF729639A281DEC85F834E9B1299F05", hash_generated_method = "ED4C74392129B7713D5435E0B7CF9389")
-        @Override
-public void write (byte[] b, int off, int len) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.296 -0500", hash_original_method = "EBF729639A281DEC85F834E9B1299F05", hash_generated_method = "ED4C74392129B7713D5435E0B7CF9389")
+        
+@Override
+        public void write (byte[] b, int off, int len) throws IOException {
             synchronized (writeMonitor) {
                 FileDescriptor myFd = fd;
                 if (myFd == null) throw new IOException("socket closed");
@@ -538,9 +651,10 @@ public void write (byte[] b, int off, int len) throws IOException {
         }
 
         /** {@inheritDoc} */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.407 -0500", hash_original_method = "0B4435377A393210C076C48249BA83BB", hash_generated_method = "024C608DDBDDDB6ABBACDC1BA4A0D8E2")
-        @Override
-public void write (int b) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.299 -0500", hash_original_method = "0B4435377A393210C076C48249BA83BB", hash_generated_method = "024C608DDBDDDB6ABBACDC1BA4A0D8E2")
+        
+@Override
+        public void write (int b) throws IOException {
             synchronized (writeMonitor) {
                 FileDescriptor myFd = fd;
                 if (myFd == null) throw new IOException("socket closed");

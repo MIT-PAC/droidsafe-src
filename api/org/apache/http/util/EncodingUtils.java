@@ -23,8 +23,9 @@ public final class EncodingUtils {
      * @param charset the desired character encoding
      * @return The result of the conversion.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.374 -0500", hash_original_method = "40BB3B2C4BB4C731F5583BF6098AFE18", hash_generated_method = "8976F30A253F465CBA0EB67FF9636DBF")
-    public static String getString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.753 -0500", hash_original_method = "40BB3B2C4BB4C731F5583BF6098AFE18", hash_generated_method = "8976F30A253F465CBA0EB67FF9636DBF")
+    
+public static String getString(
         final byte[] data, 
         int offset, 
         int length, 
@@ -56,8 +57,9 @@ public final class EncodingUtils {
      * @param charset the desired character encoding
      * @return The result of the conversion.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.376 -0500", hash_original_method = "FEB603F543F1F5AF4F6A224218D3D260", hash_generated_method = "3D315426762ABE49A91B6A91D40088DC")
-    public static String getString(final byte[] data, final String charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.755 -0500", hash_original_method = "FEB603F543F1F5AF4F6A224218D3D260", hash_generated_method = "3D315426762ABE49A91B6A91D40088DC")
+    
+public static String getString(final byte[] data, final String charset) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
         }
@@ -72,8 +74,9 @@ public final class EncodingUtils {
      * @param charset the desired character encoding
      * @return The resulting byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.376 -0500", hash_original_method = "38B56644692964A3419BDFD155B57672", hash_generated_method = "B3BA75F36FBD6E9813662D57B6350E73")
-    public static byte[] getBytes(final String data, final String charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.757 -0500", hash_original_method = "38B56644692964A3419BDFD155B57672", hash_generated_method = "B3BA75F36FBD6E9813662D57B6350E73")
+    
+public static byte[] getBytes(final String data, final String charset) {
 
         if (data == null) {
             throw new IllegalArgumentException("data may not be null");
@@ -96,8 +99,9 @@ public final class EncodingUtils {
      * @param data the string to be encoded
      * @return The string as a byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.377 -0500", hash_original_method = "58BB75688EA0004E060732C344F2327F", hash_generated_method = "DDA7941C7C9D25454B332B6E47F493BB")
-    public static byte[] getAsciiBytes(final String data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.760 -0500", hash_original_method = "58BB75688EA0004E060732C344F2327F", hash_generated_method = "DDA7941C7C9D25454B332B6E47F493BB")
+    
+public static byte[] getAsciiBytes(final String data) {
 
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
@@ -120,8 +124,9 @@ public final class EncodingUtils {
      * @param length the number of bytes to encode 
      * @return The string representation of the byte array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.378 -0500", hash_original_method = "54C133774B5EF322D037D483B88C7A86", hash_generated_method = "BA1CF2153BCD524BE783DB4924D48338")
-    public static String getAsciiString(final byte[] data, int offset, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.762 -0500", hash_original_method = "54C133774B5EF322D037D483B88C7A86", hash_generated_method = "BA1CF2153BCD524BE783DB4924D48338")
+    
+public static String getAsciiString(final byte[] data, int offset, int length) {
 
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
@@ -142,8 +147,9 @@ public final class EncodingUtils {
      * @param data the byte array to be encoded
      * @return The string representation of the byte array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.379 -0500", hash_original_method = "9EE23858D5093508DE644A77EDC3E526", hash_generated_method = "397F472CF67EA5F5F434127EDF0D1CDD")
-    public static String getAsciiString(final byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.765 -0500", hash_original_method = "9EE23858D5093508DE644A77EDC3E526", hash_generated_method = "397F472CF67EA5F5F434127EDF0D1CDD")
+    
+public static String getAsciiString(final byte[] data) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
         }
@@ -153,8 +159,9 @@ public final class EncodingUtils {
     /**
      * This class should not be instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.380 -0500", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "CEECFF6F08063F48651117F1E4FF30DE")
-    private EncodingUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.767 -0500", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "CEECFF6F08063F48651117F1E4FF30DE")
+    
+private EncodingUtils() {
     }
 
     

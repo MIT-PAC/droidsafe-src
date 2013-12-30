@@ -27,8 +27,9 @@ class WNafMultiplier implements ECMultiplier {
      * </code>, where the <code>k<sub>i</sub></code> denote the elements of the
      * returned <code>byte[]</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.769 -0500", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "13A360B8CBA047B9AD478B05EFFD33CF")
-    public byte[] windowNaf(byte width, BigInteger k)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.921 -0500", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "13A360B8CBA047B9AD478B05EFFD33CF")
+    
+public byte[] windowNaf(byte width, BigInteger k)
     {
         // The window NAF is at most 1 element longer than the binary
         // representation of the integer k. byte can be used instead of short or
@@ -95,8 +96,9 @@ class WNafMultiplier implements ECMultiplier {
      * @return A new <code>ECPoint</code> which equals <code>this</code>
      * multiplied by <code>k</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.770 -0500", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "2219F6BC7752C199D40C624DEFC79265")
-    public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.924 -0500", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "2219F6BC7752C199D40C624DEFC79265")
+    
+public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo)
     {
         WNafPreCompInfo wnafPreCompInfo;
 

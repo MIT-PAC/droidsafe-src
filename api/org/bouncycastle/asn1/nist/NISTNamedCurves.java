@@ -18,15 +18,17 @@ import org.bouncycastle.util.Strings;
 
 public class NISTNamedCurves {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.733 -0500", hash_original_method = "60633E74F2BDAD39112953D581E8F19E", hash_generated_method = "DCF3E93F4F04112545B2D19828602D8F")
-    static void defineCurve(String name, DERObjectIdentifier oid)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.249 -0500", hash_original_method = "60633E74F2BDAD39112953D581E8F19E", hash_generated_method = "DCF3E93F4F04112545B2D19828602D8F")
+    
+static void defineCurve(String name, DERObjectIdentifier oid)
     {
         objIds.put(name, oid);
         names.put(oid, name);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.734 -0500", hash_original_method = "D77DA041D0327B53EAF0F5E5B44EE309", hash_generated_method = "53BAB7CF499D9565B735A2139319EE15")
-    public static X9ECParameters getByName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.251 -0500", hash_original_method = "D77DA041D0327B53EAF0F5E5B44EE309", hash_generated_method = "53BAB7CF499D9565B735A2139319EE15")
+    
+public static X9ECParameters getByName(
         String  name)
     {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toUpperCase(name));
@@ -45,8 +47,9 @@ public class NISTNamedCurves {
      *
      * @param oid an object identifier representing a named curve, if present.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.734 -0500", hash_original_method = "9392A09FCA21090738F843DB8D1E9A07", hash_generated_method = "7D645816D04AAD675C6A15E28D4239E7")
-    public static X9ECParameters getByOID(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.253 -0500", hash_original_method = "9392A09FCA21090738F843DB8D1E9A07", hash_generated_method = "7D645816D04AAD675C6A15E28D4239E7")
+    
+public static X9ECParameters getByOID(
         DERObjectIdentifier  oid)
     {
         return SECNamedCurves.getByOID(oid);
@@ -58,8 +61,9 @@ public class NISTNamedCurves {
      *
      * @return the object identifier associated with name, if present.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.735 -0500", hash_original_method = "9C8D8DE03E7B8C724597A4D21DFDA13D", hash_generated_method = "370E5ECFED27845A7EFA75B9D2BA1492")
-    public static DERObjectIdentifier getOID(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.256 -0500", hash_original_method = "9C8D8DE03E7B8C724597A4D21DFDA13D", hash_generated_method = "370E5ECFED27845A7EFA75B9D2BA1492")
+    
+public static DERObjectIdentifier getOID(
         String  name)
     {
         return (DERObjectIdentifier)objIds.get(Strings.toUpperCase(name));
@@ -68,8 +72,9 @@ public class NISTNamedCurves {
     /**
      * return the named curve name represented by the given object identifier.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.736 -0500", hash_original_method = "842AE20B2323661CD1A911AC1FDD139F", hash_generated_method = "FD2759FE761DD6B24CA207881D36F304")
-    public static String getName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.258 -0500", hash_original_method = "842AE20B2323661CD1A911AC1FDD139F", hash_generated_method = "FD2759FE761DD6B24CA207881D36F304")
+    
+public static String getName(
         DERObjectIdentifier  oid)
     {
         return (String)names.get(oid);
@@ -79,15 +84,16 @@ public class NISTNamedCurves {
      * returns an enumeration containing the name strings for curves
      * contained in this structure.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.737 -0500", hash_original_method = "516595D0FA5B972F8928119781E833A4", hash_generated_method = "2FF83217840B907592489710D19997C3")
-    public static Enumeration getNames()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.261 -0500", hash_original_method = "516595D0FA5B972F8928119781E833A4", hash_generated_method = "2FF83217840B907592489710D19997C3")
+    
+public static Enumeration getNames()
     {
         return objIds.keys();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.731 -0500", hash_original_field = "C19E4507CE52B3E3E9AD718D35D22591", hash_generated_field = "1269679D47B7C172C418131040DC03AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.244 -0500", hash_original_field = "C19E4507CE52B3E3E9AD718D35D22591", hash_generated_field = "1269679D47B7C172C418131040DC03AA")
 
     static final Hashtable objIds = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.732 -0500", hash_original_field = "D32C06F3AA2D7D68279CA3E62E7A38C6", hash_generated_field = "734EE0BA6EAA0FCA9CCE9A4B643B3169")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.247 -0500", hash_original_field = "D32C06F3AA2D7D68279CA3E62E7A38C6", hash_generated_field = "734EE0BA6EAA0FCA9CCE9A4B643B3169")
 
     static final Hashtable names = new Hashtable();
     

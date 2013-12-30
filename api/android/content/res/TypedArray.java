@@ -11,20 +11,20 @@ import android.util.TypedValue;
 
 
 public class TypedArray {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.182 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.140 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
 
     private  Resources mResources;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.183 -0500", hash_original_field = "5B0AA5083BE633511718F93F8CB95A91", hash_generated_field = "5B0AA5083BE633511718F93F8CB95A91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.142 -0500", hash_original_field = "5B0AA5083BE633511718F93F8CB95A91", hash_generated_field = "5B0AA5083BE633511718F93F8CB95A91")
  XmlBlock.Parser mXml;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.184 -0500", hash_original_field = "A4F8D1E493616053569BD2AC1F0ABB08", hash_generated_field = "A4F8D1E493616053569BD2AC1F0ABB08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.144 -0500", hash_original_field = "A4F8D1E493616053569BD2AC1F0ABB08", hash_generated_field = "A4F8D1E493616053569BD2AC1F0ABB08")
  int[] mRsrcs;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.184 -0500", hash_original_field = "8C2374D33A80477A0B3E51CE7EB85544", hash_generated_field = "8C2374D33A80477A0B3E51CE7EB85544")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.146 -0500", hash_original_field = "8C2374D33A80477A0B3E51CE7EB85544", hash_generated_field = "8C2374D33A80477A0B3E51CE7EB85544")
  int[] mData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.185 -0500", hash_original_field = "2BB4F4BFBD9E11898040581D9D99B4FA", hash_generated_field = "2BB4F4BFBD9E11898040581D9D99B4FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.148 -0500", hash_original_field = "2BB4F4BFBD9E11898040581D9D99B4FA", hash_generated_field = "2BB4F4BFBD9E11898040581D9D99B4FA")
  int[] mIndices;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.186 -0500", hash_original_field = "FC3D477E7B6A4ACE9A379E6E41129BD1", hash_generated_field = "FC3D477E7B6A4ACE9A379E6E41129BD1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.150 -0500", hash_original_field = "FC3D477E7B6A4ACE9A379E6E41129BD1", hash_generated_field = "FC3D477E7B6A4ACE9A379E6E41129BD1")
  int mLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.187 -0500", hash_original_field = "654366000D5436FE48B31EFBD0B3756D", hash_generated_field = "654366000D5436FE48B31EFBD0B3756D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.152 -0500", hash_original_field = "654366000D5436FE48B31EFBD0B3756D", hash_generated_field = "654366000D5436FE48B31EFBD0B3756D")
  TypedValue mValue = new TypedValue();
     
     TypedArray(Resources resources, int[] data, int[] indices, int len){
@@ -79,8 +79,9 @@ public class TypedArray {
     /**
      * Return the Resources object this array was loaded from.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.190 -0500", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "05B1D2D3E0E7E913183B96A460337403")
-    public Resources getResources() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.160 -0500", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "05B1D2D3E0E7E913183B96A460337403")
+    
+public Resources getResources() {
         return mResources;
     }
 
@@ -499,8 +500,9 @@ public class TypedArray {
      * 
      * @return Returns true if the value was retrieved, else false. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.208 -0500", hash_original_method = "0C857F8AC76CD5CFBE7569B581103BDD", hash_generated_method = "8BA02359D62F0CC748F75C0F18969D76")
-    public boolean getValue(int index, TypedValue outValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.212 -0500", hash_original_method = "0C857F8AC76CD5CFBE7569B581103BDD", hash_generated_method = "8BA02359D62F0CC748F75C0F18969D76")
+    
+public boolean getValue(int index, TypedValue outValue) {
         return getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue);
     }
 

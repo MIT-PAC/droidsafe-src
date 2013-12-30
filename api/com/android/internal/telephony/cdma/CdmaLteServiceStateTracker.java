@@ -24,19 +24,20 @@ import com.android.internal.telephony.gsm.GsmDataConnectionTracker;
 
 
 public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.158 -0500", hash_original_field = "879F4AF456AD7D7A9BB5520F0BAD6F62", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.448 -0500", hash_original_field = "879F4AF456AD7D7A9BB5520F0BAD6F62", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
 
     CDMALTEPhone mCdmaLtePhone;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.159 -0500", hash_original_field = "30863065C53EF2AE7F6D6E713A334376", hash_generated_field = "CCE1FE524FD9420E4F8B07A4C62521E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.450 -0500", hash_original_field = "30863065C53EF2AE7F6D6E713A334376", hash_generated_field = "CCE1FE524FD9420E4F8B07A4C62521E0")
 
 
     private ServiceState  mLteSS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.160 -0500", hash_original_field = "C7C433963F4B4A5906B8318911ECA31F", hash_generated_field = "33DD1D28F358EBB2DB6B0718CE46393E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.453 -0500", hash_original_field = "C7C433963F4B4A5906B8318911ECA31F", hash_generated_field = "33DD1D28F358EBB2DB6B0718CE46393E")
 
     private boolean mNeedToRegForSimLoaded = true;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.161 -0500", hash_original_method = "47593605762760CA14FD5EED8D416F47", hash_generated_method = "B56056DFB2764A7F316092A36DCAAC40")
-    public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.455 -0500", hash_original_method = "47593605762760CA14FD5EED8D416F47", hash_generated_method = "B56056DFB2764A7F316092A36DCAAC40")
+    
+public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
         super(phone);
         cm.registerForSIMReady(this, EVENT_SIM_READY, null);
         mCdmaLtePhone = phone;
@@ -45,16 +46,18 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
         if (DBG) log("CdmaLteServiceStateTracker Constructors");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.161 -0500", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "8CD85EC22F318208A04AAAAA6FBC67F9")
-    @Override
-public void dispose() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.458 -0500", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "8CD85EC22F318208A04AAAAA6FBC67F9")
+    
+@Override
+    public void dispose() {
         cm.unregisterForSIMReady(this);
         super.dispose();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.163 -0500", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "175356D8D372E9D980766052FA5AC179")
-    @Override
-public void handleMessage(Message msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.461 -0500", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "175356D8D372E9D980766052FA5AC179")
+    
+@Override
+    public void handleMessage(Message msg) {
         AsyncResult ar;
         int[] ints;
         String[] strings;
@@ -103,9 +106,10 @@ public void handleMessage(Message msg) {
     /**
      * Set the cdmaSS for EVENT_POLL_STATE_REGISTRATION_CDMA
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.163 -0500", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "0F2F03D179DB5107AF9DDE5CA61A118A")
-    @Override
-protected void setCdmaTechnology(int radioTechnology) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.463 -0500", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "0F2F03D179DB5107AF9DDE5CA61A118A")
+    
+@Override
+    protected void setCdmaTechnology(int radioTechnology) {
         // Called on voice registration state response.
         // Just record new CDMA radio technology
         newSS.setRadioTechnology(radioTechnology);
@@ -114,9 +118,10 @@ protected void setCdmaTechnology(int radioTechnology) {
     /**
      * Handle the result of one of the pollState()-related requests
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.164 -0500", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "F667FE431F48E013D6A55B3947BBB1B2")
-    @Override
-protected void handlePollStateResultMessage(int what, AsyncResult ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.466 -0500", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "F667FE431F48E013D6A55B3947BBB1B2")
+    
+@Override
+    protected void handlePollStateResultMessage(int what, AsyncResult ar) {
         if (what == EVENT_POLL_STATE_GPRS) {
             if (DBG) log("handlePollStateResultMessage: EVENT_POLL_STATE_GPRS");
             String states[] = (String[])ar.result;
@@ -144,15 +149,17 @@ protected void handlePollStateResultMessage(int what, AsyncResult ar) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.166 -0500", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "EE52FB270FB21FA9B7391BE3FCC699CC")
-    @Override
-protected void setSignalStrengthDefaultValues() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.469 -0500", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "EE52FB270FB21FA9B7391BE3FCC699CC")
+    
+@Override
+    protected void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.167 -0500", hash_original_method = "B583B233911BF73B0CF330862869CA80", hash_generated_method = "35A2F7BAE98F1B1784CDE3149FE1C049")
-    @Override
-protected void pollState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.472 -0500", hash_original_method = "B583B233911BF73B0CF330862869CA80", hash_generated_method = "35A2F7BAE98F1B1784CDE3149FE1C049")
+    
+@Override
+    protected void pollState() {
         pollingContext = new int[1];
         pollingContext[0] = 0;
 
@@ -205,9 +212,10 @@ protected void pollState() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.170 -0500", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "96F36937C3740CD00970039902AD023C")
-    @Override
-protected void pollStateDone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.479 -0500", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "96F36937C3740CD00970039902AD023C")
+    
+@Override
+    protected void pollStateDone() {
         // determine data NetworkType from both LET and CDMA SS
         if (mLteSS.getState() == ServiceState.STATE_IN_SERVICE) {
             //in LTE service
@@ -444,9 +452,10 @@ protected void pollStateDone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.171 -0500", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "602FD629C257ACC57CBB9E3A7CA58384")
-    @Override
-protected void onSignalStrengthResult(AsyncResult ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.484 -0500", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "602FD629C257ACC57CBB9E3A7CA58384")
+    
+@Override
+    protected void onSignalStrengthResult(AsyncResult ar) {
         SignalStrength oldSignalStrength = mSignalStrength;
 
         if (ar.exception != null) {
@@ -487,9 +496,10 @@ protected void onSignalStrengthResult(AsyncResult ar) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.172 -0500", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "C4DFBDDC6593B307B9173E8F4B98AFE9")
-    @Override
-public boolean isConcurrentVoiceAndDataAllowed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.486 -0500", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "C4DFBDDC6593B307B9173E8F4B98AFE9")
+    
+@Override
+    public boolean isConcurrentVoiceAndDataAllowed() {
         // Note: it needs to be confirmed which CDMA network types
         // can support voice and data calls concurrently.
         // For the time-being, the return value will be false.
@@ -502,8 +512,9 @@ public boolean isConcurrentVoiceAndDataAllowed() {
      *
      * @return true if provided sid/nid pair belongs to operator's home network.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.173 -0500", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "BC0C7568898C2FF324345168E2B73A7D")
-    private boolean isInHomeSidNid(int sid, int nid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.489 -0500", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "BC0C7568898C2FF324345168E2B73A7D")
+    
+private boolean isInHomeSidNid(int sid, int nid) {
         // if SID/NID is not available, assume this is home network.
         if (isSidsAllZeros()) return true;
 
@@ -525,15 +536,17 @@ public boolean isConcurrentVoiceAndDataAllowed() {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.174 -0500", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "C9DA0BC0F5BE642C8EDCEAFD0D2068AE")
-    @Override
-protected void log(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.492 -0500", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "C9DA0BC0F5BE642C8EDCEAFD0D2068AE")
+    
+@Override
+    protected void log(String s) {
         Log.d(LOG_TAG, "[CdmaLteSST] " + s);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:19.175 -0500", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "A57137CA1176F14542C6B8BD6FFDE6A6")
-    @Override
-protected void loge(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.494 -0500", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "A57137CA1176F14542C6B8BD6FFDE6A6")
+    
+@Override
+    protected void loge(String s) {
         Log.e(LOG_TAG, "[CdmaLteSST] " + s);
     }
 

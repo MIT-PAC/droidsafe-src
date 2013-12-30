@@ -54,8 +54,9 @@ import org.bouncycastle.util.Strings;
 
 public class PKCS10CertificationRequest extends CertificationRequest {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.150 -0500", hash_original_method = "25B2A761D6FCD88D1F6D5EF8095097C3", hash_generated_method = "BBC0B09FA1E82C1739E7BED70CD2D30F")
-    private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.223 -0500", hash_original_method = "25B2A761D6FCD88D1F6D5EF8095097C3", hash_generated_method = "BBC0B09FA1E82C1739E7BED70CD2D30F")
+    
+private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize)
     {
         return new RSASSAPSSparams(
             hashAlgId,
@@ -64,8 +65,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
             new DERInteger(1));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.151 -0500", hash_original_method = "B7B42C128A250CD690CFAC82FBCAFAD6", hash_generated_method = "49F9951902F74AC0AD87EAA49D146595")
-    private static ASN1Sequence toDERSequence(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.225 -0500", hash_original_method = "B7B42C128A250CD690CFAC82FBCAFAD6", hash_generated_method = "49F9951902F74AC0AD87EAA49D146595")
+    
+private static ASN1Sequence toDERSequence(
         byte[]  bytes)
     {
         try
@@ -80,8 +82,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.155 -0500", hash_original_method = "1712D37D77918FC140E45AF86BEEDC9E", hash_generated_method = "AEAD122CB780C3B8C0E5BB640A83C181")
-    private static X509Name convertName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.237 -0500", hash_original_method = "1712D37D77918FC140E45AF86BEEDC9E", hash_generated_method = "AEAD122CB780C3B8C0E5BB640A83C181")
+    
+private static X509Name convertName(
         X500Principal    name)
     {
         try
@@ -94,8 +97,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.165 -0500", hash_original_method = "9038DA3F1958107AA4433A375AF2AA35", hash_generated_method = "9A4696D6131CE918E35B6EA2D2873C98")
-    static String getSignatureName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.267 -0500", hash_original_method = "9038DA3F1958107AA4433A375AF2AA35", hash_generated_method = "9A4696D6131CE918E35B6EA2D2873C98")
+    
+static String getSignatureName(
         AlgorithmIdentifier sigAlgId)
     {
         DEREncodable params = sigAlgId.getParameters();
@@ -112,8 +116,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         return sigAlgId.getObjectId().getId();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.167 -0500", hash_original_method = "E4BEEAE8AEEE7829CDFFCFF7B53EF391", hash_generated_method = "96DEB51CD8B19C25BE874E5A654ABB40")
-    private static String getDigestAlgName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.270 -0500", hash_original_method = "E4BEEAE8AEEE7829CDFFCFF7B53EF391", hash_generated_method = "96DEB51CD8B19C25BE874E5A654ABB40")
+    
+private static String getDigestAlgName(
         DERObjectIdentifier digestAlgOID)
     {
         if (PKCSObjectIdentifiers.md5.equals(digestAlgOID))
@@ -165,19 +170,19 @@ public class PKCS10CertificationRequest extends CertificationRequest {
             return digestAlgOID.getId();            
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.146 -0500", hash_original_field = "A8B38EFEBE1FD690B18E15CE341717C3", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.209 -0500", hash_original_field = "A8B38EFEBE1FD690B18E15CE341717C3", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
 
     private static Hashtable            algorithms = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.147 -0500", hash_original_field = "9F226D98C1CB8D80E9F82A4DB61E3C25", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.212 -0500", hash_original_field = "9F226D98C1CB8D80E9F82A4DB61E3C25", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
 
     private static Hashtable            params = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.147 -0500", hash_original_field = "9983F7ECB8274F6EDC057E020591B9F9", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.214 -0500", hash_original_field = "9983F7ECB8274F6EDC057E020591B9F9", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
 
     private static Hashtable            keyAlgorithms = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.148 -0500", hash_original_field = "321B66DBE27FCDCC20E9094F46ED8726", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.217 -0500", hash_original_field = "321B66DBE27FCDCC20E9094F46ED8726", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
 
     private static Hashtable            oids = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.149 -0500", hash_original_field = "3251BB4B6326B92285C39B28EEE8EF19", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.219 -0500", hash_original_field = "3251BB4B6326B92285C39B28EEE8EF19", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
 
     private static Set                  noParams = new HashSet();
 
@@ -185,15 +190,17 @@ public class PKCS10CertificationRequest extends CertificationRequest {
      * construct a PKCS10 certification request from a DER encoded
      * byte stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.152 -0500", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "7CC931B79D0F2CBE4F800519728D8281")
-    public PKCS10CertificationRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.228 -0500", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "7CC931B79D0F2CBE4F800519728D8281")
+    
+public PKCS10CertificationRequest(
         byte[]  bytes)
     {
         super(toDERSequence(bytes));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.153 -0500", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "CE7605C128F64B8FA557EA677E644E8A")
-    public PKCS10CertificationRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.230 -0500", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "CE7605C128F64B8FA557EA677E644E8A")
+    
+public PKCS10CertificationRequest(
         ASN1Sequence  sequence)
     {
         super(sequence);
@@ -202,8 +209,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * create a PKCS10 certfication request using the BC provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.154 -0500", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "E6AC43C33B37640BFAB5E9FD0FD9D86B")
-    public PKCS10CertificationRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.233 -0500", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "E6AC43C33B37640BFAB5E9FD0FD9D86B")
+    
+public PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X509Name            subject,
         PublicKey           key,
@@ -218,8 +226,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * create a PKCS10 certfication request using the BC provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.156 -0500", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "324750FBBE8C80F17D896F967175A5D6")
-    public PKCS10CertificationRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.239 -0500", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "324750FBBE8C80F17D896F967175A5D6")
+    
+public PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X500Principal       subject,
         PublicKey           key,
@@ -234,8 +243,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * create a PKCS10 certfication request using the named provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.157 -0500", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "9D8CFACFF8E35C4B4371E245059063AE")
-    public PKCS10CertificationRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.242 -0500", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "9D8CFACFF8E35C4B4371E245059063AE")
+    
+public PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X500Principal       subject,
         PublicKey           key,
@@ -251,8 +261,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * create a PKCS10 certfication request using the named provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.158 -0500", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "DD7F4EF291BE4E4AF536E68B0F4C8912")
-    public PKCS10CertificationRequest(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.246 -0500", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "DD7F4EF291BE4E4AF536E68B0F4C8912")
+    
+public PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X509Name            subject,
         PublicKey           key,
@@ -338,15 +349,17 @@ public class PKCS10CertificationRequest extends CertificationRequest {
      * return the public key associated with the certification request -
      * the public key is created using the BC provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.159 -0500", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "9C8E7A5652AD54B82F68169E31DFCC08")
-    public PublicKey getPublicKey()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.248 -0500", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "9C8E7A5652AD54B82F68169E31DFCC08")
+    
+public PublicKey getPublicKey()
         throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException
     {
         return getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.160 -0500", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "A2EA45DB0FBA486491FFB3ECA56DB54B")
-    public PublicKey getPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.251 -0500", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "A2EA45DB0FBA486491FFB3ECA56DB54B")
+    
+public PublicKey getPublicKey(
         String  provider)
         throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException
@@ -399,8 +412,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * verify the request using the BC provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.161 -0500", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "0E8AE9B05A74B6F7DE6780CF3FACE534")
-    public boolean verify()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.253 -0500", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "0E8AE9B05A74B6F7DE6780CF3FACE534")
+    
+public boolean verify()
         throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException
     {
@@ -410,8 +424,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * verify the request using the passed in provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.162 -0500", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "6A266B715AEA1EC82B0D2051E5253859")
-    public boolean verify(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.255 -0500", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "6A266B715AEA1EC82B0D2051E5253859")
+    
+public boolean verify(
         String provider)
         throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException
@@ -422,8 +437,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * verify the request using the passed in public key and the provider..
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.163 -0500", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "42E7C75D85E2C3704A1ADD32430A0AF4")
-    public boolean verify(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.258 -0500", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "42E7C75D85E2C3704A1ADD32430A0AF4")
+    
+public boolean verify(
         PublicKey pubKey,
         String provider)
         throws NoSuchAlgorithmException, NoSuchProviderException,
@@ -485,8 +501,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     /**
      * return a DER encoded byte array representing this object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.163 -0500", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "DCCE93F4D0141431F9D725745B73FBC0")
-    public byte[] getEncoded()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.261 -0500", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "DCCE93F4D0141431F9D725745B73FBC0")
+    
+public byte[] getEncoded()
     {
         try
         {
@@ -498,8 +515,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.164 -0500", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "BAD94E6087F1945FE1FF43E265DD50AD")
-    private void setSignatureParameters(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.265 -0500", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "BAD94E6087F1945FE1FF43E265DD50AD")
+    
+private void setSignatureParameters(
         Signature signature,
         DEREncodable params)
         throws NoSuchAlgorithmException, SignatureException, InvalidKeyException

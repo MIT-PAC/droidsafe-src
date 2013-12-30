@@ -48,8 +48,9 @@ public class Cipher {
      *             if no installed provider can provide the padding scheme in
      *             the <i>transformation</i>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.204 -0500", hash_original_method = "47D9CD504ED20085CFDD80DDD8609D02", hash_generated_method = "7A7BA9C960480382009236B5807FDC04")
-    public static final Cipher getInstance(String transformation)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.176 -0500", hash_original_method = "47D9CD504ED20085CFDD80DDD8609D02", hash_generated_method = "7A7BA9C960480382009236B5807FDC04")
+    
+public static final Cipher getInstance(String transformation)
             throws NoSuchAlgorithmException, NoSuchPaddingException {
         return getCipher(transformation, null);
     }
@@ -75,8 +76,9 @@ public class Cipher {
      * @throws IllegalArgumentException
      *             if the specified provider is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.205 -0500", hash_original_method = "C2D2096568C68F5A71EDB8A2129CC4CE", hash_generated_method = "2AD0AAF98ABD33E1D5EB4B040D89828D")
-    public static final Cipher getInstance(String transformation,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.179 -0500", hash_original_method = "C2D2096568C68F5A71EDB8A2129CC4CE", hash_generated_method = "2AD0AAF98ABD33E1D5EB4B040D89828D")
+    
+public static final Cipher getInstance(String transformation,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException, NoSuchPaddingException {
 
@@ -109,8 +111,9 @@ public class Cipher {
      * @throws IllegalArgumentException
      *             if the provider is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.206 -0500", hash_original_method = "799187ABBBF244571009789D513A15DA", hash_generated_method = "B92DA7B99FB412ECBF1AC0F6121D73FF")
-    public static final Cipher getInstance(String transformation,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.182 -0500", hash_original_method = "799187ABBBF244571009789D513A15DA", hash_generated_method = "B92DA7B99FB412ECBF1AC0F6121D73FF")
+    
+public static final Cipher getInstance(String transformation,
             Provider provider) throws NoSuchAlgorithmException,
             NoSuchPaddingException {
         if (provider == null) {
@@ -120,8 +123,9 @@ public class Cipher {
         return c;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.207 -0500", hash_original_method = "31B6CB29ED2F5413954ED45B70CE7980", hash_generated_method = "286B4EF9ED3C09E27A6A02D565EE55F7")
-    private static NoSuchAlgorithmException invalidTransformation(String transformation)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.185 -0500", hash_original_method = "31B6CB29ED2F5413954ED45B70CE7980", hash_generated_method = "286B4EF9ED3C09E27A6A02D565EE55F7")
+    
+private static NoSuchAlgorithmException invalidTransformation(String transformation)
             throws NoSuchAlgorithmException {
         throw new NoSuchAlgorithmException("Invalid transformation: " + transformation);
     }
@@ -135,8 +139,9 @@ public class Cipher {
      * @throws NoSuchAlgorithmException
      * @throws NoSuchPaddingException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.208 -0500", hash_original_method = "339FD1DB95451DD24CDE548E6DAA85EE", hash_generated_method = "A579FA8061BF3808C4D5023922279285")
-    private static synchronized Cipher getCipher(String transformation, Provider provider)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.189 -0500", hash_original_method = "339FD1DB95451DD24CDE548E6DAA85EE", hash_generated_method = "A579FA8061BF3808C4D5023922279285")
+    
+private static synchronized Cipher getCipher(String transformation, Provider provider)
             throws NoSuchAlgorithmException, NoSuchPaddingException {
 
         if (transformation == null || transformation.isEmpty()) {
@@ -210,8 +215,9 @@ public class Cipher {
         return c;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.209 -0500", hash_original_method = "CBDBE8535C51B6F20B21C297E0737B0F", hash_generated_method = "278111CE9992CA4C7A69117568A0F6D4")
-    private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.192 -0500", hash_original_method = "CBDBE8535C51B6F20B21C297E0737B0F", hash_generated_method = "278111CE9992CA4C7A69117568A0F6D4")
+    
+private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
         // ignore an extra prefix / characters such as in
         // "/DES/CBC/PKCS5Paddin" http://b/3387688
         if (transformation.startsWith("/")) {
@@ -252,8 +258,9 @@ public class Cipher {
      * @throws NullPointerException
      *             if {@code transformation} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.237 -0500", hash_original_method = "207830FDF048D662A60B871B6CF83B6F", hash_generated_method = "48B81DBED41AEA934F93239C5BB46767")
-    public static final int getMaxAllowedKeyLength(String transformation)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.272 -0500", hash_original_method = "207830FDF048D662A60B871B6CF83B6F", hash_generated_method = "48B81DBED41AEA934F93239C5BB46767")
+    
+public static final int getMaxAllowedKeyLength(String transformation)
             throws NoSuchAlgorithmException {
         if (transformation == null) {
             throw new NullPointerException();
@@ -277,8 +284,9 @@ public class Cipher {
      * @throws NullPointerException
      *             if {@code transformation} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.238 -0500", hash_original_method = "45AE9081BC51DBA62F011B19097CAB7A", hash_generated_method = "481A4F2FE711850D3EFD32E1BDBBB018")
-    public static final AlgorithmParameterSpec getMaxAllowedParameterSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.275 -0500", hash_original_method = "45AE9081BC51DBA62F011B19097CAB7A", hash_generated_method = "481A4F2FE711850D3EFD32E1BDBBB018")
+    
+public static final AlgorithmParameterSpec getMaxAllowedParameterSpec(
             String transformation) throws NoSuchAlgorithmException {
         if (transformation == null) {
             throw new NullPointerException();
@@ -287,48 +295,48 @@ public class Cipher {
         //FIXME jurisdiction policy files
         return null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.191 -0500", hash_original_field = "CC1967510BDB7F49B3D05DC53D3FF2B2", hash_generated_field = "2F15DC862DF8E709496A189635636236")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.139 -0500", hash_original_field = "CC1967510BDB7F49B3D05DC53D3FF2B2", hash_generated_field = "2F15DC862DF8E709496A189635636236")
 
     public static final int DECRYPT_MODE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.192 -0500", hash_original_field = "59CC23DB87698F655871D56C4E846AF8", hash_generated_field = "A83EC5987C5AA77E22791E25CFA393A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.142 -0500", hash_original_field = "59CC23DB87698F655871D56C4E846AF8", hash_generated_field = "A83EC5987C5AA77E22791E25CFA393A2")
 
     public static final int ENCRYPT_MODE = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.193 -0500", hash_original_field = "10092EED0AD9897466ECA3F11006BDF8", hash_generated_field = "0081C7108661D39138574156E05B2FCD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.144 -0500", hash_original_field = "10092EED0AD9897466ECA3F11006BDF8", hash_generated_field = "0081C7108661D39138574156E05B2FCD")
 
     public static final int PRIVATE_KEY = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.193 -0500", hash_original_field = "BE08D3986BDDF7CAA45CA2F12D22E27C", hash_generated_field = "295FEA31A43E6359048D4E46607B1E49")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.147 -0500", hash_original_field = "BE08D3986BDDF7CAA45CA2F12D22E27C", hash_generated_field = "295FEA31A43E6359048D4E46607B1E49")
 
     public static final int PUBLIC_KEY = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.194 -0500", hash_original_field = "EA3A7DEF127205D2877643B56EF4A8FB", hash_generated_field = "677CDE87FE6610FD7AB080651DB96E2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.149 -0500", hash_original_field = "EA3A7DEF127205D2877643B56EF4A8FB", hash_generated_field = "677CDE87FE6610FD7AB080651DB96E2F")
 
     public static final int SECRET_KEY = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.195 -0500", hash_original_field = "869E9B819E892CF0B3E01CEBDD89952F", hash_generated_field = "9CA0A457708663E8B7EA225ECB1B0CA6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.152 -0500", hash_original_field = "869E9B819E892CF0B3E01CEBDD89952F", hash_generated_field = "9CA0A457708663E8B7EA225ECB1B0CA6")
 
     public static final int UNWRAP_MODE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.196 -0500", hash_original_field = "EAC160105E7BF8809010513C4D6754E5", hash_generated_field = "04C8E84D8FBFED46FA7E0F269D64C2EB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.155 -0500", hash_original_field = "EAC160105E7BF8809010513C4D6754E5", hash_generated_field = "04C8E84D8FBFED46FA7E0F269D64C2EB")
 
     public static final int WRAP_MODE = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.198 -0500", hash_original_field = "C02C5556BE8062A628A495F209E9014B", hash_generated_field = "A6EBFC9B978978AEFD771859660D05E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.159 -0500", hash_original_field = "C02C5556BE8062A628A495F209E9014B", hash_generated_field = "A6EBFC9B978978AEFD771859660D05E3")
 
     private static final String SERVICE = "Cipher";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.199 -0500", hash_original_field = "17F86B5CB94419D7D346BC8D1B101EA5", hash_generated_field = "0CDCB796C7211B2802F60DAA409FC065")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.162 -0500", hash_original_field = "17F86B5CB94419D7D346BC8D1B101EA5", hash_generated_field = "0CDCB796C7211B2802F60DAA409FC065")
 
     private static final Engine ENGINE = new Engine(SERVICE);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.202 -0500", hash_original_field = "34751ECE59C87D5C11B7F66A26E0E74E", hash_generated_field = "09B90F530A62DA10A38CA3C1F3C2FAB8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.171 -0500", hash_original_field = "34751ECE59C87D5C11B7F66A26E0E74E", hash_generated_field = "09B90F530A62DA10A38CA3C1F3C2FAB8")
 
 
     private static SecureRandom secureRandom;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.197 -0500", hash_original_field = "462D02655D7DD7DF6E5BA12D65851DD2", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.157 -0500", hash_original_field = "462D02655D7DD7DF6E5BA12D65851DD2", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
 
 
     private int mode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.199 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.164 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
     private Provider provider;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.200 -0500", hash_original_field = "676371C3679E2138944B904312A9D3FD", hash_generated_field = "609F6DC57B3704B1B8111A24F710F199")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.167 -0500", hash_original_field = "676371C3679E2138944B904312A9D3FD", hash_generated_field = "609F6DC57B3704B1B8111A24F710F199")
 
     private CipherSpi spiImpl;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.201 -0500", hash_original_field = "D91869C9C7BB10C6FF2D94561E15F783", hash_generated_field = "2B831647F5B0DC5F72250AEA4C817CDC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.169 -0500", hash_original_field = "D91869C9C7BB10C6FF2D94561E15F783", hash_generated_field = "2B831647F5B0DC5F72250AEA4C817CDC")
 
     private String transformation;
 
@@ -345,8 +353,9 @@ public class Cipher {
      *             if either cipherSpi is {@code null} or provider is {@code
      *             null} and {@code cipherSpi} is a {@code NullCipherSpi}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.203 -0500", hash_original_method = "169E8725E31AA026BEEB43CC41C0DB25", hash_generated_method = "2A11FEF793F95F530D012A8DAC187222")
-    protected Cipher(CipherSpi cipherSpi, Provider provider,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.174 -0500", hash_original_method = "169E8725E31AA026BEEB43CC41C0DB25", hash_generated_method = "2A11FEF793F95F530D012A8DAC187222")
+    
+protected Cipher(CipherSpi cipherSpi, Provider provider,
             String transformation) {
         if (cipherSpi == null) {
             throw new NullPointerException();
@@ -364,8 +373,9 @@ public class Cipher {
      *
      * @return the provider of this cipher instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.210 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
-    public final Provider getProvider() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.194 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
+    
+public final Provider getProvider() {
         return provider;
     }
 
@@ -377,8 +387,9 @@ public class Cipher {
      *
      * @return the name of the algorithm of this cipher instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.211 -0500", hash_original_method = "8DF6BCF87B142C85CC5BB8E6263E3718", hash_generated_method = "BD8C21552E6E90777E0930CD67C9B03B")
-    public final String getAlgorithm() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.197 -0500", hash_original_method = "8DF6BCF87B142C85CC5BB8E6263E3718", hash_generated_method = "BD8C21552E6E90777E0930CD67C9B03B")
+    
+public final String getAlgorithm() {
         return transformation;
     }
 
@@ -387,8 +398,9 @@ public class Cipher {
      *
      * @return this ciphers block size.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.212 -0500", hash_original_method = "D9E2BEA1F59A5109A8382C65AF7F31D0", hash_generated_method = "A8949AAF0844A0CD122CC658F600A160")
-    public final int getBlockSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.199 -0500", hash_original_method = "D9E2BEA1F59A5109A8382C65AF7F31D0", hash_generated_method = "A8949AAF0844A0CD122CC658F600A160")
+    
+public final int getBlockSize() {
         return spiImpl.engineGetBlockSize();
     }
 
@@ -402,8 +414,9 @@ public class Cipher {
      * @throws IllegalStateException
      *             if this cipher instance is in an invalid state.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.213 -0500", hash_original_method = "AA8C5558649103E88A25D53E8218E1F5", hash_generated_method = "FFAB2FE31163CBE3C13A798514DBE09B")
-    public final int getOutputSize(int inputLen) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.201 -0500", hash_original_method = "AA8C5558649103E88A25D53E8218E1F5", hash_generated_method = "FFAB2FE31163CBE3C13A798514DBE09B")
+    
+public final int getOutputSize(int inputLen) {
         if (mode == 0) {
             throw new IllegalStateException("Cipher has not yet been initialized");
         }
@@ -415,8 +428,9 @@ public class Cipher {
      *
      * @return the <i>initialization vector</i> for this cipher instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.213 -0500", hash_original_method = "99DAD5FABE956FC53B6CC59AB3BC8215", hash_generated_method = "98791FB7D71F2BF1ACECB15A3059B7CE")
-    public final byte[] getIV() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.204 -0500", hash_original_method = "99DAD5FABE956FC53B6CC59AB3BC8215", hash_generated_method = "98791FB7D71F2BF1ACECB15A3059B7CE")
+    
+public final byte[] getIV() {
         return spiImpl.engineGetIV();
     }
 
@@ -431,8 +445,9 @@ public class Cipher {
      *         {@code null} if this cipher instance does not have any
      *         parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.214 -0500", hash_original_method = "1EF273790A635FFB8595723F2B2D47C7", hash_generated_method = "1CFAA2312177A93B935AB4BE6AC4E7BA")
-    public final AlgorithmParameters getParameters() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.206 -0500", hash_original_method = "1EF273790A635FFB8595723F2B2D47C7", hash_generated_method = "1CFAA2312177A93B935AB4BE6AC4E7BA")
+    
+public final AlgorithmParameters getParameters() {
         return spiImpl.engineGetParameters();
     }
 
@@ -441,8 +456,9 @@ public class Cipher {
      *
      * @return currently {@code null}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.215 -0500", hash_original_method = "8BD6E3BF151C3D35A58DA717088B655C", hash_generated_method = "22B367A99BB69123C0F178793A90EC19")
-    public final ExemptionMechanism getExemptionMechanism() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.209 -0500", hash_original_method = "8BD6E3BF151C3D35A58DA717088B655C", hash_generated_method = "22B367A99BB69123C0F178793A90EC19")
+    
+public final ExemptionMechanism getExemptionMechanism() {
         //FIXME implement getExemptionMechanism
 
         //        try {
@@ -480,8 +496,9 @@ public class Cipher {
      *             if the specified key can not be used to initialize this
      *             cipher instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.216 -0500", hash_original_method = "429E4D2BD5B61AF47430304468140423", hash_generated_method = "521DA08B31618FB4D102310808011570")
-    public final void init(int opmode, Key key) throws InvalidKeyException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.212 -0500", hash_original_method = "429E4D2BD5B61AF47430304468140423", hash_generated_method = "521DA08B31618FB4D102310808011570")
+    
+public final void init(int opmode, Key key) throws InvalidKeyException {
         if (secureRandom == null) {
             // In theory it might be thread-unsafe but in the given case it's OK
             // since it does not matter which SecureRandom instance is passed
@@ -523,8 +540,9 @@ public class Cipher {
      * @throws InvalidParameterException
      *             if the specified opmode is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.217 -0500", hash_original_method = "0BCC9283EB770D83968E2D5392900813", hash_generated_method = "F0434CE3494002EC26F18FCC50A2C4CD")
-    public final void init(int opmode, Key key, SecureRandom random) throws InvalidKeyException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.214 -0500", hash_original_method = "0BCC9283EB770D83968E2D5392900813", hash_generated_method = "F0434CE3494002EC26F18FCC50A2C4CD")
+    
+public final void init(int opmode, Key key, SecureRandom random) throws InvalidKeyException {
         checkMode(opmode);
         //        FIXME InvalidKeyException
         //        if keysize exceeds the maximum allowable keysize
@@ -533,8 +551,9 @@ public class Cipher {
         mode = opmode;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.217 -0500", hash_original_method = "09F21B40649178B5CD7EDFF6A1F24869", hash_generated_method = "9EE2533A8E8FA6D0BDC78251310E65E9")
-    private void checkMode(int mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.216 -0500", hash_original_method = "09F21B40649178B5CD7EDFF6A1F24869", hash_generated_method = "9EE2533A8E8FA6D0BDC78251310E65E9")
+    
+private void checkMode(int mode) {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE
             && mode != UNWRAP_MODE && mode != WRAP_MODE) {
             throw new InvalidParameterException("Invalid mode: " + mode);
@@ -572,8 +591,9 @@ public class Cipher {
      *             it the specified parameters are inappropriate for this
      *             cipher.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.218 -0500", hash_original_method = "BBC8C1A41A2EA4CA6303B616FCC7D14B", hash_generated_method = "F0AD7A3188CC71BBE28E7C61DB009F54")
-    public final void init(int opmode, Key key, AlgorithmParameterSpec params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.219 -0500", hash_original_method = "BBC8C1A41A2EA4CA6303B616FCC7D14B", hash_generated_method = "F0AD7A3188CC71BBE28E7C61DB009F54")
+    
+public final void init(int opmode, Key key, AlgorithmParameterSpec params)
             throws InvalidKeyException, InvalidAlgorithmParameterException {
         if (secureRandom == null) {
             secureRandom = new SecureRandom();
@@ -618,8 +638,9 @@ public class Cipher {
      * @throws InvalidParameterException
      *             if the specified {@code opmode} is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.219 -0500", hash_original_method = "8E7DC73E6E4E585B73E6EA7E879FC58B", hash_generated_method = "22D55C9A4FEF462385A1500BE80AA527")
-    public final void init(int opmode, Key key, AlgorithmParameterSpec params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.221 -0500", hash_original_method = "8E7DC73E6E4E585B73E6EA7E879FC58B", hash_generated_method = "22D55C9A4FEF462385A1500BE80AA527")
+    
+public final void init(int opmode, Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
             InvalidAlgorithmParameterException {
         checkMode(opmode);
@@ -666,8 +687,9 @@ public class Cipher {
      *             it the specified parameters are inappropriate for this
      *             cipher.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.221 -0500", hash_original_method = "BF9CD5FCB5A2729A943C192A3430B212", hash_generated_method = "65FB7F143990D8CDB9814002FF8745AC")
-    public final void init(int opmode, Key key, AlgorithmParameters params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.223 -0500", hash_original_method = "BF9CD5FCB5A2729A943C192A3430B212", hash_generated_method = "65FB7F143990D8CDB9814002FF8745AC")
+    
+public final void init(int opmode, Key key, AlgorithmParameters params)
             throws InvalidKeyException, InvalidAlgorithmParameterException {
         if (secureRandom == null) {
             secureRandom = new SecureRandom();
@@ -711,8 +733,9 @@ public class Cipher {
      * @throws InvalidParameterException
      *             if the specified {@code opmode} is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.222 -0500", hash_original_method = "807F390A384AF896657386359C87C81B", hash_generated_method = "C7B3400F29B65C61B9DF9EBACD463B2A")
-    public final void init(int opmode, Key key, AlgorithmParameters params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.227 -0500", hash_original_method = "807F390A384AF896657386359C87C81B", hash_generated_method = "C7B3400F29B65C61B9DF9EBACD463B2A")
+    
+public final void init(int opmode, Key key, AlgorithmParameters params,
             SecureRandom random) throws InvalidKeyException,
             InvalidAlgorithmParameterException {
         checkMode(opmode);
@@ -758,8 +781,9 @@ public class Cipher {
      *             if the public key in the certificate can not be used to
      *             initialize this cipher instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.222 -0500", hash_original_method = "D1B8B02AA4362AEA38C29780F594C5E0", hash_generated_method = "64938EA585612C18F2DBCB88DFBA6A92")
-    public final void init(int opmode, Certificate certificate)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.229 -0500", hash_original_method = "D1B8B02AA4362AEA38C29780F594C5E0", hash_generated_method = "64938EA585612C18F2DBCB88DFBA6A92")
+    
+public final void init(int opmode, Certificate certificate)
             throws InvalidKeyException {
         if (secureRandom == null) {
             secureRandom = new SecureRandom();
@@ -802,8 +826,9 @@ public class Cipher {
      *             if the public key in the certificate can not be used to
      *             initialize this cipher instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.224 -0500", hash_original_method = "CF5B7C36D9EDA90E4E4A39DDF2F721FD", hash_generated_method = "8243EB2A4C12601286260F1106AB882F")
-    public final void init(int opmode, Certificate certificate,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.232 -0500", hash_original_method = "CF5B7C36D9EDA90E4E4A39DDF2F721FD", hash_generated_method = "8243EB2A4C12601286260F1106AB882F")
+    
+public final void init(int opmode, Certificate certificate,
             SecureRandom random) throws InvalidKeyException {
         checkMode(opmode);
         if (certificate instanceof X509Certificate) {
@@ -866,8 +891,9 @@ public class Cipher {
      * @throws IllegalArgumentException
      *             if the input is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.225 -0500", hash_original_method = "D2539732F50CEA46903EFE3EE2FFBB7D", hash_generated_method = "08D5F86E631D94343F37D23A8C84BEB9")
-    public final byte[] update(byte[] input) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.236 -0500", hash_original_method = "D2539732F50CEA46903EFE3EE2FFBB7D", hash_generated_method = "08D5F86E631D94343F37D23A8C84BEB9")
+    
+public final byte[] update(byte[] input) {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
         }
@@ -900,8 +926,9 @@ public class Cipher {
      *             {@code inputLen} do not specify a valid chunk in the input
      *             buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.226 -0500", hash_original_method = "6B0ED73318E2DF96B368CBFEB9D8FD9F", hash_generated_method = "4796F139349A7DF8E05A6ADB42FE147C")
-    public final byte[] update(byte[] input, int inputOffset, int inputLen) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.238 -0500", hash_original_method = "6B0ED73318E2DF96B368CBFEB9D8FD9F", hash_generated_method = "4796F139349A7DF8E05A6ADB42FE147C")
+    
+public final byte[] update(byte[] input, int inputOffset, int inputLen) {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
         }
@@ -947,8 +974,9 @@ public class Cipher {
      *             if {@code inputOffset} and {@code inputLen} do not specify a
      *             valid chunk in the input buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.226 -0500", hash_original_method = "851A7508725C6167E01999D358074612", hash_generated_method = "CC7922A9B009171A43FB8D1459659BE1")
-    public final int update(byte[] input, int inputOffset, int inputLen,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.241 -0500", hash_original_method = "851A7508725C6167E01999D358074612", hash_generated_method = "CC7922A9B009171A43FB8D1459659BE1")
+    
+public final int update(byte[] input, int inputOffset, int inputLen,
             byte[] output) throws ShortBufferException {
         return update(input, inputOffset, inputLen, output, 0);
     }
@@ -983,8 +1011,9 @@ public class Cipher {
      *             if {@code inputOffset} and {@code inputLen} do not specify a
      *             valid chunk in the input buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.227 -0500", hash_original_method = "43E41610DEFFC00737E44CA5E5476BCF", hash_generated_method = "4C5A23C2BD099A5DF0CA4DB0810977C3")
-    public final int update(byte[] input, int inputOffset, int inputLen,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.244 -0500", hash_original_method = "43E41610DEFFC00737E44CA5E5476BCF", hash_generated_method = "4C5A23C2BD099A5DF0CA4DB0810977C3")
+    
+public final int update(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
@@ -1033,8 +1062,9 @@ public class Cipher {
      *             if the input buffer and the output buffer are the identical
      *             object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.228 -0500", hash_original_method = "3650ED22F64FB3DE8113B7C668BA6C70", hash_generated_method = "9AD099D9D75C140803A1351F7E3E19A3")
-    public final int update(ByteBuffer input, ByteBuffer output)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.246 -0500", hash_original_method = "3650ED22F64FB3DE8113B7C668BA6C70", hash_generated_method = "9AD099D9D75C140803A1351F7E3E19A3")
+    
+public final int update(ByteBuffer input, ByteBuffer output)
             throws ShortBufferException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
@@ -1061,8 +1091,9 @@ public class Cipher {
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.229 -0500", hash_original_method = "F0FEA4F0F73707A698ECC32C0962F654", hash_generated_method = "3D0FB34E4A2756F232DFAB6041E899F8")
-    public final byte[] doFinal() throws IllegalBlockSizeException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.249 -0500", hash_original_method = "F0FEA4F0F73707A698ECC32C0962F654", hash_generated_method = "3D0FB34E4A2756F232DFAB6041E899F8")
+    
+public final byte[] doFinal() throws IllegalBlockSizeException,
             BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
@@ -1094,8 +1125,9 @@ public class Cipher {
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.230 -0500", hash_original_method = "93AA6B063068AA94349A945C7753479D", hash_generated_method = "2C9A2F3C59A5D43FF6129B05CABF6E77")
-    public final int doFinal(byte[] output, int outputOffset)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.251 -0500", hash_original_method = "93AA6B063068AA94349A945C7753479D", hash_generated_method = "2C9A2F3C59A5D43FF6129B05CABF6E77")
+    
+public final int doFinal(byte[] output, int outputOffset)
             throws IllegalBlockSizeException, ShortBufferException,
             BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
@@ -1125,8 +1157,9 @@ public class Cipher {
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.231 -0500", hash_original_method = "ED0F518E6798AF2EE42518F6A3E77904", hash_generated_method = "2B362B7F94558CDBD22CAC4F5C37AC52")
-    public final byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.254 -0500", hash_original_method = "ED0F518E6798AF2EE42518F6A3E77904", hash_generated_method = "2B362B7F94558CDBD22CAC4F5C37AC52")
+    
+public final byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
             BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
@@ -1160,8 +1193,9 @@ public class Cipher {
      *             if {@code inputOffset} and {@code inputLen} do not specify an
      *             valid chunk in the input buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.232 -0500", hash_original_method = "6B1737194DBFF54F3884AE72A596BA42", hash_generated_method = "2CCDDBB8351C7557D1F3B4C0573D273C")
-    public final byte[] doFinal(byte[] input, int inputOffset, int inputLen)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.257 -0500", hash_original_method = "6B1737194DBFF54F3884AE72A596BA42", hash_generated_method = "2CCDDBB8351C7557D1F3B4C0573D273C")
+    
+public final byte[] doFinal(byte[] input, int inputOffset, int inputLen)
             throws IllegalBlockSizeException, BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
             throw new IllegalStateException();
@@ -1202,8 +1236,9 @@ public class Cipher {
      *             if {@code inputOffset} and {@code inputLen} do not specify an
      *             valid chunk in the input buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.233 -0500", hash_original_method = "A6D208F07F7B0D8A8A4180809C2EF479", hash_generated_method = "8488D6B16DF79546B439605B820C9B3A")
-    public final int doFinal(byte[] input, int inputOffset, int inputLen,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.259 -0500", hash_original_method = "A6D208F07F7B0D8A8A4180809C2EF479", hash_generated_method = "8488D6B16DF79546B439605B820C9B3A")
+    
+public final int doFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output) throws ShortBufferException,
             IllegalBlockSizeException, BadPaddingException {
         return doFinal(input, inputOffset, inputLen, output, 0);
@@ -1241,8 +1276,9 @@ public class Cipher {
      *             if {@code inputOffset} and {@code inputLen} do not specify an
      *             valid chunk in the input buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.234 -0500", hash_original_method = "46F54FF2783CE552AE826C81B354A349", hash_generated_method = "13E829A86E9B515D76C1D3373DDD511E")
-    public final int doFinal(byte[] input, int inputOffset, int inputLen,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.262 -0500", hash_original_method = "46F54FF2783CE552AE826C81B354A349", hash_generated_method = "13E829A86E9B515D76C1D3373DDD511E")
+    
+public final int doFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException,
             IllegalBlockSizeException, BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
@@ -1282,8 +1318,9 @@ public class Cipher {
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.235 -0500", hash_original_method = "90770161074657C0B33458A086574F5B", hash_generated_method = "D5EA3E337FBD7055FD13C143E1CBD026")
-    public final int doFinal(ByteBuffer input, ByteBuffer output)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.264 -0500", hash_original_method = "90770161074657C0B33458A086574F5B", hash_generated_method = "D5EA3E337FBD7055FD13C143E1CBD026")
+    
+public final int doFinal(ByteBuffer input, ByteBuffer output)
             throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
@@ -1309,8 +1346,9 @@ public class Cipher {
      * @throws IllegalStateException
      *             if this cipher instance is not initialized for wrapping.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.236 -0500", hash_original_method = "6E0DA752A02639D8B96D35F2A60D917D", hash_generated_method = "6A8137C15B985EDA25A40EAE7F2F579A")
-    public final byte[] wrap(Key key) throws IllegalBlockSizeException,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.266 -0500", hash_original_method = "6E0DA752A02639D8B96D35F2A60D917D", hash_generated_method = "6A8137C15B985EDA25A40EAE7F2F579A")
+    
+public final byte[] wrap(Key key) throws IllegalBlockSizeException,
             InvalidKeyException {
         if (mode != WRAP_MODE) {
             throw new IllegalStateException();
@@ -1339,8 +1377,9 @@ public class Cipher {
      * @throws IllegalStateException
      *             if this cipher instance is not initialized for unwrapping.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.236 -0500", hash_original_method = "601EF7D9B28B5898301EBC35141803DA", hash_generated_method = "413F0C46D488B56F71E26B18C416D817")
-    public final Key unwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.269 -0500", hash_original_method = "601EF7D9B28B5898301EBC35141803DA", hash_generated_method = "413F0C46D488B56F71E26B18C416D817")
+    
+public final Key unwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException,
             NoSuchAlgorithmException {
         if (mode != UNWRAP_MODE) {

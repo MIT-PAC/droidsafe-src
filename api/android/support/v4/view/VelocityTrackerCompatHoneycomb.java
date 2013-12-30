@@ -10,12 +10,14 @@ import android.view.VelocityTracker;
 
 
 class VelocityTrackerCompatHoneycomb {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.229 -0500", hash_original_method = "11082224BD0B510ACDA84C36C46CDACD", hash_generated_method = "4983E11F8353DE595546EB66F53C17B3")
-    public static float getXVelocity(VelocityTracker tracker, int pointerId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.633 -0500", hash_original_method = "11082224BD0B510ACDA84C36C46CDACD", hash_generated_method = "4983E11F8353DE595546EB66F53C17B3")
+    
+public static float getXVelocity(VelocityTracker tracker, int pointerId) {
         return tracker.getXVelocity(pointerId);
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.230 -0500", hash_original_method = "18C022B6D8DDF782A044ADA2C56769B8", hash_generated_method = "5FDED2BDEF0520D01BDE337D87DE5BD3")
-    public static float getYVelocity(VelocityTracker tracker, int pointerId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.635 -0500", hash_original_method = "18C022B6D8DDF782A044ADA2C56769B8", hash_generated_method = "5FDED2BDEF0520D01BDE337D87DE5BD3")
+    
+public static float getYVelocity(VelocityTracker tracker, int pointerId) {
         return tracker.getYVelocity(pointerId);
     }
     

@@ -26,37 +26,37 @@ import dalvik.system.SocketTagger;
 
 
 public class SingleClientConnManager implements ClientConnectionManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.096 -0500", hash_original_field = "212B0A87EB1D1484BA67339913729EAD", hash_generated_field = "3A54ED9163F39DBD02547DB2ADF36FAA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.312 -0500", hash_original_field = "212B0A87EB1D1484BA67339913729EAD", hash_generated_field = "3A54ED9163F39DBD02547DB2ADF36FAA")
 
     public final static String MISUSE_MESSAGE =
     "Invalid use of SingleClientConnManager: connection still allocated.\n" +
     "Make sure to release the connection before allocating another one.";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.095 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.310 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.096 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.314 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
     protected SchemeRegistry schemeRegistry;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.097 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.317 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
 
     protected ClientConnectionOperator connOperator;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.098 -0500", hash_original_field = "1FC3C0C2DEE6BA223B95A92407DF3CF0", hash_generated_field = "68C30A3515A31DCBBABC9A4AD6123F1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.319 -0500", hash_original_field = "1FC3C0C2DEE6BA223B95A92407DF3CF0", hash_generated_field = "68C30A3515A31DCBBABC9A4AD6123F1A")
 
     protected PoolEntry uniquePoolEntry;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.099 -0500", hash_original_field = "D573F697D2CFEE6EF45B922AD7B8BBDB", hash_generated_field = "59F808726659CBD9A4D1E0F9113A82AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.321 -0500", hash_original_field = "D573F697D2CFEE6EF45B922AD7B8BBDB", hash_generated_field = "59F808726659CBD9A4D1E0F9113A82AC")
 
     protected ConnAdapter managedConn;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.099 -0500", hash_original_field = "2B21A4ED7FDF1EE906849D62F49AACFD", hash_generated_field = "CEAB2B6CC71A381A86CBD5D45B4080B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.323 -0500", hash_original_field = "2B21A4ED7FDF1EE906849D62F49AACFD", hash_generated_field = "CEAB2B6CC71A381A86CBD5D45B4080B0")
 
     protected long lastReleaseTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.100 -0500", hash_original_field = "ECF549926F75651BF8B7BB0D9CA04EB8", hash_generated_field = "AF6AF66999801967D31BB459E9721911")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.326 -0500", hash_original_field = "ECF549926F75651BF8B7BB0D9CA04EB8", hash_generated_field = "AF6AF66999801967D31BB459E9721911")
 
     protected long connectionExpiresTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.101 -0500", hash_original_field = "EEA001539ECD85A5EACB08FB7616AEA3", hash_generated_field = "547C5CD459CD6CC7C1FD7211D1EFA7DD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.328 -0500", hash_original_field = "EEA001539ECD85A5EACB08FB7616AEA3", hash_generated_field = "547C5CD459CD6CC7C1FD7211D1EFA7DD")
 
     protected boolean alwaysShutDown;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.101 -0500", hash_original_field = "C61B3BDAAF84DD1FE911E77E1145E9CF", hash_generated_field = "F15F5E1E3CD7B6799921EE9E4A605FC3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.330 -0500", hash_original_field = "C61B3BDAAF84DD1FE911E77E1145E9CF", hash_generated_field = "F15F5E1E3CD7B6799921EE9E4A605FC3")
 
     protected volatile boolean isShutDown;
 
@@ -70,8 +70,9 @@ public class SingleClientConnManager implements ClientConnectionManager {
      * @param schreg    the scheme registry, or
      *                  <code>null</code> for the default registry
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.102 -0500", hash_original_method = "3E7F5EDF72EC8A96B4F4BE9344F2EB6F", hash_generated_method = "434DDE99510BF4146083C4E09BC81D24")
-    public SingleClientConnManager(HttpParams params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.333 -0500", hash_original_method = "3E7F5EDF72EC8A96B4F4BE9344F2EB6F", hash_generated_method = "434DDE99510BF4146083C4E09BC81D24")
+    
+public SingleClientConnManager(HttpParams params,
                                    SchemeRegistry schreg) {
 
         if (schreg == null) {
@@ -89,17 +90,19 @@ public class SingleClientConnManager implements ClientConnectionManager {
     } // <constructor>
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.103 -0500", hash_original_method = "0E19810A97EBEE58216EC05F0D60A026", hash_generated_method = "7633383EE29DF3462EC06822CAD53A41")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.335 -0500", hash_original_method = "0E19810A97EBEE58216EC05F0D60A026", hash_generated_method = "7633383EE29DF3462EC06822CAD53A41")
+    
+@Override
+    protected void finalize() throws Throwable {
         shutdown();
         super.finalize();
     }
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.104 -0500", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "F81D1E42481BBD388E0F662F8AE87096")
-    public SchemeRegistry getSchemeRegistry() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.337 -0500", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "F81D1E42481BBD388E0F662F8AE87096")
+    
+public SchemeRegistry getSchemeRegistry() {
         return this.schemeRegistry;
     }
 
@@ -116,8 +119,9 @@ protected void finalize() throws Throwable {
      *
      * @return  the connection operator to use
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.105 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
-    protected ClientConnectionOperator
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.340 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
+    
+protected ClientConnectionOperator
         createConnectionOperator(SchemeRegistry schreg) {
 
         return new DefaultClientConnectionOperator(schreg);
@@ -129,8 +133,9 @@ protected void finalize() throws Throwable {
      *
      * @throws IllegalStateException    if this manager is shut down
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.106 -0500", hash_original_method = "44578A979892A5F860429A798FAB46C1", hash_generated_method = "9E094A893A715A37825170596E223547")
-    protected final void assertStillUp()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.343 -0500", hash_original_method = "44578A979892A5F860429A798FAB46C1", hash_generated_method = "9E094A893A715A37825170596E223547")
+    
+protected final void assertStillUp()
         throws IllegalStateException {
 
         if (this.isShutDown)
@@ -146,13 +151,15 @@ protected void finalize() throws Throwable {
         addTaint(route.getTaint());
 ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         new ClientConnectionRequest() {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.107 -0500", hash_original_method = "59B8F54C56EBECF9DD50C78DE5B52C0B", hash_generated_method = "ED2EEF45AF307CCDD255BF69CE1DB79E")
-            public void abortRequest() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.346 -0500", hash_original_method = "59B8F54C56EBECF9DD50C78DE5B52C0B", hash_generated_method = "ED2EEF45AF307CCDD255BF69CE1DB79E")
+            
+public void abortRequest() {
                 // Nothing to abort, since requests are immediate.
             }
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.108 -0500", hash_original_method = "F7F3F9BF4CE416F8572A5E185A1E7C99", hash_generated_method = "8FF85F8EAD261050D1C796456B5D6830")
-            public ManagedClientConnection getConnection(
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.348 -0500", hash_original_method = "F7F3F9BF4CE416F8572A5E185A1E7C99", hash_generated_method = "8FF85F8EAD261050D1C796456B5D6830")
+            
+public ManagedClientConnection getConnection(
                     long timeout, TimeUnit tunit) {
                 return SingleClientConnManager.this.getConnection(
                         route, state);
@@ -182,8 +189,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
      * @return  a connection that can be used to communicate
      *          along the given route
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.110 -0500", hash_original_method = "781D1E313D4AFDE231A72D7CBA370F5D", hash_generated_method = "38849830D340DFE19D1DD85AD4AFB2AB")
-    public ManagedClientConnection getConnection(HttpRoute route, Object state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.353 -0500", hash_original_method = "781D1E313D4AFDE231A72D7CBA370F5D", hash_generated_method = "38849830D340DFE19D1DD85AD4AFB2AB")
+    
+public ManagedClientConnection getConnection(HttpRoute route, Object state) {
 
         if (route == null) {
             throw new IllegalArgumentException("Route may not be null.");
@@ -249,8 +257,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.111 -0500", hash_original_method = "ECDB4EF7528DEE3D21C1E4EB659EC445", hash_generated_method = "23C6299D37BFC32F656704593996FC88")
-    public void releaseConnection(ManagedClientConnection conn, long validDuration, TimeUnit timeUnit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.356 -0500", hash_original_method = "ECDB4EF7528DEE3D21C1E4EB659EC445", hash_generated_method = "23C6299D37BFC32F656704593996FC88")
+    
+public void releaseConnection(ManagedClientConnection conn, long validDuration, TimeUnit timeUnit) {
         assertStillUp();
 
         if (!(conn instanceof ConnAdapter)) {
@@ -312,8 +321,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
         }
     } // releaseConnection
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.112 -0500", hash_original_method = "144B79381F1DE3A7D4EE72C53F4D2E2A", hash_generated_method = "2A910D763EEB6A74885B7AB428C9EC6D")
-    public void closeExpiredConnections() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.359 -0500", hash_original_method = "144B79381F1DE3A7D4EE72C53F4D2E2A", hash_generated_method = "2A910D763EEB6A74885B7AB428C9EC6D")
+    
+public void closeExpiredConnections() {
         if(System.currentTimeMillis() >= connectionExpiresTime) {
             closeIdleConnections(0, TimeUnit.MILLISECONDS);
         }
@@ -321,8 +331,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.113 -0500", hash_original_method = "F34DBDBB0F8CB1363DA5802203A9DE31", hash_generated_method = "DF67B8C0B57B0FBF4AB44E8A4500B016")
-    public void closeIdleConnections(long idletime, TimeUnit tunit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.362 -0500", hash_original_method = "F34DBDBB0F8CB1363DA5802203A9DE31", hash_generated_method = "DF67B8C0B57B0FBF4AB44E8A4500B016")
+    
+public void closeIdleConnections(long idletime, TimeUnit tunit) {
         assertStillUp();
 
         // idletime can be 0 or negative, no problem there
@@ -346,8 +357,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
 
 
     // non-javadoc, see interface ClientConnectionManager
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.114 -0500", hash_original_method = "3B23C31C02DC0AC3A698CF8CD25A20B9", hash_generated_method = "17A13C2CF7093AC2A663D1E05FB1F408")
-    public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.364 -0500", hash_original_method = "3B23C31C02DC0AC3A698CF8CD25A20B9", hash_generated_method = "17A13C2CF7093AC2A663D1E05FB1F408")
+    
+public void shutdown() {
 
         this.isShutDown = true;
 
@@ -372,16 +384,18 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
          * Creates a new pool entry.
          *
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.116 -0500", hash_original_method = "631D63FD16AE3FEAB1552B743E29445B", hash_generated_method = "CD23FBA6B06195A36BE63AC7E71FAAB9")
-        protected PoolEntry() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.370 -0500", hash_original_method = "631D63FD16AE3FEAB1552B743E29445B", hash_generated_method = "CD23FBA6B06195A36BE63AC7E71FAAB9")
+        
+protected PoolEntry() {
             super(SingleClientConnManager.this.connOperator, null);
         }
 
         /**
          * Closes the connection in this pool entry.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.117 -0500", hash_original_method = "A86295986A372D00C8F07CAE9A39223B", hash_generated_method = "9CF16047CC30070D185BAE9E42FD4882")
-        protected void close()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.372 -0500", hash_original_method = "A86295986A372D00C8F07CAE9A39223B", hash_generated_method = "9CF16047CC30070D185BAE9E42FD4882")
+        
+protected void close()
             throws IOException {
 
             shutdownEntry();
@@ -393,8 +407,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
         /**
          * Shuts down the connection in this pool entry.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.117 -0500", hash_original_method = "D39515BCFB2BDEF720AFC38551AEFE84", hash_generated_method = "AB1861AB070B8BA388FBF22294799AB8")
-        protected void shutdown()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.374 -0500", hash_original_method = "D39515BCFB2BDEF720AFC38551AEFE84", hash_generated_method = "AB1861AB070B8BA388FBF22294799AB8")
+        
+protected void shutdown()
             throws IOException {
 
             shutdownEntry();
@@ -415,8 +430,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
          * @param entry   the pool entry for the connection being wrapped
          * @param route   the planned route for this connection
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.119 -0500", hash_original_method = "8101547A28FD0D2F472FF84F23BAF09C", hash_generated_method = "18ED4617EA25B83EFFD8CC7F38560051")
-        protected ConnAdapter(PoolEntry entry, HttpRoute route) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.379 -0500", hash_original_method = "8101547A28FD0D2F472FF84F23BAF09C", hash_generated_method = "18ED4617EA25B83EFFD8CC7F38560051")
+        
+protected ConnAdapter(PoolEntry entry, HttpRoute route) {
             super(SingleClientConnManager.this, entry);
             markReusable();
             entry.route = route;
@@ -430,8 +446,9 @@ ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         
      * Revokes the currently issued connection.
      * The adapter gets disconnected, the connection will be shut down.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.115 -0500", hash_original_method = "A0A03885E6FE7F03CE9159285B1CDEFC", hash_generated_method = "F0B500420E2688A267B32A8DCC5329DB")
-    protected void revokeConnection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.366 -0500", hash_original_method = "A0A03885E6FE7F03CE9159285B1CDEFC", hash_generated_method = "F0B500420E2688A267B32A8DCC5329DB")
+    
+protected void revokeConnection() {
         if (managedConn == null)
             return;
 

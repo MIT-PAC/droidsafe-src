@@ -33,8 +33,9 @@ public abstract class Layout {
      * Return how wide a layout must be in order to display the
      * specified text with one line per paragraph.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.992 -0500", hash_original_method = "1597B0DF539C50975D1094B78D7BA08C", hash_generated_method = "2413E4414C0FEBD348BCD3878230BC25")
-    public static float getDesiredWidth(CharSequence source,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.252 -0500", hash_original_method = "1597B0DF539C50975D1094B78D7BA08C", hash_generated_method = "2413E4414C0FEBD348BCD3878230BC25")
+    
+public static float getDesiredWidth(CharSequence source,
                                         TextPaint paint) {
         return getDesiredWidth(source, 0, source.length(), paint);
     }
@@ -43,8 +44,9 @@ public abstract class Layout {
      * Return how wide a layout must be in order to display the
      * specified text slice with one line per paragraph.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.993 -0500", hash_original_method = "70F93B7B36BD9F1CA7DABE2B88F9D9BC", hash_generated_method = "E19698407338714928F82BF4B18339BF")
-    public static float getDesiredWidth(CharSequence source,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.255 -0500", hash_original_method = "70F93B7B36BD9F1CA7DABE2B88F9D9BC", hash_generated_method = "E19698407338714928F82BF4B18339BF")
+    
+public static float getDesiredWidth(CharSequence source,
                                         int start, int end,
                                         TextPaint paint) {
         float need = 0;
@@ -70,8 +72,9 @@ public abstract class Layout {
     }
 
     /* package */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.049 -0500", hash_original_method = "7B0A64808977E314E16FC537E6BE92A2", hash_generated_method = "FED1B0E58631CF885CFF2382EE5FAA5C")
-    static float measurePara(TextPaint paint, TextPaint workPaint,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.427 -0500", hash_original_method = "7B0A64808977E314E16FC537E6BE92A2", hash_generated_method = "FED1B0E58631CF885CFF2382EE5FAA5C")
+    
+static float measurePara(TextPaint paint, TextPaint workPaint,
             CharSequence text, int start, int end) {
 
         MeasuredText mt = MeasuredText.obtain();
@@ -128,8 +131,9 @@ public abstract class Layout {
      * will be used to compute the tab stop.
      * @return the offset of the next tab stop.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.057 -0500", hash_original_method = "63723EF0B95DB45865B535A7B07F44F6", hash_generated_method = "E35782AC4B0B6B04DFA37943BF4BF52F")
-    static float nextTab(CharSequence text, int start, int end,
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.452 -0500", hash_original_method = "63723EF0B95DB45865B535A7B07F44F6", hash_generated_method = "E35782AC4B0B6B04DFA37943BF4BF52F")
+    
+static float nextTab(CharSequence text, int start, int end,
                                        float h, Object[] tabs) {
         float nh = Float.MAX_VALUE;
         boolean alltabs = false;
@@ -173,11 +177,11 @@ public abstract class Layout {
         retVal.addTaint(type.getTaint());
         return retVal;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.989 -0500", hash_original_field = "932CE43DA88AC11362DFCBBD1ACF2606", hash_generated_field = "FE192F2602DC86D3649552171C1E7D82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.244 -0500", hash_original_field = "932CE43DA88AC11362DFCBBD1ACF2606", hash_generated_field = "FE192F2602DC86D3649552171C1E7D82")
 
     private static final ParagraphStyle[] NO_PARA_SPANS =
         ArrayUtils.emptyArray(ParagraphStyle.class);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.990 -0500", hash_original_field = "2182FD9B1E42E85784EF7AA0D57C4686", hash_generated_field = "C5396A644D87D3ABF8FF4A210231B117")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.247 -0500", hash_original_field = "2182FD9B1E42E85784EF7AA0D57C4686", hash_generated_field = "C5396A644D87D3ABF8FF4A210231B117")
  static final EmojiFactory EMOJI_FACTORY =
         EmojiFactory.newAvailableInstance();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.972 -0400", hash_original_field = "471F949A3986C3F4EDFE65343195112B", hash_generated_field = "50981D9CDB8FFE37DD0AD7398C887F29")
@@ -186,67 +190,67 @@ public abstract class Layout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.972 -0400", hash_original_field = "9BA5E1F2A793A8D05CB1371A5403608D", hash_generated_field = "2FF41CCD8E77FA54D79A8CE87AE76CE2")
 
     static int MAX_EMOJI;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.088 -0500", hash_original_field = "008D661E54BF7ED509AC2785AB7BF6EB", hash_generated_field = "AB6A5E15DD892E72F299B4D5FFE1ACBA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.555 -0500", hash_original_field = "008D661E54BF7ED509AC2785AB7BF6EB", hash_generated_field = "AB6A5E15DD892E72F299B4D5FFE1ACBA")
 
     private static final Rect sTempRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.090 -0500", hash_original_field = "274988CFFC045452B8896268E0741F10", hash_generated_field = "52D12843713C54C6D6FE037A484C039E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.562 -0500", hash_original_field = "274988CFFC045452B8896268E0741F10", hash_generated_field = "52D12843713C54C6D6FE037A484C039E")
 
 
     public static final int DIR_LEFT_TO_RIGHT = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.091 -0500", hash_original_field = "61933AD26617D6849CFAE952C72D8914", hash_generated_field = "E624F93AD27646BB22CB05444CE41FB7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.566 -0500", hash_original_field = "61933AD26617D6849CFAE952C72D8914", hash_generated_field = "E624F93AD27646BB22CB05444CE41FB7")
 
     public static final int DIR_RIGHT_TO_LEFT = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.091 -0500", hash_original_field = "A1429EAE77EABD2EB8E5C4D967BD9AE9", hash_generated_field = "A0CBE122653FD7E9E2403F87AECC077E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.568 -0500", hash_original_field = "A1429EAE77EABD2EB8E5C4D967BD9AE9", hash_generated_field = "A0CBE122653FD7E9E2403F87AECC077E")
  static final int DIR_REQUEST_LTR = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.092 -0500", hash_original_field = "3EF9BAA120AB0D1CE69E1CC68129D39C", hash_generated_field = "2F54902E23F337B8398BD9B8867448B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.570 -0500", hash_original_field = "3EF9BAA120AB0D1CE69E1CC68129D39C", hash_generated_field = "2F54902E23F337B8398BD9B8867448B7")
  static final int DIR_REQUEST_RTL = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.093 -0500", hash_original_field = "4337E216F623C609AFC5BB37767A7AB4", hash_generated_field = "6BC95B8DA1C0867C5BBC92C545EC37D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.573 -0500", hash_original_field = "4337E216F623C609AFC5BB37767A7AB4", hash_generated_field = "6BC95B8DA1C0867C5BBC92C545EC37D0")
  static final int DIR_REQUEST_DEFAULT_LTR = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.094 -0500", hash_original_field = "FE9935885F94FA59C9FA9323EEEE9B09", hash_generated_field = "A3F4791226177B1A5BF0E7086C062229")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.575 -0500", hash_original_field = "FE9935885F94FA59C9FA9323EEEE9B09", hash_generated_field = "A3F4791226177B1A5BF0E7086C062229")
  static final int DIR_REQUEST_DEFAULT_RTL = -2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.095 -0500", hash_original_field = "49012C8971DD06FAF205C2FBA9AF8F4A", hash_generated_field = "521C40F9C42E64AFA41DE5429A1FE88F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.578 -0500", hash_original_field = "49012C8971DD06FAF205C2FBA9AF8F4A", hash_generated_field = "521C40F9C42E64AFA41DE5429A1FE88F")
  static final int RUN_LENGTH_MASK = 0x03ffffff;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.096 -0500", hash_original_field = "4A10472F3D697F92EB8CA1466CAAE5B3", hash_generated_field = "FA295D4D1A0E6B715FE59ACD221F6ADA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.580 -0500", hash_original_field = "4A10472F3D697F92EB8CA1466CAAE5B3", hash_generated_field = "FA295D4D1A0E6B715FE59ACD221F6ADA")
  static final int RUN_LEVEL_SHIFT = 26;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.097 -0500", hash_original_field = "7362A8B0CB2DB2FA71BCC4E4017A98F8", hash_generated_field = "94C9571A3583C54E6B7A075300DD0EE5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.583 -0500", hash_original_field = "7362A8B0CB2DB2FA71BCC4E4017A98F8", hash_generated_field = "94C9571A3583C54E6B7A075300DD0EE5")
  static final int RUN_LEVEL_MASK = 0x3f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.097 -0500", hash_original_field = "6CD5AF4251496E4F57DB2AC43ED61A39", hash_generated_field = "31D3CF26D80AD0E1199B880C73A98D4C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.586 -0500", hash_original_field = "6CD5AF4251496E4F57DB2AC43ED61A39", hash_generated_field = "31D3CF26D80AD0E1199B880C73A98D4C")
  static final int RUN_RTL_FLAG = 1 << RUN_LEVEL_SHIFT;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.099 -0500", hash_original_field = "523B437B66E94D47C6D3407D5611D3C9", hash_generated_field = "D5E340FF9F0E2C74F920DF02A6624213")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.590 -0500", hash_original_field = "523B437B66E94D47C6D3407D5611D3C9", hash_generated_field = "D5E340FF9F0E2C74F920DF02A6624213")
 
 
     private static final int TAB_INCREMENT = 20;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.100 -0500", hash_original_field = "8699269872F199A33E89295A39FFEB1B", hash_generated_field = "C8BA6950A23558C64F9FDDA3186A39D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.592 -0500", hash_original_field = "8699269872F199A33E89295A39FFEB1B", hash_generated_field = "C8BA6950A23558C64F9FDDA3186A39D3")
  static final Directions DIRS_ALL_LEFT_TO_RIGHT =
         new Directions(new int[] { 0, RUN_LENGTH_MASK });
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.100 -0500", hash_original_field = "32D864628F20A4F6659228DF35F00938", hash_generated_field = "F0C0143EECF2B25DCBC74C3BF9B92427")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.595 -0500", hash_original_field = "32D864628F20A4F6659228DF35F00938", hash_generated_field = "F0C0143EECF2B25DCBC74C3BF9B92427")
  static final Directions DIRS_ALL_RIGHT_TO_LEFT =
         new Directions(new int[] { 0, RUN_LENGTH_MASK | RUN_RTL_FLAG });
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.082 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.538 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
 
 
     private CharSequence mText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.083 -0500", hash_original_field = "956DBF43153BA67BCB0E9C5A7787D348", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.540 -0500", hash_original_field = "956DBF43153BA67BCB0E9C5A7787D348", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
 
     private TextPaint mPaint;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.084 -0500", hash_original_field = "B28AC88C47D899E85CEE0110DCCDCA16", hash_generated_field = "B28AC88C47D899E85CEE0110DCCDCA16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.543 -0500", hash_original_field = "B28AC88C47D899E85CEE0110DCCDCA16", hash_generated_field = "B28AC88C47D899E85CEE0110DCCDCA16")
  TextPaint mWorkPaint;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.084 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.545 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
 
     private int mWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.085 -0500", hash_original_field = "E5A75855A12AE2E5083C772727973580", hash_generated_field = "A5FBEE576828FD767B418A1715D12197")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.547 -0500", hash_original_field = "E5A75855A12AE2E5083C772727973580", hash_generated_field = "A5FBEE576828FD767B418A1715D12197")
 
     private Alignment mAlignment = Alignment.ALIGN_NORMAL;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.086 -0500", hash_original_field = "EBA2C53A78B31B6EAA62BF30691EAAD7", hash_generated_field = "0C2C39C12F42C181B35D16CF7D81A703")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.550 -0500", hash_original_field = "EBA2C53A78B31B6EAA62BF30691EAAD7", hash_generated_field = "0C2C39C12F42C181B35D16CF7D81A703")
 
     private float mSpacingMult;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.087 -0500", hash_original_field = "0C08CDB9A206CD48C2F03C72632F8C5E", hash_generated_field = "733F92CD6EAB2F9CA67542D073A49D69")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.552 -0500", hash_original_field = "0C08CDB9A206CD48C2F03C72632F8C5E", hash_generated_field = "733F92CD6EAB2F9CA67542D073A49D69")
 
     private float mSpacingAdd;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.088 -0500", hash_original_field = "6D3F268E06ADF0B0EDB64F30D89ABD7E", hash_generated_field = "9735AD2A3473CB2D7DEA16EAA46F6EFB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.557 -0500", hash_original_field = "6D3F268E06ADF0B0EDB64F30D89ABD7E", hash_generated_field = "9735AD2A3473CB2D7DEA16EAA46F6EFB")
 
     private boolean mSpannedText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.089 -0500", hash_original_field = "BEA8E5891FFC501B6383D60AC2DCC890", hash_generated_field = "720F1C3BB08BF46839EBBA716D35B07F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.560 -0500", hash_original_field = "BEA8E5891FFC501B6383D60AC2DCC890", hash_generated_field = "720F1C3BB08BF46839EBBA716D35B07F")
 
     private TextDirectionHeuristic mTextDir;
 
@@ -263,8 +267,9 @@ public abstract class Layout {
      * default line spacing
      * @param spacingAdd amount to add to the default line spacing
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.994 -0500", hash_original_method = "DA432A00E31F4EFC04FE32B9AEC1CEE4", hash_generated_method = "E8525190E49DFD371F81054B27CE4BBC")
-    protected Layout(CharSequence text, TextPaint paint,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.258 -0500", hash_original_method = "DA432A00E31F4EFC04FE32B9AEC1CEE4", hash_generated_method = "E8525190E49DFD371F81054B27CE4BBC")
+    
+protected Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align,
                      float spacingMult, float spacingAdd) {
         this(text, paint, width, align, TextDirectionHeuristics.FIRSTSTRONG_LTR,
@@ -286,8 +291,9 @@ public abstract class Layout {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.995 -0500", hash_original_method = "E08E539EEFF1AD274546B85662DC9DCC", hash_generated_method = "ECEEC996AC846B781ED18C214467C750")
-    protected Layout(CharSequence text, TextPaint paint,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.261 -0500", hash_original_method = "E08E539EEFF1AD274546B85662DC9DCC", hash_generated_method = "ECEEC996AC846B781ED18C214467C750")
+    
+protected Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align, TextDirectionHeuristic textDir,
                      float spacingMult, float spacingAdd) {
 
@@ -317,8 +323,9 @@ public abstract class Layout {
     /**
      * Replace constructor properties of this Layout with new ones.  Be careful.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.995 -0500", hash_original_method = "4BA809AE232557C36D4CE5AE6E36D4D2", hash_generated_method = "4BA809AE232557C36D4CE5AE6E36D4D2")
-    void replaceWith(CharSequence text, TextPaint paint,
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.264 -0500", hash_original_method = "4BA809AE232557C36D4CE5AE6E36D4D2", hash_generated_method = "4BA809AE232557C36D4CE5AE6E36D4D2")
+    
+void replaceWith(CharSequence text, TextPaint paint,
                               int width, Alignment align,
                               float spacingmult, float spacingadd) {
         if (width < 0) {
@@ -337,8 +344,9 @@ public abstract class Layout {
     /**
      * Draw this Layout on the specified Canvas.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.996 -0500", hash_original_method = "21986991A7FC788A39082240DAE8B9C3", hash_generated_method = "8EE65159161E744299A4C08E81C8EA55")
-    public void draw(Canvas c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.266 -0500", hash_original_method = "21986991A7FC788A39082240DAE8B9C3", hash_generated_method = "8EE65159161E744299A4C08E81C8EA55")
+    
+public void draw(Canvas c) {
         draw(c, null, null, 0);
     }
 
@@ -352,8 +360,9 @@ public abstract class Layout {
      * @param cursorOffsetVertical the amount to temporarily translate the
      *        canvas while rendering the highlight
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.999 -0500", hash_original_method = "C63D8686FF6D60F338825542CA174C93", hash_generated_method = "6D6B5D7F8BAC5492A7781593E3D44FE0")
-    public void draw(Canvas c, Path highlight, Paint highlightPaint,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.273 -0500", hash_original_method = "C63D8686FF6D60F338825542CA174C93", hash_generated_method = "6D6B5D7F8BAC5492A7781593E3D44FE0")
+    
+public void draw(Canvas c, Path highlight, Paint highlightPaint,
                      int cursorOffsetVertical) {
         int dtop, dbottom;
 
@@ -596,8 +605,9 @@ public abstract class Layout {
      * @param right the right bounds (width, minus leading margin if rtl para)
      * @return the start position of the line (to right of line if rtl para)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.000 -0500", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "11B6DD88F00DBC5D783B97DC24C1AE9F")
-    private int getLineStartPos(int line, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.277 -0500", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "11B6DD88F00DBC5D783B97DC24C1AE9F")
+    
+private int getLineStartPos(int line, int left, int right) {
         // Adjust the point at which to start rendering depending on the
         // alignment of the paragraph.
         Alignment align = getParagraphAlignment(line);
@@ -644,8 +654,9 @@ public abstract class Layout {
     /**
      * Return the text that is displayed by this Layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.001 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "AD41DE29B1C2DCE99B6C37C431B0FBB9")
-    public final CharSequence getText() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.280 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "AD41DE29B1C2DCE99B6C37C431B0FBB9")
+    
+public final CharSequence getText() {
         return mText;
     }
 
@@ -654,16 +665,18 @@ public abstract class Layout {
      * Do NOT change the paint, which may result in funny
      * drawing for this layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.002 -0500", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "A1B666BE245BAE87971A84F2CF98551B")
-    public final TextPaint getPaint() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.282 -0500", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "A1B666BE245BAE87971A84F2CF98551B")
+    
+public final TextPaint getPaint() {
         return mPaint;
     }
 
     /**
      * Return the width of this layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.002 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "22D52A618BDF0D88616879C17C111A4F")
-    public final int getWidth() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.285 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "22D52A618BDF0D88616879C17C111A4F")
+    
+public final int getWidth() {
         return mWidth;
     }
 
@@ -671,8 +684,9 @@ public abstract class Layout {
      * Return the width to which this Layout is ellipsizing, or
      * {@link #getWidth} if it is not doing anything special.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.003 -0500", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "E7219D99AC51B07E456390F92E1768EC")
-    public int getEllipsizedWidth() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.287 -0500", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "E7219D99AC51B07E456390F92E1768EC")
+    
+public int getEllipsizedWidth() {
         return mWidth;
     }
 
@@ -681,8 +695,9 @@ public abstract class Layout {
      * Be careful to use this only when you know it is appropriate&mdash;
      * it does not cause the text to reflow to use the full new width.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.004 -0500", hash_original_method = "461CE12B89AFCA61718D5C5F590357B0", hash_generated_method = "6EEFA7E9C5DE9882F0EDA06E870DF63D")
-    public final void increaseWidthTo(int wid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.290 -0500", hash_original_method = "461CE12B89AFCA61718D5C5F590357B0", hash_generated_method = "6EEFA7E9C5DE9882F0EDA06E870DF63D")
+    
+public final void increaseWidthTo(int wid) {
         if (wid < mWidth) {
             throw new RuntimeException("attempted to reduce Layout width");
         }
@@ -693,32 +708,36 @@ public abstract class Layout {
     /**
      * Return the total height of this layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.005 -0500", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "01D9C5CB97CB8F7EF4A0983825580515")
-    public int getHeight() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.292 -0500", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "01D9C5CB97CB8F7EF4A0983825580515")
+    
+public int getHeight() {
         return getLineTop(getLineCount());
     }
 
     /**
      * Return the base alignment of this layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.006 -0500", hash_original_method = "FB2D4D43E3EFDD971010AB3AFA49B442", hash_generated_method = "FA640E70D6B992C4BEBCC5C17D69AEBD")
-    public final Alignment getAlignment() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.294 -0500", hash_original_method = "FB2D4D43E3EFDD971010AB3AFA49B442", hash_generated_method = "FA640E70D6B992C4BEBCC5C17D69AEBD")
+    
+public final Alignment getAlignment() {
         return mAlignment;
     }
 
     /**
      * Return what the text height is multiplied by to get the line height.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.007 -0500", hash_original_method = "F861D6694D511E0A8AF4CE2A5552F333", hash_generated_method = "6D96E1ECB0C174A9EDA879AB77379863")
-    public final float getSpacingMultiplier() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.296 -0500", hash_original_method = "F861D6694D511E0A8AF4CE2A5552F333", hash_generated_method = "6D96E1ECB0C174A9EDA879AB77379863")
+    
+public final float getSpacingMultiplier() {
         return mSpacingMult;
     }
 
     /**
      * Return the number of units of leading that are added to each line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.008 -0500", hash_original_method = "E15AF37508F3C3C8F31DF2917343152C", hash_generated_method = "2E7B3A64CBB02E47FC166BB25D32A16B")
-    public final float getSpacingAdd() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.299 -0500", hash_original_method = "E15AF37508F3C3C8F31DF2917343152C", hash_generated_method = "2E7B3A64CBB02E47FC166BB25D32A16B")
+    
+public final float getSpacingAdd() {
         return mSpacingAdd;
     }
 
@@ -726,16 +745,18 @@ public abstract class Layout {
      * Return the heuristic used to determine paragraph text direction.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.008 -0500", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "37EDBC3BC62434E13DFAD301F3A917B2")
-    public final TextDirectionHeuristic getTextDirectionHeuristic() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.302 -0500", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "37EDBC3BC62434E13DFAD301F3A917B2")
+    
+public final TextDirectionHeuristic getTextDirectionHeuristic() {
         return mTextDir;
     }
 
     /**
      * Return the number of lines of text in this layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.009 -0500", hash_original_method = "C858DDC0C1BAD267278CEAB898350F70", hash_generated_method = "26F9A607A463611061DC3AF5F4989C06")
-    public abstract int getLineCount();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.305 -0500", hash_original_method = "C858DDC0C1BAD267278CEAB898350F70", hash_generated_method = "26F9A607A463611061DC3AF5F4989C06")
+    
+public abstract int getLineCount();
 
     /**
      * Return the baseline for the specified line (0&hellip;getLineCount() - 1)
@@ -745,8 +766,9 @@ public abstract class Layout {
      * @param bounds Optional. If not null, it returns the extent of the line
      * @return the Y-coordinate of the baseline
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.010 -0500", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "728D9A8BCD139769BF63031581888C94")
-    public int getLineBounds(int line, Rect bounds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.307 -0500", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "728D9A8BCD139769BF63031581888C94")
+    
+public int getLineBounds(int line, Rect bounds) {
         if (bounds != null) {
             bounds.left = 0;     // ???
             bounds.top = getLineTop(line);
@@ -762,38 +784,43 @@ public abstract class Layout {
      * If the specified line is equal to the line count, returns the
      * bottom of the last line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.011 -0500", hash_original_method = "A479D88314A093B8C2D849C09BDF783F", hash_generated_method = "D7223F3967A936CA40F1E9C5B7F55E34")
-    public abstract int getLineTop(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.310 -0500", hash_original_method = "A479D88314A093B8C2D849C09BDF783F", hash_generated_method = "D7223F3967A936CA40F1E9C5B7F55E34")
+    
+public abstract int getLineTop(int line);
 
     /**
      * Return the descent of the specified line(0&hellip;getLineCount() - 1).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.011 -0500", hash_original_method = "03140D6C234EA23E99CFD1E22FA56375", hash_generated_method = "D7CA1E509DA090D89EFE25AF998BE18E")
-    public abstract int getLineDescent(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.313 -0500", hash_original_method = "03140D6C234EA23E99CFD1E22FA56375", hash_generated_method = "D7CA1E509DA090D89EFE25AF998BE18E")
+    
+public abstract int getLineDescent(int line);
 
     /**
      * Return the text offset of the beginning of the specified line (
      * 0&hellip;getLineCount()). If the specified line is equal to the line
      * count, returns the length of the text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.012 -0500", hash_original_method = "AD4C0CF9A9707EC9B109DA8B3FD4D354", hash_generated_method = "61055093AF86441AE67056D61EBB630B")
-    public abstract int getLineStart(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.315 -0500", hash_original_method = "AD4C0CF9A9707EC9B109DA8B3FD4D354", hash_generated_method = "61055093AF86441AE67056D61EBB630B")
+    
+public abstract int getLineStart(int line);
 
     /**
      * Returns the primary directionality of the paragraph containing the
      * specified line, either 1 for left-to-right lines, or -1 for right-to-left
      * lines (see {@link #DIR_LEFT_TO_RIGHT}, {@link #DIR_RIGHT_TO_LEFT}).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.013 -0500", hash_original_method = "1F6293537B18553FE2358B8478EBFAEE", hash_generated_method = "69AF98149A08FF9A3435421DE154B7DE")
-    public abstract int getParagraphDirection(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.318 -0500", hash_original_method = "1F6293537B18553FE2358B8478EBFAEE", hash_generated_method = "69AF98149A08FF9A3435421DE154B7DE")
+    
+public abstract int getParagraphDirection(int line);
 
     /**
      * Returns whether the specified line contains one or more
      * characters that need to be handled specially, like tabs
      * or emoji.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.014 -0500", hash_original_method = "2BAA05C8EA3FC25EBF2014880F15841F", hash_generated_method = "626214B760C74C35D95DB221DB2C3B12")
-    public abstract boolean getLineContainsTab(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.320 -0500", hash_original_method = "2BAA05C8EA3FC25EBF2014880F15841F", hash_generated_method = "626214B760C74C35D95DB221DB2C3B12")
+    
+public abstract boolean getLineContainsTab(int line);
 
     /**
      * Returns the directional run information for the specified line.
@@ -802,22 +829,25 @@ public abstract class Layout {
      *
      * <p>NOTE: this is inadequate to support bidirectional text, and will change.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.014 -0500", hash_original_method = "210ABB60838D612932495B5E68C265E6", hash_generated_method = "D859D6004F6B3046ABF936118536AFDC")
-    public abstract Directions getLineDirections(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.323 -0500", hash_original_method = "210ABB60838D612932495B5E68C265E6", hash_generated_method = "D859D6004F6B3046ABF936118536AFDC")
+    
+public abstract Directions getLineDirections(int line);
 
     /**
      * Returns the (negative) number of extra pixels of ascent padding in the
      * top line of the Layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.015 -0500", hash_original_method = "203B4D132BED8A34E1E9144178389DA9", hash_generated_method = "64E1A39A214A9F5A5E503B5D5C1841F2")
-    public abstract int getTopPadding();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.325 -0500", hash_original_method = "203B4D132BED8A34E1E9144178389DA9", hash_generated_method = "64E1A39A214A9F5A5E503B5D5C1841F2")
+    
+public abstract int getTopPadding();
 
     /**
      * Returns the number of extra pixels of descent padding in the
      * bottom line of the Layout.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.016 -0500", hash_original_method = "36186ABA54E56DB57B8D8035164D19BC", hash_generated_method = "EF263A3F424EDC36F744E769CE4C50BB")
-    public abstract int getBottomPadding();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.327 -0500", hash_original_method = "36186ABA54E56DB57B8D8035164D19BC", hash_generated_method = "EF263A3F424EDC36F744E769CE4C50BB")
+    
+public abstract int getBottomPadding();
 
 
     /**
@@ -827,8 +857,9 @@ public abstract class Layout {
      * @return true if at a level boundary
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.017 -0500", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "183A814B3D3806E68915D483C8E8871E")
-    public boolean isLevelBoundary(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.331 -0500", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "183A814B3D3806E68915D483C8E8871E")
+    
+public boolean isLevelBoundary(int offset) {
         int line = getLineForOffset(offset);
         Directions dirs = getLineDirections(line);
         if (dirs == DIRS_ALL_LEFT_TO_RIGHT || dirs == DIRS_ALL_RIGHT_TO_LEFT) {
@@ -858,8 +889,9 @@ public abstract class Layout {
      * @param offset the offset
      * @return true if the character is RTL, false if it is LTR
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.018 -0500", hash_original_method = "AF5CCAD1718916CFF1EB4C8EF2E12FAE", hash_generated_method = "95B2033BED91E0E1C361CEFA7C0ED861")
-    public boolean isRtlCharAt(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.333 -0500", hash_original_method = "AF5CCAD1718916CFF1EB4C8EF2E12FAE", hash_generated_method = "95B2033BED91E0E1C361CEFA7C0ED861")
+    
+public boolean isRtlCharAt(int offset) {
         int line = getLineForOffset(offset);
         Directions dirs = getLineDirections(line);
         if (dirs == DIRS_ALL_LEFT_TO_RIGHT) {
@@ -883,8 +915,9 @@ public abstract class Layout {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.019 -0500", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "50FC3B2D69D294105C536DC818DE545D")
-    private boolean primaryIsTrailingPrevious(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.337 -0500", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "50FC3B2D69D294105C536DC818DE545D")
+    
+private boolean primaryIsTrailingPrevious(int offset) {
         int line = getLineForOffset(offset);
         int lineStart = getLineStart(line);
         int lineEnd = getLineEnd(line);
@@ -938,8 +971,9 @@ public abstract class Layout {
      * This is the location where a new character would be inserted in
      * the paragraph's primary direction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.020 -0500", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "9B4AE6B1658DB85323FD2387B1068EB8")
-    public float getPrimaryHorizontal(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.340 -0500", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "9B4AE6B1658DB85323FD2387B1068EB8")
+    
+public float getPrimaryHorizontal(int offset) {
         boolean trailing = primaryIsTrailingPrevious(offset);
         return getHorizontal(offset, trailing);
     }
@@ -949,21 +983,24 @@ public abstract class Layout {
      * This is the location where a new character would be inserted in
      * the direction other than the paragraph's primary direction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.021 -0500", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "0F79438CEB1C5845DC66AA4C325AE230")
-    public float getSecondaryHorizontal(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.343 -0500", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "0F79438CEB1C5845DC66AA4C325AE230")
+    
+public float getSecondaryHorizontal(int offset) {
         boolean trailing = primaryIsTrailingPrevious(offset);
         return getHorizontal(offset, !trailing);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.022 -0500", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "E0DF0D7927C49E1B310EECDB2E494565")
-    private float getHorizontal(int offset, boolean trailing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.345 -0500", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "E0DF0D7927C49E1B310EECDB2E494565")
+    
+private float getHorizontal(int offset, boolean trailing) {
         int line = getLineForOffset(offset);
 
         return getHorizontal(offset, trailing, line);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.023 -0500", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "4047DC4C00DF16164DC49AE2D24D687C")
-    private float getHorizontal(int offset, boolean trailing, int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.348 -0500", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "4047DC4C00DF16164DC49AE2D24D687C")
+    
+private float getHorizontal(int offset, boolean trailing, int line) {
         int start = getLineStart(line);
         int end = getLineEnd(line);
         int dir = getParagraphDirection(line);
@@ -995,8 +1032,9 @@ public abstract class Layout {
      * Get the leftmost position that should be exposed for horizontal
      * scrolling on the specified line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.024 -0500", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "E620055286D6375EB43D2B6D4A244CA1")
-    public float getLineLeft(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.351 -0500", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "E620055286D6375EB43D2B6D4A244CA1")
+    
+public float getLineLeft(int line) {
         int dir = getParagraphDirection(line);
         Alignment align = getParagraphAlignment(line);
 
@@ -1027,8 +1065,9 @@ public abstract class Layout {
      * Get the rightmost position that should be exposed for horizontal
      * scrolling on the specified line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.025 -0500", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "46B4D0C776DD5C5CEB17F101A7835895")
-    public float getLineRight(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.354 -0500", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "46B4D0C776DD5C5CEB17F101A7835895")
+    
+public float getLineRight(int line) {
         int dir = getParagraphDirection(line);
         Alignment align = getParagraphAlignment(line);
 
@@ -1059,8 +1098,9 @@ public abstract class Layout {
      * Gets the unsigned horizontal extent of the specified line, including
      * leading margin indent, but excluding trailing whitespace.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.026 -0500", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "B119E3440FEDD3D9F499A55C08208B73")
-    public float getLineMax(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.357 -0500", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "B119E3440FEDD3D9F499A55C08208B73")
+    
+public float getLineMax(int line) {
         float margin = getParagraphLeadingMargin(line);
         float signedExtent = getLineExtent(line, false);
         return margin + signedExtent >= 0 ? signedExtent : -signedExtent;
@@ -1070,8 +1110,9 @@ public abstract class Layout {
      * Gets the unsigned horizontal extent of the specified line, including
      * leading margin indent and trailing whitespace.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.026 -0500", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "0F4F8FF2C0501E3545D1A964E3770028")
-    public float getLineWidth(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.359 -0500", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "0F4F8FF2C0501E3545D1A964E3770028")
+    
+public float getLineWidth(int line) {
         float margin = getParagraphLeadingMargin(line);
         float signedExtent = getLineExtent(line, true);
         return margin + signedExtent >= 0 ? signedExtent : -signedExtent;
@@ -1084,8 +1125,9 @@ public abstract class Layout {
      * @param full whether to include trailing whitespace
      * @return the extent of the line
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.027 -0500", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "BCB47313407AEFF254651F95089AA8F1")
-    private float getLineExtent(int line, boolean full) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.363 -0500", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "BCB47313407AEFF254651F95089AA8F1")
+    
+private float getLineExtent(int line, boolean full) {
         int start = getLineStart(line);
         int end = full ? getLineEnd(line) : getLineVisibleEnd(line);
 
@@ -1121,8 +1163,9 @@ public abstract class Layout {
      * @param full whether to include trailing whitespace
      * @return the extent of the text on this line
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.028 -0500", hash_original_method = "8D693BD7DA670D75D51405BA4AD1D35A", hash_generated_method = "F33F6403EEB579C79AD8C889D277F017")
-    private float getLineExtent(int line, TabStops tabStops, boolean full) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.365 -0500", hash_original_method = "8D693BD7DA670D75D51405BA4AD1D35A", hash_generated_method = "F33F6403EEB579C79AD8C889D277F017")
+    
+private float getLineExtent(int line, TabStops tabStops, boolean full) {
         int start = getLineStart(line);
         int end = full ? getLineEnd(line) : getLineVisibleEnd(line);
         boolean hasTabsOrEmoji = getLineContainsTab(line);
@@ -1142,8 +1185,9 @@ public abstract class Layout {
      * below the bottom of the text, you get the last line.
      */
     // FIXME: It may be faster to do a linear search for layouts without many lines.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.029 -0500", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "03B80EC8F72E3FD463EC8F7A28676827")
-    public int getLineForVertical(int vertical) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.368 -0500", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "03B80EC8F72E3FD463EC8F7A28676827")
+    
+public int getLineForVertical(int vertical) {
         int high = getLineCount(), low = -1, guess;
 
         while (high - low > 1) {
@@ -1166,8 +1210,9 @@ public abstract class Layout {
      * If you ask for a position before 0, you get 0; if you ask for a position
      * beyond the end of the text, you get the last line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.030 -0500", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "675029A7C11075C6493BDAB680B9A9A1")
-    public int getLineForOffset(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.371 -0500", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "675029A7C11075C6493BDAB680B9A9A1")
+    
+public int getLineForOffset(int offset) {
         int high = getLineCount(), low = -1, guess;
 
         while (high - low > 1) {
@@ -1189,8 +1234,9 @@ public abstract class Layout {
      * Get the character offset on the specified line whose position is
      * closest to the specified horizontal position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.031 -0500", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "2E4CD0C95026F5FA47AD3EC34C1D28F1")
-    public int getOffsetForHorizontal(int line, float horiz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.374 -0500", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "2E4CD0C95026F5FA47AD3EC34C1D28F1")
+    
+public int getOffsetForHorizontal(int line, float horiz) {
         int max = getLineEnd(line) - 1;
         int min = getLineStart(line);
         Directions dirs = getLineDirections(line);
@@ -1265,8 +1311,9 @@ public abstract class Layout {
     /**
      * Return the text offset after the last character on the specified line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.032 -0500", hash_original_method = "AEF50F2FA9A7358F560FC7521C77962F", hash_generated_method = "22CFA665CDFB6F4B3B14333123EEF8CC")
-    public final int getLineEnd(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.378 -0500", hash_original_method = "AEF50F2FA9A7358F560FC7521C77962F", hash_generated_method = "22CFA665CDFB6F4B3B14333123EEF8CC")
+    
+public final int getLineEnd(int line) {
         return getLineStart(line + 1);
     }
 
@@ -1274,13 +1321,15 @@ public abstract class Layout {
      * Return the text offset after the last visible character (so whitespace
      * is not counted) on the specified line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.033 -0500", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "02BF3C4D49F3653C5D7AC1B51F0F0C1F")
-    public int getLineVisibleEnd(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.380 -0500", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "02BF3C4D49F3653C5D7AC1B51F0F0C1F")
+    
+public int getLineVisibleEnd(int line) {
         return getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.034 -0500", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "5F3E6CE517AE2C62E59DF75D0E1FEAB0")
-    private int getLineVisibleEnd(int line, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.383 -0500", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "5F3E6CE517AE2C62E59DF75D0E1FEAB0")
+    
+private int getLineVisibleEnd(int line, int start, int end) {
         CharSequence text = mText;
         char ch;
         if (line == getLineCount() - 1) {
@@ -1306,27 +1355,30 @@ public abstract class Layout {
     
     static class TabStops {
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.055 -0500", hash_original_method = "770DB8A4DEEA87A4BD324D7E61285BEE", hash_generated_method = "FB23D16440FEC713311FAF8CB6A09A6C")
-        public static float nextDefaultStop(float h, int inc) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.446 -0500", hash_original_method = "770DB8A4DEEA87A4BD324D7E61285BEE", hash_generated_method = "FB23D16440FEC713311FAF8CB6A09A6C")
+        
+public static float nextDefaultStop(float h, int inc) {
             return ((int) ((h + inc) / inc)) * inc;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.050 -0500", hash_original_field = "C19ACF2F944D58CFDC4B4490897545C7", hash_generated_field = "8DF1795EE4BFA46EFF29A588C85F9451")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.430 -0500", hash_original_field = "C19ACF2F944D58CFDC4B4490897545C7", hash_generated_field = "8DF1795EE4BFA46EFF29A588C85F9451")
 
         private int[] mStops;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.051 -0500", hash_original_field = "4F74EFD7CA3DAB233FA7392B3C212B4C", hash_generated_field = "2A878E7FB3BADF740089FE25D0D2CFB0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.433 -0500", hash_original_field = "4F74EFD7CA3DAB233FA7392B3C212B4C", hash_generated_field = "2A878E7FB3BADF740089FE25D0D2CFB0")
 
         private int mNumStops;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.052 -0500", hash_original_field = "4546209B3D6906AA48E5E5DB9F677434", hash_generated_field = "1B34C3EF06331C9557133D8E11D29298")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.435 -0500", hash_original_field = "4546209B3D6906AA48E5E5DB9F677434", hash_generated_field = "1B34C3EF06331C9557133D8E11D29298")
 
         private int mIncrement;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.052 -0500", hash_original_method = "56D1FFBFF7D6B6649609A0E9FF6888AB", hash_generated_method = "56D1FFBFF7D6B6649609A0E9FF6888AB")
-        TabStops(int increment, Object[] spans) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.438 -0500", hash_original_method = "56D1FFBFF7D6B6649609A0E9FF6888AB", hash_generated_method = "56D1FFBFF7D6B6649609A0E9FF6888AB")
+        
+TabStops(int increment, Object[] spans) {
             reset(increment, spans);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.053 -0500", hash_original_method = "12BC3A9AA4E5F32DB7C736F6D72E4602", hash_generated_method = "12BC3A9AA4E5F32DB7C736F6D72E4602")
-        void reset(int increment, Object[] spans) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.441 -0500", hash_original_method = "12BC3A9AA4E5F32DB7C736F6D72E4602", hash_generated_method = "12BC3A9AA4E5F32DB7C736F6D72E4602")
+        
+void reset(int increment, Object[] spans) {
             this.mIncrement = increment;
 
             int ns = 0;
@@ -1356,8 +1408,9 @@ public abstract class Layout {
             this.mNumStops = ns;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.054 -0500", hash_original_method = "A46080BC8F3B4D3099E262DAA9B4728B", hash_generated_method = "A46080BC8F3B4D3099E262DAA9B4728B")
-        float nextTab(float h) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.443 -0500", hash_original_method = "A46080BC8F3B4D3099E262DAA9B4728B", hash_generated_method = "A46080BC8F3B4D3099E262DAA9B4728B")
+        
+float nextTab(float h) {
             int ns = this.mNumStops;
             if (ns > 0) {
                 int[] stops = this.mStops;
@@ -1377,7 +1430,7 @@ public abstract class Layout {
 
     
     public static class Directions {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:13.721 -0500", hash_original_field = "75E76BC0D205B7AB08D04B9BD6A8D5F6", hash_generated_field = "34A5B6DB41500E828BF17A544F4CA0A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.462 -0500", hash_original_field = "75E76BC0D205B7AB08D04B9BD6A8D5F6", hash_generated_field = "34A5B6DB41500E828BF17A544F4CA0A5")
 
         // Runs are pairs of ints listed in visual order, starting from the
         // leading margin.  The first int of each pair is the offset from
@@ -1390,8 +1443,9 @@ public abstract class Layout {
         // DIR_RTL_FLAG, if set then the direction is rtl.
 
         /* package */ int[] mDirections;
-        /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.062 -0500", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "DA94802578AA1A107A88665DAAC4811A")
-        Directions(int[] dirs) {
+        /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.477 -0500", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "DA94802578AA1A107A88665DAAC4811A")
+        
+Directions(int[] dirs) {
             mDirections = dirs;
         }
 
@@ -1401,22 +1455,24 @@ public abstract class Layout {
 
     
     static class Ellipsizer implements CharSequence, GetChars {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.066 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.486 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
  CharSequence mText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.066 -0500", hash_original_field = "99107F82B615317EF9A2721652F6B828", hash_generated_field = "99107F82B615317EF9A2721652F6B828")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.489 -0500", hash_original_field = "99107F82B615317EF9A2721652F6B828", hash_generated_field = "99107F82B615317EF9A2721652F6B828")
  Layout mLayout;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.067 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "AF6410B200BC05DCA2CF0BE65165448A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.491 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "AF6410B200BC05DCA2CF0BE65165448A")
  int mWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.068 -0500", hash_original_field = "1AEFAC3E5E60C9DA6FF9B1E24BF26D63", hash_generated_field = "1AEFAC3E5E60C9DA6FF9B1E24BF26D63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.493 -0500", hash_original_field = "1AEFAC3E5E60C9DA6FF9B1E24BF26D63", hash_generated_field = "1AEFAC3E5E60C9DA6FF9B1E24BF26D63")
  TextUtils.TruncateAt mMethod;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.069 -0500", hash_original_method = "991CD3860414493D5159CDEA8946E94D", hash_generated_method = "F49E454D634A475599C2F7ABD639388A")
-        public Ellipsizer(CharSequence s) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.497 -0500", hash_original_method = "991CD3860414493D5159CDEA8946E94D", hash_generated_method = "F49E454D634A475599C2F7ABD639388A")
+        
+public Ellipsizer(CharSequence s) {
             mText = s;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.070 -0500", hash_original_method = "D253D2AD2D0DACD122596323ACBBAF25", hash_generated_method = "D7EB4ED1B40207CFF86F497A7967BA70")
-        public char charAt(int off) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.500 -0500", hash_original_method = "D253D2AD2D0DACD122596323ACBBAF25", hash_generated_method = "D7EB4ED1B40207CFF86F497A7967BA70")
+        
+public char charAt(int off) {
             char[] buf = TextUtils.obtain(1);
             getChars(off, off + 1, buf, 0);
             char ret = buf[0];
@@ -1425,8 +1481,9 @@ public abstract class Layout {
             return ret;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.070 -0500", hash_original_method = "F2DBD2F3D78F3955B1714BB078A793F8", hash_generated_method = "1E0FCCDBAC01D5172AC21CED438CA2E8")
-        public void getChars(int start, int end, char[] dest, int destoff) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.502 -0500", hash_original_method = "F2DBD2F3D78F3955B1714BB078A793F8", hash_generated_method = "1E0FCCDBAC01D5172AC21CED438CA2E8")
+        
+public void getChars(int start, int end, char[] dest, int destoff) {
             int line1 = mLayout.getLineForOffset(start);
             int line2 = mLayout.getLineForOffset(end);
 
@@ -1437,21 +1494,24 @@ public abstract class Layout {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.071 -0500", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "8958BA6171CC7F46E64433775F1B4CBA")
-        public int length() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.505 -0500", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "8958BA6171CC7F46E64433775F1B4CBA")
+        
+public int length() {
             return mText.length();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.072 -0500", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "E0382AAAC4AD6900C61843D9F3FC3F59")
-        public CharSequence subSequence(int start, int end) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.507 -0500", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "E0382AAAC4AD6900C61843D9F3FC3F59")
+        
+public CharSequence subSequence(int start, int end) {
             char[] s = new char[end - start];
             getChars(start, end, s, 0);
             return new String(s);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.073 -0500", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "16E4C4DB57F114FD51428F1C8FA1F678")
-        @Override
-public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.510 -0500", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "16E4C4DB57F114FD51428F1C8FA1F678")
+        
+@Override
+        public String toString() {
             char[] s = new char[length()];
             getChars(0, length(), s, 0);
             return new String(s);
@@ -1463,12 +1523,13 @@ public String toString() {
 
     
     static class SpannedEllipsizer extends Ellipsizer implements Spanned {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.075 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.515 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
 
         private Spanned mSpanned;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.076 -0500", hash_original_method = "F42AC9AEDB79FF2719E5DE12CF0CD85E", hash_generated_method = "14765A4620425108B238A2CBAE3A366C")
-        public SpannedEllipsizer(CharSequence display) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.518 -0500", hash_original_method = "F42AC9AEDB79FF2719E5DE12CF0CD85E", hash_generated_method = "14765A4620425108B238A2CBAE3A366C")
+        
+public SpannedEllipsizer(CharSequence display) {
             super(display);
             mSpanned = (Spanned) display;
         }
@@ -1487,29 +1548,34 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1441501040 =             mSpanned.getSpa
             //return mSpanned.getSpans(start, end, type);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.077 -0500", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "2F1F23BF4970036AFC2624FBD0A76667")
-        public int getSpanStart(Object tag) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.523 -0500", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "2F1F23BF4970036AFC2624FBD0A76667")
+        
+public int getSpanStart(Object tag) {
             return mSpanned.getSpanStart(tag);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.078 -0500", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "352085C78F363920AB38A9623804477C")
-        public int getSpanEnd(Object tag) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.526 -0500", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "352085C78F363920AB38A9623804477C")
+        
+public int getSpanEnd(Object tag) {
             return mSpanned.getSpanEnd(tag);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.079 -0500", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "94AA2E2AFBFE0A83C771FF66CD53D9D5")
-        public int getSpanFlags(Object tag) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.528 -0500", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "94AA2E2AFBFE0A83C771FF66CD53D9D5")
+        
+public int getSpanFlags(Object tag) {
             return mSpanned.getSpanFlags(tag);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.080 -0500", hash_original_method = "AF35DA8DF947D9C1330368703ECE15BE", hash_generated_method = "FF4B8EF383509E38F702AEF611D74B08")
-        public int nextSpanTransition(int start, int limit, Class type) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.531 -0500", hash_original_method = "AF35DA8DF947D9C1330368703ECE15BE", hash_generated_method = "FF4B8EF383509E38F702AEF611D74B08")
+        
+public int nextSpanTransition(int start, int limit, Class type) {
             return mSpanned.nextSpanTransition(start, limit, type);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.081 -0500", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "871FD8E52BD4A31A435C938C76D0A330")
-        @Override
-public CharSequence subSequence(int start, int end) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.534 -0500", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "871FD8E52BD4A31A435C938C76D0A330")
+        
+@Override
+        public CharSequence subSequence(int start, int end) {
             char[] s = new char[end - start];
             getChars(start, end, s, 0);
 
@@ -1534,16 +1600,18 @@ public CharSequence subSequence(int start, int end) {
     /**
      * Return the vertical position of the bottom of the specified line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.035 -0500", hash_original_method = "230C56044F8D52E3D0BA17DE5C72A914", hash_generated_method = "5AA61C33C934D24188B590F9EFA8E350")
-    public final int getLineBottom(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.385 -0500", hash_original_method = "230C56044F8D52E3D0BA17DE5C72A914", hash_generated_method = "5AA61C33C934D24188B590F9EFA8E350")
+    
+public final int getLineBottom(int line) {
         return getLineTop(line + 1);
     }
 
     /**
      * Return the vertical position of the baseline of the specified line.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.035 -0500", hash_original_method = "BC6E93964E3CCD0D48881D9F9ABB9170", hash_generated_method = "E006075DD2B455D8358F062B9DB5CA39")
-    public final int getLineBaseline(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.388 -0500", hash_original_method = "BC6E93964E3CCD0D48881D9F9ABB9170", hash_generated_method = "E006075DD2B455D8358F062B9DB5CA39")
+    
+public final int getLineBaseline(int line) {
         // getLineTop(line+1) == getLineTop(line)
         return getLineTop(line+1) - getLineDescent(line);
     }
@@ -1552,14 +1620,16 @@ public CharSequence subSequence(int start, int end) {
      * Get the ascent of the text on the specified line.
      * The return value is negative to match the Paint.ascent() convention.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.036 -0500", hash_original_method = "577197C969745092B110831C30EF14E9", hash_generated_method = "7AD521E7EB701309FB90AE02B66B8FDC")
-    public final int getLineAscent(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.390 -0500", hash_original_method = "577197C969745092B110831C30EF14E9", hash_generated_method = "7AD521E7EB701309FB90AE02B66B8FDC")
+    
+public final int getLineAscent(int line) {
         // getLineTop(line+1) - getLineDescent(line) == getLineBaseLine(line)
         return getLineTop(line) - (getLineTop(line+1) - getLineDescent(line));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.037 -0500", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "A5B1C788954A6D00176A51427C30F232")
-    public int getOffsetToLeftOf(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.393 -0500", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "A5B1C788954A6D00176A51427C30F232")
+    
+public int getOffsetToLeftOf(int offset) {
         return getOffsetToLeftRightOf(offset, true);
     }
     static {
@@ -1572,13 +1642,15 @@ public CharSequence subSequence(int start, int end) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.038 -0500", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "3A5E3ABAD545AC94C3EBCA81E4FEFA9C")
-    public int getOffsetToRightOf(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.395 -0500", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "3A5E3ABAD545AC94C3EBCA81E4FEFA9C")
+    
+public int getOffsetToRightOf(int offset) {
         return getOffsetToLeftRightOf(offset, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.039 -0500", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "659B0BF074ABD37FCC1298F8FEEACA53")
-    private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.399 -0500", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "659B0BF074ABD37FCC1298F8FEEACA53")
+    
+private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
         int line = getLineForOffset(caret);
         int lineStart = getLineStart(line);
         int lineEnd = getLineEnd(line);
@@ -1630,8 +1702,9 @@ public CharSequence subSequence(int start, int end) {
         return caret;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.040 -0500", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "89783BD78A44BC3704CB607B032D95DF")
-    private int getOffsetAtStartOf(int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.402 -0500", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "89783BD78A44BC3704CB607B032D95DF")
+    
+private int getOffsetAtStartOf(int offset) {
         // XXX this probably should skip local reorderings and
         // zero-width characters, look at callers
         if (offset == 0)
@@ -1669,8 +1742,9 @@ public CharSequence subSequence(int start, int end) {
      * but can be multiple discontinuous lines in text with multiple
      * directionalities.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.041 -0500", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "1FA24D84E3B80DB4D7943082439729D7")
-    public void getCursorPath(int point, Path dest,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.406 -0500", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "1FA24D84E3B80DB4D7943082439729D7")
+    
+public void getCursorPath(int point, Path dest,
                               CharSequence editingBuffer) {
         dest.reset();
 
@@ -1744,8 +1818,9 @@ public CharSequence subSequence(int start, int end) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.042 -0500", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "15F61C9F2541D0CC581984C3AE701AF7")
-    private void addSelection(int line, int start, int end,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.409 -0500", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "15F61C9F2541D0CC581984C3AE701AF7")
+    
+private void addSelection(int line, int start, int end,
                               int top, int bottom, Path dest) {
         int linestart = getLineStart(line);
         int lineend = getLineEnd(line);
@@ -1784,8 +1859,9 @@ public CharSequence subSequence(int start, int end) {
      * or a potentially discontinuous set of rectangles.  If the start
      * and end are the same, the returned path is empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.044 -0500", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "C2ECEA2506433BADE7235E6563771D35")
-    public void getSelectionPath(int start, int end, Path dest) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.413 -0500", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "C2ECEA2506433BADE7235E6563771D35")
+    
+public void getSelectionPath(int start, int end, Path dest) {
         dest.reset();
 
         if (start == end)
@@ -1841,8 +1917,9 @@ public CharSequence subSequence(int start, int end) {
      * Get the alignment of the specified paragraph, taking into account
      * markup attached to it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.045 -0500", hash_original_method = "8E26BC9825AB85694FDEA00F755B3420", hash_generated_method = "B135437DED555C9500A6335F89E72495")
-    public final Alignment getParagraphAlignment(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.415 -0500", hash_original_method = "8E26BC9825AB85694FDEA00F755B3420", hash_generated_method = "B135437DED555C9500A6335F89E72495")
+    
+public final Alignment getParagraphAlignment(int line) {
         Alignment align = mAlignment;
 
         if (mSpannedText) {
@@ -1863,8 +1940,9 @@ public CharSequence subSequence(int start, int end) {
     /**
      * Get the left edge of the specified paragraph, inset by left margins.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.045 -0500", hash_original_method = "D8249C79FD486A8037899C5A02304321", hash_generated_method = "DD14FCDD99E2D75016AA9A63367F42E2")
-    public final int getParagraphLeft(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.418 -0500", hash_original_method = "D8249C79FD486A8037899C5A02304321", hash_generated_method = "DD14FCDD99E2D75016AA9A63367F42E2")
+    
+public final int getParagraphLeft(int line) {
         int left = 0;
         int dir = getParagraphDirection(line);
         if (dir == DIR_RIGHT_TO_LEFT || !mSpannedText) {
@@ -1876,8 +1954,9 @@ public CharSequence subSequence(int start, int end) {
     /**
      * Get the right edge of the specified paragraph, inset by right margins.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.046 -0500", hash_original_method = "4AFE65CA85EFF9BA5DD1726E8E021AC9", hash_generated_method = "FE964169DB4009211AF47BA549E9B1DB")
-    public final int getParagraphRight(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.421 -0500", hash_original_method = "4AFE65CA85EFF9BA5DD1726E8E021AC9", hash_generated_method = "FE964169DB4009211AF47BA549E9B1DB")
+    
+public final int getParagraphRight(int line) {
         int right = mWidth;
         int dir = getParagraphDirection(line);
         if (dir == DIR_LEFT_TO_RIGHT || !mSpannedText) {
@@ -1892,8 +1971,9 @@ public CharSequence subSequence(int start, int end) {
      * @param line the line index
      * @return the leading margin of this line
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.047 -0500", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "F95AED36160F907B4EDB633E2CBDBB7A")
-    private int getParagraphLeadingMargin(int line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.424 -0500", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "F95AED36160F907B4EDB633E2CBDBB7A")
+    
+private int getParagraphLeadingMargin(int line) {
         if (!mSpannedText) {
             return 0;
         }
@@ -1929,13 +2009,15 @@ public CharSequence subSequence(int start, int end) {
         return margin;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.058 -0500", hash_original_method = "CAFF1C73D2C9EA6C410B2B2D519C8AC7", hash_generated_method = "34CD290405260303BC9C44D5C42674E2")
-    protected final boolean isSpanned() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.454 -0500", hash_original_method = "CAFF1C73D2C9EA6C410B2B2D519C8AC7", hash_generated_method = "34CD290405260303BC9C44D5C42674E2")
+    
+protected final boolean isSpanned() {
         return mSpannedText;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.060 -0500", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "E64D9B7BB3ABFE3B0B5F64655A11DA46")
-    private void ellipsize(int start, int end, int line,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.459 -0500", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "E64D9B7BB3ABFE3B0B5F64655A11DA46")
+    
+private void ellipsize(int start, int end, int line,
                            char[] dest, int destoff) {
         int ellipsisCount = getEllipsisCount(line);
 
@@ -1968,14 +2050,16 @@ public CharSequence subSequence(int start, int end) {
      * relative to the start of the line.  (So 0 if the beginning of the
      * line is ellipsized, not getLineStart().)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.063 -0500", hash_original_method = "152FA8D0FCA56A1E986B9CFF812EF658", hash_generated_method = "730B30A4CE2FEF465DFB3BD4FAA541AE")
-    public abstract int getEllipsisStart(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.481 -0500", hash_original_method = "152FA8D0FCA56A1E986B9CFF812EF658", hash_generated_method = "730B30A4CE2FEF465DFB3BD4FAA541AE")
+    
+public abstract int getEllipsisStart(int line);
 
     /**
      * Returns the number of characters to be ellipsized away, or 0 if
      * no ellipsis is to take place.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.064 -0500", hash_original_method = "8B8817BB2BCF9519A11FE01870A20CF8", hash_generated_method = "58CE8DA2B014BCFCBD3C293CB5068B49")
-    public abstract int getEllipsisCount(int line);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.483 -0500", hash_original_method = "8B8817BB2BCF9519A11FE01870A20CF8", hash_generated_method = "58CE8DA2B014BCFCBD3C293CB5068B49")
+    
+public abstract int getEllipsisCount(int line);
 }
 

@@ -84,8 +84,9 @@ import java.util.Hashtable;
 
 class ListMap {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.653 -0500", hash_original_method = "432E67B4E78CD4BF646DB4DECA89550C", hash_generated_method = "641992C365D9538BCC35E3D72A986433")
-    static private void initializeListMap() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.100 -0500", hash_original_method = "432E67B4E78CD4BF646DB4DECA89550C", hash_generated_method = "641992C365D9538BCC35E3D72A986433")
+    
+static private void initializeListMap() {
         /*
          * Build a table mapping between objects that have a list form and the
          * class of such objects.
@@ -168,8 +169,9 @@ class ListMap {
     /**
      * return true if this has an associated list object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.654 -0500", hash_original_method = "C0BF7A54D71A4DAEEC772A3C3067C193", hash_generated_method = "F1B883FF392B1F42E1D10C00B65D9580")
-    static protected boolean hasList(SIPHeader sipHeader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.103 -0500", hash_original_method = "C0BF7A54D71A4DAEEC772A3C3067C193", hash_generated_method = "F1B883FF392B1F42E1D10C00B65D9580")
+    
+static protected boolean hasList(SIPHeader sipHeader) {
         if (sipHeader instanceof SIPHeaderList)
             return false;
         else {
@@ -181,8 +183,9 @@ class ListMap {
     /**
      * Return true if this has an associated list object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.655 -0500", hash_original_method = "B0E12E7D32AA325023C77D5BAE46A99F", hash_generated_method = "46AAB543916B79A7A87F80E188ACB237")
-    static protected boolean hasList(Class<?> sipHdrClass) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.105 -0500", hash_original_method = "B0E12E7D32AA325023C77D5BAE46A99F", hash_generated_method = "46AAB543916B79A7A87F80E188ACB237")
+    
+static protected boolean hasList(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
         return headerListTable.get(sipHdrClass) != null;
@@ -191,8 +194,9 @@ class ListMap {
     /**
      * Get the associated list class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.656 -0500", hash_original_method = "1E10617861814F17C4CB7AD5EF34291D", hash_generated_method = "C3459A907149B3CB6C44B5BF0F15D406")
-    static protected Class<?> getListClass(Class<?> sipHdrClass) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.109 -0500", hash_original_method = "1E10617861814F17C4CB7AD5EF34291D", hash_generated_method = "C3459A907149B3CB6C44B5BF0F15D406")
+    
+static protected Class<?> getListClass(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
         return (Class<?>) headerListTable.get(sipHdrClass);
@@ -201,9 +205,10 @@ class ListMap {
     /**
      * Return a list object for this header if it has an associated list object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.657 -0500", hash_original_method = "4F2A6D49F6C7C93E5FFFA8D8E9F78F48", hash_generated_method = "10A047F8AE9B9218BF8786EE4DDA5BBB")
-    @SuppressWarnings("unchecked")
-static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.112 -0500", hash_original_method = "4F2A6D49F6C7C93E5FFFA8D8E9F78F48", hash_generated_method = "10A047F8AE9B9218BF8786EE4DDA5BBB")
+    
+@SuppressWarnings("unchecked")
+    static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
         if (!initialized)
             initializeListMap();
         try {
@@ -219,7 +224,7 @@ static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
         }
         return null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.651 -0500", hash_original_field = "6AB4F5875830EF73416723C09E17F867", hash_generated_field = "647D4299D29E4453A0CFEF9913ED3729")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.093 -0500", hash_original_field = "6AB4F5875830EF73416723C09E17F867", hash_generated_field = "647D4299D29E4453A0CFEF9913ED3729")
 
     // not (to catch adding of the non-list form when a list exists.)
     // Entries in this table allow you to look up the list form of a header
@@ -227,7 +232,7 @@ static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
     // typed collections which would render such a list obsolete. However,
     // we are not using java 5.
     private static Hashtable<Class<?>,Class<?>> headerListTable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.652 -0500", hash_original_field = "6FBE6536E7CE204510C4979FD7989151", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.096 -0500", hash_original_field = "6FBE6536E7CE204510C4979FD7989151", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
 
 
     private static boolean initialized;

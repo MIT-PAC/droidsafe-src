@@ -21,8 +21,9 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
 
 
     /** Test program */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.230 -0500", hash_original_method = "F91DB731CF24DA9E3E2F5684453D2459", hash_generated_method = "3AB5FDE092DACA9A0F1C16F409861211")
-    public static void main(String args[]) throws ParseException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.844 -0500", hash_original_method = "F91DB731CF24DA9E3E2F5684453D2459", hash_generated_method = "3AB5FDE092DACA9A0F1C16F409861211")
+    
+public static void main(String args[]) throws ParseException
     {
         String rou[] = {
 
@@ -39,21 +40,24 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.226 -0500", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "E5D6672E8CB56B53A9E18D6EC9D94BB9")
-    public PrivacyParser(String privacyType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.836 -0500", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "E5D6672E8CB56B53A9E18D6EC9D94BB9")
+    
+public PrivacyParser(String privacyType) {
 
         super(privacyType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.227 -0500", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "DFEC70CFD3F07B0233C8601E873BA0C2")
-    protected PrivacyParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.839 -0500", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "DFEC70CFD3F07B0233C8601E873BA0C2")
+    
+protected PrivacyParser(Lexer lexer) {
 
         super(lexer);
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.228 -0500", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "8D3FCDE70624A88DB35C97E8715F8F66")
-    public SIPHeader parse() throws ParseException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.841 -0500", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "8D3FCDE70624A88DB35C97E8715F8F66")
+    
+public SIPHeader parse() throws ParseException
     {
         if (debug)
             dbg_enter("PrivacyParser.parse");

@@ -12,23 +12,23 @@ import java.util.EventObject;
 
 
 public class PropertyChangeEvent extends EventObject {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.507 -0500", hash_original_field = "B02A1F0D1203DE34BB9BF2014933A140", hash_generated_field = "E6562888893882FF6552413C35A8C7AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.228 -0500", hash_original_field = "B02A1F0D1203DE34BB9BF2014933A140", hash_generated_field = "E6562888893882FF6552413C35A8C7AF")
 
 
     private static final long serialVersionUID = 7042693688939648123L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.508 -0500", hash_original_field = "F6E23082B68F75302CA6A0F5F57467FF", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.230 -0500", hash_original_field = "F6E23082B68F75302CA6A0F5F57467FF", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
 
 
     String propertyName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.508 -0500", hash_original_field = "960A7902634592C07CD47A2F225C6AD8", hash_generated_field = "960A7902634592C07CD47A2F225C6AD8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.232 -0500", hash_original_field = "960A7902634592C07CD47A2F225C6AD8", hash_generated_field = "960A7902634592C07CD47A2F225C6AD8")
 
 
     Object oldValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.509 -0500", hash_original_field = "B1A1DE6E10506FDF1F20E177533AEE3E", hash_generated_field = "B1A1DE6E10506FDF1F20E177533AEE3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.234 -0500", hash_original_field = "B1A1DE6E10506FDF1F20E177533AEE3E", hash_generated_field = "B1A1DE6E10506FDF1F20E177533AEE3E")
 
 
     Object newValue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.510 -0500", hash_original_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88", hash_generated_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.237 -0500", hash_original_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88", hash_generated_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88")
 
 
     Object propagationId;
@@ -50,8 +50,9 @@ public class PropertyChangeEvent extends EventObject {
      *            <code>propertyName</code> is <code>null</code> or the new
      *            value is unknown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.511 -0500", hash_original_method = "6BC761D29E61B2DA2BCFDF9B41EBE38E", hash_generated_method = "13D6616BBC8230FD1098109DD2F300ED")
-    public PropertyChangeEvent(Object source, String propertyName,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.240 -0500", hash_original_method = "6BC761D29E61B2DA2BCFDF9B41EBE38E", hash_generated_method = "13D6616BBC8230FD1098109DD2F300ED")
+    
+public PropertyChangeEvent(Object source, String propertyName,
             Object oldValue, Object newValue) {
         super(source);
 
@@ -66,8 +67,9 @@ public class PropertyChangeEvent extends EventObject {
      *
      * @return the name of the property that has changed, or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.512 -0500", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "79D137ECBA6D10D7E0F2DC15CD7EDB65")
-    public String getPropertyName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.242 -0500", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "79D137ECBA6D10D7E0F2DC15CD7EDB65")
+    
+public String getPropertyName() {
         return propertyName;
     }
 
@@ -76,8 +78,9 @@ public class PropertyChangeEvent extends EventObject {
      *
      * @see #getPropagationId()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.513 -0500", hash_original_method = "570268AC213ADE0DD8E583FF2E0DF2D9", hash_generated_method = "67506D72A9ECA48F6877280A845E3FE9")
-    public void setPropagationId(Object propagationId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.244 -0500", hash_original_method = "570268AC213ADE0DD8E583FF2E0DF2D9", hash_generated_method = "67506D72A9ECA48F6877280A845E3FE9")
+    
+public void setPropagationId(Object propagationId) {
         this.propagationId = propagationId;
     }
 
@@ -89,8 +92,9 @@ public class PropertyChangeEvent extends EventObject {
      *
      * @return the propagationId object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.513 -0500", hash_original_method = "B4EBBB8113E4594B079A51C3F9A7BBBF", hash_generated_method = "7D15BB631FB5997900F66BD721659878")
-    public Object getPropagationId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.247 -0500", hash_original_method = "B4EBBB8113E4594B079A51C3F9A7BBBF", hash_generated_method = "7D15BB631FB5997900F66BD721659878")
+    
+public Object getPropagationId() {
         return propagationId;
     }
 
@@ -100,8 +104,9 @@ public class PropertyChangeEvent extends EventObject {
      *
      * @return the old property value or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.514 -0500", hash_original_method = "F6F859A65246176318D5EFB34CCA1A19", hash_generated_method = "7AFA9801F3D766F442A5CBEB2FBAF866")
-    public Object getOldValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.250 -0500", hash_original_method = "F6F859A65246176318D5EFB34CCA1A19", hash_generated_method = "7AFA9801F3D766F442A5CBEB2FBAF866")
+    
+public Object getOldValue() {
         return oldValue;
     }
 
@@ -111,8 +116,9 @@ public class PropertyChangeEvent extends EventObject {
      *
      * @return the old property value or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.515 -0500", hash_original_method = "623578C48E0252EB5211DBCA0AAE39FA", hash_generated_method = "CFD9A4C92E90EFFA42437FFBAECBE674")
-    public Object getNewValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.252 -0500", hash_original_method = "623578C48E0252EB5211DBCA0AAE39FA", hash_generated_method = "CFD9A4C92E90EFFA42437FFBAECBE674")
+    
+public Object getNewValue() {
         return newValue;
     }
 }

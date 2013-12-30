@@ -19,8 +19,9 @@ public class RFC2109SpecFactory implements CookieSpecFactory {
         //Synthesized constructor
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.883 -0500", hash_original_method = "319F84F2475AFEEE24E68A878D2B0074", hash_generated_method = "70DCD4905B5FB795B8518E403DAA5BC0")
-    public CookieSpec newInstance(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.796 -0500", hash_original_method = "319F84F2475AFEEE24E68A878D2B0074", hash_generated_method = "70DCD4905B5FB795B8518E403DAA5BC0")
+    
+public CookieSpec newInstance(final HttpParams params) {
         if (params != null) {
             return new RFC2109Spec(
                     (String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS), 

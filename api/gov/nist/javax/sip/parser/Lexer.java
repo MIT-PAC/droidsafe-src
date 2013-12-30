@@ -99,8 +99,9 @@ public class Lexer extends LexerCore {
      * @return the header name (stuff before the :) bug fix submitted by
      *         zvali@dev.java.net
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.864 -0500", hash_original_method = "C8B6FD99710F2449ED076653B227A774", hash_generated_method = "27808AE9787F598DA386D98DA07F8065")
-    public static String getHeaderName(String line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.281 -0500", hash_original_method = "C8B6FD99710F2449ED076653B227A774", hash_generated_method = "27808AE9787F598DA386D98DA07F8065")
+    
+public static String getHeaderName(String line) {
         if (line == null)
             return null;
         String headerName = null;
@@ -120,8 +121,9 @@ public class Lexer extends LexerCore {
      *
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.866 -0500", hash_original_method = "9DC8857911D30E58533B35728C0E3879", hash_generated_method = "93373B7369FD85B2C55A89B22F981DB3")
-    public static String getHeaderValue(String line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.287 -0500", hash_original_method = "9DC8857911D30E58533B35728C0E3879", hash_generated_method = "93373B7369FD85B2C55A89B22F981DB3")
+    
+public static String getHeaderValue(String line) {
         if (line == null)
             return null;
         String headerValue = null;
@@ -134,14 +136,16 @@ public class Lexer extends LexerCore {
         return headerValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.865 -0500", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "A8BBB9F7320EDB7068654AF3283A3A3A")
-    public Lexer(String lexerName, String buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.284 -0500", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "A8BBB9F7320EDB7068654AF3283A3A3A")
+    
+public Lexer(String lexerName, String buffer) {
         super(lexerName, buffer);
         this.selectLexer(lexerName);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.869 -0500", hash_original_method = "524EFDA3A3BEC88BDD052CB8EB3761F7", hash_generated_method = "D872D1FA34BDE72B5CE94617318A692A")
-    public void selectLexer(String lexerName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.294 -0500", hash_original_method = "524EFDA3A3BEC88BDD052CB8EB3761F7", hash_generated_method = "D872D1FA34BDE72B5CE94617318A692A")
+    
+public void selectLexer(String lexerName) {
         synchronized (lexerTables) {
             // Synchronization Bug fix by Robert Rosen.
             currentLexer = (Hashtable) lexerTables.get(lexerName);

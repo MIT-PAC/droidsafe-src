@@ -35,9 +35,10 @@ public class JarHandler extends URLStreamHandler {
      *             thrown if an IO error occurs when this method tries to
      *             establish connection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.259 -0500", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "78BB64D9372F21C949C4029C556A8131")
-    @Override
-protected URLConnection openConnection(URL u) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.363 -0500", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "78BB64D9372F21C949C4029C556A8131")
+    
+@Override
+    protected URLConnection openConnection(URL u) throws IOException {
         return new JarURLConnectionImpl(u);
     }
 
@@ -52,9 +53,10 @@ protected URLConnection openConnection(URL u) throws IOException {
      * @param limit
      *            int the location where parsing ends
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.260 -0500", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "CF416AC81ED16574D0269088E2D4D7CA")
-    @Override
-protected void parseURL(URL url, String spec, int start, int limit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.366 -0500", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "CF416AC81ED16574D0269088E2D4D7CA")
+    
+@Override
+    protected void parseURL(URL url, String spec, int start, int limit) {
         String file = url.getFile();
         if (file == null) {
             file = "";
@@ -93,9 +95,10 @@ protected void parseURL(URL url, String spec, int start, int limit) {
      * @param url
      *            a URL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.261 -0500", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "14C560568D73D889123A33232020A01A")
-    @Override
-protected String toExternalForm(URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.369 -0500", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "14C560568D73D889123A33232020A01A")
+    
+@Override
+    protected String toExternalForm(URL url) {
         StringBuilder sb = new StringBuilder();
         sb.append("jar:");
         sb.append(url.getFile());

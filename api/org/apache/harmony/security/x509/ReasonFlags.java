@@ -16,7 +16,7 @@ import org.apache.harmony.security.asn1.BerOutputStream;
 
 
 public final class ReasonFlags {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.469 -0500", hash_original_field = "988CE29797D9C71ABAADD708314B7A21", hash_generated_field = "348B9970CC87333497E0122E357CC7BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.528 -0500", hash_original_field = "988CE29797D9C71ABAADD708314B7A21", hash_generated_field = "348B9970CC87333497E0122E357CC7BA")
 
     static final String[] REASONS = {
         "unused",
@@ -33,31 +33,35 @@ public final class ReasonFlags {
 
     public static final ASN1BitString ASN1 =
                             new ASN1BitString.ASN1NamedBitList(REASONS.length) {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.473 -0500", hash_original_method = "31573B2F4CCD62BF50FDA97899BAB266", hash_generated_method = "5FABEF048C285457771625592165A3A0")
-        public Object getDecodedObject(BerInputStream in) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.538 -0500", hash_original_method = "31573B2F4CCD62BF50FDA97899BAB266", hash_generated_method = "5FABEF048C285457771625592165A3A0")
+        
+public Object getDecodedObject(BerInputStream in) throws IOException {
             return new ReasonFlags((boolean[]) super.getDecodedObject(in));
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.474 -0500", hash_original_method = "7CAEE2990EB6DF6257751BA848966F42", hash_generated_method = "52E4D1960D48A19C26A58844945CA40F")
-        public void setEncodingContent(BerOutputStream out) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.541 -0500", hash_original_method = "7CAEE2990EB6DF6257751BA848966F42", hash_generated_method = "52E4D1960D48A19C26A58844945CA40F")
+        
+public void setEncodingContent(BerOutputStream out) {
             out.content = ((ReasonFlags) out.content).flags;
             super.setEncodingContent(out);
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.470 -0500", hash_original_field = "061396171076FD7FDA3FE013F4084C7F", hash_generated_field = "EDA6943CEE7FB962748614E813BD6977")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.530 -0500", hash_original_field = "061396171076FD7FDA3FE013F4084C7F", hash_generated_field = "EDA6943CEE7FB962748614E813BD6977")
 
     private  boolean[] flags;
 
     /**
      * Creates the extension object corresponding to the given flags.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.471 -0500", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "E9ED7C304D8EC41D1D7DA7A897DA5FCA")
-    public ReasonFlags(boolean[] flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.532 -0500", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "E9ED7C304D8EC41D1D7DA7A897DA5FCA")
+    
+public ReasonFlags(boolean[] flags) {
         this.flags = flags;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.472 -0500", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "4C84393F712D762C5A5C19DFE9F55A70")
-    public void dumpValue(StringBuilder sb, String prefix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.535 -0500", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "4C84393F712D762C5A5C19DFE9F55A70")
+    
+public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix);
         sb.append("ReasonFlags [\n");
         for (int i=0; i<flags.length; i++) {

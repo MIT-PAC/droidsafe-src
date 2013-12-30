@@ -14,31 +14,35 @@ import org.bouncycastle.util.Arrays;
 
 
 class IntArray {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.332 -0500", hash_original_field = "2D5FF9010CC73184DFBD8E9952524D01", hash_generated_field = "E9EBF884B577D6B8AA0EBD0D214A9975")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.447 -0500", hash_original_field = "2D5FF9010CC73184DFBD8E9952524D01", hash_generated_field = "E9EBF884B577D6B8AA0EBD0D214A9975")
 
 
     private int[] m_ints;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.333 -0500", hash_original_method = "CF92B6C8E56A2FEEE1A27D3C8C98CB3C", hash_generated_method = "40FD795C29B74611AA1748511A6669A8")
-    public IntArray(int intLen)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.451 -0500", hash_original_method = "CF92B6C8E56A2FEEE1A27D3C8C98CB3C", hash_generated_method = "40FD795C29B74611AA1748511A6669A8")
+    
+public IntArray(int intLen)
     {
         m_ints = new int[intLen];
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.334 -0500", hash_original_method = "E4E96F90C2D91DCFC85CADE699127A3A", hash_generated_method = "F65CFC7A98B41805A3B6B88558C3AB75")
-    public IntArray(int[] ints)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.453 -0500", hash_original_method = "E4E96F90C2D91DCFC85CADE699127A3A", hash_generated_method = "F65CFC7A98B41805A3B6B88558C3AB75")
+    
+public IntArray(int[] ints)
     {
         m_ints = ints;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.336 -0500", hash_original_method = "B0FB0977B01B053B445AE366ABB3C3A0", hash_generated_method = "89D8088415FED0A87F64B0C27059E5C7")
-    public IntArray(BigInteger bigInt)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.456 -0500", hash_original_method = "B0FB0977B01B053B445AE366ABB3C3A0", hash_generated_method = "89D8088415FED0A87F64B0C27059E5C7")
+    
+public IntArray(BigInteger bigInt)
     {
         this(bigInt, 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.337 -0500", hash_original_method = "F611B84A6E1A1EF85C1F3F4E5CEA7421", hash_generated_method = "DB2F694148E8746286D3C957CD847F11")
-    public IntArray(BigInteger bigInt, int minIntLen)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.459 -0500", hash_original_method = "F611B84A6E1A1EF85C1F3F4E5CEA7421", hash_generated_method = "DB2F694148E8746286D3C957CD847F11")
+    
+public IntArray(BigInteger bigInt, int minIntLen)
     {
         if (bigInt.signum() == -1)
         {
@@ -106,15 +110,17 @@ class IntArray {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.338 -0500", hash_original_method = "E4246E87B7407E5D0D895B01F5CA5262", hash_generated_method = "808A51291DE6B046B9EF855F10CB472A")
-    public boolean isZero()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.461 -0500", hash_original_method = "E4246E87B7407E5D0D895B01F5CA5262", hash_generated_method = "808A51291DE6B046B9EF855F10CB472A")
+    
+public boolean isZero()
     {
         return m_ints.length == 0
             || (m_ints[0] == 0 && getUsedLength() == 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.339 -0500", hash_original_method = "B507EE9C677C6BEF8443BBEED19F5F42", hash_generated_method = "46B585ACD50E85CBCD9625CF0A705A91")
-    public int getUsedLength()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.464 -0500", hash_original_method = "B507EE9C677C6BEF8443BBEED19F5F42", hash_generated_method = "46B585ACD50E85CBCD9625CF0A705A91")
+    
+public int getUsedLength()
     {
         int highestIntPos = m_ints.length;
 
@@ -144,8 +150,9 @@ class IntArray {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.340 -0500", hash_original_method = "8733B39F158A323B90B7B7708BEF842A", hash_generated_method = "1CD31C2706D28EA73013F3FBDA225707")
-    public int bitLength()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.466 -0500", hash_original_method = "8733B39F158A323B90B7B7708BEF842A", hash_generated_method = "1CD31C2706D28EA73013F3FBDA225707")
+    
+public int bitLength()
     {
         // JDK 1.5: see Integer.numberOfLeadingZeros()
         int intLen = getUsedLength();
@@ -187,8 +194,9 @@ class IntArray {
         return bits;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.341 -0500", hash_original_method = "F4D18BEF0C27A90F867F9F4EB4C5771F", hash_generated_method = "32E1399AD834220FE977FC52F7179924")
-    private int[] resizedInts(int newLen)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.469 -0500", hash_original_method = "F4D18BEF0C27A90F867F9F4EB4C5771F", hash_generated_method = "32E1399AD834220FE977FC52F7179924")
+    
+private int[] resizedInts(int newLen)
     {
         int[] newInts = new int[newLen];
         int oldLen = m_ints.length;
@@ -197,8 +205,9 @@ class IntArray {
         return newInts;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.342 -0500", hash_original_method = "09D09B2288FFFDA0E5E3DFE8BCA7084C", hash_generated_method = "3F9B39E96972EA0B0B99EDD806B67A86")
-    public BigInteger toBigInteger()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.472 -0500", hash_original_method = "09D09B2288FFFDA0E5E3DFE8BCA7084C", hash_generated_method = "3F9B39E96972EA0B0B99EDD806B67A86")
+    
+public BigInteger toBigInteger()
     {
         int usedLen = getUsedLength();
         if (usedLen == 0)
@@ -238,8 +247,9 @@ class IntArray {
         return new BigInteger(1, barr);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.343 -0500", hash_original_method = "EBDDD2C6998D211B0908F9BCC5704DCD", hash_generated_method = "C650A76A3D82EEEE821A4E949260C214")
-    public void shiftLeft()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.475 -0500", hash_original_method = "EBDDD2C6998D211B0908F9BCC5704DCD", hash_generated_method = "C650A76A3D82EEEE821A4E949260C214")
+    
+public void shiftLeft()
     {
         int usedLen = getUsedLength();
         if (usedLen == 0)
@@ -274,8 +284,9 @@ class IntArray {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.344 -0500", hash_original_method = "59BECB0203E4A32DCA173F83ED20FA13", hash_generated_method = "753E5FEB32C0E31D1CFA368BCC957252")
-    public IntArray shiftLeft(int n)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.477 -0500", hash_original_method = "59BECB0203E4A32DCA173F83ED20FA13", hash_generated_method = "753E5FEB32C0E31D1CFA368BCC957252")
+    
+public IntArray shiftLeft(int n)
     {
         int usedLen = getUsedLength();
         if (usedLen == 0)
@@ -307,8 +318,9 @@ class IntArray {
         return new IntArray(newInts);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.345 -0500", hash_original_method = "183D6916993CED67CC764EA8E5C66CEC", hash_generated_method = "2E8BD6A3A717336F8E8111B628AC6676")
-    public void addShifted(IntArray other, int shift)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.480 -0500", hash_original_method = "183D6916993CED67CC764EA8E5C66CEC", hash_generated_method = "2E8BD6A3A717336F8E8111B628AC6676")
+    
+public void addShifted(IntArray other, int shift)
     {
         int usedLenOther = other.getUsedLength();
         int newMinUsedLen = usedLenOther + shift;
@@ -324,14 +336,16 @@ class IntArray {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.345 -0500", hash_original_method = "690E47F400DCE7124DE7B026A4F32194", hash_generated_method = "5B1B4FF93713D1FBDA90FC5F9C9F15D9")
-    public int getLength()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.482 -0500", hash_original_method = "690E47F400DCE7124DE7B026A4F32194", hash_generated_method = "5B1B4FF93713D1FBDA90FC5F9C9F15D9")
+    
+public int getLength()
     {
         return m_ints.length;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.346 -0500", hash_original_method = "FE79684DF1E438A3896471D5404784E8", hash_generated_method = "E85C684376F38525A299804ABDF821C2")
-    public boolean testBit(int n)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.484 -0500", hash_original_method = "FE79684DF1E438A3896471D5404784E8", hash_generated_method = "E85C684376F38525A299804ABDF821C2")
+    
+public boolean testBit(int n)
     {
         // theInt = n / 32
         int theInt = n >> 5;
@@ -341,8 +355,9 @@ class IntArray {
         return ((m_ints[theInt] & tester) != 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.347 -0500", hash_original_method = "FC348D5A638DB94C0F8ADD1343AE7EDF", hash_generated_method = "9B7FD36156B58D149457C57271FD50F6")
-    public void flipBit(int n)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.487 -0500", hash_original_method = "FC348D5A638DB94C0F8ADD1343AE7EDF", hash_generated_method = "9B7FD36156B58D149457C57271FD50F6")
+    
+public void flipBit(int n)
     {
         // theInt = n / 32
         int theInt = n >> 5;
@@ -352,8 +367,9 @@ class IntArray {
         m_ints[theInt] ^= flipper;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.348 -0500", hash_original_method = "F9C9D5AAA5BDCC63A2223BBDEFA54345", hash_generated_method = "F3BC07256872DD5610E2D5D2DE8F5807")
-    public void setBit(int n)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.489 -0500", hash_original_method = "F9C9D5AAA5BDCC63A2223BBDEFA54345", hash_generated_method = "F3BC07256872DD5610E2D5D2DE8F5807")
+    
+public void setBit(int n)
     {
         // theInt = n / 32
         int theInt = n >> 5;
@@ -363,8 +379,9 @@ class IntArray {
         m_ints[theInt] |= setter;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.349 -0500", hash_original_method = "DDD6CCDE0A994A74C3AB776F1EAE0C54", hash_generated_method = "0A361E6BC64356670CD4B5D5FB41D290")
-    public IntArray multiply(IntArray other, int m)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.492 -0500", hash_original_method = "DDD6CCDE0A994A74C3AB776F1EAE0C54", hash_generated_method = "0A361E6BC64356670CD4B5D5FB41D290")
+    
+public IntArray multiply(IntArray other, int m)
     {
         // Lenght of c is 2m bits rounded up to the next int (32 bit)
         int t = (m + 31) >> 5;
@@ -420,8 +437,9 @@ class IntArray {
     // }
 
     // TODO note, redPol.length must be 3 for TPB and 5 for PPB
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.350 -0500", hash_original_method = "801A97F7B079DF395A1C84876012A4A0", hash_generated_method = "69064716A86A4786867B4190B3847E9E")
-    public void reduce(int m, int[] redPol)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.494 -0500", hash_original_method = "801A97F7B079DF395A1C84876012A4A0", hash_generated_method = "69064716A86A4786867B4190B3847E9E")
+    
+public void reduce(int m, int[] redPol)
     {
         for (int i = m + m - 2; i >= m; i--)
         {
@@ -440,8 +458,9 @@ class IntArray {
         m_ints = resizedInts((m + 31) >> 5);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.351 -0500", hash_original_method = "D2D9CEFDA97A342DED6902D248733471", hash_generated_method = "581E6965F8ED27AE553812FEB2F8CB1C")
-    public IntArray square(int m)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.497 -0500", hash_original_method = "D2D9CEFDA97A342DED6902D248733471", hash_generated_method = "581E6965F8ED27AE553812FEB2F8CB1C")
+    
+public IntArray square(int m)
     {
         // TODO make the table static final
         final int[] table = { 0x0, 0x1, 0x4, 0x5, 0x10, 0x11, 0x14, 0x15, 0x40,
@@ -482,8 +501,9 @@ class IntArray {
         return c;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.352 -0500", hash_original_method = "B863CB3B654462D1A297BFCA9B6601CD", hash_generated_method = "EFC9F01E650B729DD8A9AED0084DA8BC")
-    public boolean equals(Object o)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.500 -0500", hash_original_method = "B863CB3B654462D1A297BFCA9B6601CD", hash_generated_method = "EFC9F01E650B729DD8A9AED0084DA8BC")
+    
+public boolean equals(Object o)
     {
         if (!(o instanceof IntArray))
         {
@@ -505,8 +525,9 @@ class IntArray {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.353 -0500", hash_original_method = "651D45029664378C68EF3BB76B2C76E2", hash_generated_method = "9DC8867BA4AECD8A7155ABCBC595DC51")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.502 -0500", hash_original_method = "651D45029664378C68EF3BB76B2C76E2", hash_generated_method = "9DC8867BA4AECD8A7155ABCBC595DC51")
+    
+public int hashCode()
     {
         int usedLen = getUsedLength();
         int hash = 1;
@@ -517,14 +538,16 @@ class IntArray {
         return hash;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.353 -0500", hash_original_method = "550C6BAEBE6332C41740A28950586A2C", hash_generated_method = "AC48E4C420D14BC1119FE734B0432642")
-    public Object clone()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.504 -0500", hash_original_method = "550C6BAEBE6332C41740A28950586A2C", hash_generated_method = "AC48E4C420D14BC1119FE734B0432642")
+    
+public Object clone()
     {
         return new IntArray(Arrays.clone(m_ints));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.354 -0500", hash_original_method = "14E8054A89CE6D677D0451C5FF658D29", hash_generated_method = "81839723FA073F18DD07DE5129A4F35C")
-    public String toString()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.507 -0500", hash_original_method = "14E8054A89CE6D677D0451C5FF658D29", hash_generated_method = "81839723FA073F18DD07DE5129A4F35C")
+    
+public String toString()
     {
         int usedLen = getUsedLength();
         if (usedLen == 0)

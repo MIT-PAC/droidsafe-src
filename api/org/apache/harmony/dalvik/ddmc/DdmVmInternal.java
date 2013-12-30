@@ -66,8 +66,9 @@ public class DdmVmInternal {
     }
 
     /* do not instantiate */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.654 -0500", hash_original_method = "D0F76540C42EA165AE45A0473185E42C", hash_generated_method = "ECBD8B9A7C7FA66BB37ACB1437C1F5A1")
-    private DdmVmInternal() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.377 -0500", hash_original_method = "D0F76540C42EA165AE45A0473185E42C", hash_generated_method = "ECBD8B9A7C7FA66BB37ACB1437C1F5A1")
+    
+private DdmVmInternal() {}
 
     
 }

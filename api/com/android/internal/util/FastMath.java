@@ -15,8 +15,9 @@ public class FastMath {
      * thought it may return slightly different results. It does not try to
      * handle (in any meaningful way) NaN or infinities.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.877 -0500", hash_original_method = "E58EA1DFC67544D3C851C7F9CC058E9E", hash_generated_method = "1203240BBD954CF5F9C084F8BB169A2D")
-    public static int round(float x) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.999 -0500", hash_original_method = "E58EA1DFC67544D3C851C7F9CC058E9E", hash_generated_method = "1203240BBD954CF5F9C084F8BB169A2D")
+    
+public static int round(float x) {
         long lx = (long)(x * (65536 * 256f));
         return (int)((lx + 0x800000) >> 24);
     }

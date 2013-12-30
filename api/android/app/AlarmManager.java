@@ -10,34 +10,34 @@ import android.os.RemoteException;
 
 
 public class AlarmManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.101 -0500", hash_original_field = "A79C594EF1F8295CEC2F680A3F012CC9", hash_generated_field = "3BDDF2E6C62B61826F4AFF48F237BDD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.465 -0500", hash_original_field = "A79C594EF1F8295CEC2F680A3F012CC9", hash_generated_field = "3BDDF2E6C62B61826F4AFF48F237BDD3")
 
     public static final int RTC_WAKEUP = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.102 -0500", hash_original_field = "B28688ECBE03F0A42BF545F3C0A6452D", hash_generated_field = "EB67B90A8A2E111C6347420D2B97F28C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.468 -0500", hash_original_field = "B28688ECBE03F0A42BF545F3C0A6452D", hash_generated_field = "EB67B90A8A2E111C6347420D2B97F28C")
 
     public static final int RTC = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.103 -0500", hash_original_field = "76DCE8449C5402A9E93812423EB049EB", hash_generated_field = "ABF765CFDB37414A63F9D9B3EB8070AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.470 -0500", hash_original_field = "76DCE8449C5402A9E93812423EB049EB", hash_generated_field = "ABF765CFDB37414A63F9D9B3EB8070AA")
 
     public static final int ELAPSED_REALTIME_WAKEUP = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.103 -0500", hash_original_field = "FAA07250D70BA1BBE180B4D41DDCF472", hash_generated_field = "CB9D2A7B12A900A079B5C7C73BD1E071")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.472 -0500", hash_original_field = "FAA07250D70BA1BBE180B4D41DDCF472", hash_generated_field = "CB9D2A7B12A900A079B5C7C73BD1E071")
 
     public static final int ELAPSED_REALTIME = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.107 -0500", hash_original_field = "9711BA5DCC6F17A8C82FD1FE97DA019E", hash_generated_field = "BC6DE1F06E7A4A96C50BEC47050378FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.484 -0500", hash_original_field = "9711BA5DCC6F17A8C82FD1FE97DA019E", hash_generated_field = "BC6DE1F06E7A4A96C50BEC47050378FE")
 
     public static final long INTERVAL_FIFTEEN_MINUTES = 15 * 60 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.108 -0500", hash_original_field = "E56FFC2FCBBDCA42B728F66C74BE67C5", hash_generated_field = "D7247C7D04FAD26613BA5A928B7A127F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.486 -0500", hash_original_field = "E56FFC2FCBBDCA42B728F66C74BE67C5", hash_generated_field = "D7247C7D04FAD26613BA5A928B7A127F")
 
     public static final long INTERVAL_HALF_HOUR = 2*INTERVAL_FIFTEEN_MINUTES;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.110 -0500", hash_original_field = "4D2F510611FAF06EFCB154BE0F2AA686", hash_generated_field = "65DF78638E6704F70AB927B27E503A2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.488 -0500", hash_original_field = "4D2F510611FAF06EFCB154BE0F2AA686", hash_generated_field = "65DF78638E6704F70AB927B27E503A2F")
 
     public static final long INTERVAL_HOUR = 2*INTERVAL_HALF_HOUR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.110 -0500", hash_original_field = "DBB54F21F9E1304BD50A11638DB93EB2", hash_generated_field = "4FB20661ECA35BFCFD5B4B24221EA2B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.491 -0500", hash_original_field = "DBB54F21F9E1304BD50A11638DB93EB2", hash_generated_field = "4FB20661ECA35BFCFD5B4B24221EA2B2")
 
     public static final long INTERVAL_HALF_DAY = 12*INTERVAL_HOUR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.111 -0500", hash_original_field = "9DDFDB36DE5A203A8A6213774120E514", hash_generated_field = "4A18EAC313489EC85F334E948E3F7EA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.494 -0500", hash_original_field = "9DDFDB36DE5A203A8A6213774120E514", hash_generated_field = "4A18EAC313489EC85F334E948E3F7EA3")
 
     public static final long INTERVAL_DAY = 2*INTERVAL_HALF_DAY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.104 -0500", hash_original_field = "3F1555D92913CFFB08BED31758021BAE", hash_generated_field = "86B776A6A69718EFA060C569C84D8641")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.475 -0500", hash_original_field = "3F1555D92913CFFB08BED31758021BAE", hash_generated_field = "86B776A6A69718EFA060C569C84D8641")
 
 
     private  IAlarmManager mService;
@@ -45,8 +45,9 @@ public class AlarmManager {
     /**
      * package private on purpose
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.105 -0500", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "777E43DCC11684FA65853DF87647331C")
-    AlarmManager(IAlarmManager service) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.478 -0500", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "777E43DCC11684FA65853DF87647331C")
+    
+AlarmManager(IAlarmManager service) {
         mService = service;
     }
 

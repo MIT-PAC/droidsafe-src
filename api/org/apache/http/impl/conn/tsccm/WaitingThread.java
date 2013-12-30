@@ -13,17 +13,17 @@ import java.util.concurrent.locks.Condition;
 
 
 public class WaitingThread {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.695 -0500", hash_original_field = "DD3B07F50A4277E065FDFFC919E9FDDB", hash_generated_field = "E7E85605CD9DCB175BB641FD2FDA33A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.520 -0500", hash_original_field = "DD3B07F50A4277E065FDFFC919E9FDDB", hash_generated_field = "E7E85605CD9DCB175BB641FD2FDA33A7")
 
     private  Condition cond;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.696 -0500", hash_original_field = "9002D6F36A50032691C79DB8C1414AE5", hash_generated_field = "4F597DD21DBF7DD08DD945195741315F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.523 -0500", hash_original_field = "9002D6F36A50032691C79DB8C1414AE5", hash_generated_field = "4F597DD21DBF7DD08DD945195741315F")
 
     //@@@ replace with generic pool interface
     private  RouteSpecificPool pool;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.697 -0500", hash_original_field = "4DB9CE87B9CCE3428476BDB51EBE9EF1", hash_generated_field = "33CCD5EB6905F134ACE39F8BADCDC158")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.525 -0500", hash_original_field = "4DB9CE87B9CCE3428476BDB51EBE9EF1", hash_generated_field = "33CCD5EB6905F134ACE39F8BADCDC158")
 
     private Thread waiter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.697 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.527 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
 
     private boolean aborted;
 
@@ -35,8 +35,9 @@ public class WaitingThread {
      * @param pool      the pool on which the thread will be waiting,
      *                  or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.698 -0500", hash_original_method = "4E0FEF0D8484D6DA3DA82AB98780B168", hash_generated_method = "AD84B0CDF4AF9E51E405E56F720A791E")
-    public WaitingThread(Condition cond, RouteSpecificPool pool) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.530 -0500", hash_original_method = "4E0FEF0D8484D6DA3DA82AB98780B168", hash_generated_method = "AD84B0CDF4AF9E51E405E56F720A791E")
+    
+public WaitingThread(Condition cond, RouteSpecificPool pool) {
 
         if (cond == null) {
             throw new IllegalArgumentException("Condition must not be null.");
@@ -52,8 +53,9 @@ public class WaitingThread {
      *
      * @return  the condition on which to wait, never <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.699 -0500", hash_original_method = "06148A18B01DA630C8E9D1BE56535730", hash_generated_method = "4F4AE62136D5CFFE877E5BE8F3488E56")
-    public final Condition getCondition() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.532 -0500", hash_original_method = "06148A18B01DA630C8E9D1BE56535730", hash_generated_method = "4F4AE62136D5CFFE877E5BE8F3488E56")
+    
+public final Condition getCondition() {
         // not synchronized
         return this.cond;
     }
@@ -65,8 +67,9 @@ public class WaitingThread {
      * @return  the pool on which a thread is or was waiting,
      *          or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.700 -0500", hash_original_method = "7ACEF95834A46E1067A2FCD807704A00", hash_generated_method = "C35E32D5D68307FC752F688479E534D1")
-    public final RouteSpecificPool getPool() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.534 -0500", hash_original_method = "7ACEF95834A46E1067A2FCD807704A00", hash_generated_method = "C35E32D5D68307FC752F688479E534D1")
+    
+public final RouteSpecificPool getPool() {
         // not synchronized
         return this.pool;
     }
@@ -77,8 +80,9 @@ public class WaitingThread {
      *
      * @return  the thread which is waiting, or <code>null</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.701 -0500", hash_original_method = "71CC45999E743AA15F11389550D41BFD", hash_generated_method = "CB85D10A1FD8B2013E04262B36A14664")
-    public final Thread getThread() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.536 -0500", hash_original_method = "71CC45999E743AA15F11389550D41BFD", hash_generated_method = "CB85D10A1FD8B2013E04262B36A14664")
+    
+public final Thread getThread() {
         // not synchronized
         return this.waiter;
     }
@@ -103,8 +107,9 @@ public class WaitingThread {
      *
      * @see #wakeup
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.702 -0500", hash_original_method = "7B6DA174509B07DB7E171D838B6C3551", hash_generated_method = "3132B8E88CA8F5E6038CA366225F4B87")
-    public boolean await(Date deadline)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.540 -0500", hash_original_method = "7B6DA174509B07DB7E171D838B6C3551", hash_generated_method = "3132B8E88CA8F5E6038CA366225F4B87")
+    
+public boolean await(Date deadline)
         throws InterruptedException {
 
         // This is only a sanity check. We cannot synchronize here,
@@ -144,8 +149,9 @@ public class WaitingThread {
      * <br/>
      * This method assumes external synchronization.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.703 -0500", hash_original_method = "BAB31B5D41D1F7BEE0FF6A7B649DDB38", hash_generated_method = "C9A60E4F7AC3C08B42FE428C72B41A85")
-    public void wakeup() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.542 -0500", hash_original_method = "BAB31B5D41D1F7BEE0FF6A7B649DDB38", hash_generated_method = "C9A60E4F7AC3C08B42FE428C72B41A85")
+    
+public void wakeup() {
 
         // If external synchronization and pooling works properly,
         // this cannot happen. Just a sanity check.
@@ -159,8 +165,9 @@ public class WaitingThread {
         this.cond.signalAll();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.703 -0500", hash_original_method = "BFE3F8B3CBA9A24F2514C6FAB517057D", hash_generated_method = "EBD5A7B5A967E1082278D6C7AC0C58BD")
-    public void interrupt() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.544 -0500", hash_original_method = "BFE3F8B3CBA9A24F2514C6FAB517057D", hash_generated_method = "EBD5A7B5A967E1082278D6C7AC0C58BD")
+    
+public void interrupt() {
         aborted = true;
         this.cond.signalAll();
     }

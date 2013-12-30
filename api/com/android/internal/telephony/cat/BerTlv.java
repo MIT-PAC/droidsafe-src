@@ -20,8 +20,9 @@ class BerTlv {
      * @return A BER-TLV object decoded
      * @throws ResultException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.444 -0500", hash_original_method = "FE58CB5D6CE6A2E9688AD17CCBB6B897", hash_generated_method = "8496BD84730B5DD604BC36EA0D058875")
-    public static BerTlv decode(byte[] data) throws ResultException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.221 -0500", hash_original_method = "FE58CB5D6CE6A2E9688AD17CCBB6B897", hash_generated_method = "8496BD84730B5DD604BC36EA0D058875")
+    
+public static BerTlv decode(byte[] data) throws ResultException {
         int curIndex = 0;
         int endIndex = data.length;
         int tag, length = 0;
@@ -67,28 +68,29 @@ class BerTlv {
 
         return new BerTlv(tag, ctlvs);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.437 -0500", hash_original_field = "E46564801AB3D6DC8660EAD1318E8D77", hash_generated_field = "51019AD6C5CC55D9C6AF4E6FA65C2CFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.202 -0500", hash_original_field = "E46564801AB3D6DC8660EAD1318E8D77", hash_generated_field = "51019AD6C5CC55D9C6AF4E6FA65C2CFC")
 
 
     public static final int BER_UNKNOWN_TAG             = 0x00;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.438 -0500", hash_original_field = "A5F484D7C9AC31A97C300F3A238CA40B", hash_generated_field = "849EF9FE5E783A4D18EB93EBEF07AF92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.205 -0500", hash_original_field = "A5F484D7C9AC31A97C300F3A238CA40B", hash_generated_field = "849EF9FE5E783A4D18EB93EBEF07AF92")
 
     public static final int BER_PROACTIVE_COMMAND_TAG   = 0xd0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.440 -0500", hash_original_field = "C8240165FD441B09DBE910D691692579", hash_generated_field = "FD25A090599EDE67E1DA85645D40DBBC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.208 -0500", hash_original_field = "C8240165FD441B09DBE910D691692579", hash_generated_field = "FD25A090599EDE67E1DA85645D40DBBC")
 
     public static final int BER_MENU_SELECTION_TAG      = 0xd3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.440 -0500", hash_original_field = "AC9FA17127F7E94BAD1D9D7BB524A7A4", hash_generated_field = "037978F26D244A2F18B40FEF8C880C0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.210 -0500", hash_original_field = "AC9FA17127F7E94BAD1D9D7BB524A7A4", hash_generated_field = "037978F26D244A2F18B40FEF8C880C0F")
 
     public static final int BER_EVENT_DOWNLOAD_TAG      = 0xd6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.435 -0500", hash_original_field = "38F5E2CF6A68114F4D07368E8CD18F7D", hash_generated_field = "39FE9CD97B9AFEAEBF1F07C1BE8432FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.197 -0500", hash_original_field = "38F5E2CF6A68114F4D07368E8CD18F7D", hash_generated_field = "39FE9CD97B9AFEAEBF1F07C1BE8432FF")
 
     private int mTag = BER_UNKNOWN_TAG;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.436 -0500", hash_original_field = "6A32C99C41F706EBDBE246DB753FB229", hash_generated_field = "D44204BE63F06CA8F47FCF402390D741")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.199 -0500", hash_original_field = "6A32C99C41F706EBDBE246DB753FB229", hash_generated_field = "D44204BE63F06CA8F47FCF402390D741")
 
     private List<ComprehensionTlv> mCompTlvs = null;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.442 -0500", hash_original_method = "5C874FE61091A7FA99CA633BD5413E3E", hash_generated_method = "7792EFE71B80E06007BBB19FC27A915F")
-    private BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.213 -0500", hash_original_method = "5C874FE61091A7FA99CA633BD5413E3E", hash_generated_method = "7792EFE71B80E06007BBB19FC27A915F")
+    
+private BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
         mTag = tag;
         mCompTlvs = ctlvs;
     }
@@ -98,8 +100,9 @@ class BerTlv {
      *
      * @return A list of COMPREHENSION-TLV object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.442 -0500", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "31036B0C79BC3AE7FC0A6AE828E11749")
-    public List<ComprehensionTlv> getComprehensionTlvs() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.215 -0500", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "31036B0C79BC3AE7FC0A6AE828E11749")
+    
+public List<ComprehensionTlv> getComprehensionTlvs() {
         return mCompTlvs;
     }
 
@@ -108,8 +111,9 @@ class BerTlv {
      *
      * @return A tag integer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.443 -0500", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "92179372CE49E6423B644726BDCEE63E")
-    public int getTag() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.217 -0500", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "92179372CE49E6423B644726BDCEE63E")
+    
+public int getTag() {
         return mTag;
     }
 }

@@ -23,38 +23,41 @@ public final class GeneralNames {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.352 -0400", hash_original_field = "F9F6263E38C505EB7173C59BEEA7DE3D", hash_generated_field = "D64C2D3B9F619417B7A91D4BDC12D942")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(GeneralName.ASN1) {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.767 -0500", hash_original_method = "9A3FA9B8D9477389BCCE5A60E545BDE1", hash_generated_method = "770532B7223B3B4CD51BAFFFD97304EC")
-        @Override
-public Object getDecodedObject(BerInputStream in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.595 -0500", hash_original_method = "9A3FA9B8D9477389BCCE5A60E545BDE1", hash_generated_method = "770532B7223B3B4CD51BAFFFD97304EC")
+        
+@Override public Object getDecodedObject(BerInputStream in) {
             return new GeneralNames((List<GeneralName>) in.content, in.getEncoded());
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.768 -0500", hash_original_method = "0E3B702024D2ADCD7756F36AE80C73BB", hash_generated_method = "534AF2DE55B88D3C0C66F15FB7D37CBA")
-        @Override
-public Collection getValues(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.597 -0500", hash_original_method = "0E3B702024D2ADCD7756F36AE80C73BB", hash_generated_method = "534AF2DE55B88D3C0C66F15FB7D37CBA")
+        
+@Override public Collection getValues(Object object) {
             GeneralNames gns = (GeneralNames) object;
             return gns.generalNames;
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.758 -0500", hash_original_field = "D11E37AFF2CB9F1C8ABEE86455776935", hash_generated_field = "12F5E55FAE92B8BE0DECC643C9318F42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.570 -0500", hash_original_field = "D11E37AFF2CB9F1C8ABEE86455776935", hash_generated_field = "12F5E55FAE92B8BE0DECC643C9318F42")
 
     private List<GeneralName> generalNames;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.759 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.573 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
 
     private byte[] encoding;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.760 -0500", hash_original_method = "900922C5A2333ABDC3D6DB9D2843B6C9", hash_generated_method = "8EEE6CC0CA35A8F9FFE56BB73F14D846")
-    public GeneralNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.575 -0500", hash_original_method = "900922C5A2333ABDC3D6DB9D2843B6C9", hash_generated_method = "8EEE6CC0CA35A8F9FFE56BB73F14D846")
+    
+public GeneralNames() {
         generalNames = new ArrayList<GeneralName>();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.761 -0500", hash_original_method = "FCF1D75BDAE857F225708496A2E96EC2", hash_generated_method = "D51F6A440EFDE24067D922B5F190BB73")
-    public GeneralNames(List<GeneralName> generalNames) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.578 -0500", hash_original_method = "FCF1D75BDAE857F225708496A2E96EC2", hash_generated_method = "D51F6A440EFDE24067D922B5F190BB73")
+    
+public GeneralNames(List<GeneralName> generalNames) {
         this.generalNames = generalNames;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.762 -0500", hash_original_method = "84AB2B2BC22C66DEEE9A4059D9B177CB", hash_generated_method = "ECA719710CD81A8E3929815AEFB0A021")
-    private GeneralNames(List<GeneralName> generalNames, byte[] encoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.580 -0500", hash_original_method = "84AB2B2BC22C66DEEE9A4059D9B177CB", hash_generated_method = "ECA719710CD81A8E3929815AEFB0A021")
+    
+private GeneralNames(List<GeneralName> generalNames, byte[] encoding) {
         this.generalNames = generalNames;
         this.encoding = encoding;
     }
@@ -62,8 +65,9 @@ public Collection getValues(Object object) {
     /**
      * Returns the list of values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.763 -0500", hash_original_method = "0BE5F893124FC75916B0920319238607", hash_generated_method = "E469072D7EA24D4FA1AB52D8E4E1E3D7")
-    public List<GeneralName> getNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.582 -0500", hash_original_method = "0BE5F893124FC75916B0920319238607", hash_generated_method = "E469072D7EA24D4FA1AB52D8E4E1E3D7")
+    
+public List<GeneralName> getNames() {
         if ((generalNames == null) || (generalNames.size() == 0)) {
             return null;
         }
@@ -73,8 +77,9 @@ public Collection getValues(Object object) {
     /**
      * Returns the collection of pairs: (Integer (tag), Object (name value))*
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.764 -0500", hash_original_method = "393D0968412D8AD2DE170EB074DB113A", hash_generated_method = "5703127E086E9DCCAAFA514DF4493212")
-    public Collection<List<?>> getPairsList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.585 -0500", hash_original_method = "393D0968412D8AD2DE170EB074DB113A", hash_generated_method = "5703127E086E9DCCAAFA514DF4493212")
+    
+public Collection<List<?>> getPairsList() {
         Collection<List<?>> result = new ArrayList<List<?>>();
         if (generalNames == null) {
             return result;
@@ -85,8 +90,9 @@ public Collection getValues(Object object) {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.764 -0500", hash_original_method = "62FCFAA5CD61EB40B84DD9F5E8E0A72D", hash_generated_method = "9241BD32EED8C77306D8A2F54017C15D")
-    public void addName(GeneralName name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.587 -0500", hash_original_method = "62FCFAA5CD61EB40B84DD9F5E8E0A72D", hash_generated_method = "9241BD32EED8C77306D8A2F54017C15D")
+    
+public void addName(GeneralName name) {
         encoding = null;
         if (generalNames == null) {
             generalNames = new ArrayList<GeneralName>();
@@ -97,16 +103,18 @@ public Collection getValues(Object object) {
     /**
      * Returns ASN.1 encoded form of this X.509 GeneralNames value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.765 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
-    public byte[] getEncoded() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.589 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
+    
+public byte[] getEncoded() {
         if (encoding == null) {
             encoding = ASN1.encode(this);
         }
         return encoding;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.766 -0500", hash_original_method = "78509CF3CFA7027FFCDFED35C29E300D", hash_generated_method = "0A5AD2537BB87CDDF04EE1FD30A033B2")
-    public void dumpValue(StringBuilder sb, String prefix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.592 -0500", hash_original_method = "78509CF3CFA7027FFCDFED35C29E300D", hash_generated_method = "0A5AD2537BB87CDDF04EE1FD30A033B2")
+    
+public void dumpValue(StringBuilder sb, String prefix) {
         if (generalNames == null) {
             return;
         }

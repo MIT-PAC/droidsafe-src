@@ -13,8 +13,9 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     /**
      * Constructs a new instance of this AbstractSet.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.663 -0500", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "2FD83EFED6025F858EC91E81C4EFE5FC")
-    protected AbstractSet() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.882 -0500", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "2FD83EFED6025F858EC91E81C4EFE5FC")
+    
+protected AbstractSet() {
     }
 
     
@@ -33,9 +34,10 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
      * @return the hash code of this set.
      * @see #equals
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.666 -0500", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "EC4E6B86A0B1F508A6076903FE132A4B")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.887 -0500", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "EC4E6B86A0B1F508A6076903FE132A4B")
+    
+@Override
+    public int hashCode() {
         int result = 0;
         Iterator<?> it = iterator();
         while (it.hasNext()) {

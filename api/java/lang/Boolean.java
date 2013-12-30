@@ -20,8 +20,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * @since 1.7
      * @hide 1.7
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.655 -0500", hash_original_method = "B3A70AF2DF8E93CED801D9C24A07FA78", hash_generated_method = "52DBC9C2C80935547BDAD01A5C55773E")
-    public static int compare(boolean lhs, boolean rhs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.843 -0500", hash_original_method = "B3A70AF2DF8E93CED801D9C24A07FA78", hash_generated_method = "52DBC9C2C80935547BDAD01A5C55773E")
+    
+public static int compare(boolean lhs, boolean rhs) {
         return lhs == rhs ? 0 : lhs ? 1 : -1;
     }
 
@@ -36,8 +37,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      *         comparison, {@code false} otherwise.
      * @see System#getProperty(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.658 -0500", hash_original_method = "E88CDE1BFD10E217DE82EEF79E0E2CED", hash_generated_method = "ADCC75F930DEC79F7EEB42F15EEABB2B")
-    public static boolean getBoolean(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.850 -0500", hash_original_method = "E88CDE1BFD10E217DE82EEF79E0E2CED", hash_generated_method = "ADCC75F930DEC79F7EEB42F15EEABB2B")
+    
+public static boolean getBoolean(String string) {
         if (string == null || string.length() == 0) {
             return false;
         }
@@ -54,8 +56,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      *         otherwise.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.659 -0500", hash_original_method = "BD83C9A3C7856D0FAE5D6BC0CCD859FA", hash_generated_method = "35EF410EA41D39A8C101C5B251B58242")
-    public static boolean parseBoolean(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.853 -0500", hash_original_method = "BD83C9A3C7856D0FAE5D6BC0CCD859FA", hash_generated_method = "35EF410EA41D39A8C101C5B251B58242")
+    
+public static boolean parseBoolean(String s) {
         return "true".equalsIgnoreCase(s);
     }
 
@@ -66,8 +69,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      *            the boolean to convert.
      * @return "true" if {@code value} is {@code true}, "false" otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.660 -0500", hash_original_method = "D9199A85D0846E817E80F47C2D9F0FC6", hash_generated_method = "922BC111CD5564A1BFC8994725FA9DD1")
-    public static String toString(boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.855 -0500", hash_original_method = "D9199A85D0846E817E80F47C2D9F0FC6", hash_generated_method = "922BC111CD5564A1BFC8994725FA9DD1")
+    
+public static String toString(boolean value) {
         return String.valueOf(value);
     }
 
@@ -80,8 +84,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      *         case insensitive comparison, {@code Boolean.FALSE} otherwise.
      * @see #parseBoolean(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.661 -0500", hash_original_method = "D7304055711653AFAB319201D507D88D", hash_generated_method = "5D2F5BB17E0BBABB512766F7522CD9F0")
-    public static Boolean valueOf(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.857 -0500", hash_original_method = "D7304055711653AFAB319201D507D88D", hash_generated_method = "5D2F5BB17E0BBABB512766F7522CD9F0")
+    
+public static Boolean valueOf(String string) {
         return parseBoolean(string) ? Boolean.TRUE : Boolean.FALSE;
     }
 
@@ -97,20 +102,21 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * @return {@code Boolean.TRUE} if {@code b} is equal to {@code true},
      *         {@code Boolean.FALSE} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.662 -0500", hash_original_method = "1F020F11EF22A99E6E7AE33CA4E6AFB6", hash_generated_method = "E53A913A6561FDE56D487E4A382C5544")
-    public static Boolean valueOf(boolean b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.860 -0500", hash_original_method = "1F020F11EF22A99E6E7AE33CA4E6AFB6", hash_generated_method = "E53A913A6561FDE56D487E4A382C5544")
+    
+public static Boolean valueOf(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.647 -0500", hash_original_field = "E0E21F09D385039080D9D1CB5BA45688", hash_generated_field = "CFFD6448D529B230EC4B399C365C3ED6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.816 -0500", hash_original_field = "E0E21F09D385039080D9D1CB5BA45688", hash_generated_field = "CFFD6448D529B230EC4B399C365C3ED6")
 
 
     private static final long serialVersionUID = -3665804199014368530L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.648 -0500", hash_original_field = "137FF7BD4CE7985F11E3F85CDA816C03", hash_generated_field = "E6915B30788347C5E17C14AFE97099AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.821 -0500", hash_original_field = "137FF7BD4CE7985F11E3F85CDA816C03", hash_generated_field = "E6915B30788347C5E17C14AFE97099AA")
 
     @SuppressWarnings("unchecked")
     public static final Class<Boolean> TYPE
              = (Class<Boolean>) boolean[].class.getComponentType();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.649 -0500", hash_original_field = "FE3135AB46013BC593AB713B6667F067", hash_generated_field = "A404072AB8C61983C822CB3050E3ADC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.824 -0500", hash_original_field = "FE3135AB46013BC593AB713B6667F067", hash_generated_field = "A404072AB8C61983C822CB3050E3ADC9")
 
     // defined to be "java.lang.Boolean.TYPE";
 
@@ -119,10 +125,10 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * {@code true}.
      */
     public static final Boolean TRUE = new Boolean(true);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.650 -0500", hash_original_field = "7AC7B2D12A617605A54F213704AADF01", hash_generated_field = "76A59335A5CE94CD1B1D73C9A4052176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.826 -0500", hash_original_field = "7AC7B2D12A617605A54F213704AADF01", hash_generated_field = "76A59335A5CE94CD1B1D73C9A4052176")
 
     public static final Boolean FALSE = new Boolean(false);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.647 -0500", hash_original_field = "EF98710EB6D48DB36CD3E17E0CB16F67", hash_generated_field = "B3AA526F1538BC4E4F647F454F4A2696")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.819 -0500", hash_original_field = "EF98710EB6D48DB36CD3E17E0CB16F67", hash_generated_field = "B3AA526F1538BC4E4F647F454F4A2696")
 
     private  boolean value;
 
@@ -136,8 +142,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * @param string
      *            the string representing a boolean value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.651 -0500", hash_original_method = "16D96B4E7F901C7B1D5828A237ACCAC7", hash_generated_method = "BC59887BA943C2D4D49A4AD30A7E111C")
-    public Boolean(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.829 -0500", hash_original_method = "16D96B4E7F901C7B1D5828A237ACCAC7", hash_generated_method = "BC59887BA943C2D4D49A4AD30A7E111C")
+    
+public Boolean(String string) {
         this(parseBoolean(string));
     }
 
@@ -148,8 +155,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * @param value
      *            the primitive boolean value, {@code true} or {@code false}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.652 -0500", hash_original_method = "AAA63288DF04453D39E07EAA91131D42", hash_generated_method = "669A5BDD5BB8E366DE809427DDF7AE4F")
-    public Boolean(boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.832 -0500", hash_original_method = "AAA63288DF04453D39E07EAA91131D42", hash_generated_method = "669A5BDD5BB8E366DE809427DDF7AE4F")
+    
+public Boolean(boolean value) {
         this.value = value;
     }
 
@@ -159,8 +167,9 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      *
      * @return this object's primitive value, {@code true} or {@code false}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.653 -0500", hash_original_method = "F26012F420AB2CB381204FD30DBE0B24", hash_generated_method = "89E01E07EC4424A2F876DAADA0AD3F09")
-    public boolean booleanValue() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.835 -0500", hash_original_method = "F26012F420AB2CB381204FD30DBE0B24", hash_generated_method = "89E01E07EC4424A2F876DAADA0AD3F09")
+    
+public boolean booleanValue() {
         return value;
     }
 
@@ -174,10 +183,11 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
      * @return {@code true} if the specified object is equal to this
      *         {@code Boolean}; {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.654 -0500", hash_original_method = "28AC409B4210D4AB015BA8660C651D82", hash_generated_method = "89EA9C4EA99CF6FB717538A2DF9F7563")
-    @Override
-@FindBugsSuppressWarnings("RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN")
-public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.838 -0500", hash_original_method = "28AC409B4210D4AB015BA8660C651D82", hash_generated_method = "89EA9C4EA99CF6FB717538A2DF9F7563")
+    
+@Override
+    @FindBugsSuppressWarnings("RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN")
+    public boolean equals(Object o) {
         return (o == this) || ((o instanceof Boolean) && (((Boolean) o).value == value));
     }
 
@@ -195,8 +205,9 @@ public boolean equals(Object o) {
      * @see java.lang.Comparable
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.654 -0500", hash_original_method = "5D5C1978E7EFC6390B8F7A214888BA1C", hash_generated_method = "9A67C0D07D345C241847770D5D85B358")
-    public int compareTo(Boolean that) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.840 -0500", hash_original_method = "5D5C1978E7EFC6390B8F7A214888BA1C", hash_generated_method = "9A67C0D07D345C241847770D5D85B358")
+    
+public int compareTo(Boolean that) {
         return compare(value, that.value);
     }
 
@@ -206,9 +217,10 @@ public boolean equals(Object o) {
      * @return this boolean's hash code, which is {@code 1231} for {@code true}
      *         values and {@code 1237} for {@code false} values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.656 -0500", hash_original_method = "EE015B9251F7CEAD272805E74A0AD6CD", hash_generated_method = "D9559B8E91E481A1A462492D1F3B9A90")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.845 -0500", hash_original_method = "EE015B9251F7CEAD272805E74A0AD6CD", hash_generated_method = "D9559B8E91E481A1A462492D1F3B9A90")
+    
+@Override
+    public int hashCode() {
         return value ? 1231 : 1237;
     }
 
@@ -219,9 +231,10 @@ public int hashCode() {
      * @return "true" if the value of this boolean is {@code true}, "false"
      *         otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:22.657 -0500", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "B864B858E73245729E2A2FF424814054")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.848 -0500", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "B864B858E73245729E2A2FF424814054")
+    
+@Override
+    public String toString() {
         return String.valueOf(value);
     }
 }

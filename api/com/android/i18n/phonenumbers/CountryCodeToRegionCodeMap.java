@@ -16,8 +16,9 @@ public class CountryCodeToRegionCodeMap {
   // country/region represented by that country code. In the case of multiple
   // countries sharing a calling code, such as the NANPA countries, the one
   // indicated with "isMainCountryForCode" in the metadata should be first.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.600 -0500", hash_original_method = "BE431864601EAE48B892825B63E491FC", hash_generated_method = "7A66F935D67A11285242FE8DC006719D")
-    static Map<Integer, List<String>> getCountryCodeToRegionCodeMap() {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.630 -0500", hash_original_method = "BE431864601EAE48B892825B63E491FC", hash_generated_method = "7A66F935D67A11285242FE8DC006719D")
+    
+static Map<Integer, List<String>> getCountryCodeToRegionCodeMap() {
     // The capacity is set to 273 as there are 205 different country codes,
     // and this offers a load factor of roughly 0.75.
     Map<Integer, List<String>> countryCodeToRegionCodeMap =

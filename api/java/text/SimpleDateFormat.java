@@ -26,14 +26,16 @@ import libcore.icu.TimeZones;
 
 public class SimpleDateFormat extends DateFormat {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.378 -0500", hash_original_method = "F209DE6039C95F3ED32C483A7FAB87E8", hash_generated_method = "242A0445AD9B8EA038A867E60E2CF70F")
-    private static String defaultPattern() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.087 -0500", hash_original_method = "F209DE6039C95F3ED32C483A7FAB87E8", hash_generated_method = "242A0445AD9B8EA038A867E60E2CF70F")
+    
+private static String defaultPattern() {
         LocaleData localeData = LocaleData.get(Locale.getDefault());
         return localeData.getDateFormat(SHORT) + " " + localeData.getTimeFormat(SHORT);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.410 -0500", hash_original_method = "FC74B76DEBD3C100A988B40A9B23664F", hash_generated_method = "58DB67D74D7286DC04494E075E976CCC")
-    private static String convertPattern(String template, String fromChars, String toChars, boolean check) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.167 -0500", hash_original_method = "FC74B76DEBD3C100A988B40A9B23664F", hash_generated_method = "58DB67D74D7286DC04494E075E976CCC")
+    
+private static String convertPattern(String template, String fromChars, String toChars, boolean check) {
         if (!check && fromChars.equals(toChars)) {
             return template;
         }
@@ -59,26 +61,26 @@ public class SimpleDateFormat extends DateFormat {
         }
         return output.toString();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.359 -0500", hash_original_field = "B1180D5D305974942CDBE002F428B05D", hash_generated_field = "56D5BE14208D23988E9004C5F0B78F0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.021 -0500", hash_original_field = "B1180D5D305974942CDBE002F428B05D", hash_generated_field = "56D5BE14208D23988E9004C5F0B78F0A")
 
 
     private static final long serialVersionUID = 4774881970558875024L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.360 -0500", hash_original_field = "A744F4AD3CAB1EC97E99CD0EC93B275B", hash_generated_field = "768BF8FACCCDAD6AF5C419EAE423D264")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.024 -0500", hash_original_field = "A744F4AD3CAB1EC97E99CD0EC93B275B", hash_generated_field = "768BF8FACCCDAD6AF5C419EAE423D264")
 
     static final String PATTERN_CHARS = "GyMdkHmsSEDFwWahKzZLc";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.361 -0500", hash_original_field = "42C283719495C7F01F956C1C894B8966", hash_generated_field = "38D472B8F0929331ACCEF6DD12F5881E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.027 -0500", hash_original_field = "42C283719495C7F01F956C1C894B8966", hash_generated_field = "38D472B8F0929331ACCEF6DD12F5881E")
 
     // but has no corresponding public constant.
     private static final int RFC_822_TIMEZONE_FIELD = 18;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.363 -0500", hash_original_field = "092BF2F6FE6A95E15662967CC9554973", hash_generated_field = "90072FD3D40BEB51F7D76B4A895EAB71")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.029 -0500", hash_original_field = "092BF2F6FE6A95E15662967CC9554973", hash_generated_field = "90072FD3D40BEB51F7D76B4A895EAB71")
 
     // necessary for correct localization in various languages (http://b/2633414).
     private static final int STAND_ALONE_MONTH_FIELD = 19;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.364 -0500", hash_original_field = "0506B9721FCE5527CB33CD056A58CF04", hash_generated_field = "17C0AF79A85BEACDA5BEBD11DB284CA7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.032 -0500", hash_original_field = "0506B9721FCE5527CB33CD056A58CF04", hash_generated_field = "17C0AF79A85BEACDA5BEBD11DB284CA7")
 
     // necessary for correct localization in various languages (http://b/2633414).
     private static final int STAND_ALONE_DAY_OF_WEEK_FIELD = 20;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.412 -0500", hash_original_field = "91C32C5F865B6F47A29144104E3459E7", hash_generated_field = "9ECCA64B643BE0EF052CE0F624B781F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.172 -0500", hash_original_field = "91C32C5F865B6F47A29144104E3459E7", hash_generated_field = "9ECCA64B643BE0EF052CE0F624B781F1")
 
 
     private static final ObjectStreamField[] serialPersistentFields = {
@@ -87,19 +89,19 @@ public class SimpleDateFormat extends DateFormat {
         new ObjectStreamField("pattern", String.class),
         new ObjectStreamField("serialVersionOnStream", int.class),
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.364 -0500", hash_original_field = "57C08BF52FBB9452CE610A98F88E4F24", hash_generated_field = "8AE769BFE2CAD1B10C494CCD4D4D489A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.035 -0500", hash_original_field = "57C08BF52FBB9452CE610A98F88E4F24", hash_generated_field = "8AE769BFE2CAD1B10C494CCD4D4D489A")
 
 
     private String pattern;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.366 -0500", hash_original_field = "EF4E0D3E20F3E15FB11A62D7FC251010", hash_generated_field = "8EEEF9C78A0C692C98D78AB64DB0C20D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.037 -0500", hash_original_field = "EF4E0D3E20F3E15FB11A62D7FC251010", hash_generated_field = "8EEEF9C78A0C692C98D78AB64DB0C20D")
 
 
     private DateFormatSymbols formatData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.367 -0500", hash_original_field = "458A3ADAD63C38186017676F3CEBA899", hash_generated_field = "6DC58B2FFCD396D044D4105C5E7E21CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.040 -0500", hash_original_field = "458A3ADAD63C38186017676F3CEBA899", hash_generated_field = "6DC58B2FFCD396D044D4105C5E7E21CC")
 
 
     transient private int creationYear;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.367 -0500", hash_original_field = "FCD1B3625B07CC098656859762932F2F", hash_generated_field = "7490904CE4798294C2932FA3B8A81D84")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.043 -0500", hash_original_field = "FCD1B3625B07CC098656859762932F2F", hash_generated_field = "7490904CE4798294C2932FA3B8A81D84")
 
 
     private Date defaultCenturyStart;
@@ -109,8 +111,9 @@ public class SimpleDateFormat extends DateFormat {
      * dates and times in the {@code SHORT} style for the user's default locale.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.368 -0500", hash_original_method = "55288B23256ED63825B1D49B41027576", hash_generated_method = "39B68D1F56D4EBE9F4B1205B0CE3AF97")
-    public SimpleDateFormat() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.046 -0500", hash_original_method = "55288B23256ED63825B1D49B41027576", hash_generated_method = "39B68D1F56D4EBE9F4B1205B0CE3AF97")
+    
+public SimpleDateFormat() {
         this(Locale.getDefault());
         this.pattern = defaultPattern();
         this.formatData = new DateFormatSymbols(Locale.getDefault());
@@ -130,8 +133,9 @@ public class SimpleDateFormat extends DateFormat {
      *            if {@code pattern} is not considered to be usable by this
      *            formatter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.369 -0500", hash_original_method = "DF79561AB8D44B187C9CA04B354315AC", hash_generated_method = "F3014B31121A74282CEB26A187F51EA5")
-    public SimpleDateFormat(String pattern) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.048 -0500", hash_original_method = "DF79561AB8D44B187C9CA04B354315AC", hash_generated_method = "F3014B31121A74282CEB26A187F51EA5")
+    
+public SimpleDateFormat(String pattern) {
         this(pattern, Locale.getDefault());
     }
 
@@ -150,8 +154,9 @@ public class SimpleDateFormat extends DateFormat {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.372 -0500", hash_original_method = "2C117D04FF17ED0139CEC7451AA4BD73", hash_generated_method = "53982C08D69114A77F58DFC60F0427B9")
-    public SimpleDateFormat(String template, DateFormatSymbols value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.071 -0500", hash_original_method = "2C117D04FF17ED0139CEC7451AA4BD73", hash_generated_method = "53982C08D69114A77F58DFC60F0427B9")
+    
+public SimpleDateFormat(String template, DateFormatSymbols value) {
         this(Locale.getDefault());
         validatePattern(template);
         pattern = template;
@@ -172,16 +177,18 @@ public class SimpleDateFormat extends DateFormat {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.373 -0500", hash_original_method = "1BCD123DF2A5414BB2A2ECF5D3357D25", hash_generated_method = "D1932A3E010E48695122576E5363C257")
-    public SimpleDateFormat(String template, Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.074 -0500", hash_original_method = "1BCD123DF2A5414BB2A2ECF5D3357D25", hash_generated_method = "D1932A3E010E48695122576E5363C257")
+    
+public SimpleDateFormat(String template, Locale locale) {
         this(locale);
         validatePattern(template);
         pattern = template;
         formatData = new DateFormatSymbols(locale);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.374 -0500", hash_original_method = "F464E2338695834D875FCA6185F1E83B", hash_generated_method = "C039888B33A3E1C4324452F493B7E115")
-    private SimpleDateFormat(Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.077 -0500", hash_original_method = "F464E2338695834D875FCA6185F1E83B", hash_generated_method = "C039888B33A3E1C4324452F493B7E115")
+    
+private SimpleDateFormat(Locale locale) {
         numberFormat = NumberFormat.getInstance(locale);
         numberFormat.setParseIntegerOnly(true);
         numberFormat.setGroupingUsed(false);
@@ -200,8 +207,9 @@ public class SimpleDateFormat extends DateFormat {
      * @throws IllegalArgumentException
      *             when the format character is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.370 -0500", hash_original_method = "411C0D5D8AD5CB18D4C2CE04A3CEEBF0", hash_generated_method = "E105F6342371FC7A4CC18F36D0625481")
-    private void validateFormat(char format) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.051 -0500", hash_original_method = "411C0D5D8AD5CB18D4C2CE04A3CEEBF0", hash_generated_method = "E105F6342371FC7A4CC18F36D0625481")
+    
+private void validateFormat(char format) {
         int index = PATTERN_CHARS.indexOf(format);
         if (index == -1) {
             throw new IllegalArgumentException("Unknown pattern character '" + format + "'");
@@ -219,8 +227,9 @@ public class SimpleDateFormat extends DateFormat {
      * @throws IllegalArgumentException
      *             if the pattern is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.371 -0500", hash_original_method = "49C9E23BED9AC71209F0210F812D9D37", hash_generated_method = "C9301FAA0B5F911E884F0B0D4E4BD72F")
-    private void validatePattern(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.067 -0500", hash_original_method = "49C9E23BED9AC71209F0210F812D9D37", hash_generated_method = "C9301FAA0B5F911E884F0B0D4E4BD72F")
+    
+private void validatePattern(String template) {
         boolean quote = false;
         int next, last = -1, count = 0;
 
@@ -275,8 +284,9 @@ public class SimpleDateFormat extends DateFormat {
      * @param template
      *            the localized pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.375 -0500", hash_original_method = "9688C7F66E6F76D1BE1FBD610A4BC951", hash_generated_method = "9B81995D24CAE7A81EB817AEC4C3844B")
-    public void applyLocalizedPattern(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.079 -0500", hash_original_method = "9688C7F66E6F76D1BE1FBD610A4BC951", hash_generated_method = "9B81995D24CAE7A81EB817AEC4C3844B")
+    
+public void applyLocalizedPattern(String template) {
         pattern = convertPattern(template, formatData.getLocalPatternChars(), PATTERN_CHARS, true);
     }
 
@@ -291,8 +301,9 @@ public class SimpleDateFormat extends DateFormat {
      * @throws IllegalArgumentException
      *                if the pattern is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.376 -0500", hash_original_method = "3EFD18F746D60C3172C5216CCD625C1E", hash_generated_method = "F2F9C2909A53DF682B6C07C7CC473170")
-    public void applyPattern(String template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.081 -0500", hash_original_method = "3EFD18F746D60C3172C5216CCD625C1E", hash_generated_method = "F2F9C2909A53DF682B6C07C7CC473170")
+    
+public void applyPattern(String template) {
         validatePattern(template);
         pattern = template;
     }
@@ -304,9 +315,10 @@ public class SimpleDateFormat extends DateFormat {
      * @return a shallow copy of this simple date format.
      * @see java.lang.Cloneable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.377 -0500", hash_original_method = "894F4ABDB71A6E4F1997CC330255AFC7", hash_generated_method = "D0396D0AF64117B3ADAF61FE83EBE065")
-    @Override
-public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.084 -0500", hash_original_method = "894F4ABDB71A6E4F1997CC330255AFC7", hash_generated_method = "D0396D0AF64117B3ADAF61FE83EBE065")
+    
+@Override
+    public Object clone() {
         SimpleDateFormat clone = (SimpleDateFormat) super.clone();
         clone.formatData = (DateFormatSymbols) formatData.clone();
         clone.defaultCenturyStart = new Date(defaultCenturyStart.getTime());
@@ -325,9 +337,10 @@ public Object clone() {
      *         format; {@code false} otherwise.
      * @see #hashCode
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.380 -0500", hash_original_method = "386F5EAAB97078077630DB3A1FE9C0D6", hash_generated_method = "12C2795BBBA4D4FDEB8798DF0BFB4376")
-    @Override
-public boolean equals(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.089 -0500", hash_original_method = "386F5EAAB97078077630DB3A1FE9C0D6", hash_generated_method = "12C2795BBBA4D4FDEB8798DF0BFB4376")
+    
+@Override
+    public boolean equals(Object object) {
         if (this == object) {
             return true;
         }
@@ -354,9 +367,10 @@ public boolean equals(Object object) {
      *            if the object cannot be formatted by this simple date
      *            format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.381 -0500", hash_original_method = "F8A48BC85545A42AFE53260512DF9B2E", hash_generated_method = "9EAC7DF5A1F47B4E3861E6DF79531AD6")
-    @Override
-public AttributedCharacterIterator formatToCharacterIterator(Object object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.092 -0500", hash_original_method = "F8A48BC85545A42AFE53260512DF9B2E", hash_generated_method = "9EAC7DF5A1F47B4E3861E6DF79531AD6")
+    
+@Override
+    public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         if (object == null) {
             throw new NullPointerException();
         }
@@ -370,8 +384,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.382 -0500", hash_original_method = "39C7DAF020DB077C56334C25B45C6758", hash_generated_method = "4269B45109BDFCDABAE8B23522415D35")
-    private AttributedCharacterIterator formatToCharacterIteratorImpl(Date date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.095 -0500", hash_original_method = "39C7DAF020DB077C56334C25B45C6758", hash_generated_method = "4269B45109BDFCDABAE8B23522415D35")
+    
+private AttributedCharacterIterator formatToCharacterIteratorImpl(Date date) {
         StringBuffer buffer = new StringBuffer();
         ArrayList<FieldPosition> fields = new ArrayList<FieldPosition>();
 
@@ -416,8 +431,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * @throws IllegalArgumentException
      *            if the object cannot be formatted by this Format.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.383 -0500", hash_original_method = "1377B288F93939E9FA031027B23EE480", hash_generated_method = "36FBAF57FBC342C85330D39DAC1A304D")
-    private StringBuffer formatImpl(Date date, StringBuffer buffer,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.098 -0500", hash_original_method = "1377B288F93939E9FA031027B23EE480", hash_generated_method = "36FBAF57FBC342C85330D39DAC1A304D")
+    
+private StringBuffer formatImpl(Date date, StringBuffer buffer,
             FieldPosition field, List<FieldPosition> fields) {
 
         boolean quote = false;
@@ -470,8 +486,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         return buffer;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.385 -0500", hash_original_method = "60C88CC31EC17788C6D13B63E0E097AB", hash_generated_method = "EA5E146546A756BECC591632A6C674F2")
-    private void append(StringBuffer buffer, FieldPosition position,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.104 -0500", hash_original_method = "60C88CC31EC17788C6D13B63E0E097AB", hash_generated_method = "EA5E146546A756BECC591632A6C674F2")
+    
+private void append(StringBuffer buffer, FieldPosition position,
             List<FieldPosition> fields, char format, int count) {
         int field = -1;
         int index = PATTERN_CHARS.indexOf(format);
@@ -600,15 +617,17 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.386 -0500", hash_original_method = "DD478E87C0FA9016B83D28121FBA02DB", hash_generated_method = "62D8176C354F6CA4270DDAEDA6611069")
-    private void appendDayOfWeek(StringBuffer buffer, int count, String[] longs, String[] shorts) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.106 -0500", hash_original_method = "DD478E87C0FA9016B83D28121FBA02DB", hash_generated_method = "62D8176C354F6CA4270DDAEDA6611069")
+    
+private void appendDayOfWeek(StringBuffer buffer, int count, String[] longs, String[] shorts) {
         boolean isLong = (count > 3);
         String[] days = isLong ? longs : shorts;
         buffer.append(days[calendar.get(Calendar.DAY_OF_WEEK)]);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.387 -0500", hash_original_method = "7A41E7167A1A13C1027D42A61A5B401C", hash_generated_method = "3DF6C7C327520361A845637D593DEC47")
-    private void appendMonth(StringBuffer buffer, int count, String[] longs, String[] shorts) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.109 -0500", hash_original_method = "7A41E7167A1A13C1027D42A61A5B401C", hash_generated_method = "3DF6C7C327520361A845637D593DEC47")
+    
+private void appendMonth(StringBuffer buffer, int count, String[] longs, String[] shorts) {
         int month = calendar.get(Calendar.MONTH);
         if (count <= 2) {
             appendNumber(buffer, count, month + 1);
@@ -629,8 +648,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * false implies that we should use RFC 822 format ("-0800") instead. This corresponds to 'z'
      * versus 'Z' in the format string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.388 -0500", hash_original_method = "D7241707B86764AD36DA13023C5322B5", hash_generated_method = "EF0C4077378AB8F224EE2E770C8B4D87")
-    private void appendTimeZone(StringBuffer buffer, int count, boolean generalTimeZone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.112 -0500", hash_original_method = "D7241707B86764AD36DA13023C5322B5", hash_generated_method = "EF0C4077378AB8F224EE2E770C8B4D87")
+    
+private void appendTimeZone(StringBuffer buffer, int count, boolean generalTimeZone) {
         if (generalTimeZone) {
             TimeZone tz = calendar.getTimeZone();
             boolean daylight = (calendar.get(Calendar.DST_OFFSET) != 0);
@@ -654,8 +674,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
     /**
      * @param generalTimeZone "GMT-08:00" rather than "-0800".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.389 -0500", hash_original_method = "E1D84DE5BC6EBCC18019540ED725D9AE", hash_generated_method = "F1ADD90E358970C96463D3A14ADFAEC7")
-    private void appendNumericTimeZone(StringBuffer buffer, boolean generalTimeZone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.114 -0500", hash_original_method = "E1D84DE5BC6EBCC18019540ED725D9AE", hash_generated_method = "F1ADD90E358970C96463D3A14ADFAEC7")
+    
+private void appendNumericTimeZone(StringBuffer buffer, boolean generalTimeZone) {
         int offset = calendar.get(Calendar.ZONE_OFFSET) + calendar.get(Calendar.DST_OFFSET);
         char sign = '+';
         if (offset < 0) {
@@ -673,8 +694,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         appendNumber(buffer, 2, (offset % 3600000) / 60000);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.390 -0500", hash_original_method = "9FC1BA4007CF5C77F0A2B74AE6FBC98F", hash_generated_method = "A8E9337BDCA56FAC6220A63CD2F4DB3F")
-    private void appendNumber(StringBuffer buffer, int count, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.117 -0500", hash_original_method = "9FC1BA4007CF5C77F0A2B74AE6FBC98F", hash_generated_method = "A8E9337BDCA56FAC6220A63CD2F4DB3F")
+    
+private void appendNumber(StringBuffer buffer, int count, int value) {
         // TODO: we could avoid using the NumberFormat in most cases for a significant speedup.
         // The only problem is that we expose the NumberFormat to third-party code, so we'd have
         // some work to do to work out when the optimization is valid.
@@ -684,8 +706,9 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         numberFormat.setMinimumIntegerDigits(minimumIntegerDigits);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.391 -0500", hash_original_method = "332B10C296E05CECE855CC96158B0A61", hash_generated_method = "DA3B57BDCF1C9B301BA9760F2951B0C8")
-    private Date error(ParsePosition position, int offset, TimeZone zone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.120 -0500", hash_original_method = "332B10C296E05CECE855CC96158B0A61", hash_generated_method = "DA3B57BDCF1C9B301BA9760F2951B0C8")
+    
+private Date error(ParsePosition position, int offset, TimeZone zone) {
         position.setErrorIndex(offset);
         calendar.setTimeZone(zone);
         return null;
@@ -711,9 +734,10 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.392 -0500", hash_original_method = "F2F2556FE533C0A730BEC347E52E5292", hash_generated_method = "03617E1213EA0CE091B1A42EE8FE9EE4")
-    @Override
-public StringBuffer format(Date date, StringBuffer buffer, FieldPosition fieldPos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.122 -0500", hash_original_method = "F2F2556FE533C0A730BEC347E52E5292", hash_generated_method = "03617E1213EA0CE091B1A42EE8FE9EE4")
+    
+@Override
+    public StringBuffer format(Date date, StringBuffer buffer, FieldPosition fieldPos) {
         // Harmony delegates to ICU's SimpleDateFormat, we implement it directly
         return formatImpl(date, buffer, fieldPos, null);
     }
@@ -722,8 +746,9 @@ public StringBuffer format(Date date, StringBuffer buffer, FieldPosition fieldPo
      * Returns the date which is the start of the one hundred year period for two-digit year values.
      * See {@link #set2DigitYearStart} for details.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.393 -0500", hash_original_method = "71AF220EE7B6857040DD249E69ABFBDC", hash_generated_method = "E74FAA143E85741BE4E1784A56BEBA05")
-    public Date get2DigitYearStart() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.124 -0500", hash_original_method = "71AF220EE7B6857040DD249E69ABFBDC", hash_generated_method = "E74FAA143E85741BE4E1784A56BEBA05")
+    
+public Date get2DigitYearStart() {
         return (Date) defaultCenturyStart.clone();
     }
 
@@ -732,19 +757,22 @@ public StringBuffer format(Date date, StringBuffer buffer, FieldPosition fieldPo
      *
      * @return the {@code DateFormatSymbols} object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.394 -0500", hash_original_method = "CB6B47612D51E0A5BF8CB9FEBD927C3E", hash_generated_method = "205D974A5D75894D76F8CEEF2351B5EF")
-    public DateFormatSymbols getDateFormatSymbols() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.127 -0500", hash_original_method = "CB6B47612D51E0A5BF8CB9FEBD927C3E", hash_generated_method = "205D974A5D75894D76F8CEEF2351B5EF")
+    
+public DateFormatSymbols getDateFormatSymbols() {
         return (DateFormatSymbols) formatData.clone();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.395 -0500", hash_original_method = "90B9D79300B8D8466B4A869D0B95FB5A", hash_generated_method = "ADE3F1602E201DDEC32E7E4E6B076FBB")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.129 -0500", hash_original_method = "90B9D79300B8D8466B4A869D0B95FB5A", hash_generated_method = "ADE3F1602E201DDEC32E7E4E6B076FBB")
+    
+@Override
+    public int hashCode() {
         return super.hashCode() + pattern.hashCode() + formatData.hashCode() + creationYear;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.397 -0500", hash_original_method = "308621012329CC130ED3BC1A1EBA54C1", hash_generated_method = "4FD0ABFE3C0CD8E96E29712CBC74E1E8")
-    private int parse(String string, int offset, char format, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.134 -0500", hash_original_method = "308621012329CC130ED3BC1A1EBA54C1", hash_generated_method = "4FD0ABFE3C0CD8E96E29712CBC74E1E8")
+    
+private int parse(String string, int offset, char format, int count) {
         int index = PATTERN_CHARS.indexOf(format);
         if (index == -1) {
             throw new IllegalArgumentException("Unknown pattern character '" + format + "'");
@@ -857,8 +885,9 @@ public int hashCode() {
         return offset;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.398 -0500", hash_original_method = "4C5DAB8F3090E0FED455AF9657387367", hash_generated_method = "73128BA64BF014A304288ADA8E91211D")
-    private int parseDayOfWeek(String string, int offset, String[] longs, String[] shorts) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.137 -0500", hash_original_method = "4C5DAB8F3090E0FED455AF9657387367", hash_generated_method = "73128BA64BF014A304288ADA8E91211D")
+    
+private int parseDayOfWeek(String string, int offset, String[] longs, String[] shorts) {
         int index = parseText(string, offset, longs, Calendar.DAY_OF_WEEK);
         if (index < 0) {
             index = parseText(string, offset, shorts, Calendar.DAY_OF_WEEK);
@@ -866,8 +895,9 @@ public int hashCode() {
         return index;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.399 -0500", hash_original_method = "2749F9959CF57ED8E7DF53A146C2F50E", hash_generated_method = "166162ACB3B56B141E53976292994FD6")
-    private int parseMonth(String string, int offset, int count, int absolute, String[] longs, String[] shorts) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.139 -0500", hash_original_method = "2749F9959CF57ED8E7DF53A146C2F50E", hash_generated_method = "166162ACB3B56B141E53976292994FD6")
+    
+private int parseMonth(String string, int offset, int count, int absolute, String[] longs, String[] shorts) {
         if (count <= 2) {
             return parseNumber(absolute, string, offset, Calendar.MONTH, -1);
         }
@@ -899,9 +929,10 @@ public int hashCode() {
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.400 -0500", hash_original_method = "7359DD4332D8271AC0BCC2D6C59D8B62", hash_generated_method = "EB55FA63405C87E1036FE69E8D3600F0")
-    @Override
-public Date parse(String string, ParsePosition position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.144 -0500", hash_original_method = "7359DD4332D8271AC0BCC2D6C59D8B62", hash_generated_method = "EB55FA63405C87E1036FE69E8D3600F0")
+    
+@Override
+    public Date parse(String string, ParsePosition position) {
         // Harmony delegates to ICU's SimpleDateFormat, we implement it directly
         boolean quote = false;
         int next, last = -1, count = 0, offset = position.getIndex();
@@ -973,8 +1004,9 @@ public Date parse(String string, ParsePosition position) {
         return date;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.402 -0500", hash_original_method = "21C7D4A169609BA40C676EFC62A50E23", hash_generated_method = "E770EAFE96F6F02CFDA569B162E2C388")
-    private Number parseNumber(int max, String string, ParsePosition position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.147 -0500", hash_original_method = "21C7D4A169609BA40C676EFC62A50E23", hash_generated_method = "E770EAFE96F6F02CFDA569B162E2C388")
+    
+private Number parseNumber(int max, String string, ParsePosition position) {
         int digit, length = string.length(), result = 0;
         int index = position.getIndex();
         if (max > 0 && max < length - index) {
@@ -1002,8 +1034,9 @@ public Date parse(String string, ParsePosition position) {
         return Integer.valueOf(result);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.403 -0500", hash_original_method = "D6F7D67552A406D8EA22E8B872F7B057", hash_generated_method = "1C99299274EC12D0A55D501E0A1B9654")
-    private int parseNumber(int max, String string, int offset, int field, int skew) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.149 -0500", hash_original_method = "D6F7D67552A406D8EA22E8B872F7B057", hash_generated_method = "1C99299274EC12D0A55D501E0A1B9654")
+    
+private int parseNumber(int max, String string, int offset, int field, int skew) {
         ParsePosition position = new ParsePosition(offset);
         Number result = parseNumber(max, string, position);
         if (result == null) {
@@ -1013,8 +1046,9 @@ public Date parse(String string, ParsePosition position) {
         return position.getIndex();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.404 -0500", hash_original_method = "6091F52EF6DC933856441BD49E0F31F1", hash_generated_method = "80CBD34C39C037F0F747F6D54CD77301")
-    private int parseText(String string, int offset, String[] text, int field) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.152 -0500", hash_original_method = "6091F52EF6DC933856441BD49E0F31F1", hash_generated_method = "80CBD34C39C037F0F747F6D54CD77301")
+    
+private int parseText(String string, int offset, String[] text, int field) {
         int found = -1;
         for (int i = 0; i < text.length; i++) {
             if (text[i].isEmpty()) {
@@ -1034,8 +1068,9 @@ public Date parse(String string, ParsePosition position) {
         return -offset - 1;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.406 -0500", hash_original_method = "C11BF6380CD6AEFF5BAB825547AF7C4A", hash_generated_method = "9CECC94FE614EB29D256C9EC771C866D")
-    private int parseTimeZone(String string, int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.156 -0500", hash_original_method = "C11BF6380CD6AEFF5BAB825547AF7C4A", hash_generated_method = "9CECC94FE614EB29D256C9EC771C866D")
+    
+private int parseTimeZone(String string, int offset) {
         boolean foundGMT = string.regionMatches(offset, "GMT", 0, 3);
         if (foundGMT) {
             offset += 3;
@@ -1121,8 +1156,9 @@ public Date parse(String string, ParsePosition position) {
      * interpreted literally, regardless of the number of digits. So using the
      * pattern {@code MM/dd/yyyy}, {@code "01/11/12"} is parsed as Jan 11, 12 A.D.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.407 -0500", hash_original_method = "893CAD0A3A74697E4DAD4463A5252E56", hash_generated_method = "48F4698F555F5A8A349303AFDE857911")
-    public void set2DigitYearStart(Date date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.159 -0500", hash_original_method = "893CAD0A3A74697E4DAD4463A5252E56", hash_generated_method = "48F4698F555F5A8A349303AFDE857911")
+    
+public void set2DigitYearStart(Date date) {
         defaultCenturyStart = (Date) date.clone();
         Calendar cal = new GregorianCalendar();
         cal.setTime(defaultCenturyStart);
@@ -1135,8 +1171,9 @@ public Date parse(String string, ParsePosition position) {
      * @param value
      *            the new {@code DateFormatSymbols} object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.408 -0500", hash_original_method = "4ECB9E8EB801E57F7682FCC8E531C475", hash_generated_method = "88A555D21095717934BB05D273D92D69")
-    public void setDateFormatSymbols(DateFormatSymbols value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.161 -0500", hash_original_method = "4ECB9E8EB801E57F7682FCC8E531C475", hash_generated_method = "88A555D21095717934BB05D273D92D69")
+    
+public void setDateFormatSymbols(DateFormatSymbols value) {
         formatData = (DateFormatSymbols) value.clone();
     }
 
@@ -1146,8 +1183,9 @@ public Date parse(String string, ParsePosition position) {
      *
      * @return the localized pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.409 -0500", hash_original_method = "0CBAC1F89B5D111A3585F82BE6753903", hash_generated_method = "1CBD29E7E334507A5B5A2B3CECE9D604")
-    public String toLocalizedPattern() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.164 -0500", hash_original_method = "0CBAC1F89B5D111A3585F82BE6753903", hash_generated_method = "1CBD29E7E334507A5B5A2B3CECE9D604")
+    
+public String toLocalizedPattern() {
         return convertPattern(pattern, PATTERN_CHARS, formatData.getLocalPatternChars(), false);
     }
 
@@ -1157,13 +1195,15 @@ public Date parse(String string, ParsePosition position) {
      *
      * @return the non-localized pattern.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.411 -0500", hash_original_method = "35D638E960413F452190EF441C98A34C", hash_generated_method = "5CD84E1ED88608B4AC68B8A630BD6A44")
-    public String toPattern() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.169 -0500", hash_original_method = "35D638E960413F452190EF441C98A34C", hash_generated_method = "5CD84E1ED88608B4AC68B8A630BD6A44")
+    
+public String toPattern() {
         return pattern;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.413 -0500", hash_original_method = "C5F79137BB7206158B23593D7F9B176B", hash_generated_method = "C150C85536BFA38D40BA2DD9527521D8")
-    private void writeObject(ObjectOutputStream stream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.174 -0500", hash_original_method = "C5F79137BB7206158B23593D7F9B176B", hash_generated_method = "C150C85536BFA38D40BA2DD9527521D8")
+    
+private void writeObject(ObjectOutputStream stream) throws IOException {
         ObjectOutputStream.PutField fields = stream.putFields();
         fields.put("defaultCenturyStart", defaultCenturyStart);
         fields.put("formatData", formatData);
@@ -1172,8 +1212,9 @@ public Date parse(String string, ParsePosition position) {
         stream.writeFields();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.414 -0500", hash_original_method = "8B9631F89FAD33D3B003933051524309", hash_generated_method = "AD5EEEF3C6F64B2951EFD39F3E01F710")
-    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.178 -0500", hash_original_method = "8B9631F89FAD33D3B003933051524309", hash_generated_method = "AD5EEEF3C6F64B2951EFD39F3E01F710")
+    
+private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         ObjectInputStream.GetField fields = stream.readFields();
         int version = fields.get("serialVersionOnStream", 0);
         Date date;

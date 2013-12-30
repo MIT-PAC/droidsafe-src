@@ -19,8 +19,9 @@ import java.util.Properties;
 
 public final class MimeUtils {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.756 -0500", hash_original_method = "26D8FD3DB7DED7D6ADB895709D5259A0", hash_generated_method = "41654EDF1567158E52C1815117FFCB32")
-    private static void add(String mimeType, String extension) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.754 -0500", hash_original_method = "26D8FD3DB7DED7D6ADB895709D5259A0", hash_generated_method = "41654EDF1567158E52C1815117FFCB32")
+    
+private static void add(String mimeType, String extension) {
         //
         // if we have an existing x --> y mapping, we do not want to
         // override it with another mapping x --> ?
@@ -35,8 +36,9 @@ public final class MimeUtils {
         extensionToMimeTypeMap.put(extension, mimeType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.757 -0500", hash_original_method = "58E20A78E353D4299D932C43794B16C8", hash_generated_method = "8E3FD1989B851F59C05E025C8889658F")
-    private static InputStream getContentTypesPropertiesStream() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.756 -0500", hash_original_method = "58E20A78E353D4299D932C43794B16C8", hash_generated_method = "8E3FD1989B851F59C05E025C8889658F")
+    
+private static InputStream getContentTypesPropertiesStream() {
         // User override?
         String userTable = System.getProperty("content.types.user.table");
         if (userTable != null) {
@@ -66,8 +68,9 @@ public final class MimeUtils {
      * own "content.types.user.table" means you don't get any of the built-ins, and the built-ins
      * come from "$JAVA_HOME/lib/content-types.properties".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.758 -0500", hash_original_method = "95B16C7C7F13DC470BDCDB52F2D23BFD", hash_generated_method = "3F2164BF4140B2783EB98206D805F67C")
-    private static void applyOverrides() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.759 -0500", hash_original_method = "95B16C7C7F13DC470BDCDB52F2D23BFD", hash_generated_method = "3F2164BF4140B2783EB98206D805F67C")
+    
+private static void applyOverrides() {
         // Get the appropriate InputStream to read overrides from, if any.
         InputStream stream = getContentTypesPropertiesStream();
         if (stream == null) {
@@ -97,8 +100,9 @@ public final class MimeUtils {
      * @param mimeType A MIME type (i.e. text/plain)
      * @return True iff there is a mimeType entry in the map.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.760 -0500", hash_original_method = "DA40B025EF2A2ABBC01EE849836E7F8C", hash_generated_method = "B3074E664264A14B105A4132B50CB760")
-    public static boolean hasMimeType(String mimeType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.764 -0500", hash_original_method = "DA40B025EF2A2ABBC01EE849836E7F8C", hash_generated_method = "B3074E664264A14B105A4132B50CB760")
+    
+public static boolean hasMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return false;
         }
@@ -110,8 +114,9 @@ public final class MimeUtils {
      * @param extension A file extension without the leading '.'
      * @return The MIME type for the given extension or null iff there is none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.761 -0500", hash_original_method = "6BF2611F2DCCFC5EFFF7BC07A532AE85", hash_generated_method = "7D16012F544791A75B46331A6B4889DC")
-    public static String guessMimeTypeFromExtension(String extension) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.767 -0500", hash_original_method = "6BF2611F2DCCFC5EFFF7BC07A532AE85", hash_generated_method = "7D16012F544791A75B46331A6B4889DC")
+    
+public static String guessMimeTypeFromExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return null;
         }
@@ -123,8 +128,9 @@ public final class MimeUtils {
      * @param extension A file extension without the leading '.'
      * @return True iff there is an extension entry in the map.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.762 -0500", hash_original_method = "C464D16A28A9DCABA3B0B8FD02F52155", hash_generated_method = "0A183B7841054C14E915336FD1A0DC9E")
-    public static boolean hasExtension(String extension) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.770 -0500", hash_original_method = "C464D16A28A9DCABA3B0B8FD02F52155", hash_generated_method = "0A183B7841054C14E915336FD1A0DC9E")
+    
+public static boolean hasExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return false;
         }
@@ -138,23 +144,25 @@ public final class MimeUtils {
      * @param mimeType A MIME type (i.e. text/plain)
      * @return The extension for the given MIME type or null iff there is none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.763 -0500", hash_original_method = "562B5E3E58AE7AC8AFA073A2A9DBCEF2", hash_generated_method = "C511F1EDC52EE717FF24072D132F02D8")
-    public static String guessExtensionFromMimeType(String mimeType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.772 -0500", hash_original_method = "562B5E3E58AE7AC8AFA073A2A9DBCEF2", hash_generated_method = "C511F1EDC52EE717FF24072D132F02D8")
+    
+public static String guessExtensionFromMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return null;
         }
         return mimeTypeToExtensionMap.get(mimeType);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.753 -0500", hash_original_field = "058487A8AFED55589DDCD4BD5C463D06", hash_generated_field = "980D104AA2B72735F5F011F93DF611F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.746 -0500", hash_original_field = "058487A8AFED55589DDCD4BD5C463D06", hash_generated_field = "980D104AA2B72735F5F011F93DF611F4")
 
     private static final Map<String, String> mimeTypeToExtensionMap = new HashMap<String, String>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.754 -0500", hash_original_field = "38A0C92CE266B7CB2AAB658A5B02BC54", hash_generated_field = "7842830AD3F69A21CFE5A45DD420D95A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.749 -0500", hash_original_field = "38A0C92CE266B7CB2AAB658A5B02BC54", hash_generated_field = "7842830AD3F69A21CFE5A45DD420D95A")
 
 
     private static final Map<String, String> extensionToMimeTypeMap = new HashMap<String, String>();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.759 -0500", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "C7C14DE5A9400AF5E972869972EAB79C")
-    private MimeUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.761 -0500", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "C7C14DE5A9400AF5E972869972EAB79C")
+    
+private MimeUtils() {
     }
     static {
         add("application/andrew-inset", "ez");

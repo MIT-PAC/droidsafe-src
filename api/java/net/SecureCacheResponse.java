@@ -19,8 +19,9 @@ public abstract class SecureCacheResponse extends CacheResponse {
     /**
      * Creates a new instance of this class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.188 -0500", hash_original_method = "2B60842F322CE42A5832F1BBB0BB3BBC", hash_generated_method = "E876B20AB059AEB79D3226BCAAD496CE")
-    public SecureCacheResponse() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.203 -0500", hash_original_method = "2B60842F322CE42A5832F1BBB0BB3BBC", hash_generated_method = "E876B20AB059AEB79D3226BCAAD496CE")
+    
+public SecureCacheResponse() {
     }
 
     /**
@@ -29,8 +30,9 @@ public abstract class SecureCacheResponse extends CacheResponse {
      *
      * @return the cipher suite string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.189 -0500", hash_original_method = "DC3C51A13960575CAB20927262CC1EAA", hash_generated_method = "50C779AE7D838B9AD10E9CAAE28CA039")
-    public abstract String getCipherSuite();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.206 -0500", hash_original_method = "DC3C51A13960575CAB20927262CC1EAA", hash_generated_method = "50C779AE7D838B9AD10E9CAAE28CA039")
+    
+public abstract String getCipherSuite();
 
     /**
      * Gets the local certificate chain. When the original connection retrieved
@@ -41,8 +43,9 @@ public abstract class SecureCacheResponse extends CacheResponse {
      * @return the certificate chain that was sent to the server. If no
      *         certificate chain was sent, the method returns {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.189 -0500", hash_original_method = "311741B527CA4F39B9234C34CC3B7AFA", hash_generated_method = "35CDD61FFEE644BD96FBAF38B7C31B43")
-    public abstract List<Certificate> getLocalCertificateChain();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.208 -0500", hash_original_method = "311741B527CA4F39B9234C34CC3B7AFA", hash_generated_method = "35CDD61FFEE644BD96FBAF38B7C31B43")
+    
+public abstract List<Certificate> getLocalCertificateChain();
 
     /**
      * Gets the cached server's certificate chain. As part of defining the
@@ -55,8 +58,9 @@ public abstract class SecureCacheResponse extends CacheResponse {
      * @throws SSLPeerUnverifiedException
      *             if the peer is unverified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.190 -0500", hash_original_method = "2C182CC104B6AF3A29CD53DD7A3A838C", hash_generated_method = "7467D79C70A3C6272623BFA28341E174")
-    public abstract List<Certificate> getServerCertificateChain()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.211 -0500", hash_original_method = "2C182CC104B6AF3A29CD53DD7A3A838C", hash_generated_method = "7467D79C70A3C6272623BFA28341E174")
+    
+public abstract List<Certificate> getServerCertificateChain()
             throws SSLPeerUnverifiedException;
 
     /**
@@ -68,8 +72,9 @@ public abstract class SecureCacheResponse extends CacheResponse {
      * @throws SSLPeerUnverifiedException
      *             if the peer is unverified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.191 -0500", hash_original_method = "39836869B57D2BC0F61D16AFD90892A8", hash_generated_method = "76C69168B4B18454351FC53F4D26CA31")
-    public abstract Principal getPeerPrincipal()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.213 -0500", hash_original_method = "39836869B57D2BC0F61D16AFD90892A8", hash_generated_method = "76C69168B4B18454351FC53F4D26CA31")
+    
+public abstract Principal getPeerPrincipal()
             throws SSLPeerUnverifiedException;
 
     /**
@@ -81,8 +86,9 @@ public abstract class SecureCacheResponse extends CacheResponse {
      *         {@code X500Principal} object for X509-based cipher suites. If no
      *         principal was sent, it returns {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.192 -0500", hash_original_method = "9FFB2B18A70F76C4BCA9E2857CB5AD56", hash_generated_method = "D713221E2623AC23872545FE17F85951")
-    public abstract Principal getLocalPrincipal();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.216 -0500", hash_original_method = "9FFB2B18A70F76C4BCA9E2857CB5AD56", hash_generated_method = "D713221E2623AC23872545FE17F85951")
+    
+public abstract Principal getLocalPrincipal();
 
     
 }

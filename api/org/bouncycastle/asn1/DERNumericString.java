@@ -18,8 +18,9 @@ public class DERNumericString extends ASN1Object implements DERString {
      *
      * @exception IllegalArgumentException if the object cannot be converted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.567 -0500", hash_original_method = "6F91E8D60F41A74ED45E31085B26D476", hash_generated_method = "77871AD71F0D1C75B481FEEC7A5D770D")
-    public static DERNumericString getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.795 -0500", hash_original_method = "6F91E8D60F41A74ED45E31085B26D476", hash_generated_method = "77871AD71F0D1C75B481FEEC7A5D770D")
+    
+public static DERNumericString getInstance(
         Object  obj)
     {
         if (obj == null || obj instanceof DERNumericString)
@@ -39,8 +40,9 @@ public class DERNumericString extends ASN1Object implements DERString {
      * @exception IllegalArgumentException if the tagged object cannot
      *               be converted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.568 -0500", hash_original_method = "218C3368C5D83E9A6AE098098C904908", hash_generated_method = "C2F038823603F63E5405CEB61514AA64")
-    public static DERNumericString getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.798 -0500", hash_original_method = "218C3368C5D83E9A6AE098098C904908", hash_generated_method = "C2F038823603F63E5405CEB61514AA64")
+    
+public static DERNumericString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit)
     {
@@ -62,8 +64,9 @@ public class DERNumericString extends ASN1Object implements DERString {
      * @param str string to validate.
      * @return true if numeric, fale otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.576 -0500", hash_original_method = "049F8D965694C2AF1DDE3DF681E296F3", hash_generated_method = "39CF216D327B4F6D26F037E3F187D898")
-    public static boolean isNumericString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.820 -0500", hash_original_method = "049F8D965694C2AF1DDE3DF681E296F3", hash_generated_method = "39CF216D327B4F6D26F037E3F187D898")
+    
+public static boolean isNumericString(
         String  str)
     {
         for (int i = str.length() - 1; i >= 0; i--)
@@ -85,15 +88,16 @@ public class DERNumericString extends ASN1Object implements DERString {
 
         return true;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.566 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.792 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
 
     String  string;
 
     /**
      * basic constructor - with bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.569 -0500", hash_original_method = "68F5D78267A661375BFA3ED79E149992", hash_generated_method = "DE868654A0553D24B157BE03977F1B47")
-    public DERNumericString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.800 -0500", hash_original_method = "68F5D78267A661375BFA3ED79E149992", hash_generated_method = "DE868654A0553D24B157BE03977F1B47")
+    
+public DERNumericString(
         byte[]   string)
     {
         char[]  cs = new char[string.length];
@@ -109,8 +113,9 @@ public class DERNumericString extends ASN1Object implements DERString {
     /**
      * basic constructor -  without validation..
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.570 -0500", hash_original_method = "4A4CC31A466FEB81F134844B7BA257FB", hash_generated_method = "A284F3000955EDE6C1F2FA90BBFBB1AB")
-    public DERNumericString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.803 -0500", hash_original_method = "4A4CC31A466FEB81F134844B7BA257FB", hash_generated_method = "A284F3000955EDE6C1F2FA90BBFBB1AB")
+    
+public DERNumericString(
         String   string)
     {
         this(string, false);
@@ -124,8 +129,9 @@ public class DERNumericString extends ASN1Object implements DERString {
      * @throws IllegalArgumentException if validate is true and the string
      * contains characters that should not be in a NumericString.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.571 -0500", hash_original_method = "E352C3D2266CB71465C2437206485D10", hash_generated_method = "A05A1B742AA66A70821529E59154F5CB")
-    public DERNumericString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.805 -0500", hash_original_method = "E352C3D2266CB71465C2437206485D10", hash_generated_method = "A05A1B742AA66A70821529E59154F5CB")
+    
+public DERNumericString(
         String   string,
         boolean  validate)
     {
@@ -137,20 +143,23 @@ public class DERNumericString extends ASN1Object implements DERString {
         this.string = string;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.571 -0500", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "0799D80CD18A4A810496E9156E8785AE")
-    public String getString()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.808 -0500", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "0799D80CD18A4A810496E9156E8785AE")
+    
+public String getString()
     {
         return string;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.572 -0500", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "2D11779E0451E86157AACAD10BFF2E34")
-    public String toString()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.810 -0500", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "2D11779E0451E86157AACAD10BFF2E34")
+    
+public String toString()
     {
         return string;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.573 -0500", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "E08E3842D09F2B484542E23BCDDE2DBB")
-    public byte[] getOctets()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.812 -0500", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "E08E3842D09F2B484542E23BCDDE2DBB")
+    
+public byte[] getOctets()
     {
         char[]  cs = string.toCharArray();
         byte[]  bs = new byte[cs.length];
@@ -163,22 +172,25 @@ public class DERNumericString extends ASN1Object implements DERString {
         return bs; 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.574 -0500", hash_original_method = "9CAFE2F99C4AA1A810005CA2021DBA5F", hash_generated_method = "9CAFE2F99C4AA1A810005CA2021DBA5F")
-    void encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.814 -0500", hash_original_method = "9CAFE2F99C4AA1A810005CA2021DBA5F", hash_generated_method = "9CAFE2F99C4AA1A810005CA2021DBA5F")
+    
+void encode(
         DEROutputStream  out)
         throws IOException
     {
         out.writeEncoded(NUMERIC_STRING, this.getOctets());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.574 -0500", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "54F3A64DBCC65B097BA7A8E0BB1579E9")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.816 -0500", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "54F3A64DBCC65B097BA7A8E0BB1579E9")
+    
+public int hashCode()
     {
         return this.getString().hashCode();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:51.575 -0500", hash_original_method = "8BA017E030540263DAC8EBF952EA3B45", hash_generated_method = "8BA017E030540263DAC8EBF952EA3B45")
-    boolean asn1Equals(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.818 -0500", hash_original_method = "8BA017E030540263DAC8EBF952EA3B45", hash_generated_method = "8BA017E030540263DAC8EBF952EA3B45")
+    
+boolean asn1Equals(
         DERObject  o)
     {
         if (!(o instanceof DERNumericString))

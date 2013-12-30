@@ -25,10 +25,10 @@ import javax.net.ssl.TrustManagerFactory;
 
 
 public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.158 -0500", hash_original_field = "597F586052EA4DB698A92860AAA2AFE9", hash_generated_field = "566D6B41A10785704C5DA62CA709142C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.088 -0500", hash_original_field = "597F586052EA4DB698A92860AAA2AFE9", hash_generated_field = "566D6B41A10785704C5DA62CA709142C")
 
     private static KeyManager[] KEY_MANAGERS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.158 -0500", hash_original_field = "7E240F6BB967D0B3E4E647159202C0AC", hash_generated_field = "1EC7739BDEC2CA831D3D4FE81BA648C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.091 -0500", hash_original_field = "7E240F6BB967D0B3E4E647159202C0AC", hash_generated_field = "1EC7739BDEC2CA831D3D4FE81BA648C0")
 
     private static TrustManager[] TRUST_MANAGERS;
 
@@ -39,14 +39,16 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
      * that we don't have races in creating the state shared between
      * all default SSLContexts.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.159 -0500", hash_original_method = "09005AB24FD7DF4C7BE4D5BB1BAB63A4", hash_generated_method = "96BEC411EC28BE38E6E384F8FA7CAE60")
-    public DefaultSSLContextImpl() throws GeneralSecurityException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.093 -0500", hash_original_method = "09005AB24FD7DF4C7BE4D5BB1BAB63A4", hash_generated_method = "96BEC411EC28BE38E6E384F8FA7CAE60")
+    
+public DefaultSSLContextImpl() throws GeneralSecurityException, IOException {
         super(null);
     }
 
     // TODO javax.net.ssl.keyStoreProvider system property
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.160 -0500", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "EAC19B8B4FD5A1F1B311A095D42F2FC7")
-    KeyManager[] getKeyManagers () throws GeneralSecurityException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.096 -0500", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "EAC19B8B4FD5A1F1B311A095D42F2FC7")
+    
+KeyManager[] getKeyManagers () throws GeneralSecurityException, IOException {
         if (KEY_MANAGERS != null) {
             return KEY_MANAGERS;
         }
@@ -81,8 +83,9 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
     }
 
     // TODO javax.net.ssl.trustStoreProvider system property
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.161 -0500", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "91D2689A479083E2E70C28999FAAC745")
-    TrustManager[] getTrustManagers() throws GeneralSecurityException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.099 -0500", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "91D2689A479083E2E70C28999FAAC745")
+    
+TrustManager[] getTrustManagers() throws GeneralSecurityException, IOException {
         if (TRUST_MANAGERS != null) {
             return TRUST_MANAGERS;
         }
@@ -117,9 +120,10 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
         return TRUST_MANAGERS;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.162 -0500", hash_original_method = "C6A638FBF6A76AC1A136D02168ED58AC", hash_generated_method = "951FB07C60CD35D97FFE5CC3AEB3C84B")
-    @Override
-public void engineInit(KeyManager[] kms, TrustManager[] tms,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.101 -0500", hash_original_method = "C6A638FBF6A76AC1A136D02168ED58AC", hash_generated_method = "951FB07C60CD35D97FFE5CC3AEB3C84B")
+    
+@Override
+    public void engineInit(KeyManager[] kms, TrustManager[] tms,
             SecureRandom sr) throws KeyManagementException {
         throw new KeyManagementException("Do not init() the default SSLContext ");
     }

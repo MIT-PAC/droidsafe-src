@@ -24,8 +24,9 @@ public class AcceptLanguageParser extends HeaderParser {
      * Constructor
      * @param acceptLanguage AcceptLanguage message to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.937 -0500", hash_original_method = "4ECD6586A5A6ED08B6159E7C6D7079C1", hash_generated_method = "EE8103F532F2D46D3610970D092C3ECB")
-    public AcceptLanguageParser(String acceptLanguage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.480 -0500", hash_original_method = "4ECD6586A5A6ED08B6159E7C6D7079C1", hash_generated_method = "EE8103F532F2D46D3610970D092C3ECB")
+    
+public AcceptLanguageParser(String acceptLanguage) {
         super(acceptLanguage);
     }
 
@@ -33,8 +34,9 @@ public class AcceptLanguageParser extends HeaderParser {
      * Constructor
      * @param lexer Lexer to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.938 -0500", hash_original_method = "8738AF37C5C1AC35B7D6DAA26504D715", hash_generated_method = "D6E006301BCD32DC14D27238F2F9D49E")
-    protected AcceptLanguageParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.483 -0500", hash_original_method = "8738AF37C5C1AC35B7D6DAA26504D715", hash_generated_method = "D6E006301BCD32DC14D27238F2F9D49E")
+    
+protected AcceptLanguageParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -43,8 +45,9 @@ public class AcceptLanguageParser extends HeaderParser {
      * @return SIPHeader (AcceptLanguage object)
      * @throws ParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.940 -0500", hash_original_method = "FB0497E5D9550DB51E743204446EFE6C", hash_generated_method = "E71308111C5DA8DA3F027CA04BAFE3A4")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.487 -0500", hash_original_method = "FB0497E5D9550DB51E743204446EFE6C", hash_generated_method = "E71308111C5DA8DA3F027CA04BAFE3A4")
+    
+public SIPHeader parse() throws ParseException {
         AcceptLanguageList acceptLanguageList = new AcceptLanguageList();
         if (debug)
             dbg_enter("AcceptLanguageParser.parse");

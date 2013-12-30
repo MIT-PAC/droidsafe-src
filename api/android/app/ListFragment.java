@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 
 public class ListFragment extends Fragment {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.109 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "ED5BAD7C7A1EC83F341419B29A267C9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.044 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "ED5BAD7C7A1EC83F341419B29A267C9F")
 
     final private Handler mHandler = new Handler();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.105 -0400", hash_original_field = "F487762B42FCD79D908F11802425F9AE", hash_generated_field = "1DE73C7158094283DF2E07B61B66A0F0")
@@ -52,34 +52,35 @@ public class ListFragment extends Fragment {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.113 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "CBDD62EF585589E92C0E00AE9F4F22E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.055 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "CBDD62EF585589E92C0E00AE9F4F22E2")
 
 
     ListAdapter mAdapter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.114 -0500", hash_original_field = "A5B73AC2B922200A8C47FEAA8C3EB07A", hash_generated_field = "A5B73AC2B922200A8C47FEAA8C3EB07A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.057 -0500", hash_original_field = "A5B73AC2B922200A8C47FEAA8C3EB07A", hash_generated_field = "A5B73AC2B922200A8C47FEAA8C3EB07A")
 
     ListView mList;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.115 -0500", hash_original_field = "7791203818A2C8C23F9ABF8545C329FB", hash_generated_field = "7791203818A2C8C23F9ABF8545C329FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.060 -0500", hash_original_field = "7791203818A2C8C23F9ABF8545C329FB", hash_generated_field = "7791203818A2C8C23F9ABF8545C329FB")
 
     View mEmptyView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.115 -0500", hash_original_field = "1BF76B462D7F24436F14F7F745BB541C", hash_generated_field = "1BF76B462D7F24436F14F7F745BB541C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.062 -0500", hash_original_field = "1BF76B462D7F24436F14F7F745BB541C", hash_generated_field = "1BF76B462D7F24436F14F7F745BB541C")
 
     TextView mStandardEmptyView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.116 -0500", hash_original_field = "5A35A3CD88A2CD2FFD5E60C83A9EA805", hash_generated_field = "5A35A3CD88A2CD2FFD5E60C83A9EA805")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.064 -0500", hash_original_field = "5A35A3CD88A2CD2FFD5E60C83A9EA805", hash_generated_field = "5A35A3CD88A2CD2FFD5E60C83A9EA805")
 
     View mProgressContainer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.117 -0500", hash_original_field = "4BEB12F6053492A04536FE88CDB7F3C9", hash_generated_field = "4BEB12F6053492A04536FE88CDB7F3C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.066 -0500", hash_original_field = "4BEB12F6053492A04536FE88CDB7F3C9", hash_generated_field = "4BEB12F6053492A04536FE88CDB7F3C9")
 
     View mListContainer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.117 -0500", hash_original_field = "D3680587F795E32338C0D453701D98D2", hash_generated_field = "D3680587F795E32338C0D453701D98D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.068 -0500", hash_original_field = "D3680587F795E32338C0D453701D98D2", hash_generated_field = "D3680587F795E32338C0D453701D98D2")
 
     CharSequence mEmptyText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.118 -0500", hash_original_field = "DED3E45D8C8FC4CDC3B9DE2C2A90BA30", hash_generated_field = "DED3E45D8C8FC4CDC3B9DE2C2A90BA30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.070 -0500", hash_original_field = "DED3E45D8C8FC4CDC3B9DE2C2A90BA30", hash_generated_field = "DED3E45D8C8FC4CDC3B9DE2C2A90BA30")
 
     boolean mListShown;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.120 -0500", hash_original_method = "EF57861318B397409B17ABF77AE47B37", hash_generated_method = "B81266A0FA43BBE0A70682BF3A3618B6")
-    public ListFragment() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.072 -0500", hash_original_method = "EF57861318B397409B17ABF77AE47B37", hash_generated_method = "B81266A0FA43BBE0A70682BF3A3618B6")
+    
+public ListFragment() {
     }
 
     /**
@@ -96,9 +97,10 @@ public class ListFragment extends Fragment {
      * behavior of ListFragment.  In particular, this is currently the only
      * way to have the built-in indeterminant progress state be shown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.120 -0500", hash_original_method = "BEDEF1303F07526C038707780C2D3CB6", hash_generated_method = "32569A28687D4A3C8ED5E30F4B91B64A")
-    @Override
-public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.075 -0500", hash_original_method = "BEDEF1303F07526C038707780C2D3CB6", hash_generated_method = "32569A28687D4A3C8ED5E30F4B91B64A")
+    
+@Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         return inflater.inflate(com.android.internal.R.layout.list_content,
                 container, false);
@@ -107,9 +109,10 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
     /**
      * Attach to list view once the view hierarchy has been created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.121 -0500", hash_original_method = "3AF156F2799514C47B044D45A77C4F43", hash_generated_method = "87FA002C4A38DB8B9913B90D43B60586")
-    @Override
-public void onViewCreated(View view, Bundle savedInstanceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.077 -0500", hash_original_method = "3AF156F2799514C47B044D45A77C4F43", hash_generated_method = "87FA002C4A38DB8B9913B90D43B60586")
+    
+@Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ensureList();
     }
@@ -117,9 +120,10 @@ public void onViewCreated(View view, Bundle savedInstanceState) {
     /**
      * Detach from list view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.122 -0500", hash_original_method = "4AE67C9B14400A0313E10E10FEB59F4C", hash_generated_method = "FDE84136AAB0B0938E6DA23A8AEBA619")
-    @Override
-public void onDestroyView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.079 -0500", hash_original_method = "4AE67C9B14400A0313E10E10FEB59F4C", hash_generated_method = "FDE84136AAB0B0938E6DA23A8AEBA619")
+    
+@Override
+    public void onDestroyView() {
         mHandler.removeCallbacks(mRequestFocus);
         mList = null;
         mListShown = false;
@@ -139,15 +143,17 @@ public void onDestroyView() {
      * @param position The position of the view in the list
      * @param id The row id of the item that was clicked
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.123 -0500", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "CB4D791D7A70B359EC627916815866E7")
-    public void onListItemClick(ListView l, View v, int position, long id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.081 -0500", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "CB4D791D7A70B359EC627916815866E7")
+    
+public void onListItemClick(ListView l, View v, int position, long id) {
     }
 
     /**
      * Provide the cursor for the list view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.124 -0500", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "24360340D52FA8A6C6E50D86154E3782")
-    public void setListAdapter(ListAdapter adapter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.083 -0500", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "24360340D52FA8A6C6E50D86154E3782")
+    
+public void setListAdapter(ListAdapter adapter) {
         boolean hadAdapter = mAdapter != null;
         mAdapter = adapter;
         if (mList != null) {
@@ -166,8 +172,9 @@ public void onDestroyView() {
      *
      * @param position
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.125 -0500", hash_original_method = "6FC4BB7AE2BE523C1207DDD3222220F6", hash_generated_method = "A599FCBC7D48F26EB5D7B2F3DE51785A")
-    public void setSelection(int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.085 -0500", hash_original_method = "6FC4BB7AE2BE523C1207DDD3222220F6", hash_generated_method = "A599FCBC7D48F26EB5D7B2F3DE51785A")
+    
+public void setSelection(int position) {
         ensureList();
         mList.setSelection(position);
     }
@@ -175,8 +182,9 @@ public void onDestroyView() {
     /**
      * Get the position of the currently selected list item.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.125 -0500", hash_original_method = "602C73B7F7242D55D7B4B399409B7E51", hash_generated_method = "EF2F15FACD5AFD8A602B2895872995B7")
-    public int getSelectedItemPosition() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.087 -0500", hash_original_method = "602C73B7F7242D55D7B4B399409B7E51", hash_generated_method = "EF2F15FACD5AFD8A602B2895872995B7")
+    
+public int getSelectedItemPosition() {
         ensureList();
         return mList.getSelectedItemPosition();
     }
@@ -184,8 +192,9 @@ public void onDestroyView() {
     /**
      * Get the cursor row ID of the currently selected list item.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.126 -0500", hash_original_method = "7FA8F631361DB814AF49E068AB6A3A01", hash_generated_method = "B331E878633D89AE3581D2EE05D8FA23")
-    public long getSelectedItemId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.089 -0500", hash_original_method = "7FA8F631361DB814AF49E068AB6A3A01", hash_generated_method = "B331E878633D89AE3581D2EE05D8FA23")
+    
+public long getSelectedItemId() {
         ensureList();
         return mList.getSelectedItemId();
     }
@@ -193,8 +202,9 @@ public void onDestroyView() {
     /**
      * Get the activity's list view widget.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.127 -0500", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "F390A30877A55CE39C88D546BF9EAE07")
-    public ListView getListView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.092 -0500", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "F390A30877A55CE39C88D546BF9EAE07")
+    
+public ListView getListView() {
         ensureList();
         return mList;
     }
@@ -204,8 +214,9 @@ public void onDestroyView() {
      * be shown when the list is empty.  If you would like to have it
      * shown, call this method to supply the text it should use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.128 -0500", hash_original_method = "BDE8F4E2DF99E8DBF624FF236090A0E2", hash_generated_method = "5E065A93894B457E8400200A9E3EEBAD")
-    public void setEmptyText(CharSequence text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.095 -0500", hash_original_method = "BDE8F4E2DF99E8DBF624FF236090A0E2", hash_generated_method = "5E065A93894B457E8400200A9E3EEBAD")
+    
+public void setEmptyText(CharSequence text) {
         ensureList();
         if (mStandardEmptyView == null) {
             throw new IllegalStateException("Can't be used with a custom content view");
@@ -231,8 +242,9 @@ public void onDestroyView() {
      * @param shown If true, the list view is shown; if false, the progress
      * indicator.  The initial value is true.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.129 -0500", hash_original_method = "58A7D31C5F755970E32BD1449250481A", hash_generated_method = "4472EC2324E425D9EB5857C25B77A122")
-    public void setListShown(boolean shown) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.097 -0500", hash_original_method = "58A7D31C5F755970E32BD1449250481A", hash_generated_method = "4472EC2324E425D9EB5857C25B77A122")
+    
+public void setListShown(boolean shown) {
         setListShown(shown, true);
     }
     
@@ -240,8 +252,9 @@ public void onDestroyView() {
      * Like {@link #setListShown(boolean)}, but no animation is used when
      * transitioning from the previous state.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.129 -0500", hash_original_method = "9A20C5F20729EB8F1D1E26962B6A5257", hash_generated_method = "DB7E0C9414E9CD473D33ECCDC493220B")
-    public void setListShownNoAnimation(boolean shown) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.099 -0500", hash_original_method = "9A20C5F20729EB8F1D1E26962B6A5257", hash_generated_method = "DB7E0C9414E9CD473D33ECCDC493220B")
+    
+public void setListShownNoAnimation(boolean shown) {
         setListShown(shown, false);
     }
     
@@ -255,8 +268,9 @@ public void onDestroyView() {
      * @param animate If true, an animation will be used to transition to the
      * new state.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.130 -0500", hash_original_method = "01D2A62CF5C9E9D8F31EAD95561BA6AA", hash_generated_method = "FED296308C6FFDA511333418D12AFB73")
-    private void setListShown(boolean shown, boolean animate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.102 -0500", hash_original_method = "01D2A62CF5C9E9D8F31EAD95561BA6AA", hash_generated_method = "FED296308C6FFDA511333418D12AFB73")
+    
+private void setListShown(boolean shown, boolean animate) {
         ensureList();
         if (mProgressContainer == null) {
             throw new IllegalStateException("Can't be used with a custom content view");
@@ -295,13 +309,15 @@ public void onDestroyView() {
     /**
      * Get the ListAdapter associated with this activity's ListView.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.132 -0500", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "F0392D746E5256DD5E352F87E4AB1051")
-    public ListAdapter getListAdapter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.104 -0500", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "F0392D746E5256DD5E352F87E4AB1051")
+    
+public ListAdapter getListAdapter() {
         return mAdapter;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:19.133 -0500", hash_original_method = "E4157ED141058B6B94474E0556BB8B74", hash_generated_method = "E72A4503B14DFCDFF883C80D15414C67")
-    private void ensureList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.107 -0500", hash_original_method = "E4157ED141058B6B94474E0556BB8B74", hash_generated_method = "E72A4503B14DFCDFF883C80D15414C67")
+    
+private void ensureList() {
         if (mList != null) {
             return;
         }

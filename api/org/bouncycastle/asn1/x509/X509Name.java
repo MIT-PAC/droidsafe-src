@@ -41,16 +41,18 @@ public class X509Name extends ASN1Encodable {
      * @param explicit true if explicitly tagged false otherwise.
      * @return the X509Name
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.328 -0500", hash_original_method = "35717B5D44D40B15BC305384A515B852", hash_generated_method = "95406EE1261899B50CBD9CB2E395A509")
-    public static X509Name getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.897 -0500", hash_original_method = "35717B5D44D40B15BC305384A515B852", hash_generated_method = "95406EE1261899B50CBD9CB2E395A509")
+    
+public static X509Name getInstance(
         ASN1TaggedObject obj,
         boolean          explicit)
     {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.329 -0500", hash_original_method = "48285B3BE307C3DF1D7E2E269123DFE3", hash_generated_method = "6B86B0BE37D36155AC11623678B6E32F")
-    public static X509Name getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.899 -0500", hash_original_method = "48285B3BE307C3DF1D7E2E269123DFE3", hash_generated_method = "6B86B0BE37D36155AC11623678B6E32F")
+    
+public static X509Name getInstance(
         Object  obj)
     {
         if (obj == null || obj instanceof X509Name)
@@ -68,174 +70,175 @@ public class X509Name extends ASN1Encodable {
 
         return null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.283 -0500", hash_original_field = "AC43C952E106CFD7F964E16593B15917", hash_generated_field = "82D687239E3C86279A9A387C3E8AE15F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.768 -0500", hash_original_field = "AC43C952E106CFD7F964E16593B15917", hash_generated_field = "82D687239E3C86279A9A387C3E8AE15F")
 
     public static final DERObjectIdentifier C = new DERObjectIdentifier("2.5.4.6");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.284 -0500", hash_original_field = "FDDED9CA16A440BADDF82743028CFDF5", hash_generated_field = "9A0BCC4B2444A7BF0405630803C2F2D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.771 -0500", hash_original_field = "FDDED9CA16A440BADDF82743028CFDF5", hash_generated_field = "9A0BCC4B2444A7BF0405630803C2F2D0")
 
     public static final DERObjectIdentifier O = new DERObjectIdentifier("2.5.4.10");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.285 -0500", hash_original_field = "8D088347DE678410C2C4659D9E7F69F4", hash_generated_field = "6326280D591C30719B3DB5C13338F0A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.774 -0500", hash_original_field = "8D088347DE678410C2C4659D9E7F69F4", hash_generated_field = "6326280D591C30719B3DB5C13338F0A3")
 
     public static final DERObjectIdentifier OU = new DERObjectIdentifier("2.5.4.11");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.286 -0500", hash_original_field = "6E31D186555B147C5C13BE685C0ED00C", hash_generated_field = "E8B45184A7115EE6111EDB1B37A68019")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.776 -0500", hash_original_field = "6E31D186555B147C5C13BE685C0ED00C", hash_generated_field = "E8B45184A7115EE6111EDB1B37A68019")
 
     public static final DERObjectIdentifier T = new DERObjectIdentifier("2.5.4.12");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.287 -0500", hash_original_field = "7CBBBC6FA98F82D006AC1C3CEBD357A8", hash_generated_field = "CF9435847FFC6C3C7927992F9EE3FAFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.779 -0500", hash_original_field = "7CBBBC6FA98F82D006AC1C3CEBD357A8", hash_generated_field = "CF9435847FFC6C3C7927992F9EE3FAFF")
 
     public static final DERObjectIdentifier CN = new DERObjectIdentifier("2.5.4.3");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.288 -0500", hash_original_field = "78CAFEE0257AB794C6021C33D0C258DC", hash_generated_field = "1C5FE81E2DBFFB02A7D19673EC4A90E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.781 -0500", hash_original_field = "78CAFEE0257AB794C6021C33D0C258DC", hash_generated_field = "1C5FE81E2DBFFB02A7D19673EC4A90E2")
 
     public static final DERObjectIdentifier SN = new DERObjectIdentifier("2.5.4.5");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.289 -0500", hash_original_field = "6C28EFC044ABF6316678E6C3502849E7", hash_generated_field = "2F85801FBF51C8EE5695ECB3E05715B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.783 -0500", hash_original_field = "6C28EFC044ABF6316678E6C3502849E7", hash_generated_field = "2F85801FBF51C8EE5695ECB3E05715B4")
 
     public static final DERObjectIdentifier STREET = new DERObjectIdentifier("2.5.4.9");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.290 -0500", hash_original_field = "D284015078C9FE4C22D3CC2C97D9914E", hash_generated_field = "BDDAF789362E72D2FF3111AE8E110F7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.786 -0500", hash_original_field = "D284015078C9FE4C22D3CC2C97D9914E", hash_generated_field = "BDDAF789362E72D2FF3111AE8E110F7A")
 
     public static final DERObjectIdentifier SERIALNUMBER = SN;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.290 -0500", hash_original_field = "A00E2F3F6341370BDDDFDCCCCBB14F51", hash_generated_field = "CBB2A0091E475910A1B9F56755855304")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.788 -0500", hash_original_field = "A00E2F3F6341370BDDDFDCCCCBB14F51", hash_generated_field = "CBB2A0091E475910A1B9F56755855304")
 
     public static final DERObjectIdentifier L = new DERObjectIdentifier("2.5.4.7");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.291 -0500", hash_original_field = "6B1B2A615D04B83D8E2D786231B08734", hash_generated_field = "FA86D310F2857FB8F860635B33CDE85B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.791 -0500", hash_original_field = "6B1B2A615D04B83D8E2D786231B08734", hash_generated_field = "FA86D310F2857FB8F860635B33CDE85B")
 
     public static final DERObjectIdentifier ST = new DERObjectIdentifier("2.5.4.8");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.292 -0500", hash_original_field = "9E5210CF50E0ACD198AAE2B8B5C76D0C", hash_generated_field = "59FFCD55B0D0B45F483BC2293E395377")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.794 -0500", hash_original_field = "9E5210CF50E0ACD198AAE2B8B5C76D0C", hash_generated_field = "59FFCD55B0D0B45F483BC2293E395377")
 
     public static final DERObjectIdentifier SURNAME = new DERObjectIdentifier("2.5.4.4");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.293 -0500", hash_original_field = "1BB8F42BE8272C131965F4476D448078", hash_generated_field = "E97C7C5B7041A426BC30CC1454C5DBF7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.796 -0500", hash_original_field = "1BB8F42BE8272C131965F4476D448078", hash_generated_field = "E97C7C5B7041A426BC30CC1454C5DBF7")
 
     public static final DERObjectIdentifier GIVENNAME = new DERObjectIdentifier("2.5.4.42");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.294 -0500", hash_original_field = "868A98DFC8291023040AD2693FABC4E2", hash_generated_field = "A5FD4B35D111D951F8765946D5A83284")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.799 -0500", hash_original_field = "868A98DFC8291023040AD2693FABC4E2", hash_generated_field = "A5FD4B35D111D951F8765946D5A83284")
 
     public static final DERObjectIdentifier INITIALS = new DERObjectIdentifier("2.5.4.43");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.295 -0500", hash_original_field = "3121D94201EBFF735BEA4326E520CC24", hash_generated_field = "533BDABA5EA8217D595157FA1EE80ABF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.801 -0500", hash_original_field = "3121D94201EBFF735BEA4326E520CC24", hash_generated_field = "533BDABA5EA8217D595157FA1EE80ABF")
 
     public static final DERObjectIdentifier GENERATION = new DERObjectIdentifier("2.5.4.44");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.296 -0500", hash_original_field = "4D6B68FAD518E0281F3F27A0713BDB6D", hash_generated_field = "4F43AC9282AD9798244BC73AEDAA5A8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.804 -0500", hash_original_field = "4D6B68FAD518E0281F3F27A0713BDB6D", hash_generated_field = "4F43AC9282AD9798244BC73AEDAA5A8D")
 
     public static final DERObjectIdentifier UNIQUE_IDENTIFIER = new DERObjectIdentifier("2.5.4.45");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.296 -0500", hash_original_field = "AD0FC11A41EC275AB549DD7964A240B1", hash_generated_field = "B855455F4EDB294C798C9D3C9026BF51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.807 -0500", hash_original_field = "AD0FC11A41EC275AB549DD7964A240B1", hash_generated_field = "B855455F4EDB294C798C9D3C9026BF51")
 
     public static final DERObjectIdentifier BUSINESS_CATEGORY = new DERObjectIdentifier(
                     "2.5.4.15");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.297 -0500", hash_original_field = "738BF07F1B7B3E4D4E9A6F8708625BDE", hash_generated_field = "AFCF615F7F4AD23472ADBFCF9493AE20")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.809 -0500", hash_original_field = "738BF07F1B7B3E4D4E9A6F8708625BDE", hash_generated_field = "AFCF615F7F4AD23472ADBFCF9493AE20")
 
     public static final DERObjectIdentifier POSTAL_CODE = new DERObjectIdentifier(
                     "2.5.4.17");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.298 -0500", hash_original_field = "768FBD571C177EED83315C564FD135E5", hash_generated_field = "3BEB0664EEAAC66C4E6B3507A541A961")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.812 -0500", hash_original_field = "768FBD571C177EED83315C564FD135E5", hash_generated_field = "3BEB0664EEAAC66C4E6B3507A541A961")
 
     public static final DERObjectIdentifier DN_QUALIFIER = new DERObjectIdentifier(
                     "2.5.4.46");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.299 -0500", hash_original_field = "692BFD9E5BEED93D3C8DDCF285E53E6F", hash_generated_field = "8BDA30822F069D0EF535FB88FF8A1F36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.814 -0500", hash_original_field = "692BFD9E5BEED93D3C8DDCF285E53E6F", hash_generated_field = "8BDA30822F069D0EF535FB88FF8A1F36")
 
     public static final DERObjectIdentifier PSEUDONYM = new DERObjectIdentifier(
                     "2.5.4.65");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.300 -0500", hash_original_field = "AB843B3B41951FDE3F0B407B2A612E8E", hash_generated_field = "9420DBC6483B34D87C2038353B444C41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.817 -0500", hash_original_field = "AB843B3B41951FDE3F0B407B2A612E8E", hash_generated_field = "9420DBC6483B34D87C2038353B444C41")
 
     public static final DERObjectIdentifier DATE_OF_BIRTH = new DERObjectIdentifier(
                     "1.3.6.1.5.5.7.9.1");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.301 -0500", hash_original_field = "E31B74347ED6B9DAFEEE3FDC7A6FD5D3", hash_generated_field = "DD23A595DF652DF1A4A46D9CF34396D1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.819 -0500", hash_original_field = "E31B74347ED6B9DAFEEE3FDC7A6FD5D3", hash_generated_field = "DD23A595DF652DF1A4A46D9CF34396D1")
 
     public static final DERObjectIdentifier PLACE_OF_BIRTH = new DERObjectIdentifier(
                     "1.3.6.1.5.5.7.9.2");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.302 -0500", hash_original_field = "8FD528DD146BF5E6980947A67BB732EE", hash_generated_field = "653665F25666ED2418201CB7491A2E83")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.822 -0500", hash_original_field = "8FD528DD146BF5E6980947A67BB732EE", hash_generated_field = "653665F25666ED2418201CB7491A2E83")
 
     public static final DERObjectIdentifier GENDER = new DERObjectIdentifier(
                     "1.3.6.1.5.5.7.9.3");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.303 -0500", hash_original_field = "3E6A15C3DBFD631D10CAC1E0B3CD4C9D", hash_generated_field = "60C31DC383F5B2CBA146E21EF7DBE62C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.824 -0500", hash_original_field = "3E6A15C3DBFD631D10CAC1E0B3CD4C9D", hash_generated_field = "60C31DC383F5B2CBA146E21EF7DBE62C")
 
     public static final DERObjectIdentifier COUNTRY_OF_CITIZENSHIP = new DERObjectIdentifier(
                     "1.3.6.1.5.5.7.9.4");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.304 -0500", hash_original_field = "8E8F94E57C95E02D32A483C187B2E0A0", hash_generated_field = "298A701F0CC84796B2E4DA6C024B48DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.827 -0500", hash_original_field = "8E8F94E57C95E02D32A483C187B2E0A0", hash_generated_field = "298A701F0CC84796B2E4DA6C024B48DE")
 
     public static final DERObjectIdentifier COUNTRY_OF_RESIDENCE = new DERObjectIdentifier(
                     "1.3.6.1.5.5.7.9.5");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.304 -0500", hash_original_field = "77D35207023305A12D6FCB1221141DA6", hash_generated_field = "543131AACA3F47053FDEC53A1C384306")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.829 -0500", hash_original_field = "77D35207023305A12D6FCB1221141DA6", hash_generated_field = "543131AACA3F47053FDEC53A1C384306")
 
     public static final DERObjectIdentifier NAME_AT_BIRTH =  new DERObjectIdentifier("1.3.36.8.3.14");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.305 -0500", hash_original_field = "C892E218C458E4D5433134662755C17F", hash_generated_field = "587BAD00A55BF518298D870F21FA8435")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.831 -0500", hash_original_field = "C892E218C458E4D5433134662755C17F", hash_generated_field = "587BAD00A55BF518298D870F21FA8435")
 
     public static final DERObjectIdentifier POSTAL_ADDRESS = new DERObjectIdentifier("2.5.4.16");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.306 -0500", hash_original_field = "6FE626B521B4AAC85AEA0A402A79AA98", hash_generated_field = "EFCF83D1673ED3AA566EA2CBA7E1FCE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.834 -0500", hash_original_field = "6FE626B521B4AAC85AEA0A402A79AA98", hash_generated_field = "EFCF83D1673ED3AA566EA2CBA7E1FCE8")
 
     public static final DERObjectIdentifier DMD_NAME = new DERObjectIdentifier("2.5.4.54");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.307 -0500", hash_original_field = "8DA62222BE5ABB5D41D75AECFE738C8A", hash_generated_field = "9E94AA66AACE8B4A0BE080CCD0FAC70F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.837 -0500", hash_original_field = "8DA62222BE5ABB5D41D75AECFE738C8A", hash_generated_field = "9E94AA66AACE8B4A0BE080CCD0FAC70F")
 
     public static final DERObjectIdentifier TELEPHONE_NUMBER = X509ObjectIdentifiers.id_at_telephoneNumber;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.308 -0500", hash_original_field = "F4E9AD83FB9FA1AC2DAC854510EEF810", hash_generated_field = "FFAD4425897D716BCD593C09C46AFD73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.840 -0500", hash_original_field = "F4E9AD83FB9FA1AC2DAC854510EEF810", hash_generated_field = "FFAD4425897D716BCD593C09C46AFD73")
 
     public static final DERObjectIdentifier NAME = X509ObjectIdentifiers.id_at_name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.309 -0500", hash_original_field = "7A52801220B5B641D1C3965842F88193", hash_generated_field = "584A7AECA4B0ACA0DBBC90E0BD7C9332")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.843 -0500", hash_original_field = "7A52801220B5B641D1C3965842F88193", hash_generated_field = "584A7AECA4B0ACA0DBBC90E0BD7C9332")
 
     public static final DERObjectIdentifier EmailAddress = PKCSObjectIdentifiers.pkcs_9_at_emailAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.309 -0500", hash_original_field = "A25D3A9F838B0783AC81B66E39A852BE", hash_generated_field = "CCAA56F97463C5118260AD6DD1DDC80F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.845 -0500", hash_original_field = "A25D3A9F838B0783AC81B66E39A852BE", hash_generated_field = "CCAA56F97463C5118260AD6DD1DDC80F")
 
     public static final DERObjectIdentifier UnstructuredName = PKCSObjectIdentifiers.pkcs_9_at_unstructuredName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.310 -0500", hash_original_field = "895770A4CBCA274AC674A78BCE0FB03C", hash_generated_field = "342508E8CA88924FDFDA1D381AFD3338")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.848 -0500", hash_original_field = "895770A4CBCA274AC674A78BCE0FB03C", hash_generated_field = "342508E8CA88924FDFDA1D381AFD3338")
 
     public static final DERObjectIdentifier UnstructuredAddress = PKCSObjectIdentifiers.pkcs_9_at_unstructuredAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.311 -0500", hash_original_field = "A6687F29245D3E2FC23B9E8AFB5C8BBF", hash_generated_field = "021E5BC1569FD92F01DB6A01724523C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.850 -0500", hash_original_field = "A6687F29245D3E2FC23B9E8AFB5C8BBF", hash_generated_field = "021E5BC1569FD92F01DB6A01724523C2")
 
     public static final DERObjectIdentifier E = EmailAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.312 -0500", hash_original_field = "866FA73658D1416F11983C47F692BC40", hash_generated_field = "1334C446DFB8D545DC3107A020531330")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.853 -0500", hash_original_field = "866FA73658D1416F11983C47F692BC40", hash_generated_field = "1334C446DFB8D545DC3107A020531330")
 
     public static final DERObjectIdentifier DC = new DERObjectIdentifier("0.9.2342.19200300.100.1.25");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.313 -0500", hash_original_field = "743CAEB97E7D363A5238FD78BCE894F5", hash_generated_field = "E4CD602AF9770F8D3B9404D5F2532570")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.855 -0500", hash_original_field = "743CAEB97E7D363A5238FD78BCE894F5", hash_generated_field = "E4CD602AF9770F8D3B9404D5F2532570")
 
     public static final DERObjectIdentifier UID = new DERObjectIdentifier("0.9.2342.19200300.100.1.1");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.313 -0500", hash_original_field = "0D67DF502A72844A0964BC1D0556CF02", hash_generated_field = "BB46BFBE07BCC7526C461E59C789AB8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.857 -0500", hash_original_field = "0D67DF502A72844A0964BC1D0556CF02", hash_generated_field = "BB46BFBE07BCC7526C461E59C789AB8E")
 
     public static boolean DefaultReverse = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.316 -0500", hash_original_field = "BB36420B0085FE57C4931038638024E1", hash_generated_field = "158D1B2B36F24863D1B8E7C3B9D7F7A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.860 -0500", hash_original_field = "BB36420B0085FE57C4931038638024E1", hash_generated_field = "158D1B2B36F24863D1B8E7C3B9D7F7A2")
 
     public static final Hashtable DefaultSymbols = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.316 -0500", hash_original_field = "2432E3E061948F72A55E387668E5BCF8", hash_generated_field = "C9354DE849CFE049572C4221C51E7309")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.863 -0500", hash_original_field = "2432E3E061948F72A55E387668E5BCF8", hash_generated_field = "C9354DE849CFE049572C4221C51E7309")
 
     public static final Hashtable RFC2253Symbols = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.317 -0500", hash_original_field = "89FDAC41F8450B8A51C2C7B094C0B651", hash_generated_field = "10F89287F10A6638EB4EE375195390E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.865 -0500", hash_original_field = "89FDAC41F8450B8A51C2C7B094C0B651", hash_generated_field = "10F89287F10A6638EB4EE375195390E2")
 
     public static final Hashtable RFC1779Symbols = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.318 -0500", hash_original_field = "6A9B8BA2687E2B038C6E773AEF73F5D5", hash_generated_field = "9EEF14EBA4A5D75E5091872B5F8BAEFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.868 -0500", hash_original_field = "6A9B8BA2687E2B038C6E773AEF73F5D5", hash_generated_field = "9EEF14EBA4A5D75E5091872B5F8BAEFC")
 
     public static final Hashtable DefaultLookUp = new Hashtable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.319 -0500", hash_original_field = "AAF24ECDD294C1626FFC3EDAE8C51F4C", hash_generated_field = "914593EB818CF28AF7D26BC6344231F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.870 -0500", hash_original_field = "AAF24ECDD294C1626FFC3EDAE8C51F4C", hash_generated_field = "914593EB818CF28AF7D26BC6344231F7")
 
     public static final Hashtable OIDLookUp = DefaultSymbols;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.320 -0500", hash_original_field = "90B5DE8F2CE0353CE1B72C7F34419119", hash_generated_field = "777E54E742DACB0C5BCAD8347B24CD80")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.872 -0500", hash_original_field = "90B5DE8F2CE0353CE1B72C7F34419119", hash_generated_field = "777E54E742DACB0C5BCAD8347B24CD80")
 
     public static final Hashtable SymbolLookUp = DefaultLookUp;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.321 -0500", hash_original_field = "4C49049C10203D323EC00B264E2B128E", hash_generated_field = "D283B4A736D2AC5091CFA69743A46FDD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.875 -0500", hash_original_field = "4C49049C10203D323EC00B264E2B128E", hash_generated_field = "D283B4A736D2AC5091CFA69743A46FDD")
 
     private static final Boolean TRUE = Boolean.TRUE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.322 -0500", hash_original_field = "A97F87E7EEC56616A0D5FA3208AED11B", hash_generated_field = "0C266C5D45C3B38D3B96B825C1C5DA0B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.877 -0500", hash_original_field = "A97F87E7EEC56616A0D5FA3208AED11B", hash_generated_field = "0C266C5D45C3B38D3B96B825C1C5DA0B")
 
     private static final Boolean FALSE = Boolean.FALSE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.323 -0500", hash_original_field = "4991E2934223DCC25A5EF9D9C72EA338", hash_generated_field = "9B1A952CEBF3178959A402DABEDC0A6B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.881 -0500", hash_original_field = "4991E2934223DCC25A5EF9D9C72EA338", hash_generated_field = "9B1A952CEBF3178959A402DABEDC0A6B")
 
 
     private X509NameEntryConverter  converter = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.324 -0500", hash_original_field = "8370039E4421170D8B7341A1E9105E8E", hash_generated_field = "C8A65116741473EAA58816E75213B0AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.884 -0500", hash_original_field = "8370039E4421170D8B7341A1E9105E8E", hash_generated_field = "C8A65116741473EAA58816E75213B0AF")
 
     private Vector                  ordering = new Vector();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.324 -0500", hash_original_field = "D5F4258DC93AB73236ACC763C6FC18B8", hash_generated_field = "F7859DDEE63780863860095D2E4D0AB7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.886 -0500", hash_original_field = "D5F4258DC93AB73236ACC763C6FC18B8", hash_generated_field = "F7859DDEE63780863860095D2E4D0AB7")
 
     private Vector                  values = new Vector();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.325 -0500", hash_original_field = "A77CAF43271092CCE53A1C59B522B483", hash_generated_field = "93EE51D59E70850C8E38EBF0508102EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.888 -0500", hash_original_field = "A77CAF43271092CCE53A1C59B522B483", hash_generated_field = "93EE51D59E70850C8E38EBF0508102EE")
 
     private Vector                  added = new Vector();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.326 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.890 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
 
 
     private ASN1Sequence            seq;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.327 -0500", hash_original_field = "B6293280C3B6F91ED7F24C3952096C1C", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.892 -0500", hash_original_field = "B6293280C3B6F91ED7F24C3952096C1C", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
 
 
     private boolean                 isHashCodeCalculated;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.327 -0500", hash_original_field = "2D42E71DE4D8857610CF43708417333A", hash_generated_field = "D4D90810E0E6D99534BB2E8797B7FFA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.895 -0500", hash_original_field = "2D42E71DE4D8857610CF43708417333A", hash_generated_field = "D4D90810E0E6D99534BB2E8797B7FFA9")
 
     private int                     hashCodeValue;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.330 -0500", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "4C8C3C7FF82B27C841BA9074162C5C32")
-    protected X509Name()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.902 -0500", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "4C8C3C7FF82B27C841BA9074162C5C32")
+    
+protected X509Name()
     {
         // constructure use by new X500 Name class
     }
@@ -244,8 +247,9 @@ public class X509Name extends ASN1Encodable {
      *
      * the principal will be a list of constructed sets, each containing an (OID, String) pair.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.332 -0500", hash_original_method = "88A842BBAF40DA82D57137327D6884BA", hash_generated_method = "84F6C70CA1BEF05ED67A3F94D642FC68")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.905 -0500", hash_original_method = "88A842BBAF40DA82D57137327D6884BA", hash_generated_method = "84F6C70CA1BEF05ED67A3F94D642FC68")
+    
+public X509Name(
         ASN1Sequence  seq)
     {
         this.seq = seq;
@@ -303,8 +307,9 @@ public class X509Name extends ASN1Encodable {
      * with the ordering specified below.
      * @deprecated use an ordered constructor! The hashtable ordering is rarely correct
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.332 -0500", hash_original_method = "E338E099196C520643EABA462B148868", hash_generated_method = "AE21EDE54C7ECC7ED02380890890761E")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.908 -0500", hash_original_method = "E338E099196C520643EABA462B148868", hash_generated_method = "AE21EDE54C7ECC7ED02380890890761E")
+    
+public X509Name(
         Hashtable  attributes)
     {
         this(null, attributes);
@@ -318,8 +323,9 @@ public class X509Name extends ASN1Encodable {
      * construction process. The ordering vector should contain the OIDs
      * in the order they are meant to be encoded or printed in toString.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.333 -0500", hash_original_method = "0E56A2506DE147DC0FDCD121F4661515", hash_generated_method = "211D2849828CF9FF2A857A4E3A6B6F8C")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.911 -0500", hash_original_method = "0E56A2506DE147DC0FDCD121F4661515", hash_generated_method = "211D2849828CF9FF2A857A4E3A6B6F8C")
+    
+public X509Name(
         Vector      ordering,
         Hashtable   attributes)
     {
@@ -337,8 +343,9 @@ public class X509Name extends ASN1Encodable {
      * The passed in converter will be used to convert the strings into their
      * ASN.1 counterparts.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.335 -0500", hash_original_method = "391D1DCB58738C4647988CF64EC70334", hash_generated_method = "3BA3642B5ADE2BD217D7E933B5622096")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.914 -0500", hash_original_method = "391D1DCB58738C4647988CF64EC70334", hash_generated_method = "3BA3642B5ADE2BD217D7E933B5622096")
+    
+public X509Name(
         Vector                   ordering,
         Hashtable                attributes,
         X509NameEntryConverter   converter)
@@ -380,8 +387,9 @@ public class X509Name extends ASN1Encodable {
     /**
      * Takes two vectors one of the oids and the other of the values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.335 -0500", hash_original_method = "09339315E74F09704223BAA476796553", hash_generated_method = "2C68E0B96E192360B579F5B500C88F97")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.917 -0500", hash_original_method = "09339315E74F09704223BAA476796553", hash_generated_method = "2C68E0B96E192360B579F5B500C88F97")
+    
+public X509Name(
         Vector  oids,
         Vector  values)
     {
@@ -394,8 +402,9 @@ public class X509Name extends ASN1Encodable {
      * The passed in converter will be used to convert the strings into their
      * ASN.1 counterparts.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.337 -0500", hash_original_method = "492C8BC9ACE864159B4ED5D85649FE7D", hash_generated_method = "EEAA5DD329489A39C31FC59FF3F1E428")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.920 -0500", hash_original_method = "492C8BC9ACE864159B4ED5D85649FE7D", hash_generated_method = "EEAA5DD329489A39C31FC59FF3F1E428")
+    
+public X509Name(
         Vector                  oids,
         Vector                  values,
         X509NameEntryConverter  converter)
@@ -429,8 +438,9 @@ public class X509Name extends ASN1Encodable {
      * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
      * some such, converting it into an ordered set of name attributes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.337 -0500", hash_original_method = "4DE51E849F59B0AA80C7ECB38F0D9925", hash_generated_method = "75DE0EBDD6E564D92EC7944E0433C01E")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.922 -0500", hash_original_method = "4DE51E849F59B0AA80C7ECB38F0D9925", hash_generated_method = "75DE0EBDD6E564D92EC7944E0433C01E")
+    
+public X509Name(
         String  dirName)
     {
         this(DefaultReverse, DefaultLookUp, dirName);
@@ -442,8 +452,9 @@ public class X509Name extends ASN1Encodable {
      * string value being converted to its associated ASN.1 type using the passed
      * in converter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.338 -0500", hash_original_method = "225E7940DFC3CDF11421E5A31C692555", hash_generated_method = "E9F4A4633FFFB712F3C91CCD1598E010")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.925 -0500", hash_original_method = "225E7940DFC3CDF11421E5A31C692555", hash_generated_method = "E9F4A4633FFFB712F3C91CCD1598E010")
+    
+public X509Name(
         String                  dirName,
         X509NameEntryConverter  converter)
     {
@@ -456,8 +467,9 @@ public class X509Name extends ASN1Encodable {
      * is true, create the encoded version of the sequence starting from the
      * last element in the string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.339 -0500", hash_original_method = "A1386F925B8F997747CFC9FBEC64818C", hash_generated_method = "4F117C36CA82C778618B1D2E8208F876")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.928 -0500", hash_original_method = "A1386F925B8F997747CFC9FBEC64818C", hash_generated_method = "4F117C36CA82C778618B1D2E8208F876")
+    
+public X509Name(
         boolean reverse,
         String  dirName)
     {
@@ -471,8 +483,9 @@ public class X509Name extends ASN1Encodable {
      * in converter. If reverse is true the ASN.1 sequence representing the DN will
      * be built by starting at the end of the string, rather than the start.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.340 -0500", hash_original_method = "0ED99673E1BB44384871E74A0AAAAEE6", hash_generated_method = "E892788093A2CD439E9F7B181AC8482E")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.930 -0500", hash_original_method = "0ED99673E1BB44384871E74A0AAAAEE6", hash_generated_method = "E892788093A2CD439E9F7B181AC8482E")
+    
+public X509Name(
         boolean                 reverse,
         String                  dirName,
         X509NameEntryConverter  converter)
@@ -493,8 +506,9 @@ public class X509Name extends ASN1Encodable {
      * @param lookUp table of names and their oids.
      * @param dirName the X.500 string to be parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.341 -0500", hash_original_method = "AD0C5D6A617F7C4CAD4929B6BAF77A7F", hash_generated_method = "9B10DB69B913282F9475EFAEA3120D4C")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.933 -0500", hash_original_method = "AD0C5D6A617F7C4CAD4929B6BAF77A7F", hash_generated_method = "9B10DB69B913282F9475EFAEA3120D4C")
+    
+public X509Name(
         boolean     reverse,
         Hashtable   lookUp,
         String      dirName)
@@ -515,8 +529,9 @@ public class X509Name extends ASN1Encodable {
      * @param dirName the string dirName
      * @param converter the converter to convert string values into their ASN.1 equivalents
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.344 -0500", hash_original_method = "E0536EE704C9789715788F9D659749FC", hash_generated_method = "673D0E77C6829E7F611F2082214D9A94")
-    public X509Name(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.939 -0500", hash_original_method = "E0536EE704C9789715788F9D659749FC", hash_generated_method = "673D0E77C6829E7F611F2082214D9A94")
+    
+public X509Name(
         boolean                 reverse,
         Hashtable               lookUp,
         String                  dirName,
@@ -602,8 +617,9 @@ public class X509Name extends ASN1Encodable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.342 -0500", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "813BD70A3791EAD090BFF26467F4BC63")
-    private DERObjectIdentifier decodeOID(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.935 -0500", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "813BD70A3791EAD090BFF26467F4BC63")
+    
+private DERObjectIdentifier decodeOID(
         String      name,
         Hashtable   lookUp)
     {
@@ -628,8 +644,9 @@ public class X509Name extends ASN1Encodable {
     /**
      * return a vector of the oids in the name, in the order they were found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.345 -0500", hash_original_method = "2D101B81AA4F7CB6B72317966361C7FD", hash_generated_method = "8FDD2BD7B996DEBBA0343B72267A4050")
-    public Vector getOIDs()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.942 -0500", hash_original_method = "2D101B81AA4F7CB6B72317966361C7FD", hash_generated_method = "8FDD2BD7B996DEBBA0343B72267A4050")
+    
+public Vector getOIDs()
     {
         Vector  v = new Vector();
 
@@ -645,8 +662,9 @@ public class X509Name extends ASN1Encodable {
      * return a vector of the values found in the name, in the order they
      * were found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.346 -0500", hash_original_method = "F648A0377CD08E6DCA69D49343904A7E", hash_generated_method = "11B393EA383F1D6622D44834F15AC67C")
-    public Vector getValues()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.944 -0500", hash_original_method = "F648A0377CD08E6DCA69D49343904A7E", hash_generated_method = "11B393EA383F1D6622D44834F15AC67C")
+    
+public Vector getValues()
     {
         Vector  v = new Vector();
 
@@ -662,8 +680,9 @@ public class X509Name extends ASN1Encodable {
      * return a vector of the values found in the name, in the order they
      * were found, with the DN label corresponding to passed in oid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.347 -0500", hash_original_method = "B5B05F9A72085C1CEE80B6960CBCC4AA", hash_generated_method = "F2CD46D39A604F19567622D7DC53FDE3")
-    public Vector getValues(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.947 -0500", hash_original_method = "B5B05F9A72085C1CEE80B6960CBCC4AA", hash_generated_method = "F2CD46D39A604F19567622D7DC53FDE3")
+    
+public Vector getValues(
         DERObjectIdentifier oid)
     {
         Vector  v = new Vector();
@@ -688,8 +707,9 @@ public class X509Name extends ASN1Encodable {
         return v;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.348 -0500", hash_original_method = "3947A3064A86A512C4391326C6ABB01D", hash_generated_method = "EC2F005F89183801DBAB204494839EC6")
-    public DERObject toASN1Object()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.949 -0500", hash_original_method = "3947A3064A86A512C4391326C6ABB01D", hash_generated_method = "EC2F005F89183801DBAB204494839EC6")
+    
+public DERObject toASN1Object()
     {
         if (seq == null)
         {
@@ -736,8 +756,9 @@ public class X509Name extends ASN1Encodable {
      * @param inOrder if true the order of both X509 names must be the same,
      * as well as the values associated with each element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.349 -0500", hash_original_method = "280DBAE44A81315C42DC75BD60909480", hash_generated_method = "9521315A265A3D7B1BDAA93659BA6D02")
-    public boolean equals(Object obj, boolean inOrder)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.952 -0500", hash_original_method = "280DBAE44A81315C42DC75BD60909480", hash_generated_method = "9521315A265A3D7B1BDAA93659BA6D02")
+    
+public boolean equals(Object obj, boolean inOrder)
     {
         if (!inOrder)
         {
@@ -803,8 +824,9 @@ public class X509Name extends ASN1Encodable {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.350 -0500", hash_original_method = "F1AF8C1EFC711A1D842EED436165BEED", hash_generated_method = "E12114BF123A62D0442731AC9267F725")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.956 -0500", hash_original_method = "F1AF8C1EFC711A1D842EED436165BEED", hash_generated_method = "E12114BF123A62D0442731AC9267F725")
+    
+public int hashCode()
     {
         if (isHashCodeCalculated)
         {
@@ -831,8 +853,9 @@ public class X509Name extends ASN1Encodable {
     /**
      * test for equality - note: case is ignored.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.351 -0500", hash_original_method = "9BE112C8870FAD3CF61652B8C6BD4A74", hash_generated_method = "F2D77CB590F7FA9E0FF8D44FB616069C")
-    public boolean equals(Object obj)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.959 -0500", hash_original_method = "9BE112C8870FAD3CF61652B8C6BD4A74", hash_generated_method = "F2D77CB590F7FA9E0FF8D44FB616069C")
+    
+public boolean equals(Object obj)
     {
         if (obj == this)
         {
@@ -922,8 +945,9 @@ public class X509Name extends ASN1Encodable {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.352 -0500", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "0DC697C632F8E307989A51314BBE9F7A")
-    private boolean equivalentStrings(String s1, String s2)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.961 -0500", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "0DC697C632F8E307989A51314BBE9F7A")
+    
+private boolean equivalentStrings(String s1, String s2)
     {
         String value = canonicalize(s1);
         String oValue = canonicalize(s2);
@@ -942,8 +966,9 @@ public class X509Name extends ASN1Encodable {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.353 -0500", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "99D555158364CA3DEF5AF3388187EB1F")
-    private String canonicalize(String s)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.964 -0500", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "99D555158364CA3DEF5AF3388187EB1F")
+    
+private String canonicalize(String s)
     {
         String value = Strings.toLowerCase(s.trim());
         
@@ -960,8 +985,9 @@ public class X509Name extends ASN1Encodable {
         return value;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.354 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "5DAC87C479937FD6C9024087BA34C1AD")
-    private ASN1Object decodeObject(String oValue)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.966 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "5DAC87C479937FD6C9024087BA34C1AD")
+    
+private ASN1Object decodeObject(String oValue)
     {
         try
         {
@@ -973,8 +999,9 @@ public class X509Name extends ASN1Encodable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.354 -0500", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "9DC24EF1383CA0D3011861C7B442B127")
-    private String stripInternalSpaces(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.969 -0500", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "9DC24EF1383CA0D3011861C7B442B127")
+    
+private String stripInternalSpaces(
         String str)
     {
         StringBuffer res = new StringBuffer();
@@ -999,8 +1026,9 @@ public class X509Name extends ASN1Encodable {
         return res.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.355 -0500", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "A5562AC24A647AF0B591142A9B8EE0F8")
-    private void appendValue(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.972 -0500", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "A5562AC24A647AF0B591142A9B8EE0F8")
+    
+private void appendValue(
         StringBuffer        buf,
         Hashtable           oidSymbols,
         DERObjectIdentifier oid,
@@ -1062,8 +1090,9 @@ public class X509Name extends ASN1Encodable {
      * @param reverse if true start at the end of the sequence and work back.
      * @param oidSymbols look up table strings for oids.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.356 -0500", hash_original_method = "656BABE23C68D82FE6D3AB319F560E81", hash_generated_method = "AD96BCE3B23DB4C0476167B5645576D5")
-    public String toString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.975 -0500", hash_original_method = "656BABE23C68D82FE6D3AB319F560E81", hash_generated_method = "AD96BCE3B23DB4C0476167B5645576D5")
+    
+public String toString(
         boolean     reverse,
         Hashtable   oidSymbols)
     {
@@ -1128,8 +1157,9 @@ public class X509Name extends ASN1Encodable {
         return buf.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.357 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "6E98F280D567BB4804327BA6C2203108")
-    private String bytesToString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.977 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "6E98F280D567BB4804327BA6C2203108")
+    
+private String bytesToString(
         byte[] data)
     {
         char[]  cs = new char[data.length];
@@ -1142,8 +1172,9 @@ public class X509Name extends ASN1Encodable {
         return new String(cs);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.358 -0500", hash_original_method = "E860E9E8B8CF997531DC86A289D376AE", hash_generated_method = "8B72C1A60AC984BE730E0959D0E7CD26")
-    public String toString()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.980 -0500", hash_original_method = "E860E9E8B8CF997531DC86A289D376AE", hash_generated_method = "8B72C1A60AC984BE730E0959D0E7CD26")
+    
+public String toString()
     {
         return toString(DefaultReverse, DefaultSymbols);
     }

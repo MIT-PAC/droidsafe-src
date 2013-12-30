@@ -22,8 +22,9 @@ public class RetryAfterParser extends HeaderParser {
      * Creates a new instance of RetryAfterParser
      * @param retryAfter the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.996 -0500", hash_original_method = "72BD428D826DE1DC77C96CF7C6F2A06C", hash_generated_method = "1A2666F65622A32BE62EAD0D1C33774A")
-    public RetryAfterParser(String retryAfter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.653 -0500", hash_original_method = "72BD428D826DE1DC77C96CF7C6F2A06C", hash_generated_method = "1A2666F65622A32BE62EAD0D1C33774A")
+    
+public RetryAfterParser(String retryAfter) {
         super(retryAfter);
     }
 
@@ -31,8 +32,9 @@ public class RetryAfterParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.997 -0500", hash_original_method = "E2C340AAC5E92DCEDAC2E3B0DF98081F", hash_generated_method = "A025D75719A415964E7BF7924231AB3D")
-    protected RetryAfterParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.656 -0500", hash_original_method = "E2C340AAC5E92DCEDAC2E3B0DF98081F", hash_generated_method = "A025D75719A415964E7BF7924231AB3D")
+    
+protected RetryAfterParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class RetryAfterParser extends HeaderParser {
      * @return SIPHeader (RetryAfter object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.999 -0500", hash_original_method = "4F8238CAC8DB557039065AEC5DC20094", hash_generated_method = "28013C17768ECE56E0D132D11166A41B")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.659 -0500", hash_original_method = "4F8238CAC8DB557039065AEC5DC20094", hash_generated_method = "28013C17768ECE56E0D132D11166A41B")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("RetryAfterParser.parse");

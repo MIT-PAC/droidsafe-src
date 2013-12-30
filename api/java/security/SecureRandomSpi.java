@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 
 public abstract class SecureRandomSpi implements Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:14.062 -0500", hash_original_field = "09DA6963E46782ECF8E5B84B67CF4091", hash_generated_field = "FD60E79FCEB20AD629BA66BEC1122BB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.912 -0500", hash_original_field = "09DA6963E46782ECF8E5B84B67CF4091", hash_generated_field = "FD60E79FCEB20AD629BA66BEC1122BB3")
 
 
     private static final long serialVersionUID = -2991854161009191830L;
@@ -32,8 +32,9 @@ public abstract class SecureRandomSpi implements Serializable {
      * @param seed
      *            the new seed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:14.063 -0500", hash_original_method = "7FE199E37C91EF883FEDEEC59A4F0D9C", hash_generated_method = "661CD6063137BBDB0CA31510BC048AE2")
-    protected abstract void engineSetSeed(byte[] seed);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.914 -0500", hash_original_method = "7FE199E37C91EF883FEDEEC59A4F0D9C", hash_generated_method = "661CD6063137BBDB0CA31510BC048AE2")
+    
+protected abstract void engineSetSeed(byte[] seed);
 
     /**
      * Generates and stores random bytes in the given {@code byte[]} for each
@@ -42,8 +43,9 @@ public abstract class SecureRandomSpi implements Serializable {
      * @param bytes
      *            the {@code byte[]} to be filled with random bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:14.064 -0500", hash_original_method = "D21E53F019316BC34A671EC90C51D0AB", hash_generated_method = "AE35660397147350A644AC1047E5667C")
-    protected abstract void engineNextBytes(byte[] bytes);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.917 -0500", hash_original_method = "D21E53F019316BC34A671EC90C51D0AB", hash_generated_method = "AE35660397147350A644AC1047E5667C")
+    
+protected abstract void engineNextBytes(byte[] bytes);
 
     /**
      * Generates and returns the specified number of seed bytes, computed using
@@ -53,7 +55,8 @@ public abstract class SecureRandomSpi implements Serializable {
      *            the number of seed bytes.
      * @return the seed bytes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:14.065 -0500", hash_original_method = "0BF58C244EC1A63CD9FB6D644BB9E1DF", hash_generated_method = "4518F6157B93CA4061E5C1A868FC0DB7")
-    protected abstract byte[] engineGenerateSeed(int numBytes);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.919 -0500", hash_original_method = "0BF58C244EC1A63CD9FB6D644BB9E1DF", hash_generated_method = "4518F6157B93CA4061E5C1A868FC0DB7")
+    
+protected abstract byte[] engineGenerateSeed(int numBytes);
 }
 

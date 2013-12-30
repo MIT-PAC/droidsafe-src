@@ -29,52 +29,56 @@ import dalvik.system.CloseGuard;
 
 
 public class PlainSocketImpl extends SocketImpl {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.044 -0500", hash_original_field = "F0CA0B6A36CA244BB1CC0FFC0B728C8A", hash_generated_field = "6D9FFDACEA318C6C72BAD824AA432EA6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.513 -0500", hash_original_field = "F0CA0B6A36CA244BB1CC0FFC0B728C8A", hash_generated_field = "6D9FFDACEA318C6C72BAD824AA432EA6")
 
     // host connected to in its request.
     private static InetAddress lastConnectedAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.045 -0500", hash_original_field = "13ABAE85F4A0A7717045A563DB3039CB", hash_generated_field = "0C17CA5E0BC8EA30C7FC6175AC3AE9C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.516 -0500", hash_original_field = "13ABAE85F4A0A7717045A563DB3039CB", hash_generated_field = "0C17CA5E0BC8EA30C7FC6175AC3AE9C2")
 
 
     private static int lastConnectedPort;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.045 -0500", hash_original_field = "A337E277329F6DC1C9EA7E279642F199", hash_generated_field = "6A8CCB2C47D2D8E132EF5F76D32DB937")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.518 -0500", hash_original_field = "A337E277329F6DC1C9EA7E279642F199", hash_generated_field = "6A8CCB2C47D2D8E132EF5F76D32DB937")
 
 
     private boolean streaming = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.046 -0500", hash_original_field = "840EE78A334019BDE73FFECFB6C31FB6", hash_generated_field = "3A0B3C0A8DEC4D2F6AA0372C4FB59EF4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.911 -0500", hash_original_field = "840EE78A334019BDE73FFECFB6C31FB6", hash_generated_field = "3A0B3C0A8DEC4D2F6AA0372C4FB59EF4")
 
 
     private boolean shutdownInput;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.047 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.913 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 
 
     private Proxy proxy;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.048 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.916 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
 
 
     private final CloseGuard guard = CloseGuard.get();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.049 -0500", hash_original_method = "4D935B4FE660019BCAE5A9978A293C92", hash_generated_method = "0666BEA52525B8BAD522E131C4ADD809")
-    public PlainSocketImpl(FileDescriptor fd) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.918 -0500", hash_original_method = "4D935B4FE660019BCAE5A9978A293C92", hash_generated_method = "0666BEA52525B8BAD522E131C4ADD809")
+    
+public PlainSocketImpl(FileDescriptor fd) {
         this.fd = fd;
         if (fd.valid()) {
             guard.open("close");
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.049 -0500", hash_original_method = "261EDE8B6DD34705D1641BCCC0FB075D", hash_generated_method = "BCE4E206E1D08C0CBF24805F88B631DE")
-    public PlainSocketImpl(Proxy proxy) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.922 -0500", hash_original_method = "261EDE8B6DD34705D1641BCCC0FB075D", hash_generated_method = "BCE4E206E1D08C0CBF24805F88B631DE")
+    
+public PlainSocketImpl(Proxy proxy) {
         this(new FileDescriptor());
         this.proxy = proxy;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.050 -0500", hash_original_method = "9AFAA74CF852E1C405941486398C4C8B", hash_generated_method = "C45452C008FB51031723E1A52F90A02E")
-    public PlainSocketImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.925 -0500", hash_original_method = "9AFAA74CF852E1C405941486398C4C8B", hash_generated_method = "C45452C008FB51031723E1A52F90A02E")
+    
+public PlainSocketImpl() {
         this(new FileDescriptor());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.051 -0500", hash_original_method = "FFE0B1E5C9CF01CED30EEDFFB254CB41", hash_generated_method = "91B165E02A32B27960C67BF518A716F1")
-    public PlainSocketImpl(FileDescriptor fd, int localport, InetAddress addr, int port) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.928 -0500", hash_original_method = "FFE0B1E5C9CF01CED30EEDFFB254CB41", hash_generated_method = "91B165E02A32B27960C67BF518A716F1")
+    
+public PlainSocketImpl(FileDescriptor fd, int localport, InetAddress addr, int port) {
         this.fd = fd;
         this.localport = localport;
         this.address = addr;
@@ -84,9 +88,10 @@ public class PlainSocketImpl extends SocketImpl {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.052 -0500", hash_original_method = "7A83CE97AECF8C418E9A73B613D40E3A", hash_generated_method = "84915A463DF4DF5656C9F40364C897B5")
-    @Override
-protected void accept(SocketImpl newImpl) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.931 -0500", hash_original_method = "7A83CE97AECF8C418E9A73B613D40E3A", hash_generated_method = "84915A463DF4DF5656C9F40364C897B5")
+    
+@Override
+    protected void accept(SocketImpl newImpl) throws IOException {
         if (usingSocks()) {
             ((PlainSocketImpl) newImpl).socksBind();
             ((PlainSocketImpl) newImpl).socksAccept();
@@ -116,32 +121,37 @@ protected void accept(SocketImpl newImpl) throws IOException {
         newImpl.localport = IoBridge.getSocketLocalPort(newImpl.fd);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.053 -0500", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "286D168AC5969CEEC8D7177AFB54002B")
-    private boolean usingSocks() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.933 -0500", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "286D168AC5969CEEC8D7177AFB54002B")
+    
+private boolean usingSocks() {
         return proxy != null && proxy.type() == Proxy.Type.SOCKS;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.054 -0500", hash_original_method = "71A74E49E6970F91549D0885CC2DD805", hash_generated_method = "95344778089C6FC4D9EE49F9CD75B689")
-    public void initLocalPort(int localPort) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.936 -0500", hash_original_method = "71A74E49E6970F91549D0885CC2DD805", hash_generated_method = "95344778089C6FC4D9EE49F9CD75B689")
+    
+public void initLocalPort(int localPort) {
         this.localport = localPort;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.054 -0500", hash_original_method = "2FB3C28FA9096CEDAB5697B9A14F4A6D", hash_generated_method = "5D78C63AA81A60769C1A1E71D4103F86")
-    public void initRemoteAddressAndPort(InetAddress remoteAddress, int remotePort) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.938 -0500", hash_original_method = "2FB3C28FA9096CEDAB5697B9A14F4A6D", hash_generated_method = "5D78C63AA81A60769C1A1E71D4103F86")
+    
+public void initRemoteAddressAndPort(InetAddress remoteAddress, int remotePort) {
         this.address = remoteAddress;
         this.port = remotePort;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.056 -0500", hash_original_method = "000D9AECCAE4DD07D923EE0ADC4BD644", hash_generated_method = "797517EE3BCF41975E6EB9F62189A2F4")
-    private void checkNotClosed() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.940 -0500", hash_original_method = "000D9AECCAE4DD07D923EE0ADC4BD644", hash_generated_method = "797517EE3BCF41975E6EB9F62189A2F4")
+    
+private void checkNotClosed() throws IOException {
         if (!fd.valid()) {
             throw new SocketException("Socket is closed");
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.057 -0500", hash_original_method = "4AE73BDFE66EC427EEC7327D1955F75B", hash_generated_method = "CD754D3830E15F943E35286002692D09")
-    @Override
-protected synchronized int available() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.943 -0500", hash_original_method = "4AE73BDFE66EC427EEC7327D1955F75B", hash_generated_method = "CD754D3830E15F943E35286002692D09")
+    
+@Override
+    protected synchronized int available() throws IOException {
         checkNotClosed();
         // we need to check if the input has been shutdown. If so
         // we should return that there is no data to be read
@@ -151,9 +161,9 @@ protected synchronized int available() throws IOException {
         return IoBridge.available(fd);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.058 -0500", hash_original_method = "9F1E5C79CA0AA6C434B736E50E58B125", hash_generated_method = "F10A380BD5E024D88F6FD6F1D854DF90")
-    @Override
-protected void bind(InetAddress address, int port) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.945 -0500", hash_original_method = "9F1E5C79CA0AA6C434B736E50E58B125", hash_generated_method = "F10A380BD5E024D88F6FD6F1D854DF90")
+    
+@Override protected void bind(InetAddress address, int port) throws IOException {
         IoBridge.bind(fd, address, port);
         this.address = address;
         if (port != 0) {
@@ -163,22 +173,25 @@ protected void bind(InetAddress address, int port) throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.058 -0500", hash_original_method = "0DC75F7C7240FEBBF9FD4E0AED069D80", hash_generated_method = "1BDB995F74F20B9D905CA1CAA337629F")
-    @Override
-protected synchronized void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.948 -0500", hash_original_method = "0DC75F7C7240FEBBF9FD4E0AED069D80", hash_generated_method = "1BDB995F74F20B9D905CA1CAA337629F")
+    
+@Override
+    protected synchronized void close() throws IOException {
         guard.close();
         IoBridge.closeSocket(fd);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.059 -0500", hash_original_method = "D48633DD95102A35EC1C995654D6F3E8", hash_generated_method = "A9B1DAB707F03B7322CD3355B62BEAD9")
-    @Override
-protected void connect(String aHost, int aPort) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.951 -0500", hash_original_method = "D48633DD95102A35EC1C995654D6F3E8", hash_generated_method = "A9B1DAB707F03B7322CD3355B62BEAD9")
+    
+@Override
+    protected void connect(String aHost, int aPort) throws IOException {
         connect(InetAddress.getByName(aHost), aPort);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.060 -0500", hash_original_method = "AC6D281722BA029F05A67510D93D7EBD", hash_generated_method = "ACF008804767A75C4F076C3058DB2F17")
-    @Override
-protected void connect(InetAddress anAddr, int aPort) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.953 -0500", hash_original_method = "AC6D281722BA029F05A67510D93D7EBD", hash_generated_method = "ACF008804767A75C4F076C3058DB2F17")
+    
+@Override
+    protected void connect(InetAddress anAddr, int aPort) throws IOException {
         connect(anAddr, aPort, 0);
     }
 
@@ -194,8 +207,9 @@ protected void connect(InetAddress anAddr, int aPort) throws IOException {
      * @throws IOException
      *             if an error occurs while connecting
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.061 -0500", hash_original_method = "CF0E894E8F0E8260CA9CE5027C85CCBC", hash_generated_method = "33D143EF85E8AD02E15A033090CF0D8D")
-    private void connect(InetAddress anAddr, int aPort, int timeout) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.956 -0500", hash_original_method = "CF0E894E8F0E8260CA9CE5027C85CCBC", hash_generated_method = "33D143EF85E8AD02E15A033090CF0D8D")
+    
+private void connect(InetAddress anAddr, int aPort, int timeout) throws IOException {
         InetAddress normalAddr = anAddr.isAnyLocalAddress() ? InetAddress.getLocalHost() : anAddr;
         if (streaming && usingSocks()) {
             socksConnect(anAddr, aPort, 0);
@@ -206,16 +220,17 @@ protected void connect(InetAddress anAddr, int aPort) throws IOException {
         super.port = aPort;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.062 -0500", hash_original_method = "E78DD5CBE2B052B946F0A3B4178F9290", hash_generated_method = "499313C8191F5B4C58177A534C459A07")
-    @Override
-protected void create(boolean streaming) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.958 -0500", hash_original_method = "E78DD5CBE2B052B946F0A3B4178F9290", hash_generated_method = "499313C8191F5B4C58177A534C459A07")
+    
+@Override
+    protected void create(boolean streaming) throws IOException {
         this.streaming = streaming;
         this.fd = IoBridge.socket(streaming);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.063 -0500", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "F0F8D8EC0C5D8FA9E7582C7E60A1D793")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.960 -0500", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "F0F8D8EC0C5D8FA9E7582C7E60A1D793")
+    
+@Override protected void finalize() throws Throwable {
         try {
             if (guard != null) {
                 guard.warnIfOpen();
@@ -226,29 +241,30 @@ protected void finalize() throws Throwable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.064 -0500", hash_original_method = "2248E71A4E4A8097B0C4AD58D0A7C2D1", hash_generated_method = "548791816B3337E9919C1CB035D36CDB")
-    @Override
-protected synchronized InputStream getInputStream() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.963 -0500", hash_original_method = "2248E71A4E4A8097B0C4AD58D0A7C2D1", hash_generated_method = "548791816B3337E9919C1CB035D36CDB")
+    
+@Override protected synchronized InputStream getInputStream() throws IOException {
         checkNotClosed();
         return new PlainSocketInputStream(this);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.071 -0500", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "E4022F8103EB1A999EF7210C13D3EA7F")
-    @Override
-public Object getOption(int option) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.985 -0500", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "E4022F8103EB1A999EF7210C13D3EA7F")
+    
+@Override public Object getOption(int option) throws SocketException {
         return IoBridge.getSocketOption(fd, option);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.071 -0500", hash_original_method = "A64D8FD75C66D0E7EE62C06614C117E8", hash_generated_method = "95A988AFC46708A91DEB05109869926B")
-    @Override
-protected synchronized OutputStream getOutputStream() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.987 -0500", hash_original_method = "A64D8FD75C66D0E7EE62C06614C117E8", hash_generated_method = "95A988AFC46708A91DEB05109869926B")
+    
+@Override protected synchronized OutputStream getOutputStream() throws IOException {
         checkNotClosed();
         return new PlainSocketOutputStream(this);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.078 -0500", hash_original_method = "92B125776FD98ACD40A53B9D967365FC", hash_generated_method = "7973381A97B013C8F10682B15FB6776A")
-    @Override
-protected void listen(int backlog) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.006 -0500", hash_original_method = "92B125776FD98ACD40A53B9D967365FC", hash_generated_method = "7973381A97B013C8F10682B15FB6776A")
+    
+@Override
+    protected void listen(int backlog) throws IOException {
         if (usingSocks()) {
             // Do nothing for a SOCKS connection. The listen occurs on the
             // server during the bind.
@@ -261,17 +277,19 @@ protected void listen(int backlog) throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.078 -0500", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "9BF9637567DA8570E7C18AF8C3E21269")
-    @Override
-public void setOption(int option, Object value) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.008 -0500", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "9BF9637567DA8570E7C18AF8C3E21269")
+    
+@Override
+    public void setOption(int option, Object value) throws SocketException {
         IoBridge.setSocketOption(fd, option, value);
     }
 
     /**
      * Gets the SOCKS proxy server port.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.079 -0500", hash_original_method = "64392856CD4BE8946E6224874D95C0C3", hash_generated_method = "BCF93A278DC9D95CE64E1A5A048773E7")
-    private int socksGetServerPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.011 -0500", hash_original_method = "64392856CD4BE8946E6224874D95C0C3", hash_generated_method = "BCF93A278DC9D95CE64E1A5A048773E7")
+    
+private int socksGetServerPort() {
         // get socks server port from proxy. It is unnecessary to check
         // "socksProxyPort" property, since proxy setting should only be
         // determined by ProxySelector.
@@ -282,8 +300,9 @@ public void setOption(int option, Object value) throws SocketException {
     /**
      * Gets the InetAddress of the SOCKS proxy server.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.080 -0500", hash_original_method = "FA814969259FF99D2E9F464DE776F517", hash_generated_method = "FD504285D7DB41C0F76B38BF01BE8A13")
-    private InetAddress socksGetServerAddress() throws UnknownHostException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.013 -0500", hash_original_method = "FA814969259FF99D2E9F464DE776F517", hash_generated_method = "FD504285D7DB41C0F76B38BF01BE8A13")
+    
+private InetAddress socksGetServerAddress() throws UnknownHostException {
         String proxyName;
         // get socks server address from proxy. It is unnecessary to check
         // "socksProxyHost" property, since all proxy setting should be
@@ -299,8 +318,9 @@ public void setOption(int option, Object value) throws SocketException {
     /**
      * Connect using a SOCKS server.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.081 -0500", hash_original_method = "679FA19AE8A4DD99CA71F6CF7886F900", hash_generated_method = "61DB079FA9FD35C506423BF91572915B")
-    private void socksConnect(InetAddress applicationServerAddress, int applicationServerPort, int timeout) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.016 -0500", hash_original_method = "679FA19AE8A4DD99CA71F6CF7886F900", hash_generated_method = "61DB079FA9FD35C506423BF91572915B")
+    
+private void socksConnect(InetAddress applicationServerAddress, int applicationServerPort, int timeout) throws IOException {
         try {
             IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort(), timeout);
         } catch (Exception e) {
@@ -317,8 +337,9 @@ public void setOption(int option, Object value) throws SocketException {
      * Request a SOCKS connection to the application server given. If the
      * request fails to complete successfully, an exception is thrown.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.082 -0500", hash_original_method = "0ACA5DB4B67DEB9A055E1E45DC82A265", hash_generated_method = "5E007C1EA5F4274C098B880EEF579411")
-    private void socksRequestConnection(InetAddress applicationServerAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.019 -0500", hash_original_method = "0ACA5DB4B67DEB9A055E1E45DC82A265", hash_generated_method = "5E007C1EA5F4274C098B880EEF579411")
+    
+private void socksRequestConnection(InetAddress applicationServerAddress,
             int applicationServerPort) throws IOException {
         socksSendRequest(Socks4Message.COMMAND_CONNECT,
                 applicationServerAddress, applicationServerPort);
@@ -331,8 +352,9 @@ public void setOption(int option, Object value) throws SocketException {
     /**
      * Perform an accept for a SOCKS bind.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.083 -0500", hash_original_method = "0B2DE5EAED23ABC2AB533476CA60B194", hash_generated_method = "F9084A2132A4774A25EB67D6F9253A14")
-    public void socksAccept() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.021 -0500", hash_original_method = "0B2DE5EAED23ABC2AB533476CA60B194", hash_generated_method = "F9084A2132A4774A25EB67D6F9253A14")
+    
+public void socksAccept() throws IOException {
         Socks4Message reply = socksReadReply();
         if (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS) {
             throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
@@ -342,9 +364,10 @@ public void setOption(int option, Object value) throws SocketException {
     /**
      * Shutdown the input portion of the socket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.083 -0500", hash_original_method = "69EAD59EF006B3A496038767E7251C79", hash_generated_method = "E8BF02F1B64289F3B2238534086D0E8C")
-    @Override
-protected void shutdownInput() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.024 -0500", hash_original_method = "69EAD59EF006B3A496038767E7251C79", hash_generated_method = "E8BF02F1B64289F3B2238534086D0E8C")
+    
+@Override
+    protected void shutdownInput() throws IOException {
         shutdownInput = true;
         try {
             Libcore.os.shutdown(fd, SHUT_RD);
@@ -356,9 +379,10 @@ protected void shutdownInput() throws IOException {
     /**
      * Shutdown the output portion of the socket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.084 -0500", hash_original_method = "40C13EAB5470D8D1FC8D6DE9CC466037", hash_generated_method = "A75F5A1D74EFBDCC42E1E7CDB0133394")
-    @Override
-protected void shutdownOutput() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.027 -0500", hash_original_method = "40C13EAB5470D8D1FC8D6DE9CC466037", hash_generated_method = "A75F5A1D74EFBDCC42E1E7CDB0133394")
+    
+@Override
+    protected void shutdownOutput() throws IOException {
         try {
             Libcore.os.shutdown(fd, SHUT_WR);
         } catch (ErrnoException errnoException) {
@@ -369,8 +393,9 @@ protected void shutdownOutput() throws IOException {
     /**
      * Bind using a SOCKS server.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.086 -0500", hash_original_method = "D66101C95E8A449E156BD86059B4B4F6", hash_generated_method = "96E1944E2D52A530889950726361FE08")
-    private void socksBind() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.030 -0500", hash_original_method = "D66101C95E8A449E156BD86059B4B4F6", hash_generated_method = "96E1944E2D52A530889950726361FE08")
+    
+private void socksBind() throws IOException {
         try {
             IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort());
         } catch (Exception e) {
@@ -409,8 +434,9 @@ protected void shutdownOutput() throws IOException {
     /**
      * Send a SOCKS V4 request.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.087 -0500", hash_original_method = "6D223BF7FD79AD9333E45AB0A54AA37D", hash_generated_method = "6E32EC11506185A59EE9CB1CAD77DBB8")
-    private void socksSendRequest(int command, InetAddress address, int port) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.032 -0500", hash_original_method = "6D223BF7FD79AD9333E45AB0A54AA37D", hash_generated_method = "6E32EC11506185A59EE9CB1CAD77DBB8")
+    
+private void socksSendRequest(int command, InetAddress address, int port) throws IOException {
         Socks4Message request = new Socks4Message();
         request.setCommandOrResult(command);
         request.setPort(port);
@@ -423,8 +449,9 @@ protected void shutdownOutput() throws IOException {
     /**
      * Read a SOCKS V4 reply.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.087 -0500", hash_original_method = "8280AE4C517B666A0E69D98449480DDD", hash_generated_method = "FC82C17F2238474BCA844E921F3F0511")
-    private Socks4Message socksReadReply() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.035 -0500", hash_original_method = "8280AE4C517B666A0E69D98449480DDD", hash_generated_method = "FC82C17F2238474BCA844E921F3F0511")
+    
+private Socks4Message socksReadReply() throws IOException {
         Socks4Message reply = new Socks4Message();
         int bytesRead = 0;
         while (bytesRead < Socks4Message.REPLY_LENGTH) {
@@ -441,22 +468,25 @@ protected void shutdownOutput() throws IOException {
         return reply;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.088 -0500", hash_original_method = "A07BD72481E91ED1ACC24877AC862F5F", hash_generated_method = "8C82F0A20E48AF9C5DA055E6ED464957")
-    @Override
-protected void connect(SocketAddress remoteAddr, int timeout) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.038 -0500", hash_original_method = "A07BD72481E91ED1ACC24877AC862F5F", hash_generated_method = "8C82F0A20E48AF9C5DA055E6ED464957")
+    
+@Override
+    protected void connect(SocketAddress remoteAddr, int timeout) throws IOException {
         InetSocketAddress inetAddr = (InetSocketAddress) remoteAddr;
         connect(inetAddr.getAddress(), inetAddr.getPort(), timeout);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.089 -0500", hash_original_method = "C84277CCCCD515C678DD8E297690CF63", hash_generated_method = "79CCA64255BD450720A598CCD70DE5E5")
-    @Override
-protected boolean supportsUrgentData() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.040 -0500", hash_original_method = "C84277CCCCD515C678DD8E297690CF63", hash_generated_method = "79CCA64255BD450720A598CCD70DE5E5")
+    
+@Override
+    protected boolean supportsUrgentData() {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.090 -0500", hash_original_method = "A7E9EDD729A11A6482B0E5B153D87499", hash_generated_method = "F29586DC2AA2C2174CD8C7FB4CE30C33")
-    @Override
-protected void sendUrgentData(int value) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.043 -0500", hash_original_method = "A7E9EDD729A11A6482B0E5B153D87499", hash_generated_method = "F29586DC2AA2C2174CD8C7FB4CE30C33")
+    
+@Override
+    protected void sendUrgentData(int value) throws IOException {
         try {
             byte[] buffer = new byte[] { (byte) value };
             Libcore.os.sendto(fd, buffer, 0, 1, MSG_OOB, null, 0);
@@ -467,36 +497,37 @@ protected void sendUrgentData(int value) throws IOException {
 
     
     private static class PlainSocketInputStream extends InputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.065 -0500", hash_original_field = "C92DD3B7F09F6096C227812F0F4031CF", hash_generated_field = "16CEE3972B12A3C5752670B7FF7939A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.967 -0500", hash_original_field = "C92DD3B7F09F6096C227812F0F4031CF", hash_generated_field = "16CEE3972B12A3C5752670B7FF7939A7")
 
         private  PlainSocketImpl socketImpl;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.066 -0500", hash_original_method = "9707F729DB9DE0F069F9B6F666CEAF41", hash_generated_method = "A2C45C726DF3589E75CC30136A07DA65")
-        public PlainSocketInputStream(PlainSocketImpl socketImpl) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.970 -0500", hash_original_method = "9707F729DB9DE0F069F9B6F666CEAF41", hash_generated_method = "A2C45C726DF3589E75CC30136A07DA65")
+        
+public PlainSocketInputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.067 -0500", hash_original_method = "4F6C4EDBF6F94B4350B82DBC8B61EF44", hash_generated_method = "802CA1465F02E8195BBE40C292899388")
-        @Override
-public int available() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.973 -0500", hash_original_method = "4F6C4EDBF6F94B4350B82DBC8B61EF44", hash_generated_method = "802CA1465F02E8195BBE40C292899388")
+        
+@Override public int available() throws IOException {
             return socketImpl.available();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.067 -0500", hash_original_method = "6270DBEE277D6F2FF2E49396D9FF160A", hash_generated_method = "7E74E92E43F9BAA71C71D362FC69910A")
-        @Override
-public void close() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.976 -0500", hash_original_method = "6270DBEE277D6F2FF2E49396D9FF160A", hash_generated_method = "7E74E92E43F9BAA71C71D362FC69910A")
+        
+@Override public void close() throws IOException {
             socketImpl.close();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.068 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
-        @Override
-public int read() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.978 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
+        
+@Override public int read() throws IOException {
             return Streams.readSingleByte(this);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.069 -0500", hash_original_method = "83571F5C87BAB215B1B7EB80A1B1F5C1", hash_generated_method = "5DFAC29EEC49AAF97DBB02CB60B20F3F")
-        @Override
-public int read(byte[] buffer, int offset, int byteCount) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.981 -0500", hash_original_method = "83571F5C87BAB215B1B7EB80A1B1F5C1", hash_generated_method = "5DFAC29EEC49AAF97DBB02CB60B20F3F")
+        
+@Override public int read(byte[] buffer, int offset, int byteCount) throws IOException {
             return socketImpl.read(buffer, offset, byteCount);
         }
 
@@ -506,30 +537,31 @@ public int read(byte[] buffer, int offset, int byteCount) throws IOException {
 
     
     private static class PlainSocketOutputStream extends OutputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.072 -0500", hash_original_field = "C92DD3B7F09F6096C227812F0F4031CF", hash_generated_field = "16CEE3972B12A3C5752670B7FF7939A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.991 -0500", hash_original_field = "C92DD3B7F09F6096C227812F0F4031CF", hash_generated_field = "16CEE3972B12A3C5752670B7FF7939A7")
 
         private  PlainSocketImpl socketImpl;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.073 -0500", hash_original_method = "1A4D21BF9006CF014C027978C481D31A", hash_generated_method = "1471238D75713B5372A51EA45B1CCEE1")
-        public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.993 -0500", hash_original_method = "1A4D21BF9006CF014C027978C481D31A", hash_generated_method = "1471238D75713B5372A51EA45B1CCEE1")
+        
+public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.074 -0500", hash_original_method = "6270DBEE277D6F2FF2E49396D9FF160A", hash_generated_method = "7E74E92E43F9BAA71C71D362FC69910A")
-        @Override
-public void close() throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.996 -0500", hash_original_method = "6270DBEE277D6F2FF2E49396D9FF160A", hash_generated_method = "7E74E92E43F9BAA71C71D362FC69910A")
+        
+@Override public void close() throws IOException {
             socketImpl.close();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.075 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
-        @Override
-public void write(int oneByte) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.999 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
+        
+@Override public void write(int oneByte) throws IOException {
             Streams.writeSingleByte(this, oneByte);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.076 -0500", hash_original_method = "92B26271A04D40A7BFB8B8109985B5A0", hash_generated_method = "0D4BAAF7F5F6E7E7943F39A61D2F6DF4")
-        @Override
-public void write(byte[] buffer, int offset, int byteCount) throws IOException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.001 -0500", hash_original_method = "92B26271A04D40A7BFB8B8109985B5A0", hash_generated_method = "0D4BAAF7F5F6E7E7943F39A61D2F6DF4")
+        
+@Override public void write(byte[] buffer, int offset, int byteCount) throws IOException {
             socketImpl.write(buffer, offset, byteCount);
         }
 
@@ -539,8 +571,9 @@ public void write(byte[] buffer, int offset, int byteCount) throws IOException {
     /**
      * For PlainSocketInputStream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.091 -0500", hash_original_method = "8E8D9564EE0B9256E101864557DD238B", hash_generated_method = "A1B021345B0502A87394E4382A6C7523")
-    private int read(byte[] buffer, int offset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.045 -0500", hash_original_method = "8E8D9564EE0B9256E101864557DD238B", hash_generated_method = "A1B021345B0502A87394E4382A6C7523")
+    
+private int read(byte[] buffer, int offset, int byteCount) throws IOException {
         if (byteCount == 0) {
             return 0;
         }
@@ -563,8 +596,9 @@ public void write(byte[] buffer, int offset, int byteCount) throws IOException {
     /**
      * For PlainSocketOutputStream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:06.091 -0500", hash_original_method = "0BAFEFFE1F4A4A29CFC7D3BD2B2D732D", hash_generated_method = "5463C664C45B30B1791965FF58ACADD6")
-    private void write(byte[] buffer, int offset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.047 -0500", hash_original_method = "0BAFEFFE1F4A4A29CFC7D3BD2B2D732D", hash_generated_method = "5463C664C45B30B1791965FF58ACADD6")
+    
+private void write(byte[] buffer, int offset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
         if (streaming) {
             while (byteCount > 0) {

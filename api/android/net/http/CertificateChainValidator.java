@@ -29,8 +29,9 @@ class CertificateChainValidator {
     /**
      * @return The singleton instance of the certificates chain validator
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.196 -0500", hash_original_method = "0F243599E8016F5D4F15CBBF70F43AE6", hash_generated_method = "02D8009B6E1299C3B3A212C7B30F1CD2")
-    public static CertificateChainValidator getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.195 -0500", hash_original_method = "0F243599E8016F5D4F15CBBF70F43AE6", hash_generated_method = "02D8009B6E1299C3B3A212C7B30F1CD2")
+    
+public static CertificateChainValidator getInstance() {
         return sInstance;
     }
 
@@ -42,8 +43,9 @@ class CertificateChainValidator {
      * @param authType The authentication type for the cert chain
      * @return An SSL error object if there is an error and null otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.199 -0500", hash_original_method = "18267EA0A2027BF86F0A85466039921C", hash_generated_method = "C96CA958F20C3743481DCCEA10551E2D")
-    public static SslError verifyServerCertificates(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.202 -0500", hash_original_method = "18267EA0A2027BF86F0A85466039921C", hash_generated_method = "C96CA958F20C3743481DCCEA10551E2D")
+    
+public static SslError verifyServerCertificates(
         byte[][] certChain, String domain, String authType)
         throws IOException {
 
@@ -68,8 +70,9 @@ class CertificateChainValidator {
      * @param authType The authentication type for the cert chain
      * @return An SSL error object if there is an error and null otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.200 -0500", hash_original_method = "2785BD3BA93222E8AB5B460FDCCCF9E9", hash_generated_method = "3A258E0C2116CB2D762D495F6C5139B6")
-    private static SslError verifyServerDomainAndCertificates(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.205 -0500", hash_original_method = "2785BD3BA93222E8AB5B460FDCCCF9E9", hash_generated_method = "3A258E0C2116CB2D762D495F6C5139B6")
+    
+private static SslError verifyServerDomainAndCertificates(
             X509Certificate[] chain, String domain, String authType)
             throws IOException {
         // check if the first certificate in the chain is for this site
@@ -96,7 +99,7 @@ class CertificateChainValidator {
             return new SslError(SslError.SSL_UNTRUSTED, currCertificate);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.195 -0500", hash_original_field = "C561100F7CA9F2EEB7E58CFBB92AFD83", hash_generated_field = "7025A8FFA19D23C3239F45040E6EE9F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.192 -0500", hash_original_field = "C561100F7CA9F2EEB7E58CFBB92AFD83", hash_generated_field = "7025A8FFA19D23C3239F45040E6EE9F0")
 
     private static final CertificateChainValidator sInstance
             = new CertificateChainValidator();
@@ -105,8 +108,9 @@ class CertificateChainValidator {
      * Creates a new certificate chain validator. This is a private constructor.
      * If you need a Certificate chain validator, call getInstance().
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.197 -0500", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "D74C4DFAD21CEF4FCC29B841FA38D1DA")
-    private CertificateChainValidator() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.197 -0500", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "D74C4DFAD21CEF4FCC29B841FA38D1DA")
+    
+private CertificateChainValidator() {}
 
     /**
      * Performs the handshake and server certificates validation
@@ -118,8 +122,9 @@ class CertificateChainValidator {
      * @param domain The website domain
      * @return An SSL error object if there is an error and null otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.198 -0500", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "216E1F74EE288CB17CA845827E206614")
-    public SslError doHandshakeAndValidateServerCertificates(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.200 -0500", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "216E1F74EE288CB17CA845827E206614")
+    
+public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain)
             throws IOException {
         // get a valid SSLSession, close the socket if we fail
@@ -149,16 +154,18 @@ class CertificateChainValidator {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.201 -0500", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "10AEA3ED4E1BC4F19C79B4C82569D499")
-    private void closeSocketThrowException(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.207 -0500", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "10AEA3ED4E1BC4F19C79B4C82569D499")
+    
+private void closeSocketThrowException(
             SSLSocket socket, String errorMessage, String defaultErrorMessage)
             throws IOException {
         closeSocketThrowException(
             socket, errorMessage != null ? errorMessage : defaultErrorMessage);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.202 -0500", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "6E9E025EFFEDA554EA38003B6695FACD")
-    private void closeSocketThrowException(SSLSocket socket,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.210 -0500", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "6E9E025EFFEDA554EA38003B6695FACD")
+    
+private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {
         if (HttpLog.LOGV) {
             HttpLog.v("validation error: " + errorMessage);

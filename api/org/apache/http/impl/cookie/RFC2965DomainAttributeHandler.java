@@ -17,16 +17,18 @@ import org.apache.http.cookie.SetCookie;
 
 public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.679 -0500", hash_original_method = "5C926F9EE1EA6288872238281D019BE6", hash_generated_method = "CF3A76679EF46895931226F828AC53C7")
-    public RFC2965DomainAttributeHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.243 -0500", hash_original_method = "5C926F9EE1EA6288872238281D019BE6", hash_generated_method = "CF3A76679EF46895931226F828AC53C7")
+    
+public RFC2965DomainAttributeHandler() {
         super();
     }
 
     /**
      * Parse cookie domain attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.680 -0500", hash_original_method = "CA7EEF802D39DD35821E8C5DF292BB9E", hash_generated_method = "920F6FBF2CA4E75ED27B7EB38BB24898")
-    public void parse(final SetCookie cookie, String domain)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.246 -0500", hash_original_method = "CA7EEF802D39DD35821E8C5DF292BB9E", hash_generated_method = "920F6FBF2CA4E75ED27B7EB38BB24898")
+    
+public void parse(final SetCookie cookie, String domain)
             throws MalformedCookieException {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
@@ -66,8 +68,9 @@ public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
      * @param domain The cookie domain attribute.
      * @return true if the specified host matches the given domain.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.681 -0500", hash_original_method = "63286152494B19CF26590FA425B39B18", hash_generated_method = "F9C67CEB7FC05B284B157EA7E1FC8FFF")
-    public boolean domainMatch(String host, String domain) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.248 -0500", hash_original_method = "63286152494B19CF26590FA425B39B18", hash_generated_method = "F9C67CEB7FC05B284B157EA7E1FC8FFF")
+    
+public boolean domainMatch(String host, String domain) {
         boolean match = host.equals(domain)
                         || (domain.startsWith(".") && host.endsWith(domain));
 
@@ -77,8 +80,9 @@ public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
     /**
      * Validate cookie domain attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.682 -0500", hash_original_method = "CABE0CDEFEE66B5261D13BB72FC54CFF", hash_generated_method = "175B4AFDAB0348B0677E41D1C24635BB")
-    public void validate(final Cookie cookie, final CookieOrigin origin)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.251 -0500", hash_original_method = "CABE0CDEFEE66B5261D13BB72FC54CFF", hash_generated_method = "175B4AFDAB0348B0677E41D1C24635BB")
+    
+public void validate(final Cookie cookie, final CookieOrigin origin)
             throws MalformedCookieException {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
@@ -143,8 +147,9 @@ public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
     /**
      * Match cookie domain attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.683 -0500", hash_original_method = "C7211512AD90131E871DA498CB7C5AD4", hash_generated_method = "DA584F5F25762FF40F97F84C56ADD308")
-    public boolean match(final Cookie cookie, final CookieOrigin origin) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.254 -0500", hash_original_method = "C7211512AD90131E871DA498CB7C5AD4", hash_generated_method = "DA584F5F25762FF40F97F84C56ADD308")
+    
+public boolean match(final Cookie cookie, final CookieOrigin origin) {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");
         }

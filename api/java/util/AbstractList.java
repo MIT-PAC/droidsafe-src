@@ -13,15 +13,16 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     public static List newSimpleList() {
         return new SubAbstractList();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.263 -0500", hash_original_field = "52F3DED7388D6DA42BC9C902075440B5", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.837 -0500", hash_original_field = "52F3DED7388D6DA42BC9C902075440B5", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
 
     protected transient int modCount;
 
     /**
      * Constructs a new instance of this AbstractList.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.310 -0500", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "D2CD754E0F115F288E42249DC6A8FBE4")
-    protected AbstractList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.970 -0500", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "D2CD754E0F115F288E42249DC6A8FBE4")
+    
+protected AbstractList() {
     }
 
     
@@ -67,8 +68,9 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      * @throws IndexOutOfBoundsException
      *             if {@code location < 0 || >= size()}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.316 -0500", hash_original_method = "028843ECC72155B435F1914365BF5067", hash_generated_method = "FA43A5DF06AE806D1B6BA7C7E16F414D")
-    public abstract E get(int location);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.985 -0500", hash_original_method = "028843ECC72155B435F1914365BF5067", hash_generated_method = "FA43A5DF06AE806D1B6BA7C7E16F414D")
+    
+public abstract E get(int location);
 
     
         @DSModeled(DSC.SAFE)

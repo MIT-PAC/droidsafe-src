@@ -25,25 +25,27 @@ import javax.sip.header.Header;
 public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader implements java.util.List<HDR>, Header {
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.795 -0500", hash_original_method = "3479D46A175E4E7E02958E37278BD36E", hash_generated_method = "7BD48B92D903DC8EF08046D5E59526DD")
-    public static void setPrettyEncode(boolean flag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.748 -0500", hash_original_method = "3479D46A175E4E7E02958E37278BD36E", hash_generated_method = "7BD48B92D903DC8EF08046D5E59526DD")
+    
+public static void setPrettyEncode(boolean flag) {
         prettyEncode = flag;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.734 -0500", hash_original_field = "3E6654B574B7B146FB19CF38092BC78D", hash_generated_field = "F24392C13A6D95700264E5A997197264")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.568 -0500", hash_original_field = "3E6654B574B7B146FB19CF38092BC78D", hash_generated_field = "F24392C13A6D95700264E5A997197264")
 
 
     private static boolean prettyEncode = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.736 -0500", hash_original_field = "4353EE1013E3359C24F2F7A43652CFED", hash_generated_field = "1610EB574C9A048E3BE2EA98FBE15AF1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.572 -0500", hash_original_field = "4353EE1013E3359C24F2F7A43652CFED", hash_generated_field = "1610EB574C9A048E3BE2EA98FBE15AF1")
 
     protected List<HDR> hlist;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.737 -0500", hash_original_field = "43B2ABA48E81AE0750B9B4971CAD7379", hash_generated_field = "7DDB65A0A435AAFCBC63AD9D687C490F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.574 -0500", hash_original_field = "43B2ABA48E81AE0750B9B4971CAD7379", hash_generated_field = "7DDB65A0A435AAFCBC63AD9D687C490F")
 
 
     private Class<HDR> myClass;
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.739 -0500", hash_original_method = "D7E30AE5F54C678856B1E2B4E08FADF6", hash_generated_method = "1B375F3151E47402C3A2F26A1EB13D02")
-    private SIPHeaderList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.580 -0500", hash_original_method = "D7E30AE5F54C678856B1E2B4E08FADF6", hash_generated_method = "1B375F3151E47402C3A2F26A1EB13D02")
+    
+private SIPHeaderList() {
         hlist = new LinkedList<HDR>();
     }
 
@@ -55,15 +57,17 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @param hname
      *            String to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.740 -0500", hash_original_method = "C956079DDC347F2EE85C1D1E44860715", hash_generated_method = "9519CE0209E2AF9954175B26F2B41E10")
-    protected SIPHeaderList(Class<HDR> objclass, String hname) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.583 -0500", hash_original_method = "C956079DDC347F2EE85C1D1E44860715", hash_generated_method = "9519CE0209E2AF9954175B26F2B41E10")
+    
+protected SIPHeaderList(Class<HDR> objclass, String hname) {
         this();
         this.headerName = hname;
         this.myClass =  objclass;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.738 -0500", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "F3F8F203B82F62163ACC77D3355FEA39")
-    public String getName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.577 -0500", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "F3F8F203B82F62163ACC77D3355FEA39")
+    
+public String getName() {
         return this.headerName;
     }
 
@@ -73,8 +77,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @param objectToAdd
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.741 -0500", hash_original_method = "45FF804DBFA2BB4F4071CDF27CE28633", hash_generated_method = "DE85DD5FA87051E0F364973767E0E8A1")
-    public boolean add(HDR objectToAdd) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.587 -0500", hash_original_method = "45FF804DBFA2BB4F4071CDF27CE28633", hash_generated_method = "DE85DD5FA87051E0F364973767E0E8A1")
+    
+public boolean add(HDR objectToAdd) {
         hlist.add((HDR)objectToAdd);
         return true;
     }
@@ -86,8 +91,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @param obj
      *            Genericobject to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.743 -0500", hash_original_method = "87B618AF10705C22EFB36E4A71158D56", hash_generated_method = "54A200294B7C93768F11F3C3B2B34FAD")
-    public void addFirst(HDR obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.590 -0500", hash_original_method = "87B618AF10705C22EFB36E4A71158D56", hash_generated_method = "54A200294B7C93768F11F3C3B2B34FAD")
+    
+public void addFirst(HDR obj) {
         hlist.add(0,(HDR) obj);
     }
 
@@ -99,8 +105,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @param top
      *            is true if we want to add to the top of the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.744 -0500", hash_original_method = "3D14CCA72C816FE4801BBC05991E4343", hash_generated_method = "06F3350CA231C61E6E3D685EA2191004")
-    public void add(HDR sipheader, boolean top) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.594 -0500", hash_original_method = "3D14CCA72C816FE4801BBC05991E4343", hash_generated_method = "06F3350CA231C61E6E3D685EA2191004")
+    
+public void add(HDR sipheader, boolean top) {
         if (top)
             this.addFirst(sipheader);
         else
@@ -119,8 +126,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @throws IllegalArgumentException
      *             if the two lists are not compatible
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.745 -0500", hash_original_method = "2C5EDAC0235777863EFD087B4072277C", hash_generated_method = "9E7C21291AC9652038CC874A9632FB81")
-    public void concatenate(SIPHeaderList<HDR> other, boolean topFlag)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.597 -0500", hash_original_method = "2C5EDAC0235777863EFD087B4072277C", hash_generated_method = "9E7C21291AC9652038CC874A9632FB81")
+    
+public void concatenate(SIPHeaderList<HDR> other, boolean topFlag)
             throws IllegalArgumentException {
         if (!topFlag) {
             this.addAll(other);
@@ -139,13 +147,15 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @return String encoded string representation of this list of headers.
      *         (Contains string append of each encoded header).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.746 -0500", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "3E83C3693072E036EE6283AD07E42258")
-    public String encode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.600 -0500", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "3E83C3693072E036EE6283AD07E42258")
+    
+public String encode() {
         return encode(new StringBuffer()).toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.748 -0500", hash_original_method = "4452028BB43CC449CBD4FD5523C455CD", hash_generated_method = "D705592BC6F3769032920683153554BA")
-    public StringBuffer encode(StringBuffer buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.603 -0500", hash_original_method = "4452028BB43CC449CBD4FD5523C455CD", hash_generated_method = "D705592BC6F3769032920683153554BA")
+    
+public StringBuffer encode(StringBuffer buffer) {
         if (hlist.isEmpty()) {
             buffer.append(headerName).append(':').append(Separators.NEWLINE);
         }
@@ -183,8 +193,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *         headers.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.749 -0500", hash_original_method = "3A5F29F99CF35D16AD0C376ECAFA4E44", hash_generated_method = "2F8A4294D043A0D4FFD1926147911900")
-    public List<String> getHeadersAsEncodedStrings() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.607 -0500", hash_original_method = "3A5F29F99CF35D16AD0C376ECAFA4E44", hash_generated_method = "2F8A4294D043A0D4FFD1926147911900")
+    
+public List<String> getHeadersAsEncodedStrings() {
         List<String> retval = new LinkedList<String>();
 
         ListIterator<HDR> li = hlist.listIterator();
@@ -203,8 +214,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return SIPHeader first element of the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.750 -0500", hash_original_method = "6C7059400A289BDBD2DC174FD9546E0E", hash_generated_method = "9A9A6622EA50661311B6037CD7613E34")
-    public Header getFirst() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.610 -0500", hash_original_method = "6C7059400A289BDBD2DC174FD9546E0E", hash_generated_method = "9A9A6622EA50661311B6037CD7613E34")
+    
+public Header getFirst() {
         if (hlist == null || hlist.isEmpty())
             return null;
         else
@@ -216,8 +228,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return SIPHeader last element of the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.751 -0500", hash_original_method = "564DA566938B5DEC3F30C613889BA2FD", hash_generated_method = "D066CE7B66C3741C7EE78C82FBCA05AD")
-    public Header getLast() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.613 -0500", hash_original_method = "564DA566938B5DEC3F30C613889BA2FD", hash_generated_method = "D066CE7B66C3741C7EE78C82FBCA05AD")
+    
+public Header getLast() {
         if (hlist == null || hlist.isEmpty())
             return null;
         return  hlist.get(hlist.size() - 1);
@@ -228,8 +241,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return Class of header supported by this list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.752 -0500", hash_original_method = "52DB400388897C60F1E5D7C5CF768C2C", hash_generated_method = "B793AA81A1208A012BD710EE4FCA211B")
-    public Class<HDR> getMyClass() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.616 -0500", hash_original_method = "52DB400388897C60F1E5D7C5CF768C2C", hash_generated_method = "B793AA81A1208A012BD710EE4FCA211B")
+    
+public Class<HDR> getMyClass() {
         return  this.myClass;
     }
 
@@ -238,8 +252,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return boolean true if list is empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.753 -0500", hash_original_method = "FF43F4EB263E123805961D1A87217B48", hash_generated_method = "F540E74265E8FD3B0104DB3691099F57")
-    public boolean isEmpty() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.619 -0500", hash_original_method = "FF43F4EB263E123805961D1A87217B48", hash_generated_method = "F540E74265E8FD3B0104DB3691099F57")
+    
+public boolean isEmpty() {
         return hlist.isEmpty();
     }
 
@@ -248,8 +263,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return the generated ListIterator
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.755 -0500", hash_original_method = "36E257E69C92FC5D45CD0DCB007DB07A", hash_generated_method = "765263DBB9F52D22742C0677CC4C7BD4")
-    public ListIterator<HDR> listIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.621 -0500", hash_original_method = "36E257E69C92FC5D45CD0DCB007DB07A", hash_generated_method = "765263DBB9F52D22742C0677CC4C7BD4")
+    
+public ListIterator<HDR> listIterator() {
 
         return hlist.listIterator(0);
     }
@@ -259,8 +275,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return the imedded linked list of SIP headers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.756 -0500", hash_original_method = "9E6C15618943805727A8B08583C0FF39", hash_generated_method = "1915FE8BC5C77ABA174AE011674FFC44")
-    public List<HDR> getHeaderList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.624 -0500", hash_original_method = "9E6C15618943805727A8B08583C0FF39", hash_generated_method = "1915FE8BC5C77ABA174AE011674FFC44")
+    
+public List<HDR> getHeaderList() {
         return this.hlist;
     }
 
@@ -271,16 +288,18 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *            position for the list iterator to return
      * @return the generated list iterator
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.757 -0500", hash_original_method = "EDE82742DF271310D47CFC69F814BF44", hash_generated_method = "E5B689D6ABBE0E3C06D78A5F5688548E")
-    public ListIterator<HDR> listIterator(int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.627 -0500", hash_original_method = "EDE82742DF271310D47CFC69F814BF44", hash_generated_method = "E5B689D6ABBE0E3C06D78A5F5688548E")
+    
+public ListIterator<HDR> listIterator(int position) {
         return hlist.listIterator(position);
     }
 
     /**
      * Remove the first element of this list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.758 -0500", hash_original_method = "66F538C19C1B45B9F4975D517A08EBE7", hash_generated_method = "9AE1AEC462E0711E2705F635F396C136")
-    public void removeFirst() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.632 -0500", hash_original_method = "66F538C19C1B45B9F4975D517A08EBE7", hash_generated_method = "9AE1AEC462E0711E2705F635F396C136")
+    
+public void removeFirst() {
         if (hlist.size() != 0)
             hlist.remove(0);
 
@@ -289,8 +308,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     /**
      * Remove the last element of this list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.759 -0500", hash_original_method = "56685A1560151077841543B2BC810F93", hash_generated_method = "438653CD56BAA77611CAFBBADC3F6DC5")
-    public void removeLast() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.635 -0500", hash_original_method = "56685A1560151077841543B2BC810F93", hash_generated_method = "438653CD56BAA77611CAFBBADC3F6DC5")
+    
+public void removeLast() {
         if (hlist.size() != 0)
             hlist.remove(hlist.size() - 1);
     }
@@ -302,8 +322,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *            SIPHeader to remove
      * @return boolean
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.760 -0500", hash_original_method = "6090D81CA85470AC09234766F76789C0", hash_generated_method = "BF14AB6561EF00397BB414AC6D1395B7")
-    public boolean remove(HDR obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.637 -0500", hash_original_method = "6090D81CA85470AC09234766F76789C0", hash_generated_method = "BF14AB6561EF00397BB414AC6D1395B7")
+    
+public boolean remove(HDR obj) {
         if (hlist.size() == 0)
             return false;
         else
@@ -317,8 +338,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @param cl
      *            class to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.761 -0500", hash_original_method = "23B9304014C757503CC0D5B9D6DB550F", hash_generated_method = "FE282A1BA4803976A805E0476682E2C2")
-    protected void setMyClass(Class<HDR> cl) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.641 -0500", hash_original_method = "23B9304014C757503CC0D5B9D6DB550F", hash_generated_method = "FE282A1BA4803976A805E0476682E2C2")
+    
+protected void setMyClass(Class<HDR> cl) {
         this.myClass = cl;
     }
 
@@ -329,8 +351,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *            int to set
      * @return String string representation of object (for printing).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.762 -0500", hash_original_method = "CC42CBF49D5975143777F4A2B14A482C", hash_generated_method = "A63B3964BB51A31D78901103FC617267")
-    public String debugDump(int indentation) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.644 -0500", hash_original_method = "CC42CBF49D5975143777F4A2B14A482C", hash_generated_method = "A63B3964BB51A31D78901103FC617267")
+    
+public String debugDump(int indentation) {
         stringRepresentation = "";
         String indent = new Indentation(indentation).getIndentation();
 
@@ -351,8 +374,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.763 -0500", hash_original_method = "ABFB21316126C2849AB41073C957D80E", hash_generated_method = "CA9FDAB05D64003C749F093A56047C05")
-    public String debugDump() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.647 -0500", hash_original_method = "ABFB21316126C2849AB41073C957D80E", hash_generated_method = "CA9FDAB05D64003C749F093A56047C05")
+    
+public String debugDump() {
         return debugDump(0);
     }
 
@@ -361,8 +385,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return SIPHeader []
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.764 -0500", hash_original_method = "7EBA89BCEE46EEC5D25867CF89F8E8B9", hash_generated_method = "AFD4D64ED22ACE50EF1BB1B1A7A48939")
-    public Object[] toArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.650 -0500", hash_original_method = "7EBA89BCEE46EEC5D25867CF89F8E8B9", hash_generated_method = "AFD4D64ED22ACE50EF1BB1B1A7A48939")
+    
+public Object[] toArray() {
         return hlist.toArray();
 
     }
@@ -372,8 +397,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return index of the given element (-1) if element does not exist.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.766 -0500", hash_original_method = "795B857E8950EF3C66EEA5946EF97E00", hash_generated_method = "348846283D89ED607D27C17EE4A9858E")
-    public int indexOf(GenericObject gobj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.653 -0500", hash_original_method = "795B857E8950EF3C66EEA5946EF97E00", hash_generated_method = "348846283D89ED607D27C17EE4A9858E")
+    
+public int indexOf(GenericObject gobj) {
         return hlist.indexOf(gobj);
     }
 
@@ -386,8 +412,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *            SIPHeader structure to add.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.767 -0500", hash_original_method = "D4A0602F4424EB672EFBEE9811EC3EF2", hash_generated_method = "994D15028CCE2587BC5BF1494F96A5CF")
-    public void add(int index, HDR  sipHeader)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.656 -0500", hash_original_method = "D4A0602F4424EB672EFBEE9811EC3EF2", hash_generated_method = "994D15028CCE2587BC5BF1494F96A5CF")
+    
+public void add(int index, HDR  sipHeader)
             throws IndexOutOfBoundsException {
         hlist.add(index, sipHeader);
     }
@@ -401,9 +428,10 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *            of headers in the target (order of the headers is not
      *            important).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.768 -0500", hash_original_method = "7AF224A0221DFF0013A72A01287D2D95", hash_generated_method = "819F4559335C9CF8A66F92D1D8519B6E")
-    @SuppressWarnings("unchecked")
-public boolean equals(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.659 -0500", hash_original_method = "7AF224A0221DFF0013A72A01287D2D95", hash_generated_method = "819F4559335C9CF8A66F92D1D8519B6E")
+    
+@SuppressWarnings("unchecked")
+    public boolean equals(Object other) {
 
         if (other == this)
             return true;
@@ -423,8 +451,9 @@ public boolean equals(Object other) {
      * Template match against a template. null field in template indicates wild
      * card match.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.769 -0500", hash_original_method = "6ED02991F9AD79524F79D6703964DFB6", hash_generated_method = "23ED2E4757232F6FD7BCDFDE5B223E43")
-    public boolean match(SIPHeaderList<?> template) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.664 -0500", hash_original_method = "6ED02991F9AD79524F79D6703964DFB6", hash_generated_method = "23ED2E4757232F6FD7BCDFDE5B223E43")
+    
+public boolean match(SIPHeaderList<?> template) {
         if (template == null)
             return true;
         if (!this.getClass().equals(template.getClass()))
@@ -458,8 +487,9 @@ public boolean equals(Object other) {
      *
      * @return clone of this Header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.771 -0500", hash_original_method = "359991759D26E2A3F33ACAEA17758D18", hash_generated_method = "DF397C0487B7030073A58781A19C1EEE")
-    public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.667 -0500", hash_original_method = "359991759D26E2A3F33ACAEA17758D18", hash_generated_method = "DF397C0487B7030073A58781A19C1EEE")
+    
+public Object clone() {
         try {
             Class<?> clazz = this.getClass();
 
@@ -473,8 +503,9 @@ public boolean equals(Object other) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.772 -0500", hash_original_method = "CA032BB58CFE2AE5C2CC307C2E78224F", hash_generated_method = "74C76046F8D1164B9DC25D24C80317D9")
-    protected final SIPHeaderList<HDR> clonehlist(List<HDR> hlistToClone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.670 -0500", hash_original_method = "CA032BB58CFE2AE5C2CC307C2E78224F", hash_generated_method = "74C76046F8D1164B9DC25D24C80317D9")
+    
+protected final SIPHeaderList<HDR> clonehlist(List<HDR> hlistToClone) {
         if (hlistToClone != null) {
             for (Iterator<HDR> it = (Iterator<HDR>) hlistToClone.iterator(); it.hasNext();) {
                 Header h = it.next();
@@ -487,8 +518,9 @@ public boolean equals(Object other) {
     /**
      * Get the number of headers in the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.773 -0500", hash_original_method = "FCBD3ECE23AA666BDE06756DAACE9219", hash_generated_method = "562F7FD4E7CCD444CD48E6FB580E5C32")
-    public int size() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.673 -0500", hash_original_method = "FCBD3ECE23AA666BDE06756DAACE9219", hash_generated_method = "562F7FD4E7CCD444CD48E6FB580E5C32")
+    
+public int size() {
         return hlist.size();
     }
 
@@ -498,8 +530,9 @@ public boolean equals(Object other) {
      *
      * @return true
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.774 -0500", hash_original_method = "32932F147EA25CC7B7BC47F740C6BF91", hash_generated_method = "0DC811C156890046C4A2AB310C83BF76")
-    public boolean isHeaderList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.677 -0500", hash_original_method = "32932F147EA25CC7B7BC47F740C6BF91", hash_generated_method = "0DC811C156890046C4A2AB310C83BF76")
+    
+public boolean isHeaderList() {
         return true;
     }
 
@@ -509,13 +542,15 @@ public boolean equals(Object other) {
      * Authorization, Proxy-Authenticate and Proxy-Authorization and hence this
      * is protected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.775 -0500", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "BBFCFD2AD6BD270AD38D8FE87FD0572B")
-    protected String encodeBody() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.680 -0500", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "BBFCFD2AD6BD270AD38D8FE87FD0572B")
+    
+protected String encodeBody() {
         return encodeBody(new StringBuffer()).toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.776 -0500", hash_original_method = "8EFAAECA9CE0AC45762D4D910A6D9585", hash_generated_method = "61808CFC1656C3F3D4153C2FD2D330E1")
-    protected StringBuffer encodeBody(StringBuffer buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.683 -0500", hash_original_method = "8EFAAECA9CE0AC45762D4D910A6D9585", hash_generated_method = "61808CFC1656C3F3D4153C2FD2D330E1")
+    
+protected StringBuffer encodeBody(StringBuffer buffer) {
         ListIterator<HDR> iterator = this.listIterator();
         while (true) {
             SIPHeader sipHeader = (SIPHeader) iterator.next();
@@ -535,32 +570,37 @@ public boolean equals(Object other) {
         return buffer;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.777 -0500", hash_original_method = "D5DDE9BDBABBA5EC4E7B0879A10A7D8D", hash_generated_method = "BFBB847B654FE2CC083CE01E67A19D9B")
-    public boolean addAll(Collection<? extends HDR> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.686 -0500", hash_original_method = "D5DDE9BDBABBA5EC4E7B0879A10A7D8D", hash_generated_method = "BFBB847B654FE2CC083CE01E67A19D9B")
+    
+public boolean addAll(Collection<? extends HDR> collection) {
         return this.hlist.addAll(collection);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.778 -0500", hash_original_method = "5E3DA6DCBC302D72E9103E3CB1D3527B", hash_generated_method = "E4F69B7A71A96C867BBBAF4E17B7E2A3")
-    public boolean addAll(int index, Collection<? extends HDR> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.689 -0500", hash_original_method = "5E3DA6DCBC302D72E9103E3CB1D3527B", hash_generated_method = "E4F69B7A71A96C867BBBAF4E17B7E2A3")
+    
+public boolean addAll(int index, Collection<? extends HDR> collection) {
         return this.hlist.addAll(index, collection);
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.780 -0500", hash_original_method = "F1DA48A9A827D74FF9F3AEB298E80E0A", hash_generated_method = "F2C05BF8E74DFEF8E6CC6B3BE48637D3")
-    public boolean containsAll(Collection<?> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.692 -0500", hash_original_method = "F1DA48A9A827D74FF9F3AEB298E80E0A", hash_generated_method = "F2C05BF8E74DFEF8E6CC6B3BE48637D3")
+    
+public boolean containsAll(Collection<?> collection) {
         return this.hlist.containsAll(collection);
     }
 
 
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.781 -0500", hash_original_method = "D791B8D331C82850017A4DF87B2D73FE", hash_generated_method = "DD48FCDD38D43309D1E9BD10583894DA")
-    public void clear() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.695 -0500", hash_original_method = "D791B8D331C82850017A4DF87B2D73FE", hash_generated_method = "DD48FCDD38D43309D1E9BD10583894DA")
+    
+public void clear() {
         this.hlist.clear();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.782 -0500", hash_original_method = "B039DF80CC42319FF93C93DFC4F09CCF", hash_generated_method = "EB644998ED00092BE046641143971738")
-    public boolean contains(Object header) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.698 -0500", hash_original_method = "B039DF80CC42319FF93C93DFC4F09CCF", hash_generated_method = "EB644998ED00092BE046641143971738")
+    
+public boolean contains(Object header) {
         return this.hlist.contains(header);
     }
 
@@ -572,8 +612,9 @@ public boolean equals(Object other) {
      *            location from which to get the object.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.783 -0500", hash_original_method = "B0FF15B145547E100ED44D45A7137CDE", hash_generated_method = "F46DEB9CDD87E07C4051278902E10473")
-    public HDR get(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.701 -0500", hash_original_method = "B0FF15B145547E100ED44D45A7137CDE", hash_generated_method = "F46DEB9CDD87E07C4051278902E10473")
+    
+public HDR get(int index) {
         return  this.hlist.get(index);
     }
 
@@ -583,8 +624,9 @@ public boolean equals(Object other) {
      * @param obj --
      *            object whose index to compute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.784 -0500", hash_original_method = "9C1A1055EA03DFB32FF882EA4FC9149D", hash_generated_method = "59A048735E082051D84A211B25F71E16")
-    public int indexOf(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.705 -0500", hash_original_method = "9C1A1055EA03DFB32FF882EA4FC9149D", hash_generated_method = "59A048735E082051D84A211B25F71E16")
+    
+public int indexOf(Object obj) {
         return this.hlist.indexOf(obj);
     }
 
@@ -595,8 +637,9 @@ public boolean equals(Object other) {
      *
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.785 -0500", hash_original_method = "84FF645EE0B76DB0D5B552F9A7A0DC94", hash_generated_method = "2C9F9172277FBCC77F44B8EB9FF01C29")
-    public java.util.Iterator<HDR> iterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.708 -0500", hash_original_method = "84FF645EE0B76DB0D5B552F9A7A0DC94", hash_generated_method = "2C9F9172277FBCC77F44B8EB9FF01C29")
+    
+public java.util.Iterator<HDR> iterator() {
         return this.hlist.listIterator();
     }
 
@@ -606,8 +649,9 @@ public boolean equals(Object other) {
      * @param obj --
      *            object whose index to find.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.786 -0500", hash_original_method = "05A7D65C6D911E0B1F3261A66888CB52", hash_generated_method = "3AFFFBA2DDE5D54646A6F203B3BBAF40")
-    public int lastIndexOf(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.711 -0500", hash_original_method = "05A7D65C6D911E0B1F3261A66888CB52", hash_generated_method = "3AFFFBA2DDE5D54646A6F203B3BBAF40")
+    
+public int lastIndexOf(Object obj) {
 
         return this.hlist.lastIndexOf(obj);
     }
@@ -620,8 +664,9 @@ public boolean equals(Object other) {
      *
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.787 -0500", hash_original_method = "FB49499CFAFE2E72F27390E6807CB034", hash_generated_method = "260C3A1E9B90029916A52C1DCC486CE4")
-    public boolean remove(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.715 -0500", hash_original_method = "FB49499CFAFE2E72F27390E6807CB034", hash_generated_method = "260C3A1E9B90029916A52C1DCC486CE4")
+    
+public boolean remove(Object obj) {
 
         return this.hlist.remove(obj);
     }
@@ -633,8 +678,9 @@ public boolean equals(Object other) {
      *            index at which to remove the object
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.788 -0500", hash_original_method = "2B7049D180B166140C32B8D54A96E238", hash_generated_method = "E3B492E3EA37500381FA59083A1CD08A")
-    public HDR remove(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.719 -0500", hash_original_method = "2B7049D180B166140C32B8D54A96E238", hash_generated_method = "E3B492E3EA37500381FA59083A1CD08A")
+    
+public HDR remove(int index) {
         return this.hlist.remove(index);
     }
 
@@ -642,8 +688,9 @@ public boolean equals(Object other) {
      * Remove all the elements.
      * @see List#removeAll(java.util.Collection)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.789 -0500", hash_original_method = "5A03B3005777615BF04A1D43320D1AA1", hash_generated_method = "A568AD10F00EA2CC70306780A6D6D9DD")
-    public boolean removeAll(java.util.Collection<?> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.725 -0500", hash_original_method = "5A03B3005777615BF04A1D43320D1AA1", hash_generated_method = "A568AD10F00EA2CC70306780A6D6D9DD")
+    
+public boolean removeAll(java.util.Collection<?> collection) {
         return this.hlist.removeAll(collection);
     }
 
@@ -652,8 +699,9 @@ public boolean equals(Object other) {
      * @see List#retainAll(java.util.Collection)
      * @param collection
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.790 -0500", hash_original_method = "4FD342E6A050272CE06CEE9969944C1B", hash_generated_method = "8003CE05FE216B9ACB6AE8B5310557B9")
-    public boolean retainAll(java.util.Collection<?> collection) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.731 -0500", hash_original_method = "4FD342E6A050272CE06CEE9969944C1B", hash_generated_method = "8003CE05FE216B9ACB6AE8B5310557B9")
+    
+public boolean retainAll(java.util.Collection<?> collection) {
         return this.hlist.retainAll(collection);
     }
 
@@ -662,8 +710,9 @@ public boolean equals(Object other) {
      *
      * @see List#subList(int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.792 -0500", hash_original_method = "894CB5A5FAD7AFC5CD5A3389B3F77AB4", hash_generated_method = "35638E214210D780397781FC12C13372")
-    public java.util.List<HDR> subList(int index1, int index2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.736 -0500", hash_original_method = "894CB5A5FAD7AFC5CD5A3389B3F77AB4", hash_generated_method = "35638E214210D780397781FC12C13372")
+    
+public java.util.List<HDR> subList(int index1, int index2) {
         return this.hlist.subList(index1, index2);
 
     }
@@ -672,8 +721,9 @@ public boolean equals(Object other) {
      * @see Object#hashCode()
      * @return -- the computed hashcode.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.793 -0500", hash_original_method = "78242797F449E5EBFB278CC5A6BC56D0", hash_generated_method = "684C0BABDAF236671E858A8C4C737032")
-    public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.741 -0500", hash_original_method = "78242797F449E5EBFB278CC5A6BC56D0", hash_generated_method = "684C0BABDAF236671E858A8C4C737032")
+    
+public int hashCode() {
 
         return this.headerName.hashCode();
     }
@@ -683,8 +733,9 @@ public boolean equals(Object other) {
      *
      * @see List#set(int, java.lang.Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.794 -0500", hash_original_method = "A9FD382DBA3FE66AACB46D6203100A0D", hash_generated_method = "C6D352BFFEECAC0F38AAD655317FD08C")
-    public HDR set(int position, HDR sipHeader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.744 -0500", hash_original_method = "A9FD382DBA3FE66AACB46D6203100A0D", hash_generated_method = "C6D352BFFEECAC0F38AAD655317FD08C")
+    
+public HDR set(int position, HDR sipHeader) {
 
         return hlist.set(position, sipHeader);
 

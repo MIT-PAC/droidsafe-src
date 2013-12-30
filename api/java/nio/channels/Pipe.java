@@ -20,16 +20,18 @@ public abstract class Pipe {
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.732 -0500", hash_original_method = "DEAA17350CC2E5E935405ABC338450AB", hash_generated_method = "8C5D6C0F92E4264803AD977F0CB40CEC")
-    public static Pipe open() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.777 -0500", hash_original_method = "DEAA17350CC2E5E935405ABC338450AB", hash_generated_method = "8C5D6C0F92E4264803AD977F0CB40CEC")
+    
+public static Pipe open() throws IOException {
         return SelectorProvider.provider().openPipe();
     }
 
     /**
      * The protected default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.733 -0500", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "402940CFAE1ABA8620A2D5B606F4117F")
-    protected Pipe() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.781 -0500", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "402940CFAE1ABA8620A2D5B606F4117F")
+    
+protected Pipe() {
     }
 
     /**
@@ -37,16 +39,18 @@ public abstract class Pipe {
      *
      * @return a writable sink channel of the pipe.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.733 -0500", hash_original_method = "AD3F0081408BB2FCEECAE63479FE7E5A", hash_generated_method = "E0239CD9C0D91AE8D96FDA2FAA979DD8")
-    public abstract SinkChannel sink();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.783 -0500", hash_original_method = "AD3F0081408BB2FCEECAE63479FE7E5A", hash_generated_method = "E0239CD9C0D91AE8D96FDA2FAA979DD8")
+    
+public abstract SinkChannel sink();
 
     /**
      * Returns the source channel of the pipe.
      *
      * @return a readable source channel of the pipe.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.734 -0500", hash_original_method = "B343D6974A4C4F073595EF38542D761F", hash_generated_method = "C2E867FEB59FED1AE08078B3B51F39A5")
-    public abstract SourceChannel source();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.786 -0500", hash_original_method = "B343D6974A4C4F073595EF38542D761F", hash_generated_method = "C2E867FEB59FED1AE08078B3B51F39A5")
+    
+public abstract SourceChannel source();
 
     
     public static abstract class SinkChannel extends AbstractSelectableChannel implements WritableByteChannel, GatheringByteChannel {
@@ -56,8 +60,9 @@ public abstract class Pipe {
          * @param provider
          *            the provider of the channel.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.727 -0500", hash_original_method = "6199DECCB48C88702EC19067764991B0", hash_generated_method = "85F41140EAC6B7FFBC2B221FE48DA53F")
-        protected SinkChannel(SelectorProvider provider) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.763 -0500", hash_original_method = "6199DECCB48C88702EC19067764991B0", hash_generated_method = "85F41140EAC6B7FFBC2B221FE48DA53F")
+        
+protected SinkChannel(SelectorProvider provider) {
             super(provider);
         }
 
@@ -66,9 +71,10 @@ public abstract class Pipe {
          *
          * @return a static value of OP_WRITE.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.728 -0500", hash_original_method = "C028D25CCC7628B8923253B7D8B4C45A", hash_generated_method = "EC431122F271EADC293EE80F5B6817E1")
-        @Override
-public final int validOps() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.765 -0500", hash_original_method = "C028D25CCC7628B8923253B7D8B4C45A", hash_generated_method = "EC431122F271EADC293EE80F5B6817E1")
+        
+@Override
+        public final int validOps() {
             return SelectionKey.OP_WRITE;
         }
 
@@ -84,8 +90,9 @@ public final int validOps() {
          * @param provider
          *            the provider of the channel.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.729 -0500", hash_original_method = "9817FE62735CF1F1F50A3C676A019302", hash_generated_method = "C23D2215BDF603EA893EBE51BFD85CCF")
-        protected SourceChannel(SelectorProvider provider) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.770 -0500", hash_original_method = "9817FE62735CF1F1F50A3C676A019302", hash_generated_method = "C23D2215BDF603EA893EBE51BFD85CCF")
+        
+protected SourceChannel(SelectorProvider provider) {
             super(provider);
         }
 
@@ -94,9 +101,10 @@ public final int validOps() {
          *
          * @return a static value of OP_READ.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.730 -0500", hash_original_method = "D2EA48B97033CCCA8D2B0ECC7F0D7822", hash_generated_method = "4B8803BC0EE51139D29E4539E5B57336")
-        @Override
-public final int validOps() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.773 -0500", hash_original_method = "D2EA48B97033CCCA8D2B0ECC7F0D7822", hash_generated_method = "4B8803BC0EE51139D29E4539E5B57336")
+        
+@Override
+        public final int validOps() {
             return SelectionKey.OP_READ;
         }
 

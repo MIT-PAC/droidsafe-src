@@ -30,8 +30,9 @@ public class PorterDuffColorFilter extends ColorFilter {
      *                       porter-duff mode
      * @param mode           The porter-duff mode that is applied
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.730 -0500", hash_original_method = "7596573BC98218F8353DB810A415EA55", hash_generated_method = "FC221DD174470D4245763A796A96A214")
-    public PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.970 -0500", hash_original_method = "7596573BC98218F8353DB810A415EA55", hash_generated_method = "FC221DD174470D4245763A796A96A214")
+    
+public PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
         native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
         nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
     }

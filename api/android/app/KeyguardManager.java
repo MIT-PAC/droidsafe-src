@@ -15,7 +15,7 @@ import android.view.IWindowManager;
 
 
 public class KeyguardManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.979 -0500", hash_original_field = "71165EAD9C083BBFAF16999CC816A558", hash_generated_field = "900206E0E1CB232AC9B36B78FD174716")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.636 -0500", hash_original_field = "71165EAD9C083BBFAF16999CC816A558", hash_generated_field = "900206E0E1CB232AC9B36B78FD174716")
 
     private IWindowManager mWM;
     
@@ -43,9 +43,10 @@ public class KeyguardManager {
      * @return A {@link KeyguardLock} handle to use to disable and reenable the
      *   keyguard.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.988 -0500", hash_original_method = "5C652CD18FFB9FB973F397E439BEDA7E", hash_generated_method = "CD6447334B6D5472BB47560DDD8C84F3")
-    @Deprecated
-public KeyguardLock newKeyguardLock(String tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.657 -0500", hash_original_method = "5C652CD18FFB9FB973F397E439BEDA7E", hash_generated_method = "CD6447334B6D5472BB47560DDD8C84F3")
+    
+@Deprecated
+    public KeyguardLock newKeyguardLock(String tag) {
         return new KeyguardLock(tag);
     }
 
@@ -105,9 +106,10 @@ public KeyguardLock newKeyguardLock(String tag) {
      *   it is safe to launch anything that would normally be considered safe
      *   once the user has gotten past the keyguard.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.992 -0500", hash_original_method = "FE8F5B525A90789B7FAA52BD35F0F030", hash_generated_method = "3DBA21B3C6F2E1FCDFFFE6D6B1EA77BE")
-    @Deprecated
-public void exitKeyguardSecurely(final OnKeyguardExitResult callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.669 -0500", hash_original_method = "FE8F5B525A90789B7FAA52BD35F0F030", hash_generated_method = "3DBA21B3C6F2E1FCDFFFE6D6B1EA77BE")
+    
+@Deprecated
+    public void exitKeyguardSecurely(final OnKeyguardExitResult callback) {
         try {
             mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {
                 public void onKeyguardExitResult(boolean success) throws RemoteException {
@@ -121,15 +123,16 @@ public void exitKeyguardSecurely(final OnKeyguardExitResult callback) {
 
     
     public class KeyguardLock {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.980 -0500", hash_original_field = "0DA9108D2E2A711522F589279D2F355A", hash_generated_field = "0A3D50E0763C2392A4FD5877627E0D78")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.639 -0500", hash_original_field = "0DA9108D2E2A711522F589279D2F355A", hash_generated_field = "0A3D50E0763C2392A4FD5877627E0D78")
 
         private IBinder mToken = new Binder();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.981 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.642 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
 
         private String mTag;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.982 -0500", hash_original_method = "4D032B51654914D2B6BB0DA8DB46B141", hash_generated_method = "4D032B51654914D2B6BB0DA8DB46B141")
-        KeyguardLock(String tag) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.644 -0500", hash_original_method = "4D032B51654914D2B6BB0DA8DB46B141", hash_generated_method = "4D032B51654914D2B6BB0DA8DB46B141")
+        
+KeyguardLock(String tag) {
             mTag = tag;
         }
         

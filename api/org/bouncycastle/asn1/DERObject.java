@@ -18,20 +18,24 @@ public abstract class DERObject extends ASN1Encodable implements DERTags {
     {
         //Synthesized constructor
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.469 -0500", hash_original_method = "E2D1E8CC85ED259FA016D4CED2E671CA", hash_generated_method = "5BCE74A3339F2B8C12C1DCCFF2316103")
-    public DERObject toASN1Object()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.934 -0500", hash_original_method = "E2D1E8CC85ED259FA016D4CED2E671CA", hash_generated_method = "5BCE74A3339F2B8C12C1DCCFF2316103")
+    
+public DERObject toASN1Object()
     {
         return this;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.470 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "6DC7B39669B69F5C42BF1BAC2411F684")
-    public abstract int hashCode();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.937 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "6DC7B39669B69F5C42BF1BAC2411F684")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.471 -0500", hash_original_method = "ABA676D17E1DCC5B68CA9641467BE6F0", hash_generated_method = "5F04941C356A0F51887E7E2A00CF4487")
-    public abstract boolean equals(Object o);
+public abstract int hashCode();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.472 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
-    abstract void encode(DEROutputStream out)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.939 -0500", hash_original_method = "ABA676D17E1DCC5B68CA9641467BE6F0", hash_generated_method = "5F04941C356A0F51887E7E2A00CF4487")
+    
+public abstract boolean equals(Object o);
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.941 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
+    
+abstract void encode(DEROutputStream out)
         throws IOException;
 
     

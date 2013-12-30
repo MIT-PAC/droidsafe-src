@@ -35,8 +35,9 @@ public class Linkify {
      *  attached to the Spannable, to avoid problems if you call it
      *  repeatedly on the same text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.748 -0500", hash_original_method = "6675017785DF7C3E1BBF27AB1F21461B", hash_generated_method = "1A156E678AD361ACA842A68E86E3BB2B")
-    public static final boolean addLinks(Spannable text, int mask) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.769 -0500", hash_original_method = "6675017785DF7C3E1BBF27AB1F21461B", hash_generated_method = "1A156E678AD361ACA842A68E86E3BB2B")
+    
+public static final boolean addLinks(Spannable text, int mask) {
         if (mask == 0) {
             return false;
         }
@@ -90,8 +91,9 @@ public class Linkify {
      *  are found the movement method for the TextView is set to
      *  LinkMovementMethod.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.749 -0500", hash_original_method = "D4023CCAA6FDAA3E9FB26AE7253D5FC2", hash_generated_method = "A5F616A48879E1E66C24E798A9C82B2A")
-    public static final boolean addLinks(TextView text, int mask) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.772 -0500", hash_original_method = "D4023CCAA6FDAA3E9FB26AE7253D5FC2", hash_generated_method = "A5F616A48879E1E66C24E798A9C82B2A")
+    
+public static final boolean addLinks(TextView text, int mask) {
         if (mask == 0) {
             return false;
         }
@@ -119,8 +121,9 @@ public class Linkify {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.750 -0500", hash_original_method = "B3A143C63E26B7CFD3F7C75589162FB2", hash_generated_method = "C62486D87726CBF969CA54D9409C2FAB")
-    private static final void addLinkMovementMethod(TextView t) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.776 -0500", hash_original_method = "B3A143C63E26B7CFD3F7C75589162FB2", hash_generated_method = "C62486D87726CBF969CA54D9409C2FAB")
+    
+private static final void addLinkMovementMethod(TextView t) {
         MovementMethod m = t.getMovementMethod();
 
         if ((m == null) || !(m instanceof LinkMovementMethod)) {
@@ -142,8 +145,9 @@ public class Linkify {
      *                      prepended to the url of links that do not have
      *                      a scheme specified in the link text
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.751 -0500", hash_original_method = "9F163477F9B0B187536137CC20B2DC0D", hash_generated_method = "921121D797C16A9C7CF564107E47138A")
-    public static final void addLinks(TextView text, Pattern pattern, String scheme) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.778 -0500", hash_original_method = "9F163477F9B0B187536137CC20B2DC0D", hash_generated_method = "921121D797C16A9C7CF564107E47138A")
+    
+public static final void addLinks(TextView text, Pattern pattern, String scheme) {
         addLinks(text, pattern, scheme, null, null);
     }
 
@@ -162,8 +166,9 @@ public class Linkify {
      *                      additional control over which pattern matches are
      *                      to be converted into links.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.752 -0500", hash_original_method = "524FF7740D87FDD88442F9E07F71C4C5", hash_generated_method = "EB9271C11E5362AFD32FD684F840EB47")
-    public static final void addLinks(TextView text, Pattern p, String scheme,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.781 -0500", hash_original_method = "524FF7740D87FDD88442F9E07F71C4C5", hash_generated_method = "EB9271C11E5362AFD32FD684F840EB47")
+    
+public static final void addLinks(TextView text, Pattern p, String scheme,
             MatchFilter matchFilter, TransformFilter transformFilter) {
         SpannableString s = SpannableString.valueOf(text.getText());
 
@@ -184,8 +189,9 @@ public class Linkify {
      *                      prepended to the url of links that do not have
      *                      a scheme specified in the link text
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.752 -0500", hash_original_method = "4771008E867E137AE8D7BAC2F0B7386A", hash_generated_method = "935F0F10BC8B50591B3F9D7FF378D172")
-    public static final boolean addLinks(Spannable text, Pattern pattern, String scheme) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.785 -0500", hash_original_method = "4771008E867E137AE8D7BAC2F0B7386A", hash_generated_method = "935F0F10BC8B50591B3F9D7FF378D172")
+    
+public static final boolean addLinks(Spannable text, Pattern pattern, String scheme) {
         return addLinks(text, pattern, scheme, null, null);
     }
 
@@ -203,8 +209,9 @@ public class Linkify {
      *                      additional control over which pattern matches are
      *                      to be converted into links.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.754 -0500", hash_original_method = "6CF180C8AC48F581F44385FCBEB35530", hash_generated_method = "497D4A1B31F5E5B3AFDA95280D0EF258")
-    public static final boolean addLinks(Spannable s, Pattern p,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.788 -0500", hash_original_method = "6CF180C8AC48F581F44385FCBEB35530", hash_generated_method = "497D4A1B31F5E5B3AFDA95280D0EF258")
+    
+public static final boolean addLinks(Spannable s, Pattern p,
             String scheme, MatchFilter matchFilter,
             TransformFilter transformFilter) {
         boolean hasMatches = false;
@@ -232,15 +239,17 @@ public class Linkify {
         return hasMatches;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.754 -0500", hash_original_method = "6A96E49D98DB283ABEDCA5DA8A0D27E1", hash_generated_method = "3DFF1086F3FB5C82A60C75633D7FFF46")
-    private static final void applyLink(String url, int start, int end, Spannable text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.790 -0500", hash_original_method = "6A96E49D98DB283ABEDCA5DA8A0D27E1", hash_generated_method = "3DFF1086F3FB5C82A60C75633D7FFF46")
+    
+private static final void applyLink(String url, int start, int end, Spannable text) {
         URLSpan span = new URLSpan(url);
 
         text.setSpan(span, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.756 -0500", hash_original_method = "56EBC488F3C5E85B7277F381EAE46938", hash_generated_method = "B3B1029566EB5A60F682379C38FD0323")
-    private static final String makeUrl(String url, String[] prefixes,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.794 -0500", hash_original_method = "56EBC488F3C5E85B7277F381EAE46938", hash_generated_method = "B3B1029566EB5A60F682379C38FD0323")
+    
+private static final String makeUrl(String url, String[] prefixes,
             Matcher m, TransformFilter filter) {
         if (filter != null) {
             url = filter.transformUrl(m, url);
@@ -270,8 +279,9 @@ public class Linkify {
         return url;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.757 -0500", hash_original_method = "0A5825FC3972F737412507B95D87C8F2", hash_generated_method = "B0D53B7CB5CA47AD666E7768B30EFA0E")
-    private static final void gatherLinks(ArrayList<LinkSpec> links,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.797 -0500", hash_original_method = "0A5825FC3972F737412507B95D87C8F2", hash_generated_method = "B0D53B7CB5CA47AD666E7768B30EFA0E")
+    
+private static final void gatherLinks(ArrayList<LinkSpec> links,
             Spannable s, Pattern pattern, String[] schemes,
             MatchFilter matchFilter, TransformFilter transformFilter) {
         Matcher m = pattern.matcher(s);
@@ -293,8 +303,9 @@ public class Linkify {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.758 -0500", hash_original_method = "2760D74C5CC252E337320350F0C84F55", hash_generated_method = "5ED656E3B4083BA9313227BBAC4B002E")
-    private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.800 -0500", hash_original_method = "2760D74C5CC252E337320350F0C84F55", hash_generated_method = "5ED656E3B4083BA9313227BBAC4B002E")
+    
+private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s) {
         String string = s.toString();
         String address;
         int base = 0;
@@ -332,8 +343,9 @@ public class Linkify {
     @DSModeled(DSC.BAN)
     private static final void pruneOverlaps(ArrayList<LinkSpec> links) {
         Comparator<LinkSpec>  c = new Comparator<LinkSpec>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.759 -0500", hash_original_method = "8ED3E1F0B1838A02146C142C5B858BAA", hash_generated_method = "7CF7D8B086CE7815023B31658E63FE8B")
-            public final int compare(LinkSpec a, LinkSpec b) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.804 -0500", hash_original_method = "8ED3E1F0B1838A02146C142C5B858BAA", hash_generated_method = "7CF7D8B086CE7815023B31658E63FE8B")
+            
+public final int compare(LinkSpec a, LinkSpec b) {
                 if (a.start < b.start) {
                     return -1;
                 }
@@ -353,8 +365,9 @@ public class Linkify {
                 return 0;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.760 -0500", hash_original_method = "41879F3ECE84BDD3E4B04325E71E8A69", hash_generated_method = "F0FFBDE17DFCB00CE91A2991226C5D29")
-            public final boolean equals(Object o) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.807 -0500", hash_original_method = "41879F3ECE84BDD3E4B04325E71E8A69", hash_generated_method = "F0FFBDE17DFCB00CE91A2991226C5D29")
+            
+public final boolean equals(Object o) {
                 return false;
             }
         };
@@ -382,7 +395,7 @@ public class Linkify {
             i++;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.735 -0500", hash_original_field = "1539B154C51FEE1E4007A9D0CC57AC8E", hash_generated_field = "368D3C042CD4B22DC7E2E97B265A1597")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.728 -0500", hash_original_field = "1539B154C51FEE1E4007A9D0CC57AC8E", hash_generated_field = "368D3C042CD4B22DC7E2E97B265A1597")
 
     public static final int WEB_URLS = 0x01;
 
@@ -396,26 +409,27 @@ public class Linkify {
         
         String transformUrl(final Matcher match, String url);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.736 -0500", hash_original_field = "0B087C31A3D9458F8B5B2380338FB1CA", hash_generated_field = "49537DE6E32CE1FDEFBAA9B907C31C5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.730 -0500", hash_original_field = "0B087C31A3D9458F8B5B2380338FB1CA", hash_generated_field = "49537DE6E32CE1FDEFBAA9B907C31C5A")
 
     public static final int EMAIL_ADDRESSES = 0x02;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.736 -0500", hash_original_field = "3BB571E9B4FA068F7430AC660FCA230D", hash_generated_field = "C10F585D529DD802A945821CA5FD4C88")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.733 -0500", hash_original_field = "3BB571E9B4FA068F7430AC660FCA230D", hash_generated_field = "C10F585D529DD802A945821CA5FD4C88")
 
     public static final int PHONE_NUMBERS = 0x04;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.737 -0500", hash_original_field = "E1618FC7087867AC97AD15838436ED73", hash_generated_field = "3CFB66FCB81210697B2CE809A5B9CEB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.736 -0500", hash_original_field = "E1618FC7087867AC97AD15838436ED73", hash_generated_field = "3CFB66FCB81210697B2CE809A5B9CEB6")
 
     public static final int MAP_ADDRESSES = 0x08;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.738 -0500", hash_original_field = "5982208D3FEB2A3AC71DE5C05E1294CB", hash_generated_field = "5CA0F41FA914E0B91F6B4FF2405321CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.739 -0500", hash_original_field = "5982208D3FEB2A3AC71DE5C05E1294CB", hash_generated_field = "5CA0F41FA914E0B91F6B4FF2405321CD")
 
     public static final int ALL = WEB_URLS | EMAIL_ADDRESSES | PHONE_NUMBERS | MAP_ADDRESSES;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.739 -0500", hash_original_field = "E5A4DD8A5F0002E2DA467172C983B9A0", hash_generated_field = "3AC0D2E4E2A49EBD47C3D4DEDB66D043")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.741 -0500", hash_original_field = "E5A4DD8A5F0002E2DA467172C983B9A0", hash_generated_field = "3AC0D2E4E2A49EBD47C3D4DEDB66D043")
 
     private static final int PHONE_NUMBER_MINIMUM_DIGITS = 5;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.483 -0400", hash_original_field = "6B88F88D64011199D23480B3B784D6FC", hash_generated_field = "008D1D2B5A7B2E7FD037B74448FC9CE8")
 
     public static final MatchFilter sUrlMatchFilter = new MatchFilter() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.740 -0500", hash_original_method = "AAF769FD7BAFAAFBC12DBCD0A5379028", hash_generated_method = "E3F6039DA7A936B630E4A9CEC402206A")
-        public final boolean acceptMatch(CharSequence s, int start, int end) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.745 -0500", hash_original_method = "AAF769FD7BAFAAFBC12DBCD0A5379028", hash_generated_method = "E3F6039DA7A936B630E4A9CEC402206A")
+        
+public final boolean acceptMatch(CharSequence s, int start, int end) {
             if (start == 0) {
                 return true;
             }
@@ -430,8 +444,9 @@ public class Linkify {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.483 -0400", hash_original_field = "F9493765D21ABAB52702E4974A1B1708", hash_generated_field = "B2CCB2AB7A7BFE05D0DBC4E5E2C9C4F7")
 
     public static final MatchFilter sPhoneNumberMatchFilter = new MatchFilter() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.742 -0500", hash_original_method = "CE7315FEE6FC136CE864E7D696A4648D", hash_generated_method = "B758E7F06A4AF83A3C8CC4415F549F6F")
-        public final boolean acceptMatch(CharSequence s, int start, int end) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.752 -0500", hash_original_method = "CE7315FEE6FC136CE864E7D696A4648D", hash_generated_method = "B758E7F06A4AF83A3C8CC4415F549F6F")
+        
+public final boolean acceptMatch(CharSequence s, int start, int end) {
             int digitCount = 0;
 
             for (int i = start; i < end; i++) {
@@ -448,8 +463,9 @@ public class Linkify {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.483 -0400", hash_original_field = "56A5F9993C0C7AC35957D43FBEFB0D1F", hash_generated_field = "EC888D0C5984A0BF717AAA49789F16EB")
 
     public static final TransformFilter sPhoneNumberTransformFilter = new TransformFilter() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.744 -0500", hash_original_method = "98DF336D3D5B2E2B9C3D87FAC939396C", hash_generated_method = "0EB6710A9F75FA19B2327695DC8460DC")
-        public final String transformUrl(final Matcher match, String url) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.759 -0500", hash_original_method = "98DF336D3D5B2E2B9C3D87FAC939396C", hash_generated_method = "0EB6710A9F75FA19B2327695DC8460DC")
+        
+public final String transformUrl(final Matcher match, String url) {
             return Patterns.digitsAndPlusOnly(match);
         }
     };
@@ -505,13 +521,13 @@ public class Linkify {
 }
 
 class LinkSpec {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.762 -0500", hash_original_field = "1B433832A8D8C8722BF3FE2FD98C7841", hash_generated_field = "1B433832A8D8C8722BF3FE2FD98C7841")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.813 -0500", hash_original_field = "1B433832A8D8C8722BF3FE2FD98C7841", hash_generated_field = "1B433832A8D8C8722BF3FE2FD98C7841")
 
     String url;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.763 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.815 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
 
     int start;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:53.763 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "302E5A3147803830441A79AED31F4022")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.817 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "302E5A3147803830441A79AED31F4022")
 
     int end;
     

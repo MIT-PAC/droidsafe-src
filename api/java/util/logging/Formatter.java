@@ -16,8 +16,9 @@ public abstract class Formatter {
     /**
      * Constructs a {@code Formatter} object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:50.660 -0500", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "B391543BD46E60AF59B6CE3503AD0B73")
-    protected Formatter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.818 -0500", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "B391543BD46E60AF59B6CE3503AD0B73")
+    
+protected Formatter() {
     }
 
     /**
@@ -29,8 +30,9 @@ public abstract class Formatter {
      *            the log record to be formatted into a string.
      * @return the formatted string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:50.661 -0500", hash_original_method = "7E168986BF1FADDA4930F992D3D84353", hash_generated_method = "E6DE8F47A6778B61C83B2AA82D9DF8FB")
-    public abstract String format(LogRecord r);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.821 -0500", hash_original_method = "7E168986BF1FADDA4930F992D3D84353", hash_generated_method = "E6DE8F47A6778B61C83B2AA82D9DF8FB")
+    
+public abstract String format(LogRecord r);
 
     /**
      * Formats a {@code LogRecord} object into a localized string
@@ -47,8 +49,9 @@ public abstract class Formatter {
      *            the log record to be formatted.
      * @return the string resulted from the formatting.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:50.661 -0500", hash_original_method = "C04F7375B92ACCB2488DC0EF0253C5B2", hash_generated_method = "2477C53B755CB69B3C21EA08E87BCC0E")
-    public String formatMessage(LogRecord r) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.824 -0500", hash_original_method = "C04F7375B92ACCB2488DC0EF0253C5B2", hash_generated_method = "2477C53B755CB69B3C21EA08E87BCC0E")
+    
+public String formatMessage(LogRecord r) {
         String pattern = r.getMessage();
         ResourceBundle rb = null;
         // try to localize the message string first
@@ -85,8 +88,9 @@ public abstract class Formatter {
      * @return the head string used to wrap a set of log records, empty in this
      *         implementation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:50.662 -0500", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "101AC05BF274870B943BA199D7465EAE")
-    public String getHead(Handler h) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.826 -0500", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "101AC05BF274870B943BA199D7465EAE")
+    
+public String getHead(Handler h) {
         return "";
     }
 
@@ -99,8 +103,9 @@ public abstract class Formatter {
      * @return the tail string used to wrap a set of log records, empty in this
      *         implementation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:50.663 -0500", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "98F3E6FA5F9C1CD9F3A0ED244AD38C4E")
-    public String getTail(Handler h) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.828 -0500", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "98F3E6FA5F9C1CD9F3A0ED244AD38C4E")
+    
+public String getTail(Handler h) {
         return "";
     }
 

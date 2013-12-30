@@ -18,8 +18,9 @@ import droidsafe.helpers.DSUtils;
 
 public class Canvas {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.947 -0500", hash_original_method = "4E72B045BA38CFE64C69AC73618E6E81", hash_generated_method = "334FC681567308ECFC605C40827E1CC3")
-    private static void throwIfRecycled(Bitmap bitmap) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.272 -0500", hash_original_method = "4E72B045BA38CFE64C69AC73618E6E81", hash_generated_method = "334FC681567308ECFC605C40827E1CC3")
+    
+private static void throwIfRecycled(Bitmap bitmap) {
         if (bitmap.isRecycled()) {
             throw new RuntimeException(
                         "Canvas: trying to use a recycled bitmap " + bitmap);
@@ -29,8 +30,9 @@ public class Canvas {
     /**
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.954 -0500", hash_original_method = "8881482C31CD6EB42F6A156D24B79CEC", hash_generated_method = "BFA33F863C09EC7778ECB3B0762595FC")
-    protected static void checkRange(int length, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.291 -0500", hash_original_method = "8881482C31CD6EB42F6A156D24B79CEC", hash_generated_method = "BFA33F863C09EC7778ECB3B0762595FC")
+    
+protected static void checkRange(int length, int offset, int count) {
         if ((offset | count) < 0 || offset + count > length) {
             throw new ArrayIndexOutOfBoundsException();
         }
@@ -366,58 +368,58 @@ public class Canvas {
     @DSModeled(DSC.SAFE)
     private static void finalizer(int nativeCanvas) {
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.865 -0500", hash_original_field = "DE0993C64A5DCE6B04BA860BC13954B0", hash_generated_field = "560BA2CA377351903A6838650E1B66A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.046 -0500", hash_original_field = "DE0993C64A5DCE6B04BA860BC13954B0", hash_generated_field = "560BA2CA377351903A6838650E1B66A9")
 
     public static final int DIRECTION_LTR = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.866 -0500", hash_original_field = "46B700B3B2E9E814F4C1E3FC3262AEB1", hash_generated_field = "FE6A83E9AB181642152249B0E98D001F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.048 -0500", hash_original_field = "46B700B3B2E9E814F4C1E3FC3262AEB1", hash_generated_field = "FE6A83E9AB181642152249B0E98D001F")
 
     public static final int DIRECTION_RTL = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.596 -0500", hash_original_field = "B5945FF46563199466C484AC170AD006", hash_generated_field = "BC69128E9B848FDD39E2F6D1048A3E30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.050 -0500", hash_original_field = "B5945FF46563199466C484AC170AD006", hash_generated_field = "BC69128E9B848FDD39E2F6D1048A3E30")
 
     // (see SkCanvas.cpp, SkDraw.cpp)
     private static final int MAXMIMUM_BITMAP_SIZE = 32766;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.616 -0500", hash_original_field = "E60E36172E05957F55F145C2156155BA", hash_generated_field = "6C8DE3849C8C2C8F11FED5E72A54856F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.103 -0500", hash_original_field = "E60E36172E05957F55F145C2156155BA", hash_generated_field = "6C8DE3849C8C2C8F11FED5E72A54856F")
 
 
     /** restore the current matrix when restore() is called */
     public static final int MATRIX_SAVE_FLAG = 0x01;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.887 -0500", hash_original_field = "5331FE1A3406446C5981931DCB724987", hash_generated_field = "58F530C9C6B270B19539C29F0F59AF3F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.105 -0500", hash_original_field = "5331FE1A3406446C5981931DCB724987", hash_generated_field = "58F530C9C6B270B19539C29F0F59AF3F")
 
     public static final int CLIP_SAVE_FLAG = 0x02;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.888 -0500", hash_original_field = "A29A388892161BAC13B6CD1CDC67B45B", hash_generated_field = "46E7D1290A1803E6928B2E065D955191")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.108 -0500", hash_original_field = "A29A388892161BAC13B6CD1CDC67B45B", hash_generated_field = "46E7D1290A1803E6928B2E065D955191")
 
     public static final int HAS_ALPHA_LAYER_SAVE_FLAG = 0x04;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.889 -0500", hash_original_field = "D40895AB2C4E729507313F9A6624B745", hash_generated_field = "532BC0688FBCF248880462AA6827890F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.110 -0500", hash_original_field = "D40895AB2C4E729507313F9A6624B745", hash_generated_field = "532BC0688FBCF248880462AA6827890F")
 
     public static final int FULL_COLOR_LAYER_SAVE_FLAG = 0x08;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.890 -0500", hash_original_field = "B97A7C3CD626185DDD36D5A7FC04926B", hash_generated_field = "9BC3AB123F6CF841BC3428B9EA233C60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.113 -0500", hash_original_field = "B97A7C3CD626185DDD36D5A7FC04926B", hash_generated_field = "9BC3AB123F6CF841BC3428B9EA233C60")
 
     public static final int CLIP_TO_LAYER_SAVE_FLAG = 0x10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.891 -0500", hash_original_field = "4FDDBD41583FED24D0A15A369D1B03AD", hash_generated_field = "A21A7EFBC48A7EE5E4832E43F9767035")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.116 -0500", hash_original_field = "4FDDBD41583FED24D0A15A369D1B03AD", hash_generated_field = "A21A7EFBC48A7EE5E4832E43F9767035")
 
     public static final int ALL_SAVE_FLAG = 0x1F;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.860 -0500", hash_original_field = "9AEAAB458F04AA015A1FEC7988D58EFD", hash_generated_field = "9AEAAB458F04AA015A1FEC7988D58EFD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.032 -0500", hash_original_field = "9AEAAB458F04AA015A1FEC7988D58EFD", hash_generated_field = "9AEAAB458F04AA015A1FEC7988D58EFD")
 
      int mNativeCanvas;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.861 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "4EFA3179E01F3A6C04DAAC2298E5BFE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.034 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "4EFA3179E01F3A6C04DAAC2298E5BFE4")
 
     private Bitmap  mBitmap;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.591 -0500", hash_original_field = "1809E3F3B0952C4944386BCDAFF81AC8", hash_generated_field = "04F9CD5B166F725F4476D4C3990647B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.036 -0500", hash_original_field = "1809E3F3B0952C4944386BCDAFF81AC8", hash_generated_field = "04F9CD5B166F725F4476D4C3990647B3")
 
     
     // optional field set by the caller
     private DrawFilter mDrawFilter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.863 -0500", hash_original_field = "41920084ADA48F59F241C35F3D02476D", hash_generated_field = "26A3C4D459B626187E0E8706060CBC58")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.039 -0500", hash_original_field = "41920084ADA48F59F241C35F3D02476D", hash_generated_field = "26A3C4D459B626187E0E8706060CBC58")
 
     protected int mDensity = Bitmap.DENSITY_NONE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.863 -0500", hash_original_field = "FA7F1C26BE2DD8F0261D589B965FA2A4", hash_generated_field = "B3B96B83CBF6A474ACFDE54DAF7E8D5B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.041 -0500", hash_original_field = "FA7F1C26BE2DD8F0261D589B965FA2A4", hash_generated_field = "B3B96B83CBF6A474ACFDE54DAF7E8D5B")
 
     protected int mScreenDensity = Bitmap.DENSITY_NONE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.864 -0500", hash_original_field = "BDE9F80FF611CA04BAC6BF350B53679E", hash_generated_field = "5A79E0455BB83A8F5930E665EB36A02A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.043 -0500", hash_original_field = "BDE9F80FF611CA04BAC6BF350B53679E", hash_generated_field = "5A79E0455BB83A8F5930E665EB36A02A")
 
     @SuppressWarnings({"UnusedDeclaration"})
     private int         mSurfaceFormat;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.869 -0500", hash_original_field = "92E0A3468E5C8A32534FFA55F4EA69E2", hash_generated_field = "D26BA3C2A6930E011E689CD349B6702B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.052 -0500", hash_original_field = "92E0A3468E5C8A32534FFA55F4EA69E2", hash_generated_field = "D26BA3C2A6930E011E689CD349B6702B")
 
     @SuppressWarnings({"UnusedDeclaration"})
     private  CanvasFinalizer mFinalizer;
@@ -436,8 +438,9 @@ public class Canvas {
      *
      * @param bitmap Specifies a mutable bitmap for the canvas to draw into.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.874 -0500", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "9BFED6DEC7FF5091C599E38FA68AFF9D")
-    public Canvas(Bitmap bitmap) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.068 -0500", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "9BFED6DEC7FF5091C599E38FA68AFF9D")
+    
+public Canvas(Bitmap bitmap) {
         if (!bitmap.isMutable()) {
             throw new IllegalStateException(
                             "Immutable bitmap passed to Canvas constructor");
@@ -449,8 +452,9 @@ public class Canvas {
         mDensity = bitmap.mDensity;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.875 -0500", hash_original_method = "347D84319548CC8FC9B392FE55B81BD9", hash_generated_method = "347D84319548CC8FC9B392FE55B81BD9")
-    Canvas(int nativeCanvas) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.070 -0500", hash_original_method = "347D84319548CC8FC9B392FE55B81BD9", hash_generated_method = "347D84319548CC8FC9B392FE55B81BD9")
+    
+Canvas(int nativeCanvas) {
         if (nativeCanvas == 0) {
             throw new IllegalStateException();
         }
@@ -466,9 +470,10 @@ public class Canvas {
      * 
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.875 -0500", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "5BB6D3440A25548E93896CEA426595C1")
-    @Deprecated
-protected GL getGL() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.073 -0500", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "5BB6D3440A25548E93896CEA426595C1")
+    
+@Deprecated
+    protected GL getGL() {
         return null;
     }
 
@@ -481,8 +486,9 @@ protected GL getGL() {
      * @return True if drawing operations are hardware accelerated,
      *         false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.876 -0500", hash_original_method = "8E464E19F5A7F279FF3FC1B84D15C4F0", hash_generated_method = "3C7366855ACB2D093DD423127CC059B2")
-    public boolean isHardwareAccelerated() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.075 -0500", hash_original_method = "8E464E19F5A7F279FF3FC1B84D15C4F0", hash_generated_method = "3C7366855ACB2D093DD423127CC059B2")
+    
+public boolean isHardwareAccelerated() {
         return false;
     }
 
@@ -518,8 +524,9 @@ protected GL getGL() {
      * 
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.877 -0500", hash_original_method = "85F5D8C713E0C3D78EE01CE144D393CD", hash_generated_method = "F813A2ECD65AA49F40CA21327D7699A1")
-    public void setViewport(int width, int height) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.079 -0500", hash_original_method = "85F5D8C713E0C3D78EE01CE144D393CD", hash_generated_method = "F813A2ECD65AA49F40CA21327D7699A1")
+    
+public void setViewport(int width, int height) {
     }
 
     /**
@@ -528,24 +535,39 @@ protected GL getGL() {
      *
      * @return true if the device that the current layer draws into is opaque
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.609 -0500", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "0FF4C408441CDF51A299C96865D3C743")
-    public native boolean isOpaque();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.083 -0500", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "0FF4C408441CDF51A299C96865D3C743")
+    
+    public boolean isOpaque(){
+    	//Formerly a native method
+    	return getTaintBoolean();
+    }
+
 
     /**
      * Returns the width of the current drawing layer
      *
      * @return the width of the current drawing layer
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.610 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "119E6F88A6022FFF8C0BCF10E5D283FB")
-    public native int getWidth();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.086 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "119E6F88A6022FFF8C0BCF10E5D283FB")
+    
+    public int getWidth(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
 
     /**
      * Returns the height of the current drawing layer
      *
      * @return the height of the current drawing layer
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.611 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "A50AB7B99158205015AA04248040D6D3")
-    public native int getHeight();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.090 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "A50AB7B99158205015AA04248040D6D3")
+    
+    public int getHeight(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -568,8 +590,9 @@ protected GL getGL() {
 	}
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.884 -0500", hash_original_method = "097B83D968163B69D9FD944A715444E1", hash_generated_method = "0608A6D15F183500AD37A116391AB878")
-    public void setScreenDensity(int density) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.097 -0500", hash_original_method = "097B83D968163B69D9FD944A715444E1", hash_generated_method = "0608A6D15F183500AD37A116391AB878")
+    
+public void setScreenDensity(int density) {
         mScreenDensity = density;
     }
 
@@ -580,8 +603,9 @@ protected GL getGL() {
      * 
      * @see #getMaximumBitmapHeight() 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.885 -0500", hash_original_method = "E7FD28619D99C67895E6B54C83B12011", hash_generated_method = "5D274B8825E67B365D5115D71633CAE7")
-    public int getMaximumBitmapWidth() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.099 -0500", hash_original_method = "E7FD28619D99C67895E6B54C83B12011", hash_generated_method = "5D274B8825E67B365D5115D71633CAE7")
+    
+public int getMaximumBitmapWidth() {
         return MAXMIMUM_BITMAP_SIZE;
     }
     
@@ -592,8 +616,9 @@ protected GL getGL() {
      * 
      * @see #getMaximumBitmapWidth() 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.886 -0500", hash_original_method = "F4D5E7FCD71CC06030F3DF600D5A4E91", hash_generated_method = "9340C6DCC529E409677A2F3455B2243D")
-    public int getMaximumBitmapHeight() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.100 -0500", hash_original_method = "F4D5E7FCD71CC06030F3DF600D5A4E91", hash_generated_method = "9340C6DCC529E409677A2F3455B2243D")
+    
+public int getMaximumBitmapHeight() {
         return MAXMIMUM_BITMAP_SIZE;
     } 
     
@@ -606,8 +631,13 @@ protected GL getGL() {
      *
      * @return The value to pass to restoreToCount() to balance this save()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.622 -0500", hash_original_method = "F3B8683979D1D489E213BCC22FA3BBF8", hash_generated_method = "2B849F705D66B3344BB858C062FCF030")
-    public native int save();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.119 -0500", hash_original_method = "F3B8683979D1D489E213BCC22FA3BBF8", hash_generated_method = "2B849F705D66B3344BB858C062FCF030")
+    
+    public int save(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
     
     /**
      * Based on saveFlags, can save the current matrix and clip onto a private
@@ -620,8 +650,14 @@ protected GL getGL() {
      *                  to save/restore
      * @return The value to pass to restoreToCount() to balance this save()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.623 -0500", hash_original_method = "B3EA192DB08CDE7F222599E8EB46FFD6", hash_generated_method = "78CD894CA5CA8D178BBE65B05D1E4F9A")
-    public native int save(int saveFlags);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.123 -0500", hash_original_method = "B3EA192DB08CDE7F222599E8EB46FFD6", hash_generated_method = "78CD894CA5CA8D178BBE65B05D1E4F9A")
+    
+    public int save(int saveFlags){
+    	//Formerly a native method
+    	addTaint(saveFlags);
+    	return getTaintInt();
+    }
+
 
     /**
      * This behaves the same as save(), but in addition it allocates an
@@ -639,8 +675,9 @@ protected GL getGL() {
      * @param saveFlags  see _SAVE_FLAG constants
      * @return       value to pass to restoreToCount() to balance this save()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.894 -0500", hash_original_method = "D3E38B54874BE956E1980D322B5BE510", hash_generated_method = "8E8A50822F89D18894E9EDB936F0539B")
-    public int saveLayer(RectF bounds, Paint paint, int saveFlags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.125 -0500", hash_original_method = "D3E38B54874BE956E1980D322B5BE510", hash_generated_method = "8E8A50822F89D18894E9EDB936F0539B")
+    
+public int saveLayer(RectF bounds, Paint paint, int saveFlags) {
         return native_saveLayer(mNativeCanvas, bounds,
                                 paint != null ? paint.mNativePaint : 0,
                                 saveFlags);
@@ -649,8 +686,9 @@ protected GL getGL() {
     /**
      * Helper version of saveLayer() that takes 4 values rather than a RectF.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.895 -0500", hash_original_method = "E5CA8AFF181BF9AD7711CB91FDA3487A", hash_generated_method = "77968793B4456561D3534C8518576750")
-    public int saveLayer(float left, float top, float right, float bottom,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.127 -0500", hash_original_method = "E5CA8AFF181BF9AD7711CB91FDA3487A", hash_generated_method = "77968793B4456561D3534C8518576750")
+    
+public int saveLayer(float left, float top, float right, float bottom,
                          Paint paint, int saveFlags) {
         return native_saveLayer(mNativeCanvas, left, top, right, bottom,
                                 paint != null ? paint.mNativePaint : 0,
@@ -673,8 +711,9 @@ protected GL getGL() {
      * @param saveFlags see _SAVE_FLAG constants
      * @return          value to pass to restoreToCount() to balance this call
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.896 -0500", hash_original_method = "11712C48B70E4A29EC050275E8757D6B", hash_generated_method = "01AF074B73D4C1F84F3199AA9ECEB8B1")
-    public int saveLayerAlpha(RectF bounds, int alpha, int saveFlags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.129 -0500", hash_original_method = "11712C48B70E4A29EC050275E8757D6B", hash_generated_method = "01AF074B73D4C1F84F3199AA9ECEB8B1")
+    
+public int saveLayerAlpha(RectF bounds, int alpha, int saveFlags) {
         alpha = Math.min(255, Math.max(0, alpha));
         return native_saveLayerAlpha(mNativeCanvas, bounds, alpha, saveFlags);
     }
@@ -682,8 +721,9 @@ protected GL getGL() {
     /**
      * Helper for saveLayerAlpha() that takes 4 values instead of a RectF.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.896 -0500", hash_original_method = "1E17DC2ECF868A450BC9B6F62927FD6A", hash_generated_method = "2EE874E2E6C2748C0F4D4D80A9216851")
-    public int saveLayerAlpha(float left, float top, float right, float bottom,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.131 -0500", hash_original_method = "1E17DC2ECF868A450BC9B6F62927FD6A", hash_generated_method = "2EE874E2E6C2748C0F4D4D80A9216851")
+    
+public int saveLayerAlpha(float left, float top, float right, float bottom,
                               int alpha, int saveFlags) {
         return native_saveLayerAlpha(mNativeCanvas, left, top, right, bottom,
                                      alpha, saveFlags);
@@ -698,8 +738,13 @@ protected GL getGL() {
      * Returns the number of matrix/clip states on the Canvas' private stack.
      * This will equal # save() calls - # restore() calls.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.629 -0500", hash_original_method = "C157B89F0FBAFE11C45EBC10DA0B6D3E", hash_generated_method = "469086422F4A0C211EE8A99341DDC2E6")
-    public native int getSaveCount();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.139 -0500", hash_original_method = "C157B89F0FBAFE11C45EBC10DA0B6D3E", hash_generated_method = "469086422F4A0C211EE8A99341DDC2E6")
+    
+    public int getSaveCount(){
+    	//Formerly a native method
+    	return getTaintInt();
+    }
+
 
     /**
      * Efficient way to pop any calls to save() that happened after the save
@@ -714,8 +759,13 @@ protected GL getGL() {
      *
      * @param saveCount The save level to restore to.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.631 -0500", hash_original_method = "5559D0B771CBEE6A1A38BCD3A9AC5162", hash_generated_method = "FFDE58BDE0F4E8A7BB6CEACB56352E98")
-    public native void restoreToCount(int saveCount);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.143 -0500", hash_original_method = "5559D0B771CBEE6A1A38BCD3A9AC5162", hash_generated_method = "FFDE58BDE0F4E8A7BB6CEACB56352E98")
+    
+    public void restoreToCount(int saveCount){
+    	//Formerly a native method
+    	addTaint(saveCount);
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -739,8 +789,9 @@ protected GL getGL() {
      * @param px The x-coord for the pivot point (unchanged by the scale)
      * @param py The y-coord for the pivot point (unchanged by the scale)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.904 -0500", hash_original_method = "FBE272FA12218448E57FDD0F51163D2E", hash_generated_method = "A90714BC8F2D627F45F2D7B13B278A01")
-    public final void scale(float sx, float sy, float px, float py) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.152 -0500", hash_original_method = "FBE272FA12218448E57FDD0F51163D2E", hash_generated_method = "A90714BC8F2D627F45F2D7B13B278A01")
+    
+public final void scale(float sx, float sy, float px, float py) {
         translate(px, py);
         scale(sx, sy);
         translate(-px, -py);
@@ -759,8 +810,9 @@ protected GL getGL() {
      * @param px The x-coord for the pivot point (unchanged by the rotation)
      * @param py The y-coord for the pivot point (unchanged by the rotation)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.906 -0500", hash_original_method = "96E9024A0524487F4C2E52375F89DAF2", hash_generated_method = "61DCE9732DA02773D3D2939E3FB0D6DE")
-    public final void rotate(float degrees, float px, float py) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.158 -0500", hash_original_method = "96E9024A0524487F4C2E52375F89DAF2", hash_generated_method = "61DCE9732DA02773D3D2939E3FB0D6DE")
+    
+public final void rotate(float degrees, float px, float py) {
         translate(px, py);
         rotate(degrees);
         translate(-px, -py);
@@ -772,8 +824,14 @@ protected GL getGL() {
      * @param sx The amount to skew in X
      * @param sy The amount to skew in Y
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.637 -0500", hash_original_method = "89B271C0116BA22E329740125333F5A7", hash_generated_method = "634C1E54E855948A577968C18CF78209")
-    public native void skew(float sx, float sy);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.162 -0500", hash_original_method = "89B271C0116BA22E329740125333F5A7", hash_generated_method = "634C1E54E855948A577968C18CF78209")
+    
+    public void skew(float sx, float sy){
+    	//Formerly a native method
+    	addTaint(sx);
+    	addTaint(sy);
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -788,8 +846,9 @@ protected GL getGL() {
      * @param matrix The matrix to replace the current matrix with. If it is
      *               null, set the current matrix to identity.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.909 -0500", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "2D41CB2D2ED1123789F114F9CE5C1F8F")
-    public void setMatrix(Matrix matrix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.166 -0500", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "2D41CB2D2ED1123789F114F9CE5C1F8F")
+    
+public void setMatrix(Matrix matrix) {
         native_setMatrix(mNativeCanvas,
                          matrix == null ? 0 : matrix.native_instance);
     }
@@ -798,8 +857,9 @@ protected GL getGL() {
      * Return, in ctm, the current transformation matrix. This does not alter
      * the matrix in the canvas, but just returns a copy of it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.910 -0500", hash_original_method = "43D0B837CD75E40B4AB1C87B7D03A6CC", hash_generated_method = "A9BE5FD6B90F19A6DB1C75520C046BEA")
-    public void getMatrix(Matrix ctm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.168 -0500", hash_original_method = "43D0B837CD75E40B4AB1C87B7D03A6CC", hash_generated_method = "A9BE5FD6B90F19A6DB1C75520C046BEA")
+    
+public void getMatrix(Matrix ctm) {
         native_getCTM(mNativeCanvas, ctm.native_instance);
     }
 
@@ -807,8 +867,9 @@ protected GL getGL() {
      * Return a new matrix with a copy of the canvas' current transformation
      * matrix.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.911 -0500", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "0EFEA3854D4D1A1427D490C733F4434D")
-    public final Matrix getMatrix() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.171 -0500", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "0EFEA3854D4D1A1427D490C733F4434D")
+    
+public final Matrix getMatrix() {
         Matrix m = new Matrix();
         getMatrix(m);
         return m;
@@ -821,8 +882,9 @@ protected GL getGL() {
      * @param op How the clip is modified
      * @return true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.912 -0500", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "11763958C4DDE97C38EB6CF50AA0DC5D")
-    public boolean clipRect(RectF rect, Region.Op op) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.173 -0500", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "11763958C4DDE97C38EB6CF50AA0DC5D")
+    
+public boolean clipRect(RectF rect, Region.Op op) {
         return native_clipRect(mNativeCanvas,
                                rect.left, rect.top, rect.right, rect.bottom,
                                op.nativeInt);
@@ -836,8 +898,9 @@ protected GL getGL() {
      * @param op How the clip is modified
      * @return true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.912 -0500", hash_original_method = "C0255CEC0BCD1AD46E1B4E180BE74E1B", hash_generated_method = "B52B4C54AFF7D730B7710759599B2299")
-    public boolean clipRect(Rect rect, Region.Op op) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.175 -0500", hash_original_method = "C0255CEC0BCD1AD46E1B4E180BE74E1B", hash_generated_method = "B52B4C54AFF7D730B7710759599B2299")
+    
+public boolean clipRect(Rect rect, Region.Op op) {
         return native_clipRect(mNativeCanvas,
                                rect.left, rect.top, rect.right, rect.bottom,
                                op.nativeInt);
@@ -850,8 +913,14 @@ protected GL getGL() {
      * @param rect The rectangle to intersect with the current clip.
      * @return true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.643 -0500", hash_original_method = "830DBE6B0CD66B7FB13D1DDCBCB1919D", hash_generated_method = "F2C884192B64A3A56DC7DFFCF33158E7")
-    public native boolean clipRect(RectF rect);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.178 -0500", hash_original_method = "830DBE6B0CD66B7FB13D1DDCBCB1919D", hash_generated_method = "F2C884192B64A3A56DC7DFFCF33158E7")
+    
+    public boolean clipRect(RectF rect){
+    	//Formerly a native method
+    	addTaint(rect.getTaint());
+    	return getTaintBoolean();
+    }
+
     
     /**
      * Intersect the current clip with the specified rectangle, which is
@@ -860,8 +929,14 @@ protected GL getGL() {
      * @param rect The rectangle to intersect with the current clip.
      * @return true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.645 -0500", hash_original_method = "85C29845972840A2A78B8F138670556A", hash_generated_method = "CD4E9DC764BA294C9CF415C093942BB3")
-    public native boolean clipRect(Rect rect);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.182 -0500", hash_original_method = "85C29845972840A2A78B8F138670556A", hash_generated_method = "CD4E9DC764BA294C9CF415C093942BB3")
+    
+    public boolean clipRect(Rect rect){
+    	//Formerly a native method
+    	addTaint(rect.getTaint());
+    	return getTaintBoolean();
+    }
+
     
     /**
      * Modify the current clip with the specified rectangle, which is
@@ -878,8 +953,9 @@ protected GL getGL() {
      * @param op     How the clip is modified
      * @return       true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.916 -0500", hash_original_method = "1DF6FF81DFB932BE2B5849557766481E", hash_generated_method = "949B522CC2BD95F3746A3FBAF564F432")
-    public boolean clipRect(float left, float top, float right, float bottom,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.184 -0500", hash_original_method = "1DF6FF81DFB932BE2B5849557766481E", hash_generated_method = "949B522CC2BD95F3746A3FBAF564F432")
+    
+public boolean clipRect(float left, float top, float right, float bottom,
                             Region.Op op) {
         return native_clipRect(mNativeCanvas, left, top, right, bottom,
                                op.nativeInt);
@@ -898,9 +974,18 @@ protected GL getGL() {
      *               clip
      * @return       true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.647 -0500", hash_original_method = "1121260B2872F4C8288BF6DC851005F3", hash_generated_method = "6D64E5549536322AD01BC3C2F5F7B309")
-    public native boolean clipRect(float left, float top,
-                                   float right, float bottom);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.188 -0500", hash_original_method = "1121260B2872F4C8288BF6DC851005F3", hash_generated_method = "6D64E5549536322AD01BC3C2F5F7B309")
+    
+    public boolean clipRect(float left, float top,
+                                       float right, float bottom){
+    	//Formerly a native method
+    	addTaint(left);
+    	addTaint(top);
+    	addTaint(right);
+    	addTaint(bottom);
+    	return getTaintBoolean();
+    }
+
     
     /**
      * Intersect the current clip with the specified rectangle, which is
@@ -915,9 +1000,18 @@ protected GL getGL() {
      *               clip
      * @return       true if the resulting clip is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.649 -0500", hash_original_method = "C42EF88CC3B7717E7A29DDD6EED6CD2B", hash_generated_method = "D3A89CF00F564A9CFE02EBD6D8219414")
-    public native boolean clipRect(int left, int top,
-                                   int right, int bottom);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.192 -0500", hash_original_method = "C42EF88CC3B7717E7A29DDD6EED6CD2B", hash_generated_method = "D3A89CF00F564A9CFE02EBD6D8219414")
+    
+    public boolean clipRect(int left, int top,
+                                       int right, int bottom){
+    	//Formerly a native method
+    	addTaint(left);
+    	addTaint(top);
+    	addTaint(right);
+    	addTaint(bottom);
+    	return getTaintBoolean();
+    }
+
     
     /**
         * Modify the current clip with the specified path.
@@ -926,8 +1020,9 @@ protected GL getGL() {
      * @param op   How the clip is modified
      * @return     true if the resulting is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.919 -0500", hash_original_method = "7A7DE76338CD4FF5C3A48558D2B4614E", hash_generated_method = "1BC6A3758785F5F0776626FF643FAA62")
-    public boolean clipPath(Path path, Region.Op op) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.194 -0500", hash_original_method = "7A7DE76338CD4FF5C3A48558D2B4614E", hash_generated_method = "1BC6A3758785F5F0776626FF643FAA62")
+    
+public boolean clipPath(Path path, Region.Op op) {
         return native_clipPath(mNativeCanvas, path.ni(), op.nativeInt);
     }
     
@@ -937,8 +1032,9 @@ protected GL getGL() {
      * @param path The path to intersect with the current clip
      * @return     true if the resulting is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.920 -0500", hash_original_method = "1145BB7612B8DCB4209865A3916D22D3", hash_generated_method = "AD6D4EAA7D8C0F1641FF3CCD8A40507B")
-    public boolean clipPath(Path path) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.196 -0500", hash_original_method = "1145BB7612B8DCB4209865A3916D22D3", hash_generated_method = "AD6D4EAA7D8C0F1641FF3CCD8A40507B")
+    
+public boolean clipPath(Path path) {
         return clipPath(path, Region.Op.INTERSECT);
     }
     
@@ -953,8 +1049,9 @@ protected GL getGL() {
      * @param op How the clip is modified
      * @return true if the resulting is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.920 -0500", hash_original_method = "28C7C5FF233FA752A95A4980EB733491", hash_generated_method = "2F846477F27E4E0526BED076D2581381")
-    public boolean clipRegion(Region region, Region.Op op) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.198 -0500", hash_original_method = "28C7C5FF233FA752A95A4980EB733491", hash_generated_method = "2F846477F27E4E0526BED076D2581381")
+    
+public boolean clipRegion(Region region, Region.Op op) {
         return native_clipRegion(mNativeCanvas, region.ni(), op.nativeInt);
     }
 
@@ -968,18 +1065,21 @@ protected GL getGL() {
      * @param region The region to operate on the current clip, based on op
      * @return true if the resulting is non-empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.921 -0500", hash_original_method = "DB214CB3316FBBF79B84FF393892AF1F", hash_generated_method = "F5CFE1D0ECCD78ABD40742E04CEB317E")
-    public boolean clipRegion(Region region) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.200 -0500", hash_original_method = "DB214CB3316FBBF79B84FF393892AF1F", hash_generated_method = "F5CFE1D0ECCD78ABD40742E04CEB317E")
+    
+public boolean clipRegion(Region region) {
         return clipRegion(region, Region.Op.INTERSECT);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.922 -0500", hash_original_method = "7CFD876AAFB864AD7FF69DF25AA89EAD", hash_generated_method = "DB47B7D7BDB246B91136D3617D06EA7A")
-    public DrawFilter getDrawFilter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.203 -0500", hash_original_method = "7CFD876AAFB864AD7FF69DF25AA89EAD", hash_generated_method = "DB47B7D7BDB246B91136D3617D06EA7A")
+    
+public DrawFilter getDrawFilter() {
         return mDrawFilter;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.923 -0500", hash_original_method = "68F6BB80C574F9A67A1BF360B92238CB", hash_generated_method = "CFC18FCAFAB562E5E19EA145E4E09CFB")
-    public void setDrawFilter(DrawFilter filter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.205 -0500", hash_original_method = "68F6BB80C574F9A67A1BF360B92238CB", hash_generated_method = "CFC18FCAFAB562E5E19EA145E4E09CFB")
+    
+public void setDrawFilter(DrawFilter filter) {
         int nativeFilter = 0;
         if (filter != null) {
             nativeFilter = filter.mNativeInt;
@@ -999,8 +1099,9 @@ protected GL getGL() {
      * @return      true if the rect (transformed by the canvas' matrix)
      *              does not intersect with the canvas' clip
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.926 -0500", hash_original_method = "6593DA2291538241F61FD613E7FE6D5B", hash_generated_method = "681D0242EDBE5796B0251F8FE01E5F4A")
-    public boolean quickReject(RectF rect, EdgeType type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.214 -0500", hash_original_method = "6593DA2291538241F61FD613E7FE6D5B", hash_generated_method = "681D0242EDBE5796B0251F8FE01E5F4A")
+    
+public boolean quickReject(RectF rect, EdgeType type) {
         return native_quickReject(mNativeCanvas, rect, type.nativeInt);
     }
 
@@ -1020,8 +1121,9 @@ protected GL getGL() {
      * @return            true if the path (transformed by the canvas' matrix)
      *                    does not intersect with the canvas' clip
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.927 -0500", hash_original_method = "1B5471D21BEA46C8ED1B36EA429F046B", hash_generated_method = "277779C1CB18A60DD012AA41528BB1DB")
-    public boolean quickReject(Path path, EdgeType type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.216 -0500", hash_original_method = "1B5471D21BEA46C8ED1B36EA429F046B", hash_generated_method = "277779C1CB18A60DD012AA41528BB1DB")
+    
+public boolean quickReject(Path path, EdgeType type) {
         return native_quickReject(mNativeCanvas, path.ni(), type.nativeInt);
     }
 
@@ -1045,8 +1147,9 @@ protected GL getGL() {
      * @return            true if the rect (transformed by the canvas' matrix)
      *                    does not intersect with the canvas' clip
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.928 -0500", hash_original_method = "A8D2AD12ACC5E410C736D30130C20B13", hash_generated_method = "0923654BB8AF65F9484CAA5A96D66B6A")
-    public boolean quickReject(float left, float top, float right, float bottom,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.218 -0500", hash_original_method = "A8D2AD12ACC5E410C736D30130C20B13", hash_generated_method = "0923654BB8AF65F9484CAA5A96D66B6A")
+    
+public boolean quickReject(float left, float top, float right, float bottom,
                                EdgeType type) {
         return native_quickReject(mNativeCanvas, left, top, right, bottom,
                                   type.nativeInt);
@@ -1059,8 +1162,9 @@ protected GL getGL() {
      *               still return true if the current clip is non-empty.
      * @return true if the current clip is non-empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.929 -0500", hash_original_method = "C4C8EDF474744387A03BAF2FCA9EC7E1", hash_generated_method = "CD2B68B9BCE0D43AB62694FB49268EB6")
-    public boolean getClipBounds(Rect bounds) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.220 -0500", hash_original_method = "C4C8EDF474744387A03BAF2FCA9EC7E1", hash_generated_method = "CD2B68B9BCE0D43AB62694FB49268EB6")
+    
+public boolean getClipBounds(Rect bounds) {
         return native_getClipBounds(mNativeCanvas, bounds);
     }
     
@@ -1069,8 +1173,9 @@ protected GL getGL() {
      *
      * @return the clip bounds, or [0, 0, 0, 0] if the clip is empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.930 -0500", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "C7F3C9DD4F71BE5FE3E931C0C7EA11E6")
-    public final Rect getClipBounds() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.222 -0500", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "C7F3C9DD4F71BE5FE3E931C0C7EA11E6")
+    
+public final Rect getClipBounds() {
         Rect r = new Rect();
         getClipBounds(r);
         return r;
@@ -1084,8 +1189,9 @@ protected GL getGL() {
      * @param g green component (0..255) of the color to draw onto the canvas
      * @param b blue component (0..255) of the color to draw onto the canvas
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.930 -0500", hash_original_method = "512FC5029F1C2BD4A7A7DEBEE6E3C841", hash_generated_method = "2DA1E6EA2939186445D232E9DDEB54FE")
-    public void drawRGB(int r, int g, int b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.224 -0500", hash_original_method = "512FC5029F1C2BD4A7A7DEBEE6E3C841", hash_generated_method = "2DA1E6EA2939186445D232E9DDEB54FE")
+    
+public void drawRGB(int r, int g, int b) {
         native_drawRGB(mNativeCanvas, r, g, b);
     }
 
@@ -1098,8 +1204,9 @@ protected GL getGL() {
      * @param g green component (0..255) of the color to draw onto the canvas
      * @param b blue component (0..255) of the color to draw onto the canvas
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.931 -0500", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "25A3A58DABAB0A14F7BA58894D4CE78B")
-    public void drawARGB(int a, int r, int g, int b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.227 -0500", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "25A3A58DABAB0A14F7BA58894D4CE78B")
+    
+public void drawARGB(int a, int r, int g, int b) {
         native_drawARGB(mNativeCanvas, a, r, g, b);
     }
 
@@ -1109,8 +1216,9 @@ protected GL getGL() {
      *
      * @param color the color to draw onto the canvas
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.932 -0500", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "EE06CAAE9D24DA5976CF89E841300FAB")
-    public void drawColor(int color) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.229 -0500", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "EE06CAAE9D24DA5976CF89E841300FAB")
+    
+public void drawColor(int color) {
         native_drawColor(mNativeCanvas, color);
     }
 
@@ -1121,8 +1229,9 @@ protected GL getGL() {
      * @param color the color to draw with
      * @param mode  the porter-duff mode to apply to the color
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.933 -0500", hash_original_method = "4AB8965ACD48B286E6BCF28D614F6B00", hash_generated_method = "BC575776DFB584ABEB1578CB4B01E8B5")
-    public void drawColor(int color, PorterDuff.Mode mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.231 -0500", hash_original_method = "4AB8965ACD48B286E6BCF28D614F6B00", hash_generated_method = "BC575776DFB584ABEB1578CB4B01E8B5")
+    
+public void drawColor(int color, PorterDuff.Mode mode) {
         native_drawColor(mNativeCanvas, color, mode.nativeInt);
     }
 
@@ -1133,8 +1242,9 @@ protected GL getGL() {
      *
      * @param paint The paint used to draw onto the canvas
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.933 -0500", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "842D690B248E8ADCC5125F903224E558")
-    public void drawPaint(Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.233 -0500", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "842D690B248E8ADCC5125F903224E558")
+    
+public void drawPaint(Paint paint) {
         native_drawPaint(mNativeCanvas, paint.mNativePaint);
     }
     
@@ -1154,23 +1264,39 @@ protected GL getGL() {
      *                 "points" that are drawn is really (count >> 1).
      * @param paint    The paint used to draw the points
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.666 -0500", hash_original_method = "A7026FD3DE10525F382BCFDA63577851", hash_generated_method = "D83D82C75D0C85838D7CC6E60BE8AA26")
-    public native void drawPoints(float[] pts, int offset, int count,
-                                  Paint paint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.237 -0500", hash_original_method = "A7026FD3DE10525F382BCFDA63577851", hash_generated_method = "D83D82C75D0C85838D7CC6E60BE8AA26")
+    
+    public void drawPoints(float[] pts, int offset, int count,
+                                      Paint paint){
+    	//Formerly a native method
+    	addTaint(pts[0]);
+    	addTaint(offset);
+    	addTaint(count);
+    	addTaint(paint.getTaint());
+    }
+
 
     /**
      * Helper for drawPoints() that assumes you want to draw the entire array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.936 -0500", hash_original_method = "929DA853C72DCA36C1C2D5AEB0F0EEC1", hash_generated_method = "4963A10BE9A7760ABAFB8261B92A7C9A")
-    public void drawPoints(float[] pts, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.240 -0500", hash_original_method = "929DA853C72DCA36C1C2D5AEB0F0EEC1", hash_generated_method = "4963A10BE9A7760ABAFB8261B92A7C9A")
+    
+public void drawPoints(float[] pts, Paint paint) {
         drawPoints(pts, 0, pts.length, paint);
     }
 
     /**
      * Helper for drawPoints() for drawing a single point.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.668 -0500", hash_original_method = "09F3146190FEA35181D8E9A65B708145", hash_generated_method = "44507CA9D773D18530A1BEC585BFD420")
-    public native void drawPoint(float x, float y, Paint paint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.244 -0500", hash_original_method = "09F3146190FEA35181D8E9A65B708145", hash_generated_method = "44507CA9D773D18530A1BEC585BFD420")
+    
+    public void drawPoint(float x, float y, Paint paint){
+    	//Formerly a native method
+    	addTaint(x);
+    	addTaint(y);
+    	addTaint(paint.getTaint());
+    }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -1208,12 +1334,21 @@ protected GL getGL() {
      *                 (count >> 2).
      * @param paint    The paint used to draw the points
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.670 -0500", hash_original_method = "5A8D10A468DAF40C9664F83218CAE45B", hash_generated_method = "895A193964894AB87288405D02F31326")
-    public native void drawLines(float[] pts, int offset, int count,
-                                 Paint paint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.249 -0500", hash_original_method = "5A8D10A468DAF40C9664F83218CAE45B", hash_generated_method = "895A193964894AB87288405D02F31326")
+    
+    public void drawLines(float[] pts, int offset, int count,
+                                     Paint paint){
+    	//Formerly a native method
+    	addTaint(pts[0]);
+    	addTaint(offset);
+    	addTaint(count);
+    	addTaint(paint.getTaint());
+    }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.940 -0500", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "6BB9AF47E7A96C3EDD32940E0EDDF45D")
-    public void drawLines(float[] pts, Paint paint) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.251 -0500", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "6BB9AF47E7A96C3EDD32940E0EDDF45D")
+    
+public void drawLines(float[] pts, Paint paint) {
         drawLines(pts, 0, pts.length, paint);
     }
 
@@ -1224,8 +1359,9 @@ protected GL getGL() {
      * @param rect  The rect to be drawn
      * @param paint The paint used to draw the rect
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.941 -0500", hash_original_method = "890D392C9C1E85BE5BBE5EB943FF6481", hash_generated_method = "687F901A7B0DB72090772A4E5099C96D")
-    public void drawRect(RectF rect, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.254 -0500", hash_original_method = "890D392C9C1E85BE5BBE5EB943FF6481", hash_generated_method = "687F901A7B0DB72090772A4E5099C96D")
+    
+public void drawRect(RectF rect, Paint paint) {
         native_drawRect(mNativeCanvas, rect, paint.mNativePaint);
     }
 
@@ -1236,8 +1372,9 @@ protected GL getGL() {
      * @param r        The rectangle to be drawn.
      * @param paint    The paint used to draw the rectangle
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.941 -0500", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "ADA6219B535C173D2ADD2608EB80D68B")
-    public void drawRect(Rect r, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.257 -0500", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "ADA6219B535C173D2ADD2608EB80D68B")
+    
+public void drawRect(Rect r, Paint paint) {
         drawRect(r.left, r.top, r.right, r.bottom, paint);
     }
     
@@ -1252,8 +1389,9 @@ protected GL getGL() {
      * @param bottom The bottom side of the rectangle to be drawn
      * @param paint  The paint used to draw the rect
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.942 -0500", hash_original_method = "CDE86729C0DE5B687E9F3D6C62C89CBA", hash_generated_method = "F9406D975293ED3CE5ED28AC7966047F")
-    public void drawRect(float left, float top, float right, float bottom,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.259 -0500", hash_original_method = "CDE86729C0DE5B687E9F3D6C62C89CBA", hash_generated_method = "F9406D975293ED3CE5ED28AC7966047F")
+    
+public void drawRect(float left, float top, float right, float bottom,
                          Paint paint) {
         native_drawRect(mNativeCanvas, left, top, right, bottom,
                         paint.mNativePaint);
@@ -1282,8 +1420,9 @@ protected GL getGL() {
      * @param radius The radius of the cirle to be drawn
      * @param paint  The paint used to draw the circle
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.944 -0500", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "692344834A58C7F02E5722238C227FDE")
-    public void drawCircle(float cx, float cy, float radius, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.263 -0500", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "692344834A58C7F02E5722238C227FDE")
+    
+public void drawCircle(float cx, float cy, float radius, Paint paint) {
         native_drawCircle(mNativeCanvas, cx, cy, radius,
                           paint.mNativePaint);
     }
@@ -1311,8 +1450,9 @@ protected GL getGL() {
                         close it if it is being stroked. This will draw a wedge
      * @param paint      The paint used to draw the arc
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.945 -0500", hash_original_method = "5411F007DFA413B9921CB5C131E7CB3B", hash_generated_method = "CE118D9220FDE4CED8F2CCAF3528CA51")
-    public void drawArc(RectF oval, float startAngle, float sweepAngle,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.265 -0500", hash_original_method = "5411F007DFA413B9921CB5C131E7CB3B", hash_generated_method = "CE118D9220FDE4CED8F2CCAF3528CA51")
+    
+public void drawArc(RectF oval, float startAngle, float sweepAngle,
                         boolean useCenter, Paint paint) {
         if (oval == null) {
             throw new NullPointerException();
@@ -1330,8 +1470,9 @@ protected GL getGL() {
      * @param ry    The y-radius of the oval used to round the corners
      * @param paint The paint used to draw the roundRect
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.945 -0500", hash_original_method = "41C1A121517CD12760C521BBD9AF1967", hash_generated_method = "AF18146D80DB438DD0A2F77C34F0CB67")
-    public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.267 -0500", hash_original_method = "41C1A121517CD12760C521BBD9AF1967", hash_generated_method = "AF18146D80DB438DD0A2F77C34F0CB67")
+    
+public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
         if (rect == null) {
             throw new NullPointerException();
         }
@@ -1361,8 +1502,9 @@ protected GL getGL() {
      * 
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.948 -0500", hash_original_method = "ED4DAC4BAED1A32A3D194D286EE0C9BC", hash_generated_method = "EB27392E1BDD30EDFD84F4921F2A74B4")
-    public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.274 -0500", hash_original_method = "ED4DAC4BAED1A32A3D194D286EE0C9BC", hash_generated_method = "EB27392E1BDD30EDFD84F4921F2A74B4")
+    
+public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
     }
 
     
@@ -1411,8 +1553,9 @@ protected GL getGL() {
      *               to fit into
      * @param paint  May be null. The paint used to draw the bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.951 -0500", hash_original_method = "841672D97CF75C5F24DD91219B8271EA", hash_generated_method = "8F2F6B8B6FB5820FB660E656203CC417")
-    public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.282 -0500", hash_original_method = "841672D97CF75C5F24DD91219B8271EA", hash_generated_method = "8F2F6B8B6FB5820FB660E656203CC417")
+    
+public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
         if (dst == null) {
             throw new NullPointerException();
         }
@@ -1441,8 +1584,9 @@ protected GL getGL() {
      *                 be 0xFF for every pixel).
      * @param paint  May be null. The paint used to draw the bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.952 -0500", hash_original_method = "16007B10D324732000F0755E804F2C6B", hash_generated_method = "862D3F90B941C9EBECA4941BD16C4649")
-    public void drawBitmap(int[] colors, int offset, int stride, float x,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.285 -0500", hash_original_method = "16007B10D324732000F0755E804F2C6B", hash_generated_method = "862D3F90B941C9EBECA4941BD16C4649")
+    
+public void drawBitmap(int[] colors, int offset, int stride, float x,
                            float y, int width, int height, boolean hasAlpha,
                            Paint paint) {
         // check for valid input
@@ -1472,8 +1616,9 @@ protected GL getGL() {
     
     /** Legacy version of drawBitmap(int[] colors, ...) that took ints for x,y
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.952 -0500", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "D01D43B09DAFD2BBAD87A5CC970B7DC0")
-    public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.287 -0500", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "D01D43B09DAFD2BBAD87A5CC970B7DC0")
+    
+public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
                            int width, int height, boolean hasAlpha,
                            Paint paint) {
         // call through to the common float version
@@ -1488,8 +1633,9 @@ protected GL getGL() {
      * @param matrix The matrix used to transform the bitmap when it is drawn
      * @param paint  May be null. The paint used to draw the bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.953 -0500", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "E0067301BC4D95F1F82B6EFF8CAC0C89")
-    public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.289 -0500", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "E0067301BC4D95F1F82B6EFF8CAC0C89")
+    
+public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
         nativeDrawBitmapMatrix(mNativeCanvas, bitmap.ni(), matrix.ni(),
                 paint != null ? paint.mNativePaint : 0);
     }
@@ -1520,8 +1666,9 @@ protected GL getGL() {
      * @param colorOffset Number of color elements to skip before drawing
      * @param paint  May be null. The paint used to draw the bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.956 -0500", hash_original_method = "014BBC0AF3F984A031B4F01243EED110", hash_generated_method = "5E417D0279DE411E7B89E6E44D91B70C")
-    public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.294 -0500", hash_original_method = "014BBC0AF3F984A031B4F01243EED110", hash_generated_method = "5E417D0279DE411E7B89E6E44D91B70C")
+    
+public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight,
                                float[] verts, int vertOffset,
                                int[] colors, int colorOffset, Paint paint) {
         if ((meshWidth | meshHeight | vertOffset | colorOffset) < 0) {
@@ -1572,8 +1719,9 @@ protected GL getGL() {
      * @param indexCount number of entries in the indices array (if not null).
      * @param paint Specifies the shader to use if the texs array is non-null. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.959 -0500", hash_original_method = "DF78170F74F7916B8CA044C6FA0E7706", hash_generated_method = "BBBCFF4693D5F2C3DA4308D56E7A969E")
-    public void drawVertices(VertexMode mode, int vertexCount,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.303 -0500", hash_original_method = "DF78170F74F7916B8CA044C6FA0E7706", hash_generated_method = "BBBCFF4693D5F2C3DA4308D56E7A969E")
+    
+public void drawVertices(VertexMode mode, int vertexCount,
                              float[] verts, int vertOffset,
                              float[] texs, int texOffset,
                              int[] colors, int colorOffset,
@@ -1603,8 +1751,9 @@ protected GL getGL() {
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.960 -0500", hash_original_method = "B53D951EA30645908EAA0D773F3CD0B1", hash_generated_method = "CE07C6E1BD5141BE415BFA895FDEDA11")
-    public void drawText(char[] text, int index, int count, float x, float y,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.306 -0500", hash_original_method = "B53D951EA30645908EAA0D773F3CD0B1", hash_generated_method = "CE07C6E1BD5141BE415BFA895FDEDA11")
+    
+public void drawText(char[] text, int index, int count, float x, float y,
                          Paint paint) {
         if ((index | count | (index + count) |
             (text.length - index - count)) < 0) {
@@ -1623,8 +1772,9 @@ protected GL getGL() {
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.960 -0500", hash_original_method = "5AF5477506B1C1EE3856DD0F624B5874", hash_generated_method = "A9F3EEEB2A8415737D8887B2A209059C")
-    public void drawText(String text, float x, float y, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.308 -0500", hash_original_method = "5AF5477506B1C1EE3856DD0F624B5874", hash_generated_method = "A9F3EEEB2A8415737D8887B2A209059C")
+    
+public void drawText(String text, float x, float y, Paint paint) {
         native_drawText(mNativeCanvas, text, 0, text.length(), x, y, paint.mBidiFlags,
                 paint.mNativePaint);
     }
@@ -1640,8 +1790,9 @@ protected GL getGL() {
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.961 -0500", hash_original_method = "6829DC946932105C9401F9B35E7B6F88", hash_generated_method = "8428B61909C5F2EBDE360D0D5F0EDE95")
-    public void drawText(String text, int start, int end, float x, float y,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.311 -0500", hash_original_method = "6829DC946932105C9401F9B35E7B6F88", hash_generated_method = "8428B61909C5F2EBDE360D0D5F0EDE95")
+    
+public void drawText(String text, int start, int end, float x, float y,
                          Paint paint) {
         if ((start | end | (end - start) | (text.length() - end)) < 0) {
             throw new IndexOutOfBoundsException();
@@ -1663,8 +1814,9 @@ protected GL getGL() {
      * @param y        The y-coordinate of origin for where to draw the text
      * @param paint The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.962 -0500", hash_original_method = "6FEFF94D9E21F991F21729F6F5F461A6", hash_generated_method = "31282EAB2BB247C7F5C281A556545124")
-    public void drawText(CharSequence text, int start, int end, float x,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.313 -0500", hash_original_method = "6FEFF94D9E21F991F21729F6F5F461A6", hash_generated_method = "31282EAB2BB247C7F5C281A556545124")
+    
+public void drawText(CharSequence text, int start, int end, float x,
                          float y, Paint paint) {
         if (text instanceof String || text instanceof SpannedString ||
             text instanceof SpannableString) {
@@ -1703,8 +1855,9 @@ protected GL getGL() {
      * @param paint the paint
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.963 -0500", hash_original_method = "6EBE295547BE775A36E1A6AF2206E2F5", hash_generated_method = "1B9C28878E8B0179B8E0E1BDD4CDED62")
-    public void drawTextRun(char[] text, int index, int count,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.316 -0500", hash_original_method = "6EBE295547BE775A36E1A6AF2206E2F5", hash_generated_method = "1B9C28878E8B0179B8E0E1BDD4CDED62")
+    
+public void drawTextRun(char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir,
             Paint paint) {
 
@@ -1742,8 +1895,9 @@ protected GL getGL() {
      * @param paint the paint
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.964 -0500", hash_original_method = "92F46C968D6DA82FFBC09248C72F0C8C", hash_generated_method = "39739D2446632EC7009AA1DE60DF6229")
-    public void drawTextRun(CharSequence text, int start, int end,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.320 -0500", hash_original_method = "92F46C968D6DA82FFBC09248C72F0C8C", hash_generated_method = "39739D2446632EC7009AA1DE60DF6229")
+    
+public void drawTextRun(CharSequence text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int dir,
             Paint paint) {
 
@@ -1779,18 +1933,20 @@ protected GL getGL() {
 
     
     private static class CanvasFinalizer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.870 -0500", hash_original_field = "9AEAAB458F04AA015A1FEC7988D58EFD", hash_generated_field = "2D4BC4BEF691AE213514DA2EF6E7568C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.055 -0500", hash_original_field = "9AEAAB458F04AA015A1FEC7988D58EFD", hash_generated_field = "2D4BC4BEF691AE213514DA2EF6E7568C")
 
         private  int mNativeCanvas;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.870 -0500", hash_original_method = "C87133F6F9E7B261DCFE48B3CCDE3AF4", hash_generated_method = "9CF681F26468FE9E51A54AAE3DFC6D05")
-        public CanvasFinalizer(int nativeCanvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.058 -0500", hash_original_method = "C87133F6F9E7B261DCFE48B3CCDE3AF4", hash_generated_method = "9CF681F26468FE9E51A54AAE3DFC6D05")
+        
+public CanvasFinalizer(int nativeCanvas) {
             mNativeCanvas = nativeCanvas;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.871 -0500", hash_original_method = "DC60B53B0AE455E1CAF5A4B9B6F554F2", hash_generated_method = "9EAA59FE8A1AC389853679A4014358DB")
-        @Override
-protected void finalize() throws Throwable {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.061 -0500", hash_original_method = "DC60B53B0AE455E1CAF5A4B9B6F554F2", hash_generated_method = "9EAA59FE8A1AC389853679A4014358DB")
+        
+@Override
+        protected void finalize() throws Throwable {
             try {
                 if (mNativeCanvas != 0) {
                     finalizer(mNativeCanvas);
@@ -1809,11 +1965,12 @@ protected void finalize() throws Throwable {
         BW(0),  
         AA(1);  //!< treat edges by rounding-out, since they may be antialiased
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.924 -0500", hash_original_method = "DE06F253EDCACE209FBC3A0C0A89C58A", hash_generated_method = "DE06F253EDCACE209FBC3A0C0A89C58A")
-            EdgeType(int nativeInt) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.208 -0500", hash_original_method = "DE06F253EDCACE209FBC3A0C0A89C58A", hash_generated_method = "DE06F253EDCACE209FBC3A0C0A89C58A")
+            
+EdgeType(int nativeInt) {
             this.nativeInt = nativeInt;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.925 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "98EAA4A55387890AE1074B767C7F1464")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.211 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "98EAA4A55387890AE1074B767C7F1464")
 
         public  int nativeInt;
     }
@@ -1824,11 +1981,12 @@ protected void finalize() throws Throwable {
         TRIANGLE_STRIP(1),
         TRIANGLE_FAN(2);
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.957 -0500", hash_original_method = "76F89A0458E260840A64ADE5D74457F8", hash_generated_method = "76F89A0458E260840A64ADE5D74457F8")
-            VertexMode(int nativeInt) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.297 -0500", hash_original_method = "76F89A0458E260840A64ADE5D74457F8", hash_generated_method = "76F89A0458E260840A64ADE5D74457F8")
+            
+VertexMode(int nativeInt) {
             this.nativeInt = nativeInt;
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.957 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "98EAA4A55387890AE1074B767C7F1464")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.299 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "98EAA4A55387890AE1074B767C7F1464")
 
         public  int nativeInt;
     }
@@ -1844,8 +2002,9 @@ protected void finalize() throws Throwable {
      *                 character
      * @param paint    The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.965 -0500", hash_original_method = "85C4F370BE8714F2CD7DF24F138664E0", hash_generated_method = "A4B1D5F82C1C758F36C3D4E56F30C1A9")
-    public void drawPosText(char[] text, int index, int count, float[] pos,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.322 -0500", hash_original_method = "85C4F370BE8714F2CD7DF24F138664E0", hash_generated_method = "A4B1D5F82C1C758F36C3D4E56F30C1A9")
+    
+public void drawPosText(char[] text, int index, int count, float[] pos,
                             Paint paint) {
         if (index < 0 || index + count > text.length || count*2 > pos.length) {
             throw new IndexOutOfBoundsException();
@@ -1862,8 +2021,9 @@ protected void finalize() throws Throwable {
      * @param pos   Array of [x,y] positions, used to position each character
      * @param paint The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.966 -0500", hash_original_method = "887F094692FA72239FA373420B7D2404", hash_generated_method = "DF7223F1354FFC21F5CBD418A7364F9B")
-    public void drawPosText(String text, float[] pos, Paint paint) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.324 -0500", hash_original_method = "887F094692FA72239FA373420B7D2404", hash_generated_method = "DF7223F1354FFC21F5CBD418A7364F9B")
+    
+public void drawPosText(String text, float[] pos, Paint paint) {
         if (text.length()*2 > pos.length) {
             throw new ArrayIndexOutOfBoundsException();
         }
@@ -1883,8 +2043,9 @@ protected void finalize() throws Throwable {
      *                 the text
      * @param paint    The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.966 -0500", hash_original_method = "34245E42F942570AFBDEF6E2A30FB787", hash_generated_method = "35BA1DF442634C9B4F2A851D1604FA9B")
-    public void drawTextOnPath(char[] text, int index, int count, Path path,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.327 -0500", hash_original_method = "34245E42F942570AFBDEF6E2A30FB787", hash_generated_method = "35BA1DF442634C9B4F2A851D1604FA9B")
+    
+public void drawTextOnPath(char[] text, int index, int count, Path path,
                                float hOffset, float vOffset, Paint paint) {
         if (index < 0 || index + count > text.length) {
             throw new ArrayIndexOutOfBoundsException();
@@ -1907,8 +2068,9 @@ protected void finalize() throws Throwable {
      *                 the text
      * @param paint    The paint used for the text (e.g. color, size, style)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.967 -0500", hash_original_method = "BBB121FCAE128F1EC35D041163A72498", hash_generated_method = "FE6DD563D7BEBC354DFA48CAF6847CF0")
-    public void drawTextOnPath(String text, Path path, float hOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.329 -0500", hash_original_method = "BBB121FCAE128F1EC35D041163A72498", hash_generated_method = "FE6DD563D7BEBC354DFA48CAF6847CF0")
+    
+public void drawTextOnPath(String text, Path path, float hOffset,
                                float vOffset, Paint paint) {
         if (text.length() > 0) {
             native_drawTextOnPath(mNativeCanvas, text, path.ni(),
@@ -1924,8 +2086,9 @@ protected void finalize() throws Throwable {
      * 
      * @param picture  The picture to be drawn
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.968 -0500", hash_original_method = "DAACDF6D023CC31453619FC0BE061518", hash_generated_method = "A7CDC96DCBEB12154D728CCBA831327D")
-    public void drawPicture(Picture picture) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.331 -0500", hash_original_method = "DAACDF6D023CC31453619FC0BE061518", hash_generated_method = "A7CDC96DCBEB12154D728CCBA831327D")
+    
+public void drawPicture(Picture picture) {
         picture.endRecording();
         native_drawPicture(mNativeCanvas, picture.ni());
     }
@@ -1933,8 +2096,9 @@ protected void finalize() throws Throwable {
     /**
      * Draw the picture, stretched to fit into the dst rectangle.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.969 -0500", hash_original_method = "9A4AF54B94158E3C4DCFADF51FCAADD5", hash_generated_method = "96E3C3926F5F41E8C998D191BB378939")
-    public void drawPicture(Picture picture, RectF dst) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.334 -0500", hash_original_method = "9A4AF54B94158E3C4DCFADF51FCAADD5", hash_generated_method = "96E3C3926F5F41E8C998D191BB378939")
+    
+public void drawPicture(Picture picture, RectF dst) {
         save();
         translate(dst.left, dst.top);
         if (picture.getWidth() > 0 && picture.getHeight() > 0) {
@@ -1948,8 +2112,9 @@ protected void finalize() throws Throwable {
     /**
      * Draw the picture, stretched to fit into the dst rectangle.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.970 -0500", hash_original_method = "A0088B5FD0255BCF9789E7655D1F3782", hash_generated_method = "BB63D045235D0F2D29909303E4AA51F6")
-    public void drawPicture(Picture picture, Rect dst) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.336 -0500", hash_original_method = "A0088B5FD0255BCF9789E7655D1F3782", hash_generated_method = "BB63D045235D0F2D29909303E4AA51F6")
+    
+public void drawPicture(Picture picture, Rect dst) {
         save();
         translate(dst.left, dst.top);
         if (picture.getWidth() > 0 && picture.getHeight() > 0) {
@@ -1959,19 +2124,42 @@ protected void finalize() throws Throwable {
         drawPicture(picture);
         restore();
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.748 -0500", hash_original_method = "43BC096C5F63253CAAFF0D49F467C93B", hash_generated_method = "0546F5A0C949A71B1798184843F818A0")
-    private native void native_drawBitmap(int nativeCanvas, int bitmap,
-                                                 float left, float top,
-                                                 int nativePaintOrZero,
-                                                 int canvasDensity,
-                                                 int screenDensity,
-                                                 int bitmapDensity);
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:37.750 -0500", hash_original_method = "9002F07A0506565EF0C19FE427C30B26", hash_generated_method = "DF800D68BE0723DC79FE8A9A4F3F8878")
-    private native void native_drawBitmap(int nativeCanvas, int bitmap,
-                                                 Rect src, RectF dst,
-                                                 int nativePaintOrZero,
-                                                 int screenDensity,
-                                                 int bitmapDensity);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.458 -0500", hash_original_method = "43BC096C5F63253CAAFF0D49F467C93B", hash_generated_method = "0546F5A0C949A71B1798184843F818A0")
+    
+    private void native_drawBitmap(int nativeCanvas, int bitmap,
+                                                     float left, float top,
+                                                     int nativePaintOrZero,
+                                                     int canvasDensity,
+                                                     int screenDensity,
+                                                     int bitmapDensity){
+    	//Formerly a native method
+    	addTaint(nativeCanvas);
+    	addTaint(bitmap);
+    	addTaint(left);
+    	addTaint(top);
+    	addTaint(nativePaintOrZero);
+    	addTaint(canvasDensity);
+    	addTaint(screenDensity);
+    	addTaint(bitmapDensity);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.462 -0500", hash_original_method = "9002F07A0506565EF0C19FE427C30B26", hash_generated_method = "DF800D68BE0723DC79FE8A9A4F3F8878")
+    
+    private void native_drawBitmap(int nativeCanvas, int bitmap,
+                                                     Rect src, RectF dst,
+                                                     int nativePaintOrZero,
+                                                     int screenDensity,
+                                                     int bitmapDensity){
+    	//Formerly a native method
+    	addTaint(nativeCanvas);
+    	addTaint(bitmap);
+    	addTaint(src.getTaint());
+    	addTaint(dst.getTaint());
+    	addTaint(nativePaintOrZero);
+    	addTaint(screenDensity);
+    	addTaint(bitmapDensity);
+    }
+
     
 }
 

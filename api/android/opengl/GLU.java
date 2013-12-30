@@ -20,8 +20,9 @@ public class GLU {
      * @return the error string for the input error code, or NULL if the input
      *         was not a valid GL or GLU error code.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.582 -0500", hash_original_method = "3ABE2F316ECDFFD83FBC44153E87F595", hash_generated_method = "A2FC8AFF15470D95D80EA5B87B62A329")
-    public static String gluErrorString(int error) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.616 -0500", hash_original_method = "3ABE2F316ECDFFD83FBC44153E87F595", hash_generated_method = "A2FC8AFF15470D95D80EA5B87B62A329")
+    
+public static String gluErrorString(int error) {
         switch (error) {
         case GL10.GL_NO_ERROR:
             return "no error";
@@ -57,8 +58,9 @@ public class GLU {
      * @param upY up vector Y
      * @param upZ up vector Z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.583 -0500", hash_original_method = "E1F5217DF3769CB3D03EC18F545E133B", hash_generated_method = "18747120E5EC77DBCD3996A0DFF45257")
-    public static void gluLookAt(GL10 gl, float eyeX, float eyeY, float eyeZ,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.619 -0500", hash_original_method = "E1F5217DF3769CB3D03EC18F545E133B", hash_generated_method = "18747120E5EC77DBCD3996A0DFF45257")
+    
+public static void gluLookAt(GL10 gl, float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,
             float upZ) {
 
@@ -79,8 +81,9 @@ public class GLU {
      * @param bottom
      * @param top
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.584 -0500", hash_original_method = "516F308BCBD27D7CFD7DAEDE95CCF081", hash_generated_method = "B88CCE3E38D7C85BA2E6327BB09A86FE")
-    public static void gluOrtho2D(GL10 gl, float left, float right,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.621 -0500", hash_original_method = "516F308BCBD27D7CFD7DAEDE95CCF081", hash_generated_method = "B88CCE3E38D7C85BA2E6327BB09A86FE")
+    
+public static void gluOrtho2D(GL10 gl, float left, float right,
             float bottom, float top) {
         gl.glOrthof(left, right, bottom, top, -1.0f, 1.0f);
     }
@@ -99,8 +102,9 @@ public class GLU {
      * @param zFar specifies the distance from the viewer to the far clipping
      *        plane (always positive).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.585 -0500", hash_original_method = "9AF538E08B87A3ABF0DDE7BDDBBA91E2", hash_generated_method = "F2BF80FB629DF731008AB1848AA5E537")
-    public static void gluPerspective(GL10 gl, float fovy, float aspect,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.628 -0500", hash_original_method = "9AF538E08B87A3ABF0DDE7BDDBBA91E2", hash_generated_method = "F2BF80FB629DF731008AB1848AA5E537")
+    
+public static void gluPerspective(GL10 gl, float fovy, float aspect,
             float zNear, float zFar) {
         float top = zNear * (float) Math.tan(fovy * (Math.PI / 360.0));
         float bottom = -top;
@@ -136,8 +140,9 @@ public class GLU {
      * @return A return value of GL_TRUE indicates success, a return value of
      *         GL_FALSE indicates failure.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.586 -0500", hash_original_method = "EEC212663EADADCD78540A87E501357F", hash_generated_method = "A36D94FB65933FB8D9C8978CB370655C")
-    public static int gluProject(float objX, float objY, float objZ,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.631 -0500", hash_original_method = "EEC212663EADADCD78540A87E501357F", hash_generated_method = "A36D94FB65933FB8D9C8978CB370655C")
+    
+public static int gluProject(float objX, float objY, float objZ,
             float[] model, int modelOffset, float[] project, int projectOffset,
             int[] view, int viewOffset, float[] win, int winOffset) {
         float[] scratch = sScratch;
@@ -203,8 +208,9 @@ public class GLU {
      * @return A return value of GL10.GL_TRUE indicates success, a return value
      *         of GL10.GL_FALSE indicates failure.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.587 -0500", hash_original_method = "9E656F575164E75EE282031F44B3A846", hash_generated_method = "806483B9BF809EDA45E3F98ECBB0C618")
-    public static int gluUnProject(float winX, float winY, float winZ,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.636 -0500", hash_original_method = "9E656F575164E75EE282031F44B3A846", hash_generated_method = "806483B9BF809EDA45E3F98ECBB0C618")
+    
+public static int gluUnProject(float winX, float winY, float winZ,
             float[] model, int modelOffset, float[] project, int projectOffset,
             int[] view, int viewOffset, float[] obj, int objOffset) {
         float[] scratch = sScratch;
@@ -234,7 +240,7 @@ public class GLU {
 
         return GL10.GL_TRUE;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.588 -0500", hash_original_field = "0B653DD92412B1F46EE9BDC62D614682", hash_generated_field = "4C7E849CA192581CA2BD76D1C6206DA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.639 -0500", hash_original_field = "0B653DD92412B1F46EE9BDC62D614682", hash_generated_field = "4C7E849CA192581CA2BD76D1C6206DA9")
 
 
     private static final float[] sScratch = new float[32];

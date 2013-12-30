@@ -15,18 +15,21 @@ import java.text.ParseException;
 
 public class AddressParametersParser extends ParametersParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.927 -0500", hash_original_method = "C3BA12083B7F74793C4F2E2FB3C1DB43", hash_generated_method = "32C575E0B6268B101B0077F16A99F56C")
-    protected AddressParametersParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.782 -0500", hash_original_method = "C3BA12083B7F74793C4F2E2FB3C1DB43", hash_generated_method = "32C575E0B6268B101B0077F16A99F56C")
+    
+protected AddressParametersParser(Lexer lexer) {
         super(lexer);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.928 -0500", hash_original_method = "D3B3C15A6507A072481DABC46CDC9E97", hash_generated_method = "529CAB5982D0D39B47DFD01EDBEDDBF6")
-    protected AddressParametersParser(String buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.785 -0500", hash_original_method = "D3B3C15A6507A072481DABC46CDC9E97", hash_generated_method = "529CAB5982D0D39B47DFD01EDBEDDBF6")
+    
+protected AddressParametersParser(String buffer) {
         super(buffer);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.929 -0500", hash_original_method = "CAB6813880E3A34B3347219ABB88ECB8", hash_generated_method = "A2A5470D439F3076CF9501A7A3EF357C")
-    protected void parse(AddressParametersHeader addressParametersHeader)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.788 -0500", hash_original_method = "CAB6813880E3A34B3347219ABB88ECB8", hash_generated_method = "A2A5470D439F3076CF9501A7A3EF357C")
+    
+protected void parse(AddressParametersHeader addressParametersHeader)
         throws ParseException {
         dbg_enter("AddressParametersParser.parse");
         try {

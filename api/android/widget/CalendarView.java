@@ -42,204 +42,207 @@ import com.android.internal.R;
 
 
 public class CalendarView extends FrameLayout {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.070 -0500", hash_original_field = "5F136E3C34A69A50E2AE284AED194731", hash_generated_field = "8CE15FF28B44090045106C853EF2EE4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.880 -0500", hash_original_field = "5F136E3C34A69A50E2AE284AED194731", hash_generated_field = "8CE15FF28B44090045106C853EF2EE4B")
 
     private static final String LOG_TAG = CalendarView.class.getSimpleName();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.071 -0500", hash_original_field = "5BD171322F90A62C6A7389DACF6A11E0", hash_generated_field = "646039AB554A3815E0298F000A3686C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.882 -0500", hash_original_field = "5BD171322F90A62C6A7389DACF6A11E0", hash_generated_field = "646039AB554A3815E0298F000A3686C8")
 
     private static final boolean DEFAULT_SHOW_WEEK_NUMBER = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.072 -0500", hash_original_field = "E6D7F67D39F0CB55E79495D9914EBF4C", hash_generated_field = "0F74C92E99DEC02D7782C264F33AE8FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.885 -0500", hash_original_field = "E6D7F67D39F0CB55E79495D9914EBF4C", hash_generated_field = "0F74C92E99DEC02D7782C264F33AE8FB")
 
     private static final long MILLIS_IN_DAY = 86400000L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.072 -0500", hash_original_field = "CE3E10BC008E9606E9FED7C8B649E2CB", hash_generated_field = "5885B11EDA0655E178ED35E9A995148D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.887 -0500", hash_original_field = "CE3E10BC008E9606E9FED7C8B649E2CB", hash_generated_field = "5885B11EDA0655E178ED35E9A995148D")
 
     private static final int DAYS_PER_WEEK = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.073 -0500", hash_original_field = "DABB65FDBDD65D122A9345DB4CF26654", hash_generated_field = "165EEE05425CB47749F5037764F4A7D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.890 -0500", hash_original_field = "DABB65FDBDD65D122A9345DB4CF26654", hash_generated_field = "165EEE05425CB47749F5037764F4A7D3")
 
     private static final long MILLIS_IN_WEEK = DAYS_PER_WEEK * MILLIS_IN_DAY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.075 -0500", hash_original_field = "DDF7F3AE697826E33220807D1C5438DE", hash_generated_field = "2AA8DB968B5A86A728DD2A86DD1E7E93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.893 -0500", hash_original_field = "DDF7F3AE697826E33220807D1C5438DE", hash_generated_field = "2AA8DB968B5A86A728DD2A86DD1E7E93")
 
     private static final int SCROLL_HYST_WEEKS = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.076 -0500", hash_original_field = "C81B4187925C70C0A17F828DE6FF2028", hash_generated_field = "6C834AEF89871A669CC43830D67C8C03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.895 -0500", hash_original_field = "C81B4187925C70C0A17F828DE6FF2028", hash_generated_field = "6C834AEF89871A669CC43830D67C8C03")
 
     private static final int GOTO_SCROLL_DURATION = 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.077 -0500", hash_original_field = "9135A4BB86ADD8566FF9167B5296887C", hash_generated_field = "A674A9C559D7D2AC10E9248FA01CEAFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.898 -0500", hash_original_field = "9135A4BB86ADD8566FF9167B5296887C", hash_generated_field = "A674A9C559D7D2AC10E9248FA01CEAFA")
 
     private static final int ADJUSTMENT_SCROLL_DURATION = 500;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.078 -0500", hash_original_field = "52E2B0A54E2C6AC9B1FB1B5FFDFD64A1", hash_generated_field = "E9D815F505FCC787C9BD6CEF978C9ACB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.900 -0500", hash_original_field = "52E2B0A54E2C6AC9B1FB1B5FFDFD64A1", hash_generated_field = "E9D815F505FCC787C9BD6CEF978C9ACB")
 
     private static final int SCROLL_CHANGE_DELAY = 40;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.079 -0500", hash_original_field = "4A21EFC12B8A7D00AD012663E0282367", hash_generated_field = "92A4E472511D5AB0B2A3BE852088B3B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.902 -0500", hash_original_field = "4A21EFC12B8A7D00AD012663E0282367", hash_generated_field = "92A4E472511D5AB0B2A3BE852088B3B7")
 
     private static final String DATE_FORMAT = "MM/dd/yyyy";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.080 -0500", hash_original_field = "543CF1E6A7EEA9EDF21B56345AADD014", hash_generated_field = "A084D00EDEE1C51E7E64232271A08EA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.905 -0500", hash_original_field = "543CF1E6A7EEA9EDF21B56345AADD014", hash_generated_field = "A084D00EDEE1C51E7E64232271A08EA5")
 
     private static final String DEFAULT_MIN_DATE = "01/01/1900";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.080 -0500", hash_original_field = "13CCD677C53A3D60CEA8B7933B9E5B27", hash_generated_field = "F4B9230A9D1D80341565F8E78206D2EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.907 -0500", hash_original_field = "13CCD677C53A3D60CEA8B7933B9E5B27", hash_generated_field = "F4B9230A9D1D80341565F8E78206D2EC")
 
     private static final String DEFAULT_MAX_DATE = "01/01/2100";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.081 -0500", hash_original_field = "7D404E91DF51B0B164B74EEF8EE01547", hash_generated_field = "4C736D69B6814393DDDF5CDEECB06D46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.909 -0500", hash_original_field = "7D404E91DF51B0B164B74EEF8EE01547", hash_generated_field = "4C736D69B6814393DDDF5CDEECB06D46")
 
 
     private static final int DEFAULT_SHOWN_WEEK_COUNT = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.082 -0500", hash_original_field = "3E5F362BD4592B949DA8BE02866E2B8D", hash_generated_field = "496326F4CDD77EAC73CDD5295D2BE7A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.911 -0500", hash_original_field = "3E5F362BD4592B949DA8BE02866E2B8D", hash_generated_field = "496326F4CDD77EAC73CDD5295D2BE7A2")
 
 
     private static final int DEFAULT_DATE_TEXT_SIZE = 14;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.083 -0500", hash_original_field = "DBFCCFE2AEBC41E24A5FBB0E4D0E7352", hash_generated_field = "3A418335293EF12B3DA3F4FDB05879C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.914 -0500", hash_original_field = "DBFCCFE2AEBC41E24A5FBB0E4D0E7352", hash_generated_field = "3A418335293EF12B3DA3F4FDB05879C9")
 
 
     private static final int UNSCALED_SELECTED_DATE_VERTICAL_BAR_WIDTH = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.084 -0500", hash_original_field = "CC19208AE76845899CEEF986579809DB", hash_generated_field = "E66AB956C44089E58FD61F5676B647D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.916 -0500", hash_original_field = "CC19208AE76845899CEEF986579809DB", hash_generated_field = "E66AB956C44089E58FD61F5676B647D8")
 
 
     private static final int UNSCALED_WEEK_MIN_VISIBLE_HEIGHT = 12;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.085 -0500", hash_original_field = "647BEC428C05E13CE0A2E0FF8BEC8985", hash_generated_field = "1FBE9A9D01B5A713E1CD35B977F46262")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.919 -0500", hash_original_field = "647BEC428C05E13CE0A2E0FF8BEC8985", hash_generated_field = "1FBE9A9D01B5A713E1CD35B977F46262")
 
 
     private static final int UNSCALED_LIST_SCROLL_TOP_OFFSET = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.086 -0500", hash_original_field = "27D31B4C9B0F0B410093CDDE914C76E3", hash_generated_field = "98241598EE1C58C44C51B6E4E37BFA7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.921 -0500", hash_original_field = "27D31B4C9B0F0B410093CDDE914C76E3", hash_generated_field = "98241598EE1C58C44C51B6E4E37BFA7A")
 
 
     private static final int UNSCALED_BOTTOM_BUFFER = 20;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.087 -0500", hash_original_field = "2B6586B166801FCCCA6707777E82440A", hash_generated_field = "2E33FBCAB992F6A4FCF51C7E08C43011")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.924 -0500", hash_original_field = "2B6586B166801FCCCA6707777E82440A", hash_generated_field = "2E33FBCAB992F6A4FCF51C7E08C43011")
 
 
     private static final int UNSCALED_WEEK_SEPARATOR_LINE_WIDTH = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.088 -0500", hash_original_field = "B2AA03855A96812C25C970417D5F83B5", hash_generated_field = "F0ACF1E44F55CCE1B401D0863B7C0AC8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.926 -0500", hash_original_field = "B2AA03855A96812C25C970417D5F83B5", hash_generated_field = "F0ACF1E44F55CCE1B401D0863B7C0AC8")
 
 
     private static final int DEFAULT_WEEK_DAY_TEXT_APPEARANCE_RES_ID = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.089 -0500", hash_original_field = "7F368DA5079641767B57AFB4C5C5E6EC", hash_generated_field = "8B23991BED629DDCFDA8E1DD88120AF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.928 -0500", hash_original_field = "7F368DA5079641767B57AFB4C5C5E6EC", hash_generated_field = "8B23991BED629DDCFDA8E1DD88120AF5")
 
 
     private  int mWeekSeperatorLineWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.090 -0500", hash_original_field = "B5937C1D70C0C1CA339A5169E91A4E68", hash_generated_field = "3897E934AACB2D4B5C6B0C16CCB429A0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.931 -0500", hash_original_field = "B5937C1D70C0C1CA339A5169E91A4E68", hash_generated_field = "3897E934AACB2D4B5C6B0C16CCB429A0")
 
 
     private  int mDateTextSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.091 -0500", hash_original_field = "7E1F915EE5D517F9A5F697F3B54BF4A9", hash_generated_field = "A59A89A5D83C758D66546FEAE58F54D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.933 -0500", hash_original_field = "7E1F915EE5D517F9A5F697F3B54BF4A9", hash_generated_field = "A59A89A5D83C758D66546FEAE58F54D4")
 
 
     private  Drawable mSelectedDateVerticalBar;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.091 -0500", hash_original_field = "9F0A2C050440FADBEA0D94BF069801E4", hash_generated_field = "2C1B7E5AE5693E0A43249D97A45D63E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.935 -0500", hash_original_field = "9F0A2C050440FADBEA0D94BF069801E4", hash_generated_field = "2C1B7E5AE5693E0A43249D97A45D63E8")
 
 
     private  int mSelectedDateVerticalBarWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.092 -0500", hash_original_field = "7FF554901F47BA5D94A53115E895738A", hash_generated_field = "74B6E0C11198E97BD97CA4756AB27759")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.937 -0500", hash_original_field = "7FF554901F47BA5D94A53115E895738A", hash_generated_field = "74B6E0C11198E97BD97CA4756AB27759")
 
 
     private  int mSelectedWeekBackgroundColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.093 -0500", hash_original_field = "D2F0733E9CD59EF7BE50B934F7A5131A", hash_generated_field = "A9584354BACE2D8F069618758B081B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.941 -0500", hash_original_field = "D2F0733E9CD59EF7BE50B934F7A5131A", hash_generated_field = "A9584354BACE2D8F069618758B081B06")
 
 
     private  int mFocusedMonthDateColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.094 -0500", hash_original_field = "EEF9F5EE66744844988286DFC6F60F54", hash_generated_field = "7D2BE4C5D269E856747B17281912BE9C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.943 -0500", hash_original_field = "EEF9F5EE66744844988286DFC6F60F54", hash_generated_field = "7D2BE4C5D269E856747B17281912BE9C")
 
 
     private  int mUnfocusedMonthDateColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.095 -0500", hash_original_field = "86BF37BC7BCF670871E8DE76450BE493", hash_generated_field = "8DDBF4CBD718C3948A0F42D2C1DB5D99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.946 -0500", hash_original_field = "86BF37BC7BCF670871E8DE76450BE493", hash_generated_field = "8DDBF4CBD718C3948A0F42D2C1DB5D99")
 
 
     private  int mWeekSeparatorLineColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.096 -0500", hash_original_field = "71DB8044101EA8BD2D4A5F10155B3BE9", hash_generated_field = "6A25546F44B6068A62792DA64248742A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.949 -0500", hash_original_field = "71DB8044101EA8BD2D4A5F10155B3BE9", hash_generated_field = "6A25546F44B6068A62792DA64248742A")
 
 
     private  int mWeekNumberColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.096 -0500", hash_original_field = "F47218C170AA21D704104F97067F4CD3", hash_generated_field = "5665B7B8CC3DF642A1DAF00F3DE77EFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.951 -0500", hash_original_field = "F47218C170AA21D704104F97067F4CD3", hash_generated_field = "5665B7B8CC3DF642A1DAF00F3DE77EFA")
 
     private int mListScrollTopOffset = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.097 -0500", hash_original_field = "4E0A25921A028E9B40ABFF13921C0183", hash_generated_field = "D65BAA41D805492896870D587D162209")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.953 -0500", hash_original_field = "4E0A25921A028E9B40ABFF13921C0183", hash_generated_field = "D65BAA41D805492896870D587D162209")
 
     private int mWeekMinVisibleHeight = 12;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.098 -0500", hash_original_field = "427C6C58F4CE497B6C552537439B4FF1", hash_generated_field = "5FC459B021EAF2699021DD8B9B1D6C2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.955 -0500", hash_original_field = "427C6C58F4CE497B6C552537439B4FF1", hash_generated_field = "5FC459B021EAF2699021DD8B9B1D6C2B")
 
     private int mBottomBuffer = 20;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.099 -0500", hash_original_field = "22683A3B664CC0D7B59EC4719249018C", hash_generated_field = "6CB09EC87311D40CB9B77369F5C620A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.957 -0500", hash_original_field = "22683A3B664CC0D7B59EC4719249018C", hash_generated_field = "6CB09EC87311D40CB9B77369F5C620A1")
 
     private int mShownWeekCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.100 -0500", hash_original_field = "9DE37C7706A8AD21BAD61B5361C9AE58", hash_generated_field = "0A0881CE0345FE41D9B257D56D8D82CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.959 -0500", hash_original_field = "9DE37C7706A8AD21BAD61B5361C9AE58", hash_generated_field = "0A0881CE0345FE41D9B257D56D8D82CA")
 
     private boolean mShowWeekNumber;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.100 -0500", hash_original_field = "372463B20CA4908B539BAA366DBA6E11", hash_generated_field = "0792CCA61E447A5A7FB7126E5ABF29EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.961 -0500", hash_original_field = "372463B20CA4908B539BAA366DBA6E11", hash_generated_field = "0792CCA61E447A5A7FB7126E5ABF29EC")
 
     private int mDaysPerWeek = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.101 -0500", hash_original_field = "3849CAADAA85CA2279F9C45E2440F55A", hash_generated_field = "78A6141C2BBA378820D9128DA7F22F8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.963 -0500", hash_original_field = "3849CAADAA85CA2279F9C45E2440F55A", hash_generated_field = "78A6141C2BBA378820D9128DA7F22F8D")
 
     private float mFriction = .05f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.102 -0500", hash_original_field = "6A5AFC16EC5F92222C089B5C3CDE53F8", hash_generated_field = "E3AADF3834C4F3228039B1ED679BE2BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.966 -0500", hash_original_field = "6A5AFC16EC5F92222C089B5C3CDE53F8", hash_generated_field = "E3AADF3834C4F3228039B1ED679BE2BE")
 
     private float mVelocityScale = 0.333f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.103 -0500", hash_original_field = "FB770D56B9E0F1EB37F9B7745DB59C31", hash_generated_field = "C5ED7BC1BF12E15BC029B4E0815E71E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.968 -0500", hash_original_field = "FB770D56B9E0F1EB37F9B7745DB59C31", hash_generated_field = "C5ED7BC1BF12E15BC029B4E0815E71E3")
 
     private WeeksAdapter mAdapter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.103 -0500", hash_original_field = "564994122F8B404810DDCD714146F030", hash_generated_field = "7E41BBAA7AC45D61F96A7CC2A5AFF94F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.970 -0500", hash_original_field = "564994122F8B404810DDCD714146F030", hash_generated_field = "7E41BBAA7AC45D61F96A7CC2A5AFF94F")
 
     private ListView mListView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.104 -0500", hash_original_field = "097CCFF08894D0F42297A25AFB590EAF", hash_generated_field = "3BCC597FF6F62DFD9F809924D1A9B7CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.972 -0500", hash_original_field = "097CCFF08894D0F42297A25AFB590EAF", hash_generated_field = "3BCC597FF6F62DFD9F809924D1A9B7CC")
 
     private TextView mMonthName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.105 -0500", hash_original_field = "5EE5E878725E0992F5784A273EFDB90A", hash_generated_field = "E95A3921B8AB382181ED602DFBF5F267")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.974 -0500", hash_original_field = "5EE5E878725E0992F5784A273EFDB90A", hash_generated_field = "E95A3921B8AB382181ED602DFBF5F267")
 
     private ViewGroup mDayNamesHeader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.106 -0500", hash_original_field = "5548D14828675ACCF43A9D0B99EBC6F6", hash_generated_field = "59E44C9DFCE7DBB845766E4E65180588")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.976 -0500", hash_original_field = "5548D14828675ACCF43A9D0B99EBC6F6", hash_generated_field = "59E44C9DFCE7DBB845766E4E65180588")
 
     private String[] mDayLabels;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.107 -0500", hash_original_field = "4D423895C8AD92745DD85C75D5AE7F1E", hash_generated_field = "30452844013892C49D8827DAE1E459DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.978 -0500", hash_original_field = "4D423895C8AD92745DD85C75D5AE7F1E", hash_generated_field = "30452844013892C49D8827DAE1E459DE")
 
     private int mFirstDayOfWeek;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.108 -0500", hash_original_field = "864C6DE2608C2D9B803D3DA55BC5B006", hash_generated_field = "41289D9BED76260F340EB785FCC2056A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.981 -0500", hash_original_field = "864C6DE2608C2D9B803D3DA55BC5B006", hash_generated_field = "41289D9BED76260F340EB785FCC2056A")
 
     private int mCurrentMonthDisplayed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.108 -0500", hash_original_field = "77F426D888DDCA713E97C8121A094556", hash_generated_field = "A32E25FFB7BC22A215A1EAB2F45C9CD4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.983 -0500", hash_original_field = "77F426D888DDCA713E97C8121A094556", hash_generated_field = "A32E25FFB7BC22A215A1EAB2F45C9CD4")
 
     private long mPreviousScrollPosition;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.109 -0500", hash_original_field = "95A2BD81B991645829368DE83301E532", hash_generated_field = "5B9F7E9646034BCC8F83298FA039B637")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.985 -0500", hash_original_field = "95A2BD81B991645829368DE83301E532", hash_generated_field = "5B9F7E9646034BCC8F83298FA039B637")
 
     private boolean mIsScrollingUp = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.110 -0500", hash_original_field = "C1547261DFA2D3DD06106C2329741A83", hash_generated_field = "F3024B0C881FFDC3012F965272357A8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.988 -0500", hash_original_field = "C1547261DFA2D3DD06106C2329741A83", hash_generated_field = "F3024B0C881FFDC3012F965272357A8A")
 
     private int mPreviousScrollState = OnScrollListener.SCROLL_STATE_IDLE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.111 -0500", hash_original_field = "8B2A34A6237EAA1FB690F76F3B158C20", hash_generated_field = "328AD7D92706C021C1C22127BE75612C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.990 -0500", hash_original_field = "8B2A34A6237EAA1FB690F76F3B158C20", hash_generated_field = "328AD7D92706C021C1C22127BE75612C")
 
     private int mCurrentScrollState = OnScrollListener.SCROLL_STATE_IDLE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.111 -0500", hash_original_field = "09EFFE80971DFB8BE4C5512F92399439", hash_generated_field = "05EE47F5BF2CAC4310C2BEEFD3D65AE0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.992 -0500", hash_original_field = "09EFFE80971DFB8BE4C5512F92399439", hash_generated_field = "05EE47F5BF2CAC4310C2BEEFD3D65AE0")
 
     private OnDateChangeListener mOnDateChangeListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.112 -0500", hash_original_field = "18D447DB1A18457CC08D447B5635FE7F", hash_generated_field = "2729908D3AF534B2F645E718D75BC4E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.995 -0500", hash_original_field = "18D447DB1A18457CC08D447B5635FE7F", hash_generated_field = "2729908D3AF534B2F645E718D75BC4E8")
 
     private ScrollStateRunnable mScrollStateChangedRunnable = new ScrollStateRunnable();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.113 -0500", hash_original_field = "83B9DD6E7508BD94D813D2BBAE835A2C", hash_generated_field = "915400C77BD703DACB8E97CD72BFFD5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.997 -0500", hash_original_field = "83B9DD6E7508BD94D813D2BBAE835A2C", hash_generated_field = "915400C77BD703DACB8E97CD72BFFD5E")
 
     private Calendar mTempDate;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.113 -0500", hash_original_field = "48B33391F4500730B6E5C3D6E7E6DBD8", hash_generated_field = "D29AF2C549B988F84E81471C8F4DFA25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.999 -0500", hash_original_field = "48B33391F4500730B6E5C3D6E7E6DBD8", hash_generated_field = "D29AF2C549B988F84E81471C8F4DFA25")
 
     private Calendar mFirstDayOfMonth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.114 -0500", hash_original_field = "3DB37928D9BCCB809A9FC162964B0E42", hash_generated_field = "681C6D172B5A021A54543F6E6ED5BD03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.001 -0500", hash_original_field = "3DB37928D9BCCB809A9FC162964B0E42", hash_generated_field = "681C6D172B5A021A54543F6E6ED5BD03")
 
     private Calendar mMinDate;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.115 -0500", hash_original_field = "E3F10F4404115CF847283246E14AF324", hash_generated_field = "4C58BCC5BEA466149D70675257F2009F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.003 -0500", hash_original_field = "E3F10F4404115CF847283246E14AF324", hash_generated_field = "4C58BCC5BEA466149D70675257F2009F")
 
     private Calendar mMaxDate;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.116 -0500", hash_original_field = "14347A98AF9CE70FD1B6F60D5AA3ADC1", hash_generated_field = "B406C1F86E2B5C90127E71BBD6EC950B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.006 -0500", hash_original_field = "14347A98AF9CE70FD1B6F60D5AA3ADC1", hash_generated_field = "B406C1F86E2B5C90127E71BBD6EC950B")
 
     private final java.text.DateFormat mDateFormat = new SimpleDateFormat(DATE_FORMAT);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.116 -0500", hash_original_field = "0400C5C553DC4CBF37271C21855854A7", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.008 -0500", hash_original_field = "0400C5C553DC4CBF37271C21855854A7", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
 
     private Locale mCurrentLocale;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.118 -0500", hash_original_method = "52384FB40509E71BA2451D4915E5D413", hash_generated_method = "D92C0D13DD14AA039D389307D686CE10")
-    public CalendarView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.013 -0500", hash_original_method = "52384FB40509E71BA2451D4915E5D413", hash_generated_method = "D92C0D13DD14AA039D389307D686CE10")
+    
+public CalendarView(Context context) {
         this(context, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.120 -0500", hash_original_method = "79D5762FBD0B1A46CF2745AED4E3FAD9", hash_generated_method = "DEB888F78800DDEBF0847FD965B6D45B")
-    public CalendarView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.016 -0500", hash_original_method = "79D5762FBD0B1A46CF2745AED4E3FAD9", hash_generated_method = "DEB888F78800DDEBF0847FD965B6D45B")
+    
+public CalendarView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.122 -0500", hash_original_method = "B881CA40E8482968634BC9086836F338", hash_generated_method = "D2E54F84E88D0B00B462C87EBAFB569E")
-    public CalendarView(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.021 -0500", hash_original_method = "B881CA40E8482968634BC9086836F338", hash_generated_method = "D2E54F84E88D0B00B462C87EBAFB569E")
+    
+public CalendarView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, 0);
 
         // initialization based on locale
@@ -327,21 +330,24 @@ public class CalendarView extends FrameLayout {
         invalidate();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.123 -0500", hash_original_method = "1D9E2CC40134FA188645AC8C7A8FADC7", hash_generated_method = "61E305833BB432899A9B803A8835CCD1")
-    @Override
-public void setEnabled(boolean enabled) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.024 -0500", hash_original_method = "1D9E2CC40134FA188645AC8C7A8FADC7", hash_generated_method = "61E305833BB432899A9B803A8835CCD1")
+    
+@Override
+    public void setEnabled(boolean enabled) {
         mListView.setEnabled(enabled);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.124 -0500", hash_original_method = "93B4809DF8FBD1AECB02AFF6547691F9", hash_generated_method = "E3F8EC8548C465830E0A8D0A5727ECFD")
-    @Override
-public boolean isEnabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.026 -0500", hash_original_method = "93B4809DF8FBD1AECB02AFF6547691F9", hash_generated_method = "E3F8EC8548C465830E0A8D0A5727ECFD")
+    
+@Override
+    public boolean isEnabled() {
         return mListView.isEnabled();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.125 -0500", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "6328851CBC85DA1645204E969B0A309A")
-    @Override
-protected void onConfigurationChanged(Configuration newConfig) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.028 -0500", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "6328851CBC85DA1645204E969B0A309A")
+    
+@Override
+    protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         setCurrentLocale(newConfig.locale);
     }
@@ -356,8 +362,9 @@ protected void onConfigurationChanged(Configuration newConfig) {
      *
      * @return The minimal supported date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.126 -0500", hash_original_method = "967B291ED0BCED68F7E3E5A0CEF03695", hash_generated_method = "6734926BF8983D647D6BC30605DCDB84")
-    public long getMinDate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.030 -0500", hash_original_method = "967B291ED0BCED68F7E3E5A0CEF03695", hash_generated_method = "6734926BF8983D647D6BC30605DCDB84")
+    
+public long getMinDate() {
         return mMinDate.getTimeInMillis();
     }
 
@@ -368,8 +375,9 @@ protected void onConfigurationChanged(Configuration newConfig) {
      *
      * @param minDate The minimal supported date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.127 -0500", hash_original_method = "FF5386D03D60B1076A84367A6FF3DA28", hash_generated_method = "0CA393BF01715101B3C44C1134F1E962")
-    public void setMinDate(long minDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.033 -0500", hash_original_method = "FF5386D03D60B1076A84367A6FF3DA28", hash_generated_method = "0CA393BF01715101B3C44C1134F1E962")
+    
+public void setMinDate(long minDate) {
         mTempDate.setTimeInMillis(minDate);
         if (isSameDate(mTempDate, mMinDate)) {
             return;
@@ -406,8 +414,9 @@ protected void onConfigurationChanged(Configuration newConfig) {
      *
      * @return The maximal supported date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.128 -0500", hash_original_method = "4B53E128D2B815FDD1432B3F6B079B5B", hash_generated_method = "E5060BEB16EBF1E8166F59AFB57105AB")
-    public long getMaxDate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.035 -0500", hash_original_method = "4B53E128D2B815FDD1432B3F6B079B5B", hash_generated_method = "E5060BEB16EBF1E8166F59AFB57105AB")
+    
+public long getMaxDate() {
         return mMaxDate.getTimeInMillis();
     }
 
@@ -418,8 +427,9 @@ protected void onConfigurationChanged(Configuration newConfig) {
      *
      * @param maxDate The maximal supported date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.129 -0500", hash_original_method = "A06814E3E9CB43249648A0F0C1DE0D5D", hash_generated_method = "55697005F4FEDCBCBFEF47B83D2827A6")
-    public void setMaxDate(long maxDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.037 -0500", hash_original_method = "A06814E3E9CB43249648A0F0C1DE0D5D", hash_generated_method = "55697005F4FEDCBCBFEF47B83D2827A6")
+    
+public void setMaxDate(long maxDate) {
         mTempDate.setTimeInMillis(maxDate);
         if (isSameDate(mTempDate, mMaxDate)) {
             return;
@@ -441,10 +451,10 @@ protected void onConfigurationChanged(Configuration newConfig) {
 
     
     private class ScrollStateRunnable implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.152 -0500", hash_original_field = "84D89183D5AC0191C04346FAAB7912B5", hash_generated_field = "1F3C2B019CE351B6A3F4C6C3616C5C0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.097 -0500", hash_original_field = "84D89183D5AC0191C04346FAAB7912B5", hash_generated_field = "1F3C2B019CE351B6A3F4C6C3616C5C0E")
 
         private AbsListView mView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.153 -0500", hash_original_field = "7B41F7FE3ADEB3E998739116B4C5C65E", hash_generated_field = "B54F7897F242D86283E88CF300719E2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.099 -0500", hash_original_field = "7B41F7FE3ADEB3E998739116B4C5C65E", hash_generated_field = "B54F7897F242D86283E88CF300719E2B")
 
 
         private int mNewState;
@@ -462,16 +472,18 @@ protected void onConfigurationChanged(Configuration newConfig) {
          * @param view The list view that changed state
          * @param scrollState The new state it changed to
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.153 -0500", hash_original_method = "69E5B9D1AE0F98719D28BA5FB866EF08", hash_generated_method = "A719CB1DAF61DB1A4B554C51FA3707D4")
-        public void doScrollStateChange(AbsListView view, int scrollState) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.101 -0500", hash_original_method = "69E5B9D1AE0F98719D28BA5FB866EF08", hash_generated_method = "A719CB1DAF61DB1A4B554C51FA3707D4")
+        
+public void doScrollStateChange(AbsListView view, int scrollState) {
             mView = view;
             mNewState = scrollState;
             removeCallbacks(this);
             postDelayed(this, SCROLL_CHANGE_DELAY);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.154 -0500", hash_original_method = "62729E70BB0456A375600477CC5D2643", hash_generated_method = "9A5A45E1160235FD96591591BD17E761")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.105 -0500", hash_original_method = "62729E70BB0456A375600477CC5D2643", hash_generated_method = "9A5A45E1160235FD96591591BD17E761")
+        
+public void run() {
             mCurrentScrollState = mNewState;
             // Fix the position after a scroll or a fling ends
             if (mNewState == OnScrollListener.SCROLL_STATE_IDLE
@@ -499,29 +511,30 @@ protected void onConfigurationChanged(Configuration newConfig) {
 
     
     private class WeeksAdapter extends BaseAdapter implements OnTouchListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.156 -0500", hash_original_field = "CC90443A38FE9DAA92F3BB4526322226", hash_generated_field = "5BF9B16DA16CA4B8867BE9E962493092")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.110 -0500", hash_original_field = "CC90443A38FE9DAA92F3BB4526322226", hash_generated_field = "5BF9B16DA16CA4B8867BE9E962493092")
 
 
         private int mSelectedWeek;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.157 -0500", hash_original_field = "AB20CE05616A647AECFCD053AA0A7A3C", hash_generated_field = "DA7C2146C29AB67A18FA4519D8BF6725")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.112 -0500", hash_original_field = "AB20CE05616A647AECFCD053AA0A7A3C", hash_generated_field = "DA7C2146C29AB67A18FA4519D8BF6725")
 
 
         private GestureDetector mGestureDetector;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.158 -0500", hash_original_field = "71D139026965143191C2B81C039091B4", hash_generated_field = "F72CF38F2566D6E733620DFADA8D38C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.114 -0500", hash_original_field = "71D139026965143191C2B81C039091B4", hash_generated_field = "F72CF38F2566D6E733620DFADA8D38C7")
 
 
         private int mFocusedMonth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.160 -0500", hash_original_field = "0553D2F948679AE9A630CAADF59A790E", hash_generated_field = "95E30C29B97433E1CA9F533BA1A954C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.116 -0500", hash_original_field = "0553D2F948679AE9A630CAADF59A790E", hash_generated_field = "95E30C29B97433E1CA9F533BA1A954C1")
 
 
         private final Calendar mSelectedDate = Calendar.getInstance();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.160 -0500", hash_original_field = "0F859F8FABE2D4FD9A195DE85620F709", hash_generated_field = "740B29A5145E76BF427504A23D8A9471")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.118 -0500", hash_original_field = "0F859F8FABE2D4FD9A195DE85620F709", hash_generated_field = "740B29A5145E76BF427504A23D8A9471")
 
 
         private int mTotalWeekCount;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.161 -0500", hash_original_method = "A5340406393612546D90AF6654589F05", hash_generated_method = "8E410B1DD2634DD382F6F3FDBBAE9A6E")
-        public WeeksAdapter(Context context) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.121 -0500", hash_original_method = "A5340406393612546D90AF6654589F05", hash_generated_method = "8E410B1DD2634DD382F6F3FDBBAE9A6E")
+        
+public WeeksAdapter(Context context) {
             mContext = context;
             mGestureDetector = new GestureDetector(mContext, new CalendarGestureListener());
             init();
@@ -530,8 +543,9 @@ protected void onConfigurationChanged(Configuration newConfig) {
         /**
          * Set up the gesture detector and selected time
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.162 -0500", hash_original_method = "155544AF4C95F51C95BCC140A715A96B", hash_generated_method = "EB8CB92FD797AFD7C2388D23B5D2A7C9")
-        private void init() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.123 -0500", hash_original_method = "155544AF4C95F51C95BCC140A715A96B", hash_generated_method = "EB8CB92FD797AFD7C2388D23B5D2A7C9")
+        
+private void init() {
             mSelectedWeek = getWeeksSinceMinDate(mSelectedDate);
             mTotalWeekCount = getWeeksSinceMinDate(mMaxDate);
             if (mMinDate.get(Calendar.DAY_OF_WEEK) != mFirstDayOfWeek
@@ -545,8 +559,9 @@ protected void onConfigurationChanged(Configuration newConfig) {
          *
          * @param selectedDay The time to highlight
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.163 -0500", hash_original_method = "D3DE83E2185E4ADE498D767CEB2FBE21", hash_generated_method = "EF998B721EE3434670F30C438825BA9D")
-        public void setSelectedDay(Calendar selectedDay) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.126 -0500", hash_original_method = "D3DE83E2185E4ADE498D767CEB2FBE21", hash_generated_method = "EF998B721EE3434670F30C438825BA9D")
+        
+public void setSelectedDay(Calendar selectedDay) {
             if (selectedDay.get(Calendar.DAY_OF_YEAR) == mSelectedDate.get(Calendar.DAY_OF_YEAR)
                     && selectedDay.get(Calendar.YEAR) == mSelectedDate.get(Calendar.YEAR)) {
                 return;
@@ -560,32 +575,37 @@ protected void onConfigurationChanged(Configuration newConfig) {
         /**
          * @return The selected day of month.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.164 -0500", hash_original_method = "B5E95894B654555C190BA20C07877305", hash_generated_method = "739A34B9EED51934F039D48AA8C8863E")
-        public Calendar getSelectedDay() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.128 -0500", hash_original_method = "B5E95894B654555C190BA20C07877305", hash_generated_method = "739A34B9EED51934F039D48AA8C8863E")
+        
+public Calendar getSelectedDay() {
             return mSelectedDate;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.165 -0500", hash_original_method = "F04F5B9FBE7B2AAA41BE9F0558597E2D", hash_generated_method = "438C76CA078274D90EF9AA238DA13862")
-        @Override
-public int getCount() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.130 -0500", hash_original_method = "F04F5B9FBE7B2AAA41BE9F0558597E2D", hash_generated_method = "438C76CA078274D90EF9AA238DA13862")
+        
+@Override
+        public int getCount() {
             return mTotalWeekCount;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.166 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "5E5284BEBB44E47AB169D2002D85C125")
-        @Override
-public Object getItem(int position) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.132 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "5E5284BEBB44E47AB169D2002D85C125")
+        
+@Override
+        public Object getItem(int position) {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.167 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
-        @Override
-public long getItemId(int position) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.135 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
+        
+@Override
+        public long getItemId(int position) {
             return position;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.168 -0500", hash_original_method = "381E4A6A7165FC308D77C676467DC158", hash_generated_method = "93B5972012CD113CFA78BF5FC05A9452")
-        @Override
-public View getView(int position, View convertView, ViewGroup parent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.137 -0500", hash_original_method = "381E4A6A7165FC308D77C676467DC158", hash_generated_method = "93B5972012CD113CFA78BF5FC05A9452")
+        
+@Override
+        public View getView(int position, View convertView, ViewGroup parent) {
             WeekView weekView = null;
             if (convertView != null) {
                 weekView = (WeekView) convertView;
@@ -611,8 +631,9 @@ public View getView(int position, View convertView, ViewGroup parent) {
          *
          * @param month The month to show as in focus [0-11]
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.169 -0500", hash_original_method = "3E18205C8C59D0D94EAE40666647C4EA", hash_generated_method = "2C6E9DCF85A0C3C8ADAFE29C31A712D6")
-        public void setFocusMonth(int month) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.140 -0500", hash_original_method = "3E18205C8C59D0D94EAE40666647C4EA", hash_generated_method = "2C6E9DCF85A0C3C8ADAFE29C31A712D6")
+        
+public void setFocusMonth(int month) {
             if (mFocusedMonth == month) {
                 return;
             }
@@ -620,9 +641,10 @@ public View getView(int position, View convertView, ViewGroup parent) {
             notifyDataSetChanged();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.170 -0500", hash_original_method = "0A87811DE71587238059DB215F3C12EA", hash_generated_method = "E8135CD26A17A4FB994E046AF9B96372")
-        @Override
-public boolean onTouch(View v, MotionEvent event) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.143 -0500", hash_original_method = "0A87811DE71587238059DB215F3C12EA", hash_generated_method = "E8135CD26A17A4FB994E046AF9B96372")
+        
+@Override
+        public boolean onTouch(View v, MotionEvent event) {
             if (mListView.isEnabled() && mGestureDetector.onTouchEvent(event)) {
                 WeekView weekView = (WeekView) v;
                 // if we cannot find a day for the given location we are done
@@ -645,8 +667,9 @@ public boolean onTouch(View v, MotionEvent event) {
          *
          * @param day The day that was tapped
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.171 -0500", hash_original_method = "DDBBBC0FCC832A9812721416C01B8F28", hash_generated_method = "B97A0F074113796E0086F9E5E02A465D")
-        private void onDateTapped(Calendar day) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.146 -0500", hash_original_method = "DDBBBC0FCC832A9812721416C01B8F28", hash_generated_method = "B97A0F074113796E0086F9E5E02A465D")
+        
+private void onDateTapped(Calendar day) {
             setSelectedDay(day);
             setMonthDisplayed(day);
         }
@@ -659,9 +682,10 @@ public boolean onTouch(View v, MotionEvent event) {
             {
                 //Synthesized constructor
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.172 -0500", hash_original_method = "685EB340645172BC9B4FCDA0078720CA", hash_generated_method = "416B77B32FB67A3E1CDBED860A7F24C6")
-            @Override
-public boolean onSingleTapUp(MotionEvent e) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.149 -0500", hash_original_method = "685EB340645172BC9B4FCDA0078720CA", hash_generated_method = "416B77B32FB67A3E1CDBED860A7F24C6")
+            
+@Override
+            public boolean onSingleTapUp(MotionEvent e) {
                 return true;
             }
 
@@ -675,61 +699,62 @@ public boolean onSingleTapUp(MotionEvent e) {
 
     
     private class WeekView extends View {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.175 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.156 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
 
 
         private final Rect mTempRect = new Rect();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.176 -0500", hash_original_field = "946375A5AA83EE2844C7EFB7C4794B4B", hash_generated_field = "338ED8DD33B33701CE23F0F875140BFA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.158 -0500", hash_original_field = "946375A5AA83EE2844C7EFB7C4794B4B", hash_generated_field = "338ED8DD33B33701CE23F0F875140BFA")
 
 
         private final Paint mDrawPaint = new Paint();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.176 -0500", hash_original_field = "A12D6927DB7AAA725129CCFA06DF3EAA", hash_generated_field = "B72452912A34FBA0455C9A4A9A3B5617")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.160 -0500", hash_original_field = "A12D6927DB7AAA725129CCFA06DF3EAA", hash_generated_field = "B72452912A34FBA0455C9A4A9A3B5617")
 
 
         private final Paint mMonthNumDrawPaint = new Paint();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.177 -0500", hash_original_field = "640385D602848CBAF46EE8EDEBE9CD34", hash_generated_field = "78D1BFA8C5AB20E3FA796AF37BFF531E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.163 -0500", hash_original_field = "640385D602848CBAF46EE8EDEBE9CD34", hash_generated_field = "78D1BFA8C5AB20E3FA796AF37BFF531E")
 
         private String[] mDayNumbers;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.178 -0500", hash_original_field = "D13BD92AB28E131D260EA86B44411C20", hash_generated_field = "952CF69DC05C27C042F9A535F18EABAA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.165 -0500", hash_original_field = "D13BD92AB28E131D260EA86B44411C20", hash_generated_field = "952CF69DC05C27C042F9A535F18EABAA")
 
         private boolean[] mFocusDay;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.179 -0500", hash_original_field = "9BC3DFC09E9F2E7DF183CB2C479005CC", hash_generated_field = "BA0F23DA4A4FAB8F0FD3B66F58517BD2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.167 -0500", hash_original_field = "9BC3DFC09E9F2E7DF183CB2C479005CC", hash_generated_field = "BA0F23DA4A4FAB8F0FD3B66F58517BD2")
 
         private Calendar mFirstDay;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.180 -0500", hash_original_field = "60B9FE474956812E273546BEB943156F", hash_generated_field = "FB82DB14926CC1AA0BF7C4500B4879E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.171 -0500", hash_original_field = "60B9FE474956812E273546BEB943156F", hash_generated_field = "FB82DB14926CC1AA0BF7C4500B4879E0")
 
         private int mMonthOfFirstWeekDay = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.181 -0500", hash_original_field = "00F7597BBB0AD96B8B51051595D85EA2", hash_generated_field = "2E4EA70A3DFCC5BD9972525121790DF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.173 -0500", hash_original_field = "00F7597BBB0AD96B8B51051595D85EA2", hash_generated_field = "2E4EA70A3DFCC5BD9972525121790DF9")
 
         private int mLastWeekDayMonth = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:33.793 -0500", hash_original_field = "9E0CE4701DE3D148048765CD38153D64", hash_generated_field = "93438C9E098AE9C8DA6FC890AF828C5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.175 -0500", hash_original_field = "9E0CE4701DE3D148048765CD38153D64", hash_generated_field = "93438C9E098AE9C8DA6FC890AF828C5D")
 
         // 1st, 1900
         private int mWeek = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.183 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.177 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
 
         private int mWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.183 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.179 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
 
         private int mHeight;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.184 -0500", hash_original_field = "7E88A538F52505FF1F7813CA98F76717", hash_generated_field = "F079C68689F59A1F17CEAEF7A0E64F7E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.181 -0500", hash_original_field = "7E88A538F52505FF1F7813CA98F76717", hash_generated_field = "F079C68689F59A1F17CEAEF7A0E64F7E")
 
         private boolean mHasSelectedDay = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.185 -0500", hash_original_field = "C3ED3B7986BEED72537B443F86E7F7E4", hash_generated_field = "473DF409EEE7296C165945C249CB7F25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.183 -0500", hash_original_field = "C3ED3B7986BEED72537B443F86E7F7E4", hash_generated_field = "473DF409EEE7296C165945C249CB7F25")
 
         private int mSelectedDay = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.186 -0500", hash_original_field = "79C8D6D4E14A27CF01143E0376ED503E", hash_generated_field = "84AEAB75604C7FBC0916DC2DDFA2924F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.186 -0500", hash_original_field = "79C8D6D4E14A27CF01143E0376ED503E", hash_generated_field = "84AEAB75604C7FBC0916DC2DDFA2924F")
 
         private int mNumCells;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.187 -0500", hash_original_field = "D073B0B95FE9E3DD004776FF9CE0B9A5", hash_generated_field = "4298CFE393B84E2395510D4EDDD01514")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.188 -0500", hash_original_field = "D073B0B95FE9E3DD004776FF9CE0B9A5", hash_generated_field = "4298CFE393B84E2395510D4EDDD01514")
 
         private int mSelectedLeft = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.187 -0500", hash_original_field = "9E2035519D3C3A673A1C827CE381CCD2", hash_generated_field = "47DB8CDE061685EA777E17F9CDE00FAF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.190 -0500", hash_original_field = "9E2035519D3C3A673A1C827CE381CCD2", hash_generated_field = "47DB8CDE061685EA777E17F9CDE00FAF")
 
         private int mSelectedRight = -1;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.188 -0500", hash_original_method = "FA7001D4C667668E5D1235594C9A8E32", hash_generated_method = "FA3DAB0DC7FDBBCD01CF85C43FA733AC")
-        public WeekView(Context context) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.193 -0500", hash_original_method = "FA7001D4C667668E5D1235594C9A8E32", hash_generated_method = "FA3DAB0DC7FDBBCD01CF85C43FA733AC")
+        
+public WeekView(Context context) {
             super(context);
 
             mHeight = (mListView.getHeight() - mListView.getPaddingTop() - mListView
@@ -750,8 +775,9 @@ public boolean onSingleTapUp(MotionEvent e) {
          * @param focusedMonth The month that is currently in focus i.e.
          *            highlighted.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.189 -0500", hash_original_method = "27089ACBC4590C27BA2DDE1963872C77", hash_generated_method = "AB625640DE972AB98FA0B01D383A66F4")
-        public void init(int weekNumber, int selectedWeekDay, int focusedMonth) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.196 -0500", hash_original_method = "27089ACBC4590C27BA2DDE1963872C77", hash_generated_method = "AB625640DE972AB98FA0B01D383A66F4")
+        
+public void init(int weekNumber, int selectedWeekDay, int focusedMonth) {
             mSelectedDay = selectedWeekDay;
             mHasSelectedDay = mSelectedDay != -1;
             mNumCells = mShowWeekNumber ? mDaysPerWeek + 1 : mDaysPerWeek;
@@ -802,8 +828,9 @@ public boolean onSingleTapUp(MotionEvent e) {
         /**
          * Sets up the text and style properties for painting.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.190 -0500", hash_original_method = "FEF07EDEB83DCD7D850BA0B7A04A7856", hash_generated_method = "BDECB2CFACEA72F6C9EBD6D8ED457C75")
-        private void setPaintProperties() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.199 -0500", hash_original_method = "FEF07EDEB83DCD7D850BA0B7A04A7856", hash_generated_method = "BDECB2CFACEA72F6C9EBD6D8ED457C75")
+        
+private void setPaintProperties() {
             mDrawPaint.setFakeBoldText(false);
             mDrawPaint.setAntiAlias(true);
             mDrawPaint.setTextSize(mDateTextSize);
@@ -822,8 +849,9 @@ public boolean onSingleTapUp(MotionEvent e) {
          *
          * @return The month the first day of this view is in.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.191 -0500", hash_original_method = "132ACA3161A5E95F30BDE89FA7E699D9", hash_generated_method = "7B6C4B1ADFDF2C8DF8618B843E0B8BA4")
-        public int getMonthOfFirstWeekDay() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.201 -0500", hash_original_method = "132ACA3161A5E95F30BDE89FA7E699D9", hash_generated_method = "7B6C4B1ADFDF2C8DF8618B843E0B8BA4")
+        
+public int getMonthOfFirstWeekDay() {
             return mMonthOfFirstWeekDay;
         }
 
@@ -832,8 +860,9 @@ public boolean onSingleTapUp(MotionEvent e) {
          *
          * @return The month the last day of this view is in
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.192 -0500", hash_original_method = "CD3B8D9B4D0AF03A28010706DE17FBAB", hash_generated_method = "120C57C35D375E7A4AD5875E48287763")
-        public int getMonthOfLastWeekDay() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.203 -0500", hash_original_method = "CD3B8D9B4D0AF03A28010706DE17FBAB", hash_generated_method = "120C57C35D375E7A4AD5875E48287763")
+        
+public int getMonthOfLastWeekDay() {
             return mLastWeekDayMonth;
         }
 
@@ -842,8 +871,9 @@ public boolean onSingleTapUp(MotionEvent e) {
          *
          * @return The first day in the view.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.193 -0500", hash_original_method = "58CF666CFDF77BB5B426C92097C0AA79", hash_generated_method = "8AEDB2B9678B564C11FA5D3B9011E488")
-        public Calendar getFirstDay() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.205 -0500", hash_original_method = "58CF666CFDF77BB5B426C92097C0AA79", hash_generated_method = "8AEDB2B9678B564C11FA5D3B9011E488")
+        
+public Calendar getFirstDay() {
             return mFirstDay;
         }
 
@@ -854,8 +884,9 @@ public boolean onSingleTapUp(MotionEvent e) {
          * @param x The x position of the touch event.
          * @return True if a day was found for the given location.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.194 -0500", hash_original_method = "967438ECCB56B80859C1A92A3366B466", hash_generated_method = "563C00D7FA3D53A79EB9C8A010CE0578")
-        public boolean getDayFromLocation(float x, Calendar outCalendar) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.209 -0500", hash_original_method = "967438ECCB56B80859C1A92A3366B466", hash_generated_method = "563C00D7FA3D53A79EB9C8A010CE0578")
+        
+public boolean getDayFromLocation(float x, Calendar outCalendar) {
             int dayStart = mShowWeekNumber ? mWidth / mNumCells : 0;
             if (x < dayStart || x > mWidth) {
                 outCalendar.clear();
@@ -869,9 +900,10 @@ public boolean onSingleTapUp(MotionEvent e) {
             return true;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.195 -0500", hash_original_method = "2CF8C160EAF6EF1682AC691B4F4CBC56", hash_generated_method = "4481A9629F2534BDE4C02B481494B78B")
-        @Override
-protected void onDraw(Canvas canvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.211 -0500", hash_original_method = "2CF8C160EAF6EF1682AC691B4F4CBC56", hash_generated_method = "4481A9629F2534BDE4C02B481494B78B")
+        
+@Override
+        protected void onDraw(Canvas canvas) {
             drawBackground(canvas);
             drawWeekNumbers(canvas);
             drawWeekSeparators(canvas);
@@ -883,8 +915,9 @@ protected void onDraw(Canvas canvas) {
          *
          * @param canvas The canvas to draw on
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.196 -0500", hash_original_method = "86B2559C98404D7EBD9D2D1A57D5B7B9", hash_generated_method = "CB706EE37E1BF2169A5E7713F9657926")
-        private void drawBackground(Canvas canvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.214 -0500", hash_original_method = "86B2559C98404D7EBD9D2D1A57D5B7B9", hash_generated_method = "CB706EE37E1BF2169A5E7713F9657926")
+        
+private void drawBackground(Canvas canvas) {
             if (!mHasSelectedDay) {
                 return;
             }
@@ -906,8 +939,9 @@ protected void onDraw(Canvas canvas) {
          *
          * @param canvas The canvas to draw on
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.197 -0500", hash_original_method = "D3ED4C16A7F0A5B2E5F9E818EC82B4AE", hash_generated_method = "3EB1FEFC27F535A334632D3161FFF648")
-        private void drawWeekNumbers(Canvas canvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.217 -0500", hash_original_method = "D3ED4C16A7F0A5B2E5F9E818EC82B4AE", hash_generated_method = "3EB1FEFC27F535A334632D3161FFF648")
+        
+private void drawWeekNumbers(Canvas canvas) {
             float textHeight = mDrawPaint.getTextSize();
             int y = (int) ((mHeight + textHeight) / 2) - mWeekSeperatorLineWidth;
             int nDays = mNumCells;
@@ -934,8 +968,9 @@ protected void onDraw(Canvas canvas) {
          *
          * @param canvas The canvas to draw on.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.198 -0500", hash_original_method = "D028062BEA4F3ED75274534BCA9F109C", hash_generated_method = "EECBD29BD1D9261E869A3233378493CE")
-        private void drawWeekSeparators(Canvas canvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.219 -0500", hash_original_method = "D028062BEA4F3ED75274534BCA9F109C", hash_generated_method = "EECBD29BD1D9261E869A3233378493CE")
+        
+private void drawWeekSeparators(Canvas canvas) {
             // If it is the topmost fully visible child do not draw separator line
             int firstFullyVisiblePosition = mListView.getFirstVisiblePosition();
             if (mListView.getChildAt(0).getTop() < 0) {
@@ -955,8 +990,9 @@ protected void onDraw(Canvas canvas) {
          *
          * @param canvas The canvas to draw on
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.199 -0500", hash_original_method = "A1C98C2320B89AC1B0E9DE7623F0F5E4", hash_generated_method = "3222F0813A737281DE33567DE387E01D")
-        private void drawSelectedDateVerticalBars(Canvas canvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.221 -0500", hash_original_method = "A1C98C2320B89AC1B0E9DE7623F0F5E4", hash_generated_method = "3222F0813A737281DE33567DE387E01D")
+        
+private void drawSelectedDateVerticalBars(Canvas canvas) {
             if (!mHasSelectedDay) {
                 return;
             }
@@ -970,9 +1006,10 @@ protected void onDraw(Canvas canvas) {
             mSelectedDateVerticalBar.draw(canvas);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.200 -0500", hash_original_method = "07B6C7DD90A0E1B5FAECCFBA1208B086", hash_generated_method = "8F83DBE840FA326FA5534D182C083B2B")
-        @Override
-protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.223 -0500", hash_original_method = "07B6C7DD90A0E1B5FAECCFBA1208B086", hash_generated_method = "8F83DBE840FA326FA5534D182C083B2B")
+        
+@Override
+        protected void onSizeChanged(int w, int h, int oldw, int oldh) {
             mWidth = w;
             updateSelectionPositions();
         }
@@ -980,8 +1017,9 @@ protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         /**
          * This calculates the positions for the selected day lines.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.201 -0500", hash_original_method = "F4AE55BB3F9C613E7E5A646F02C33791", hash_generated_method = "91BACA51039F1D751961763F63B04D92")
-        private void updateSelectionPositions() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.226 -0500", hash_original_method = "F4AE55BB3F9C613E7E5A646F02C33791", hash_generated_method = "91BACA51039F1D751961763F63B04D92")
+        
+private void updateSelectionPositions() {
             if (mHasSelectedDay) {
                 int selectedPosition = mSelectedDay - mFirstDayOfWeek;
                 if (selectedPosition < 0) {
@@ -995,9 +1033,10 @@ protected void onSizeChanged(int w, int h, int oldw, int oldh) {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.202 -0500", hash_original_method = "F89A4F4FAB6DC416DC0DD7077DC69E1C", hash_generated_method = "B7FBE230E6DFD7E8F20050D2649F118B")
-        @Override
-protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.228 -0500", hash_original_method = "F89A4F4FAB6DC416DC0DD7077DC69E1C", hash_generated_method = "B7FBE230E6DFD7E8F20050D2649F118B")
+        
+@Override
+        protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
             setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), mHeight);
         }
 
@@ -1017,8 +1056,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @param showWeekNumber True to show the week number.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.129 -0500", hash_original_method = "F2BDD8F6BF1030E3F09A2B5F73B0EF93", hash_generated_method = "3471F6A5807D7593B5D9F5A88B909E5B")
-    public void setShowWeekNumber(boolean showWeekNumber) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.039 -0500", hash_original_method = "F2BDD8F6BF1030E3F09A2B5F73B0EF93", hash_generated_method = "3471F6A5807D7593B5D9F5A88B909E5B")
+    
+public void setShowWeekNumber(boolean showWeekNumber) {
         if (mShowWeekNumber == showWeekNumber) {
             return;
         }
@@ -1032,8 +1072,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @return True if showing the week number.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.130 -0500", hash_original_method = "466B93651CABC20F69979D67C7EC6971", hash_generated_method = "DEBCA43DE40AE5AA3E93CB98D5FCCA55")
-    public boolean getShowWeekNumber() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.041 -0500", hash_original_method = "466B93651CABC20F69979D67C7EC6971", hash_generated_method = "DEBCA43DE40AE5AA3E93CB98D5FCCA55")
+    
+public boolean getShowWeekNumber() {
         return mShowWeekNumber;
     }
 
@@ -1050,8 +1091,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @see Calendar#SATURDAY
      * @see Calendar#SUNDAY
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.131 -0500", hash_original_method = "13AE9B7D254FD4442860EE49493A72AE", hash_generated_method = "09B80B36285D088C093DCBE570293DA9")
-    public int getFirstDayOfWeek() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.043 -0500", hash_original_method = "13AE9B7D254FD4442860EE49493A72AE", hash_generated_method = "09B80B36285D088C093DCBE570293DA9")
+    
+public int getFirstDayOfWeek() {
         return mFirstDayOfWeek;
     }
 
@@ -1068,8 +1110,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @see Calendar#SATURDAY
      * @see Calendar#SUNDAY
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.132 -0500", hash_original_method = "631B1F3A15EE6F7D95BE757EDF5B5B91", hash_generated_method = "ED5779E3F3CB5CB181FB93B66FAC38A8")
-    public void setFirstDayOfWeek(int firstDayOfWeek) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.045 -0500", hash_original_method = "631B1F3A15EE6F7D95BE757EDF5B5B91", hash_generated_method = "ED5779E3F3CB5CB181FB93B66FAC38A8")
+    
+public void setFirstDayOfWeek(int firstDayOfWeek) {
         if (mFirstDayOfWeek == firstDayOfWeek) {
             return;
         }
@@ -1084,8 +1127,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @param listener The listener to be notified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.133 -0500", hash_original_method = "2EC5480533B2BF54D56B2049BA7CA5D7", hash_generated_method = "760AF8D4280E51921BA03F1DD37302CA")
-    public void setOnDateChangeListener(OnDateChangeListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.047 -0500", hash_original_method = "2EC5480533B2BF54D56B2049BA7CA5D7", hash_generated_method = "760AF8D4280E51921BA03F1DD37302CA")
+    
+public void setOnDateChangeListener(OnDateChangeListener listener) {
         mOnDateChangeListener = listener;
     }
 
@@ -1095,8 +1139,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @return The selected date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.134 -0500", hash_original_method = "1C8908BABBBBE904441B712A0F71BAD8", hash_generated_method = "79AEBEC017161384AB6FF18EC851F2B0")
-    public long getDate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.050 -0500", hash_original_method = "1C8908BABBBBE904441B712A0F71BAD8", hash_generated_method = "79AEBEC017161384AB6FF18EC851F2B0")
+    
+public long getDate() {
         return mAdapter.mSelectedDate.getTimeInMillis();
     }
 
@@ -1113,8 +1158,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @see #setMinDate(long)
      * @see #setMaxDate(long)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.135 -0500", hash_original_method = "D6F29E7F63D0C42CAD60620E4D2FC504", hash_generated_method = "67F63F051C489D8BDFA248BF789E172F")
-    public void setDate(long date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.052 -0500", hash_original_method = "D6F29E7F63D0C42CAD60620E4D2FC504", hash_generated_method = "67F63F051C489D8BDFA248BF789E172F")
+    
+public void setDate(long date) {
         setDate(date, false, false);
     }
 
@@ -1132,8 +1178,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @see #setMinDate(long)
      * @see #setMaxDate(long)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.136 -0500", hash_original_method = "7D056A885692AA64348F6515B99D8688", hash_generated_method = "E6D9A5BB464122C30397F13FAB60F0E4")
-    public void setDate(long date, boolean animate, boolean center) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.054 -0500", hash_original_method = "7D056A885692AA64348F6515B99D8688", hash_generated_method = "E6D9A5BB464122C30397F13FAB60F0E4")
+    
+public void setDate(long date, boolean animate, boolean center) {
         mTempDate.setTimeInMillis(date);
         if (isSameDate(mTempDate, mAdapter.mSelectedDate)) {
             return;
@@ -1146,8 +1193,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @param locale The current locale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.137 -0500", hash_original_method = "4AE549580BCF2D6667C808ED8CCBDCDC", hash_generated_method = "9735E05A9064E240975103C93C06F8C6")
-    private void setCurrentLocale(Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.057 -0500", hash_original_method = "4AE549580BCF2D6667C808ED8CCBDCDC", hash_generated_method = "9735E05A9064E240975103C93C06F8C6")
+    
+private void setCurrentLocale(Locale locale) {
         if (locale.equals(mCurrentLocale)) {
             return;
         }
@@ -1166,8 +1214,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @param oldCalendar The old calendar.
      * @param locale The locale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.138 -0500", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "FF2C9EE6088D5A80898CD22EED43D339")
-    private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.059 -0500", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "FF2C9EE6088D5A80898CD22EED43D339")
+    
+private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
         if (oldCalendar == null) {
             return Calendar.getInstance(locale);
         } else {
@@ -1182,8 +1231,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @return True if the <code>firstDate</code> is the same as the <code>
      * secondDate</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.138 -0500", hash_original_method = "70DC9A9889795E848236506BBC0A481B", hash_generated_method = "E7F9F398761CDCEB482A29A969EB0716")
-    private boolean isSameDate(Calendar firstDate, Calendar secondDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.061 -0500", hash_original_method = "70DC9A9889795E848236506BBC0A481B", hash_generated_method = "E7F9F398761CDCEB482A29A969EB0716")
+    
+private boolean isSameDate(Calendar firstDate, Calendar secondDate) {
         return (firstDate.get(Calendar.DAY_OF_YEAR) == secondDate.get(Calendar.DAY_OF_YEAR)
                 && firstDate.get(Calendar.YEAR) == secondDate.get(Calendar.YEAR));
     }
@@ -1191,8 +1241,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     /**
      * Creates a new adapter if necessary and sets up its parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.140 -0500", hash_original_method = "513863F202D0E7C406F959CC7EBC2D43", hash_generated_method = "6EAA8B10AA012389EDFB6D2EB92E7CB7")
-    private void setUpAdapter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.067 -0500", hash_original_method = "513863F202D0E7C406F959CC7EBC2D43", hash_generated_method = "6EAA8B10AA012389EDFB6D2EB92E7CB7")
+    
+private void setUpAdapter() {
         if (mAdapter == null) {
             mAdapter = new WeeksAdapter(getContext());
             mAdapter.registerDataSetObserver(new DataSetObserver() {
@@ -1217,8 +1268,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     /**
      * Sets up the strings to be used by the header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.141 -0500", hash_original_method = "2BEB208CF4EFB41463E1218ACA7650C9", hash_generated_method = "381190A899EE4B402200707598F9B96C")
-    private void setUpHeader(int weekDayTextAppearanceResId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.070 -0500", hash_original_method = "2BEB208CF4EFB41463E1218ACA7650C9", hash_generated_method = "381190A899EE4B402200707598F9B96C")
+    
+private void setUpHeader(int weekDayTextAppearanceResId) {
         mDayLabels = new String[mDaysPerWeek];
         for (int i = mFirstDayOfWeek, count = mFirstDayOfWeek + mDaysPerWeek; i < count; i++) {
             int calendarDay = (i > Calendar.SATURDAY) ? i - Calendar.SATURDAY : i;
@@ -1255,13 +1307,15 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         mListView.setItemsCanFocus(true);
         mListView.setVerticalScrollBarEnabled(false);
         mListView.setOnScrollListener(new OnScrollListener() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.142 -0500", hash_original_method = "00F32D753053A861AE7DBFD213079352", hash_generated_method = "09B9E0EE9959A555DB418AB23BCF25F4")
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.074 -0500", hash_original_method = "00F32D753053A861AE7DBFD213079352", hash_generated_method = "09B9E0EE9959A555DB418AB23BCF25F4")
+            
+public void onScrollStateChanged(AbsListView view, int scrollState) {
                 CalendarView.this.onScrollStateChanged(view, scrollState);
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.143 -0500", hash_original_method = "E68786505B378D9C994B2BFCAEDF7B06", hash_generated_method = "E47F08E2B49B8EE38D547025E80E3CC1")
-            public void onScroll(
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.076 -0500", hash_original_method = "E68786505B378D9C994B2BFCAEDF7B06", hash_generated_method = "E47F08E2B49B8EE38D547025E80E3CC1")
+            
+public void onScroll(
                     AbsListView view, int firstVisibleItem, int visibleItemCount,
                     int totalItemCount) {
                 CalendarView.this.onScroll(view, firstVisibleItem, visibleItemCount,
@@ -1306,8 +1360,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @throws IllegalArgumentException of the provided date is before the
      *        range start of after the range end.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.145 -0500", hash_original_method = "9885B6A6E0E890A0EF52CBA474F609AF", hash_generated_method = "3502152145688A5D12E1A22A9194D0A2")
-    private void goTo(Calendar date, boolean animate, boolean setSelected, boolean forceScroll) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.081 -0500", hash_original_method = "9885B6A6E0E890A0EF52CBA474F609AF", hash_generated_method = "3502152145688A5D12E1A22A9194D0A2")
+    
+private void goTo(Calendar date, boolean animate, boolean setSelected, boolean forceScroll) {
         if (date.before(mMinDate) || date.after(mMaxDate)) {
             throw new IllegalArgumentException("Time not between " + mMinDate.getTime()
                     + " and " + mMaxDate.getTime());
@@ -1365,8 +1420,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @return True if the date was parsed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.146 -0500", hash_original_method = "4EF37BB5E8B6D289AE6D0021CE0D4FEB", hash_generated_method = "A8F56004CD8FCB6686C74FEBB9164E0E")
-    private boolean parseDate(String date, Calendar outDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.084 -0500", hash_original_method = "4EF37BB5E8B6D289AE6D0021CE0D4FEB", hash_generated_method = "A8F56004CD8FCB6686C74FEBB9164E0E")
+    
+private boolean parseDate(String date, Calendar outDate) {
         try {
             outDate.setTime(mDateFormat.parse(date));
             return true;
@@ -1380,8 +1436,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * Called when a <code>view</code> transitions to a new <code>scrollState
      * </code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.147 -0500", hash_original_method = "F153BBCA7962990A30E79BE6D90D9C30", hash_generated_method = "B4B4D8FE55139118C518ABC9FDD69D79")
-    private void onScrollStateChanged(AbsListView view, int scrollState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.086 -0500", hash_original_method = "F153BBCA7962990A30E79BE6D90D9C30", hash_generated_method = "B4B4D8FE55139118C518ABC9FDD69D79")
+    
+private void onScrollStateChanged(AbsListView view, int scrollState) {
         mScrollStateChangedRunnable.doScrollStateChange(view, scrollState);
     }
 
@@ -1389,8 +1446,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * Updates the title and selected month if the <code>view</code> has moved to a new
      * month.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.148 -0500", hash_original_method = "FE6404A8901B8111BDEFCBB086ABC460", hash_generated_method = "5A0105A9E88297E8B07404A58CFC02C3")
-    private void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.089 -0500", hash_original_method = "FE6404A8901B8111BDEFCBB086ABC460", hash_generated_method = "5A0105A9E88297E8B07404A58CFC02C3")
+    
+private void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {
         WeekView child = (WeekView) view.getChildAt(0);
         if (child == null) {
@@ -1459,8 +1517,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      *
      * @param calendar A day in the new focus month.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.149 -0500", hash_original_method = "2D87D8A121385B44A48D783AA9D15CB4", hash_generated_method = "93195447087440355F33B4D4CB0EA1D0")
-    private void setMonthDisplayed(Calendar calendar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.091 -0500", hash_original_method = "2D87D8A121385B44A48D783AA9D15CB4", hash_generated_method = "93195447087440355F33B4D4CB0EA1D0")
+    
+private void setMonthDisplayed(Calendar calendar) {
         final int newMonthDisplayed = calendar.get(Calendar.MONTH);
         if (mCurrentMonthDisplayed != newMonthDisplayed) {
             mCurrentMonthDisplayed = newMonthDisplayed;
@@ -1478,8 +1537,9 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
      * @return Returns the number of weeks between the current <code>date</code>
      *         and the <code>mMinDate</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:01.151 -0500", hash_original_method = "025B6CEC43A90DA392B09F9FACE78FF5", hash_generated_method = "A96011E69D8E2DC230550BE27027A1DA")
-    private int getWeeksSinceMinDate(Calendar date) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.093 -0500", hash_original_method = "025B6CEC43A90DA392B09F9FACE78FF5", hash_generated_method = "A96011E69D8E2DC230550BE27027A1DA")
+    
+private int getWeeksSinceMinDate(Calendar date) {
         if (date.before(mMinDate)) {
             throw new IllegalArgumentException("fromDate: " + mMinDate.getTime()
                     + " does not precede toDate: " + date.getTime());

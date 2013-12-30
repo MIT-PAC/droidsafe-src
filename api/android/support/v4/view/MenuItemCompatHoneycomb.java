@@ -11,13 +11,15 @@ import android.view.View;
 
 
 class MenuItemCompatHoneycomb {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.203 -0500", hash_original_method = "89CD2C30CF5A705FF97EBB7DAEFF0B6A", hash_generated_method = "DDAF007DCCB4122BF03524C617CCE49F")
-    public static void setShowAsAction(MenuItem item, int actionEnum) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.556 -0500", hash_original_method = "89CD2C30CF5A705FF97EBB7DAEFF0B6A", hash_generated_method = "DDAF007DCCB4122BF03524C617CCE49F")
+    
+public static void setShowAsAction(MenuItem item, int actionEnum) {
         item.setShowAsAction(actionEnum);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.204 -0500", hash_original_method = "472E51716AFA194E818BC256203A7F04", hash_generated_method = "810E367DCDDAB1D06C8E8F576F4B806B")
-    public static MenuItem setActionView(MenuItem item, View view) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.558 -0500", hash_original_method = "472E51716AFA194E818BC256203A7F04", hash_generated_method = "810E367DCDDAB1D06C8E8F576F4B806B")
+    
+public static MenuItem setActionView(MenuItem item, View view) {
         return item.setActionView(view);
     }
     

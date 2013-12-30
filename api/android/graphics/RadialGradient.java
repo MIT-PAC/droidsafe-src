@@ -49,8 +49,9 @@ public class RadialGradient extends Shader {
                         the the colors are distributed evenly between the center and edge of the circle.
         @param  tile    The Shader tiling mode
 	*/
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.999 -0500", hash_original_method = "AAECBEFB54B4ACCFD5CA83A095E16729", hash_generated_method = "919F1080491EF19B5BE76556767A792F")
-    public RadialGradient(float x, float y, float radius,
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.742 -0500", hash_original_method = "AAECBEFB54B4ACCFD5CA83A095E16729", hash_generated_method = "919F1080491EF19B5BE76556767A792F")
+    
+public RadialGradient(float x, float y, float radius,
                           int colors[], float positions[], TileMode tile) {
         if (radius <= 0) {
             throw new IllegalArgumentException("radius must be > 0");
@@ -74,8 +75,9 @@ public class RadialGradient extends Shader {
         @param color1   The color at the edge of the circle.
         @param tile     The Shader tiling mode
 	*/
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:57.000 -0500", hash_original_method = "967A1FFF1D78A377DCB1552FAD26240E", hash_generated_method = "B387EDD658B0C0EA1C4E8CB091822B2C")
-    public RadialGradient(float x, float y, float radius,
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.745 -0500", hash_original_method = "967A1FFF1D78A377DCB1552FAD26240E", hash_generated_method = "B387EDD658B0C0EA1C4E8CB091822B2C")
+    
+public RadialGradient(float x, float y, float radius,
                           int color0, int color1, TileMode tile) {
         if (radius <= 0) {
             throw new IllegalArgumentException("radius must be > 0");

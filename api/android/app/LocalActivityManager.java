@@ -20,57 +20,57 @@ import android.view.Window;
 
 
 public class LocalActivityManager {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.749 -0500", hash_original_field = "CE8ADB3DD1644E5C152ADB17DBF734F0", hash_generated_field = "51C71CC685F225C3ECFF2ACB9029A01F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.339 -0500", hash_original_field = "CE8ADB3DD1644E5C152ADB17DBF734F0", hash_generated_field = "51C71CC685F225C3ECFF2ACB9029A01F")
 
     private static final String TAG = "LocalActivityManager";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.750 -0500", hash_original_field = "7A06C0A50B73200DDC70097F2AFFF800", hash_generated_field = "761D2619615A389BF902F171CC86D6A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.341 -0500", hash_original_field = "7A06C0A50B73200DDC70097F2AFFF800", hash_generated_field = "761D2619615A389BF902F171CC86D6A4")
 
     private static final boolean localLOGV = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.757 -0500", hash_original_field = "732E0C842B1B09236CA82DB3232F02AF", hash_generated_field = "FB094120D71B6E47F4CCD5880F183955")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.363 -0500", hash_original_field = "732E0C842B1B09236CA82DB3232F02AF", hash_generated_field = "FB094120D71B6E47F4CCD5880F183955")
 
 
     static final int RESTORED = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.758 -0500", hash_original_field = "C4D8D1583E3D0B4649E95F837328E9BE", hash_generated_field = "482EFBA42C6E2CFF17C7C88620EE2AE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.365 -0500", hash_original_field = "C4D8D1583E3D0B4649E95F837328E9BE", hash_generated_field = "482EFBA42C6E2CFF17C7C88620EE2AE7")
 
     static final int INITIALIZING = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.758 -0500", hash_original_field = "51FC0DA9040C2EA600704EFB36FAF31A", hash_generated_field = "79EC126748439AA2A44FDF8D6ED403DD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.368 -0500", hash_original_field = "51FC0DA9040C2EA600704EFB36FAF31A", hash_generated_field = "79EC126748439AA2A44FDF8D6ED403DD")
 
     static final int CREATED = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.759 -0500", hash_original_field = "0B45C76A7815F18DFE404F4073DD0437", hash_generated_field = "32314BE6D22C0FBFEE57366A48F24AEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.370 -0500", hash_original_field = "0B45C76A7815F18DFE404F4073DD0437", hash_generated_field = "32314BE6D22C0FBFEE57366A48F24AEF")
 
     static final int STARTED = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.761 -0500", hash_original_field = "F43ACF77B48A854C5A60C856FB2C66E8", hash_generated_field = "CDB8768200B5FB0298BB9334F431B4E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.372 -0500", hash_original_field = "F43ACF77B48A854C5A60C856FB2C66E8", hash_generated_field = "CDB8768200B5FB0298BB9334F431B4E6")
 
     static final int RESUMED = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.762 -0500", hash_original_field = "EE1E47480CD073D6FC41BA2B2BF10298", hash_generated_field = "5019021A5B3C4386BCA1F34395386874")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.374 -0500", hash_original_field = "EE1E47480CD073D6FC41BA2B2BF10298", hash_generated_field = "5019021A5B3C4386BCA1F34395386874")
 
     static final int DESTROYED = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:05.510 -0500", hash_original_field = "B78253FB0F6A8AE9C3434DD384D8A838", hash_generated_field = "59A25D5EA94D9575239D0D207B005E37")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.376 -0500", hash_original_field = "B78253FB0F6A8AE9C3434DD384D8A838", hash_generated_field = "59A25D5EA94D9575239D0D207B005E37")
 
     
     /** Thread our activities are running in. */
     private  ActivityThread mActivityThread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.763 -0500", hash_original_field = "CD55C80FF47FF655766F475F33319B07", hash_generated_field = "130E2721A67D8BF1BBFAC45B04E5FF8B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.379 -0500", hash_original_field = "CD55C80FF47FF655766F475F33319B07", hash_generated_field = "130E2721A67D8BF1BBFAC45B04E5FF8B")
 
     private  Activity mParent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.764 -0500", hash_original_field = "C40E394A1E402210013123EB86833106", hash_generated_field = "86C367C360550C8AC8371A7EA31B7C59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.381 -0500", hash_original_field = "C40E394A1E402210013123EB86833106", hash_generated_field = "86C367C360550C8AC8371A7EA31B7C59")
 
     private LocalActivityRecord mResumed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.765 -0500", hash_original_field = "875472C83F8851CCC8A0034D56E012BD", hash_generated_field = "3279D1193B59C6A27CDB22D771FB6A5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.383 -0500", hash_original_field = "875472C83F8851CCC8A0034D56E012BD", hash_generated_field = "3279D1193B59C6A27CDB22D771FB6A5E")
 
     private final Map<String, LocalActivityRecord> mActivities
             = new HashMap<String, LocalActivityRecord>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.766 -0500", hash_original_field = "577FD602961559A115D212445B755CD3", hash_generated_field = "51D5888963C48B7E77E27D6489323908")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.385 -0500", hash_original_field = "577FD602961559A115D212445B755CD3", hash_generated_field = "51D5888963C48B7E77E27D6489323908")
 
     private final ArrayList<LocalActivityRecord> mActivityArray
             = new ArrayList<LocalActivityRecord>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.767 -0500", hash_original_field = "DE989A93D6B70C1F62975671963E3D34", hash_generated_field = "0DD5EF490635B2544D1F4425BC363B4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.388 -0500", hash_original_field = "DE989A93D6B70C1F62975671963E3D34", hash_generated_field = "0DD5EF490635B2544D1F4425BC363B4D")
 
     private boolean mSingleMode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.767 -0500", hash_original_field = "E47120DD0AACE728FE0AF8530ED0B336", hash_generated_field = "72BBBF947B4E9BBAA7A265FAF6F263E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.390 -0500", hash_original_field = "E47120DD0AACE728FE0AF8530ED0B336", hash_generated_field = "72BBBF947B4E9BBAA7A265FAF6F263E0")
 
     private boolean mFinishing;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.768 -0500", hash_original_field = "CFF0F0646F9DF3F6E23C34B8849FCCBF", hash_generated_field = "56550F8D73862FCFD4D73681A0E5EBC0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.392 -0500", hash_original_field = "CFF0F0646F9DF3F6E23C34B8849FCCBF", hash_generated_field = "56550F8D73862FCFD4D73681A0E5EBC0")
 
     private int mCurState = INITIALIZING;
     
@@ -86,15 +86,17 @@ public class LocalActivityManager {
      * @param singleMode True if the LocalActivityManger should keep a maximum
      * of one activity resumed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.769 -0500", hash_original_method = "91223A19E58DDEF4278C27D9FB9EBEA3", hash_generated_method = "3314B25AF66BFE180F30D55AB12A0DB4")
-    public LocalActivityManager(Activity parent, boolean singleMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.394 -0500", hash_original_method = "91223A19E58DDEF4278C27D9FB9EBEA3", hash_generated_method = "3314B25AF66BFE180F30D55AB12A0DB4")
+    
+public LocalActivityManager(Activity parent, boolean singleMode) {
         mActivityThread = ActivityThread.currentActivityThread();
         mParent = parent;
         mSingleMode = singleMode;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.771 -0500", hash_original_method = "B12896933A50085371F00492E36D4EA5", hash_generated_method = "4D5847CE6422221DF635E53671887260")
-    private void moveToState(LocalActivityRecord r, int desiredState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.399 -0500", hash_original_method = "B12896933A50085371F00492E36D4EA5", hash_generated_method = "4D5847CE6422221DF635E53671887260")
+    
+private void moveToState(LocalActivityRecord r, int desiredState) {
         if (r.curState == RESTORED || r.curState == DESTROYED) {
             // startActivity() has not yet been called, so nothing to do.
             return;
@@ -190,8 +192,9 @@ public class LocalActivityManager {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.772 -0500", hash_original_method = "D6EC4953476E7D98493712A14D0E2C8F", hash_generated_method = "95DC1535A4E291CF846F71A615F24706")
-    private void performPause(LocalActivityRecord r, boolean finishing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.401 -0500", hash_original_method = "D6EC4953476E7D98493712A14D0E2C8F", hash_generated_method = "95DC1535A4E291CF846F71A615F24706")
+    
+private void performPause(LocalActivityRecord r, boolean finishing) {
         boolean needState = r.instanceState == null;
         Bundle instanceState = mActivityThread.performPauseActivity(r,
                 finishing, needState);
@@ -245,8 +248,9 @@ public class LocalActivityManager {
      * 
      * @throws android.content.ActivityNotFoundException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.773 -0500", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "B78CB55B0AD280C73F4ADD02A9AABA0F")
-    public Window startActivity(String id, Intent intent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.405 -0500", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "B78CB55B0AD280C73F4ADD02A9AABA0F")
+    
+public Window startActivity(String id, Intent intent) {
         if (mCurState == INITIALIZING) {
             throw new IllegalStateException(
                     "Activities can't be added until the containing group has been created.");
@@ -342,8 +346,9 @@ public class LocalActivityManager {
         return r.window;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.774 -0500", hash_original_method = "9068A3C43CAB8D5C5EE5DD7E1741D6DA", hash_generated_method = "E828F3B0F04834D18D82BED4FEB45432")
-    private Window performDestroy(LocalActivityRecord r, boolean finish) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.408 -0500", hash_original_method = "9068A3C43CAB8D5C5EE5DD7E1741D6DA", hash_generated_method = "E828F3B0F04834D18D82BED4FEB45432")
+    
+private Window performDestroy(LocalActivityRecord r, boolean finish) {
         Window win;
         win = r.window;
         if (r.curState == RESUMED && !finish) {
@@ -372,8 +377,9 @@ public class LocalActivityManager {
      * @return Returns the window that was used to display the activity, or
      * null if there was none.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.775 -0500", hash_original_method = "BE481800D6C8FAA522EB6457C475667B", hash_generated_method = "F44233FB347E5FD4543E20B51FB6AAAB")
-    public Window destroyActivity(String id, boolean finish) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.410 -0500", hash_original_method = "BE481800D6C8FAA522EB6457C475667B", hash_generated_method = "F44233FB347E5FD4543E20B51FB6AAAB")
+    
+public Window destroyActivity(String id, boolean finish) {
         LocalActivityRecord r = mActivities.get(id);
         Window win = null;
         if (r != null) {
@@ -395,8 +401,9 @@ public class LocalActivityManager {
      * @see #startActivity
      * @see #getCurrentId
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.776 -0500", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "FF1F9ECE6E3D1BD66D6645D262D06434")
-    public Activity getCurrentActivity() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.412 -0500", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "FF1F9ECE6E3D1BD66D6645D262D06434")
+    
+public Activity getCurrentActivity() {
         return mResumed != null ? mResumed.activity : null;
     }
 
@@ -409,8 +416,9 @@ public class LocalActivityManager {
      * @see #startActivity
      * @see #getCurrentActivity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.776 -0500", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "4DDCC0BF080D774312C1898D964EC6C2")
-    public String getCurrentId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.415 -0500", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "4DDCC0BF080D774312C1898D964EC6C2")
+    
+public String getCurrentId() {
         return mResumed != null ? mResumed.id : null;
     }
 
@@ -422,38 +430,40 @@ public class LocalActivityManager {
      * @return the associated Activity object, or null if the id is unknown or
      *         its activity is not currently instantiated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.777 -0500", hash_original_method = "AAFBFF7BB86A9D1FFB973CDC0860D37E", hash_generated_method = "5B68D0E1E88D3BA99DAC8D301ECEEEED")
-    public Activity getActivity(String id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.417 -0500", hash_original_method = "AAFBFF7BB86A9D1FFB973CDC0860D37E", hash_generated_method = "5B68D0E1E88D3BA99DAC8D301ECEEEED")
+    
+public Activity getActivity(String id) {
         LocalActivityRecord r = mActivities.get(id);
         return r != null ? r.activity : null;
     }
 
     
     private static class LocalActivityRecord extends Binder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.752 -0500", hash_original_field = "960D0AAB4FA1CF92AEC1F360608BDEE3", hash_generated_field = "960D0AAB4FA1CF92AEC1F360608BDEE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.346 -0500", hash_original_field = "960D0AAB4FA1CF92AEC1F360608BDEE3", hash_generated_field = "960D0AAB4FA1CF92AEC1F360608BDEE3")
 
 
          String id;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.752 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.348 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
 
         Intent intent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.753 -0500", hash_original_field = "9CFCA1B7F8752ABB79A9EED9367C413A", hash_generated_field = "9CFCA1B7F8752ABB79A9EED9367C413A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.351 -0500", hash_original_field = "9CFCA1B7F8752ABB79A9EED9367C413A", hash_generated_field = "9CFCA1B7F8752ABB79A9EED9367C413A")
 
         ActivityInfo activityInfo;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.754 -0500", hash_original_field = "A63B0916BD4AC2611D1AF746A2DF045C", hash_generated_field = "A63B0916BD4AC2611D1AF746A2DF045C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.353 -0500", hash_original_field = "A63B0916BD4AC2611D1AF746A2DF045C", hash_generated_field = "A63B0916BD4AC2611D1AF746A2DF045C")
 
         Activity activity;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.754 -0500", hash_original_field = "C8345ED8E0FB49346B128B9846AFDDB2", hash_generated_field = "C8345ED8E0FB49346B128B9846AFDDB2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.355 -0500", hash_original_field = "C8345ED8E0FB49346B128B9846AFDDB2", hash_generated_field = "C8345ED8E0FB49346B128B9846AFDDB2")
 
         Window window;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.755 -0500", hash_original_field = "F4B69932E4B52B5DB7DD5C9BD2D7B407", hash_generated_field = "F4B69932E4B52B5DB7DD5C9BD2D7B407")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.357 -0500", hash_original_field = "F4B69932E4B52B5DB7DD5C9BD2D7B407", hash_generated_field = "F4B69932E4B52B5DB7DD5C9BD2D7B407")
 
         Bundle instanceState;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.756 -0500", hash_original_field = "6D133C9482705F97D3CEA539075FF242", hash_generated_field = "6D133C9482705F97D3CEA539075FF242")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.359 -0500", hash_original_field = "6D133C9482705F97D3CEA539075FF242", hash_generated_field = "6D133C9482705F97D3CEA539075FF242")
 
         int curState = RESTORED;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.751 -0500", hash_original_method = "E1D83503B31583A6BAE5696926B0F492", hash_generated_method = "E1D83503B31583A6BAE5696926B0F492")
-        LocalActivityRecord(String _id, Intent _intent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.344 -0500", hash_original_method = "E1D83503B31583A6BAE5696926B0F492", hash_generated_method = "E1D83503B31583A6BAE5696926B0F492")
+        
+LocalActivityRecord(String _id, Intent _intent) {
             id = _id;
             intent = _intent;
         }
@@ -475,8 +485,9 @@ public class LocalActivityManager {
      * 
      * @see #saveInstanceState
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.778 -0500", hash_original_method = "012D05327CF4F67BB20181F9A8D8EBE2", hash_generated_method = "DE4C485033BE39BACB098EE622F21137")
-    public void dispatchCreate(Bundle state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.419 -0500", hash_original_method = "012D05327CF4F67BB20181F9A8D8EBE2", hash_generated_method = "DE4C485033BE39BACB098EE622F21137")
+    
+public void dispatchCreate(Bundle state) {
         if (state != null) {
             for (String id : state.keySet()) {
                 try {
@@ -510,8 +521,9 @@ public class LocalActivityManager {
      * 
      * @see #dispatchCreate
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.779 -0500", hash_original_method = "5298101F1EDBDE2B5A84C3EFF961D34B", hash_generated_method = "380788475216D0A335556FD30738A77D")
-    public Bundle saveInstanceState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.422 -0500", hash_original_method = "5298101F1EDBDE2B5A84C3EFF961D34B", hash_generated_method = "380788475216D0A335556FD30738A77D")
+    
+public Bundle saveInstanceState() {
         Bundle state = null;
 
         // FIXME: child activities will freeze as part of onPaused. Do we
@@ -545,8 +557,9 @@ public class LocalActivityManager {
      * 
      * @see Activity#onResume
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.780 -0500", hash_original_method = "7718D5666C8415D1D9EF0CF84FCCE3FD", hash_generated_method = "89B030EB532E367F10F6215449F2D4F1")
-    public void dispatchResume() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.424 -0500", hash_original_method = "7718D5666C8415D1D9EF0CF84FCCE3FD", hash_generated_method = "89B030EB532E367F10F6215449F2D4F1")
+    
+public void dispatchResume() {
         mCurState = RESUMED;
         if (mSingleMode) {
             if (mResumed != null) {
@@ -572,8 +585,9 @@ public class LocalActivityManager {
      * @see Activity#onPause
      * @see Activity#isFinishing
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.781 -0500", hash_original_method = "85A6F8844A81DEE3E47CADEC5BC4757D", hash_generated_method = "028D48D2A242341C4CED30A3C5B7667D")
-    public void dispatchPause(boolean finishing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.427 -0500", hash_original_method = "85A6F8844A81DEE3E47CADEC5BC4757D", hash_generated_method = "028D48D2A242341C4CED30A3C5B7667D")
+    
+public void dispatchPause(boolean finishing) {
         if (finishing) {
             mFinishing = true;
         }
@@ -600,8 +614,9 @@ public class LocalActivityManager {
      * 
      * @see Activity#onStop
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.782 -0500", hash_original_method = "E93631F1674DB507A27EE53DB47C2CFE", hash_generated_method = "B20D5AD41CA9D6A1A9D3856FA4E7C061")
-    public void dispatchStop() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.429 -0500", hash_original_method = "E93631F1674DB507A27EE53DB47C2CFE", hash_generated_method = "B20D5AD41CA9D6A1A9D3856FA4E7C061")
+    
+public void dispatchStop() {
         mCurState = CREATED;
         final int N = mActivityArray.size();
         for (int i=0; i<N; i++) {
@@ -617,8 +632,9 @@ public class LocalActivityManager {
      * 
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.783 -0500", hash_original_method = "070B049D0EB630832F296616C02C666D", hash_generated_method = "6B03AD255CDDCAC63500D38F4490A1FD")
-    public HashMap<String,Object> dispatchRetainNonConfigurationInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.431 -0500", hash_original_method = "070B049D0EB630832F296616C02C666D", hash_generated_method = "6B03AD255CDDCAC63500D38F4490A1FD")
+    
+public HashMap<String,Object> dispatchRetainNonConfigurationInstance() {
         HashMap<String,Object> instanceMap = null;
         
         final int N = mActivityArray.size();
@@ -641,8 +657,9 @@ public class LocalActivityManager {
      * Remove all activities from this LocalActivityManager, performing an
      * {@link Activity#onDestroy} on any that are currently instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.783 -0500", hash_original_method = "430AC76EEFA93CEEF93A908E5EA7F34D", hash_generated_method = "5475561F052910F544652A5F13851A56")
-    public void removeAllActivities() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.433 -0500", hash_original_method = "430AC76EEFA93CEEF93A908E5EA7F34D", hash_generated_method = "5475561F052910F544652A5F13851A56")
+    
+public void removeAllActivities() {
         dispatchDestroy(true);
     }
 
@@ -653,8 +670,9 @@ public class LocalActivityManager {
      * 
      * @see Activity#onDestroy
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:15.784 -0500", hash_original_method = "B2B8D2770115DF4D7579D9F1CB00CAA2", hash_generated_method = "1331549BB05532D676BF427989AB8847")
-    public void dispatchDestroy(boolean finishing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.435 -0500", hash_original_method = "B2B8D2770115DF4D7579D9F1CB00CAA2", hash_generated_method = "1331549BB05532D676BF427989AB8847")
+    
+public void dispatchDestroy(boolean finishing) {
         final int N = mActivityArray.size();
         for (int i=0; i<N; i++) {
             LocalActivityRecord r = mActivityArray.get(i);

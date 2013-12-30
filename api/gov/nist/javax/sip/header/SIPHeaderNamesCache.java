@@ -13,8 +13,9 @@ import java.util.HashMap;
 
 public abstract class SIPHeaderNamesCache {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.561 -0500", hash_original_method = "33ED352FA65DF9495F02E79B54AC6C8B", hash_generated_method = "7BDA4AA0B3380EEBA1F0140C36E7FE2A")
-    public static String toLowerCase(String headerName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.007 -0500", hash_original_method = "33ED352FA65DF9495F02E79B54AC6C8B", hash_generated_method = "7BDA4AA0B3380EEBA1F0140C36E7FE2A")
+    
+public static String toLowerCase(String headerName) {
         String lowerCase = (String) lowercaseMap.get(headerName);
         if (lowerCase == null) {
             return headerName.toLowerCase();
@@ -23,7 +24,7 @@ public abstract class SIPHeaderNamesCache {
             return lowerCase;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.559 -0500", hash_original_field = "24E4C15E5A48493C6D507B2DBD2504E4", hash_generated_field = "020672DDF8B640C88D89F337A5ED11A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.003 -0500", hash_original_field = "24E4C15E5A48493C6D507B2DBD2504E4", hash_generated_field = "020672DDF8B640C88D89F337A5ED11A7")
 
     private static final HashMap lowercaseMap = new HashMap();
     

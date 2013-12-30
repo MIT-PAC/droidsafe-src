@@ -6,7 +6,7 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public class Stack<E> extends Vector<E> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.741 -0500", hash_original_field = "7B45B91C3E17EC3DBBE0867E23E6214B", hash_generated_field = "B114A5411C4CC65AB8A6E3407B2F7E77")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.932 -0500", hash_original_field = "7B45B91C3E17EC3DBBE0867E23E6214B", hash_generated_field = "B114A5411C4CC65AB8A6E3407B2F7E77")
 
 
     private static final long serialVersionUID = 1224463164541339165L;
@@ -14,8 +14,9 @@ public class Stack<E> extends Vector<E> {
     /**
      * Constructs a stack with the default size of {@code Vector}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.742 -0500", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "929D9277DEEF374CC6B17326832CDE90")
-    public Stack() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.934 -0500", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "929D9277DEEF374CC6B17326832CDE90")
+    
+public Stack() {
     }
 
     
@@ -62,8 +63,9 @@ public class Stack<E> extends Vector<E> {
      * @see #peek
      * @see #pop
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.747 -0500", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "F0F6FE2D7660908EBD9C2CBA85446EC1")
-    public E push(E object) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.944 -0500", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "F0F6FE2D7660908EBD9C2CBA85446EC1")
+    
+public E push(E object) {
         addElement(object);
         return object;
     }

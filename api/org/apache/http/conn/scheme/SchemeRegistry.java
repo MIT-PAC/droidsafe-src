@@ -15,7 +15,7 @@ import org.apache.http.HttpHost;
 
 
 public final class SchemeRegistry {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.289 -0500", hash_original_field = "937907C9E4279052DD4EE9715869156A", hash_generated_field = "F36240EAE5CF2A96AAAB44994667903B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.022 -0500", hash_original_field = "937907C9E4279052DD4EE9715869156A", hash_generated_field = "F36240EAE5CF2A96AAAB44994667903B")
 
     private  Map<String,Scheme> registeredSchemes;
 
@@ -23,8 +23,9 @@ public final class SchemeRegistry {
     /**
      * Creates a new, empty scheme registry.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.290 -0500", hash_original_method = "783AF87541D2DBDBA1743DA12D81CD53", hash_generated_method = "74AB894C18300FE3B23DF04436CBD8A2")
-    public SchemeRegistry() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.025 -0500", hash_original_method = "783AF87541D2DBDBA1743DA12D81CD53", hash_generated_method = "74AB894C18300FE3B23DF04436CBD8A2")
+    
+public SchemeRegistry() {
         super();
         registeredSchemes = new LinkedHashMap<String,Scheme>();
     }
@@ -40,8 +41,9 @@ public final class SchemeRegistry {
      * @throws IllegalStateException
      *          if the scheme with the given name is not registered
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.291 -0500", hash_original_method = "C5B073CA8B29C4A4D0086C8D16427838", hash_generated_method = "5DA1E242E556E78D5BAC6BD8379CF45C")
-    public synchronized final Scheme getScheme(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.029 -0500", hash_original_method = "C5B073CA8B29C4A4D0086C8D16427838", hash_generated_method = "5DA1E242E556E78D5BAC6BD8379CF45C")
+    
+public synchronized final Scheme getScheme(String name) {
         Scheme found = get(name);
         if (found == null) {
             throw new IllegalStateException
@@ -62,8 +64,9 @@ public final class SchemeRegistry {
      * @throws IllegalStateException
      *          if a scheme with the respective name is not registered
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.292 -0500", hash_original_method = "1246E5540B6FD28C8D868D100FFA2CE0", hash_generated_method = "0E6533C6226F3121B59638BF815FC1FD")
-    public synchronized final Scheme getScheme(HttpHost host) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.033 -0500", hash_original_method = "1246E5540B6FD28C8D868D100FFA2CE0", hash_generated_method = "0E6533C6226F3121B59638BF815FC1FD")
+    
+public synchronized final Scheme getScheme(HttpHost host) {
         if (host == null) {
             throw new IllegalArgumentException("Host must not be null.");
         }
@@ -79,8 +82,9 @@ public final class SchemeRegistry {
      * @return  the scheme, or
      *          <code>null</code> if there is none by this name
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.293 -0500", hash_original_method = "CF0C42ED0F9F87284AAED270A8C47522", hash_generated_method = "9456CAAD0798ECC1328B3429BF803965")
-    public synchronized final Scheme get(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.036 -0500", hash_original_method = "CF0C42ED0F9F87284AAED270A8C47522", hash_generated_method = "9456CAAD0798ECC1328B3429BF803965")
+    
+public synchronized final Scheme get(String name) {
         if (name == null)
             throw new IllegalArgumentException("Name must not be null.");
 
@@ -101,8 +105,9 @@ public final class SchemeRegistry {
      * @return  the scheme previously registered with that name, or
      *          <code>null</code> if none was registered
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.294 -0500", hash_original_method = "BF6DF8E3D28698AF7FF4E9FD5B4A484C", hash_generated_method = "254C69213B5D4D2353215375DE7E6B2C")
-    public synchronized final Scheme register(Scheme sch) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.038 -0500", hash_original_method = "BF6DF8E3D28698AF7FF4E9FD5B4A484C", hash_generated_method = "254C69213B5D4D2353215375DE7E6B2C")
+    
+public synchronized final Scheme register(Scheme sch) {
         if (sch == null)
             throw new IllegalArgumentException("Scheme must not be null.");
 
@@ -119,8 +124,9 @@ public final class SchemeRegistry {
      * @return  the unregistered scheme, or
      *          <code>null</code> if there was none
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.295 -0500", hash_original_method = "68812395544991B9645F8BA0B34BB709", hash_generated_method = "D75FF2A976BD2B6C1FC29FDB97556890")
-    public synchronized final Scheme unregister(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.041 -0500", hash_original_method = "68812395544991B9645F8BA0B34BB709", hash_generated_method = "D75FF2A976BD2B6C1FC29FDB97556890")
+    
+public synchronized final Scheme unregister(String name) {
         if (name == null)
             throw new IllegalArgumentException("Name must not be null.");
 
@@ -136,8 +142,9 @@ public final class SchemeRegistry {
      *
      * @return  List containing registered scheme names.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.295 -0500", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "60F1E62291485E559C9E3A6E4E1D94F2")
-    public synchronized final List<String> getSchemeNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.043 -0500", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "60F1E62291485E559C9E3A6E4E1D94F2")
+    
+public synchronized final List<String> getSchemeNames() {
         return new ArrayList<String>(registeredSchemes.keySet());
     }
 
@@ -147,8 +154,9 @@ public final class SchemeRegistry {
      * 
      * @param map protocol schemes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.296 -0500", hash_original_method = "E53575E4E05CC4D1B4FC58DE949DDA2A", hash_generated_method = "A20480509991ADF38F1AB560FBF27F36")
-    public synchronized void setItems(final Map<String, Scheme> map) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.045 -0500", hash_original_method = "E53575E4E05CC4D1B4FC58DE949DDA2A", hash_generated_method = "A20480509991ADF38F1AB560FBF27F36")
+    
+public synchronized void setItems(final Map<String, Scheme> map) {
         if (map == null) {
             return;
         }

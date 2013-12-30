@@ -21,8 +21,9 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
      * Cast a Binder object into a content resolver interface, generating
      * a proxy if needed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.120 -0500", hash_original_method = "C54B271CE44B8B3CA02F34CEBF170328", hash_generated_method = "1D619AF2715A1536034540225DAE3B98")
-    static public IBulkCursor asInterface(IBinder obj)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.536 -0500", hash_original_method = "C54B271CE44B8B3CA02F34CEBF170328", hash_generated_method = "1D619AF2715A1536034540225DAE3B98")
+    
+static public IBulkCursor asInterface(IBinder obj)
     {
         if (obj == null) {
             return null;
@@ -34,15 +35,17 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
 
         return new BulkCursorProxy(obj);
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.119 -0500", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "50CCF7129DEBE42BE14A842ECF8748F8")
-    public BulkCursorNative()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.533 -0500", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "50CCF7129DEBE42BE14A842ECF8748F8")
+    
+public BulkCursorNative()
     {
         attachInterface(this, descriptor);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.122 -0500", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "44B1EE5FABD9FB2B1CCC833898555361")
-    @Override
-public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.541 -0500", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "44B1EE5FABD9FB2B1CCC833898555361")
+    
+@Override
+    public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
             throws RemoteException {
         try {
             switch (code) {
@@ -146,8 +149,9 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
         return super.onTransact(code, data, reply, flags);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.123 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
-    public IBinder asBinder()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.543 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
+    
+public IBinder asBinder()
     {
         return this;
     }
@@ -156,28 +160,31 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
 }
 
 final class BulkCursorProxy implements IBulkCursor {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.124 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.546 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
 
     private IBinder mRemote;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.124 -0500", hash_original_field = "8E33C9E28D87B1286C4160446ABF7B5C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.548 -0500", hash_original_field = "8E33C9E28D87B1286C4160446ABF7B5C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
 
     private Bundle mExtras;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.125 -0500", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "4C6435B3F41CD6A1BEB41F8858E76A61")
-    public BulkCursorProxy(IBinder remote)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.551 -0500", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "4C6435B3F41CD6A1BEB41F8858E76A61")
+    
+public BulkCursorProxy(IBinder remote)
     {
         mRemote = remote;
         mExtras = null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.126 -0500", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "4DCC3A1AD60EC3BEEFB87DCA83743448")
-    public IBinder asBinder()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.553 -0500", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "4DCC3A1AD60EC3BEEFB87DCA83743448")
+    
+public IBinder asBinder()
     {
         return mRemote;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.127 -0500", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "EA78ADB97DFC3B522B8A78141E40B1BC")
-    public CursorWindow getWindow(int startPos) throws RemoteException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.556 -0500", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "EA78ADB97DFC3B522B8A78141E40B1BC")
+    
+public CursorWindow getWindow(int startPos) throws RemoteException
     {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -199,8 +206,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.127 -0500", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "2B91D016CC7D59F3D4E24662B92CAD90")
-    public void onMove(int position) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.559 -0500", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "2B91D016CC7D59F3D4E24662B92CAD90")
+    
+public void onMove(int position) throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try {
@@ -215,8 +223,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.128 -0500", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "E9FDB8182FE9955825F9884EDCF6EA7C")
-    public int count() throws RemoteException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.561 -0500", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "E9FDB8182FE9955825F9884EDCF6EA7C")
+    
+public int count() throws RemoteException
     {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -239,8 +248,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.129 -0500", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "73215A2094BBFC88A1DED3BDDBA0B6B8")
-    public String[] getColumnNames() throws RemoteException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.564 -0500", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "73215A2094BBFC88A1DED3BDDBA0B6B8")
+    
+public String[] getColumnNames() throws RemoteException
     {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -263,8 +273,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.130 -0500", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "7C29F510C93EE22F95C7E4ADFC92ECB7")
-    public void deactivate() throws RemoteException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.567 -0500", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "7C29F510C93EE22F95C7E4ADFC92ECB7")
+    
+public void deactivate() throws RemoteException
     {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -279,8 +290,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.131 -0500", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "C1A58BF67AE58BAE68468DE633C4FFF1")
-    public void close() throws RemoteException
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.569 -0500", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "C1A58BF67AE58BAE68468DE633C4FFF1")
+    
+public void close() throws RemoteException
     {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -295,8 +307,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.132 -0500", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "0B3B0CAAE1F340B6EED5FBD38F88B290")
-    public int requery(IContentObserver observer) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.572 -0500", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "0B3B0CAAE1F340B6EED5FBD38F88B290")
+    
+public int requery(IContentObserver observer) throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try {
@@ -320,8 +333,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.133 -0500", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "08FE55F28BBA6423B34740AD73DB2749")
-    public boolean getWantsAllOnMoveCalls() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.574 -0500", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "08FE55F28BBA6423B34740AD73DB2749")
+    
+public boolean getWantsAllOnMoveCalls() throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try {
@@ -338,8 +352,9 @@ final class BulkCursorProxy implements IBulkCursor {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.133 -0500", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "8534442E1A57371CEB797D84E718FD6F")
-    public Bundle getExtras() throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.576 -0500", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "8534442E1A57371CEB797D84E718FD6F")
+    
+public Bundle getExtras() throws RemoteException {
         if (mExtras == null) {
             Parcel data = Parcel.obtain();
             Parcel reply = Parcel.obtain();
@@ -358,8 +373,9 @@ final class BulkCursorProxy implements IBulkCursor {
         return mExtras;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.136 -0500", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "6120D436D6E46640E40F529D865E95F5")
-    public Bundle respond(Bundle extras) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.579 -0500", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "6120D436D6E46640E40F529D865E95F5")
+    
+public Bundle respond(Bundle extras) throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
         try {

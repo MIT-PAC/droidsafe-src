@@ -12,14 +12,14 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class Vibrator {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.018 -0500", hash_original_field = "978871C473963B7B85160A7F3D0A428F", hash_generated_field = "58FE1B639F58F6B845A5213089DAFE03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.201 -0500", hash_original_field = "978871C473963B7B85160A7F3D0A428F", hash_generated_field = "58FE1B639F58F6B845A5213089DAFE03")
 
     private static final String TAG = "Vibrator";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.019 -0500", hash_original_field = "6D5176DB6DC642185DCF8E32C5EC1BC9", hash_generated_field = "6D5176DB6DC642185DCF8E32C5EC1BC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.203 -0500", hash_original_field = "6D5176DB6DC642185DCF8E32C5EC1BC9", hash_generated_field = "6D5176DB6DC642185DCF8E32C5EC1BC9")
 
 
     IVibratorService mService;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.020 -0500", hash_original_field = "B6655DE5A418A8AD5DE782E8D5BD3E0A", hash_generated_field = "338AF9C7C3937329885532B2150C11ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.205 -0500", hash_original_field = "B6655DE5A418A8AD5DE782E8D5BD3E0A", hash_generated_field = "338AF9C7C3937329885532B2150C11ED")
 
     private final Binder mToken = new Binder();
     
@@ -85,8 +85,9 @@ public class Vibrator {
     /**
      * Turn the vibrator off.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.024 -0500", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "9713832FE84F3FCBD8DE0E9E6E792254")
-    public void cancel()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.217 -0500", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "9713832FE84F3FCBD8DE0E9E6E792254")
+    
+public void cancel()
     {
         if (mService == null) {
             return;

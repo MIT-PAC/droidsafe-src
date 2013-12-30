@@ -28,7 +28,7 @@ public class SyncStateContract {
 
 
     public static class Constants implements Columns {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.974 -0500", hash_original_field = "651555897195CAF1D909B047C60B8BCF", hash_generated_field = "FA8A31E4C831AAEF706E8EC3EE0F6F62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.579 -0500", hash_original_field = "651555897195CAF1D909B047C60B8BCF", hash_generated_field = "FA8A31E4C831AAEF706E8EC3EE0F6F62")
 
         public static final String CONTENT_DIRECTORY = "syncstate";
         
@@ -53,8 +53,9 @@ public class SyncStateContract {
          * @throws RemoteException if there is a failure communicating with the remote
          * {@link android.content.ContentProvider}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.978 -0500", hash_original_method = "5BAEEA9617C0AA3B35E4E6BB2B33ED19", hash_generated_method = "6A48469F02BB96E63D13AB49D1B5431B")
-        public static byte[] get(ContentProviderClient provider, Uri uri,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.590 -0500", hash_original_method = "5BAEEA9617C0AA3B35E4E6BB2B33ED19", hash_generated_method = "6A48469F02BB96E63D13AB49D1B5431B")
+        
+public static byte[] get(ContentProviderClient provider, Uri uri,
                 Account account) throws RemoteException {
             Cursor c = provider.query(uri, DATA_PROJECTION, SELECT_BY_ACCOUNT,
                     new String[]{account.name, account.type}, null);
@@ -84,8 +85,9 @@ public class SyncStateContract {
          * @throws RemoteException if there is a failure communicating with the remote
          * {@link android.content.ContentProvider}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.979 -0500", hash_original_method = "7175BBC1400E9B9ACF4AC9D742700EC1", hash_generated_method = "2A3FEA68CF5F65D576C531538A0704F2")
-        public static void set(ContentProviderClient provider, Uri uri,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.592 -0500", hash_original_method = "7175BBC1400E9B9ACF4AC9D742700EC1", hash_generated_method = "2A3FEA68CF5F65D576C531538A0704F2")
+        
+public static void set(ContentProviderClient provider, Uri uri,
                 Account account, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -94,8 +96,9 @@ public class SyncStateContract {
             provider.insert(uri, values);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.980 -0500", hash_original_method = "D67AD736719565B401F7D635C42166E8", hash_generated_method = "AC105E9966F6FEFD78C648C972E83070")
-        public static Uri insert(ContentProviderClient provider, Uri uri,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.595 -0500", hash_original_method = "D67AD736719565B401F7D635C42166E8", hash_generated_method = "AC105E9966F6FEFD78C648C972E83070")
+        
+public static Uri insert(ContentProviderClient provider, Uri uri,
                 Account account, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -104,16 +107,18 @@ public class SyncStateContract {
             return provider.insert(uri, values);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.981 -0500", hash_original_method = "6B723E445C051D3A95A305F12C554D39", hash_generated_method = "5365CA6B8E077F8FB400EE376B2EA021")
-        public static void update(ContentProviderClient provider, Uri uri, byte[] data)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.597 -0500", hash_original_method = "6B723E445C051D3A95A305F12C554D39", hash_generated_method = "5365CA6B8E077F8FB400EE376B2EA021")
+        
+public static void update(ContentProviderClient provider, Uri uri, byte[] data)
                 throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
             provider.update(uri, values, null, null);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.982 -0500", hash_original_method = "59C36C2A4187FE21080DCE61B12EC2C5", hash_generated_method = "0FCB2EFB8728B15169BFE14097E5AA6A")
-        public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Uri uri,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.600 -0500", hash_original_method = "59C36C2A4187FE21080DCE61B12EC2C5", hash_generated_method = "0FCB2EFB8728B15169BFE14097E5AA6A")
+        
+public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Uri uri,
                 Account account) throws RemoteException {
             Cursor c = provider.query(uri, DATA_PROJECTION, SELECT_BY_ACCOUNT,
                     new String[]{account.name, account.type}, null);
@@ -143,8 +148,9 @@ public class SyncStateContract {
          * @return the new ContentProviderOperation that assigns the data array as the
          * account's sync state
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.983 -0500", hash_original_method = "79826C36B2AA82EB741C6DACEAF05E13", hash_generated_method = "6C63AFB549C6A2DEB4BDFF0FC1F8CCE1")
-        public static ContentProviderOperation newSetOperation(Uri uri,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.603 -0500", hash_original_method = "79826C36B2AA82EB741C6DACEAF05E13", hash_generated_method = "6C63AFB549C6A2DEB4BDFF0FC1F8CCE1")
+        
+public static ContentProviderOperation newSetOperation(Uri uri,
                 Account account, byte[] data) {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -164,8 +170,9 @@ public class SyncStateContract {
          * @return the new ContentProviderOperation that assigns the data array as the
          * account's sync state
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.984 -0500", hash_original_method = "03ED4805F1B71684BC51E366A02690AE", hash_generated_method = "6FA53809A465BFB793C30C8A79112408")
-        public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.605 -0500", hash_original_method = "03ED4805F1B71684BC51E366A02690AE", hash_generated_method = "6FA53809A465BFB793C30C8A79112408")
+        
+public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
             return ContentProviderOperation
@@ -173,10 +180,10 @@ public class SyncStateContract {
                     .withValues(values)
                     .build();
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.976 -0500", hash_original_field = "8E3B6E5B5B6C1C46EF7E5E8AF66B7835", hash_generated_field = "16F80F154C043273B4490EE306B3A865")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.584 -0500", hash_original_field = "8E3B6E5B5B6C1C46EF7E5E8AF66B7835", hash_generated_field = "16F80F154C043273B4490EE306B3A865")
 
         private static final String[] DATA_PROJECTION = new String[]{Columns.DATA, Columns._ID};
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:45.977 -0500", hash_original_field = "0CF736763CCB8427EEB4E54AF4D3539B", hash_generated_field = "CC8FA1F4EE7228ACC08A945BFBF3437B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.587 -0500", hash_original_field = "0CF736763CCB8427EEB4E54AF4D3539B", hash_generated_field = "CC8FA1F4EE7228ACC08A945BFBF3437B")
 
         private static final String SELECT_BY_ACCOUNT =
                 Columns.ACCOUNT_NAME + "=? AND " + Columns.ACCOUNT_TYPE + "=?";

@@ -22,8 +22,9 @@ public final class AuthParams {
      *
      * @see AuthPNames#CREDENTIAL_CHARSET
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.357 -0500", hash_original_method = "83E68A1F7212025E177C44461A8681BF", hash_generated_method = "81D4B84D1CADC581B696FD91EF64DC1F")
-    public static String getCredentialCharset(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.227 -0500", hash_original_method = "83E68A1F7212025E177C44461A8681BF", hash_generated_method = "81D4B84D1CADC581B696FD91EF64DC1F")
+    
+public static String getCredentialCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -44,16 +45,18 @@ public final class AuthParams {
      * 
      * @param charset The charset
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.358 -0500", hash_original_method = "0A1029E7DE52A3D6B1434265A979992C", hash_generated_method = "898E77E22A3BF38038282A5B97758360")
-    public static void setCredentialCharset(final HttpParams params, final String charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.229 -0500", hash_original_method = "0A1029E7DE52A3D6B1434265A979992C", hash_generated_method = "898E77E22A3BF38038282A5B97758360")
+    
+public static void setCredentialCharset(final HttpParams params, final String charset) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
         params.setParameter(AuthPNames.CREDENTIAL_CHARSET, charset);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.356 -0500", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "7F4E5802A312C1007D40C42C567D1ADC")
-    private AuthParams() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.224 -0500", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "7F4E5802A312C1007D40C42C567D1ADC")
+    
+private AuthParams() {
         super();
     }
 

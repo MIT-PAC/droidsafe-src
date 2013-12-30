@@ -12,23 +12,23 @@ import android.util.Printer;
 
 
 public class Handler {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.963 -0500", hash_original_field = "EF077B080E17BA8045DEC02712518733", hash_generated_field = "0511AC5400F6AB0B4374BEAACA5C07BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.007 -0500", hash_original_field = "EF077B080E17BA8045DEC02712518733", hash_generated_field = "0511AC5400F6AB0B4374BEAACA5C07BE")
 
     private static final boolean FIND_POTENTIAL_LEAKS = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.963 -0500", hash_original_field = "104D1D0D252AE2A79C970B6831381C21", hash_generated_field = "BFB213888655CBD96A5FA5BA90716E2A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.009 -0500", hash_original_field = "104D1D0D252AE2A79C970B6831381C21", hash_generated_field = "BFB213888655CBD96A5FA5BA90716E2A")
 
     private static final String TAG = "Handler";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.999 -0500", hash_original_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.106 -0500", hash_original_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
 
 
      MessageQueue mQueue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.000 -0500", hash_original_field = "4C6A73D1D5351706C43659B423CF9288", hash_generated_field = "4C6A73D1D5351706C43659B423CF9288")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.108 -0500", hash_original_field = "4C6A73D1D5351706C43659B423CF9288", hash_generated_field = "4C6A73D1D5351706C43659B423CF9288")
 
      Looper mLooper;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.001 -0500", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "1A99E72B6409E38FBCC780D1BAB4898D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.111 -0500", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "1A99E72B6409E38FBCC780D1BAB4898D")
 
      Callback mCallback;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.001 -0500", hash_original_field = "35095A7AFB955F43B213705056D01A47", hash_generated_field = "35095A7AFB955F43B213705056D01A47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.113 -0500", hash_original_field = "35095A7AFB955F43B213705056D01A47", hash_generated_field = "35095A7AFB955F43B213705056D01A47")
 
     IMessenger mMessenger;
     
@@ -100,8 +100,9 @@ public class Handler {
     /**
      * Subclasses must implement this to receive messages.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.965 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
-    public void handleMessage(Message msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.014 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
+    
+public void handleMessage(Message msg) {
     }
 
     
@@ -143,8 +144,9 @@ public class Handler {
      * creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).
      *  If you don't want that facility, just call Message.obtain() instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.972 -0500", hash_original_method = "3FA1D1E6850485EFDFF54C55EBFDD1CC", hash_generated_method = "D4575D4F60FCD7C3F7B83BA70194059B")
-    public final Message obtainMessage()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.031 -0500", hash_original_method = "3FA1D1E6850485EFDFF54C55EBFDD1CC", hash_generated_method = "D4575D4F60FCD7C3F7B83BA70194059B")
+    
+public final Message obtainMessage()
     {
         return Message.obtain(this);
     }
@@ -508,8 +510,9 @@ public class Handler {
 
     // if we can get rid of this method, the handler need not remember its loop
     // we could instead export a getMessageQueue() method... 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.992 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
-    public final Looper getLooper() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.087 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
+    
+public final Looper getLooper() {
         return mLooper;
     }
 
@@ -598,8 +601,9 @@ public class Handler {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.996 -0500", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "F786300E27C986F542B94E2D484AD33A")
-        public void send(Message msg) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.097 -0500", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "F786300E27C986F542B94E2D484AD33A")
+        
+public void send(Message msg) {
             Handler.this.sendMessage(msg);
         }
 
@@ -612,16 +616,18 @@ public class Handler {
         public boolean handleMessage(Message msg);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.998 -0500", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "A5974E73A9C80C82DFA1C17347E03874")
-    private final Message getPostMessage(Runnable r, Object token) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.102 -0500", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "A5974E73A9C80C82DFA1C17347E03874")
+    
+private final Message getPostMessage(Runnable r, Object token) {
         Message m = Message.obtain();
         m.obj = token;
         m.callback = r;
         return m;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.999 -0500", hash_original_method = "6CA31B63D4772009E291A8EEE8116A2F", hash_generated_method = "AD0BE4CB06C28D91482679A28DE4CCB6")
-    private final void handleCallback(Message message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.104 -0500", hash_original_method = "6CA31B63D4772009E291A8EEE8116A2F", hash_generated_method = "AD0BE4CB06C28D91482679A28DE4CCB6")
+    
+private final void handleCallback(Message message) {
         message.callback.run();
     }
 }

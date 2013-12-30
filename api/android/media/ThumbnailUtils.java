@@ -40,8 +40,9 @@ public class ThumbnailUtils {
      *
      * @hide This method is only used by media framework and media provider internally.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.645 -0500", hash_original_method = "8C4FBB07B0C99590FAA381B302C95C66", hash_generated_method = "742DE2C5038A96164760FF4738F32B6E")
-    public static Bitmap createImageThumbnail(String filePath, int kind) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.755 -0500", hash_original_method = "8C4FBB07B0C99590FAA381B302C95C66", hash_generated_method = "742DE2C5038A96164760FF4738F32B6E")
+    
+public static Bitmap createImageThumbnail(String filePath, int kind) {
         boolean wantMini = (kind == Images.Thumbnails.MINI_KIND);
         int targetSize = wantMini
                 ? TARGET_SIZE_MINI_THUMBNAIL
@@ -98,8 +99,9 @@ public class ThumbnailUtils {
      * @param filePath the path of video file
      * @param kind could be MINI_KIND or MICRO_KIND
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.646 -0500", hash_original_method = "3C5DBD92A3A305187D743DC871D6AE55", hash_generated_method = "0279A15AEFC098387B9E2647C88FBC69")
-    public static Bitmap createVideoThumbnail(String filePath, int kind) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.758 -0500", hash_original_method = "3C5DBD92A3A305187D743DC871D6AE55", hash_generated_method = "0279A15AEFC098387B9E2647C88FBC69")
+    
+public static Bitmap createVideoThumbnail(String filePath, int kind) {
         Bitmap bitmap = null;
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         try {
@@ -146,8 +148,9 @@ public class ThumbnailUtils {
      * @param width targeted width
      * @param height targeted height
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.647 -0500", hash_original_method = "04F11977515FDB4F5E012AC13A40882D", hash_generated_method = "1BAB2227279275269EDB0E4C6BD99FA5")
-    public static Bitmap extractThumbnail(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.761 -0500", hash_original_method = "04F11977515FDB4F5E012AC13A40882D", hash_generated_method = "1BAB2227279275269EDB0E4C6BD99FA5")
+    
+public static Bitmap extractThumbnail(
             Bitmap source, int width, int height) {
         return extractThumbnail(source, width, height, OPTIONS_NONE);
     }
@@ -160,8 +163,9 @@ public class ThumbnailUtils {
      * @param height targeted height
      * @param options options used during thumbnail extraction
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.648 -0500", hash_original_method = "F8E32D9ECB9A19E8EE9CCF27EE20F097", hash_generated_method = "BDAA0031048EE5BC279C6822D8F87545")
-    public static Bitmap extractThumbnail(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.763 -0500", hash_original_method = "F8E32D9ECB9A19E8EE9CCF27EE20F097", hash_generated_method = "BDAA0031048EE5BC279C6822D8F87545")
+    
+public static Bitmap extractThumbnail(
             Bitmap source, int width, int height, int options) {
         if (source == null) {
             return null;
@@ -199,8 +203,9 @@ public class ThumbnailUtils {
      * For example, BitmapFactory downsamples an image by 2 even though the
      * request is 3. So we round up the sample size to avoid OOM.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.650 -0500", hash_original_method = "DEEF6A1C5EDDA6C20572575D59F5EB46", hash_generated_method = "7333F215F1457DAD418689DCC5F34ED8")
-    private static int computeSampleSize(BitmapFactory.Options options,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.767 -0500", hash_original_method = "DEEF6A1C5EDDA6C20572575D59F5EB46", hash_generated_method = "7333F215F1457DAD418689DCC5F34ED8")
+    
+private static int computeSampleSize(BitmapFactory.Options options,
             int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength,
                 maxNumOfPixels);
@@ -218,8 +223,9 @@ public class ThumbnailUtils {
         return roundedSize;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.651 -0500", hash_original_method = "01AADA97E0B42FE20256DE5884700C34", hash_generated_method = "EAE4E039AB6A26002019F8FBD5C974FB")
-    private static int computeInitialSampleSize(BitmapFactory.Options options,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.770 -0500", hash_original_method = "01AADA97E0B42FE20256DE5884700C34", hash_generated_method = "EAE4E039AB6A26002019F8FBD5C974FB")
+    
+private static int computeInitialSampleSize(BitmapFactory.Options options,
             int minSideLength, int maxNumOfPixels) {
         double w = options.outWidth;
         double h = options.outHeight;
@@ -253,8 +259,9 @@ public class ThumbnailUtils {
      * Clients are allowed to pass their own BitmapFactory.Options used for bitmap decoding. A
      * new BitmapFactory.Options will be created if options is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.652 -0500", hash_original_method = "03AA0E6A46D7F727B5D81615ADC51108", hash_generated_method = "8DC11397EA3F6F6EF3CD12372C47ADB5")
-    private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.773 -0500", hash_original_method = "03AA0E6A46D7F727B5D81615ADC51108", hash_generated_method = "8DC11397EA3F6F6EF3CD12372C47ADB5")
+    
+private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
             Uri uri, ContentResolver cr, ParcelFileDescriptor pfd,
             BitmapFactory.Options options) {
         Bitmap b = null;
@@ -287,8 +294,9 @@ public class ThumbnailUtils {
         return b;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.652 -0500", hash_original_method = "FC6A0FA20365F95F496B2895DCD18765", hash_generated_method = "82AD175BB4105E5CA8A5D91AE5A316FB")
-    private static void closeSilently(ParcelFileDescriptor c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.775 -0500", hash_original_method = "FC6A0FA20365F95F496B2895DCD18765", hash_generated_method = "82AD175BB4105E5CA8A5D91AE5A316FB")
+    
+private static void closeSilently(ParcelFileDescriptor c) {
       if (c == null) return;
       try {
           c.close();
@@ -297,8 +305,9 @@ public class ThumbnailUtils {
       }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.653 -0500", hash_original_method = "A019EC2B740FA4F119FA9C0508A1F44E", hash_generated_method = "FF8D83046215CF42BE9DE9ADBC6660C4")
-    private static ParcelFileDescriptor makeInputStream(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.778 -0500", hash_original_method = "A019EC2B740FA4F119FA9C0508A1F44E", hash_generated_method = "FF8D83046215CF42BE9DE9ADBC6660C4")
+    
+private static ParcelFileDescriptor makeInputStream(
             Uri uri, ContentResolver cr) {
         try {
             return cr.openFileDescriptor(uri, "r");
@@ -310,8 +319,9 @@ public class ThumbnailUtils {
     /**
      * Transform source Bitmap to targeted width and height.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.655 -0500", hash_original_method = "0F38C1B7EF4D27E0FE011F71A1226373", hash_generated_method = "EE9A0886C5343FE0EEB4CA45AB817FDB")
-    private static Bitmap transform(Matrix scaler,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.782 -0500", hash_original_method = "0F38C1B7EF4D27E0FE011F71A1226373", hash_generated_method = "EE9A0886C5343FE0EEB4CA45AB817FDB")
+    
+private static Bitmap transform(Matrix scaler,
             Bitmap source,
             int targetWidth,
             int targetHeight,
@@ -412,8 +422,9 @@ public class ThumbnailUtils {
      * The functions returns a SizedThumbnailBitmap,
      * which contains a downsampled bitmap and the thumbnail data in EXIF if exists.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.661 -0500", hash_original_method = "11FD3E760075BCE4140D633304A572D7", hash_generated_method = "0F5A696F05C8305BB05A333E367CFFFF")
-    private static void createThumbnailFromEXIF(String filePath, int targetSize,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.799 -0500", hash_original_method = "11FD3E760075BCE4140D633304A572D7", hash_generated_method = "0F5A696F05C8305BB05A333E367CFFFF")
+    
+private static void createThumbnailFromEXIF(String filePath, int targetSize,
             int maxPixels, SizedThumbnailBitmap sizedThumbBitmap) {
         if (filePath == null) return;
 
@@ -464,22 +475,22 @@ public class ThumbnailUtils {
             sizedThumbBitmap.mBitmap = BitmapFactory.decodeFile(filePath, fullOptions);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.637 -0500", hash_original_field = "9F89762DCCDF0C177AB5C7A4C4A847A1", hash_generated_field = "CC8569C5C144996C2C1B9BCC3DFD2CE0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.730 -0500", hash_original_field = "9F89762DCCDF0C177AB5C7A4C4A847A1", hash_generated_field = "CC8569C5C144996C2C1B9BCC3DFD2CE0")
 
     private static final String TAG = "ThumbnailUtils";
 
     
     private static class SizedThumbnailBitmap {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.657 -0500", hash_original_field = "3F520D35D42F7D83BD963CE4801140CC", hash_generated_field = "06D73110F79B9622C1F4FE2AF624C5A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.786 -0500", hash_original_field = "3F520D35D42F7D83BD963CE4801140CC", hash_generated_field = "06D73110F79B9622C1F4FE2AF624C5A7")
 
         public byte[] mThumbnailData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.657 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "02D2A96543D882460FFE49C81D348540")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.788 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "02D2A96543D882460FFE49C81D348540")
 
         public Bitmap mBitmap;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.658 -0500", hash_original_field = "0FB7F1854426C7C20C8F54251DD6BEFE", hash_generated_field = "8575EFE206E28950AED9B1BF9FBF19F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.790 -0500", hash_original_field = "0FB7F1854426C7C20C8F54251DD6BEFE", hash_generated_field = "8575EFE206E28950AED9B1BF9FBF19F8")
 
         public int mThumbnailWidth;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.659 -0500", hash_original_field = "E573642589D0DD78940B992E22C021AE", hash_generated_field = "4F468E46E529F4DA7191944F9D5425C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.793 -0500", hash_original_field = "E573642589D0DD78940B992E22C021AE", hash_generated_field = "4F468E46E529F4DA7191944F9D5425C8")
 
         public int mThumbnailHeight;
         
@@ -492,28 +503,28 @@ public class ThumbnailUtils {
 
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.638 -0500", hash_original_field = "B1B7B3AC5A1A6668790640899EDF81EB", hash_generated_field = "C3D7D5D0952213F1807F9BD3033D397E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.732 -0500", hash_original_field = "B1B7B3AC5A1A6668790640899EDF81EB", hash_generated_field = "C3D7D5D0952213F1807F9BD3033D397E")
 
     private static final int MAX_NUM_PIXELS_THUMBNAIL = 512 * 384;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.639 -0500", hash_original_field = "F1C3F39A12D0591068973AAF2728C422", hash_generated_field = "8D0D85131F24C37479F7BB0CEAB0AA09")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.736 -0500", hash_original_field = "F1C3F39A12D0591068973AAF2728C422", hash_generated_field = "8D0D85131F24C37479F7BB0CEAB0AA09")
 
     private static final int MAX_NUM_PIXELS_MICRO_THUMBNAIL = 128 * 128;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.640 -0500", hash_original_field = "9F1702CE263DF047CE828843E3575400", hash_generated_field = "2E7FC5F2B51AC632D5BA82D9BABD08C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.738 -0500", hash_original_field = "9F1702CE263DF047CE828843E3575400", hash_generated_field = "2E7FC5F2B51AC632D5BA82D9BABD08C3")
 
     private static final int UNCONSTRAINED = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.641 -0500", hash_original_field = "AD62A5AA71562A959A0A65D9D3888950", hash_generated_field = "D39ACE695185D8A29676FC1684ACB673")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.741 -0500", hash_original_field = "AD62A5AA71562A959A0A65D9D3888950", hash_generated_field = "D39ACE695185D8A29676FC1684ACB673")
 
     private static final int OPTIONS_NONE = 0x0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.641 -0500", hash_original_field = "9DE19AECD17B684A7AD0E9E540B53136", hash_generated_field = "BD2B9DB83546A985E6E0920D9F0029F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.743 -0500", hash_original_field = "9DE19AECD17B684A7AD0E9E540B53136", hash_generated_field = "BD2B9DB83546A985E6E0920D9F0029F2")
 
     private static final int OPTIONS_SCALE_UP = 0x1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.642 -0500", hash_original_field = "08D00C21AF4FE99CF6B783902EA899BD", hash_generated_field = "8F87E3121A64D60592B5131A7EC030B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.746 -0500", hash_original_field = "08D00C21AF4FE99CF6B783902EA899BD", hash_generated_field = "8F87E3121A64D60592B5131A7EC030B4")
 
     public static final int OPTIONS_RECYCLE_INPUT = 0x2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.643 -0500", hash_original_field = "3BF51E36A4C9EF6900D271E3B961C807", hash_generated_field = "9F7F30C69C85E52290E33BE9CC22AE05")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.748 -0500", hash_original_field = "3BF51E36A4C9EF6900D271E3B961C807", hash_generated_field = "9F7F30C69C85E52290E33BE9CC22AE05")
 
     public static final int TARGET_SIZE_MINI_THUMBNAIL = 320;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.644 -0500", hash_original_field = "90E679535D0AA77047A63D38E72A5BBD", hash_generated_field = "0D8371A6E6E061CDEF380A55CF66637C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.751 -0500", hash_original_field = "90E679535D0AA77047A63D38E72A5BBD", hash_generated_field = "0D8371A6E6E061CDEF380A55CF66637C")
 
     public static final int TARGET_SIZE_MICRO_THUMBNAIL = 96;
     

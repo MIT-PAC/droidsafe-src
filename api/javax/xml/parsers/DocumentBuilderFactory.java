@@ -22,8 +22,9 @@ public abstract class DocumentBuilderFactory {
      *
      * @return a new DocumentBuilderFactory.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.860 -0500", hash_original_method = "A299BC4F50290936C6E9B976A12D85C4", hash_generated_method = "88A6006A7BD6774B22C77C0E457E635C")
-    public static DocumentBuilderFactory newInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.033 -0500", hash_original_method = "A299BC4F50290936C6E9B976A12D85C4", hash_generated_method = "88A6006A7BD6774B22C77C0E457E635C")
+    
+public static DocumentBuilderFactory newInstance() {
         // instantiate the class directly rather than using reflection
         return new DocumentBuilderFactoryImpl();
     }
@@ -35,8 +36,9 @@ public abstract class DocumentBuilderFactory {
      *     instantiated.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.861 -0500", hash_original_method = "6649CD9FBDB8C0B42278B6629FF5EE88", hash_generated_method = "32793FC0050A658B1F408EF343F4BD71")
-    public static DocumentBuilderFactory newInstance(String factoryClassName,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.036 -0500", hash_original_method = "6649CD9FBDB8C0B42278B6629FF5EE88", hash_generated_method = "32793FC0050A658B1F408EF343F4BD71")
+    
+public static DocumentBuilderFactory newInstance(String factoryClassName,
             ClassLoader classLoader) {
         if (factoryClassName == null) {
             throw new FactoryConfigurationError("factoryClassName == null");
@@ -57,28 +59,29 @@ public abstract class DocumentBuilderFactory {
             throw new FactoryConfigurationError(e);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.855 -0500", hash_original_field = "C056FD2FDA0F7E8A6B7443BDF09FC0F0", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.017 -0500", hash_original_field = "C056FD2FDA0F7E8A6B7443BDF09FC0F0", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")
 
 
     private boolean validating = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.855 -0500", hash_original_field = "6BDE859F4B3849644ED8212C15F2301D", hash_generated_field = "5485D5F0CEEDFBCE5E10558A9D6EF469")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.019 -0500", hash_original_field = "6BDE859F4B3849644ED8212C15F2301D", hash_generated_field = "5485D5F0CEEDFBCE5E10558A9D6EF469")
 
     private boolean namespaceAware = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.856 -0500", hash_original_field = "72213A100688F5AEBECF397209377DB2", hash_generated_field = "F5C170D2FDD05D4195A0F8E895734286")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.022 -0500", hash_original_field = "72213A100688F5AEBECF397209377DB2", hash_generated_field = "F5C170D2FDD05D4195A0F8E895734286")
 
     private boolean whitespace = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.857 -0500", hash_original_field = "95A991DEE4BB28A645152C6568E019A6", hash_generated_field = "B6E7B075644E24680869851F5AD9F7FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.024 -0500", hash_original_field = "95A991DEE4BB28A645152C6568E019A6", hash_generated_field = "B6E7B075644E24680869851F5AD9F7FE")
 
     private boolean expandEntityRef = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.857 -0500", hash_original_field = "BF1CF94278ED5985CE16AD6F5F79497A", hash_generated_field = "6AADFB48B77E0B566BCCB3729E527FEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.026 -0500", hash_original_field = "BF1CF94278ED5985CE16AD6F5F79497A", hash_generated_field = "6AADFB48B77E0B566BCCB3729E527FEE")
 
     private boolean ignoreComments = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.858 -0500", hash_original_field = "766AAA4E472767CAA845B6EAC224DBB2", hash_generated_field = "D86CB026082A8D0C540D599E27C2D71B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.028 -0500", hash_original_field = "766AAA4E472767CAA845B6EAC224DBB2", hash_generated_field = "D86CB026082A8D0C540D599E27C2D71B")
 
     private boolean coalescing = false;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.859 -0500", hash_original_method = "49D4E4D47C8CF413B98AC9B42DF82DC4", hash_generated_method = "3C2F0A523B35EC7AA446B70E23453FD4")
-    protected DocumentBuilderFactory () {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.031 -0500", hash_original_method = "49D4E4D47C8CF413B98AC9B42DF82DC4", hash_generated_method = "3C2F0A523B35EC7AA446B70E23453FD4")
+    
+protected DocumentBuilderFactory () {
     }
 
     /**
@@ -90,8 +93,9 @@ public abstract class DocumentBuilderFactory {
      * @return A new instance of a DocumentBuilder.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.862 -0500", hash_original_method = "C92B2605725A3C79039D87554B8487A2", hash_generated_method = "2510D54080F06623198E1BC44C9B9D87")
-    public abstract DocumentBuilder newDocumentBuilder()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.039 -0500", hash_original_method = "C92B2605725A3C79039D87554B8487A2", hash_generated_method = "2510D54080F06623198E1BC44C9B9D87")
+    
+public abstract DocumentBuilder newDocumentBuilder()
         throws ParserConfigurationException;
 
 
@@ -104,8 +108,9 @@ public abstract class DocumentBuilderFactory {
      *                  for XML namespaces; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.862 -0500", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "4FD13D12045B2E9F47E39E40A44BDDEE")
-    public void setNamespaceAware(boolean awareness) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.041 -0500", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "4FD13D12045B2E9F47E39E40A44BDDEE")
+    
+public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
     }
 
@@ -135,8 +140,9 @@ public abstract class DocumentBuilderFactory {
      *                   as they are parsed; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.863 -0500", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "20A92CFBF84C6F5D289DA3B1FC978F63")
-    public void setValidating(boolean validating) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.043 -0500", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "20A92CFBF84C6F5D289DA3B1FC978F63")
+    
+public void setValidating(boolean validating) {
         this.validating = validating;
     }
 
@@ -155,8 +161,9 @@ public abstract class DocumentBuilderFactory {
      *                   false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.864 -0500", hash_original_method = "247761D9B12D676DDB4CAC3CDF600276", hash_generated_method = "A9F14CC96A6F79A9EC970AE15D1CB2C0")
-    public void setIgnoringElementContentWhitespace(boolean whitespace) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.045 -0500", hash_original_method = "247761D9B12D676DDB4CAC3CDF600276", hash_generated_method = "A9F14CC96A6F79A9EC970AE15D1CB2C0")
+    
+public void setIgnoringElementContentWhitespace(boolean whitespace) {
         this.whitespace = whitespace;
     }
 
@@ -169,8 +176,9 @@ public abstract class DocumentBuilderFactory {
      *                        reference nodes; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.865 -0500", hash_original_method = "671BE4D371F0581E5B97389628916E7F", hash_generated_method = "48F857FD5F6BCB33768E787DAEC7F651")
-    public void setExpandEntityReferences(boolean expandEntityRef) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.048 -0500", hash_original_method = "671BE4D371F0581E5B97389628916E7F", hash_generated_method = "48F857FD5F6BCB33768E787DAEC7F651")
+    
+public void setExpandEntityReferences(boolean expandEntityRef) {
         this.expandEntityRef = expandEntityRef;
     }
 
@@ -182,8 +190,9 @@ public abstract class DocumentBuilderFactory {
      * @param ignoreComments <code>boolean</code> value to ignore comments during processing
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.866 -0500", hash_original_method = "1FD1C35E28B34CBCC42CB14E4FC91862", hash_generated_method = "CA49EEC24A99AD59560953E71B70431F")
-    public void setIgnoringComments(boolean ignoreComments) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.050 -0500", hash_original_method = "1FD1C35E28B34CBCC42CB14E4FC91862", hash_generated_method = "CA49EEC24A99AD59560953E71B70431F")
+    
+public void setIgnoringComments(boolean ignoreComments) {
         this.ignoreComments = ignoreComments;
     }
 
@@ -198,8 +207,9 @@ public abstract class DocumentBuilderFactory {
      *                    text node; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.867 -0500", hash_original_method = "221C7C3610A4998C18C0CAC31215B4A1", hash_generated_method = "0B67822AC6103E643F5A0B40B39D109F")
-    public void setCoalescing(boolean coalescing) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.052 -0500", hash_original_method = "221C7C3610A4998C18C0CAC31215B4A1", hash_generated_method = "0B67822AC6103E643F5A0B40B39D109F")
+    
+public void setCoalescing(boolean coalescing) {
         this.coalescing = coalescing;
     }
 
@@ -211,8 +221,9 @@ public abstract class DocumentBuilderFactory {
      *          are namespace aware; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.868 -0500", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "05DE9B7AFEC5AD5DCD1C87ACF69282FD")
-    public boolean isNamespaceAware() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.054 -0500", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "05DE9B7AFEC5AD5DCD1C87ACF69282FD")
+    
+public boolean isNamespaceAware() {
         return namespaceAware;
     }
 
@@ -224,8 +235,9 @@ public abstract class DocumentBuilderFactory {
      *          which validate the XML content during parse; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.868 -0500", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "8FE35D4442248DC57AD51037BE262D1B")
-    public boolean isValidating() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.057 -0500", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "8FE35D4442248DC57AD51037BE262D1B")
+    
+public boolean isValidating() {
         return validating;
     }
 
@@ -238,8 +250,9 @@ public abstract class DocumentBuilderFactory {
      *          false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.869 -0500", hash_original_method = "4E56F5A7CCC6378B3CF8D112F8B1AB79", hash_generated_method = "BCAA63C6CBDFD3AE633629B02A131D3E")
-    public boolean isIgnoringElementContentWhitespace() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.059 -0500", hash_original_method = "4E56F5A7CCC6378B3CF8D112F8B1AB79", hash_generated_method = "BCAA63C6CBDFD3AE633629B02A131D3E")
+    
+public boolean isIgnoringElementContentWhitespace() {
         return whitespace;
     }
 
@@ -251,8 +264,9 @@ public abstract class DocumentBuilderFactory {
      *          which expand entity reference nodes; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.870 -0500", hash_original_method = "FE5A53A39E38E86520120F61AA406DC2", hash_generated_method = "C535FA784661640D4E3D4F8BD0E89DE0")
-    public boolean isExpandEntityReferences() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.062 -0500", hash_original_method = "FE5A53A39E38E86520120F61AA406DC2", hash_generated_method = "C535FA784661640D4E3D4F8BD0E89DE0")
+    
+public boolean isExpandEntityReferences() {
         return expandEntityRef;
     }
 
@@ -264,8 +278,9 @@ public abstract class DocumentBuilderFactory {
      *          which ignores comments; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.871 -0500", hash_original_method = "472A3B5EC6A2D01FA4DE3A7E2B7C3115", hash_generated_method = "D73744E29D11545CC37D184B132864A8")
-    public boolean isIgnoringComments() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.064 -0500", hash_original_method = "472A3B5EC6A2D01FA4DE3A7E2B7C3115", hash_generated_method = "D73744E29D11545CC37D184B132864A8")
+    
+public boolean isIgnoringComments() {
         return ignoreComments;
     }
 
@@ -279,8 +294,9 @@ public abstract class DocumentBuilderFactory {
      *          the adjacent (if any) Text node; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.871 -0500", hash_original_method = "0B8DEAAC66A552BA34931CFF16BDD152", hash_generated_method = "5D1A0A7C74F3F361C7910FB5402F1064")
-    public boolean isCoalescing() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.066 -0500", hash_original_method = "0B8DEAAC66A552BA34931CFF16BDD152", hash_generated_method = "5D1A0A7C74F3F361C7910FB5402F1064")
+    
+public boolean isCoalescing() {
         return coalescing;
     }
 
@@ -292,8 +308,9 @@ public abstract class DocumentBuilderFactory {
      * @exception IllegalArgumentException thrown if the underlying
      * implementation doesn't recognize the attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.872 -0500", hash_original_method = "CB73F36311CD92EDEA1B2B1274063888", hash_generated_method = "8AA6026C8FF7CAC06417C37855D110F3")
-    public abstract void setAttribute(String name, Object value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.068 -0500", hash_original_method = "CB73F36311CD92EDEA1B2B1274063888", hash_generated_method = "8AA6026C8FF7CAC06417C37855D110F3")
+    
+public abstract void setAttribute(String name, Object value)
                 throws IllegalArgumentException;
 
     /**
@@ -304,8 +321,9 @@ public abstract class DocumentBuilderFactory {
      * @exception IllegalArgumentException thrown if the underlying
      * implementation doesn't recognize the attribute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.873 -0500", hash_original_method = "91ADABC875C777126203143168D8F098", hash_generated_method = "05DA748C339404248E8ADA114B39660B")
-    public abstract Object getAttribute(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.071 -0500", hash_original_method = "91ADABC875C777126203143168D8F098", hash_generated_method = "05DA748C339404248E8ADA114B39660B")
+    
+public abstract Object getAttribute(String name)
                 throws IllegalArgumentException;
 
     /**
@@ -343,8 +361,9 @@ public abstract class DocumentBuilderFactory {
      *   it creates cannot support this feature.
      * @throws NullPointerException If the <code>name</code> parameter is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.874 -0500", hash_original_method = "36709D7D57B60C6C962D7D5945B5BF45", hash_generated_method = "6A57F383BB0171EF10332E4F340D9CF6")
-    public abstract void setFeature(String name, boolean value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.073 -0500", hash_original_method = "36709D7D57B60C6C962D7D5945B5BF45", hash_generated_method = "6A57F383BB0171EF10332E4F340D9CF6")
+    
+public abstract void setFeature(String name, boolean value)
         throws ParserConfigurationException;
 
     /**
@@ -365,8 +384,9 @@ public abstract class DocumentBuilderFactory {
      * @throws ParserConfigurationException if this <code>DocumentBuilderFactory</code>
      *   or the <code>DocumentBuilder</code>s it creates cannot support this feature.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.875 -0500", hash_original_method = "5A73D1115FD1B21364503EAEC11369CE", hash_generated_method = "97981E4AF4AF97F8AD156A0F6B6084B8")
-    public abstract boolean getFeature(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.075 -0500", hash_original_method = "5A73D1115FD1B21364503EAEC11369CE", hash_generated_method = "97981E4AF4AF97F8AD156A0F6B6084B8")
+    
+public abstract boolean getFeature(String name)
         throws ParserConfigurationException;
 
     /**
@@ -387,8 +407,9 @@ public abstract class DocumentBuilderFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.876 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
-    public Schema getSchema() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.078 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
+    
+public Schema getSchema() {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -454,8 +475,9 @@ public abstract class DocumentBuilderFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.877 -0500", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "7F4E43F28FCAA4F27CDFFBBB38B303F1")
-    public void setSchema(Schema schema) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.080 -0500", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "7F4E43F28FCAA4F27CDFFBBB38B303F1")
+    
+public void setSchema(Schema schema) {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -484,8 +506,9 @@ public abstract class DocumentBuilderFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.877 -0500", hash_original_method = "7123F2F991682C288B1EB84DFD3ADE3C", hash_generated_method = "E4DD79361E7B88C281F51675955E6730")
-    public void setXIncludeAware(final boolean state) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.083 -0500", hash_original_method = "7123F2F991682C288B1EB84DFD3ADE3C", hash_generated_method = "E4DD79361E7B88C281F51675955E6730")
+    
+public void setXIncludeAware(final boolean state) {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -507,8 +530,9 @@ public abstract class DocumentBuilderFactory {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.878 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
-    public boolean isXIncludeAware() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.085 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
+    
+public boolean isXIncludeAware() {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()

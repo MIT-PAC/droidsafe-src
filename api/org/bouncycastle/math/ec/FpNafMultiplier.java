@@ -19,8 +19,9 @@ class FpNafMultiplier implements ECMultiplier {
      * D.3.2 pg 101
      * @see org.bouncycastle.math.ec.ECMultiplier#multiply(org.bouncycastle.math.ec.ECPoint, java.math.BigInteger)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.730 -0500", hash_original_method = "DE008A6A0942FE352BE58D2F6B7E9069", hash_generated_method = "D3C5BDA22382B8D3BA336B952BC07A61")
-    public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.822 -0500", hash_original_method = "DE008A6A0942FE352BE58D2F6B7E9069", hash_generated_method = "D3C5BDA22382B8D3BA336B952BC07A61")
+    
+public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo)
     {
         // TODO Probably should try to add this
         // BigInteger e = k.mod(n); // n == order of p

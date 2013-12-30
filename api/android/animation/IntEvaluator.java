@@ -31,8 +31,9 @@ public class IntEvaluator implements TypeEvaluator<Integer> {
      * @return A linear interpolation between the start and end values, given the
      *         <code>fraction</code> parameter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.378 -0500", hash_original_method = "6401BD46F7D1EA9F5782F720B53B51D0", hash_generated_method = "99EE37795D574886793E48AD2066470F")
-    public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.336 -0500", hash_original_method = "6401BD46F7D1EA9F5782F720B53B51D0", hash_generated_method = "99EE37795D574886793E48AD2066470F")
+    
+public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
         int startInt = startValue;
         return (int)(startInt + fraction * (endValue - startInt));
     }

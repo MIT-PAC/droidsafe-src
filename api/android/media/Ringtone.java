@@ -23,8 +23,9 @@ import android.provider.Settings;
 
 public class Ringtone {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.965 -0500", hash_original_method = "7C7E876780A603240D42A5BB96522037", hash_generated_method = "EAAD1702E472810FAA2CF3F810517246")
-    private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.964 -0500", hash_original_method = "7C7E876780A603240D42A5BB96522037", hash_generated_method = "EAAD1702E472810FAA2CF3F810517246")
+    
+private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
         Cursor cursor = null;
         ContentResolver res = context.getContentResolver();
         
@@ -75,10 +76,10 @@ public class Ringtone {
         
         return title;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.952 -0500", hash_original_field = "F291506CBE2EA90D9EA25E6AD0A4EEA0", hash_generated_field = "E713CD010BF5D6DDAFC0491CA9A150F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.927 -0500", hash_original_field = "F291506CBE2EA90D9EA25E6AD0A4EEA0", hash_generated_field = "E713CD010BF5D6DDAFC0491CA9A150F9")
 
     private static String TAG = "Ringtone";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.953 -0500", hash_original_field = "560B665A142B68230F4465A1C59C24C9", hash_generated_field = "9C933AC05E3167A254DFD7049D6C5A3D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.929 -0500", hash_original_field = "560B665A142B68230F4465A1C59C24C9", hash_generated_field = "9C933AC05E3167A254DFD7049D6C5A3D")
 
 
     private static final String[] MEDIA_COLUMNS = new String[] {
@@ -86,7 +87,7 @@ public class Ringtone {
         MediaStore.Audio.Media.DATA,
         MediaStore.Audio.Media.TITLE
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.954 -0500", hash_original_field = "49CF46E8760538BC04BCF36CF117C555", hash_generated_field = "12C48621F14CD9EBFF2B9F5D2C5B747B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.932 -0500", hash_original_field = "49CF46E8760538BC04BCF36CF117C555", hash_generated_field = "12C48621F14CD9EBFF2B9F5D2C5B747B")
 
 
     private static final String[] DRM_COLUMNS = new String[] {
@@ -94,37 +95,38 @@ public class Ringtone {
         DrmStore.Audio.DATA,
         DrmStore.Audio.TITLE
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.954 -0500", hash_original_field = "114D6930502EB051599FDF53068B5EF9", hash_generated_field = "29CF01719F6820D08330DF490C891644")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.934 -0500", hash_original_field = "114D6930502EB051599FDF53068B5EF9", hash_generated_field = "29CF01719F6820D08330DF490C891644")
 
 
     private MediaPlayer mAudio;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.955 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "04FA8EB5D9FB8AC4AAE6453BCF1BBF82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.936 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "04FA8EB5D9FB8AC4AAE6453BCF1BBF82")
 
 
     private Uri mUri;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.956 -0500", hash_original_field = "16E0C5A3FE98D2D22AD69EC7A123442F", hash_generated_field = "F874AFA927FA7D19042AF93F53067D66")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.938 -0500", hash_original_field = "16E0C5A3FE98D2D22AD69EC7A123442F", hash_generated_field = "F874AFA927FA7D19042AF93F53067D66")
 
     private String mTitle;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.957 -0500", hash_original_field = "3DDF6F67F19B0814E8DAB7B3CFFED3B7", hash_generated_field = "58A1B3A123725E48931BD35C0EB2D4CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.941 -0500", hash_original_field = "3DDF6F67F19B0814E8DAB7B3CFFED3B7", hash_generated_field = "58A1B3A123725E48931BD35C0EB2D4CB")
 
     private FileDescriptor mFileDescriptor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.958 -0500", hash_original_field = "3AD3C99572C02A10C19EE987B38F31EB", hash_generated_field = "42013BEA58DB5CF2CBDDDD7864338432")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.943 -0500", hash_original_field = "3AD3C99572C02A10C19EE987B38F31EB", hash_generated_field = "42013BEA58DB5CF2CBDDDD7864338432")
 
     private AssetFileDescriptor mAssetFileDescriptor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.959 -0500", hash_original_field = "60852FBB34E58AF261BF32523C542C38", hash_generated_field = "6500983E788303EA2D93C21805BCE618")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.946 -0500", hash_original_field = "60852FBB34E58AF261BF32523C542C38", hash_generated_field = "6500983E788303EA2D93C21805BCE618")
 
 
     private int mStreamType = AudioManager.STREAM_RING;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.959 -0500", hash_original_field = "81931559493F052ED78BA000FD1BC717", hash_generated_field = "B52B11818937F27E927A20CDEBA27654")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.948 -0500", hash_original_field = "81931559493F052ED78BA000FD1BC717", hash_generated_field = "B52B11818937F27E927A20CDEBA27654")
 
     private AudioManager mAudioManager;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.960 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.950 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private Context mContext;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.961 -0500", hash_original_method = "6365B663239886F10DC7E25536BA8CE2", hash_generated_method = "6365B663239886F10DC7E25536BA8CE2")
-    Ringtone(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.953 -0500", hash_original_method = "6365B663239886F10DC7E25536BA8CE2", hash_generated_method = "6365B663239886F10DC7E25536BA8CE2")
+    
+Ringtone(Context context) {
         mContext = context;
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
     }
@@ -134,8 +136,9 @@ public class Ringtone {
      * 
      * @param streamType The stream, see {@link AudioManager}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.962 -0500", hash_original_method = "F5CC923451A07D4657129E70BA4A3BAD", hash_generated_method = "EDAD9F39DFEA1BCA5B89200BCF36CAA0")
-    public void setStreamType(int streamType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.955 -0500", hash_original_method = "F5CC923451A07D4657129E70BA4A3BAD", hash_generated_method = "EDAD9F39DFEA1BCA5B89200BCF36CAA0")
+    
+public void setStreamType(int streamType) {
         mStreamType = streamType;
         
         if (mAudio != null) {
@@ -156,8 +159,9 @@ public class Ringtone {
      * 
      * @return The stream type, see {@link AudioManager}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.963 -0500", hash_original_method = "216E9F6C8E5136791318AC3D24F88326", hash_generated_method = "F7BEAF5998981A9DDFFDF515BD2883C7")
-    public int getStreamType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.958 -0500", hash_original_method = "216E9F6C8E5136791318AC3D24F88326", hash_generated_method = "F7BEAF5998981A9DDFFDF515BD2883C7")
+    
+public int getStreamType() {
         return mStreamType;
     }
 
@@ -167,14 +171,16 @@ public class Ringtone {
      * 
      * @param context A context used for querying. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.964 -0500", hash_original_method = "9AA0FF99679830890209304DA3B8D69B", hash_generated_method = "6E3AD98B144BB627B392050A53FFE9BE")
-    public String getTitle(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.960 -0500", hash_original_method = "9AA0FF99679830890209304DA3B8D69B", hash_generated_method = "6E3AD98B144BB627B392050A53FFE9BE")
+    
+public String getTitle(Context context) {
         if (mTitle != null) return mTitle;
         return mTitle = getTitle(context, mUri, true);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.966 -0500", hash_original_method = "3D9FD67EE5212878A40EB00FDD255FB4", hash_generated_method = "64022A1AA54923F2F5BCB6D43B903CE2")
-    private void openMediaPlayer() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.967 -0500", hash_original_method = "3D9FD67EE5212878A40EB00FDD255FB4", hash_generated_method = "64022A1AA54923F2F5BCB6D43B903CE2")
+    
+private void openMediaPlayer() throws IOException {
         if (mAudio != null) {
             mAudio.release();
         }
@@ -201,20 +207,23 @@ public class Ringtone {
         mAudio.prepare();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.967 -0500", hash_original_method = "CD193C4ECAE3F3E852CEEC2F9F6DE33F", hash_generated_method = "CD193C4ECAE3F3E852CEEC2F9F6DE33F")
-    void open(FileDescriptor fd) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.969 -0500", hash_original_method = "CD193C4ECAE3F3E852CEEC2F9F6DE33F", hash_generated_method = "CD193C4ECAE3F3E852CEEC2F9F6DE33F")
+    
+void open(FileDescriptor fd) throws IOException {
         mFileDescriptor = fd;
         openMediaPlayer();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.968 -0500", hash_original_method = "5CEC2029E42F2A9E18E70ED996F72E6E", hash_generated_method = "5CEC2029E42F2A9E18E70ED996F72E6E")
-    void open(AssetFileDescriptor fd) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.972 -0500", hash_original_method = "5CEC2029E42F2A9E18E70ED996F72E6E", hash_generated_method = "5CEC2029E42F2A9E18E70ED996F72E6E")
+    
+void open(AssetFileDescriptor fd) throws IOException {
         mAssetFileDescriptor = fd;
         openMediaPlayer();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.969 -0500", hash_original_method = "B6A9AEC7559EAFEEA670C63D280E78C6", hash_generated_method = "B6A9AEC7559EAFEEA670C63D280E78C6")
-    void open(Uri uri) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.974 -0500", hash_original_method = "B6A9AEC7559EAFEEA670C63D280E78C6", hash_generated_method = "B6A9AEC7559EAFEEA670C63D280E78C6")
+    
+void open(Uri uri) throws IOException {
         mUri = uri;
         openMediaPlayer();
     }
@@ -222,8 +231,9 @@ public class Ringtone {
     /**
      * Plays the ringtone.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.970 -0500", hash_original_method = "F9F3FD902406E9F982D2A30CB15B8CC4", hash_generated_method = "D19C91221B1080DB646063B49CD92AD8")
-    public void play() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.977 -0500", hash_original_method = "F9F3FD902406E9F982D2A30CB15B8CC4", hash_generated_method = "D19C91221B1080DB646063B49CD92AD8")
+    
+public void play() {
         if (mAudio == null) {
             try {
                 openMediaPlayer();
@@ -244,8 +254,9 @@ public class Ringtone {
     /**
      * Stops a playing ringtone.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.971 -0500", hash_original_method = "25B57E3869C6FCC0565FBD24EEAB9FA0", hash_generated_method = "D54276E98CE38A3B15A1D16585CD8968")
-    public void stop() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.979 -0500", hash_original_method = "25B57E3869C6FCC0565FBD24EEAB9FA0", hash_generated_method = "D54276E98CE38A3B15A1D16585CD8968")
+    
+public void stop() {
         if (mAudio != null) {
             mAudio.reset();
             mAudio.release();
@@ -258,13 +269,15 @@ public class Ringtone {
      * 
      * @return True if playing, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.971 -0500", hash_original_method = "0CA36CF7485684069EDD095AE8455157", hash_generated_method = "113EE03FEC2AB5B9B31E6309FF6709D4")
-    public boolean isPlaying() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.981 -0500", hash_original_method = "0CA36CF7485684069EDD095AE8455157", hash_generated_method = "113EE03FEC2AB5B9B31E6309FF6709D4")
+    
+public boolean isPlaying() {
         return mAudio != null && mAudio.isPlaying();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:57.972 -0500", hash_original_method = "A4C423176AB11C87E288F89C31FDE32A", hash_generated_method = "A4C423176AB11C87E288F89C31FDE32A")
-    void setTitle(String title) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.983 -0500", hash_original_method = "A4C423176AB11C87E288F89C31FDE32A", hash_generated_method = "A4C423176AB11C87E288F89C31FDE32A")
+    
+void setTitle(String title) {
         mTitle = title;
     }
 }

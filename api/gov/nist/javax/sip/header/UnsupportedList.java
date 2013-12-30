@@ -12,7 +12,7 @@ import javax.sip.header.UnsupportedHeader;
 
 
 public class UnsupportedList extends SIPHeaderList<Unsupported> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.965 -0500", hash_original_field = "349125D0D735C0B36640E4A3981AFE9E", hash_generated_field = "127841856DFEDCF98BA424B546FA09BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.915 -0500", hash_original_field = "349125D0D735C0B36640E4A3981AFE9E", hash_generated_field = "127841856DFEDCF98BA424B546FA09BC")
 
 
 
@@ -21,14 +21,16 @@ public class UnsupportedList extends SIPHeaderList<Unsupported> {
 
     /** Default Constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.966 -0500", hash_original_method = "CBBAF1558631750DDBDF9DAEDB7A572C", hash_generated_method = "E4BA823E78F552EE56C402AD3022B220")
-    public UnsupportedList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.919 -0500", hash_original_method = "CBBAF1558631750DDBDF9DAEDB7A572C", hash_generated_method = "E4BA823E78F552EE56C402AD3022B220")
+    
+public UnsupportedList() {
         super(Unsupported.class, UnsupportedHeader.NAME);
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.967 -0500", hash_original_method = "586FD49C37A8AA9D6CC092649E8819BF", hash_generated_method = "F69B5C0382BBC6ED2C3C331501831857")
-    public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.921 -0500", hash_original_method = "586FD49C37A8AA9D6CC092649E8819BF", hash_generated_method = "F69B5C0382BBC6ED2C3C331501831857")
+    
+public Object clone() {
         UnsupportedList retval = new UnsupportedList();
         return retval.clonehlist(this.hlist);
     }

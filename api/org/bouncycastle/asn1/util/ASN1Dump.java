@@ -53,8 +53,9 @@ public class ASN1Dump {
      *
      * @param obj the DERObject to be dumped out.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.192 -0500", hash_original_method = "CD75AC17D7F386D86DC2E6459CAA03CB", hash_generated_method = "5FF28E01CC55A0DCA7583B0CF55EFA69")
-    static void _dumpAsString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.167 -0500", hash_original_method = "CD75AC17D7F386D86DC2E6459CAA03CB", hash_generated_method = "5FF28E01CC55A0DCA7583B0CF55EFA69")
+    
+static void _dumpAsString(
         String      indent,
         boolean     verbose,
         DERObject   obj,
@@ -322,8 +323,9 @@ public class ASN1Dump {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.193 -0500", hash_original_method = "A085E90B685E2DD1BB807B35DC58CB82", hash_generated_method = "6E3C46138551D08E7509B06BB5FB5701")
-    private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.170 -0500", hash_original_method = "A085E90B685E2DD1BB807B35DC58CB82", hash_generated_method = "6E3C46138551D08E7509B06BB5FB5701")
+    
+private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl)
     {
         DERApplicationSpecific app = (DERApplicationSpecific)obj;
         StringBuffer buf = new StringBuffer();
@@ -355,8 +357,9 @@ public class ASN1Dump {
      * @param obj the DERObject to be dumped out.
      * @return  the resulting string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.195 -0500", hash_original_method = "4ACF3BC65F0835BDAED23C3218607CC6", hash_generated_method = "AB47D7FD2D522A6C4B52051AE9DD7CB1")
-    public static String dumpAsString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.172 -0500", hash_original_method = "4ACF3BC65F0835BDAED23C3218607CC6", hash_generated_method = "AB47D7FD2D522A6C4B52051AE9DD7CB1")
+    
+public static String dumpAsString(
         Object   obj)
     {
         return dumpAsString(obj, false);
@@ -369,8 +372,9 @@ public class ASN1Dump {
      * @param verbose  if true, dump out the contents of octet and bit strings.
      * @return  the resulting string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.196 -0500", hash_original_method = "1D99DCC453E784FF5D3F8F4D5E30D7F1", hash_generated_method = "F8DEFD92E985896075DF4A52D4143A21")
-    public static String dumpAsString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.175 -0500", hash_original_method = "1D99DCC453E784FF5D3F8F4D5E30D7F1", hash_generated_method = "F8DEFD92E985896075DF4A52D4143A21")
+    
+public static String dumpAsString(
         Object   obj,
         boolean  verbose)
     {
@@ -392,8 +396,9 @@ public class ASN1Dump {
         return buf.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.197 -0500", hash_original_method = "3D6C67C11A06616DF2A4DB86F4BD675E", hash_generated_method = "BE9E9BFE41C2CE7AB847C0394AFCE1BF")
-    private static String dumpBinaryDataAsString(String indent, byte[] bytes)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.178 -0500", hash_original_method = "3D6C67C11A06616DF2A4DB86F4BD675E", hash_generated_method = "BE9E9BFE41C2CE7AB847C0394AFCE1BF")
+    
+private static String dumpBinaryDataAsString(String indent, byte[] bytes)
     {
         String nl = System.getProperty("line.separator");
         StringBuffer buf = new StringBuffer();
@@ -428,8 +433,9 @@ public class ASN1Dump {
         return buf.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.198 -0500", hash_original_method = "B7AB993C8FF8F0BB3933979E8FD641AD", hash_generated_method = "B782F7489415D349C53C522882507B00")
-    private static String calculateAscString(byte[] bytes, int off, int len)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.181 -0500", hash_original_method = "B7AB993C8FF8F0BB3933979E8FD641AD", hash_generated_method = "B782F7489415D349C53C522882507B00")
+    
+private static String calculateAscString(byte[] bytes, int off, int len)
     {
         StringBuffer buf = new StringBuffer();
 
@@ -443,10 +449,10 @@ public class ASN1Dump {
 
         return buf.toString();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.189 -0500", hash_original_field = "438765849B728A4D470967DDA176F6F1", hash_generated_field = "A38D576A197CBBF0C244B1F346CC2E3F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.158 -0500", hash_original_field = "438765849B728A4D470967DDA176F6F1", hash_generated_field = "A38D576A197CBBF0C244B1F346CC2E3F")
 
     private static final String  TAB = "    ";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.190 -0500", hash_original_field = "B2161652CF4640A23D0045E350406E14", hash_generated_field = "400B646519ABB7EFD5C377C33E8EFD31")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.160 -0500", hash_original_field = "B2161652CF4640A23D0045E350406E14", hash_generated_field = "400B646519ABB7EFD5C377C33E8EFD31")
 
     private static final int SAMPLE_SIZE = 32;
     

@@ -35,8 +35,9 @@ public abstract class NodeImpl implements Node {
      * @param namespaceAware whether this node is namespace aware
      * @param namespaceURI this node's namespace URI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.798 -0500", hash_original_method = "5A076CF41CCED2BA03916DBA6A8D512A", hash_generated_method = "A02189EB4857335F0506463788C17864")
-    static String validatePrefix(String prefix, boolean namespaceAware, String namespaceURI) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.220 -0500", hash_original_method = "5A076CF41CCED2BA03916DBA6A8D512A", hash_generated_method = "A02189EB4857335F0506463788C17864")
+    
+static String validatePrefix(String prefix, boolean namespaceAware, String namespaceURI) {
         if (!namespaceAware) {
             throw new DOMException(DOMException.NAMESPACE_ERR, prefix);
         }
@@ -61,8 +62,9 @@ public abstract class NodeImpl implements Node {
      * @param namespaceURI this node's namespace URI. May be null.
      * @param qualifiedName a possibly-prefixed name like "img" or "html:img".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.800 -0500", hash_original_method = "DA9A10D4BFE6F3C7C94DCF078FE3E793", hash_generated_method = "3567149F6AB32EE63E57D654E909A1CC")
-    static void setNameNS(NodeImpl node, String namespaceURI, String qualifiedName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.223 -0500", hash_original_method = "DA9A10D4BFE6F3C7C94DCF078FE3E793", hash_generated_method = "3567149F6AB32EE63E57D654E909A1CC")
+    
+static void setNameNS(NodeImpl node, String namespaceURI, String qualifiedName) {
         if (qualifiedName == null) {
             throw new DOMException(DOMException.NAMESPACE_ERR, qualifiedName);
         }
@@ -111,8 +113,9 @@ public abstract class NodeImpl implements Node {
      *
      * @param node an element or attribute node.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.801 -0500", hash_original_method = "D4A9B75EBE5B2394483BA819B660B5EB", hash_generated_method = "9775A9FE12F5070EC7B931CA3F875BF0")
-    static void setName(NodeImpl node, String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.226 -0500", hash_original_method = "D4A9B75EBE5B2394483BA819B660B5EB", hash_generated_method = "9775A9FE12F5070EC7B931CA3F875BF0")
+    
+static void setName(NodeImpl node, String name) {
         int prefixSeparator = name.lastIndexOf(":");
         if (prefixSeparator != -1) {
             String prefix = name.substring(0, prefixSeparator);
@@ -149,8 +152,9 @@ public abstract class NodeImpl implements Node {
      * neither of which override Object.equals(). Such values must be compared
      * manually.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.815 -0500", hash_original_method = "9793DB47E7673F718DADE1F7C169BB4E", hash_generated_method = "79A13F694D4418D3F15A793345940960")
-    private static List<Object> createEqualityKey(Node node) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.265 -0500", hash_original_method = "9793DB47E7673F718DADE1F7C169BB4E", hash_generated_method = "79A13F694D4418D3F15A793345940960")
+    
+private static List<Object> createEqualityKey(Node node) {
         List<Object> values = new ArrayList<Object>();
         values.add(node.getNodeType());
         values.add(node.getNodeName());
@@ -180,7 +184,7 @@ public abstract class NodeImpl implements Node {
 
         return values;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.772 -0500", hash_original_field = "EB6AC58D4187F31636AB0B55B3807816", hash_generated_field = "F53B7EB5F95F86FB434D25A8A5066C44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.146 -0500", hash_original_field = "EB6AC58D4187F31636AB0B55B3807816", hash_generated_field = "F53B7EB5F95F86FB434D25A8A5066C44")
 
 
     private static final NodeList EMPTY_LIST = new NodeListImpl();
@@ -226,129 +230,154 @@ public abstract class NodeImpl implements Node {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.777 -0500", hash_original_field = "3C52D3A90E4759490A57AF776DEAFE65", hash_generated_field = "3C52D3A90E4759490A57AF776DEAFE65")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.159 -0500", hash_original_field = "3C52D3A90E4759490A57AF776DEAFE65", hash_generated_field = "3C52D3A90E4759490A57AF776DEAFE65")
 
     DocumentImpl document;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.778 -0500", hash_original_method = "A803585FEFBC6246911A956CA607D5CA", hash_generated_method = "A803585FEFBC6246911A956CA607D5CA")
-    NodeImpl(DocumentImpl document) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.162 -0500", hash_original_method = "A803585FEFBC6246911A956CA607D5CA", hash_generated_method = "A803585FEFBC6246911A956CA607D5CA")
+    
+NodeImpl(DocumentImpl document) {
         this.document = document;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.779 -0500", hash_original_method = "2014C4DBC7F925271C7D07A1BBA7C167", hash_generated_method = "76D81537092E5F70C95EB74154A31BE7")
-    public Node appendChild(Node newChild) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.164 -0500", hash_original_method = "2014C4DBC7F925271C7D07A1BBA7C167", hash_generated_method = "76D81537092E5F70C95EB74154A31BE7")
+    
+public Node appendChild(Node newChild) throws DOMException {
         throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.780 -0500", hash_original_method = "917775F899DEE58C265631FD33F793ED", hash_generated_method = "0E78FE35EBC68E83DB825ED6330BF37D")
-    public final Node cloneNode(boolean deep) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.166 -0500", hash_original_method = "917775F899DEE58C265631FD33F793ED", hash_generated_method = "0E78FE35EBC68E83DB825ED6330BF37D")
+    
+public final Node cloneNode(boolean deep) {
         return document.cloneOrImportNode(UserDataHandler.NODE_CLONED, this, deep);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.780 -0500", hash_original_method = "E2D79625FBECAF1E43447A0BEFC228B9", hash_generated_method = "F93927BCF29AB4CCA8EFBF832137603C")
-    public NamedNodeMap getAttributes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.169 -0500", hash_original_method = "E2D79625FBECAF1E43447A0BEFC228B9", hash_generated_method = "F93927BCF29AB4CCA8EFBF832137603C")
+    
+public NamedNodeMap getAttributes() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.781 -0500", hash_original_method = "1F381BCE8228355FEE86D697E02DDE0B", hash_generated_method = "1ED27F314E2126FC1BB2F8C1F787096F")
-    public NodeList getChildNodes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.171 -0500", hash_original_method = "1F381BCE8228355FEE86D697E02DDE0B", hash_generated_method = "1ED27F314E2126FC1BB2F8C1F787096F")
+    
+public NodeList getChildNodes() {
         return EMPTY_LIST;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.782 -0500", hash_original_method = "DB31E0DD76C8C1947AB843730A5D8205", hash_generated_method = "A2835D1CD8E281CA60B54343298C349E")
-    public Node getFirstChild() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.173 -0500", hash_original_method = "DB31E0DD76C8C1947AB843730A5D8205", hash_generated_method = "A2835D1CD8E281CA60B54343298C349E")
+    
+public Node getFirstChild() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.783 -0500", hash_original_method = "6070A4A9C5DDD0223B459D45F6FD5CBB", hash_generated_method = "0393C378A39C4B1B35CDED5A945D8F64")
-    public Node getLastChild() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.175 -0500", hash_original_method = "6070A4A9C5DDD0223B459D45F6FD5CBB", hash_generated_method = "0393C378A39C4B1B35CDED5A945D8F64")
+    
+public Node getLastChild() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.783 -0500", hash_original_method = "DEB04882A70946FEC78DD7AD3ABDE01B", hash_generated_method = "72B2C09EF2527400688B3ECA412FC84B")
-    public String getLocalName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.177 -0500", hash_original_method = "DEB04882A70946FEC78DD7AD3ABDE01B", hash_generated_method = "72B2C09EF2527400688B3ECA412FC84B")
+    
+public String getLocalName() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.784 -0500", hash_original_method = "4D95F58ABD4076A5B25FED87E28A6FD8", hash_generated_method = "3200B922BB7D869E3E3D1561EF351142")
-    public String getNamespaceURI() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.179 -0500", hash_original_method = "4D95F58ABD4076A5B25FED87E28A6FD8", hash_generated_method = "3200B922BB7D869E3E3D1561EF351142")
+    
+public String getNamespaceURI() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.785 -0500", hash_original_method = "D23B45CE7514A5E8C576F43815BA5C75", hash_generated_method = "2163D07AD240EE8FB15A46AC29230C59")
-    public Node getNextSibling() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.182 -0500", hash_original_method = "D23B45CE7514A5E8C576F43815BA5C75", hash_generated_method = "2163D07AD240EE8FB15A46AC29230C59")
+    
+public Node getNextSibling() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.786 -0500", hash_original_method = "FDA68CAC7DBE692AD654EACCAEB8ADF4", hash_generated_method = "15BE672E670A14A468C529C3FF846AB0")
-    public String getNodeName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.184 -0500", hash_original_method = "FDA68CAC7DBE692AD654EACCAEB8ADF4", hash_generated_method = "15BE672E670A14A468C529C3FF846AB0")
+    
+public String getNodeName() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.787 -0500", hash_original_method = "16B19D352521D775272307977AC58B41", hash_generated_method = "B8D2BA8533F0EF1FEBDD64D3DE6A1755")
-    public abstract short getNodeType();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.186 -0500", hash_original_method = "16B19D352521D775272307977AC58B41", hash_generated_method = "B8D2BA8533F0EF1FEBDD64D3DE6A1755")
+    
+public abstract short getNodeType();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.788 -0500", hash_original_method = "5D533F6B29FA017DED37EB54506CEFCE", hash_generated_method = "09F08BD2031C8DC15E6ABA4C033F8BE8")
-    public String getNodeValue() throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.188 -0500", hash_original_method = "5D533F6B29FA017DED37EB54506CEFCE", hash_generated_method = "09F08BD2031C8DC15E6ABA4C033F8BE8")
+    
+public String getNodeValue() throws DOMException {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.788 -0500", hash_original_method = "683FB3B36E3C0C255B09CB1FE69555EA", hash_generated_method = "A5914BB150184644977FBF3D8F2A20FB")
-    public final Document getOwnerDocument() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.190 -0500", hash_original_method = "683FB3B36E3C0C255B09CB1FE69555EA", hash_generated_method = "A5914BB150184644977FBF3D8F2A20FB")
+    
+public final Document getOwnerDocument() {
         return document == this ? null : document;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.789 -0500", hash_original_method = "2F661FBCA438408BEACED1A87A3CFAEE", hash_generated_method = "CBB5D0875BD6BBE90B07A3C3E00D40AF")
-    public Node getParentNode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.192 -0500", hash_original_method = "2F661FBCA438408BEACED1A87A3CFAEE", hash_generated_method = "CBB5D0875BD6BBE90B07A3C3E00D40AF")
+    
+public Node getParentNode() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.790 -0500", hash_original_method = "727413C23E49E727D2327332BBC1F81A", hash_generated_method = "733EB16CF618211DCD50AC4465EBF684")
-    public String getPrefix() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.194 -0500", hash_original_method = "727413C23E49E727D2327332BBC1F81A", hash_generated_method = "733EB16CF618211DCD50AC4465EBF684")
+    
+public String getPrefix() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.790 -0500", hash_original_method = "70F44FC98E437F8103C8C034DB4ECB33", hash_generated_method = "F5362F7A7F598714FCDCEBB489892969")
-    public Node getPreviousSibling() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.197 -0500", hash_original_method = "70F44FC98E437F8103C8C034DB4ECB33", hash_generated_method = "F5362F7A7F598714FCDCEBB489892969")
+    
+public Node getPreviousSibling() {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.791 -0500", hash_original_method = "B7795536C66ABB4718F9ED686281788D", hash_generated_method = "43F52F5A6BE539160D4154314C0CFAF6")
-    public boolean hasAttributes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.199 -0500", hash_original_method = "B7795536C66ABB4718F9ED686281788D", hash_generated_method = "43F52F5A6BE539160D4154314C0CFAF6")
+    
+public boolean hasAttributes() {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.792 -0500", hash_original_method = "75BC1F0CD3DD7ADF1C7C374A2270CAC3", hash_generated_method = "699709FBF6E20EE0869D5AD4793F8385")
-    public boolean hasChildNodes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.201 -0500", hash_original_method = "75BC1F0CD3DD7ADF1C7C374A2270CAC3", hash_generated_method = "699709FBF6E20EE0869D5AD4793F8385")
+    
+public boolean hasChildNodes() {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.793 -0500", hash_original_method = "02900D7407B8981D4618C0943B784132", hash_generated_method = "B072803C8F8D4352614359BD33471F1D")
-    public Node insertBefore(Node newChild, Node refChild) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.203 -0500", hash_original_method = "02900D7407B8981D4618C0943B784132", hash_generated_method = "B072803C8F8D4352614359BD33471F1D")
+    
+public Node insertBefore(Node newChild, Node refChild) throws DOMException {
         throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.793 -0500", hash_original_method = "83D2E21D1EF19CE5C027A4D56C9BBECC", hash_generated_method = "7847333289A7D5EA4C23B6CDBD56E2FB")
-    public boolean isSupported(String feature, String version) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.206 -0500", hash_original_method = "83D2E21D1EF19CE5C027A4D56C9BBECC", hash_generated_method = "7847333289A7D5EA4C23B6CDBD56E2FB")
+    
+public boolean isSupported(String feature, String version) {
         return DOMImplementationImpl.getInstance().hasFeature(feature, version);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.794 -0500", hash_original_method = "6E21C006D39E2D7D2AB395E9723D1D3D", hash_generated_method = "4C12ED80C73EE5DB68A5BC4B46F899FB")
-    public void normalize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.208 -0500", hash_original_method = "6E21C006D39E2D7D2AB395E9723D1D3D", hash_generated_method = "4C12ED80C73EE5DB68A5BC4B46F899FB")
+    
+public void normalize() {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.795 -0500", hash_original_method = "C0BCC4253F844D2665FCB84131264ACF", hash_generated_method = "0DD3B73283802C91454FFA05D6344E71")
-    public Node removeChild(Node oldChild) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.210 -0500", hash_original_method = "C0BCC4253F844D2665FCB84131264ACF", hash_generated_method = "0DD3B73283802C91454FFA05D6344E71")
+    
+public Node removeChild(Node oldChild) throws DOMException {
         throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.796 -0500", hash_original_method = "3CB9ABDC605D3811167E9E73D3AF8E67", hash_generated_method = "A1A571E4A7FEFD2F35F1569CA1E40869")
-    public Node replaceChild(Node newChild, Node oldChild) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.212 -0500", hash_original_method = "3CB9ABDC605D3811167E9E73D3AF8E67", hash_generated_method = "A1A571E4A7FEFD2F35F1569CA1E40869")
+    
+public Node replaceChild(Node newChild, Node oldChild) throws DOMException {
         throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.797 -0500", hash_original_method = "DD460B5BCEAE1CB09CE08B91E621DF7E", hash_generated_method = "F6F04EBC749ACC85C9CF4AD58B8585EC")
-    public final void setNodeValue(String nodeValue) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.216 -0500", hash_original_method = "DD460B5BCEAE1CB09CE08B91E621DF7E", hash_generated_method = "F6F04EBC749ACC85C9CF4AD58B8585EC")
+    
+public final void setNodeValue(String nodeValue) throws DOMException {
         switch (getNodeType()) {
             case CDATA_SECTION_NODE:
             case COMMENT_NODE:
@@ -379,8 +408,9 @@ public abstract class NodeImpl implements Node {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.797 -0500", hash_original_method = "534A727E4FDB6CDBB5DC8BBEFB80CC50", hash_generated_method = "72AD63D8257DD9AB99E10151EF5554C8")
-    public void setPrefix(String prefix) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.218 -0500", hash_original_method = "534A727E4FDB6CDBB5DC8BBEFB80CC50", hash_generated_method = "72AD63D8257DD9AB99E10151EF5554C8")
+    
+public void setPrefix(String prefix) throws DOMException {
     }
 
     
@@ -459,8 +489,9 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.803 -0500", hash_original_method = "DFD855C107B39D74015E43DCF13ECA5E", hash_generated_method = "70495698BE58AB35C3ADE99D972A45B4")
-    private String getParentBaseUri() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.231 -0500", hash_original_method = "DFD855C107B39D74015E43DCF13ECA5E", hash_generated_method = "70495698BE58AB35C3ADE99D972A45B4")
+    
+private String getParentBaseUri() {
         Node parentNode = getParentNode();
         return parentNode != null ? parentNode.getBaseURI() : null;
     }
@@ -468,8 +499,9 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
     /**
      * Returns the sanitized input if it is a URI, or {@code null} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.804 -0500", hash_original_method = "1D824B9402137DBC708C242BAEC27F82", hash_generated_method = "C952930FCE91E68AA5A642F8179D45E5")
-    private String sanitizeUri(String uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.233 -0500", hash_original_method = "1D824B9402137DBC708C242BAEC27F82", hash_generated_method = "C952930FCE91E68AA5A642F8179D45E5")
+    
+private String sanitizeUri(String uri) {
         if (uri == null || uri.length() == 0) {
             return null;
         }
@@ -480,27 +512,31 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.804 -0500", hash_original_method = "1DDF123F9002EFB3DC60D7666C901199", hash_generated_method = "81B18A1B51B4AE8A820A0E3B60679038")
-    public short compareDocumentPosition(Node other)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.235 -0500", hash_original_method = "1DDF123F9002EFB3DC60D7666C901199", hash_generated_method = "81B18A1B51B4AE8A820A0E3B60679038")
+    
+public short compareDocumentPosition(Node other)
             throws DOMException {
         throw new UnsupportedOperationException(); // TODO
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.805 -0500", hash_original_method = "67AC02ADFBE93754C1AB8AE0D37378EE", hash_generated_method = "70FFC50792BB2E94BA92027FF912E313")
-    public String getTextContent() throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.237 -0500", hash_original_method = "67AC02ADFBE93754C1AB8AE0D37378EE", hash_generated_method = "70FFC50792BB2E94BA92027FF912E313")
+    
+public String getTextContent() throws DOMException {
         return getNodeValue();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.806 -0500", hash_original_method = "6ADB0BF10CD256A5C763161A1385CD79", hash_generated_method = "6ADB0BF10CD256A5C763161A1385CD79")
-    void getTextContent(StringBuilder buf) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.239 -0500", hash_original_method = "6ADB0BF10CD256A5C763161A1385CD79", hash_generated_method = "6ADB0BF10CD256A5C763161A1385CD79")
+    
+void getTextContent(StringBuilder buf) throws DOMException {
         String content = getNodeValue();
         if (content != null) {
             buf.append(content);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.807 -0500", hash_original_method = "B267D49587C3D1DB842740F077498528", hash_generated_method = "2A4DF2AEBDA5F75AFB0FB707C6C12713")
-    public final void setTextContent(String textContent) throws DOMException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.243 -0500", hash_original_method = "B267D49587C3D1DB842740F077498528", hash_generated_method = "2A4DF2AEBDA5F75AFB0FB707C6C12713")
+    
+public final void setTextContent(String textContent) throws DOMException {
         switch (getNodeType()) {
             case DOCUMENT_TYPE_NODE:
             case DOCUMENT_NODE:
@@ -536,8 +572,9 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.808 -0500", hash_original_method = "CDCF2BEBCB3DF8B0191B82144C39E4E3", hash_generated_method = "E824669ABF4C851956D19FFED888CAA5")
-    public boolean isSameNode(Node other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.245 -0500", hash_original_method = "CDCF2BEBCB3DF8B0191B82144C39E4E3", hash_generated_method = "E824669ABF4C851956D19FFED888CAA5")
+    
+public boolean isSameNode(Node other) {
         return this == other;
     }
 
@@ -545,8 +582,9 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
      * Returns the element whose namespace definitions apply to this node. Use
      * this element when mapping prefixes to URIs and vice versa.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.809 -0500", hash_original_method = "DDD4A4E09BB31E4B92DF0753DE457415", hash_generated_method = "E5D08FEEF5044B534CF8CEA79BDC3E0C")
-    private NodeImpl getNamespacingElement() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.247 -0500", hash_original_method = "DDD4A4E09BB31E4B92DF0753DE457415", hash_generated_method = "E5D08FEEF5044B534CF8CEA79BDC3E0C")
+    
+private NodeImpl getNamespacingElement() {
         switch (this.getNodeType()) {
             case ELEMENT_NODE:
                 return this;
@@ -579,8 +617,9 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
     /**
      * Returns the nearest ancestor element that contains this node.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.810 -0500", hash_original_method = "E4B9E13482B5AB13521831694CDD3F31", hash_generated_method = "3BE440C3722A8E0923D8EC35D57A079C")
-    private NodeImpl getContainingElement() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.249 -0500", hash_original_method = "E4B9E13482B5AB13521831694CDD3F31", hash_generated_method = "3BE440C3722A8E0923D8EC35D57A079C")
+    
+private NodeImpl getContainingElement() {
         for (Node p = getParentNode(); p != null; p = p.getParentNode()) {
             if (p.getNodeType() == ELEMENT_NODE) {
                 return (NodeImpl) p;
@@ -652,8 +691,9 @@ String var540C13E9E156B687226421B24F2DF178_259019385 =         null;
      * @param prefix the prefix to find. Nullable.
      * @param uri the URI to match. Non-null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.811 -0500", hash_original_method = "AA07F6405A8EB7821F818F6C760FCB2D", hash_generated_method = "AA07F6405A8EB7821F818F6C760FCB2D")
-    boolean isPrefixMappedToUri(String prefix, String uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.256 -0500", hash_original_method = "AA07F6405A8EB7821F818F6C760FCB2D", hash_generated_method = "AA07F6405A8EB7821F818F6C760FCB2D")
+    
+boolean isPrefixMappedToUri(String prefix, String uri) {
         if (prefix == null) {
             return false;
         }
@@ -662,8 +702,9 @@ String var540C13E9E156B687226421B24F2DF178_259019385 =         null;
         return uri.equals(actual);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.812 -0500", hash_original_method = "408B99A289EC0349924637E46549BA26", hash_generated_method = "A0ED909DB763D30FA5061EC60A5D146B")
-    public final boolean isDefaultNamespace(String namespaceURI) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.258 -0500", hash_original_method = "408B99A289EC0349924637E46549BA26", hash_generated_method = "A0ED909DB763D30FA5061EC60A5D146B")
+    
+public final boolean isDefaultNamespace(String namespaceURI) {
         String actual = lookupNamespaceURI(null); // null yields the default namespace
         return namespaceURI == null
                 ? actual == null
@@ -720,8 +761,9 @@ String var540C13E9E156B687226421B24F2DF178_551338838 =         null;
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.816 -0500", hash_original_method = "5ACD5A1048128B414FC469A4162D7D49", hash_generated_method = "30929F434D466B34C7F18EE2CE7C26B5")
-    public final boolean isEqualNode(Node arg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.268 -0500", hash_original_method = "5ACD5A1048128B414FC469A4162D7D49", hash_generated_method = "30929F434D466B34C7F18EE2CE7C26B5")
+    
+public final boolean isEqualNode(Node arg) {
         if (arg == this) {
             return true;
         }
@@ -768,8 +810,9 @@ String var540C13E9E156B687226421B24F2DF178_551338838 =         null;
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.817 -0500", hash_original_method = "C9854B9EF2C5621F4F378B8106F34125", hash_generated_method = "E50386A0818B7CDDEA4B1940F4C9C3B6")
-    private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.271 -0500", hash_original_method = "C9854B9EF2C5621F4F378B8106F34125", hash_generated_method = "E50386A0818B7CDDEA4B1940F4C9C3B6")
+    
+private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
         if (a.getLength() != b.getLength()) {
             return false;
         }
@@ -785,21 +828,23 @@ String var540C13E9E156B687226421B24F2DF178_551338838 =         null;
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.818 -0500", hash_original_method = "654AD0B7653E61CCCCF2A287DD7A9FCF", hash_generated_method = "F21C3E203E1643D3A53B867FA5DC5478")
-    public final Object getFeature(String feature, String version) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.273 -0500", hash_original_method = "654AD0B7653E61CCCCF2A287DD7A9FCF", hash_generated_method = "F21C3E203E1643D3A53B867FA5DC5478")
+    
+public final Object getFeature(String feature, String version) {
         return isSupported(feature, version) ? this : null;
     }
 
     
     static class UserData {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.820 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.280 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
 
          Object value;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.821 -0500", hash_original_field = "827CB1F78A0BBD2016258DC26E1ED2F5", hash_generated_field = "827CB1F78A0BBD2016258DC26E1ED2F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.283 -0500", hash_original_field = "827CB1F78A0BBD2016258DC26E1ED2F5", hash_generated_field = "827CB1F78A0BBD2016258DC26E1ED2F5")
 
          UserDataHandler handler;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.822 -0500", hash_original_method = "0B6C19B4FFBA791689124EA47788F25F", hash_generated_method = "0B6C19B4FFBA791689124EA47788F25F")
-        UserData(Object value, UserDataHandler handler) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.286 -0500", hash_original_method = "0B6C19B4FFBA791689124EA47788F25F", hash_generated_method = "0B6C19B4FFBA791689124EA47788F25F")
+        
+UserData(Object value, UserDataHandler handler) {
             this.value = value;
             this.handler = handler;
         }
@@ -807,8 +852,9 @@ String var540C13E9E156B687226421B24F2DF178_551338838 =         null;
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.818 -0500", hash_original_method = "9F34FDEA3DB7CC58B5A8B86C5F6353A5", hash_generated_method = "A0D2DF0527CEACAD6243FA01D61FF7BE")
-    public final Object setUserData(String key, Object data, UserDataHandler handler) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.275 -0500", hash_original_method = "9F34FDEA3DB7CC58B5A8B86C5F6353A5", hash_generated_method = "A0D2DF0527CEACAD6243FA01D61FF7BE")
+    
+public final Object setUserData(String key, Object data, UserDataHandler handler) {
         if (key == null) {
             throw new NullPointerException();
         }
@@ -819,8 +865,9 @@ String var540C13E9E156B687226421B24F2DF178_551338838 =         null;
         return previous != null ? previous.value : null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:14.819 -0500", hash_original_method = "B29B782E95D64D942AA9D9D3C7EEF744", hash_generated_method = "7129FCAB54DD956423A4E6410148D2D8")
-    public final Object getUserData(String key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.278 -0500", hash_original_method = "B29B782E95D64D942AA9D9D3C7EEF744", hash_generated_method = "7129FCAB54DD956423A4E6410148D2D8")
+    
+public final Object getUserData(String key) {
         if (key == null) {
             throw new NullPointerException();
         }

@@ -13,8 +13,9 @@ import android.os.Parcelable;
 
 public class DhcpInfo implements Parcelable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.792 -0500", hash_original_method = "C4630BCCACA5913D9EFE445952131BDB", hash_generated_method = "D7100706F3DA9D35C8228CA2981296E2")
-    private static void putAddress(StringBuffer buf, int addr) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.824 -0500", hash_original_method = "C4630BCCACA5913D9EFE445952131BDB", hash_generated_method = "D7100706F3DA9D35C8228CA2981296E2")
+    
+private static void putAddress(StringBuffer buf, int addr) {
         buf.append(NetworkUtils.intToInetAddress(addr).getHostAddress());
     }
 
@@ -23,8 +24,9 @@ public class DhcpInfo implements Parcelable {
 
     public static final Creator<DhcpInfo> CREATOR =
         new Creator<DhcpInfo>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.795 -0500", hash_original_method = "F44837DFDE4E00511933DFB4D7F0040E", hash_generated_method = "85828B4F335D384AAB760CCC0E316227")
-        public DhcpInfo createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.833 -0500", hash_original_method = "F44837DFDE4E00511933DFB4D7F0040E", hash_generated_method = "85828B4F335D384AAB760CCC0E316227")
+        
+public DhcpInfo createFromParcel(Parcel in) {
                 DhcpInfo info = new DhcpInfo();
                 info.ipAddress = in.readInt();
                 info.gateway = in.readInt();
@@ -36,43 +38,46 @@ public class DhcpInfo implements Parcelable {
                 return info;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.796 -0500", hash_original_method = "807ED57C7D32921184285C1BE9B084C4", hash_generated_method = "3518739E05DCDA6E387E2861AEA6FF25")
-        public DhcpInfo[] newArray(int size) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.835 -0500", hash_original_method = "807ED57C7D32921184285C1BE9B084C4", hash_generated_method = "3518739E05DCDA6E387E2861AEA6FF25")
+        
+public DhcpInfo[] newArray(int size) {
                 return new DhcpInfo[size];
             }
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.783 -0500", hash_original_field = "A3E13DDDECF36DAF88A56A59296668A5", hash_generated_field = "C724F9C20BA29ABA1B784CD7B6F790AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.802 -0500", hash_original_field = "A3E13DDDECF36DAF88A56A59296668A5", hash_generated_field = "C724F9C20BA29ABA1B784CD7B6F790AC")
 
     public int ipAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.784 -0500", hash_original_field = "FCAFB9569CC67D1E952DD189A971899E", hash_generated_field = "4A25F063CFF1A08AFBDF399724369996")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.804 -0500", hash_original_field = "FCAFB9569CC67D1E952DD189A971899E", hash_generated_field = "4A25F063CFF1A08AFBDF399724369996")
 
     public int gateway;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.784 -0500", hash_original_field = "2127ED5D8320FEA86C37CF2425D37D98", hash_generated_field = "425E646BC1F92E2E3580929E14D019CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.807 -0500", hash_original_field = "2127ED5D8320FEA86C37CF2425D37D98", hash_generated_field = "425E646BC1F92E2E3580929E14D019CB")
 
     public int netmask;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.785 -0500", hash_original_field = "DD5C00C7D698690DB50DDE4E11D9B847", hash_generated_field = "257F82C9AA70827B0BA2B4E037775503")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.809 -0500", hash_original_field = "DD5C00C7D698690DB50DDE4E11D9B847", hash_generated_field = "257F82C9AA70827B0BA2B4E037775503")
 
 
     public int dns1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.786 -0500", hash_original_field = "BB166109CA3E3292037E187A9AD0424A", hash_generated_field = "BC9DD1C3178F0AAF32A5A79882B2C471")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.811 -0500", hash_original_field = "BB166109CA3E3292037E187A9AD0424A", hash_generated_field = "BC9DD1C3178F0AAF32A5A79882B2C471")
 
     public int dns2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.787 -0500", hash_original_field = "EFA5EDCAD00909BB1BE02EB7F655FE09", hash_generated_field = "955CDA6770D7F45900D23A25A1E286DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.813 -0500", hash_original_field = "EFA5EDCAD00909BB1BE02EB7F655FE09", hash_generated_field = "955CDA6770D7F45900D23A25A1E286DF")
 
 
     public int serverAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.787 -0500", hash_original_field = "24726342E9CB33AC125472BB0EF00AFE", hash_generated_field = "7EE02913D8BA0209DD0BF7B47A6FCC6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.815 -0500", hash_original_field = "24726342E9CB33AC125472BB0EF00AFE", hash_generated_field = "7EE02913D8BA0209DD0BF7B47A6FCC6D")
 
     public int leaseDuration;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.788 -0500", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "277E1F8AB1BB05F0D3B5C79F1B46AC7E")
-    public DhcpInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.817 -0500", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "277E1F8AB1BB05F0D3B5C79F1B46AC7E")
+    
+public DhcpInfo() {
         super();
     }
 
     /** copy constructor {@hide} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.790 -0500", hash_original_method = "39B86796FD777927684A932467EC8639", hash_generated_method = "2FBB47A3EC6B3E550F24020D0D93A7B3")
-    public DhcpInfo(DhcpInfo source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.820 -0500", hash_original_method = "39B86796FD777927684A932467EC8639", hash_generated_method = "2FBB47A3EC6B3E550F24020D0D93A7B3")
+    
+public DhcpInfo(DhcpInfo source) {
         if (source != null) {
             ipAddress = source.ipAddress;
             gateway = source.gateway;
@@ -84,8 +89,9 @@ public class DhcpInfo implements Parcelable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.791 -0500", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "5249A72ACA966A97676F9DF740D3607F")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.822 -0500", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "5249A72ACA966A97676F9DF740D3607F")
+    
+public String toString() {
         StringBuffer str = new StringBuffer();
 
         str.append("ipaddr "); putAddress(str, ipAddress);
@@ -100,14 +106,16 @@ public class DhcpInfo implements Parcelable {
     }
 
     /** Implement the Parcelable interface {@hide} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.793 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.826 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 
     /** Implement the Parcelable interface {@hide} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:30.794 -0500", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "0B1B8DFE449710908AA68F64708C7A53")
-    public void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.828 -0500", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "0B1B8DFE449710908AA68F64708C7A53")
+    
+public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ipAddress);
         dest.writeInt(gateway);
         dest.writeInt(netmask);

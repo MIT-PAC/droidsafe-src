@@ -16,8 +16,9 @@ public class AndroidConfig {
      * named class is instantiated, the constructor is assumed to tweak the
      * configuration, the instance itself is of no interest.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:38.231 -0500", hash_original_method = "C1A94E93768B2642CCBAA40A11700DD6", hash_generated_method = "552BBAF613451D21B2E3FBE44D5C4689")
-    public AndroidConfig() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.792 -0500", hash_original_method = "C1A94E93768B2642CCBAA40A11700DD6", hash_generated_method = "552BBAF613451D21B2E3FBE44D5C4689")
+    
+public AndroidConfig() {
         super();
         
         try {

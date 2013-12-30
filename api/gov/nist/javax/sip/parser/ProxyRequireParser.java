@@ -22,8 +22,9 @@ public class ProxyRequireParser extends HeaderParser {
      * Creates a new instance of ProxyRequireParser
      * @param require the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.922 -0500", hash_original_method = "5FB5567CF156CEA2F5335691822C90DD", hash_generated_method = "B368D6282366BEBE3AE8D6F6FEDFEAE5")
-    public ProxyRequireParser(String require) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.436 -0500", hash_original_method = "5FB5567CF156CEA2F5335691822C90DD", hash_generated_method = "B368D6282366BEBE3AE8D6F6FEDFEAE5")
+    
+public ProxyRequireParser(String require) {
         super(require);
     }
 
@@ -31,8 +32,9 @@ public class ProxyRequireParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.923 -0500", hash_original_method = "234BDD3530202548153433053521557F", hash_generated_method = "76856878298F809419B89DA37C1537E1")
-    protected ProxyRequireParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.439 -0500", hash_original_method = "234BDD3530202548153433053521557F", hash_generated_method = "76856878298F809419B89DA37C1537E1")
+    
+protected ProxyRequireParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class ProxyRequireParser extends HeaderParser {
      * @return SIPHeader (ProxyRequireList object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.924 -0500", hash_original_method = "3B22313394D07BEF3A6E95D38DEA0C1A", hash_generated_method = "1BF4A279C7A74A72E14E010698496E4D")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.442 -0500", hash_original_method = "3B22313394D07BEF3A6E95D38DEA0C1A", hash_generated_method = "1BF4A279C7A74A72E14E010698496E4D")
+    
+public SIPHeader parse() throws ParseException {
         ProxyRequireList list = new ProxyRequireList();
         if (debug)
             dbg_enter("ProxyRequireParser.parse");

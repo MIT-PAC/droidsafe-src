@@ -20,8 +20,9 @@ public final class ObjectIdentifier {
      * @throws NullPointerException     - if oid is null
      * @throws IllegalArgumentException - if oid is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.081 -0500", hash_original_method = "8A03D4A0A8F771BBDCBB48C7AE384ACF", hash_generated_method = "2F7D3B508C8CE668C31890B26F7A3F6F")
-    public static void validateOid(int[] oid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.706 -0500", hash_original_method = "8A03D4A0A8F771BBDCBB48C7AE384ACF", hash_generated_method = "2F7D3B508C8CE668C31890B26F7A3F6F")
+    
+public static void validateOid(int[] oid) {
 
         if (oid == null) {
             throw new NullPointerException("oid == null");
@@ -43,30 +44,31 @@ public final class ObjectIdentifier {
      *
      * @param oid - array of integers
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.082 -0500", hash_original_method = "8BE7213CC6A7767AC7788E8FF7C56936", hash_generated_method = "FD56D70A7777268231EA506342543753")
-    public static int hashIntArray(int[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.709 -0500", hash_original_method = "8BE7213CC6A7767AC7788E8FF7C56936", hash_generated_method = "FD56D70A7777268231EA506342543753")
+    
+public static int hashIntArray(int[] array) {
         int intHash = 0;
         for (int i = 0; i < array.length && i < 4; i++) {
             intHash += array[i] << (8 * i); //TODO what about to find better one?
         }
         return intHash & 0x7FFFFFFF; // only positive
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.068 -0500", hash_original_field = "82C0B35B7B0E7EF1298A50C60DFA28D7", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.671 -0500", hash_original_field = "82C0B35B7B0E7EF1298A50C60DFA28D7", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
 
     private  int[] oid;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.069 -0500", hash_original_field = "0E9CC8489A4FBB9FA510FC03CD2752A3", hash_generated_field = "D81A83B1820A06AF71E170062C4ECA79")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.673 -0500", hash_original_field = "0E9CC8489A4FBB9FA510FC03CD2752A3", hash_generated_field = "D81A83B1820A06AF71E170062C4ECA79")
 
     private int hash = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.070 -0500", hash_original_field = "6834EE6A69F4CDD499ACBB7835C507E6", hash_generated_field = "B67A2A548CCCA3ABBCDCF1E77441B37F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.675 -0500", hash_original_field = "6834EE6A69F4CDD499ACBB7835C507E6", hash_generated_field = "B67A2A548CCCA3ABBCDCF1E77441B37F")
 
     private String soid;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.071 -0500", hash_original_field = "93634CE7983F931A535C1EFB096B2C4D", hash_generated_field = "84B9B965B3055F61D4D95D618DA2A1D9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.677 -0500", hash_original_field = "93634CE7983F931A535C1EFB096B2C4D", hash_generated_field = "84B9B965B3055F61D4D95D618DA2A1D9")
 
     private String sOID;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.072 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.679 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.073 -0500", hash_original_field = "5D82297537D7B27BDF32D691C05D97FA", hash_generated_field = "20B5DD71DC465C0DFA3301CB14EE7FDD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.681 -0500", hash_original_field = "5D82297537D7B27BDF32D691C05D97FA", hash_generated_field = "20B5DD71DC465C0DFA3301CB14EE7FDD")
 
     private Object group;
 
@@ -78,8 +80,9 @@ public final class ObjectIdentifier {
      * @throws NullPointerException     - if oid is null
      * @throws IllegalArgumentException - if oid is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.074 -0500", hash_original_method = "7ABF15BC63C3D8D706564084308C24AA", hash_generated_method = "8B63F8B806AFB677E63BCABBAD3CA2D8")
-    public ObjectIdentifier(int[] oid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.684 -0500", hash_original_method = "7ABF15BC63C3D8D706564084308C24AA", hash_generated_method = "8B63F8B806AFB677E63BCABBAD3CA2D8")
+    
+public ObjectIdentifier(int[] oid) {
 
         validateOid(oid);
 
@@ -96,8 +99,9 @@ public final class ObjectIdentifier {
      * @throws NullPointerException     - if oid is null
      * @throws IllegalArgumentException - if oid is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.075 -0500", hash_original_method = "383F734F3FE5E01DEDB78CACC2759E14", hash_generated_method = "9FE5C18693AF5CF70CDD3301E85F968D")
-    public ObjectIdentifier(int[] oid, String name, Object oidGroup) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.687 -0500", hash_original_method = "383F734F3FE5E01DEDB78CACC2759E14", hash_generated_method = "9FE5C18693AF5CF70CDD3301E85F968D")
+    
+public ObjectIdentifier(int[] oid, String name, Object oidGroup) {
         this(oid);
 
         if (oidGroup == null) {
@@ -114,8 +118,9 @@ public final class ObjectIdentifier {
      *
      * @return oid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.075 -0500", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "8A71FF49FA15C11307B74CA6B18B0ECC")
-    public int[] getOid() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.689 -0500", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "8A71FF49FA15C11307B74CA6B18B0ECC")
+    
+public int[] getOid() {
         return oid;
     }
 
@@ -124,8 +129,9 @@ public final class ObjectIdentifier {
      *
      * @return name
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.076 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
-    public String getName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.692 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
+    
+public String getName() {
         return name;
     }
 
@@ -134,8 +140,9 @@ public final class ObjectIdentifier {
      *
      * @return group
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.077 -0500", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "84E594EDE61A2569C84F479C2E3C43BC")
-    public Object getGroup() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.694 -0500", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "84E594EDE61A2569C84F479C2E3C43BC")
+    
+public Object getGroup() {
         return group;
     }
 
@@ -145,8 +152,9 @@ public final class ObjectIdentifier {
      * @return true if object is ObjectIdentifier and it has the same
      *         representation as array of integers, otherwise false
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.078 -0500", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "DBC701613AB8121F89BA676B9E7A66A0")
-    public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.696 -0500", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "DBC701613AB8121F89BA676B9E7A66A0")
+    
+public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -161,8 +169,9 @@ public final class ObjectIdentifier {
      *
      * @return oid as string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.079 -0500", hash_original_method = "81F5AC8E69E1A1CBA984F8550D6AF5BD", hash_generated_method = "359C401138D8DF0D69F0B5325E55616C")
-    public String toOIDString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.698 -0500", hash_original_method = "81F5AC8E69E1A1CBA984F8550D6AF5BD", hash_generated_method = "359C401138D8DF0D69F0B5325E55616C")
+    
+public String toOIDString() {
         if (sOID == null) {
             sOID = "OID." + toString();
         }
@@ -174,8 +183,9 @@ public final class ObjectIdentifier {
      *
      * @return oid as string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.079 -0500", hash_original_method = "B22823BCA8FD058C901A741025BA8FB1", hash_generated_method = "92EC2B489D0BE6DE5617D9029E2D7E07")
-    public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.701 -0500", hash_original_method = "B22823BCA8FD058C901A741025BA8FB1", hash_generated_method = "92EC2B489D0BE6DE5617D9029E2D7E07")
+    
+public String toString() {
         if (soid == null) {
             StringBuilder sb = new StringBuilder(4 * oid.length);
 
@@ -192,8 +202,9 @@ public final class ObjectIdentifier {
     /**
      * @see java.lang.Object#hashCode()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.080 -0500", hash_original_method = "F5FB24607FBDCD1263609B3FEECCC6D5", hash_generated_method = "D5B8416537B382FD8670A89654FE3AB2")
-    public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.703 -0500", hash_original_method = "F5FB24607FBDCD1263609B3FEECCC6D5", hash_generated_method = "D5B8416537B382FD8670A89654FE3AB2")
+    
+public int hashCode() {
         if (hash == -1) {
             hash = hashIntArray(oid);
         }

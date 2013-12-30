@@ -19,8 +19,9 @@ class Tnaf {
      * <code><b>Z</b>[&tau;]</code>.
      * @return The norm of <code>&lambda;</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.535 -0500", hash_original_method = "A3F4AD10FE1FBABD5486B6D7CD090B7A", hash_generated_method = "866284A0FC5071C1D7B5954B6592A2CD")
-    public static BigInteger norm(final byte mu, ZTauElement lambda)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.002 -0500", hash_original_method = "A3F4AD10FE1FBABD5486B6D7CD090B7A", hash_generated_method = "866284A0FC5071C1D7B5954B6592A2CD")
+    
+public static BigInteger norm(final byte mu, ZTauElement lambda)
     {
         BigInteger norm;
 
@@ -61,8 +62,9 @@ class Tnaf {
      * <code>&lambda;</code> of <code><b>R</b>[&tau;]</code>.
      * @return The norm of <code>&lambda;</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.536 -0500", hash_original_method = "3713DD7DCA331E2397E6660D223579BE", hash_generated_method = "2E20EDA91E2E0A0AF5A940E0A5099B52")
-    public static SimpleBigDecimal norm(final byte mu, SimpleBigDecimal u,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.005 -0500", hash_original_method = "3713DD7DCA331E2397E6660D223579BE", hash_generated_method = "2E20EDA91E2E0A0AF5A940E0A5099B52")
+    
+public static SimpleBigDecimal norm(final byte mu, SimpleBigDecimal u,
             SimpleBigDecimal v)
     {
         SimpleBigDecimal norm;
@@ -105,8 +107,9 @@ class Tnaf {
      * @throws IllegalArgumentException if <code>lambda0</code> and
      * <code>lambda1</code> do not have same scale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.538 -0500", hash_original_method = "FD3DD036A6C7DDF93DF974FBA106518E", hash_generated_method = "490FBC8002396BC9A6D71F9C763F0C17")
-    public static ZTauElement round(SimpleBigDecimal lambda0,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.009 -0500", hash_original_method = "FD3DD036A6C7DDF93DF974FBA106518E", hash_generated_method = "490FBC8002396BC9A6D71F9C763F0C17")
+    
+public static ZTauElement round(SimpleBigDecimal lambda0,
             SimpleBigDecimal lambda1, byte mu)
     {
         int scale = lambda0.getScale();
@@ -223,8 +226,9 @@ class Tnaf {
      * @return The value <code>&lambda; = s k / n</code> computed to
      * <code>c</code> bits of accuracy.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.539 -0500", hash_original_method = "72BC4C8EEC8B936DCFF970785A880F0C", hash_generated_method = "1C27BAF01D2DC6F38A59C65D34552DA5")
-    public static SimpleBigDecimal approximateDivisionByN(BigInteger k,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.012 -0500", hash_original_method = "72BC4C8EEC8B936DCFF970785A880F0C", hash_generated_method = "1C27BAF01D2DC6F38A59C65D34552DA5")
+    
+public static SimpleBigDecimal approximateDivisionByN(BigInteger k,
             BigInteger s, BigInteger vm, byte a, int m, int c)
     {
         int _k = (m + 5)/2 + c;
@@ -255,8 +259,9 @@ class Tnaf {
      * <code><b>Z</b>[&tau;]</code>.
      * @return The <code>&tau;</code>-adic NAF of <code>&lambda;</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.540 -0500", hash_original_method = "963F98A8FDC7B7AF2796AD66CC439076", hash_generated_method = "6FFAEEF21DE26EF3C5E04574282E7986")
-    public static byte[] tauAdicNaf(byte mu, ZTauElement lambda)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.015 -0500", hash_original_method = "963F98A8FDC7B7AF2796AD66CC439076", hash_generated_method = "6FFAEEF21DE26EF3C5E04574282E7986")
+    
+public static byte[] tauAdicNaf(byte mu, ZTauElement lambda)
     {
         if (!((mu == 1) || (mu == -1)))
         {
@@ -335,8 +340,9 @@ class Tnaf {
      * @param p The ECPoint.F2m to which <code>&tau;()</code> is applied.
      * @return <code>&tau;(p)</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.541 -0500", hash_original_method = "0AF9661B39DF89BA2CB28B0B7702F643", hash_generated_method = "12CFD1E25E85643ED325C9AD18CFEEC0")
-    public static ECPoint.F2m tau(ECPoint.F2m p)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.017 -0500", hash_original_method = "0AF9661B39DF89BA2CB28B0B7702F643", hash_generated_method = "12CFD1E25E85643ED325C9AD18CFEEC0")
+    
+public static ECPoint.F2m tau(ECPoint.F2m p)
     {
         if (p.isInfinity())
         {
@@ -359,8 +365,9 @@ class Tnaf {
      * @throws IllegalArgumentException if the given ECCurve is not a Koblitz
      * curve.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.542 -0500", hash_original_method = "54A08A57EB6D682D1E1FABEB6CEDFDE7", hash_generated_method = "071FCFDE691A9399465C0094D37F00E4")
-    public static byte getMu(ECCurve.F2m curve)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.020 -0500", hash_original_method = "54A08A57EB6D682D1E1FABEB6CEDFDE7", hash_generated_method = "071FCFDE691A9399465C0094D37F00E4")
+    
+public static byte getMu(ECCurve.F2m curve)
     {
         BigInteger a = curve.getA().toBigInteger();
         byte mu;
@@ -395,8 +402,9 @@ class Tnaf {
      * and <code>U<sub>k</sub></code> or <code>V<sub>k-1</sub></code>
      * and <code>V<sub>k</sub></code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.543 -0500", hash_original_method = "B78760B6B76AB776070241E43E861258", hash_generated_method = "F9CF7F93C4CEEC6A276A14C546E83E81")
-    public static BigInteger[] getLucas(byte mu, int k, boolean doV)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.023 -0500", hash_original_method = "B78760B6B76AB776070241E43E861258", hash_generated_method = "F9CF7F93C4CEEC6A276A14C546E83E81")
+    
+public static BigInteger[] getLucas(byte mu, int k, boolean doV)
     {
         if (!((mu == 1) || (mu == -1)))
         {
@@ -451,8 +459,9 @@ class Tnaf {
      * @param w The window width of the WTNAF.
      * @return the auxiliary value <code>t<sub>w</sub></code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.544 -0500", hash_original_method = "39A2EE88735ABA3F952333D86E844A33", hash_generated_method = "54F564BB8437B0E8A1A94F08141E9C7E")
-    public static BigInteger getTw(byte mu, int w)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.025 -0500", hash_original_method = "39A2EE88735ABA3F952333D86E844A33", hash_generated_method = "54F564BB8437B0E8A1A94F08141E9C7E")
+    
+public static BigInteger getTw(byte mu, int w)
     {
         if (w == 4)
         {
@@ -488,8 +497,9 @@ class Tnaf {
      * @throws IllegalArgumentException if <code>curve</code> is not a
      * Koblitz curve (Anomalous Binary Curve, ABC).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.546 -0500", hash_original_method = "EEB9AA9DB567B9E2271C925A0847E421", hash_generated_method = "29406FBE232E570250E9151E603C86F4")
-    public static BigInteger[] getSi(ECCurve.F2m curve)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.028 -0500", hash_original_method = "EEB9AA9DB567B9E2271C925A0847E421", hash_generated_method = "29406FBE232E570250E9151E603C86F4")
+    
+public static BigInteger[] getSi(ECCurve.F2m curve)
     {
         if (!curve.isKoblitz())
         {
@@ -553,8 +563,9 @@ class Tnaf {
      * modular reduction.
      * @return <code>&rho; := k partmod (&tau;<sup>m</sup> - 1)/(&tau; - 1)</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.547 -0500", hash_original_method = "FB2EC5D8B12C04BA891CB7A7EE47F374", hash_generated_method = "31271D7CFBBC50634D1AB6E6BC6B2559")
-    public static ZTauElement partModReduction(BigInteger k, int m, byte a,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.031 -0500", hash_original_method = "FB2EC5D8B12C04BA891CB7A7EE47F374", hash_generated_method = "31271D7CFBBC50634D1AB6E6BC6B2559")
+    
+public static ZTauElement partModReduction(BigInteger k, int m, byte a,
             BigInteger[] s, byte mu, byte c)
     {
         // d0 = s[0] + mu*s[1]; mu is either 1 or -1
@@ -597,8 +608,9 @@ class Tnaf {
      * @param k The <code>BigInteger</code> by which to multiply <code>p</code>.
      * @return <code>k * p</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.548 -0500", hash_original_method = "1F7273EF26745CBC11E1C712393F22D5", hash_generated_method = "ED2028B7D89E2C3685C44EE7E5A67214")
-    public static ECPoint.F2m multiplyRTnaf(ECPoint.F2m p, BigInteger k)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.034 -0500", hash_original_method = "1F7273EF26745CBC11E1C712393F22D5", hash_generated_method = "ED2028B7D89E2C3685C44EE7E5A67214")
+    
+public static ECPoint.F2m multiplyRTnaf(ECPoint.F2m p, BigInteger k)
     {
         ECCurve.F2m curve = (ECCurve.F2m) p.getCurve();
         int m = curve.getM();
@@ -619,8 +631,9 @@ class Tnaf {
      * <code><b>Z</b>[&tau;]</code>.
      * @return <code>&lambda; * p</code>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.548 -0500", hash_original_method = "667D0F740EF0109574C00B67AB1F0586", hash_generated_method = "16B3D0A6D8696FA6905F460637320268")
-    public static ECPoint.F2m multiplyTnaf(ECPoint.F2m p, ZTauElement lambda)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.037 -0500", hash_original_method = "667D0F740EF0109574C00B67AB1F0586", hash_generated_method = "16B3D0A6D8696FA6905F460637320268")
+    
+public static ECPoint.F2m multiplyTnaf(ECPoint.F2m p, ZTauElement lambda)
     {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
         byte mu = curve.getMu();
@@ -640,8 +653,9 @@ class Tnaf {
     * @param u The the TNAF of <code>&lambda;</code>..
     * @return <code>&lambda; * p</code>
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.549 -0500", hash_original_method = "0833A62905CCEFC5583EA9F31E32AF2B", hash_generated_method = "4857D9150D6293877CC9DA74B7B81E9D")
-    public static ECPoint.F2m multiplyFromTnaf(ECPoint.F2m p, byte[] u)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.039 -0500", hash_original_method = "0833A62905CCEFC5583EA9F31E32AF2B", hash_generated_method = "4857D9150D6293877CC9DA74B7B81E9D")
+    
+public static ECPoint.F2m multiplyFromTnaf(ECPoint.F2m p, byte[] u)
     {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
         ECPoint.F2m q = (ECPoint.F2m) curve.getInfinity();
@@ -674,8 +688,9 @@ class Tnaf {
      * @return The <code>[&tau;]</code>-adic window NAF of
      * <code>&lambda;</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.550 -0500", hash_original_method = "44ECAB7CCF1E1A7E957F1A152FF180D4", hash_generated_method = "00EE6B3274706ED9634D310BB4AA658E")
-    public static byte[] tauAdicWNaf(byte mu, ZTauElement lambda,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.043 -0500", hash_original_method = "44ECAB7CCF1E1A7E957F1A152FF180D4", hash_generated_method = "00EE6B3274706ED9634D310BB4AA658E")
+    
+public static byte[] tauAdicWNaf(byte mu, ZTauElement lambda,
             byte width, BigInteger pow2w, BigInteger tw, ZTauElement[] alpha)
     {
         if (!((mu == 1) || (mu == -1)))
@@ -772,8 +787,9 @@ class Tnaf {
      * @param a The parameter <code>a</code> of the elliptic curve.
      * @return The precomputation array for <code>p</code>. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.551 -0500", hash_original_method = "F49CFE570CFFA710E0434F95AECBF72A", hash_generated_method = "3E1BE1BE91CA1F009C38580CF65A5C27")
-    public static ECPoint.F2m[] getPreComp(ECPoint.F2m p, byte a)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.046 -0500", hash_original_method = "F49CFE570CFFA710E0434F95AECBF72A", hash_generated_method = "3E1BE1BE91CA1F009C38580CF65A5C27")
+    
+public static ECPoint.F2m[] getPreComp(ECPoint.F2m p, byte a)
     {
         ECPoint.F2m[] pu;
         pu = new ECPoint.F2m[16];
@@ -797,22 +813,22 @@ class Tnaf {
         
         return pu;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.527 -0500", hash_original_field = "6F806218DB13548C10588489C40B6F4F", hash_generated_field = "E47A0708357590CCE79AC42AC8295DDF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.979 -0500", hash_original_field = "6F806218DB13548C10588489C40B6F4F", hash_generated_field = "E47A0708357590CCE79AC42AC8295DDF")
 
     private static final BigInteger MINUS_ONE = ECConstants.ONE.negate();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.528 -0500", hash_original_field = "F580B06ED70B12BDA9965CB64C411E24", hash_generated_field = "233983D0ED664D901E87017E2630A217")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.982 -0500", hash_original_field = "F580B06ED70B12BDA9965CB64C411E24", hash_generated_field = "233983D0ED664D901E87017E2630A217")
 
     private static final BigInteger MINUS_TWO = ECConstants.TWO.negate();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.529 -0500", hash_original_field = "2DA6C735D9084DDFA252CD9E3592375B", hash_generated_field = "08C22EA714BE24B9BEB625FE05C99244")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.984 -0500", hash_original_field = "2DA6C735D9084DDFA252CD9E3592375B", hash_generated_field = "08C22EA714BE24B9BEB625FE05C99244")
 
     private static final BigInteger MINUS_THREE = ECConstants.THREE.negate();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.530 -0500", hash_original_field = "DF9E386CC9CDE2D1C05A101CBF196C0F", hash_generated_field = "215F7EF58A81C276BCD0EDD9879D52DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.987 -0500", hash_original_field = "DF9E386CC9CDE2D1C05A101CBF196C0F", hash_generated_field = "215F7EF58A81C276BCD0EDD9879D52DC")
 
     public static final byte WIDTH = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.531 -0500", hash_original_field = "CF3CF90483E0134F0DDA89C5D0E6CDFA", hash_generated_field = "21265DFA1B96D48276E77642FD82A450")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.989 -0500", hash_original_field = "CF3CF90483E0134F0DDA89C5D0E6CDFA", hash_generated_field = "21265DFA1B96D48276E77642FD82A450")
 
     public static final byte POW_2_WIDTH = 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.532 -0500", hash_original_field = "B9660E76D7E309D8177EC8F30DC9875D", hash_generated_field = "6CD45D97DE0751113A36B5C417B90B59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.991 -0500", hash_original_field = "B9660E76D7E309D8177EC8F30DC9875D", hash_generated_field = "6CD45D97DE0751113A36B5C417B90B59")
 
     public static final ZTauElement[] alpha0 = {
         null,
@@ -821,12 +837,12 @@ class Tnaf {
         new ZTauElement(MINUS_ONE, MINUS_ONE), null,
         new ZTauElement(ECConstants.ONE, MINUS_ONE), null
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.533 -0500", hash_original_field = "DD158E6E00D6C1196FA563835C8B60B8", hash_generated_field = "2610932BBC232F1B35161A474C555605")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.994 -0500", hash_original_field = "DD158E6E00D6C1196FA563835C8B60B8", hash_generated_field = "2610932BBC232F1B35161A474C555605")
 
     public static final byte[][] alpha0Tnaf = {
         null, {1}, null, {-1, 0, 1}, null, {1, 0, 1}, null, {-1, 0, 0, 1}
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.533 -0500", hash_original_field = "ACAB0FF2FC90B3234130F7D2CFB76364", hash_generated_field = "B27BD535E864081052B48483622B9F55")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.997 -0500", hash_original_field = "ACAB0FF2FC90B3234130F7D2CFB76364", hash_generated_field = "B27BD535E864081052B48483622B9F55")
 
     public static final ZTauElement[] alpha1 = {null,
         new ZTauElement(ECConstants.ONE, ECConstants.ZERO), null,
@@ -834,7 +850,7 @@ class Tnaf {
         new ZTauElement(MINUS_ONE, ECConstants.ONE), null,
         new ZTauElement(ECConstants.ONE, ECConstants.ONE), null
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:59.534 -0500", hash_original_field = "4D543AB17D63F5D9AAA3A0D71A216094", hash_generated_field = "429E234FB060570ACC226375F178F480")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.000 -0500", hash_original_field = "4D543AB17D63F5D9AAA3A0D71A216094", hash_generated_field = "429E234FB060570ACC226375F178F480")
 
     public static final byte[][] alpha1Tnaf = {
         null, {1}, null, {-1, 0, 1}, null, {1, 0, 1}, null, {-1, 0, 0, -1}

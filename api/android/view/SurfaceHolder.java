@@ -24,12 +24,14 @@ public interface SurfaceHolder {
 
     
     public static class BadSurfaceTypeException extends RuntimeException {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.548 -0500", hash_original_method = "5B711042C26083732A0FE1DD39275FD8", hash_generated_method = "FD7DD460BCB3D7623A5171C48B4F08E5")
-        public BadSurfaceTypeException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.840 -0500", hash_original_method = "5B711042C26083732A0FE1DD39275FD8", hash_generated_method = "FD7DD460BCB3D7623A5171C48B4F08E5")
+        
+public BadSurfaceTypeException() {
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.549 -0500", hash_original_method = "548B66E802408B549443C0031F038236", hash_generated_method = "B26C9C0F99ED3B0153CF9DE48E3B5F31")
-        public BadSurfaceTypeException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.843 -0500", hash_original_method = "548B66E802408B549443C0031F038236", hash_generated_method = "B26C9C0F99ED3B0153CF9DE48E3B5F31")
+        
+public BadSurfaceTypeException(String name) {
             super(name);
         }
     }

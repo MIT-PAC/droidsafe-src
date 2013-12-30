@@ -17,8 +17,9 @@ public class NullCipher extends Cipher {
     /**
      * Creates a new {@code NullCipher} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.754 -0500", hash_original_method = "88CD20CBC668B0AA4FE357EBFA9D0A37", hash_generated_method = "89406841F3C0132922C311A94FEA334A")
-    public NullCipher() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.907 -0500", hash_original_method = "88CD20CBC668B0AA4FE357EBFA9D0A37", hash_generated_method = "89406841F3C0132922C311A94FEA334A")
+    
+public NullCipher() {
         super(new NullCipherSpi(), null, null);
         try {
             this.init(Cipher.ENCRYPT_MODE, (Key)null, (SecureRandom)null);

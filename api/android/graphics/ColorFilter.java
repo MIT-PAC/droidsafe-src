@@ -15,10 +15,10 @@ public class ColorFilter {
     @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance, int nativeColorFilter) {
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.425 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.092 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
     int native_instance;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.425 -0500", hash_original_field = "18E9845A71E43900124F08ED6B6E0199", hash_generated_field = "356D3DECEC4831614887BA02809E06EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.094 -0500", hash_original_field = "18E9845A71E43900124F08ED6B6E0199", hash_generated_field = "356D3DECEC4831614887BA02809E06EA")
 
     public int nativeColorFilter;
     
@@ -29,8 +29,9 @@ public class ColorFilter {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.426 -0500", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "C4DD20B802A13FAC6510C3A64139B70A")
-    protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.096 -0500", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "C4DD20B802A13FAC6510C3A64139B70A")
+    
+protected void finalize() throws Throwable {
         try {
             super.finalize();
         } finally {

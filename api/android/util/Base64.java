@@ -32,8 +32,9 @@ public class Base64 {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.058 -0500", hash_original_method = "D2F55864406EBEBDF4F8980B58236A85", hash_generated_method = "66ADEDD57E8DF67551C8904E7C1A8996")
-    public static byte[] decode(String str, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.839 -0500", hash_original_method = "D2F55864406EBEBDF4F8980B58236A85", hash_generated_method = "66ADEDD57E8DF67551C8904E7C1A8996")
+    
+public static byte[] decode(String str, int flags) {
         return decode(str.getBytes(), flags);
     }
 
@@ -51,8 +52,9 @@ public class Base64 {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.059 -0500", hash_original_method = "ACD53DE2D88BBAB4B72FDF61BEE83076", hash_generated_method = "F3FD65D235E64E72F9A5E7B532538D46")
-    public static byte[] decode(byte[] input, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.841 -0500", hash_original_method = "ACD53DE2D88BBAB4B72FDF61BEE83076", hash_generated_method = "F3FD65D235E64E72F9A5E7B532538D46")
+    
+public static byte[] decode(byte[] input, int flags) {
         return decode(input, 0, input.length, flags);
     }
 
@@ -72,8 +74,9 @@ public class Base64 {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.060 -0500", hash_original_method = "795AFD2FD16C81A1775B830E04DF9E9F", hash_generated_method = "E1784E1E0B1A65AD0A028EC0396E05B0")
-    public static byte[] decode(byte[] input, int offset, int len, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.844 -0500", hash_original_method = "795AFD2FD16C81A1775B830E04DF9E9F", hash_generated_method = "E1784E1E0B1A65AD0A028EC0396E05B0")
+    
+public static byte[] decode(byte[] input, int offset, int len, int flags) {
         // Allocate space for the most data the input could represent.
         // (It could contain less if it contains whitespace, etc.)
         Decoder decoder = new Decoder(flags, new byte[len*3/4]);
@@ -107,8 +110,9 @@ public class Base64 {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.074 -0500", hash_original_method = "9F8B8F16A23EE15117AB1FE2B512CD16", hash_generated_method = "5678F807C5ED664186D0648015429F71")
-    public static String encodeToString(byte[] input, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.883 -0500", hash_original_method = "9F8B8F16A23EE15117AB1FE2B512CD16", hash_generated_method = "5678F807C5ED664186D0648015429F71")
+    
+public static String encodeToString(byte[] input, int flags) {
         try {
             return new String(encode(input, flags), "US-ASCII");
         } catch (UnsupportedEncodingException e) {
@@ -129,8 +133,9 @@ public class Base64 {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.075 -0500", hash_original_method = "A12D3DC1982AC39840BA4C25FDD2D3BE", hash_generated_method = "047A122D3A75AEB424BF4A43E04D2130")
-    public static String encodeToString(byte[] input, int offset, int len, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.885 -0500", hash_original_method = "A12D3DC1982AC39840BA4C25FDD2D3BE", hash_generated_method = "047A122D3A75AEB424BF4A43E04D2130")
+    
+public static String encodeToString(byte[] input, int offset, int len, int flags) {
         try {
             return new String(encode(input, offset, len, flags), "US-ASCII");
         } catch (UnsupportedEncodingException e) {
@@ -148,8 +153,9 @@ public class Base64 {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.076 -0500", hash_original_method = "7D93E16B367D9ED35C3EE948B04BB0A6", hash_generated_method = "8EA208C8C2B286660EC1A107CC3ADB9E")
-    public static byte[] encode(byte[] input, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.887 -0500", hash_original_method = "7D93E16B367D9ED35C3EE948B04BB0A6", hash_generated_method = "8EA208C8C2B286660EC1A107CC3ADB9E")
+    
+public static byte[] encode(byte[] input, int flags) {
         return encode(input, 0, input.length, flags);
     }
 
@@ -165,8 +171,9 @@ public class Base64 {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.077 -0500", hash_original_method = "E1555B173FAD4BF288A7EC4FC77FC937", hash_generated_method = "40D1FF3B844E6AB8871233CF1984FB22")
-    public static byte[] encode(byte[] input, int offset, int len, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.894 -0500", hash_original_method = "E1555B173FAD4BF288A7EC4FC77FC937", hash_generated_method = "40D1FF3B844E6AB8871233CF1984FB22")
+    
+public static byte[] encode(byte[] input, int offset, int len, int flags) {
         Encoder encoder = new Encoder(flags, null);
 
         // Compute the exact length of the array we will produce.
@@ -198,16 +205,16 @@ public class Base64 {
 
         return encoder.output;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.049 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.813 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
 
     public static final int DEFAULT = 0;
 
     
     static abstract class Coder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.054 -0500", hash_original_field = "DC78FA07CC10DBEB15408EF44F988DA2", hash_generated_field = "D105CC424D01A80053DB00A4050DABF0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.828 -0500", hash_original_field = "DC78FA07CC10DBEB15408EF44F988DA2", hash_generated_field = "D105CC424D01A80053DB00A4050DABF0")
 
         public byte[] output;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.055 -0500", hash_original_field = "FFDD70CACFDCC6D3BE3A85B514D02D77", hash_generated_field = "2CC8ED7F6ECA7F350E8D1039E35F5E73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.830 -0500", hash_original_field = "FFDD70CACFDCC6D3BE3A85B514D02D77", hash_generated_field = "2CC8ED7F6ECA7F350E8D1039E35F5E73")
 
         public int op;
         
@@ -230,16 +237,18 @@ public class Base64 {
          * @return true if the input so far is good; false if some
          *         error has been detected in the input stream..
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.056 -0500", hash_original_method = "75EE07B248864EAE893E28029B66362E", hash_generated_method = "2450F1E12888A2FB60B9FCD35235052A")
-        public abstract boolean process(byte[] input, int offset, int len, boolean finish);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.833 -0500", hash_original_method = "75EE07B248864EAE893E28029B66362E", hash_generated_method = "2450F1E12888A2FB60B9FCD35235052A")
+        
+public abstract boolean process(byte[] input, int offset, int len, boolean finish);
 
         /**
          * @return the maximum number of bytes a call to process()
          * could produce for the given number of input bytes.  This may
          * be an overestimate.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.057 -0500", hash_original_method = "00005B72510A57CC06F375BAC4161ADC", hash_generated_method = "8FC7EA328F9FD1DA3A7C48BE37C3997A")
-        public abstract int maxOutputSize(int len);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.835 -0500", hash_original_method = "00005B72510A57CC06F375BAC4161ADC", hash_generated_method = "8FC7EA328F9FD1DA3A7C48BE37C3997A")
+        
+public abstract int maxOutputSize(int len);
 
         
     }
@@ -247,7 +256,7 @@ public class Base64 {
 
     
     static class Decoder extends Coder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.062 -0500", hash_original_field = "4734027D7CB76D9F75A473B448E011A2", hash_generated_field = "C476360DF9D857A2925681052DA07C19")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.849 -0500", hash_original_field = "4734027D7CB76D9F75A473B448E011A2", hash_generated_field = "C476360DF9D857A2925681052DA07C19")
 
         private static final int DECODE[] = {
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -267,7 +276,7 @@ public class Base64 {
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.063 -0500", hash_original_field = "E5E062587C885B1589151F2A04C932C3", hash_generated_field = "D484883C2C35399CF99348476C2D0A97")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.853 -0500", hash_original_field = "E5E062587C885B1589151F2A04C932C3", hash_generated_field = "D484883C2C35399CF99348476C2D0A97")
 
         private static final int DECODE_WEBSAFE[] = {
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -287,25 +296,26 @@ public class Base64 {
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.064 -0500", hash_original_field = "DF77CA57276F4D8160BCFF9791738856", hash_generated_field = "4F546CF4B8E245683DB60010E7DCC5AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.856 -0500", hash_original_field = "DF77CA57276F4D8160BCFF9791738856", hash_generated_field = "4F546CF4B8E245683DB60010E7DCC5AA")
 
         private static final int SKIP = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.065 -0500", hash_original_field = "455BE393DF2EDF8F7552DA930393D960", hash_generated_field = "15968FF04D715A124A2832120101F3DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.859 -0500", hash_original_field = "455BE393DF2EDF8F7552DA930393D960", hash_generated_field = "15968FF04D715A124A2832120101F3DA")
 
         private static final int EQUALS = -2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.066 -0500", hash_original_field = "962E680994F097CBCF73193974918C63", hash_generated_field = "26F20A2ED327951B7F331D22F1CEEC90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.861 -0500", hash_original_field = "962E680994F097CBCF73193974918C63", hash_generated_field = "26F20A2ED327951B7F331D22F1CEEC90")
 
         private int state;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.066 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.863 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
 
         private int value;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.067 -0500", hash_original_field = "8346BBC6668B394F591BA98D61419AC5", hash_generated_field = "B4B64C8D6FAE0E02F5E7C4A49CB38458")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.865 -0500", hash_original_field = "8346BBC6668B394F591BA98D61419AC5", hash_generated_field = "B4B64C8D6FAE0E02F5E7C4A49CB38458")
 
 
          private int[] alphabet;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.068 -0500", hash_original_method = "28200CA179B3214BB831C341BA07009C", hash_generated_method = "BFDC7A7997A76245AF50D66FA4CA33AE")
-        public Decoder(int flags, byte[] output) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.867 -0500", hash_original_method = "28200CA179B3214BB831C341BA07009C", hash_generated_method = "BFDC7A7997A76245AF50D66FA4CA33AE")
+        
+public Decoder(int flags, byte[] output) {
             this.output = output;
 
             alphabet = ((flags & URL_SAFE) == 0) ? DECODE : DECODE_WEBSAFE;
@@ -317,8 +327,9 @@ public class Base64 {
          * @return an overestimate for the number of bytes {@code
          * len} bytes could decode to.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.069 -0500", hash_original_method = "006B314D1443F75FACC9C9CF957F4174", hash_generated_method = "8C053730630C91682B0D48109BFD4C9B")
-        public int maxOutputSize(int len) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.870 -0500", hash_original_method = "006B314D1443F75FACC9C9CF957F4174", hash_generated_method = "8C053730630C91682B0D48109BFD4C9B")
+        
+public int maxOutputSize(int len) {
             return len * 3/4 + 10;
         }
 
@@ -328,8 +339,9 @@ public class Base64 {
          * @return true if the state machine is still healthy.  false if
          *         bad base-64 data has been detected in the input stream.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.071 -0500", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "D0DA8E8FC33BE93729D64D25C1A83448")
-        public boolean process(byte[] input, int offset, int len, boolean finish) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.875 -0500", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "D0DA8E8FC33BE93729D64D25C1A83448")
+        
+public boolean process(byte[] input, int offset, int len, boolean finish) {
             if (this.state == 6) return false;
 
             int p = offset;
@@ -510,10 +522,10 @@ public class Base64 {
 
     
     static class Encoder extends Coder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.078 -0500", hash_original_field = "32DE0AEE9A9AD44E0EAA72456C29CB84", hash_generated_field = "AEA37AD1BAA7CFE9FF857DBCC9155C6B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.898 -0500", hash_original_field = "32DE0AEE9A9AD44E0EAA72456C29CB84", hash_generated_field = "AEA37AD1BAA7CFE9FF857DBCC9155C6B")
 
         public static final int LINE_GROUPS = 19;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.080 -0500", hash_original_field = "D9D68994C5CB1D774E15DB341D18872C", hash_generated_field = "99FC3B7700D42E7A1429B46B2DABA37C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.900 -0500", hash_original_field = "D9D68994C5CB1D774E15DB341D18872C", hash_generated_field = "99FC3B7700D42E7A1429B46B2DABA37C")
 
         private static final byte ENCODE[] = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -521,7 +533,7 @@ public class Base64 {
             'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
             'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/',
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.081 -0500", hash_original_field = "EB1BFC2ABF225B31ECEC8B9032333287", hash_generated_field = "DD402FEA9A4EE03692FE1322010C2742")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.903 -0500", hash_original_field = "EB1BFC2ABF225B31ECEC8B9032333287", hash_generated_field = "DD402FEA9A4EE03692FE1322010C2742")
 
         private static final byte ENCODE_WEBSAFE[] = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -529,31 +541,32 @@ public class Base64 {
             'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
             'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_',
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.082 -0500", hash_original_field = "40F5D2974BD0024720371B89C57AA7FB", hash_generated_field = "3976D48215D9CD369B9FF1E7AF7204AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.906 -0500", hash_original_field = "40F5D2974BD0024720371B89C57AA7FB", hash_generated_field = "3976D48215D9CD369B9FF1E7AF7204AD")
 
 
          private byte[] tail;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.083 -0500", hash_original_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC", hash_generated_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.907 -0500", hash_original_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC", hash_generated_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC")
  int tailLen;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.083 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.910 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
 
         private int count;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.084 -0500", hash_original_field = "959BD29AF9EB12C06F64B2F61624FED0", hash_generated_field = "4E0FC1C064D8F3218FE12A1DD5866176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.912 -0500", hash_original_field = "959BD29AF9EB12C06F64B2F61624FED0", hash_generated_field = "4E0FC1C064D8F3218FE12A1DD5866176")
 
 
          public boolean do_padding;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.085 -0500", hash_original_field = "F60F42998F372F78CCD1317E069EF47C", hash_generated_field = "232A0ACDB2D945A1E8AF0B685CCC1422")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.914 -0500", hash_original_field = "F60F42998F372F78CCD1317E069EF47C", hash_generated_field = "232A0ACDB2D945A1E8AF0B685CCC1422")
 
          public boolean do_newline;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.086 -0500", hash_original_field = "CDBF013D90D57D08BE469AE1EF4D8833", hash_generated_field = "C3A36DCB9AD646054DE6D44BB1B8EC47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.917 -0500", hash_original_field = "CDBF013D90D57D08BE469AE1EF4D8833", hash_generated_field = "C3A36DCB9AD646054DE6D44BB1B8EC47")
 
          public boolean do_cr;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.087 -0500", hash_original_field = "3A387067914E47222CDF80CD1F5FF5E3", hash_generated_field = "01F03DE41626851E3A4CAC48E94745D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.919 -0500", hash_original_field = "3A387067914E47222CDF80CD1F5FF5E3", hash_generated_field = "01F03DE41626851E3A4CAC48E94745D3")
 
          private byte[] alphabet;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.088 -0500", hash_original_method = "248AE984D731F285F53C3C8EA52608A3", hash_generated_method = "EFEF80418BA1735EA6DF13A0B10FC032")
-        public Encoder(int flags, byte[] output) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.922 -0500", hash_original_method = "248AE984D731F285F53C3C8EA52608A3", hash_generated_method = "EFEF80418BA1735EA6DF13A0B10FC032")
+        
+public Encoder(int flags, byte[] output) {
             this.output = output;
 
             do_padding = (flags & NO_PADDING) == 0;
@@ -571,13 +584,15 @@ public class Base64 {
          * @return an overestimate for the number of bytes {@code
          * len} bytes could encode to.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.089 -0500", hash_original_method = "9D3D65123317D09985A4DE210ACBFBB3", hash_generated_method = "DEEDEF9FAB68ADAB7777BDE4B742D0C3")
-        public int maxOutputSize(int len) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.924 -0500", hash_original_method = "9D3D65123317D09985A4DE210ACBFBB3", hash_generated_method = "DEEDEF9FAB68ADAB7777BDE4B742D0C3")
+        
+public int maxOutputSize(int len) {
             return len * 8/5 + 10;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.091 -0500", hash_original_method = "551D84DD57FDEAF562D9C2C55207FB04", hash_generated_method = "E24CD75C7DBE44D1CE459EE219769AC3")
-        public boolean process(byte[] input, int offset, int len, boolean finish) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.930 -0500", hash_original_method = "551D84DD57FDEAF562D9C2C55207FB04", hash_generated_method = "E24CD75C7DBE44D1CE459EE219769AC3")
+        
+public boolean process(byte[] input, int offset, int len, boolean finish) {
             // Using local variables makes the encoder about 9% faster.
             final byte[] alphabet = this.alphabet;
             final byte[] output = this.output;
@@ -713,23 +728,24 @@ public class Base64 {
             return true;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.049 -0500", hash_original_field = "F77A9A566C76A821318FEBE33179B60F", hash_generated_field = "90B2069C15AB13D219B27D01B76F7345")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.815 -0500", hash_original_field = "F77A9A566C76A821318FEBE33179B60F", hash_generated_field = "90B2069C15AB13D219B27D01B76F7345")
 
     public static final int NO_PADDING = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.050 -0500", hash_original_field = "DCA6A36C3C0DE146F3DEABF2E82D68C1", hash_generated_field = "DD1DB73525C3F37E3BC419AB114C4B75")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.818 -0500", hash_original_field = "DCA6A36C3C0DE146F3DEABF2E82D68C1", hash_generated_field = "DD1DB73525C3F37E3BC419AB114C4B75")
 
     public static final int NO_WRAP = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.051 -0500", hash_original_field = "DABBD105F6BB7795E87C5B29AE89EF7F", hash_generated_field = "2556AB718F122F12992982C57F5C3502")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.820 -0500", hash_original_field = "DABBD105F6BB7795E87C5B29AE89EF7F", hash_generated_field = "2556AB718F122F12992982C57F5C3502")
 
     public static final int CRLF = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.052 -0500", hash_original_field = "1955709B6B8F6C5BD784C32B86A98D23", hash_generated_field = "E5A3AC6BA5190912C47BD41618AC8C0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.822 -0500", hash_original_field = "1955709B6B8F6C5BD784C32B86A98D23", hash_generated_field = "E5A3AC6BA5190912C47BD41618AC8C0F")
 
     public static final int URL_SAFE = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.053 -0500", hash_original_field = "3743B5F5902C950C19B85FE84F180E0B", hash_generated_field = "F8D813B2752942D8E0142FAF2E00BDCC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.824 -0500", hash_original_field = "3743B5F5902C950C19B85FE84F180E0B", hash_generated_field = "F8D813B2752942D8E0142FAF2E00BDCC")
 
     public static final int NO_CLOSE = 16;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.093 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
-    private Base64() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.936 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
+    
+private Base64() { }
 }
 

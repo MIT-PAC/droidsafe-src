@@ -12,14 +12,14 @@ import java.text.ParseException;
 
 
 public abstract class ParserCore {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.035 -0500", hash_original_field = "98AAD20EFC540BFCEEE8C94A57587407", hash_generated_field = "C7421C837BE84CB71F0718DB57F8E962")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.646 -0500", hash_original_field = "98AAD20EFC540BFCEEE8C94A57587407", hash_generated_field = "C7421C837BE84CB71F0718DB57F8E962")
 
     public static final boolean debug = Debug.parserDebug;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.036 -0500", hash_original_field = "9FA3227F51436A81B8A27413064C2B27", hash_generated_field = "80C87DAAFBB424B160F9721506874F09")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.648 -0500", hash_original_field = "9FA3227F51436A81B8A27413064C2B27", hash_generated_field = "80C87DAAFBB424B160F9721506874F09")
 
 
     static int nesting_level;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.037 -0500", hash_original_field = "694AD1BF080B86E08B0E314389D08AB5", hash_generated_field = "AF108A7E81C8C1348B39F9FCBD8C60E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.651 -0500", hash_original_field = "694AD1BF080B86E08B0E314389D08AB5", hash_generated_field = "AF108A7E81C8C1348B39F9FCBD8C60E7")
 
 
     protected LexerCore lexer;
@@ -31,8 +31,9 @@ public abstract class ParserCore {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.038 -0500", hash_original_method = "2B8F776DAFC357EFC899FF251A427EF6", hash_generated_method = "FED05485A0974D95153CC926E74EE894")
-    protected NameValue nameValue(char separator) throws ParseException  {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.655 -0500", hash_original_method = "2B8F776DAFC357EFC899FF251A427EF6", hash_generated_method = "FED05485A0974D95153CC926E74EE894")
+    
+protected NameValue nameValue(char separator) throws ParseException  {
         if (debug) dbg_enter("nameValue");
         try {
 
@@ -84,8 +85,9 @@ public abstract class ParserCore {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.039 -0500", hash_original_method = "FEF315A443660226B56655DBFD660360", hash_generated_method = "2CC809F5CB9762AB22FDDE770398FC72")
-    protected void dbg_enter(String rule) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.657 -0500", hash_original_method = "FEF315A443660226B56655DBFD660360", hash_generated_method = "2CC809F5CB9762AB22FDDE770398FC72")
+    
+protected  void dbg_enter(String rule) {
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < nesting_level ; i++)
             stringBuffer.append(">");
@@ -99,8 +101,9 @@ public abstract class ParserCore {
         nesting_level++;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.040 -0500", hash_original_method = "1BC6FB469729E22F0BBD9E3870285FA5", hash_generated_method = "543C9BD19E373DB533AA5A2550507AEF")
-    protected void dbg_leave(String rule) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.660 -0500", hash_original_method = "1BC6FB469729E22F0BBD9E3870285FA5", hash_generated_method = "543C9BD19E373DB533AA5A2550507AEF")
+    
+protected void dbg_leave(String rule) {
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < nesting_level ; i++)
             stringBuffer.append("<");
@@ -115,15 +118,17 @@ public abstract class ParserCore {
         nesting_level --;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.041 -0500", hash_original_method = "96EC2DBFF0EC1BA1DEDB704D9ED6E4AE", hash_generated_method = "BCA2F6BCA05A0FC34FC25E41E0AE28C7")
-    protected NameValue nameValue() throws ParseException  {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.662 -0500", hash_original_method = "96EC2DBFF0EC1BA1DEDB704D9ED6E4AE", hash_generated_method = "BCA2F6BCA05A0FC34FC25E41E0AE28C7")
+    
+protected NameValue nameValue() throws ParseException  {
         return nameValue('=');
     }
 
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.042 -0500", hash_original_method = "9816EEB9F7DF054BEDA3076A1CE20DA0", hash_generated_method = "8B483A1525BA623F62F1B79AA683FFEA")
-    protected void peekLine(String rule) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.664 -0500", hash_original_method = "9816EEB9F7DF054BEDA3076A1CE20DA0", hash_generated_method = "8B483A1525BA623F62F1B79AA683FFEA")
+    
+protected void peekLine(String rule) {
         if (debug) {
             Debug.println(rule +" " + lexer.peekLine());
         }

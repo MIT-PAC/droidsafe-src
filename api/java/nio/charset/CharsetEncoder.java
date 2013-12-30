@@ -16,51 +16,51 @@ import java.util.Arrays;
 
 
 public abstract class CharsetEncoder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.251 -0500", hash_original_field = "B76CDD71E689972A5BDDB24204A777AF", hash_generated_field = "13F9744A97D618343432AF93BBD9D480")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.230 -0500", hash_original_field = "B76CDD71E689972A5BDDB24204A777AF", hash_generated_field = "13F9744A97D618343432AF93BBD9D480")
 
     private static final int READY = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.251 -0500", hash_original_field = "DB372BD195DD04D38594D658CD0941C7", hash_generated_field = "BE844086D377CEB871B6E1DD59844EB0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.233 -0500", hash_original_field = "DB372BD195DD04D38594D658CD0941C7", hash_generated_field = "BE844086D377CEB871B6E1DD59844EB0")
 
     private static final int ONGOING = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.252 -0500", hash_original_field = "330B5909E190BF7186B4F7E611F5BC23", hash_generated_field = "B476F4C7146F42E47055EAC44A214B2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.236 -0500", hash_original_field = "330B5909E190BF7186B4F7E611F5BC23", hash_generated_field = "B476F4C7146F42E47055EAC44A214B2C")
 
     private static final int END = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.253 -0500", hash_original_field = "15B05665B9D3473592ABD28718757C60", hash_generated_field = "D345F0B97A5F86F7808649FE9032B485")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.238 -0500", hash_original_field = "15B05665B9D3473592ABD28718757C60", hash_generated_field = "D345F0B97A5F86F7808649FE9032B485")
 
     private static final int FLUSH = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.254 -0500", hash_original_field = "FFE197A6174A45A9AA66A22BD0EF4A1E", hash_generated_field = "A23FBDE5837AE7A8AD8DDC6F0A5E686A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.241 -0500", hash_original_field = "FFE197A6174A45A9AA66A22BD0EF4A1E", hash_generated_field = "A23FBDE5837AE7A8AD8DDC6F0A5E686A")
 
     private static final int INIT = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.255 -0500", hash_original_field = "071AD032827EC07DCD0193396C176EE2", hash_generated_field = "220BF257D2CCF23A35C6D1D35FB3F79C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.243 -0500", hash_original_field = "071AD032827EC07DCD0193396C176EE2", hash_generated_field = "220BF257D2CCF23A35C6D1D35FB3F79C")
 
 
     private  Charset cs;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.256 -0500", hash_original_field = "B3DDB7A0B36CE088327AE6AB3E3FE881", hash_generated_field = "5C783D0D8B0013302A29C9244F7615B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.246 -0500", hash_original_field = "B3DDB7A0B36CE088327AE6AB3E3FE881", hash_generated_field = "5C783D0D8B0013302A29C9244F7615B3")
 
 
     private  float averageBytesPerChar;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.257 -0500", hash_original_field = "D0B54BAFB708906DB74080547292069C", hash_generated_field = "B19FD23ACD0442A467073D3E6F98A95A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.249 -0500", hash_original_field = "D0B54BAFB708906DB74080547292069C", hash_generated_field = "B19FD23ACD0442A467073D3E6F98A95A")
 
     private  float maxBytesPerChar;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.257 -0500", hash_original_field = "66F7C2E8DE97CDE8CFCDC7D1BE499877", hash_generated_field = "A0C8011AEB0BF78979EBADE417E449F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.251 -0500", hash_original_field = "66F7C2E8DE97CDE8CFCDC7D1BE499877", hash_generated_field = "A0C8011AEB0BF78979EBADE417E449F0")
 
 
     private byte[] replacementBytes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.258 -0500", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "4BAC49709EDEAEFDD9E07400E0F02406")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.253 -0500", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "4BAC49709EDEAEFDD9E07400E0F02406")
 
 
     private int status;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.259 -0500", hash_original_field = "59CD61E3A383ACAD01F8F1AA33285180", hash_generated_field = "3E2B0E3E2E572DECE0B20D77E19B79CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.259 -0500", hash_original_field = "59CD61E3A383ACAD01F8F1AA33285180", hash_generated_field = "3E2B0E3E2E572DECE0B20D77E19B79CF")
 
     private boolean finished;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.260 -0500", hash_original_field = "321407B0D07B357A2C1E6B0BC805BF74", hash_generated_field = "1214F64762553AD2B0BE51AAC36B64DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.262 -0500", hash_original_field = "321407B0D07B357A2C1E6B0BC805BF74", hash_generated_field = "1214F64762553AD2B0BE51AAC36B64DE")
 
 
     private CodingErrorAction malformedInputAction;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.261 -0500", hash_original_field = "27CE0B153219039850616F66BE87462B", hash_generated_field = "60F320659477DF0A50B0661AEB74E53F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.265 -0500", hash_original_field = "27CE0B153219039850616F66BE87462B", hash_generated_field = "60F320659477DF0A50B0661AEB74E53F")
 
     private CodingErrorAction unmappableCharacterAction;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.262 -0500", hash_original_field = "EB8B81788E764E7EC09C99438B975CD8", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.267 -0500", hash_original_field = "EB8B81788E764E7EC09C99438B975CD8", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
 
     private CharsetDecoder decoder;
 
@@ -68,8 +68,9 @@ public abstract class CharsetEncoder {
      * Constructs a new {@code CharsetEncoder} using the given parameters and
      * the replacement byte array {@code { (byte) '?' }}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.263 -0500", hash_original_method = "5E9CA4841A80C315BA24674061FE2949", hash_generated_method = "D723EDBE48CACC50A9409DF44DC42EAC")
-    protected CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.270 -0500", hash_original_method = "5E9CA4841A80C315BA24674061FE2949", hash_generated_method = "D723EDBE48CACC50A9409DF44DC42EAC")
+    
+protected CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar) {
         this(cs, averageBytesPerChar, maxBytesPerChar, new byte[] { (byte) '?' });
     }
 
@@ -94,13 +95,15 @@ public abstract class CharsetEncoder {
      * @throws IllegalArgumentException
      *             if any parameters are invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.264 -0500", hash_original_method = "33500150E00A96E14E2810282423268E", hash_generated_method = "0353D675BDF5C244E9E528B3C3C563D6")
-    protected CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.272 -0500", hash_original_method = "33500150E00A96E14E2810282423268E", hash_generated_method = "0353D675BDF5C244E9E528B3C3C563D6")
+    
+protected CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement) {
         this(cs, averageBytesPerChar, maxBytesPerChar, replacement, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.265 -0500", hash_original_method = "173A83611BD70B9738420414876CE0BB", hash_generated_method = "50AF5491F0B8B2D5C34DF134EC7ECEFF")
-    CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement, boolean trusted) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.275 -0500", hash_original_method = "173A83611BD70B9738420414876CE0BB", hash_generated_method = "50AF5491F0B8B2D5C34DF134EC7ECEFF")
+    
+CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement, boolean trusted) {
         if (averageBytesPerChar <= 0 || maxBytesPerChar <= 0) {
             throw new IllegalArgumentException("averageBytesPerChar and maxBytesPerChar must both be positive");
         }
@@ -126,8 +129,9 @@ public abstract class CharsetEncoder {
      * Returns the average number of bytes created by this encoder for a single
      * input character.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.266 -0500", hash_original_method = "A746602428AC27FECC8176A57B5A2933", hash_generated_method = "63E37E337CD2C4CC1A05968ED0D75790")
-    public final float averageBytesPerChar() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.278 -0500", hash_original_method = "A746602428AC27FECC8176A57B5A2933", hash_generated_method = "63E37E337CD2C4CC1A05968ED0D75790")
+    
+public final float averageBytesPerChar() {
         return averageBytesPerChar;
     }
 
@@ -147,14 +151,16 @@ public abstract class CharsetEncoder {
      *             if another encode process is ongoing so that the current
      *             internal status is neither RESET or FLUSH.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.266 -0500", hash_original_method = "DF8D80CA8C09E77634765D8D414FAE26", hash_generated_method = "CC1D7AFBDC33C8FD5681DF2F0BA20738")
-    public boolean canEncode(char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.280 -0500", hash_original_method = "DF8D80CA8C09E77634765D8D414FAE26", hash_generated_method = "CC1D7AFBDC33C8FD5681DF2F0BA20738")
+    
+public boolean canEncode(char c) {
         return implCanEncode(CharBuffer.wrap(new char[] { c }));
     }
 
     // implementation of canEncode
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.267 -0500", hash_original_method = "8FE38300B66D2E408C3C937D4188B910", hash_generated_method = "B24499D4671ABD45CCE054E5DE6BAEFD")
-    private boolean implCanEncode(CharBuffer cb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.283 -0500", hash_original_method = "8FE38300B66D2E408C3C937D4188B910", hash_generated_method = "B24499D4671ABD45CCE054E5DE6BAEFD")
+    
+private boolean implCanEncode(CharBuffer cb) {
         if (status == FLUSH || status == INIT) {
             status = READY;
         }
@@ -194,8 +200,9 @@ public abstract class CharsetEncoder {
      * @throws IllegalStateException
      *             if current internal status is neither RESET or FLUSH.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.268 -0500", hash_original_method = "54A1B7BF9180636CA7E06E09FE414A09", hash_generated_method = "B5B4B2D83E66A14A1BB7D29DF8647F4F")
-    public boolean canEncode(CharSequence sequence) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.286 -0500", hash_original_method = "54A1B7BF9180636CA7E06E09FE414A09", hash_generated_method = "B5B4B2D83E66A14A1BB7D29DF8647F4F")
+    
+public boolean canEncode(CharSequence sequence) {
         CharBuffer cb;
         if (sequence instanceof CharBuffer) {
             cb = ((CharBuffer) sequence).duplicate();
@@ -208,8 +215,9 @@ public abstract class CharsetEncoder {
     /**
      * Returns the {@link Charset} which this encoder uses.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.269 -0500", hash_original_method = "B98730A31745049759B27FC27542555A", hash_generated_method = "1B3A1A60F8135EF363B08F511D4AE81E")
-    public final Charset charset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.289 -0500", hash_original_method = "B98730A31745049759B27FC27542555A", hash_generated_method = "1B3A1A60F8135EF363B08F511D4AE81E")
+    
+public final Charset charset() {
         return cs;
     }
 
@@ -244,8 +252,9 @@ public abstract class CharsetEncoder {
      * @throws CharacterCodingException
      *             if other exception happened during the encode operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.271 -0500", hash_original_method = "6617ED92398FABBB6F1186A03F59422C", hash_generated_method = "8A3458D855F96B73420B80FFD95A2DAE")
-    public final ByteBuffer encode(CharBuffer in) throws CharacterCodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.292 -0500", hash_original_method = "6617ED92398FABBB6F1186A03F59422C", hash_generated_method = "8A3458D855F96B73420B80FFD95A2DAE")
+    
+public final ByteBuffer encode(CharBuffer in) throws CharacterCodingException {
         if (in.remaining() == 0) {
             return ByteBuffer.allocate(0);
         }
@@ -292,8 +301,9 @@ public abstract class CharsetEncoder {
     /*
      * checks the result whether it needs to throw CharacterCodingException.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.271 -0500", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "D4B9B7436AC3B98BB199F3D923E8CA0A")
-    private void checkCoderResult(CoderResult result) throws CharacterCodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.295 -0500", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "D4B9B7436AC3B98BB199F3D923E8CA0A")
+    
+private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         if (malformedInputAction == CodingErrorAction.REPORT && result.isMalformed() ) {
             throw new MalformedInputException(result.length());
         } else if (unmappableCharacterAction == CodingErrorAction.REPORT && result.isUnmappable()) {
@@ -302,8 +312,9 @@ public abstract class CharsetEncoder {
     }
 
     // allocate more spaces to the given ByteBuffer
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.272 -0500", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "05A13E5088B9AD144A3A695CB753E4B7")
-    private ByteBuffer allocateMore(ByteBuffer output) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.297 -0500", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "05A13E5088B9AD144A3A695CB753E4B7")
+    
+private ByteBuffer allocateMore(ByteBuffer output) {
         if (output.capacity() == 0) {
             return ByteBuffer.allocate(1);
         }
@@ -375,8 +386,9 @@ public abstract class CharsetEncoder {
      *             method threw an <code>BufferUnderflowException</code> or
      *             <code>BufferUnderflowException</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.273 -0500", hash_original_method = "F53B4856D46D71BB987D9EC6F2ED08EE", hash_generated_method = "708ABAF1F51A81A7CA9ECE00BF14A3A2")
-    public final CoderResult encode(CharBuffer in, ByteBuffer out, boolean endOfInput) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.300 -0500", hash_original_method = "F53B4856D46D71BB987D9EC6F2ED08EE", hash_generated_method = "708ABAF1F51A81A7CA9ECE00BF14A3A2")
+    
+public final CoderResult encode(CharBuffer in, ByteBuffer out, boolean endOfInput) {
         // If the previous step is encode(CharBuffer), then no more input is needed
         // thus endOfInput should not be false
         if (status == READY && finished && !endOfInput) {
@@ -463,8 +475,9 @@ public abstract class CharsetEncoder {
      *            the output buffer.
      * @return a <code>CoderResult</code> instance indicating the result.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.274 -0500", hash_original_method = "9616F044279972BD99324EB6552327DB", hash_generated_method = "87FA30EDAC109573D595DF9CF40D1A26")
-    protected abstract CoderResult encodeLoop(CharBuffer in, ByteBuffer out);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.303 -0500", hash_original_method = "9616F044279972BD99324EB6552327DB", hash_generated_method = "87FA30EDAC109573D595DF9CF40D1A26")
+    
+protected abstract CoderResult encodeLoop(CharBuffer in, ByteBuffer out);
 
     /**
      * Flushes this encoder.
@@ -497,8 +510,9 @@ public abstract class CharsetEncoder {
      *             encode(CharBuffer, ByteBuffer, boolean)} with {@code true}
      *             for the last boolean parameter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.275 -0500", hash_original_method = "7DF66453B2225F37798DBF2842A3A344", hash_generated_method = "157E2A514418A254EA8960AE10FAF083")
-    public final CoderResult flush(ByteBuffer out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.306 -0500", hash_original_method = "7DF66453B2225F37798DBF2842A3A344", hash_generated_method = "157E2A514418A254EA8960AE10FAF083")
+    
+public final CoderResult flush(ByteBuffer out) {
         if (status != END && status != READY) {
             throw new IllegalStateException();
         }
@@ -519,8 +533,9 @@ public abstract class CharsetEncoder {
      * @return <code>CoderResult.UNDERFLOW</code> or
      *         <code>CoderResult.OVERFLOW</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.276 -0500", hash_original_method = "A9BF2BD565E7966B3C6B16D11959F2CA", hash_generated_method = "B360BD1295B9D6721C2DA60E9DC9314C")
-    protected CoderResult implFlush(ByteBuffer out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.308 -0500", hash_original_method = "A9BF2BD565E7966B3C6B16D11959F2CA", hash_generated_method = "B360BD1295B9D6721C2DA60E9DC9314C")
+    
+protected CoderResult implFlush(ByteBuffer out) {
         return CoderResult.UNDERFLOW;
     }
 
@@ -532,8 +547,9 @@ public abstract class CharsetEncoder {
      * @param newAction
      *            the new action.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.277 -0500", hash_original_method = "E03D9D5B6C40FD58B1EEECF43C9BC127", hash_generated_method = "C5211B0A34ACC9B09F85B9C3BB00884B")
-    protected void implOnMalformedInput(CodingErrorAction newAction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.311 -0500", hash_original_method = "E03D9D5B6C40FD58B1EEECF43C9BC127", hash_generated_method = "C5211B0A34ACC9B09F85B9C3BB00884B")
+    
+protected void implOnMalformedInput(CodingErrorAction newAction) {
         // default implementation is empty
     }
 
@@ -545,8 +561,9 @@ public abstract class CharsetEncoder {
      * @param newAction
      *            the new action.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.277 -0500", hash_original_method = "33D941D09604A3F698502AE892B2B2F1", hash_generated_method = "0A2CA91C3F95D4B9B90FF47CE10AEDD0")
-    protected void implOnUnmappableCharacter(CodingErrorAction newAction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.313 -0500", hash_original_method = "33D941D09604A3F698502AE892B2B2F1", hash_generated_method = "0A2CA91C3F95D4B9B90FF47CE10AEDD0")
+    
+protected void implOnUnmappableCharacter(CodingErrorAction newAction) {
         // default implementation is empty
     }
 
@@ -557,8 +574,9 @@ public abstract class CharsetEncoder {
      * @param newReplacement
      *            the new replacement string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.278 -0500", hash_original_method = "BBBD9A68869312EDB40CCAE9146777D7", hash_generated_method = "ECB5A88F778C3531BB777EE6B7CE22DF")
-    protected void implReplaceWith(byte[] newReplacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.315 -0500", hash_original_method = "BBBD9A68869312EDB40CCAE9146777D7", hash_generated_method = "ECB5A88F778C3531BB777EE6B7CE22DF")
+    
+protected void implReplaceWith(byte[] newReplacement) {
         // default implementation is empty
     }
 
@@ -566,8 +584,9 @@ public abstract class CharsetEncoder {
      * Resets this encoder's charset related state. The default implementation
      * does nothing; this method can be overridden if needed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.279 -0500", hash_original_method = "B1E265ECD4B779BE3343E27B901DC354", hash_generated_method = "D34CBDF19BAA869AFE1F7988761B919A")
-    protected void implReset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.318 -0500", hash_original_method = "B1E265ECD4B779BE3343E27B901DC354", hash_generated_method = "D34CBDF19BAA869AFE1F7988761B919A")
+    
+protected void implReset() {
         // default implementation is empty
     }
 
@@ -585,8 +604,9 @@ public abstract class CharsetEncoder {
      * @return true if the the given argument is legal as this encoder's
      *         replacement byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.280 -0500", hash_original_method = "0E6BADBD5D3BB826133FA0CE0CAA8F2B", hash_generated_method = "69D218CAF7786E069C4F35593AA33A65")
-    public boolean isLegalReplacement(byte[] replacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.321 -0500", hash_original_method = "0E6BADBD5D3BB826133FA0CE0CAA8F2B", hash_generated_method = "69D218CAF7786E069C4F35593AA33A65")
+    
+public boolean isLegalReplacement(byte[] replacement) {
         if (decoder == null) {
             decoder = cs.newDecoder();
             decoder.onMalformedInput(CodingErrorAction.REPORT);
@@ -602,8 +622,9 @@ public abstract class CharsetEncoder {
      * Returns this encoder's <code>CodingErrorAction</code> when a malformed
      * input error occurred during the encoding process.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.281 -0500", hash_original_method = "14FFD5293B4145E0D4BC6D81F9598816", hash_generated_method = "B62894BCE731B87F0E58598D87803EE2")
-    public CodingErrorAction malformedInputAction() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.323 -0500", hash_original_method = "14FFD5293B4145E0D4BC6D81F9598816", hash_generated_method = "B62894BCE731B87F0E58598D87803EE2")
+    
+public CodingErrorAction malformedInputAction() {
         return malformedInputAction;
     }
 
@@ -611,8 +632,9 @@ public abstract class CharsetEncoder {
      * Returns the maximum number of bytes which can be created by this encoder for
      * one input character, must be positive.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.281 -0500", hash_original_method = "F4624CD8E2F5B5C085387046C0856D44", hash_generated_method = "0EE4AAAF4A83FB7CE34D8002046C29C5")
-    public final float maxBytesPerChar() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.326 -0500", hash_original_method = "F4624CD8E2F5B5C085387046C0856D44", hash_generated_method = "0EE4AAAF4A83FB7CE34D8002046C29C5")
+    
+public final float maxBytesPerChar() {
         return maxBytesPerChar;
     }
 
@@ -629,8 +651,9 @@ public abstract class CharsetEncoder {
      * @throws IllegalArgumentException
      *             if the given newAction is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.282 -0500", hash_original_method = "9AA0403DB22EF3A510B565026DCE2424", hash_generated_method = "0011EC96FF5543956D12364517834E9A")
-    public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.328 -0500", hash_original_method = "9AA0403DB22EF3A510B565026DCE2424", hash_generated_method = "0011EC96FF5543956D12364517834E9A")
+    
+public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
         if (newAction == null) {
             throw new IllegalArgumentException("newAction == null");
         }
@@ -652,8 +675,9 @@ public abstract class CharsetEncoder {
      * @throws IllegalArgumentException
      *             if the given newAction is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.283 -0500", hash_original_method = "8F9E9A5BA6AED0663F62AB88ADE1A1B8", hash_generated_method = "92C50D049871AEE37000E49D171DBEFA")
-    public final CharsetEncoder onUnmappableCharacter(CodingErrorAction newAction) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.331 -0500", hash_original_method = "8F9E9A5BA6AED0663F62AB88ADE1A1B8", hash_generated_method = "92C50D049871AEE37000E49D171DBEFA")
+    
+public final CharsetEncoder onUnmappableCharacter(CodingErrorAction newAction) {
         if (newAction == null) {
             throw new IllegalArgumentException("newAction == null");
         }
@@ -665,8 +689,9 @@ public abstract class CharsetEncoder {
     /**
      * Returns the replacement byte array, which is never null or empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.284 -0500", hash_original_method = "D4DB6E703F0B5C3D24041A00F1C8C203", hash_generated_method = "4545941C969FD37B8017D053CD6AA5CB")
-    public final byte[] replacement() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.333 -0500", hash_original_method = "D4DB6E703F0B5C3D24041A00F1C8C203", hash_generated_method = "4545941C969FD37B8017D053CD6AA5CB")
+    
+public final byte[] replacement() {
         return replacementBytes;
     }
 
@@ -688,8 +713,9 @@ public abstract class CharsetEncoder {
      *             if the given replacement cannot satisfy the requirement
      *             mentioned above.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.285 -0500", hash_original_method = "267C7D54312382305679F98E9AD49DA0", hash_generated_method = "2A83C62DEA8BAF96E6A492527CD3B2E2")
-    public final CharsetEncoder replaceWith(byte[] replacement) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.337 -0500", hash_original_method = "267C7D54312382305679F98E9AD49DA0", hash_generated_method = "2A83C62DEA8BAF96E6A492527CD3B2E2")
+    
+public final CharsetEncoder replaceWith(byte[] replacement) {
         if (replacement == null) {
             throw new IllegalArgumentException("replacement == null");
         }
@@ -716,8 +742,9 @@ public abstract class CharsetEncoder {
      *
      * @return this encoder.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.286 -0500", hash_original_method = "939E78B196C94EAC65CBC7206A9E1DD0", hash_generated_method = "74582C54E087C1EF781FF318AC604A85")
-    public final CharsetEncoder reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.339 -0500", hash_original_method = "939E78B196C94EAC65CBC7206A9E1DD0", hash_generated_method = "74582C54E087C1EF781FF318AC604A85")
+    
+public final CharsetEncoder reset() {
         status = INIT;
         implReset();
         return this;
@@ -727,8 +754,9 @@ public abstract class CharsetEncoder {
      * Returns this encoder's <code>CodingErrorAction</code> when unmappable
      * character occurred during encoding process.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.287 -0500", hash_original_method = "01254405DC3888434A269A87FF2AF4FB", hash_generated_method = "1F078C226DD272E4C9A8DABC7770CFCF")
-    public CodingErrorAction unmappableCharacterAction() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.341 -0500", hash_original_method = "01254405DC3888434A269A87FF2AF4FB", hash_generated_method = "1F078C226DD272E4C9A8DABC7770CFCF")
+    
+public CodingErrorAction unmappableCharacterAction() {
         return unmappableCharacterAction;
     }
 }

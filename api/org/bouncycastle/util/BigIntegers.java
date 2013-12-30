@@ -18,8 +18,9 @@ public final class BigIntegers {
      * @param value value to be converted.
      * @return a byte array without a leading zero byte if present in the signed encoding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.061 -0500", hash_original_method = "979A867C88CED149A8B0CC0C806AA09A", hash_generated_method = "37BDC297138C5562FDE593E32F4BDB8E")
-    public static byte[] asUnsignedByteArray(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.410 -0500", hash_original_method = "979A867C88CED149A8B0CC0C806AA09A", hash_generated_method = "37BDC297138C5562FDE593E32F4BDB8E")
+    
+public static byte[] asUnsignedByteArray(
         BigInteger value)
     {
         byte[] bytes = value.toByteArray();
@@ -44,8 +45,9 @@ public final class BigIntegers {
      * @param random the source of randomness
      * @return a random BigInteger value in the range [min,max]
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.062 -0500", hash_original_method = "53B55470D05734C403FE921C557119F5", hash_generated_method = "F2963150F2456D21A09B08F298769583")
-    public static BigInteger createRandomInRange(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.413 -0500", hash_original_method = "53B55470D05734C403FE921C557119F5", hash_generated_method = "F2963150F2456D21A09B08F298769583")
+    
+public static BigInteger createRandomInRange(
         BigInteger      min,
         BigInteger      max,
         SecureRandom    random)
@@ -78,10 +80,10 @@ public final class BigIntegers {
         // fall back to a faster (restricted) method
         return new BigInteger(max.subtract(min).bitLength() - 1, random).add(min);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.058 -0500", hash_original_field = "1D0D46B958439834140E299F6789A7DD", hash_generated_field = "859C82FDE2952F49F9B9C155801362CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.405 -0500", hash_original_field = "1D0D46B958439834140E299F6789A7DD", hash_generated_field = "859C82FDE2952F49F9B9C155801362CA")
 
     private static final int MAX_ITERATIONS = 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:00.059 -0500", hash_original_field = "022E24154725CD5F5585BBEA8F639A54", hash_generated_field = "751997057E9748B7597C8C19A2A57677")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.407 -0500", hash_original_field = "022E24154725CD5F5585BBEA8F639A54", hash_generated_field = "751997057E9748B7597C8C19A2A57677")
 
     private static final BigInteger ZERO = BigInteger.valueOf(0);
     

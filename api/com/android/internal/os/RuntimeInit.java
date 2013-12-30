@@ -33,8 +33,9 @@ import droidsafe.helpers.DSUtils;
 
 public class RuntimeInit {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.399 -0500", hash_original_method = "C7622073E000BE2542D010C6F669959A", hash_generated_method = "771018B1D01CA66B5C048E790F69C13F")
-    private static final void commonInit() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.222 -0500", hash_original_method = "C7622073E000BE2542D010C6F669959A", hash_generated_method = "771018B1D01CA66B5C048E790F69C13F")
+    
+private static final void commonInit() {
         if (DEBUG) Slog.d(TAG, "Entered RuntimeInit!");
 
         /* set default handler; this applies to all threads in the VM */
@@ -98,8 +99,9 @@ public class RuntimeInit {
      * Returns an HTTP user agent of the form
      * "Dalvik/1.1.0 (Linux; U; Android Eclair Build/MASTER)".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.400 -0500", hash_original_method = "CC6D52B1B7C2781118F4D0CDEF717B7F", hash_generated_method = "21BCD93CA8F78FB04BE6067E43347FE3")
-    private static String getDefaultUserAgent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.224 -0500", hash_original_method = "CC6D52B1B7C2781118F4D0CDEF717B7F", hash_generated_method = "21BCD93CA8F78FB04BE6067E43347FE3")
+    
+private static String getDefaultUserAgent() {
         StringBuilder result = new StringBuilder(64);
         result.append("Dalvik/");
         result.append(System.getProperty("java.vm.version")); // such as 1.1.0
@@ -133,8 +135,9 @@ public class RuntimeInit {
      * @param className Fully-qualified class name
      * @param argv Argument vector for main()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.401 -0500", hash_original_method = "57D106C9A5F0931B48EF6F0A7020131B", hash_generated_method = "E6DC0239745199AB2318C248A870A99E")
-    private static void invokeStaticMain(String className, String[] argv)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.227 -0500", hash_original_method = "57D106C9A5F0931B48EF6F0A7020131B", hash_generated_method = "E6DC0239745199AB2318C248A870A99E")
+    
+private static void invokeStaticMain(String className, String[] argv)
             throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
 
@@ -172,8 +175,9 @@ public class RuntimeInit {
         throw new ZygoteInit.MethodAndArgsCaller(m, argv);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.402 -0500", hash_original_method = "0D2BE4D132F751EADEC03AA29790EAA4", hash_generated_method = "367D7E6B6EAEC19E1E850899BAEFFFF9")
-    public static final void main(String[] argv) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.230 -0500", hash_original_method = "0D2BE4D132F751EADEC03AA29790EAA4", hash_generated_method = "367D7E6B6EAEC19E1E850899BAEFFFF9")
+    
+public static final void main(String[] argv) {
         if (argv.length == 2 && argv[1].equals("application")) {
             if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application");
             redirectLogStreams();
@@ -210,8 +214,9 @@ public class RuntimeInit {
      * @param targetSdkVersion target SDK version
      * @param argv arg strings
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.405 -0500", hash_original_method = "9881403720ADE533F77BFD7C116DE8A0", hash_generated_method = "0F2DC0835E1E6FB890D0373B8BD49B08")
-    public static final void zygoteInit(int targetSdkVersion, String[] argv)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.237 -0500", hash_original_method = "9881403720ADE533F77BFD7C116DE8A0", hash_generated_method = "0F2DC0835E1E6FB890D0373B8BD49B08")
+    
+public static final void zygoteInit(int targetSdkVersion, String[] argv)
             throws ZygoteInit.MethodAndArgsCaller {
         if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application from zygote");
 
@@ -234,16 +239,18 @@ public class RuntimeInit {
      * @param targetSdkVersion target SDK version
      * @param argv arg strings
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.406 -0500", hash_original_method = "7C54E6389E453FD515994E6002004E39", hash_generated_method = "DD353CABA71F1E8C54F83BBAC5481E24")
-    public static void wrapperInit(int targetSdkVersion, String[] argv)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.240 -0500", hash_original_method = "7C54E6389E453FD515994E6002004E39", hash_generated_method = "DD353CABA71F1E8C54F83BBAC5481E24")
+    
+public static void wrapperInit(int targetSdkVersion, String[] argv)
             throws ZygoteInit.MethodAndArgsCaller {
         if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application from wrapper");
 
         applicationInit(targetSdkVersion, argv);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.407 -0500", hash_original_method = "ED4327773C53459AF7AFC1B9F1BFFE58", hash_generated_method = "51ABAE0A416A1BEAFBE4E8FEAC94ED8E")
-    private static void applicationInit(int targetSdkVersion, String[] argv)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.242 -0500", hash_original_method = "ED4327773C53459AF7AFC1B9F1BFFE58", hash_generated_method = "51ABAE0A416A1BEAFBE4E8FEAC94ED8E")
+    
+private static void applicationInit(int targetSdkVersion, String[] argv)
             throws ZygoteInit.MethodAndArgsCaller {
         // We want to be fairly aggressive about heap utilization, to avoid
         // holding on to a lot of memory that isn't needed.
@@ -266,8 +273,9 @@ public class RuntimeInit {
     /**
      * Redirect System.out and System.err to the Android log.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.407 -0500", hash_original_method = "64B494D57495388AEA3A29297F0CBFFC", hash_generated_method = "7764F224334641D2EC0D60CEFC73A728")
-    public static void redirectLogStreams() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.245 -0500", hash_original_method = "64B494D57495388AEA3A29297F0CBFFC", hash_generated_method = "7764F224334641D2EC0D60CEFC73A728")
+    
+public static void redirectLogStreams() {
         System.out.close();
         System.setOut(new AndroidPrintStream(Log.INFO, "System.out"));
         System.err.close();
@@ -303,8 +311,9 @@ public class RuntimeInit {
      * @param tag to record with the error
      * @param t exception describing the error site and conditions
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.414 -0500", hash_original_method = "F1B813BD238681733DAFF269616C7CF7", hash_generated_method = "F681E3FD634766498B11C935AE1CEDA2")
-    public static void wtf(String tag, Throwable t) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.263 -0500", hash_original_method = "F1B813BD238681733DAFF269616C7CF7", hash_generated_method = "F681E3FD634766498B11C935AE1CEDA2")
+    
+public static void wtf(String tag, Throwable t) {
         try {
             if (ActivityManagerNative.getDefault().handleApplicationWtf(
                     mApplicationObject, tag, new ApplicationErrorReport.CrashInfo(t))) {
@@ -321,16 +330,18 @@ public class RuntimeInit {
      * Set the object identifying this application/process, for reporting VM
      * errors.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.415 -0500", hash_original_method = "C39B9D61998C599A14A36C909D0DA77C", hash_generated_method = "6F401FB1E069C59322E5684437DF2D4F")
-    public static final void setApplicationObject(IBinder app) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.265 -0500", hash_original_method = "C39B9D61998C599A14A36C909D0DA77C", hash_generated_method = "6F401FB1E069C59322E5684437DF2D4F")
+    
+public static final void setApplicationObject(IBinder app) {
         mApplicationObject = app;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.416 -0500", hash_original_method = "E901955560D4A31547FD724447878F67", hash_generated_method = "22E2E5155AECEAD3EABB5DFA20E1CD96")
-    public static final IBinder getApplicationObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.267 -0500", hash_original_method = "E901955560D4A31547FD724447878F67", hash_generated_method = "22E2E5155AECEAD3EABB5DFA20E1CD96")
+    
+public static final IBinder getApplicationObject() {
         return mApplicationObject;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.391 -0500", hash_original_field = "C73D9F25E5F6CAFECCE98CB85C10D990", hash_generated_field = "527BFEF4E332EB2DD2EA4CFDB3D09D89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.200 -0500", hash_original_field = "C73D9F25E5F6CAFECCE98CB85C10D990", hash_generated_field = "527BFEF4E332EB2DD2EA4CFDB3D09D89")
 
     private final static String TAG = "AndroidRuntime";
 
@@ -343,8 +354,9 @@ public class RuntimeInit {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.396 -0500", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "4D4A550BC86A534E273B85EC759C5EDB")
-        public void uncaughtException(Thread t, Throwable e) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.213 -0500", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "4D4A550BC86A534E273B85EC759C5EDB")
+        
+public void uncaughtException(Thread t, Throwable e) {
             try {
                 // Don't re-enter -- avoid infinite loops if crash-reporting crashes.
                 if (mCrashing) return;
@@ -378,10 +390,10 @@ public class RuntimeInit {
 
     
     static class Arguments {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.417 -0500", hash_original_field = "54F1E4F701E6BC5080DD319C8D10B220", hash_generated_field = "54F1E4F701E6BC5080DD319C8D10B220")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.270 -0500", hash_original_field = "54F1E4F701E6BC5080DD319C8D10B220", hash_generated_field = "54F1E4F701E6BC5080DD319C8D10B220")
 
         String startClass;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.418 -0500", hash_original_field = "711B2441164D898E55743AC3E8A55306", hash_generated_field = "711B2441164D898E55743AC3E8A55306")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.272 -0500", hash_original_field = "711B2441164D898E55743AC3E8A55306", hash_generated_field = "711B2441164D898E55743AC3E8A55306")
 
         String[] startArgs;
 
@@ -390,16 +402,18 @@ public class RuntimeInit {
          * @param args runtime command-line args
          * @throws IllegalArgumentException
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.419 -0500", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "35BDC5101A4DE38616FDCE6EF4D8CA10")
-        Arguments(String args[]) throws IllegalArgumentException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.276 -0500", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "35BDC5101A4DE38616FDCE6EF4D8CA10")
+        
+Arguments(String args[]) throws IllegalArgumentException {
             parseArgs(args);
         }
 
         /**
          * Parses the commandline arguments intended for the Runtime.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.420 -0500", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "BA0AD7E18F4DCF5C52C0A2E2DC39C35F")
-        private void parseArgs(String args[])
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.278 -0500", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "BA0AD7E18F4DCF5C52C0A2E2DC39C35F")
+        
+private void parseArgs(String args[])
                 throws IllegalArgumentException {
             int curArg = 0;
             for (; curArg < args.length; curArg++) {
@@ -424,17 +438,17 @@ public class RuntimeInit {
 
         
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.392 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "7841AA055B417A7E8C3D727A4ADDD91D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.203 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "7841AA055B417A7E8C3D727A4ADDD91D")
 
     private final static boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.393 -0500", hash_original_field = "6FBE6536E7CE204510C4979FD7989151", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.205 -0500", hash_original_field = "6FBE6536E7CE204510C4979FD7989151", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
 
     private static boolean initialized;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.393 -0500", hash_original_field = "FFD16133019F2BA1473D1931EA0B77AF", hash_generated_field = "254F062FB27979B6C2E631565CC9502B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.207 -0500", hash_original_field = "FFD16133019F2BA1473D1931EA0B77AF", hash_generated_field = "254F062FB27979B6C2E631565CC9502B")
 
 
     private static IBinder mApplicationObject;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.394 -0500", hash_original_field = "01558103F728473DCF5D7E6B0402B753", hash_generated_field = "7061173743FAA271B75796C94B51B8DD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.210 -0500", hash_original_field = "01558103F728473DCF5D7E6B0402B753", hash_generated_field = "7061173743FAA271B75796C94B51B8DD")
 
 
     private static volatile boolean mCrashing = false;

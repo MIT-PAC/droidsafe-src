@@ -21,8 +21,9 @@ public class DERObjectIdentifier extends ASN1Object {
      *
      * @exception IllegalArgumentException if the object cannot be converted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.144 -0500", hash_original_method = "8E6A00C9FD578924DAE1E9AA277D235D", hash_generated_method = "801B110C896132E1A396E76F36312800")
-    public static DERObjectIdentifier getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.623 -0500", hash_original_method = "8E6A00C9FD578924DAE1E9AA277D235D", hash_generated_method = "801B110C896132E1A396E76F36312800")
+    
+public static DERObjectIdentifier getInstance(
         Object  obj)
     {
         if (obj == null || obj instanceof DERObjectIdentifier)
@@ -42,8 +43,9 @@ public class DERObjectIdentifier extends ASN1Object {
      * @exception IllegalArgumentException if the tagged object cannot
      *               be converted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.145 -0500", hash_original_method = "A02B5A4CC1D675D6AB61342B6CB52A83", hash_generated_method = "DA83580FE5AB1481B0AA055FA3E544F1")
-    public static DERObjectIdentifier getInstance(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.626 -0500", hash_original_method = "A02B5A4CC1D675D6AB61342B6CB52A83", hash_generated_method = "DA83580FE5AB1481B0AA055FA3E544F1")
+    
+public static DERObjectIdentifier getInstance(
         ASN1TaggedObject obj,
         boolean          explicit)
     {
@@ -59,8 +61,9 @@ public class DERObjectIdentifier extends ASN1Object {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.154 -0500", hash_original_method = "7A21A0FDB9F41FC21B39244A17757B27", hash_generated_method = "99A784EBDDE84250403E1CC619AC8F04")
-    private static boolean isValidIdentifier(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.651 -0500", hash_original_method = "7A21A0FDB9F41FC21B39244A17757B27", hash_generated_method = "99A784EBDDE84250403E1CC619AC8F04")
+    
+private static boolean isValidIdentifier(
         String identifier)
     {
         if (identifier.length() < 3
@@ -102,13 +105,14 @@ public class DERObjectIdentifier extends ASN1Object {
 
         return periodAllowed;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.143 -0500", hash_original_field = "67D18ED1400CD458B308847E018D0637", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.620 -0500", hash_original_field = "67D18ED1400CD458B308847E018D0637", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
 
     String      identifier;
     
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.146 -0500", hash_original_method = "41784C2F0BEC0E535BBC46B058BAD130", hash_generated_method = "E194B8ACE3B852AC3A9A0D5915A8C6D8")
-    DERObjectIdentifier(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.629 -0500", hash_original_method = "41784C2F0BEC0E535BBC46B058BAD130", hash_generated_method = "E194B8ACE3B852AC3A9A0D5915A8C6D8")
+    
+DERObjectIdentifier(
         byte[]  bytes)
     {
         StringBuffer    objId = new StringBuffer();
@@ -175,8 +179,9 @@ public class DERObjectIdentifier extends ASN1Object {
         // END android-changed
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.147 -0500", hash_original_method = "475B203FC54A32C4FE512A1ADD61E543", hash_generated_method = "821A328933AD5429C03C69E3DE9D30AF")
-    public DERObjectIdentifier(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.632 -0500", hash_original_method = "475B203FC54A32C4FE512A1ADD61E543", hash_generated_method = "821A328933AD5429C03C69E3DE9D30AF")
+    
+public DERObjectIdentifier(
         String  identifier)
     {
         if (!isValidIdentifier(identifier))
@@ -193,14 +198,16 @@ public class DERObjectIdentifier extends ASN1Object {
         // END android-changed
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.148 -0500", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "FF7AB1564D75C7CD37060B089918FD81")
-    public String getId()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.634 -0500", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "FF7AB1564D75C7CD37060B089918FD81")
+    
+public String getId()
     {
         return identifier;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.149 -0500", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "E45E5504E29A0C473AC244F4CCC51689")
-    private void writeField(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.636 -0500", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "E45E5504E29A0C473AC244F4CCC51689")
+    
+private void writeField(
         OutputStream    out,
         long            fieldValue)
         throws IOException
@@ -216,8 +223,9 @@ public class DERObjectIdentifier extends ASN1Object {
         out.write(result, pos, 9 - pos);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.150 -0500", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "5A4499E969469E1AB2CCB45521BE4E7D")
-    private void writeField(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.639 -0500", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "5A4499E969469E1AB2CCB45521BE4E7D")
+    
+private void writeField(
         OutputStream    out,
         BigInteger      fieldValue)
         throws IOException
@@ -242,8 +250,9 @@ public class DERObjectIdentifier extends ASN1Object {
 
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.151 -0500", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "ECFD3ADA5852656A886183CB7FE8CA3F")
-    void encode(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.642 -0500", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "ECFD3ADA5852656A886183CB7FE8CA3F")
+    
+void encode(
         DEROutputStream out)
         throws IOException
     {
@@ -275,14 +284,16 @@ public class DERObjectIdentifier extends ASN1Object {
         out.writeEncoded(OBJECT_IDENTIFIER, bytes);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.152 -0500", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "9D581FCEE7A17AA66DF023030951627B")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.644 -0500", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "9D581FCEE7A17AA66DF023030951627B")
+    
+public int hashCode()
     {
         return identifier.hashCode();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.152 -0500", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "0655D55E620898111D8D6A0724E88908")
-    boolean asn1Equals(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.646 -0500", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "0655D55E620898111D8D6A0724E88908")
+    
+boolean asn1Equals(
         DERObject  o)
     {
         if (!(o instanceof DERObjectIdentifier))
@@ -293,8 +304,9 @@ public class DERObjectIdentifier extends ASN1Object {
         return identifier.equals(((DERObjectIdentifier)o).identifier);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.153 -0500", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "241A0FB634B7F2AB240F27EA72BC5EEA")
-    public String toString()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.648 -0500", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "241A0FB634B7F2AB240F27EA72BC5EEA")
+    
+public String toString()
     {
         return getId();
     }

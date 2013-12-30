@@ -13,11 +13,11 @@ import java.util.Arrays;
 
 
 public class RC2ParameterSpec implements AlgorithmParameterSpec {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.863 -0500", hash_original_field = "28D53E7400C0A531DBB5CFA9D420D399", hash_generated_field = "AC6861D88456BB5E6B8CBF2574EE2E67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.213 -0500", hash_original_field = "28D53E7400C0A531DBB5CFA9D420D399", hash_generated_field = "AC6861D88456BB5E6B8CBF2574EE2E67")
 
 
     private  int effectiveKeyBits;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.864 -0500", hash_original_field = "E884C91B0186461100A61CCE6B0406E0", hash_generated_field = "EF60E6736481A45AB4AEED35775132C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.215 -0500", hash_original_field = "E884C91B0186461100A61CCE6B0406E0", hash_generated_field = "EF60E6736481A45AB4AEED35775132C4")
 
     private  byte[] iv;
 
@@ -28,8 +28,9 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
      * @param effectiveKeyBits
      *            the effective key length (in bits).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.864 -0500", hash_original_method = "981D6EF1132B7EAC7AA89C92203BA1A2", hash_generated_method = "F39ECEA021ACCE7E5DF0B3EDAD33CAD7")
-    public RC2ParameterSpec(int effectiveKeyBits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.217 -0500", hash_original_method = "981D6EF1132B7EAC7AA89C92203BA1A2", hash_generated_method = "F39ECEA021ACCE7E5DF0B3EDAD33CAD7")
+    
+public RC2ParameterSpec(int effectiveKeyBits) {
         this.effectiveKeyBits = effectiveKeyBits;
         iv = null;
     }
@@ -48,8 +49,9 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
      * @throws IllegalArgumentException
      *             if the initialization vector is null or shorter than 8 bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.865 -0500", hash_original_method = "66EC02A60547F68FA7875E0B5CB3BCDA", hash_generated_method = "FFBEE79BB4001BF36F516D3A3F9118AC")
-    public RC2ParameterSpec(int effectiveKeyBits, byte[] iv) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.221 -0500", hash_original_method = "66EC02A60547F68FA7875E0B5CB3BCDA", hash_generated_method = "FFBEE79BB4001BF36F516D3A3F9118AC")
+    
+public RC2ParameterSpec(int effectiveKeyBits, byte[] iv) {
         if (iv == null) {
             throw new IllegalArgumentException("iv == null");
         }
@@ -79,8 +81,9 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
      *             if the initialization vector is null or starting at
      *             <code>offset</code> is shorter than 8 bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.866 -0500", hash_original_method = "F8E908A70E700CBC7624EF366C4425D3", hash_generated_method = "AEFF8E84E95C023F6D8865FE889AC2AA")
-    public RC2ParameterSpec(int effectiveKeyBits, byte[] iv, int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.224 -0500", hash_original_method = "F8E908A70E700CBC7624EF366C4425D3", hash_generated_method = "AEFF8E84E95C023F6D8865FE889AC2AA")
+    
+public RC2ParameterSpec(int effectiveKeyBits, byte[] iv, int offset) {
         if (iv == null) {
             throw new IllegalArgumentException("iv == null");
         }
@@ -97,8 +100,9 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
      *
      * @return the effective key length (in bits).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.867 -0500", hash_original_method = "1ACACD69299A3BB8DC7106B43ACB3CF4", hash_generated_method = "C603A355B8F4AAE24A24C3D1867627A6")
-    public int getEffectiveKeyBits() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.226 -0500", hash_original_method = "1ACACD69299A3BB8DC7106B43ACB3CF4", hash_generated_method = "C603A355B8F4AAE24A24C3D1867627A6")
+    
+public int getEffectiveKeyBits() {
         return effectiveKeyBits;
     }
 
@@ -107,8 +111,9 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
      *
      * @return a copy of the initialization vector, or null if none specified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.868 -0500", hash_original_method = "462AE8FB0DAC66A27C950BA3964C530D", hash_generated_method = "C6D6D74BC87A4D97FDA1CACFCE456E88")
-    public byte[] getIV() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.228 -0500", hash_original_method = "462AE8FB0DAC66A27C950BA3964C530D", hash_generated_method = "C6D6D74BC87A4D97FDA1CACFCE456E88")
+    
+public byte[] getIV() {
         if (iv == null) {
             return null;
         }
@@ -126,9 +131,10 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
      * @return true if the effective key length and the initialization vector of
      *         both objects are equal, otherwise false.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.869 -0500", hash_original_method = "054E5AEB74111DBC68AB791919DED60A", hash_generated_method = "92502B57C99C64E2794D9E013E4AE9B3")
-    @Override
-public boolean equals(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.231 -0500", hash_original_method = "054E5AEB74111DBC68AB791919DED60A", hash_generated_method = "92502B57C99C64E2794D9E013E4AE9B3")
+    
+@Override
+    public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
@@ -145,9 +151,10 @@ public boolean equals(Object obj) {
      *
      * @return the hash code.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.870 -0500", hash_original_method = "006AB7CB427D2D70245D98F537F7CF42", hash_generated_method = "BFD824D09553C899DB5EF18CDC25D772")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.233 -0500", hash_original_method = "006AB7CB427D2D70245D98F537F7CF42", hash_generated_method = "BFD824D09553C899DB5EF18CDC25D772")
+    
+@Override
+    public int hashCode() {
         int result = effectiveKeyBits;
         if (iv == null) {
             return result;

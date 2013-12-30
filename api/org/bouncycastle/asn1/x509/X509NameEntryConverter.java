@@ -31,8 +31,9 @@ public abstract class X509NameEntryConverter {
      * @param off the index at which the encoding starts
      * @return the decoded object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.745 -0500", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "B12D65C7B715CC71B06DD7953345660F")
-    protected DERObject convertHexEncoded(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.842 -0500", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "B12D65C7B715CC71B06DD7953345660F")
+    
+protected DERObject convertHexEncoded(
         String  str,
         int     off)
         throws IOException
@@ -71,8 +72,9 @@ public abstract class X509NameEntryConverter {
      * return true if the passed in String can be represented without
      * loss as a PrintableString, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.746 -0500", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "FB6B49193A56B436EEBE084386601EFE")
-    protected boolean canBePrintable(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.844 -0500", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "FB6B49193A56B436EEBE084386601EFE")
+    
+protected boolean canBePrintable(
         String  str)
     {
         return DERPrintableString.isPrintableString(str);
@@ -86,8 +88,9 @@ public abstract class X509NameEntryConverter {
      * @param value the value of the particular DN component.
      * @return the ASN.1 equivalent for the value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.747 -0500", hash_original_method = "D0B42605F54F436BA6550A9164C86416", hash_generated_method = "0F05FF416A244E97C0B0AD580B10BB3B")
-    public abstract DERObject getConvertedValue(DERObjectIdentifier oid, String value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.847 -0500", hash_original_method = "D0B42605F54F436BA6550A9164C86416", hash_generated_method = "0F05FF416A244E97C0B0AD580B10BB3B")
+    
+public abstract DERObject getConvertedValue(DERObjectIdentifier oid, String value);
 
     
 }

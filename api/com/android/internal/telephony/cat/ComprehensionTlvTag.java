@@ -32,13 +32,14 @@ public enum ComprehensionTlvTag {
     URL(0x31),
     BROWSER_TERMINATION_CAUSE(0x34),
     TEXT_ATTRIBUTE(0x50);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.389 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "1FE26AAF0F7068BF50C3FDD7D6BD850D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.074 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "1FE26AAF0F7068BF50C3FDD7D6BD850D")
 
 
     private int mValue;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.390 -0500", hash_original_method = "7F4CD850361B10325932E6280EE6B17E", hash_generated_method = "7F4CD850361B10325932E6280EE6B17E")
-        ComprehensionTlvTag(int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.076 -0500", hash_original_method = "7F4CD850361B10325932E6280EE6B17E", hash_generated_method = "7F4CD850361B10325932E6280EE6B17E")
+        
+ComprehensionTlvTag(int value) {
         mValue = value;
     }
 
@@ -47,13 +48,15 @@ public enum ComprehensionTlvTag {
      *
      * @return Actual tag value of this object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.391 -0500", hash_original_method = "27017A4BB2548485661BB15426A7D88C", hash_generated_method = "830F464825E9198C7936F8382B630542")
-        public int value() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.079 -0500", hash_original_method = "27017A4BB2548485661BB15426A7D88C", hash_generated_method = "830F464825E9198C7936F8382B630542")
+        
+public int value() {
         return mValue;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.391 -0500", hash_original_method = "33F65876064DF227E7D95E254A137FBB", hash_generated_method = "E83211FFEF3EACA388D0315B46E32149")
-        public static ComprehensionTlvTag fromInt(int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.081 -0500", hash_original_method = "33F65876064DF227E7D95E254A137FBB", hash_generated_method = "E83211FFEF3EACA388D0315B46E32149")
+        
+public static ComprehensionTlvTag fromInt(int value) {
         for (ComprehensionTlvTag e : ComprehensionTlvTag.values()) {
             if (e.mValue == value) {
                 return e;

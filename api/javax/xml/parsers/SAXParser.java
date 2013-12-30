@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 
 public abstract class SAXParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.191 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.670 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
 
     private static final boolean DEBUG = false;
@@ -34,8 +34,9 @@ public abstract class SAXParser {
      * <p>Protected constructor to prevent instantiation.
      * Use {@link javax.xml.parsers.SAXParserFactory#newSAXParser()}.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.193 -0500", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "956B7A546D3F4BF1BA883D180DA1FB4A")
-    protected SAXParser () {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.672 -0500", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "956B7A546D3F4BF1BA883D180DA1FB4A")
+    
+protected SAXParser () {
 
     }
 
@@ -53,8 +54,9 @@ public abstract class SAXParser {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.195 -0500", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "C15518AC6D3FFAD64907FEA3CF993635")
-    public void reset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.675 -0500", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "C15518AC6D3FFAD64907FEA3CF993635")
+    
+public void reset() {
 
         // implementors should override this method
         throw new UnsupportedOperationException(
@@ -80,8 +82,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.197 -0500", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "BF8CFBBEA18A12A239BA0C8DB24F3656")
-    public void parse(InputStream is, HandlerBase hb)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.678 -0500", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "BF8CFBBEA18A12A239BA0C8DB24F3656")
+    
+public void parse(InputStream is, HandlerBase hb)
         throws SAXException, IOException {
         if (is == null) {
             throw new IllegalArgumentException("InputStream cannot be null");
@@ -109,8 +112,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler version of this method instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.198 -0500", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "DFE97DBB075CEB43CC98933A412464B6")
-    public void parse(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.680 -0500", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "DFE97DBB075CEB43CC98933A412464B6")
+    
+public void parse(
         InputStream is,
         HandlerBase hb,
         String systemId)
@@ -138,8 +142,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.200 -0500", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "85E07A63C210923C558596017081C361")
-    public void parse(InputStream is, DefaultHandler dh)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.683 -0500", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "85E07A63C210923C558596017081C361")
+    
+public void parse(InputStream is, DefaultHandler dh)
         throws SAXException, IOException {
         if (is == null) {
             throw new IllegalArgumentException("InputStream cannot be null");
@@ -164,8 +169,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler version of this method instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.201 -0500", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "3C21E7953F5452067AA5A27C66419022")
-    public void parse(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.685 -0500", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "3C21E7953F5452067AA5A27C66419022")
+    
+public void parse(
         InputStream is,
         DefaultHandler dh,
         String systemId)
@@ -195,8 +201,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.203 -0500", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "43D13F5939334F2F10AB50C8971F6DF9")
-    public void parse(String uri, HandlerBase hb)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.687 -0500", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "43D13F5939334F2F10AB50C8971F6DF9")
+    
+public void parse(String uri, HandlerBase hb)
         throws SAXException, IOException {
         if (uri == null) {
             throw new IllegalArgumentException("uri cannot be null");
@@ -220,8 +227,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.204 -0500", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "C9998E6A83F4A64846D1FFF9E7C51719")
-    public void parse(String uri, DefaultHandler dh)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.689 -0500", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "C9998E6A83F4A64846D1FFF9E7C51719")
+    
+public void parse(String uri, DefaultHandler dh)
         throws SAXException, IOException {
         if (uri == null) {
             throw new IllegalArgumentException("uri cannot be null");
@@ -246,8 +254,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.206 -0500", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "E8EB618F55B4C3E8ABCCCEEC9CF3DDDD")
-    public void parse(File f, HandlerBase hb)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.692 -0500", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "E8EB618F55B4C3E8ABCCCEEC9CF3DDDD")
+    
+public void parse(File f, HandlerBase hb)
         throws SAXException, IOException {
         if (f == null) {
             throw new IllegalArgumentException("File cannot be null");
@@ -276,8 +285,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.208 -0500", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "E1820870BC3407C75737C70D7558183D")
-    public void parse(File f, DefaultHandler dh)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.694 -0500", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "E1820870BC3407C75737C70D7558183D")
+    
+public void parse(File f, DefaultHandler dh)
         throws SAXException, IOException {
         if (f == null) {
             throw new IllegalArgumentException("File cannot be null");
@@ -310,8 +320,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.209 -0500", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "291FAAD7E7EF70DACDE5C2DC4FA54219")
-    public void parse(InputSource is, HandlerBase hb)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.696 -0500", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "291FAAD7E7EF70DACDE5C2DC4FA54219")
+    
+public void parse(InputSource is, HandlerBase hb)
         throws SAXException, IOException {
         if (is == null) {
             throw new IllegalArgumentException("InputSource cannot be null");
@@ -342,8 +353,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.211 -0500", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "E6927473C62A9031C3B8A4697416E78F")
-    public void parse(InputSource is, DefaultHandler dh)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.699 -0500", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "E6927473C62A9031C3B8A4697416E78F")
+    
+public void parse(InputSource is, DefaultHandler dh)
         throws SAXException, IOException {
         if (is == null) {
             throw new IllegalArgumentException("InputSource cannot be null");
@@ -368,8 +380,9 @@ public abstract class SAXParser {
      *
      * @throws SAXException If any SAX errors occur during processing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.212 -0500", hash_original_method = "58C886207D8A58E2461E91D14CFC167C", hash_generated_method = "272E38E21040234908310753B49E4582")
-    public abstract org.xml.sax.Parser getParser() throws SAXException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.702 -0500", hash_original_method = "58C886207D8A58E2461E91D14CFC167C", hash_generated_method = "272E38E21040234908310753B49E4582")
+    
+public abstract org.xml.sax.Parser getParser() throws SAXException;
 
     /**
      * Returns the {@link org.xml.sax.XMLReader} that is encapsulated by the
@@ -381,8 +394,9 @@ public abstract class SAXParser {
      * @throws SAXException If any SAX errors occur during processing.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.214 -0500", hash_original_method = "B62E96B0118EEB0E23EC3778F736AAE1", hash_generated_method = "388CF7B5AAE047FFAF40E11D2B1A57CC")
-    public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.704 -0500", hash_original_method = "B62E96B0118EEB0E23EC3778F736AAE1", hash_generated_method = "388CF7B5AAE047FFAF40E11D2B1A57CC")
+    
+public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;
 
     /**
      * Indicates whether or not this parser is configured to
@@ -392,8 +406,9 @@ public abstract class SAXParser {
      *         understand namespaces; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.215 -0500", hash_original_method = "0C20300A9407A97F92B793E805D98086", hash_generated_method = "C069C8335C3E94893ADF95CE4452F34C")
-    public abstract boolean isNamespaceAware();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.707 -0500", hash_original_method = "0C20300A9407A97F92B793E805D98086", hash_generated_method = "C069C8335C3E94893ADF95CE4452F34C")
+    
+public abstract boolean isNamespaceAware();
 
     /**
      * Indicates whether or not this parser is configured to
@@ -403,8 +418,9 @@ public abstract class SAXParser {
      *         validate XML documents; false otherwise.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.217 -0500", hash_original_method = "B128693C9551D41070A4A0D64F8C0627", hash_generated_method = "89D797F47244E86E3C28FB7197668A45")
-    public abstract boolean isValidating();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.709 -0500", hash_original_method = "B128693C9551D41070A4A0D64F8C0627", hash_generated_method = "89D797F47244E86E3C28FB7197668A45")
+    
+public abstract boolean isValidating();
 
     /**
      * <p>Sets the particular property in the underlying implementation of
@@ -423,8 +439,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.XMLReader#setProperty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.218 -0500", hash_original_method = "4803E6F019B67995F2AFE024A185FC1E", hash_generated_method = "3D6939B3969A0F5AAE6AC1ED64A13B6C")
-    public abstract void setProperty(String name, Object value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.712 -0500", hash_original_method = "4803E6F019B67995F2AFE024A185FC1E", hash_generated_method = "3D6939B3969A0F5AAE6AC1ED64A13B6C")
+    
+public abstract void setProperty(String name, Object value)
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     /**
@@ -441,8 +458,9 @@ public abstract class SAXParser {
      *
      * @see org.xml.sax.XMLReader#getProperty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.219 -0500", hash_original_method = "A8F7E72A24ED70D88A263F42AB6331E0", hash_generated_method = "32023161F2DD5A4344FACE167186DC0F")
-    public abstract Object getProperty(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.715 -0500", hash_original_method = "A8F7E72A24ED70D88A263F42AB6331E0", hash_generated_method = "32023161F2DD5A4344FACE167186DC0F")
+    
+public abstract Object getProperty(String name)
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     /** <p>Get a reference to the the {@link Schema} being used by
@@ -460,8 +478,9 @@ public abstract class SAXParser {
      *
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.221 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
-    public Schema getSchema() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.717 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
+    
+public Schema getSchema() {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
@@ -488,8 +507,9 @@ public abstract class SAXParser {
      *
      * @see SAXParserFactory#setXIncludeAware(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.222 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
-    public boolean isXIncludeAware() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.720 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
+    
+public boolean isXIncludeAware() {
         throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()

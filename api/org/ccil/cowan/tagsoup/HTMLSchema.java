@@ -13,8 +13,9 @@ public class HTMLSchema extends Schema implements HTMLModels {
 	any existing ones.
 	*/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:02.425 -0500", hash_original_method = "B2A4B0E492C25011D357FE5464557874", hash_generated_method = "EF22B4C297DB91EF0334685BA9B1B44B")
-	public HTMLSchema() {
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.620 -0500", hash_original_method = "B2A4B0E492C25011D357FE5464557874", hash_generated_method = "EF22B4C297DB91EF0334685BA9B1B44B")
+	
+public HTMLSchema() {
 		// Start of Schema calls
 				setURI("http://www.w3.org/1999/xhtml");
 		setPrefix("html");

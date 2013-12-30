@@ -19,8 +19,9 @@ public class NetscapeDraftSpecFactory implements CookieSpecFactory {
         //Synthesized constructor
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.647 -0500", hash_original_method = "34FA08500657FDD515515AEEA52740F3", hash_generated_method = "0723E57BBF022B1A11EA4A04625C0410")
-    public CookieSpec newInstance(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.153 -0500", hash_original_method = "34FA08500657FDD515515AEEA52740F3", hash_generated_method = "0723E57BBF022B1A11EA4A04625C0410")
+    
+public CookieSpec newInstance(final HttpParams params) {
         if (params != null) {
             return new NetscapeDraftSpec(
                     (String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS));

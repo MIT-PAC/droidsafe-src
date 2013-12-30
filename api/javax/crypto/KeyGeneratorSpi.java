@@ -17,8 +17,9 @@ public abstract class KeyGeneratorSpi {
     /**
      * Creates a new {@code KeyGeneratorSpi} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.533 -0500", hash_original_method = "A75599FEFECBB1DE286B9919E5114FFE", hash_generated_method = "8575C1F81F960CBF97E36CFAA017FE2F")
-    public KeyGeneratorSpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.115 -0500", hash_original_method = "A75599FEFECBB1DE286B9919E5114FFE", hash_generated_method = "8575C1F81F960CBF97E36CFAA017FE2F")
+    
+public KeyGeneratorSpi() {
     }
 
     /**
@@ -26,8 +27,9 @@ public abstract class KeyGeneratorSpi {
      *
      * @return the generated secret key.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.534 -0500", hash_original_method = "68ECB24641996C94599FBD25DD668E73", hash_generated_method = "FFEB126BECE4358A1B7E9438CF71BA4A")
-    protected abstract SecretKey engineGenerateKey();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.117 -0500", hash_original_method = "68ECB24641996C94599FBD25DD668E73", hash_generated_method = "FFEB126BECE4358A1B7E9438CF71BA4A")
+    
+protected abstract SecretKey engineGenerateKey();
 
     /**
      * Initializes this {@code KeyGeneratorSpi} instance with the specified
@@ -41,8 +43,9 @@ public abstract class KeyGeneratorSpi {
      *             if the parameters cannot be uses to initialize this key
      *             generator algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.535 -0500", hash_original_method = "1E8B80FE4B38D99EEFEA0413936393C4", hash_generated_method = "8A89AF7DFCFC698EFF7E92E164F66801")
-    protected abstract void engineInit(AlgorithmParameterSpec params,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.120 -0500", hash_original_method = "1E8B80FE4B38D99EEFEA0413936393C4", hash_generated_method = "8A89AF7DFCFC698EFF7E92E164F66801")
+    
+protected abstract void engineInit(AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidAlgorithmParameterException;
 
     /**
@@ -54,8 +57,9 @@ public abstract class KeyGeneratorSpi {
      * @param random
      *            the randomness source for any random bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.535 -0500", hash_original_method = "7F2C8AF1B28CA2BB540ECEE8C651C4D7", hash_generated_method = "6BEE8FCD01C2BA222877BFEDD0F7CFB8")
-    protected abstract void engineInit(int keysize, SecureRandom random);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.122 -0500", hash_original_method = "7F2C8AF1B28CA2BB540ECEE8C651C4D7", hash_generated_method = "6BEE8FCD01C2BA222877BFEDD0F7CFB8")
+    
+protected abstract void engineInit(int keysize, SecureRandom random);
 
     /**
      * Initializes this {@code KeyGenerator} with the specified randomness
@@ -64,8 +68,9 @@ public abstract class KeyGeneratorSpi {
      * @param random
      *            the randomness source for any random bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:27.536 -0500", hash_original_method = "94BAA529D8EADD7261258DCF5C1FF668", hash_generated_method = "72914D70886628327444991D9E41ABF8")
-    protected abstract void engineInit(SecureRandom random);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.124 -0500", hash_original_method = "94BAA529D8EADD7261258DCF5C1FF668", hash_generated_method = "72914D70886628327444991D9E41ABF8")
+    
+protected abstract void engineInit(SecureRandom random);
 
     
 }

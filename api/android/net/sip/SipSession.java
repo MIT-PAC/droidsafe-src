@@ -12,19 +12,20 @@ import android.os.RemoteException;
 
 
 public final class SipSession {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.118 -0500", hash_original_field = "AF9438B88AD0FB6B975D18D00203FE64", hash_generated_field = "C71A0754A378907E73E85A0E7FA4A060")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.464 -0500", hash_original_field = "AF9438B88AD0FB6B975D18D00203FE64", hash_generated_field = "C71A0754A378907E73E85A0E7FA4A060")
 
     private static final String TAG = "SipSession";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.145 -0500", hash_original_field = "D0612F19DE6148ECCBB71FC3A3423CE7", hash_generated_field = "B127E608132911BCC4FB99E4A8F915FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.538 -0500", hash_original_field = "D0612F19DE6148ECCBB71FC3A3423CE7", hash_generated_field = "B127E608132911BCC4FB99E4A8F915FC")
 
 
     private  ISipSession mSession;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.146 -0500", hash_original_field = "DB28047BDCC49490A13C1B72324FBE59", hash_generated_field = "55B4CC9A7CFEB5835D007742DA36AADE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.540 -0500", hash_original_field = "DB28047BDCC49490A13C1B72324FBE59", hash_generated_field = "55B4CC9A7CFEB5835D007742DA36AADE")
 
     private Listener mListener;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.147 -0500", hash_original_method = "B71DAA3D1365DDABF697A1D97F8D88A8", hash_generated_method = "B71DAA3D1365DDABF697A1D97F8D88A8")
-    SipSession(ISipSession realSession) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.543 -0500", hash_original_method = "B71DAA3D1365DDABF697A1D97F8D88A8", hash_generated_method = "B71DAA3D1365DDABF697A1D97F8D88A8")
+    
+SipSession(ISipSession realSession) {
         mSession = realSession;
         if (realSession != null) {
             try {
@@ -35,8 +36,9 @@ public final class SipSession {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.148 -0500", hash_original_method = "26EA80DBAC1B6413B57EA6A425A19EE9", hash_generated_method = "26EA80DBAC1B6413B57EA6A425A19EE9")
-    SipSession(ISipSession realSession, Listener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.545 -0500", hash_original_method = "26EA80DBAC1B6413B57EA6A425A19EE9", hash_generated_method = "26EA80DBAC1B6413B57EA6A425A19EE9")
+    
+SipSession(ISipSession realSession, Listener listener) {
         this(realSession);
         setListener(listener);
     }
@@ -46,8 +48,9 @@ public final class SipSession {
      *
      * @return the IP address of the local host
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.148 -0500", hash_original_method = "E9A721906097EBC1FEB98095FAB057F5", hash_generated_method = "677E55B4188D99256E0D8A054CA03870")
-    public String getLocalIp() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.547 -0500", hash_original_method = "E9A721906097EBC1FEB98095FAB057F5", hash_generated_method = "677E55B4188D99256E0D8A054CA03870")
+    
+public String getLocalIp() {
         try {
             return mSession.getLocalIp();
         } catch (RemoteException e) {
@@ -61,8 +64,9 @@ public final class SipSession {
      *
      * @return the SIP profile that this session is associated with
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.149 -0500", hash_original_method = "87F54D512869FBB2D14566F63922D1B6", hash_generated_method = "1FD2899D5D6411C331BF8D9381F9A633")
-    public SipProfile getLocalProfile() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.550 -0500", hash_original_method = "87F54D512869FBB2D14566F63922D1B6", hash_generated_method = "1FD2899D5D6411C331BF8D9381F9A633")
+    
+public SipProfile getLocalProfile() {
         try {
             return mSession.getLocalProfile();
         } catch (RemoteException e) {
@@ -77,8 +81,9 @@ public final class SipSession {
      *
      * @return the SIP profile that this session is connected to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.150 -0500", hash_original_method = "D61110CB083F8C813E52FD778D269E44", hash_generated_method = "A85C13DC8C4E5EC6A927456BDB42FB5A")
-    public SipProfile getPeerProfile() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.552 -0500", hash_original_method = "D61110CB083F8C813E52FD778D269E44", hash_generated_method = "A85C13DC8C4E5EC6A927456BDB42FB5A")
+    
+public SipProfile getPeerProfile() {
         try {
             return mSession.getPeerProfile();
         } catch (RemoteException e) {
@@ -93,8 +98,9 @@ public final class SipSession {
      *
      * @return the session state
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.151 -0500", hash_original_method = "9EA9E21B58E34C7FB49C45688377E72F", hash_generated_method = "A2A0E799F3A8BAA58BCAFEF701F28036")
-    public int getState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.554 -0500", hash_original_method = "9EA9E21B58E34C7FB49C45688377E72F", hash_generated_method = "A2A0E799F3A8BAA58BCAFEF701F28036")
+    
+public int getState() {
         try {
             return mSession.getState();
         } catch (RemoteException e) {
@@ -108,8 +114,9 @@ public final class SipSession {
      *
      * @return true if the session is in a call
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.152 -0500", hash_original_method = "9EAE3F24E2C650B2D541A86A9F9A7795", hash_generated_method = "28DA8E137822FE176B67AF43B0F4F4B9")
-    public boolean isInCall() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.557 -0500", hash_original_method = "9EAE3F24E2C650B2D541A86A9F9A7795", hash_generated_method = "28DA8E137822FE176B67AF43B0F4F4B9")
+    
+public boolean isInCall() {
         try {
             return mSession.isInCall();
         } catch (RemoteException e) {
@@ -123,8 +130,9 @@ public final class SipSession {
      *
      * @return the call ID
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.152 -0500", hash_original_method = "A52F1B195D0D0A598BE5EAF9C188D1E2", hash_generated_method = "20463913D1EB1192B810213B0ACC00BE")
-    public String getCallId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.559 -0500", hash_original_method = "A52F1B195D0D0A598BE5EAF9C188D1E2", hash_generated_method = "20463913D1EB1192B810213B0ACC00BE")
+    
+public String getCallId() {
         try {
             return mSession.getCallId();
         } catch (RemoteException e) {
@@ -141,8 +149,9 @@ public final class SipSession {
      *
      * @param listener to listen to the session events of this object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.153 -0500", hash_original_method = "DF1CB7C0481108A53612C7FB72F6204A", hash_generated_method = "C77DE4E51514B6BC3180C67CBF94C5D7")
-    public void setListener(Listener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.561 -0500", hash_original_method = "DF1CB7C0481108A53612C7FB72F6204A", hash_generated_method = "C77DE4E51514B6BC3180C67CBF94C5D7")
+    
+public void setListener(Listener listener) {
         mListener = listener;
     }
 
@@ -156,8 +165,9 @@ public final class SipSession {
      * @param duration duration in second before the registration expires
      * @see Listener
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.154 -0500", hash_original_method = "8D2FD08823732E1C2D815A7E90C0FC77", hash_generated_method = "EE65FAFBA5FB190C5D75F1C5BE8FFF36")
-    public void register(int duration) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.563 -0500", hash_original_method = "8D2FD08823732E1C2D815A7E90C0FC77", hash_generated_method = "EE65FAFBA5FB190C5D75F1C5BE8FFF36")
+    
+public void register(int duration) {
         try {
             mSession.register(duration);
         } catch (RemoteException e) {
@@ -174,8 +184,9 @@ public final class SipSession {
      *
      * @see Listener
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.156 -0500", hash_original_method = "E4AB4EE14705E79FAB12EC8A1515405F", hash_generated_method = "6D93B3851227F8BFB9A1527B99C72931")
-    public void unregister() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.565 -0500", hash_original_method = "E4AB4EE14705E79FAB12EC8A1515405F", hash_generated_method = "6D93B3851227F8BFB9A1527B99C72931")
+    
+public void unregister() {
         try {
             mSession.unregister();
         } catch (RemoteException e) {
@@ -195,8 +206,9 @@ public final class SipSession {
      *        by SIP protocol) is used if {@code timeout} is zero or negative.
      * @see Listener
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.156 -0500", hash_original_method = "D9BC3F90AB4006B9EA6C3281D0F8E8EF", hash_generated_method = "86984BF195DEEE43217FDEDBE8C7C2D7")
-    public void makeCall(SipProfile callee, String sessionDescription,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.568 -0500", hash_original_method = "D9BC3F90AB4006B9EA6C3281D0F8E8EF", hash_generated_method = "86984BF195DEEE43217FDEDBE8C7C2D7")
+    
+public void makeCall(SipProfile callee, String sessionDescription,
             int timeout) {
         try {
             mSession.makeCall(callee, sessionDescription, timeout);
@@ -215,8 +227,9 @@ public final class SipSession {
      *        established within {@code timeout} seconds. Default value (defined
      *        by SIP protocol) is used if {@code timeout} is zero or negative.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.157 -0500", hash_original_method = "A5A5F75F0E41462274C36F9EA8217848", hash_generated_method = "1D57E00B47F68D45C9E581E52C489E47")
-    public void answerCall(String sessionDescription, int timeout) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.570 -0500", hash_original_method = "A5A5F75F0E41462274C36F9EA8217848", hash_generated_method = "1D57E00B47F68D45C9E581E52C489E47")
+    
+public void answerCall(String sessionDescription, int timeout) {
         try {
             mSession.answerCall(sessionDescription, timeout);
         } catch (RemoteException e) {
@@ -232,8 +245,9 @@ public final class SipSession {
      * {@link State#OUTGOING_CALL} or
      * {@link State#OUTGOING_CALL_RING_BACK}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.158 -0500", hash_original_method = "B98ACA998657ED3CD995605D9A274D2E", hash_generated_method = "1D4C436A95F19BCEA7E84EE01FE8E85F")
-    public void endCall() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.572 -0500", hash_original_method = "B98ACA998657ED3CD995605D9A274D2E", hash_generated_method = "1D4C436A95F19BCEA7E84EE01FE8E85F")
+    
+public void endCall() {
         try {
             mSession.endCall();
         } catch (RemoteException e) {
@@ -250,8 +264,9 @@ public final class SipSession {
      *        established within {@code timeout} seconds. Default value (defined
      *        by SIP protocol) is used if {@code timeout} is zero or negative.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.159 -0500", hash_original_method = "0DCF9DE8E2729C90E933890D545801E4", hash_generated_method = "7AAFC9A026FCC50A76F1270B03E98963")
-    public void changeCall(String sessionDescription, int timeout) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.574 -0500", hash_original_method = "0DCF9DE8E2729C90E933890D545801E4", hash_generated_method = "7AAFC9A026FCC50A76F1270B03E98963")
+    
+public void changeCall(String sessionDescription, int timeout) {
         try {
             mSession.changeCall(sessionDescription, timeout);
         } catch (RemoteException e) {
@@ -259,8 +274,9 @@ public final class SipSession {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.160 -0500", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "457DE503669A22F9796CDD5163AC081E")
-    ISipSession getRealSession() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.576 -0500", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "457DE503669A22F9796CDD5163AC081E")
+    
+ISipSession getRealSession() {
         return mSession;
     }
 
@@ -270,8 +286,9 @@ public final class SipSession {
         /**
          * Converts the state to string.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.131 -0500", hash_original_method = "568E659DC654AF7F82B3FE327FE2A97B", hash_generated_method = "F153B60BE1575A843B5EC2EC8D1A33BE")
-        public static String toString(int state) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.498 -0500", hash_original_method = "568E659DC654AF7F82B3FE327FE2A97B", hash_generated_method = "F153B60BE1575A843B5EC2EC8D1A33BE")
+        
+public static String toString(int state) {
             switch (state) {
                 case READY_TO_CALL:
                     return "READY_TO_CALL";
@@ -297,45 +314,46 @@ public final class SipSession {
                     return "NOT_DEFINED";
             }
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.120 -0500", hash_original_field = "89B4E0A703B641D3B00D63635A5F5DB3", hash_generated_field = "D6CF7815116771C30F5505C0D30DAAA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.468 -0500", hash_original_field = "89B4E0A703B641D3B00D63635A5F5DB3", hash_generated_field = "D6CF7815116771C30F5505C0D30DAAA0")
 
         public static final int READY_TO_CALL = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.121 -0500", hash_original_field = "580AAF42E7166DB5FD9AC1620DB3BB92", hash_generated_field = "6E8D637253813E25EE79327490FD11DB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.470 -0500", hash_original_field = "580AAF42E7166DB5FD9AC1620DB3BB92", hash_generated_field = "6E8D637253813E25EE79327490FD11DB")
 
         public static final int REGISTERING = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.121 -0500", hash_original_field = "EF222475ED14682CC9C27068BA3D498D", hash_generated_field = "53325B9453E2CDBB5536AA0006D59656")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.472 -0500", hash_original_field = "EF222475ED14682CC9C27068BA3D498D", hash_generated_field = "53325B9453E2CDBB5536AA0006D59656")
 
         public static final int DEREGISTERING = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.122 -0500", hash_original_field = "B837ECD008DB85758F7809DB5C8EEABA", hash_generated_field = "4CF84D38E6E85F0013C36CDED43365C3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.475 -0500", hash_original_field = "B837ECD008DB85758F7809DB5C8EEABA", hash_generated_field = "4CF84D38E6E85F0013C36CDED43365C3")
 
         public static final int INCOMING_CALL = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.123 -0500", hash_original_field = "B7333C42B8386CA24554907BF7B4E7CA", hash_generated_field = "8FCBA6A42A23BE1381F16A8A22F19DFB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.477 -0500", hash_original_field = "B7333C42B8386CA24554907BF7B4E7CA", hash_generated_field = "8FCBA6A42A23BE1381F16A8A22F19DFB")
 
         public static final int INCOMING_CALL_ANSWERING = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.124 -0500", hash_original_field = "F58256933B24D300ECA631F18CA433A1", hash_generated_field = "D525E8AB9F7FA02B8F0A85C344DB10F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.479 -0500", hash_original_field = "F58256933B24D300ECA631F18CA433A1", hash_generated_field = "D525E8AB9F7FA02B8F0A85C344DB10F6")
 
         public static final int OUTGOING_CALL = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.125 -0500", hash_original_field = "A99B8351F9D5CCDEB77807B02D1C5D92", hash_generated_field = "427EF79B93399A5C3B799BBBE9407455")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.482 -0500", hash_original_field = "A99B8351F9D5CCDEB77807B02D1C5D92", hash_generated_field = "427EF79B93399A5C3B799BBBE9407455")
 
         public static final int OUTGOING_CALL_RING_BACK = 6;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.126 -0500", hash_original_field = "9F4BF59AB46D916DEB18417D58E0E4C7", hash_generated_field = "03C3904064D9ACFD5D047226208158C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.485 -0500", hash_original_field = "9F4BF59AB46D916DEB18417D58E0E4C7", hash_generated_field = "03C3904064D9ACFD5D047226208158C2")
 
         public static final int OUTGOING_CALL_CANCELING = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.127 -0500", hash_original_field = "75E859461BC4EA3C685F176BBCE39F21", hash_generated_field = "2DD221BAEB49EF885927070B38698CD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.487 -0500", hash_original_field = "75E859461BC4EA3C685F176BBCE39F21", hash_generated_field = "2DD221BAEB49EF885927070B38698CD6")
 
         public static final int IN_CALL = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.128 -0500", hash_original_field = "3E95FE792A699FE0739B97F1D9918942", hash_generated_field = "FD07CBF55A8245950B7B2648AFEEBDFB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.490 -0500", hash_original_field = "3E95FE792A699FE0739B97F1D9918942", hash_generated_field = "FD07CBF55A8245950B7B2648AFEEBDFB")
 
         public static final int PINGING = 9;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.129 -0500", hash_original_field = "B446CA70B771C8D783F53BE1060A957F", hash_generated_field = "43AC0184E67B2E974A2CDEEC81A3D3DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.493 -0500", hash_original_field = "B446CA70B771C8D783F53BE1060A957F", hash_generated_field = "43AC0184E67B2E974A2CDEEC81A3D3DF")
 
         public static final int ENDING_CALL = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.130 -0500", hash_original_field = "B8570DD6362675C6ECF9AE581957B9C2", hash_generated_field = "777618F477CD835F0BBFD9A5E1AF42B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.495 -0500", hash_original_field = "B8570DD6362675C6ECF9AE581957B9C2", hash_generated_field = "777618F477CD835F0BBFD9A5E1AF42B8")
 
         public static final int NOT_DEFINED = 101;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.131 -0500", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "3C8E530756BAC73B98BD6601E6821720")
-        private State() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.500 -0500", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "3C8E530756BAC73B98BD6601E6821720")
+        
+private State() {
         }
     }
 
@@ -353,8 +371,9 @@ public final class SipSession {
          *
          * @param session the session object that carries out the transaction
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.134 -0500", hash_original_method = "AE0E913F9E3F8804DBC653BF8673EC2F", hash_generated_method = "4BD76B76AD1D7ED6C7D4EA6886F19CF2")
-        public void onCalling(SipSession session) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.506 -0500", hash_original_method = "AE0E913F9E3F8804DBC653BF8673EC2F", hash_generated_method = "4BD76B76AD1D7ED6C7D4EA6886F19CF2")
+        
+public void onCalling(SipSession session) {
         }
 
         /**
@@ -364,8 +383,9 @@ public final class SipSession {
          * @param caller the SIP profile of the caller
          * @param sessionDescription the caller's session description
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.135 -0500", hash_original_method = "A6495E0C14482D9554C3F987B616D040", hash_generated_method = "F7D2B2F3DFF01541550944824DDBFEE7")
-        public void onRinging(SipSession session, SipProfile caller,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.508 -0500", hash_original_method = "A6495E0C14482D9554C3F987B616D040", hash_generated_method = "F7D2B2F3DFF01541550944824DDBFEE7")
+        
+public void onRinging(SipSession session, SipProfile caller,
                 String sessionDescription) {
         }
 
@@ -374,8 +394,9 @@ public final class SipSession {
          *
          * @param session the session object that carries out the transaction
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.135 -0500", hash_original_method = "3040682D1BCFEA9BA338FA9FE200A62D", hash_generated_method = "CAAB92B2FE1C02DD4BCA219B7AFDAD2B")
-        public void onRingingBack(SipSession session) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.511 -0500", hash_original_method = "3040682D1BCFEA9BA338FA9FE200A62D", hash_generated_method = "CAAB92B2FE1C02DD4BCA219B7AFDAD2B")
+        
+public void onRingingBack(SipSession session) {
         }
 
         /**
@@ -384,8 +405,9 @@ public final class SipSession {
          * @param session the session object that is associated with the dialog
          * @param sessionDescription the peer's session description
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.136 -0500", hash_original_method = "E5D299BA3CDE0EE166AC2795783FB427", hash_generated_method = "30E8ED8B5F2EFB0EDF7AF05C52A4DEA7")
-        public void onCallEstablished(SipSession session,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.513 -0500", hash_original_method = "E5D299BA3CDE0EE166AC2795783FB427", hash_generated_method = "30E8ED8B5F2EFB0EDF7AF05C52A4DEA7")
+        
+public void onCallEstablished(SipSession session,
                 String sessionDescription) {
         }
 
@@ -394,8 +416,9 @@ public final class SipSession {
          *
          * @param session the session object that is associated with the dialog
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.137 -0500", hash_original_method = "711404AF80F30F53943AF0817E2DC7DA", hash_generated_method = "59E93A15BE6AEC5A1FBECAC978774B99")
-        public void onCallEnded(SipSession session) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.515 -0500", hash_original_method = "711404AF80F30F53943AF0817E2DC7DA", hash_generated_method = "59E93A15BE6AEC5A1FBECAC978774B99")
+        
+public void onCallEnded(SipSession session) {
         }
 
         /**
@@ -403,8 +426,9 @@ public final class SipSession {
          *
          * @param session the session object that carries out the transaction
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.138 -0500", hash_original_method = "DF73FA582D888219D7BAD8AC6A6DFD56", hash_generated_method = "936390A4CBBD5E8A16D4D481EAAD3882")
-        public void onCallBusy(SipSession session) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.517 -0500", hash_original_method = "DF73FA582D888219D7BAD8AC6A6DFD56", hash_generated_method = "936390A4CBBD5E8A16D4D481EAAD3882")
+        
+public void onCallBusy(SipSession session) {
         }
 
         /**
@@ -414,8 +438,9 @@ public final class SipSession {
          * @param newSession the new session that the call will be transferred to
          * @param sessionDescription the new peer's session description
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.139 -0500", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "31DE44F9B3F8EE0CE72E5066DA9C5597")
-        public void onCallTransferring(SipSession newSession,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.520 -0500", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "31DE44F9B3F8EE0CE72E5066DA9C5597")
+        
+public void onCallTransferring(SipSession newSession,
                 String sessionDescription) {
         }
 
@@ -427,8 +452,9 @@ public final class SipSession {
          * @param errorCode error code defined in {@link SipErrorCode}
          * @param errorMessage error message
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.139 -0500", hash_original_method = "4CD681E2D11D80A916993A5E2A67B6D2", hash_generated_method = "088B63961957732197A9E3C8FB47F4E7")
-        public void onError(SipSession session, int errorCode,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.522 -0500", hash_original_method = "4CD681E2D11D80A916993A5E2A67B6D2", hash_generated_method = "088B63961957732197A9E3C8FB47F4E7")
+        
+public void onError(SipSession session, int errorCode,
                 String errorMessage) {
         }
 
@@ -439,8 +465,9 @@ public final class SipSession {
          * @param errorCode error code defined in {@link SipErrorCode}
          * @param errorMessage error message
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.141 -0500", hash_original_method = "98747504BDA403336DDC3899112D7C4E", hash_generated_method = "9BC2F438A4576A57E774AE431E7F4F80")
-        public void onCallChangeFailed(SipSession session, int errorCode,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.524 -0500", hash_original_method = "98747504BDA403336DDC3899112D7C4E", hash_generated_method = "9BC2F438A4576A57E774AE431E7F4F80")
+        
+public void onCallChangeFailed(SipSession session, int errorCode,
                 String errorMessage) {
         }
 
@@ -449,8 +476,9 @@ public final class SipSession {
          *
          * @param session the session object that carries out the transaction
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.141 -0500", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "6723A7318B1D6DCC42575E420836DAC4")
-        public void onRegistering(SipSession session) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.527 -0500", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "6723A7318B1D6DCC42575E420836DAC4")
+        
+public void onRegistering(SipSession session) {
         }
 
         /**
@@ -459,8 +487,9 @@ public final class SipSession {
          * @param session the session object that carries out the transaction
          * @param duration duration in second before the registration expires
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.142 -0500", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "3EA76C656B8912C3A2A5543245302B75")
-        public void onRegistrationDone(SipSession session, int duration) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.529 -0500", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "3EA76C656B8912C3A2A5543245302B75")
+        
+public void onRegistrationDone(SipSession session, int duration) {
         }
 
         /**
@@ -470,8 +499,9 @@ public final class SipSession {
          * @param errorCode error code defined in {@link SipErrorCode}
          * @param errorMessage error message
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.143 -0500", hash_original_method = "3E873AF3736F468DF3025CAE14D73D95", hash_generated_method = "FB0DA0EFD62D15BC45D1CEFC69F4214A")
-        public void onRegistrationFailed(SipSession session, int errorCode,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.531 -0500", hash_original_method = "3E873AF3736F468DF3025CAE14D73D95", hash_generated_method = "FB0DA0EFD62D15BC45D1CEFC69F4214A")
+        
+public void onRegistrationFailed(SipSession session, int errorCode,
                 String errorMessage) {
         }
 
@@ -480,15 +510,17 @@ public final class SipSession {
          *
          * @param session the session object that carries out the transaction
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.144 -0500", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "3BFDE7FCC6B045B1A489416B281101BE")
-        public void onRegistrationTimeout(SipSession session) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.533 -0500", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "3BFDE7FCC6B045B1A489416B281101BE")
+        
+public void onRegistrationTimeout(SipSession session) {
         }
 
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:38.173 -0500", hash_original_method = "346C5E2A278D0A9A8B61352C5712D581", hash_generated_method = "96775B494C1C9D031CB428176091C7E3")
-    private ISipSessionListener createListener() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.613 -0500", hash_original_method = "346C5E2A278D0A9A8B61352C5712D581", hash_generated_method = "96775B494C1C9D031CB428176091C7E3")
+    
+private ISipSessionListener createListener() {
         return new ISipSessionListener.Stub() {
             public void onCalling(ISipSession session) {
                 if (mListener != null) {

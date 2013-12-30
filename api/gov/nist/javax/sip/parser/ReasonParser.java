@@ -21,8 +21,9 @@ public class ReasonParser extends ParametersParser {
      * Creates a new instance of ReasonParser
      * @param reason the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.313 -0500", hash_original_method = "B94DA4BEBB849BE0C94AD11E29C73BAF", hash_generated_method = "E4CAE05F1742E6F4D9EE56AAEC4DAE35")
-    public ReasonParser(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.865 -0500", hash_original_method = "B94DA4BEBB849BE0C94AD11E29C73BAF", hash_generated_method = "E4CAE05F1742E6F4D9EE56AAEC4DAE35")
+    
+public ReasonParser(String reason) {
         super(reason);
     }
 
@@ -30,8 +31,9 @@ public class ReasonParser extends ParametersParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.314 -0500", hash_original_method = "A4DE926778D9613A22D41E6650D2AD81", hash_generated_method = "609B66F71635733EEC2627426CF3D849")
-    protected ReasonParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.868 -0500", hash_original_method = "A4DE926778D9613A22D41E6650D2AD81", hash_generated_method = "609B66F71635733EEC2627426CF3D849")
+    
+protected ReasonParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -40,8 +42,9 @@ public class ReasonParser extends ParametersParser {
      * @return SIPHeader (ReasonParserList object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.315 -0500", hash_original_method = "C924C06E3DD994AE91BBC5A8A54B9FE3", hash_generated_method = "DD675B4DB80B01CA747A2586227C4AFA")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.871 -0500", hash_original_method = "C924C06E3DD994AE91BBC5A8A54B9FE3", hash_generated_method = "DD675B4DB80B01CA747A2586227C4AFA")
+    
+public SIPHeader parse() throws ParseException {
         ReasonList reasonList = new ReasonList();
         if (debug)
             dbg_enter("ReasonParser.parse");

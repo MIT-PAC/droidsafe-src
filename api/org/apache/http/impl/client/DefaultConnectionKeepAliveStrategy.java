@@ -22,8 +22,9 @@ public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveSt
         //Synthesized constructor
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.836 -0500", hash_original_method = "A7D37BD826557BEBF753D4A8DC681C72", hash_generated_method = "0EF83904AE40AE58427F3F72650CEE8A")
-    public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.398 -0500", hash_original_method = "A7D37BD826557BEBF753D4A8DC681C72", hash_generated_method = "0EF83904AE40AE58427F3F72650CEE8A")
+    
+public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
         if (response == null) {
             throw new IllegalArgumentException("HTTP response may not be null");
         }

@@ -18,8 +18,9 @@ import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
 
   /** Returns a regular expression quantifier with an upper and lower limit. */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.414 -0500", hash_original_method = "FEB84A328EE7F3166E4E0FA71F02D2E0", hash_generated_method = "A8A19550D0A1B28AF44CDAE5D0E2399B")
-    private static String limit(int lower, int upper) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.118 -0500", hash_original_method = "FEB84A328EE7F3166E4E0FA71F02D2E0", hash_generated_method = "A8A19550D0A1B28AF44CDAE5D0E2399B")
+    
+private static String limit(int lower, int upper) {
     if ((lower < 0) || (upper <= 0) || (upper < lower)) {
       throw new IllegalArgumentException();
     }
@@ -30,8 +31,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    * Trims away any characters after the first match of {@code pattern} in {@code candidate},
    * returning the trimmed version.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.425 -0500", hash_original_method = "AB1D11A817737E1FAD20796B1941F248", hash_generated_method = "25FCE6A88C437FD6A09F9BF4EDF639F0")
-    private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence candidate) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.153 -0500", hash_original_method = "AB1D11A817737E1FAD20796B1941F248", hash_generated_method = "25FCE6A88C437FD6A09F9BF4EDF639F0")
+    
+private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence candidate) {
     Matcher trailingCharsMatcher = pattern.matcher(candidate);
     if (trailingCharsMatcher.find()) {
       candidate = candidate.subSequence(0, trailingCharsMatcher.start());
@@ -44,8 +46,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    * combining marks should also return true since we assume they have been added to a preceding
    * Latin character.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.426 -0500", hash_original_method = "554CF3040E9CF07F05663E3B5F16517A", hash_generated_method = "A8F0E5EA62744C26D0169D65C29CE734")
-    static boolean isLatinLetter(char letter) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.156 -0500", hash_original_method = "554CF3040E9CF07F05663E3B5F16517A", hash_generated_method = "A8F0E5EA62744C26D0169D65C29CE734")
+    
+static boolean isLatinLetter(char letter) {
     // Combining marks are a subset of non-spacing-mark.
     if (!Character.isLetter(letter) && Character.getType(letter) != Character.NON_SPACING_MARK) {
       return false;
@@ -59,51 +62,52 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
         block.equals(UnicodeBlock.COMBINING_DIACRITICAL_MARKS);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.427 -0500", hash_original_method = "D59D72E25010879107B56CC21125EBDA", hash_generated_method = "C8247B36BE222BC06BFD92CBA4FFD281")
-    private static boolean isCurrencySymbol(char character) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.159 -0500", hash_original_method = "D59D72E25010879107B56CC21125EBDA", hash_generated_method = "C8247B36BE222BC06BFD92CBA4FFD281")
+    
+private static boolean isCurrencySymbol(char character) {
     return Character.getType(character) == Character.CURRENCY_SYMBOL;
   }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.409 -0500", hash_original_field = "F989734BE55AF97D011F6C951500BE39", hash_generated_field = "B67DB8AD534231B3DFBCDC8FADB87CD9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.103 -0500", hash_original_field = "F989734BE55AF97D011F6C951500BE39", hash_generated_field = "B67DB8AD534231B3DFBCDC8FADB87CD9")
 
   private static  Pattern PATTERN;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.410 -0500", hash_original_field = "269B231576FE10F93DF42B8FE6C71550", hash_generated_field = "AFDD5A0D3478F459E19A9B28F0825662")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.105 -0500", hash_original_field = "269B231576FE10F93DF42B8FE6C71550", hash_generated_field = "AFDD5A0D3478F459E19A9B28F0825662")
 
   private static final Pattern PUB_PAGES = Pattern.compile("\\d{1,5}-+\\d{1,5}\\s{0,4}\\(\\d{1,4}");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.411 -0500", hash_original_field = "C42DD7CC48069621EBCA9EAF7036C1F3", hash_generated_field = "64624B78B0314B7CE8F5D8865FF30674")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.108 -0500", hash_original_field = "C42DD7CC48069621EBCA9EAF7036C1F3", hash_generated_field = "64624B78B0314B7CE8F5D8865FF30674")
 
   private static final Pattern SLASH_SEPARATED_DATES =
       Pattern.compile("(?:(?:[0-3]?\\d/[01]?\\d)|(?:[01]?\\d/[0-3]?\\d))/(?:[12]\\d)?\\d{2}");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.412 -0500", hash_original_field = "54EFF20C086F9452E499390077FCD5FA", hash_generated_field = "0E3E98A4E9E55E5D5355E96742720F77")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.111 -0500", hash_original_field = "54EFF20C086F9452E499390077FCD5FA", hash_generated_field = "0E3E98A4E9E55E5D5355E96742720F77")
 
   private static  Pattern MATCHING_BRACKETS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.412 -0500", hash_original_field = "CA4F6714E53E82DA8AEED27C72D80F0F", hash_generated_field = "07B48D8DD762837F8558D15A298E7F7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.113 -0500", hash_original_field = "CA4F6714E53E82DA8AEED27C72D80F0F", hash_generated_field = "07B48D8DD762837F8558D15A298E7F7C")
 
   private static  Pattern GROUP_SEPARATOR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.413 -0500", hash_original_field = "4162D79F7224F9776226BEFCBC32F05F", hash_generated_field = "BFF4C6D5BA3233E2F2554B8CEE31C6BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.116 -0500", hash_original_field = "4162D79F7224F9776226BEFCBC32F05F", hash_generated_field = "BFF4C6D5BA3233E2F2554B8CEE31C6BF")
 
   private static  Pattern LEAD_CLASS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.416 -0500", hash_original_field = "84443D8F5E184105D6EA71883B0EB14B", hash_generated_field = "2E33D99F5B4A20B25B98A154596BE936")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.123 -0500", hash_original_field = "84443D8F5E184105D6EA71883B0EB14B", hash_generated_field = "2E33D99F5B4A20B25B98A154596BE936")
 
   private  PhoneNumberUtil phoneUtil;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.417 -0500", hash_original_field = "0F26345BF87C16C80BAC76779863E330", hash_generated_field = "5FBEDC86BE77699C3F0DD393BD5C241B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.126 -0500", hash_original_field = "0F26345BF87C16C80BAC76779863E330", hash_generated_field = "5FBEDC86BE77699C3F0DD393BD5C241B")
 
   private  CharSequence text;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.418 -0500", hash_original_field = "13130F7B833A14B0C4E2ECB42DFD1397", hash_generated_field = "919257B95C0A2873677AF8F369A2FD23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.129 -0500", hash_original_field = "13130F7B833A14B0C4E2ECB42DFD1397", hash_generated_field = "919257B95C0A2873677AF8F369A2FD23")
 
   private  String preferredRegion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.418 -0500", hash_original_field = "DBBD7C3F740D4C76D639D28725877A6D", hash_generated_field = "1901EB03238813E3A90CAB00F8F24531")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.131 -0500", hash_original_field = "DBBD7C3F740D4C76D639D28725877A6D", hash_generated_field = "1901EB03238813E3A90CAB00F8F24531")
 
   private  Leniency leniency;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.419 -0500", hash_original_field = "5D3D8DDD2BE3EBABFAD78342587A0162", hash_generated_field = "5BD507CEE6539816D66E14C52F3CEA0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.133 -0500", hash_original_field = "5D3D8DDD2BE3EBABFAD78342587A0162", hash_generated_field = "5BD507CEE6539816D66E14C52F3CEA0F")
 
   private long maxTries;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.420 -0500", hash_original_field = "CF3F75B688BD7BB4EF0AF07117F933EF", hash_generated_field = "D868360155DE4E01C861A8C867061965")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.136 -0500", hash_original_field = "CF3F75B688BD7BB4EF0AF07117F933EF", hash_generated_field = "D868360155DE4E01C861A8C867061965")
 
   private State state = State.NOT_READY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.421 -0500", hash_original_field = "B35557E4AA4A5D68F1C14EF3D6D0F13F", hash_generated_field = "CD2E461A3543C1B081C303C6BA322BB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.138 -0500", hash_original_field = "B35557E4AA4A5D68F1C14EF3D6D0F13F", hash_generated_field = "CD2E461A3543C1B081C303C6BA322BB5")
 
   private PhoneNumberMatch lastMatch = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.421 -0500", hash_original_field = "60EFD01467875E2618FA1956B806EA36", hash_generated_field = "73A01B8956D34AAB07FB4276843E3EFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.140 -0500", hash_original_field = "60EFD01467875E2618FA1956B806EA36", hash_generated_field = "73A01B8956D34AAB07FB4276843E3EFF")
 
   private int searchIndex = 0;
 
@@ -122,8 +126,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    *                  This is to cover degenerate cases where the text has a lot of false positives
    *                  in it. Must be {@code >= 0}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.422 -0500", hash_original_method = "1C998965C70C11F4F601639EB7EFDC0A", hash_generated_method = "1C998965C70C11F4F601639EB7EFDC0A")
-    PhoneNumberMatcher(PhoneNumberUtil util, CharSequence text, String country, Leniency leniency,
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.143 -0500", hash_original_method = "1C998965C70C11F4F601639EB7EFDC0A", hash_generated_method = "1C998965C70C11F4F601639EB7EFDC0A")
+    
+PhoneNumberMatcher(PhoneNumberUtil util, CharSequence text, String country, Leniency leniency,
       long maxTries) {
 
     if ((util == null) || (leniency == null)) {
@@ -139,8 +144,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     this.maxTries = maxTries;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.423 -0500", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "C6DACE382E8C51CBA13CBC8F7B386FEE")
-    public boolean hasNext() {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.145 -0500", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "C6DACE382E8C51CBA13CBC8F7B386FEE")
+    
+public boolean hasNext() {
     if (state == State.NOT_READY) {
       lastMatch = find(searchIndex);
       if (lastMatch == null) {
@@ -158,8 +164,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     NOT_READY, READY, DONE
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.424 -0500", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "A8303C9A79DA35E0B1C59721487E2DF7")
-    public PhoneNumberMatch next() {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.148 -0500", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "A8303C9A79DA35E0B1C59721487E2DF7")
+    
+public PhoneNumberMatch next() {
     // Check the state and find the next match as a side-effect if necessary.
     if (!hasNext()) {
       throw new NoSuchElementException();
@@ -179,8 +186,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    * @param index  the search index to start searching at
    * @return  the phone number match found, null if none can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.425 -0500", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "26C29AB2CDD6239ED3186A0364BE41D2")
-    private PhoneNumberMatch find(int index) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.150 -0500", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "26C29AB2CDD6239ED3186A0364BE41D2")
+    
+private PhoneNumberMatch find(int index) {
     Matcher matcher = PATTERN.matcher(text);
     while ((maxTries > 0) && matcher.find(index)) {
       int start = matcher.start();
@@ -210,8 +218,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    * @param offset  the offset of {@code candidate} within {@link #text}
    * @return  the match found, null if none can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.428 -0500", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "758DD38C53E2DA0F40F876AA51633F80")
-    private PhoneNumberMatch extractMatch(CharSequence candidate, int offset) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.161 -0500", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "758DD38C53E2DA0F40F876AA51633F80")
+    
+private PhoneNumberMatch extractMatch(CharSequence candidate, int offset) {
     // Skip a match that is more likely a publication page reference or a date.
     if (PUB_PAGES.matcher(candidate).find() || SLASH_SEPARATED_DATES.matcher(candidate).find()) {
       return null;
@@ -237,8 +246,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    * @param offset  the current offset of {@code candidate} within {@link #text}
    * @return  the match found, null if none can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.429 -0500", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "1592748F2767C48208EACB2EFF97A07A")
-    private PhoneNumberMatch extractInnerMatch(String candidate, int offset) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.165 -0500", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "1592748F2767C48208EACB2EFF97A07A")
+    
+private PhoneNumberMatch extractInnerMatch(String candidate, int offset) {
     // Try removing either the first or last "group" in the number and see if this gives a result.
     // We consider white space to be a possible indication of the start or end of the phone number.
     Matcher groupMatcher = GROUP_SEPARATOR.matcher(candidate);
@@ -299,8 +309,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
    * @param offset  the offset of {@code candidate} within {@link #text}
    * @return  the parsed and validated phone number match, or null
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.431 -0500", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "D54292D6C692A99EFE0E67B181185304")
-    private PhoneNumberMatch parseAndVerify(String candidate, int offset) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.167 -0500", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "D54292D6C692A99EFE0E67B181185304")
+    
+private PhoneNumberMatch parseAndVerify(String candidate, int offset) {
     try {
       // Check the candidate doesn't contain any formatting which would indicate that it really
       // isn't a phone number.
@@ -342,8 +353,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
   /**
    * Always throws {@link UnsupportedOperationException} as removal is not supported.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.431 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
-    public void remove() {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.169 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
+    
+public void remove() {
     throw new UnsupportedOperationException();
   }
     static {

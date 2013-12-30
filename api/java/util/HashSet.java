@@ -17,11 +17,11 @@ import java.io.Serializable;
 
 
 public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.194 -0500", hash_original_field = "D265CB2C582F6826B2ACE4E396B25CCA", hash_generated_field = "BC951AA543F9E1173730CA46C12B0D8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.655 -0500", hash_original_field = "D265CB2C582F6826B2ACE4E396B25CCA", hash_generated_field = "BC951AA543F9E1173730CA46C12B0D8D")
 
 
     private static final long serialVersionUID = -5024744406713321676L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.195 -0500", hash_original_field = "56E00CFDFE3E1F2E083EDAE635A1D969", hash_generated_field = "99404527879A26BB1EA746B8950DD10D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.658 -0500", hash_original_field = "56E00CFDFE3E1F2E083EDAE635A1D969", hash_generated_field = "99404527879A26BB1EA746B8950DD10D")
 
 
     transient HashMap<E, HashSet<E>> backingMap;
@@ -59,8 +59,9 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         //}
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.200 -0500", hash_original_method = "03A7D4D479B1CF6DDF3EDEC66129252B", hash_generated_method = "03A7D4D479B1CF6DDF3EDEC66129252B")
-    HashSet(HashMap<E, HashSet<E>> backingMap) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.671 -0500", hash_original_method = "03A7D4D479B1CF6DDF3EDEC66129252B", hash_generated_method = "03A7D4D479B1CF6DDF3EDEC66129252B")
+    
+HashSet(HashMap<E, HashSet<E>> backingMap) {
         this.backingMap = backingMap;
     }
 

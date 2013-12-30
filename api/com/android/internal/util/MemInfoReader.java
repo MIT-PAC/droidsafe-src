@@ -13,17 +13,17 @@ import android.os.StrictMode;
 
 
 public class MemInfoReader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.230 -0500", hash_original_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC", hash_generated_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.237 -0500", hash_original_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC", hash_generated_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC")
 
     byte[] mBuffer = new byte[1024];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.231 -0500", hash_original_field = "6D00962622134601C809BF42998E8D12", hash_generated_field = "7929D370BBAA2A6043EF739E265C3242")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.239 -0500", hash_original_field = "6D00962622134601C809BF42998E8D12", hash_generated_field = "7929D370BBAA2A6043EF739E265C3242")
 
 
     private long mTotalSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.232 -0500", hash_original_field = "1AAFE5F5E1A8763ED987466D6531C05E", hash_generated_field = "BCCA6254E80514BD4181C138C6D39F8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.242 -0500", hash_original_field = "1AAFE5F5E1A8763ED987466D6531C05E", hash_generated_field = "BCCA6254E80514BD4181C138C6D39F8D")
 
     private long mFreeSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.232 -0500", hash_original_field = "73E4FAE08BAE013F3963E3268557FE31", hash_generated_field = "2FCE9C963C19BA9992E163CB6895C992")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.244 -0500", hash_original_field = "73E4FAE08BAE013F3963E3268557FE31", hash_generated_field = "2FCE9C963C19BA9992E163CB6895C992")
 
     private long mCachedSize;
     
@@ -34,8 +34,9 @@ public class MemInfoReader {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.233 -0500", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "ECDA8EE868F3228CAAF2451D7A1A2B99")
-    private boolean matchText(byte[] buffer, int index, String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.246 -0500", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "ECDA8EE868F3228CAAF2451D7A1A2B99")
+    
+private boolean matchText(byte[] buffer, int index, String text) {
         int N = text.length();
         if ((index+N) >= buffer.length) {
             return false;
@@ -48,8 +49,9 @@ public class MemInfoReader {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.234 -0500", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "EEEBF45D062C00900A093C5FF4CB0C11")
-    private long extractMemValue(byte[] buffer, int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.249 -0500", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "EEEBF45D062C00900A093C5FF4CB0C11")
+    
+private long extractMemValue(byte[] buffer, int index) {
         while (index < buffer.length && buffer[index] != '\n') {
             if (buffer[index] >= '0' && buffer[index] <= '9') {
                 int start = index;
@@ -66,8 +68,9 @@ public class MemInfoReader {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.235 -0500", hash_original_method = "BB97E1D4EA3CA166050B741E23967BDC", hash_generated_method = "A10F79202FF74EA72DA2492BD6C96241")
-    public void readMemInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.251 -0500", hash_original_method = "BB97E1D4EA3CA166050B741E23967BDC", hash_generated_method = "A10F79202FF74EA72DA2492BD6C96241")
+    
+public void readMemInfo() {
         // Permit disk reads here, as /proc/meminfo isn't really "on
         // disk" and should be fast.  TODO: make BlockGuard ignore
         // /proc/ and /sys/ files perhaps?
@@ -106,18 +109,21 @@ public class MemInfoReader {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.236 -0500", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "9B29D867E46F40BDB379803D4131A9AA")
-    public long getTotalSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.253 -0500", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "9B29D867E46F40BDB379803D4131A9AA")
+    
+public long getTotalSize() {
         return mTotalSize;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.237 -0500", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "468BB80E6307F748437203E2B7FEE575")
-    public long getFreeSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.255 -0500", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "468BB80E6307F748437203E2B7FEE575")
+    
+public long getFreeSize() {
         return mFreeSize;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.237 -0500", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "F4400F45D0DD65E2B797051FE78FA6D2")
-    public long getCachedSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.257 -0500", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "F4400F45D0DD65E2B797051FE78FA6D2")
+    
+public long getCachedSize() {
         return mCachedSize;
     }
 

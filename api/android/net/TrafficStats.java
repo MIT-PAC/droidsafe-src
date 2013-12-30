@@ -34,8 +34,9 @@ public class TrafficStats {
      * used internally by system services like {@link DownloadManager} when
      * performing traffic on behalf of an application.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.061 -0500", hash_original_method = "8A6683AC46C482376EDB137406895EA4", hash_generated_method = "82DCC980DC0931619D28A669069BC53B")
-    public static void setThreadStatsTag(int tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.258 -0500", hash_original_method = "8A6683AC46C482376EDB137406895EA4", hash_generated_method = "82DCC980DC0931619D28A669069BC53B")
+    
+public static void setThreadStatsTag(int tag) {
         NetworkManagementSocketTagger.setThreadSocketStatsTag(tag);
     }
 
@@ -44,13 +45,15 @@ public class TrafficStats {
      * from the current thread. Only one active tag per thread is supported.
      * {@link #tagSocket(Socket)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.062 -0500", hash_original_method = "241455C0E3DABE2C90F976AA351D8F6B", hash_generated_method = "D358E2458BE1AB76C109717C0B831B41")
-    public static int getThreadStatsTag() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.261 -0500", hash_original_method = "241455C0E3DABE2C90F976AA351D8F6B", hash_generated_method = "D358E2458BE1AB76C109717C0B831B41")
+    
+public static int getThreadStatsTag() {
         return NetworkManagementSocketTagger.getThreadSocketStatsTag();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.063 -0500", hash_original_method = "6E8825218B2DFD130436D4F78968BA20", hash_generated_method = "9CF251DF482A98A69EB969015F5F34D1")
-    public static void clearThreadStatsTag() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.264 -0500", hash_original_method = "6E8825218B2DFD130436D4F78968BA20", hash_generated_method = "9CF251DF482A98A69EB969015F5F34D1")
+    
+public static void clearThreadStatsTag() {
         NetworkManagementSocketTagger.setThreadSocketStatsTag(-1);
     }
 
@@ -67,14 +70,16 @@ public class TrafficStats {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.064 -0500", hash_original_method = "2465ECE023EA6F6315B38940B5A27E11", hash_generated_method = "FB4612769C2D600C361EC2D31F9241CD")
-    public static void setThreadStatsUid(int uid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.266 -0500", hash_original_method = "2465ECE023EA6F6315B38940B5A27E11", hash_generated_method = "FB4612769C2D600C361EC2D31F9241CD")
+    
+public static void setThreadStatsUid(int uid) {
         NetworkManagementSocketTagger.setThreadSocketStatsUid(uid);
     }
 
     /** {@hide} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.065 -0500", hash_original_method = "9B50381898D777B449A29A4F0559E088", hash_generated_method = "B10C7BA9F99F7FD95D2913E937E095B1")
-    public static void clearThreadStatsUid() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.268 -0500", hash_original_method = "9B50381898D777B449A29A4F0559E088", hash_generated_method = "B10C7BA9F99F7FD95D2913E937E095B1")
+    
+public static void clearThreadStatsUid() {
         NetworkManagementSocketTagger.setThreadSocketStatsUid(-1);
     }
 
@@ -87,16 +92,18 @@ public class TrafficStats {
      * @see #setThreadStatsTag(int)
      * @see #setThreadStatsUid(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.065 -0500", hash_original_method = "821AB37695B594727ABEEFF11698960F", hash_generated_method = "DB98BE8A084ABCF5B145BA68E9905BB0")
-    public static void tagSocket(Socket socket) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.270 -0500", hash_original_method = "821AB37695B594727ABEEFF11698960F", hash_generated_method = "DB98BE8A084ABCF5B145BA68E9905BB0")
+    
+public static void tagSocket(Socket socket) throws SocketException {
         SocketTagger.get().tag(socket);
     }
 
     /**
      * Remove any statistics parameters from the given {@link Socket}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.066 -0500", hash_original_method = "554BE569F7BDC3C8D27CCE859115D1B1", hash_generated_method = "A68AAA62167732901D231CB17AB81680")
-    public static void untagSocket(Socket socket) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.273 -0500", hash_original_method = "554BE569F7BDC3C8D27CCE859115D1B1", hash_generated_method = "A68AAA62167732901D231CB17AB81680")
+    
+public static void untagSocket(Socket socket) throws SocketException {
         SocketTagger.get().untag(socket);
     }
 
@@ -106,8 +113,9 @@ public class TrafficStats {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.067 -0500", hash_original_method = "2941E7D87CA3D32F9ED426806A173E79", hash_generated_method = "EB3FD27410C95C1DF24D1F0C00CA8AC6")
-    public static void startDataProfiling(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.275 -0500", hash_original_method = "2941E7D87CA3D32F9ED426806A173E79", hash_generated_method = "EB3FD27410C95C1DF24D1F0C00CA8AC6")
+    
+public static void startDataProfiling(Context context) {
         synchronized (sProfilingLock) {
             if (sActiveProfilingStart != null) {
                 throw new IllegalStateException("already profiling data");
@@ -125,8 +133,9 @@ public class TrafficStats {
      *         {@link #startDataProfiling(Context)} call.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.068 -0500", hash_original_method = "3E7A0A4AB8A0BE85D7EB3547E24BD537", hash_generated_method = "F69BF5865306F676EC83FF7CD18A229E")
-    public static NetworkStats stopDataProfiling(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.277 -0500", hash_original_method = "3E7A0A4AB8A0BE85D7EB3547E24BD537", hash_generated_method = "F69BF5865306F676EC83FF7CD18A229E")
+    
+public static NetworkStats stopDataProfiling(Context context) {
         synchronized (sProfilingLock) {
             if (sActiveProfilingStart == null) {
                 throw new IllegalStateException("not profiling data");
@@ -151,8 +160,9 @@ public class TrafficStats {
      *
      * @param operationCount Number of operations to increment count by.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.069 -0500", hash_original_method = "DBD8969F9F8A15C1B81C767022D4A852", hash_generated_method = "5221A9A6564F97816880393CB890BC0A")
-    public static void incrementOperationCount(int operationCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.280 -0500", hash_original_method = "DBD8969F9F8A15C1B81C767022D4A852", hash_generated_method = "5221A9A6564F97816880393CB890BC0A")
+    
+public static void incrementOperationCount(int operationCount) {
         final int tag = getThreadStatsTag();
         incrementOperationCount(tag, operationCount);
     }
@@ -164,8 +174,9 @@ public class TrafficStats {
      * @param tag Accounting tag used in {@link #setThreadStatsTag(int)}.
      * @param operationCount Number of operations to increment count by.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.070 -0500", hash_original_method = "171C5D5D16A1A39BAF8B5EAF02935E25", hash_generated_method = "9D87F629693BDA83CCD42A680700F21C")
-    public static void incrementOperationCount(int tag, int operationCount) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.282 -0500", hash_original_method = "171C5D5D16A1A39BAF8B5EAF02935E25", hash_generated_method = "9D87F629693BDA83CCD42A680700F21C")
+    
+public static void incrementOperationCount(int tag, int operationCount) {
         final INetworkStatsService statsService = INetworkStatsService.Stub.asInterface(
                 ServiceManager.getService(Context.NETWORK_STATS_SERVICE));
         final int uid = android.os.Process.myUid();
@@ -324,8 +335,9 @@ public class TrafficStats {
      * Return detailed {@link NetworkStats} for the current UID. Requires no
      * special permission.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.103 -0500", hash_original_method = "4800E1BB809552A3F41F215D24E3D8D6", hash_generated_method = "39A8F7F76955E0CF923C47F2D8EC1439")
-    private static NetworkStats getDataLayerSnapshotForUid(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.375 -0500", hash_original_method = "4800E1BB809552A3F41F215D24E3D8D6", hash_generated_method = "39A8F7F76955E0CF923C47F2D8EC1439")
+    
+private static NetworkStats getDataLayerSnapshotForUid(Context context) {
         final INetworkStatsService statsService = INetworkStatsService.Stub.asInterface(
                 ServiceManager.getService(Context.NETWORK_STATS_SERVICE));
         final int uid = android.os.Process.myUid();
@@ -335,28 +347,28 @@ public class TrafficStats {
             throw new RuntimeException(e);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.054 -0500", hash_original_field = "C15544477D456E69CC5B1C4D10553EC7", hash_generated_field = "82588A84F039BA87CFCB0C2E0F69AEDF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.240 -0500", hash_original_field = "C15544477D456E69CC5B1C4D10553EC7", hash_generated_field = "82588A84F039BA87CFCB0C2E0F69AEDF")
 
     public final static int UNSUPPORTED = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.055 -0500", hash_original_field = "2CD45C833F20F5CAD5DAB3B9FEDCF160", hash_generated_field = "5D1A2E1D99D4168BA62937248EBA0BBB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.243 -0500", hash_original_field = "2CD45C833F20F5CAD5DAB3B9FEDCF160", hash_generated_field = "5D1A2E1D99D4168BA62937248EBA0BBB")
 
     public static final int UID_REMOVED = -4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.056 -0500", hash_original_field = "22002541AFFA2EDC0FD539D79571D710", hash_generated_field = "89FB936B328F723630C3AAD4B9AC514B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.245 -0500", hash_original_field = "22002541AFFA2EDC0FD539D79571D710", hash_generated_field = "89FB936B328F723630C3AAD4B9AC514B")
 
     public static final int UID_TETHERING = -5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.057 -0500", hash_original_field = "96BA30B91B1F13729F72FFEFCC2554F7", hash_generated_field = "C02A5C3A2945DD3A9498E9A2B3ADE3E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.247 -0500", hash_original_field = "96BA30B91B1F13729F72FFEFCC2554F7", hash_generated_field = "C02A5C3A2945DD3A9498E9A2B3ADE3E8")
 
     public static final int TAG_SYSTEM_DOWNLOAD = 0xFFFFFF01;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.058 -0500", hash_original_field = "899B5BE0143CE89E6ACAEACC469EEC31", hash_generated_field = "F2074CB1C4379C5B50BB4B1FF63B0820")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.249 -0500", hash_original_field = "899B5BE0143CE89E6ACAEACC469EEC31", hash_generated_field = "F2074CB1C4379C5B50BB4B1FF63B0820")
 
     public static final int TAG_SYSTEM_MEDIA = 0xFFFFFF02;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.059 -0500", hash_original_field = "1B6449ED5A6102664B9B18D9B0800D3A", hash_generated_field = "F9E20E050386391004636FE05F2369DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.251 -0500", hash_original_field = "1B6449ED5A6102664B9B18D9B0800D3A", hash_generated_field = "F9E20E050386391004636FE05F2369DA")
 
     public static final int TAG_SYSTEM_BACKUP = 0xFFFFFF03;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.060 -0500", hash_original_field = "5D2F33191A2E616D4B50301CB47004EA", hash_generated_field = "9EB86C19C4E01418DA01359F0C805E43")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.253 -0500", hash_original_field = "5D2F33191A2E616D4B50301CB47004EA", hash_generated_field = "9EB86C19C4E01418DA01359F0C805E43")
 
     private static NetworkStats sActiveProfilingStart;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:36.060 -0500", hash_original_field = "F20A45A0061992FE154D37C68124F98C", hash_generated_field = "A1F5981D31D6D64C0FB7AA0C9780DCFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.256 -0500", hash_original_field = "F20A45A0061992FE154D37C68124F98C", hash_generated_field = "A1F5981D31D6D64C0FB7AA0C9780DCFC")
 
 
     private static Object sProfilingLock = new Object();

@@ -21,11 +21,11 @@ import java.util.Set;
 
 
 public class AttributedString {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.999 -0500", hash_original_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C", hash_generated_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.095 -0500", hash_original_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C", hash_generated_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C")
 
 
     String text;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.000 -0500", hash_original_field = "EA3CF0028C57B0F0FB6C371B620465D1", hash_generated_field = "EA3CF0028C57B0F0FB6C371B620465D1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.097 -0500", hash_original_field = "EA3CF0028C57B0F0FB6C371B620465D1", hash_generated_field = "EA3CF0028C57B0F0FB6C371B620465D1")
 
 
     Map<AttributedCharacterIterator.Attribute, List<Range>> attributeMap;
@@ -38,8 +38,9 @@ public class AttributedString {
      *            the {@code AttributedCharacterIterator} that contains the text
      *            for this attributed string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.038 -0500", hash_original_method = "5638BBE38DFF9B04A672F4EC9A02409B", hash_generated_method = "549451187631A94BF8217CD56E05447C")
-    public AttributedString(AttributedCharacterIterator iterator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.198 -0500", hash_original_method = "5638BBE38DFF9B04A672F4EC9A02409B", hash_generated_method = "549451187631A94BF8217CD56E05447C")
+    
+public AttributedString(AttributedCharacterIterator iterator) {
         if (iterator.getBeginIndex() > iterator.getEndIndex()) {
             throw new IllegalArgumentException("Invalid substring range");
         }
@@ -73,8 +74,9 @@ public class AttributedString {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.040 -0500", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "76E0AB286E2C917791F96CD048B777AA")
-    private AttributedString(AttributedCharacterIterator iterator, int start,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.202 -0500", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "76E0AB286E2C917791F96CD048B777AA")
+    
+private AttributedString(AttributedCharacterIterator iterator, int start,
             int end, Set<Attribute> attributes) {
         if (start < iterator.getBeginIndex() || end > iterator.getEndIndex()
                 || start > end) {
@@ -132,8 +134,9 @@ public class AttributedString {
      *             {@code iterator}, {@code end} is greater than the last
      *             index + 1 in {@code iterator} or if {@code start > end}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.041 -0500", hash_original_method = "D0E1FC5545253EA6E008AE3675A9452F", hash_generated_method = "4A69B046F0DC285A3AD270A5E57E6835")
-    public AttributedString(AttributedCharacterIterator iterator, int start,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.204 -0500", hash_original_method = "D0E1FC5545253EA6E008AE3675A9452F", hash_generated_method = "4A69B046F0DC285A3AD270A5E57E6835")
+    
+public AttributedString(AttributedCharacterIterator iterator, int start,
             int end) {
         this(iterator, start, end, iterator.getAllAttributeKeys());
     }
@@ -160,8 +163,9 @@ public class AttributedString {
      *             {@code iterator}, {@code end} is greater than the last index +
      *             1 in {@code iterator} or if {@code start > end}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.042 -0500", hash_original_method = "B4766721E168BC843A6EA06CFE59500E", hash_generated_method = "B59C0E88B16BF64C9DF1EEBC384D83DC")
-    public AttributedString(AttributedCharacterIterator iterator, int start,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.207 -0500", hash_original_method = "B4766721E168BC843A6EA06CFE59500E", hash_generated_method = "B59C0E88B16BF64C9DF1EEBC384D83DC")
+    
+public AttributedString(AttributedCharacterIterator iterator, int start,
             int end, AttributedCharacterIterator.Attribute[] attributes) {
         this(iterator, start, end, (attributes == null
                 ? new HashSet<Attribute>()
@@ -174,8 +178,9 @@ public class AttributedString {
      * @param value
      *            the text to take as base for this attributed string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.043 -0500", hash_original_method = "A0ACF5D97B9D79B3295575A771939692", hash_generated_method = "48D6ACE7C7ABD5B1247D0E282AA020F5")
-    public AttributedString(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.210 -0500", hash_original_method = "A0ACF5D97B9D79B3295575A771939692", hash_generated_method = "48D6ACE7C7ABD5B1247D0E282AA020F5")
+    
+public AttributedString(String value) {
         if (value == null) {
             throw new NullPointerException();
         }
@@ -197,8 +202,9 @@ public class AttributedString {
      * @throws NullPointerException
      *             if {@code value} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.044 -0500", hash_original_method = "85CF866984BA31F6F3E97322323F86BA", hash_generated_method = "447A1B5A9EC03334905B86FA059A8461")
-    public AttributedString(String value,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.213 -0500", hash_original_method = "85CF866984BA31F6F3E97322323F86BA", hash_generated_method = "447A1B5A9EC03334905B86FA059A8461")
+    
+public AttributedString(String value,
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes) {
         if (value == null) {
             throw new NullPointerException();
@@ -232,8 +238,9 @@ public class AttributedString {
      * @throws NullPointerException
      *             if {@code attribute} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.045 -0500", hash_original_method = "F800EB2F1E580436E49CB51D04E3F37C", hash_generated_method = "52E912297D8319959E7727A211EA1F19")
-    public void addAttribute(AttributedCharacterIterator.Attribute attribute, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.216 -0500", hash_original_method = "F800EB2F1E580436E49CB51D04E3F37C", hash_generated_method = "52E912297D8319959E7727A211EA1F19")
+    
+public void addAttribute(AttributedCharacterIterator.Attribute attribute, Object value) {
         if (attribute == null) {
             throw new NullPointerException();
         }
@@ -269,8 +276,9 @@ public class AttributedString {
      * @throws NullPointerException
      *             if {@code attribute} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.047 -0500", hash_original_method = "1EA9CE9DE6197B4051F39E120F823C8E", hash_generated_method = "93559F9E76B147DE214A12BD25014E3C")
-    public void addAttribute(AttributedCharacterIterator.Attribute attribute,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.220 -0500", hash_original_method = "1EA9CE9DE6197B4051F39E120F823C8E", hash_generated_method = "93559F9E76B147DE214A12BD25014E3C")
+    
+public void addAttribute(AttributedCharacterIterator.Attribute attribute,
             Object value, int start, int end) {
         if (attribute == null) {
             throw new NullPointerException();
@@ -364,8 +372,9 @@ public class AttributedString {
      *             if {@code start < 0}, {@code end} is greater than the length
      *             of this string, or if {@code start >= end}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.048 -0500", hash_original_method = "9BDF8CEEC650CFF21B203033378C7411", hash_generated_method = "D2B5FC2E1D0298403E6F489A411CC0EB")
-    public void addAttributes(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.223 -0500", hash_original_method = "9BDF8CEEC650CFF21B203033378C7411", hash_generated_method = "D2B5FC2E1D0298403E6F489A411CC0EB")
+    
+public void addAttributes(
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes,
             int start, int end) {
         Iterator<?> it = attributes.entrySet().iterator();
@@ -383,8 +392,9 @@ public class AttributedString {
      *
      * @return the newly created {@code AttributedCharacterIterator}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.049 -0500", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "70FF1D5C6DB97D8D9158233D5FA99D28")
-    public AttributedCharacterIterator getIterator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.225 -0500", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "70FF1D5C6DB97D8D9158233D5FA99D28")
+    
+public AttributedCharacterIterator getIterator() {
         return new AttributedIterator(this);
     }
 
@@ -399,8 +409,9 @@ public class AttributedString {
      *            iterator if they are defined for this text.
      * @return the newly created {@code AttributedCharacterIterator}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.050 -0500", hash_original_method = "AFA08901CAEF730E40B185484FAABB29", hash_generated_method = "26A06F6605BB57E3A2E7B284838AB359")
-    public AttributedCharacterIterator getIterator(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.228 -0500", hash_original_method = "AFA08901CAEF730E40B185484FAABB29", hash_generated_method = "26A06F6605BB57E3A2E7B284838AB359")
+    
+public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes) {
         return new AttributedIterator(this, attributes, 0, text.length());
     }
@@ -420,8 +431,9 @@ public class AttributedString {
      *            the end index of the iterator on the underlying text.
      * @return the newly created {@code AttributedCharacterIterator}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.051 -0500", hash_original_method = "EF8FB9411A496C9D99CDE8B83C48CE6B", hash_generated_method = "7DC49E672FE2CD50CFEF589021657F23")
-    public AttributedCharacterIterator getIterator(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.230 -0500", hash_original_method = "EF8FB9411A496C9D99CDE8B83C48CE6B", hash_generated_method = "7DC49E672FE2CD50CFEF589021657F23")
+    
+public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes, int start,
             int end) {
         return new AttributedIterator(this, attributes, start, end);
@@ -429,20 +441,21 @@ public class AttributedString {
 
     
     static class Range {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.001 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.100 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
 
         int start;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.002 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "302E5A3147803830441A79AED31F4022")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.102 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "302E5A3147803830441A79AED31F4022")
 
 
         int end;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.003 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.105 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
 
 
         Object value;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.004 -0500", hash_original_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5", hash_generated_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5")
-        Range(int s, int e, Object v) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.107 -0500", hash_original_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5", hash_generated_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5")
+        
+Range(int s, int e, Object v) {
             start = s;
             end = e;
             value = v;
@@ -463,25 +476,27 @@ public class AttributedString {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
 
         private int offset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.006 -0500", hash_original_field = "29952B3FB0A05E507FF36DA98D657172", hash_generated_field = "D02499DC7F8023F8CAFDC0A4B220FECC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.115 -0500", hash_original_field = "29952B3FB0A05E507FF36DA98D657172", hash_generated_field = "D02499DC7F8023F8CAFDC0A4B220FECC")
 
 
         private AttributedString attrString;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.007 -0500", hash_original_field = "02187A1DE7B3344886DF15C4DDE851BF", hash_generated_field = "8E1D222DFFE5F062ACF483541B60F0D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.117 -0500", hash_original_field = "02187A1DE7B3344886DF15C4DDE851BF", hash_generated_field = "8E1D222DFFE5F062ACF483541B60F0D5")
 
 
         private HashSet<Attribute> attributesAllowed;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.008 -0500", hash_original_method = "E441422DE6FDEDB0F1BB74606A67171C", hash_generated_method = "E441422DE6FDEDB0F1BB74606A67171C")
-        AttributedIterator(AttributedString attrString) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.120 -0500", hash_original_method = "E441422DE6FDEDB0F1BB74606A67171C", hash_generated_method = "E441422DE6FDEDB0F1BB74606A67171C")
+        
+AttributedIterator(AttributedString attrString) {
             this.attrString = attrString;
             begin = 0;
             end = attrString.text.length();
             offset = 0;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.010 -0500", hash_original_method = "43841E67E512106866A3902EDBE2D718", hash_generated_method = "43841E67E512106866A3902EDBE2D718")
-        AttributedIterator(AttributedString attrString,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.123 -0500", hash_original_method = "43841E67E512106866A3902EDBE2D718", hash_generated_method = "43841E67E512106866A3902EDBE2D718")
+        
+AttributedIterator(AttributedString attrString,
                 AttributedCharacterIterator.Attribute[] attributes, int begin,
                 int end) {
             if (begin < 0 || end > attrString.text.length() || begin > end) {
@@ -508,10 +523,11 @@ public class AttributedString {
          * @return a shallow copy of this attributed iterator.
          * @see java.lang.Cloneable
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.011 -0500", hash_original_method = "CC2190075ADAC44CCBDC93141CA9BE6C", hash_generated_method = "44AE55E213931B931D436A023F145C4E")
-        @Override
-@SuppressWarnings("unchecked")
-public Object clone() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.127 -0500", hash_original_method = "CC2190075ADAC44CCBDC93141CA9BE6C", hash_generated_method = "44AE55E213931B931D436A023F145C4E")
+        
+@Override
+        @SuppressWarnings("unchecked")
+        public Object clone() {
             try {
                 AttributedIterator clone = (AttributedIterator) super.clone();
                 if (attributesAllowed != null) {
@@ -524,16 +540,18 @@ public Object clone() {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.012 -0500", hash_original_method = "81A9D498AF1F73C3D962F8C3EDD6D3D9", hash_generated_method = "FEFE4C54A85D8DEC647D86E467CEFE61")
-        public char current() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.129 -0500", hash_original_method = "81A9D498AF1F73C3D962F8C3EDD6D3D9", hash_generated_method = "FEFE4C54A85D8DEC647D86E467CEFE61")
+        
+public char current() {
             if (offset == end) {
                 return DONE;
             }
             return attrString.text.charAt(offset);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.013 -0500", hash_original_method = "4AF9D055D17E58470820B415A8EBAFA4", hash_generated_method = "AEF215975D4DD2DFDD64AD59FE4DAA92")
-        public char first() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.132 -0500", hash_original_method = "4AF9D055D17E58470820B415A8EBAFA4", hash_generated_method = "AEF215975D4DD2DFDD64AD59FE4DAA92")
+        
+public char first() {
             if (begin == end) {
                 return DONE;
             }
@@ -546,8 +564,9 @@ public Object clone() {
          *
          * @return the index of the first character to iterate.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.014 -0500", hash_original_method = "1D4D2C19F23B97FE6ECF3D3284916FD4", hash_generated_method = "F7911960348415BFBAD397B847A674C7")
-        public int getBeginIndex() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.134 -0500", hash_original_method = "1D4D2C19F23B97FE6ECF3D3284916FD4", hash_generated_method = "F7911960348415BFBAD397B847A674C7")
+        
+public int getBeginIndex() {
             return begin;
         }
 
@@ -556,8 +575,9 @@ public Object clone() {
          *
          * @return the index one past the last character to iterate.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.015 -0500", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "ACC8D1B1439CA809AB08C45ABAB29DED")
-        public int getEndIndex() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.137 -0500", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "ACC8D1B1439CA809AB08C45ABAB29DED")
+        
+public int getEndIndex() {
             return end;
         }
 
@@ -566,13 +586,15 @@ public Object clone() {
          *
          * @return the current index.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.015 -0500", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "78C6B22E21CF81415ABD0C7B74926529")
-        public int getIndex() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.139 -0500", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "78C6B22E21CF81415ABD0C7B74926529")
+        
+public int getIndex() {
             return offset;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.016 -0500", hash_original_method = "20101C80E99D94E4CD68776989F0B447", hash_generated_method = "6373E2873E101E6AAFA9CF3AE9E0B9AC")
-        private boolean inRange(Range range) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.142 -0500", hash_original_method = "20101C80E99D94E4CD68776989F0B447", hash_generated_method = "6373E2873E101E6AAFA9CF3AE9E0B9AC")
+        
+private boolean inRange(Range range) {
             if (!(range.value instanceof Annotation)) {
                 return true;
             }
@@ -580,8 +602,9 @@ public Object clone() {
                     && range.end > begin && range.end <= end;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.018 -0500", hash_original_method = "D282867E9466B5652FFBD5F7BCA71B9B", hash_generated_method = "B2D3D82DDC0DCD4CC70151539E51F85B")
-        private boolean inRange(List<Range> ranges) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.145 -0500", hash_original_method = "D282867E9466B5652FFBD5F7BCA71B9B", hash_generated_method = "B2D3D82DDC0DCD4CC70151539E51F85B")
+        
+private boolean inRange(List<Range> ranges) {
             Iterator<Range> it = ranges.iterator();
             while (it.hasNext()) {
                 Range range = it.next();
@@ -602,8 +625,9 @@ public Object clone() {
          *
          * @return a set of attribute keys that may be empty.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.019 -0500", hash_original_method = "1F90FC3406D3E88B418E6F5A05B249D4", hash_generated_method = "19BDE914DC09300083E2188F1CB3A53B")
-        public Set<AttributedIterator.Attribute> getAllAttributeKeys() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.148 -0500", hash_original_method = "1F90FC3406D3E88B418E6F5A05B249D4", hash_generated_method = "19BDE914DC09300083E2188F1CB3A53B")
+        
+public Set<AttributedIterator.Attribute> getAllAttributeKeys() {
             if (begin == 0 && end == attrString.text.length()
                     && attributesAllowed == null) {
                 return attrString.attributeMap.keySet();
@@ -626,8 +650,9 @@ public Object clone() {
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.020 -0500", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "8B0F14EC21CD12FEE40E3DE66D4F41E1")
-        private Object currentValue(List<Range> ranges) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.151 -0500", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "8B0F14EC21CD12FEE40E3DE66D4F41E1")
+        
+private Object currentValue(List<Range> ranges) {
             Iterator<Range> it = ranges.iterator();
             while (it.hasNext()) {
                 Range range = it.next();
@@ -638,8 +663,9 @@ public Object clone() {
             return null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.021 -0500", hash_original_method = "9256DFDAE9CB8C43C18A44C8B3AC6DAC", hash_generated_method = "333DD1A1694570679808041C2E323073")
-        public Object getAttribute(
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.154 -0500", hash_original_method = "9256DFDAE9CB8C43C18A44C8B3AC6DAC", hash_generated_method = "333DD1A1694570679808041C2E323073")
+        
+public Object getAttribute(
                 AttributedCharacterIterator.Attribute attribute) {
             if (attributesAllowed != null
                     && !attributesAllowed.contains(attribute)) {
@@ -653,8 +679,9 @@ public Object clone() {
             return currentValue(ranges);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.022 -0500", hash_original_method = "AAAFE2E009783E25A93A8B590538D893", hash_generated_method = "B7CA3841E6FE08E8D490A5AF31260DAA")
-        public Map<Attribute, Object> getAttributes() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.157 -0500", hash_original_method = "AAAFE2E009783E25A93A8B590538D893", hash_generated_method = "B7CA3841E6FE08E8D490A5AF31260DAA")
+        
+public Map<Attribute, Object> getAttributes() {
             Map<Attribute, Object> result = new HashMap<Attribute, Object>(
                     (attrString.attributeMap.size() * 4 / 3) + 1);
             Iterator<Map.Entry<Attribute, List<Range>>> it = attrString.attributeMap
@@ -672,13 +699,15 @@ public Object clone() {
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.023 -0500", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "1143D87374631893A073C09129971673")
-        public int getRunLimit() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.159 -0500", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "1143D87374631893A073C09129971673")
+        
+public int getRunLimit() {
             return getRunLimit(getAllAttributeKeys());
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.024 -0500", hash_original_method = "40F484258D42E498FCA29FFC5F596001", hash_generated_method = "D0103678C208EFCE7480C5398687A394")
-        private int runLimit(List<Range> ranges) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.162 -0500", hash_original_method = "40F484258D42E498FCA29FFC5F596001", hash_generated_method = "D0103678C208EFCE7480C5398687A394")
+        
+private int runLimit(List<Range> ranges) {
             int result = end;
             ListIterator<Range> it = ranges.listIterator(ranges.size());
             while (it.hasPrevious()) {
@@ -696,8 +725,9 @@ public Object clone() {
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.025 -0500", hash_original_method = "F819F4AC98ED7B00F15856104CEA6D7F", hash_generated_method = "E22F8A8B1478140A715EF8CB3FB93B77")
-        public int getRunLimit(AttributedCharacterIterator.Attribute attribute) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.164 -0500", hash_original_method = "F819F4AC98ED7B00F15856104CEA6D7F", hash_generated_method = "E22F8A8B1478140A715EF8CB3FB93B77")
+        
+public int getRunLimit(AttributedCharacterIterator.Attribute attribute) {
             if (attributesAllowed != null
                     && !attributesAllowed.contains(attribute)) {
                 return end;
@@ -710,8 +740,9 @@ public Object clone() {
             return runLimit(ranges);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.026 -0500", hash_original_method = "39CD1571C1B0AAE61A932D3B1E130DFE", hash_generated_method = "BF9BCD83E0D05B9063793D870686585E")
-        public int getRunLimit(Set<? extends Attribute> attributes) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.167 -0500", hash_original_method = "39CD1571C1B0AAE61A932D3B1E130DFE", hash_generated_method = "BF9BCD83E0D05B9063793D870686585E")
+        
+public int getRunLimit(Set<? extends Attribute> attributes) {
             int limit = end;
             Iterator<? extends Attribute> it = attributes.iterator();
             while (it.hasNext()) {
@@ -724,13 +755,15 @@ public Object clone() {
             return limit;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.027 -0500", hash_original_method = "FE3F08CD8D40BCC02EAAB9CF9D349F73", hash_generated_method = "8E2B58FDAD2633BA3E10448891A05BE2")
-        public int getRunStart() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.169 -0500", hash_original_method = "FE3F08CD8D40BCC02EAAB9CF9D349F73", hash_generated_method = "8E2B58FDAD2633BA3E10448891A05BE2")
+        
+public int getRunStart() {
             return getRunStart(getAllAttributeKeys());
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.028 -0500", hash_original_method = "3940F742081E74CA234FF11DA5FD3120", hash_generated_method = "1AF3D97DF9B83DA977D426D799AF9A3E")
-        private int runStart(List<Range> ranges) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.173 -0500", hash_original_method = "3940F742081E74CA234FF11DA5FD3120", hash_generated_method = "1AF3D97DF9B83DA977D426D799AF9A3E")
+        
+private int runStart(List<Range> ranges) {
             int result = begin;
             Iterator<Range> it = ranges.iterator();
             while (it.hasNext()) {
@@ -748,8 +781,9 @@ public Object clone() {
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.029 -0500", hash_original_method = "D8F9F8B7D0C4F74D05FEF10E27E7F588", hash_generated_method = "A7B117FF73641A857771605CBA73DFCC")
-        public int getRunStart(AttributedCharacterIterator.Attribute attribute) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.176 -0500", hash_original_method = "D8F9F8B7D0C4F74D05FEF10E27E7F588", hash_generated_method = "A7B117FF73641A857771605CBA73DFCC")
+        
+public int getRunStart(AttributedCharacterIterator.Attribute attribute) {
             if (attributesAllowed != null
                     && !attributesAllowed.contains(attribute)) {
                 return begin;
@@ -762,8 +796,9 @@ public Object clone() {
             return runStart(ranges);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.030 -0500", hash_original_method = "62E2E3A1AAFB276945B722FDB547D45B", hash_generated_method = "6DC4E4B305594D2168B776393B666F59")
-        public int getRunStart(Set<? extends Attribute> attributes) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.179 -0500", hash_original_method = "62E2E3A1AAFB276945B722FDB547D45B", hash_generated_method = "6DC4E4B305594D2168B776393B666F59")
+        
+public int getRunStart(Set<? extends Attribute> attributes) {
             int start = begin;
             Iterator<? extends Attribute> it = attributes.iterator();
             while (it.hasNext()) {
@@ -776,8 +811,9 @@ public Object clone() {
             return start;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.031 -0500", hash_original_method = "6CAD62DAB178D2919A2036BE42DEC497", hash_generated_method = "430325AAC24DBD01E7DF99B1EDA839D9")
-        public char last() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.181 -0500", hash_original_method = "6CAD62DAB178D2919A2036BE42DEC497", hash_generated_method = "430325AAC24DBD01E7DF99B1EDA839D9")
+        
+public char last() {
             if (begin == end) {
                 return DONE;
             }
@@ -785,8 +821,9 @@ public Object clone() {
             return attrString.text.charAt(offset);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.032 -0500", hash_original_method = "B623F272BE854A8CF15368B2FE2B8A97", hash_generated_method = "648C073C30860A21FCCBDA428DD692D0")
-        public char next() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.184 -0500", hash_original_method = "B623F272BE854A8CF15368B2FE2B8A97", hash_generated_method = "648C073C30860A21FCCBDA428DD692D0")
+        
+public char next() {
             if (offset >= (end - 1)) {
                 offset = end;
                 return DONE;
@@ -794,16 +831,18 @@ public Object clone() {
             return attrString.text.charAt(++offset);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.033 -0500", hash_original_method = "E77E60DF0F891730B03F44D98923AB66", hash_generated_method = "5EA3C4C7CD74D6CCBBF3B03048B9F119")
-        public char previous() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.187 -0500", hash_original_method = "E77E60DF0F891730B03F44D98923AB66", hash_generated_method = "5EA3C4C7CD74D6CCBBF3B03048B9F119")
+        
+public char previous() {
             if (offset == begin) {
                 return DONE;
             }
             return attrString.text.charAt(--offset);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.034 -0500", hash_original_method = "C542CEFF91217DDB3083AD983C51F194", hash_generated_method = "890F7D5463D8C8B06260FB3BDC88E65A")
-        public char setIndex(int location) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.189 -0500", hash_original_method = "C542CEFF91217DDB3083AD983C51F194", hash_generated_method = "890F7D5463D8C8B06260FB3BDC88E65A")
+        
+public char setIndex(int location) {
             if (location < begin || location > end) {
                 throw new IllegalArgumentException();
             }

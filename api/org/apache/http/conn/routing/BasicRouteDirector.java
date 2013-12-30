@@ -28,8 +28,9 @@ public class BasicRouteDirector implements HttpRouteDirector {
      *          either the next step to perform, or success, or failure.
      *          0 is for success, a negative value for failure.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.102 -0500", hash_original_method = "2D52A8A1F4F510CECBAF7D127E816999", hash_generated_method = "26F2E23187C893BF0787312C4C13EB3C")
-    public int nextStep(RouteInfo plan, RouteInfo fact) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.454 -0500", hash_original_method = "2D52A8A1F4F510CECBAF7D127E816999", hash_generated_method = "26F2E23187C893BF0787312C4C13EB3C")
+    
+public int nextStep(RouteInfo plan, RouteInfo fact) {
         if (plan == null) {
             throw new IllegalArgumentException
                 ("Planned route may not be null.");
@@ -56,8 +57,9 @@ public class BasicRouteDirector implements HttpRouteDirector {
      *
      * @return  the first step
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.103 -0500", hash_original_method = "966B65B53C96D6B72CF4916A6633605B", hash_generated_method = "14941E50CB5A9E94D25F3080C1DB0C47")
-    protected int firstStep(RouteInfo plan) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.456 -0500", hash_original_method = "966B65B53C96D6B72CF4916A6633605B", hash_generated_method = "14941E50CB5A9E94D25F3080C1DB0C47")
+    
+protected int firstStep(RouteInfo plan) {
 
         return (plan.getHopCount() > 1) ?
             CONNECT_PROXY : CONNECT_TARGET;
@@ -73,8 +75,9 @@ public class BasicRouteDirector implements HttpRouteDirector {
      * @return  one of the constants defined in this class, indicating
      *          either the next step to perform, or success, or failure
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.104 -0500", hash_original_method = "B25ACDEED75919F7360EB24551217719", hash_generated_method = "E15A0CD48C48D7E5F888C2EED5CC1A6D")
-    protected int directStep(RouteInfo plan, RouteInfo fact) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.459 -0500", hash_original_method = "B25ACDEED75919F7360EB24551217719", hash_generated_method = "E15A0CD48C48D7E5F888C2EED5CC1A6D")
+    
+protected int directStep(RouteInfo plan, RouteInfo fact) {
 
         if (fact.getHopCount() > 1)
             return UNREACHABLE;
@@ -109,8 +112,9 @@ public class BasicRouteDirector implements HttpRouteDirector {
      * @return  one of the constants defined in this class, indicating
      *          either the next step to perform, or success, or failure
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.105 -0500", hash_original_method = "DAD47A54D3A856226CAD2FBA5A8D36F7", hash_generated_method = "AD499F2ECD39B002F58477D70DEC1000")
-    protected int proxiedStep(RouteInfo plan, RouteInfo fact) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.461 -0500", hash_original_method = "DAD47A54D3A856226CAD2FBA5A8D36F7", hash_generated_method = "AD499F2ECD39B002F58477D70DEC1000")
+    
+protected int proxiedStep(RouteInfo plan, RouteInfo fact) {
 
         if (fact.getHopCount() <= 1)
             return UNREACHABLE;

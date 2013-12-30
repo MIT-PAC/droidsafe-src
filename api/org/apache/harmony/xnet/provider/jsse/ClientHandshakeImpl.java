@@ -34,8 +34,9 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
      *
      * @param owner
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.278 -0500", hash_original_method = "E7725F54B70B03AB684209C7F7E63A02", hash_generated_method = "E7725F54B70B03AB684209C7F7E63A02")
-    ClientHandshakeImpl(Object owner) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.406 -0500", hash_original_method = "E7725F54B70B03AB684209C7F7E63A02", hash_generated_method = "E7725F54B70B03AB684209C7F7E63A02")
+    
+ClientHandshakeImpl(Object owner) {
         super(owner);
     }
 
@@ -43,9 +44,10 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
      * Starts handshake
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.279 -0500", hash_original_method = "6C060C09ED0246441EBDE47DFEF048B2", hash_generated_method = "4BC410302B6F252CC3D835E7B02F89AC")
-    @Override
-public void start() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.409 -0500", hash_original_method = "6C060C09ED0246441EBDE47DFEF048B2", hash_generated_method = "4BC410302B6F252CC3D835E7B02F89AC")
+    
+@Override
+    public void start() {
         if (session == null) { // initial handshake
             session = findSessionToResume();
         } else { // start session renegotiation
@@ -79,8 +81,9 @@ public void start() {
      * Starts renegotiation on a new session
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.280 -0500", hash_original_method = "A1AF1BC51EE82C9340D705103AD7A155", hash_generated_method = "B095B45DF7DE60E1EB58901C0B717D81")
-    private void renegotiateNewSession() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.412 -0500", hash_original_method = "A1AF1BC51EE82C9340D705103AD7A155", hash_generated_method = "B095B45DF7DE60E1EB58901C0B717D81")
+    
+private void renegotiateNewSession() {
         if (parameters.getEnableSessionCreation()){
             isResuming = false;
             session = new SSLSessionImpl(parameters.getSecureRandom());
@@ -101,8 +104,9 @@ public void start() {
     /*
      * Starts/resumes session
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.281 -0500", hash_original_method = "FFCAFC294E61749148CA1FC19A14A2BB", hash_generated_method = "7B7F9A61DB07CB5BE72C469070733090")
-    private void startSession() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.414 -0500", hash_original_method = "FFCAFC294E61749148CA1FC19A14A2BB", hash_generated_method = "7B7F9A61DB07CB5BE72C469070733090")
+    
+private void startSession() {
         CipherSuite[] cipher_suites;
         if (isResuming) {
             cipher_suites = new CipherSuite[] { session.cipherSuite };
@@ -120,9 +124,10 @@ public void start() {
      * Processes inbound handshake messages
      * @param bytes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.284 -0500", hash_original_method = "A389390FF4680222C458E1D6E9083717", hash_generated_method = "4F35B217867E297BC43CAC891648AAE5")
-    @Override
-public void unwrap(byte[] bytes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.423 -0500", hash_original_method = "A389390FF4680222C458E1D6E9083717", hash_generated_method = "4F35B217867E297BC43CAC891648AAE5")
+    
+@Override
+    public void unwrap(byte[] bytes) {
         if (this.delegatedTaskErr != null) {
             Exception e = this.delegatedTaskErr;
             this.delegatedTaskErr = null;
@@ -304,18 +309,20 @@ public void unwrap(byte[] bytes) {
      * @ see TLS 1.0 spec., E.1. Version 2 client hello
      * @param bytes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.285 -0500", hash_original_method = "A121217103E96E47F6E62859875393D7", hash_generated_method = "C28A86C63FA83DA1968ACF2068B18022")
-    @Override
-public void unwrapSSLv2(byte[] bytes) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.425 -0500", hash_original_method = "A121217103E96E47F6E62859875393D7", hash_generated_method = "C28A86C63FA83DA1968ACF2068B18022")
+    
+@Override
+    public void unwrapSSLv2(byte[] bytes) {
         unexpectedMessage();
     }
 
     /**
      * Creates and sends Finished message
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.287 -0500", hash_original_method = "8B073BF3F8F00875CF9B653567C3900A", hash_generated_method = "782E43CE43B7326AF0F4F50C66FB2FDB")
-    @Override
-protected void makeFinished() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.428 -0500", hash_original_method = "8B073BF3F8F00875CF9B653567C3900A", hash_generated_method = "782E43CE43B7326AF0F4F50C66FB2FDB")
+    
+@Override
+    protected void makeFinished() {
         byte[] verify_data;
         if (serverHello.server_version[1] == 1) {
             verify_data = new byte[12];
@@ -343,8 +350,9 @@ protected void makeFinished() {
      * Processes ServerHelloDone: makes verification of the server messages; sends
      * client messages, computers masterSecret, sends ChangeCipherSpec
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.289 -0500", hash_original_method = "2DDF37E22088D1FE8BC73EB3CA83F3A0", hash_generated_method = "D2F899ECF0C8F0AF7307958FBF03F0A2")
-    void processServerHelloDone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.434 -0500", hash_original_method = "2DDF37E22088D1FE8BC73EB3CA83F3A0", hash_generated_method = "D2F899ECF0C8F0AF7307958FBF03F0A2")
+    
+void processServerHelloDone() {
         PrivateKey clientKey = null;
 
         if (serverCert != null) {
@@ -505,8 +513,9 @@ protected void makeFinished() {
     /*
      * Verifies certificate path
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.290 -0500", hash_original_method = "D4DFA4A65ECB84B5CCE7F9A88CE9F713", hash_generated_method = "7F94A9520F6F2ABBEFC47A3CE13B1AB6")
-    private void verifyServerCert() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.437 -0500", hash_original_method = "D4DFA4A65ECB84B5CCE7F9A88CE9F713", hash_generated_method = "7F94A9520F6F2ABBEFC47A3CE13B1AB6")
+    
+private void verifyServerCert() {
         String authType = session.cipherSuite.getAuthType(serverKeyExchange != null);
         if (authType == null) {
             return;
@@ -523,9 +532,10 @@ protected void makeFinished() {
     /**
      * Processes ChangeCipherSpec message
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.291 -0500", hash_original_method = "EC675B353AC97965B98DB90ABCC2C0E4", hash_generated_method = "44F0A08A25047D89681036C930DBA04C")
-    @Override
-public void receiveChangeCipherSpec() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.439 -0500", hash_original_method = "EC675B353AC97965B98DB90ABCC2C0E4", hash_generated_method = "44F0A08A25047D89681036C930DBA04C")
+    
+@Override
+    public void receiveChangeCipherSpec() {
         if (isResuming) {
             if (serverHello == null) {
                 unexpectedMessage();
@@ -537,8 +547,9 @@ public void receiveChangeCipherSpec() {
     }
 
     // Find session to resume in client session context
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.292 -0500", hash_original_method = "BCA1C752C9C2161C7353D057736B9B80", hash_generated_method = "39275527E963F89D6D5160891DF4E00E")
-    private SSLSessionImpl findSessionToResume() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.442 -0500", hash_original_method = "BCA1C752C9C2161C7353D057736B9B80", hash_generated_method = "39275527E963F89D6D5160891DF4E00E")
+    
+private SSLSessionImpl findSessionToResume() {
         String host = null;
         int port = -1;
         if (engineOwner != null) {

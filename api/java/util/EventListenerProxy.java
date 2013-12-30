@@ -10,7 +10,7 @@ import droidsafe.annotations.*;
 
 
 public abstract class EventListenerProxy implements EventListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.294 -0500", hash_original_field = "349D93182B74FDD05AC630535DA0F781", hash_generated_field = "63216795243EEE41ECEC8F741B6ECA5B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.383 -0500", hash_original_field = "349D93182B74FDD05AC630535DA0F781", hash_generated_field = "63216795243EEE41ECEC8F741B6ECA5B")
 
 
     private  EventListener listener;
@@ -21,8 +21,9 @@ public abstract class EventListenerProxy implements EventListener {
      * @param listener
      *            the listener wrapped by this proxy.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.295 -0500", hash_original_method = "0B02F9CA1E264165C6D771C4F9CE717F", hash_generated_method = "EDB2EDBADCEFDEC3BF6E35D0979AB9F2")
-    public EventListenerProxy(EventListener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.386 -0500", hash_original_method = "0B02F9CA1E264165C6D771C4F9CE717F", hash_generated_method = "EDB2EDBADCEFDEC3BF6E35D0979AB9F2")
+    
+public EventListenerProxy(EventListener listener) {
         this.listener = listener;
     }
 
@@ -31,8 +32,9 @@ public abstract class EventListenerProxy implements EventListener {
      *
      * @return the wrapped {@code EventListener}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.296 -0500", hash_original_method = "544CEBD256D91351395433E8E1959E7F", hash_generated_method = "26437651E60C6E6FE53A6F9741417A1A")
-    public EventListener getListener() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.388 -0500", hash_original_method = "544CEBD256D91351395433E8E1959E7F", hash_generated_method = "26437651E60C6E6FE53A6F9741417A1A")
+    
+public EventListener getListener() {
         return listener;
     }
 

@@ -27,8 +27,9 @@ public class BasicResponseHandler implements ResponseHandler<String> {
      * response was unsuccessful (>= 300 status code), throws an
      * {@link HttpResponseException}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.366 -0500", hash_original_method = "2A5E0F0DC068B1165A25576DA590B50A", hash_generated_method = "33B2188B3F54CBA9844743E409A83493")
-    public String handleResponse(final HttpResponse response)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.106 -0500", hash_original_method = "2A5E0F0DC068B1165A25576DA590B50A", hash_generated_method = "33B2188B3F54CBA9844743E409A83493")
+    
+public String handleResponse(final HttpResponse response)
             throws HttpResponseException, IOException {
         StatusLine statusLine = response.getStatusLine();
         if (statusLine.getStatusCode() >= 300) {

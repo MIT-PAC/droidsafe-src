@@ -15,11 +15,12 @@ public class DHParameters {
      * Returns prime bytes
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.754 -0500", hash_original_method = "5A0A21527AD2CDDB88C677469F0B4186", hash_generated_method = "40FF0E36783A0A5E664E968CC3D7885A")
-    public static byte[] getPrime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.543 -0500", hash_original_method = "5A0A21527AD2CDDB88C677469F0B4186", hash_generated_method = "40FF0E36783A0A5E664E968CC3D7885A")
+    
+public static byte[] getPrime() {
         return prime;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.749 -0500", hash_original_field = "B0AD8BBBE6A3105790A28C08BBAA1B04", hash_generated_field = "0623B04222DE03635B36EFA39C6B3CFE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.531 -0500", hash_original_field = "B0AD8BBBE6A3105790A28C08BBAA1B04", hash_generated_field = "0623B04222DE03635B36EFA39C6B3CFE")
 
     // http://news.hping.org/sci.crypt.archive/2370.html
     private static byte[] prime512 = new byte[] { (byte) 0xF5, (byte) 0x2A, (byte) 0xFF,
@@ -36,7 +37,7 @@ public class DHParameters {
             (byte) 0x26, (byte) 0xBA, (byte) 0xAB, (byte) 0xA2, (byte) 0x5E,
             (byte) 0xC3, (byte) 0x55, (byte) 0xE9, (byte) 0x2A, (byte) 0x05,
             (byte) 0x5F };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.751 -0500", hash_original_field = "0BB65DE81EEF340133812EBB996EB759", hash_generated_field = "4509DAA58AF8D72B04DA8472AD38C8B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.534 -0500", hash_original_field = "0BB65DE81EEF340133812EBB996EB759", hash_generated_field = "4509DAA58AF8D72B04DA8472AD38C8B5")
 
     // (http://www.ietf.org/rfc/rfc2539.txt?number=2539)
     private static byte[] primeGroup1 = { (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
@@ -59,7 +60,7 @@ public class DHParameters {
             (byte) 0xA6, (byte) 0x3A, (byte) 0x36, (byte) 0x20, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.752 -0500", hash_original_field = "100B94C4516FA5215F242669ECB23FEC", hash_generated_field = "8319E6B27737DB6E247EA6365F56E9BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.538 -0500", hash_original_field = "100B94C4516FA5215F242669ECB23FEC", hash_generated_field = "8319E6B27737DB6E247EA6365F56E9BE")
 
     // (http://www.ietf.org/rfc/rfc2539.txt?number=2539)
     private static byte[] primeGroup2 = { (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
@@ -89,7 +90,7 @@ public class DHParameters {
             (byte) 0x81, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF,
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.753 -0500", hash_original_field = "14702BAE11A1A43483F11F4A56766F60", hash_generated_field = "E308A45DAEAECF2B8BCC430FCFA81CB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.540 -0500", hash_original_field = "14702BAE11A1A43483F11F4A56766F60", hash_generated_field = "E308A45DAEAECF2B8BCC430FCFA81CB6")
 
 
     private static byte[] prime;

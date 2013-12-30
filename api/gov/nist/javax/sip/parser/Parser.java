@@ -25,8 +25,9 @@ public abstract class Parser extends ParserCore implements TokenTypes {
      *
      * @author JvB
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.782 -0500", hash_original_method = "5D57B7D8E86E542F53B3CEE7F8A3E576", hash_generated_method = "27B1A977D227EF1ED2F59B8A0BA001BA")
-    public static final void checkToken( String token ) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.169 -0500", hash_original_method = "5D57B7D8E86E542F53B3CEE7F8A3E576", hash_generated_method = "27B1A977D227EF1ED2F59B8A0BA001BA")
+    
+public static final void checkToken( String token ) throws ParseException {
 
         if (token == null || token.length()==0 ) {
             throw new ParseException("null or empty token", -1 );
@@ -46,20 +47,23 @@ public abstract class Parser extends ParserCore implements TokenTypes {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.778 -0500", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "74E8045DDF3B0B4D4E14DD9459189BF8")
-    protected ParseException createParseException(String exceptionString) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.159 -0500", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "74E8045DDF3B0B4D4E14DD9459189BF8")
+    
+protected ParseException createParseException(String exceptionString) {
         return new ParseException(
             lexer.getBuffer() + ":" + exceptionString,
             lexer.getPtr());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.779 -0500", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "0546A9D6EA2C9BFC49AE3B508DBA66A7")
-    protected Lexer getLexer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.161 -0500", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "0546A9D6EA2C9BFC49AE3B508DBA66A7")
+    
+protected Lexer getLexer() {
         return (Lexer) this.lexer;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.780 -0500", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "75C20F86026E83C96214FCC10B09D203")
-    protected String sipVersion() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.163 -0500", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "75C20F86026E83C96214FCC10B09D203")
+    
+protected String sipVersion() throws ParseException {
         if (debug)
             dbg_enter("sipVersion");
         try {
@@ -81,8 +85,9 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     /**
      * parses a method. Consumes if a valid method has been found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.781 -0500", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "D4A582748A1256222F0353A380EFF1E4")
-    protected String method() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.166 -0500", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "D4A582748A1256222F0353A380EFF1E4")
+    
+protected String method() throws ParseException {
         try {
             if (debug)
                 dbg_enter("method");

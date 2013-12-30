@@ -16,10 +16,10 @@ import android.view.WindowManager;
 
 
 class SoftInputWindow extends Dialog {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.707 -0500", hash_original_field = "9399A9196ADA53199056D05EEBB238C5", hash_generated_field = "9399A9196ADA53199056D05EEBB238C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.292 -0500", hash_original_field = "9399A9196ADA53199056D05EEBB238C5", hash_generated_field = "9399A9196ADA53199056D05EEBB238C5")
 
      KeyEvent.DispatcherState mDispatcherState;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.708 -0500", hash_original_field = "811AC12DD4794990F0DFD3FA5A6E3596", hash_generated_field = "FD1FEF375C4015D208B59BBFA039409F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.294 -0500", hash_original_field = "811AC12DD4794990F0DFD3FA5A6E3596", hash_generated_field = "FD1FEF375C4015D208B59BBFA039409F")
 
     private final Rect mBounds = new Rect();
     
@@ -35,31 +35,35 @@ class SoftInputWindow extends Dialog {
      *        using styles. This theme is applied on top of the current theme in
      *        <var>context</var>. If 0, the default dialog theme will be used.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.709 -0500", hash_original_method = "CB2FD50E46BEAA500E1BA02FF1CB309D", hash_generated_method = "866E681A0EB1161DFEB42CAAEEE0D322")
-    public SoftInputWindow(Context context, int theme,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.299 -0500", hash_original_method = "CB2FD50E46BEAA500E1BA02FF1CB309D", hash_generated_method = "866E681A0EB1161DFEB42CAAEEE0D322")
+    
+public SoftInputWindow(Context context, int theme,
             KeyEvent.DispatcherState dispatcherState) {
         super(context, theme);
         mDispatcherState = dispatcherState;
         initDockWindow();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.708 -0500", hash_original_method = "DE19D8588D226C63B985BFE529D19F5B", hash_generated_method = "11804B63B2CE474CFF3B870BDE7A3472")
-    public void setToken(IBinder token) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.296 -0500", hash_original_method = "DE19D8588D226C63B985BFE529D19F5B", hash_generated_method = "11804B63B2CE474CFF3B870BDE7A3472")
+    
+public void setToken(IBinder token) {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
         lp.token = token;
         getWindow().setAttributes(lp);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.710 -0500", hash_original_method = "948733408C213A09362904F3B801CDB6", hash_generated_method = "C694054C01189B209F9485319EE96FDD")
-    @Override
-public void onWindowFocusChanged(boolean hasFocus) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.301 -0500", hash_original_method = "948733408C213A09362904F3B801CDB6", hash_generated_method = "C694054C01189B209F9485319EE96FDD")
+    
+@Override
+    public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         mDispatcherState.reset();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.711 -0500", hash_original_method = "6F026F4BC5B101183B4B9B4DF989B709", hash_generated_method = "6144BFD87538941E1F92436B10165D0F")
-    @Override
-public boolean dispatchTouchEvent(MotionEvent ev) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.303 -0500", hash_original_method = "6F026F4BC5B101183B4B9B4DF989B709", hash_generated_method = "6144BFD87538941E1F92436B10165D0F")
+    
+@Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
         getWindow().getDecorView().getHitRect(mBounds);
 
         if (ev.isWithinBoundsNoHistory(mBounds.left, mBounds.top,
@@ -83,8 +87,9 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
      *         left or right of the screen, the return value is the width of the
      *         DockWindow, and its height is equal to the height of the screen.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.712 -0500", hash_original_method = "9B0D08AECE95E0C5A74220E56FAF5BBC", hash_generated_method = "84D9F3DE530E5E1790C30F09F0BAF092")
-    public int getSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.306 -0500", hash_original_method = "9B0D08AECE95E0C5A74220E56FAF5BBC", hash_generated_method = "84D9F3DE530E5E1790C30F09F0BAF092")
+    
+public int getSize() {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
 
         if (lp.gravity == Gravity.TOP || lp.gravity == Gravity.BOTTOM) {
@@ -103,8 +108,9 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
      *        left or right of the screen, <var>size</var> is the width of the
      *        DockWindow, and its height is equal to the height of the screen.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.712 -0500", hash_original_method = "32B4C6FEAFD2BF15DEEB55504FF34518", hash_generated_method = "CE4ACDFC593561B0DC6143C8CA390B37")
-    public void setSize(int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.308 -0500", hash_original_method = "32B4C6FEAFD2BF15DEEB55504FF34518", hash_generated_method = "CE4ACDFC593561B0DC6143C8CA390B37")
+    
+public void setSize(int size) {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
 
         if (lp.gravity == Gravity.TOP || lp.gravity == Gravity.BOTTOM) {
@@ -125,8 +131,9 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
      *        {#link android.view.Gravity.BOTTOM}, {#link
      *        android.view.Gravity.RIGHT}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.713 -0500", hash_original_method = "E3269318E29BDA61BD7E82E14CD77997", hash_generated_method = "744CD09F96B73C6C3E8D64B184A2F315")
-    public void setGravity(int gravity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.310 -0500", hash_original_method = "E3269318E29BDA61BD7E82E14CD77997", hash_generated_method = "744CD09F96B73C6C3E8D64B184A2F315")
+    
+public void setGravity(int gravity) {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
 
         boolean oldIsVertical = (lp.gravity == Gravity.TOP || lp.gravity == Gravity.BOTTOM);
@@ -143,8 +150,9 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.714 -0500", hash_original_method = "F6A5F856FF7B400209C66879FBEA71E5", hash_generated_method = "BA5D9FD9FB5F6F4D54CA580065F93831")
-    private void initDockWindow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.313 -0500", hash_original_method = "F6A5F856FF7B400209C66879FBEA71E5", hash_generated_method = "BA5D9FD9FB5F6F4D54CA580065F93831")
+    
+private void initDockWindow() {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
 
         lp.type = WindowManager.LayoutParams.TYPE_INPUT_METHOD;

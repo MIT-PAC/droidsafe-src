@@ -43,8 +43,9 @@ public class URIUtils {
          *             component of the string is present but cannot be parsed
          *             as a server-based authority
          */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.325 -0500", hash_original_method = "19A08876017B0E66F12ADB34AE24FA2E", hash_generated_method = "86440AB2C498932E991F146363D76901")
-    public static URI createURI(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.569 -0500", hash_original_method = "19A08876017B0E66F12ADB34AE24FA2E", hash_generated_method = "86440AB2C498932E991F146363D76901")
+    
+public static URI createURI(
             final String scheme,
             final String host,
             int port,
@@ -97,8 +98,9 @@ public class URIUtils {
      * @throws URISyntaxException
      *             If the resulting URI is invalid.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.326 -0500", hash_original_method = "5BCF6CC51BFC75D8413D633758FBA659", hash_generated_method = "28EE0D92FA51D1769C76980AF918D41F")
-    public static URI rewriteURI(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.572 -0500", hash_original_method = "5BCF6CC51BFC75D8413D633758FBA659", hash_generated_method = "28EE0D92FA51D1769C76980AF918D41F")
+    
+public static URI rewriteURI(
             final URI uri, 
             final HttpHost target,
             boolean dropFragment) throws URISyntaxException {
@@ -129,8 +131,9 @@ public class URIUtils {
      * {@link URIUtils#rewriteURI(URI, HttpHost, boolean)} that always keeps the
      * fragment.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.327 -0500", hash_original_method = "0CAE9240B5B3CDDA3A701D41E526238F", hash_generated_method = "57306AAC46193404E9D3354186493CF2")
-    public static URI rewriteURI(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.574 -0500", hash_original_method = "0CAE9240B5B3CDDA3A701D41E526238F", hash_generated_method = "57306AAC46193404E9D3354186493CF2")
+    
+public static URI rewriteURI(
             final URI uri, 
             final HttpHost target) throws URISyntaxException {
         return rewriteURI(uri, target, false);
@@ -144,8 +147,9 @@ public class URIUtils {
      * @param reference the URI reference
      * @return the resulting URI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.328 -0500", hash_original_method = "EC59E00085E1F31ADDA0DBE4C60C3840", hash_generated_method = "CD39698D2E50D07981213FC662C1DBF5")
-    public static URI resolve(final URI baseURI, final String reference) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.576 -0500", hash_original_method = "EC59E00085E1F31ADDA0DBE4C60C3840", hash_generated_method = "CD39698D2E50D07981213FC662C1DBF5")
+    
+public static URI resolve(final URI baseURI, final String reference) {
         return URIUtils.resolve(baseURI, URI.create(reference));
     }
 
@@ -157,8 +161,9 @@ public class URIUtils {
      * @param reference the URI reference
      * @return the resulting URI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.329 -0500", hash_original_method = "B3B247A72B9A5E5D631B15DB9021C14E", hash_generated_method = "C5079CC507FC792378C3D1DC8D1E9C32")
-    public static URI resolve(final URI baseURI, URI reference){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.579 -0500", hash_original_method = "B3B247A72B9A5E5D631B15DB9021C14E", hash_generated_method = "C5079CC507FC792378C3D1DC8D1E9C32")
+    
+public static URI resolve(final URI baseURI, URI reference){
         if (baseURI == null) {
             throw new IllegalArgumentException("Base URI may nor be null");
         }
@@ -181,8 +186,9 @@ public class URIUtils {
     /**
      * This class should not be instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.330 -0500", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "763070220CDD6AAECE1612E041381A7A")
-    private URIUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.581 -0500", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "763070220CDD6AAECE1612E041381A7A")
+    
+private URIUtils() {
     }
 
     

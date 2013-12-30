@@ -25,8 +25,9 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
      * uses power-of-two length hash tables, that otherwise encounter collisions
      * for hashCodes that do not differ in lower or upper bits.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.373 -0500", hash_original_method = "EB10FD63A8403F00F4E59BED9E510DF9", hash_generated_method = "2C4F8F4C8B306CD83B3F5D269A2D4EFC")
-    private static int secondaryHash(int h) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.564 -0500", hash_original_method = "EB10FD63A8403F00F4E59BED9E510DF9", hash_generated_method = "2C4F8F4C8B306CD83B3F5D269A2D4EFC")
+    
+private static int secondaryHash(int h) {
         // Doug Lea's supplemental hash function
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
@@ -39,8 +40,9 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
      * returns Integer.MIN_VALUE. If the argument is zero, the method returns
      * zero.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.374 -0500", hash_original_method = "2E3FAB2711A493998A5CD02CF97D3862", hash_generated_method = "88D47F1314328668F8579B4CB5297971")
-    private static int roundUpToPowerOfTwo(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.567 -0500", hash_original_method = "2E3FAB2711A493998A5CD02CF97D3862", hash_generated_method = "88D47F1314328668F8579B4CB5297971")
+    
+private static int roundUpToPowerOfTwo(int i) {
         i--; // If input is a power of two, shift its high-order bit right
 
         // "Smear" the high-order bit all the way to the right
@@ -52,20 +54,20 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 
         return i + 1;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.289 -0500", hash_original_field = "9C9C52C3044A64A1683A2865C14D4656", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.325 -0500", hash_original_field = "9C9C52C3044A64A1683A2865C14D4656", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
 
     private static final int MINIMUM_CAPACITY = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.290 -0500", hash_original_field = "8450B9285BE1BB97BF823A8DA56CC45D", hash_generated_field = "C94813E6F46C48A83BBFCFA3C9862983")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.327 -0500", hash_original_field = "8450B9285BE1BB97BF823A8DA56CC45D", hash_generated_field = "C94813E6F46C48A83BBFCFA3C9862983")
 
     private static final int MAXIMUM_CAPACITY = 1 << 30;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.292 -0500", hash_original_field = "69E9667A37D40729A72B55AC0A75E1FE", hash_generated_field = "8B66B6321C50459F7579C610CEA9040E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.332 -0500", hash_original_field = "69E9667A37D40729A72B55AC0A75E1FE", hash_generated_field = "8B66B6321C50459F7579C610CEA9040E")
 
     static final float DEFAULT_LOAD_FACTOR = .75F;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.374 -0500", hash_original_field = "3C5C22C8B3537F79B4DEBD590294808C", hash_generated_field = "895D2EFED015878DCDE59CE17F2ED051")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.570 -0500", hash_original_field = "3C5C22C8B3537F79B4DEBD590294808C", hash_generated_field = "895D2EFED015878DCDE59CE17F2ED051")
 
 
     private static final long serialVersionUID = 362498820763181265L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.375 -0500", hash_original_field = "EAD386E5C87BDA4672992408FDD8CECE", hash_generated_field = "07BD8E29CA88435F65E9AD35F51067E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.573 -0500", hash_original_field = "EAD386E5C87BDA4672992408FDD8CECE", hash_generated_field = "07BD8E29CA88435F65E9AD35F51067E8")
 
 
     private static final ObjectStreamField[] serialPersistentFields = {
@@ -126,8 +128,9 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
      *                when the capacity is less than zero or the load factor is
      *                less or equal to zero or NaN.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.301 -0500", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "3099B2A9FB1DB95A61DD56E531C7FD7C")
-    public HashMap(int capacity, float loadFactor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.360 -0500", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "3099B2A9FB1DB95A61DD56E531C7FD7C")
+    
+public HashMap(int capacity, float loadFactor) {
         this(capacity);
 
         if (loadFactor <= 0 || Float.isNaN(loadFactor)) {
@@ -198,8 +201,9 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
      * Item 17). In this case it is unavoidable, and the init method provides a
      * workaround.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.305 -0500", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "417EF77086319CE91314CCF850ADA61E")
-    void init() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.373 -0500", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "417EF77086319CE91314CCF850ADA61E")
+    
+void init() { }
 
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "54875E203703AD755476CBDF0B4AFC75", hash_generated_method = "8823E12553CEF9F29146B21A2A664B17")

@@ -26,8 +26,9 @@ import org.bouncycastle.util.encoders.Hex;
 
 
 public class IETFUtils {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.414 -0500", hash_original_method = "983A3D28718608244DB1B77020020016", hash_generated_method = "EFCCC0589F64419E642BE38ACBC24C65")
-    public static RDN[] rDNsFromString(String name, X500NameStyle x500Style)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.737 -0500", hash_original_method = "983A3D28718608244DB1B77020020016", hash_generated_method = "EFCCC0589F64419E642BE38ACBC24C65")
+    
+public static RDN[] rDNsFromString(String name, X500NameStyle x500Style)
     {
         X500NameTokenizer nTok = new X500NameTokenizer(name);
         X500NameBuilder builder = new X500NameBuilder(x500Style);
@@ -80,8 +81,9 @@ public class IETFUtils {
         return builder.build().getRDNs();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.416 -0500", hash_original_method = "E214B529B1DCDC130AD64AFD64165517", hash_generated_method = "AB8311C45EC1C8ACB4031F1279459043")
-    private static String[] toValueArray(Vector values)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.739 -0500", hash_original_method = "E214B529B1DCDC130AD64AFD64165517", hash_generated_method = "AB8311C45EC1C8ACB4031F1279459043")
+    
+private static String[] toValueArray(Vector values)
     {
         String[] tmp = new String[values.size()];
 
@@ -93,8 +95,9 @@ public class IETFUtils {
         return tmp;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.417 -0500", hash_original_method = "C6B3449A8EDEDC2DE359B6D403CFA9E6", hash_generated_method = "D569F0732F3C61FB4907BD4EABBFA85E")
-    private static ASN1ObjectIdentifier[] toOIDArray(Vector oids)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.742 -0500", hash_original_method = "C6B3449A8EDEDC2DE359B6D403CFA9E6", hash_generated_method = "D569F0732F3C61FB4907BD4EABBFA85E")
+    
+private static ASN1ObjectIdentifier[] toOIDArray(Vector oids)
     {
         ASN1ObjectIdentifier[] tmp = new ASN1ObjectIdentifier[oids.size()];
 
@@ -106,8 +109,9 @@ public class IETFUtils {
         return tmp;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.418 -0500", hash_original_method = "2B4FA08D7BEC41710260E21E1430C826", hash_generated_method = "A395E196978224D1E3E8BF078B47389D")
-    public static ASN1ObjectIdentifier decodeAttrName(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.745 -0500", hash_original_method = "2B4FA08D7BEC41710260E21E1430C826", hash_generated_method = "A395E196978224D1E3E8BF078B47389D")
+    
+public static ASN1ObjectIdentifier decodeAttrName(
         String      name,
         Hashtable   lookUp)
     {
@@ -129,8 +133,9 @@ public class IETFUtils {
         return oid;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.421 -0500", hash_original_method = "135D447AB71FA29E1F47BFE5B59E6000", hash_generated_method = "5B7856AC112F22D5A62A5B20D2A3D67A")
-    public static ASN1Encodable valueFromHexString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.748 -0500", hash_original_method = "135D447AB71FA29E1F47BFE5B59E6000", hash_generated_method = "5B7856AC112F22D5A62A5B20D2A3D67A")
+    
+public static ASN1Encodable valueFromHexString(
         String  str,
         int     off)
         throws IOException
@@ -163,8 +168,9 @@ public class IETFUtils {
         return ASN1Object.fromByteArray(data);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.422 -0500", hash_original_method = "4A947950B73C103F62C704A292BF18F7", hash_generated_method = "170E7B16BF70E250634764831293D7F5")
-    public static void appendTypeAndValue(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.750 -0500", hash_original_method = "4A947950B73C103F62C704A292BF18F7", hash_generated_method = "170E7B16BF70E250634764831293D7F5")
+    
+public static void appendTypeAndValue(
         StringBuffer          buf,
         AttributeTypeAndValue typeAndValue,
         Hashtable             oidSymbols)
@@ -185,8 +191,9 @@ public class IETFUtils {
         buf.append(valueToString(typeAndValue.getValue()));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.423 -0500", hash_original_method = "30AD1CBBB8AB39F951AAF7B8702A500A", hash_generated_method = "0F0D8CE8DC1390A643C41574C271536B")
-    public static String valueToString(ASN1Encodable value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.753 -0500", hash_original_method = "30AD1CBBB8AB39F951AAF7B8702A500A", hash_generated_method = "0F0D8CE8DC1390A643C41574C271536B")
+    
+public static String valueToString(ASN1Encodable value)
     {
         StringBuffer vBuf = new StringBuffer();
 
@@ -237,8 +244,9 @@ public class IETFUtils {
         return vBuf.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.424 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "5BD375269EED1A37250371DA6FF695D6")
-    private static String bytesToString(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.756 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "5BD375269EED1A37250371DA6FF695D6")
+    
+private static String bytesToString(
         byte[] data)
     {
         char[]  cs = new char[data.length];
@@ -251,8 +259,9 @@ public class IETFUtils {
         return new String(cs);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.425 -0500", hash_original_method = "8D7080B4062A91F949A92A478FFA85DE", hash_generated_method = "9E4C1E1F59CEAD447BFDBE6BC9A760FE")
-    public static String canonicalize(String s)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.758 -0500", hash_original_method = "8D7080B4062A91F949A92A478FFA85DE", hash_generated_method = "9E4C1E1F59CEAD447BFDBE6BC9A760FE")
+    
+public static String canonicalize(String s)
     {
         String value = Strings.toLowerCase(s.trim());
 
@@ -271,8 +280,9 @@ public class IETFUtils {
         return value;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.426 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "A58EA57D2A8246BB9F2AC7E44A284DAD")
-    private static ASN1Object decodeObject(String oValue)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.761 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "A58EA57D2A8246BB9F2AC7E44A284DAD")
+    
+private static ASN1Object decodeObject(String oValue)
     {
         try
         {
@@ -284,8 +294,9 @@ public class IETFUtils {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.427 -0500", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "BE9597E652D462FFC2EE6BD63E91F8C4")
-    public static String stripInternalSpaces(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.765 -0500", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "BE9597E652D462FFC2EE6BD63E91F8C4")
+    
+public static String stripInternalSpaces(
         String str)
     {
         StringBuffer res = new StringBuffer();

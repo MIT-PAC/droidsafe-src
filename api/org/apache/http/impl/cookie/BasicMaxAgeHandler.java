@@ -13,13 +13,15 @@ import org.apache.http.cookie.SetCookie;
 
 public class BasicMaxAgeHandler extends AbstractCookieAttributeHandler {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.250 -0500", hash_original_method = "B0446CDE16622CCB68895B794F750D42", hash_generated_method = "BDB4B85EF80A1DE400C1497516204821")
-    public BasicMaxAgeHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.785 -0500", hash_original_method = "B0446CDE16622CCB68895B794F750D42", hash_generated_method = "BDB4B85EF80A1DE400C1497516204821")
+    
+public BasicMaxAgeHandler() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.251 -0500", hash_original_method = "A8EE51F3135F41C00ED9344CF5263715", hash_generated_method = "E84E2FA541FD4BED72AA2680AE46012F")
-    public void parse(final SetCookie cookie, final String value) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.788 -0500", hash_original_method = "A8EE51F3135F41C00ED9344CF5263715", hash_generated_method = "E84E2FA541FD4BED72AA2680AE46012F")
+    
+public void parse(final SetCookie cookie, final String value) 
             throws MalformedCookieException {
         if (cookie == null) {
             throw new IllegalArgumentException("Cookie may not be null");

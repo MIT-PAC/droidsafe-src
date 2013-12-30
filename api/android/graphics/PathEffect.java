@@ -15,7 +15,7 @@ public class PathEffect {
     @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_patheffect) {
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.504 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.339 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
     int native_instance;
     
@@ -26,8 +26,9 @@ public class PathEffect {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.501 -0500", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "1B58F815E13231E7E163ED79B267DEA7")
-    protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.333 -0500", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "1B58F815E13231E7E163ED79B267DEA7")
+    
+protected void finalize() throws Throwable {
         nativeDestructor(native_instance);
     }
 

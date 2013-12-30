@@ -11,7 +11,7 @@ import java.util.Comparator;
 
 
 public class CookiePathComparator implements Serializable, Comparator<Cookie> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.726 -0500", hash_original_field = "F9CD8031B020F5139FA72E3F6D9EDC41", hash_generated_field = "72EE05E0928858A1E51BAE2345CB995B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.285 -0500", hash_original_field = "F9CD8031B020F5139FA72E3F6D9EDC41", hash_generated_field = "72EE05E0928858A1E51BAE2345CB995B")
 
 
     private static final long serialVersionUID = 7523645369616405818L;
@@ -23,8 +23,9 @@ public class CookiePathComparator implements Serializable, Comparator<Cookie> {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.727 -0500", hash_original_method = "679ADE09B30DFC8534697854331FFCFD", hash_generated_method = "0270A918331D0D3909B48E87021C7770")
-    private String normalizePath(final Cookie cookie) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.288 -0500", hash_original_method = "679ADE09B30DFC8534697854331FFCFD", hash_generated_method = "0270A918331D0D3909B48E87021C7770")
+    
+private String normalizePath(final Cookie cookie) {
         String path = cookie.getPath();
         if (path == null) {
             path = "/";
@@ -35,8 +36,9 @@ public class CookiePathComparator implements Serializable, Comparator<Cookie> {
         return path;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.728 -0500", hash_original_method = "38114A956CA6EEFF2831D01642E4D39A", hash_generated_method = "8FEACE0E0CF31016BAF0C982B6E3D548")
-    public int compare(final Cookie c1, final Cookie c2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.290 -0500", hash_original_method = "38114A956CA6EEFF2831D01642E4D39A", hash_generated_method = "8FEACE0E0CF31016BAF0C982B6E3D548")
+    
+public int compare(final Cookie c1, final Cookie c2) {
         String path1 = normalizePath(c1);
         String path2 = normalizePath(c2);
         if (path1.equals(path2)) {

@@ -23,16 +23,16 @@ import java.util.TreeSet;
 
 
 public class MappingFileProvider implements Externalizable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.618 -0500", hash_original_field = "242BE32CA84E9DE0901B0ABC120A2CEA", hash_generated_field = "98909880D8EAD8B8385A6005C50C5E65")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.135 -0500", hash_original_field = "242BE32CA84E9DE0901B0ABC120A2CEA", hash_generated_field = "98909880D8EAD8B8385A6005C50C5E65")
 
   private static  Map<String, String> LOCALE_NORMALIZATION_MAP;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.615 -0500", hash_original_field = "00F1381F548F3A5295097F2401ADFC52", hash_generated_field = "3E0B4451FC75BFBEA7BE0888ADA52D93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.128 -0500", hash_original_field = "00F1381F548F3A5295097F2401ADFC52", hash_generated_field = "3E0B4451FC75BFBEA7BE0888ADA52D93")
 
   private int numOfEntries = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.616 -0500", hash_original_field = "D31F3760FA588B3120206AC80519C001", hash_generated_field = "5D843B062DC0F709662151020D18BCC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.130 -0500", hash_original_field = "D31F3760FA588B3120206AC80519C001", hash_generated_field = "5D843B062DC0F709662151020D18BCC2")
 
   private int[] countryCallingCodes;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.617 -0500", hash_original_field = "A4D45AB2AD56C87C531397805771C9A0", hash_generated_field = "297401D4476B3C0539FAD27EE481B768")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.132 -0500", hash_original_field = "A4D45AB2AD56C87C531397805771C9A0", hash_generated_field = "297401D4476B3C0539FAD27EE481B768")
 
   private List<Set<String>> availableLanguages;
 
@@ -41,8 +41,9 @@ public class MappingFileProvider implements Externalizable {
    * implementing {@link Externalizable}. The empty provider could later be populated by
    * {@link #readFileConfigs(java.util.SortedMap)} or {@link #readExternal(java.io.ObjectInput)}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.619 -0500", hash_original_method = "8FB53B01F748B2BCB846F8E0ABF1A4BF", hash_generated_method = "113E1FE8A1E6BE8880D11B9E05256657")
-    public MappingFileProvider() {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.137 -0500", hash_original_method = "8FB53B01F748B2BCB846F8E0ABF1A4BF", hash_generated_method = "113E1FE8A1E6BE8880D11B9E05256657")
+    
+public MappingFileProvider() {
   }
 
   /**
@@ -52,8 +53,9 @@ public class MappingFileProvider implements Externalizable {
    *     files are available for the specific country calling code. The map is sorted in ascending
    *     order of the country calling codes as integers.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.620 -0500", hash_original_method = "2C1785672959EEFC03879AF7408DB866", hash_generated_method = "2F682F22C2DAF57E8C95165F90BF5063")
-    public void readFileConfigs(SortedMap<Integer, Set<String>> availableDataFiles) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.140 -0500", hash_original_method = "2C1785672959EEFC03879AF7408DB866", hash_generated_method = "2F682F22C2DAF57E8C95165F90BF5063")
+    
+public void readFileConfigs(SortedMap<Integer, Set<String>> availableDataFiles) {
     numOfEntries = availableDataFiles.size();
     countryCallingCodes = new int[numOfEntries];
     availableLanguages = new ArrayList<Set<String>>(numOfEntries);
@@ -67,8 +69,9 @@ public class MappingFileProvider implements Externalizable {
   /**
    * Supports Java Serialization.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.621 -0500", hash_original_method = "A5B4139EF2A7D591E843D1D3DA56504C", hash_generated_method = "490E40B28DAF1C41715EE733C1CCE6DF")
-    public void readExternal(ObjectInput objectInput) throws IOException {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.143 -0500", hash_original_method = "A5B4139EF2A7D591E843D1D3DA56504C", hash_generated_method = "490E40B28DAF1C41715EE733C1CCE6DF")
+    
+public void readExternal(ObjectInput objectInput) throws IOException {
     numOfEntries = objectInput.readInt();
     if (countryCallingCodes == null || countryCallingCodes.length < numOfEntries) {
       countryCallingCodes = new int[numOfEntries];
@@ -90,8 +93,9 @@ public class MappingFileProvider implements Externalizable {
   /**
    * Supports Java Serialization.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.622 -0500", hash_original_method = "E326CA0D62F025609F12A4A9B87E4431", hash_generated_method = "8EA038D25A6CA65C7B835AD3C41DCE6D")
-    public void writeExternal(ObjectOutput objectOutput) throws IOException {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.145 -0500", hash_original_method = "E326CA0D62F025609F12A4A9B87E4431", hash_generated_method = "8EA038D25A6CA65C7B835AD3C41DCE6D")
+    
+public void writeExternal(ObjectOutput objectOutput) throws IOException {
     objectOutput.writeInt(numOfEntries);
     for (int i = 0; i < numOfEntries; i++) {
       objectOutput.writeInt(countryCallingCodes[i]);
@@ -109,9 +113,10 @@ public class MappingFileProvider implements Externalizable {
    * country calling code. The country calling code is followed by a '|' and then a list of
    * comma-separated languages sorted in ascending order.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.623 -0500", hash_original_method = "17C0EB7BC2271962455DE53D535BEB5E", hash_generated_method = "F5DA2469AC3754FE916038AE7ABFBEE5")
-    @Override
-public String toString() {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.148 -0500", hash_original_method = "17C0EB7BC2271962455DE53D535BEB5E", hash_generated_method = "F5DA2469AC3754FE916038AE7ABFBEE5")
+    
+@Override
+  public String toString() {
     StringBuilder output = new StringBuilder();
     for (int i = 0; i < numOfEntries; i++) {
       output.append(countryCallingCodes[i]);
@@ -138,8 +143,9 @@ public String toString() {
    * @param region  two-letter uppercase ISO country codes as defined by ISO 3166-1
    * @return  the name of the file, or empty string if no such file can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.623 -0500", hash_original_method = "F40661B16774EA00988010D992802DCB", hash_generated_method = "F40661B16774EA00988010D992802DCB")
-    String getFileName(int countryCallingCode, String language, String script, String region) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.150 -0500", hash_original_method = "F40661B16774EA00988010D992802DCB", hash_generated_method = "F40661B16774EA00988010D992802DCB")
+    
+String getFileName(int countryCallingCode, String language, String script, String region) {
     if (language.length() == 0) {
       return "";
     }
@@ -159,8 +165,9 @@ public String toString() {
     return "";
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.625 -0500", hash_original_method = "18F97AE37D6D32FF4C5E8DE16502349B", hash_generated_method = "9A558B04B751C441C72BE513FB41C1B5")
-    private String findBestMatchingLanguageCode(
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.153 -0500", hash_original_method = "18F97AE37D6D32FF4C5E8DE16502349B", hash_generated_method = "9A558B04B751C441C72BE513FB41C1B5")
+    
+private String findBestMatchingLanguageCode(
       Set<String> setOfLangs, String language, String script, String region) {
     StringBuilder fullLocale = constructFullLocale(language, script, region);
     String fullLocaleStr = fullLocale.toString();
@@ -198,22 +205,25 @@ public String toString() {
     return "";
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.625 -0500", hash_original_method = "AAED8563DDED3C53862CE4371524442C", hash_generated_method = "7C004154730EA0AB439CF10D45190DA5")
-    private boolean onlyOneOfScriptOrRegionIsEmpty(String script, String region) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.156 -0500", hash_original_method = "AAED8563DDED3C53862CE4371524442C", hash_generated_method = "7C004154730EA0AB439CF10D45190DA5")
+    
+private boolean onlyOneOfScriptOrRegionIsEmpty(String script, String region) {
     return (script.length() == 0 && region.length() > 0) ||
             (region.length() == 0 && script.length() > 0);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.626 -0500", hash_original_method = "67AD4EAACC19DF5D4391EFA1CE27EABA", hash_generated_method = "0CB4D1F6B2111F0FFAA02160FEA4EA48")
-    private StringBuilder constructFullLocale(String language, String script, String region) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.158 -0500", hash_original_method = "67AD4EAACC19DF5D4391EFA1CE27EABA", hash_generated_method = "0CB4D1F6B2111F0FFAA02160FEA4EA48")
+    
+private StringBuilder constructFullLocale(String language, String script, String region) {
     StringBuilder fullLocale = new StringBuilder(language);
     appendSubsequentLocalePart(script, fullLocale);
     appendSubsequentLocalePart(region, fullLocale);
     return fullLocale;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.627 -0500", hash_original_method = "A3149B7498B5162CA69A1D6F38AF4B31", hash_generated_method = "416E345B4AD7758BDDB75B399C26D9FC")
-    private void appendSubsequentLocalePart(String subsequentLocalePart, StringBuilder fullLocale) {
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.160 -0500", hash_original_method = "A3149B7498B5162CA69A1D6F38AF4B31", hash_generated_method = "416E345B4AD7758BDDB75B399C26D9FC")
+    
+private void appendSubsequentLocalePart(String subsequentLocalePart, StringBuilder fullLocale) {
     if (subsequentLocalePart.length() > 0) {
       fullLocale.append('_').append(subsequentLocalePart);
     }

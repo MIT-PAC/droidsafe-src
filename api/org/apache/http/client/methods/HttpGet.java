@@ -13,7 +13,7 @@ import java.net.URI;
 
 @DSVAModeled
 public class HttpGet extends HttpRequestBase {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.141 -0500", hash_original_field = "FAA38044AD16F915890905B63FBBCA42", hash_generated_field = "BCFE29A06D4EB94143E09A5AED669A6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.038 -0500", hash_original_field = "FAA38044AD16F915890905B63FBBCA42", hash_generated_field = "BCFE29A06D4EB94143E09A5AED669A6C")
 
 
     public final static String METHOD_NAME = "GET";
@@ -21,13 +21,15 @@ public class HttpGet extends HttpRequestBase {
     @DSVAModeled
     private URI theURI;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.142 -0500", hash_original_method = "5037302FD966B72BDD781660024EF657", hash_generated_method = "0C8D3574F60C84033C0278476E55ECDE")
-    public HttpGet() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.040 -0500", hash_original_method = "5037302FD966B72BDD781660024EF657", hash_generated_method = "0C8D3574F60C84033C0278476E55ECDE")
+    
+public HttpGet() {
         super();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.143 -0500", hash_original_method = "31474A7F59CE66F27E23571A1F0DC0EA", hash_generated_method = "746BE47C6BCD631FEA7CF15494CB8B2C")
-    public HttpGet(final URI uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.043 -0500", hash_original_method = "31474A7F59CE66F27E23571A1F0DC0EA", hash_generated_method = "746BE47C6BCD631FEA7CF15494CB8B2C")
+    
+public HttpGet(final URI uri) {
         super();
         setURI(uri);
     }
@@ -58,9 +60,10 @@ public class HttpGet extends HttpRequestBase {
         return this.theURI;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.144 -0500", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "5FCF2FB47A767785DCEA247A24F7E8BC")
-    @Override
-public String getMethod() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.048 -0500", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "5FCF2FB47A767785DCEA247A24F7E8BC")
+    
+@Override
+    public String getMethod() {
         return METHOD_NAME;
     }
 }

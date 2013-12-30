@@ -10,15 +10,16 @@ public interface ITextToSpeechService extends android.os.IInterface
 
 public static abstract class Stub extends android.os.Binder implements android.speech.tts.ITextToSpeechService
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.860 -0500", hash_original_field = "81DD0E2D071E59F47AD97FE2FC4A9ACD", hash_generated_field = "A92BC81C5A6CA1339938BC9DE3BCE971")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.858 -0500", hash_original_field = "81DD0E2D071E59F47AD97FE2FC4A9ACD", hash_generated_field = "A92BC81C5A6CA1339938BC9DE3BCE971")
 
 private static final java.lang.String DESCRIPTOR = "android.speech.tts.ITextToSpeechService";
 /**
  * Cast an IBinder object into an android.speech.tts.ITextToSpeechService interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.862 -0500", hash_original_method = "3EFA2A17E3A9AF2C6729813563746DCE", hash_generated_method = "BE7F361970A72EBD7ADE85E1A828D861")
-        public static android.speech.tts.ITextToSpeechService asInterface(android.os.IBinder obj)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.864 -0500", hash_original_method = "3EFA2A17E3A9AF2C6729813563746DCE", hash_generated_method = "BE7F361970A72EBD7ADE85E1A828D861")
+        
+public static android.speech.tts.ITextToSpeechService asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -29,32 +30,35 @@ return ((android.speech.tts.ITextToSpeechService)iin);
 }
 return new android.speech.tts.ITextToSpeechService.Stub.Proxy(obj);
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.884 -0500", hash_original_field = "EA84F9ADB9C5ED128CE34ECFBFE2E3B2", hash_generated_field = "90250B918A81CEE86AE1248DCADB5B40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.920 -0500", hash_original_field = "EA84F9ADB9C5ED128CE34ECFBFE2E3B2", hash_generated_field = "90250B918A81CEE86AE1248DCADB5B40")
 
 static final int TRANSACTION_speak = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.885 -0500", hash_original_field = "F991BBA0B0E4425849674A075601326D", hash_generated_field = "59517F232AA83AFDE31C2F17C97AB65C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.923 -0500", hash_original_field = "F991BBA0B0E4425849674A075601326D", hash_generated_field = "59517F232AA83AFDE31C2F17C97AB65C")
 
 static final int TRANSACTION_synthesizeToFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.886 -0500", hash_original_field = "BF9656BBCE4AE808189400CAC1C47EEA", hash_generated_field = "F95997902D58CCCE4238996279BEF61C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.926 -0500", hash_original_field = "BF9656BBCE4AE808189400CAC1C47EEA", hash_generated_field = "F95997902D58CCCE4238996279BEF61C")
 
 static final int TRANSACTION_playAudio = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
 private static class Proxy implements android.speech.tts.ITextToSpeechService
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.867 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.875 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
 
 private android.os.IBinder mRemote;
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.868 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
-            Proxy(android.os.IBinder remote)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.878 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
+            
+Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.869 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
-            public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.880 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
+            
+public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.870 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
-            public java.lang.String getInterfaceDescriptor()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.882 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+            
+public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -67,8 +71,9 @@ return DESCRIPTOR;
      * @param queueMode Determines what to do to requests already in the queue.
      * @param param Request parameters.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.871 -0500", hash_original_method = "09BD97D1334819A4DE3A96DF841A6DA4", hash_generated_method = "D7C9397ACADFCBF6420BA8077B66809A")
-            public int speak(java.lang.String callingApp, java.lang.String text, int queueMode, android.os.Bundle params) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.885 -0500", hash_original_method = "09BD97D1334819A4DE3A96DF841A6DA4", hash_generated_method = "D7C9397ACADFCBF6420BA8077B66809A")
+            
+public int speak(java.lang.String callingApp, java.lang.String text, int queueMode, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -104,8 +109,9 @@ return _result;
      * @param filename The file to write the synthesized audio to.
      * @param param Request parameters.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.872 -0500", hash_original_method = "135DDF34F6D4D02FC5F03BE333330523", hash_generated_method = "B4B1CCB591446789BA93C9F0D38EF6CD")
-            public int synthesizeToFile(java.lang.String callingApp, java.lang.String text, java.lang.String filename, android.os.Bundle params) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.888 -0500", hash_original_method = "135DDF34F6D4D02FC5F03BE333330523", hash_generated_method = "B4B1CCB591446789BA93C9F0D38EF6CD")
+            
+public int synthesizeToFile(java.lang.String callingApp, java.lang.String text, java.lang.String filename, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -141,8 +147,9 @@ return _result;
      * @param queueMode Determines what to do to requests already in the queue.
      * @param param Request parameters.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.873 -0500", hash_original_method = "FA0C2E0A552D3BCC4F4E3EE7FDA48C7B", hash_generated_method = "2C87A4D6B3277742BB778DA6CC3E177D")
-            public int playAudio(java.lang.String callingApp, android.net.Uri audioUri, int queueMode, android.os.Bundle params) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.892 -0500", hash_original_method = "FA0C2E0A552D3BCC4F4E3EE7FDA48C7B", hash_generated_method = "2C87A4D6B3277742BB778DA6CC3E177D")
+            
+public int playAudio(java.lang.String callingApp, android.net.Uri audioUri, int queueMode, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -184,8 +191,9 @@ return _result;
      * @param queueMode Determines what to do to requests already in the queue.
      * @param param Request parameters.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.874 -0500", hash_original_method = "1CAE9DD480E137E74A91EABE2D915456", hash_generated_method = "B6F11F3BEE007FEA755FB29193EFC79D")
-            public int playSilence(java.lang.String callingApp, long duration, int queueMode, android.os.Bundle params) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.894 -0500", hash_original_method = "1CAE9DD480E137E74A91EABE2D915456", hash_generated_method = "B6F11F3BEE007FEA755FB29193EFC79D")
+            
+public int playSilence(java.lang.String callingApp, long duration, int queueMode, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -215,8 +223,9 @@ return _result;
 /**
      * Checks whether the service is currently playing some audio.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.875 -0500", hash_original_method = "DA5E6B693FBEEF5B1E48FC45AB1713D1", hash_generated_method = "8CAA3955B4E19ED0BD1309F411A05843")
-            public boolean isSpeaking() throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.897 -0500", hash_original_method = "DA5E6B693FBEEF5B1E48FC45AB1713D1", hash_generated_method = "8CAA3955B4E19ED0BD1309F411A05843")
+            
+public boolean isSpeaking() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -240,8 +249,9 @@ return _result;
      * @param callingApp Package name of the app whose utterances
      *        should be interrupted and cleared.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.876 -0500", hash_original_method = "9859905843839781A8B87AA6F465024C", hash_generated_method = "284290B50F76833347CC09DE038635D6")
-            public int stop(java.lang.String callingApp) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.899 -0500", hash_original_method = "9859905843839781A8B87AA6F465024C", hash_generated_method = "284290B50F76833347CC09DE038635D6")
+            
+public int stop(java.lang.String callingApp) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -269,8 +279,9 @@ return _result;
      *         The country and variant may be {@code ""}. If country is empty, then variant must
      *         be empty too.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.877 -0500", hash_original_method = "C569A45F37C99B6F9C602D91F256E18B", hash_generated_method = "9025E5D36B5C831FE62F0750C27B378D")
-            public java.lang.String[] getLanguage() throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.902 -0500", hash_original_method = "C569A45F37C99B6F9C602D91F256E18B", hash_generated_method = "9025E5D36B5C831FE62F0750C27B378D")
+            
+public java.lang.String[] getLanguage() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -300,8 +311,9 @@ return _result;
      *         {@link TextToSpeech#LANG_MISSING_DATA}
      *         {@link TextToSpeech#LANG_NOT_SUPPORTED}.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.878 -0500", hash_original_method = "7913CAD8BCC780BF05B2FE9B44B9A1B3", hash_generated_method = "17ED0F06197C57D4B2B238A2A16743CD")
-            public int isLanguageAvailable(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.904 -0500", hash_original_method = "7913CAD8BCC780BF05B2FE9B44B9A1B3", hash_generated_method = "17ED0F06197C57D4B2B238A2A16743CD")
+            
+public int isLanguageAvailable(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -334,8 +346,9 @@ return _result;
      *         the supplied locale. The array of strings must not contain 
      *         duplicates.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.879 -0500", hash_original_method = "FE2BB20EC8B6AA673E11F37A3F20D812", hash_generated_method = "60D596B86DC92BF1CD5D540698D93A8E")
-            public java.lang.String[] getFeaturesForLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.908 -0500", hash_original_method = "FE2BB20EC8B6AA673E11F37A3F20D812", hash_generated_method = "60D596B86DC92BF1CD5D540698D93A8E")
+            
+public java.lang.String[] getFeaturesForLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -368,8 +381,9 @@ return _result;
      *         {@link TextToSpeech#LANG_MISSING_DATA}
      *         {@link TextToSpeech#LANG_NOT_SUPPORTED}.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.880 -0500", hash_original_method = "B689DC29DF9C0768C6D0F180732D8140", hash_generated_method = "60297672CD57FDA6045D5B2232C93531")
-            public int loadLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.910 -0500", hash_original_method = "B689DC29DF9C0768C6D0F180732D8140", hash_generated_method = "60297672CD57FDA6045D5B2232C93531")
+            
+public int loadLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -396,8 +410,9 @@ return _result;
      * @param callingApp Package name for the app whose utterance the callback will handle.
      * @param cb The callback.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.881 -0500", hash_original_method = "C0EEB754D53CBF8A296618A623FC836C", hash_generated_method = "564ABAAE9BF3BA158356D1B57979ECEB")
-            public void setCallback(java.lang.String callingApp, android.speech.tts.ITextToSpeechCallback cb) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.913 -0500", hash_original_method = "C0EEB754D53CBF8A296618A623FC836C", hash_generated_method = "564ABAAE9BF3BA158356D1B57979ECEB")
+            
+public void setCallback(java.lang.String callingApp, android.speech.tts.ITextToSpeechCallback cb) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -414,44 +429,46 @@ _data.recycle();
 }
 }
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.886 -0500", hash_original_field = "192BE4CB081988FDC1B1BE41E13CF4EB", hash_generated_field = "981AC4B455106D71F5639EFBB000F244")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.928 -0500", hash_original_field = "192BE4CB081988FDC1B1BE41E13CF4EB", hash_generated_field = "981AC4B455106D71F5639EFBB000F244")
 
 static final int TRANSACTION_playSilence = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.887 -0500", hash_original_field = "732027B164F34DFE3FD9BB3F26225885", hash_generated_field = "7C7CCACBF229A44CBCA0914A2681FC44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.931 -0500", hash_original_field = "732027B164F34DFE3FD9BB3F26225885", hash_generated_field = "7C7CCACBF229A44CBCA0914A2681FC44")
 
 static final int TRANSACTION_isSpeaking = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.888 -0500", hash_original_field = "BE61F621723C243DE7622C3AFF877083", hash_generated_field = "4B6F5499A021BC3192FF934EA599D817")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.933 -0500", hash_original_field = "BE61F621723C243DE7622C3AFF877083", hash_generated_field = "4B6F5499A021BC3192FF934EA599D817")
 
 static final int TRANSACTION_stop = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.889 -0500", hash_original_field = "32FF0DDCBFB3B988D2F51DCDCEED1B4C", hash_generated_field = "90DA0EB884AEE9913FF07BF4875A8DDD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.936 -0500", hash_original_field = "32FF0DDCBFB3B988D2F51DCDCEED1B4C", hash_generated_field = "90DA0EB884AEE9913FF07BF4875A8DDD")
 
 static final int TRANSACTION_getLanguage = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.890 -0500", hash_original_field = "AB232A5F24022CB118BD8BEACABFEFE6", hash_generated_field = "238991933AE4271360E8757103E4F2B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.938 -0500", hash_original_field = "AB232A5F24022CB118BD8BEACABFEFE6", hash_generated_field = "238991933AE4271360E8757103E4F2B2")
 
 static final int TRANSACTION_isLanguageAvailable = (android.os.IBinder.FIRST_CALL_TRANSACTION + 7);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.891 -0500", hash_original_field = "65D83D4276AFD9ACE963F31F56809CF9", hash_generated_field = "C99D0897DE12385E48BBD3F1AD8C5CDB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.940 -0500", hash_original_field = "65D83D4276AFD9ACE963F31F56809CF9", hash_generated_field = "C99D0897DE12385E48BBD3F1AD8C5CDB")
 
 static final int TRANSACTION_getFeaturesForLanguage = (android.os.IBinder.FIRST_CALL_TRANSACTION + 8);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.892 -0500", hash_original_field = "7F54885E866A0DCAC10BD3A7603D6775", hash_generated_field = "B95EEAAD05469F4F8CCED7DAA701303C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.943 -0500", hash_original_field = "7F54885E866A0DCAC10BD3A7603D6775", hash_generated_field = "B95EEAAD05469F4F8CCED7DAA701303C")
 
 static final int TRANSACTION_loadLanguage = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.893 -0500", hash_original_field = "171294B20A5DF6F57EF43909070A6229", hash_generated_field = "00853EE40E234CB9228E9D78DF42F9F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.945 -0500", hash_original_field = "171294B20A5DF6F57EF43909070A6229", hash_generated_field = "00853EE40E234CB9228E9D78DF42F9F4")
 
 static final int TRANSACTION_setCallback = (android.os.IBinder.FIRST_CALL_TRANSACTION + 10);
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.861 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
-        public Stub()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.861 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        
+public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.863 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
-        public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.866 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+        
+public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.866 -0500", hash_original_method = "01C1950B898344CC31DFBAEB904BB96C", hash_generated_method = "9DC5C74CF85847C17075331480A1EE9A")
-        @Override
-public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.872 -0500", hash_original_method = "01C1950B898344CC31DFBAEB904BB96C", hash_generated_method = "9DC5C74CF85847C17075331480A1EE9A")
+        
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {

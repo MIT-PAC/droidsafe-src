@@ -16,7 +16,7 @@ import java.util.Hashtable;
 
 
 public class NamespaceSupport {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.813 -0500", hash_original_field = "8DE519BED5914C49639CE7F2987B16A9", hash_generated_field = "8DEE82483ED300797D3AA22429D118FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.354 -0500", hash_original_field = "8DE519BED5914C49639CE7F2987B16A9", hash_generated_field = "8DEE82483ED300797D3AA22429D118FC")
 
     // Constants.
     ////////////////////////////////////////////////////////////////////
@@ -32,26 +32,26 @@ public class NamespaceSupport {
      */
     public static final String XMLNS =
     "http://www.w3.org/XML/1998/namespace";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.814 -0500", hash_original_field = "6AF3D2D1B4B66E8926720CD35978907B", hash_generated_field = "1571E423031924244408A7D28A741EE6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.356 -0500", hash_original_field = "6AF3D2D1B4B66E8926720CD35978907B", hash_generated_field = "1571E423031924244408A7D28A741EE6")
 
     public static final String NSDECL =
     "http://www.w3.org/xmlns/2000/";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.815 -0500", hash_original_field = "77C5D95C23E8F8DBCEF901F7E769F074", hash_generated_field = "0A58893494FE31226DF50FC333D4E439")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.359 -0500", hash_original_field = "77C5D95C23E8F8DBCEF901F7E769F074", hash_generated_field = "0A58893494FE31226DF50FC333D4E439")
 
     private static final Enumeration EMPTY_ENUMERATION = Collections.enumeration(Collections.emptyList());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.826 -0500", hash_original_field = "1BF4BE8B5196A638FAE1357682005778", hash_generated_field = "8497C1EFA9FA325954ED265655983D38")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.394 -0500", hash_original_field = "1BF4BE8B5196A638FAE1357682005778", hash_generated_field = "8497C1EFA9FA325954ED265655983D38")
 
     // Internal state.
     ////////////////////////////////////////////////////////////////////
 
     private Context contexts[];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.827 -0500", hash_original_field = "4B8A3454CE5D1D0E620985BEFF8A3F3F", hash_generated_field = "16BCC2B5B5C19EE2FA8800AE041E507F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.396 -0500", hash_original_field = "4B8A3454CE5D1D0E620985BEFF8A3F3F", hash_generated_field = "16BCC2B5B5C19EE2FA8800AE041E507F")
 
     private Context currentContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.828 -0500", hash_original_field = "CC6B826D976681D593BC01B528C28600", hash_generated_field = "6E7F5C2FF9D13C809071AD4BD4B43575")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.399 -0500", hash_original_field = "CC6B826D976681D593BC01B528C28600", hash_generated_field = "6E7F5C2FF9D13C809071AD4BD4B43575")
 
     private int contextPos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.829 -0500", hash_original_field = "7ADEFCE56A5E80EE0DB8462716E759B4", hash_generated_field = "93D47AA8737E27469EC5299DD6FB86D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.401 -0500", hash_original_field = "7ADEFCE56A5E80EE0DB8462716E759B4", hash_generated_field = "93D47AA8737E27469EC5299DD6FB86D0")
 
     private boolean namespaceDeclUris;
 
@@ -64,8 +64,9 @@ public class NamespaceSupport {
     /**
      * Create a new Namespace support object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.816 -0500", hash_original_method = "1F62AD2938072A93E19EAFFCDA555D07", hash_generated_method = "E522C6EE17CC779935F0D04DE1F1F350")
-    public NamespaceSupport ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.362 -0500", hash_original_method = "1F62AD2938072A93E19EAFFCDA555D07", hash_generated_method = "E522C6EE17CC779935F0D04DE1F1F350")
+    
+public NamespaceSupport ()
     {
     reset();
     }
@@ -88,8 +89,9 @@ public class NamespaceSupport {
      *
      * @see #setNamespaceDeclUris
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.816 -0500", hash_original_method = "2A27A75937E4BE02DA5FD7B031C4079A", hash_generated_method = "23BC72FFEAC2A16A0D3A8E2F49EBED8E")
-    public void reset ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.364 -0500", hash_original_method = "2A27A75937E4BE02DA5FD7B031C4079A", hash_generated_method = "23BC72FFEAC2A16A0D3A8E2F49EBED8E")
+    
+public void reset ()
     {
     contexts = new Context[32];
     namespaceDeclUris = false;
@@ -135,8 +137,9 @@ public class NamespaceSupport {
      * @see org.xml.sax.ContentHandler
      * @see #popContext
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.817 -0500", hash_original_method = "B186F7F0BF353B1A746862E337C50A69", hash_generated_method = "7727160CCA8A9EE39BE8CC36CB939BC2")
-    public void pushContext ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.367 -0500", hash_original_method = "B186F7F0BF353B1A746862E337C50A69", hash_generated_method = "7727160CCA8A9EE39BE8CC36CB939BC2")
+    
+public void pushContext ()
     {
     int max = contexts.length;
 
@@ -177,8 +180,9 @@ public class NamespaceSupport {
      *
      * @see #pushContext
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.818 -0500", hash_original_method = "D28ACF4ED7DED6C7ED370F52380381BA", hash_generated_method = "21646247B3F1AB7BA202FFA1C126FBBF")
-    public void popContext ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.369 -0500", hash_original_method = "D28ACF4ED7DED6C7ED370F52380381BA", hash_generated_method = "21646247B3F1AB7BA202FFA1C126FBBF")
+    
+public void popContext ()
     {
     contexts[contextPos].clear();
     contextPos--;
@@ -233,8 +237,9 @@ public class NamespaceSupport {
      * @see #getURI
      * @see #getPrefix
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.819 -0500", hash_original_method = "90A3EE210CAE689DFC3CD58893529A76", hash_generated_method = "0600ACAE5A6A3ED2A754973DEE4FC515")
-    public boolean declarePrefix (String prefix, String uri)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.372 -0500", hash_original_method = "90A3EE210CAE689DFC3CD58893529A76", hash_generated_method = "0600ACAE5A6A3ED2A754973DEE4FC515")
+    
+public boolean declarePrefix (String prefix, String uri)
     {
     if (prefix.equals("xml") || prefix.equals("xmlns")) {
         return false;
@@ -285,8 +290,9 @@ public class NamespaceSupport {
      *        is an undeclared prefix.
      * @see #declarePrefix
      * @see java.lang.String#intern */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.820 -0500", hash_original_method = "568BC23E816C8735D1D944210F1F3C08", hash_generated_method = "E4254185344404BDB9DC61A69485A76A")
-    public String [] processName (String qName, String parts[],
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.374 -0500", hash_original_method = "568BC23E816C8735D1D944210F1F3C08", hash_generated_method = "E4254185344404BDB9DC61A69485A76A")
+    
+public String [] processName (String qName, String parts[],
                   boolean isAttribute)
     {
     String myParts[] = currentContext.processName(qName, isAttribute);
@@ -313,8 +319,9 @@ public class NamespaceSupport {
      * @see #getPrefix
      * @see #getPrefixes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.821 -0500", hash_original_method = "AC6673E983BE229DBE393CCBB4A72E75", hash_generated_method = "03FD0CE5F473571E708DB9317FA1B856")
-    public String getURI (String prefix)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.376 -0500", hash_original_method = "AC6673E983BE229DBE393CCBB4A72E75", hash_generated_method = "03FD0CE5F473571E708DB9317FA1B856")
+    
+public String getURI (String prefix)
     {
     return currentContext.getURI(prefix);
     }
@@ -334,8 +341,9 @@ public class NamespaceSupport {
      * @see #getDeclaredPrefixes
      * @see #getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.821 -0500", hash_original_method = "A5B18FED447546E052ABC48FA9E4C291", hash_generated_method = "13E9351D9FFB02163EC2102FAB7D1318")
-    public Enumeration getPrefixes ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.379 -0500", hash_original_method = "A5B18FED447546E052ABC48FA9E4C291", hash_generated_method = "13E9351D9FFB02163EC2102FAB7D1318")
+    
+public Enumeration getPrefixes ()
     {
     return currentContext.getPrefixes();
     }
@@ -360,8 +368,9 @@ public class NamespaceSupport {
      * @see #getPrefixes(java.lang.String)
      * @see #getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.822 -0500", hash_original_method = "EEA9ABC8ACBC17B2454F5F5D40E93A34", hash_generated_method = "1B0C362F53E442DD756F1F73E397C763")
-    public String getPrefix (String uri)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.381 -0500", hash_original_method = "EEA9ABC8ACBC17B2454F5F5D40E93A34", hash_generated_method = "1B0C362F53E442DD756F1F73E397C763")
+    
+public String getPrefix (String uri)
     {
     return currentContext.getPrefix(uri);
     }
@@ -390,8 +399,9 @@ public class NamespaceSupport {
      * @see #getDeclaredPrefixes
      * @see #getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.823 -0500", hash_original_method = "E9FAC6924E2013A13EA977C97AEA2AF7", hash_generated_method = "2916EBF06540C1330069ED9DE88433E1")
-    public Enumeration getPrefixes(String uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.384 -0500", hash_original_method = "E9FAC6924E2013A13EA977C97AEA2AF7", hash_generated_method = "2916EBF06540C1330069ED9DE88433E1")
+    
+public Enumeration getPrefixes(String uri) {
         ArrayList<String> prefixes = new ArrayList<String>();
         Enumeration allPrefixes = getPrefixes();
         while (allPrefixes.hasMoreElements()) {
@@ -405,45 +415,46 @@ public class NamespaceSupport {
 
     
     final class Context {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.839 -0500", hash_original_field = "CF0B92985AF9DC8DD4202061605E7021", hash_generated_field = "D4510924EB225588E6B0EC7DDBD1B6B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.428 -0500", hash_original_field = "CF0B92985AF9DC8DD4202061605E7021", hash_generated_field = "D4510924EB225588E6B0EC7DDBD1B6B6")
 
     // Protected state.
     ////////////////////////////////////////////////////////////////
 
     Hashtable prefixTable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.839 -0500", hash_original_field = "40686847BD0275762FCF55168889D3C9", hash_generated_field = "40686847BD0275762FCF55168889D3C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.431 -0500", hash_original_field = "40686847BD0275762FCF55168889D3C9", hash_generated_field = "40686847BD0275762FCF55168889D3C9")
 
     Hashtable uriTable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.840 -0500", hash_original_field = "90E334191890A4914B17EA7FAF986992", hash_generated_field = "90E334191890A4914B17EA7FAF986992")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.434 -0500", hash_original_field = "90E334191890A4914B17EA7FAF986992", hash_generated_field = "90E334191890A4914B17EA7FAF986992")
 
     Hashtable elementNameTable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.841 -0500", hash_original_field = "F042A8F63CE2471660EB97BB2E6F44AE", hash_generated_field = "F042A8F63CE2471660EB97BB2E6F44AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.436 -0500", hash_original_field = "F042A8F63CE2471660EB97BB2E6F44AE", hash_generated_field = "F042A8F63CE2471660EB97BB2E6F44AE")
 
     Hashtable attributeNameTable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.842 -0500", hash_original_field = "8E657056ECC4C162CFF6080FBFCD63F6", hash_generated_field = "8E657056ECC4C162CFF6080FBFCD63F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.438 -0500", hash_original_field = "8E657056ECC4C162CFF6080FBFCD63F6", hash_generated_field = "8E657056ECC4C162CFF6080FBFCD63F6")
 
     String defaultNS = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.842 -0500", hash_original_field = "E1C9F736B16FF7122A0BB4347159B956", hash_generated_field = "E1C9F736B16FF7122A0BB4347159B956")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.440 -0500", hash_original_field = "E1C9F736B16FF7122A0BB4347159B956", hash_generated_field = "E1C9F736B16FF7122A0BB4347159B956")
 
     boolean declsOK = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.843 -0500", hash_original_field = "121FA267850D1F940635A7F4BA9985BA", hash_generated_field = "FC055A3C6E1CD8E2D34929A4B3D42721")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.442 -0500", hash_original_field = "121FA267850D1F940635A7F4BA9985BA", hash_generated_field = "FC055A3C6E1CD8E2D34929A4B3D42721")
 
     // Internal state.
     ////////////////////////////////////////////////////////////////
 
     private ArrayList<String> declarations = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.844 -0500", hash_original_field = "9015D8BA134276FB259AAE9E5030140F", hash_generated_field = "98CD992C81C807EFBCB961B2F6E16972")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.445 -0500", hash_original_field = "9015D8BA134276FB259AAE9E5030140F", hash_generated_field = "98CD992C81C807EFBCB961B2F6E16972")
 
     private boolean declSeen = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.845 -0500", hash_original_field = "6DF678280DC762759E031118D14107E3", hash_generated_field = "1E04AB28ECFE4BCC38F06ACD519BB459")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.447 -0500", hash_original_field = "6DF678280DC762759E031118D14107E3", hash_generated_field = "1E04AB28ECFE4BCC38F06ACD519BB459")
 
     private Context parent = null;
 
     /**
      * Create the root-level Namespace context.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.830 -0500", hash_original_method = "CD5C82C799E78C74801FDB521CEE7324", hash_generated_method = "CD5C82C799E78C74801FDB521CEE7324")
-        Context ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.404 -0500", hash_original_method = "CD5C82C799E78C74801FDB521CEE7324", hash_generated_method = "CD5C82C799E78C74801FDB521CEE7324")
+        
+Context ()
     {
         copyTables();
     }
@@ -456,8 +467,9 @@ public class NamespaceSupport {
      *
      * @param context The parent Namespace context object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.831 -0500", hash_original_method = "E1D3B844E1B48DBC46153D5E5632428F", hash_generated_method = "E1D3B844E1B48DBC46153D5E5632428F")
-        void setParent (Context parent)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.406 -0500", hash_original_method = "E1D3B844E1B48DBC46153D5E5632428F", hash_generated_method = "E1D3B844E1B48DBC46153D5E5632428F")
+        
+void setParent (Context parent)
     {
         this.parent = parent;
         declarations = null;
@@ -476,8 +488,9 @@ public class NamespaceSupport {
      * {@link #setParent} must be called before
      * this context may be used again.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.831 -0500", hash_original_method = "9488BC4AFF7634EA1262BEB181C9541E", hash_generated_method = "9488BC4AFF7634EA1262BEB181C9541E")
-        void clear ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.408 -0500", hash_original_method = "9488BC4AFF7634EA1262BEB181C9541E", hash_generated_method = "9488BC4AFF7634EA1262BEB181C9541E")
+        
+void clear ()
     {
         parent = null;
         prefixTable = null;
@@ -495,8 +508,9 @@ public class NamespaceSupport {
      * @param uri The associated Namespace URI.
      * @see org.xml.sax.helpers.NamespaceSupport#declarePrefix
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.832 -0500", hash_original_method = "4549801F41C68E0A6A490696C062C72D", hash_generated_method = "8B62B5695F36760CAD8EDCDC235C2C64")
-        void declarePrefix(String prefix, String uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.411 -0500", hash_original_method = "4549801F41C68E0A6A490696C062C72D", hash_generated_method = "8B62B5695F36760CAD8EDCDC235C2C64")
+        
+void declarePrefix(String prefix, String uri) {
         // Lazy processing...
         if (!declsOK) {
             throw new IllegalStateException ("can't declare any more prefixes in this context");
@@ -535,8 +549,9 @@ public class NamespaceSupport {
      *         if there is an undeclared prefix.
      * @see org.xml.sax.helpers.NamespaceSupport#processName
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.833 -0500", hash_original_method = "33259345EBD99FFF49F4E1AAD2529013", hash_generated_method = "296CADF2DCFE4D340DC221E4F2AE1D69")
-        String [] processName (String qName, boolean isAttribute)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.414 -0500", hash_original_method = "33259345EBD99FFF49F4E1AAD2529013", hash_generated_method = "296CADF2DCFE4D340DC221E4F2AE1D69")
+        
+String [] processName (String qName, boolean isAttribute)
     {
         String name[];
         Hashtable table;
@@ -616,8 +631,9 @@ public class NamespaceSupport {
      *         declared.
      * @see org.xml.sax.helpers.NamespaceSupport#getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.834 -0500", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "33F968ABABCEBD2BA0661937EB8377F0")
-        String getURI (String prefix)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.417 -0500", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "33F968ABABCEBD2BA0661937EB8377F0")
+        
+String getURI (String prefix)
     {
         if ("".equals(prefix)) {
         return defaultNS;
@@ -639,8 +655,9 @@ public class NamespaceSupport {
      * @return The associated prefix, or null if none is declared.
      * @see org.xml.sax.helpers.NamespaceSupport#getPrefix
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.836 -0500", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "62121EA4CFF0891BFB2032F7AF8FE7A1")
-        String getPrefix (String uri)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.419 -0500", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "62121EA4CFF0891BFB2032F7AF8FE7A1")
+        
+String getPrefix (String uri)
     {
         if (uriTable == null) {
         return null;
@@ -656,8 +673,9 @@ public class NamespaceSupport {
      * @return An enumeration of prefixes (possibly empty).
      * @see org.xml.sax.helpers.NamespaceSupport#getDeclaredPrefixes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.836 -0500", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "B116CF358C1D0DA8CF46DFF106939FC0")
-        Enumeration getDeclaredPrefixes() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.421 -0500", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "B116CF358C1D0DA8CF46DFF106939FC0")
+        
+Enumeration getDeclaredPrefixes() {
         return (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
     }
 
@@ -671,8 +689,9 @@ public class NamespaceSupport {
      * @return An enumeration of prefixes (never empty).
      * @see org.xml.sax.helpers.NamespaceSupport#getPrefixes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.837 -0500", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "D02303EBFA8DB4A97AF291339C2FB52B")
-        Enumeration getPrefixes ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.423 -0500", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "D02303EBFA8DB4A97AF291339C2FB52B")
+        
+Enumeration getPrefixes ()
     {
         if (prefixTable == null) {
         return EMPTY_ENUMERATION;
@@ -694,8 +713,9 @@ public class NamespaceSupport {
      * <p>This class is optimized for the normal case where most
      * elements do not contain Namespace declarations.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.838 -0500", hash_original_method = "26D71A046B8A5E21DEFC65FB89CD9FDA", hash_generated_method = "2293476E78FCC8BDA181F927AEA93BD1")
-        private void copyTables ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.426 -0500", hash_original_method = "26D71A046B8A5E21DEFC65FB89CD9FDA", hash_generated_method = "2293476E78FCC8BDA181F927AEA93BD1")
+        
+private void copyTables ()
     {
         if (prefixTable != null) {
         prefixTable = (Hashtable)prefixTable.clone();
@@ -728,8 +748,9 @@ public class NamespaceSupport {
      * @see #getPrefixes
      * @see #getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.824 -0500", hash_original_method = "410BA98433560BB4462E66EC18960649", hash_generated_method = "4A7CDE4864CE969CC5C614E3BC067989")
-    public Enumeration getDeclaredPrefixes ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.386 -0500", hash_original_method = "410BA98433560BB4462E66EC18960649", hash_generated_method = "4A7CDE4864CE969CC5C614E3BC067989")
+    
+public Enumeration getDeclaredPrefixes ()
     {
     return currentContext.getDeclaredPrefixes();
     }
@@ -748,8 +769,9 @@ public class NamespaceSupport {
      * @exception IllegalStateException when attempting to set this
      *    after any context has been pushed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.825 -0500", hash_original_method = "D57A861BE58AF20E8C88DE55C319347D", hash_generated_method = "60DAD705249B8CCB7BA321F3E665BDA6")
-    public void setNamespaceDeclUris (boolean value)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.389 -0500", hash_original_method = "D57A861BE58AF20E8C88DE55C319347D", hash_generated_method = "60DAD705249B8CCB7BA321F3E665BDA6")
+    
+public void setNamespaceDeclUris (boolean value)
     {
     if (contextPos != 0)
         throw new IllegalStateException ();
@@ -772,8 +794,9 @@ public class NamespaceSupport {
      *         otherwise.
      * @since SAX 2.1alpha
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.825 -0500", hash_original_method = "704394E46FC1A63E6F1F5F09E7A57B00", hash_generated_method = "8FAF493A55EDB5B9A9A1EEB1456CF4B2")
-    public boolean isNamespaceDeclUris ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.392 -0500", hash_original_method = "704394E46FC1A63E6F1F5F09E7A57B00", hash_generated_method = "8FAF493A55EDB5B9A9A1EEB1456CF4B2")
+    
+public boolean isNamespaceDeclUris ()
     { return namespaceDeclUris; }
 }
 

@@ -16,13 +16,15 @@ import org.apache.http.protocol.HTTP;
 
 public class StrictContentLengthStrategy implements ContentLengthStrategy {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.285 -0500", hash_original_method = "A65C37571E3ECC9A929C203280BB89E8", hash_generated_method = "44602CACFC5191B9BF91741DE7D47859")
-    public StrictContentLengthStrategy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.643 -0500", hash_original_method = "A65C37571E3ECC9A929C203280BB89E8", hash_generated_method = "44602CACFC5191B9BF91741DE7D47859")
+    
+public StrictContentLengthStrategy() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.286 -0500", hash_original_method = "27CE2D4FD8280195B6E05E2B487DF036", hash_generated_method = "2D8B29A7EA7AC3F4588CF68164E99D8A")
-    public long determineLength(final HttpMessage message) throws HttpException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.646 -0500", hash_original_method = "27CE2D4FD8280195B6E05E2B487DF036", hash_generated_method = "2D8B29A7EA7AC3F4588CF68164E99D8A")
+    
+public long determineLength(final HttpMessage message) throws HttpException {
         if (message == null) {
             throw new IllegalArgumentException("HTTP message may not be null");
         }

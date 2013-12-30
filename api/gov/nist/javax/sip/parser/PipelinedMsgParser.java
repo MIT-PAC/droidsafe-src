@@ -20,29 +20,30 @@ import java.text.ParseException;
 
 public final class PipelinedMsgParser implements Runnable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.345 -0500", hash_original_method = "DAF76D5DD85CC446D92B47A110AC634C", hash_generated_method = "DE313A56D6E4C9D480B32495037BE062")
-    private static synchronized int getNewUid() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.961 -0500", hash_original_method = "DAF76D5DD85CC446D92B47A110AC634C", hash_generated_method = "DE313A56D6E4C9D480B32495037BE062")
+    
+private static synchronized int getNewUid() {
         return uid++;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.344 -0500", hash_original_field = "8E7F39D78C11D0D620F5769854F95AD4", hash_generated_field = "C945ED2D87187C29A8B309C59A8903B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.958 -0500", hash_original_field = "8E7F39D78C11D0D620F5769854F95AD4", hash_generated_field = "C945ED2D87187C29A8B309C59A8903B9")
 
 
     private static int uid = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.339 -0500", hash_original_field = "3A28FCAF17F65963C61393B050C3AEEC", hash_generated_field = "E951DA693006702904D44903EC071300")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.943 -0500", hash_original_field = "3A28FCAF17F65963C61393B050C3AEEC", hash_generated_field = "E951DA693006702904D44903EC071300")
 
     protected SIPMessageListener sipMessageListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.340 -0500", hash_original_field = "4AB983356694FB1E44D4AE16E3897B0E", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.946 -0500", hash_original_field = "4AB983356694FB1E44D4AE16E3897B0E", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
 
     private Thread mythread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.341 -0500", hash_original_field = "68012D41A36981DBB1951911F9086543", hash_generated_field = "199D445F1CDE522CAD696E07DB2A1BAF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.948 -0500", hash_original_field = "68012D41A36981DBB1951911F9086543", hash_generated_field = "199D445F1CDE522CAD696E07DB2A1BAF")
 
     //private byte[] messageBody;
     //private boolean errorFlag;
     private Pipeline rawInputStream;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.342 -0500", hash_original_field = "22F0990BFBB825F63302151EEE1DEF9C", hash_generated_field = "6056A74FE8111EC12B2D46373C91E6E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.950 -0500", hash_original_field = "22F0990BFBB825F63302151EEE1DEF9C", hash_generated_field = "6056A74FE8111EC12B2D46373C91E6E1")
 
     private int maxMessageSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.343 -0500", hash_original_field = "BFD1B2A66F160593F8C728C2037366DD", hash_generated_field = "87B02180527F6273015739A99F276EBD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.953 -0500", hash_original_field = "BFD1B2A66F160593F8C728C2037366DD", hash_generated_field = "87B02180527F6273015739A99F276EBD")
 
     private int sizeCounter;
     //private int messageSize;
@@ -50,8 +51,9 @@ public final class PipelinedMsgParser implements Runnable {
     /**
      * default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.344 -0500", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "2C194672D47C6EEA080B4FF20D4E0703")
-    protected PipelinedMsgParser() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.955 -0500", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "2C194672D47C6EEA080B4FF20D4E0703")
+    
+protected PipelinedMsgParser() {
         super();
 
     }
@@ -68,8 +70,9 @@ public final class PipelinedMsgParser implements Runnable {
      * @param debug
      *            Enable/disable tracing or lexical analyser switch.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.346 -0500", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "2CBEC2E4691FB150D025B1CDBA904F96")
-    public PipelinedMsgParser(SIPMessageListener sipMessageListener,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.964 -0500", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "2CBEC2E4691FB150D025B1CDBA904F96")
+    
+public PipelinedMsgParser(SIPMessageListener sipMessageListener,
             Pipeline in, boolean debug, int maxMessageSize) {
         this();
         this.sipMessageListener = sipMessageListener;
@@ -90,8 +93,9 @@ public final class PipelinedMsgParser implements Runnable {
      *            An input stream to read messages from.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.347 -0500", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "3F2F3DD7A2E94C0596679AA217B1473A")
-    public PipelinedMsgParser(SIPMessageListener mhandler, Pipeline in,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.967 -0500", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "3F2F3DD7A2E94C0596679AA217B1473A")
+    
+public PipelinedMsgParser(SIPMessageListener mhandler, Pipeline in,
             int maxMsgSize) {
         this(mhandler, in, false, maxMsgSize);
     }
@@ -103,16 +107,18 @@ public final class PipelinedMsgParser implements Runnable {
      *            An input stream to read messages from.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.348 -0500", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "257831BBD49AA3A14DAA67BEFACD49BE")
-    public PipelinedMsgParser(Pipeline in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.970 -0500", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "257831BBD49AA3A14DAA67BEFACD49BE")
+    
+public PipelinedMsgParser(Pipeline in) {
         this(null, in, false, 0);
     }
 
     /**
      * Start reading and processing input.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.349 -0500", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5052780A51C172A7104F8230B21D9B2E")
-    public void processInput() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.972 -0500", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5052780A51C172A7104F8230B21D9B2E")
+    
+public void processInput() {
         mythread.start();
     }
 
@@ -121,8 +127,9 @@ public final class PipelinedMsgParser implements Runnable {
      *
      * @return A new pipelined parser that reads from the same input stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.351 -0500", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "F568C8989067E18EBDA66C388D30FDAD")
-    protected Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.975 -0500", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "F568C8989067E18EBDA66C388D30FDAD")
+    
+protected Object clone() {
         PipelinedMsgParser p = new PipelinedMsgParser();
 
         p.rawInputStream = this.rawInputStream;
@@ -141,8 +148,9 @@ public final class PipelinedMsgParser implements Runnable {
      *            and incorrect pars.
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.351 -0500", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "DEDA56DC267C61F1D03CF1A43E7B6209")
-    public void setMessageListener(SIPMessageListener mlistener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.977 -0500", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "DEDA56DC267C61F1D03CF1A43E7B6209")
+    
+public void setMessageListener(SIPMessageListener mlistener) {
         sipMessageListener = mlistener;
     }
 
@@ -150,8 +158,9 @@ public final class PipelinedMsgParser implements Runnable {
      * read a line of input (I cannot use buffered reader because we may need to
      * switch encodings mid-stream!
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.352 -0500", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "C900F8ACEA0D0AB63148521651B7CD91")
-    private String readLine(InputStream inputStream) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.980 -0500", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "C900F8ACEA0D0AB63148521651B7CD91")
+    
+private String readLine(InputStream inputStream) throws IOException {
         StringBuffer retval = new StringBuffer("");
         while (true) {
             char ch;
@@ -181,8 +190,9 @@ public final class PipelinedMsgParser implements Runnable {
      * listener interface for message processing or error. It cleans up the
      * input - dealing with things like line continuation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.354 -0500", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "5B31420BBBF7F0CEACC295D11F5F68A9")
-    public void run() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.984 -0500", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "5B31420BBBF7F0CEACC295D11F5F68A9")
+    
+public void run() {
 
         Pipeline inputStream = this.rawInputStream;
         // inputStream = new MyFilterInputStream(this.rawInputStream);
@@ -330,8 +340,9 @@ public final class PipelinedMsgParser implements Runnable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.355 -0500", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "C2E57EB99EF1FD69BC47C1D38FD5733F")
-    public void close() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.987 -0500", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "C2E57EB99EF1FD69BC47C1D38FD5733F")
+    
+public void close() {
         try {
             this.rawInputStream.close();
         } catch (IOException ex) {

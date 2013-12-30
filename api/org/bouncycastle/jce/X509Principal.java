@@ -17,8 +17,9 @@ import org.bouncycastle.asn1.x509.X509Name;
 
 
 public class X509Principal extends X509Name implements Principal {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.672 -0500", hash_original_method = "FF25B788711032BAC2432264078A15A6", hash_generated_method = "C85E6D520322491A08965914F5D7DC41")
-    private static ASN1Sequence readSequence(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.906 -0500", hash_original_method = "FF25B788711032BAC2432264078A15A6", hash_generated_method = "C85E6D520322491A08965914F5D7DC41")
+    
+private static ASN1Sequence readSequence(
         ASN1InputStream aIn)
         throws IOException
     {
@@ -35,8 +36,9 @@ public class X509Principal extends X509Name implements Principal {
     /**
      * Constructor from an encoded byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.672 -0500", hash_original_method = "B0820FF823FE44437CE57E7CCF385599", hash_generated_method = "CA74E8C7D88A42EFBB18A00E67A1D68A")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.908 -0500", hash_original_method = "B0820FF823FE44437CE57E7CCF385599", hash_generated_method = "CA74E8C7D88A42EFBB18A00E67A1D68A")
+    
+public X509Principal(
         byte[]  bytes)
         throws IOException
     {
@@ -46,8 +48,9 @@ public class X509Principal extends X509Name implements Principal {
     /**
      * Constructor from an X509Name object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.673 -0500", hash_original_method = "0E5AD6E3648EC2E4F0A2CBF76D62FE6E", hash_generated_method = "E78037CFF08527AE2EF495FE4A4B4A98")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.911 -0500", hash_original_method = "0E5AD6E3648EC2E4F0A2CBF76D62FE6E", hash_generated_method = "E78037CFF08527AE2EF495FE4A4B4A98")
+    
+public X509Principal(
         X509Name  name)
     {
         super((ASN1Sequence)name.getDERObject());
@@ -58,8 +61,9 @@ public class X509Principal extends X509Name implements Principal {
      * <p>
      * it's is assumed the table contains OID/String pairs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.674 -0500", hash_original_method = "D3D6DABF2D2EE8D49403BBA6B447728D", hash_generated_method = "EAC42D76D31BFEE11EC5A8C55BF6085D")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.913 -0500", hash_original_method = "D3D6DABF2D2EE8D49403BBA6B447728D", hash_generated_method = "EAC42D76D31BFEE11EC5A8C55BF6085D")
+    
+public X509Principal(
         Hashtable  attributes)
     {
         super(attributes);
@@ -71,8 +75,9 @@ public class X509Principal extends X509Name implements Principal {
      * <p>
      * it's is assumed the table contains OID/String pairs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.675 -0500", hash_original_method = "33C0081C021F2AA73D8ACD68C98658C4", hash_generated_method = "3A690507D7EFEDE1986EFB1F448A33BA")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.916 -0500", hash_original_method = "33C0081C021F2AA73D8ACD68C98658C4", hash_generated_method = "3A690507D7EFEDE1986EFB1F448A33BA")
+    
+public X509Principal(
         Vector      ordering,
         Hashtable   attributes)
     {
@@ -82,8 +87,9 @@ public class X509Principal extends X509Name implements Principal {
     /**
      * constructor from a vector of attribute values and a vector of OIDs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.676 -0500", hash_original_method = "3B6A04762F0F16A7BA4938718F609D48", hash_generated_method = "702E61657B9B14A8FDF04FF71D421185")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.918 -0500", hash_original_method = "3B6A04762F0F16A7BA4938718F609D48", hash_generated_method = "702E61657B9B14A8FDF04FF71D421185")
+    
+public X509Principal(
         Vector      oids,
         Vector      values)
     {
@@ -94,8 +100,9 @@ public class X509Principal extends X509Name implements Principal {
      * takes an X509 dir name as a string of the format "C=AU,ST=Victoria", or
      * some such, converting it into an ordered set of name attributes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.677 -0500", hash_original_method = "3167ECA848A59D0FB98E0257E20EB2C0", hash_generated_method = "ACC8505AA35F49E36D783FB341A67AE3")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.922 -0500", hash_original_method = "3167ECA848A59D0FB98E0257E20EB2C0", hash_generated_method = "ACC8505AA35F49E36D783FB341A67AE3")
+    
+public X509Principal(
         String  dirName)
     {
         super(dirName);
@@ -108,8 +115,9 @@ public class X509Principal extends X509Name implements Principal {
      * presented, otherwise the encoding will start with the last (name, value) pair
      * and work back.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.678 -0500", hash_original_method = "8E38511E2EC0E52F81E91783DD99493A", hash_generated_method = "39D05B985C35F2EB9E6449B0282F5D02")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.924 -0500", hash_original_method = "8E38511E2EC0E52F81E91783DD99493A", hash_generated_method = "39D05B985C35F2EB9E6449B0282F5D02")
+    
+public X509Principal(
         boolean reverse,
         String  dirName)
     {
@@ -126,8 +134,9 @@ public class X509Principal extends X509Name implements Principal {
      * If reverse is true, create the encoded version of the sequence starting
      * from the last element in the string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.679 -0500", hash_original_method = "F7CF19656BE8328A59A7894CA6394ACC", hash_generated_method = "0B3728CF8B8DA8C27F7F140B7B7A8341")
-    public X509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.927 -0500", hash_original_method = "F7CF19656BE8328A59A7894CA6394ACC", hash_generated_method = "0B3728CF8B8DA8C27F7F140B7B7A8341")
+    
+public X509Principal(
         boolean     reverse,
         Hashtable   lookUp,
         String      dirName)
@@ -135,8 +144,9 @@ public class X509Principal extends X509Name implements Principal {
         super(reverse, lookUp, dirName);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.679 -0500", hash_original_method = "73EC4210941682DD4DF1478421683765", hash_generated_method = "BF6AC6A6C5815BB61FD26F74E679ED31")
-    public String getName()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.929 -0500", hash_original_method = "73EC4210941682DD4DF1478421683765", hash_generated_method = "BF6AC6A6C5815BB61FD26F74E679ED31")
+    
+public String getName()
     {
         return this.toString();
     }
@@ -144,8 +154,9 @@ public class X509Principal extends X509Name implements Principal {
     /**
      * return a DER encoded byte array representing this object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.680 -0500", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "DCCE93F4D0141431F9D725745B73FBC0")
-    public byte[] getEncoded()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.931 -0500", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "DCCE93F4D0141431F9D725745B73FBC0")
+    
+public byte[] getEncoded()
     {
         try
         {

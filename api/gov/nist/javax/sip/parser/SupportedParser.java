@@ -22,8 +22,9 @@ public class SupportedParser extends HeaderParser {
      * Creates a new instance of SupportedParser
      * @param supported the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.017 -0500", hash_original_method = "825F17E8D5A2A3E333D66101B84E14D2", hash_generated_method = "AD4FC447AE529D97C7B0E291B2C3206A")
-    public SupportedParser(String supported) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.028 -0500", hash_original_method = "825F17E8D5A2A3E333D66101B84E14D2", hash_generated_method = "AD4FC447AE529D97C7B0E291B2C3206A")
+    
+public SupportedParser(String supported) {
         super(supported);
     }
 
@@ -31,8 +32,9 @@ public class SupportedParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.018 -0500", hash_original_method = "6DF629AC3F3B8D2B11653ABB66FFD43C", hash_generated_method = "FE3A22B10F31194FD6592970762C61CD")
-    protected SupportedParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.031 -0500", hash_original_method = "6DF629AC3F3B8D2B11653ABB66FFD43C", hash_generated_method = "FE3A22B10F31194FD6592970762C61CD")
+    
+protected SupportedParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class SupportedParser extends HeaderParser {
      * @return SIPHeader (Supported object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.019 -0500", hash_original_method = "0C976477F7A22AE527BAA6379E244E6F", hash_generated_method = "B0673D9789C64E640B95006E1104E706")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.034 -0500", hash_original_method = "0C976477F7A22AE527BAA6379E244E6F", hash_generated_method = "B0673D9789C64E640B95006E1104E706")
+    
+public SIPHeader parse() throws ParseException {
         SupportedList supportedList = new SupportedList();
         if (debug)
             dbg_enter("SupportedParser.parse");

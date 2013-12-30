@@ -26,8 +26,9 @@ import org.apache.harmony.security.fortress.Services;
 public final class Security {
 
     // Register default providers
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.006 -0500", hash_original_method = "4FF6FA341ED545BB45EA708ED46D5EA7", hash_generated_method = "B9FBDF6F317E6E4AE7796420935CF81D")
-    private static void registerDefaultProviders() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.357 -0500", hash_original_method = "4FF6FA341ED545BB45EA708ED46D5EA7", hash_generated_method = "B9FBDF6F317E6E4AE7796420935CF81D")
+    
+private static void registerDefaultProviders() {
         secprops.put("security.provider.1", "org.apache.harmony.xnet.provider.jsse.OpenSSLProvider");
         secprops.put("security.provider.2", "org.apache.harmony.security.provider.cert.DRLCertFactory");
         secprops.put("security.provider.3", "org.bouncycastle.jce.provider.BouncyCastleProvider");
@@ -46,9 +47,10 @@ public final class Security {
      * @deprecated Use {@link AlgorithmParameters} and {@link KeyFactory}
      *             instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.007 -0500", hash_original_method = "D3DABD5C1A3E4046B634B4ABE7B41DC8", hash_generated_method = "348187D66E3458F2A5A813E68314E45F")
-    @Deprecated
-public static String getAlgorithmProperty(String algName, String propName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.361 -0500", hash_original_method = "D3DABD5C1A3E4046B634B4ABE7B41DC8", hash_generated_method = "348187D66E3458F2A5A813E68314E45F")
+    
+@Deprecated
+    public static String getAlgorithmProperty(String algName, String propName) {
         if (algName == null || propName == null) {
             return null;
         }
@@ -78,8 +80,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      *         was already in the list. The actual position may be different
      *         from the desired position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.008 -0500", hash_original_method = "67AE1CD5DCFCA41946EBB236A4A63A0E", hash_generated_method = "CD338293BEA3F7EEA009E3372E54EA98")
-    public static synchronized int insertProviderAt(Provider provider, int position) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.363 -0500", hash_original_method = "67AE1CD5DCFCA41946EBB236A4A63A0E", hash_generated_method = "CD338293BEA3F7EEA009E3372E54EA98")
+    
+public static synchronized int insertProviderAt(Provider provider, int position) {
         // check that provider is not already
         // installed, else return -1; if (position <1) or (position > max
         // position) position = max position + 1; insert provider, shift up
@@ -101,8 +104,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      * @return the actual position or {@code -1} if the given {@code provider}
      *         was already in the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.009 -0500", hash_original_method = "E56D0C14EE73394DE8439EEF0879315D", hash_generated_method = "7FE6810E7DCDA05798504F90847EBF2F")
-    public static int addProvider(Provider provider) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.366 -0500", hash_original_method = "E56D0C14EE73394DE8439EEF0879315D", hash_generated_method = "7FE6810E7DCDA05798504F90847EBF2F")
+    
+public static int addProvider(Provider provider) {
         return insertProviderAt(provider, 0);
     }
 
@@ -118,8 +122,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      * @param name
      *            the name of the provider to remove.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.010 -0500", hash_original_method = "B96A90ADCC337AF873B627F27B354B02", hash_generated_method = "CF5C0F72EF3C10E37A661172E365FA87")
-    public static synchronized void removeProvider(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.369 -0500", hash_original_method = "B96A90ADCC337AF873B627F27B354B02", hash_generated_method = "CF5C0F72EF3C10E37A661172E365FA87")
+    
+public static synchronized void removeProvider(String name) {
         // It is not clear from spec.:
         // 1. if name is null, should we checkSecurityAccess or not?
         //    throw SecurityException or not?
@@ -145,8 +150,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      *
      * @return an array containing all installed providers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.011 -0500", hash_original_method = "EAE9285B08BB32BE2AF6653E79C9F615", hash_generated_method = "ED0B530D59AB27614637C6D2551CDFE9")
-    public static synchronized Provider[] getProviders() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.371 -0500", hash_original_method = "EAE9285B08BB32BE2AF6653E79C9F615", hash_generated_method = "ED0B530D59AB27614637C6D2551CDFE9")
+    
+public static synchronized Provider[] getProviders() {
         return Services.getProviders();
     }
 
@@ -159,8 +165,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      *            the name of the requested provider.
      * @return the provider with the specified name, maybe {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.012 -0500", hash_original_method = "129A779E3BBD24BC13650E637FDCE401", hash_generated_method = "FF9D7A73DBD193463FD11FA473E485B0")
-    public static synchronized Provider getProvider(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.374 -0500", hash_original_method = "129A779E3BBD24BC13650E637FDCE401", hash_generated_method = "FF9D7A73DBD193463FD11FA473E485B0")
+    
+public static synchronized Provider getProvider(String name) {
         return Services.getProvider(name);
     }
 
@@ -187,8 +194,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      * @throws NullPointerException
      *             if {@code filter} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.013 -0500", hash_original_method = "F6138CDF14D8D5962F697D1DAE8ACD56", hash_generated_method = "55A03477641E49547C5C0296E5D3979B")
-    public static Provider[] getProviders(String filter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.376 -0500", hash_original_method = "F6138CDF14D8D5962F697D1DAE8ACD56", hash_generated_method = "55A03477641E49547C5C0296E5D3979B")
+    
+public static Provider[] getProviders(String filter) {
         if (filter == null) {
             throw new NullPointerException();
         }
@@ -232,8 +240,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      * @throws NullPointerException
      *             if {@code filter} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.015 -0500", hash_original_method = "68DDE2F39160A5938C8ECA7BA32376CA", hash_generated_method = "7CF44E4609D8AE84EA35153F03FEF320")
-    public static synchronized Provider[] getProviders(Map<String,String> filter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.381 -0500", hash_original_method = "68DDE2F39160A5938C8ECA7BA32376CA", hash_generated_method = "7CF44E4609D8AE84EA35153F03FEF320")
+    
+public static synchronized Provider[] getProviders(Map<String,String> filter) {
         if (filter == null) {
             throw new NullPointerException();
         }
@@ -298,8 +307,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      *            the name of the requested security property.
      * @return the value of the security property.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.016 -0500", hash_original_method = "FBE94713485830A30BBD5079D4570A8E", hash_generated_method = "C17246BF3337C7E14B654907595AA70A")
-    public static String getProperty(String key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.383 -0500", hash_original_method = "FBE94713485830A30BBD5079D4570A8E", hash_generated_method = "C17246BF3337C7E14B654907595AA70A")
+    
+public static String getProperty(String key) {
         if (key == null) {
             throw new NullPointerException("key == null");
         }
@@ -313,8 +323,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
     /**
      * Sets the value of the specified security property.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.017 -0500", hash_original_method = "E9A275F23060DA3D5E42FE19B6245D55", hash_generated_method = "EE34367337CA9748B635C6659AE4E420")
-    public static void setProperty(String key, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.386 -0500", hash_original_method = "E9A275F23060DA3D5E42FE19B6245D55", hash_generated_method = "EE34367337CA9748B635C6659AE4E420")
+    
+public static void setProperty(String key, String value) {
         secprops.put(key, value);
     }
 
@@ -330,8 +341,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
      *         serviceName} is {@code null} or if no registered provider
      *         provides the requested service.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.018 -0500", hash_original_method = "D678C323A21AFC9C219F4C1FB9E8266D", hash_generated_method = "A6BA2A563EED770A921797C4C4690111")
-    public static Set<String> getAlgorithms(String serviceName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.389 -0500", hash_original_method = "D678C323A21AFC9C219F4C1FB9E8266D", hash_generated_method = "A6BA2A563EED770A921797C4C4690111")
+    
+public static Set<String> getAlgorithms(String serviceName) {
         Set<String> result = new HashSet<String>();
         // compatibility with RI
         if (serviceName == null) {
@@ -352,14 +364,15 @@ public static String getAlgorithmProperty(String algName, String propName) {
      * Update sequence numbers of all providers.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.019 -0500", hash_original_method = "36CAA565E766988B673C74F846171C19", hash_generated_method = "92D0B4BBA24621AE273B53B31014859B")
-    private static void renumProviders() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.391 -0500", hash_original_method = "36CAA565E766988B673C74F846171C19", hash_generated_method = "92D0B4BBA24621AE273B53B31014859B")
+    
+private static void renumProviders() {
         Provider[] p = Services.getProviders();
         for (int i = 0; i < p.length; i++) {
             p[i].setProviderNumber(i + 1);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.004 -0500", hash_original_field = "316C260B369C976F6D55B7C36AB88F2C", hash_generated_field = "A93753A56D3EA0009297A4F944A7CCCC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.351 -0500", hash_original_field = "316C260B369C976F6D55B7C36AB88F2C", hash_generated_field = "A93753A56D3EA0009297A4F944A7CCCC")
 
     private static final Properties secprops = new Properties();
 
@@ -373,20 +386,23 @@ public static String getAlgorithmProperty(String algName, String propName) {
             //Synthesized constructor
         }
         // Access to Security.renumProviders()
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.020 -0500", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "98CA43884F8237670B8F04E14A16C221")
-        public void renumProviders() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.395 -0500", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "98CA43884F8237670B8F04E14A16C221")
+        
+public void renumProviders() {
             Security.renumProviders();
         }
 
         //  Access to Security.getAliases()
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.020 -0500", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "59164752619EAC7B05D87BEC4C4A614A")
-        public List<String> getAliases(Provider.Service s) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.397 -0500", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "59164752619EAC7B05D87BEC4C4A614A")
+        
+public List<String> getAliases(Provider.Service s) {
             return s.getAliases();
         }
 
         // Access to Provider.getService()
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.021 -0500", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "9266514A9969EEA8B09CD18F6E208031")
-        public Provider.Service getService(Provider p, String type) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.400 -0500", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "9266514A9969EEA8B09CD18F6E208031")
+        
+public Provider.Service getService(Provider p, String type) {
             return p.getService(type);
         }
 
@@ -396,8 +412,9 @@ public static String getAlgorithmProperty(String algName, String propName) {
     /**
      * This class can't be instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.005 -0500", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "4BBE606056C3BCB2A6E6D86FC214144D")
-    private Security() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.354 -0500", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "4BBE606056C3BCB2A6E6D86FC214144D")
+    
+private Security() {
     }
     static {
         boolean loaded = false;

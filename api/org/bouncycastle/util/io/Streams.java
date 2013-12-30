@@ -14,8 +14,9 @@ import java.io.OutputStream;
 
 public final class Streams {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.388 -0500", hash_original_method = "B652CC7FFE463ED9BB2F1EA52C4B64E0", hash_generated_method = "269D98D0B99CDBE9FDD076841803007C")
-    public static void drain(InputStream inStr)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.756 -0500", hash_original_method = "B652CC7FFE463ED9BB2F1EA52C4B64E0", hash_generated_method = "269D98D0B99CDBE9FDD076841803007C")
+    
+public static void drain(InputStream inStr)
         throws IOException
     {
         byte[] bs = new byte[BUFFER_SIZE];
@@ -24,8 +25,9 @@ public final class Streams {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.389 -0500", hash_original_method = "2073459F803DF81B173DB2DFE6D0D68D", hash_generated_method = "0ADB0E716B30E1C7F634925756BE3848")
-    public static byte[] readAll(InputStream inStr)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.758 -0500", hash_original_method = "2073459F803DF81B173DB2DFE6D0D68D", hash_generated_method = "0ADB0E716B30E1C7F634925756BE3848")
+    
+public static byte[] readAll(InputStream inStr)
         throws IOException
     {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
@@ -33,8 +35,9 @@ public final class Streams {
         return buf.toByteArray();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.390 -0500", hash_original_method = "5A1F12ABC5C650A54FE8C7454204C2F4", hash_generated_method = "E65C56F91007251195DF2704F48AB41B")
-    public static byte[] readAllLimited(InputStream inStr, int limit)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.761 -0500", hash_original_method = "5A1F12ABC5C650A54FE8C7454204C2F4", hash_generated_method = "E65C56F91007251195DF2704F48AB41B")
+    
+public static byte[] readAllLimited(InputStream inStr, int limit)
         throws IOException
     {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
@@ -42,15 +45,17 @@ public final class Streams {
         return buf.toByteArray();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.391 -0500", hash_original_method = "6DA0ABA711AB2E85DAF7983F7ACBF524", hash_generated_method = "D451F035543BE18BBAAE67EBA36D6590")
-    public static int readFully(InputStream inStr, byte[] buf)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.763 -0500", hash_original_method = "6DA0ABA711AB2E85DAF7983F7ACBF524", hash_generated_method = "D451F035543BE18BBAAE67EBA36D6590")
+    
+public static int readFully(InputStream inStr, byte[] buf)
         throws IOException
     {
         return readFully(inStr, buf, 0, buf.length);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.392 -0500", hash_original_method = "589CAA22439F2CF8C22C8F9EEBC74A97", hash_generated_method = "6B3C258AEB1893368BBDAE242A0B850A")
-    public static int readFully(InputStream inStr, byte[] buf, int off, int len)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.765 -0500", hash_original_method = "589CAA22439F2CF8C22C8F9EEBC74A97", hash_generated_method = "6B3C258AEB1893368BBDAE242A0B850A")
+    
+public static int readFully(InputStream inStr, byte[] buf, int off, int len)
         throws IOException
     {
         int totalRead = 0;
@@ -66,8 +71,9 @@ public final class Streams {
         return totalRead;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.393 -0500", hash_original_method = "4AA97A5BDB9254BF6F61CE08E939FF60", hash_generated_method = "BAF140A7D3021ADC5CFEDEB5459CFB5C")
-    public static void pipeAll(InputStream inStr, OutputStream outStr)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.768 -0500", hash_original_method = "4AA97A5BDB9254BF6F61CE08E939FF60", hash_generated_method = "BAF140A7D3021ADC5CFEDEB5459CFB5C")
+    
+public static void pipeAll(InputStream inStr, OutputStream outStr)
         throws IOException
     {
         byte[] bs = new byte[BUFFER_SIZE];
@@ -78,8 +84,9 @@ public final class Streams {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.393 -0500", hash_original_method = "2F580BDBC98383E95352A5A31F132FFC", hash_generated_method = "527A8DD38EE6703A8F15A3D0F1674D63")
-    public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.771 -0500", hash_original_method = "2F580BDBC98383E95352A5A31F132FFC", hash_generated_method = "527A8DD38EE6703A8F15A3D0F1674D63")
+    
+public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr)
         throws IOException
     {
         long total = 0;
@@ -96,7 +103,7 @@ public final class Streams {
         }
         return total;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:01.387 -0500", hash_original_field = "DF06FD606E84A338B25CD7BC1E002FCF", hash_generated_field = "750618C8814E79503D809C74376A5474")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.753 -0500", hash_original_field = "DF06FD606E84A338B25CD7BC1E002FCF", hash_generated_field = "750618C8814E79503D809C74376A5474")
 
     private static int BUFFER_SIZE = 512;
     

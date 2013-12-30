@@ -10,15 +10,16 @@ public interface IDropBoxManagerService extends android.os.IInterface
 
 public static abstract class Stub extends android.os.Binder implements com.android.internal.os.IDropBoxManagerService
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.778 -0500", hash_original_field = "3B8F7AD7D812A9360AB213CC77D6BC3C", hash_generated_field = "7356BD0063AA7872770BB3CA1C335C5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.285 -0500", hash_original_field = "3B8F7AD7D812A9360AB213CC77D6BC3C", hash_generated_field = "7356BD0063AA7872770BB3CA1C335C5C")
 
 private static final java.lang.String DESCRIPTOR = "com.android.internal.os.IDropBoxManagerService";
 /**
  * Cast an IBinder object into an com.android.internal.os.IDropBoxManagerService interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.780 -0500", hash_original_method = "098AF8A66DCF8A4797B71EFFA9E96313", hash_generated_method = "31003077771BF25E1A16F53942531791")
-        public static com.android.internal.os.IDropBoxManagerService asInterface(android.os.IBinder obj)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.290 -0500", hash_original_method = "098AF8A66DCF8A4797B71EFFA9E96313", hash_generated_method = "31003077771BF25E1A16F53942531791")
+        
+public static com.android.internal.os.IDropBoxManagerService asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -29,32 +30,35 @@ return ((com.android.internal.os.IDropBoxManagerService)iin);
 }
 return new com.android.internal.os.IDropBoxManagerService.Stub.Proxy(obj);
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.791 -0500", hash_original_field = "3294D678F63ECE7CB024FDA46450F47D", hash_generated_field = "B526FEEF1E7774FD85C365D7C392D7D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.319 -0500", hash_original_field = "3294D678F63ECE7CB024FDA46450F47D", hash_generated_field = "B526FEEF1E7774FD85C365D7C392D7D2")
 
 static final int TRANSACTION_add = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.792 -0500", hash_original_field = "B1E5F1DABBE22ECB1F81FE2223685C9D", hash_generated_field = "298F0B0B6505881878805957C854FCAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.322 -0500", hash_original_field = "B1E5F1DABBE22ECB1F81FE2223685C9D", hash_generated_field = "298F0B0B6505881878805957C854FCAE")
 
 static final int TRANSACTION_isTagEnabled = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.793 -0500", hash_original_field = "B852644614D9B43D892D41B6AE466016", hash_generated_field = "B4B49393452EFA717816E91B22FF4920")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.324 -0500", hash_original_field = "B852644614D9B43D892D41B6AE466016", hash_generated_field = "B4B49393452EFA717816E91B22FF4920")
 
 static final int TRANSACTION_getNextEntry = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
 private static class Proxy implements com.android.internal.os.IDropBoxManagerService
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.784 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.299 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
 
 private android.os.IBinder mRemote;
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.784 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
-            Proxy(android.os.IBinder remote)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.301 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
+            
+Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.785 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
-            public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.304 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
+            
+public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.786 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
-            public java.lang.String getInterfaceDescriptor()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.307 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+            
+public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -63,8 +67,9 @@ return DESCRIPTOR;
      * @see DropBoxManager#addData
      * @see DropBoxManager#addFile
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.787 -0500", hash_original_method = "64920B7D5B524D619D22D418466BE88D", hash_generated_method = "F55A9225F1AF4BA2CC1ADAF2E16FF985")
-            public void add(android.os.DropBoxManager.Entry entry) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.309 -0500", hash_original_method = "64920B7D5B524D619D22D418466BE88D", hash_generated_method = "F55A9225F1AF4BA2CC1ADAF2E16FF985")
+            
+public void add(android.os.DropBoxManager.Entry entry) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -86,8 +91,9 @@ _data.recycle();
 }
 }
 /** @see DropBoxManager#getNextEntry */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.788 -0500", hash_original_method = "48D27E1B964E8B49ED44AF316C07C95E", hash_generated_method = "3D90429E74FDBB5E91C51EE5D566A98C")
-            public boolean isTagEnabled(java.lang.String tag) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.312 -0500", hash_original_method = "48D27E1B964E8B49ED44AF316C07C95E", hash_generated_method = "3D90429E74FDBB5E91C51EE5D566A98C")
+            
+public boolean isTagEnabled(java.lang.String tag) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -106,8 +112,9 @@ _data.recycle();
 return _result;
 }
 /** @see DropBoxManager#getNextEntry */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.789 -0500", hash_original_method = "2ABA53D07182C0A7C347E26200702976", hash_generated_method = "3B977BB0B52CB2CF2A2E85E15BB09D5B")
-            public android.os.DropBoxManager.Entry getNextEntry(java.lang.String tag, long millis) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.315 -0500", hash_original_method = "2ABA53D07182C0A7C347E26200702976", hash_generated_method = "3B977BB0B52CB2CF2A2E85E15BB09D5B")
+            
+public android.os.DropBoxManager.Entry getNextEntry(java.lang.String tag, long millis) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -133,19 +140,21 @@ return _result;
 }
 }
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.779 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
-        public Stub()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.287 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        
+public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.781 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
-        public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.292 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+        
+public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.782 -0500", hash_original_method = "39A04C5CCDDC4A52FC9601B3F1C05DE5", hash_generated_method = "3D1AB04B85A5B6B73C7583A7D886CE5F")
-        @Override
-public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.295 -0500", hash_original_method = "39A04C5CCDDC4A52FC9601B3F1C05DE5", hash_generated_method = "3D1AB04B85A5B6B73C7583A7D886CE5F")
+        
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {

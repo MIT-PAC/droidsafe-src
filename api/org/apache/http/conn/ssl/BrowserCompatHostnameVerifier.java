@@ -19,17 +19,19 @@ public class BrowserCompatHostnameVerifier extends AbstractVerifier {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.550 -0500", hash_original_method = "D9F365CDBDB058C6F5810F830DF6A39F", hash_generated_method = "2C9FA89D7947D66CE9FC6A380CD42816")
-    public final void verify(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.852 -0500", hash_original_method = "D9F365CDBDB058C6F5810F830DF6A39F", hash_generated_method = "2C9FA89D7947D66CE9FC6A380CD42816")
+    
+public final void verify(
             final String host, 
             final String[] cns,
             final String[] subjectAlts) throws SSLException {
         verify(host, cns, subjectAlts, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.550 -0500", hash_original_method = "94D0B9A8609089C8ED7C7100365BC140", hash_generated_method = "BE653C5EDDDF61D380B1C56384ED39D2")
-    @Override
-public final String toString() { 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.854 -0500", hash_original_method = "94D0B9A8609089C8ED7C7100365BC140", hash_generated_method = "BE653C5EDDDF61D380B1C56384ED39D2")
+    
+@Override
+    public final String toString() { 
         return "BROWSER_COMPATIBLE"; 
     }
 

@@ -12,31 +12,31 @@ import java.util.Arrays;
 
 
 public class PipedInputStream extends InputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.574 -0500", hash_original_field = "32272A849EA457522206621DB7551BDB", hash_generated_field = "98981E77F477BF5BC6052D8850C465A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.835 -0500", hash_original_field = "32272A849EA457522206621DB7551BDB", hash_generated_field = "98981E77F477BF5BC6052D8850C465A7")
 
     protected static final int PIPE_SIZE = 1024;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.569 -0500", hash_original_field = "0C274599D1E182E9646E850B1F54838C", hash_generated_field = "F5A62F451E05D22096D6EE6BA212D601")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.821 -0500", hash_original_field = "0C274599D1E182E9646E850B1F54838C", hash_generated_field = "F5A62F451E05D22096D6EE6BA212D601")
 
 
     private Thread lastReader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.570 -0500", hash_original_field = "11B82934C1097E36AA09E79AB8952C5D", hash_generated_field = "276A7969C85F5DE4B1F84464F2E355FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.823 -0500", hash_original_field = "11B82934C1097E36AA09E79AB8952C5D", hash_generated_field = "276A7969C85F5DE4B1F84464F2E355FA")
 
 
     private Thread lastWriter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.571 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.825 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
 
 
     private boolean isClosed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.572 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.828 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
 
     protected byte[] buffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.572 -0500", hash_original_field = "6C2A488AC6B0C698A8607CEA3B0A6CD5", hash_generated_field = "58862AB4E2B0CB5FD1377E7AA508B6BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.830 -0500", hash_original_field = "6C2A488AC6B0C698A8607CEA3B0A6CD5", hash_generated_field = "58862AB4E2B0CB5FD1377E7AA508B6BA")
 
     protected int in = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.573 -0500", hash_original_field = "F336AD514990B0A382A01CD56F41BE74", hash_generated_field = "B9DAD1FC7D32BD3FCCD6EA20CBE64C1B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.832 -0500", hash_original_field = "F336AD514990B0A382A01CD56F41BE74", hash_generated_field = "B9DAD1FC7D32BD3FCCD6EA20CBE64C1B")
 
     protected int out;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.576 -0500", hash_original_field = "63EA3415F69DFBAE1E285FCFD4110E54", hash_generated_field = "63EA3415F69DFBAE1E285FCFD4110E54")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.837 -0500", hash_original_field = "63EA3415F69DFBAE1E285FCFD4110E54", hash_generated_field = "63EA3415F69DFBAE1E285FCFD4110E54")
 
     boolean isConnected;
 
@@ -45,8 +45,9 @@ public class PipedInputStream extends InputStream {
      * stream must be connected to a {@link PipedOutputStream} before data may
      * be read from it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.577 -0500", hash_original_method = "EAE18C87236155EAE738625B0EE95D6C", hash_generated_method = "E7FB40C6AB2C8096523A1C2B218A59B4")
-    public PipedInputStream() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.840 -0500", hash_original_method = "EAE18C87236155EAE738625B0EE95D6C", hash_generated_method = "E7FB40C6AB2C8096523A1C2B218A59B4")
+    
+public PipedInputStream() {}
 
     /**
      * Constructs a new {@code PipedInputStream} connected to the
@@ -58,8 +59,9 @@ public class PipedInputStream extends InputStream {
      * @throws IOException
      *             if this stream or {@code out} are already connected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.578 -0500", hash_original_method = "5C6A295DEF226D787CAB21BFAF549F52", hash_generated_method = "496B6F83C7A477341F9D7519173DCAB3")
-    public PipedInputStream(PipedOutputStream out) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.843 -0500", hash_original_method = "5C6A295DEF226D787CAB21BFAF549F52", hash_generated_method = "496B6F83C7A477341F9D7519173DCAB3")
+    
+public PipedInputStream(PipedOutputStream out) throws IOException {
         connect(out);
     }
 
@@ -72,8 +74,9 @@ public class PipedInputStream extends InputStream {
      * @throws IllegalArgumentException if pipeSize is less than or equal to zero.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.579 -0500", hash_original_method = "E71321ED2FFA70E9F11724EE1BE224BC", hash_generated_method = "579223054415B6B88118728AB8960597")
-    public PipedInputStream(int pipeSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.846 -0500", hash_original_method = "E71321ED2FFA70E9F11724EE1BE224BC", hash_generated_method = "579223054415B6B88118728AB8960597")
+    
+public PipedInputStream(int pipeSize) {
         if (pipeSize <= 0) {
             throw new IllegalArgumentException("pipe size " + pipeSize + " too small");
         }
@@ -91,8 +94,9 @@ public class PipedInputStream extends InputStream {
      * @throws IllegalArgumentException if pipeSize is less than or equal to zero.
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.580 -0500", hash_original_method = "A3EF9AC77ADE8608AA265A4D24E9A500", hash_generated_method = "5B25F97E3955958762693BDD25DF1DD4")
-    public PipedInputStream(PipedOutputStream out, int pipeSize) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.849 -0500", hash_original_method = "A3EF9AC77ADE8608AA265A4D24E9A500", hash_generated_method = "5B25F97E3955958762693BDD25DF1DD4")
+    
+public PipedInputStream(PipedOutputStream out, int pipeSize) throws IOException {
         this(pipeSize);
         connect(out);
     }
@@ -106,9 +110,10 @@ public class PipedInputStream extends InputStream {
      *
      * @throws IOException if an I/O error occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.581 -0500", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "55B947A3E612BD1E29ED2B3E8790B567")
-    @Override
-public synchronized int available() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.852 -0500", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "55B947A3E612BD1E29ED2B3E8790B567")
+    
+@Override
+    public synchronized int available() throws IOException {
         if (buffer == null || in == -1) {
             return 0;
         }
@@ -122,9 +127,10 @@ public synchronized int available() throws IOException {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.582 -0500", hash_original_method = "3F663E82A2EB3C95CA9BF0AFC9912DC8", hash_generated_method = "DBB377E63B1D8B44DF2588167E13233A")
-    @Override
-public synchronized void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.855 -0500", hash_original_method = "3F663E82A2EB3C95CA9BF0AFC9912DC8", hash_generated_method = "DBB377E63B1D8B44DF2588167E13233A")
+    
+@Override
+    public synchronized void close() throws IOException {
         buffer = null;
         notifyAll();
     }
@@ -139,8 +145,9 @@ public synchronized void close() throws IOException {
      * @throws IOException
      *             if either stream is already connected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.583 -0500", hash_original_method = "577007FA4B30A526722BCCB2926E190B", hash_generated_method = "C353233A3672428C8E74F3B8D253DC73")
-    public void connect(PipedOutputStream src) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.857 -0500", hash_original_method = "577007FA4B30A526722BCCB2926E190B", hash_generated_method = "C353233A3672428C8E74F3B8D253DC73")
+    
+public void connect(PipedOutputStream src) throws IOException {
         src.connect(this);
     }
 
@@ -150,8 +157,9 @@ public synchronized void close() throws IOException {
      * @throws IOException
      *             If this Reader is already connected.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.584 -0500", hash_original_method = "5C9219C47AC485F782454E337FD705F5", hash_generated_method = "9EC41D60B9E82340DD96551BF7F48F3A")
-    synchronized void establishConnection() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.859 -0500", hash_original_method = "5C9219C47AC485F782454E337FD705F5", hash_generated_method = "9EC41D60B9E82340DD96551BF7F48F3A")
+    
+synchronized void establishConnection() throws IOException {
         if (isConnected) {
             throw new IOException("Pipe already connected");
         }
@@ -179,9 +187,10 @@ public synchronized void close() throws IOException {
      *             stream, or if the thread writing to the connected output
      *             stream is no longer alive.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.585 -0500", hash_original_method = "2CE52A22634017D3B9A1E29444B8338A", hash_generated_method = "6B35C78925AC44ADD51236A6E5FEBB2D")
-    @Override
-public synchronized int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.863 -0500", hash_original_method = "2CE52A22634017D3B9A1E29444B8338A", hash_generated_method = "6B35C78925AC44ADD51236A6E5FEBB2D")
+    
+@Override
+    public synchronized int read() throws IOException {
         if (!isConnected) {
             throw new IOException("Not connected");
         }
@@ -253,9 +262,10 @@ public synchronized int read() throws IOException {
      * @throws NullPointerException
      *             if {@code bytes} is {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.586 -0500", hash_original_method = "D28D662CAD3AC901637BA85FDFEE5B3E", hash_generated_method = "4EB375BFE4DC1AB0442C4397A7F58490")
-    @Override
-public synchronized int read(byte[] bytes, int offset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.866 -0500", hash_original_method = "D28D662CAD3AC901637BA85FDFEE5B3E", hash_generated_method = "4EB375BFE4DC1AB0442C4397A7F58490")
+    
+@Override
+    public synchronized int read(byte[] bytes, int offset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(bytes.length, offset, byteCount);
         if (byteCount == 0) {
             return 0;
@@ -350,8 +360,9 @@ public synchronized int read(byte[] bytes, int offset, int byteCount) throws IOE
      *             if this stream is closed or the thread that has last read
      *             from this stream is no longer alive.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.587 -0500", hash_original_method = "F1DDF844B79F62E2699AFB2EF26553A3", hash_generated_method = "D65DF3570488C96DD21CDC4BE59E708C")
-    protected synchronized void receive(int oneByte) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.869 -0500", hash_original_method = "F1DDF844B79F62E2699AFB2EF26553A3", hash_generated_method = "D65DF3570488C96DD21CDC4BE59E708C")
+    
+protected synchronized void receive(int oneByte) throws IOException {
         if (buffer == null || isClosed) {
             throw new IOException("Pipe is closed");
         }
@@ -388,8 +399,9 @@ public synchronized int read(byte[] bytes, int offset, int byteCount) throws IOE
         notifyAll();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.588 -0500", hash_original_method = "19BFAB2AD4E1A13AD9CB12419968F5AB", hash_generated_method = "0B05E6B5D4DC4B6BD624E8CCC3D31FDE")
-    synchronized void done() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.872 -0500", hash_original_method = "19BFAB2AD4E1A13AD9CB12419968F5AB", hash_generated_method = "0B05E6B5D4DC4B6BD624E8CCC3D31FDE")
+    
+synchronized void done() {
         isClosed = true;
         notifyAll();
     }

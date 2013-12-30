@@ -34,15 +34,17 @@ import java.util.Hashtable;
 
 public class NameMap implements SIPHeaderNames, PackageNames {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.967 -0500", hash_original_method = "0CF4D79C066C097F21221FDB060FA4F8", hash_generated_method = "56033EF2E571984869A8811F671FA2EB")
-    protected static void putNameMap(String headerName, String className) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.939 -0500", hash_original_method = "0CF4D79C066C097F21221FDB060FA4F8", hash_generated_method = "56033EF2E571984869A8811F671FA2EB")
+    
+protected static void putNameMap(String headerName, String className) {
         nameMap.put(
             headerName.toLowerCase(),
             className);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.968 -0500", hash_original_method = "B248307A8F9E50DFEF49B17C8E17D951", hash_generated_method = "E563A0A86173E21089A84293AA15A801")
-    public static Class getClassFromName(String headerName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.942 -0500", hash_original_method = "B248307A8F9E50DFEF49B17C8E17D951", hash_generated_method = "E563A0A86173E21089A84293AA15A801")
+    
+public static Class getClassFromName(String headerName) {
         String className = (String) nameMap.get(headerName.toLowerCase());
         if (className == null)
             return null;
@@ -62,15 +64,17 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     * Use this if you want to use the introspection-based methods.
     */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.970 -0500", hash_original_method = "87CEA39C87C6E6A55E0C3E8D0DB070E7", hash_generated_method = "433F39090E4F70958D2750670C5A6784")
-    public static void addExtensionHeader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.945 -0500", hash_original_method = "87CEA39C87C6E6A55E0C3E8D0DB070E7", hash_generated_method = "433F39090E4F70958D2750670C5A6784")
+    
+public static void addExtensionHeader(
         String headerName,
         String className) {
         nameMap.put(headerName.toLowerCase(), className);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.973 -0500", hash_original_method = "E9B22A8DE01AD2CD98E62339746DE4A7", hash_generated_method = "5F8B99DAC7CF3485F2B4ACAF3F264FB7")
-    private static void initializeNameMap() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.952 -0500", hash_original_method = "E9B22A8DE01AD2CD98E62339746DE4A7", hash_generated_method = "5F8B99DAC7CF3485F2B4ACAF3F264FB7")
+    
+private static void initializeNameMap() {
         nameMap = new Hashtable();
         putNameMap(MinExpires.NAME, MinExpires.class.getName()); // 1
 
@@ -203,7 +207,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
 
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:52.966 -0500", hash_original_field = "96028DEAB127065E601657D11EE5475A", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.936 -0500", hash_original_field = "96028DEAB127065E601657D11EE5475A", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
 
     static Hashtable nameMap;
     

@@ -30,26 +30,26 @@ import dalvik.system.CloseGuard;
 
 
 public class RandomAccessFile implements DataInput, DataOutput, Closeable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.963 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.168 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
     private FileDescriptor fd;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.964 -0500", hash_original_field = "920CF7C13BFADA1EF4D89DFD1D609670", hash_generated_field = "3B32EAA0CEEDC75E8106E9EDC5E4B7B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.171 -0500", hash_original_field = "920CF7C13BFADA1EF4D89DFD1D609670", hash_generated_field = "3B32EAA0CEEDC75E8106E9EDC5E4B7B8")
 
 
     private boolean syncMetadata = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.965 -0500", hash_original_field = "606E91E177C017AB22115E5BAB9B1D1A", hash_generated_field = "A73C1BBF84E836D55D5484C6C8858F5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.173 -0500", hash_original_field = "606E91E177C017AB22115E5BAB9B1D1A", hash_generated_field = "A73C1BBF84E836D55D5484C6C8858F5D")
 
     // initialized).
     private FileChannel channel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.966 -0500", hash_original_field = "462D02655D7DD7DF6E5BA12D65851DD2", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.175 -0500", hash_original_field = "462D02655D7DD7DF6E5BA12D65851DD2", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
 
 
     private int mode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.967 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.177 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
 
 
     private final CloseGuard guard = CloseGuard.get();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.968 -0500", hash_original_field = "BB6EE13587F628B91D273A1D077E6D31", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.180 -0500", hash_original_field = "BB6EE13587F628B91D273A1D077E6D31", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
 
 
     private final byte[] scratch = new byte[8];
@@ -95,8 +95,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
      *             if {@code mode} is not {@code "r"}, {@code "rw"}, {@code
      *             "rws"} or {@code "rwd"}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.969 -0500", hash_original_method = "C0E3F3B9285851822189430A61815E02", hash_generated_method = "9CA1ACF5C8FE6BED9CE22A688A14F80F")
-    public RandomAccessFile(File file, String mode) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.183 -0500", hash_original_method = "C0E3F3B9285851822189430A61815E02", hash_generated_method = "9CA1ACF5C8FE6BED9CE22A688A14F80F")
+    
+public RandomAccessFile(File file, String mode) throws FileNotFoundException {
         int flags;
         if (mode.equals("r")) {
             flags = O_RDONLY;
@@ -144,8 +145,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
      *             if {@code mode} is not {@code "r"}, {@code "rw"}, {@code
      *             "rws"} or {@code "rwd"}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.970 -0500", hash_original_method = "1B258B17ED328999F6B21E961C189B35", hash_generated_method = "EB168E11185786D18D391DC8D7754EFC")
-    public RandomAccessFile(String fileName, String mode) throws FileNotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.186 -0500", hash_original_method = "1B258B17ED328999F6B21E961C189B35", hash_generated_method = "EB168E11185786D18D391DC8D7754EFC")
+    
+public RandomAccessFile(String fileName, String mode) throws FileNotFoundException {
         this(new File(fileName), mode);
     }
 
@@ -155,8 +157,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
      * @throws IOException
      *             if an error occurs while closing this file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.971 -0500", hash_original_method = "884D49058FBF3FAB457C152EAAE74126", hash_generated_method = "0096CF7A8E8C11058C92174E45F5E004")
-    public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.188 -0500", hash_original_method = "884D49058FBF3FAB457C152EAAE74126", hash_generated_method = "0096CF7A8E8C11058C92174E45F5E004")
+    
+public void close() throws IOException {
         guard.close();
         synchronized (this) {
             if (channel != null && channel.isOpen()) {
@@ -167,9 +170,9 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.972 -0500", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "F0F8D8EC0C5D8FA9E7582C7E60A1D793")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.191 -0500", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "F0F8D8EC0C5D8FA9E7582C7E60A1D793")
+    
+@Override protected void finalize() throws Throwable {
         try {
             if (guard != null) {
                 guard.warnIfOpen();
@@ -190,8 +193,9 @@ protected void finalize() throws Throwable {
      *
      * @return this file's file channel instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.973 -0500", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "71023C0B035767FEDEF5C724C59A4BDF")
-    public final synchronized FileChannel getChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.194 -0500", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "71023C0B035767FEDEF5C724C59A4BDF")
+    
+public final synchronized FileChannel getChannel() {
         if(channel == null) {
             channel = NioUtils.newFileChannel(this, fd, mode);
         }
@@ -207,8 +211,9 @@ protected void finalize() throws Throwable {
      *             if an error occurs while getting the file descriptor of this
      *             file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.974 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
-    public final FileDescriptor getFD() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.196 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
+    
+public final FileDescriptor getFD() throws IOException {
         return fd;
     }
 
@@ -222,8 +227,9 @@ protected void finalize() throws Throwable {
      *             if an error occurs while getting the file pointer of this
      *             file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.974 -0500", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "78E5DC27F44F7D2899D06F9452A20977")
-    public long getFilePointer() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.199 -0500", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "78E5DC27F44F7D2899D06F9452A20977")
+    
+public long getFilePointer() throws IOException {
         try {
             return Libcore.os.lseek(fd, 0L, SEEK_CUR);
         } catch (ErrnoException errnoException) {
@@ -238,8 +244,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or some other I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.975 -0500", hash_original_method = "E8687801225ADA3B0E63B61937B0020C", hash_generated_method = "CB2CD97BAA9992C591917F959A4543EB")
-    public long length() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.201 -0500", hash_original_method = "E8687801225ADA3B0E63B61937B0020C", hash_generated_method = "CB2CD97BAA9992C591917F959A4543EB")
+    
+public long length() throws IOException {
         try {
             return Libcore.os.fstat(fd).st_size;
         } catch (ErrnoException errnoException) {
@@ -257,8 +264,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.976 -0500", hash_original_method = "9CBC8BBFD7044A0BC3A194777FBBD2CA", hash_generated_method = "C43FAE37877C94D1A4278A353B3DC98F")
-    public int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.204 -0500", hash_original_method = "9CBC8BBFD7044A0BC3A194777FBBD2CA", hash_generated_method = "C43FAE37877C94D1A4278A353B3DC98F")
+    
+public int read() throws IOException {
         return (read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1;
     }
 
@@ -275,8 +283,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.977 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "6E5D00FFA2D494E6084FF31B9747697A")
-    public int read(byte[] buffer) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.206 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "6E5D00FFA2D494E6084FF31B9747697A")
+    
+public int read(byte[] buffer) throws IOException {
         return read(buffer, 0, buffer.length);
     }
 
@@ -294,8 +303,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.978 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "DC7919B1248E944CD403B40630CBB67F")
-    public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.208 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "DC7919B1248E944CD403B40630CBB67F")
+    
+public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
         return IoBridge.read(fd, buffer, byteOffset, byteCount);
     }
 
@@ -311,8 +321,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeBoolean(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.979 -0500", hash_original_method = "50A11AE3C5EDA3B4603E1C2204F22ED8", hash_generated_method = "F9A31F84ADBCA19B6043EA35A5DF9513")
-    public final boolean readBoolean() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.211 -0500", hash_original_method = "50A11AE3C5EDA3B4603E1C2204F22ED8", hash_generated_method = "F9A31F84ADBCA19B6043EA35A5DF9513")
+    
+public final boolean readBoolean() throws IOException {
         int temp = this.read();
         if (temp < 0) {
             throw new EOFException();
@@ -332,8 +343,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeBoolean(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.980 -0500", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "60488882DC013DC02E5B18F972072683")
-    public final byte readByte() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.214 -0500", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "60488882DC013DC02E5B18F972072683")
+    
+public final byte readByte() throws IOException {
         int temp = this.read();
         if (temp < 0) {
             throw new EOFException();
@@ -353,8 +365,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeChar(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.981 -0500", hash_original_method = "A44D11CC3BE0C88F3640C82011E315A3", hash_generated_method = "B0732E37E958B55BB10FAA52B3D5674C")
-    public final char readChar() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.217 -0500", hash_original_method = "A44D11CC3BE0C88F3640C82011E315A3", hash_generated_method = "B0732E37E958B55BB10FAA52B3D5674C")
+    
+public final char readChar() throws IOException {
         return (char) readShort();
     }
 
@@ -370,8 +383,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeDouble(double)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.982 -0500", hash_original_method = "D7A510C090532D6542CA33ECD805653E", hash_generated_method = "D338B640779B17CB7260528C9150884A")
-    public final double readDouble() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.219 -0500", hash_original_method = "D7A510C090532D6542CA33ECD805653E", hash_generated_method = "D338B640779B17CB7260528C9150884A")
+    
+public final double readDouble() throws IOException {
         return Double.longBitsToDouble(readLong());
     }
 
@@ -387,16 +401,18 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeFloat(float)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.983 -0500", hash_original_method = "C7FD0C2698771DF8CC60A785DCC40BB4", hash_generated_method = "80593170191F13BFD0E1C07AC7E4AFC0")
-    public final float readFloat() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.222 -0500", hash_original_method = "C7FD0C2698771DF8CC60A785DCC40BB4", hash_generated_method = "80593170191F13BFD0E1C07AC7E4AFC0")
+    
+public final float readFloat() throws IOException {
         return Float.intBitsToFloat(readInt());
     }
 
     /**
      * Equivalent to {@code readFully(dst, 0, dst.length);}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.984 -0500", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "A7F355DBB7B4EAE4A328A9A9E3910E20")
-    public final void readFully(byte[] dst) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.224 -0500", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "A7F355DBB7B4EAE4A328A9A9E3910E20")
+    
+public final void readFully(byte[] dst) throws IOException {
         readFully(dst, 0, dst.length);
     }
 
@@ -426,8 +442,9 @@ protected void finalize() throws Throwable {
      * @throws NullPointerException
      *             if {@code dst} is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.985 -0500", hash_original_method = "35386938706C6610A66A6C02D11FE342", hash_generated_method = "D5B8143676F49C157F3B2AD3E184A597")
-    public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.227 -0500", hash_original_method = "35386938706C6610A66A6C02D11FE342", hash_generated_method = "D5B8143676F49C157F3B2AD3E184A597")
+    
+public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(dst.length, offset, byteCount);
         while (byteCount > 0) {
             int result = read(dst, offset, byteCount);
@@ -451,8 +468,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeInt(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.986 -0500", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "5D6C62E5010CBE21FE3E33B342C82583")
-    public final int readInt() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.230 -0500", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "5D6C62E5010CBE21FE3E33B342C82583")
+    
+public final int readInt() throws IOException {
         readFully(scratch, 0, SizeOf.INT);
         return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
@@ -471,8 +489,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.987 -0500", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "BEAFAA89A57C515E05B4E556EACE92EE")
-    public final String readLine() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.233 -0500", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "BEAFAA89A57C515E05B4E556EACE92EE")
+    
+public final String readLine() throws IOException {
         StringBuilder line = new StringBuilder(80); // Typical line length
         boolean foundTerminator = false;
         long unreadPosition = 0;
@@ -514,8 +533,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeLong(long)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.988 -0500", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "A9605FE51958909BD225DA582AF5352D")
-    public final long readLong() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.235 -0500", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "A9605FE51958909BD225DA582AF5352D")
+    
+public final long readLong() throws IOException {
         readFully(scratch, 0, SizeOf.LONG);
         return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
@@ -532,8 +552,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeShort(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.989 -0500", hash_original_method = "C93410329A523BCD2A1636A4AEB3409A", hash_generated_method = "8C1BC44A51E102FD4811ACD830EA9366")
-    public final short readShort() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.238 -0500", hash_original_method = "C93410329A523BCD2A1636A4AEB3409A", hash_generated_method = "8C1BC44A51E102FD4811ACD830EA9366")
+    
+public final short readShort() throws IOException {
         readFully(scratch, 0, SizeOf.SHORT);
         return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
@@ -550,8 +571,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeByte(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.990 -0500", hash_original_method = "AF5E7921B4B2187E0041EFA801E04DA5", hash_generated_method = "E10289AF1D5496D17669A60BBBE2F9E9")
-    public final int readUnsignedByte() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.240 -0500", hash_original_method = "AF5E7921B4B2187E0041EFA801E04DA5", hash_generated_method = "E10289AF1D5496D17669A60BBBE2F9E9")
+    
+public final int readUnsignedByte() throws IOException {
         int temp = this.read();
         if (temp < 0) {
             throw new EOFException();
@@ -571,8 +593,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #writeShort(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.991 -0500", hash_original_method = "856B18E0C9E8549741083F490D54C8D8", hash_generated_method = "D61B634BAB1210C26ADCEAB5B21DE464")
-    public final int readUnsignedShort() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.243 -0500", hash_original_method = "856B18E0C9E8549741083F490D54C8D8", hash_generated_method = "D61B634BAB1210C26ADCEAB5B21DE464")
+    
+public final int readUnsignedShort() throws IOException {
         return ((int) readShort()) & 0xffff;
     }
 
@@ -593,8 +616,9 @@ protected void finalize() throws Throwable {
      *             if the bytes read cannot be decoded into a character string.
      * @see #writeUTF(String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.992 -0500", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "9185F536AED2E9334E1588BCE6D15B49")
-    public final String readUTF() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.246 -0500", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "9185F536AED2E9334E1588BCE6D15B49")
+    
+public final String readUTF() throws IOException {
         int utfSize = readUnsignedShort();
         if (utfSize == 0) {
             return "";
@@ -619,8 +643,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed, {@code pos < 0} or another I/O error
      *             occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.992 -0500", hash_original_method = "92812216A189B62C22C36FA4ABFCEF90", hash_generated_method = "73DC14107C93695D525162506C13794D")
-    public void seek(long offset) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.249 -0500", hash_original_method = "92812216A189B62C22C36FA4ABFCEF90", hash_generated_method = "73DC14107C93695D525162506C13794D")
+    
+public void seek(long offset) throws IOException {
         if (offset < 0) {
             throw new IOException("offset < 0: " + offset);
         }
@@ -645,8 +670,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.993 -0500", hash_original_method = "385EF87B8915AB37CD3540061C92256B", hash_generated_method = "AB5A5369B402ECB690F6A9D77ABACB90")
-    public void setLength(long newLength) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.251 -0500", hash_original_method = "385EF87B8915AB37CD3540061C92256B", hash_generated_method = "AB5A5369B402ECB690F6A9D77ABACB90")
+    
+public void setLength(long newLength) throws IOException {
         if (newLength < 0) {
             throw new IllegalArgumentException("newLength < 0");
         }
@@ -679,8 +705,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.994 -0500", hash_original_method = "FB9C2E97D200EE03574ADD76D56D23DD", hash_generated_method = "F28BDDC6AFDD6D20810D78F064E232CF")
-    public int skipBytes(int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.254 -0500", hash_original_method = "FB9C2E97D200EE03574ADD76D56D23DD", hash_generated_method = "F28BDDC6AFDD6D20810D78F064E232CF")
+    
+public int skipBytes(int count) throws IOException {
         if (count > 0) {
             long currentPos = getFilePointer(), eof = length();
             int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);
@@ -699,8 +726,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if an I/O error occurs while writing to this file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.995 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
-    public void write(byte[] buffer) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.257 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
+    
+public void write(byte[] buffer) throws IOException {
         write(buffer, 0, buffer.length);
     }
 
@@ -715,8 +743,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if an I/O error occurs while writing to this file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.996 -0500", hash_original_method = "35FA4EEB101513E91F640D0BB99E182F", hash_generated_method = "408D805D9F4B74A29DDEBF53541D0A55")
-    public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.259 -0500", hash_original_method = "35FA4EEB101513E91F640D0BB99E182F", hash_generated_method = "408D805D9F4B74A29DDEBF53541D0A55")
+    
+public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
         IoBridge.write(fd, buffer, byteOffset, byteCount);
         // if we are in "rws" mode, attempt to sync file+metadata
         if (syncMetadata) {
@@ -734,8 +763,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #read()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.997 -0500", hash_original_method = "9AECC3BD7576DA9A6BE139AE80679C12", hash_generated_method = "5ED746FBDAF085038B13817E660DB906")
-    public void write(int oneByte) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.262 -0500", hash_original_method = "9AECC3BD7576DA9A6BE139AE80679C12", hash_generated_method = "5ED746FBDAF085038B13817E660DB906")
+    
+public void write(int oneByte) throws IOException {
         scratch[0] = (byte) (oneByte & 0xff);
         write(scratch, 0, 1);
     }
@@ -750,8 +780,9 @@ protected void finalize() throws Throwable {
      *             if this file is closed or another I/O error occurs.
      * @see #readBoolean()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.997 -0500", hash_original_method = "9F118A4D5206A4234B8C15F22340D26C", hash_generated_method = "BC3F06DA4ACE3228AF29A037952DAF6A")
-    public final void writeBoolean(boolean val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.264 -0500", hash_original_method = "9F118A4D5206A4234B8C15F22340D26C", hash_generated_method = "BC3F06DA4ACE3228AF29A037952DAF6A")
+    
+public final void writeBoolean(boolean val) throws IOException {
         write(val ? 1 : 0);
     }
 
@@ -766,8 +797,9 @@ protected void finalize() throws Throwable {
      * @see #readByte()
      * @see #readUnsignedByte()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.998 -0500", hash_original_method = "B252FC199353C3326913DC87EC8ACD0F", hash_generated_method = "B8250C3250A38DA6C7D198731C269ADA")
-    public final void writeByte(int val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.267 -0500", hash_original_method = "B252FC199353C3326913DC87EC8ACD0F", hash_generated_method = "B8250C3250A38DA6C7D198731C269ADA")
+    
+public final void writeByte(int val) throws IOException {
         write(val & 0xFF);
     }
 
@@ -780,8 +812,9 @@ protected void finalize() throws Throwable {
      * @throws IOException
      *             if an I/O error occurs while writing to this file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.999 -0500", hash_original_method = "EECBC8862767167AF0CABDC3594E6347", hash_generated_method = "39275A257DB50D61A6E49D9313454A28")
-    public final void writeBytes(String str) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.269 -0500", hash_original_method = "EECBC8862767167AF0CABDC3594E6347", hash_generated_method = "39275A257DB50D61A6E49D9313454A28")
+    
+public final void writeBytes(String str) throws IOException {
         byte[] bytes = new byte[str.length()];
         for (int index = 0; index < str.length(); index++) {
             bytes[index] = (byte) (str.charAt(index) & 0xFF);
@@ -800,8 +833,9 @@ protected void finalize() throws Throwable {
      *             if an I/O error occurs while writing to this file.
      * @see #readChar()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.000 -0500", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "932B9992937F002B26811C18101888C1")
-    public final void writeChar(int val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.272 -0500", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "932B9992937F002B26811C18101888C1")
+    
+public final void writeChar(int val) throws IOException {
         writeShort(val);
     }
 
@@ -815,8 +849,9 @@ protected void finalize() throws Throwable {
      *             if an I/O error occurs while writing to this file.
      * @see #readChar()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.001 -0500", hash_original_method = "C993D359026F2BBBDD097DA5FA69EA70", hash_generated_method = "9C778C35E08DCB80938DC8E57B2C1AA4")
-    public final void writeChars(String str) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.274 -0500", hash_original_method = "C993D359026F2BBBDD097DA5FA69EA70", hash_generated_method = "9C778C35E08DCB80938DC8E57B2C1AA4")
+    
+public final void writeChars(String str) throws IOException {
         write(str.getBytes("UTF-16BE"));
     }
 
@@ -831,8 +866,9 @@ protected void finalize() throws Throwable {
      *             if an I/O error occurs while writing to this file.
      * @see #readDouble()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.002 -0500", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "F3BF6663D138ED0E1DFEA62B1C80FA3F")
-    public final void writeDouble(double val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.277 -0500", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "F3BF6663D138ED0E1DFEA62B1C80FA3F")
+    
+public final void writeDouble(double val) throws IOException {
         writeLong(Double.doubleToLongBits(val));
     }
 
@@ -847,8 +883,9 @@ protected void finalize() throws Throwable {
      *             if an I/O error occurs while writing to this file.
      * @see #readFloat()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.003 -0500", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "1792C72D5DB8A7188EE6A15A300D3124")
-    public final void writeFloat(float val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.279 -0500", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "1792C72D5DB8A7188EE6A15A300D3124")
+    
+public final void writeFloat(float val) throws IOException {
         writeInt(Float.floatToIntBits(val));
     }
 
@@ -862,8 +899,9 @@ protected void finalize() throws Throwable {
      *             if an I/O error occurs while writing to this file.
      * @see #readInt()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.003 -0500", hash_original_method = "37CBB7B1E5121DA5847923CB75DB4FD7", hash_generated_method = "614D95C47B63C83EC304F76F5EA63F78")
-    public final void writeInt(int val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.282 -0500", hash_original_method = "37CBB7B1E5121DA5847923CB75DB4FD7", hash_generated_method = "614D95C47B63C83EC304F76F5EA63F78")
+    
+public final void writeInt(int val) throws IOException {
         Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.INT);
     }
@@ -878,8 +916,9 @@ protected void finalize() throws Throwable {
      *             if an I/O error occurs while writing to this file.
      * @see #readLong()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.005 -0500", hash_original_method = "7B3E247666A6F3E05280E703124B5A4E", hash_generated_method = "EC58106DBA84FF2516FCC382DA22D5AA")
-    public final void writeLong(long val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.285 -0500", hash_original_method = "7B3E247666A6F3E05280E703124B5A4E", hash_generated_method = "EC58106DBA84FF2516FCC382DA22D5AA")
+    
+public final void writeLong(long val) throws IOException {
         Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.LONG);
     }
@@ -896,8 +935,9 @@ protected void finalize() throws Throwable {
      * @see #readShort()
      * @see DataInput#readUnsignedShort()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.006 -0500", hash_original_method = "64B98C2F1C9F8A49F0516D9D78465522", hash_generated_method = "BD718C7C8DCE79BD36DF8E1657B26DBA")
-    public final void writeShort(int val) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.287 -0500", hash_original_method = "64B98C2F1C9F8A49F0516D9D78465522", hash_generated_method = "BD718C7C8DCE79BD36DF8E1657B26DBA")
+    
+public final void writeShort(int val) throws IOException {
         Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.SHORT);
     }
@@ -915,8 +955,9 @@ protected void finalize() throws Throwable {
      *             if the encoded string is longer than 65535 bytes.
      * @see #readUTF()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.007 -0500", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "58B20B8780C4182A44E8248160366D2A")
-    public final void writeUTF(String str) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.290 -0500", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "58B20B8780C4182A44E8248160366D2A")
+    
+public final void writeUTF(String str) throws IOException {
         write(ModifiedUtf8.encode(str));
     }
 

@@ -37,8 +37,9 @@ public class SmsMessage extends SmsMessageBase {
     /**
      * Create an SmsMessage from a raw PDU.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.213 -0500", hash_original_method = "D80087E99C638E2C1CFB51B0D1FE7131", hash_generated_method = "51F3800AFAA28758CFC510E4F6E7B460")
-    public static SmsMessage createFromPdu(byte[] pdu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.007 -0500", hash_original_method = "D80087E99C638E2C1CFB51B0D1FE7131", hash_generated_method = "51F3800AFAA28758CFC510E4F6E7B460")
+    
+public static SmsMessage createFromPdu(byte[] pdu) {
         try {
             SmsMessage msg = new SmsMessage();
             msg.parsePdu(pdu);
@@ -58,8 +59,9 @@ public class SmsMessage extends SmsMessageBase {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.215 -0500", hash_original_method = "7B768B24A9FAD94266E16EF0BEA6CFF1", hash_generated_method = "750C9A039AAE0A10197EA73534D92711")
-    public static SmsMessage newFromCMT(String[] lines) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.012 -0500", hash_original_method = "7B768B24A9FAD94266E16EF0BEA6CFF1", hash_generated_method = "750C9A039AAE0A10197EA73534D92711")
+    
+public static SmsMessage newFromCMT(String[] lines) {
         try {
             SmsMessage msg = new SmsMessage();
             msg.parsePdu(IccUtils.hexStringToBytes(lines[1]));
@@ -71,8 +73,9 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.216 -0500", hash_original_method = "8BF47CC1337149C4CF27C6F14A97D6E1", hash_generated_method = "611946B0DD83E5F2931AEF25DFA6679B")
-    public static SmsMessage newFromCDS(String line) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.015 -0500", hash_original_method = "8BF47CC1337149C4CF27C6F14A97D6E1", hash_generated_method = "611946B0DD83E5F2931AEF25DFA6679B")
+    
+public static SmsMessage newFromCDS(String line) {
         try {
             SmsMessage msg = new SmsMessage();
             msg.parsePdu(IccUtils.hexStringToBytes(line));
@@ -93,8 +96,9 @@ public class SmsMessage extends SmsMessageBase {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.217 -0500", hash_original_method = "2675172999C283E7F22B4F54E3DFAB83", hash_generated_method = "2FED92AFEE7FEE648412E37ACA7DA597")
-    public static SmsMessage createFromEfRecord(int index, byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.018 -0500", hash_original_method = "2675172999C283E7F22B4F54E3DFAB83", hash_generated_method = "2FED92AFEE7FEE648412E37ACA7DA597")
+    
+public static SmsMessage createFromEfRecord(int index, byte[] data) {
         try {
             SmsMessage msg = new SmsMessage();
 
@@ -129,8 +133,9 @@ public class SmsMessage extends SmsMessageBase {
      * Get the TP-Layer-Length for the given SMS-SUBMIT PDU Basically, the
      * length in bytes (not hex chars) less the SMSC header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.218 -0500", hash_original_method = "C944CD27F2D3E7001043FCCEFD128BFD", hash_generated_method = "46461381B45FD8583C9EA7263AB16736")
-    public static int getTPLayerLengthForPDU(String pdu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.021 -0500", hash_original_method = "C944CD27F2D3E7001043FCCEFD128BFD", hash_generated_method = "46461381B45FD8583C9EA7263AB16736")
+    
+public static int getTPLayerLengthForPDU(String pdu) {
         int len = pdu.length() / 2;
         int smscLen = Integer.parseInt(pdu.substring(0, 2), 16);
 
@@ -146,8 +151,9 @@ public class SmsMessage extends SmsMessageBase {
      *         Returns null on encode error.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.219 -0500", hash_original_method = "A44D9B8CD0F571FF3876C91DC0074CD9", hash_generated_method = "F548C018EA0C5CB150DA38B5DD6C2824")
-    public static SubmitPdu getSubmitPdu(String scAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.024 -0500", hash_original_method = "A44D9B8CD0F571FF3876C91DC0074CD9", hash_generated_method = "F548C018EA0C5CB150DA38B5DD6C2824")
+    
+public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested, byte[] header) {
         return getSubmitPdu(scAddress, destinationAddress, message, statusReportRequested, header,
@@ -168,8 +174,9 @@ public class SmsMessage extends SmsMessageBase {
      *         Returns null on encode error.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.221 -0500", hash_original_method = "6FE511015D6614F05F116E0A5E1A3730", hash_generated_method = "444C77AC24DA8352A16AFC38BC6940B6")
-    public static SubmitPdu getSubmitPdu(String scAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.028 -0500", hash_original_method = "6FE511015D6614F05F116E0A5E1A3730", hash_generated_method = "444C77AC24DA8352A16AFC38BC6940B6")
+    
+public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested, byte[] header, int encoding,
             int languageTable, int languageShiftTable) {
@@ -282,8 +289,9 @@ public class SmsMessage extends SmsMessageBase {
      * @return
      * @throws UnsupportedEncodingException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.222 -0500", hash_original_method = "D60A69CC97C8202C3B8342511B9B0E17", hash_generated_method = "650895162A56A032665DB40B814BA737")
-    private static byte[] encodeUCS2(String message, byte[] header)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.031 -0500", hash_original_method = "D60A69CC97C8202C3B8342511B9B0E17", hash_generated_method = "650895162A56A032665DB40B814BA737")
+    
+private static byte[] encodeUCS2(String message, byte[] header)
         throws UnsupportedEncodingException {
         byte[] userData, textPart;
         textPart = message.getBytes("utf-16be");
@@ -313,8 +321,9 @@ public class SmsMessage extends SmsMessageBase {
      *         address, if applicable, and the encoded message.
      *         Returns null on encode error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.223 -0500", hash_original_method = "03FE6652D36A4EE0FCEC2B47F9153B89", hash_generated_method = "056BCE6C2850BB841CE89DBFD9A3F5CC")
-    public static SubmitPdu getSubmitPdu(String scAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.033 -0500", hash_original_method = "03FE6652D36A4EE0FCEC2B47F9153B89", hash_generated_method = "056BCE6C2850BB841CE89DBFD9A3F5CC")
+    
+public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested) {
 
@@ -333,8 +342,9 @@ public class SmsMessage extends SmsMessageBase {
      *         address, if applicable, and the encoded message.
      *         Returns null on encode error.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.224 -0500", hash_original_method = "BE7F72EDEBC746FD8DAD5450A4903B6E", hash_generated_method = "F033CE09566210197F15C678A5DB5C35")
-    public static SubmitPdu getSubmitPdu(String scAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.037 -0500", hash_original_method = "BE7F72EDEBC746FD8DAD5450A4903B6E", hash_generated_method = "F033CE09566210197F15C678A5DB5C35")
+    
+public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, int destinationPort, byte[] data,
             boolean statusReportRequested) {
 
@@ -392,8 +402,9 @@ public class SmsMessage extends SmsMessageBase {
      * @param ret <code>SubmitPdu</code> containing the encoded SC
      *        address, if applicable, and the encoded message
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.225 -0500", hash_original_method = "CD4E1E350585FFF9C1FBE85EA57A2900", hash_generated_method = "6D4B95E9AFB592415E10ECD2BC6EC203")
-    private static ByteArrayOutputStream getSubmitPduHead(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.040 -0500", hash_original_method = "CD4E1E350585FFF9C1FBE85EA57A2900", hash_generated_method = "6D4B95E9AFB592415E10ECD2BC6EC203")
+    
+private static ByteArrayOutputStream getSubmitPduHead(
             String scAddress, String destinationAddress, byte mtiByte,
             boolean statusReportRequested, SubmitPdu ret) {
         ByteArrayOutputStream bo = new ByteArrayOutputStream(
@@ -442,8 +453,9 @@ public class SmsMessage extends SmsMessageBase {
      * @param use7bitOnly ignore (but still count) illegal characters if true
      * @return TextEncodingDetails
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.244 -0500", hash_original_method = "A0FB6099859E19ABD2EE706082DAECC3", hash_generated_method = "4D5C1DA14952ABC721903A1467465FE7")
-    public static TextEncodingDetails calculateLength(CharSequence msgBody,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.098 -0500", hash_original_method = "A0FB6099859E19ABD2EE706082DAECC3", hash_generated_method = "4D5C1DA14952ABC721903A1467465FE7")
+    
+public static TextEncodingDetails calculateLength(CharSequence msgBody,
             boolean use7bitOnly) {
         TextEncodingDetails ted = GsmAlphabet.countGsmSeptets(msgBody, use7bitOnly);
         if (ted == null) {
@@ -463,44 +475,44 @@ public class SmsMessage extends SmsMessageBase {
         }
         return ted;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.203 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.975 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
     static final String LOG_TAG = "GSM";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.204 -0500", hash_original_field = "421620B201E2BB659AD5EC901E601942", hash_generated_field = "7857416028EC39FBC0A39F3682AC483E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.977 -0500", hash_original_field = "421620B201E2BB659AD5EC901E601942", hash_generated_field = "7857416028EC39FBC0A39F3682AC483E")
 
 
     private MessageClass messageClass;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.205 -0500", hash_original_field = "CE5CBFD362994E794710FDA486A7FC14", hash_generated_field = "E7356B822A8D6EAF5A79AC5BFB93BA7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.980 -0500", hash_original_field = "CE5CBFD362994E794710FDA486A7FC14", hash_generated_field = "E7356B822A8D6EAF5A79AC5BFB93BA7C")
 
     private int mti;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.205 -0500", hash_original_field = "20E0C8831C265B55FE461E14E0E28D75", hash_generated_field = "B1BC4F1F687666F5FB78306ED8E39C0D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.982 -0500", hash_original_field = "20E0C8831C265B55FE461E14E0E28D75", hash_generated_field = "B1BC4F1F687666F5FB78306ED8E39C0D")
 
     private int protocolIdentifier;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.206 -0500", hash_original_field = "0463FAC0FF75D1D68251893EEF7FA86E", hash_generated_field = "1EF4588833C51F28BE4982D24D974495")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.984 -0500", hash_original_field = "0463FAC0FF75D1D68251893EEF7FA86E", hash_generated_field = "1EF4588833C51F28BE4982D24D974495")
 
     // see TS 23.038
     private int dataCodingScheme;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.207 -0500", hash_original_field = "ED3FE6C9B81423466CA74B8104FC79ED", hash_generated_field = "A0DF3F226FA65B7A839A4730766B6176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.987 -0500", hash_original_field = "ED3FE6C9B81423466CA74B8104FC79ED", hash_generated_field = "A0DF3F226FA65B7A839A4730766B6176")
 
     // e.g. 23.040 9.2.2.1
     private boolean replyPathPresent = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.208 -0500", hash_original_field = "02A70D05F6A4DF29A76284BAEB4ECFDC", hash_generated_field = "292FF0523053663BA51B6FF876CC25C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.989 -0500", hash_original_field = "02A70D05F6A4DF29A76284BAEB4ECFDC", hash_generated_field = "292FF0523053663BA51B6FF876CC25C4")
 
     // 23.038 Section 4
     private boolean automaticDeletion;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.209 -0500", hash_original_field = "5AC7B46ABF45BA3D91D9560FA6429491", hash_generated_field = "C607017C2C44E60AAC44759C98F463E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.992 -0500", hash_original_field = "5AC7B46ABF45BA3D91D9560FA6429491", hash_generated_field = "C607017C2C44E60AAC44759C98F463E7")
 
     private boolean forSubmit;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.209 -0500", hash_original_field = "DC191E941C0B6240C38D2BBAB74EB70B", hash_generated_field = "6F3AA87D4A1136C3D307623CA6224439")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.994 -0500", hash_original_field = "DC191E941C0B6240C38D2BBAB74EB70B", hash_generated_field = "6F3AA87D4A1136C3D307623CA6224439")
 
     private GsmSmsAddress recipientAddress;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.210 -0500", hash_original_field = "59429F58E49BB831EF09EDE38C839489", hash_generated_field = "7F8B1302B10B9B6031593ECB5E2259BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.997 -0500", hash_original_field = "59429F58E49BB831EF09EDE38C839489", hash_generated_field = "7F8B1302B10B9B6031593ECB5E2259BB")
 
     private long dischargeTimeMillis;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.211 -0500", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "4BAC49709EDEAEFDD9E07400E0F02406")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.999 -0500", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "4BAC49709EDEAEFDD9E07400E0F02406")
 
     private int status;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.211 -0500", hash_original_field = "5E32DF1D2416ECD49693C99C2BC17F64", hash_generated_field = "63317BD16A868FCF8316B9F91C279BC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.002 -0500", hash_original_field = "5E32DF1D2416ECD49693C99C2BC17F64", hash_generated_field = "63317BD16A868FCF8316B9F91C279BC5")
 
     private boolean isStatusReportMessage = false;
     
@@ -514,15 +526,17 @@ public class SmsMessage extends SmsMessageBase {
      * 3GPP TS 23.040 9.2.3.9 specifies that Type Zero messages are indicated
      * by TP_PID field set to value 0x40
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.214 -0500", hash_original_method = "AD0C1E28FA77467C1A6AC08BEE60D8C5", hash_generated_method = "AD53C9D2D02AE2A023D701CAAA2EB8F3")
-    public boolean isTypeZero() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.009 -0500", hash_original_method = "AD0C1E28FA77467C1A6AC08BEE60D8C5", hash_generated_method = "AD53C9D2D02AE2A023D701CAAA2EB8F3")
+    
+public boolean isTypeZero() {
         return (protocolIdentifier == 0x40);
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.245 -0500", hash_original_method = "E7C032F027F70A1B6B025F651AAD0755", hash_generated_method = "D0A3376B6F4063092AC4655CAD816EF4")
-    @Override
-public int getProtocolIdentifier() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.100 -0500", hash_original_method = "E7C032F027F70A1B6B025F651AAD0755", hash_generated_method = "D0A3376B6F4063092AC4655CAD816EF4")
+    
+@Override
+    public int getProtocolIdentifier() {
         return protocolIdentifier;
     }
 
@@ -530,32 +544,36 @@ public int getProtocolIdentifier() {
      * Returns the TP-Data-Coding-Scheme byte, for acknowledgement of SMS-PP download messages.
      * @return the TP-DCS field of the SMS header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.245 -0500", hash_original_method = "5E449C3565950C318CBD3ECE2F1F0BD6", hash_generated_method = "5E449C3565950C318CBD3ECE2F1F0BD6")
-    int getDataCodingScheme() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.102 -0500", hash_original_method = "5E449C3565950C318CBD3ECE2F1F0BD6", hash_generated_method = "5E449C3565950C318CBD3ECE2F1F0BD6")
+    
+int getDataCodingScheme() {
         return dataCodingScheme;
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.246 -0500", hash_original_method = "BDE809523E280561E9C29F7B9A7C7DBF", hash_generated_method = "358B08BE6C0310DF1DF6132AA2237297")
-    @Override
-public boolean isReplace() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.105 -0500", hash_original_method = "BDE809523E280561E9C29F7B9A7C7DBF", hash_generated_method = "358B08BE6C0310DF1DF6132AA2237297")
+    
+@Override
+    public boolean isReplace() {
         return (protocolIdentifier & 0xc0) == 0x40
                 && (protocolIdentifier & 0x3f) > 0
                 && (protocolIdentifier & 0x3f) < 8;
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.247 -0500", hash_original_method = "8C882F4C280C6C8CC6957F303C6657A2", hash_generated_method = "E27607D8406DF942B0095F00C4B7473F")
-    @Override
-public boolean isCphsMwiMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.108 -0500", hash_original_method = "8C882F4C280C6C8CC6957F303C6657A2", hash_generated_method = "E27607D8406DF942B0095F00C4B7473F")
+    
+@Override
+    public boolean isCphsMwiMessage() {
         return ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageClear()
                 || ((GsmSmsAddress) originatingAddress).isCphsVoiceMessageSet();
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.248 -0500", hash_original_method = "70DC4C6B18CE83A6EFAF90F534A37766", hash_generated_method = "8E6DC0FFAA1FE0C45B24BA9BFE48502D")
-    @Override
-public boolean isMWIClearMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.110 -0500", hash_original_method = "70DC4C6B18CE83A6EFAF90F534A37766", hash_generated_method = "8E6DC0FFAA1FE0C45B24BA9BFE48502D")
+    
+@Override
+    public boolean isMWIClearMessage() {
         if (isMwi && !mwiSense) {
             return true;
         }
@@ -565,9 +583,10 @@ public boolean isMWIClearMessage() {
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.249 -0500", hash_original_method = "29E72ED32BDC3692E9219EFE428EB222", hash_generated_method = "D8FE46FD433C91F0C878ABB8ACF77D42")
-    @Override
-public boolean isMWISetMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.113 -0500", hash_original_method = "29E72ED32BDC3692E9219EFE428EB222", hash_generated_method = "D8FE46FD433C91F0C878ABB8ACF77D42")
+    
+@Override
+    public boolean isMWISetMessage() {
         if (isMwi && mwiSense) {
             return true;
         }
@@ -577,9 +596,10 @@ public boolean isMWISetMessage() {
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.250 -0500", hash_original_method = "06DE61C568026EFDCDFB983D9CE6FFEE", hash_generated_method = "4E47DD6A59C04A58BF886A4364FAA583")
-    @Override
-public boolean isMwiDontStore() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.116 -0500", hash_original_method = "06DE61C568026EFDCDFB983D9CE6FFEE", hash_generated_method = "4E47DD6A59C04A58BF886A4364FAA583")
+    
+@Override
+    public boolean isMwiDontStore() {
         if (isMwi && mwiDontStore) {
             return true;
         }
@@ -598,23 +618,26 @@ public boolean isMwiDontStore() {
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.251 -0500", hash_original_method = "A6874122EB6D2A9BF852845259D73D4C", hash_generated_method = "6725D3B3E5383D07C3E186E5387548AF")
-    @Override
-public int getStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.118 -0500", hash_original_method = "A6874122EB6D2A9BF852845259D73D4C", hash_generated_method = "6725D3B3E5383D07C3E186E5387548AF")
+    
+@Override
+    public int getStatus() {
         return status;
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.252 -0500", hash_original_method = "234314E66EB58BCF2E45191C1F3D0599", hash_generated_method = "8F71CADBBABA4B64E8349F5B091950B5")
-    @Override
-public boolean isStatusReportMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.120 -0500", hash_original_method = "234314E66EB58BCF2E45191C1F3D0599", hash_generated_method = "8F71CADBBABA4B64E8349F5B091950B5")
+    
+@Override
+    public boolean isStatusReportMessage() {
         return isStatusReportMessage;
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.252 -0500", hash_original_method = "D49F3476E255463D6592CF4849CB4273", hash_generated_method = "1A03233B96F4CD7B0399A019DB09D365")
-    @Override
-public boolean isReplyPathPresent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.123 -0500", hash_original_method = "D49F3476E255463D6592CF4849CB4273", hash_generated_method = "1A03233B96F4CD7B0399A019DB09D365")
+    
+@Override
+    public boolean isReplyPathPresent() {
         return replyPathPresent;
     }
 
@@ -626,8 +649,9 @@ public boolean isReplyPathPresent() {
      * characters 2A (IRA 50 and 65))" ...in the case of cell broadcast,
      * something else...
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.253 -0500", hash_original_method = "AF62799239B28F1660277ADF3CA55E81", hash_generated_method = "7CEC1D71532AB5C159F494EE0843A3EC")
-    private void parsePdu(byte[] pdu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.126 -0500", hash_original_method = "AF62799239B28F1660277ADF3CA55E81", hash_generated_method = "7CEC1D71532AB5C159F494EE0843A3EC")
+    
+private void parsePdu(byte[] pdu) {
         mPdu = pdu;
         // Log.d(LOG_TAG, "raw sms message:");
         // Log.d(LOG_TAG, s);
@@ -670,8 +694,9 @@ public boolean isReplyPathPresent() {
      * @param p A PduParser, cued past the first byte.
      * @param firstByte The first byte of the PDU, which contains MTI, etc.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.255 -0500", hash_original_method = "A70831539166366B9681E2ACC95982AC", hash_generated_method = "1AEA9BD8E826B96D44420B922A4B6FA3")
-    private void parseSmsStatusReport(PduParser p, int firstByte) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.129 -0500", hash_original_method = "A70831539166366B9681E2ACC95982AC", hash_generated_method = "1AEA9BD8E826B96D44420B922A4B6FA3")
+    
+private void parseSmsStatusReport(PduParser p, int firstByte) {
         isStatusReportMessage = true;
 
         // TP-Status-Report-Qualifier bit == 0 for SUBMIT
@@ -714,8 +739,9 @@ public boolean isReplyPathPresent() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.256 -0500", hash_original_method = "7E3F60FEC92AD175AC8D63C56FC781E1", hash_generated_method = "7834AE6AB9A65C0CA9ECA9631065D8B8")
-    private void parseSmsDeliver(PduParser p, int firstByte) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.132 -0500", hash_original_method = "7E3F60FEC92AD175AC8D63C56FC781E1", hash_generated_method = "7834AE6AB9A65C0CA9ECA9631065D8B8")
+    
+private void parseSmsDeliver(PduParser p, int firstByte) {
         replyPathPresent = (firstByte & 0x80) == 0x80;
 
         originatingAddress = p.getAddress();
@@ -754,8 +780,9 @@ public boolean isReplyPathPresent() {
      * @param hasUserDataHeader Indicates whether a header is present in the
      *                          User Data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.257 -0500", hash_original_method = "445BCC4CA8B8EE2EB716CA993346CBBC", hash_generated_method = "B1A69609949F40DA5D31BAEB8E74092E")
-    private void parseUserData(PduParser p, boolean hasUserDataHeader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.137 -0500", hash_original_method = "445BCC4CA8B8EE2EB716CA993346CBBC", hash_generated_method = "B1A69609949F40DA5D31BAEB8E74092E")
+    
+private void parseUserData(PduParser p, boolean hasUserDataHeader) {
         boolean hasMessageClass = false;
         boolean userDataCompressed = false;
 
@@ -902,9 +929,10 @@ public boolean isReplyPathPresent() {
     /**
      * {@inheritDoc}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.258 -0500", hash_original_method = "A363CB6F91B76BEA5906C381D551632B", hash_generated_method = "F6C93B8227894824CFA9DE911608D82E")
-    @Override
-public MessageClass getMessageClass() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.139 -0500", hash_original_method = "A363CB6F91B76BEA5906C381D551632B", hash_generated_method = "F6C93B8227894824CFA9DE911608D82E")
+    
+@Override
+    public MessageClass getMessageClass() {
         return messageClass;
     }
 
@@ -923,27 +951,28 @@ public MessageClass getMessageClass() {
 
     
     private static class PduParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.225 -0500", hash_original_field = "19D13A40BDDB2C7F8CD159EA0077CC93", hash_generated_field = "19D13A40BDDB2C7F8CD159EA0077CC93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.044 -0500", hash_original_field = "19D13A40BDDB2C7F8CD159EA0077CC93", hash_generated_field = "19D13A40BDDB2C7F8CD159EA0077CC93")
 
         byte pdu[];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.226 -0500", hash_original_field = "2F4877CE6BA21232C2B8D66924B60128", hash_generated_field = "2F4877CE6BA21232C2B8D66924B60128")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.046 -0500", hash_original_field = "2F4877CE6BA21232C2B8D66924B60128", hash_generated_field = "2F4877CE6BA21232C2B8D66924B60128")
 
         int cur;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.227 -0500", hash_original_field = "532180B80C80AE52803AEB5499571541", hash_generated_field = "532180B80C80AE52803AEB5499571541")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.048 -0500", hash_original_field = "532180B80C80AE52803AEB5499571541", hash_generated_field = "532180B80C80AE52803AEB5499571541")
 
         SmsHeader userDataHeader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.228 -0500", hash_original_field = "A84FAC4EE7B4249A85AFD54238EB3F78", hash_generated_field = "A84FAC4EE7B4249A85AFD54238EB3F78")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.052 -0500", hash_original_field = "A84FAC4EE7B4249A85AFD54238EB3F78", hash_generated_field = "A84FAC4EE7B4249A85AFD54238EB3F78")
 
         byte[] userData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.228 -0500", hash_original_field = "E1D52F93D65AFF05A56D0C19482CCBAC", hash_generated_field = "E1D52F93D65AFF05A56D0C19482CCBAC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.054 -0500", hash_original_field = "E1D52F93D65AFF05A56D0C19482CCBAC", hash_generated_field = "E1D52F93D65AFF05A56D0C19482CCBAC")
 
         int mUserDataSeptetPadding;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.229 -0500", hash_original_field = "DDFAE6B21F6F82F78AE1E9B94A4CE136", hash_generated_field = "DDFAE6B21F6F82F78AE1E9B94A4CE136")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.056 -0500", hash_original_field = "DDFAE6B21F6F82F78AE1E9B94A4CE136", hash_generated_field = "DDFAE6B21F6F82F78AE1E9B94A4CE136")
 
         int mUserDataSize;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.230 -0500", hash_original_method = "A42B16D029D2C7C381F18291645B39B4", hash_generated_method = "A42B16D029D2C7C381F18291645B39B4")
-        PduParser(byte[] pdu) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.059 -0500", hash_original_method = "A42B16D029D2C7C381F18291645B39B4", hash_generated_method = "A42B16D029D2C7C381F18291645B39B4")
+        
+PduParser(byte[] pdu) {
             this.pdu = pdu;
             cur = 0;
             mUserDataSeptetPadding = 0;
@@ -953,8 +982,9 @@ public MessageClass getMessageClass() {
          * Parse and return the SC address prepended to SMS messages coming via
          * the TS 27.005 / AT interface.  Returns null on invalid address
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.231 -0500", hash_original_method = "99E23657D695EA8C595E80B24F474921", hash_generated_method = "243F2B931658B5001F9E98F7D11774DD")
-        String getSCAddress() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.061 -0500", hash_original_method = "99E23657D695EA8C595E80B24F474921", hash_generated_method = "243F2B931658B5001F9E98F7D11774DD")
+        
+String getSCAddress() {
             int len;
             String ret;
 
@@ -983,8 +1013,9 @@ public MessageClass getMessageClass() {
         /**
          * returns non-sign-extended byte value
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.232 -0500", hash_original_method = "2F75C981EB64A28A85FF5D6FE13A88A1", hash_generated_method = "2F75C981EB64A28A85FF5D6FE13A88A1")
-        int getByte() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.064 -0500", hash_original_method = "2F75C981EB64A28A85FF5D6FE13A88A1", hash_generated_method = "2F75C981EB64A28A85FF5D6FE13A88A1")
+        
+int getByte() {
             return pdu[cur++] & 0xff;
         }
 
@@ -992,8 +1023,9 @@ public MessageClass getMessageClass() {
          * Any address except the SC address (eg, originating address) See TS
          * 23.040 9.1.2.5
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.232 -0500", hash_original_method = "F408E9DA0C4025DEBACF10CB13B7E7DC", hash_generated_method = "70AAB02D2D20B1391B02DB280AF4CC74")
-        GsmSmsAddress getAddress() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.066 -0500", hash_original_method = "F408E9DA0C4025DEBACF10CB13B7E7DC", hash_generated_method = "70AAB02D2D20B1391B02DB280AF4CC74")
+        
+GsmSmsAddress getAddress() {
             GsmSmsAddress ret;
 
             // "The Address-Length field is an integer representation of
@@ -1015,8 +1047,9 @@ public MessageClass getMessageClass() {
          * timestamp
          */
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.233 -0500", hash_original_method = "E4DF9155D0C40868D52456F5AA0ADEBA", hash_generated_method = "6D607DB2DE95B38F8D534CC70486F143")
-        long getSCTimestampMillis() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.070 -0500", hash_original_method = "E4DF9155D0C40868D52456F5AA0ADEBA", hash_generated_method = "6D607DB2DE95B38F8D534CC70486F143")
+        
+long getSCTimestampMillis() {
             // TP-Service-Centre-Time-Stamp
             int year = IccUtils.gsmBcdByteToInt(pdu[cur++]);
             int month = IccUtils.gsmBcdByteToInt(pdu[cur++]);
@@ -1060,8 +1093,9 @@ public MessageClass getMessageClass() {
          *  of octets
          * @return the number of septets or octets in the user data payload
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.236 -0500", hash_original_method = "E0920414B78E3CE1FE70B99B68FA357A", hash_generated_method = "F936F726FF87F369DF6CAAEDDA4E909C")
-        int constructUserData(boolean hasUserDataHeader, boolean dataInSeptets) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.073 -0500", hash_original_method = "E0920414B78E3CE1FE70B99B68FA357A", hash_generated_method = "F936F726FF87F369DF6CAAEDDA4E909C")
+        
+int constructUserData(boolean hasUserDataHeader, boolean dataInSeptets) {
             int offset = cur;
             int userDataLength = pdu[offset++] & 0xff;
             int headerSeptets = 0;
@@ -1120,8 +1154,9 @@ public MessageClass getMessageClass() {
          *
          * @return the user data payload, not including the headers
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.236 -0500", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "832EF14448695517A54541076D502A0C")
-        byte[] getUserData() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.075 -0500", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "832EF14448695517A54541076D502A0C")
+        
+byte[] getUserData() {
             return userData;
         }
 
@@ -1132,8 +1167,9 @@ public MessageClass getMessageClass() {
          * @return the number of padding bits at the beginning of the user data
          * array before the start of the septets
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.237 -0500", hash_original_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9", hash_generated_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9")
-        int getUserDataSeptetPadding() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.077 -0500", hash_original_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9", hash_generated_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9")
+        
+int getUserDataSeptetPadding() {
             return mUserDataSeptetPadding;
         }
 
@@ -1142,8 +1178,9 @@ public MessageClass getMessageClass() {
          *
          * {@hide}
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.238 -0500", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "4DA43BCCB17FE826B675411D64594E85")
-        SmsHeader getUserDataHeader() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.079 -0500", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "4DA43BCCB17FE826B675411D64594E85")
+        
+SmsHeader getUserDataHeader() {
             return userDataHeader;
         }
 
@@ -1154,8 +1191,9 @@ public MessageClass getMessageClass() {
          * @param septetCount the number of septets in the user data payload
          * @return a String with the decoded characters
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.239 -0500", hash_original_method = "51731F422A9CB8603202E115B88733FC", hash_generated_method = "51731F422A9CB8603202E115B88733FC")
-        String getUserDataGSM7Bit(int septetCount, int languageTable,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.082 -0500", hash_original_method = "51731F422A9CB8603202E115B88733FC", hash_generated_method = "51731F422A9CB8603202E115B88733FC")
+        
+String getUserDataGSM7Bit(int septetCount, int languageTable,
                 int languageShiftTable) {
             String ret;
 
@@ -1174,8 +1212,9 @@ public MessageClass getMessageClass() {
          * @param byteCount the number of bytes in the user data payload
          * @return a String with the decoded characters
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.240 -0500", hash_original_method = "97FC9E20E0F795CD7B2A52C595E2E8DE", hash_generated_method = "97FC9E20E0F795CD7B2A52C595E2E8DE")
-        String getUserDataUCS2(int byteCount) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.085 -0500", hash_original_method = "97FC9E20E0F795CD7B2A52C595E2E8DE", hash_generated_method = "97FC9E20E0F795CD7B2A52C595E2E8DE")
+        
+String getUserDataUCS2(int byteCount) {
             String ret;
 
             try {
@@ -1196,8 +1235,9 @@ public MessageClass getMessageClass() {
          * @param byteCount the number of bytes in the user data payload
          * @return a String with the decoded characters
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.241 -0500", hash_original_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F", hash_generated_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F")
-        String getUserDataKSC5601(int byteCount) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.088 -0500", hash_original_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F", hash_generated_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F")
+        
+String getUserDataKSC5601(int byteCount) {
             String ret;
 
             try {
@@ -1211,8 +1251,9 @@ public MessageClass getMessageClass() {
             return ret;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.241 -0500", hash_original_method = "AB0388E5C4230464C7FA98166E0C9557", hash_generated_method = "AB0388E5C4230464C7FA98166E0C9557")
-        boolean moreDataPresent() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.091 -0500", hash_original_method = "AB0388E5C4230464C7FA98166E0C9557", hash_generated_method = "AB0388E5C4230464C7FA98166E0C9557")
+        
+boolean moreDataPresent() {
             return (pdu.length > cur);
         }
 
@@ -1225,8 +1266,9 @@ public MessageClass getMessageClass() {
      *
      * @return true if this is a USIM data download message; false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.259 -0500", hash_original_method = "E16A5CBE2AF5641D1FC19A09E4EADBC9", hash_generated_method = "E16A5CBE2AF5641D1FC19A09E4EADBC9")
-    boolean isUsimDataDownload() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.142 -0500", hash_original_method = "E16A5CBE2AF5641D1FC19A09E4EADBC9", hash_generated_method = "E16A5CBE2AF5641D1FC19A09E4EADBC9")
+    
+boolean isUsimDataDownload() {
         return messageClass == MessageClass.CLASS_2 &&
                 (protocolIdentifier == 0x7f || protocolIdentifier == 0x7c);
     }

@@ -18,8 +18,9 @@ import com.android.internal.util.ArrayUtils;
 
 public class SpannableStringBuilder implements CharSequence, GetChars, Spannable, Editable, Appendable, GraphicsOperations {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.599 -0500", hash_original_method = "6E4B705F56C3BE22100FD14C8AB5330A", hash_generated_method = "83DC34C0333E4CBFD30BDA50C8F21BCD")
-    public static SpannableStringBuilder valueOf(CharSequence source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.777 -0500", hash_original_method = "6E4B705F56C3BE22100FD14C8AB5330A", hash_generated_method = "83DC34C0333E4CBFD30BDA50C8F21BCD")
+    
+public static SpannableStringBuilder valueOf(CharSequence source) {
         if (source instanceof SpannableStringBuilder) {
             return (SpannableStringBuilder) source;
         } else {
@@ -27,65 +28,67 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.635 -0500", hash_original_method = "6B7A1DDF85ADC183B3426DC1B4007521", hash_generated_method = "47901FCF4C66D2137EBF33493DFF4299")
-    private static String region(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.880 -0500", hash_original_method = "6B7A1DDF85ADC183B3426DC1B4007521", hash_generated_method = "47901FCF4C66D2137EBF33493DFF4299")
+    
+private static String region(int start, int end) {
         return "(" + start + " ... " + end + ")";
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.645 -0500", hash_original_field = "8F8BB2875FCC75EB5D66BC4152125391", hash_generated_field = "EDD7FE0B7D12EE9C3486272F367681B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.912 -0500", hash_original_field = "8F8BB2875FCC75EB5D66BC4152125391", hash_generated_field = "EDD7FE0B7D12EE9C3486272F367681B2")
 
 
     private static final InputFilter[] NO_FILTERS = new InputFilter[0];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.653 -0500", hash_original_field = "5576A15AD5E53DFDFD04B2077F7237D2", hash_generated_field = "C7F2D79B9AFA94FAA8193039FD601611")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.937 -0500", hash_original_field = "5576A15AD5E53DFDFD04B2077F7237D2", hash_generated_field = "C7F2D79B9AFA94FAA8193039FD601611")
 
 
     private static final int POINT = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.654 -0500", hash_original_field = "E119A075AD5D169513CC4BE43025C7AF", hash_generated_field = "DAC314A52970829DE920414BCD420813")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.939 -0500", hash_original_field = "E119A075AD5D169513CC4BE43025C7AF", hash_generated_field = "DAC314A52970829DE920414BCD420813")
 
     private static final int PARAGRAPH = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.655 -0500", hash_original_field = "B057EC1C3F0DA3334DDE49EE2654C48F", hash_generated_field = "62F477B3AA465E1D6BB9002CA3207142")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.942 -0500", hash_original_field = "B057EC1C3F0DA3334DDE49EE2654C48F", hash_generated_field = "62F477B3AA465E1D6BB9002CA3207142")
 
 
     private static final int START_MASK = 0xF0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.656 -0500", hash_original_field = "EE13D9C7DA2F142A87803A3BF471C5C0", hash_generated_field = "DB23288AE0F2FDCBE5902F7D83D9C129")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.945 -0500", hash_original_field = "EE13D9C7DA2F142A87803A3BF471C5C0", hash_generated_field = "DB23288AE0F2FDCBE5902F7D83D9C129")
 
     private static final int END_MASK = 0x0F;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.656 -0500", hash_original_field = "B2F55F417DF258D38F3554DBD2EB984B", hash_generated_field = "6EE5967CCE475609F69D5553B70E80C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.947 -0500", hash_original_field = "B2F55F417DF258D38F3554DBD2EB984B", hash_generated_field = "6EE5967CCE475609F69D5553B70E80C8")
 
     private static final int START_SHIFT = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.646 -0500", hash_original_field = "8C8A85521B489004093F260598DE60E3", hash_generated_field = "489605ABB55A73F593690CC2882D1D5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.914 -0500", hash_original_field = "8C8A85521B489004093F260598DE60E3", hash_generated_field = "489605ABB55A73F593690CC2882D1D5E")
 
     private InputFilter[] mFilters = NO_FILTERS;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.647 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.916 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
 
 
     private char[] mText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.647 -0500", hash_original_field = "814FBC343EF399A89CC06DA8039F47C7", hash_generated_field = "40EFB69E13F0CDEFCFD23CECDA09F21F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.919 -0500", hash_original_field = "814FBC343EF399A89CC06DA8039F47C7", hash_generated_field = "40EFB69E13F0CDEFCFD23CECDA09F21F")
 
     private int mGapStart;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.648 -0500", hash_original_field = "6A4F5CBACDF19F9BE1207278678EA519", hash_generated_field = "A295E6D1722C924D1E523308C8F24CB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.921 -0500", hash_original_field = "6A4F5CBACDF19F9BE1207278678EA519", hash_generated_field = "A295E6D1722C924D1E523308C8F24CB5")
 
     private int mGapLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.649 -0500", hash_original_field = "CEB48CD34EDA945F7544A85E8671F5CB", hash_generated_field = "64DC9467A0917D43133A286556BA813F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.923 -0500", hash_original_field = "CEB48CD34EDA945F7544A85E8671F5CB", hash_generated_field = "64DC9467A0917D43133A286556BA813F")
 
 
     private Object[] mSpans;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.650 -0500", hash_original_field = "CCB8DB5D1573B043ED78A6330B85E1F0", hash_generated_field = "84CB203FE2C516ED9C3D0BE9F569E2FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.926 -0500", hash_original_field = "CCB8DB5D1573B043ED78A6330B85E1F0", hash_generated_field = "84CB203FE2C516ED9C3D0BE9F569E2FC")
 
     private int[] mSpanStarts;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.651 -0500", hash_original_field = "D2E4A5463E8A6AD5265E6488995C7D02", hash_generated_field = "B6B8A934A26F4A20670B5A234A93FAF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.928 -0500", hash_original_field = "D2E4A5463E8A6AD5265E6488995C7D02", hash_generated_field = "B6B8A934A26F4A20670B5A234A93FAF3")
 
     private int[] mSpanEnds;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.651 -0500", hash_original_field = "1D154F19747582370E0217CD18F3D7E9", hash_generated_field = "F6EC87D3CD6571312E304AA9452368CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.932 -0500", hash_original_field = "1D154F19747582370E0217CD18F3D7E9", hash_generated_field = "F6EC87D3CD6571312E304AA9452368CA")
 
     private int[] mSpanFlags;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.652 -0500", hash_original_field = "72EED4C1552152EAD8F6596F5703265D", hash_generated_field = "BDC8CC3C9B276345952883B6B6FC3B62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.934 -0500", hash_original_field = "72EED4C1552152EAD8F6596F5703265D", hash_generated_field = "BDC8CC3C9B276345952883B6B6FC3B62")
 
     private int mSpanCount;
     /**
      * Create a new SpannableStringBuilder with empty contents
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.596 -0500", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "EE7A28C6AC161E3A60759D67AD59E395")
-    public SpannableStringBuilder() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.768 -0500", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "EE7A28C6AC161E3A60759D67AD59E395")
+    
+public SpannableStringBuilder() {
         this("");
     }
 
@@ -93,8 +96,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
      * Create a new SpannableStringBuilder containing a copy of the
      * specified text, including its spans if any.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.597 -0500", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "03BD07DEFCF254DA0DD3FE825F1CB381")
-    public SpannableStringBuilder(CharSequence text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.771 -0500", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "03BD07DEFCF254DA0DD3FE825F1CB381")
+    
+public SpannableStringBuilder(CharSequence text) {
         this(text, 0, text.length());
     }
 
@@ -102,8 +106,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
      * Create a new SpannableStringBuilder containing a copy of the
      * specified slice of the specified text, including its spans if any.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.598 -0500", hash_original_method = "D35C3B0425645BAC16D8668E04F8F0BF", hash_generated_method = "696E48EA35044F78DA5C2EF965CEEEC0")
-    public SpannableStringBuilder(CharSequence text, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.774 -0500", hash_original_method = "D35C3B0425645BAC16D8668E04F8F0BF", hash_generated_method = "696E48EA35044F78DA5C2EF965CEEEC0")
+    
+public SpannableStringBuilder(CharSequence text, int start, int end) {
         int srclen = end - start;
 
         int len = ArrayUtils.idealCharArraySize(srclen + 1);
@@ -151,8 +156,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     /**
      * Return the char at the specified offset within the buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.601 -0500", hash_original_method = "8A39C40193810117501439EDABBFE6E5", hash_generated_method = "648001FDA029DADEC8796D207B8A9CB3")
-    public char charAt(int where) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.780 -0500", hash_original_method = "8A39C40193810117501439EDABBFE6E5", hash_generated_method = "648001FDA029DADEC8796D207B8A9CB3")
+    
+public char charAt(int where) {
         int len = length();
         if (where < 0) {
             throw new IndexOutOfBoundsException("charAt: " + where + " < 0");
@@ -174,8 +180,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
 		return 0;
 	}
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.602 -0500", hash_original_method = "976FC6C6553888C069C4B298C5B14B80", hash_generated_method = "6A048918BD28DC2C33A9C04D1160814B")
-    private void resizeFor(int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.785 -0500", hash_original_method = "976FC6C6553888C069C4B298C5B14B80", hash_generated_method = "6A048918BD28DC2C33A9C04D1160814B")
+    
+private void resizeFor(int size) {
         int newlen = ArrayUtils.idealCharArraySize(size + 1);
         char[] newtext = new char[newlen];
 
@@ -200,8 +207,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             new Exception("mGapLength < 1").printStackTrace();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.604 -0500", hash_original_method = "D9447594759C2324F4C84ED525D8EBA8", hash_generated_method = "611D69115DF2C3A10632F224CEC5FEF5")
-    private void moveGapTo(int where) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.789 -0500", hash_original_method = "D9447594759C2324F4C84ED525D8EBA8", hash_generated_method = "611D69115DF2C3A10632F224CEC5FEF5")
+    
+private void moveGapTo(int where) {
         if (where == mGapStart)
             return;
 
@@ -254,20 +262,23 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     // Documentation from interface
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.604 -0500", hash_original_method = "05B349B857A56AE010B814959800B44E", hash_generated_method = "2A5BC3E42E7CB674BEEAD8E38B07B85E")
-    public SpannableStringBuilder insert(int where, CharSequence tb, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.791 -0500", hash_original_method = "05B349B857A56AE010B814959800B44E", hash_generated_method = "2A5BC3E42E7CB674BEEAD8E38B07B85E")
+    
+public SpannableStringBuilder insert(int where, CharSequence tb, int start, int end) {
         return replace(where, where, tb, start, end);
     }
 
     // Documentation from interface
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.605 -0500", hash_original_method = "8FF3D73D08A9AFA2B9C652CF8F4F615D", hash_generated_method = "9A3545162A2E1B09EF19F1A8F8FF88A9")
-    public SpannableStringBuilder insert(int where, CharSequence tb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.794 -0500", hash_original_method = "8FF3D73D08A9AFA2B9C652CF8F4F615D", hash_generated_method = "9A3545162A2E1B09EF19F1A8F8FF88A9")
+    
+public SpannableStringBuilder insert(int where, CharSequence tb) {
         return replace(where, where, tb, 0, tb.length());
     }
 
     // Documentation from interface
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.606 -0500", hash_original_method = "CCAFF8AC74D86E62008C289B374BD199", hash_generated_method = "EE1B67175238DA30775E7B85500A64C9")
-    public SpannableStringBuilder delete(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.797 -0500", hash_original_method = "CCAFF8AC74D86E62008C289B374BD199", hash_generated_method = "EE1B67175238DA30775E7B85500A64C9")
+    
+public SpannableStringBuilder delete(int start, int end) {
         SpannableStringBuilder ret = replace(start, end, "", 0, 0);
 
         if (mGapLength > 2 * length())
@@ -314,13 +325,15 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
 		return null;
 	}
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.611 -0500", hash_original_method = "3C715BB6E3D7DD6490206A10C6A892D0", hash_generated_method = "D7B4185EE0026162CD749FD69F649C81")
-    private int change(int start, int end, CharSequence tb, int tbstart, int tbend) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.812 -0500", hash_original_method = "3C715BB6E3D7DD6490206A10C6A892D0", hash_generated_method = "D7B4185EE0026162CD749FD69F649C81")
+    
+private int change(int start, int end, CharSequence tb, int tbstart, int tbend) {
         return change(true, start, end, tb, tbstart, tbend);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.613 -0500", hash_original_method = "84DCE273834998C04B3160C57E76984B", hash_generated_method = "4807F0586C1EC2267048F63D9E9C7BBB")
-    private int change(boolean notify, int start, int end,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.817 -0500", hash_original_method = "84DCE273834998C04B3160C57E76984B", hash_generated_method = "4807F0586C1EC2267048F63D9E9C7BBB")
+    
+private int change(boolean notify, int start, int end,
                        CharSequence tb, int tbstart, int tbend) {
         checkRange("replace", start, end);
         int ret = tbend - tbstart;
@@ -447,8 +460,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         return ret;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.614 -0500", hash_original_method = "5F40E5580DD9B6C8070DDBE86036D0A0", hash_generated_method = "9364AC549E7A123E8F1376E1430245A0")
-    private void removeSpan(int i) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.820 -0500", hash_original_method = "5F40E5580DD9B6C8070DDBE86036D0A0", hash_generated_method = "9364AC549E7A123E8F1376E1430245A0")
+    
+private void removeSpan(int i) {
         Object object = mSpans[i];
 
         int start = mSpanStarts[i];
@@ -471,14 +485,16 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     // Documentation from interface
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.614 -0500", hash_original_method = "F007284EC0E266D0B466C6FB60440DED", hash_generated_method = "77C79B68B302FE1DE97B168BF29FC276")
-    public SpannableStringBuilder replace(int start, int end, CharSequence tb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.823 -0500", hash_original_method = "F007284EC0E266D0B466C6FB60440DED", hash_generated_method = "77C79B68B302FE1DE97B168BF29FC276")
+    
+public SpannableStringBuilder replace(int start, int end, CharSequence tb) {
         return replace(start, end, tb, 0, tb.length());
     }
 
     // Documentation from interface
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.616 -0500", hash_original_method = "653147CE10EC22F15BE8C423BD65FA32", hash_generated_method = "3DABA23248A3CE7C0F1874570C59E1FA")
-    public SpannableStringBuilder replace(final int start, final int end,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.827 -0500", hash_original_method = "653147CE10EC22F15BE8C423BD65FA32", hash_generated_method = "3DABA23248A3CE7C0F1874570C59E1FA")
+    
+public SpannableStringBuilder replace(final int start, final int end,
                         CharSequence tb, int tbstart, int tbend) {
         int filtercount = mFilters.length;
         for (int i = 0; i < filtercount; i++) {
@@ -575,8 +591,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
 		// TODO Auto-generated method stub
 	}
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.618 -0500", hash_original_method = "2D459893E2DC729F5693ABCD511FCC18", hash_generated_method = "B925D0EE1F9FF7EC27B80C692B7D7AF1")
-    private void setSpan(boolean send, Object what, int start, int end, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.833 -0500", hash_original_method = "2D459893E2DC729F5693ABCD511FCC18", hash_generated_method = "B925D0EE1F9FF7EC27B80C692B7D7AF1")
+    
+private void setSpan(boolean send, Object what, int start, int end, int flags) {
         int nstart = start;
         int nend = end;
 
@@ -681,8 +698,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
      * Return the buffer offset of the beginning of the specified
      * markup object, or -1 if it is not attached to this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.620 -0500", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "D57039BB89705C38EEC76A5F0188763A")
-    public int getSpanStart(Object what) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.839 -0500", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "D57039BB89705C38EEC76A5F0188763A")
+    
+public int getSpanStart(Object what) {
         int count = mSpanCount;
         Object[] spans = mSpans;
 
@@ -704,8 +722,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
      * Return the buffer offset of the end of the specified
      * markup object, or -1 if it is not attached to this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.621 -0500", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "37B0998B57691BB4CF884757474F4BED")
-    public int getSpanEnd(Object what) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.842 -0500", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "37B0998B57691BB4CF884757474F4BED")
+    
+public int getSpanEnd(Object what) {
         int count = mSpanCount;
         Object[] spans = mSpans;
 
@@ -727,8 +746,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
      * Return the flags of the end of the specified
      * markup object, or 0 if it is not attached to this buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.622 -0500", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "373D3AB510B3D543F644EE8A3B45B838")
-    public int getSpanFlags(Object what) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.844 -0500", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "373D3AB510B3D543F644EE8A3B45B838")
+    
+public int getSpanFlags(Object what) {
         int count = mSpanCount;
         Object[] spans = mSpans;
 
@@ -862,8 +882,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
      * equal to <code>limit</code> where a span of the specified type
      * begins or ends.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.624 -0500", hash_original_method = "AC3B57A902A92307655B10B6A320F4FA", hash_generated_method = "08EF0D2A48EFF10756158651773C6BD1")
-    public int nextSpanTransition(int start, int limit, Class kind) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.851 -0500", hash_original_method = "AC3B57A902A92307655B10B6A320F4FA", hash_generated_method = "08EF0D2A48EFF10756158651773C6BD1")
+    
+public int nextSpanTransition(int start, int limit, Class kind) {
         int count = mSpanCount;
         Object[] spans = mSpans;
         int[] starts = mSpanStarts;
@@ -920,15 +941,17 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
      * [start, end[ range.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.628 -0500", hash_original_method = "5E2755BFE298194FA4E39DBC872CF6D4", hash_generated_method = "CC06C753E8140A21D9D985E65F2F5230")
-    public String substring(int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.862 -0500", hash_original_method = "5E2755BFE298194FA4E39DBC872CF6D4", hash_generated_method = "CC06C753E8140A21D9D985E65F2F5230")
+    
+public String substring(int start, int end) {
         char[] buf = new char[end - start];
         getChars(start, end, buf, 0);
         return new String(buf);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.629 -0500", hash_original_method = "9EEE5F03C950DBDA8CD631C0E0A3B78A", hash_generated_method = "5C9748C0B437FC8674F47C7A9443FC7B")
-    private TextWatcher[] sendTextWillChange(int start, int before, int after) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.864 -0500", hash_original_method = "9EEE5F03C950DBDA8CD631C0E0A3B78A", hash_generated_method = "5C9748C0B437FC8674F47C7A9443FC7B")
+    
+private TextWatcher[] sendTextWillChange(int start, int before, int after) {
         TextWatcher[] recip = getSpans(start, start + before, TextWatcher.class);
         int n = recip.length;
 
@@ -939,8 +962,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
         return recip;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.630 -0500", hash_original_method = "B0F46C63F0D82B2972BAF2786F5024B6", hash_generated_method = "AFAA8E9BE07B166E1333098013CF609C")
-    private void sendTextChange(TextWatcher[] recip, int start, int before, int after) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.867 -0500", hash_original_method = "B0F46C63F0D82B2972BAF2786F5024B6", hash_generated_method = "AFAA8E9BE07B166E1333098013CF609C")
+    
+private void sendTextChange(TextWatcher[] recip, int start, int before, int after) {
         int n = recip.length;
 
         for (int i = 0; i < n; i++) {
@@ -948,8 +972,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.631 -0500", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "5883A705572BE249EB4C077E99892A28")
-    private void sendTextHasChanged(TextWatcher[] recip) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.869 -0500", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "5883A705572BE249EB4C077E99892A28")
+    
+private void sendTextHasChanged(TextWatcher[] recip) {
         int n = recip.length;
 
         for (int i = 0; i < n; i++) {
@@ -957,8 +982,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.632 -0500", hash_original_method = "39DD82D37A3679E95040612AC2A4CD5D", hash_generated_method = "11589EF1504003C29FEA8ED0CAFCA936")
-    private void sendSpanAdded(Object what, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.872 -0500", hash_original_method = "39DD82D37A3679E95040612AC2A4CD5D", hash_generated_method = "11589EF1504003C29FEA8ED0CAFCA936")
+    
+private void sendSpanAdded(Object what, int start, int end) {
         SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
         int n = recip.length;
 
@@ -967,8 +993,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.633 -0500", hash_original_method = "8451F34A8F8537B6F36684962116E358", hash_generated_method = "B287D730E88000F87F502F960F74DD0B")
-    private void sendSpanRemoved(Object what, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.875 -0500", hash_original_method = "8451F34A8F8537B6F36684962116E358", hash_generated_method = "B287D730E88000F87F502F960F74DD0B")
+    
+private void sendSpanRemoved(Object what, int start, int end) {
         SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
         int n = recip.length;
 
@@ -977,8 +1004,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.634 -0500", hash_original_method = "89C4871AB16E570ACF45A07B8EFEFB25", hash_generated_method = "F8CD917E2FFAF1F96D44C826A8AC3A0B")
-    private void sendSpanChanged(Object what, int s, int e, int st, int en) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.877 -0500", hash_original_method = "89C4871AB16E570ACF45A07B8EFEFB25", hash_generated_method = "F8CD917E2FFAF1F96D44C826A8AC3A0B")
+    
+private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         SpanWatcher[] recip = getSpans(Math.min(s, st), Math.max(e, en), SpanWatcher.class);
         int n = recip.length;
 
@@ -987,8 +1015,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.635 -0500", hash_original_method = "70C480F1BBBBF461E174788F8B29326C", hash_generated_method = "A599E02D51122E6540797E709E0B7A7A")
-    private void checkRange(final String operation, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.883 -0500", hash_original_method = "70C480F1BBBBF461E174788F8B29326C", hash_generated_method = "A599E02D51122E6540797E709E0B7A7A")
+    
+private void checkRange(final String operation, int start, int end) {
         if (end < start) {
             throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
@@ -1045,8 +1074,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
      * Don't call this yourself -- exists for Paint to use internally.
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.640 -0500", hash_original_method = "FE2235DDEA2C6A2285ED2D1196CDD9B2", hash_generated_method = "4E70B087F887AB1B09F50C3199F56F78")
-    public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.898 -0500", hash_original_method = "FE2235DDEA2C6A2285ED2D1196CDD9B2", hash_generated_method = "4E70B087F887AB1B09F50C3199F56F78")
+    
+public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
             float[] advances, int advancesPos, Paint p) {
 
         float ret;
@@ -1075,8 +1105,9 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
      * Don't call this yourself -- exists for Paint to use internally.
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.641 -0500", hash_original_method = "C231D32FAB37A7BF2DFD000F849A602C", hash_generated_method = "FA844BE046CE27D6A5F085CBB05D4797")
-    public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.901 -0500", hash_original_method = "C231D32FAB37A7BF2DFD000F849A602C", hash_generated_method = "FA844BE046CE27D6A5F085CBB05D4797")
+    
+public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
             float[] advances, int advancesPos, Paint p, int reserved) {
 
         float ret;

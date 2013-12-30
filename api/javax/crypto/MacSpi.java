@@ -19,8 +19,9 @@ public abstract class MacSpi {
     /**
      * Creates a new {@code MacSpi} instance.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.636 -0500", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "132FD63D4BAF7B3BF5EECA165BAC8542")
-    public MacSpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.463 -0500", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "132FD63D4BAF7B3BF5EECA165BAC8542")
+    
+public MacSpi() {
     }
 
     /**
@@ -28,8 +29,9 @@ public abstract class MacSpi {
      *
      * @return the length of this MAC (in bytes).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.637 -0500", hash_original_method = "E5EE4E3D529200DA127E29694CDB8928", hash_generated_method = "171056A01B3A57938A6452A54EFDEE0C")
-    protected abstract int engineGetMacLength();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.465 -0500", hash_original_method = "E5EE4E3D529200DA127E29694CDB8928", hash_generated_method = "171056A01B3A57938A6452A54EFDEE0C")
+    
+protected abstract int engineGetMacLength();
 
     /**
      * Initializes this {@code MacSpi} instance with the specified key and
@@ -46,8 +48,9 @@ public abstract class MacSpi {
      *             if the specified parameters cannot be used to initialize this
      *             algorithm.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.638 -0500", hash_original_method = "A22BD27EF5C096BDC4200799D5CB43E0", hash_generated_method = "5E2EEEB85E1EBAC9690FDF147512AE55")
-    protected abstract void engineInit(Key key, AlgorithmParameterSpec params)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.468 -0500", hash_original_method = "A22BD27EF5C096BDC4200799D5CB43E0", hash_generated_method = "5E2EEEB85E1EBAC9690FDF147512AE55")
+    
+protected abstract void engineInit(Key key, AlgorithmParameterSpec params)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
     /**
@@ -56,8 +59,9 @@ public abstract class MacSpi {
      * @param input
      *            the byte.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.638 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
-    protected abstract void engineUpdate(byte input);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.471 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
+    
+protected abstract void engineUpdate(byte input);
 
     /**
      * Updates this {@code MacSpi} instance with the data from the specified
@@ -71,8 +75,9 @@ public abstract class MacSpi {
      * @param len
      *            the length of the data in the buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.639 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
-    protected abstract void engineUpdate(byte[] input, int offset, int len);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.473 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
+    
+protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     /**
      * Updates this {@code MacSpi} instance with the data from the specified
@@ -82,8 +87,9 @@ public abstract class MacSpi {
      * @param input
      *            the buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.640 -0500", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "57BA6652D441251A1BE9A47D69952297")
-    protected void engineUpdate(ByteBuffer input) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.476 -0500", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "57BA6652D441251A1BE9A47D69952297")
+    
+protected void engineUpdate(ByteBuffer input) {
         if (!input.hasRemaining()) {
             return;
         }
@@ -112,8 +118,9 @@ public abstract class MacSpi {
      *
      * @return the generated digest.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.641 -0500", hash_original_method = "28E98DE89A8C2A2C7FA6A0C5403AC9E0", hash_generated_method = "DD49CF0D72F140D2D0B5399BA8032066")
-    protected abstract byte[] engineDoFinal();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.478 -0500", hash_original_method = "28E98DE89A8C2A2C7FA6A0C5403AC9E0", hash_generated_method = "DD49CF0D72F140D2D0B5399BA8032066")
+    
+protected abstract byte[] engineDoFinal();
 
     /**
      * Resets this {@code MacSpi} instance to its initial state.
@@ -122,8 +129,9 @@ public abstract class MacSpi {
      * used to start the next MAC computation with the same parameters or
      * initialized with different parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.641 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
-    protected abstract void engineReset();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.480 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
+    
+protected abstract void engineReset();
 
     /**
      * Clones this {@code MacSpi} instance.
@@ -132,9 +140,10 @@ public abstract class MacSpi {
      * @throws CloneNotSupportedException
      *             if cloning is not supported.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.642 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
-    @Override
-public Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.482 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
+    
+@Override
+    public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 

@@ -33,8 +33,9 @@ public class ArgbEvaluator implements TypeEvaluator {
      * color channels and interpolating each one separately, recombining the
      * resulting values in the same way.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.386 -0500", hash_original_method = "415FA7137AA653EF40F66C5BED279EE7", hash_generated_method = "8C9A165489888831002D2F518C304D06")
-    public Object evaluate(float fraction, Object startValue, Object endValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.362 -0500", hash_original_method = "415FA7137AA653EF40F66C5BED279EE7", hash_generated_method = "8C9A165489888831002D2F518C304D06")
+    
+public Object evaluate(float fraction, Object startValue, Object endValue) {
         int startInt = (Integer) startValue;
         int startA = (startInt >> 24);
         int startR = (startInt >> 16) & 0xff;

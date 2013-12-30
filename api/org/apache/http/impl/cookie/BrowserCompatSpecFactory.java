@@ -19,8 +19,9 @@ public class BrowserCompatSpecFactory implements CookieSpecFactory {
         //Synthesized constructor
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.004 -0500", hash_original_method = "57B736694D04F685316FEE33170F38F5", hash_generated_method = "2C1B2580A18DE9489D6122D8998BC612")
-    public CookieSpec newInstance(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.124 -0500", hash_original_method = "57B736694D04F685316FEE33170F38F5", hash_generated_method = "2C1B2580A18DE9489D6122D8998BC612")
+    
+public CookieSpec newInstance(final HttpParams params) {
         if (params != null) {
             return new BrowserCompatSpec(
                     (String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS));

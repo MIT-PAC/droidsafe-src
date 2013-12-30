@@ -21,13 +21,14 @@ import javax.sip.TransactionState;
 
 
 class NistSipMessageFactoryImpl implements StackMessageFactory {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.224 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.918 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
 
     private SipStackImpl sipStack;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.227 -0500", hash_original_method = "B4A348E139EC58BD28DD0F3A69B45AAD", hash_generated_method = "6F8E186CA749499C408261B2123CEEE7")
-    public NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.927 -0500", hash_original_method = "B4A348E139EC58BD28DD0F3A69B45AAD", hash_generated_method = "6F8E186CA749499C408261B2123CEEE7")
+    
+public NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
         this.sipStack = sipStackImpl;
 
     }
@@ -41,8 +42,9 @@ class NistSipMessageFactoryImpl implements StackMessageFactory {
      * @param messageChannel
      *            is the MessageChannel abstraction for this SIPServerRequest.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.225 -0500", hash_original_method = "05D11288A97D40A10A9E1FF4BB412446", hash_generated_method = "E7183459344DDC1F8F41F20C87AC3E8F")
-    public ServerRequestInterface newSIPServerRequest(SIPRequest sipRequest,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.921 -0500", hash_original_method = "05D11288A97D40A10A9E1FF4BB412446", hash_generated_method = "E7183459344DDC1F8F41F20C87AC3E8F")
+    
+public ServerRequestInterface newSIPServerRequest(SIPRequest sipRequest,
             MessageChannel messageChannel) {
 
         if (messageChannel == null || sipRequest == null) {
@@ -78,8 +80,9 @@ class NistSipMessageFactoryImpl implements StackMessageFactory {
      * @param messageChannel
      *            is the MessageChannel abstraction for this SIPServerResponse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.226 -0500", hash_original_method = "683DE9908ACD912FB40AB2EA7112FC1F", hash_generated_method = "5F837B5EEEF568F0D8B6971471D8B2EC")
-    public ServerResponseInterface newSIPServerResponse(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.924 -0500", hash_original_method = "683DE9908ACD912FB40AB2EA7112FC1F", hash_generated_method = "5F837B5EEEF568F0D8B6971471D8B2EC")
+    
+public ServerResponseInterface newSIPServerResponse(
             SIPResponse sipResponse, MessageChannel messageChannel) {
         SIPTransactionStack theStack = (SIPTransactionStack) messageChannel
                 .getSIPStack();

@@ -29,8 +29,9 @@ public final class SmsManager {
      *
      * @return the default instance of the SmsManager
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.714 -0500", hash_original_method = "90BE6788389BCE1C80031293D6D7E760", hash_generated_method = "9C1A166120752C95ACA753CF105E8926")
-    public static SmsManager getDefault() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.962 -0500", hash_original_method = "90BE6788389BCE1C80031293D6D7E760", hash_generated_method = "9C1A166120752C95ACA753CF105E8926")
+    
+public static SmsManager getDefault() {
         return sInstance;
     }
 
@@ -43,8 +44,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.718 -0500", hash_original_method = "99ADD055A9B6DECFD44D9DAC14E75079", hash_generated_method = "51B1764F4C3503DB865B1030185E8A32")
-    public static ArrayList<SmsMessage> getAllMessagesFromIcc() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.979 -0500", hash_original_method = "99ADD055A9B6DECFD44D9DAC14E75079", hash_generated_method = "51B1764F4C3503DB865B1030185E8A32")
+    
+public static ArrayList<SmsMessage> getAllMessagesFromIcc() {
         List<SmsRawData> records = null;
 
         try {
@@ -67,8 +69,9 @@ public final class SmsManager {
      *   <code>getAllMessagesFromIcc</code>
      * @return <code>ArrayList</code> of <code>SmsMessage</code> objects.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.723 -0500", hash_original_method = "79C62ACAD5DF9EB85CE9ACD9496D0810", hash_generated_method = "BD37A5C053055A9986EAFB09C4A8220A")
-    private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRawData> records) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.996 -0500", hash_original_method = "79C62ACAD5DF9EB85CE9ACD9496D0810", hash_generated_method = "BD37A5C053055A9986EAFB09C4A8220A")
+    
+private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRawData> records) {
         ArrayList<SmsMessage> messages = new ArrayList<SmsMessage>();
         if (records != null) {
             int count = records.size();
@@ -85,49 +88,50 @@ public final class SmsManager {
         }
         return messages;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.708 -0500", hash_original_field = "59BBECBCD774987A182CB005BA2A85AB", hash_generated_field = "582D84745AFAA3A0DFEECEB994BD5990")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.944 -0500", hash_original_field = "59BBECBCD774987A182CB005BA2A85AB", hash_generated_field = "582D84745AFAA3A0DFEECEB994BD5990")
 
     private static final SmsManager sInstance = new SmsManager();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:06.610 -0500", hash_original_field = "32EC953CC073D710A20490F011A770A9", hash_generated_field = "9B19D81E4A6550A2394AA6D410C4C25D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.000 -0500", hash_original_field = "32EC953CC073D710A20490F011A770A9", hash_generated_field = "9B19D81E4A6550A2394AA6D410C4C25D")
 
 
     /** Free space (TS 51.011 10.5.3 / 3GPP2 C.S0023 3.4.27). */
     static public final int STATUS_ON_ICC_FREE      = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.724 -0500", hash_original_field = "08CD8E45B5B9A7874F77B4E55776F8A0", hash_generated_field = "00BACFAD7A3200CC928AC8BD98BBA6EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.003 -0500", hash_original_field = "08CD8E45B5B9A7874F77B4E55776F8A0", hash_generated_field = "00BACFAD7A3200CC928AC8BD98BBA6EC")
 
     static public final int STATUS_ON_ICC_READ      = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.725 -0500", hash_original_field = "84203366DEFED55323927024905F92E3", hash_generated_field = "2C5348D548EDFCA8E280127B8158C082")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.007 -0500", hash_original_field = "84203366DEFED55323927024905F92E3", hash_generated_field = "2C5348D548EDFCA8E280127B8158C082")
 
     static public final int STATUS_ON_ICC_UNREAD    = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.726 -0500", hash_original_field = "F3B8A0A410B09F2B3486A74344BCFBB9", hash_generated_field = "BD9F93947F03C611A4A8E88B7B512A07")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.011 -0500", hash_original_field = "F3B8A0A410B09F2B3486A74344BCFBB9", hash_generated_field = "BD9F93947F03C611A4A8E88B7B512A07")
 
     static public final int STATUS_ON_ICC_SENT      = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.727 -0500", hash_original_field = "0EFDE1889CD0FC12752668D7A932B22C", hash_generated_field = "5B255A810A40F44F9F9F38AF79FDDD7D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.014 -0500", hash_original_field = "0EFDE1889CD0FC12752668D7A932B22C", hash_generated_field = "5B255A810A40F44F9F9F38AF79FDDD7D")
 
     static public final int STATUS_ON_ICC_UNSENT    = 7;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:06.617 -0500", hash_original_field = "B3D471F816AD7E4E15483AD4B00BF74C", hash_generated_field = "09B94621BA64E79BAFC3396E7C9159A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.018 -0500", hash_original_field = "B3D471F816AD7E4E15483AD4B00BF74C", hash_generated_field = "09B94621BA64E79BAFC3396E7C9159A1")
 
 
     /** Generic failure cause */
     static public final int RESULT_ERROR_GENERIC_FAILURE    = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.729 -0500", hash_original_field = "D7314A139353CCFF92E0DA4264FD883F", hash_generated_field = "78693EA6263B78B03E23201FC00BCB05")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.021 -0500", hash_original_field = "D7314A139353CCFF92E0DA4264FD883F", hash_generated_field = "78693EA6263B78B03E23201FC00BCB05")
 
     static public final int RESULT_ERROR_RADIO_OFF          = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.730 -0500", hash_original_field = "A38A5D934E6DEED106706FCDC4900D05", hash_generated_field = "158133D9027A00583E016D1C53F6B144")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.024 -0500", hash_original_field = "A38A5D934E6DEED106706FCDC4900D05", hash_generated_field = "158133D9027A00583E016D1C53F6B144")
 
     static public final int RESULT_ERROR_NULL_PDU           = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.731 -0500", hash_original_field = "E247D7F9CDD740DF82BD4910D9FFE742", hash_generated_field = "E72951F6A9AF440FD4C872FCF4A49FF0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.028 -0500", hash_original_field = "E247D7F9CDD740DF82BD4910D9FFE742", hash_generated_field = "E72951F6A9AF440FD4C872FCF4A49FF0")
 
     static public final int RESULT_ERROR_NO_SERVICE         = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.731 -0500", hash_original_field = "DA5B7E7B39137D62B8528C4502593B66", hash_generated_field = "18E101E1D73C57D8B643B40625F78BC7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.032 -0500", hash_original_field = "DA5B7E7B39137D62B8528C4502593B66", hash_generated_field = "18E101E1D73C57D8B643B40625F78BC7")
 
     static public final int RESULT_ERROR_LIMIT_EXCEEDED     = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.732 -0500", hash_original_field = "3FEC76E29D158F7D85EF9DBF94D82CB1", hash_generated_field = "6144D456FFACE1B39473F88B869D90C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.035 -0500", hash_original_field = "3FEC76E29D158F7D85EF9DBF94D82CB1", hash_generated_field = "6144D456FFACE1B39473F88B869D90C0")
 
     static public final int RESULT_ERROR_FDN_CHECK_FAILURE  = 6;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.715 -0500", hash_original_method = "20095975633950A922641E0460F74587", hash_generated_method = "C08E158669C15A7C99D46221E8D79A58")
-    private SmsManager() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.965 -0500", hash_original_method = "20095975633950A922641E0460F74587", hash_generated_method = "C08E158669C15A7C99D46221E8D79A58")
+    
+private SmsManager() {
         //nothing
     }
 
@@ -157,8 +161,9 @@ public final class SmsManager {
      *
      * @throws IllegalArgumentException if destinationAddress or text are empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.709 -0500", hash_original_method = "9D6620F75021FD9E9FBB0176F1528DEF", hash_generated_method = "7E2CB05D0E625D5244B2ACD83151F77F")
-    public void sendTextMessage(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.948 -0500", hash_original_method = "9D6620F75021FD9E9FBB0176F1528DEF", hash_generated_method = "7E2CB05D0E625D5244B2ACD83151F77F")
+    
+public void sendTextMessage(
             String destinationAddress, String scAddress, String text,
             PendingIntent sentIntent, PendingIntent deliveryIntent) {
         if (TextUtils.isEmpty(destinationAddress)) {
@@ -187,8 +192,9 @@ public final class SmsManager {
      * @return an <code>ArrayList</code> of strings that, in order,
      *   comprise the original message
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.710 -0500", hash_original_method = "C15BF98DC594420F78E24C2D1AF66E37", hash_generated_method = "E54848E4BC4358D067F4D82AB65C1FE4")
-    public ArrayList<String> divideMessage(String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.951 -0500", hash_original_method = "C15BF98DC594420F78E24C2D1AF66E37", hash_generated_method = "E54848E4BC4358D067F4D82AB65C1FE4")
+    
+public ArrayList<String> divideMessage(String text) {
         return SmsMessage.fragmentText(text);
     }
 
@@ -224,8 +230,9 @@ public final class SmsManager {
      *
      * @throws IllegalArgumentException if destinationAddress or data are empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.712 -0500", hash_original_method = "C9D37AD9E9C3945E93E31952A098B3F5", hash_generated_method = "15EA93085150F19B9B0DD272CF8FDBB5")
-    public void sendMultipartTextMessage(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.955 -0500", hash_original_method = "C9D37AD9E9C3945E93E31952A098B3F5", hash_generated_method = "15EA93085150F19B9B0DD272CF8FDBB5")
+    
+public void sendMultipartTextMessage(
             String destinationAddress, String scAddress, ArrayList<String> parts,
             ArrayList<PendingIntent> sentIntents, ArrayList<PendingIntent> deliveryIntents) {
         if (TextUtils.isEmpty(destinationAddress)) {
@@ -286,8 +293,9 @@ public final class SmsManager {
      *
      * @throws IllegalArgumentException if destinationAddress or data are empty
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.713 -0500", hash_original_method = "5042F246D8D2B46884C265425E52DAB1", hash_generated_method = "4E7506FBCEA4CF0F1FB89CF1297ECA6A")
-    public void sendDataMessage(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.958 -0500", hash_original_method = "5042F246D8D2B46884C265425E52DAB1", hash_generated_method = "4E7506FBCEA4CF0F1FB89CF1297ECA6A")
+    
+public void sendDataMessage(
             String destinationAddress, String scAddress, short destinationPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
         if (TextUtils.isEmpty(destinationAddress)) {
@@ -322,8 +330,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.716 -0500", hash_original_method = "149DCB8E596A59716D0EA3B88B730E88", hash_generated_method = "8FA7F71D74A33611FDEF5B42549B3A81")
-    public boolean copyMessageToIcc(byte[] smsc, byte[] pdu, int status) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.968 -0500", hash_original_method = "149DCB8E596A59716D0EA3B88B730E88", hash_generated_method = "8FA7F71D74A33611FDEF5B42549B3A81")
+    
+public boolean copyMessageToIcc(byte[] smsc, byte[] pdu, int status) {
         boolean success = false;
 
         try {
@@ -348,8 +357,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.716 -0500", hash_original_method = "D912FCB1DFFBD3EFF004E65AAFF52944", hash_generated_method = "F42B96F37F56F4E03EF2CE6A5F457A69")
-    public boolean
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.973 -0500", hash_original_method = "D912FCB1DFFBD3EFF004E65AAFF52944", hash_generated_method = "F42B96F37F56F4E03EF2CE6A5F457A69")
+    
+public boolean
     deleteMessageFromIcc(int messageIndex) {
         boolean success = false;
         byte[] pdu = new byte[IccConstants.SMS_RECORD_LENGTH-1];
@@ -381,8 +391,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.717 -0500", hash_original_method = "E7AD2FCC9238E9621F78F9C99C389491", hash_generated_method = "2A4F95874FEEFD0673FB865F1C81BEEE")
-    public boolean updateMessageOnIcc(int messageIndex, int newStatus, byte[] pdu) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.976 -0500", hash_original_method = "E7AD2FCC9238E9621F78F9C99C389491", hash_generated_method = "2A4F95874FEEFD0673FB865F1C81BEEE")
+    
+public boolean updateMessageOnIcc(int messageIndex, int newStatus, byte[] pdu) {
         boolean success = false;
 
         try {
@@ -412,8 +423,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.719 -0500", hash_original_method = "D2AB66A7ACEF0D4C8C4D01478F148AA5", hash_generated_method = "21DC2D4654A30F5918F7D07B4E0FBB8F")
-    public boolean enableCellBroadcast(int messageIdentifier) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.982 -0500", hash_original_method = "D2AB66A7ACEF0D4C8C4D01478F148AA5", hash_generated_method = "21DC2D4654A30F5918F7D07B4E0FBB8F")
+    
+public boolean enableCellBroadcast(int messageIdentifier) {
         boolean success = false;
 
         try {
@@ -443,8 +455,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.720 -0500", hash_original_method = "BF7C27985ACD2C46C3E7C98C6196EF24", hash_generated_method = "BB13DA5E83C88211FB3E68F2D6E78465")
-    public boolean disableCellBroadcast(int messageIdentifier) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.986 -0500", hash_original_method = "BF7C27985ACD2C46C3E7C98C6196EF24", hash_generated_method = "BB13DA5E83C88211FB3E68F2D6E78465")
+    
+public boolean disableCellBroadcast(int messageIdentifier) {
         boolean success = false;
 
         try {
@@ -475,8 +488,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.721 -0500", hash_original_method = "48FE73E95EE31EEBE730A030272A67D6", hash_generated_method = "5C0C602A635BB6361D07F53B8EE9AF92")
-    public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.989 -0500", hash_original_method = "48FE73E95EE31EEBE730A030272A67D6", hash_generated_method = "5C0C602A635BB6361D07F53B8EE9AF92")
+    
+public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
         boolean success = false;
 
         try {
@@ -507,8 +521,9 @@ public final class SmsManager {
      *
      * {@hide}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:47.722 -0500", hash_original_method = "528508E389FED61ADC9A70FF93AA8789", hash_generated_method = "59B59CD0BDDA39AA7270D74CEB419FFD")
-    public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.992 -0500", hash_original_method = "528508E389FED61ADC9A70FF93AA8789", hash_generated_method = "59B59CD0BDDA39AA7270D74CEB419FFD")
+    
+public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
         boolean success = false;
 
         try {

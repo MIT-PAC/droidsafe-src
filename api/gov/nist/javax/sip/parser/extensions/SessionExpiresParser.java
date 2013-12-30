@@ -18,8 +18,9 @@ import javax.sip.InvalidArgumentException;
 
 public class SessionExpiresParser extends ParametersParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.527 -0500", hash_original_method = "ACF0B386A0ED030CE5A2288D5CFBE065", hash_generated_method = "DFED83E799D9A1AD52ED7EBAF73FEBA3")
-    public static void main(String args[]) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.668 -0500", hash_original_method = "ACF0B386A0ED030CE5A2288D5CFBE065", hash_generated_method = "DFED83E799D9A1AD52ED7EBAF73FEBA3")
+    
+public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Session-Expires: 30\n",
                 "Session-Expires: 45;refresher=uac\n",
@@ -40,8 +41,9 @@ public class SessionExpiresParser extends ParametersParser {
      * protected constructor.
      * @param text is the text of the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.524 -0500", hash_original_method = "7C2BC7AE1B8B283C846DFC926BD1514D", hash_generated_method = "92EF66FA79735F35EDE6624461D41772")
-    public SessionExpiresParser(String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.659 -0500", hash_original_method = "7C2BC7AE1B8B283C846DFC926BD1514D", hash_generated_method = "92EF66FA79735F35EDE6624461D41772")
+    
+public SessionExpiresParser(String text) {
         super(text);
     }
 
@@ -49,16 +51,18 @@ public class SessionExpiresParser extends ParametersParser {
      * constructor.
      * @param lexer is the lexer passed in from the enclosing parser.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.525 -0500", hash_original_method = "821EB3B546274960D96C2E7F96AD190B", hash_generated_method = "6C33EA0CDB15BB74218B48878EB8E3FE")
-    protected SessionExpiresParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.663 -0500", hash_original_method = "821EB3B546274960D96C2E7F96AD190B", hash_generated_method = "6C33EA0CDB15BB74218B48878EB8E3FE")
+    
+protected SessionExpiresParser(Lexer lexer) {
         super(lexer);
     }
 
     /**
      * Parse the header.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.526 -0500", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "077DF7ACA3749BD5DB16CC648425AF0D")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.665 -0500", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "077DF7ACA3749BD5DB16CC648425AF0D")
+    
+public SIPHeader parse() throws ParseException {
         SessionExpires se = new SessionExpires();
         if (debug)
             dbg_enter("parse");

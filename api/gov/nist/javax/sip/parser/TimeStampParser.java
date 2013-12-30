@@ -22,8 +22,9 @@ public class TimeStampParser extends HeaderParser {
      * Creates a new instance of TimeStampParser
      * @param timeStamp the header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.784 -0500", hash_original_method = "11301E3D259A26B05B62DD42A72B1913", hash_generated_method = "D1724525721DB5F537A5B61C1E9561A4")
-    public TimeStampParser(String timeStamp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.074 -0500", hash_original_method = "11301E3D259A26B05B62DD42A72B1913", hash_generated_method = "D1724525721DB5F537A5B61C1E9561A4")
+    
+public TimeStampParser(String timeStamp) {
         super(timeStamp);
     }
 
@@ -31,8 +32,9 @@ public class TimeStampParser extends HeaderParser {
      * Constructor
      * @param lexer the lexer to use to parse the header
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.785 -0500", hash_original_method = "ABAA3B4AC330CE8F23110008CB442301", hash_generated_method = "E93F98310B569E946D308E3FD924F807")
-    protected TimeStampParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.077 -0500", hash_original_method = "ABAA3B4AC330CE8F23110008CB442301", hash_generated_method = "E93F98310B569E946D308E3FD924F807")
+    
+protected TimeStampParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -41,8 +43,9 @@ public class TimeStampParser extends HeaderParser {
      * @return SIPHeader (TimeStamp object)
      * @throws SIPParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.786 -0500", hash_original_method = "2B179D27AA0FC8FCF5481D4095B4030E", hash_generated_method = "814C1C407F98A217222553107A0898F8")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.081 -0500", hash_original_method = "2B179D27AA0FC8FCF5481D4095B4030E", hash_generated_method = "814C1C407F98A217222553107A0898F8")
+    
+public SIPHeader parse() throws ParseException {
 
         if (debug)
             dbg_enter("TimeStampParser.parse");

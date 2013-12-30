@@ -26,8 +26,9 @@ public class WarningParser extends HeaderParser {
      * @param warning -
      *            Warning header to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.546 -0500", hash_original_method = "38623B910ABA654EC8C258B1F2DD35A3", hash_generated_method = "ADAA2404AD9AFA3E4FCBF93E8A04CA7C")
-    public WarningParser(String warning) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.505 -0500", hash_original_method = "38623B910ABA654EC8C258B1F2DD35A3", hash_generated_method = "ADAA2404AD9AFA3E4FCBF93E8A04CA7C")
+    
+public WarningParser(String warning) {
         super(warning);
     }
 
@@ -37,8 +38,9 @@ public class WarningParser extends HeaderParser {
      * @param lexer -
      *            the lexer to use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.547 -0500", hash_original_method = "AB9AC91F8631F4AA3239C3547D18BC09", hash_generated_method = "6BC4FFEC90365BF5E44CE071D60EC134")
-    protected WarningParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.508 -0500", hash_original_method = "AB9AC91F8631F4AA3239C3547D18BC09", hash_generated_method = "6BC4FFEC90365BF5E44CE071D60EC134")
+    
+protected WarningParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -49,8 +51,9 @@ public class WarningParser extends HeaderParser {
      * @throws SIPParseException
      *             if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.549 -0500", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "426004DD56479AB68361A155302D98E9")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.513 -0500", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "426004DD56479AB68361A155302D98E9")
+    
+public SIPHeader parse() throws ParseException {
         WarningList warningList = new WarningList();
         if (debug)
             dbg_enter("WarningParser.parse");

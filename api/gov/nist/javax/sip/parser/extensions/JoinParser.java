@@ -18,8 +18,9 @@ import java.text.ParseException;
 
 public class JoinParser extends ParametersParser {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.553 -0500", hash_original_method = "5B969B355337FA1F212D31D5CF92C127", hash_generated_method = "70BC1B3E2C4EAED3F625297CB867B2BF")
-    public static void main(String args[]) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.739 -0500", hash_original_method = "5B969B355337FA1F212D31D5CF92C127", hash_generated_method = "70BC1B3E2C4EAED3F625297CB867B2BF")
+    
+public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Join: 12345th5z8z\n",
                 "Join: 12345th5z8z;to-tag=tozght6-45;from-tag=fromzght789-337-2\n",
@@ -40,8 +41,9 @@ public class JoinParser extends ParametersParser {
      * Creates new CallIDParser
      * @param callID message to parse
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.550 -0500", hash_original_method = "EF4712E80A9A6595AD0A1CEA8AD509AD", hash_generated_method = "86CEEDE71FFD7D8241C3FB62BCD64C0C")
-    public JoinParser(String callID) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.731 -0500", hash_original_method = "EF4712E80A9A6595AD0A1CEA8AD509AD", hash_generated_method = "86CEEDE71FFD7D8241C3FB62BCD64C0C")
+    
+public JoinParser(String callID) {
         super(callID);
     }
 
@@ -49,8 +51,9 @@ public class JoinParser extends ParametersParser {
      * Constructor
      * @param lexer Lexer to set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.551 -0500", hash_original_method = "C3C0BEC6FC6BFB3701BC82718709C143", hash_generated_method = "8BA3D7B60FAC74C6F644CB3534F1B42E")
-    protected JoinParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.734 -0500", hash_original_method = "C3C0BEC6FC6BFB3701BC82718709C143", hash_generated_method = "8BA3D7B60FAC74C6F644CB3534F1B42E")
+    
+protected JoinParser(Lexer lexer) {
         super(lexer);
     }
 
@@ -59,8 +62,9 @@ public class JoinParser extends ParametersParser {
      * @return SIPHeader (CallID object)
      * @throws ParseException if the message does not respect the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.552 -0500", hash_original_method = "66B10ECC601C3201E5F156FEACCA3B45", hash_generated_method = "DB91D5D8E3B28E068975F092C74FBBF7")
-    public SIPHeader parse() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.737 -0500", hash_original_method = "66B10ECC601C3201E5F156FEACCA3B45", hash_generated_method = "DB91D5D8E3B28E068975F092C74FBBF7")
+    
+public SIPHeader parse() throws ParseException {
         if (debug)
             dbg_enter("parse");
         try {

@@ -27,22 +27,24 @@ import org.apache.http.protocol.HttpContext;
 
 
 public class DefaultRedirectHandler implements RedirectHandler {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.982 -0500", hash_original_field = "4C021DF32978B8873540C8586D107095", hash_generated_field = "AED16E84EEB6EA92E138FA12F2449034")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.806 -0500", hash_original_field = "4C021DF32978B8873540C8586D107095", hash_generated_field = "AED16E84EEB6EA92E138FA12F2449034")
 
     
     private static final String REDIRECT_LOCATIONS = "http.protocol.redirect-locations";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.981 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.803 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.982 -0500", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "648FCB378FF86F9EEBDEE287A5FDE4BB")
-    public DefaultRedirectHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.808 -0500", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "648FCB378FF86F9EEBDEE287A5FDE4BB")
+    
+public DefaultRedirectHandler() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.983 -0500", hash_original_method = "03F3AE903C1DF30A5B96C5B08682C8BA", hash_generated_method = "0B28BC45B12A308D37FAE479BB358BED")
-    public boolean isRedirectRequested(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.811 -0500", hash_original_method = "03F3AE903C1DF30A5B96C5B08682C8BA", hash_generated_method = "0B28BC45B12A308D37FAE479BB358BED")
+    
+public boolean isRedirectRequested(
             final HttpResponse response,
             final HttpContext context) {
         if (response == null) {
@@ -60,8 +62,9 @@ public class DefaultRedirectHandler implements RedirectHandler {
         } //end of switch
     }
  
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.985 -0500", hash_original_method = "21747B99F20BEEB46FB81199FFB99B8C", hash_generated_method = "4740C71BA7B35191C20AA85957C5FD67")
-    public URI getLocationURI(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.814 -0500", hash_original_method = "21747B99F20BEEB46FB81199FFB99B8C", hash_generated_method = "4740C71BA7B35191C20AA85957C5FD67")
+    
+public URI getLocationURI(
             final HttpResponse response, 
             final HttpContext context) throws ProtocolException {
         if (response == null) {

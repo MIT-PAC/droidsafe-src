@@ -45,7 +45,7 @@ public final class Rect implements Parcelable {
 		*/
 		return false;
 	}
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.247 -0500", hash_original_field = "C827880A18B6ACBC60E1778FF671B928", hash_generated_field = "22CBDD4FA5AC4D71EB10C39DCFB71CD2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.574 -0500", hash_original_field = "C827880A18B6ACBC60E1778FF671B928", hash_generated_field = "22CBDD4FA5AC4D71EB10C39DCFB71CD2")
 
 
     private static final Pattern FLATTENED_PATTERN = Pattern.compile(
@@ -54,8 +54,9 @@ public final class Rect implements Parcelable {
         /**
          * Return a new rectangle from the data in the specified parcel.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.279 -0500", hash_original_method = "A9B8238B616BE351FF7BBE6405761278", hash_generated_method = "F945D9E311BDCA10D30B0106282427DE")
-        public Rect createFromParcel(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.663 -0500", hash_original_method = "A9B8238B616BE351FF7BBE6405761278", hash_generated_method = "F945D9E311BDCA10D30B0106282427DE")
+        
+public Rect createFromParcel(Parcel in) {
             Rect r = new Rect();
             r.readFromParcel(in);
             return r;
@@ -64,29 +65,31 @@ public final class Rect implements Parcelable {
         /**
          * Return an array of rectangles of the specified size.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.280 -0500", hash_original_method = "6E3A450019A5044B67A49D3D4BD4953E", hash_generated_method = "A2E9B5AB9555B7EA582BEFC558753027")
-        public Rect[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.666 -0500", hash_original_method = "6E3A450019A5044B67A49D3D4BD4953E", hash_generated_method = "A2E9B5AB9555B7EA582BEFC558753027")
+        
+public Rect[] newArray(int size) {
             return new Rect[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.244 -0500", hash_original_field = "F8DAB7F926CD7972429F7B948D9F5533", hash_generated_field = "1DC0B64660F00182FB9FBCCB50A51F92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.565 -0500", hash_original_field = "F8DAB7F926CD7972429F7B948D9F5533", hash_generated_field = "1DC0B64660F00182FB9FBCCB50A51F92")
 
     public int left;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.245 -0500", hash_original_field = "9620536E5A5D6E12CC93092A5EBB857E", hash_generated_field = "4FB04C904AA02F82B407995BA570583C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.567 -0500", hash_original_field = "9620536E5A5D6E12CC93092A5EBB857E", hash_generated_field = "4FB04C904AA02F82B407995BA570583C")
 
     public int top;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.245 -0500", hash_original_field = "49C6BE2EEC7270CFEAEFBD796F2C423B", hash_generated_field = "8D8E5E7DA2C11F273C631EF06D16F776")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.569 -0500", hash_original_field = "49C6BE2EEC7270CFEAEFBD796F2C423B", hash_generated_field = "8D8E5E7DA2C11F273C631EF06D16F776")
 
     public int right;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.246 -0500", hash_original_field = "7F74B1869951CB3A6660AA746710A714", hash_generated_field = "F7035266BD2A20B12FE551C6FAE7D704")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.571 -0500", hash_original_field = "7F74B1869951CB3A6660AA746710A714", hash_generated_field = "F7035266BD2A20B12FE551C6FAE7D704")
 
     public int bottom;
 
     /**
      * Create a new empty Rect. All coordinates are initialized to 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.248 -0500", hash_original_method = "2824AA033EB3CD5BF749E2296CB51BE8", hash_generated_method = "C673E9B57A7025273AA936A51CDE4468")
-    public Rect() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.576 -0500", hash_original_method = "2824AA033EB3CD5BF749E2296CB51BE8", hash_generated_method = "C673E9B57A7025273AA936A51CDE4468")
+    
+public Rect() {}
 
     
     @DSModeled(DSC.SAFE)
@@ -584,8 +587,9 @@ public final class Rect implements Parcelable {
     /**
      * Parcelable interface methods
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.277 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.658 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 

@@ -29,8 +29,9 @@ public class AccessibleObject implements AnnotatedElement {
      *
      * @see #setAccessible(boolean)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.344 -0500", hash_original_method = "670F990BF0D6A92A8F1AA8AC7F02D156", hash_generated_method = "68DE20ABD356D6F8D1ADEEEC1DD849F0")
-    public static void setAccessible(AccessibleObject[] objects, boolean flag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.336 -0500", hash_original_method = "670F990BF0D6A92A8F1AA8AC7F02D156", hash_generated_method = "68DE20ABD356D6F8D1ADEEEC1DD849F0")
+    
+public static void setAccessible(AccessibleObject[] objects, boolean flag) {
         synchronized(AccessibleObject.class) {
             for (AccessibleObject object : objects) {
                 object.flag = flag;
@@ -43,8 +44,9 @@ public class AccessibleObject implements AnnotatedElement {
      * the same as Class.getSignatureAttribute(), but it can be used from
      * the java.lang.reflect package.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.353 -0500", hash_original_method = "0EA85850CAF8D26BF10D52C824A0CA19", hash_generated_method = "48B4ABE2E7323E428D11CA7F6309669D")
-    static String getClassSignatureAttribute(Class clazz) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.363 -0500", hash_original_method = "0EA85850CAF8D26BF10D52C824A0CA19", hash_generated_method = "48B4ABE2E7323E428D11CA7F6309669D")
+    
+static String getClassSignatureAttribute(Class clazz) {
         Object[] annotation = getClassSignatureAnnotation(clazz);
 
         if (annotation == null) {
@@ -61,10 +63,10 @@ public class AccessibleObject implements AnnotatedElement {
 		ret[0].addTaint(clazz.taint);
 		return ret;
 	}
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.343 -0500", hash_original_field = "73EA6AEBBE448C5C33ED9F0E5E3F055A", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.332 -0500", hash_original_field = "73EA6AEBBE448C5C33ED9F0E5E3F055A", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
 
     static Hashtable<String, String> trans;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.342 -0500", hash_original_field = "D3CD6765000979577B5DA559E9F23C55", hash_generated_field = "D3CD6765000979577B5DA559E9F23C55")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.330 -0500", hash_original_field = "D3CD6765000979577B5DA559E9F23C55", hash_generated_field = "D3CD6765000979577B5DA559E9F23C55")
 
     boolean flag = false;
 
@@ -73,8 +75,9 @@ public class AccessibleObject implements AnnotatedElement {
      * AccessibleObject} instances can only be constructed by the virtual
      * machine.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.345 -0500", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "07D69BA5ABE497283D1B6DE52B581BA9")
-    protected AccessibleObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.339 -0500", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "07D69BA5ABE497283D1B6DE52B581BA9")
+    
+protected AccessibleObject() {
     }
 
     /**
@@ -84,8 +87,9 @@ public class AccessibleObject implements AnnotatedElement {
      * @return {@code true} if this object is accessible without access
      *         checks, {@code false} otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.345 -0500", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "F758FA2BFE5D48F8DCF99731C758F154")
-    public boolean isAccessible() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.341 -0500", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "F758FA2BFE5D48F8DCF99731C758F154")
+    
+public boolean isAccessible() {
         return flag;
     }
 
@@ -97,23 +101,27 @@ public class AccessibleObject implements AnnotatedElement {
      * @param flag
      *            the new value for the accessible flag
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.346 -0500", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "BB58AE5FEDFFFA08CEBC07B09269E4D5")
-    public void setAccessible(boolean flag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.344 -0500", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "BB58AE5FEDFFFA08CEBC07B09269E4D5")
+    
+public void setAccessible(boolean flag) {
         this.flag = flag;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.347 -0500", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "A0EBDBBF334272F87ED8B448C40859E4")
-    public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.346 -0500", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "A0EBDBBF334272F87ED8B448C40859E4")
+    
+public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         throw new UnsupportedOperationException();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.348 -0500", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "3681CD33362442788F51F5CB97E8F924")
-    public Annotation[] getDeclaredAnnotations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.348 -0500", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "3681CD33362442788F51F5CB97E8F924")
+    
+public Annotation[] getDeclaredAnnotations() {
         throw new UnsupportedOperationException();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.348 -0500", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "2BE97EAB30C93D24E30DEBAEA5394C7F")
-    public Annotation[] getAnnotations() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.351 -0500", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "2BE97EAB30C93D24E30DEBAEA5394C7F")
+    
+public Annotation[] getAnnotations() {
         // for all but Class, getAnnotations == getDeclaredAnnotations
         return getDeclaredAnnotations();
     }
@@ -140,8 +148,9 @@ public class AccessibleObject implements AnnotatedElement {
      *
      * @return The signature as a string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.350 -0500", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "AFCD123A6E616CB6E7A6F8CAEE33C533")
-    String getSignature(Class<?> clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.356 -0500", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "AFCD123A6E616CB6E7A6F8CAEE33C533")
+    
+String getSignature(Class<?> clazz) {
         String result = "";
         String nextType = clazz.getName();
 
@@ -168,8 +177,9 @@ public class AccessibleObject implements AnnotatedElement {
      *
      * @return The String of names
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.351 -0500", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "538B7B8EC3794D6F6E22215297E953DA")
-    String toString(Class<?>[] types) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.358 -0500", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "538B7B8EC3794D6F6E22215297E953DA")
+    
+String toString(Class<?>[] types) {
         StringBuilder result = new StringBuilder();
 
         if (types.length != 0) {
@@ -187,8 +197,9 @@ public class AccessibleObject implements AnnotatedElement {
      * Gets the Signature attribute for this instance. Returns {@code null}
      * if not found.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.352 -0500", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "F0B9CD63B24B94657C1ECA3D3E5E02CA")
-    String getSignatureAttribute() {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.360 -0500", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "F0B9CD63B24B94657C1ECA3D3E5E02CA")
+    
+String getSignatureAttribute() {
         /*
          * Note: This method would have been declared abstract, but the
          * standard API lists this class as concrete.
@@ -205,8 +216,9 @@ public class AccessibleObject implements AnnotatedElement {
      *
      * @throws NullPointerException if any of the arguments is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.355 -0500", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "96346F5FDCAEE775233825443F323528")
-    void appendArrayType(StringBuilder sb, Class<?> obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.370 -0500", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "96346F5FDCAEE775233825443F323528")
+    
+void appendArrayType(StringBuilder sb, Class<?> obj) {
         int dimensions = 0;
         while (obj.isArray()) {
             obj = obj.getComponentType();
@@ -226,8 +238,9 @@ public class AccessibleObject implements AnnotatedElement {
      * @param types array of classes to print the names
      * @throws NullPointerException if any of the arguments is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.356 -0500", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "4331049DB20FE3D320265414E1BB6DD1")
-    void appendArrayGenericType(StringBuilder sb, Type[] types) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.373 -0500", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "4331049DB20FE3D320265414E1BB6DD1")
+    
+void appendArrayGenericType(StringBuilder sb, Type[] types) {
         if (types.length > 0) {
             appendGenericType(sb, types[0]);
             for (int i = 1; i < types.length; i++) {
@@ -245,8 +258,9 @@ public class AccessibleObject implements AnnotatedElement {
      *
      * @throws NullPointerException if any of the arguments is null
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.357 -0500", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "639986077F4F64C49F9CD8BE0AAAE4A8")
-    void appendGenericType(StringBuilder sb, Type obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.377 -0500", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "639986077F4F64C49F9CD8BE0AAAE4A8")
+    
+void appendGenericType(StringBuilder sb, Type obj) {
         if (obj instanceof TypeVariable) {
             sb.append(((TypeVariable)obj).getName());
         } else if (obj instanceof ParameterizedType) {

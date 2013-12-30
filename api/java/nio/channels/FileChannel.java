@@ -19,8 +19,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     /**
      * Protected default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.228 -0500", hash_original_method = "EC2F86678151C05272A58EBF4D3007B7", hash_generated_method = "720775B864FB24C368C95FD654F70448")
-    protected FileChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.358 -0500", hash_original_method = "EC2F86678151C05272A58EBF4D3007B7", hash_generated_method = "720775B864FB24C368C95FD654F70448")
+    
+protected FileChannel() {
     }
 
     /**
@@ -51,8 +52,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.229 -0500", hash_original_method = "61EBCEF4B94A7459672132AD7811DADE", hash_generated_method = "2B9F346152C011E3B65F2DAB75EBEB19")
-    public abstract void force(boolean metadata) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.361 -0500", hash_original_method = "61EBCEF4B94A7459672132AD7811DADE", hash_generated_method = "2B9F346152C011E3B65F2DAB75EBEB19")
+    
+public abstract void force(boolean metadata) throws IOException;
 
     /**
      * Obtains an exclusive lock on this file.
@@ -80,8 +82,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if another I/O error occurs while obtaining the requested
      *             lock.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.230 -0500", hash_original_method = "DFAB2BF3C1A891B83AFBA77A43B03809", hash_generated_method = "A870032A5BE185398477C92B02CAC7A3")
-    public final FileLock lock() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.363 -0500", hash_original_method = "DFAB2BF3C1A891B83AFBA77A43B03809", hash_generated_method = "A870032A5BE185398477C92B02CAC7A3")
+    
+public final FileLock lock() throws IOException {
         return lock(0L, Long.MAX_VALUE, false);
     }
 
@@ -147,8 +150,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.231 -0500", hash_original_method = "36155CCD191879126D8E713581E24518", hash_generated_method = "1A1268EF9581FF52B1081F47DCBD7FA2")
-    public abstract FileLock lock(long position, long size, boolean shared)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.366 -0500", hash_original_method = "36155CCD191879126D8E713581E24518", hash_generated_method = "1A1268EF9581FF52B1081F47DCBD7FA2")
+    
+public abstract FileLock lock(long position, long size, boolean shared)
             throws IOException;
 
     /**
@@ -178,8 +182,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if any I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.232 -0500", hash_original_method = "A2BC4DBD035FEED75CAEA3D2096F8492", hash_generated_method = "53F009F81C3DAABB500D969C8E37BD55")
-    public abstract MappedByteBuffer map(FileChannel.MapMode mode,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.368 -0500", hash_original_method = "A2BC4DBD035FEED75CAEA3D2096F8492", hash_generated_method = "53F009F81C3DAABB500D969C8E37BD55")
+    
+public abstract MappedByteBuffer map(FileChannel.MapMode mode,
             long position, long size) throws IOException;
 
     /**
@@ -192,8 +197,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.232 -0500", hash_original_method = "86318E3FB80940F1AAA533B2ACED4DF9", hash_generated_method = "095B82116960CE70F3D88FD85E36DEEC")
-    public abstract long position() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.371 -0500", hash_original_method = "86318E3FB80940F1AAA533B2ACED4DF9", hash_generated_method = "095B82116960CE70F3D88FD85E36DEEC")
+    
+public abstract long position() throws IOException;
 
     /**
      * Sets the file position pointer to a new value.
@@ -215,8 +221,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.233 -0500", hash_original_method = "50275360EE0083C7C1733212A0550AD4", hash_generated_method = "8702A40A60C04552BC429A1BAAB729AB")
-    public abstract FileChannel position(long offset) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.373 -0500", hash_original_method = "50275360EE0083C7C1733212A0550AD4", hash_generated_method = "8702A40A60C04552BC429A1BAAB729AB")
+    
+public abstract FileChannel position(long offset) throws IOException;
 
     /**
      * Reads bytes from this file channel into the given buffer.
@@ -247,8 +254,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.234 -0500", hash_original_method = "DE356E2CF3D3B7BE8C5411B6AE364543", hash_generated_method = "E4614D8711BA6249DDF8157E192C267E")
-    public abstract int read(ByteBuffer buffer) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.375 -0500", hash_original_method = "DE356E2CF3D3B7BE8C5411B6AE364543", hash_generated_method = "E4614D8711BA6249DDF8157E192C267E")
+    
+public abstract int read(ByteBuffer buffer) throws IOException;
 
     /**
      * Reads bytes from this file channel into the given buffer starting from
@@ -285,8 +293,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.236 -0500", hash_original_method = "19A1A80A2A8297FB8F1FB19A576CD97B", hash_generated_method = "5D6844A43D3ECFC11747B3DA9689C100")
-    public abstract int read(ByteBuffer buffer, long position)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.378 -0500", hash_original_method = "19A1A80A2A8297FB8F1FB19A576CD97B", hash_generated_method = "5D6844A43D3ECFC11747B3DA9689C100")
+    
+public abstract int read(ByteBuffer buffer, long position)
             throws IOException;
 
     /**
@@ -319,8 +328,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.236 -0500", hash_original_method = "4118483D5739F1F8B1E72DACCDF365C6", hash_generated_method = "5E3DE9B53B261351875D534317A11FE9")
-    public final long read(ByteBuffer[] buffers) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.381 -0500", hash_original_method = "4118483D5739F1F8B1E72DACCDF365C6", hash_generated_method = "5E3DE9B53B261351875D534317A11FE9")
+    
+public final long read(ByteBuffer[] buffers) throws IOException {
         return read(buffers, 0, buffers.length);
     }
 
@@ -359,8 +369,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.237 -0500", hash_original_method = "7B96FC6FAB2F090D69C3DCBFF89C815B", hash_generated_method = "B0149C348230C332CE6BEFBA3208C156")
-    public abstract long read(ByteBuffer[] buffers, int start, int number)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.384 -0500", hash_original_method = "7B96FC6FAB2F090D69C3DCBFF89C815B", hash_generated_method = "B0149C348230C332CE6BEFBA3208C156")
+    
+public abstract long read(ByteBuffer[] buffers, int start, int number)
             throws IOException;
 
     /**
@@ -372,8 +383,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if an I/O error occurs while getting the size of the file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.238 -0500", hash_original_method = "533E99DC61BBBC696C27BAAAE618F5D9", hash_generated_method = "CDF3B561CA5CAE9E5BFB6F445BEFCE76")
-    public abstract long size() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.386 -0500", hash_original_method = "533E99DC61BBBC696C27BAAAE618F5D9", hash_generated_method = "CDF3B561CA5CAE9E5BFB6F445BEFCE76")
+    
+public abstract long size() throws IOException;
 
     /**
      * Reads up to {@code count} bytes from {@code src} and stores them in this
@@ -409,8 +421,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if any I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.239 -0500", hash_original_method = "BF5C523214ACE0203C5F07D23BFB5334", hash_generated_method = "CB134CE9BEDA7D9D6F4CDE2E7ADDD06B")
-    public abstract long transferFrom(ReadableByteChannel src, long position,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.388 -0500", hash_original_method = "BF5C523214ACE0203C5F07D23BFB5334", hash_generated_method = "CB134CE9BEDA7D9D6F4CDE2E7ADDD06B")
+    
+public abstract long transferFrom(ReadableByteChannel src, long position,
             long count) throws IOException;
 
     /**
@@ -447,8 +460,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if any I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.240 -0500", hash_original_method = "7DCEB5A88D5F4847CF78A45513AA406A", hash_generated_method = "52B302591A2C8323208E0F6D44BED1D3")
-    public abstract long transferTo(long position, long count,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.391 -0500", hash_original_method = "7DCEB5A88D5F4847CF78A45513AA406A", hash_generated_method = "52B302591A2C8323208E0F6D44BED1D3")
+    
+public abstract long transferTo(long position, long count,
             WritableByteChannel target) throws IOException;
 
     /**
@@ -471,8 +485,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if another I/O error occurs.
      * @return this channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.241 -0500", hash_original_method = "D825937878D60F01461C9636076BDCF3", hash_generated_method = "C8C6F1AB8869E88DAD37A0C419CF170D")
-    public abstract FileChannel truncate(long size) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.393 -0500", hash_original_method = "D825937878D60F01461C9636076BDCF3", hash_generated_method = "C8C6F1AB8869E88DAD37A0C419CF170D")
+    
+public abstract FileChannel truncate(long size) throws IOException;
 
     /**
      * Attempts to acquire an exclusive lock on this file without blocking.
@@ -495,8 +510,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if any I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.242 -0500", hash_original_method = "F4B810DA7C3314CA042E76DA336480A9", hash_generated_method = "765B70727AF6AE5E4DD4630CCB15527C")
-    public final FileLock tryLock() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.397 -0500", hash_original_method = "F4B810DA7C3314CA042E76DA336480A9", hash_generated_method = "765B70727AF6AE5E4DD4630CCB15527C")
+    
+public final FileLock tryLock() throws IOException {
         return tryLock(0L, Long.MAX_VALUE, false);
     }
 
@@ -529,8 +545,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if any I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.243 -0500", hash_original_method = "069917A2201DF3B10F8F8DD124DA59AD", hash_generated_method = "82031EE4A79726435431B4685008646B")
-    public abstract FileLock tryLock(long position, long size, boolean shared)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.399 -0500", hash_original_method = "069917A2201DF3B10F8F8DD124DA59AD", hash_generated_method = "82031EE4A79726435431B4685008646B")
+    
+public abstract FileLock tryLock(long position, long size, boolean shared)
             throws IOException;
 
     /**
@@ -558,8 +575,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      *             if another I/O error occurs, details are in the message.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.244 -0500", hash_original_method = "D87BCA67F95D1FD6B9CB7D4E4ADD1B2A", hash_generated_method = "FA9F2388453D6D813A2368038E57E8FD")
-    public abstract int write(ByteBuffer src) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.401 -0500", hash_original_method = "D87BCA67F95D1FD6B9CB7D4E4ADD1B2A", hash_generated_method = "FA9F2388453D6D813A2368038E57E8FD")
+    
+public abstract int write(ByteBuffer src) throws IOException;
 
     /**
      * Writes bytes from the given buffer to this file channel starting at the
@@ -596,8 +614,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws IOException
      *             if another I/O error occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.244 -0500", hash_original_method = "FE44E4912270B085CA3AFC2E6840559E", hash_generated_method = "10862CCEADBBE800DF252131F9DE485B")
-    public abstract int write(ByteBuffer buffer, long position)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.404 -0500", hash_original_method = "FE44E4912270B085CA3AFC2E6840559E", hash_generated_method = "10862CCEADBBE800DF252131F9DE485B")
+    
+public abstract int write(ByteBuffer buffer, long position)
             throws IOException;
 
     /**
@@ -628,8 +647,9 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.245 -0500", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "7AA1B97F418BF33310818DAF604E2235")
-    public final long write(ByteBuffer[] buffers) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.407 -0500", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "7AA1B97F418BF33310818DAF604E2235")
+    
+public final long write(ByteBuffer[] buffers) throws IOException {
         return write(buffers, 0, buffers.length);
     }
 
@@ -669,30 +689,32 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.246 -0500", hash_original_method = "AC372293C8ABAB0E308F0F7E86460068", hash_generated_method = "5194FA121EAA05CA674317B28600EE9B")
-    public abstract long write(ByteBuffer[] buffers, int offset, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.409 -0500", hash_original_method = "AC372293C8ABAB0E308F0F7E86460068", hash_generated_method = "5194FA121EAA05CA674317B28600EE9B")
+    
+public abstract long write(ByteBuffer[] buffers, int offset, int length)
             throws IOException;
 
     
     public static class MapMode {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.221 -0500", hash_original_field = "F54DBA0E8003D347C0E5FC6C7F122070", hash_generated_field = "E61C6941861B8B13323795D9F76ADC35")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.340 -0500", hash_original_field = "F54DBA0E8003D347C0E5FC6C7F122070", hash_generated_field = "E61C6941861B8B13323795D9F76ADC35")
 
         public static final MapMode PRIVATE = new MapMode("PRIVATE");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.222 -0500", hash_original_field = "588F18139B210A02885B9518CF5887F4", hash_generated_field = "73340F0AACAD2D5EA6BC7E1EEA96187B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.343 -0500", hash_original_field = "588F18139B210A02885B9518CF5887F4", hash_generated_field = "73340F0AACAD2D5EA6BC7E1EEA96187B")
 
         public static final MapMode READ_ONLY = new MapMode("READ_ONLY");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.223 -0500", hash_original_field = "09D539976C591A7E03DD6B373983E8AE", hash_generated_field = "04922E3259BB871A02F86B60071A2FD5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.346 -0500", hash_original_field = "09D539976C591A7E03DD6B373983E8AE", hash_generated_field = "04922E3259BB871A02F86B60071A2FD5")
 
         public static final MapMode READ_WRITE = new MapMode("READ_WRITE");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.224 -0500", hash_original_field = "BB0F3128C925598F592DB9E6926FCA25", hash_generated_field = "EC3AB759487D6B2DE8D7429A76BFCE45")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.349 -0500", hash_original_field = "BB0F3128C925598F592DB9E6926FCA25", hash_generated_field = "EC3AB759487D6B2DE8D7429A76BFCE45")
 
         private  String displayName;
 
         /*
          * Private constructor prevents others creating new modes.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.225 -0500", hash_original_method = "CA25667E00C4DE16C856657D4E26E93A", hash_generated_method = "79A3B4CE250D4F31DAF740FFA9928F62")
-        private MapMode(String displayName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.351 -0500", hash_original_method = "CA25667E00C4DE16C856657D4E26E93A", hash_generated_method = "79A3B4CE250D4F31DAF740FFA9928F62")
+        
+private MapMode(String displayName) {
             this.displayName = displayName;
         }
 
@@ -701,9 +723,10 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
          *
          * @return this map mode as string.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.226 -0500", hash_original_method = "224E04BA70E2891F43254A5C70CBC214", hash_generated_method = "867852FDF30FD3913C1FC1BFB210F9EE")
-        @Override
-public String toString() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.354 -0500", hash_original_method = "224E04BA70E2891F43254A5C70CBC214", hash_generated_method = "867852FDF30FD3913C1FC1BFB210F9EE")
+        
+@Override
+        public String toString() {
             return displayName;
         }
     }

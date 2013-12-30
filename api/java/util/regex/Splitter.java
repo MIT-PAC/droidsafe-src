@@ -19,8 +19,9 @@ public class Splitter {
      * to compute it more cheaply than ICU, or null if the caller should fall back to
      * using ICU.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.012 -0500", hash_original_method = "1414AE5E68DF81B22597337750C2038E", hash_generated_method = "C8809045AB28522F725F461B542E354B")
-    public static String[] fastSplit(String re, String input, int limit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.080 -0500", hash_original_method = "1414AE5E68DF81B22597337750C2038E", hash_generated_method = "C8809045AB28522F725F461B542E354B")
+    
+public static String[] fastSplit(String re, String input, int limit) {
         // Can we do it cheaply?
         int len = re.length();
         if (len == 0) {
@@ -60,8 +61,9 @@ public class Splitter {
         return finishSplit(list, input, begin, maxSize, limit);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.013 -0500", hash_original_method = "C41E1C0F8C7FD3DEF4FA010275C2B48C", hash_generated_method = "8892BE56ACE36C10CCB09117F16561A0")
-    public static String[] split(Pattern pattern, String re, String input, int limit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.083 -0500", hash_original_method = "C41E1C0F8C7FD3DEF4FA010275C2B48C", hash_generated_method = "8892BE56ACE36C10CCB09117F16561A0")
+    
+public static String[] split(Pattern pattern, String re, String input, int limit) {
         String[] fastResult = fastSplit(re, input, limit);
         if (fastResult != null) {
             return fastResult;
@@ -85,8 +87,9 @@ public class Splitter {
         return finishSplit(list, input, begin, maxSize, limit);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.015 -0500", hash_original_method = "0050259AEB9A6D717FF62E48E0DE4FA1", hash_generated_method = "F1D5F2B00DA03DDDF2D392B40A3BE3B8")
-    private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.087 -0500", hash_original_method = "0050259AEB9A6D717FF62E48E0DE4FA1", hash_generated_method = "F1D5F2B00DA03DDDF2D392B40A3BE3B8")
+    
+private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
         // Add trailing text.
         if (begin < input.length()) {
             list.add(input.substring(begin));
@@ -104,12 +107,13 @@ public class Splitter {
         // Convert to an array.
         return list.toArray(new String[list.size()]);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.010 -0500", hash_original_field = "38A4CF599FC923449DE87F7C0BDA1FC2", hash_generated_field = "B2FC8B6E50D0FCFCC52E2829DE0BADB1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.074 -0500", hash_original_field = "38A4CF599FC923449DE87F7C0BDA1FC2", hash_generated_field = "B2FC8B6E50D0FCFCC52E2829DE0BADB1")
 
     private static final String METACHARACTERS = "\\?*+[](){}^$.|";
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.011 -0500", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "BB29E622CEF7B73828D657A8CD746D77")
-    private Splitter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.077 -0500", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "BB29E622CEF7B73828D657A8CD746D77")
+    
+private Splitter() {
     }
 }
 

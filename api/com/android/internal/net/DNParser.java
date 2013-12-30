@@ -12,16 +12,16 @@ import javax.security.auth.x500.X500Principal;
 
 
 public final class DNParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.091 -0500", hash_original_field = "EA1B57D73AF22D42FFBE3F9C03A150D5", hash_generated_field = "8755658AF290FD110892EDFB73434ADB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.185 -0500", hash_original_field = "EA1B57D73AF22D42FFBE3F9C03A150D5", hash_generated_field = "8755658AF290FD110892EDFB73434ADB")
 
     private static final String TAG = "DNParser";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.096 -0500", hash_original_field = "AC5649507EA15733DFCCC1FBFEB5DC6A", hash_generated_field = "F6565CB51CDFFE700B2DBF94ED832F63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.200 -0500", hash_original_field = "AC5649507EA15733DFCCC1FBFEB5DC6A", hash_generated_field = "F6565CB51CDFFE700B2DBF94ED832F63")
 
     private static final String ERROR_PARSE_ERROR = "Failed to parse DN";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.092 -0500", hash_original_field = "74A77BA6BAB71A1CFF838B8FBBD6D72C", hash_generated_field = "3D2CB8429158C4900E9EA4B3985C38C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.188 -0500", hash_original_field = "74A77BA6BAB71A1CFF838B8FBBD6D72C", hash_generated_field = "3D2CB8429158C4900E9EA4B3985C38C4")
 
     private  String dn;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.093 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.190 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
 
     private  int length;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
@@ -33,10 +33,10 @@ public final class DNParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
 
     private int end;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.094 -0500", hash_original_field = "2F4877CE6BA21232C2B8D66924B60128", hash_generated_field = "574083FEFFA006A1773B42DB36035D30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.195 -0500", hash_original_field = "2F4877CE6BA21232C2B8D66924B60128", hash_generated_field = "574083FEFFA006A1773B42DB36035D30")
 
     private int cur;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.095 -0500", hash_original_field = "BABA8C00F9965D74411919B77DB127E3", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.197 -0500", hash_original_field = "BABA8C00F9965D74411919B77DB127E3", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
 
     private char[] chars;
 
@@ -45,15 +45,17 @@ public final class DNParser {
      *
      * @param principal - {@link X500Principal} to be parsed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.097 -0500", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "515592831E5B57905D11A2F212070F53")
-    public DNParser(X500Principal principal) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.203 -0500", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "515592831E5B57905D11A2F212070F53")
+    
+public DNParser(X500Principal principal) {
         this.dn = principal.getName(X500Principal.RFC2253);
         this.length = dn.length();
     }
 
     // gets next attribute type: (ALPHA 1*keychar) / oid
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.098 -0500", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "F0D0BF57D4C2BD93F75155F728BA4DC0")
-    private String nextAT() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.206 -0500", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "F0D0BF57D4C2BD93F75155F728BA4DC0")
+    
+private String nextAT() throws IOException {
 
         // skip preceding space chars, they can present after
         // comma or semicolon (compatibility with RFC 1779)
@@ -112,8 +114,9 @@ public final class DNParser {
     }
 
     // gets quoted attribute value: QUOTATION *( quotechar / pair ) QUOTATION
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.099 -0500", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "C8479615C8221D0B73A1DA6D2665FBAB")
-    private String quotedAV() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.208 -0500", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "C8479615C8221D0B73A1DA6D2665FBAB")
+    
+private String quotedAV() throws IOException {
 
         pos++;
         beg = pos;
@@ -148,8 +151,9 @@ public final class DNParser {
     }
 
     // gets hex string attribute value: "#" hexstring
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.100 -0500", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "F1094E0759D42A95372AF458E2BC086C")
-    private String hexAV() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.212 -0500", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "F1094E0759D42A95372AF458E2BC086C")
+    
+private String hexAV() throws IOException {
 
         if (pos + 4 >= length) {
             // encoded byte array  must be not less then 4 c
@@ -200,8 +204,9 @@ public final class DNParser {
     }
 
     // gets string attribute value: *( stringchar / pair )
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.101 -0500", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "FA340660B1DC19FDC8860502F86C8A8C")
-    private String escapedAV() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.215 -0500", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "FA340660B1DC19FDC8860502F86C8A8C")
+    
+private String escapedAV() throws IOException {
 
         beg = pos;
         end = pos;
@@ -248,8 +253,9 @@ public final class DNParser {
     }
 
     // returns escaped char
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.102 -0500", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "C460509F8FDC988A9540230C9CA971BE")
-    private char getEscaped() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.217 -0500", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "C460509F8FDC988A9540230C9CA971BE")
+    
+private char getEscaped() throws IOException {
 
         pos++;
         if (pos == length) {
@@ -281,8 +287,9 @@ public final class DNParser {
 
     // decodes UTF-8 char
     // see http://www.unicode.org for UTF-8 bit distribution table
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.103 -0500", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "05008221DC4D81DCF8CC27935EE71897")
-    private char getUTF8() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.221 -0500", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "05008221DC4D81DCF8CC27935EE71897")
+    
+private char getUTF8() throws IOException {
 
         int res = getByte(pos);
         pos++; //FIXME tmp
@@ -331,8 +338,9 @@ public final class DNParser {
     // According to BNF syntax:
     // hexchar    = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
     //                    / "a" / "b" / "c" / "d" / "e" / "f"
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.104 -0500", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "91DA66F05902E6D47D3876FBD601DB01")
-    private int getByte(int position) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.224 -0500", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "91DA66F05902E6D47D3876FBD601DB01")
+    
+private int getByte(int position) throws IOException {
 
         if ((position + 1) >= length) {
             // to avoid ArrayIndexOutOfBoundsException
@@ -372,8 +380,9 @@ public final class DNParser {
      * @param attributeType attribute type to look for (e.g. "ca")
      * @return value of the attribute that first found, or null if none found
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.105 -0500", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "797FCFBAD15E51E156BF4478A85641DF")
-    public String find(String attributeType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.227 -0500", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "797FCFBAD15E51E156BF4478A85641DF")
+    
+public String find(String attributeType) {
         try {
             // Initialize internal state.
             pos = 0;

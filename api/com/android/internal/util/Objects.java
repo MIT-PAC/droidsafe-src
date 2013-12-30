@@ -23,8 +23,9 @@ public class Objects {
      * <p>This assumes that any non-null objects passed to this function conform
      * to the {@code equals()} contract.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.609 -0500", hash_original_method = "F296275000E1AA53C7B464F5FDA7A4B5", hash_generated_method = "F1FE59F254185FB0421C417ADE74E86C")
-    public static boolean equal(Object a, Object b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.286 -0500", hash_original_method = "F296275000E1AA53C7B464F5FDA7A4B5", hash_generated_method = "F1FE59F254185FB0421C417ADE74E86C")
+    
+public static boolean equal(Object a, Object b) {
         return a == b || (a != null && a.equals(b));
     }
 
@@ -43,8 +44,9 @@ public class Objects {
      * <b>Warning</b>: When a single object is supplied, the returned hash code
      * does not equal the hash code of that object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:40.610 -0500", hash_original_method = "5906F045128166A9E56FF6FDE6E49CCD", hash_generated_method = "88A9EA0CDDBC5F37AABAE9F35B6F717C")
-    public static int hashCode(Object... objects) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.288 -0500", hash_original_method = "5906F045128166A9E56FF6FDE6E49CCD", hash_generated_method = "88A9EA0CDDBC5F37AABAE9F35B6F717C")
+    
+public static int hashCode(Object... objects) {
         return Arrays.hashCode(objects);
     }
     

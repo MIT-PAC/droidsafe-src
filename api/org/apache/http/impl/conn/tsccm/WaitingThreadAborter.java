@@ -10,11 +10,11 @@ import droidsafe.annotations.*;
 
 
 public class WaitingThreadAborter {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.993 -0500", hash_original_field = "F1A0AC4A2E7C774F3DAB11506EBBCA82", hash_generated_field = "C79D835D74C6AC2AE8A11E51B7EFA777")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.342 -0500", hash_original_field = "F1A0AC4A2E7C774F3DAB11506EBBCA82", hash_generated_field = "C79D835D74C6AC2AE8A11E51B7EFA777")
 
     
     private WaitingThread waitingThread;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.994 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.344 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
 
     private boolean aborted;
     
@@ -27,8 +27,9 @@ public class WaitingThreadAborter {
     /**
      * If a waiting thread has been set, interrupts it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.994 -0500", hash_original_method = "27CF8733634F3CF20401DD1AFEAA91BD", hash_generated_method = "2BA036273BDA7B336FEB03EC4E817398")
-    public void abort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.346 -0500", hash_original_method = "27CF8733634F3CF20401DD1AFEAA91BD", hash_generated_method = "2BA036273BDA7B336FEB03EC4E817398")
+    
+public void abort() {
         aborted = true;
         
         if (waitingThread != null)
@@ -42,8 +43,9 @@ public class WaitingThreadAborter {
      * 
      * @param waitingThread The thread to interrupt when aborting.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.995 -0500", hash_original_method = "BEF4BF67B8CAA8FFE4DAC439C25D6987", hash_generated_method = "C403637F10DB97F52E9C5FCC4872655C")
-    public void setWaitingThread(WaitingThread waitingThread) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.349 -0500", hash_original_method = "BEF4BF67B8CAA8FFE4DAC439C25D6987", hash_generated_method = "C403637F10DB97F52E9C5FCC4872655C")
+    
+public void setWaitingThread(WaitingThread waitingThread) {
         this.waitingThread = waitingThread;
         if (aborted)
             waitingThread.interrupt();

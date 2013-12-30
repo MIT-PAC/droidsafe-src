@@ -31,34 +31,35 @@ import com.android.internal.util.Predicate;
 
 
 public class TestGrouping {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.285 -0500", hash_original_field = "4BB1C3CE23F79A39D22915266FFB15BD", hash_generated_field = "CE2E1060B46BDBE7E16BF5287A109FDB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.296 -0500", hash_original_field = "4BB1C3CE23F79A39D22915266FFB15BD", hash_generated_field = "CE2E1060B46BDBE7E16BF5287A109FDB")
 
 
     private static final String LOG_TAG = "TestGrouping";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.287 -0500", hash_original_field = "4FA53D39E3C5EFDC072331C06A976AE4", hash_generated_field = "6393FB509BD7B738CA4EC7858735B178")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.300 -0500", hash_original_field = "4FA53D39E3C5EFDC072331C06A976AE4", hash_generated_field = "6393FB509BD7B738CA4EC7858735B178")
 
 
     public static final Comparator<Class<? extends TestCase>> SORT_BY_SIMPLE_NAME
             = new SortBySimpleName();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.287 -0500", hash_original_field = "0A6475311D0159CC81A7AF1883FA7A87", hash_generated_field = "88E0DDC4F117766575D8ADA532BFD923")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.302 -0500", hash_original_field = "0A6475311D0159CC81A7AF1883FA7A87", hash_generated_field = "88E0DDC4F117766575D8ADA532BFD923")
 
 
     public static final Comparator<Class<? extends TestCase>> SORT_BY_FULLY_QUALIFIED_NAME
             = new SortByFullyQualifiedName();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.286 -0500", hash_original_field = "92A1F72A3CA9AFF319E6A33DD1FCF056", hash_generated_field = "92A1F72A3CA9AFF319E6A33DD1FCF056")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.298 -0500", hash_original_field = "92A1F72A3CA9AFF319E6A33DD1FCF056", hash_generated_field = "92A1F72A3CA9AFF319E6A33DD1FCF056")
 
 
     SortedSet<Class<? extends TestCase>> testCaseClasses;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.288 -0500", hash_original_field = "B4AE6C1BAB00DCF5B38176C50EDD4DC1", hash_generated_field = "46A35DF78B071F820EB500E754651053")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.304 -0500", hash_original_field = "B4AE6C1BAB00DCF5B38176C50EDD4DC1", hash_generated_field = "46A35DF78B071F820EB500E754651053")
 
 
     protected String firstIncludedPackage = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.289 -0500", hash_original_field = "DB93E4DB6045160743AC769A344DA267", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.306 -0500", hash_original_field = "DB93E4DB6045160743AC769A344DA267", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
 
     private ClassLoader classLoader;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.290 -0500", hash_original_method = "E97169CD65D986F2307319C325D5D1C7", hash_generated_method = "9358E14B3DC2C015474494B3D928A1D6")
-    public TestGrouping(Comparator<Class<? extends TestCase>> comparator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.309 -0500", hash_original_method = "E97169CD65D986F2307319C325D5D1C7", hash_generated_method = "9358E14B3DC2C015474494B3D928A1D6")
+    
+public TestGrouping(Comparator<Class<? extends TestCase>> comparator) {
         testCaseClasses = new TreeSet<Class<? extends TestCase>>(comparator);
     }
 
@@ -66,8 +67,9 @@ public class TestGrouping {
      * @return A list of all tests in the package, including small, medium, large,
      *         flaky, and suppressed tests. Includes sub-packages recursively.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.291 -0500", hash_original_method = "680BBB6317C221899395AD16A5E3E2AA", hash_generated_method = "63E7D53AD5A5D08C638F81A633CFECF8")
-    public List<TestMethod> getTests() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.311 -0500", hash_original_method = "680BBB6317C221899395AD16A5E3E2AA", hash_generated_method = "63E7D53AD5A5D08C638F81A633CFECF8")
+    
+public List<TestMethod> getTests() {
         List<TestMethod> testMethods = new ArrayList<TestMethod>();
         for (Class<? extends TestCase> testCase : testCaseClasses) {
             for (Method testMethod : getTestMethods(testCase)) {
@@ -77,19 +79,22 @@ public class TestGrouping {
         return testMethods;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.292 -0500", hash_original_method = "2AE043142188DFBFC0C6FBA8EE4EFD15", hash_generated_method = "B4674C588ACDD25FDAFF8D232C255B06")
-    protected List<Method> getTestMethods(Class<? extends TestCase> testCaseClass) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.314 -0500", hash_original_method = "2AE043142188DFBFC0C6FBA8EE4EFD15", hash_generated_method = "B4674C588ACDD25FDAFF8D232C255B06")
+    
+protected List<Method> getTestMethods(Class<? extends TestCase> testCaseClass) {
         List<Method> methods = Arrays.asList(testCaseClass.getMethods());
         return select(methods, new TestMethodPredicate());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.292 -0500", hash_original_method = "33F5ECA31F61AACED3C9710C1D8342FC", hash_generated_method = "33F5ECA31F61AACED3C9710C1D8342FC")
-    SortedSet<Class<? extends TestCase>> getTestCaseClasses() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.316 -0500", hash_original_method = "33F5ECA31F61AACED3C9710C1D8342FC", hash_generated_method = "33F5ECA31F61AACED3C9710C1D8342FC")
+    
+SortedSet<Class<? extends TestCase>> getTestCaseClasses() {
         return testCaseClasses;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.293 -0500", hash_original_method = "6F62F66C41F8017782EE166F70D0516E", hash_generated_method = "14BB8360F989C83B3FED42D1670ACD0F")
-    public boolean equals(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.318 -0500", hash_original_method = "6F62F66C41F8017782EE166F70D0516E", hash_generated_method = "14BB8360F989C83B3FED42D1670ACD0F")
+    
+public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -103,8 +108,9 @@ public class TestGrouping {
         return this.testCaseClasses.comparator().equals(other.testCaseClasses.comparator());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.294 -0500", hash_original_method = "E7359B0E16100AA2FD7539D694C05DFB", hash_generated_method = "D559DEE6286F02565C4C0BA1F7C60FE2")
-    public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.320 -0500", hash_original_method = "E7359B0E16100AA2FD7539D694C05DFB", hash_generated_method = "D559DEE6286F02565C4C0BA1F7C60FE2")
+    
+public int hashCode() {
         return testCaseClasses.hashCode();
     }
 
@@ -116,8 +122,9 @@ public class TestGrouping {
      * @param packageNames Names of packages to add.
      * @return The {@link TestGrouping} for method chaining.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.295 -0500", hash_original_method = "F1ABEC9272D67A731F25021CAE965675", hash_generated_method = "8DD502AAB7BE6B0225AD791FFB9A887C")
-    public TestGrouping addPackagesRecursive(String... packageNames) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.323 -0500", hash_original_method = "F1ABEC9272D67A731F25021CAE965675", hash_generated_method = "8DD502AAB7BE6B0225AD791FFB9A887C")
+    
+public TestGrouping addPackagesRecursive(String... packageNames) {
         for (String packageName : packageNames) {
             List<Class<? extends TestCase>> addedClasses = testCaseClassesInPackage(packageName);
             if (addedClasses.isEmpty()) {
@@ -139,8 +146,9 @@ public class TestGrouping {
      * @param packageNames Names of packages to remove.
      * @return The {@link TestGrouping} for method chaining.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.296 -0500", hash_original_method = "56956838CAE54304087255CB840E79B1", hash_generated_method = "D82620E518F3C5A9651F630088CD1A5F")
-    public TestGrouping removePackagesRecursive(String... packageNames) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.325 -0500", hash_original_method = "56956838CAE54304087255CB840E79B1", hash_generated_method = "D82620E518F3C5A9651F630088CD1A5F")
+    
+public TestGrouping removePackagesRecursive(String... packageNames) {
         for (String packageName : packageNames) {
             testCaseClasses.removeAll(testCaseClassesInPackage(packageName));
         }
@@ -151,13 +159,15 @@ public class TestGrouping {
      * @return The first package name passed to {@link #addPackagesRecursive(String[])}, or null
      *         if that method was never called.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.296 -0500", hash_original_method = "C38D4C4BAAACEDDA4FA2C460C27FC791", hash_generated_method = "65DD5F56BE5B71D4A2012D649D033A6A")
-    public String getFirstIncludedPackage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.328 -0500", hash_original_method = "C38D4C4BAAACEDDA4FA2C460C27FC791", hash_generated_method = "65DD5F56BE5B71D4A2012D649D033A6A")
+    
+public String getFirstIncludedPackage() {
         return firstIncludedPackage;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.297 -0500", hash_original_method = "EB0D3DDEC19295079ED9F02F9ADFE3B2", hash_generated_method = "0B8CAF4FA756F6A9BEDE26D8CC487375")
-    private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.330 -0500", hash_original_method = "EB0D3DDEC19295079ED9F02F9ADFE3B2", hash_generated_method = "0B8CAF4FA756F6A9BEDE26D8CC487375")
+    
+private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageName) {
         ClassPathPackageInfoSource source = PackageInfoSources.forClassPath(classLoader);
         ClassPathPackageInfo packageInfo = source.getPackageInfo(packageName);
 
@@ -174,8 +184,9 @@ public class TestGrouping {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.301 -0500", hash_original_method = "D443F8BF084E7C4C20680ADEEDC43BF0", hash_generated_method = "675A098E23EE3D3BDBA4D58835C30ED6")
-        public int compare(Class<? extends TestCase> class1,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.340 -0500", hash_original_method = "D443F8BF084E7C4C20680ADEEDC43BF0", hash_generated_method = "675A098E23EE3D3BDBA4D58835C30ED6")
+        
+public int compare(Class<? extends TestCase> class1,
                 Class<? extends TestCase> class2) {
             int result = class1.getSimpleName().compareTo(class2.getSimpleName());
             if (result != 0) {
@@ -198,8 +209,9 @@ public class TestGrouping {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.303 -0500", hash_original_method = "4B1D58D6EFFB49C224C33511FACEBC5F", hash_generated_method = "37F1A5E69F8AB7EBC7B50ADB225A6EB7")
-        public int compare(Class<? extends TestCase> class1,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.345 -0500", hash_original_method = "4B1D58D6EFFB49C224C33511FACEBC5F", hash_generated_method = "37F1A5E69F8AB7EBC7B50ADB225A6EB7")
+        
+public int compare(Class<? extends TestCase> class1,
                 Class<? extends TestCase> class2) {
             return class1.getName().compareTo(class2.getName());
         }
@@ -218,8 +230,9 @@ public class TestGrouping {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.305 -0500", hash_original_method = "9D9B2E8FB03F4B758E0C890C03F2E5F6", hash_generated_method = "A53A4FCB10B1FB5AD5E845F3B7FD5A33")
-        public boolean apply(Class aClass) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.349 -0500", hash_original_method = "9D9B2E8FB03F4B758E0C890C03F2E5F6", hash_generated_method = "A53A4FCB10B1FB5AD5E845F3B7FD5A33")
+        
+public boolean apply(Class aClass) {
             int modifiers = ((Class<?>) aClass).getModifiers();
             return TestCase.class.isAssignableFrom((Class<?>) aClass)
                     && Modifier.isPublic(modifiers)
@@ -227,9 +240,10 @@ public class TestGrouping {
                     && hasValidConstructor((Class<?>) aClass);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.306 -0500", hash_original_method = "3C87EFFA5D029BD7C6E8E87D3458D6A6", hash_generated_method = "C2B55BDCEA7F38FC81E5E7247F40F14E")
-        @SuppressWarnings("unchecked")
-private boolean hasValidConstructor(java.lang.Class<?> aClass) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.352 -0500", hash_original_method = "3C87EFFA5D029BD7C6E8E87D3458D6A6", hash_generated_method = "C2B55BDCEA7F38FC81E5E7247F40F14E")
+        
+@SuppressWarnings("unchecked")
+        private boolean hasValidConstructor(java.lang.Class<?> aClass) {
             // The cast below is not necessary with the Java 5 compiler, but necessary with the Java 6 compiler,
             // where the return type of Class.getDeclaredConstructors() was changed
             // from Constructor<T>[] to Constructor<?>[]
@@ -265,8 +279,9 @@ private boolean hasValidConstructor(java.lang.Class<?> aClass) {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.308 -0500", hash_original_method = "D26D55EE6758E6673A4F60E3C2FBF447", hash_generated_method = "149F12C0C8D410E20EC2296724A9BF1C")
-        public boolean apply(Method method) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.358 -0500", hash_original_method = "D26D55EE6758E6673A4F60E3C2FBF447", hash_generated_method = "149F12C0C8D410E20EC2296724A9BF1C")
+        
+public boolean apply(Method method) {
             return ((method.getParameterTypes().length == 0) &&
                     (method.getName().startsWith("test")) &&
                     (method.getReturnType().getSimpleName().equals("void")));
@@ -275,9 +290,10 @@ private boolean hasValidConstructor(java.lang.Class<?> aClass) {
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.298 -0500", hash_original_method = "9793CFC93A78E03886A5AA31DA3BF499", hash_generated_method = "C246E0185EC4EBE6271F9AAF975CA328")
-    @SuppressWarnings("unchecked")
-private List<Class<? extends TestCase>> selectTestClasses(Set<Class<?>> allClasses) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.333 -0500", hash_original_method = "9793CFC93A78E03886A5AA31DA3BF499", hash_generated_method = "C246E0185EC4EBE6271F9AAF975CA328")
+    
+@SuppressWarnings("unchecked")
+    private List<Class<? extends TestCase>> selectTestClasses(Set<Class<?>> allClasses) {
         List<Class<? extends TestCase>> testClasses = new ArrayList<Class<? extends TestCase>>();
         for (Class<?> testClass : select(allClasses,
                 new TestCasePredicate())) {
@@ -312,8 +328,9 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
         //return selectedItems;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.300 -0500", hash_original_method = "EF51D9ADCA3E8F522FB005D173D913A5", hash_generated_method = "17E56A506DB48401AA8C60783B0C74E5")
-    public void setClassLoader(ClassLoader classLoader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.337 -0500", hash_original_method = "EF51D9ADCA3E8F522FB005D173D913A5", hash_generated_method = "17E56A506DB48401AA8C60783B0C74E5")
+    
+public void setClassLoader(ClassLoader classLoader) {
         this.classLoader = classLoader;
     }
 }

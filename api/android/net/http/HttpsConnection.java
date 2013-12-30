@@ -53,18 +53,21 @@ public class HttpsConnection extends Connection {
             OpenSSLContextImpl sslContext = new OpenSSLContextImpl();
             TrustManager[] trustManagers = new TrustManager[] {
                 new X509TrustManager() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.023 -0500", hash_original_method = "26F2D3EE02564BFED1F63E8224D261E2", hash_generated_method = "4B421804C4196085705F57A169F61AAF")
-                public X509Certificate[] getAcceptedIssuers() {
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.698 -0500", hash_original_method = "26F2D3EE02564BFED1F63E8224D261E2", hash_generated_method = "4B421804C4196085705F57A169F61AAF")
+                
+public X509Certificate[] getAcceptedIssuers() {
                         return null;
                     }
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.024 -0500", hash_original_method = "8BEE625C472E5C247B0F67569E87EB34", hash_generated_method = "F756548F393463E0C8D93B459A266B14")
-                public void checkClientTrusted(
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.701 -0500", hash_original_method = "8BEE625C472E5C247B0F67569E87EB34", hash_generated_method = "F756548F393463E0C8D93B459A266B14")
+                
+public void checkClientTrusted(
                         X509Certificate[] certs, String authType) {
                     }
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.025 -0500", hash_original_method = "B887E524006B0C946A6E6D3AF1B3859E", hash_generated_method = "9A95F409B60F21956FB15D9D594D5808")
-                public void checkServerTrusted(
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.704 -0500", hash_original_method = "B887E524006B0C946A6E6D3AF1B3859E", hash_generated_method = "9A95F409B60F21956FB15D9D594D5808")
+                
+public void checkServerTrusted(
                         X509Certificate[] certs, String authType) {
                     }
                 }
@@ -81,31 +84,33 @@ public class HttpsConnection extends Connection {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.027 -0500", hash_original_method = "85F174ABC4055BEA52A3B6ED8F0BA48D", hash_generated_method = "C029373C9E1D524F94FA7302D85722C8")
-    private synchronized static SSLSocketFactory getSocketFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.709 -0500", hash_original_method = "85F174ABC4055BEA52A3B6ED8F0BA48D", hash_generated_method = "C029373C9E1D524F94FA7302D85722C8")
+    
+private synchronized static SSLSocketFactory getSocketFactory() {
         return mSslSocketFactory;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.022 -0500", hash_original_field = "C0E8772F63B6CB66BA5EF399681285B7", hash_generated_field = "8E3EE282922FDB169CB5B6E3288B84EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.694 -0500", hash_original_field = "C0E8772F63B6CB66BA5EF399681285B7", hash_generated_field = "8E3EE282922FDB169CB5B6E3288B84EE")
 
     private static SSLSocketFactory mSslSocketFactory = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.028 -0500", hash_original_field = "A78075C6B404E1A3729B2564AA0E1FCC", hash_generated_field = "0A84F656FB5724862D6D0C3942C87FC1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.711 -0500", hash_original_field = "A78075C6B404E1A3729B2564AA0E1FCC", hash_generated_field = "0A84F656FB5724862D6D0C3942C87FC1")
 
     private Object mSuspendLock = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.028 -0500", hash_original_field = "99486750A96AC48100839A0EF6F5FA03", hash_generated_field = "BA9E563F9C3D28A8140DFC39976CEE8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.713 -0500", hash_original_field = "99486750A96AC48100839A0EF6F5FA03", hash_generated_field = "BA9E563F9C3D28A8140DFC39976CEE8E")
 
     private boolean mSuspended = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.029 -0500", hash_original_field = "A3D94C28DC24D0838F1204401C40E70B", hash_generated_field = "97FC50A1353400AFE74E8B9443FE780C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.716 -0500", hash_original_field = "A3D94C28DC24D0838F1204401C40E70B", hash_generated_field = "97FC50A1353400AFE74E8B9443FE780C")
 
     private boolean mAborted = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.030 -0500", hash_original_field = "8D07AC44AA4C74B2AC6E6F002329824C", hash_generated_field = "C97CBEA2D1E657445C817C4D993F97BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.718 -0500", hash_original_field = "8D07AC44AA4C74B2AC6E6F002329824C", hash_generated_field = "C97CBEA2D1E657445C817C4D993F97BF")
 
     private HttpHost mProxyHost;
 
     /**
      * Contructor for a https connection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.031 -0500", hash_original_method = "09C25F5735AB0754281F1FBF0B28F30D", hash_generated_method = "09C25F5735AB0754281F1FBF0B28F30D")
-    HttpsConnection(Context context, HttpHost host, HttpHost proxy,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.720 -0500", hash_original_method = "09C25F5735AB0754281F1FBF0B28F30D", hash_generated_method = "09C25F5735AB0754281F1FBF0B28F30D")
+    
+HttpsConnection(Context context, HttpHost host, HttpHost proxy,
                     RequestFeeder requestFeeder) {
         super(context, host, requestFeeder);
         mProxyHost = proxy;
@@ -116,8 +121,9 @@ public class HttpsConnection extends Connection {
      * connection.
      * @param certificate The SSL certificate
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.031 -0500", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "CE5F1A45B1025117B442485B7D853DDB")
-    void setCertificate(SslCertificate certificate) {
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.722 -0500", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "CE5F1A45B1025117B442485B7D853DDB")
+    
+void setCertificate(SslCertificate certificate) {
         mCertificate = certificate;
     }
 
@@ -127,9 +133,10 @@ public class HttpsConnection extends Connection {
      * @return the opened low level connection
      * @throws IOException if the connection fails for any reason.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.033 -0500", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "622D4DB076F02438468DE4A4417A69A2")
-    @Override
-AndroidHttpClientConnection openConnection(Request req) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.727 -0500", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "622D4DB076F02438468DE4A4417A69A2")
+    
+@Override
+    AndroidHttpClientConnection openConnection(Request req) throws IOException {
         SSLSocket sslSock = null;
 
         if (mProxyHost != null) {
@@ -345,9 +352,10 @@ AndroidHttpClientConnection openConnection(Request req) throws IOException {
      * need to take any further action.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.035 -0500", hash_original_method = "94AF48C1BBE0D9628C41EDAE43AD4A70", hash_generated_method = "6F750470763A09962F7C3949B80129FE")
-    @Override
-void closeConnection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.730 -0500", hash_original_method = "94AF48C1BBE0D9628C41EDAE43AD4A70", hash_generated_method = "6F750470763A09962F7C3949B80129FE")
+    
+@Override
+    void closeConnection() {
         // if the connection has been suspended due to an SSL error
         if (mSuspended) {
             // wake up the network thread
@@ -369,8 +377,9 @@ void closeConnection() {
     /**
      * Restart a secure connection suspended waiting for user interaction.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.035 -0500", hash_original_method = "AF3B09D914ADDB679280100B7539789D", hash_generated_method = "AF3B09D914ADDB679280100B7539789D")
-    void restartConnection(boolean proceed) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.733 -0500", hash_original_method = "AF3B09D914ADDB679280100B7539789D", hash_generated_method = "AF3B09D914ADDB679280100B7539789D")
+    
+void restartConnection(boolean proceed) {
         if (HttpLog.LOGV) {
             HttpLog.v("HttpsConnection.restartConnection():" +
                       " proceed: " + proceed);
@@ -385,9 +394,10 @@ void closeConnection() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.036 -0500", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "C7BD68F4A3F52626B3EE16BC0A450363")
-    @Override
-String getScheme() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.735 -0500", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "C7BD68F4A3F52626B3EE16BC0A450363")
+    
+@Override
+    String getScheme() {
         return "https";
     }
     static {
@@ -413,8 +423,9 @@ String getScheme() {
 
 class SSLConnectionClosedByUserException extends SSLException {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.037 -0500", hash_original_method = "1C338196B36BFFFB864A09C466046734", hash_generated_method = "FA4B5BC32C579A431C293C3392E7A18A")
-    public SSLConnectionClosedByUserException(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.737 -0500", hash_original_method = "1C338196B36BFFFB864A09C466046734", hash_generated_method = "FA4B5BC32C579A431C293C3392E7A18A")
+    
+public SSLConnectionClosedByUserException(String reason) {
         super(reason);
     }
 

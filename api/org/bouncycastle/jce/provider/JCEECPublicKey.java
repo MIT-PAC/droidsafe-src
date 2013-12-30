@@ -44,24 +44,25 @@ import org.bouncycastle.math.ec.ECCurve;
 
 
 public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfaces.ECPublicKey, ECPointEncoder {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.891 -0500", hash_original_field = "33AD2E21A3D6578549470A35F5EBE102", hash_generated_field = "03A7690F51B3F9BF560AF66A2E562751")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.503 -0500", hash_original_field = "33AD2E21A3D6578549470A35F5EBE102", hash_generated_field = "03A7690F51B3F9BF560AF66A2E562751")
 
     private String                  algorithm = "EC";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.891 -0500", hash_original_field = "E0015430B52E8DC21D8477370DE05860", hash_generated_field = "1BFFE5596A381FE9DEDEC12337FB70C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.505 -0500", hash_original_field = "E0015430B52E8DC21D8477370DE05860", hash_generated_field = "1BFFE5596A381FE9DEDEC12337FB70C9")
 
     private org.bouncycastle.math.ec.ECPoint q;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.892 -0500", hash_original_field = "EB973ACD34C53FAD0CB136BA5F678A1A", hash_generated_field = "2F50CBE484A009E85DF08C55473AAD50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.507 -0500", hash_original_field = "EB973ACD34C53FAD0CB136BA5F678A1A", hash_generated_field = "2F50CBE484A009E85DF08C55473AAD50")
 
     private ECParameterSpec         ecSpec;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.893 -0500", hash_original_field = "FE461DF1DAA1B11668B50BA700384774", hash_generated_field = "C4E023510AEF37ABC4F4741FA8031492")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.510 -0500", hash_original_field = "FE461DF1DAA1B11668B50BA700384774", hash_generated_field = "C4E023510AEF37ABC4F4741FA8031492")
 
     private boolean                 withCompression;
     // BEGIN android-removed
     // private GOST3410PublicKeyAlgParameters       gostParams;
     // END android-removed
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.894 -0500", hash_original_method = "9E7728C1623EC94B5D37FACBA5DD3318", hash_generated_method = "340070F335BFD5CE5D8FF0B1C33A7725")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.513 -0500", hash_original_method = "9E7728C1623EC94B5D37FACBA5DD3318", hash_generated_method = "340070F335BFD5CE5D8FF0B1C33A7725")
+    
+public JCEECPublicKey(
         String              algorithm,
         JCEECPublicKey      key)
     {
@@ -74,8 +75,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         // END android-removed
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.895 -0500", hash_original_method = "A5616D4D55CEB63F772F9CBA3C1DFD14", hash_generated_method = "B2B4728FBA7543329415A0352F25603D")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.516 -0500", hash_original_method = "A5616D4D55CEB63F772F9CBA3C1DFD14", hash_generated_method = "B2B4728FBA7543329415A0352F25603D")
+    
+public JCEECPublicKey(
         String              algorithm,
         ECPublicKeySpec     spec)
     {
@@ -84,8 +86,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         this.q = EC5Util.convertPoint(ecSpec, spec.getW(), false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.896 -0500", hash_original_method = "111BFFE89DFF28BACA95639C99C739E4", hash_generated_method = "C3BE91760D28E89BC77D0AA7A9862862")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.519 -0500", hash_original_method = "111BFFE89DFF28BACA95639C99C739E4", hash_generated_method = "C3BE91760D28E89BC77D0AA7A9862862")
+    
+public JCEECPublicKey(
         String              algorithm,
         org.bouncycastle.jce.spec.ECPublicKeySpec     spec)
     {
@@ -111,8 +114,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.897 -0500", hash_original_method = "55746F5B590BA5E7E6F86647B2880B63", hash_generated_method = "8CC9BA9D03C335B66861FFD027DC48D8")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.522 -0500", hash_original_method = "55746F5B590BA5E7E6F86647B2880B63", hash_generated_method = "8CC9BA9D03C335B66861FFD027DC48D8")
+    
+public JCEECPublicKey(
         String                  algorithm,
         ECPublicKeyParameters   params,
         ECParameterSpec         spec)
@@ -134,8 +138,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.898 -0500", hash_original_method = "DB4C98F6CA9631B3AF629189844FA51E", hash_generated_method = "3B5008678D73869B15A635910D6A711B")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.525 -0500", hash_original_method = "DB4C98F6CA9631B3AF629189844FA51E", hash_generated_method = "3B5008678D73869B15A635910D6A711B")
+    
+public JCEECPublicKey(
         String                  algorithm,
         ECPublicKeyParameters   params,
         org.bouncycastle.jce.spec.ECParameterSpec         spec)
@@ -162,8 +167,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     /*
      * called for implicitCA
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.899 -0500", hash_original_method = "493E6C6367259B3C767DD7B0D44CD4AE", hash_generated_method = "B4457F9BF43D079CB8C22D0DD415B68A")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.528 -0500", hash_original_method = "493E6C6367259B3C767DD7B0D44CD4AE", hash_generated_method = "B4457F9BF43D079CB8C22D0DD415B68A")
+    
+public JCEECPublicKey(
         String                  algorithm,
         ECPublicKeyParameters   params)
     {
@@ -172,8 +178,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         this.ecSpec = null;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.901 -0500", hash_original_method = "48FEA81B6DD226AC77A269B6C1D0920E", hash_generated_method = "8E2371D86B877A10720FEEA7F2BEF130")
-    public JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.533 -0500", hash_original_method = "48FEA81B6DD226AC77A269B6C1D0920E", hash_generated_method = "8E2371D86B877A10720FEEA7F2BEF130")
+    
+public JCEECPublicKey(
         ECPublicKey     key)
     {
         this.algorithm = key.getAlgorithm();
@@ -181,15 +188,17 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         this.q = EC5Util.convertPoint(this.ecSpec, key.getW(), false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.902 -0500", hash_original_method = "E3331AE678062C5B5D7432BD6E2A836D", hash_generated_method = "E3331AE678062C5B5D7432BD6E2A836D")
-    JCEECPublicKey(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.535 -0500", hash_original_method = "E3331AE678062C5B5D7432BD6E2A836D", hash_generated_method = "E3331AE678062C5B5D7432BD6E2A836D")
+    
+JCEECPublicKey(
         SubjectPublicKeyInfo    info)
     {
         populateFromPubKeyInfo(info);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.900 -0500", hash_original_method = "78B971AFBB9FB77663E9AB2BC39F53F9", hash_generated_method = "1F63A992ABDA31E1B069D0AA20D39148")
-    private ECParameterSpec createSpec(EllipticCurve ellipticCurve, ECDomainParameters dp)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.530 -0500", hash_original_method = "78B971AFBB9FB77663E9AB2BC39F53F9", hash_generated_method = "1F63A992ABDA31E1B069D0AA20D39148")
+    
+private ECParameterSpec createSpec(EllipticCurve ellipticCurve, ECDomainParameters dp)
     {
         return new ECParameterSpec(
                 ellipticCurve,
@@ -200,8 +209,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
                         dp.getH().intValue());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.903 -0500", hash_original_method = "04369E0AD06428BC33AE0A89BD867221", hash_generated_method = "C3C6B22A24A18C0190D74359896DABB5")
-    private void populateFromPubKeyInfo(SubjectPublicKeyInfo info)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.539 -0500", hash_original_method = "04369E0AD06428BC33AE0A89BD867221", hash_generated_method = "C3C6B22A24A18C0190D74359896DABB5")
+    
+private void populateFromPubKeyInfo(SubjectPublicKeyInfo info)
     {
         // BEGIN android-removed
         // if (info.getAlgorithmId().getObjectId().equals(CryptoProObjectIdentifiers.gostR3410_2001))
@@ -326,20 +336,23 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.904 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
-    public String getAlgorithm()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.542 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
+    
+public String getAlgorithm()
     {
         return algorithm;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.904 -0500", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "7238AE3F6AC2664EEF973F2CB2EA7A49")
-    public String getFormat()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.544 -0500", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "7238AE3F6AC2664EEF973F2CB2EA7A49")
+    
+public String getFormat()
     {
         return "X.509";
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.906 -0500", hash_original_method = "B91F24351022908E98D855E5218CDAAE", hash_generated_method = "6527FDBC850542362DCA22A63743B546")
-    public byte[] getEncoded()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.547 -0500", hash_original_method = "B91F24351022908E98D855E5218CDAAE", hash_generated_method = "6527FDBC850542362DCA22A63743B546")
+    
+public byte[] getEncoded()
     {
         ASN1Encodable        params;
         SubjectPublicKeyInfo info;
@@ -423,8 +436,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         return info.getDEREncoded();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.907 -0500", hash_original_method = "7BE58B7CFDB546DA8CA10F5D2E9502BA", hash_generated_method = "FB7EAE8355D3C84383B8E9F07B4C6DC0")
-    private void extractBytes(byte[] encKey, int offSet, BigInteger bI)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.549 -0500", hash_original_method = "7BE58B7CFDB546DA8CA10F5D2E9502BA", hash_generated_method = "FB7EAE8355D3C84383B8E9F07B4C6DC0")
+    
+private void extractBytes(byte[] encKey, int offSet, BigInteger bI)
     {
         byte[] val = bI.toByteArray();
         if (val.length < 32)
@@ -440,14 +454,16 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.907 -0500", hash_original_method = "F5E9634D462D35EA798E6B23EBFE4406", hash_generated_method = "B9C39808478CA1F0355CA0827C05D825")
-    public ECParameterSpec getParams()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.552 -0500", hash_original_method = "F5E9634D462D35EA798E6B23EBFE4406", hash_generated_method = "B9C39808478CA1F0355CA0827C05D825")
+    
+public ECParameterSpec getParams()
     {
         return ecSpec;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.908 -0500", hash_original_method = "81096D9364BAA8B516E2B6B9D2CC7FA4", hash_generated_method = "4E62030D307C47813F66EEB282C15F97")
-    public org.bouncycastle.jce.spec.ECParameterSpec getParameters()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.554 -0500", hash_original_method = "81096D9364BAA8B516E2B6B9D2CC7FA4", hash_generated_method = "4E62030D307C47813F66EEB282C15F97")
+    
+public org.bouncycastle.jce.spec.ECParameterSpec getParameters()
     {
         if (ecSpec == null)     // implictlyCA
         {
@@ -457,14 +473,16 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         return EC5Util.convertSpec(ecSpec, withCompression);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.909 -0500", hash_original_method = "FA9E01D5B24E77318273BFF81F13FFEE", hash_generated_method = "5B834286FC65FFB477093C7DF4D63638")
-    public ECPoint getW()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.556 -0500", hash_original_method = "FA9E01D5B24E77318273BFF81F13FFEE", hash_generated_method = "5B834286FC65FFB477093C7DF4D63638")
+    
+public ECPoint getW()
     {
         return new ECPoint(q.getX().toBigInteger(), q.getY().toBigInteger());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.910 -0500", hash_original_method = "7DB4A3AB35CAAC289E69D3DC0703DC49", hash_generated_method = "60B805F62EF9FDAF5E1BE2F306902BE9")
-    public org.bouncycastle.math.ec.ECPoint getQ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.560 -0500", hash_original_method = "7DB4A3AB35CAAC289E69D3DC0703DC49", hash_generated_method = "60B805F62EF9FDAF5E1BE2F306902BE9")
+    
+public org.bouncycastle.math.ec.ECPoint getQ()
     {
         if (ecSpec == null)
         {
@@ -481,14 +499,16 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         return q;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.911 -0500", hash_original_method = "08945EEACB289647DD0EEBD7F3D2712E", hash_generated_method = "77FA1CDB3AFF5FE18D294E6480FA7A38")
-    public org.bouncycastle.math.ec.ECPoint engineGetQ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.562 -0500", hash_original_method = "08945EEACB289647DD0EEBD7F3D2712E", hash_generated_method = "77FA1CDB3AFF5FE18D294E6480FA7A38")
+    
+public org.bouncycastle.math.ec.ECPoint engineGetQ()
     {
         return q;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.912 -0500", hash_original_method = "EA50C6AAC98F0F1C8DE39B8B441A0904", hash_generated_method = "EA50C6AAC98F0F1C8DE39B8B441A0904")
-    org.bouncycastle.jce.spec.ECParameterSpec engineGetSpec()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.564 -0500", hash_original_method = "EA50C6AAC98F0F1C8DE39B8B441A0904", hash_generated_method = "EA50C6AAC98F0F1C8DE39B8B441A0904")
+    
+org.bouncycastle.jce.spec.ECParameterSpec engineGetSpec()
     {
         if (ecSpec != null)
         {
@@ -498,8 +518,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         return ProviderUtil.getEcImplicitlyCa();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.913 -0500", hash_original_method = "DA24BA2CA85DFA6FE167BE0F082D0E3F", hash_generated_method = "CB4B65C7D162FEAF0C22BCA6280EC868")
-    public String toString()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.566 -0500", hash_original_method = "DA24BA2CA85DFA6FE167BE0F082D0E3F", hash_generated_method = "CB4B65C7D162FEAF0C22BCA6280EC868")
+    
+public String toString()
     {
         StringBuffer    buf = new StringBuffer();
         String          nl = System.getProperty("line.separator");
@@ -512,14 +533,16 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
 
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.913 -0500", hash_original_method = "EACE99DE9593101E486E698F887836BD", hash_generated_method = "8D7B44536C9B350B5B63EDA5AE268A45")
-    public void setPointFormat(String style)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.569 -0500", hash_original_method = "EACE99DE9593101E486E698F887836BD", hash_generated_method = "8D7B44536C9B350B5B63EDA5AE268A45")
+    
+public void setPointFormat(String style)
     {
        withCompression = !("UNCOMPRESSED".equalsIgnoreCase(style));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.914 -0500", hash_original_method = "D60F50DFADDF83A04F7A401D33CE399D", hash_generated_method = "03935E2D11EA3D091E1B0044C726EAFF")
-    public boolean equals(Object o)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.571 -0500", hash_original_method = "D60F50DFADDF83A04F7A401D33CE399D", hash_generated_method = "03935E2D11EA3D091E1B0044C726EAFF")
+    
+public boolean equals(Object o)
     {
         if (!(o instanceof JCEECPublicKey))
         {
@@ -531,14 +554,16 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         return engineGetQ().equals(other.engineGetQ()) && (engineGetSpec().equals(other.engineGetSpec()));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.915 -0500", hash_original_method = "218BA141B3E48ED89E83DD04DDAC204C", hash_generated_method = "6A1E6B819F1E90D11549359BBF278FE9")
-    public int hashCode()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.573 -0500", hash_original_method = "218BA141B3E48ED89E83DD04DDAC204C", hash_generated_method = "6A1E6B819F1E90D11549359BBF278FE9")
+    
+public int hashCode()
     {
         return engineGetQ().hashCode() ^ engineGetSpec().hashCode();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.916 -0500", hash_original_method = "65AAF373098ED8D46B05238E5475AB46", hash_generated_method = "6E5EFD3B714F485EC3F876D6BD2C9091")
-    private void readObject(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.575 -0500", hash_original_method = "65AAF373098ED8D46B05238E5475AB46", hash_generated_method = "6E5EFD3B714F485EC3F876D6BD2C9091")
+    
+private void readObject(
         ObjectInputStream in)
         throws IOException, ClassNotFoundException
     {
@@ -550,8 +575,9 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
         this.withCompression = in.readBoolean();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.917 -0500", hash_original_method = "2E7E67EC6D00C929FDA46D4809812937", hash_generated_method = "00D4F0E1FC29AC287FDBAEBB452F71E5")
-    private void writeObject(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.578 -0500", hash_original_method = "2E7E67EC6D00C929FDA46D4809812937", hash_generated_method = "00D4F0E1FC29AC287FDBAEBB452F71E5")
+    
+private void writeObject(
         ObjectOutputStream out)
         throws IOException
     {

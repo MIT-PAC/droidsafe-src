@@ -21,11 +21,11 @@ import org.apache.http.HttpResponseInterceptor;
 
 
 public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInterceptorList, HttpResponseInterceptorList, Cloneable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.874 -0500", hash_original_field = "F0927C12028AB6BB9BB20CCEECE3CCD1", hash_generated_field = "7398F9B2AE291E5D2787309DA0C28986")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.203 -0500", hash_original_field = "F0927C12028AB6BB9BB20CCEECE3CCD1", hash_generated_field = "7398F9B2AE291E5D2787309DA0C28986")
 
 
     protected List requestInterceptors = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.875 -0500", hash_original_field = "2BC97F81D8E4786B2EA6F956785478DB", hash_generated_field = "9A978F38560CD78676894BBBC402D767")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.206 -0500", hash_original_field = "2BC97F81D8E4786B2EA6F956785478DB", hash_generated_field = "9A978F38560CD78676894BBBC402D767")
  
     protected List responseInterceptors = null;
     
@@ -37,8 +37,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
 
 
     // non-Javadoc, see interface HttpRequestInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.876 -0500", hash_original_method = "E1A96A9E1100F28388C805D474E7BAD5", hash_generated_method = "36D725ACA49B211F5C2BD3C69F53E8E5")
-    public void addRequestInterceptor(final HttpRequestInterceptor itcp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.208 -0500", hash_original_method = "E1A96A9E1100F28388C805D474E7BAD5", hash_generated_method = "36D725ACA49B211F5C2BD3C69F53E8E5")
+    
+public void addRequestInterceptor(final HttpRequestInterceptor itcp) {
 
         if (itcp == null) {
             return;
@@ -50,8 +51,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     }
     
     // non-Javadoc, see interface HttpRequestInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.877 -0500", hash_original_method = "7082E628C139155B4DBFBA26A9DAA55A", hash_generated_method = "C843B06528BD102DBAA0D8D9CF022947")
-    public void addRequestInterceptor(final HttpRequestInterceptor itcp,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.211 -0500", hash_original_method = "7082E628C139155B4DBFBA26A9DAA55A", hash_generated_method = "C843B06528BD102DBAA0D8D9CF022947")
+    
+public void addRequestInterceptor(final HttpRequestInterceptor itcp,
                                       int index) {
         if (index < 0) {
             throw new IndexOutOfBoundsException(String.valueOf(index));
@@ -70,8 +72,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     }
     
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.877 -0500", hash_original_method = "306BD5279F186A7F697194E65EEC0E22", hash_generated_method = "0647AEE1FAA42EC4789386AE1509F27A")
-    public void addResponseInterceptor(HttpResponseInterceptor itcp,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.213 -0500", hash_original_method = "306BD5279F186A7F697194E65EEC0E22", hash_generated_method = "0647AEE1FAA42EC4789386AE1509F27A")
+    
+public void addResponseInterceptor(HttpResponseInterceptor itcp,
                                        int index) {
         if (index < 0) {
             throw new IndexOutOfBoundsException(String.valueOf(index));
@@ -91,8 +94,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     
     
     // non-Javadoc, see interface HttpRequestInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.878 -0500", hash_original_method = "EFB13BD2F5F78871DC67563CE3418B82", hash_generated_method = "EC73B16DAE71315F2FE7CD31D187BFFD")
-    public void removeRequestInterceptorByClass(final Class clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.216 -0500", hash_original_method = "EFB13BD2F5F78871DC67563CE3418B82", hash_generated_method = "EC73B16DAE71315F2FE7CD31D187BFFD")
+    
+public void removeRequestInterceptorByClass(final Class clazz) {
         if (this.requestInterceptors == null) {
             return;
         }
@@ -106,8 +110,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     }
     
     // non-Javadoc, see interface HttpResponseInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.879 -0500", hash_original_method = "DF5F226D1AE22FA4A42A4921E11EE920", hash_generated_method = "5974694CC3CA9F59ED0771C37AC18FCF")
-    public void removeResponseInterceptorByClass(final Class clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.219 -0500", hash_original_method = "DF5F226D1AE22FA4A42A4921E11EE920", hash_generated_method = "5974694CC3CA9F59ED0771C37AC18FCF")
+    
+public void removeResponseInterceptorByClass(final Class clazz) {
         if (this.responseInterceptors == null) {
             return;
         }
@@ -125,29 +130,35 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
      *
      * @param interceptor       the interceptor to add
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.880 -0500", hash_original_method = "49979C36D9B3AD67BC7E969CE817FBA1", hash_generated_method = "CA4F4D90C55BF69E633C00510AA7D1AD")
-    public final void addInterceptor(final HttpRequestInterceptor interceptor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.221 -0500", hash_original_method = "49979C36D9B3AD67BC7E969CE817FBA1", hash_generated_method = "CA4F4D90C55BF69E633C00510AA7D1AD")
+    
+public final
+            void addInterceptor(final HttpRequestInterceptor interceptor) {
         addRequestInterceptor(interceptor);
     }
     
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.881 -0500", hash_original_method = "E7AC62DE103BF676D1A944DB4C5B9066", hash_generated_method = "45675F7AE861D454364E166BA607A2C6")
-    public final void addInterceptor(final HttpRequestInterceptor interceptor,
+     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.224 -0500", hash_original_method = "E7AC62DE103BF676D1A944DB4C5B9066", hash_generated_method = "45675F7AE861D454364E166BA607A2C6")
+    
+public final
+            void addInterceptor(final HttpRequestInterceptor interceptor,
                                 int index) {
         addRequestInterceptor(interceptor, index);
     }
     
     
     // non-Javadoc, see interface HttpRequestInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.882 -0500", hash_original_method = "88BEDAF27A7611A7A46622E627DC9A63", hash_generated_method = "FCC03D0B7B33D37098A6196DD1AECD89")
-    public int getRequestInterceptorCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.226 -0500", hash_original_method = "88BEDAF27A7611A7A46622E627DC9A63", hash_generated_method = "FCC03D0B7B33D37098A6196DD1AECD89")
+    
+public int getRequestInterceptorCount() {
         return (this.requestInterceptors == null) ?
             0 : this.requestInterceptors.size();
     }
     
     
     // non-Javadoc, see interface HttpRequestInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.883 -0500", hash_original_method = "977729FD94F3060F22AEFDD0D34CFD7C", hash_generated_method = "97812F7A13B1A29BD5C585434AB29987")
-    public HttpRequestInterceptor getRequestInterceptor(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.228 -0500", hash_original_method = "977729FD94F3060F22AEFDD0D34CFD7C", hash_generated_method = "97812F7A13B1A29BD5C585434AB29987")
+    
+public HttpRequestInterceptor getRequestInterceptor(int index) {
         
         if ((this.requestInterceptors == null) ||
                 (index < 0) || (index >= this.requestInterceptors.size()))
@@ -158,16 +169,18 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     
     
     // non-Javadoc, see interface HttpRequestInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.883 -0500", hash_original_method = "145E2FEDCA1A32FEC7370D21776649A2", hash_generated_method = "6D49CAC2418C0263BF0152380A974F60")
-    public void clearRequestInterceptors() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.231 -0500", hash_original_method = "145E2FEDCA1A32FEC7370D21776649A2", hash_generated_method = "6D49CAC2418C0263BF0152380A974F60")
+    
+public void clearRequestInterceptors() {
         this.requestInterceptors = null;
     }
     
     
     
     // non-Javadoc, see interface HttpResponseInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.884 -0500", hash_original_method = "7D6C31789EA3365B9B9BD2DA3F7D37E3", hash_generated_method = "728F4E0865346D9141027EF7ABC38892")
-    public void addResponseInterceptor(final HttpResponseInterceptor itcp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.234 -0500", hash_original_method = "7D6C31789EA3365B9B9BD2DA3F7D37E3", hash_generated_method = "728F4E0865346D9141027EF7ABC38892")
+    
+public void addResponseInterceptor(final HttpResponseInterceptor itcp) {
         if (itcp == null) {
             return;
         }
@@ -182,13 +195,16 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
      *
      * @param interceptor       the interceptor to add
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.885 -0500", hash_original_method = "7DCB6CEE097C8760F94401368BED6C8A", hash_generated_method = "60DF96D9BA7C2EC0BA86C23F102CE99A")
-    public final void addInterceptor(final HttpResponseInterceptor interceptor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.238 -0500", hash_original_method = "7DCB6CEE097C8760F94401368BED6C8A", hash_generated_method = "60DF96D9BA7C2EC0BA86C23F102CE99A")
+    
+public final
+            void addInterceptor(final HttpResponseInterceptor interceptor) {
         addResponseInterceptor(interceptor);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.886 -0500", hash_original_method = "5F99216482E6DE112B8985A77BFA25FC", hash_generated_method = "45669F9B439692FC59D65F3837F027D7")
-    public final void addInterceptor(final HttpResponseInterceptor interceptor,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.240 -0500", hash_original_method = "5F99216482E6DE112B8985A77BFA25FC", hash_generated_method = "45669F9B439692FC59D65F3837F027D7")
+    
+public final void addInterceptor(final HttpResponseInterceptor interceptor,
                                      int index) {
         addResponseInterceptor(interceptor, index);
     }
@@ -196,16 +212,18 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     
     
     // non-Javadoc, see interface HttpResponseInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.887 -0500", hash_original_method = "076BC0B3D789CD5AF4622C7C18D19D27", hash_generated_method = "524749162A855AC91F21EA7A7ACDCBD7")
-    public int getResponseInterceptorCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.242 -0500", hash_original_method = "076BC0B3D789CD5AF4622C7C18D19D27", hash_generated_method = "524749162A855AC91F21EA7A7ACDCBD7")
+    
+public int getResponseInterceptorCount() {
         return (this.responseInterceptors == null) ?
             0 : this.responseInterceptors.size();
     }
     
     
     // non-Javadoc, see interface HttpResponseInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.887 -0500", hash_original_method = "745ED53DD037C2DD0D029886B0DA9F3E", hash_generated_method = "E73C579B3FDC010E06DE90ECFFDFD7B4")
-    public HttpResponseInterceptor getResponseInterceptor(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.244 -0500", hash_original_method = "745ED53DD037C2DD0D029886B0DA9F3E", hash_generated_method = "E73C579B3FDC010E06DE90ECFFDFD7B4")
+    
+public HttpResponseInterceptor getResponseInterceptor(int index) {
         
         if ((this.responseInterceptors == null) ||
                 (index < 0) || (index >= this.responseInterceptors.size()))
@@ -216,8 +234,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     
     
     // non-Javadoc, see interface HttpResponseInterceptorList
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.888 -0500", hash_original_method = "312DB737544A7054D89F25FB9ECC2521", hash_generated_method = "CEF1B504F2F465F90D63442FC5DC9F1B")
-    public void clearResponseInterceptors() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.247 -0500", hash_original_method = "312DB737544A7054D89F25FB9ECC2521", hash_generated_method = "CEF1B504F2F465F90D63442FC5DC9F1B")
+    
+public void clearResponseInterceptors() {
         this.responseInterceptors = null;
     }
     
@@ -239,8 +258,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
      * @param list      the list of request and response interceptors
      *                  from which to initialize
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.889 -0500", hash_original_method = "2546A12B167929D122A18C572AD1485C", hash_generated_method = "D4DB2B779E134539710BA68ECDC9E8F1")
-    public void setInterceptors(final List list) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.249 -0500", hash_original_method = "2546A12B167929D122A18C572AD1485C", hash_generated_method = "D4DB2B779E134539710BA68ECDC9E8F1")
+    
+public void setInterceptors(final List list) {
         if (list == null) {
             throw new IllegalArgumentException("List must not be null.");
         }
@@ -264,15 +284,17 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     /**
      * Clears both interceptor lists maintained by this processor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.890 -0500", hash_original_method = "D115BE155D407C71B3079D92DD3ABF36", hash_generated_method = "E083AE564F1A70F4C8B241C8A4873920")
-    public void clearInterceptors() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.251 -0500", hash_original_method = "D115BE155D407C71B3079D92DD3ABF36", hash_generated_method = "E083AE564F1A70F4C8B241C8A4873920")
+    
+public void clearInterceptors() {
         clearRequestInterceptors();
         clearResponseInterceptors();
     }
     
     // non-Javadoc, see interface HttpRequestInterceptor (via HttpProcessor)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.891 -0500", hash_original_method = "73AD1047DC7932E91E23500135DCAA1F", hash_generated_method = "787290C705ECD7B548488F2A0DDCF825")
-    public void process(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.254 -0500", hash_original_method = "73AD1047DC7932E91E23500135DCAA1F", hash_generated_method = "787290C705ECD7B548488F2A0DDCF825")
+    
+public void process(
             final HttpRequest request,
             final HttpContext context)
             throws IOException, HttpException {
@@ -286,8 +308,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     }
     
     // non-Javadoc, see interface HttpResponseInterceptor (via HttpProcessor)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.892 -0500", hash_original_method = "41A094A5EA8F96220C5B29D851C7CE79", hash_generated_method = "5DDA49EF0792677DD8A9DEB7BC9A3EE6")
-    public void process(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.256 -0500", hash_original_method = "41A094A5EA8F96220C5B29D851C7CE79", hash_generated_method = "5DDA49EF0792677DD8A9DEB7BC9A3EE6")
+    
+public void process(
             final HttpResponse response,
             final HttpContext context)
             throws IOException, HttpException {
@@ -300,8 +323,9 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.893 -0500", hash_original_method = "1B68B439697A421DCA2B8CED4C47D3CE", hash_generated_method = "CBD717A04D1A914D9B363B84F625D015")
-    protected void copyInterceptors(final BasicHttpProcessor target) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.259 -0500", hash_original_method = "1B68B439697A421DCA2B8CED4C47D3CE", hash_generated_method = "CBD717A04D1A914D9B363B84F625D015")
+    
+protected void copyInterceptors(final BasicHttpProcessor target) {
         if (this.requestInterceptors != null) {
             target.requestInterceptors =
                 new ArrayList(this.requestInterceptors);
@@ -317,15 +341,17 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
      *
      * @return new instance of the BasicHttpProcessor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.893 -0500", hash_original_method = "166F0C6BA2B53E84DB5B8B4516A0E908", hash_generated_method = "A499CC215A2AD31EF71C24E8CF5996A6")
-    public BasicHttpProcessor copy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.261 -0500", hash_original_method = "166F0C6BA2B53E84DB5B8B4516A0E908", hash_generated_method = "A499CC215A2AD31EF71C24E8CF5996A6")
+    
+public BasicHttpProcessor copy() {
         BasicHttpProcessor clone = new BasicHttpProcessor();
         copyInterceptors(clone);
         return clone;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.894 -0500", hash_original_method = "5AA72A12635065E25111537F7EBBA8DC", hash_generated_method = "7BEBDC195C53D4F44E60CA2921426284")
-    public Object clone() throws CloneNotSupportedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.263 -0500", hash_original_method = "5AA72A12635065E25111537F7EBBA8DC", hash_generated_method = "7BEBDC195C53D4F44E60CA2921426284")
+    
+public Object clone() throws CloneNotSupportedException {
         BasicHttpProcessor clone = (BasicHttpProcessor) super.clone();
         copyInterceptors(clone);
         return clone;

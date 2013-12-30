@@ -14,28 +14,28 @@ import libcore.io.Memory;
 
 
 public class GZIPInputStream extends InflaterInputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.470 -0500", hash_original_field = "562DED064ECF9245FD9964B42E1B365A", hash_generated_field = "02DDC74956F881D64CE1C7D6050C9F70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.638 -0500", hash_original_field = "562DED064ECF9245FD9964B42E1B365A", hash_generated_field = "02DDC74956F881D64CE1C7D6050C9F70")
 
     private static final int FCOMMENT = 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.471 -0500", hash_original_field = "959B3384CBC0C3E67D0ECCEA64D202E1", hash_generated_field = "E75B8E4FDF02F0C7E68C62FE1BBF493F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.641 -0500", hash_original_field = "959B3384CBC0C3E67D0ECCEA64D202E1", hash_generated_field = "E75B8E4FDF02F0C7E68C62FE1BBF493F")
 
 
     private static final int FEXTRA = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.472 -0500", hash_original_field = "93C6A00BB570B22DACF6A67FBE45DDB0", hash_generated_field = "390F1EF548C925A41577D8A8F438ADC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.644 -0500", hash_original_field = "93C6A00BB570B22DACF6A67FBE45DDB0", hash_generated_field = "390F1EF548C925A41577D8A8F438ADC9")
 
 
     private static final int FHCRC = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.473 -0500", hash_original_field = "B844997ECF08C6CD1FC43F320571A37F", hash_generated_field = "BEF062C8719D26CFC454C2C6074500B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.646 -0500", hash_original_field = "B844997ECF08C6CD1FC43F320571A37F", hash_generated_field = "BEF062C8719D26CFC454C2C6074500B1")
 
 
     private static final int FNAME = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.474 -0500", hash_original_field = "A60D6887DA9295E3D6BABAE0A26A0251", hash_generated_field = "EA43AF0273B6C3B8DADF1F68E7A59DEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.649 -0500", hash_original_field = "A60D6887DA9295E3D6BABAE0A26A0251", hash_generated_field = "EA43AF0273B6C3B8DADF1F68E7A59DEF")
 
     public static final int GZIP_MAGIC = 0x8b1f;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.475 -0500", hash_original_field = "8797544496C08ADE2D4F77E9A38D0FB1", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.652 -0500", hash_original_field = "8797544496C08ADE2D4F77E9A38D0FB1", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
 
     protected CRC32 crc = new CRC32();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.475 -0500", hash_original_field = "542D70E5D5A3290907DA75B37B0954FD", hash_generated_field = "CDC6F178723B8CC90E4127274A60802C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.654 -0500", hash_original_field = "542D70E5D5A3290907DA75B37B0954FD", hash_generated_field = "CDC6F178723B8CC90E4127274A60802C")
 
     protected boolean eos = false;
 
@@ -48,8 +48,9 @@ public class GZIPInputStream extends InflaterInputStream {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.476 -0500", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "4CACDDA3C01475C988E89A026717E9AA")
-    public GZIPInputStream(InputStream is) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.657 -0500", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "4CACDDA3C01475C988E89A026717E9AA")
+    
+public GZIPInputStream(InputStream is) throws IOException {
         this(is, BUF_SIZE);
     }
 
@@ -64,8 +65,9 @@ public class GZIPInputStream extends InflaterInputStream {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.477 -0500", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "AF15E3C7F5B5382DCDADBB1DF73D5083")
-    public GZIPInputStream(InputStream is, int size) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.660 -0500", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "AF15E3C7F5B5382DCDADBB1DF73D5083")
+    
+public GZIPInputStream(InputStream is, int size) throws IOException {
         super(is, new Inflater(true), size);
         byte[] header = new byte[10];
         readFully(header, 0, header.length);
@@ -115,9 +117,10 @@ public class GZIPInputStream extends InflaterInputStream {
     /**
      * Closes this stream and any underlying streams.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.478 -0500", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "BA6BD4389234E8C218462453C8EB683C")
-    @Override
-public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.663 -0500", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "BA6BD4389234E8C218462453C8EB683C")
+    
+@Override
+    public void close() throws IOException {
         eos = true;
         super.close();
     }
@@ -126,9 +129,10 @@ public void close() throws IOException {
      * Reads and decompresses GZIP data from the underlying stream into the
      * given buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.479 -0500", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "46FBC679AB395A203BA80D20DE3C76DA")
-    @Override
-public int read(byte[] buffer, int offset, int byteCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.666 -0500", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "46FBC679AB395A203BA80D20DE3C76DA")
+    
+@Override
+    public int read(byte[] buffer, int offset, int byteCount) throws IOException {
         if (closed) {
             throw new IOException("Stream is closed");
         }
@@ -155,8 +159,9 @@ public int read(byte[] buffer, int offset, int byteCount) throws IOException {
         return bytesRead;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.481 -0500", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "8C3AD726F1F3E6CDDABB7FC7BFC4171A")
-    private void verifyCrc() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.669 -0500", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "8C3AD726F1F3E6CDDABB7FC7BFC4171A")
+    
+private void verifyCrc() throws IOException {
         // Get non-compressed bytes read by fill
         int size = inf.getRemaining();
         final int trailerSize = 8; // crc (4 bytes) + total out (4 bytes)
@@ -174,8 +179,9 @@ public int read(byte[] buffer, int offset, int byteCount) throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.482 -0500", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "CC43A6B9AB766388B022EC0324861731")
-    private void readFully(byte[] buffer, int offset, int length) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.671 -0500", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "CC43A6B9AB766388B022EC0324861731")
+    
+private void readFully(byte[] buffer, int offset, int length) throws IOException {
         int result;
         while (length > 0) {
             result = in.read(buffer, offset, length);
@@ -187,8 +193,9 @@ public int read(byte[] buffer, int offset, int byteCount) throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.483 -0500", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "B001FE4DE62E99E6040B8044D96F693E")
-    private void readZeroTerminated(boolean hcrc) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.674 -0500", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "B001FE4DE62E99E6040B8044D96F693E")
+    
+private void readZeroTerminated(boolean hcrc) throws IOException {
         int result;
         while ((result = in.read()) > 0) {
             if (hcrc) {

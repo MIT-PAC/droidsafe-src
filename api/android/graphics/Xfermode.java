@@ -15,7 +15,7 @@ public class Xfermode {
     @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance) {
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.415 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.848 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
 
     int native_instance;
@@ -27,8 +27,9 @@ public class Xfermode {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.413 -0500", hash_original_method = "E460B29F415CD7A40554AE473F148807", hash_generated_method = "D49DD5D2A6C2FBFC72BA771457583316")
-    protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.842 -0500", hash_original_method = "E460B29F415CD7A40554AE473F148807", hash_generated_method = "D49DD5D2A6C2FBFC72BA771457583316")
+    
+protected void finalize() throws Throwable {
         try {
             finalizer(native_instance);
         } finally {

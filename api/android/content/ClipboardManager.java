@@ -16,8 +16,9 @@ import android.os.ServiceManager;
 
 public class ClipboardManager extends android.text.ClipboardManager {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.743 -0500", hash_original_method = "B823D91CB0BDECA7B94A432D3169CF0F", hash_generated_method = "E46EEAD91E5B0F8A4FFB94615D67E32E")
-    static private IClipboard getService() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.353 -0500", hash_original_method = "B823D91CB0BDECA7B94A432D3169CF0F", hash_generated_method = "E46EEAD91E5B0F8A4FFB94615D67E32E")
+    
+static private IClipboard getService() {
         synchronized (sStaticLock) {
             if (sService != null) {
                 return sService;
@@ -27,21 +28,21 @@ public class ClipboardManager extends android.text.ClipboardManager {
             return sService;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.734 -0500", hash_original_field = "70A71BD16E05A887B72D59F04116381D", hash_generated_field = "F842219FC69FE9ACCBA41EF52147C0D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.329 -0500", hash_original_field = "70A71BD16E05A887B72D59F04116381D", hash_generated_field = "F842219FC69FE9ACCBA41EF52147C0D4")
 
     private final static Object sStaticLock = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.735 -0500", hash_original_field = "1EF768EB48A307001D0C0E9180D2C792", hash_generated_field = "7DAD8437C868C87DD2CEB4861B4C57D1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.331 -0500", hash_original_field = "1EF768EB48A307001D0C0E9180D2C792", hash_generated_field = "7DAD8437C868C87DD2CEB4861B4C57D1")
 
     private static IClipboard sService;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.739 -0500", hash_original_field = "1C8819E0457C61ABDAA5E1E45DE2C427", hash_generated_field = "3C04989ED0EDFEE643DF5780498583F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.344 -0500", hash_original_field = "1C8819E0457C61ABDAA5E1E45DE2C427", hash_generated_field = "3C04989ED0EDFEE643DF5780498583F4")
 
 
     static final int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.736 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.333 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.736 -0500", hash_original_field = "69431F5030A8CFD222EF228DFCC7DF2C", hash_generated_field = "E56DE56B7E953844281AFE87E0843DAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.336 -0500", hash_original_field = "69431F5030A8CFD222EF228DFCC7DF2C", hash_generated_field = "E56DE56B7E953844281AFE87E0843DAB")
 
 
     private final ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners
@@ -100,8 +101,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
      *
      * @param clip The clipped data item to set.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.744 -0500", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "7679C6F41286656564D6FD1432FC95FC")
-    public void setPrimaryClip(ClipData clip) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.358 -0500", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "7679C6F41286656564D6FD1432FC95FC")
+    
+public void setPrimaryClip(ClipData clip) {
         try {
             getService().setPrimaryClip(clip);
         } catch (RemoteException e) {
@@ -111,8 +113,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
     /**
      * Returns the current primary clip on the clipboard.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.745 -0500", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "7DDDA0056751537DC044752D3DE1A34C")
-    public ClipData getPrimaryClip() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.361 -0500", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "7DDDA0056751537DC044752D3DE1A34C")
+    
+public ClipData getPrimaryClip() {
         try {
             return getService().getPrimaryClip(mContext.getPackageName());
         } catch (RemoteException e) {
@@ -124,8 +127,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
      * Returns a description of the current primary clip on the clipboard
      * but not a copy of its data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.746 -0500", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "CA11E7B1CBE4EC33585AD3095A9223D3")
-    public ClipDescription getPrimaryClipDescription() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.363 -0500", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "CA11E7B1CBE4EC33585AD3095A9223D3")
+    
+public ClipDescription getPrimaryClipDescription() {
         try {
             return getService().getPrimaryClipDescription();
         } catch (RemoteException e) {
@@ -136,8 +140,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
     /**
      * Returns true if there is currently a primary clip on the clipboard.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.747 -0500", hash_original_method = "CBBCF938F0063A19991B3E7A8193FD4F", hash_generated_method = "6F09A619FDA4D3D0D01D1806C7987F21")
-    public boolean hasPrimaryClip() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.365 -0500", hash_original_method = "CBBCF938F0063A19991B3E7A8193FD4F", hash_generated_method = "6F09A619FDA4D3D0D01D1806C7987F21")
+    
+public boolean hasPrimaryClip() {
         try {
             return getService().hasPrimaryClip();
         } catch (RemoteException e) {
@@ -145,8 +150,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.748 -0500", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "F8652FD64D22F64F108BE481EA8913D3")
-    public void addPrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.368 -0500", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "F8652FD64D22F64F108BE481EA8913D3")
+    
+public void addPrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
         synchronized (mPrimaryClipChangedListeners) {
             if (mPrimaryClipChangedListeners.size() == 0) {
                 try {
@@ -159,8 +165,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.749 -0500", hash_original_method = "7128B19124A44EC27CC4C323B8513057", hash_generated_method = "8BF6DFFBDB7DA5514BD9806E613C1054")
-    public void removePrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.370 -0500", hash_original_method = "7128B19124A44EC27CC4C323B8513057", hash_generated_method = "8BF6DFFBDB7DA5514BD9806E613C1054")
+    
+public void removePrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
         synchronized (mPrimaryClipChangedListeners) {
             mPrimaryClipChangedListeners.remove(what);
             if (mPrimaryClipChangedListeners.size() == 0) {
@@ -177,8 +184,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
      * @deprecated Use {@link #getPrimaryClip()} instead.  This retrieves
      * the primary clip and tries to coerce it to a string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.749 -0500", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "15ABA5238E08C544D4AF67B8DC71CA77")
-    public CharSequence getText() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.372 -0500", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "15ABA5238E08C544D4AF67B8DC71CA77")
+    
+public CharSequence getText() {
         ClipData clip = getPrimaryClip();
         if (clip != null && clip.getItemCount() > 0) {
             return clip.getItemAt(0).coerceToText(mContext);
@@ -196,16 +204,18 @@ public class ClipboardManager extends android.text.ClipboardManager {
      * creates a ClippedItem holding the given text and sets it as the
      * primary clip.  It has no label or icon.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.750 -0500", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "8F6424DC11A3E95CAE183109CBA05CFE")
-    public void setText(CharSequence text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.374 -0500", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "8F6424DC11A3E95CAE183109CBA05CFE")
+    
+public void setText(CharSequence text) {
         setPrimaryClip(ClipData.newPlainText(null, text));
     }
 
     /**
      * @deprecated Use {@link #hasPrimaryClip()} instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.751 -0500", hash_original_method = "9F22D463FB706DEB91BA1565CF5CF48D", hash_generated_method = "9424FF4D96A4EC78AF9234EE6BCB8E85")
-    public boolean hasText() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.376 -0500", hash_original_method = "9F22D463FB706DEB91BA1565CF5CF48D", hash_generated_method = "9424FF4D96A4EC78AF9234EE6BCB8E85")
+    
+public boolean hasText() {
         try {
             return getService().hasClipboardText();
         } catch (RemoteException e) {
@@ -213,8 +223,9 @@ public class ClipboardManager extends android.text.ClipboardManager {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.752 -0500", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "0985A14308F67055EBA5FC0B7343D794")
-    void reportPrimaryClipChanged() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.379 -0500", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "0985A14308F67055EBA5FC0B7343D794")
+    
+void reportPrimaryClipChanged() {
         Object[] listeners;
 
         synchronized (mPrimaryClipChangedListeners) {

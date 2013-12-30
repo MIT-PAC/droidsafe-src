@@ -26,8 +26,9 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
      * @return -1 of first OID "less" than second OID 1 otherwise, 0 if they are
      *         equal
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.920 -0500", hash_original_method = "B35DA3AB8471E98A0F9901B66FBBA5C9", hash_generated_method = "7557328DF4D4A138F8EF4FFB2D8845C4")
-    private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.273 -0500", hash_original_method = "B35DA3AB8471E98A0F9901B66FBBA5C9", hash_generated_method = "7557328DF4D4A138F8EF4FFB2D8845C4")
+    
+private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
         if (oid1 == oid2) {
             return 0;
         }
@@ -51,7 +52,7 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
         }
         return 0;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.918 -0500", hash_original_field = "B4233DEB3183D4BBD895A0DA12ED5529", hash_generated_field = "D4ECDC5A87F7ADFE1C3A33CD3F11715D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.268 -0500", hash_original_field = "B4233DEB3183D4BBD895A0DA12ED5529", hash_generated_field = "D4ECDC5A87F7ADFE1C3A33CD3F11715D")
 
 
     private static final long serialVersionUID = -1286471842007103132L;
@@ -73,8 +74,9 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
      * @return -1 of first AttributeTypeAndValue "less" than second
      *         AttributeTypeAndValue 1 otherwise, 0 if they are equal
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:05.919 -0500", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "FED4FBCEA05778094376463F7BBF91F1")
-    public int compare(Object obj1, Object obj2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.270 -0500", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "FED4FBCEA05778094376463F7BBF91F1")
+    
+public int compare(Object obj1, Object obj2) {
         if (obj1 == obj2) {
             return 0;
         }

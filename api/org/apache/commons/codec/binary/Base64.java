@@ -16,8 +16,9 @@ import org.apache.commons.codec.EncoderException;
 
 public class Base64 implements BinaryEncoder, BinaryDecoder {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.163 -0500", hash_original_method = "A822EBC4FB6E69A8F1BB99F6026DF203", hash_generated_method = "42463F56890B4DE57C93AFF61468CC38")
-    private static boolean isBase64(byte octect) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.942 -0500", hash_original_method = "A822EBC4FB6E69A8F1BB99F6026DF203", hash_generated_method = "42463F56890B4DE57C93AFF61468CC38")
+    
+private static boolean isBase64(byte octect) {
         if (octect == PAD) {
             return true;
         } else if (base64Alphabet[octect] == -1) {
@@ -35,8 +36,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @return true if all bytes are valid characters in the Base64
      *         alphabet or if the byte array is empty; false, otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.164 -0500", hash_original_method = "9B3201AE5D07B0FE82D467B91B0DEBA5", hash_generated_method = "879B54130E22C02EF54785AE920934C3")
-    public static boolean isArrayByteBase64(byte[] arrayOctect) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.945 -0500", hash_original_method = "9B3201AE5D07B0FE82D467B91B0DEBA5", hash_generated_method = "879B54130E22C02EF54785AE920934C3")
+    
+public static boolean isArrayByteBase64(byte[] arrayOctect) {
 
         arrayOctect = discardWhitespace(arrayOctect);
 
@@ -61,8 +63,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @param binaryData binary data to encode
      * @return Base64 characters
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.165 -0500", hash_original_method = "4494B29E35A945C6922BB1D438D582EC", hash_generated_method = "8B6A51FCB99EE75C98201BBFFB4CEC76")
-    public static byte[] encodeBase64(byte[] binaryData) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.947 -0500", hash_original_method = "4494B29E35A945C6922BB1D438D582EC", hash_generated_method = "8B6A51FCB99EE75C98201BBFFB4CEC76")
+    
+public static byte[] encodeBase64(byte[] binaryData) {
         return encodeBase64(binaryData, false);
     }
 
@@ -73,8 +76,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @param binaryData binary data to encode
      * @return Base64 characters chunked in 76 character blocks
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.166 -0500", hash_original_method = "68A658D6A5BAAA4F48B195A7B0E88D46", hash_generated_method = "5F228E07FEAE93D40C07AA6B1EDC541E")
-    public static byte[] encodeBase64Chunked(byte[] binaryData) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.949 -0500", hash_original_method = "68A658D6A5BAAA4F48B195A7B0E88D46", hash_generated_method = "5F228E07FEAE93D40C07AA6B1EDC541E")
+    
+public static byte[] encodeBase64Chunked(byte[] binaryData) {
         return encodeBase64(binaryData, true);
     }
 
@@ -87,8 +91,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      *                  the base64 output into 76 character blocks
      * @return Base64-encoded data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.169 -0500", hash_original_method = "574B1997394313A9CBB50913816A2452", hash_generated_method = "F7A59FE591A255BCF961218A4165471C")
-    public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.959 -0500", hash_original_method = "574B1997394313A9CBB50913816A2452", hash_generated_method = "F7A59FE591A255BCF961218A4165471C")
+    
+public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
         int lengthDataBits = binaryData.length * EIGHTBIT;
         int fewerThan24bits = lengthDataBits % TWENTYFOURBITGROUP;
         int numberTriplets = lengthDataBits / TWENTYFOURBITGROUP;
@@ -228,8 +233,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @param base64Data Byte array containing Base64 data
      * @return Array containing decoded data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.171 -0500", hash_original_method = "87C77E071BDF35E1C91859D8F7A3EF45", hash_generated_method = "24B5D2DD8D4071995BF1156D8E7C81EE")
-    public static byte[] decodeBase64(byte[] base64Data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.963 -0500", hash_original_method = "87C77E071BDF35E1C91859D8F7A3EF45", hash_generated_method = "24B5D2DD8D4071995BF1156D8E7C81EE")
+    
+public static byte[] decodeBase64(byte[] base64Data) {
         // RFC 2045 requires that we discard ALL non-Base64 characters
         base64Data = discardNonBase64(base64Data);
 
@@ -298,8 +304,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * from.
      * @return The data, less whitespace (see RFC 2045).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.172 -0500", hash_original_method = "9BCC1A7457934BC771EBD3626A0DE18B", hash_generated_method = "3CBB1FFB63A50C335D002AC2738F9D2B")
-    static byte[] discardWhitespace(byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.965 -0500", hash_original_method = "9BCC1A7457934BC771EBD3626A0DE18B", hash_generated_method = "3CBB1FFB63A50C335D002AC2738F9D2B")
+    
+static byte[] discardWhitespace(byte[] data) {
         byte groomedData[] = new byte[data.length];
         int bytesCopied = 0;
         
@@ -331,8 +338,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @param data The base-64 encoded data to groom
      * @return The data, less non-base64 characters (see RFC 2045).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.173 -0500", hash_original_method = "94A8BA1BB14E20FE8AAE958A036048A6", hash_generated_method = "03DE6BA56337AAD75057F043E8AE104E")
-    static byte[] discardNonBase64(byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.968 -0500", hash_original_method = "94A8BA1BB14E20FE8AAE958A036048A6", hash_generated_method = "03DE6BA56337AAD75057F043E8AE104E")
+    
+static byte[] discardNonBase64(byte[] data) {
         byte groomedData[] = new byte[data.length];
         int bytesCopied = 0;
 
@@ -348,41 +356,41 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
 
         return packedData;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.154 -0500", hash_original_field = "3417D36C255C0A706906CC312C6DD207", hash_generated_field = "785A63382D1643559C7DD1D6491301B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.914 -0500", hash_original_field = "3417D36C255C0A706906CC312C6DD207", hash_generated_field = "785A63382D1643559C7DD1D6491301B2")
 
     static final int CHUNK_SIZE = 76;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.154 -0500", hash_original_field = "EF1EF80F225DB0E3DBB64CFBECF87EA0", hash_generated_field = "DA2ED5E12D62BE4EE0706244E3772052")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.916 -0500", hash_original_field = "EF1EF80F225DB0E3DBB64CFBECF87EA0", hash_generated_field = "DA2ED5E12D62BE4EE0706244E3772052")
 
     static final byte[] CHUNK_SEPARATOR = "\r\n".getBytes();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.156 -0500", hash_original_field = "3166F2C3484696622891054ECC9C314D", hash_generated_field = "536185EBD18970FB64E03E6E55F3CD95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.918 -0500", hash_original_field = "3166F2C3484696622891054ECC9C314D", hash_generated_field = "536185EBD18970FB64E03E6E55F3CD95")
 
     static final int BASELENGTH = 255;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.156 -0500", hash_original_field = "FCEF32062C3359C0B11C2FD23EF33C67", hash_generated_field = "7C87871A009E7F7C30EDE4A2E1248EE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.921 -0500", hash_original_field = "FCEF32062C3359C0B11C2FD23EF33C67", hash_generated_field = "7C87871A009E7F7C30EDE4A2E1248EE4")
 
     static final int LOOKUPLENGTH = 64;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.157 -0500", hash_original_field = "C26BDE6871D9E0AC8EBF3B7ED730A19E", hash_generated_field = "0614664A7DBCACC8E8866D5A2B16925A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.923 -0500", hash_original_field = "C26BDE6871D9E0AC8EBF3B7ED730A19E", hash_generated_field = "0614664A7DBCACC8E8866D5A2B16925A")
 
     static final int EIGHTBIT = 8;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.158 -0500", hash_original_field = "C8F805AB5701352C5DC504F79E19F64B", hash_generated_field = "49E6A1B0C093832AEB47951289FC205F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.925 -0500", hash_original_field = "C8F805AB5701352C5DC504F79E19F64B", hash_generated_field = "49E6A1B0C093832AEB47951289FC205F")
 
     static final int SIXTEENBIT = 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.159 -0500", hash_original_field = "2F09F83DB29CD46D2021B5F990FF7F04", hash_generated_field = "3EEFAF834B22ACD4CF3C2951310D9CF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.928 -0500", hash_original_field = "2F09F83DB29CD46D2021B5F990FF7F04", hash_generated_field = "3EEFAF834B22ACD4CF3C2951310D9CF3")
 
     static final int TWENTYFOURBITGROUP = 24;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.159 -0500", hash_original_field = "3C45E4CFEEF26E0F0B27D88F356D5311", hash_generated_field = "01F8FEEA5A073F54FCDC8A7EF0A80BE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.930 -0500", hash_original_field = "3C45E4CFEEF26E0F0B27D88F356D5311", hash_generated_field = "01F8FEEA5A073F54FCDC8A7EF0A80BE7")
 
     static final int FOURBYTE = 4;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.160 -0500", hash_original_field = "7F95232D00582C0AE1B15B064FCBEBA3", hash_generated_field = "72625668F2920D54B73E40ED89C74952")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.932 -0500", hash_original_field = "7F95232D00582C0AE1B15B064FCBEBA3", hash_generated_field = "72625668F2920D54B73E40ED89C74952")
 
     static final int SIGN = -128;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.161 -0500", hash_original_field = "1EA38367D236402519BFC161ADFB09AE", hash_generated_field = "7DDF70FA82DA2839AC5F2B0F41202425")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.934 -0500", hash_original_field = "1EA38367D236402519BFC161ADFB09AE", hash_generated_field = "7DDF70FA82DA2839AC5F2B0F41202425")
 
     static final byte PAD = (byte) '=';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.162 -0500", hash_original_field = "A620F336585F07DACADC3B2EAEEA8CA4", hash_generated_field = "CEC8D3A40438DA9D3BA0DE1C5BBCB916")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.937 -0500", hash_original_field = "A620F336585F07DACADC3B2EAEEA8CA4", hash_generated_field = "CEC8D3A40438DA9D3BA0DE1C5BBCB916")
 
     // lookup for base64 chars
     private static byte[] base64Alphabet = new byte[BASELENGTH];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.162 -0500", hash_original_field = "3DD9B58A8F71D585F98AD00789EAA8EC", hash_generated_field = "5F6F4EBEDC3FFA3D977AF8A987ABD629")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.940 -0500", hash_original_field = "3DD9B58A8F71D585F98AD00789EAA8EC", hash_generated_field = "5F6F4EBEDC3FFA3D977AF8A987ABD629")
 
     private static byte[] lookUpBase64Alphabet = new byte[LOOKUPLENGTH];
     
@@ -405,8 +413,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @throws DecoderException if the parameter supplied is not
      *                          of type byte[]
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.166 -0500", hash_original_method = "27928DA5608E3EA81ACF98D07D1CDAA8", hash_generated_method = "51462A14CCF991407A4464C8FB796E4C")
-    public Object decode(Object pObject) throws DecoderException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.951 -0500", hash_original_method = "27928DA5608E3EA81ACF98D07D1CDAA8", hash_generated_method = "51462A14CCF991407A4464C8FB796E4C")
+    
+public Object decode(Object pObject) throws DecoderException {
         if (!(pObject instanceof byte[])) {
             throw new DecoderException("Parameter supplied to Base64 decode is not a byte[]");
         }
@@ -420,8 +429,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @param pArray A byte array containing Base64 character data
      * @return a byte array containing binary data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.167 -0500", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "C17AE6177C5668A0F0E5EE932AEF930C")
-    public byte[] decode(byte[] pArray) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.953 -0500", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "C17AE6177C5668A0F0E5EE932AEF930C")
+    
+public byte[] decode(byte[] pArray) {
         return decodeBase64(pArray);
     }
 
@@ -440,8 +450,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @throws EncoderException if the parameter supplied is not
      *                          of type byte[]
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.174 -0500", hash_original_method = "D5F82E7B8136CE61250AF5358F628FEE", hash_generated_method = "7692D23DABDAD6D43E67AD377007F3FC")
-    public Object encode(Object pObject) throws EncoderException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.970 -0500", hash_original_method = "D5F82E7B8136CE61250AF5358F628FEE", hash_generated_method = "7692D23DABDAD6D43E67AD377007F3FC")
+    
+public Object encode(Object pObject) throws EncoderException {
         if (!(pObject instanceof byte[])) {
             throw new EncoderException(
                 "Parameter supplied to Base64 encode is not a byte[]");
@@ -456,8 +467,9 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
      * @param pArray a byte array containing binary data
      * @return A byte array containing only Base64 character data
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.175 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
-    public byte[] encode(byte[] pArray) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.972 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
+    
+public byte[] encode(byte[] pArray) {
         return encodeBase64(pArray, false);
     }
     static {

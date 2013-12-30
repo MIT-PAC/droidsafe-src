@@ -25,51 +25,51 @@ import javax.security.cert.CertificateException;
 
 
 public class OpenSSLSessionImpl implements SSLSession {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.427 -0500", hash_original_field = "A41A922D630409E60FE006B46592FFB7", hash_generated_field = "269D1908AAA6996EA79A385B96B8D46B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.097 -0500", hash_original_field = "A41A922D630409E60FE006B46592FFB7", hash_generated_field = "269D1908AAA6996EA79A385B96B8D46B")
 
 
     private long creationTime = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.428 -0500", hash_original_field = "CA76B0FD881476C838923B95EAFEFA21", hash_generated_field = "CA76B0FD881476C838923B95EAFEFA21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.099 -0500", hash_original_field = "CA76B0FD881476C838923B95EAFEFA21", hash_generated_field = "CA76B0FD881476C838923B95EAFEFA21")
 
     long lastAccessedTime = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.429 -0500", hash_original_field = "32A66D390E195F822A847B8B4CE21F22", hash_generated_field = "32A66D390E195F822A847B8B4CE21F22")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.101 -0500", hash_original_field = "32A66D390E195F822A847B8B4CE21F22", hash_generated_field = "32A66D390E195F822A847B8B4CE21F22")
 
      X509Certificate[] localCertificates;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.429 -0500", hash_original_field = "C26B9ED4C7D0355EF58C50C7FCD5DD79", hash_generated_field = "C26B9ED4C7D0355EF58C50C7FCD5DD79")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.103 -0500", hash_original_field = "C26B9ED4C7D0355EF58C50C7FCD5DD79", hash_generated_field = "C26B9ED4C7D0355EF58C50C7FCD5DD79")
 
      X509Certificate[] peerCertificates;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.430 -0500", hash_original_field = "FFFCC50D3A278EF95DEB022E99DE2B21", hash_generated_field = "5738630542C71F34716CA340A1982FCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.106 -0500", hash_original_field = "FFFCC50D3A278EF95DEB022E99DE2B21", hash_generated_field = "5738630542C71F34716CA340A1982FCB")
 
 
     private boolean isValid = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.431 -0500", hash_original_field = "5572873E708318B5BCB1211CAFB42224", hash_generated_field = "9D0FE98D3FB5DD14BD6D5D1B013768C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.109 -0500", hash_original_field = "5572873E708318B5BCB1211CAFB42224", hash_generated_field = "9D0FE98D3FB5DD14BD6D5D1B013768C8")
 
     private final Map<String, Object> values = new HashMap<String, Object>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.432 -0500", hash_original_field = "72F58174D07CA827E673CCF7A48A456F", hash_generated_field = "CA10727E3B6C4E28BA2DC6C0BB046AB5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.111 -0500", hash_original_field = "72F58174D07CA827E673CCF7A48A456F", hash_generated_field = "CA10727E3B6C4E28BA2DC6C0BB046AB5")
 
     private volatile javax.security.cert.X509Certificate[] peerCertificateChain;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.432 -0500", hash_original_field = "AFBA487E3552449FC6E9C6F16D545534", hash_generated_field = "B359FFDC454F9BD60DB6759BAEDB0FBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.113 -0500", hash_original_field = "AFBA487E3552449FC6E9C6F16D545534", hash_generated_field = "B359FFDC454F9BD60DB6759BAEDB0FBE")
 
     protected int sslSessionNativePointer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.433 -0500", hash_original_field = "C33A347C63CF676DBDFD0CCC029E433E", hash_generated_field = "871B4093DF845204CC93E22B63A3EB07")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.115 -0500", hash_original_field = "C33A347C63CF676DBDFD0CCC029E433E", hash_generated_field = "871B4093DF845204CC93E22B63A3EB07")
 
     private String peerHost;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.434 -0500", hash_original_field = "B3622AB429836A8D09D8B344FA643F7F", hash_generated_field = "95590212F4127D0DA83F9732C159832A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.117 -0500", hash_original_field = "B3622AB429836A8D09D8B344FA643F7F", hash_generated_field = "95590212F4127D0DA83F9732C159832A")
 
     private int peerPort = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.435 -0500", hash_original_field = "29E2AAA661609AB9806905F1C2C48A95", hash_generated_field = "2B93F4D04C330EE5C6289BC73BF497CE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.119 -0500", hash_original_field = "29E2AAA661609AB9806905F1C2C48A95", hash_generated_field = "2B93F4D04C330EE5C6289BC73BF497CE")
 
     private String cipherSuite;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.436 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.121 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
 
     private String protocol;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.437 -0500", hash_original_field = "E9BC9787BE0291444EC41657CFEA571C", hash_generated_field = "60FA26833155E846A9CFC6F83676739D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.123 -0500", hash_original_field = "E9BC9787BE0291444EC41657CFEA571C", hash_generated_field = "60FA26833155E846A9CFC6F83676739D")
 
     private String compressionMethod;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.438 -0500", hash_original_field = "16B65D9ABEC541D9357431299FAA3C81", hash_generated_field = "4CFE5CBF57F2F36BBD15DF349B9E7672")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.126 -0500", hash_original_field = "16B65D9ABEC541D9357431299FAA3C81", hash_generated_field = "4CFE5CBF57F2F36BBD15DF349B9E7672")
 
     private AbstractSessionContext sessionContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.439 -0500", hash_original_field = "90A5D328FD00C6FE5EBB6109B912317E", hash_generated_field = "8E7258E790097F4AD5ED2D02B17E7B9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.128 -0500", hash_original_field = "90A5D328FD00C6FE5EBB6109B912317E", hash_generated_field = "8E7258E790097F4AD5ED2D02B17E7B9A")
 
     private byte[] id;
 
@@ -77,8 +77,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Class constructor creates an SSL session context given the appropriate
      * SSL parameters.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.440 -0500", hash_original_method = "1D97F06EBCB0CC7BB7E5B60E8D275DC2", hash_generated_method = "349E4F539865688355EE47EBC2447E65")
-    protected OpenSSLSessionImpl(int sslSessionNativePointer, X509Certificate[] localCertificates,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.131 -0500", hash_original_method = "1D97F06EBCB0CC7BB7E5B60E8D275DC2", hash_generated_method = "349E4F539865688355EE47EBC2447E65")
+    
+protected OpenSSLSessionImpl(int sslSessionNativePointer, X509Certificate[] localCertificates,
             X509Certificate[] peerCertificates, String peerHost, int peerPort,
             AbstractSessionContext sessionContext) {
         this.sslSessionNativePointer = sslSessionNativePointer;
@@ -94,8 +95,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * allows loading the saved session.
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.441 -0500", hash_original_method = "ECC374A16FFF293E37020E85B391DB03", hash_generated_method = "780E8B5B055F68B079A55AA39CDAE638")
-    OpenSSLSessionImpl(byte[] derData,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.133 -0500", hash_original_method = "ECC374A16FFF293E37020E85B391DB03", hash_generated_method = "780E8B5B055F68B079A55AA39CDAE638")
+    
+OpenSSLSessionImpl(byte[] derData,
             String peerHost, int peerPort,
             X509Certificate[] peerCertificates,
             AbstractSessionContext sessionContext)
@@ -116,8 +118,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Gets the identifier of the actual SSL session
      * @return array of sessions' identifiers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.441 -0500", hash_original_method = "566A3E7ED91C5CA2BC21AC127756388D", hash_generated_method = "26B0B0EF0B597894436E2479D0935A94")
-    public byte[] getId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.136 -0500", hash_original_method = "566A3E7ED91C5CA2BC21AC127756388D", hash_generated_method = "26B0B0EF0B597894436E2479D0935A94")
+    
+public byte[] getId() {
         if (id == null) {
             resetId();
         }
@@ -132,8 +135,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * before we have read the session ticket from the server side and
      * therefore have computed no id based on the SHA of the ticket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.442 -0500", hash_original_method = "57B02BE93AE841112E3F3B64D0EF8580", hash_generated_method = "57B02BE93AE841112E3F3B64D0EF8580")
-    void resetId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.138 -0500", hash_original_method = "57B02BE93AE841112E3F3B64D0EF8580", hash_generated_method = "57B02BE93AE841112E3F3B64D0EF8580")
+    
+void resetId() {
         id = NativeCrypto.SSL_SESSION_session_id(sslSessionNativePointer);
     }
 
@@ -141,8 +145,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Get the session object in DER format. This allows saving the session
      * data or sharing it with other processes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.443 -0500", hash_original_method = "6E61934F3054764656AF5E19BA5296B9", hash_generated_method = "6E61934F3054764656AF5E19BA5296B9")
-    byte[] getEncoded() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.140 -0500", hash_original_method = "6E61934F3054764656AF5E19BA5296B9", hash_generated_method = "6E61934F3054764656AF5E19BA5296B9")
+    
+byte[] getEncoded() {
         return NativeCrypto.i2d_SSL_SESSION(sslSessionNativePointer);
     }
 
@@ -150,8 +155,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Gets the creation time of the SSL session.
      * @return the session's creation time in milliseconds since the epoch
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.444 -0500", hash_original_method = "A19FB54083053630467ACC70727A9F00", hash_generated_method = "2E7F9619FB87FAC8711C48EA1DB83A85")
-    public long getCreationTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.142 -0500", hash_original_method = "A19FB54083053630467ACC70727A9F00", hash_generated_method = "2E7F9619FB87FAC8711C48EA1DB83A85")
+    
+public long getCreationTime() {
         if (creationTime == 0) {
             creationTime = NativeCrypto.SSL_SESSION_get_time(sslSessionNativePointer);
         }
@@ -165,8 +171,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *
      * @return the session's last access time in milliseconds since the epoch
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.444 -0500", hash_original_method = "D25DBFE273F16B7B3F4524AEB4575158", hash_generated_method = "886740B010A1EA526B6065DA8F34EB19")
-    public long getLastAccessedTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.144 -0500", hash_original_method = "D25DBFE273F16B7B3F4524AEB4575158", hash_generated_method = "886740B010A1EA526B6065DA8F34EB19")
+    
+public long getLastAccessedTime() {
         return (lastAccessedTime == 0) ? getCreationTime() : lastAccessedTime;
     }
 
@@ -175,8 +182,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * concrete SSL session.
      * @return the largest buffer size
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.445 -0500", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "E81B1F1B3E4F15AAEFD04FB4DC689CD7")
-    public int getApplicationBufferSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.146 -0500", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "E81B1F1B3E4F15AAEFD04FB4DC689CD7")
+    
+public int getApplicationBufferSize() {
         return SSLRecordProtocol.MAX_DATA_LENGTH;
     }
 
@@ -185,8 +193,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * SSL session.
      * @return the largest packet size
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.446 -0500", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "49066EE1ED41F2667BDAEB4A3668CF26")
-    public int getPacketBufferSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.148 -0500", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "49066EE1ED41F2667BDAEB4A3668CF26")
+    
+public int getPacketBufferSize() {
         return SSLRecordProtocol.MAX_SSL_PACKET_SIZE;
     }
 
@@ -195,8 +204,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * handshaking phase of the connection.
      * @return a X509 certificate or null if no principal was defined
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.447 -0500", hash_original_method = "FC218F5482EE1068025787BA631F1A11", hash_generated_method = "4E55611D3B687672122D9CE0CB3A3B55")
-    public Principal getLocalPrincipal() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.152 -0500", hash_original_method = "FC218F5482EE1068025787BA631F1A11", hash_generated_method = "4E55611D3B687672122D9CE0CB3A3B55")
+    
+public Principal getLocalPrincipal() {
         if (localCertificates != null && localCertificates.length > 0) {
             return localCertificates[0].getSubjectX500Principal();
         } else {
@@ -212,8 +222,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *         that of the certification authority) or null if no certificate
      *         were used during the handshaking phase.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.447 -0500", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "DCB7B96357BAC93BE08BBFECA9CC1109")
-    public Certificate[] getLocalCertificates() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.154 -0500", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "DCB7B96357BAC93BE08BBFECA9CC1109")
+    
+public Certificate[] getLocalCertificates() {
         return localCertificates;
     }
 
@@ -229,8 +240,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *         not X509 certificate was used (i.e. Kerberos certificates) or the
      *         peer could not be verified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.448 -0500", hash_original_method = "74B59F5E567633033E420B2FD20F7EA9", hash_generated_method = "6D4DE2EB8A7302922C9FB831C62D1F5D")
-    public javax.security.cert.X509Certificate[] getPeerCertificateChain()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.156 -0500", hash_original_method = "74B59F5E567633033E420B2FD20F7EA9", hash_generated_method = "6D4DE2EB8A7302922C9FB831C62D1F5D")
+    
+public javax.security.cert.X509Certificate[] getPeerCertificateChain()
             throws SSLPeerUnverifiedException {
         checkPeerCertificatesPresent();
         javax.security.cert.X509Certificate[] result = peerCertificateChain;
@@ -245,8 +257,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Provide a value to initialize the volatile peerCertificateChain
      * field based on the native SSL_SESSION
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.449 -0500", hash_original_method = "95455CDE829A27B48DAF238C4403FA5A", hash_generated_method = "A8390121371D7D9D59758E1993A98F69")
-    private javax.security.cert.X509Certificate[] createPeerCertificateChain()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.158 -0500", hash_original_method = "95455CDE829A27B48DAF238C4403FA5A", hash_generated_method = "A8390121371D7D9D59758E1993A98F69")
+    
+private javax.security.cert.X509Certificate[] createPeerCertificateChain()
             throws SSLPeerUnverifiedException {
         try {
             javax.security.cert.X509Certificate[] chain
@@ -278,8 +291,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *         certificate was used (i.e. Kerberos certificates) or the peer
      *         could not be verified.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.450 -0500", hash_original_method = "6F2F2196C2B5F66BDE334D0180ADBF68", hash_generated_method = "21E343A0D6E32590DDC3668CEB850696")
-    public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.160 -0500", hash_original_method = "6F2F2196C2B5F66BDE334D0180ADBF68", hash_generated_method = "21E343A0D6E32590DDC3668CEB850696")
+    
+public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
         checkPeerCertificatesPresent();
         return peerCertificates;
     }
@@ -287,8 +301,9 @@ public class OpenSSLSessionImpl implements SSLSession {
     /**
      * Throw SSLPeerUnverifiedException on null or empty peerCertificates array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.451 -0500", hash_original_method = "4A7519F376EC7B19E89A23705C5BAAD6", hash_generated_method = "709FF115FFE9F07757B4CC928089959E")
-    private void checkPeerCertificatesPresent() throws SSLPeerUnverifiedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.162 -0500", hash_original_method = "4A7519F376EC7B19E89A23705C5BAAD6", hash_generated_method = "709FF115FFE9F07757B4CC928089959E")
+    
+private void checkPeerCertificatesPresent() throws SSLPeerUnverifiedException {
         if (peerCertificates == null || peerCertificates.length == 0) {
             throw new SSLPeerUnverifiedException("No peer certificates");
         }
@@ -304,8 +319,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *         peer does not exist.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.452 -0500", hash_original_method = "14CCB3DBB8312C280BE97228D3117477", hash_generated_method = "91DA70C589B456D7FC949C206DA98454")
-    public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.164 -0500", hash_original_method = "14CCB3DBB8312C280BE97228D3117477", hash_generated_method = "91DA70C589B456D7FC949C206DA98454")
+    
+public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
         checkPeerCertificatesPresent();
         return peerCertificates[0].getSubjectX500Principal();
     }
@@ -320,8 +336,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *         available.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.452 -0500", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "B884ECED502456841527EC5FB85A2015")
-    public String getPeerHost() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.167 -0500", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "B884ECED502456841527EC5FB85A2015")
+    
+public String getPeerHost() {
         return peerHost;
     }
 
@@ -334,8 +351,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * @return the peer's port number, or -1 if no one is available.
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.453 -0500", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "0A13911FE5FD34A377B4DEB23C492969")
-    public int getPeerPort() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.169 -0500", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "0A13911FE5FD34A377B4DEB23C492969")
+    
+public int getPeerPort() {
         return peerPort;
     }
 
@@ -343,8 +361,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Returns a string identifier of the crypto tools used in the actual SSL
      * session. For example AES_256_WITH_MD5.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.454 -0500", hash_original_method = "232543257EF0615A8C98189B2944DDF8", hash_generated_method = "83D45C5CF4C5B2FEFCEDBA393368F36A")
-    public String getCipherSuite() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.172 -0500", hash_original_method = "232543257EF0615A8C98189B2944DDF8", hash_generated_method = "83D45C5CF4C5B2FEFCEDBA393368F36A")
+    
+public String getCipherSuite() {
         if (cipherSuite == null) {
             String name = NativeCrypto.SSL_SESSION_cipher(sslSessionNativePointer);
             cipherSuite = NativeCrypto.OPENSSL_TO_STANDARD_CIPHER_SUITES.get(name);
@@ -359,8 +378,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Returns the standard version name of the SSL protocol used in all
      * connections pertaining to this SSL session.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.455 -0500", hash_original_method = "DC690D466354C337179157E9ED46DB27", hash_generated_method = "5A8F6C2178CF578AFF458D8EE38B254A")
-    public String getProtocol() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.174 -0500", hash_original_method = "DC690D466354C337179157E9ED46DB27", hash_generated_method = "5A8F6C2178CF578AFF458D8EE38B254A")
+    
+public String getProtocol() {
         if (protocol == null) {
             protocol = NativeCrypto.SSL_SESSION_get_version(sslSessionNativePointer);
         }
@@ -371,8 +391,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * Returns the compression method name used in all connections
      * pertaining to this SSL session.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.456 -0500", hash_original_method = "968671DF82E2AA12BC31F552097867FE", hash_generated_method = "8BF24F4111408B0E6581E2664F47A96B")
-    public String getCompressionMethod() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.176 -0500", hash_original_method = "968671DF82E2AA12BC31F552097867FE", hash_generated_method = "8BF24F4111408B0E6581E2664F47A96B")
+    
+public String getCompressionMethod() {
         if (compressionMethod == null) {
             compressionMethod
                     = NativeCrypto.SSL_SESSION_compress_meth(sessionContext.sslCtxNativePointer,
@@ -388,8 +409,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * @return the SSL context used for this session, or null if it is
      * unavailable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.456 -0500", hash_original_method = "6C1FB28F6F59303D04A80E546963567A", hash_generated_method = "DD74B7C633C3A408143E85D4C6827B68")
-    public SSLSessionContext getSessionContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.178 -0500", hash_original_method = "6C1FB28F6F59303D04A80E546963567A", hash_generated_method = "DD74B7C633C3A408143E85D4C6827B68")
+    
+public SSLSessionContext getSessionContext() {
         return sessionContext;
     }
 
@@ -399,8 +421,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *
      * @return true if this session may be resumed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.457 -0500", hash_original_method = "8D23F85B43098BFBC0CC2E7E59C1A10A", hash_generated_method = "8AE753C071FF8E0D201DD8A4B290FA3D")
-    public boolean isValid() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.180 -0500", hash_original_method = "8D23F85B43098BFBC0CC2E7E59C1A10A", hash_generated_method = "8AE753C071FF8E0D201DD8A4B290FA3D")
+    
+public boolean isValid() {
         SSLSessionContext context = sessionContext;
         if (isValid
                 && context != null
@@ -415,8 +438,9 @@ public class OpenSSLSessionImpl implements SSLSession {
     /**
      * It invalidates a SSL session forbidding any resumption.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.458 -0500", hash_original_method = "9CCB74C876B98AB8C259B415A5496084", hash_generated_method = "C9DBF3B4EDCAC34471E10F51BA381E6E")
-    public void invalidate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.183 -0500", hash_original_method = "9CCB74C876B98AB8C259B415A5496084", hash_generated_method = "C9DBF3B4EDCAC34471E10F51BA381E6E")
+    
+public void invalidate() {
         isValid = false;
         sessionContext = null;
     }
@@ -433,8 +457,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *         exist.
      * @throws <code>IllegalArgumentException</code> if the argument is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.459 -0500", hash_original_method = "AC1FF55FABC34CC9974A294171A954DF", hash_generated_method = "482A1EBBD4ADC2D29BC2576BF219C8BF")
-    public Object getValue(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.185 -0500", hash_original_method = "AC1FF55FABC34CC9974A294171A954DF", hash_generated_method = "482A1EBBD4ADC2D29BC2576BF219C8BF")
+    
+public Object getValue(String name) {
         if (name == null) {
             throw new IllegalArgumentException("name == null");
         }
@@ -450,8 +475,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * @return a non-null (possibly empty) array of names of the data objects
      *         bound to this SSL session.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.460 -0500", hash_original_method = "94A4765ACA5D7A784EB5749EBA86107C", hash_generated_method = "212BEDE870CA0A8C4B9BA72912F392CA")
-    public String[] getValueNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.188 -0500", hash_original_method = "94A4765ACA5D7A784EB5749EBA86107C", hash_generated_method = "212BEDE870CA0A8C4B9BA72912F392CA")
+    
+public String[] getValueNames() {
         return values.keySet().toArray(new String[values.size()]);
     }
 
@@ -470,8 +496,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      * @throws <code>IllegalArgumentException</code> if one or both
      *             argument(s) is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.460 -0500", hash_original_method = "306FE04DD14403034511108312788846", hash_generated_method = "3D28D4DAA15DA59E1E198C43B216F883")
-    public void putValue(String name, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.190 -0500", hash_original_method = "306FE04DD14403034511108312788846", hash_generated_method = "3D28D4DAA15DA59E1E198C43B216F883")
+    
+public void putValue(String name, Object value) {
         if (name == null || value == null) {
             throw new IllegalArgumentException("name == null || value == null");
         }
@@ -501,8 +528,9 @@ public class OpenSSLSessionImpl implements SSLSession {
      *            accepted!)
      * @throws <code>IllegalArgumentException</code> if the argument is null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.461 -0500", hash_original_method = "EC2DC464BD3BB987F4ACA997202AA983", hash_generated_method = "C1F063A87C38C41A8C0646FAC8DC1A82")
-    public void removeValue(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.193 -0500", hash_original_method = "EC2DC464BD3BB987F4ACA997202AA983", hash_generated_method = "C1F063A87C38C41A8C0646FAC8DC1A82")
+    
+public void removeValue(String name) {
         if (name == null) {
             throw new IllegalArgumentException("name == null");
         }
@@ -513,9 +541,9 @@ public class OpenSSLSessionImpl implements SSLSession {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.462 -0500", hash_original_method = "1A939A31B27FEC68DC8C26996575F0FB", hash_generated_method = "FFE7A66666FEE0B5D7AE4F33A403162C")
-    @Override
-protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.195 -0500", hash_original_method = "1A939A31B27FEC68DC8C26996575F0FB", hash_generated_method = "FFE7A66666FEE0B5D7AE4F33A403162C")
+    
+@Override protected void finalize() throws Throwable {
         try {
             NativeCrypto.SSL_SESSION_free(sslSessionNativePointer);
         } finally {

@@ -17,15 +17,18 @@ import java.lang.reflect.Modifier;
 public abstract class MessageObject extends GenericObject {
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.697 -0500", hash_original_method = "FC3F0C40EB43CAA923D6D6A1BF0E3847", hash_generated_method = "1DCA3CCA8E6E09BBA7F86CAD1E1D5F4C")
-    protected MessageObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.224 -0500", hash_original_method = "FC3F0C40EB43CAA923D6D6A1BF0E3847", hash_generated_method = "1DCA3CCA8E6E09BBA7F86CAD1E1D5F4C")
+    
+protected MessageObject() {
         super();
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.693 -0500", hash_original_method = "62F9CE492238F967486EB3E8B7CFE75A", hash_generated_method = "5BF421C60268DEDED1E2C31D57984D81")
-    public abstract String encode();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.212 -0500", hash_original_method = "62F9CE492238F967486EB3E8B7CFE75A", hash_generated_method = "5BF421C60268DEDED1E2C31D57984D81")
+    
+public abstract String encode();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.693 -0500", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07FA9249E0984A0CAE96B90D99799894")
-    public void dbgPrint() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.216 -0500", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07FA9249E0984A0CAE96B90D99799894")
+    
+public void dbgPrint() {
         super.dbgPrint();
     }
 
@@ -35,8 +38,9 @@ public abstract class MessageObject extends GenericObject {
      * the superclass) because it needs to access the protected members
      * of the other objects in this class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.696 -0500", hash_original_method = "0442EC30A54A551F3B539049CBAE5178", hash_generated_method = "6D0150B112E54A3DB0A66FCA25337600")
-    public String debugDump() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.221 -0500", hash_original_method = "0442EC30A54A551F3B539049CBAE5178", hash_generated_method = "6D0150B112E54A3DB0A66FCA25337600")
+    
+public String debugDump() {
         stringRepresentation = "";
         Class<?> myclass = getClass();
         sprint(myclass.getName());
@@ -135,8 +139,9 @@ public abstract class MessageObject extends GenericObject {
     /**
      * Formatter with a given starting indentation (for nested structs).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.698 -0500", hash_original_method = "FAEFAEB9988F2842518A414FFF4FC663", hash_generated_method = "A93437BD4A0526BE35A1025C3962E72C")
-    public String dbgPrint(int indent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.226 -0500", hash_original_method = "FAEFAEB9988F2842518A414FFF4FC663", hash_generated_method = "A93437BD4A0526BE35A1025C3962E72C")
+    
+public String dbgPrint(int indent) {
         int save = indentation;
         indentation = indent;
         String retval = this.toString();

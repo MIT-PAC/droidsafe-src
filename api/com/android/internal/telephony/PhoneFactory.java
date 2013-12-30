@@ -23,8 +23,9 @@ public class PhoneFactory {
 
     //***** Class Methods
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.034 -0500", hash_original_method = "0E1E8931F63DFB6885BA0E932A386482", hash_generated_method = "EAE0AA2B1398ECEDBB04FE2727AB5B98")
-    public static void makeDefaultPhones(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.857 -0500", hash_original_method = "0E1E8931F63DFB6885BA0E932A386482", hash_generated_method = "EAE0AA2B1398ECEDBB04FE2727AB5B98")
+    
+public static void makeDefaultPhones(Context context) {
         makeDefaultPhone(context);
     }
 
@@ -32,8 +33,9 @@ public class PhoneFactory {
      * FIXME replace this with some other way of making these
      * instances
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.035 -0500", hash_original_method = "FD504A8EE66FE46638165E4FA7669C08", hash_generated_method = "A7B536DB29EACCA84CD9D770118ACB70")
-    public static void makeDefaultPhone(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.862 -0500", hash_original_method = "FD504A8EE66FE46638165E4FA7669C08", hash_generated_method = "A7B536DB29EACCA84CD9D770118ACB70")
+    
+public static void makeDefaultPhone(Context context) {
         synchronized(Phone.class) {
             if (!sMadeDefaults) {
                 sLooper = Looper.myLooper();
@@ -142,8 +144,9 @@ public class PhoneFactory {
      * @param network mode
      * @return Phone Type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.036 -0500", hash_original_method = "EF5F5E28A34E9E9EC202E3A779439E2A", hash_generated_method = "5E332680A8C51EC776B281EEFA3D5618")
-    public static int getPhoneType(int networkMode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.865 -0500", hash_original_method = "EF5F5E28A34E9E9EC202E3A779439E2A", hash_generated_method = "5E332680A8C51EC776B281EEFA3D5618")
+    
+public static int getPhoneType(int networkMode) {
         switch(networkMode) {
         case RILConstants.NETWORK_MODE_CDMA:
         case RILConstants.NETWORK_MODE_CDMA_NO_EVDO:
@@ -173,8 +176,9 @@ public class PhoneFactory {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.037 -0500", hash_original_method = "E0E640EABAC4777B910C56F03DFB97E3", hash_generated_method = "AF440F5EC61D362F245508B2E93D2847")
-    public static Phone getDefaultPhone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.868 -0500", hash_original_method = "E0E640EABAC4777B910C56F03DFB97E3", hash_generated_method = "AF440F5EC61D362F245508B2E93D2847")
+    
+public static Phone getDefaultPhone() {
         if (sLooper != Looper.myLooper()) {
             throw new RuntimeException(
                 "PhoneFactory.getDefaultPhone must be called from Looper thread");
@@ -186,8 +190,9 @@ public class PhoneFactory {
        return sProxyPhone;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.038 -0500", hash_original_method = "3914D022DA63364ED06A0A76AA75F742", hash_generated_method = "C3AD0A4549895A2281873672BB52AEDE")
-    public static Phone getCdmaPhone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.870 -0500", hash_original_method = "3914D022DA63364ED06A0A76AA75F742", hash_generated_method = "C3AD0A4549895A2281873672BB52AEDE")
+    
+public static Phone getCdmaPhone() {
         Phone phone;
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             switch (BaseCommands.getLteOnCdmaModeStatic()) {
@@ -206,8 +211,9 @@ public class PhoneFactory {
         return phone;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.039 -0500", hash_original_method = "D21324550B0D208FEBE5EE2A4FB6D6A5", hash_generated_method = "30715F2D0DF0026F0D876CE7EC5B115B")
-    public static Phone getGsmPhone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.873 -0500", hash_original_method = "D21324550B0D208FEBE5EE2A4FB6D6A5", hash_generated_method = "30715F2D0DF0026F0D876CE7EC5B115B")
+    
+public static Phone getGsmPhone() {
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             Phone phone = new GSMPhone(sContext, sCommandsInterface, sPhoneNotifier);
             return phone;
@@ -219,40 +225,41 @@ public class PhoneFactory {
      * @param sipUri the local SIP URI the phone runs on
      * @return the {@code SipPhone} object or null if the SIP URI is not valid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.040 -0500", hash_original_method = "602CEBAA873618AF473B0ECCA9F1A939", hash_generated_method = "CB4F46AA4D258D2DB4E21ECE953B9CFF")
-    public static SipPhone makeSipPhone(String sipUri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.875 -0500", hash_original_method = "602CEBAA873618AF473B0ECCA9F1A939", hash_generated_method = "CB4F46AA4D258D2DB4E21ECE953B9CFF")
+    
+public static SipPhone makeSipPhone(String sipUri) {
         return SipPhoneFactory.makePhone(sipUri, sContext, sPhoneNotifier);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.026 -0500", hash_original_field = "F4446E751DD7D5E85FE650192A5E7AE4", hash_generated_field = "90DFE6F4299DB554E753A7D7707C6EC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.834 -0500", hash_original_field = "F4446E751DD7D5E85FE650192A5E7AE4", hash_generated_field = "90DFE6F4299DB554E753A7D7707C6EC5")
 
     static final String LOG_TAG = "PHONE";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.027 -0500", hash_original_field = "C31BFCCF5322C7DAFBAA7F6F38E8E8EF", hash_generated_field = "D9188122A97A294FF16BEFA0A1A17979")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.836 -0500", hash_original_field = "C31BFCCF5322C7DAFBAA7F6F38E8E8EF", hash_generated_field = "D9188122A97A294FF16BEFA0A1A17979")
 
     static final int SOCKET_OPEN_RETRY_MILLIS = 2 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.028 -0500", hash_original_field = "92646751BF3F7FC3FA1E904F900FAB05", hash_generated_field = "E1118DBBDAB6CAFBF7DDF57BCC17F890")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.838 -0500", hash_original_field = "92646751BF3F7FC3FA1E904F900FAB05", hash_generated_field = "E1118DBBDAB6CAFBF7DDF57BCC17F890")
 
     static final int SOCKET_OPEN_MAX_RETRY = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.028 -0500", hash_original_field = "E40B43EECEFF894B61232068FF4B6452", hash_generated_field = "FFD48797B24EE6D7B6E4F727582D4861")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.841 -0500", hash_original_field = "E40B43EECEFF894B61232068FF4B6452", hash_generated_field = "FFD48797B24EE6D7B6E4F727582D4861")
 
 
     static private Phone sProxyPhone = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.029 -0500", hash_original_field = "4CEBC247DDA6403F22746931A1D46857", hash_generated_field = "948633D0D5C93BC4F71449321A821594")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.843 -0500", hash_original_field = "4CEBC247DDA6403F22746931A1D46857", hash_generated_field = "948633D0D5C93BC4F71449321A821594")
 
     static private CommandsInterface sCommandsInterface = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.030 -0500", hash_original_field = "72293D3627C82681D2739C24FC972587", hash_generated_field = "02E9DB57BA34902E9B630E9F37D0663A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.846 -0500", hash_original_field = "72293D3627C82681D2739C24FC972587", hash_generated_field = "02E9DB57BA34902E9B630E9F37D0663A")
 
 
     static private boolean sMadeDefaults = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.031 -0500", hash_original_field = "229EFF098D4EE5A4D864A34ADA836109", hash_generated_field = "C04DE785FB2B397C6D68F5F32B6C5018")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.848 -0500", hash_original_field = "229EFF098D4EE5A4D864A34ADA836109", hash_generated_field = "C04DE785FB2B397C6D68F5F32B6C5018")
 
     static private PhoneNotifier sPhoneNotifier;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.032 -0500", hash_original_field = "DC7DC1FDFC7889453CE997D3B604ED46", hash_generated_field = "C4167377B5F2D6FE4CFD038AB9D2C19B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.850 -0500", hash_original_field = "DC7DC1FDFC7889453CE997D3B604ED46", hash_generated_field = "C4167377B5F2D6FE4CFD038AB9D2C19B")
 
     static private Looper sLooper;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.032 -0500", hash_original_field = "CEF70F4829B188D89E37229D281B99F4", hash_generated_field = "6C044CAE0B4842270F6CBBA83E26A7BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.853 -0500", hash_original_field = "CEF70F4829B188D89E37229D281B99F4", hash_generated_field = "6C044CAE0B4842270F6CBBA83E26A7BE")
 
     static private Context sContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:27.033 -0500", hash_original_field = "3D13FFAC931996EA14B80B41398A0178", hash_generated_field = "DCF8A1C5D546D28BD0D7A720AA48C565")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.855 -0500", hash_original_field = "3D13FFAC931996EA14B80B41398A0178", hash_generated_field = "DCF8A1C5D546D28BD0D7A720AA48C565")
 
 
     static final int preferredCdmaSubscription = RILConstants.PREFERRED_CDMA_SUBSCRIPTION;

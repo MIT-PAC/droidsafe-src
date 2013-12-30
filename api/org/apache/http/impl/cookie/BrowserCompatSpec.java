@@ -26,7 +26,7 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public class BrowserCompatSpec extends CookieSpecBase {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.272 -0500", hash_original_field = "4F30D7346FE9603EC1B9A123868D0324", hash_generated_field = "0A51A84F6A48C700CC30A9F8BE2AB7A0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.844 -0500", hash_original_field = "4F30D7346FE9603EC1B9A123868D0324", hash_generated_field = "0A51A84F6A48C700CC30A9F8BE2AB7A0")
 
     protected static final String[] DATE_PATTERNS = new String[] {
             DateUtils.PATTERN_RFC1123,
@@ -44,14 +44,15 @@ public class BrowserCompatSpec extends CookieSpecBase {
             "EEE,dd-MMM-yyyy HH:mm:ss z",
             "EEE, dd-MM-yyyy HH:mm:ss z",                
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.272 -0500", hash_original_field = "6ECCC683F151EE6CE57F2B5BB3F18FF6", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.847 -0500", hash_original_field = "6ECCC683F151EE6CE57F2B5BB3F18FF6", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
 
 
     private  String[] datepatterns; 
     
     /** Default constructor */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.273 -0500", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "7D8D35CA9F2F06B4FCE9AD644D24968B")
-    public BrowserCompatSpec(final String[] datepatterns) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.850 -0500", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "7D8D35CA9F2F06B4FCE9AD644D24968B")
+    
+public BrowserCompatSpec(final String[] datepatterns) {
         super();
         if (datepatterns != null) {
             this.datepatterns = datepatterns.clone();
@@ -68,13 +69,15 @@ public class BrowserCompatSpec extends CookieSpecBase {
     }
 
     /** Default constructor */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.274 -0500", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "90648FA6E43E44AA1A60F2B9ED760AA9")
-    public BrowserCompatSpec() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.853 -0500", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "90648FA6E43E44AA1A60F2B9ED760AA9")
+    
+public BrowserCompatSpec() {
         this(null);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.275 -0500", hash_original_method = "D6912D1F98189529AD0F723836603277", hash_generated_method = "423FB13D3B3CCF4008E87254998EB146")
-    public List<Cookie> parse(final Header header, final CookieOrigin origin) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.856 -0500", hash_original_method = "D6912D1F98189529AD0F723836603277", hash_generated_method = "423FB13D3B3CCF4008E87254998EB146")
+    
+public List<Cookie> parse(final Header header, final CookieOrigin origin) 
             throws MalformedCookieException {
         if (header == null) {
             throw new IllegalArgumentException("Header may not be null");
@@ -124,8 +127,9 @@ public class BrowserCompatSpec extends CookieSpecBase {
         return parse(elems, origin);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.276 -0500", hash_original_method = "A80B57E4EF4EED165A6AA62FBF374996", hash_generated_method = "2E0AC1ABFBAB890FFE89F47381577C85")
-    public List<Header> formatCookies(final List<Cookie> cookies) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.859 -0500", hash_original_method = "A80B57E4EF4EED165A6AA62FBF374996", hash_generated_method = "2E0AC1ABFBAB890FFE89F47381577C85")
+    
+public List<Header> formatCookies(final List<Cookie> cookies) {
         if (cookies == null) {
             throw new IllegalArgumentException("List of cookies may not be null");
         }
@@ -152,13 +156,15 @@ public class BrowserCompatSpec extends CookieSpecBase {
         return headers;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.277 -0500", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "4F2143F4EC2E36A2DC294CA599F7593F")
-    public int getVersion() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.861 -0500", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "4F2143F4EC2E36A2DC294CA599F7593F")
+    
+public int getVersion() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.278 -0500", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "1B200382D02120253E20B1BF08CC95D3")
-    public Header getVersionHeader() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.863 -0500", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "1B200382D02120253E20B1BF08CC95D3")
+    
+public Header getVersionHeader() {
         return null;
     }
 }

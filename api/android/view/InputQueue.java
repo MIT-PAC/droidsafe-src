@@ -72,29 +72,31 @@ public final class InputQueue {
         nativeUnregisterInputChannel(inputChannel);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.899 -0500", hash_original_method = "36C17BD34CDDCF86AAD54E86A65CBE17", hash_generated_method = "48F220CF03DE9F3A2BEC15ED27315F57")
-    @SuppressWarnings("unused")
-private static void dispatchKeyEvent(InputHandler inputHandler,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.280 -0500", hash_original_method = "36C17BD34CDDCF86AAD54E86A65CBE17", hash_generated_method = "48F220CF03DE9F3A2BEC15ED27315F57")
+    
+@SuppressWarnings("unused")
+    private static void dispatchKeyEvent(InputHandler inputHandler,
             KeyEvent event, long finishedToken) {
         FinishedCallback finishedCallback = FinishedCallback.obtain(finishedToken);
         inputHandler.handleKey(event, finishedCallback);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.900 -0500", hash_original_method = "1DB369BCBC340EA73F202ACFFFE6A3DD", hash_generated_method = "945929AAFC4E215FA8BC3E6248F28423")
-    @SuppressWarnings("unused")
-private static void dispatchMotionEvent(InputHandler inputHandler,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.283 -0500", hash_original_method = "1DB369BCBC340EA73F202ACFFFE6A3DD", hash_generated_method = "945929AAFC4E215FA8BC3E6248F28423")
+    
+@SuppressWarnings("unused")
+    private static void dispatchMotionEvent(InputHandler inputHandler,
             MotionEvent event, long finishedToken) {
         FinishedCallback finishedCallback = FinishedCallback.obtain(finishedToken);
         inputHandler.handleMotion(event, finishedCallback);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.887 -0500", hash_original_field = "DF383A2ACFEE05AC3BD4A4406C46C7E2", hash_generated_field = "94920E7D18ECE70284EAAEB037392224")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.245 -0500", hash_original_field = "DF383A2ACFEE05AC3BD4A4406C46C7E2", hash_generated_field = "94920E7D18ECE70284EAAEB037392224")
 
     private static final String TAG = "InputQueue";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.888 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.247 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     
     private static final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.891 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "BDCA99E42BC506D141E07BE230771AE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.255 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "BDCA99E42BC506D141E07BE230771AE3")
 
     
     private static final Object sLock = new Object();
@@ -113,16 +115,17 @@ private static void dispatchMotionEvent(InputHandler inputHandler,
             }
             return callBackMap.get(finishedToken);
         }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.905 -0500", hash_original_field = "5A9C4804E43B1DA0BA241FB5470EF97E", hash_generated_field = "11EDD9B738A3761EEA6282CC3588BF9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.297 -0500", hash_original_field = "5A9C4804E43B1DA0BA241FB5470EF97E", hash_generated_field = "11EDD9B738A3761EEA6282CC3588BF9E")
 
         
         private FinishedCallback mRecycleNext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.905 -0500", hash_original_field = "67A0FC1AB73DFA1EF77B1023746AD614", hash_generated_field = "1C857E4F95050669EDA465BE12C181F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.300 -0500", hash_original_field = "67A0FC1AB73DFA1EF77B1023746AD614", hash_generated_field = "1C857E4F95050669EDA465BE12C181F0")
 
         private long mFinishedToken;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.907 -0500", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "2E154B4C61D82C8A0B2C3D1599F5A3C6")
-        private FinishedCallback() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.302 -0500", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "2E154B4C61D82C8A0B2C3D1599F5A3C6")
+        
+private FinishedCallback() {
         }
 
         
@@ -166,20 +169,22 @@ private static void dispatchMotionEvent(InputHandler inputHandler,
         
         void onInputQueueDestroyed(InputQueue queue);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.890 -0500", hash_original_field = "9822897BD047FB46E3B13005AC739818", hash_generated_field = "9822897BD047FB46E3B13005AC739818")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.252 -0500", hash_original_field = "9822897BD047FB46E3B13005AC739818", hash_generated_field = "9822897BD047FB46E3B13005AC739818")
 
 
      InputChannel mChannel;
     
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.895 -0500", hash_original_method = "578F9F8C0543A874EC0424533736E385", hash_generated_method = "F3609ACFC4EBC9F4C56997CE627C55BF")
-    public InputQueue(InputChannel channel) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.270 -0500", hash_original_method = "578F9F8C0543A874EC0424533736E385", hash_generated_method = "F3609ACFC4EBC9F4C56997CE627C55BF")
+    
+public InputQueue(InputChannel channel) {
         mChannel = channel;
     }
     
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.896 -0500", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "4041D8E4263F3B4F9618C753D89620DE")
-    public InputChannel getInputChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.272 -0500", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "4041D8E4263F3B4F9618C753D89620DE")
+    
+public InputChannel getInputChannel() {
         return mChannel;
     }
 }

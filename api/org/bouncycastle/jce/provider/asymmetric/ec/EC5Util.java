@@ -21,8 +21,9 @@ import org.bouncycastle.math.ec.ECCurve;
 
 
 public class EC5Util {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.083 -0500", hash_original_method = "D2830BD07D3130852D457ED09BAC30B4", hash_generated_method = "E87384123D53EA285E4CC0C45416B41E")
-    public static EllipticCurve convertCurve(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.032 -0500", hash_original_method = "D2830BD07D3130852D457ED09BAC30B4", hash_generated_method = "E87384123D53EA285E4CC0C45416B41E")
+    
+public static EllipticCurve convertCurve(
         ECCurve curve, 
         byte[]  seed)
     {
@@ -52,8 +53,9 @@ public class EC5Util {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.084 -0500", hash_original_method = "DF6321E52D95F0D8985F17FFECBD307E", hash_generated_method = "6BAA17ACA3A02144F97FA6B6FDE5FDC3")
-    public static ECCurve convertCurve(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.035 -0500", hash_original_method = "DF6321E52D95F0D8985F17FFECBD307E", hash_generated_method = "6BAA17ACA3A02144F97FA6B6FDE5FDC3")
+    
+public static ECCurve convertCurve(
         EllipticCurve ec)
     {
         ECField field = ec.getField();
@@ -73,8 +75,9 @@ public class EC5Util {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.085 -0500", hash_original_method = "A9E0E7B09923AF895DEDC68559085AD6", hash_generated_method = "3F7D8E686D4130CA670237956E88AE53")
-    public static ECParameterSpec convertSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.038 -0500", hash_original_method = "A9E0E7B09923AF895DEDC68559085AD6", hash_generated_method = "3F7D8E686D4130CA670237956E88AE53")
+    
+public static ECParameterSpec convertSpec(
         EllipticCurve ellipticCurve,
         org.bouncycastle.jce.spec.ECParameterSpec spec)
     {
@@ -101,8 +104,9 @@ public class EC5Util {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.085 -0500", hash_original_method = "BC0074BF0B610B8847FC74E7CA3D7147", hash_generated_method = "7EFEFB40F57541C8625A51EA903C7464")
-    public static org.bouncycastle.jce.spec.ECParameterSpec convertSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.040 -0500", hash_original_method = "BC0074BF0B610B8847FC74E7CA3D7147", hash_generated_method = "7EFEFB40F57541C8625A51EA903C7464")
+    
+public static org.bouncycastle.jce.spec.ECParameterSpec convertSpec(
         ECParameterSpec ecSpec,
         boolean withCompression)
     {
@@ -116,8 +120,9 @@ public class EC5Util {
             ecSpec.getCurve().getSeed());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.086 -0500", hash_original_method = "C0CB41A3DDF37702B4C06DE01CF0EA9D", hash_generated_method = "8AD181BD46D31F6CE5020D7A0874C0A6")
-    public static org.bouncycastle.math.ec.ECPoint convertPoint(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.043 -0500", hash_original_method = "C0CB41A3DDF37702B4C06DE01CF0EA9D", hash_generated_method = "8AD181BD46D31F6CE5020D7A0874C0A6")
+    
+public static org.bouncycastle.math.ec.ECPoint convertPoint(
         ECParameterSpec ecSpec,
         ECPoint point,
         boolean withCompression)
@@ -125,8 +130,9 @@ public class EC5Util {
         return convertPoint(convertCurve(ecSpec.getCurve()), point, withCompression);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.087 -0500", hash_original_method = "4521231271BEA3B32039C4C8B132C71C", hash_generated_method = "5E2D6C70C1070268BB58A1BC65184845")
-    public static org.bouncycastle.math.ec.ECPoint convertPoint(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.045 -0500", hash_original_method = "4521231271BEA3B32039C4C8B132C71C", hash_generated_method = "5E2D6C70C1070268BB58A1BC65184845")
+    
+public static org.bouncycastle.math.ec.ECPoint convertPoint(
         ECCurve curve,
         ECPoint point,
         boolean withCompression)

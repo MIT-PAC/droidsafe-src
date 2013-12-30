@@ -20,8 +20,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.769 -0500", hash_original_method = "6046B077AB394D3EE192C203E1B5357E", hash_generated_method = "3AE9973997983BDE421D39586AF6DF26")
-    public static void sort(int[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.358 -0500", hash_original_method = "6046B077AB394D3EE192C203E1B5357E", hash_generated_method = "3AE9973997983BDE421D39586AF6DF26")
+    
+public static void sort(int[] a) {
         doSort(a, 0, a.length - 1);
     }
 
@@ -38,8 +39,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.770 -0500", hash_original_method = "BC36EF2390B2EAFCD9CC55E9BF920708", hash_generated_method = "381136C45908BC9FBDE9FD24FA3C98CD")
-    public static void sort(int[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.360 -0500", hash_original_method = "BC36EF2390B2EAFCD9CC55E9BF920708", hash_generated_method = "381136C45908BC9FBDE9FD24FA3C98CD")
+    
+public static void sort(int[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
@@ -54,8 +56,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.771 -0500", hash_original_method = "DE2F13AFC7540F73FF05BA40E9B31AF8", hash_generated_method = "624308ED8D4B36134BA69A0A6AEEEE65")
-    private static void doSort(int[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.363 -0500", hash_original_method = "DE2F13AFC7540F73FF05BA40E9B31AF8", hash_generated_method = "624308ED8D4B36134BA69A0A6AEEEE65")
+    
+private static void doSort(int[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -79,8 +82,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.773 -0500", hash_original_method = "7E78CD90ED1E9E863DE97D11ACED21F6", hash_generated_method = "8C48F897F798B01DF3D2D717DB4F52C6")
-    private static void dualPivotQuicksort(int[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.369 -0500", hash_original_method = "7E78CD90ED1E9E863DE97D11ACED21F6", hash_generated_method = "8C48F897F798B01DF3D2D717DB4F52C6")
+    
+private static void dualPivotQuicksort(int[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -302,8 +306,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.774 -0500", hash_original_method = "A2AC90B935B0F7A3AA49E791BAFD5249", hash_generated_method = "419F6F98DEC40FCD1FCFEC54581578B9")
-    public static void sort(long[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.371 -0500", hash_original_method = "A2AC90B935B0F7A3AA49E791BAFD5249", hash_generated_method = "419F6F98DEC40FCD1FCFEC54581578B9")
+    
+public static void sort(long[] a) {
         doSort(a, 0, a.length - 1);
     }
 
@@ -320,8 +325,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.775 -0500", hash_original_method = "8F234F269D33940DA94DD5ECEA121022", hash_generated_method = "FDE82B13742D746290A3C22F37F30CAD")
-    public static void sort(long[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.375 -0500", hash_original_method = "8F234F269D33940DA94DD5ECEA121022", hash_generated_method = "FDE82B13742D746290A3C22F37F30CAD")
+    
+public static void sort(long[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
@@ -336,8 +342,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.776 -0500", hash_original_method = "57217C9A49FB585063B45B1F237ED223", hash_generated_method = "EBC178C42238810C4AF0C5A5C0490259")
-    private static void doSort(long[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.378 -0500", hash_original_method = "57217C9A49FB585063B45B1F237ED223", hash_generated_method = "EBC178C42238810C4AF0C5A5C0490259")
+    
+private static void doSort(long[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -361,8 +368,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.778 -0500", hash_original_method = "FB7B04B697C4CD5C2E52C66D10F38E7C", hash_generated_method = "B9BECCC653C69893690A16B8DB132B22")
-    private static void dualPivotQuicksort(long[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.383 -0500", hash_original_method = "FB7B04B697C4CD5C2E52C66D10F38E7C", hash_generated_method = "B9BECCC653C69893690A16B8DB132B22")
+    
+private static void dualPivotQuicksort(long[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -584,8 +592,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.779 -0500", hash_original_method = "E605CEDD3D735C877CD5828196F893EC", hash_generated_method = "A197A3EA3EA4ED335C81DA684AD7D6F7")
-    public static void sort(short[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.386 -0500", hash_original_method = "E605CEDD3D735C877CD5828196F893EC", hash_generated_method = "A197A3EA3EA4ED335C81DA684AD7D6F7")
+    
+public static void sort(short[] a) {
         doSort(a, 0, a.length - 1);
     }
 
@@ -602,8 +611,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.780 -0500", hash_original_method = "565C3405F12FE5668E6BDD038EC3F15F", hash_generated_method = "6E5BAE33A9A48983EAC412627B6F01AC")
-    public static void sort(short[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.388 -0500", hash_original_method = "565C3405F12FE5668E6BDD038EC3F15F", hash_generated_method = "6E5BAE33A9A48983EAC412627B6F01AC")
+    
+public static void sort(short[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
@@ -618,8 +628,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.782 -0500", hash_original_method = "6AE68DF80A8FE2CB0DCFB68F6A59F77D", hash_generated_method = "571151D5767C0FC3C71BAA18E02C0707")
-    private static void doSort(short[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.395 -0500", hash_original_method = "6AE68DF80A8FE2CB0DCFB68F6A59F77D", hash_generated_method = "571151D5767C0FC3C71BAA18E02C0707")
+    
+private static void doSort(short[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -657,8 +668,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.784 -0500", hash_original_method = "C7C89EDE88EEEE9F63E963A5E9C3FEE9", hash_generated_method = "B8B764751BE0250B937971F01AE9FE8D")
-    private static void dualPivotQuicksort(short[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.400 -0500", hash_original_method = "C7C89EDE88EEEE9F63E963A5E9C3FEE9", hash_generated_method = "B8B764751BE0250B937971F01AE9FE8D")
+    
+private static void dualPivotQuicksort(short[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -880,8 +892,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.785 -0500", hash_original_method = "E19FA42AA082CC163404041188B59FFA", hash_generated_method = "4CEFECF21EB2AF8C2BB7F8E6763AB164")
-    public static void sort(char[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.403 -0500", hash_original_method = "E19FA42AA082CC163404041188B59FFA", hash_generated_method = "4CEFECF21EB2AF8C2BB7F8E6763AB164")
+    
+public static void sort(char[] a) {
         doSort(a, 0, a.length - 1);
     }
 
@@ -898,8 +911,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.785 -0500", hash_original_method = "17F1AD79DA39A57DA59F3C59DD2C317C", hash_generated_method = "903C552756F2C661DB70CEBEE5EB2166")
-    public static void sort(char[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.406 -0500", hash_original_method = "17F1AD79DA39A57DA59F3C59DD2C317C", hash_generated_method = "903C552756F2C661DB70CEBEE5EB2166")
+    
+public static void sort(char[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
@@ -914,8 +928,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.787 -0500", hash_original_method = "909B15FA5BF6E7570D2E31DE88123D65", hash_generated_method = "DA52F21B79453835FE6551667A1B5116")
-    private static void doSort(char[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.413 -0500", hash_original_method = "909B15FA5BF6E7570D2E31DE88123D65", hash_generated_method = "DA52F21B79453835FE6551667A1B5116")
+    
+private static void doSort(char[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -951,8 +966,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.789 -0500", hash_original_method = "955F0BB80223C58E153B47499A5DD4B3", hash_generated_method = "FDD563AA40ECE31E69BC2E5E22861B16")
-    private static void dualPivotQuicksort(char[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.418 -0500", hash_original_method = "955F0BB80223C58E153B47499A5DD4B3", hash_generated_method = "FDD563AA40ECE31E69BC2E5E22861B16")
+    
+private static void dualPivotQuicksort(char[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -1174,8 +1190,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.790 -0500", hash_original_method = "1BD37EF197753A4C52E1EAD431273D9E", hash_generated_method = "ED1014A56C27D110A8DA40BC92649C61")
-    public static void sort(byte[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.421 -0500", hash_original_method = "1BD37EF197753A4C52E1EAD431273D9E", hash_generated_method = "ED1014A56C27D110A8DA40BC92649C61")
+    
+public static void sort(byte[] a) {
         doSort(a, 0, a.length - 1);
     }
 
@@ -1192,8 +1209,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.791 -0500", hash_original_method = "4D58317C5C3B34360CFB17CBB78DECCA", hash_generated_method = "08BDFEA743182B07EEE27D8DAA7824DD")
-    public static void sort(byte[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.424 -0500", hash_original_method = "4D58317C5C3B34360CFB17CBB78DECCA", hash_generated_method = "08BDFEA743182B07EEE27D8DAA7824DD")
+    
+public static void sort(byte[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         doSort(a, fromIndex, toIndex - 1);
     }
@@ -1208,8 +1226,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.793 -0500", hash_original_method = "A1C3CF7FD1EE08825F2123508F5A4D77", hash_generated_method = "B3BEDF731DCA92AE219DA076178656D5")
-    private static void doSort(byte[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.430 -0500", hash_original_method = "A1C3CF7FD1EE08825F2123508F5A4D77", hash_generated_method = "B3BEDF731DCA92AE219DA076178656D5")
+    
+private static void doSort(byte[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -1247,8 +1266,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.796 -0500", hash_original_method = "385DB8898AF9AC13D75FFFA3464F288D", hash_generated_method = "57E81833D69AF69EB95FF82F92A7308E")
-    private static void dualPivotQuicksort(byte[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.436 -0500", hash_original_method = "385DB8898AF9AC13D75FFFA3464F288D", hash_generated_method = "57E81833D69AF69EB95FF82F92A7308E")
+    
+private static void dualPivotQuicksort(byte[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -1478,8 +1498,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.797 -0500", hash_original_method = "A3D557943E8348E3BCEFBC8A62E2FCD4", hash_generated_method = "1DB19A7182A7E44148C870D50634551A")
-    public static void sort(float[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.438 -0500", hash_original_method = "A3D557943E8348E3BCEFBC8A62E2FCD4", hash_generated_method = "1DB19A7182A7E44148C870D50634551A")
+    
+public static void sort(float[] a) {
         sortNegZeroAndNaN(a, 0, a.length - 1);
     }
 
@@ -1504,8 +1525,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.798 -0500", hash_original_method = "B6BF98C7E8A52686AE779050AF7E2F0E", hash_generated_method = "720FA50148E48C2E06AFE6C1D8F309C1")
-    public static void sort(float[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.441 -0500", hash_original_method = "B6BF98C7E8A52686AE779050AF7E2F0E", hash_generated_method = "720FA50148E48C2E06AFE6C1D8F309C1")
+    
+public static void sort(float[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         sortNegZeroAndNaN(a, fromIndex, toIndex - 1);
     }
@@ -1520,8 +1542,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.799 -0500", hash_original_method = "08E74107BBE5A1309F25A73146E73583", hash_generated_method = "A2BB16061B6FD08D6C44AACDF4AA6D2C")
-    private static void sortNegZeroAndNaN(float[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.444 -0500", hash_original_method = "08E74107BBE5A1309F25A73146E73583", hash_generated_method = "A2BB16061B6FD08D6C44AACDF4AA6D2C")
+    
+private static void sortNegZeroAndNaN(float[] a, int left, int right) {
         /*
          * Phase 1: Count negative zeros and move NaNs to end of array
          */
@@ -1574,8 +1597,9 @@ final class DualPivotQuicksort {
      * @param low the index of the first element, inclusive, to be searched
      * @param high the index of the last element, inclusive, to be searched
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.800 -0500", hash_original_method = "4B96477BBB4E18CCF7F5B12A49CDFC2A", hash_generated_method = "BC8C3B5543D293ACEC988CEA8B3F1359")
-    private static int findAnyZero(float[] a, int low, int high) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.448 -0500", hash_original_method = "4B96477BBB4E18CCF7F5B12A49CDFC2A", hash_generated_method = "BC8C3B5543D293ACEC988CEA8B3F1359")
+    
+private static int findAnyZero(float[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             float middleValue = a[middle];
@@ -1601,8 +1625,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.801 -0500", hash_original_method = "8B9253591CB3778BA3235DBD1965402C", hash_generated_method = "7E7B7653D9006713B36B4C18A0C52E31")
-    private static void doSort(float[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.451 -0500", hash_original_method = "8B9253591CB3778BA3235DBD1965402C", hash_generated_method = "7E7B7653D9006713B36B4C18A0C52E31")
+    
+private static void doSort(float[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -1626,8 +1651,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.803 -0500", hash_original_method = "87F4CF9B4558729C608B779F834C4D2A", hash_generated_method = "C11DC780A9FA5D5DD147BBB9BA9688DC")
-    private static void dualPivotQuicksort(float[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.457 -0500", hash_original_method = "87F4CF9B4558729C608B779F834C4D2A", hash_generated_method = "C11DC780A9FA5D5DD147BBB9BA9688DC")
+    
+private static void dualPivotQuicksort(float[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -1857,8 +1883,9 @@ final class DualPivotQuicksort {
      *
      * @param a the array to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.804 -0500", hash_original_method = "8F278FEA5C9ECC20001FE85FA8D54AEE", hash_generated_method = "73D73D496C95B4ACCCBC25BB73241B94")
-    public static void sort(double[] a) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.460 -0500", hash_original_method = "8F278FEA5C9ECC20001FE85FA8D54AEE", hash_generated_method = "73D73D496C95B4ACCCBC25BB73241B94")
+    
+public static void sort(double[] a) {
         sortNegZeroAndNaN(a, 0, a.length - 1);
     }
 
@@ -1883,8 +1910,9 @@ final class DualPivotQuicksort {
      * @throws ArrayIndexOutOfBoundsException
      *     if {@code fromIndex < 0} or {@code toIndex > a.length}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.805 -0500", hash_original_method = "D6E41A8E529CCB76613ADD41E816838F", hash_generated_method = "DFDD4639E22D06F8A28D1A93D8CD53A1")
-    public static void sort(double[] a, int fromIndex, int toIndex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.463 -0500", hash_original_method = "D6E41A8E529CCB76613ADD41E816838F", hash_generated_method = "DFDD4639E22D06F8A28D1A93D8CD53A1")
+    
+public static void sort(double[] a, int fromIndex, int toIndex) {
         Arrays.checkStartAndEnd(a.length, fromIndex, toIndex);
         sortNegZeroAndNaN(a, fromIndex, toIndex - 1);
     }
@@ -1899,8 +1927,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.806 -0500", hash_original_method = "A36ED475DD13515BBDA234F6686CB7DD", hash_generated_method = "F5D54E52EA3A4E6A0F3922B994C6BD95")
-    private static void sortNegZeroAndNaN(double[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.466 -0500", hash_original_method = "A36ED475DD13515BBDA234F6686CB7DD", hash_generated_method = "F5D54E52EA3A4E6A0F3922B994C6BD95")
+    
+private static void sortNegZeroAndNaN(double[] a, int left, int right) {
         /*
          * Phase 1: Count negative zeros and move NaNs to end of array
          */
@@ -1953,8 +1982,9 @@ final class DualPivotQuicksort {
      * @param low the index of the first element, inclusive, to be searched
      * @param high the index of the last element, inclusive, to be searched
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.807 -0500", hash_original_method = "586B8F3F36F41AEEA37D2D7C84643BDD", hash_generated_method = "86E2CB6863C9F186FD4556610E97B0D6")
-    private static int findAnyZero(double[] a, int low, int high) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.469 -0500", hash_original_method = "586B8F3F36F41AEEA37D2D7C84643BDD", hash_generated_method = "86E2CB6863C9F186FD4556610E97B0D6")
+    
+private static int findAnyZero(double[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             double middleValue = a[middle];
@@ -1980,8 +2010,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.808 -0500", hash_original_method = "A69F91768E9AEC9D49249CE97937E948", hash_generated_method = "6B2B6592134553BD7A946B6816052A9C")
-    private static void doSort(double[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.472 -0500", hash_original_method = "A69F91768E9AEC9D49249CE97937E948", hash_generated_method = "6B2B6592134553BD7A946B6816052A9C")
+    
+private static void doSort(double[] a, int left, int right) {
         // Use insertion sort on tiny arrays
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -2005,8 +2036,9 @@ final class DualPivotQuicksort {
      * @param left the index of the first element, inclusive, to be sorted
      * @param right the index of the last element, inclusive, to be sorted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.810 -0500", hash_original_method = "2098CB9502FC347E6CEF0B39981B1FB6", hash_generated_method = "F5FCAF9BD5CA5DB34A9139FFD115ABDC")
-    private static void dualPivotQuicksort(double[] a, int left, int right) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.477 -0500", hash_original_method = "2098CB9502FC347E6CEF0B39981B1FB6", hash_generated_method = "F5FCAF9BD5CA5DB34A9139FFD115ABDC")
+    
+private static void dualPivotQuicksort(double[] a, int left, int right) {
         // Compute indices of five evenly spaced elements
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -2222,7 +2254,7 @@ final class DualPivotQuicksort {
         // Sort center part recursively, excluding known pivot values
         doSort(a, less, great);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.766 -0500", hash_original_field = "1161DDF926E92097F713C6A620F3FBEF", hash_generated_field = "69F1559DEF8EAE4C7B8144E76EB36B2D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.349 -0500", hash_original_field = "1161DDF926E92097F713C6A620F3FBEF", hash_generated_field = "69F1559DEF8EAE4C7B8144E76EB36B2D")
 
 
     /**
@@ -2230,26 +2262,27 @@ final class DualPivotQuicksort {
      * constant, insertion sort is used in preference to Quicksort.
      */
     private static final int INSERTION_SORT_THRESHOLD = 32;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.767 -0500", hash_original_field = "E12A0760399EA4AC4D58931141403685", hash_generated_field = "FB00E5C7F5169F6909153059E9E7DC47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.352 -0500", hash_original_field = "E12A0760399EA4AC4D58931141403685", hash_generated_field = "FB00E5C7F5169F6909153059E9E7DC47")
 
     private static final int COUNTING_SORT_THRESHOLD_FOR_BYTE = 128;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.768 -0500", hash_original_field = "AA2E6F2748B6E68424E16E074C099F58", hash_generated_field = "BC08190B460D0471F1781A740F156E67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.354 -0500", hash_original_field = "AA2E6F2748B6E68424E16E074C099F58", hash_generated_field = "BC08190B460D0471F1781A740F156E67")
 
     private static final int COUNTING_SORT_THRESHOLD_FOR_SHORT_OR_CHAR = 32768;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.781 -0500", hash_original_field = "5DA14A8D4AAE936DE49B19DBEA5354B2", hash_generated_field = "FB6D5FC791962D1D653D5EC8368240F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.392 -0500", hash_original_field = "5DA14A8D4AAE936DE49B19DBEA5354B2", hash_generated_field = "FB6D5FC791962D1D653D5EC8368240F1")
 
     private static final int NUM_SHORT_VALUES = 1 << 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.786 -0500", hash_original_field = "A59F14593AB6A405CB530DA6EE354039", hash_generated_field = "32B1F4D135C8358A9B7BCD2C64DB0B09")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.409 -0500", hash_original_field = "A59F14593AB6A405CB530DA6EE354039", hash_generated_field = "32B1F4D135C8358A9B7BCD2C64DB0B09")
 
     private static final int NUM_CHAR_VALUES = 1 << 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.792 -0500", hash_original_field = "C32AB1DB2F432FF04A53C12ECB70A331", hash_generated_field = "891D887973B93E8CB3FE00BAD7302B4C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.426 -0500", hash_original_field = "C32AB1DB2F432FF04A53C12ECB70A331", hash_generated_field = "891D887973B93E8CB3FE00BAD7302B4C")
 
     private static final int NUM_BYTE_VALUES = 1 << 8;
 
     /**
      * Prevents instantiation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.765 -0500", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "BE224B666802DAA9D4B75F867770010D")
-    private DualPivotQuicksort() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.347 -0500", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "BE224B666802DAA9D4B75F867770010D")
+    
+private DualPivotQuicksort() {}
 }
 

@@ -21,8 +21,9 @@ public final class UrlUtils {
      *     the path. This is appropriate for paths that are known to be
      *     absolute.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.462 -0500", hash_original_method = "9846573335398B4F61F3531E4C57F2B5", hash_generated_method = "80D0985321ECA2E6F1ECECF536BFEBFB")
-    public static String canonicalizePath(String path, boolean discardRelativePrefix) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.922 -0500", hash_original_method = "9846573335398B4F61F3531E4C57F2B5", hash_generated_method = "80D0985321ECA2E6F1ECECF536BFEBFB")
+    
+public static String canonicalizePath(String path, boolean discardRelativePrefix) {
         // the first character of the current path segment
         int segmentStart = 0;
 
@@ -77,8 +78,9 @@ public final class UrlUtils {
      * the authority is null or empty, this can be any path. Otherwise the paths
      * run together like {@code http://android.comindex.html}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.463 -0500", hash_original_method = "8B63B6606F2CF427FC7B99898B25B215", hash_generated_method = "EC1965268AD0D881798AD2CB98574BF6")
-    public static String authoritySafePath(String authority, String path) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.925 -0500", hash_original_method = "8B63B6606F2CF427FC7B99898B25B215", hash_generated_method = "EC1965268AD0D881798AD2CB98574BF6")
+    
+public static String authoritySafePath(String authority, String path) {
         if (authority != null && !authority.isEmpty() && !path.isEmpty() && !path.startsWith("/")) {
             return "/" + path;
         }
@@ -90,8 +92,9 @@ public final class UrlUtils {
      * spec doesn't start with a scheme. Scheme prefixes match this pattern:
      * {@code alpha ( alpha | digit | '+' | '-' | '.' )* ':'}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.463 -0500", hash_original_method = "E2E22956A4F207916457EDE07112F88D", hash_generated_method = "419F2EEDA0825E754A3521196C5AFD60")
-    public static String getSchemePrefix(String spec) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.927 -0500", hash_original_method = "E2E22956A4F207916457EDE07112F88D", hash_generated_method = "419F2EEDA0825E754A3521196C5AFD60")
+    
+public static String getSchemePrefix(String spec) {
         int colon = spec.indexOf(':');
 
         if (colon < 1) {
@@ -108,8 +111,9 @@ public final class UrlUtils {
         return spec.substring(0, colon).toLowerCase(Locale.US);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.464 -0500", hash_original_method = "4943CCAF6D78FBC7B907B31B28241551", hash_generated_method = "79F2BE0BD08A9658B85E5E0865FFDF63")
-    public static boolean isValidSchemeChar(int index, char c) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.930 -0500", hash_original_method = "4943CCAF6D78FBC7B907B31B28241551", hash_generated_method = "79F2BE0BD08A9658B85E5E0865FFDF63")
+    
+public static boolean isValidSchemeChar(int index, char c) {
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             return true;
         }
@@ -124,8 +128,9 @@ public final class UrlUtils {
      * bounded between {@code start} and {@code end}. This returns {@code end}
      * if none of the characters exist in the requested range.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.466 -0500", hash_original_method = "5B71B161212244EE7AB917C7C7C70B93", hash_generated_method = "437128F81BE6DA9B43CEC59DB6054742")
-    public static int findFirstOf(String string, String chars, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.933 -0500", hash_original_method = "5B71B161212244EE7AB917C7C7C70B93", hash_generated_method = "437128F81BE6DA9B43CEC59DB6054742")
+    
+public static int findFirstOf(String string, String chars, int start, int end) {
         for (int i = start; i < end; i++) {
             char c = string.charAt(i);
             if (chars.indexOf(c) != -1) {
@@ -134,8 +139,9 @@ public final class UrlUtils {
         }
         return end;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.460 -0500", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "7FCF6717728C584D442F19497B41ABF1")
-    private UrlUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.919 -0500", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "7FCF6717728C584D442F19497B41ABF1")
+    
+private UrlUtils() {
     }
 
     

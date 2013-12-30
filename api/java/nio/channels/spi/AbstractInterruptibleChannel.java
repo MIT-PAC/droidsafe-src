@@ -16,11 +16,11 @@ import java.nio.channels.InterruptibleChannel;
 
 
 public abstract class AbstractInterruptibleChannel implements Channel, InterruptibleChannel {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.400 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "ACA7C061F36840D4F0EB869DD1E1AB7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.843 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "ACA7C061F36840D4F0EB869DD1E1AB7C")
 
 
     private volatile boolean closed = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.401 -0500", hash_original_field = "0D4EE7030B7F215071386480E00E3511", hash_generated_field = "40A458BD5C00C50CD6C70C9B2D7F702B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.845 -0500", hash_original_field = "0D4EE7030B7F215071386480E00E3511", hash_generated_field = "40A458BD5C00C50CD6C70C9B2D7F702B")
 
 
     volatile boolean interrupted = false;
@@ -49,13 +49,14 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         
 };
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.404 -0500", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "AEB2875D39F3451BA1CDF86D6F8E0B58")
-    protected AbstractInterruptibleChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.853 -0500", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "AEB2875D39F3451BA1CDF86D6F8E0B58")
+    
+protected AbstractInterruptibleChannel() {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.405 -0500", hash_original_method = "EEF08D7C99E69679C24335EC336EDE1D", hash_generated_method = "9219E403A6D1F3A8FA8DD293570F10D1")
-    @Override
-public synchronized final boolean isOpen() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.856 -0500", hash_original_method = "EEF08D7C99E69679C24335EC336EDE1D", hash_generated_method = "9219E403A6D1F3A8FA8DD293570F10D1")
+    
+@Override public synchronized final boolean isOpen() {
         return !closed;
     }
 
@@ -75,9 +76,9 @@ public synchronized final boolean isOpen() {
      *             if a problem occurs while closing this channel.
      * @see java.nio.channels.Channel#close()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.406 -0500", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "6C2DE299C40C17EBC93A0618727B6ABB")
-    @Override
-public final void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.859 -0500", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "6C2DE299C40C17EBC93A0618727B6ABB")
+    
+@Override public final void close() throws IOException {
         if (!closed) {
             synchronized (this) {
                 if (!closed) {
@@ -93,8 +94,9 @@ public final void close() throws IOException {
      * that is potentially blocking. After this operation, the application
      * should invoke the corresponding {@code end(boolean)} method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.406 -0500", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "11944B49B489B7A4BFA697FDFBC45991")
-    protected final void begin() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.862 -0500", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "11944B49B489B7A4BFA697FDFBC45991")
+    
+protected final void begin() {
         Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
     }
 
@@ -112,8 +114,9 @@ public final void close() throws IOException {
      *             if another thread interrupts the calling thread while this
      *             method is executing.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.407 -0500", hash_original_method = "9F919A15107680D02C9F3C07FD906976", hash_generated_method = "1B681B64DF5EE267DB1B0CD7E83BA291")
-    protected final void end(boolean success) throws AsynchronousCloseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.864 -0500", hash_original_method = "9F919A15107680D02C9F3C07FD906976", hash_generated_method = "1B681B64DF5EE267DB1B0CD7E83BA291")
+    
+protected final void end(boolean success) throws AsynchronousCloseException {
         Thread.currentThread().popInterruptAction$(interruptAndCloseRunnable);
         if (interrupted) {
             interrupted = false;
@@ -138,8 +141,9 @@ public final void close() throws IOException {
      * @throws IOException
      *             if a problem occurs while closing the channel.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.408 -0500", hash_original_method = "9762B902A56F50AF9CDE8E96A06F4D65", hash_generated_method = "F2284707C3F560D4B31581090601831F")
-    protected abstract void implCloseChannel() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.867 -0500", hash_original_method = "9762B902A56F50AF9CDE8E96A06F4D65", hash_generated_method = "F2284707C3F560D4B31581090601831F")
+    
+protected abstract void implCloseChannel() throws IOException;
 
     
 }

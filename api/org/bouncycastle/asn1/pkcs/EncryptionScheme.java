@@ -16,8 +16,9 @@ import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 
 public class EncryptionScheme extends AlgorithmIdentifier {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.337 -0500", hash_original_method = "329448F62D43F2D72E279A19F351634F", hash_generated_method = "0FBFED9FCE389ACC961AA8E74204421B")
-    public static final AlgorithmIdentifier getInstance(Object obj)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.250 -0500", hash_original_method = "329448F62D43F2D72E279A19F351634F", hash_generated_method = "0FBFED9FCE389ACC961AA8E74204421B")
+    
+public static final AlgorithmIdentifier getInstance(Object obj)
     {
         if (obj instanceof EncryptionScheme)
         {
@@ -30,29 +31,33 @@ public class EncryptionScheme extends AlgorithmIdentifier {
 
         throw new IllegalArgumentException("unknown object in factory: " + obj.getClass().getName());
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.336 -0500", hash_original_method = "695FECBCB14F5A1D31F0B55CAC6B7944", hash_generated_method = "F06CCC20B17EC02450A3149CDE6F7757")
-    public EncryptionScheme(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.244 -0500", hash_original_method = "695FECBCB14F5A1D31F0B55CAC6B7944", hash_generated_method = "F06CCC20B17EC02450A3149CDE6F7757")
+    
+public EncryptionScheme(
         DERObjectIdentifier objectId,
         DEREncodable parameters)
     {
         super(objectId, parameters);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.336 -0500", hash_original_method = "14492AE8746901ADA4AAC49DFFF4DA42", hash_generated_method = "14492AE8746901ADA4AAC49DFFF4DA42")
-    EncryptionScheme(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.247 -0500", hash_original_method = "14492AE8746901ADA4AAC49DFFF4DA42", hash_generated_method = "14492AE8746901ADA4AAC49DFFF4DA42")
+    
+EncryptionScheme(
         ASN1Sequence  seq)
     {   
         this((DERObjectIdentifier)seq.getObjectAt(0), seq.getObjectAt(1));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.338 -0500", hash_original_method = "20A4F3D13CF17139753D47801A517EAE", hash_generated_method = "34A9F5DDC33A7CAADF3965056BE10DA3")
-    public DERObject getObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.252 -0500", hash_original_method = "20A4F3D13CF17139753D47801A517EAE", hash_generated_method = "34A9F5DDC33A7CAADF3965056BE10DA3")
+    
+public DERObject getObject()
     {
         return (DERObject)getParameters();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:50.340 -0500", hash_original_method = "0A2A11415EF4AC8722D540FA9324533D", hash_generated_method = "D184C3070E0B8E20E17B5A76A65BA9EB")
-    public DERObject getDERObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.256 -0500", hash_original_method = "0A2A11415EF4AC8722D540FA9324533D", hash_generated_method = "D184C3070E0B8E20E17B5A76A65BA9EB")
+    
+public DERObject getDERObject()
     {
         ASN1EncodableVector  v = new ASN1EncodableVector();
 

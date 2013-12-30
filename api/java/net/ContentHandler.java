@@ -27,8 +27,9 @@ public abstract class ContentHandler {
      * @throws IOException
      *             if an IO error occurs during the retrieval of the object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.115 -0500", hash_original_method = "0A0DE36248DED56E2DC9A3C213E73F00", hash_generated_method = "C085E82305BE92773C89ADB444EB7B2D")
-    public abstract Object getContent(URLConnection uConn) throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.861 -0500", hash_original_method = "0A0DE36248DED56E2DC9A3C213E73F00", hash_generated_method = "C085E82305BE92773C89ADB444EB7B2D")
+    
+public abstract Object getContent(URLConnection uConn) throws IOException;
 
     /**
      * Returns the object pointed by the specified URL connection {@code uConn}.
@@ -43,9 +44,10 @@ public abstract class ContentHandler {
      *             if an error occurred while obtaining the content.
      */
     // Class arg not generified in the spec.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.116 -0500", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "1AD0408A977EABBE121234307AE2FBAD")
-    @SuppressWarnings("unchecked")
-public Object getContent(URLConnection uConn, Class[] types)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.864 -0500", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "1AD0408A977EABBE121234307AE2FBAD")
+    
+@SuppressWarnings("unchecked")
+    public Object getContent(URLConnection uConn, Class[] types)
             throws IOException {
         Object content = getContent(uConn);
         for (int i = 0; i < types.length; i++) {

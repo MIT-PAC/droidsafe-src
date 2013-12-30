@@ -36,8 +36,9 @@ public class ParserFactory {
      * @see #makeParser(java.lang.String)
      * @see org.xml.sax.Parser
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.331 -0500", hash_original_method = "7812B206861870FE3F66FE5DE1D37F8E", hash_generated_method = "46104D90CA503B48FA8A1170DC27DF11")
-    public static Parser makeParser ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.018 -0500", hash_original_method = "7812B206861870FE3F66FE5DE1D37F8E", hash_generated_method = "46104D90CA503B48FA8A1170DC27DF11")
+    
+public static Parser makeParser ()
     throws ClassNotFoundException,
     IllegalAccessException,
     InstantiationException,
@@ -76,8 +77,9 @@ public class ParserFactory {
      * @see #makeParser()
      * @see org.xml.sax.Parser
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.331 -0500", hash_original_method = "B7F811B950A25312761637A38072277E", hash_generated_method = "FF4C262BFA0F383701894FAB88F4E73E")
-    public static Parser makeParser (String className)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.021 -0500", hash_original_method = "B7F811B950A25312761637A38072277E", hash_generated_method = "FF4C262BFA0F383701894FAB88F4E73E")
+    
+public static Parser makeParser (String className)
     throws ClassNotFoundException,
     IllegalAccessException,
     InstantiationException,
@@ -91,8 +93,9 @@ public class ParserFactory {
     /**
      * Private null constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.330 -0500", hash_original_method = "DF02A0380B383E5EEB62CFDB1AB4D130", hash_generated_method = "CA5715143EA1523CF5782DB4DE0D9B8E")
-    private ParserFactory ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.015 -0500", hash_original_method = "DF02A0380B383E5EEB62CFDB1AB4D130", hash_generated_method = "CA5715143EA1523CF5782DB4DE0D9B8E")
+    
+private ParserFactory ()
     {
     }
 

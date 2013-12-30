@@ -17,8 +17,9 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     /**
      * Returns column index of "_id" column, or -1 if not found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.611 -0500", hash_original_method = "A1363D8F4C336B0A08C904C28B9D0448", hash_generated_method = "FF55DCE7800A970FD612A052C53A3446")
-    public static int findRowIdColumnIndex(String[] columnNames) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.677 -0500", hash_original_method = "A1363D8F4C336B0A08C904C28B9D0448", hash_generated_method = "FF55DCE7800A970FD612A052C53A3446")
+    
+public static int findRowIdColumnIndex(String[] columnNames) {
         int length = columnNames.length;
         for (int i = 0; i < length; i++) {
             if (columnNames[i].equals("_id")) {
@@ -27,23 +28,23 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
         }
         return -1;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.605 -0500", hash_original_field = "084582FAD180EC515575FE3E8435607F", hash_generated_field = "ADC0FCD54016ADA5A4BD1654F2DAEC28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.660 -0500", hash_original_field = "084582FAD180EC515575FE3E8435607F", hash_generated_field = "ADC0FCD54016ADA5A4BD1654F2DAEC28")
 
     private static final String TAG = "BulkCursor";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.606 -0500", hash_original_field = "B137C0C42FB6695835607BC3B3F48B0E", hash_generated_field = "1E15C10F775B223368F80DF5C8726D1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.663 -0500", hash_original_field = "B137C0C42FB6695835607BC3B3F48B0E", hash_generated_field = "1E15C10F775B223368F80DF5C8726D1A")
 
 
     private SelfContentObserver mObserverBridge = new SelfContentObserver(this);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.607 -0500", hash_original_field = "66CFECD4811614CB55DCEE3BC7CCEF08", hash_generated_field = "9C921B869C896D2D1E8F32F098601C98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.666 -0500", hash_original_field = "66CFECD4811614CB55DCEE3BC7CCEF08", hash_generated_field = "9C921B869C896D2D1E8F32F098601C98")
 
     private IBulkCursor mBulkCursor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.607 -0500", hash_original_field = "228E80965D19F3262507FB2E30484C98", hash_generated_field = "C71F96D16C33B34D6BB40030CD898648")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.668 -0500", hash_original_field = "228E80965D19F3262507FB2E30484C98", hash_generated_field = "C71F96D16C33B34D6BB40030CD898648")
 
     private int mCount;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.608 -0500", hash_original_field = "05C6FA34740ED8752F22266873F75802", hash_generated_field = "53DC72E56AF72859CCB6315DB649FC3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.670 -0500", hash_original_field = "05C6FA34740ED8752F22266873F75802", hash_generated_field = "53DC72E56AF72859CCB6315DB649FC3E")
 
     private String[] mColumns;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.609 -0500", hash_original_field = "0541A92F1227967C4F621D00D304DDFF", hash_generated_field = "09D230C6B972C5B44F7AE21F206E5D75")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.672 -0500", hash_original_field = "0541A92F1227967C4F621D00D304DDFF", hash_generated_field = "09D230C6B972C5B44F7AE21F206E5D75")
 
     private boolean mWantsAllOnMoveCalls;
     
@@ -57,8 +58,9 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
      * Initializes the adaptor.
      * Must be called before first use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.610 -0500", hash_original_method = "BDEAB060DBF06B617753E5FD68DF3DA6", hash_generated_method = "555C784C8E6FB0A57ACAD5F7648D3C10")
-    public void initialize(IBulkCursor bulkCursor, int count, int idIndex,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.675 -0500", hash_original_method = "BDEAB060DBF06B617753E5FD68DF3DA6", hash_generated_method = "555C784C8E6FB0A57ACAD5F7648D3C10")
+    
+public void initialize(IBulkCursor bulkCursor, int count, int idIndex,
             boolean wantsAllOnMoveCalls) {
         mBulkCursor = bulkCursor;
         mColumns = null;  // lazily retrieved
@@ -73,28 +75,32 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
      *
      * @return A SelfContentObserver hooked up to this Cursor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.612 -0500", hash_original_method = "7E3AA4478BE7164F626026375ACE354B", hash_generated_method = "A1B41044A931BC9485859EA8186C9405")
-    public IContentObserver getObserver() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.679 -0500", hash_original_method = "7E3AA4478BE7164F626026375ACE354B", hash_generated_method = "A1B41044A931BC9485859EA8186C9405")
+    
+public IContentObserver getObserver() {
         return mObserverBridge.getContentObserver();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.613 -0500", hash_original_method = "A0DC3D6282923B31FCC435384F5B1B63", hash_generated_method = "207A1BFBBD46C28991369216F5EE6345")
-    private void throwIfCursorIsClosed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.682 -0500", hash_original_method = "A0DC3D6282923B31FCC435384F5B1B63", hash_generated_method = "207A1BFBBD46C28991369216F5EE6345")
+    
+private void throwIfCursorIsClosed() {
         if (mBulkCursor == null) {
             throw new StaleDataException("Attempted to access a cursor after it has been closed.");
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.614 -0500", hash_original_method = "0E6B64C20F6304D897F9214656E1B9B2", hash_generated_method = "D697043E99580945CEDED89CB5B67AFF")
-    @Override
-public int getCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.684 -0500", hash_original_method = "0E6B64C20F6304D897F9214656E1B9B2", hash_generated_method = "D697043E99580945CEDED89CB5B67AFF")
+    
+@Override
+    public int getCount() {
         throwIfCursorIsClosed();
         return mCount;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.615 -0500", hash_original_method = "A467CB6464BEC42A874BA0630DE4F114", hash_generated_method = "09F47DC1114E682C359099978799C88E")
-    @Override
-public boolean onMove(int oldPosition, int newPosition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.687 -0500", hash_original_method = "A467CB6464BEC42A874BA0630DE4F114", hash_generated_method = "09F47DC1114E682C359099978799C88E")
+    
+@Override
+    public boolean onMove(int oldPosition, int newPosition) {
         throwIfCursorIsClosed();
 
         try {
@@ -120,9 +126,10 @@ public boolean onMove(int oldPosition, int newPosition) {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.615 -0500", hash_original_method = "DCD3F558B41192D9CD395623901FE4A3", hash_generated_method = "43C1A334BDCC98642B77185AA91788D1")
-    @Override
-public void deactivate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.690 -0500", hash_original_method = "DCD3F558B41192D9CD395623901FE4A3", hash_generated_method = "43C1A334BDCC98642B77185AA91788D1")
+    
+@Override
+    public void deactivate() {
         // This will call onInvalidated(), so make sure to do it before calling release,
         // which is what actually makes the data set invalid.
         super.deactivate();
@@ -136,9 +143,10 @@ public void deactivate() {
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.616 -0500", hash_original_method = "546597EB3DC3CEE4DD604F653491E5D5", hash_generated_method = "68B5B5B856D9D581E046B181EAFB98EC")
-    @Override
-public void close() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.693 -0500", hash_original_method = "546597EB3DC3CEE4DD604F653491E5D5", hash_generated_method = "68B5B5B856D9D581E046B181EAFB98EC")
+    
+@Override
+    public void close() {
         super.close();
 
         if (mBulkCursor != null) {
@@ -152,9 +160,10 @@ public void close() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.617 -0500", hash_original_method = "2BB8C0DB5A3CE31D75C859DF8A5992AB", hash_generated_method = "6AE83350538398CFDDEDC3B303DB78A3")
-    @Override
-public boolean requery() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.696 -0500", hash_original_method = "2BB8C0DB5A3CE31D75C859DF8A5992AB", hash_generated_method = "6AE83350538398CFDDEDC3B303DB78A3")
+    
+@Override
+    public boolean requery() {
         throwIfCursorIsClosed();
 
         try {
@@ -179,9 +188,10 @@ public boolean requery() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.618 -0500", hash_original_method = "1A723D6E7321D209C1569AA4BBEA85AD", hash_generated_method = "06750EEE4BAB9F09AD43FB3D07543703")
-    @Override
-public String[] getColumnNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.698 -0500", hash_original_method = "1A723D6E7321D209C1569AA4BBEA85AD", hash_generated_method = "06750EEE4BAB9F09AD43FB3D07543703")
+    
+@Override
+    public String[] getColumnNames() {
         throwIfCursorIsClosed();
 
         if (mColumns == null) {
@@ -195,9 +205,10 @@ public String[] getColumnNames() {
         return mColumns;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.619 -0500", hash_original_method = "5109D579D87DF77312539D6DDC351AB2", hash_generated_method = "3BC2D21BA5951A433D2AF7F4C9FC0409")
-    @Override
-public Bundle getExtras() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.701 -0500", hash_original_method = "5109D579D87DF77312539D6DDC351AB2", hash_generated_method = "3BC2D21BA5951A433D2AF7F4C9FC0409")
+    
+@Override
+    public Bundle getExtras() {
         throwIfCursorIsClosed();
 
         try {
@@ -209,9 +220,10 @@ public Bundle getExtras() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.620 -0500", hash_original_method = "EAE7773B95560E382A302B739F6438AF", hash_generated_method = "CA31A1DF73C78C7596D1AB956319DEDC")
-    @Override
-public Bundle respond(Bundle extras) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.703 -0500", hash_original_method = "EAE7773B95560E382A302B739F6438AF", hash_generated_method = "CA31A1DF73C78C7596D1AB956319DEDC")
+    
+@Override
+    public Bundle respond(Bundle extras) {
         throwIfCursorIsClosed();
 
         try {

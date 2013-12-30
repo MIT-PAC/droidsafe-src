@@ -26,8 +26,9 @@ public class ECNamedCurveTable {
      * @param name the name of the curve requested
      * @return a parameter spec for the curve, null if it is not available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.231 -0500", hash_original_method = "658FDAFCB16D884F8A73D9920535B79B", hash_generated_method = "3176F3D3A7D2A21C8C3AFDADB5A8511A")
-    public static ECNamedCurveParameterSpec getParameterSpec(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.436 -0500", hash_original_method = "658FDAFCB16D884F8A73D9920535B79B", hash_generated_method = "3176F3D3A7D2A21C8C3AFDADB5A8511A")
+    
+public static ECNamedCurveParameterSpec getParameterSpec(
         String  name)
     {
         X9ECParameters  ecP = X962NamedCurves.getByName(name);
@@ -101,8 +102,9 @@ public class ECNamedCurveTable {
      *
      * @return an enumeration of the names of the available curves.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.232 -0500", hash_original_method = "7562D6B6F049D6670CBB9B00481D6EBB", hash_generated_method = "BBCD8CF7E4D239A16CC25971B540671E")
-    public static Enumeration getNames()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.439 -0500", hash_original_method = "7562D6B6F049D6670CBB9B00481D6EBB", hash_generated_method = "BBCD8CF7E4D239A16CC25971B540671E")
+    
+public static Enumeration getNames()
     {
         Vector v = new Vector();
         
@@ -116,8 +118,9 @@ public class ECNamedCurveTable {
         return v.elements();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:58.233 -0500", hash_original_method = "18BFADD4FC9E195D778FFD96D4319E62", hash_generated_method = "94B42B2C3424706C7EC0D2F3A161EFA2")
-    private static void addEnumeration(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.441 -0500", hash_original_method = "18BFADD4FC9E195D778FFD96D4319E62", hash_generated_method = "94B42B2C3424706C7EC0D2F3A161EFA2")
+    
+private static void addEnumeration(
         Vector v, 
         Enumeration e)
     {

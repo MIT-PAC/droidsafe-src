@@ -16,8 +16,9 @@ public abstract class TimezoneGetter {
      *
      * @return TimezoneGetter the single instance of this class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.727 -0500", hash_original_method = "C0F8B0F9DC6033715F5A9B5877DEC568", hash_generated_method = "8EA34018244D32BE4282BD0D1EC39A7B")
-    public static TimezoneGetter getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.577 -0500", hash_original_method = "C0F8B0F9DC6033715F5A9B5877DEC568", hash_generated_method = "8EA34018244D32BE4282BD0D1EC39A7B")
+    
+public static TimezoneGetter getInstance() {
         return instance;
     }
 
@@ -27,14 +28,15 @@ public abstract class TimezoneGetter {
      * @param instance
      *            TimezoneGetter the single instance of this class.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.728 -0500", hash_original_method = "68E62A782D0D67099F52FF0719D92EF1", hash_generated_method = "5C1793B0FD208C3FCEA0F4677498E30A")
-    public static void setInstance(TimezoneGetter getter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.579 -0500", hash_original_method = "68E62A782D0D67099F52FF0719D92EF1", hash_generated_method = "5C1793B0FD208C3FCEA0F4677498E30A")
+    
+public static void setInstance(TimezoneGetter getter) {
         if (instance != null) {
             throw new UnsupportedOperationException("TimezoneGetter instance already set");
         }
         instance = getter;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.726 -0500", hash_original_field = "30EB9F14C9B72E9925AF245C6CEF294C", hash_generated_field = "D3AAD2C19E68DBB13BF532AFF4D3C58C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.575 -0500", hash_original_field = "30EB9F14C9B72E9925AF245C6CEF294C", hash_generated_field = "D3AAD2C19E68DBB13BF532AFF4D3C58C")
 
 
     private static TimezoneGetter instance;
@@ -50,7 +52,8 @@ public abstract class TimezoneGetter {
      *
      * @return String the ID of the current time zone.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:16.728 -0500", hash_original_method = "786FFADA2702303736BFB9FDDC0A830C", hash_generated_method = "B5BA589892AA7DF2EDF582DD9382FAF7")
-    public abstract String getId();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.582 -0500", hash_original_method = "786FFADA2702303736BFB9FDDC0A830C", hash_generated_method = "B5BA589892AA7DF2EDF582DD9382FAF7")
+    
+public abstract String getId();
 }
 

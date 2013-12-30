@@ -30,8 +30,9 @@ public abstract class LayoutInflater {
     /**
      * Obtains the LayoutInflater from the given context.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.854 -0500", hash_original_method = "AFFD098D4A16258CBADF0A2E61B5AB7C", hash_generated_method = "915AC053BFDCDE5D7ACF4530BF35E466")
-    public static LayoutInflater from(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.767 -0500", hash_original_method = "AFFD098D4A16258CBADF0A2E61B5AB7C", hash_generated_method = "915AC053BFDCDE5D7ACF4530BF35E466")
+    
+public static LayoutInflater from(Context context) {
         LayoutInflater LayoutInflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (LayoutInflater == null) {
@@ -39,55 +40,55 @@ public abstract class LayoutInflater {
         }
         return LayoutInflater;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.837 -0500", hash_original_field = "ACD23DD77F2F0D797D965DB4AFEF41BC", hash_generated_field = "63DF1F110DEB7B86F6BD18817F9A4731")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.718 -0500", hash_original_field = "ACD23DD77F2F0D797D965DB4AFEF41BC", hash_generated_field = "63DF1F110DEB7B86F6BD18817F9A4731")
 
 
     static final Class<?>[] mConstructorSignature = new Class[] {
             Context.class, AttributeSet.class};
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.838 -0500", hash_original_field = "6C848B71EB280D9174A99E52C6901000", hash_generated_field = "C38DE3F776CAFB12B475430CF0EEAA23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.720 -0500", hash_original_field = "6C848B71EB280D9174A99E52C6901000", hash_generated_field = "C38DE3F776CAFB12B475430CF0EEAA23")
 
 
     private static final HashMap<String, Constructor<? extends View>> sConstructorMap =
             new HashMap<String, Constructor<? extends View>>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.840 -0500", hash_original_field = "B64C2D7D9E8B48203AC38D4E0C2989BC", hash_generated_field = "36C7BA0C809B7EB42A272F2829D1F77B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.725 -0500", hash_original_field = "B64C2D7D9E8B48203AC38D4E0C2989BC", hash_generated_field = "36C7BA0C809B7EB42A272F2829D1F77B")
 
 
     private static final String TAG_MERGE = "merge";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.841 -0500", hash_original_field = "96D68432CD8001A5FCF6A115465004AD", hash_generated_field = "E44225DBBDDDD64E37F1DAB51EE83BFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.728 -0500", hash_original_field = "96D68432CD8001A5FCF6A115465004AD", hash_generated_field = "E44225DBBDDDD64E37F1DAB51EE83BFC")
 
     private static final String TAG_INCLUDE = "include";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.842 -0500", hash_original_field = "C2D39934842441B7955895662FB9F4F4", hash_generated_field = "D5A8197B8C970976D34EB44455934252")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.731 -0500", hash_original_field = "C2D39934842441B7955895662FB9F4F4", hash_generated_field = "D5A8197B8C970976D34EB44455934252")
 
     private static final String TAG_1995 = "blink";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.843 -0500", hash_original_field = "6CD35FB9636121213649063DC38A6A94", hash_generated_field = "245DD97419AEA5026E042D1B40675C79")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.733 -0500", hash_original_field = "6CD35FB9636121213649063DC38A6A94", hash_generated_field = "245DD97419AEA5026E042D1B40675C79")
 
     private static final String TAG_REQUEST_FOCUS = "requestFocus";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.831 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "40AF400BA8F86FA9C9E428F903D03FF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.697 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "40AF400BA8F86FA9C9E428F903D03FF5")
 
     private final boolean DEBUG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.832 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.701 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
 
     protected  Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.833 -0500", hash_original_field = "ABBF88F2FF66E1F410D2E6FD81CC8AE8", hash_generated_field = "AED919A3A7191A7906DCEFFE6A0831DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.704 -0500", hash_original_field = "ABBF88F2FF66E1F410D2E6FD81CC8AE8", hash_generated_field = "AED919A3A7191A7906DCEFFE6A0831DA")
 
     private boolean mFactorySet;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.833 -0500", hash_original_field = "EB9C0194D04367072ED69F08FC117DDF", hash_generated_field = "BF67D382843E913B81807CA170E68BEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.706 -0500", hash_original_field = "EB9C0194D04367072ED69F08FC117DDF", hash_generated_field = "BF67D382843E913B81807CA170E68BEC")
 
     private Factory mFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.834 -0500", hash_original_field = "06650FD9169B958F060F85DE035C8FE8", hash_generated_field = "DDA453B5760FDE700FAD36F64FD01268")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.709 -0500", hash_original_field = "06650FD9169B958F060F85DE035C8FE8", hash_generated_field = "DDA453B5760FDE700FAD36F64FD01268")
 
     private Factory2 mFactory2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.835 -0500", hash_original_field = "9425F36B7D03975BAA27AAC0D0483FCB", hash_generated_field = "91C09704D064CA0F12ECD6E6EFEC80CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.711 -0500", hash_original_field = "9425F36B7D03975BAA27AAC0D0483FCB", hash_generated_field = "91C09704D064CA0F12ECD6E6EFEC80CF")
 
     private Factory2 mPrivateFactory;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.835 -0500", hash_original_field = "E9FBEB72F5336AFA25831B1B3CB2A4B4", hash_generated_field = "A13F7A33CB1B9B8C8BC52C7A25894515")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.713 -0500", hash_original_field = "E9FBEB72F5336AFA25831B1B3CB2A4B4", hash_generated_field = "A13F7A33CB1B9B8C8BC52C7A25894515")
 
     private Filter mFilter;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.836 -0500", hash_original_field = "D62709ECD69C2FFB452C5E25B014B17D", hash_generated_field = "B7AB5DA0883F2685164B5F2691D42F0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.715 -0500", hash_original_field = "D62709ECD69C2FFB452C5E25B014B17D", hash_generated_field = "B7AB5DA0883F2685164B5F2691D42F0F")
 
 
     final Object[] mConstructorArgs = new Object[2];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.839 -0500", hash_original_field = "64255D40992BD3778F35B1834AE29BF0", hash_generated_field = "208DFBA685342B06C1A3F18B71A9291E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.723 -0500", hash_original_field = "64255D40992BD3778F35B1834AE29BF0", hash_generated_field = "208DFBA685342B06C1A3F18B71A9291E")
 
     
     private HashMap<String, Boolean> mFilterMap;
@@ -102,8 +103,9 @@ public abstract class LayoutInflater {
      * Views; most importantly, this supplies the theme from which the default
      * values for their attributes are retrieved.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.852 -0500", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "BA802A2813FB891162A6114BBF468633")
-    protected LayoutInflater(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.761 -0500", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "BA802A2813FB891162A6114BBF468633")
+    
+protected LayoutInflater(Context context) {
         mContext = context;
     }
 
@@ -115,8 +117,9 @@ public abstract class LayoutInflater {
      * @param original The original LayoutInflater to copy.
      * @param newContext The new Context to use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.853 -0500", hash_original_method = "5CC0837D3FE56B24A71C58B4CCAA4F88", hash_generated_method = "B99DFD671F091AA5405DAE1C0BFA71F7")
-    protected LayoutInflater(LayoutInflater original, Context newContext) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.764 -0500", hash_original_method = "5CC0837D3FE56B24A71C58B4CCAA4F88", hash_generated_method = "B99DFD671F091AA5405DAE1C0BFA71F7")
+    
+protected LayoutInflater(LayoutInflater original, Context newContext) {
         mContext = newContext;
         mFactory = original.mFactory;
         mFactory2 = original.mFactory2;
@@ -141,15 +144,17 @@ public abstract class LayoutInflater {
      * @return Returns a brand spanking new LayoutInflater object associated with
      * the given Context.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.855 -0500", hash_original_method = "3D202F2528926E0CC64A1F0FA507E4F3", hash_generated_method = "429FCA58C8A9A2CC82E1644446569CE4")
-    public abstract LayoutInflater cloneInContext(Context newContext);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.769 -0500", hash_original_method = "3D202F2528926E0CC64A1F0FA507E4F3", hash_generated_method = "429FCA58C8A9A2CC82E1644446569CE4")
+    
+public abstract LayoutInflater cloneInContext(Context newContext);
     
     /**
      * Return the context we are running in, for access to resources, class
      * loader, etc.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.856 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
-    public Context getContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.772 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
+    
+public Context getContext() {
         return mContext;
     }
 
@@ -158,8 +163,9 @@ public abstract class LayoutInflater {
      * name. If the factory returns a View, add that to the hierarchy. If it
      * returns null, proceed to call onCreateView(name).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.857 -0500", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "BB2447E4D90ED5D0807E89E46636F0EC")
-    public final Factory getFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.774 -0500", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "BB2447E4D90ED5D0807E89E46636F0EC")
+    
+public final Factory getFactory() {
         return mFactory;
     }
 
@@ -170,8 +176,9 @@ public abstract class LayoutInflater {
      * name. If the factory returns a View, add that to the hierarchy. If it
      * returns null, proceed to call onCreateView(name).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.857 -0500", hash_original_method = "1401AE51BF0559687CED2D99A883164D", hash_generated_method = "72D9814603E2A5B6153C308BB6F48EBB")
-    public final Factory2 getFactory2() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.777 -0500", hash_original_method = "1401AE51BF0559687CED2D99A883164D", hash_generated_method = "72D9814603E2A5B6153C308BB6F48EBB")
+    
+public final Factory2 getFactory2() {
         return mFactory2;
     }
 
@@ -190,8 +197,9 @@ public abstract class LayoutInflater {
      * merge your own factory with whatever factory the original instance is
      * using.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.858 -0500", hash_original_method = "711BCDCCD1A0460B88DDB4B05554E6F0", hash_generated_method = "2A839CC188A56A09B649B9EBB0CE6C8E")
-    public void setFactory(Factory factory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.779 -0500", hash_original_method = "711BCDCCD1A0460B88DDB4B05554E6F0", hash_generated_method = "2A839CC188A56A09B649B9EBB0CE6C8E")
+    
+public void setFactory(Factory factory) {
         if (mFactorySet) {
             throw new IllegalStateException("A factory has already been set on this LayoutInflater");
         }
@@ -210,8 +218,9 @@ public abstract class LayoutInflater {
      * Like {@link #setFactory}, but allows you to set a {@link Factory2}
      * interface.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.859 -0500", hash_original_method = "206E93CE21BFEFA64CD336FC01E3DC86", hash_generated_method = "943F3FAC5C6E74B548F6AECD38AC005D")
-    public void setFactory2(Factory2 factory) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.782 -0500", hash_original_method = "206E93CE21BFEFA64CD336FC01E3DC86", hash_generated_method = "943F3FAC5C6E74B548F6AECD38AC005D")
+    
+public void setFactory2(Factory2 factory) {
         if (mFactorySet) {
             throw new IllegalStateException("A factory has already been set on this LayoutInflater");
         }
@@ -235,8 +244,9 @@ public abstract class LayoutInflater {
      * @return The {@link Filter} currently used by this LayoutInflater to restrict the set of Views
      * that are allowed to be inflated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.861 -0500", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "F668027EA3D6A22181739B4473EB4541")
-    public Filter getFilter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.787 -0500", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "F668027EA3D6A22181739B4473EB4541")
+    
+public Filter getFilter() {
         return mFilter;
     }
     
@@ -249,8 +259,9 @@ public abstract class LayoutInflater {
      * @param filter The Filter which restricts the set of Views that are allowed to be inflated.
      *        This filter will replace any previous filter set on this LayoutInflater.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.862 -0500", hash_original_method = "E7980136733C7B2EC13AC2733EC56104", hash_generated_method = "CCDB167CE572B9EB4498274049062614")
-    public void setFilter(Filter filter) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.789 -0500", hash_original_method = "E7980136733C7B2EC13AC2733EC56104", hash_generated_method = "CCDB167CE572B9EB4498274049062614")
+    
+public void setFilter(Filter filter) {
         mFilter = filter;
         if (filter != null) {
             mFilterMap = new HashMap<String, Boolean>();
@@ -268,8 +279,9 @@ public abstract class LayoutInflater {
      *         this is the root View; otherwise it is the root of the inflated
      *         XML file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.862 -0500", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "73A7EB7DA3644F58C6A3248C4944CDDE")
-    public View inflate(int resource, ViewGroup root) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.792 -0500", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "73A7EB7DA3644F58C6A3248C4944CDDE")
+    
+public View inflate(int resource, ViewGroup root) {
         return inflate(resource, root, root != null);
     }
 
@@ -289,8 +301,9 @@ public abstract class LayoutInflater {
      *         this is the root View; otherwise it is the root of the inflated
      *         XML file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.863 -0500", hash_original_method = "2C6130928BF5FC4257D730B98F9E332E", hash_generated_method = "D6DD0E6D5A315E2DB13640AB129CE459")
-    public View inflate(XmlPullParser parser, ViewGroup root) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.794 -0500", hash_original_method = "2C6130928BF5FC4257D730B98F9E332E", hash_generated_method = "D6DD0E6D5A315E2DB13640AB129CE459")
+    
+public View inflate(XmlPullParser parser, ViewGroup root) {
         return inflate(parser, root, root != null);
     }
 
@@ -323,8 +336,9 @@ public abstract class LayoutInflater {
      *         attachToRoot is true, this is root; otherwise it is the root of
      *         the inflated XML file.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.865 -0500", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "61A1FCF5FE21DE83BA36DB488F2EE8AC")
-    public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.802 -0500", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "61A1FCF5FE21DE83BA36DB488F2EE8AC")
+    
+public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) {
         synchronized (mConstructorArgs) {
             final AttributeSet attrs = Xml.asAttributeSet(parser);
             Context lastContext = (Context)mConstructorArgs[0];
@@ -444,8 +458,9 @@ public abstract class LayoutInflater {
      * 
      * @return View The newly instantiated view, or null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.867 -0500", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "D9DD31C509C78EF24376145F9807B128")
-    public final View createView(String name, String prefix, AttributeSet attrs)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.806 -0500", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "D9DD31C509C78EF24376145F9807B128")
+    
+public final View createView(String name, String prefix, AttributeSet attrs)
             throws ClassNotFoundException, InflateException {
         Constructor<? extends View> constructor = sConstructorMap.get(name);
         Class<? extends View> clazz = null;
@@ -530,23 +545,26 @@ public abstract class LayoutInflater {
 
         private Factory2 mF22;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.849 -0500", hash_original_method = "E5AD3FF1F375743BB365B35578675E98", hash_generated_method = "E5AD3FF1F375743BB365B35578675E98")
-        FactoryMerger(Factory f1, Factory2 f12, Factory f2, Factory2 f22) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.750 -0500", hash_original_method = "E5AD3FF1F375743BB365B35578675E98", hash_generated_method = "E5AD3FF1F375743BB365B35578675E98")
+        
+FactoryMerger(Factory f1, Factory2 f12, Factory f2, Factory2 f22) {
             mF1 = f1;
             mF2 = f2;
             mF12 = f12;
             mF22 = f22;
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.850 -0500", hash_original_method = "912C6EE593A6921C8E87D5E0641D7CDD", hash_generated_method = "EA84A169DC3D34F380D66E7286688C4D")
-        public View onCreateView(String name, Context context, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.753 -0500", hash_original_method = "912C6EE593A6921C8E87D5E0641D7CDD", hash_generated_method = "EA84A169DC3D34F380D66E7286688C4D")
+        
+public View onCreateView(String name, Context context, AttributeSet attrs) {
             View v = mF1.onCreateView(name, context, attrs);
             if (v != null) return v;
             return mF2.onCreateView(name, context, attrs);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.851 -0500", hash_original_method = "F1957EAE5145EA0F0129265F270794D6", hash_generated_method = "75335244B36E73660223E78FD991C745")
-        public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.755 -0500", hash_original_method = "F1957EAE5145EA0F0129265F270794D6", hash_generated_method = "75335244B36E73660223E78FD991C745")
+        
+public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
             View v = mF12 != null ? mF12.onCreateView(parent, name, context, attrs)
                     : mF1.onCreateView(name, context, attrs);
             if (v != null) return v;
@@ -560,25 +578,26 @@ public abstract class LayoutInflater {
 
     
     private static class BlinkLayout extends FrameLayout {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.876 -0500", hash_original_field = "843D856C679F610BF2FA6342A2AA5C6E", hash_generated_field = "4A3D47FA8808A8239672ED34E6BFB3B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.830 -0500", hash_original_field = "843D856C679F610BF2FA6342A2AA5C6E", hash_generated_field = "4A3D47FA8808A8239672ED34E6BFB3B1")
 
         private static final int MESSAGE_BLINK = 0x42;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.876 -0500", hash_original_field = "F6202A81D818ADEE6EEC7ABE8BBE1F89", hash_generated_field = "D5B9EC9F6E148AEB7231E8904BDB2F8F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.832 -0500", hash_original_field = "F6202A81D818ADEE6EEC7ABE8BBE1F89", hash_generated_field = "D5B9EC9F6E148AEB7231E8904BDB2F8F")
 
         private static final int BLINK_DELAY = 500;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.877 -0500", hash_original_field = "D1B4BEA30F9091920BA4960DD995B0CA", hash_generated_field = "9F94E2291878F4B79ED3B6B67A1ED0C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.836 -0500", hash_original_field = "D1B4BEA30F9091920BA4960DD995B0CA", hash_generated_field = "9F94E2291878F4B79ED3B6B67A1ED0C7")
 
 
         private boolean mBlink;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.878 -0500", hash_original_field = "D7C58D31A3AD81D1F95EB309B4AFAC63", hash_generated_field = "57E34B9F322B663DA6033C74FD1E64C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.838 -0500", hash_original_field = "D7C58D31A3AD81D1F95EB309B4AFAC63", hash_generated_field = "57E34B9F322B663DA6033C74FD1E64C4")
 
         private boolean mBlinkState;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.879 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.841 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
         private  Handler mHandler;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.881 -0500", hash_original_method = "3DD68C66D41BE889B84232F33376A99A", hash_generated_method = "CE5C367810014F30C9D2A83677C91192")
-        public BlinkLayout(Context context, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.848 -0500", hash_original_method = "3DD68C66D41BE889B84232F33376A99A", hash_generated_method = "CE5C367810014F30C9D2A83677C91192")
+        
+public BlinkLayout(Context context, AttributeSet attrs) {
             super(context, attrs);
             mHandler = new Handler(new Handler.Callback() {
                 @Override
@@ -596,15 +615,17 @@ public abstract class LayoutInflater {
             });
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.882 -0500", hash_original_method = "553FA2CA85816FF11073226F48838667", hash_generated_method = "2ECD602022E8AD4E49F7157714A0721E")
-        private void makeBlink() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.850 -0500", hash_original_method = "553FA2CA85816FF11073226F48838667", hash_generated_method = "2ECD602022E8AD4E49F7157714A0721E")
+        
+private void makeBlink() {
             Message message = mHandler.obtainMessage(MESSAGE_BLINK);
             mHandler.sendMessageDelayed(message, BLINK_DELAY);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.883 -0500", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "6284B5BDAB2DDB221E2E9EE595018DF0")
-        @Override
-protected void onAttachedToWindow() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.853 -0500", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "6284B5BDAB2DDB221E2E9EE595018DF0")
+        
+@Override
+        protected void onAttachedToWindow() {
             super.onAttachedToWindow();
 
             mBlink = true;
@@ -613,9 +634,10 @@ protected void onAttachedToWindow() {
             makeBlink();
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.884 -0500", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "6A0685E58F3EC3A3DCAE39465F581AFA")
-        @Override
-protected void onDetachedFromWindow() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.856 -0500", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "6A0685E58F3EC3A3DCAE39465F581AFA")
+        
+@Override
+        protected void onDetachedFromWindow() {
             super.onDetachedFromWindow();
 
             mBlink = false;
@@ -624,9 +646,10 @@ protected void onDetachedFromWindow() {
             mHandler.removeMessages(MESSAGE_BLINK);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.885 -0500", hash_original_method = "B2A7E99D93A7E570FADBB759CB038122", hash_generated_method = "16A89DEF744A3BBDE7BBA6D9F8C2EC56")
-        @Override
-protected void dispatchDraw(Canvas canvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.858 -0500", hash_original_method = "B2A7E99D93A7E570FADBB759CB038122", hash_generated_method = "16A89DEF744A3BBDE7BBA6D9F8C2EC56")
+        
+@Override
+        protected void dispatchDraw(Canvas canvas) {
             if (mBlinkState) {
                 super.dispatchDraw(canvas);
             }
@@ -654,8 +677,9 @@ protected void dispatchDraw(Canvas canvas) {
     /**
      * Throw an exception because the specified class is not allowed to be inflated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.868 -0500", hash_original_method = "0971FA0124FB7B31B88F61FC842AABEB", hash_generated_method = "CDB48CD6F3B5A4D5799B3AD84AE78576")
-    private void failNotAllowed(String name, String prefix, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.808 -0500", hash_original_method = "0971FA0124FB7B31B88F61FC842AABEB", hash_generated_method = "CDB48CD6F3B5A4D5799B3AD84AE78576")
+    
+private void failNotAllowed(String name, String prefix, AttributeSet attrs) {
         throw new InflateException(attrs.getPositionDescription()
                 + ": Class not allowed to be inflated "
                 + (prefix != null ? (prefix + name) : name));
@@ -672,8 +696,9 @@ protected void dispatchDraw(Canvas canvas) {
      * 
      * @return View The View created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.869 -0500", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "EA4AB360C7AC099C3A013E5CC0638751")
-    protected View onCreateView(String name, AttributeSet attrs)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.811 -0500", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "EA4AB360C7AC099C3A013E5CC0638751")
+    
+protected View onCreateView(String name, AttributeSet attrs)
             throws ClassNotFoundException {
         return createView(name, "android.view.", attrs);
     }
@@ -690,8 +715,9 @@ protected void dispatchDraw(Canvas canvas) {
      *
      * @return View The View created.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.870 -0500", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "9848BD8BC8DA93C4C1B59E99FB34666B")
-    protected View onCreateView(View parent, String name, AttributeSet attrs)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.813 -0500", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "9848BD8BC8DA93C4C1B59E99FB34666B")
+    
+protected View onCreateView(View parent, String name, AttributeSet attrs)
             throws ClassNotFoundException {
         return onCreateView(name, attrs);
     }
@@ -699,8 +725,9 @@ protected void dispatchDraw(Canvas canvas) {
     /*
      * default visibility so the BridgeInflater can override it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.871 -0500", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "42E00CE52BE01D0BF7040FF60139A865")
-    View createViewFromTag(View parent, String name, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.816 -0500", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "42E00CE52BE01D0BF7040FF60139A865")
+    
+View createViewFromTag(View parent, String name, AttributeSet attrs) {
         if (name.equals("view")) {
             name = attrs.getAttributeValue(null, "class");
         }
@@ -749,8 +776,9 @@ protected void dispatchDraw(Canvas canvas) {
      * Recursive method used to descend down the xml hierarchy and instantiate
      * views, instantiate their children, and then call onFinishInflate().
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.872 -0500", hash_original_method = "3A61628D6ED69C72EF61CAE501BAE992", hash_generated_method = "3A61628D6ED69C72EF61CAE501BAE992")
-    void rInflate(XmlPullParser parser, View parent, final AttributeSet attrs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.819 -0500", hash_original_method = "3A61628D6ED69C72EF61CAE501BAE992", hash_generated_method = "3A61628D6ED69C72EF61CAE501BAE992")
+    
+void rInflate(XmlPullParser parser, View parent, final AttributeSet attrs,
             boolean finishInflate) throws XmlPullParserException, IOException {
 
         final int depth = parser.getDepth();
@@ -792,8 +820,9 @@ protected void dispatchDraw(Canvas canvas) {
         if (finishInflate) parent.onFinishInflate();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.873 -0500", hash_original_method = "D305B9D132FFD898328C34D4AEEA8981", hash_generated_method = "99EFA7552291D9A4CB2F746CA381F160")
-    private void parseRequestFocus(XmlPullParser parser, View parent)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.822 -0500", hash_original_method = "D305B9D132FFD898328C34D4AEEA8981", hash_generated_method = "99EFA7552291D9A4CB2F746CA381F160")
+    
+private void parseRequestFocus(XmlPullParser parser, View parent)
             throws XmlPullParserException, IOException {
         int type;
         parent.requestFocus();
@@ -804,8 +833,9 @@ protected void dispatchDraw(Canvas canvas) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:16.874 -0500", hash_original_method = "3903965D4D2522F244AF5345C6CDB188", hash_generated_method = "C449020B6125C8DAC04C41F3DD851E25")
-    private void parseInclude(XmlPullParser parser, View parent, AttributeSet attrs)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.826 -0500", hash_original_method = "3903965D4D2522F244AF5345C6CDB188", hash_generated_method = "C449020B6125C8DAC04C41F3DD851E25")
+    
+private void parseInclude(XmlPullParser parser, View parent, AttributeSet attrs)
             throws XmlPullParserException, IOException {
 
         int type;

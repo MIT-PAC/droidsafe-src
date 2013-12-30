@@ -25,8 +25,9 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
      * Returns a new or existing instance with the specified capitalization
      * and correction properties.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.371 -0500", hash_original_method = "4E97B9F33E3690A393012BAC99D71702", hash_generated_method = "B24A55E3524250C9BCDCFC246ADEB9DA")
-    public static MultiTapKeyListener getInstance(boolean autotext,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.538 -0500", hash_original_method = "4E97B9F33E3690A393012BAC99D71702", hash_generated_method = "B24A55E3524250C9BCDCFC246ADEB9DA")
+    
+public static MultiTapKeyListener getInstance(boolean autotext,
                                                   Capitalize cap) {
         int off = cap.ordinal() * 2 + (autotext ? 1 : 0);
 
@@ -37,8 +38,9 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
         return sInstance[off];
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.375 -0500", hash_original_method = "A9D9431F8F7C49BD7FCC39C25DD87181", hash_generated_method = "7E0919A985C3A4E00333092011633B3C")
-    private static void removeTimeouts(Spannable buf) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.553 -0500", hash_original_method = "A9D9431F8F7C49BD7FCC39C25DD87181", hash_generated_method = "7E0919A985C3A4E00333092011633B3C")
+    
+private static void removeTimeouts(Spannable buf) {
         Timeout[] timeout = buf.getSpans(0, buf.length(), Timeout.class);
 
         for (int i = 0; i < timeout.length; i++) {
@@ -49,36 +51,39 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
             buf.removeSpan(t);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.366 -0500", hash_original_field = "5805C0CE1B91B00306C2FDDA14D5C69C", hash_generated_field = "5AAB138DC3461610E21934C9916D10E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.522 -0500", hash_original_field = "5805C0CE1B91B00306C2FDDA14D5C69C", hash_generated_field = "5AAB138DC3461610E21934C9916D10E2")
 
     private static MultiTapKeyListener[] sInstance =
         new MultiTapKeyListener[Capitalize.values().length * 2];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.367 -0500", hash_original_field = "ECA101F9529E11568760EB2314D83FC5", hash_generated_field = "7F64AC2635E34AEAB242631B33213228")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.526 -0500", hash_original_field = "ECA101F9529E11568760EB2314D83FC5", hash_generated_field = "7F64AC2635E34AEAB242631B33213228")
 
 
     private static final SparseArray<String> sRecs = new SparseArray<String>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.368 -0500", hash_original_field = "917533800E906A4D91677293540D1184", hash_generated_field = "7D23761C8705FAE591EE2FF3599940B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.528 -0500", hash_original_field = "917533800E906A4D91677293540D1184", hash_generated_field = "7D23761C8705FAE591EE2FF3599940B6")
 
 
     private Capitalize mCapitalize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.369 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.531 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
 
     private boolean mAutoText;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.370 -0500", hash_original_method = "6BE005A7E4D72D3CA2FBB167C1B244A8", hash_generated_method = "8D24403BFBA744B4861BCC7F16F4C8DE")
-    public MultiTapKeyListener(Capitalize cap,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.535 -0500", hash_original_method = "6BE005A7E4D72D3CA2FBB167C1B244A8", hash_generated_method = "8D24403BFBA744B4861BCC7F16F4C8DE")
+    
+public MultiTapKeyListener(Capitalize cap,
                                boolean autotext) {
         mCapitalize = cap;
         mAutoText = autotext;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.372 -0500", hash_original_method = "0F62DAE08CCEDDF88EBED8C62070D6C5", hash_generated_method = "0B7F1FA09C054D9B934295C3C2A89BD2")
-    public int getInputType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.542 -0500", hash_original_method = "0F62DAE08CCEDDF88EBED8C62070D6C5", hash_generated_method = "0B7F1FA09C054D9B934295C3C2A89BD2")
+    
+public int getInputType() {
         return makeTextContentType(mCapitalize, mAutoText);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.373 -0500", hash_original_method = "A5D3B5CD1C27B709A733246605C23357", hash_generated_method = "BFF86FA97AEA614221DE67AA43F95E56")
-    public boolean onKeyDown(View view, Editable content,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.547 -0500", hash_original_method = "A5D3B5CD1C27B709A733246605C23357", hash_generated_method = "BFF86FA97AEA614221DE67AA43F95E56")
+    
+public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
         int selStart, selEnd;
         int pref = 0;
@@ -227,8 +232,9 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
         return super.onKeyDown(view, content, keyCode, event);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.374 -0500", hash_original_method = "32D49D04D14DFD2D5D5762D6E8E59602", hash_generated_method = "159301206BA9C3461ABFA90A03E86E49")
-    public void onSpanChanged(Spannable buf,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.550 -0500", hash_original_method = "32D49D04D14DFD2D5D5762D6E8E59602", hash_generated_method = "159301206BA9C3461ABFA90A03E86E49")
+    
+public void onSpanChanged(Spannable buf,
                               Object what, int s, int e, int start, int stop) {
         if (what == Selection.SELECTION_END) {
             buf.removeSpan(TextKeyListener.ACTIVE);
@@ -238,12 +244,13 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
 
     
     private class Timeout extends Handler implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.378 -0500", hash_original_field = "2E9B92BEB3F58CC9235E27C030F0082B", hash_generated_field = "18D0F939AB26C87C5090868F3237476C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.564 -0500", hash_original_field = "2E9B92BEB3F58CC9235E27C030F0082B", hash_generated_field = "18D0F939AB26C87C5090868F3237476C")
 
 
         private Editable mBuffer;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.376 -0500", hash_original_method = "3DB3951CA009929F9B4A37752F403591", hash_generated_method = "E7DCEC8AB791586EB937CA795193DAF7")
-        public Timeout(Editable buffer) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.558 -0500", hash_original_method = "3DB3951CA009929F9B4A37752F403591", hash_generated_method = "E7DCEC8AB791586EB937CA795193DAF7")
+        
+public Timeout(Editable buffer) {
             mBuffer = buffer;
             mBuffer.setSpan(Timeout.this, 0, mBuffer.length(),
                             Spannable.SPAN_INCLUSIVE_INCLUSIVE);
@@ -251,8 +258,9 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
             postAtTime(this, SystemClock.uptimeMillis() + 2000);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.377 -0500", hash_original_method = "9422E834C74E9D65E1B16C1853183F4B", hash_generated_method = "9DFFBED0D2474352FDD7AB21BBC6F531")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.561 -0500", hash_original_method = "9422E834C74E9D65E1B16C1853183F4B", hash_generated_method = "9DFFBED0D2474352FDD7AB21BBC6F531")
+        
+public void run() {
             Spannable buf = mBuffer;
 
             if (buf != null) {
@@ -273,10 +281,12 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
         
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.379 -0500", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "D0D44080BF1B8B0853634EBEFA340901")
-    public void onSpanAdded(Spannable s, Object what, int start, int end) { }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.380 -0500", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "5B4B7AFD86AC085C95BBA97BAFF2BD93")
-    public void onSpanRemoved(Spannable s, Object what, int start, int end) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.568 -0500", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "D0D44080BF1B8B0853634EBEFA340901")
+    
+public void onSpanAdded(Spannable s, Object what, int start, int end) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.571 -0500", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "5B4B7AFD86AC085C95BBA97BAFF2BD93")
+    
+public void onSpanRemoved(Spannable s, Object what, int start, int end) { }
     static {
         sRecs.put(KeyEvent.KEYCODE_1,     ".,1!@#$%^&*:/?'=()");
         sRecs.put(KeyEvent.KEYCODE_2,     "abc2ABC");

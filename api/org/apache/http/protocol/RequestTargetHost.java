@@ -21,13 +21,15 @@ import org.apache.http.ProtocolVersion;
 
 public class RequestTargetHost implements HttpRequestInterceptor {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.192 -0500", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "2DA67DBB12ACDFB89AED93D7A8F52839")
-    public RequestTargetHost() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.161 -0500", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "2DA67DBB12ACDFB89AED93D7A8F52839")
+    
+public RequestTargetHost() {
         super();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.193 -0500", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "3F08F337F170E56EF5D705B22D55C5D3")
-    public void process(final HttpRequest request, final HttpContext context) 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.165 -0500", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "3F08F337F170E56EF5D705B22D55C5D3")
+    
+public void process(final HttpRequest request, final HttpContext context) 
             throws HttpException, IOException {
         if (request == null) {
             throw new IllegalArgumentException("HTTP request may not be null");

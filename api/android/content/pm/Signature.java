@@ -21,8 +21,9 @@ import android.os.Parcelable;
 
 public class Signature implements Parcelable {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.867 -0500", hash_original_method = "2EFDF66421CB71AEE738679CD64484B1", hash_generated_method = "2CC9D14C5DECE3F63B13E21D77780F06")
-    private static final int parseHexDigit(int nibble) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.800 -0500", hash_original_method = "2EFDF66421CB71AEE738679CD64484B1", hash_generated_method = "2CC9D14C5DECE3F63B13E21D77780F06")
+    
+private static final int parseHexDigit(int nibble) {
         if ('0' <= nibble && nibble <= '9') {
             return nibble - '0';
         } else if ('a' <= nibble && nibble <= 'f') {
@@ -39,34 +40,37 @@ public class Signature implements Parcelable {
 
     public static final Parcelable.Creator<Signature> CREATOR
             = new Parcelable.Creator<Signature>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.877 -0500", hash_original_method = "59AB50688ABB8B89A247E93F4C76880C", hash_generated_method = "94463D2ECA0FB0B4DCCBF0065392C4B9")
-        public Signature createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.828 -0500", hash_original_method = "59AB50688ABB8B89A247E93F4C76880C", hash_generated_method = "94463D2ECA0FB0B4DCCBF0065392C4B9")
+        
+public Signature createFromParcel(Parcel source) {
             return new Signature(source);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.878 -0500", hash_original_method = "910E548F13237BE241520EC845542C7B", hash_generated_method = "DB7610611C892942AB430B2B71C70D0E")
-        public Signature[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.830 -0500", hash_original_method = "910E548F13237BE241520EC845542C7B", hash_generated_method = "DB7610611C892942AB430B2B71C70D0E")
+        
+public Signature[] newArray(int size) {
             return new Signature[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.863 -0500", hash_original_field = "E63712AB53701E0642EF9DDDC3898081", hash_generated_field = "82FF487F3BC72CD61B5A92D15C282FF7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.788 -0500", hash_original_field = "E63712AB53701E0642EF9DDDC3898081", hash_generated_field = "82FF487F3BC72CD61B5A92D15C282FF7")
 
     private  byte[] mSignature;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.864 -0500", hash_original_field = "A13152B9FE22A291FA8BF7E71C005049", hash_generated_field = "A977E573260D0E2786C71BC0961278A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.790 -0500", hash_original_field = "A13152B9FE22A291FA8BF7E71C005049", hash_generated_field = "A977E573260D0E2786C71BC0961278A2")
 
     private int mHashCode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.864 -0500", hash_original_field = "674DB2511805B4D68885D7E4A8D1301D", hash_generated_field = "1E26145EC834378C0A9DBC88E0224A55")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.792 -0500", hash_original_field = "674DB2511805B4D68885D7E4A8D1301D", hash_generated_field = "1E26145EC834378C0A9DBC88E0224A55")
 
     private boolean mHaveHashCode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.865 -0500", hash_original_field = "C7B071430DEF8FE92B374A177870100E", hash_generated_field = "1DA2E56EBB947D41BB50077BEA325ECF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.794 -0500", hash_original_field = "C7B071430DEF8FE92B374A177870100E", hash_generated_field = "1DA2E56EBB947D41BB50077BEA325ECF")
 
     private SoftReference<String> mStringRef;
 
     /**
      * Create Signature from an existing raw byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.866 -0500", hash_original_method = "D6836B125607EB452687B13BDE6808A1", hash_generated_method = "9D9F09BCA00ADEF6E37839FEA4228DCD")
-    public Signature(byte[] signature) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.797 -0500", hash_original_method = "D6836B125607EB452687B13BDE6808A1", hash_generated_method = "9D9F09BCA00ADEF6E37839FEA4228DCD")
+    
+public Signature(byte[] signature) {
         mSignature = signature.clone();
     }
 
@@ -78,8 +82,9 @@ public class Signature implements Parcelable {
      * @param text hex-encoded string representing the signature
      * @throws IllegalArgumentException when signature is odd-length
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.868 -0500", hash_original_method = "D3C2556D1F2D5F06D4836CF4CB37FB62", hash_generated_method = "1F26B13FDD2424B6CCB41EE17BFFBB2E")
-    public Signature(String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.803 -0500", hash_original_method = "D3C2556D1F2D5F06D4836CF4CB37FB62", hash_generated_method = "1F26B13FDD2424B6CCB41EE17BFFBB2E")
+    
+public Signature(String text) {
         final byte[] input = text.getBytes();
         final int N = input.length;
 
@@ -99,16 +104,18 @@ public class Signature implements Parcelable {
         mSignature = sig;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.880 -0500", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "60EE1FF730337042BFF564400F648ED1")
-    private Signature(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.834 -0500", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "60EE1FF730337042BFF564400F648ED1")
+    
+private Signature(Parcel source) {
         mSignature = source.createByteArray();
     }
 
     /**
      * Encode the Signature as ASCII text.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.869 -0500", hash_original_method = "01DD3741CD8E2948231CA6DA5A86A75B", hash_generated_method = "0CEDB44E2ECF4C1E1C864C156289461C")
-    public char[] toChars() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.805 -0500", hash_original_method = "01DD3741CD8E2948231CA6DA5A86A75B", hash_generated_method = "0CEDB44E2ECF4C1E1C864C156289461C")
+    
+public char[] toChars() {
         return toChars(null, null);
     }
 
@@ -122,8 +129,9 @@ public class Signature implements Parcelable {
      * to hold the ASCII representation, or a newly created char[] array if
      * needed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.870 -0500", hash_original_method = "AD9B978BF103416C8AF045B7D5E010A1", hash_generated_method = "FA79E3433392288203339D438AD103C4")
-    public char[] toChars(char[] existingArray, int[] outLen) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.807 -0500", hash_original_method = "AD9B978BF103416C8AF045B7D5E010A1", hash_generated_method = "FA79E3433392288203339D438AD103C4")
+    
+public char[] toChars(char[] existingArray, int[] outLen) {
         byte[] sig = mSignature;
         final int N = sig.length;
         final int N2 = N*2;
@@ -143,8 +151,9 @@ public class Signature implements Parcelable {
     /**
      * Return the result of {@link #toChars()} as a String.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.871 -0500", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "CF08BA09345112F19780B30497196162")
-    public String toCharsString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.810 -0500", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "CF08BA09345112F19780B30497196162")
+    
+public String toCharsString() {
         String str = mStringRef == null ? null : mStringRef.get();
         if (str != null) {
             return str;
@@ -157,8 +166,9 @@ public class Signature implements Parcelable {
     /**
      * @return the contents of this signature as a byte array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.872 -0500", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "06EEAF99EBA8544F9705EB43B42F11CC")
-    public byte[] toByteArray() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.812 -0500", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "06EEAF99EBA8544F9705EB43B42F11CC")
+    
+public byte[] toByteArray() {
         byte[] bytes = new byte[mSignature.length];
         System.arraycopy(mSignature, 0, bytes, 0, mSignature.length);
         return bytes;
@@ -171,17 +181,19 @@ public class Signature implements Parcelable {
      *             certificate; shouldn't happen.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.873 -0500", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "CAEEC1672220C2BD4280F7D0DA8400F4")
-    public PublicKey getPublicKey() throws CertificateException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.815 -0500", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "CAEEC1672220C2BD4280F7D0DA8400F4")
+    
+public PublicKey getPublicKey() throws CertificateException {
         final CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
         final ByteArrayInputStream bais = new ByteArrayInputStream(mSignature);
         final Certificate cert = certFactory.generateCertificate(bais);
         return cert.getPublicKey();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.873 -0500", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "D6FD3B0353D1CDA901DCA0F4761C00F6")
-    @Override
-public boolean equals(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.817 -0500", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "D6FD3B0353D1CDA901DCA0F4761C00F6")
+    
+@Override
+    public boolean equals(Object obj) {
         try {
             if (obj != null) {
                 Signature other = (Signature)obj;
@@ -192,9 +204,10 @@ public boolean equals(Object obj) {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.874 -0500", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "E1E055FCA73BA1F4A7886CB254AA07A2")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.820 -0500", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "E1E055FCA73BA1F4A7886CB254AA07A2")
+    
+@Override
+    public int hashCode() {
         if (mHaveHashCode) {
             return mHashCode;
         }
@@ -203,13 +216,15 @@ public int hashCode() {
         return mHashCode;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.875 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.822 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:02.876 -0500", hash_original_method = "0B8B8E5420BBB8BD8CE54CF326578D2C", hash_generated_method = "3F8350DF19398779906AB017C7EBA0BD")
-    public void writeToParcel(Parcel dest, int parcelableFlags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.824 -0500", hash_original_method = "0B8B8E5420BBB8BD8CE54CF326578D2C", hash_generated_method = "3F8350DF19398779906AB017C7EBA0BD")
+    
+public void writeToParcel(Parcel dest, int parcelableFlags) {
         dest.writeByteArray(mSignature);
     }
     // orphaned legacy method

@@ -12,18 +12,18 @@ import java.util.Arrays;
 
 
 public class StringReader extends Reader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.624 -0500", hash_original_field = "8D1932428116A452F4A363260F8684E7", hash_generated_field = "787A2B4D426AC144FB23E0D0502FE70E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.754 -0500", hash_original_field = "8D1932428116A452F4A363260F8684E7", hash_generated_field = "787A2B4D426AC144FB23E0D0502FE70E")
 
     private String str;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.626 -0500", hash_original_field = "AA082170A07E47DD757AA0D276241BD9", hash_generated_field = "D9BE4F291B7CF1E403126100EC51CB87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.756 -0500", hash_original_field = "AA082170A07E47DD757AA0D276241BD9", hash_generated_field = "D9BE4F291B7CF1E403126100EC51CB87")
 
 
     private int markpos = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.627 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.758 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
 
     private int pos;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.627 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.761 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
 
 
     private int count;
@@ -36,8 +36,9 @@ public class StringReader extends Reader {
      * @param str
      *            the source string for this reader.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.628 -0500", hash_original_method = "FB44DCC8276A9B32CF15DCC88FC63BEE", hash_generated_method = "6947F25B438E6AE482E8E023AF1349D8")
-    public StringReader(String str) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.764 -0500", hash_original_method = "FB44DCC8276A9B32CF15DCC88FC63BEE", hash_generated_method = "6947F25B438E6AE482E8E023AF1349D8")
+    
+public StringReader(String str) {
         this.str = str;
         this.count = str.length();
     }
@@ -47,9 +48,10 @@ public class StringReader extends Reader {
      * will throw an {@code IOException}. Only the first invocation of this
      * method has any effect.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.629 -0500", hash_original_method = "827A4A30AD2891E9194C78AEA719C92F", hash_generated_method = "4AA1355CB20EA7F230BFADCED89C2935")
-    @Override
-public void close() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.766 -0500", hash_original_method = "827A4A30AD2891E9194C78AEA719C92F", hash_generated_method = "4AA1355CB20EA7F230BFADCED89C2935")
+    
+@Override
+    public void close() {
         str = null;
     }
 
@@ -58,8 +60,9 @@ public void close() {
      *
      * @return {@code true} if closed, otherwise {@code false}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.630 -0500", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "6527F0BA57A980BF6CB039A1D9CEA605")
-    private boolean isClosed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.769 -0500", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "6527F0BA57A980BF6CB039A1D9CEA605")
+    
+private boolean isClosed() {
         return str == null;
     }
 
@@ -77,9 +80,10 @@ public void close() {
      * @see #markSupported()
      * @see #reset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.631 -0500", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "CAEFA9F9FC72532B2549A04756D90732")
-    @Override
-public void mark(int readLimit) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.772 -0500", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "CAEFA9F9FC72532B2549A04756D90732")
+    
+@Override
+    public void mark(int readLimit) throws IOException {
         if (readLimit < 0) {
             throw new IllegalArgumentException();
         }
@@ -90,8 +94,9 @@ public void mark(int readLimit) throws IOException {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.632 -0500", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "8E2E90CC0F7CC6CA4F243AB52DE19121")
-    private void checkNotClosed() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.775 -0500", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "8E2E90CC0F7CC6CA4F243AB52DE19121")
+    
+private void checkNotClosed() throws IOException {
         if (isClosed()) {
             throw new IOException("StringReader is closed");
         }
@@ -103,9 +108,10 @@ public void mark(int readLimit) throws IOException {
      *
      * @return always {@code true}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.633 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
-    @Override
-public boolean markSupported() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.777 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
+    
+@Override
+    public boolean markSupported() {
         return true;
     }
 
@@ -119,9 +125,10 @@ public boolean markSupported() {
      * @throws IOException
      *             if this reader is closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.634 -0500", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "85FFC9978267B1E67AAF608E98C06023")
-    @Override
-public int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.779 -0500", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "85FFC9978267B1E67AAF608E98C06023")
+    
+@Override
+    public int read() throws IOException {
         synchronized (lock) {
             checkNotClosed();
             if (pos != count) {
@@ -152,9 +159,10 @@ public int read() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.635 -0500", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "4EA1787DEA8553F64FE2035C6AED16CA")
-    @Override
-public int read(char[] buf, int offset, int len) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.782 -0500", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "4EA1787DEA8553F64FE2035C6AED16CA")
+    
+@Override
+    public int read(char[] buf, int offset, int len) throws IOException {
         synchronized (lock) {
             checkNotClosed();
             Arrays.checkOffsetAndCount(buf.length, offset, len);
@@ -182,9 +190,10 @@ public int read(char[] buf, int offset, int len) throws IOException {
      * @see #read()
      * @see #read(char[], int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.636 -0500", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "82422747FE057A76BDD75E84FA12D054")
-    @Override
-public boolean ready() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.785 -0500", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "82422747FE057A76BDD75E84FA12D054")
+    
+@Override
+    public boolean ready() throws IOException {
         synchronized (lock) {
             checkNotClosed();
             return true;
@@ -202,9 +211,10 @@ public boolean ready() throws IOException {
      * @see #mark(int)
      * @see #markSupported()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.637 -0500", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "41EADE0FC52598FB47990BB2C6983730")
-    @Override
-public void reset() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.787 -0500", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "41EADE0FC52598FB47990BB2C6983730")
+    
+@Override
+    public void reset() throws IOException {
         synchronized (lock) {
             checkNotClosed();
             pos = markpos != -1 ? markpos : 0;
@@ -231,9 +241,10 @@ public void reset() throws IOException {
      * @see #markSupported()
      * @see #reset()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.638 -0500", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "AEDA2BADC8C7353D3C34B57D9C758E02")
-    @Override
-public long skip(long charCount) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.791 -0500", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "AEDA2BADC8C7353D3C34B57D9C758E02")
+    
+@Override
+    public long skip(long charCount) throws IOException {
         synchronized (lock) {
             checkNotClosed();
 

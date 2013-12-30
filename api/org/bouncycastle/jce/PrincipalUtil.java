@@ -20,8 +20,9 @@ public class PrincipalUtil {
     /**
      * return the issuer of the given cert as an X509PrincipalObject.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.653 -0500", hash_original_method = "166B775807CA9630825F040ACD22C9D9", hash_generated_method = "D39C91FCF949AC8D833106517D990ED0")
-    public static X509Principal getIssuerX509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.856 -0500", hash_original_method = "166B775807CA9630825F040ACD22C9D9", hash_generated_method = "D39C91FCF949AC8D833106517D990ED0")
+    
+public static X509Principal getIssuerX509Principal(
         X509Certificate cert)
         throws CertificateEncodingException
     {
@@ -41,8 +42,9 @@ public class PrincipalUtil {
     /**
      * return the subject of the given cert as an X509PrincipalObject.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.654 -0500", hash_original_method = "17329EDB7F3F6379048AC3576BCE6002", hash_generated_method = "6F8E3AC677B96539AE758CF4537940FF")
-    public static X509Principal getSubjectX509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.858 -0500", hash_original_method = "17329EDB7F3F6379048AC3576BCE6002", hash_generated_method = "6F8E3AC677B96539AE758CF4537940FF")
+    
+public static X509Principal getSubjectX509Principal(
         X509Certificate cert)
         throws CertificateEncodingException
     {
@@ -61,8 +63,9 @@ public class PrincipalUtil {
     /**
      * return the issuer of the given CRL as an X509PrincipalObject.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.655 -0500", hash_original_method = "D1923EE98321556672BA5B09F8556462", hash_generated_method = "F97153EC819B44D798CD3EE04AF742A9")
-    public static X509Principal getIssuerX509Principal(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.861 -0500", hash_original_method = "D1923EE98321556672BA5B09F8556462", hash_generated_method = "F97153EC819B44D798CD3EE04AF742A9")
+    
+public static X509Principal getIssuerX509Principal(
         X509CRL crl)
         throws CRLException
     {

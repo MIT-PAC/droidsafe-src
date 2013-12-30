@@ -14,7 +14,7 @@ import javax.sip.header.ExtensionHeader;
 
 
 public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader implements PUserDatabaseHeader, SIPHeaderNamesIms, ExtensionHeader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.819 -0500", hash_original_field = "1D4A58FFF7AA38B6C9A27CCC6771A449", hash_generated_field = "86C05D139AEEDD5C16FB836B4667558E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.849 -0500", hash_original_field = "1D4A58FFF7AA38B6C9A27CCC6771A449", hash_generated_field = "86C05D139AEEDD5C16FB836B4667558E")
 
 
     private String databaseName;
@@ -23,8 +23,9 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
      *
      * @param databaseName
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.821 -0500", hash_original_method = "7F14AD9E055B0EDA573715DABAF69E4A", hash_generated_method = "CDEDE6DD1D14EFE79101F1481576C186")
-    public PUserDatabase(String databaseName)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.853 -0500", hash_original_method = "7F14AD9E055B0EDA573715DABAF69E4A", hash_generated_method = "CDEDE6DD1D14EFE79101F1481576C186")
+    
+public PUserDatabase(String databaseName)
     {
         super(NAME);
         this.databaseName = databaseName;
@@ -33,13 +34,15 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
     /**
      * Default constructor.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.822 -0500", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "4A7D58B86640240005440BF8BA013D2B")
-    public PUserDatabase() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.856 -0500", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "4A7D58B86640240005440BF8BA013D2B")
+    
+public PUserDatabase() {
         super(P_USER_DATABASE);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.823 -0500", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "670AFE2F9B8340580BECCDB06D8BB4C6")
-    public String getDatabaseName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.860 -0500", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "670AFE2F9B8340580BECCDB06D8BB4C6")
+    
+public String getDatabaseName() {
 
         return this.databaseName;
     }
@@ -69,8 +72,9 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
                 //this.databaseName = databaseName;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.826 -0500", hash_original_method = "C5A419AE4F54D4DB306D1B917A489A39", hash_generated_method = "C70DDAAF4CE56806DA74FFF9FD29CFCD")
-    protected String encodeBody() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.867 -0500", hash_original_method = "C5A419AE4F54D4DB306D1B917A489A39", hash_generated_method = "C70DDAAF4CE56806DA74FFF9FD29CFCD")
+    
+protected String encodeBody() {
 
         StringBuffer retval = new StringBuffer();
         retval.append("<");
@@ -84,22 +88,25 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
         return retval.toString();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.827 -0500", hash_original_method = "E720B3A09C72EF9AD917691C9271EB0A", hash_generated_method = "97914C0F9C0738B1832C0F5D20126DF8")
-    public boolean equals(Object other)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.870 -0500", hash_original_method = "E720B3A09C72EF9AD917691C9271EB0A", hash_generated_method = "97914C0F9C0738B1832C0F5D20126DF8")
+    
+public boolean equals(Object other)
     {
         return (other instanceof PUserDatabaseHeader) && super.equals(other);
 
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.828 -0500", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "6D9B725C8901044875E10FB3FDDD193C")
-    public Object clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.873 -0500", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "6D9B725C8901044875E10FB3FDDD193C")
+    
+public Object clone() {
         PUserDatabase retval = (PUserDatabase) super.clone();
         return retval;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.829 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
-    public void setValue(String value) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.876 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
+    
+public void setValue(String value) throws ParseException {
         throw new ParseException(value,0);
 
     }

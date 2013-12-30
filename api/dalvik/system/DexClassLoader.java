@@ -29,8 +29,9 @@ public class DexClassLoader extends BaseDexClassLoader {
      *     {@code null}
      * @param parent the parent class loader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.848 -0500", hash_original_method = "0E54801097DD3CB2DCA8F1C7661C6431", hash_generated_method = "87A58931F57DAF46173EFD86E890DF88")
-    public DexClassLoader(String dexPath, String optimizedDirectory,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.020 -0500", hash_original_method = "0E54801097DD3CB2DCA8F1C7661C6431", hash_generated_method = "87A58931F57DAF46173EFD86E890DF88")
+    
+public DexClassLoader(String dexPath, String optimizedDirectory,
             String libraryPath, ClassLoader parent) {
         super(dexPath, new File(optimizedDirectory), libraryPath, parent);
     }

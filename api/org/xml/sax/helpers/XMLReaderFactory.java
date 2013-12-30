@@ -61,8 +61,9 @@ final public class XMLReaderFactory {
      *            can be identified and instantiated.
      * @see #createXMLReader(java.lang.String)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.349 -0500", hash_original_method = "180A50C02EF56D0920FCD19F710BDFCF", hash_generated_method = "7F0B50C5B63631B4A77F25B28F797203")
-    public static XMLReader createXMLReader ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.069 -0500", hash_original_method = "180A50C02EF56D0920FCD19F710BDFCF", hash_generated_method = "7F0B50C5B63631B4A77F25B28F797203")
+    
+public static XMLReader createXMLReader ()
     throws SAXException
     {
     String        className = null;
@@ -135,15 +136,17 @@ final public class XMLReaderFactory {
      *            loaded, instantiated, and cast to XMLReader.
      * @see #createXMLReader()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.350 -0500", hash_original_method = "7B57FCA59F8E8ECF64401977C141F604", hash_generated_method = "38CE04D38A0C314CB910E94916491B8F")
-    public static XMLReader createXMLReader (String className)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.072 -0500", hash_original_method = "7B57FCA59F8E8ECF64401977C141F604", hash_generated_method = "38CE04D38A0C314CB910E94916491B8F")
+    
+public static XMLReader createXMLReader (String className)
     throws SAXException
     {
     return loadClass (NewInstance.getClassLoader (), className);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.351 -0500", hash_original_method = "19F45E94121470D2054A27FC5606404E", hash_generated_method = "84E036670D1F7C69B51ED09D9A62AD98")
-    private static XMLReader loadClass (ClassLoader loader, String className)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.075 -0500", hash_original_method = "19F45E94121470D2054A27FC5606404E", hash_generated_method = "84E036670D1F7C69B51ED09D9A62AD98")
+    
+private static XMLReader loadClass (ClassLoader loader, String className)
     throws SAXException
     {
     try {
@@ -163,7 +166,7 @@ final public class XMLReaderFactory {
                    " does not implement XMLReader", e4);
     }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.348 -0500", hash_original_field = "1FF00DEEDADF017351C6C7186E37BE3F", hash_generated_field = "21C340AAACD5354B279B5877FDAA9460")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.066 -0500", hash_original_field = "1FF00DEEDADF017351C6C7186E37BE3F", hash_generated_field = "21C340AAACD5354B279B5877FDAA9460")
 
 
     private static final String property = "org.xml.sax.driver";
@@ -172,8 +175,9 @@ final public class XMLReaderFactory {
      *
      * <p>This constructor prevents the class from being instantiated.</p>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.347 -0500", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "51AC7249F9BE6B126263D8302841892F")
-    private XMLReaderFactory ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.063 -0500", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "51AC7249F9BE6B126263D8302841892F")
+    
+private XMLReaderFactory ()
     {
     }
 }

@@ -45,8 +45,9 @@ public final class PendingIntent implements Parcelable {
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.419 -0500", hash_original_method = "69D22A82CA352429278AB66C9EC4D269", hash_generated_method = "95BB43864FAB78706EBCD8B6F60963D4")
-    public static PendingIntent getActivity(Context context, int requestCode,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.420 -0500", hash_original_method = "69D22A82CA352429278AB66C9EC4D269", hash_generated_method = "95BB43864FAB78706EBCD8B6F60963D4")
+    
+public static PendingIntent getActivity(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -105,8 +106,9 @@ public final class PendingIntent implements Parcelable {
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.420 -0500", hash_original_method = "54CC706903E6C235969DAB2CC8228B77", hash_generated_method = "BE46BD134F3641199D92CC24DA371D50")
-    public static PendingIntent getActivities(Context context, int requestCode,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.423 -0500", hash_original_method = "54CC706903E6C235969DAB2CC8228B77", hash_generated_method = "BE46BD134F3641199D92CC24DA371D50")
+    
+public static PendingIntent getActivities(Context context, int requestCode,
             Intent[] intents, int flags) {
         String packageName = context.getPackageName();
         String[] resolvedTypes = new String[intents.length];
@@ -144,8 +146,9 @@ public final class PendingIntent implements Parcelable {
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.421 -0500", hash_original_method = "7ECBF28DE75BC4F2B5047057DCC1075B", hash_generated_method = "41701B886985ED16AB2AB3DED8138C7A")
-    public static PendingIntent getBroadcast(Context context, int requestCode,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.426 -0500", hash_original_method = "7ECBF28DE75BC4F2B5047057DCC1075B", hash_generated_method = "41701B886985ED16AB2AB3DED8138C7A")
+    
+public static PendingIntent getBroadcast(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -183,8 +186,9 @@ public final class PendingIntent implements Parcelable {
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.422 -0500", hash_original_method = "ABFD2E080CD8663BF6E26BE6876274AD", hash_generated_method = "D979B054426B7D588BDD63C2E93DE780")
-    public static PendingIntent getService(Context context, int requestCode,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.428 -0500", hash_original_method = "ABFD2E080CD8663BF6E26BE6876274AD", hash_generated_method = "D979B054426B7D588BDD63C2E93DE780")
+    
+public static PendingIntent getService(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -210,8 +214,9 @@ public final class PendingIntent implements Parcelable {
      * @param sender The PendingIntent to write, or null.
      * @param out Where to write the PendingIntent.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.439 -0500", hash_original_method = "22B62015BE969BA5F8FF4277748534BD", hash_generated_method = "9C4F52F75D02CD3BE3C38AA5172500C5")
-    public static void writePendingIntentOrNullToParcel(PendingIntent sender,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.472 -0500", hash_original_method = "22B62015BE969BA5F8FF4277748534BD", hash_generated_method = "9C4F52F75D02CD3BE3C38AA5172500C5")
+    
+public static void writePendingIntentOrNullToParcel(PendingIntent sender,
             Parcel out) {
         out.writeStrongBinder(sender != null ? sender.mTarget.asBinder()
                 : null);
@@ -227,49 +232,54 @@ public final class PendingIntent implements Parcelable {
      * @return Returns the Messenger read from the Parcel, or null if null had
      * been written.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.440 -0500", hash_original_method = "87F4B01ECCD12AE599F0E972E34C07E9", hash_generated_method = "8B33B39B0338061CA43B39E3CB933B33")
-    public static PendingIntent readPendingIntentOrNullFromParcel(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.475 -0500", hash_original_method = "87F4B01ECCD12AE599F0E972E34C07E9", hash_generated_method = "8B33B39B0338061CA43B39E3CB933B33")
+    
+public static PendingIntent readPendingIntentOrNullFromParcel(Parcel in) {
         IBinder b = in.readStrongBinder();
         return b != null ? new PendingIntent(b) : null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.400 -0500", hash_original_field = "5371EE4B71F65A7A5C4121D8D37CCFBD", hash_generated_field = "5E771266274AD1856355F7F2644C40F0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.372 -0500", hash_original_field = "5371EE4B71F65A7A5C4121D8D37CCFBD", hash_generated_field = "5E771266274AD1856355F7F2644C40F0")
 
     public static final int FLAG_ONE_SHOT = 1<<30;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.401 -0500", hash_original_field = "38E08F68905AA7F99318A60DBBA33EBF", hash_generated_field = "6ECB010344DA3BF2E28DD81C26A1E226")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.375 -0500", hash_original_field = "38E08F68905AA7F99318A60DBBA33EBF", hash_generated_field = "6ECB010344DA3BF2E28DD81C26A1E226")
 
     public static final int FLAG_NO_CREATE = 1<<29;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.402 -0500", hash_original_field = "356472E72A9FA6D04BA36253AF11A6B2", hash_generated_field = "50E1B18733D9B9E6FAC056955439D1C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.377 -0500", hash_original_field = "356472E72A9FA6D04BA36253AF11A6B2", hash_generated_field = "50E1B18733D9B9E6FAC056955439D1C7")
 
     public static final int FLAG_CANCEL_CURRENT = 1<<28;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.404 -0500", hash_original_field = "D359E8EBDCAA973E644272D0383BEF56", hash_generated_field = "07161ED3853628F4CC6ED18374F570F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.379 -0500", hash_original_field = "D359E8EBDCAA973E644272D0383BEF56", hash_generated_field = "07161ED3853628F4CC6ED18374F570F7")
 
     public static final int FLAG_UPDATE_CURRENT = 1<<27;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.396 -0400", hash_original_field = "68AC0C0209638127AE110D7481B6BF8A", hash_generated_field = "A03CAD3B827B3F879722CD11378FA14A")
 
     public static final Parcelable.Creator<PendingIntent> CREATOR
             = new Parcelable.Creator<PendingIntent>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.436 -0500", hash_original_method = "002B3842CB6C032442901D240F958E6F", hash_generated_method = "03E91BD6FC2A0D19BD7193F9F9DCD27E")
-        public PendingIntent createFromParcel(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.466 -0500", hash_original_method = "002B3842CB6C032442901D240F958E6F", hash_generated_method = "03E91BD6FC2A0D19BD7193F9F9DCD27E")
+        
+public PendingIntent createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();
             return target != null ? new PendingIntent(target) : null;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.437 -0500", hash_original_method = "54375C4346ED3346E211F06AD01508EB", hash_generated_method = "DD6FD45DF19224B4FC959EB116DD5B3E")
-        public PendingIntent[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.468 -0500", hash_original_method = "54375C4346ED3346E211F06AD01508EB", hash_generated_method = "DD6FD45DF19224B4FC959EB116DD5B3E")
+        
+public PendingIntent[] newArray(int size) {
             return new PendingIntent[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.399 -0500", hash_original_field = "1D491A99AD04D3B16F7131B168BB0724", hash_generated_field = "E4E58773DF3C0920C12AA38B8FC403A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.370 -0500", hash_original_field = "1D491A99AD04D3B16F7131B168BB0724", hash_generated_field = "E4E58773DF3C0920C12AA38B8FC403A5")
 
     private  IIntentSender mTarget;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.441 -0500", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "3ACE5727953950B87626FD6380A23370")
-    PendingIntent(IIntentSender target) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.478 -0500", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "3ACE5727953950B87626FD6380A23370")
+    
+PendingIntent(IIntentSender target) {
         mTarget = target;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.442 -0500", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D")
-    PendingIntent(IBinder target) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.480 -0500", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D")
+    
+PendingIntent(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);
     }
 
@@ -279,8 +289,9 @@ public final class PendingIntent implements Parcelable {
      * @return Returns a IntentSender object that wraps the sender of PendingIntent
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.423 -0500", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "CC4CE09BF8F43AD6ADBEBE35CB9D4209")
-    public IntentSender getIntentSender() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.430 -0500", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "CC4CE09BF8F43AD6ADBEBE35CB9D4209")
+    
+public IntentSender getIntentSender() {
         return new IntentSender(mTarget);
     }
 
@@ -288,8 +299,9 @@ public final class PendingIntent implements Parcelable {
      * Cancel a currently active PendingIntent.  Only the original application
      * owning an PendingIntent can cancel it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.424 -0500", hash_original_method = "7E47A257CCD629A0D7E43A8ADD34CCE8", hash_generated_method = "920E8C7E84F34DAC3321073AE18A2854")
-    public void cancel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.433 -0500", hash_original_method = "7E47A257CCD629A0D7E43A8ADD34CCE8", hash_generated_method = "920E8C7E84F34DAC3321073AE18A2854")
+    
+public void cancel() {
         try {
             ActivityManagerNative.getDefault().cancelIntentSender(mTarget);
         } catch (RemoteException e) {
@@ -304,8 +316,9 @@ public final class PendingIntent implements Parcelable {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.425 -0500", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "46DA51288025E80A0E3EF352BC1B6A2C")
-    public void send() throws CanceledException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.435 -0500", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "46DA51288025E80A0E3EF352BC1B6A2C")
+    
+public void send() throws CanceledException {
         send(null, 0, null, null, null, null);
     }
 
@@ -319,8 +332,9 @@ public final class PendingIntent implements Parcelable {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.425 -0500", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "CB8910838B2370E2E3A768D7BF8F1FFE")
-    public void send(int code) throws CanceledException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.437 -0500", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "CB8910838B2370E2E3A768D7BF8F1FFE")
+    
+public void send(int code) throws CanceledException {
         send(null, code, null, null, null, null);
     }
 
@@ -339,8 +353,9 @@ public final class PendingIntent implements Parcelable {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.426 -0500", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6A32A838B0D449ABCB7226D14EC8E406")
-    public void send(Context context, int code, Intent intent)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.439 -0500", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6A32A838B0D449ABCB7226D14EC8E406")
+    
+public void send(Context context, int code, Intent intent)
             throws CanceledException {
         send(context, code, intent, null, null, null);
     }
@@ -361,8 +376,9 @@ public final class PendingIntent implements Parcelable {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.427 -0500", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "278DD9C1F502BADEE4F34865B60B6AF5")
-    public void send(int code, OnFinished onFinished, Handler handler)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.442 -0500", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "278DD9C1F502BADEE4F34865B60B6AF5")
+    
+public void send(int code, OnFinished onFinished, Handler handler)
             throws CanceledException {
         send(null, code, null, onFinished, handler, null);
     }
@@ -398,8 +414,9 @@ public final class PendingIntent implements Parcelable {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.428 -0500", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "4AD6AEF1F974525EC4F626AD8217232F")
-    public void send(Context context, int code, Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.445 -0500", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "4AD6AEF1F974525EC4F626AD8217232F")
+    
+public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws CanceledException {
         send(context, code, intent, onFinished, handler, null);
     }
@@ -440,8 +457,9 @@ public final class PendingIntent implements Parcelable {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.429 -0500", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "0D9CDB0D98A6C7707455612FFEB794D7")
-    public void send(Context context, int code, Intent intent,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.447 -0500", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "0D9CDB0D98A6C7707455612FFEB794D7")
+    
+public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission)
             throws CanceledException {
         try {
@@ -470,8 +488,9 @@ public final class PendingIntent implements Parcelable {
      * @return The package name of the PendingIntent, or null if there is
      * none associated with it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.430 -0500", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "D3A6F32790B99E339D9B68926FE71FFC")
-    public String getTargetPackage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.449 -0500", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "D3A6F32790B99E339D9B68926FE71FFC")
+    
+public String getTargetPackage() {
         try {
             return ActivityManagerNative.getDefault()
                 .getPackageForIntentSender(mTarget);
@@ -485,8 +504,9 @@ public final class PendingIntent implements Parcelable {
      * @hide
      * Check to verify that this PendingIntent targets a specific package.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.431 -0500", hash_original_method = "6D06AB3EE4D5DE54AFE0CC755257630C", hash_generated_method = "9C0DA04DA2E730A04E7E33B17325BE84")
-    public boolean isTargetedToPackage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.452 -0500", hash_original_method = "6D06AB3EE4D5DE54AFE0CC755257630C", hash_generated_method = "9C0DA04DA2E730A04E7E33B17325BE84")
+    
+public boolean isTargetedToPackage() {
         try {
             return ActivityManagerNative.getDefault()
                 .isIntentSenderTargetedToPackage(mTarget);
@@ -505,9 +525,10 @@ public final class PendingIntent implements Parcelable {
      * objects but whose equals() method identifies them as being the same
      * operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.432 -0500", hash_original_method = "29E3C1E256E903CF301460F6770B7518", hash_generated_method = "895A26C8494EF0AA13A50A6453B4B20D")
-    @Override
-public boolean equals(Object otherObj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.454 -0500", hash_original_method = "29E3C1E256E903CF301460F6770B7518", hash_generated_method = "895A26C8494EF0AA13A50A6453B4B20D")
+    
+@Override
+    public boolean equals(Object otherObj) {
         if (otherObj instanceof PendingIntent) {
             return mTarget.asBinder().equals(((PendingIntent)otherObj)
                     .mTarget.asBinder());
@@ -517,17 +538,20 @@ public boolean equals(Object otherObj) {
 
     
     public static class CanceledException extends AndroidException {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.405 -0500", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "76984C31773ED74269A80CE848B3D28D")
-        public CanceledException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.382 -0500", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "76984C31773ED74269A80CE848B3D28D")
+        
+public CanceledException() {
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.406 -0500", hash_original_method = "C3CBF66373C770C27B2BC8A07C4853B3", hash_generated_method = "63B8C976D89988330EAE08B9D051A4A4")
-        public CanceledException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.385 -0500", hash_original_method = "C3CBF66373C770C27B2BC8A07C4853B3", hash_generated_method = "63B8C976D89988330EAE08B9D051A4A4")
+        
+public CanceledException(String name) {
             super(name);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.407 -0500", hash_original_method = "3AC8DEA112912D7509E7C6631865B3D3", hash_generated_method = "6471698CA95689569E1FEF49CD45D9E3")
-        public CanceledException(Exception cause) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.387 -0500", hash_original_method = "3AC8DEA112912D7509E7C6631865B3D3", hash_generated_method = "6471698CA95689569E1FEF49CD45D9E3")
+        
+public CanceledException(Exception cause) {
             super(cause);
         }
 
@@ -537,35 +561,37 @@ public boolean equals(Object otherObj) {
 
     
     private static class FinishedDispatcher extends IIntentReceiver.Stub implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.409 -0500", hash_original_field = "7B47F6D668EAC8B29A4C2C64F0EA44AC", hash_generated_field = "094D5D79D03F65D4515938385B22FFF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.395 -0500", hash_original_field = "7B47F6D668EAC8B29A4C2C64F0EA44AC", hash_generated_field = "094D5D79D03F65D4515938385B22FFF9")
 
         private  PendingIntent mPendingIntent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.411 -0500", hash_original_field = "064BC46820F6CAC18F4A40662540577B", hash_generated_field = "3E0837F5746BF0F0EA46630CD994FC89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.397 -0500", hash_original_field = "064BC46820F6CAC18F4A40662540577B", hash_generated_field = "3E0837F5746BF0F0EA46630CD994FC89")
 
         private  OnFinished mWho;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.411 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.400 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
         private  Handler mHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.412 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.402 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
 
         private Intent mIntent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.413 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "77069BAE5867220B0011AB47341F29C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.404 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "77069BAE5867220B0011AB47341F29C2")
 
         private int mResultCode;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.414 -0500", hash_original_field = "9297DC4168CE0E61BD9D0F02E127B543", hash_generated_field = "C1E52350501391E7118DB73479974476")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.406 -0500", hash_original_field = "9297DC4168CE0E61BD9D0F02E127B543", hash_generated_field = "C1E52350501391E7118DB73479974476")
 
         private String mResultData;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.415 -0500", hash_original_field = "F5C1D34888409EAA7782FD08EA76AE47", hash_generated_field = "109BE0C611CD1E4823349D5DAFA222D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.408 -0500", hash_original_field = "F5C1D34888409EAA7782FD08EA76AE47", hash_generated_field = "109BE0C611CD1E4823349D5DAFA222D0")
 
         private Bundle mResultExtras;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.416 -0500", hash_original_method = "D38CFD5EE08A135F8705E392DA5A871B", hash_generated_method = "D38CFD5EE08A135F8705E392DA5A871B")
-        FinishedDispatcher(PendingIntent pi, OnFinished who, Handler handler) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.411 -0500", hash_original_method = "D38CFD5EE08A135F8705E392DA5A871B", hash_generated_method = "D38CFD5EE08A135F8705E392DA5A871B")
+        
+FinishedDispatcher(PendingIntent pi, OnFinished who, Handler handler) {
             mPendingIntent = pi;
             mWho = who;
             mHandler = handler;
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.416 -0500", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "28B5F41CEB7ECE4D1A59129F3C7D959D")
-        public void performReceive(Intent intent, int resultCode,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.413 -0500", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "28B5F41CEB7ECE4D1A59129F3C7D959D")
+        
+public void performReceive(Intent intent, int resultCode,
                 String data, Bundle extras, boolean serialized, boolean sticky) {
             mIntent = intent;
             mResultCode = resultCode;
@@ -577,8 +603,9 @@ public boolean equals(Object otherObj) {
                 mHandler.post(this);
             }
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.417 -0500", hash_original_method = "323DC1202D6F14888580320FDC435E03", hash_generated_method = "7C574604C2F96F251C7EFB72E931341A")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.416 -0500", hash_original_method = "323DC1202D6F14888580320FDC435E03", hash_generated_method = "7C574604C2F96F251C7EFB72E931341A")
+        
+public void run() {
             mWho.onSendFinished(mPendingIntent, mIntent, mResultCode,
                     mResultData, mResultExtras);
         }
@@ -594,15 +621,17 @@ public boolean equals(Object otherObj) {
                 int resultCode, String resultData, Bundle resultExtras);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.432 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "E62183137C3FCEB0B112CE7C5C0D4444")
-    @Override
-public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.456 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "E62183137C3FCEB0B112CE7C5C0D4444")
+    
+@Override
+    public int hashCode() {
         return mTarget.asBinder().hashCode();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.433 -0500", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "587EE0041A3A79CBFBA2B0E90C3817C7")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.458 -0500", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "587EE0041A3A79CBFBA2B0E90C3817C7")
+    
+@Override
+    public String toString() {
         StringBuilder sb = new StringBuilder(128);
         sb.append("PendingIntent{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
@@ -612,19 +641,22 @@ public String toString() {
         return sb.toString();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.434 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
-    public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.460 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.435 -0500", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "5FB48EDF3036D823DDA10D61F6FC459B")
-    public void writeToParcel(Parcel out, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.462 -0500", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "5FB48EDF3036D823DDA10D61F6FC459B")
+    
+public void writeToParcel(Parcel out, int flags) {
         out.writeStrongBinder(mTarget.asBinder());
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:17.443 -0500", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "147FBD3908885E3E49DD8E1224C6EDEA")
-    public IIntentSender getTarget() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.482 -0500", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "147FBD3908885E3E49DD8E1224C6EDEA")
+    
+public IIntentSender getTarget() {
         return mTarget;
     }
     // orphaned legacy method

@@ -30,38 +30,40 @@ import android.util.Xml;
 
 
 public final class SpellCheckerInfo implements Parcelable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.041 -0500", hash_original_field = "CAFE3ED6B053B310C3D2FEEBC0BE5344", hash_generated_field = "B9C780B55162E0EEA102B93C8BE1103A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.760 -0500", hash_original_field = "CAFE3ED6B053B310C3D2FEEBC0BE5344", hash_generated_field = "B9C780B55162E0EEA102B93C8BE1103A")
 
     private static final String TAG = SpellCheckerInfo.class.getSimpleName();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.869 -0400", hash_original_field = "7A612228AEBA5D53B0643FEBD5AE3BB8", hash_generated_field = "3A3EE9B5EE70A014F29E533D3D1BDF90")
 
     public static final Parcelable.Creator<SpellCheckerInfo> CREATOR
             = new Parcelable.Creator<SpellCheckerInfo>() {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.052 -0500", hash_original_method = "B57052E05D31390D8AC825C45000906A", hash_generated_method = "0657642A1B5397DC3654D5996FDE0020")
-        @Override
-public SpellCheckerInfo createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.793 -0500", hash_original_method = "B57052E05D31390D8AC825C45000906A", hash_generated_method = "0657642A1B5397DC3654D5996FDE0020")
+        
+@Override
+        public SpellCheckerInfo createFromParcel(Parcel source) {
             return new SpellCheckerInfo(source);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.053 -0500", hash_original_method = "923FE0033E87D54E7EAC06D455D52BFB", hash_generated_method = "86D6B807CA3BDC9F1A8EBD2F31BF73F8")
-        @Override
-public SpellCheckerInfo[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.795 -0500", hash_original_method = "923FE0033E87D54E7EAC06D455D52BFB", hash_generated_method = "86D6B807CA3BDC9F1A8EBD2F31BF73F8")
+        
+@Override
+        public SpellCheckerInfo[] newArray(int size) {
             return new SpellCheckerInfo[size];
         }
     };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.042 -0500", hash_original_field = "6778D731BF0BE2E5E9F46404EEE44664", hash_generated_field = "47A49524DB3D9D5011E27A061CD906FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.763 -0500", hash_original_field = "6778D731BF0BE2E5E9F46404EEE44664", hash_generated_field = "47A49524DB3D9D5011E27A061CD906FB")
 
     private  ResolveInfo mService;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.043 -0500", hash_original_field = "5AB31FF91690EC0315884BA04F6C543E", hash_generated_field = "34D624C7CD290D72B15AB814BF1BA854")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.765 -0500", hash_original_field = "5AB31FF91690EC0315884BA04F6C543E", hash_generated_field = "34D624C7CD290D72B15AB814BF1BA854")
 
     private  String mId;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.043 -0500", hash_original_field = "52EEF292DE7E8E903809AEE9B517553D", hash_generated_field = "288F27297FDE0055206DB25B18D34AF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.767 -0500", hash_original_field = "52EEF292DE7E8E903809AEE9B517553D", hash_generated_field = "288F27297FDE0055206DB25B18D34AF5")
 
     private  int mLabel;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.044 -0500", hash_original_field = "1E356AACEE2D50E0C905EA0627229FF1", hash_generated_field = "3227A556BB8D91CC368DE162089FC968")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.770 -0500", hash_original_field = "1E356AACEE2D50E0C905EA0627229FF1", hash_generated_field = "3227A556BB8D91CC368DE162089FC968")
 
     private  String mSettingsActivityName;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.045 -0500", hash_original_field = "05D4DE1C8543976BB152FA0EF57B7FEE", hash_generated_field = "116F12542346011C049323E2C901D79E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.772 -0500", hash_original_field = "05D4DE1C8543976BB152FA0EF57B7FEE", hash_generated_field = "116F12542346011C049323E2C901D79E")
 
     private final ArrayList<SpellCheckerSubtype> mSubtypes = new ArrayList<SpellCheckerSubtype>();
 
@@ -69,8 +71,9 @@ public SpellCheckerInfo[] newArray(int size) {
      * Constructor.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.047 -0500", hash_original_method = "6A25F08819F54F2E6B313A58A8CE6D90", hash_generated_method = "9D35229F7D6A115BE581B534FCE2A4B2")
-    public SpellCheckerInfo(Context context, ResolveInfo service)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.776 -0500", hash_original_method = "6A25F08819F54F2E6B313A58A8CE6D90", hash_generated_method = "9D35229F7D6A115BE581B534FCE2A4B2")
+    
+public SpellCheckerInfo(Context context, ResolveInfo service)
             throws XmlPullParserException, IOException {
         mService = service;
         ServiceInfo si = service.serviceInfo;
@@ -145,8 +148,9 @@ public SpellCheckerInfo[] newArray(int size) {
      * Constructor.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.048 -0500", hash_original_method = "D0DF2452D02A3DC9C8E7C8BB825D11D4", hash_generated_method = "4AB8433D1CB945B91127E8B1113CEEDF")
-    public SpellCheckerInfo(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.779 -0500", hash_original_method = "D0DF2452D02A3DC9C8E7C8BB825D11D4", hash_generated_method = "4AB8433D1CB945B91127E8B1113CEEDF")
+    
+public SpellCheckerInfo(Parcel source) {
         mLabel = source.readInt();
         mId = source.readString();
         mSettingsActivityName = source.readString();
@@ -158,8 +162,9 @@ public SpellCheckerInfo[] newArray(int size) {
      * Return a unique ID for this spell checker.  The ID is generated from
      * the package and class name implementing the method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.049 -0500", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8F9FC8944DF69B66CB8D7A8B6ABB6416")
-    public String getId() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.781 -0500", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8F9FC8944DF69B66CB8D7A8B6ABB6416")
+    
+public String getId() {
         return mId;
     }
 
@@ -167,8 +172,9 @@ public SpellCheckerInfo[] newArray(int size) {
     /**
      * Return the component of the service that implements.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.049 -0500", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "2B97835D1618C71F40A014490410F857")
-    public ComponentName getComponent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.784 -0500", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "2B97835D1618C71F40A014490410F857")
+    
+public ComponentName getComponent() {
         return new ComponentName(
                 mService.serviceInfo.packageName, mService.serviceInfo.name);
     }
@@ -176,8 +182,9 @@ public SpellCheckerInfo[] newArray(int size) {
     /**
      * Return the .apk package that implements this.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.050 -0500", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "6994E25AD1E96805A7C2A499125900C0")
-    public String getPackageName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.786 -0500", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "6994E25AD1E96805A7C2A499125900C0")
+    
+public String getPackageName() {
         return mService.serviceInfo.packageName;
     }
 
@@ -187,9 +194,10 @@ public SpellCheckerInfo[] newArray(int size) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.051 -0500", hash_original_method = "2F472510FA9E87ADC65F29887FB84501", hash_generated_method = "D4D43B62E449729D0528B748A3BE6CB3")
-    @Override
-public void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.788 -0500", hash_original_method = "2F472510FA9E87ADC65F29887FB84501", hash_generated_method = "D4D43B62E449729D0528B748A3BE6CB3")
+    
+@Override
+    public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mLabel);
         dest.writeString(mId);
         dest.writeString(mSettingsActivityName);
@@ -202,8 +210,9 @@ public void writeToParcel(Parcel dest, int flags) {
      *
      * @param pm Supply a PackageManager used to load the spell checker's resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.055 -0500", hash_original_method = "440496C0C039EAF57937C0E12546E16A", hash_generated_method = "23DC341BBB50BCBF088F63F20F68D85D")
-    public CharSequence loadLabel(PackageManager pm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.800 -0500", hash_original_method = "440496C0C039EAF57937C0E12546E16A", hash_generated_method = "23DC341BBB50BCBF088F63F20F68D85D")
+    
+public CharSequence loadLabel(PackageManager pm) {
         if (mLabel == 0 || pm == null) return "";
         return pm.getText(getPackageName(), mLabel, mService.serviceInfo.applicationInfo);
     }
@@ -213,8 +222,9 @@ public void writeToParcel(Parcel dest, int flags) {
      *
      * @param pm Supply a PackageManager used to load the spell checker's resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.056 -0500", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "510880B85D007E14A841E542571C558E")
-    public Drawable loadIcon(PackageManager pm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.802 -0500", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "510880B85D007E14A841E542571C558E")
+    
+public Drawable loadIcon(PackageManager pm) {
         return mService.loadIcon(pm);
     }
 
@@ -223,8 +233,9 @@ public void writeToParcel(Parcel dest, int flags) {
      * Return the raw information about the Service implementing this
      * spell checker.  Do not modify the returned object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.057 -0500", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "1E6E8EA06F8EE7CE7231791DBE1C3740")
-    public ServiceInfo getServiceInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.804 -0500", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "1E6E8EA06F8EE7CE7231791DBE1C3740")
+    
+public ServiceInfo getServiceInfo() {
         return mService.serviceInfo;
     }
 
@@ -237,16 +248,18 @@ public void writeToParcel(Parcel dest, int flags) {
      *
      * <p>A null will be returned if there is no settings activity.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.058 -0500", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "B6031419836B6E01A163B6457817552A")
-    public String getSettingsActivity() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.807 -0500", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "B6031419836B6E01A163B6457817552A")
+    
+public String getSettingsActivity() {
         return mSettingsActivityName;
     }
 
     /**
      * Return the count of the subtypes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.058 -0500", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "BF3C4168A920856FD17636F2E32450ED")
-    public int getSubtypeCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.809 -0500", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "BF3C4168A920856FD17636F2E32450ED")
+    
+public int getSubtypeCount() {
         return mSubtypes.size();
     }
 
@@ -255,17 +268,19 @@ public void writeToParcel(Parcel dest, int flags) {
      *
      * @param index the index of the subtype to return.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.059 -0500", hash_original_method = "A5CD061EE9765DD17A95FDAD389682DB", hash_generated_method = "3AA7C2644DB0FB4B71EE84D46A25EEFB")
-    public SpellCheckerSubtype getSubtypeAt(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.811 -0500", hash_original_method = "A5CD061EE9765DD17A95FDAD389682DB", hash_generated_method = "3AA7C2644DB0FB4B71EE84D46A25EEFB")
+    
+public SpellCheckerSubtype getSubtypeAt(int index) {
         return mSubtypes.get(index);
     }
 
     /**
      * Used to make this class parcelable.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:24.060 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
-    @Override
-public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.814 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
+    
+@Override
+    public int describeContents() {
         return 0;
     }
 }

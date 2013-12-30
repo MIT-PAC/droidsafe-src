@@ -19,69 +19,70 @@ import android.view.WindowManager;
 
 
 public class DialogFragment extends Fragment implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.877 -0500", hash_original_field = "B33617D119C9E65EA12B9D46B7D4B9F5", hash_generated_field = "2799E9EE0BE29351BF2343EFA521A888")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.575 -0500", hash_original_field = "B33617D119C9E65EA12B9D46B7D4B9F5", hash_generated_field = "2799E9EE0BE29351BF2343EFA521A888")
 
     public static final int STYLE_NORMAL = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.877 -0500", hash_original_field = "6D8979A028077F060188A8EF07A84FC3", hash_generated_field = "11CB838B0B80C53CBB3DE1A1CDB02BE9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.577 -0500", hash_original_field = "6D8979A028077F060188A8EF07A84FC3", hash_generated_field = "11CB838B0B80C53CBB3DE1A1CDB02BE9")
 
     public static final int STYLE_NO_TITLE = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.878 -0500", hash_original_field = "9A5547F54B964B4A7AA50040DCDB7834", hash_generated_field = "68C9068A63469E24D318F617F5D83168")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.580 -0500", hash_original_field = "9A5547F54B964B4A7AA50040DCDB7834", hash_generated_field = "68C9068A63469E24D318F617F5D83168")
 
     public static final int STYLE_NO_FRAME = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.879 -0500", hash_original_field = "F40FA4E00D4E1BC73F6536C66AD1A4C7", hash_generated_field = "37C0C9DA86FDBC608BC720AB07FEA0DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.582 -0500", hash_original_field = "F40FA4E00D4E1BC73F6536C66AD1A4C7", hash_generated_field = "37C0C9DA86FDBC608BC720AB07FEA0DF")
 
     public static final int STYLE_NO_INPUT = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.880 -0500", hash_original_field = "7C2844D3DF7604C62F66EFED0CC6C3AD", hash_generated_field = "94C97F4A0413FA80F711F0AF0957903C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.585 -0500", hash_original_field = "7C2844D3DF7604C62F66EFED0CC6C3AD", hash_generated_field = "94C97F4A0413FA80F711F0AF0957903C")
 
 
     private static final String SAVED_DIALOG_STATE_TAG = "android:savedDialogState";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.881 -0500", hash_original_field = "E2492F7AF4DDC10729303DEE44331262", hash_generated_field = "32CF27987345FC568CD0673A0881B818")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.588 -0500", hash_original_field = "E2492F7AF4DDC10729303DEE44331262", hash_generated_field = "32CF27987345FC568CD0673A0881B818")
 
     private static final String SAVED_STYLE = "android:style";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.882 -0500", hash_original_field = "D555F1957DEDBEF7515491ED49E1A35B", hash_generated_field = "2B4A79E71BCE71D18854AA312DB69394")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.590 -0500", hash_original_field = "D555F1957DEDBEF7515491ED49E1A35B", hash_generated_field = "2B4A79E71BCE71D18854AA312DB69394")
 
     private static final String SAVED_THEME = "android:theme";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.883 -0500", hash_original_field = "CD5E35D5D68CF75BC1CAF350714E485A", hash_generated_field = "05351F680E32E607C372E8D76BD924C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.592 -0500", hash_original_field = "CD5E35D5D68CF75BC1CAF350714E485A", hash_generated_field = "05351F680E32E607C372E8D76BD924C2")
 
     private static final String SAVED_CANCELABLE = "android:cancelable";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.883 -0500", hash_original_field = "062F1796A0FD32090E24A065B684F8A4", hash_generated_field = "A6049DE77B2A3470E5B9E2A661D1E027")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.594 -0500", hash_original_field = "062F1796A0FD32090E24A065B684F8A4", hash_generated_field = "A6049DE77B2A3470E5B9E2A661D1E027")
 
     private static final String SAVED_SHOWS_DIALOG = "android:showsDialog";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.884 -0500", hash_original_field = "F6E95AF919670F04FA0DF6A23DAB5F8A", hash_generated_field = "E8BD2BE09F9DEF6BEC48E8E6748CC6BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.597 -0500", hash_original_field = "F6E95AF919670F04FA0DF6A23DAB5F8A", hash_generated_field = "E8BD2BE09F9DEF6BEC48E8E6748CC6BC")
 
     private static final String SAVED_BACK_STACK_ID = "android:backStackId";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.885 -0500", hash_original_field = "DBD7D865FD8EE56258485D2729E89222", hash_generated_field = "DBD7D865FD8EE56258485D2729E89222")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.599 -0500", hash_original_field = "DBD7D865FD8EE56258485D2729E89222", hash_generated_field = "DBD7D865FD8EE56258485D2729E89222")
 
 
     int mStyle = STYLE_NORMAL;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.886 -0500", hash_original_field = "075FD7AAD50C5AD8803D9E3B208423A2", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.602 -0500", hash_original_field = "075FD7AAD50C5AD8803D9E3B208423A2", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
 
     int mTheme = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.886 -0500", hash_original_field = "5D88854104F09F0EBF08FB1F80A11401", hash_generated_field = "5D88854104F09F0EBF08FB1F80A11401")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.604 -0500", hash_original_field = "5D88854104F09F0EBF08FB1F80A11401", hash_generated_field = "5D88854104F09F0EBF08FB1F80A11401")
 
     boolean mCancelable = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.887 -0500", hash_original_field = "D659735FD2C6B71AB6EABEB3172D7105", hash_generated_field = "D659735FD2C6B71AB6EABEB3172D7105")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.607 -0500", hash_original_field = "D659735FD2C6B71AB6EABEB3172D7105", hash_generated_field = "D659735FD2C6B71AB6EABEB3172D7105")
 
     boolean mShowsDialog = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.888 -0500", hash_original_field = "12A4FC8D1F805602392E89610A3F85BE", hash_generated_field = "12A4FC8D1F805602392E89610A3F85BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.609 -0500", hash_original_field = "12A4FC8D1F805602392E89610A3F85BE", hash_generated_field = "12A4FC8D1F805602392E89610A3F85BE")
 
     int mBackStackId = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.889 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "0C87BCBAF0D95855709E5BEE2BDBA46D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.611 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "0C87BCBAF0D95855709E5BEE2BDBA46D")
 
 
     Dialog mDialog;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.890 -0500", hash_original_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3", hash_generated_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.613 -0500", hash_original_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3", hash_generated_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3")
 
     boolean mViewDestroyed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.891 -0500", hash_original_field = "6A18A060E129D1B2532BF1934F57C02F", hash_generated_field = "6A18A060E129D1B2532BF1934F57C02F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.615 -0500", hash_original_field = "6A18A060E129D1B2532BF1934F57C02F", hash_generated_field = "6A18A060E129D1B2532BF1934F57C02F")
 
     boolean mDismissed;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.891 -0500", hash_original_field = "0E39250F08259A9ECD97D7EAA8ACE897", hash_generated_field = "0E39250F08259A9ECD97D7EAA8ACE897")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.617 -0500", hash_original_field = "0E39250F08259A9ECD97D7EAA8ACE897", hash_generated_field = "0E39250F08259A9ECD97D7EAA8ACE897")
 
     boolean mShownByMe;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.892 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
-    public DialogFragment() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.620 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
+    
+public DialogFragment() {
     }
 
     /**
@@ -98,8 +99,9 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * @param theme Optional custom theme.  If 0, an appropriate theme (based
      * on the style) will be selected for you.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.893 -0500", hash_original_method = "40CEF93F7180D855BD9BCBC02D54626F", hash_generated_method = "8A164EE2E023B2144FDE0869AB8E7D9A")
-    public void setStyle(int style, int theme) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.622 -0500", hash_original_method = "40CEF93F7180D855BD9BCBC02D54626F", hash_generated_method = "8A164EE2E023B2144FDE0869AB8E7D9A")
+    
+public void setStyle(int style, int theme) {
         mStyle = style;
         if (mStyle == STYLE_NO_FRAME || mStyle == STYLE_NO_INPUT) {
             mTheme = android.R.style.Theme_Panel;
@@ -120,8 +122,9 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * @param tag The tag for this fragment, as per
      * {@link FragmentTransaction#add(Fragment, String) FragmentTransaction.add}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.894 -0500", hash_original_method = "8FAA759F9028DD0FC2323799369D6711", hash_generated_method = "5C6D90FF7F0EA4F4D76354EF83F7E041")
-    public void show(FragmentManager manager, String tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.624 -0500", hash_original_method = "8FAA759F9028DD0FC2323799369D6711", hash_generated_method = "5C6D90FF7F0EA4F4D76354EF83F7E041")
+    
+public void show(FragmentManager manager, String tag) {
         mDismissed = false;
         mShownByMe = true;
         FragmentTransaction ft = manager.beginTransaction();
@@ -138,8 +141,9 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * @return Returns the identifier of the committed transaction, as per
      * {@link FragmentTransaction#commit() FragmentTransaction.commit()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.895 -0500", hash_original_method = "040104E30D8A876DF591293449491AA6", hash_generated_method = "09CF06890A0238BCB3134F67E4117897")
-    public int show(FragmentTransaction transaction, String tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.627 -0500", hash_original_method = "040104E30D8A876DF591293449491AA6", hash_generated_method = "09CF06890A0238BCB3134F67E4117897")
+    
+public int show(FragmentTransaction transaction, String tag) {
         mDismissed = false;
         mShownByMe = true;
         transaction.add(this, tag);
@@ -154,8 +158,9 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * be popped.  Otherwise, a new transaction will be committed to remove
      * the fragment.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.896 -0500", hash_original_method = "DB04742794ECD07699F134042784BBAE", hash_generated_method = "995FB47B2ED1ADE79D1CFC3C7747B4D2")
-    public void dismiss() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.629 -0500", hash_original_method = "DB04742794ECD07699F134042784BBAE", hash_generated_method = "995FB47B2ED1ADE79D1CFC3C7747B4D2")
+    
+public void dismiss() {
         dismissInternal(false);
     }
 
@@ -165,13 +170,15 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * FragmentTransaction.commitAllowingStateLoss()}. See linked
      * documentation for further details.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.896 -0500", hash_original_method = "C37A06AA62DF1D8997FD4317E6F51B99", hash_generated_method = "8813BD79CF65D58DF9509C1975C63841")
-    public void dismissAllowingStateLoss() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.632 -0500", hash_original_method = "C37A06AA62DF1D8997FD4317E6F51B99", hash_generated_method = "8813BD79CF65D58DF9509C1975C63841")
+    
+public void dismissAllowingStateLoss() {
         dismissInternal(true);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.897 -0500", hash_original_method = "D69B3047ADB8F155BAC29C903FDECC6E", hash_generated_method = "D69B3047ADB8F155BAC29C903FDECC6E")
-    void dismissInternal(boolean allowStateLoss) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.635 -0500", hash_original_method = "D69B3047ADB8F155BAC29C903FDECC6E", hash_generated_method = "D69B3047ADB8F155BAC29C903FDECC6E")
+    
+void dismissInternal(boolean allowStateLoss) {
         if (mDismissed) {
             return;
         }
@@ -197,13 +204,15 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         }
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.898 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
-    public Dialog getDialog() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.637 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
+    
+public Dialog getDialog() {
         return mDialog;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.899 -0500", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "70C10CD453A270D9A3D6BB0351C256D5")
-    public int getTheme() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.639 -0500", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "70C10CD453A270D9A3D6BB0351C256D5")
+    
+public int getTheme() {
         return mTheme;
     }
 
@@ -216,8 +225,9 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * @param cancelable If true, the dialog is cancelable.  The default
      * is true.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.900 -0500", hash_original_method = "50F98C3ABE4F899A123E50B89219D94B", hash_generated_method = "D3BF408FCDF10C9C2ABD9996B063EE73")
-    public void setCancelable(boolean cancelable) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.641 -0500", hash_original_method = "50F98C3ABE4F899A123E50B89219D94B", hash_generated_method = "D3BF408FCDF10C9C2ABD9996B063EE73")
+    
+public void setCancelable(boolean cancelable) {
         mCancelable = cancelable;
         if (mDialog != null) mDialog.setCancelable(cancelable);
     }
@@ -225,8 +235,9 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     /**
      * Return the current value of {@link #setCancelable(boolean)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.901 -0500", hash_original_method = "C5B21DACDF63560D5CBEBB813CF00A94", hash_generated_method = "1F76716A1F7F7E8655F10FBCCFB87A3F")
-    public boolean isCancelable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.643 -0500", hash_original_method = "C5B21DACDF63560D5CBEBB813CF00A94", hash_generated_method = "1F76716A1F7F7E8655F10FBCCFB87A3F")
+    
+public boolean isCancelable() {
         return mCancelable;
     }
 
@@ -247,22 +258,25 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
      * If false, no Dialog will be created and the fragment's view hierarchly
      * left undisturbed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.901 -0500", hash_original_method = "9B3CB0767DA345E448E7161B8A1612ED", hash_generated_method = "05D6EAAA4C55D200D3EAEDF548547767")
-    public void setShowsDialog(boolean showsDialog) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.645 -0500", hash_original_method = "9B3CB0767DA345E448E7161B8A1612ED", hash_generated_method = "05D6EAAA4C55D200D3EAEDF548547767")
+    
+public void setShowsDialog(boolean showsDialog) {
         mShowsDialog = showsDialog;
     }
 
     /**
      * Return the current value of {@link #setShowsDialog(boolean)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.902 -0500", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "B9101F7AA44C7E8C87EF62912DF1DDE6")
-    public boolean getShowsDialog() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.648 -0500", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "B9101F7AA44C7E8C87EF62912DF1DDE6")
+    
+public boolean getShowsDialog() {
         return mShowsDialog;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.903 -0500", hash_original_method = "4F6E3ACB3030C4724A44B02F1B4FB1BA", hash_generated_method = "409F3CC8703F9FF26D31058EF49DCA85")
-    @Override
-public void onAttach(Activity activity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.650 -0500", hash_original_method = "4F6E3ACB3030C4724A44B02F1B4FB1BA", hash_generated_method = "409F3CC8703F9FF26D31058EF49DCA85")
+    
+@Override
+    public void onAttach(Activity activity) {
         super.onAttach(activity);
         if (!mShownByMe) {
             // If not explicitly shown through our API, take this as an
@@ -271,9 +285,10 @@ public void onAttach(Activity activity) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.904 -0500", hash_original_method = "2C281285ACC0A61C67E7A68F54E6F98C", hash_generated_method = "F04C9D6168EC15DEF59998ACE39A6657")
-    @Override
-public void onDetach() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.653 -0500", hash_original_method = "2C281285ACC0A61C67E7A68F54E6F98C", hash_generated_method = "F04C9D6168EC15DEF59998ACE39A6657")
+    
+@Override
+    public void onDetach() {
         super.onDetach();
         if (!mShownByMe && !mDismissed) {
             // The fragment was not shown by a direct call here, it is not
@@ -283,9 +298,10 @@ public void onDetach() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.905 -0500", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "9347B65955CA212EDA6B1AB62C4BBD9E")
-    @Override
-public void onCreate(Bundle savedInstanceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.656 -0500", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "9347B65955CA212EDA6B1AB62C4BBD9E")
+    
+@Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mShowsDialog = mContainerId == 0;
@@ -301,9 +317,10 @@ public void onCreate(Bundle savedInstanceState) {
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.906 -0500", hash_original_method = "EC067D1F5D74A2844592729119AA0EAB", hash_generated_method = "E54FE9B80EB98CF6B0844591E9573EA1")
-    @Override
-public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.660 -0500", hash_original_method = "EC067D1F5D74A2844592729119AA0EAB", hash_generated_method = "E54FE9B80EB98CF6B0844591E9573EA1")
+    
+@Override
+    public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
         if (!mShowsDialog) {
             return super.getLayoutInflater(savedInstanceState);
         }
@@ -349,17 +366,20 @@ public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
      * 
      * @return Return a new Dialog instance to be displayed by the Fragment.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.907 -0500", hash_original_method = "94CB11021A94D8409376FA3A852A41E9", hash_generated_method = "8854F20A927D4731539FCCDAD7E493F4")
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.662 -0500", hash_original_method = "94CB11021A94D8409376FA3A852A41E9", hash_generated_method = "8854F20A927D4731539FCCDAD7E493F4")
+    
+public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new Dialog(getActivity(), getTheme());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.908 -0500", hash_original_method = "355678003B9B3B1563024A6589368B65", hash_generated_method = "B5C1EB04A4254D80E0CBB4208CB0D39E")
-    public void onCancel(DialogInterface dialog) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.664 -0500", hash_original_method = "355678003B9B3B1563024A6589368B65", hash_generated_method = "B5C1EB04A4254D80E0CBB4208CB0D39E")
+    
+public void onCancel(DialogInterface dialog) {
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.908 -0500", hash_original_method = "2F7D346350F9327D0059F752221072E9", hash_generated_method = "EE11F82F5AE7A4AE2FBC865D97EBAA77")
-    public void onDismiss(DialogInterface dialog) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.667 -0500", hash_original_method = "2F7D346350F9327D0059F752221072E9", hash_generated_method = "EE11F82F5AE7A4AE2FBC865D97EBAA77")
+    
+public void onDismiss(DialogInterface dialog) {
         if (!mViewDestroyed) {
             // Note: we need to use allowStateLoss, because the dialog
             // dispatches this asynchronously so we can receive the call
@@ -369,9 +389,10 @@ public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.909 -0500", hash_original_method = "3427E371293FB144BBDBE8066115235E", hash_generated_method = "0FFD022C4374DE4DC0DFA36DE9F7B604")
-    @Override
-public void onActivityCreated(Bundle savedInstanceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.669 -0500", hash_original_method = "3427E371293FB144BBDBE8066115235E", hash_generated_method = "0FFD022C4374DE4DC0DFA36DE9F7B604")
+    
+@Override
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         if (!mShowsDialog) {
@@ -397,9 +418,10 @@ public void onActivityCreated(Bundle savedInstanceState) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.910 -0500", hash_original_method = "CFA39F554612E24A4614D286AB70C801", hash_generated_method = "F4CC27144B9864F5A13121D556F3D501")
-    @Override
-public void onStart() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.672 -0500", hash_original_method = "CFA39F554612E24A4614D286AB70C801", hash_generated_method = "F4CC27144B9864F5A13121D556F3D501")
+    
+@Override
+    public void onStart() {
         super.onStart();
         if (mDialog != null) {
             mViewDestroyed = false;
@@ -407,9 +429,10 @@ public void onStart() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.912 -0500", hash_original_method = "36AA220233F5FF78B8725588D009C1D9", hash_generated_method = "E01E9F7B4265B087304DB47188E5C0EA")
-    @Override
-public void onSaveInstanceState(Bundle outState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.675 -0500", hash_original_method = "36AA220233F5FF78B8725588D009C1D9", hash_generated_method = "E01E9F7B4265B087304DB47188E5C0EA")
+    
+@Override
+    public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if (mDialog != null) {
             Bundle dialogState = mDialog.onSaveInstanceState();
@@ -434,9 +457,10 @@ public void onSaveInstanceState(Bundle outState) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.913 -0500", hash_original_method = "17D046BD7350E945F7CAD60E8CDA42D0", hash_generated_method = "F4581EEBAF078137794FB0DF1603F402")
-    @Override
-public void onStop() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.678 -0500", hash_original_method = "17D046BD7350E945F7CAD60E8CDA42D0", hash_generated_method = "F4581EEBAF078137794FB0DF1603F402")
+    
+@Override
+    public void onStop() {
         super.onStop();
         if (mDialog != null) {
             mDialog.hide();
@@ -446,9 +470,10 @@ public void onStop() {
     /**
      * Remove dialog.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.914 -0500", hash_original_method = "A28646D8654C968065CCEE80C360B171", hash_generated_method = "5BDF40E1FD876DCB9A201D9F7020DAE4")
-    @Override
-public void onDestroyView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.680 -0500", hash_original_method = "A28646D8654C968065CCEE80C360B171", hash_generated_method = "5BDF40E1FD876DCB9A201D9F7020DAE4")
+    
+@Override
+    public void onDestroyView() {
         super.onDestroyView();
         if (mDialog != null) {
             // Set removed here because this dismissal is just to hide

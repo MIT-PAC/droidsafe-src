@@ -13,20 +13,22 @@ import java.io.OutputStream;
 
 
 final class BluetoothOutputStream extends OutputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.962 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.494 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.963 -0500", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "6B802CCB266833E5725B115B8F18B649")
-    BluetoothOutputStream(BluetoothSocket s) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.496 -0500", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "6B802CCB266833E5725B115B8F18B649")
+    
+BluetoothOutputStream(BluetoothSocket s) {
         mSocket = s;
     }
 
     /**
      * Close this output stream and the socket associated with it.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.964 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
-    public void close() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.498 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
+    
+public void close() throws IOException {
         mSocket.close();
     }
 
@@ -40,8 +42,9 @@ final class BluetoothOutputStream extends OutputStream {
      *             if an error occurs while writing to this stream.
      * @since Android 1.0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.965 -0500", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "2D5A46C23DD97DDE153E0C9506B1B72B")
-    public void write(int oneByte) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.500 -0500", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "2D5A46C23DD97DDE153E0C9506B1B72B")
+    
+public void write(int oneByte) throws IOException {
         byte b[] = new byte[1];
         b[0] = (byte)oneByte;
         mSocket.write(b, 0, 1);
@@ -66,8 +69,9 @@ final class BluetoothOutputStream extends OutputStream {
      *             {@code buffer}.
      * @since Android 1.0
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.965 -0500", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "7AAC56040D447F28CDAF031F1B6BE1B8")
-    public void write(byte[] b, int offset, int count) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.503 -0500", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "7AAC56040D447F28CDAF031F1B6BE1B8")
+    
+public void write(byte[] b, int offset, int count) throws IOException {
         if (b == null) {
             throw new NullPointerException("buffer is null");
         }

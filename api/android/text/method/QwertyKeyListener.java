@@ -26,8 +26,9 @@ public class QwertyKeyListener extends BaseKeyListener {
      * Returns a new or existing instance with the specified capitalization
      * and correction properties.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.054 -0500", hash_original_method = "FC0371B93FC0F7C1604A0BCD86E92DAE", hash_generated_method = "2D57DB30E5854ED40516B092DEA8C728")
-    public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.509 -0500", hash_original_method = "FC0371B93FC0F7C1604A0BCD86E92DAE", hash_generated_method = "2D57DB30E5854ED40516B092DEA8C728")
+    
+public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
         int off = cap.ordinal() * 2 + (autoText ? 1 : 0);
 
         if (sInstance[off] == null) {
@@ -42,8 +43,9 @@ public class QwertyKeyListener extends BaseKeyListener {
      * Disables auto-capitalization, auto-text and long-press initiated on-screen
      * character pickers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.055 -0500", hash_original_method = "28036565923896767649070FCEAD63E9", hash_generated_method = "0B8DEE85B85265AA92FB2339489EC029")
-    public static QwertyKeyListener getInstanceForFullKeyboard() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.512 -0500", hash_original_method = "28036565923896767649070FCEAD63E9", hash_generated_method = "0B8DEE85B85265AA92FB2339489EC029")
+    
+public static QwertyKeyListener getInstanceForFullKeyboard() {
         if (sFullKeyboardInstance == null) {
             sFullKeyboardInstance = new QwertyKeyListener(Capitalize.NONE, false, true);
         }
@@ -63,8 +65,9 @@ public class QwertyKeyListener extends BaseKeyListener {
      * @param end the end of the replaced region; the location of the cursor
      * @param original the text to be restored if the user presses DEL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.061 -0500", hash_original_method = "F1AEE3667206B123E352DC3A76F57C2B", hash_generated_method = "346DD33C10E5D2CF0A9A7E95BB803763")
-    public static void markAsReplaced(Spannable content, int start, int end,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.530 -0500", hash_original_method = "F1AEE3667206B123E352DC3A76F57C2B", hash_generated_method = "346DD33C10E5D2CF0A9A7E95BB803763")
+    
+public static void markAsReplaced(Spannable content, int start, int end,
                                       String original) {
         Replaced[] repl = content.getSpans(0, content.length(), Replaced.class);
         for (int a = 0; a < repl.length; a++) {
@@ -79,66 +82,72 @@ public class QwertyKeyListener extends BaseKeyListener {
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.064 -0500", hash_original_method = "5F2215F5D4894B08250EC6D68589E01F", hash_generated_method = "6A1FF60FA257FF03CDBB3F944ECF8324")
-    private static String toTitleCase(String src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.540 -0500", hash_original_method = "5F2215F5D4894B08250EC6D68589E01F", hash_generated_method = "6A1FF60FA257FF03CDBB3F944ECF8324")
+    
+private static String toTitleCase(String src) {
         return Character.toUpperCase(src.charAt(0)) + src.substring(1);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.048 -0500", hash_original_field = "55641515C59146D89CDD62EBC67B1B6C", hash_generated_field = "A353237BA01032703B8EE72570666A29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.487 -0500", hash_original_field = "55641515C59146D89CDD62EBC67B1B6C", hash_generated_field = "A353237BA01032703B8EE72570666A29")
 
     private static QwertyKeyListener[] sInstance =
         new QwertyKeyListener[Capitalize.values().length * 2];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.049 -0500", hash_original_field = "3B04CDD553AA26B16E0F547A58841763", hash_generated_field = "651B32B3E93CD00CBF35BC8DCF79F33D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.492 -0500", hash_original_field = "3B04CDD553AA26B16E0F547A58841763", hash_generated_field = "651B32B3E93CD00CBF35BC8DCF79F33D")
 
     private static QwertyKeyListener sFullKeyboardInstance;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.062 -0500", hash_original_field = "CC50BA795F37D7C55E085B5638CF7E91", hash_generated_field = "874843BFD3C716ACB6504590F54D3C63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.532 -0500", hash_original_field = "CC50BA795F37D7C55E085B5638CF7E91", hash_generated_field = "874843BFD3C716ACB6504590F54D3C63")
 
 
     private static SparseArray<String> PICKER_SETS =
                         new SparseArray<String>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.050 -0500", hash_original_field = "3B5E34829A96BDB56A96B72761630C9F", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.494 -0500", hash_original_field = "3B5E34829A96BDB56A96B72761630C9F", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
 
 
     private Capitalize mAutoCap;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.051 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.497 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
 
     private boolean mAutoText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.052 -0500", hash_original_field = "84AFEAB079E57626B1626EFE3FF5F02F", hash_generated_field = "3DB509C5642BF3C24769763A7E5EACB0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.500 -0500", hash_original_field = "84AFEAB079E57626B1626EFE3FF5F02F", hash_generated_field = "3DB509C5642BF3C24769763A7E5EACB0")
 
     private boolean mFullKeyboard;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.053 -0500", hash_original_method = "49C27B077A312737DD85C2ED4E150C41", hash_generated_method = "C56BFDC508189D9103C6171D887F04F0")
-    private QwertyKeyListener(Capitalize cap, boolean autoText, boolean fullKeyboard) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.503 -0500", hash_original_method = "49C27B077A312737DD85C2ED4E150C41", hash_generated_method = "C56BFDC508189D9103C6171D887F04F0")
+    
+private QwertyKeyListener(Capitalize cap, boolean autoText, boolean fullKeyboard) {
         mAutoCap = cap;
         mAutoText = autoText;
         mFullKeyboard = fullKeyboard;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.053 -0500", hash_original_method = "603DCE8018B8306CEBEFEE75734ABE47", hash_generated_method = "C37ECC5045B93CBDF03F1998D764A9A7")
-    public QwertyKeyListener(Capitalize cap, boolean autoText) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.506 -0500", hash_original_method = "603DCE8018B8306CEBEFEE75734ABE47", hash_generated_method = "C37ECC5045B93CBDF03F1998D764A9A7")
+    
+public QwertyKeyListener(Capitalize cap, boolean autoText) {
         this(cap, autoText, false);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.056 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
-    public int getInputType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.515 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
+    
+public int getInputType() {
         return makeTextContentType(mAutoCap, mAutoText);
     }
 
     
     static class Replaced implements NoCopySpan {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.066 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.547 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
 
 
         private char[] mText;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.065 -0500", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "CCF842D94F2C1571A5886311B3A7F89C")
-        public Replaced(char[] text) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.544 -0500", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "CCF842D94F2C1571A5886311B3A7F89C")
+        
+public Replaced(char[] text) {
             mText = text;
         }
 
         
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.059 -0500", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "86735E5613BD276499A17AEDC581B3E9")
-    public boolean onKeyDown(View view, Editable content,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.523 -0500", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "86735E5613BD276499A17AEDC581B3E9")
+    
+public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
         int selStart, selEnd;
         int pref = 0;
@@ -413,8 +422,9 @@ public class QwertyKeyListener extends BaseKeyListener {
         return super.onKeyDown(view, content, keyCode, event);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.060 -0500", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "D0295F52687B48DD7A8E2092641C5A5A")
-    private String getReplacement(CharSequence src, int start, int end,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.527 -0500", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "D0295F52687B48DD7A8E2092641C5A5A")
+    
+private String getReplacement(CharSequence src, int start, int end,
                                   View view) {
         int len = end - start;
         boolean changecase = false;
@@ -457,8 +467,9 @@ public class QwertyKeyListener extends BaseKeyListener {
         return out;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.063 -0500", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "5F5E4F8AE9B822D595A482D15393A8AF")
-    private boolean showCharacterPicker(View view, Editable content, char c,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.537 -0500", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "5F5E4F8AE9B822D595A482D15393A8AF")
+    
+private boolean showCharacterPicker(View view, Editable content, char c,
                                         boolean insert, int count) {
         String set = PICKER_SETS.get(c);
         if (set == null) {

@@ -14,10 +14,10 @@ import javax.net.ssl.SSLProtocolException;
 
 
 public class SSLRecordProtocol {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.037 -0500", hash_original_field = "739A2DA6AFC09041ECD05E453896E8F2", hash_generated_field = "87E646BD1D684A2CC2BBDDF46C3B3825")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.319 -0500", hash_original_field = "739A2DA6AFC09041ECD05E453896E8F2", hash_generated_field = "87E646BD1D684A2CC2BBDDF46C3B3825")
 
     protected static final int MAX_DATA_LENGTH = 16384;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.037 -0500", hash_original_field = "5EF24E87087082EF652B10D0F5303664", hash_generated_field = "4B17F799B0589759FBE7EC3C4CC947A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.322 -0500", hash_original_field = "5EF24E87087082EF652B10D0F5303664", hash_generated_field = "4B17F799B0589759FBE7EC3C4CC947A3")
 
     /**
      * Maximum length of allowed compressed data fragment
@@ -25,33 +25,33 @@ public class SSLRecordProtocol {
      */
     protected static final int MAX_COMPRESSED_DATA_LENGTH
                                     = MAX_DATA_LENGTH + 1024;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.038 -0500", hash_original_field = "8CC483EF2B320C33337E7D5BF6D02850", hash_generated_field = "1C41081ACDECD110402B056E876963B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.324 -0500", hash_original_field = "8CC483EF2B320C33337E7D5BF6D02850", hash_generated_field = "1C41081ACDECD110402B056E876963B4")
 
     protected static final int MAX_CIPHERED_DATA_LENGTH
                                     = MAX_COMPRESSED_DATA_LENGTH + 1024;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.039 -0500", hash_original_field = "637E15B1572D864E1CB5E1D4E006C497", hash_generated_field = "9016CFB4E63BFBA851E3F0411B11579B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.327 -0500", hash_original_field = "637E15B1572D864E1CB5E1D4E006C497", hash_generated_field = "9016CFB4E63BFBA851E3F0411B11579B")
 
     protected static final int MAX_SSL_PACKET_SIZE
                                     = MAX_CIPHERED_DATA_LENGTH + 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.047 -0500", hash_original_field = "17FE222AE9E9EF49F9535FD36A32A5E8", hash_generated_field = "AC695E8CF49911104998F741364CAECF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.349 -0500", hash_original_field = "17FE222AE9E9EF49F9535FD36A32A5E8", hash_generated_field = "AC695E8CF49911104998F741364CAECF")
 
     private static final byte[] change_cipher_spec_byte = new byte[] {1};
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.040 -0500", hash_original_field = "2FEA9607120FF1F874D7A8B19B248896", hash_generated_field = "14A9356888CCC2F5828130712AD7BEEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.329 -0500", hash_original_field = "2FEA9607120FF1F874D7A8B19B248896", hash_generated_field = "14A9356888CCC2F5828130712AD7BEEF")
 
     private SSLSessionImpl session;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.041 -0500", hash_original_field = "1100ACE58905CA2B2E277C1A3E45DA80", hash_generated_field = "6DD92B23CCB33B5D152D0944DF44FF29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.331 -0500", hash_original_field = "1100ACE58905CA2B2E277C1A3E45DA80", hash_generated_field = "6DD92B23CCB33B5D152D0944DF44FF29")
 
     private byte[] version;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.041 -0500", hash_original_field = "FD3E61735D6C990BB124EC8238A6C4D5", hash_generated_field = "3AE956BBC985F4E127794974EC734E8F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.333 -0500", hash_original_field = "FD3E61735D6C990BB124EC8238A6C4D5", hash_generated_field = "3AE956BBC985F4E127794974EC734E8F")
 
     private SSLInputStream in;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.042 -0500", hash_original_field = "C657785F6A0EDCF13D6ABCC66DA9658A", hash_generated_field = "1032E45BD599BACD8B5F207A3C5A48C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.335 -0500", hash_original_field = "C657785F6A0EDCF13D6ABCC66DA9658A", hash_generated_field = "1032E45BD599BACD8B5F207A3C5A48C0")
 
     private HandshakeProtocol handshakeProtocol;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.043 -0500", hash_original_field = "36D0D0F3C543230F133CC70A25806808", hash_generated_field = "7F98BE8FCC656C783F586E8BC58013DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.338 -0500", hash_original_field = "36D0D0F3C543230F133CC70A25806808", hash_generated_field = "7F98BE8FCC656C783F586E8BC58013DC")
 
     private AlertProtocol alertProtocol;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.043 -0500", hash_original_field = "F13A7DB787CF52F553AA5C1B8E8A4F58", hash_generated_field = "F533AC76CA4BD5C923BAC96FB8431A9D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.340 -0500", hash_original_field = "F13A7DB787CF52F553AA5C1B8E8A4F58", hash_generated_field = "F533AC76CA4BD5C923BAC96FB8431A9D")
 
     private org.apache.harmony.xnet.provider.jsse.Appendable appData;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.357 -0400", hash_original_field = "492C2588B5BE10560BB5ABDF4D815B6E", hash_generated_field = "1F02C7414FAA438A328BE8E1F0311428")
@@ -63,10 +63,10 @@ public class SSLRecordProtocol {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.358 -0400", hash_original_field = "FF6B1895B92396394170C04D12D34B7A", hash_generated_field = "EC476235365221866BA37737942327BC")
 
     private ConnectionState pendingConnectionState;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.046 -0500", hash_original_field = "BFF5D5906A6DB8E20D31993F2EC6980D", hash_generated_field = "F03EA0DFE6D87F0203C96C7F0E556215")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.344 -0500", hash_original_field = "BFF5D5906A6DB8E20D31993F2EC6980D", hash_generated_field = "F03EA0DFE6D87F0203C96C7F0E556215")
 
     private Logger.Stream logger = Logger.getStream("record");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.047 -0500", hash_original_field = "4A5734CD3C7347313739835DFCE26680", hash_generated_field = "25E0EF9283EF0AA778BE7E7930871797")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.347 -0500", hash_original_field = "4A5734CD3C7347313739835DFCE26680", hash_generated_field = "25E0EF9283EF0AA778BE7E7930871797")
 
     // handshake phase (to distinguish session pending state)
     private boolean sessionWasChanged = false;
@@ -79,8 +79,9 @@ public class SSLRecordProtocol {
      * @param   in: SSLInputStream
      * @param   appData:    Appendable
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.048 -0500", hash_original_method = "0C3980D24E651B574AA14368331D3B6C", hash_generated_method = "1DB559FD55A7FA848028D6B734FFE588")
-    protected SSLRecordProtocol(HandshakeProtocol handshakeProtocol,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.353 -0500", hash_original_method = "0C3980D24E651B574AA14368331D3B6C", hash_generated_method = "1DB559FD55A7FA848028D6B734FFE588")
+    
+protected SSLRecordProtocol(HandshakeProtocol handshakeProtocol,
             AlertProtocol alertProtocol,
             SSLInputStream in,
             Appendable appData) {
@@ -97,8 +98,9 @@ public class SSLRecordProtocol {
      * If the handshake process was not completed, method returns null.
      * @return the session in effect.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.049 -0500", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "6ACDA15C77445167050F19A88935BFFD")
-    protected SSLSessionImpl getSession() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.355 -0500", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "6ACDA15C77445167050F19A88935BFFD")
+    
+protected SSLSessionImpl getSession() {
         return session;
     }
 
@@ -106,8 +108,9 @@ public class SSLRecordProtocol {
      * Returns the minimum possible length of the SSL record.
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.050 -0500", hash_original_method = "68629F3A6781EB04D799B3D741A0C393", hash_generated_method = "300582CE1BC2A29F6E2CB9BFCDAC5EA5")
-    protected int getMinRecordSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.357 -0500", hash_original_method = "68629F3A6781EB04D799B3D741A0C393", hash_generated_method = "300582CE1BC2A29F6E2CB9BFCDAC5EA5")
+    
+protected int getMinRecordSize() {
         return (activeReadState == null)
             ? 6 // type + version + length + 1 byte of data
             : 5 + activeReadState.getMinFragmentSize();
@@ -118,8 +121,9 @@ public class SSLRecordProtocol {
      * If actual resulting record length is greater than
      * MAX_CIPHERED_DATA_LENGTH, MAX_CIPHERED_DATA_LENGTH is returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.051 -0500", hash_original_method = "96A9B5266C66AFA94D8E0CC291B5F152", hash_generated_method = "2244CC45EFEE7C43C8834B306750DAE2")
-    protected int getRecordSize(int data_size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.359 -0500", hash_original_method = "96A9B5266C66AFA94D8E0CC291B5F152", hash_generated_method = "2244CC45EFEE7C43C8834B306750DAE2")
+    
+protected int getRecordSize(int data_size) {
         if (activeWriteState == null) {
             return 5+data_size; // type + version + length + data_size
         } else {
@@ -140,8 +144,9 @@ public class SSLRecordProtocol {
      * counted as for data with
      * MAX_CIPHERED_DATA_LENGTH length.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.052 -0500", hash_original_method = "CC13DBD4825E3C45756D9062D61E5D58", hash_generated_method = "CCC6B5502CDF657DF9F718141A9013EF")
-    protected int getDataSize(int record_size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.361 -0500", hash_original_method = "CC13DBD4825E3C45756D9062D61E5D58", hash_generated_method = "CCC6B5502CDF657DF9F718141A9013EF")
+    
+protected int getDataSize(int record_size) {
         record_size -= 5; // - (type + version + length + data_size)
         if (record_size > MAX_CIPHERED_DATA_LENGTH) {
             // the data of such size consists of the several packets
@@ -159,8 +164,9 @@ public class SSLRecordProtocol {
      * @param   content_type: int
      * @return  ssl packet created over the current connection state
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.053 -0500", hash_original_method = "5F7DF598938706B482CEEA679EFAD91B", hash_generated_method = "DDB4886C9569A5BFEA0E41041AB2060E")
-    protected byte[] wrap(byte content_type, DataStream dataStream) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.363 -0500", hash_original_method = "5F7DF598938706B482CEEA679EFAD91B", hash_generated_method = "DDB4886C9569A5BFEA0E41041AB2060E")
+    
+protected byte[] wrap(byte content_type, DataStream dataStream) {
         byte[] fragment = dataStream.getData(MAX_DATA_LENGTH);
         return wrap(content_type, fragment, 0, fragment.length);
     }
@@ -172,8 +178,9 @@ public class SSLRecordProtocol {
      * @param   fragment: byte[]
      * @return  ssl packet created over the current connection state
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.054 -0500", hash_original_method = "55B5DE87A88F61771BAABFB22C57BC6F", hash_generated_method = "36B9F0D7A47193C22EA48CF954978E17")
-    protected byte[] wrap(byte content_type,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.367 -0500", hash_original_method = "55B5DE87A88F61771BAABFB22C57BC6F", hash_generated_method = "36B9F0D7A47193C22EA48CF954978E17")
+    
+protected byte[] wrap(byte content_type,
                        byte[] fragment, int offset, int len) {
         if (logger != null) {
             logger.println("SSLRecordProtocol.wrap: TLSPlaintext.fragment["
@@ -206,8 +213,9 @@ public class SSLRecordProtocol {
         return packetize(content_type, version, ciphered_fragment);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.055 -0500", hash_original_method = "5CCC3748379530494C61DB0E5CDE03DA", hash_generated_method = "2A22C92A3FD80E3D66B40145FCD1B917")
-    private byte[] packetize(byte type, byte[] version, byte[] fragment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.369 -0500", hash_original_method = "5CCC3748379530494C61DB0E5CDE03DA", hash_generated_method = "2A22C92A3FD80E3D66B40145FCD1B917")
+    
+private byte[] packetize(byte type, byte[] version, byte[] fragment) {
         byte[] buff = new byte[5+fragment.length];
         buff[0] = type;
         if (version != null) {
@@ -227,8 +235,9 @@ public class SSLRecordProtocol {
      * Set the ssl session to be used after sending the changeCipherSpec message
      * @param   session:    SSLSessionImpl
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.055 -0500", hash_original_method = "B29F5DC9A2BE75FFC944D86037256C31", hash_generated_method = "FA2A8EAE8ED72A519E2810F9CA7EBF7C")
-    private void setSession(SSLSessionImpl session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.372 -0500", hash_original_method = "B29F5DC9A2BE75FFC944D86037256C31", hash_generated_method = "FA2A8EAE8ED72A519E2810F9CA7EBF7C")
+    
+private void setSession(SSLSessionImpl session) {
         if (!sessionWasChanged) {
             // session was not changed for current handshake process
             if (logger != null) {
@@ -255,8 +264,9 @@ public class SSLRecordProtocol {
      * be active.
      * @return ssl record containing the "change cipher spec" message.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.056 -0500", hash_original_method = "D4A06B5E6BD10843CEED9C48A36D68A3", hash_generated_method = "8A3F8C123134B8F25AA00E0B5C6AA559")
-    protected byte[] getChangeCipherSpecMesage(SSLSessionImpl session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.374 -0500", hash_original_method = "D4A06B5E6BD10843CEED9C48A36D68A3", hash_generated_method = "8A3F8C123134B8F25AA00E0B5C6AA559")
+    
+protected byte[] getChangeCipherSpecMesage(SSLSessionImpl session) {
         // make change_cipher_spec_message:
         byte[] change_cipher_spec_message;
         if (activeWriteState == null) {
@@ -308,8 +318,9 @@ public class SSLRecordProtocol {
      *                              to build complete ssl packet.
      * @return the type of unwrapped message.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.058 -0500", hash_original_method = "B39FD616EE504B12CB9E5F46F7A6A390", hash_generated_method = "42E2C04CD5150C1C72712478B68A54F2")
-    protected int unwrap() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.378 -0500", hash_original_method = "B39FD616EE504B12CB9E5F46F7A6A390", hash_generated_method = "42E2C04CD5150C1C72712478B68A54F2")
+    
+protected int unwrap() throws IOException {
         if (logger != null) {
             logger.println("SSLRecordProtocol.unwrap: BEGIN [");
         }
@@ -417,8 +428,9 @@ public class SSLRecordProtocol {
      * @param   level:  byte
      * @param   description:    byte
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.059 -0500", hash_original_method = "23FCA30C77438F833B36A8A9B6CBC6CC", hash_generated_method = "5BF51B9D756AC66CA74ED0E535DA5717")
-    protected void alert(byte level, byte description) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.381 -0500", hash_original_method = "23FCA30C77438F833B36A8A9B6CBC6CC", hash_generated_method = "5BF51B9D756AC66CA74ED0E535DA5717")
+    
+protected void alert(byte level, byte description) {
         if (logger != null) {
             logger.println("SSLRecordProtocol.allert: "+level+" "+description);
         }
@@ -432,8 +444,9 @@ public class SSLRecordProtocol {
      * @param   ver:    byte[]
      * @return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.060 -0500", hash_original_method = "DE69782F4CD99CC5C5DEED4E3A6B9F4E", hash_generated_method = "BF804C669D7ECB279B2E41666733DC04")
-    protected void setVersion(byte[] ver) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.384 -0500", hash_original_method = "DE69782F4CD99CC5C5DEED4E3A6B9F4E", hash_generated_method = "BF804C669D7ECB279B2E41666733DC04")
+    
+protected void setVersion(byte[] ver) {
         this.version = ver;
     }
 
@@ -441,8 +454,9 @@ public class SSLRecordProtocol {
      * Shuts down the protocol. It will be impossible to use the instance
      * after the calling of this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:13.061 -0500", hash_original_method = "C2A186E08A6901259D50AE521996EDF2", hash_generated_method = "BCC9369DD1AC7B1C7E7AAADD8CD3AEF2")
-    protected void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.386 -0500", hash_original_method = "C2A186E08A6901259D50AE521996EDF2", hash_generated_method = "BCC9369DD1AC7B1C7E7AAADD8CD3AEF2")
+    
+protected void shutdown() {
         session = null;
         version = null;
         in = null;

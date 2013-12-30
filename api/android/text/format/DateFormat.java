@@ -32,8 +32,9 @@ public class DateFormat {
      * @param context the context to use for the content resolver
      * @return true if 24 hour time format is selected, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.124 -0500", hash_original_method = "E5AB6833BD9B82E228B17845C6EA8653", hash_generated_method = "AB0FFB3AEC8ABA85D7943D4EBCB83DC4")
-    public static boolean is24HourFormat(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.144 -0500", hash_original_method = "E5AB6833BD9B82E228B17845C6EA8653", hash_generated_method = "AB0FFB3AEC8ABA85D7943D4EBCB83DC4")
+    
+public static boolean is24HourFormat(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.TIME_12_24);
 
@@ -79,8 +80,9 @@ public class DateFormat {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that properly formats the time.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.125 -0500", hash_original_method = "71FE993D45AFD9417B89B7CB5C26B27B", hash_generated_method = "CBEC912AD7610BF8D67E68424199304C")
-    public static final java.text.DateFormat getTimeFormat(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.147 -0500", hash_original_method = "71FE993D45AFD9417B89B7CB5C26B27B", hash_generated_method = "CBEC912AD7610BF8D67E68424199304C")
+    
+public static final java.text.DateFormat getTimeFormat(Context context) {
         boolean b24 = is24HourFormat(context);
         int res;
 
@@ -100,8 +102,9 @@ public class DateFormat {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that properly formats the date.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.126 -0500", hash_original_method = "31DB25FCF5E17D5BA39D40A6AB758B79", hash_generated_method = "5AEC6419123B2A4BF329169CFA1989C5")
-    public static final java.text.DateFormat getDateFormat(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.149 -0500", hash_original_method = "31DB25FCF5E17D5BA39D40A6AB758B79", hash_generated_method = "5AEC6419123B2A4BF329169CFA1989C5")
+    
+public static final java.text.DateFormat getDateFormat(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.DATE_FORMAT);
 
@@ -117,16 +120,18 @@ public class DateFormat {
      *              the current locale
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.127 -0500", hash_original_method = "E08C4A6180FCBAD756891AB6B54F23BC", hash_generated_method = "BCF21067BBFCE97B90A19D2C958E341B")
-    public static java.text.DateFormat getDateFormatForSetting(Context context,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.152 -0500", hash_original_method = "E08C4A6180FCBAD756891AB6B54F23BC", hash_generated_method = "BCF21067BBFCE97B90A19D2C958E341B")
+    
+public static java.text.DateFormat getDateFormatForSetting(Context context,
                                                                String value) {
         String format = getDateFormatStringForSetting(context, value);
 
         return new java.text.SimpleDateFormat(format);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.128 -0500", hash_original_method = "32A5D141E416AE9044FB1BE5A731640E", hash_generated_method = "4E8409AE4FF1E42F9CDEFE7D2F3E60EE")
-    private static String getDateFormatStringForSetting(Context context, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.155 -0500", hash_original_method = "32A5D141E416AE9044FB1BE5A731640E", hash_generated_method = "4E8409AE4FF1E42F9CDEFE7D2F3E60EE")
+    
+private static String getDateFormatStringForSetting(Context context, String value) {
         if (value != null) {
             int month = value.indexOf('M');
             int day = value.indexOf('d');
@@ -173,8 +178,9 @@ public class DateFormat {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that formats the date in long form.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.129 -0500", hash_original_method = "2A3978E636FD74D0DA3D3D064C7B50BA", hash_generated_method = "383D75750E7492A1500CF3750B10302E")
-    public static final java.text.DateFormat getLongDateFormat(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.160 -0500", hash_original_method = "2A3978E636FD74D0DA3D3D064C7B50BA", hash_generated_method = "383D75750E7492A1500CF3750B10302E")
+    
+public static final java.text.DateFormat getLongDateFormat(Context context) {
         return java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG);
     }
 
@@ -184,8 +190,9 @@ public class DateFormat {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that formats the date in long form.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.130 -0500", hash_original_method = "AA9003CA5933631AE307343983461627", hash_generated_method = "EC5E4BF9F43BDF921F57A24485470A00")
-    public static final java.text.DateFormat getMediumDateFormat(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.162 -0500", hash_original_method = "AA9003CA5933631AE307343983461627", hash_generated_method = "EC5E4BF9F43BDF921F57A24485470A00")
+    
+public static final java.text.DateFormat getMediumDateFormat(Context context) {
         return java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM);
     }
 
@@ -198,8 +205,9 @@ public class DateFormat {
      * not just the day, month, and year, and not necessarily in the same
      * order returned here.
      */    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.131 -0500", hash_original_method = "AFEFE08A10E9D5121F8D0F8F87F0469D", hash_generated_method = "C0D212969C3E423BDD19028625D38031")
-    public static final char[] getDateFormatOrder(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.166 -0500", hash_original_method = "AFEFE08A10E9D5121F8D0F8F87F0469D", hash_generated_method = "C0D212969C3E423BDD19028625D38031")
+    
+public static final char[] getDateFormatOrder(Context context) {
         char[] order = new char[] {DATE, MONTH, YEAR};
         String value = getDateFormatString(context);
         int index = 0;
@@ -229,8 +237,9 @@ public class DateFormat {
         return order;
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.132 -0500", hash_original_method = "566994D4112DFC120EA25833B7A2AD23", hash_generated_method = "6DC8D650167CE81590C08346D1F88C9B")
-    private static String getDateFormatString(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.168 -0500", hash_original_method = "566994D4112DFC120EA25833B7A2AD23", hash_generated_method = "6DC8D650167CE81590C08346D1F88C9B")
+    
+private static String getDateFormatString(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.DATE_FORMAT);
 
@@ -244,8 +253,9 @@ public class DateFormat {
      * @param inTimeInMillis in milliseconds since Jan 1, 1970 GMT
      * @return a {@link CharSequence} containing the requested text
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.133 -0500", hash_original_method = "DB5E1435497B50A83BF83DDB6082161C", hash_generated_method = "FDB2FAFA7D11C2731B9585F51D9312E1")
-    public static final CharSequence format(CharSequence inFormat, long inTimeInMillis) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.172 -0500", hash_original_method = "DB5E1435497B50A83BF83DDB6082161C", hash_generated_method = "FDB2FAFA7D11C2731B9585F51D9312E1")
+    
+public static final CharSequence format(CharSequence inFormat, long inTimeInMillis) {
         return format(inFormat, new Date(inTimeInMillis));
     }
 
@@ -256,8 +266,9 @@ public class DateFormat {
      * @param inDate the date to format
      * @return a {@link CharSequence} containing the requested text
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.133 -0500", hash_original_method = "E0419C3C471C7E345983AE259311718A", hash_generated_method = "3F9D986BBECCB6EB224C8C601A3AFC67")
-    public static final CharSequence format(CharSequence inFormat, Date inDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.174 -0500", hash_original_method = "E0419C3C471C7E345983AE259311718A", hash_generated_method = "3F9D986BBECCB6EB224C8C601A3AFC67")
+    
+public static final CharSequence format(CharSequence inFormat, Date inDate) {
         Calendar    c = new GregorianCalendar();
         
         c.setTime(inDate);
@@ -272,8 +283,9 @@ public class DateFormat {
      * @param inDate the date to format
      * @return a {@link CharSequence} containing the requested text
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.135 -0500", hash_original_method = "1E7FCBB9BDAB6241DCC43FD2CDBCAE7C", hash_generated_method = "35A0B093592D9F22C9A064893A06A86F")
-    public static final CharSequence format(CharSequence inFormat, Calendar inDate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.179 -0500", hash_original_method = "1E7FCBB9BDAB6241DCC43FD2CDBCAE7C", hash_generated_method = "35A0B093592D9F22C9A064893A06A86F")
+    
+public static final CharSequence format(CharSequence inFormat, Calendar inDate) {
         SpannableStringBuilder      s = new SpannableStringBuilder(inFormat);
         int             c;
         int             count;
@@ -371,8 +383,9 @@ public class DateFormat {
             return s.toString();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.136 -0500", hash_original_method = "B6328CDAAE059376F42670F10E94C3C7", hash_generated_method = "9324B5CE870AACE0BA47C45A3543CFCF")
-    private static final String getMonthString(Calendar inDate, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.182 -0500", hash_original_method = "B6328CDAAE059376F42670F10E94C3C7", hash_generated_method = "9324B5CE870AACE0BA47C45A3543CFCF")
+    
+private static final String getMonthString(Calendar inDate, int count) {
         int month = inDate.get(Calendar.MONTH);
         
         if (count >= 4)
@@ -385,8 +398,9 @@ public class DateFormat {
         }
     }
         
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.137 -0500", hash_original_method = "717F8011BB33AD60A52972788AFDBE92", hash_generated_method = "89B2030A9561BD57E99AC98ADEE25225")
-    private static final String getTimeZoneString(Calendar inDate, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.185 -0500", hash_original_method = "717F8011BB33AD60A52972788AFDBE92", hash_generated_method = "89B2030A9561BD57E99AC98ADEE25225")
+    
+private static final String getTimeZoneString(Calendar inDate, int count) {
         TimeZone tz = inDate.getTimeZone();
         
         if (count < 2) { // FIXME: shouldn't this be <= 2 ?
@@ -399,8 +413,9 @@ public class DateFormat {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.138 -0500", hash_original_method = "DCEF93C8648F8A4BADBE0DEB45045CC3", hash_generated_method = "7B7892A12E677D66BCA3E5B7D1B19DAB")
-    private static final String formatZoneOffset(int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.188 -0500", hash_original_method = "DCEF93C8648F8A4BADBE0DEB45045CC3", hash_generated_method = "7B7892A12E677D66BCA3E5B7D1B19DAB")
+    
+private static final String formatZoneOffset(int offset, int count) {
         offset /= 1000; // milliseconds to seconds
         StringBuilder tb = new StringBuilder();
 
@@ -419,14 +434,16 @@ public class DateFormat {
         return tb.toString();
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.139 -0500", hash_original_method = "61C8A1A7F87CCD34E1CB408B77469F5C", hash_generated_method = "AD8F947AB2F17726ADEE4FEB87658605")
-    private static final String getYearString(Calendar inDate, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.191 -0500", hash_original_method = "61C8A1A7F87CCD34E1CB408B77469F5C", hash_generated_method = "AD8F947AB2F17726ADEE4FEB87658605")
+    
+private static final String getYearString(Calendar inDate, int count) {
         int year = inDate.get(Calendar.YEAR);
         return (count <= 2) ? zeroPad(year % 100, 2) : String.valueOf(year);
     }
    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.140 -0500", hash_original_method = "636A48F51D0980A4E6BB5D7F973D5483", hash_generated_method = "1B17694B1880264A26674589EE8C8527")
-    private static final int appendQuotedText(SpannableStringBuilder s, int i, int len) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.195 -0500", hash_original_method = "636A48F51D0980A4E6BB5D7F973D5483", hash_generated_method = "1B17694B1880264A26674589EE8C8527")
+    
+private static final int appendQuotedText(SpannableStringBuilder s, int i, int len) {
         if (i + 1 < len && s.charAt(i + 1) == QUOTE) {
             s.delete(i, i + 1);
             return 1;
@@ -463,8 +480,9 @@ public class DateFormat {
         return count;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.141 -0500", hash_original_method = "5A00C98C01DB41A2F1A77A0819740F7C", hash_generated_method = "49A2586C850B0856347F2CED3B587F5D")
-    private static final String zeroPad(int inValue, int inMinDigits) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.198 -0500", hash_original_method = "5A00C98C01DB41A2F1A77A0819740F7C", hash_generated_method = "49A2586C850B0856347F2CED3B587F5D")
+    
+private static final String zeroPad(int inValue, int inMinDigits) {
         String val = String.valueOf(inValue);
 
         if (val.length() < inMinDigits) {
@@ -478,51 +496,51 @@ public class DateFormat {
         }
         return val;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.109 -0500", hash_original_field = "6B3E51976BB1EC7EE489E9F85EC7B58A", hash_generated_field = "250A84389E130C726113284F2D117A00")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.100 -0500", hash_original_field = "6B3E51976BB1EC7EE489E9F85EC7B58A", hash_generated_field = "250A84389E130C726113284F2D117A00")
 
     public  static final char    QUOTE                  =    '\'';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.110 -0500", hash_original_field = "1A4EE042261280E397034EC0E516672B", hash_generated_field = "16093291ABEFB472FBE1F3FEF4023988")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.103 -0500", hash_original_field = "1A4EE042261280E397034EC0E516672B", hash_generated_field = "16093291ABEFB472FBE1F3FEF4023988")
 
     public  static final char    AM_PM                  =    'a';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.111 -0500", hash_original_field = "6FB7D38D9E6DDEBD95DFD3929F9F05BE", hash_generated_field = "9B7136CFCD8022B9C61259E68F2D56A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.106 -0500", hash_original_field = "6FB7D38D9E6DDEBD95DFD3929F9F05BE", hash_generated_field = "9B7136CFCD8022B9C61259E68F2D56A5")
 
     public  static final char    CAPITAL_AM_PM          =    'A';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.112 -0500", hash_original_field = "65014EC6E144E18A831B9BCBF62362F7", hash_generated_field = "5D54378F1E1E8673FEB1D6D040ACD156")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.109 -0500", hash_original_field = "65014EC6E144E18A831B9BCBF62362F7", hash_generated_field = "5D54378F1E1E8673FEB1D6D040ACD156")
 
     public  static final char    DATE                   =    'd';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.112 -0500", hash_original_field = "B00882DAF304BF3599D65DC438CC9F8D", hash_generated_field = "5A53B128E46D6BA59FBFBB13B828F69D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.112 -0500", hash_original_field = "B00882DAF304BF3599D65DC438CC9F8D", hash_generated_field = "5A53B128E46D6BA59FBFBB13B828F69D")
 
     public  static final char    DAY                    =    'E';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.113 -0500", hash_original_field = "B423397E297495E9A2BE24DA3E005E28", hash_generated_field = "613A1CD7DCE462E205EBA8126B697902")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.115 -0500", hash_original_field = "B423397E297495E9A2BE24DA3E005E28", hash_generated_field = "613A1CD7DCE462E205EBA8126B697902")
 
     public  static final char    HOUR                   =    'h';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.114 -0500", hash_original_field = "DB432F36A1C9D5C8626D21EC28E04935", hash_generated_field = "10470B1D7CBA625E2E9CEBCFD571802E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.118 -0500", hash_original_field = "DB432F36A1C9D5C8626D21EC28E04935", hash_generated_field = "10470B1D7CBA625E2E9CEBCFD571802E")
 
     public  static final char    HOUR_OF_DAY            =    'k';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.115 -0500", hash_original_field = "1D42B51096A784F674C3669FD0C1E0EB", hash_generated_field = "B4992C56769E8673618C8FEA85DC5010")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.121 -0500", hash_original_field = "1D42B51096A784F674C3669FD0C1E0EB", hash_generated_field = "B4992C56769E8673618C8FEA85DC5010")
 
     public  static final char    MINUTE                 =    'm';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.116 -0500", hash_original_field = "B779E707DAB0BCFD2C6CF564381F203D", hash_generated_field = "3765CF3C3E8B2767C0D82BAC9274FAE1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.124 -0500", hash_original_field = "B779E707DAB0BCFD2C6CF564381F203D", hash_generated_field = "3765CF3C3E8B2767C0D82BAC9274FAE1")
 
     public  static final char    MONTH                  =    'M';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.116 -0500", hash_original_field = "E3853FE52A3B791FB6C808C2CB9CC186", hash_generated_field = "6F43AB9201DB419BC629D6FFFEC9B8DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.127 -0500", hash_original_field = "E3853FE52A3B791FB6C808C2CB9CC186", hash_generated_field = "6F43AB9201DB419BC629D6FFFEC9B8DA")
 
     public  static final char    SECONDS                =    's';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.117 -0500", hash_original_field = "47DEA5ADCB028D52F18F8E17394E536A", hash_generated_field = "93F1A65F4251064F2BA64FB11B049AD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.129 -0500", hash_original_field = "47DEA5ADCB028D52F18F8E17394E536A", hash_generated_field = "93F1A65F4251064F2BA64FB11B049AD7")
 
     public  static final char    TIME_ZONE              =    'z';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.118 -0500", hash_original_field = "F72281817953DA925221524BDB52358B", hash_generated_field = "670716792657D0E9DD7069832C0E534E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.132 -0500", hash_original_field = "F72281817953DA925221524BDB52358B", hash_generated_field = "670716792657D0E9DD7069832C0E534E")
 
     public  static final char    YEAR                   =    'y';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.119 -0500", hash_original_field = "61DC592BCCEB048C6E6CACD1439CA4DE", hash_generated_field = "AAE447C6BB21DFB2195044EACE33BBDF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.135 -0500", hash_original_field = "61DC592BCCEB048C6E6CACD1439CA4DE", hash_generated_field = "AAE447C6BB21DFB2195044EACE33BBDF")
 
 
 
     private static final Object sLocaleLock = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.122 -0500", hash_original_field = "0361EEF44E717D9DAF07EB1CAF9D07BF", hash_generated_field = "872809FA2AF3A2EA3BD5FBFC0313FA4E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.137 -0500", hash_original_field = "0361EEF44E717D9DAF07EB1CAF9D07BF", hash_generated_field = "872809FA2AF3A2EA3BD5FBFC0313FA4E")
 
     private static Locale sIs24HourLocale;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:55.123 -0500", hash_original_field = "4C1DE63FA6BE6A6DDCEC50749B78D69C", hash_generated_field = "C14F0D97025D8697B6AE4E5D56399951")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.140 -0500", hash_original_field = "4C1DE63FA6BE6A6DDCEC50749B78D69C", hash_generated_field = "C14F0D97025D8697B6AE4E5D56399951")
 
     private static boolean sIs24Hour;
     

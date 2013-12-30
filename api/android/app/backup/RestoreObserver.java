@@ -27,8 +27,9 @@ public abstract class RestoreObserver {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.143 -0500", hash_original_method = "668807DC740187B04A6B6A3F86625C1D", hash_generated_method = "50E8C0AE1BDE3A8B54D39CA390CC1EA2")
-    public void restoreSetsAvailable(RestoreSet[] result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.789 -0500", hash_original_method = "668807DC740187B04A6B6A3F86625C1D", hash_generated_method = "50E8C0AE1BDE3A8B54D39CA390CC1EA2")
+    
+public void restoreSetsAvailable(RestoreSet[] result) {
     }
 
     /**
@@ -37,8 +38,9 @@ public abstract class RestoreObserver {
      * @param numPackages The total number of packages being processed in
      *   this restore operation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.143 -0500", hash_original_method = "DBB8890F5DB9136F39685677B4F1E581", hash_generated_method = "8B2B1B699F3BC76DC163AE27183AC7E8")
-    public void restoreStarting(int numPackages) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.792 -0500", hash_original_method = "DBB8890F5DB9136F39685677B4F1E581", hash_generated_method = "8B2B1B699F3BC76DC163AE27183AC7E8")
+    
+public void restoreStarting(int numPackages) {
     }
 
     /**
@@ -54,8 +56,9 @@ public abstract class RestoreObserver {
      *   indication of the backup manager's progress through the overall restore process.
      * @param currentPackage The name of the package now being restored.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.144 -0500", hash_original_method = "0D7718CD7EB4ACA6FF6B636456D0E82A", hash_generated_method = "5F1091FB9DD136AFA3C0542BB3A9646B")
-    public void onUpdate(int nowBeingRestored, String currentPackage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.794 -0500", hash_original_method = "0D7718CD7EB4ACA6FF6B636456D0E82A", hash_generated_method = "5F1091FB9DD136AFA3C0542BB3A9646B")
+    
+public void onUpdate(int nowBeingRestored, String currentPackage) {
     }
 
     /**
@@ -65,8 +68,9 @@ public abstract class RestoreObserver {
      * @param error Zero on success; a nonzero error code if the restore operation
      *   as a whole failed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.145 -0500", hash_original_method = "0756746AA6CF68909818DDB3CD0E35A6", hash_generated_method = "012518DF28A847B89A0EC7757AC5802D")
-    public void restoreFinished(int error) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.796 -0500", hash_original_method = "0756746AA6CF68909818DDB3CD0E35A6", hash_generated_method = "012518DF28A847B89A0EC7757AC5802D")
+    
+public void restoreFinished(int error) {
     }
 
     

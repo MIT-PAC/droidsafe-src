@@ -14,17 +14,17 @@ import org.apache.commons.logging.LogFactory;
 
 
 public class RefQueueWorker implements Runnable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.731 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.624 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
 
     private final Log log = LogFactory.getLog(getClass());
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.732 -0500", hash_original_field = "AF3F1BF62DD67A6204D4B99C3928DDE7", hash_generated_field = "40049CCA20E99139643BCB7890F78F90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.626 -0500", hash_original_field = "AF3F1BF62DD67A6204D4B99C3928DDE7", hash_generated_field = "40049CCA20E99139643BCB7890F78F90")
 
     protected  ReferenceQueue<?> refQueue;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.733 -0500", hash_original_field = "C4D17D8E20F898203F5288742532355E", hash_generated_field = "7ABFD2CF4B63269B45DD287A5590324B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.628 -0500", hash_original_field = "C4D17D8E20F898203F5288742532355E", hash_generated_field = "7ABFD2CF4B63269B45DD287A5590324B")
 
     protected  RefQueueHandler refHandler;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.734 -0500", hash_original_field = "E9FF103FC0FAC4762B85597770D9D323", hash_generated_field = "AD9424F71A9D950798ECA942D1D55E60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.631 -0500", hash_original_field = "E9FF103FC0FAC4762B85597770D9D323", hash_generated_field = "AD9424F71A9D950798ECA942D1D55E60")
 
     protected volatile Thread workerThread;
 
@@ -35,8 +35,9 @@ public class RefQueueWorker implements Runnable {
      * @param queue     the queue on which to wait for references
      * @param handler   the handler to pass the references to
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.735 -0500", hash_original_method = "7CE59BC66C958C608E20B1EEC430162A", hash_generated_method = "CA85AE20212AFCDAED1E94900A261A2A")
-    public RefQueueWorker(ReferenceQueue<?> queue, RefQueueHandler handler) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.633 -0500", hash_original_method = "7CE59BC66C958C608E20B1EEC430162A", hash_generated_method = "CA85AE20212AFCDAED1E94900A261A2A")
+    
+public RefQueueWorker(ReferenceQueue<?> queue, RefQueueHandler handler) {
         if (queue == null) {
             throw new IllegalArgumentException("Queue must not be null.");
         }
@@ -55,8 +56,9 @@ public class RefQueueWorker implements Runnable {
      * after {@link #shutdown shutdown()}. Only one thread can
      * execute the main loop at any time.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.736 -0500", hash_original_method = "068901515EDCF67E719CCEED21C02CEA", hash_generated_method = "3D8D6E0C0D5DD7B4890A87101CA0C31F")
-    public void run() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.635 -0500", hash_original_method = "068901515EDCF67E719CCEED21C02CEA", hash_generated_method = "3D8D6E0C0D5DD7B4890A87101CA0C31F")
+    
+public void run() {
 
         if (this.workerThread == null) {
             this.workerThread = Thread.currentThread();
@@ -82,8 +84,9 @@ public class RefQueueWorker implements Runnable {
      * Shuts down this worker.
      * It can be re-started afterwards by another call to {@link #run run()}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.737 -0500", hash_original_method = "4BBB4A6394E78355577BCA1899518AA3", hash_generated_method = "6CE48C3E51E997E0D335B5113DBA95F1")
-    public void shutdown() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.637 -0500", hash_original_method = "4BBB4A6394E78355577BCA1899518AA3", hash_generated_method = "6CE48C3E51E997E0D335B5113DBA95F1")
+    
+public void shutdown() {
         Thread wt = this.workerThread;
         if (wt != null) {
             this.workerThread = null; // indicate shutdown
@@ -97,9 +100,10 @@ public class RefQueueWorker implements Runnable {
      *
      * @return  a descriptive string for this worker
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.737 -0500", hash_original_method = "7EB957F4647F2E9AB09EE1A296B7BEEF", hash_generated_method = "4C820E660A2767B76BC387A5AB9B43EE")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.640 -0500", hash_original_method = "7EB957F4647F2E9AB09EE1A296B7BEEF", hash_generated_method = "4C820E660A2767B76BC387A5AB9B43EE")
+    
+@Override
+    public String toString() {
         return "RefQueueWorker::" + this.workerThread;
     }
 

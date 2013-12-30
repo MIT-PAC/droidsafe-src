@@ -22,8 +22,9 @@ public class Allocation extends BaseObj {
      * @param usage bit field specifying how the allocation is
      *              utilized
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.343 -0500", hash_original_method = "D46EC694956076F8C05462336690C5EE", hash_generated_method = "53E5DC40C93A265BD10F85ADA412D606")
-    static public Allocation createTyped(RenderScript rs, Type type, MipmapControl mips, int usage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.160 -0500", hash_original_method = "D46EC694956076F8C05462336690C5EE", hash_generated_method = "53E5DC40C93A265BD10F85ADA412D606")
+    
+static public Allocation createTyped(RenderScript rs, Type type, MipmapControl mips, int usage) {
         rs.validate();
         if (type.getID() == 0) {
             throw new RSInvalidStateException("Bad Type");
@@ -46,8 +47,9 @@ public class Allocation extends BaseObj {
      *
      * @return allocation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.344 -0500", hash_original_method = "A408B34F281395540EEED77731180C65", hash_generated_method = "8161DBF71A1F31005E5910BA3A540D17")
-    static public Allocation createTyped(RenderScript rs, Type type, int usage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.162 -0500", hash_original_method = "A408B34F281395540EEED77731180C65", hash_generated_method = "8161DBF71A1F31005E5910BA3A540D17")
+    
+static public Allocation createTyped(RenderScript rs, Type type, int usage) {
         return createTyped(rs, type, MipmapControl.MIPMAP_NONE, usage);
     }
 
@@ -61,8 +63,9 @@ public class Allocation extends BaseObj {
      *
      * @return allocation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.344 -0500", hash_original_method = "2F9FE5236662F74D39C5964ED1AC733E", hash_generated_method = "91F8FCFA8E864025E14A6A32CC90A733")
-    static public Allocation createTyped(RenderScript rs, Type type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.165 -0500", hash_original_method = "2F9FE5236662F74D39C5964ED1AC733E", hash_generated_method = "91F8FCFA8E864025E14A6A32CC90A733")
+    
+static public Allocation createTyped(RenderScript rs, Type type) {
         return createTyped(rs, type, MipmapControl.MIPMAP_NONE, USAGE_SCRIPT);
     }
 
@@ -78,8 +81,9 @@ public class Allocation extends BaseObj {
      *
      * @return allocation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.345 -0500", hash_original_method = "5F0329920CE6539503E8DACE82C515C1", hash_generated_method = "1545BCD278795E649171171C17A88878")
-    static public Allocation createSized(RenderScript rs, Element e,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.167 -0500", hash_original_method = "5F0329920CE6539503E8DACE82C515C1", hash_generated_method = "1545BCD278795E649171171C17A88878")
+    
+static public Allocation createSized(RenderScript rs, Element e,
                                          int count, int usage) {
         rs.validate();
         Type.Builder b = new Type.Builder(rs, e);
@@ -103,13 +107,15 @@ public class Allocation extends BaseObj {
      *
      * @return allocation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.346 -0500", hash_original_method = "BD08BF24DECE867FBC9BAD4B74A67538", hash_generated_method = "2D32BC9CC9400302C75C909342F79A39")
-    static public Allocation createSized(RenderScript rs, Element e, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.169 -0500", hash_original_method = "BD08BF24DECE867FBC9BAD4B74A67538", hash_generated_method = "2D32BC9CC9400302C75C909342F79A39")
+    
+static public Allocation createSized(RenderScript rs, Element e, int count) {
         return createSized(rs, e, count, USAGE_SCRIPT);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.347 -0500", hash_original_method = "EDF440B25345512D66E9F3A7B03FD12E", hash_generated_method = "F8D3B59FCD3890C53F5E6B947FAF6CE4")
-    static Element elementFromBitmap(RenderScript rs, Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.172 -0500", hash_original_method = "EDF440B25345512D66E9F3A7B03FD12E", hash_generated_method = "F8D3B59FCD3890C53F5E6B947FAF6CE4")
+    
+static Element elementFromBitmap(RenderScript rs, Bitmap b) {
         final Bitmap.Config bc = b.getConfig();
         if (bc == Bitmap.Config.ALPHA_8) {
             return Element.A_8(rs);
@@ -126,8 +132,9 @@ public class Allocation extends BaseObj {
         throw new RSInvalidStateException("Bad bitmap type: " + bc);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.348 -0500", hash_original_method = "4E8B62F9912697CCA84BCC1B4CEC6BDE", hash_generated_method = "89C8EBDFA80779B0788B758D75F90669")
-    static Type typeFromBitmap(RenderScript rs, Bitmap b,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.175 -0500", hash_original_method = "4E8B62F9912697CCA84BCC1B4CEC6BDE", hash_generated_method = "89C8EBDFA80779B0788B758D75F90669")
+    
+static Type typeFromBitmap(RenderScript rs, Bitmap b,
                                        MipmapControl mip) {
         Element e = elementFromBitmap(rs, b);
         Type.Builder tb = new Type.Builder(rs, e);
@@ -150,8 +157,9 @@ public class Allocation extends BaseObj {
      * @return renderscript allocation containing bitmap data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.348 -0500", hash_original_method = "3EF74B5B3A471F2849137326FEF0ADD2", hash_generated_method = "5716256425AE587F4F61E2781BD91808")
-    static public Allocation createFromBitmap(RenderScript rs, Bitmap b,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.177 -0500", hash_original_method = "3EF74B5B3A471F2849137326FEF0ADD2", hash_generated_method = "5716256425AE587F4F61E2781BD91808")
+    
+static public Allocation createFromBitmap(RenderScript rs, Bitmap b,
                                               MipmapControl mips,
                                               int usage) {
         rs.validate();
@@ -174,8 +182,9 @@ public class Allocation extends BaseObj {
      * @return renderscript allocation containing bitmap data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.349 -0500", hash_original_method = "95514FF5073DD08599DBE9F6D73E59F3", hash_generated_method = "0F370532FCB5748EE69AAC583B25F924")
-    static public Allocation createFromBitmap(RenderScript rs, Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.179 -0500", hash_original_method = "95514FF5073DD08599DBE9F6D73E59F3", hash_generated_method = "0F370532FCB5748EE69AAC583B25F924")
+    
+static public Allocation createFromBitmap(RenderScript rs, Bitmap b) {
         return createFromBitmap(rs, b, MipmapControl.MIPMAP_NONE,
                                 USAGE_GRAPHICS_TEXTURE);
     }
@@ -194,8 +203,9 @@ public class Allocation extends BaseObj {
      * @return allocation containing cubemap data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.351 -0500", hash_original_method = "938F8E40CDECF343C54169E6C37AE49D", hash_generated_method = "7735EA72A00CBF32470D39B95BF859E8")
-    static public Allocation createCubemapFromBitmap(RenderScript rs, Bitmap b,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.182 -0500", hash_original_method = "938F8E40CDECF343C54169E6C37AE49D", hash_generated_method = "7735EA72A00CBF32470D39B95BF859E8")
+    
+static public Allocation createCubemapFromBitmap(RenderScript rs, Bitmap b,
                                                      MipmapControl mips,
                                                      int usage) {
         rs.validate();
@@ -242,8 +252,9 @@ public class Allocation extends BaseObj {
      * @return allocation containing cubemap data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.352 -0500", hash_original_method = "0AEC913D07D4AD9724684A673FC6F8D3", hash_generated_method = "E9609598A966F8817A66516FB39D7B13")
-    static public Allocation createCubemapFromBitmap(RenderScript rs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.185 -0500", hash_original_method = "0AEC913D07D4AD9724684A673FC6F8D3", hash_generated_method = "E9609598A966F8817A66516FB39D7B13")
+    
+static public Allocation createCubemapFromBitmap(RenderScript rs,
                                                      Bitmap b) {
         return createCubemapFromBitmap(rs, b, MipmapControl.MIPMAP_NONE,
                                        USAGE_GRAPHICS_TEXTURE);
@@ -267,8 +278,9 @@ public class Allocation extends BaseObj {
      * @return allocation containing cubemap data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.353 -0500", hash_original_method = "B3BAFBC51FF629F36C7E41D021DDE05F", hash_generated_method = "7C419FE6FAD865AC422C74E859F80193")
-    static public Allocation createCubemapFromCubeFaces(RenderScript rs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.188 -0500", hash_original_method = "B3BAFBC51FF629F36C7E41D021DDE05F", hash_generated_method = "7C419FE6FAD865AC422C74E859F80193")
+    
+static public Allocation createCubemapFromCubeFaces(RenderScript rs,
                                                         Bitmap xpos,
                                                         Bitmap xneg,
                                                         Bitmap ypos,
@@ -334,8 +346,9 @@ public class Allocation extends BaseObj {
      * @return allocation containing cubemap data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.354 -0500", hash_original_method = "62C2C1B6F0249A81DF96D887CDE57892", hash_generated_method = "807BC3E63A8EC7B7CD4EFA3978F6E0B1")
-    static public Allocation createCubemapFromCubeFaces(RenderScript rs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.191 -0500", hash_original_method = "62C2C1B6F0249A81DF96D887CDE57892", hash_generated_method = "807BC3E63A8EC7B7CD4EFA3978F6E0B1")
+    
+static public Allocation createCubemapFromCubeFaces(RenderScript rs,
                                                         Bitmap xpos,
                                                         Bitmap xneg,
                                                         Bitmap ypos,
@@ -362,8 +375,9 @@ public class Allocation extends BaseObj {
      * @return renderscript allocation containing resource data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.355 -0500", hash_original_method = "CFD3A90BD3110FE566B6AC2DC60734EF", hash_generated_method = "AB5F2F13564317CD5377BC20B35B244C")
-    static public Allocation createFromBitmapResource(RenderScript rs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.194 -0500", hash_original_method = "CFD3A90BD3110FE566B6AC2DC60734EF", hash_generated_method = "AB5F2F13564317CD5377BC20B35B244C")
+    
+static public Allocation createFromBitmapResource(RenderScript rs,
                                                       Resources res,
                                                       int id,
                                                       MipmapControl mips,
@@ -387,8 +401,9 @@ public class Allocation extends BaseObj {
      * @return renderscript allocation containing resource data
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.356 -0500", hash_original_method = "B0C87E65C5430C3898079FF855C10E98", hash_generated_method = "8D9B2644325A2F7E8FBEFDF7D614187B")
-    static public Allocation createFromBitmapResource(RenderScript rs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.196 -0500", hash_original_method = "B0C87E65C5430C3898079FF855C10E98", hash_generated_method = "8D9B2644325A2F7E8FBEFDF7D614187B")
+    
+static public Allocation createFromBitmapResource(RenderScript rs,
                                                       Resources res,
                                                       int id) {
         return createFromBitmapResource(rs, res, id,
@@ -406,8 +421,9 @@ public class Allocation extends BaseObj {
      *              utilized
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.357 -0500", hash_original_method = "B8CE0DE4924B901D9FDF5D196082956F", hash_generated_method = "97283EDF44EE1B1E0078162D518FDD90")
-    static public Allocation createFromString(RenderScript rs,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.198 -0500", hash_original_method = "B8CE0DE4924B901D9FDF5D196082956F", hash_generated_method = "97283EDF44EE1B1E0078162D518FDD90")
+    
+static public Allocation createFromString(RenderScript rs,
                                               String str,
                                               int usage) {
         rs.validate();
@@ -422,22 +438,22 @@ public class Allocation extends BaseObj {
             throw new RSRuntimeException("Could not convert string to utf-8.");
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.293 -0500", hash_original_field = "1AE8EE92A346A52B5F5255ADCDFBBA90", hash_generated_field = "06CA9F64F5678EC367DCB8981FA5E914")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.025 -0500", hash_original_field = "1AE8EE92A346A52B5F5255ADCDFBBA90", hash_generated_field = "06CA9F64F5678EC367DCB8981FA5E914")
 
     public static final int USAGE_SCRIPT = 0x0001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.293 -0500", hash_original_field = "B2515D4A6D7632F2F7741F69ED09FDD2", hash_generated_field = "E1921C905C89D7B37889A81697E5C083")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.028 -0500", hash_original_field = "B2515D4A6D7632F2F7741F69ED09FDD2", hash_generated_field = "E1921C905C89D7B37889A81697E5C083")
 
     public static final int USAGE_GRAPHICS_TEXTURE = 0x0002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.294 -0500", hash_original_field = "0E9E0B59725D4B2F13422E426434ABF1", hash_generated_field = "D78461A3746C21BD98EEE3B38299D6F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.030 -0500", hash_original_field = "0E9E0B59725D4B2F13422E426434ABF1", hash_generated_field = "D78461A3746C21BD98EEE3B38299D6F2")
 
     public static final int USAGE_GRAPHICS_VERTEX = 0x0004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.295 -0500", hash_original_field = "6A74D2B25E3081E80D913F52BCD4133B", hash_generated_field = "39B183AD834C81DFE77B349B49963B4E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.033 -0500", hash_original_field = "6A74D2B25E3081E80D913F52BCD4133B", hash_generated_field = "39B183AD834C81DFE77B349B49963B4E")
 
     public static final int USAGE_GRAPHICS_CONSTANTS = 0x0008;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.296 -0500", hash_original_field = "0A875C1D0F5D8BCE3DD30A8EEEBE09FE", hash_generated_field = "A075DE6001096AED922B70169526411A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.035 -0500", hash_original_field = "0A875C1D0F5D8BCE3DD30A8EEEBE09FE", hash_generated_field = "A075DE6001096AED922B70169526411A")
 
     public static final int USAGE_GRAPHICS_RENDER_TARGET = 0x0010;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:21.983 -0500", hash_original_field = "CB4D2A9A30166F32913FF91112AF5F85", hash_generated_field = "7A3E66DD2D5D765451AE7D825CAB2F16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.157 -0500", hash_original_field = "CB4D2A9A30166F32913FF91112AF5F85", hash_generated_field = "7A3E66DD2D5D765451AE7D825CAB2F16")
 
 
 
@@ -445,59 +461,60 @@ public class Allocation extends BaseObj {
     // creation
 
     static BitmapFactory.Options mBitmapOptions = new BitmapFactory.Options();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.281 -0500", hash_original_field = "CD9EE990878373ED9EA7539218CF9C59", hash_generated_field = "CD9EE990878373ED9EA7539218CF9C59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:08.992 -0500", hash_original_field = "CD9EE990878373ED9EA7539218CF9C59", hash_generated_field = "CD9EE990878373ED9EA7539218CF9C59")
 
     Type mType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.281 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "46C0A7FFF0FFB93D952536F8E8BA5C29")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:08.994 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "46C0A7FFF0FFB93D952536F8E8BA5C29")
 
     Bitmap mBitmap;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.282 -0500", hash_original_field = "455102E0D248DC24482D3093AA618A87", hash_generated_field = "455102E0D248DC24482D3093AA618A87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:08.996 -0500", hash_original_field = "455102E0D248DC24482D3093AA618A87", hash_generated_field = "455102E0D248DC24482D3093AA618A87")
 
     int mUsage;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.283 -0500", hash_original_field = "1EA0A10472B7C7B59A503123DD3AD568", hash_generated_field = "1EA0A10472B7C7B59A503123DD3AD568")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:08.998 -0500", hash_original_field = "1EA0A10472B7C7B59A503123DD3AD568", hash_generated_field = "1EA0A10472B7C7B59A503123DD3AD568")
 
     Allocation mAdaptedAllocation;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.284 -0500", hash_original_field = "1FF9B76BD894BB7012F7F3B358570205", hash_generated_field = "1FF9B76BD894BB7012F7F3B358570205")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.000 -0500", hash_original_field = "1FF9B76BD894BB7012F7F3B358570205", hash_generated_field = "1FF9B76BD894BB7012F7F3B358570205")
 
 
     boolean mConstrainedLOD;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.284 -0500", hash_original_field = "348B2424577ECDC38E311FD999D29B92", hash_generated_field = "348B2424577ECDC38E311FD999D29B92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.002 -0500", hash_original_field = "348B2424577ECDC38E311FD999D29B92", hash_generated_field = "348B2424577ECDC38E311FD999D29B92")
 
     boolean mConstrainedFace;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.285 -0500", hash_original_field = "1CFCA3B29736345A883DCD8FFC987773", hash_generated_field = "1CFCA3B29736345A883DCD8FFC987773")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.004 -0500", hash_original_field = "1CFCA3B29736345A883DCD8FFC987773", hash_generated_field = "1CFCA3B29736345A883DCD8FFC987773")
 
     boolean mConstrainedY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.286 -0500", hash_original_field = "1678C7D3401C13859A995AFD4D4275F8", hash_generated_field = "1678C7D3401C13859A995AFD4D4275F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.007 -0500", hash_original_field = "1678C7D3401C13859A995AFD4D4275F8", hash_generated_field = "1678C7D3401C13859A995AFD4D4275F8")
 
     boolean mConstrainedZ;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.286 -0500", hash_original_field = "30125E7FDD5750F30165219EF82021D8", hash_generated_field = "30125E7FDD5750F30165219EF82021D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.009 -0500", hash_original_field = "30125E7FDD5750F30165219EF82021D8", hash_generated_field = "30125E7FDD5750F30165219EF82021D8")
 
     int mSelectedY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.287 -0500", hash_original_field = "BAE70EA9F4208C3B720719728E7BDDA3", hash_generated_field = "BAE70EA9F4208C3B720719728E7BDDA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.011 -0500", hash_original_field = "BAE70EA9F4208C3B720719728E7BDDA3", hash_generated_field = "BAE70EA9F4208C3B720719728E7BDDA3")
 
     int mSelectedZ;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.288 -0500", hash_original_field = "DC59A891AEDB641EB500D06CE65ABB3D", hash_generated_field = "DC59A891AEDB641EB500D06CE65ABB3D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.012 -0500", hash_original_field = "DC59A891AEDB641EB500D06CE65ABB3D", hash_generated_field = "DC59A891AEDB641EB500D06CE65ABB3D")
 
     int mSelectedLOD;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.288 -0500", hash_original_field = "865E817C479D396BB5B31B01D35B7C2F", hash_generated_field = "865E817C479D396BB5B31B01D35B7C2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.015 -0500", hash_original_field = "865E817C479D396BB5B31B01D35B7C2F", hash_generated_field = "865E817C479D396BB5B31B01D35B7C2F")
 
     Type.CubemapFace mSelectedFace = Type.CubemapFace.POSITIVE_X;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.289 -0500", hash_original_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40", hash_generated_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.016 -0500", hash_original_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40", hash_generated_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40")
 
 
     int mCurrentDimX;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.290 -0500", hash_original_field = "A99E76F576811A9EDE6769AE3935BB39", hash_generated_field = "A99E76F576811A9EDE6769AE3935BB39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.019 -0500", hash_original_field = "A99E76F576811A9EDE6769AE3935BB39", hash_generated_field = "A99E76F576811A9EDE6769AE3935BB39")
 
     int mCurrentDimY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.291 -0500", hash_original_field = "A7728265B3DADFFCB9152F4DE3CA6055", hash_generated_field = "A7728265B3DADFFCB9152F4DE3CA6055")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.020 -0500", hash_original_field = "A7728265B3DADFFCB9152F4DE3CA6055", hash_generated_field = "A7728265B3DADFFCB9152F4DE3CA6055")
 
     int mCurrentDimZ;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.292 -0500", hash_original_field = "6186AFFF0523CEF3E143CFF8B9F270A6", hash_generated_field = "6186AFFF0523CEF3E143CFF8B9F270A6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.022 -0500", hash_original_field = "6186AFFF0523CEF3E143CFF8B9F270A6", hash_generated_field = "6186AFFF0523CEF3E143CFF8B9F270A6")
 
     int mCurrentCount;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.301 -0500", hash_original_method = "665FE224B2EB4C9CAB6FB0250F8FC614", hash_generated_method = "665FE224B2EB4C9CAB6FB0250F8FC614")
-    Allocation(int id, RenderScript rs, Type t, int usage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.048 -0500", hash_original_method = "665FE224B2EB4C9CAB6FB0250F8FC614", hash_generated_method = "665FE224B2EB4C9CAB6FB0250F8FC614")
+    
+Allocation(int id, RenderScript rs, Type t, int usage) {
         super(id, rs);
         if ((usage & ~(USAGE_SCRIPT |
                        USAGE_GRAPHICS_TEXTURE |
@@ -514,16 +531,18 @@ public class Allocation extends BaseObj {
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.299 -0500", hash_original_method = "311D2B5BD14C46D52A18F5FB7D46A7CD", hash_generated_method = "EF4A9BBCFACDD949B961C655FAE4A879")
-    private int getIDSafe() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.043 -0500", hash_original_method = "311D2B5BD14C46D52A18F5FB7D46A7CD", hash_generated_method = "EF4A9BBCFACDD949B961C655FAE4A879")
+    
+private int getIDSafe() {
         if (mAdaptedAllocation != null) {
             return mAdaptedAllocation.getID();
         }
         return getID();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.300 -0500", hash_original_method = "88EDB22B03764ACCBD1FBAF2EA2911C8", hash_generated_method = "E9FDE68297733F42F200B2A392559113")
-    private void updateCacheInfo(Type t) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.046 -0500", hash_original_method = "88EDB22B03764ACCBD1FBAF2EA2911C8", hash_generated_method = "E9FDE68297733F42F200B2A392559113")
+    
+private void updateCacheInfo(Type t) {
         mCurrentDimX = t.getX();
         mCurrentDimY = t.getY();
         mCurrentDimZ = t.getZ();
@@ -536,8 +555,9 @@ public class Allocation extends BaseObj {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.301 -0500", hash_original_method = "65C711257F94F3105DCE4FED6B46495C", hash_generated_method = "EF987AA5F7BC11E7365A6C71DC6A5082")
-    private void validateIsInt32() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.051 -0500", hash_original_method = "65C711257F94F3105DCE4FED6B46495C", hash_generated_method = "EF987AA5F7BC11E7365A6C71DC6A5082")
+    
+private void validateIsInt32() {
         if ((mType.mElement.mType == Element.DataType.SIGNED_32) ||
             (mType.mElement.mType == Element.DataType.UNSIGNED_32)) {
             return;
@@ -546,8 +566,9 @@ public class Allocation extends BaseObj {
             "32 bit integer source does not match allocation type " + mType.mElement.mType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.302 -0500", hash_original_method = "6E4F71EB18D2F00682465DF6305D48C6", hash_generated_method = "27E3517DDE1711114B9ABF5692B0BCDE")
-    private void validateIsInt16() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.053 -0500", hash_original_method = "6E4F71EB18D2F00682465DF6305D48C6", hash_generated_method = "27E3517DDE1711114B9ABF5692B0BCDE")
+    
+private void validateIsInt16() {
         if ((mType.mElement.mType == Element.DataType.SIGNED_16) ||
             (mType.mElement.mType == Element.DataType.UNSIGNED_16)) {
             return;
@@ -556,8 +577,9 @@ public class Allocation extends BaseObj {
             "16 bit integer source does not match allocation type " + mType.mElement.mType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.304 -0500", hash_original_method = "ED6CF93005996273EC0803DD9A6B2BBC", hash_generated_method = "76045603592813D78E71B76EA4888FCB")
-    private void validateIsInt8() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.055 -0500", hash_original_method = "ED6CF93005996273EC0803DD9A6B2BBC", hash_generated_method = "76045603592813D78E71B76EA4888FCB")
+    
+private void validateIsInt8() {
         if ((mType.mElement.mType == Element.DataType.SIGNED_8) ||
             (mType.mElement.mType == Element.DataType.UNSIGNED_8)) {
             return;
@@ -566,8 +588,9 @@ public class Allocation extends BaseObj {
             "8 bit integer source does not match allocation type " + mType.mElement.mType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.305 -0500", hash_original_method = "22DC03BEB0D64704815FAFAD8DD448C1", hash_generated_method = "BDD73D53C1D243DC45C624E4D5382AA3")
-    private void validateIsFloat32() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.057 -0500", hash_original_method = "22DC03BEB0D64704815FAFAD8DD448C1", hash_generated_method = "BDD73D53C1D243DC45C624E4D5382AA3")
+    
+private void validateIsFloat32() {
         if (mType.mElement.mType == Element.DataType.FLOAT_32) {
             return;
         }
@@ -575,8 +598,9 @@ public class Allocation extends BaseObj {
             "32 bit float source does not match allocation type " + mType.mElement.mType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.306 -0500", hash_original_method = "0F7CA754806BFED6B25F7C22657938DC", hash_generated_method = "426CA8D30E594A28B30F5665F652D730")
-    private void validateIsObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.061 -0500", hash_original_method = "0F7CA754806BFED6B25F7C22657938DC", hash_generated_method = "426CA8D30E594A28B30F5665F652D730")
+    
+private void validateIsObject() {
         if ((mType.mElement.mType == Element.DataType.RS_ELEMENT) ||
             (mType.mElement.mType == Element.DataType.RS_TYPE) ||
             (mType.mElement.mType == Element.DataType.RS_ALLOCATION) ||
@@ -593,9 +617,10 @@ public class Allocation extends BaseObj {
             "Object source does not match allocation type " + mType.mElement.mType);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.307 -0500", hash_original_method = "CEBA9EC127886AA7BBE4344B60C3C2EC", hash_generated_method = "536AA8035924B0753F81747A946CAE94")
-    @Override
-void updateFromNative() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.063 -0500", hash_original_method = "CEBA9EC127886AA7BBE4344B60C3C2EC", hash_generated_method = "536AA8035924B0753F81747A946CAE94")
+    
+@Override
+    void updateFromNative() {
         super.updateFromNative();
         int typeID = mRS.nAllocationGetType(getID());
         if(typeID != 0) {
@@ -605,13 +630,15 @@ void updateFromNative() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.308 -0500", hash_original_method = "9C32C8CB3047BF2C1A7EE0D985A901B5", hash_generated_method = "8CB2603D4174969C589CB781EB5489B4")
-    public Type getType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.065 -0500", hash_original_method = "9C32C8CB3047BF2C1A7EE0D985A901B5", hash_generated_method = "8CB2603D4174969C589CB781EB5489B4")
+    
+public Type getType() {
         return mType;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.309 -0500", hash_original_method = "401E03E52E40FA71066750AE07682BA7", hash_generated_method = "304D540C9959231367EAC4DA76E12C27")
-    public void syncAll(int srcLocation) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.067 -0500", hash_original_method = "401E03E52E40FA71066750AE07682BA7", hash_generated_method = "304D540C9959231367EAC4DA76E12C27")
+    
+public void syncAll(int srcLocation) {
         switch (srcLocation) {
         case USAGE_SCRIPT:
         case USAGE_GRAPHICS_CONSTANTS:
@@ -625,8 +652,9 @@ void updateFromNative() {
         mRS.nAllocationSyncAll(getIDSafe(), srcLocation);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.310 -0500", hash_original_method = "1C2809FD292D672B4F67F7D52DEE8BA3", hash_generated_method = "2A62BA8B2DA699E7CED46824100B11C9")
-    public void copyFrom(BaseObj[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.070 -0500", hash_original_method = "1C2809FD292D672B4F67F7D52DEE8BA3", hash_generated_method = "2A62BA8B2DA699E7CED46824100B11C9")
+    
+public void copyFrom(BaseObj[] d) {
         mRS.validate();
         validateIsObject();
         if (d.length != mCurrentCount) {
@@ -640,8 +668,9 @@ void updateFromNative() {
         copy1DRangeFromUnchecked(0, mCurrentCount, i);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.311 -0500", hash_original_method = "68F022BD518BF34A861F2C9F1854EE2C", hash_generated_method = "5F87A944D913FAD9511D138989E00B93")
-    private void validateBitmapFormat(Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.073 -0500", hash_original_method = "68F022BD518BF34A861F2C9F1854EE2C", hash_generated_method = "5F87A944D913FAD9511D138989E00B93")
+    
+private void validateBitmapFormat(Bitmap b) {
         Bitmap.Config bc = b.getConfig();
         switch (bc) {
         case ALPHA_8:
@@ -687,8 +716,9 @@ void updateFromNative() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.312 -0500", hash_original_method = "EA8D3B5F0BE6DABF77176C0C9533D70D", hash_generated_method = "78AD0571A02F1D906D5E1D5B75E296C7")
-    private void validateBitmapSize(Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.075 -0500", hash_original_method = "EA8D3B5F0BE6DABF77176C0C9533D70D", hash_generated_method = "78AD0571A02F1D906D5E1D5B75E296C7")
+    
+private void validateBitmapSize(Bitmap b) {
         if((mCurrentDimX != b.getWidth()) || (mCurrentDimY != b.getHeight())) {
             throw new RSIllegalArgumentException("Cannot update allocation from bitmap, sizes mismatch");
         }
@@ -701,8 +731,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.313 -0500", hash_original_method = "407334247B0770162522DC9F49AB59F1", hash_generated_method = "60F9307B3237528FFF40374DAE975639")
-    public void copyFromUnchecked(int[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.077 -0500", hash_original_method = "407334247B0770162522DC9F49AB59F1", hash_generated_method = "60F9307B3237528FFF40374DAE975639")
+    
+public void copyFromUnchecked(int[] d) {
         mRS.validate();
         copy1DRangeFromUnchecked(0, mCurrentCount, d);
     }
@@ -713,8 +744,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.313 -0500", hash_original_method = "54011F5D28450E17A088B23862CB14CB", hash_generated_method = "8DBF2298F55DC953A20252E1B37D6A63")
-    public void copyFromUnchecked(short[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.080 -0500", hash_original_method = "54011F5D28450E17A088B23862CB14CB", hash_generated_method = "8DBF2298F55DC953A20252E1B37D6A63")
+    
+public void copyFromUnchecked(short[] d) {
         mRS.validate();
         copy1DRangeFromUnchecked(0, mCurrentCount, d);
     }
@@ -725,8 +757,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.314 -0500", hash_original_method = "C30FE6183FA56AAB4D4D014829EBBFDC", hash_generated_method = "5C813B98FE3952799FD45FBDC1D36766")
-    public void copyFromUnchecked(byte[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.082 -0500", hash_original_method = "C30FE6183FA56AAB4D4D014829EBBFDC", hash_generated_method = "5C813B98FE3952799FD45FBDC1D36766")
+    
+public void copyFromUnchecked(byte[] d) {
         mRS.validate();
         copy1DRangeFromUnchecked(0, mCurrentCount, d);
     }
@@ -737,8 +770,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.315 -0500", hash_original_method = "8F953C76C1FB41C208B15E25F4581FF5", hash_generated_method = "857397CCD84CFD441D495018C2DC0976")
-    public void copyFromUnchecked(float[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.084 -0500", hash_original_method = "8F953C76C1FB41C208B15E25F4581FF5", hash_generated_method = "857397CCD84CFD441D495018C2DC0976")
+    
+public void copyFromUnchecked(float[] d) {
         mRS.validate();
         copy1DRangeFromUnchecked(0, mCurrentCount, d);
     }
@@ -750,8 +784,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.316 -0500", hash_original_method = "82E8721F348356C043C685C43214068C", hash_generated_method = "B6C626E1E216DBD7577593D98F91C1ED")
-    public void copyFrom(int[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.086 -0500", hash_original_method = "82E8721F348356C043C685C43214068C", hash_generated_method = "B6C626E1E216DBD7577593D98F91C1ED")
+    
+public void copyFrom(int[] d) {
         mRS.validate();
         copy1DRangeFrom(0, mCurrentCount, d);
     }
@@ -763,8 +798,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.317 -0500", hash_original_method = "E045B23C5646055DFC50B85B83A4F6FC", hash_generated_method = "1DAAD1137C2DD5F17C9CEC47AEA130B8")
-    public void copyFrom(short[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.088 -0500", hash_original_method = "E045B23C5646055DFC50B85B83A4F6FC", hash_generated_method = "1DAAD1137C2DD5F17C9CEC47AEA130B8")
+    
+public void copyFrom(short[] d) {
         mRS.validate();
         copy1DRangeFrom(0, mCurrentCount, d);
     }
@@ -776,8 +812,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.317 -0500", hash_original_method = "F54BC10B0D60AEAE0067D3AFD674BB35", hash_generated_method = "2CD5F2779DB8D2401420749A849154DD")
-    public void copyFrom(byte[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.090 -0500", hash_original_method = "F54BC10B0D60AEAE0067D3AFD674BB35", hash_generated_method = "2CD5F2779DB8D2401420749A849154DD")
+    
+public void copyFrom(byte[] d) {
         mRS.validate();
         copy1DRangeFrom(0, mCurrentCount, d);
     }
@@ -789,8 +826,9 @@ void updateFromNative() {
      *
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.318 -0500", hash_original_method = "0C41419913B85ADFA42D345CEAE65A53", hash_generated_method = "866B495E351F706A996054EF72F83132")
-    public void copyFrom(float[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.092 -0500", hash_original_method = "0C41419913B85ADFA42D345CEAE65A53", hash_generated_method = "866B495E351F706A996054EF72F83132")
+    
+public void copyFrom(float[] d) {
         mRS.validate();
         copy1DRangeFrom(0, mCurrentCount, d);
     }
@@ -801,8 +839,9 @@ void updateFromNative() {
      *
      * @param b the source bitmap
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.319 -0500", hash_original_method = "512A5161660D68AB5470903C03DA343E", hash_generated_method = "9A8C94856F8B55E80E440B65AAF5FD74")
-    public void copyFrom(Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.094 -0500", hash_original_method = "512A5161660D68AB5470903C03DA343E", hash_generated_method = "9A8C94856F8B55E80E440B65AAF5FD74")
+    
+public void copyFrom(Bitmap b) {
         mRS.validate();
         validateBitmapSize(b);
         validateBitmapFormat(b);
@@ -816,8 +855,9 @@ void updateFromNative() {
      * @param xoff
      * @param fp
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.320 -0500", hash_original_method = "E70E78EB3719016B4E6FB42A9EB5810C", hash_generated_method = "97A710717708BEEC3171324422D5E37A")
-    public void setFromFieldPacker(int xoff, FieldPacker fp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.097 -0500", hash_original_method = "E70E78EB3719016B4E6FB42A9EB5810C", hash_generated_method = "97A710717708BEEC3171324422D5E37A")
+    
+public void setFromFieldPacker(int xoff, FieldPacker fp) {
         int eSize = mType.mElement.getSizeBytes();
         final byte[] data = fp.getData();
 
@@ -837,8 +877,9 @@ void updateFromNative() {
      * @param component_number
      * @param fp
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.321 -0500", hash_original_method = "507EA1A1B860EC041E68F02818C67D1F", hash_generated_method = "4D8E80D26F52714FC62A8065959577CD")
-    public void setFromFieldPacker(int xoff, int component_number, FieldPacker fp) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.099 -0500", hash_original_method = "507EA1A1B860EC041E68F02818C67D1F", hash_generated_method = "4D8E80D26F52714FC62A8065959577CD")
+    
+public void setFromFieldPacker(int xoff, int component_number, FieldPacker fp) {
         if (component_number >= mType.mElement.mElements.length) {
             throw new RSIllegalArgumentException("Component_number " + component_number + " out of range.");
         }
@@ -858,8 +899,9 @@ void updateFromNative() {
                                      component_number, data, data.length);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.322 -0500", hash_original_method = "C280AAD194909DEEA802F55F051EEFEF", hash_generated_method = "DE48C88000708CA7955A0FE6DA0C5FAD")
-    private void data1DChecks(int off, int count, int len, int dataSize) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.103 -0500", hash_original_method = "C280AAD194909DEEA802F55F051EEFEF", hash_generated_method = "DE48C88000708CA7955A0FE6DA0C5FAD")
+    
+private void data1DChecks(int off, int count, int len, int dataSize) {
         mRS.validate();
         if(off < 0) {
             throw new RSIllegalArgumentException("Offset must be >= 0.");
@@ -886,8 +928,9 @@ void updateFromNative() {
      * If the allocation is also using other memory spaces a
      * followup sync will be required.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.322 -0500", hash_original_method = "6F3414BDFDCAE5A0099FF42DC9162024", hash_generated_method = "DFDC102C305D9CC41E0023B499A34D2A")
-    public void generateMipmaps() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.105 -0500", hash_original_method = "6F3414BDFDCAE5A0099FF42DC9162024", hash_generated_method = "DFDC102C305D9CC41E0023B499A34D2A")
+    
+public void generateMipmaps() {
         mRS.nAllocationGenerateMipmaps(getID());
     }
 
@@ -900,8 +943,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.323 -0500", hash_original_method = "9BD1F31EAB786A33FC8D6DD03AC7DD13", hash_generated_method = "727476E5E8869ABEA4455A58878360E2")
-    public void copy1DRangeFromUnchecked(int off, int count, int[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.107 -0500", hash_original_method = "9BD1F31EAB786A33FC8D6DD03AC7DD13", hash_generated_method = "727476E5E8869ABEA4455A58878360E2")
+    
+public void copy1DRangeFromUnchecked(int off, int count, int[] d) {
         int dataSize = mType.mElement.getSizeBytes() * count;
         data1DChecks(off, count, d.length * 4, dataSize);
         mRS.nAllocationData1D(getIDSafe(), off, mSelectedLOD, count, d, dataSize);
@@ -915,8 +959,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.324 -0500", hash_original_method = "76B5FD8D10654A26BCBBF314A697FBF8", hash_generated_method = "D767C5066EA6C12716CC36785DA5ED59")
-    public void copy1DRangeFromUnchecked(int off, int count, short[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.109 -0500", hash_original_method = "76B5FD8D10654A26BCBBF314A697FBF8", hash_generated_method = "D767C5066EA6C12716CC36785DA5ED59")
+    
+public void copy1DRangeFromUnchecked(int off, int count, short[] d) {
         int dataSize = mType.mElement.getSizeBytes() * count;
         data1DChecks(off, count, d.length * 2, dataSize);
         mRS.nAllocationData1D(getIDSafe(), off, mSelectedLOD, count, d, dataSize);
@@ -930,8 +975,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.325 -0500", hash_original_method = "C68391FBBAF4E4C2759F231D9BB3CE56", hash_generated_method = "F1671C54E611B4F570632F9FDA2E2EDC")
-    public void copy1DRangeFromUnchecked(int off, int count, byte[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.112 -0500", hash_original_method = "C68391FBBAF4E4C2759F231D9BB3CE56", hash_generated_method = "F1671C54E611B4F570632F9FDA2E2EDC")
+    
+public void copy1DRangeFromUnchecked(int off, int count, byte[] d) {
         int dataSize = mType.mElement.getSizeBytes() * count;
         data1DChecks(off, count, d.length, dataSize);
         mRS.nAllocationData1D(getIDSafe(), off, mSelectedLOD, count, d, dataSize);
@@ -945,8 +991,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.326 -0500", hash_original_method = "0F7A0E2393C34E90AEC2D039DA3C1483", hash_generated_method = "AA78817369B857462D1EED8199A1A4E2")
-    public void copy1DRangeFromUnchecked(int off, int count, float[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.114 -0500", hash_original_method = "0F7A0E2393C34E90AEC2D039DA3C1483", hash_generated_method = "AA78817369B857462D1EED8199A1A4E2")
+    
+public void copy1DRangeFromUnchecked(int off, int count, float[] d) {
         int dataSize = mType.mElement.getSizeBytes() * count;
         data1DChecks(off, count, d.length * 4, dataSize);
         mRS.nAllocationData1D(getIDSafe(), off, mSelectedLOD, count, d, dataSize);
@@ -961,8 +1008,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.327 -0500", hash_original_method = "D55849C3A95A52797F56CE21D0AC9A77", hash_generated_method = "9763415CD958E82BBBFBC321C58C931A")
-    public void copy1DRangeFrom(int off, int count, int[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.116 -0500", hash_original_method = "D55849C3A95A52797F56CE21D0AC9A77", hash_generated_method = "9763415CD958E82BBBFBC321C58C931A")
+    
+public void copy1DRangeFrom(int off, int count, int[] d) {
         validateIsInt32();
         copy1DRangeFromUnchecked(off, count, d);
     }
@@ -976,8 +1024,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.328 -0500", hash_original_method = "1EAA6FDE909AE941C837793DE6358EFA", hash_generated_method = "0B48AA10B2C40A1009726BB6AFB5ADA6")
-    public void copy1DRangeFrom(int off, int count, short[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.118 -0500", hash_original_method = "1EAA6FDE909AE941C837793DE6358EFA", hash_generated_method = "0B48AA10B2C40A1009726BB6AFB5ADA6")
+    
+public void copy1DRangeFrom(int off, int count, short[] d) {
         validateIsInt16();
         copy1DRangeFromUnchecked(off, count, d);
     }
@@ -991,8 +1040,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.328 -0500", hash_original_method = "3469D95A9F285D7729B7F7DF2EEF92C2", hash_generated_method = "C5197774DA14880E801768C159BB979E")
-    public void copy1DRangeFrom(int off, int count, byte[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.120 -0500", hash_original_method = "3469D95A9F285D7729B7F7DF2EEF92C2", hash_generated_method = "C5197774DA14880E801768C159BB979E")
+    
+public void copy1DRangeFrom(int off, int count, byte[] d) {
         validateIsInt8();
         copy1DRangeFromUnchecked(off, count, d);
     }
@@ -1006,8 +1056,9 @@ void updateFromNative() {
      * @param count The number of elements to be copied.
      * @param d the source data array.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.329 -0500", hash_original_method = "E6965F1E2FB321FAD1F4EA1126484F16", hash_generated_method = "60C132B45E842D9C2697360FDDF75B00")
-    public void copy1DRangeFrom(int off, int count, float[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.123 -0500", hash_original_method = "E6965F1E2FB321FAD1F4EA1126484F16", hash_generated_method = "60C132B45E842D9C2697360FDDF75B00")
+    
+public void copy1DRangeFrom(int off, int count, float[] d) {
         validateIsFloat32();
         copy1DRangeFromUnchecked(off, count, d);
     }
@@ -1021,16 +1072,18 @@ void updateFromNative() {
      * @param dataOff off The offset of the first element in data to
      *          be copied.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.330 -0500", hash_original_method = "A7A26BCBBE62D435D0EFB88761B8B839", hash_generated_method = "904ABB9461D23365CF641460822A344C")
-    public void copy1DRangeFrom(int off, int count, Allocation data, int dataOff) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.125 -0500", hash_original_method = "A7A26BCBBE62D435D0EFB88761B8B839", hash_generated_method = "904ABB9461D23365CF641460822A344C")
+    
+public void copy1DRangeFrom(int off, int count, Allocation data, int dataOff) {
         mRS.nAllocationData2D(getIDSafe(), off, 0,
                               mSelectedLOD, mSelectedFace.mID,
                               count, 1, data.getID(), dataOff, 0,
                               data.mSelectedLOD, data.mSelectedFace.mID);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.331 -0500", hash_original_method = "549AEF19696CDA0CE15593CF21BCB97B", hash_generated_method = "8C53E625A5EC8863D3711911FCED83CA")
-    private void validate2DRange(int xoff, int yoff, int w, int h) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.127 -0500", hash_original_method = "549AEF19696CDA0CE15593CF21BCB97B", hash_generated_method = "8C53E625A5EC8863D3711911FCED83CA")
+    
+private void validate2DRange(int xoff, int yoff, int w, int h) {
         if (mAdaptedAllocation != null) {
 
         } else {
@@ -1057,32 +1110,36 @@ void updateFromNative() {
      * @param h Height of the incoming region to update
      * @param data to be placed into the allocation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.332 -0500", hash_original_method = "B5CF3549C87A0C7A6D468F5569934765", hash_generated_method = "A4A84804294AB04C381AEB9196EBBEA2")
-    public void copy2DRangeFrom(int xoff, int yoff, int w, int h, byte[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.129 -0500", hash_original_method = "B5CF3549C87A0C7A6D468F5569934765", hash_generated_method = "A4A84804294AB04C381AEB9196EBBEA2")
+    
+public void copy2DRangeFrom(int xoff, int yoff, int w, int h, byte[] data) {
         mRS.validate();
         validate2DRange(xoff, yoff, w, h);
         mRS.nAllocationData2D(getIDSafe(), xoff, yoff, mSelectedLOD, mSelectedFace.mID,
                               w, h, data, data.length);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.332 -0500", hash_original_method = "1E0366E42882BACDF313C59C4D74B054", hash_generated_method = "C330928E265BC5DD6DDF189B0D9CFE1B")
-    public void copy2DRangeFrom(int xoff, int yoff, int w, int h, short[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.132 -0500", hash_original_method = "1E0366E42882BACDF313C59C4D74B054", hash_generated_method = "C330928E265BC5DD6DDF189B0D9CFE1B")
+    
+public void copy2DRangeFrom(int xoff, int yoff, int w, int h, short[] data) {
         mRS.validate();
         validate2DRange(xoff, yoff, w, h);
         mRS.nAllocationData2D(getIDSafe(), xoff, yoff, mSelectedLOD, mSelectedFace.mID,
                               w, h, data, data.length * 2);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.333 -0500", hash_original_method = "121F440BD580F4A6EA04D352E792872F", hash_generated_method = "774E4306907DED5048B41E4AA36371BF")
-    public void copy2DRangeFrom(int xoff, int yoff, int w, int h, int[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.134 -0500", hash_original_method = "121F440BD580F4A6EA04D352E792872F", hash_generated_method = "774E4306907DED5048B41E4AA36371BF")
+    
+public void copy2DRangeFrom(int xoff, int yoff, int w, int h, int[] data) {
         mRS.validate();
         validate2DRange(xoff, yoff, w, h);
         mRS.nAllocationData2D(getIDSafe(), xoff, yoff, mSelectedLOD, mSelectedFace.mID,
                               w, h, data, data.length * 4);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.334 -0500", hash_original_method = "6CE72D2F101545C9487F397B5DC7D5E4", hash_generated_method = "77838290215703F07A52874E657EBC69")
-    public void copy2DRangeFrom(int xoff, int yoff, int w, int h, float[] data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.136 -0500", hash_original_method = "6CE72D2F101545C9487F397B5DC7D5E4", hash_generated_method = "77838290215703F07A52874E657EBC69")
+    
+public void copy2DRangeFrom(int xoff, int yoff, int w, int h, float[] data) {
         mRS.validate();
         validate2DRange(xoff, yoff, w, h);
         mRS.nAllocationData2D(getIDSafe(), xoff, yoff, mSelectedLOD, mSelectedFace.mID,
@@ -1101,8 +1158,9 @@ void updateFromNative() {
      * @param dataXoff X offset in data of the region to update.
      * @param dataYoff Y offset in data of the region to update.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.336 -0500", hash_original_method = "2D47F9E4EEBA0DDD1F9AB9C826991FF7", hash_generated_method = "B4560C1063D53DBECDE2C6950010C298")
-    public void copy2DRangeFrom(int xoff, int yoff, int w, int h,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.138 -0500", hash_original_method = "2D47F9E4EEBA0DDD1F9AB9C826991FF7", hash_generated_method = "B4560C1063D53DBECDE2C6950010C298")
+    
+public void copy2DRangeFrom(int xoff, int yoff, int w, int h,
                                 Allocation data, int dataXoff, int dataYoff) {
         mRS.validate();
         validate2DRange(xoff, yoff, w, h);
@@ -1121,8 +1179,9 @@ void updateFromNative() {
      * @param yoff Y offset of the region to update
      * @param data the bitmap to be copied
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.336 -0500", hash_original_method = "E9C60CA998422120B69758A8DCF01F28", hash_generated_method = "705D1A74421F2CE0B06ECF5B002BB479")
-    public void copy2DRangeFrom(int xoff, int yoff, Bitmap data) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.141 -0500", hash_original_method = "E9C60CA998422120B69758A8DCF01F28", hash_generated_method = "705D1A74421F2CE0B06ECF5B002BB479")
+    
+public void copy2DRangeFrom(int xoff, int yoff, Bitmap data) {
         mRS.validate();
         validateBitmapFormat(data);
         validate2DRange(xoff, yoff, data.getWidth(), data.getHeight());
@@ -1134,12 +1193,13 @@ void updateFromNative() {
         MIPMAP_NONE(0),
         MIPMAP_FULL(1),
         MIPMAP_ON_SYNC_TO_TEXTURE(2);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.297 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.038 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
 
         int mID;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.298 -0500", hash_original_method = "799E9DBA54D46449D97C57D053873549", hash_generated_method = "799E9DBA54D46449D97C57D053873549")
-            MipmapControl(int id) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.040 -0500", hash_original_method = "799E9DBA54D46449D97C57D053873549", hash_generated_method = "799E9DBA54D46449D97C57D053873549")
+            
+MipmapControl(int id) {
             mID = id;
         }
     }
@@ -1151,8 +1211,9 @@ void updateFromNative() {
      *
      * @param b The bitmap to be set from the Allocation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.337 -0500", hash_original_method = "5E3CAA2F54821F9B5D4C289C7A8559A4", hash_generated_method = "C078171AD265080010C6C1D09F1486EA")
-    public void copyTo(Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.144 -0500", hash_original_method = "5E3CAA2F54821F9B5D4C289C7A8559A4", hash_generated_method = "C078171AD265080010C6C1D09F1486EA")
+    
+public void copyTo(Bitmap b) {
         mRS.validate();
         validateBitmapFormat(b);
         validateBitmapSize(b);
@@ -1166,8 +1227,9 @@ void updateFromNative() {
      *
      * @param d The array to be set from the Allocation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.338 -0500", hash_original_method = "25DC8075DF7374531478BAA131CB7343", hash_generated_method = "CEA2428286B155E93CC6F54FE4546B7F")
-    public void copyTo(byte[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.146 -0500", hash_original_method = "25DC8075DF7374531478BAA131CB7343", hash_generated_method = "CEA2428286B155E93CC6F54FE4546B7F")
+    
+public void copyTo(byte[] d) {
         validateIsInt8();
         mRS.validate();
         mRS.nAllocationRead(getID(), d);
@@ -1180,8 +1242,9 @@ void updateFromNative() {
      *
      * @param d The array to be set from the Allocation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.339 -0500", hash_original_method = "9D52040F814FD0C684C6F66DC8E8CB93", hash_generated_method = "74664AE927DA46BD6FF402D1EE4BC805")
-    public void copyTo(short[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.148 -0500", hash_original_method = "9D52040F814FD0C684C6F66DC8E8CB93", hash_generated_method = "74664AE927DA46BD6FF402D1EE4BC805")
+    
+public void copyTo(short[] d) {
         validateIsInt16();
         mRS.validate();
         mRS.nAllocationRead(getID(), d);
@@ -1194,8 +1257,9 @@ void updateFromNative() {
      *
      * @param d The array to be set from the Allocation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.339 -0500", hash_original_method = "379200F1BB84BA87FFEA29C22000A4D9", hash_generated_method = "463696934A97BB7B13571CF5275474F5")
-    public void copyTo(int[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.150 -0500", hash_original_method = "379200F1BB84BA87FFEA29C22000A4D9", hash_generated_method = "463696934A97BB7B13571CF5275474F5")
+    
+public void copyTo(int[] d) {
         validateIsInt32();
         mRS.validate();
         mRS.nAllocationRead(getID(), d);
@@ -1208,8 +1272,9 @@ void updateFromNative() {
      *
      * @param d The array to be set from the Allocation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.340 -0500", hash_original_method = "5FBBCE58245F93A1688AB0878EC30A26", hash_generated_method = "51415E5A51F0E7D9AA4DDAE20BA0A283")
-    public void copyTo(float[] d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.153 -0500", hash_original_method = "5FBBCE58245F93A1688AB0878EC30A26", hash_generated_method = "51415E5A51F0E7D9AA4DDAE20BA0A283")
+    
+public void copyTo(float[] d) {
         validateIsFloat32();
         mRS.validate();
         mRS.nAllocationRead(getID(), d);
@@ -1227,8 +1292,9 @@ void updateFromNative() {
      *
      * @param dimX The new size of the allocation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.341 -0500", hash_original_method = "4D8212FF39765998C2ACC0C3F633686C", hash_generated_method = "238750A6C3B5A84CA044F3179B50D1C5")
-    public synchronized void resize(int dimX) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.155 -0500", hash_original_method = "4D8212FF39765998C2ACC0C3F633686C", hash_generated_method = "238750A6C3B5A84CA044F3179B50D1C5")
+    
+public synchronized void resize(int dimX) {
         if ((mType.getY() > 0)|| (mType.getZ() > 0) || mType.hasFaces() || mType.hasMipmaps()) {
             throw new RSInvalidStateException("Resize only support for 1D allocations at this time.");
         }

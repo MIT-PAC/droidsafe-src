@@ -18,8 +18,9 @@ public class BerInputStream {
     /**
      * Returns the length of the encoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.350 -0500", hash_original_method = "0FB1A1C4D911EA5AEA102491DDF03FDC", hash_generated_method = "6646F2D5F31AFA5B8CC7AB9E51AFAFE7")
-    public static int getLength(byte[] encoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.832 -0500", hash_original_method = "0FB1A1C4D911EA5AEA102491DDF03FDC", hash_generated_method = "6646F2D5F31AFA5B8CC7AB9E51AFAFE7")
+    
+public static int getLength(byte[] encoding) {
         int length = encoding[1] & 0xFF;
         int numOctets = 0;
         if ((length & 0x80) != 0) { // long form
@@ -34,65 +35,66 @@ public class BerInputStream {
         //    tag length long_form content
         return 1 + 1 + numOctets + length;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.337 -0500", hash_original_field = "0FA804C035B510D7C5380E04A76E7C66", hash_generated_field = "15AEBAF204B1E1628DA9A9D8B78EB825")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.799 -0500", hash_original_field = "0FA804C035B510D7C5380E04A76E7C66", hash_generated_field = "15AEBAF204B1E1628DA9A9D8B78EB825")
 
     private static final int BUF_INCREASE_SIZE = 1024 * 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.338 -0500", hash_original_field = "33C8385A41AD10C36334085F976010B5", hash_generated_field = "12A8A7878E72ADED3FB919DC5D266C92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.802 -0500", hash_original_field = "33C8385A41AD10C36334085F976010B5", hash_generated_field = "12A8A7878E72ADED3FB919DC5D266C92")
 
     protected static final int INDEFINIT_LENGTH = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.335 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.792 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
 
 
     private  InputStream in;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.335 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.795 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
 
     protected byte[] buffer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.336 -0500", hash_original_field = "B57AAF7BF5F2E3B125D28448999D0D18", hash_generated_field = "47DA870F49698AFE94AB5C1004A17787")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.797 -0500", hash_original_field = "B57AAF7BF5F2E3B125D28448999D0D18", hash_generated_field = "47DA870F49698AFE94AB5C1004A17787")
 
     protected int offset = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.339 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "FE8BF0CD5CB8CBF698330270CCCC9D95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.804 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "FE8BF0CD5CB8CBF698330270CCCC9D95")
 
     public int tag;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.340 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "01D45192EF478C4B8895FC65CF51D2EB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.806 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "01D45192EF478C4B8895FC65CF51D2EB")
 
     protected int length;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.341 -0500", hash_original_field = "D0B8E49E3D027D4128A52EE40E051281", hash_generated_field = "57FED7E8E8FF2184EEF7EFF7F0B770B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.808 -0500", hash_original_field = "D0B8E49E3D027D4128A52EE40E051281", hash_generated_field = "57FED7E8E8FF2184EEF7EFF7F0B770B6")
 
     public Object content;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.342 -0500", hash_original_field = "9EFA788A5F443B270B3D9BE618E7DEB5", hash_generated_field = "1C9B4A7A1F753F59487D78BA9637D2A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.811 -0500", hash_original_field = "9EFA788A5F443B270B3D9BE618E7DEB5", hash_generated_field = "1C9B4A7A1F753F59487D78BA9637D2A9")
 
     protected int tagOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.343 -0500", hash_original_field = "37C4062A644D024415A63A1C2A78204E", hash_generated_field = "EC588CCB12D3A88BA3D161DCA8D8918C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.813 -0500", hash_original_field = "37C4062A644D024415A63A1C2A78204E", hash_generated_field = "EC588CCB12D3A88BA3D161DCA8D8918C")
 
     protected int contentOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.353 -0500", hash_original_field = "D28F4FB31ED5415017DA18AD47F033DA", hash_generated_field = "0BFC4C9F195DE6B4C0280180D67D78C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.842 -0500", hash_original_field = "D28F4FB31ED5415017DA18AD47F033DA", hash_generated_field = "0BFC4C9F195DE6B4C0280180D67D78C2")
 
     public int choiceIndex;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.354 -0500", hash_original_field = "56EBD0F85C51178751B3A06611A0EB2B", hash_generated_field = "13DDA1F04AC379B354F578F22425463A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.844 -0500", hash_original_field = "56EBD0F85C51178751B3A06611A0EB2B", hash_generated_field = "13DDA1F04AC379B354F578F22425463A")
 
     public int[] times;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.361 -0500", hash_original_field = "647293CF90373655D1AC2C7923B61AC3", hash_generated_field = "022E0C44AE6A598FC1C18F39EC6A5FAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.862 -0500", hash_original_field = "647293CF90373655D1AC2C7923B61AC3", hash_generated_field = "022E0C44AE6A598FC1C18F39EC6A5FAB")
 
 
     public int oidElement;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.373 -0500", hash_original_field = "F646C758AA6F4358F9A1160050DDC9A9", hash_generated_field = "7DEBAA72E1DC386A76CC44BDD6E3E330")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.896 -0500", hash_original_field = "F646C758AA6F4358F9A1160050DDC9A9", hash_generated_field = "7DEBAA72E1DC386A76CC44BDD6E3E330")
 
     // FIXME it is used only for one case
     // decoding PCKS#8 Private Key Info notation
     // remove this option because it does decoding more complex
     protected boolean isVerify;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.376 -0500", hash_original_field = "618295DE556A36F1EBEE6FF2FD372580", hash_generated_field = "00FF4B69234D0AC263E1AA84F9B79338")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.901 -0500", hash_original_field = "618295DE556A36F1EBEE6FF2FD372580", hash_generated_field = "00FF4B69234D0AC263E1AA84F9B79338")
 
     protected boolean isIndefinedLength;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.380 -0500", hash_original_field = "73851E582412D1434EEB107AE68FCCD6", hash_generated_field = "052E31DFE5C2BAB4284743C186914165")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.911 -0500", hash_original_field = "73851E582412D1434EEB107AE68FCCD6", hash_generated_field = "052E31DFE5C2BAB4284743C186914165")
 
     private Object[][] pool;
 
     /**
      * Creates stream for decoding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.344 -0500", hash_original_method = "879F2FC8DE697B067D571C3BF31ADD98", hash_generated_method = "B1F77C3D14748D4B11A7AB0A42350225")
-    public BerInputStream(byte[] encoded) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.816 -0500", hash_original_method = "879F2FC8DE697B067D571C3BF31ADD98", hash_generated_method = "B1F77C3D14748D4B11A7AB0A42350225")
+    
+public BerInputStream(byte[] encoded) throws IOException {
         this(encoded, 0, encoded.length);
     }
 
@@ -104,8 +106,9 @@ public class BerInputStream {
      * @param expectedLength expected length of full encoding, this includes
      *     identifier, length an content octets
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.345 -0500", hash_original_method = "FB2C80FA06C3B0FD8EA5024440AD49C3", hash_generated_method = "4C5B9C290142B7ABBA04B3A95FCA1458")
-    public BerInputStream(byte[] encoded, int offset, int expectedLength) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.818 -0500", hash_original_method = "FB2C80FA06C3B0FD8EA5024440AD49C3", hash_generated_method = "4C5B9C290142B7ABBA04B3A95FCA1458")
+    
+public BerInputStream(byte[] encoded, int offset, int expectedLength) throws IOException {
         this.in = null;
         this.buffer = encoded;
         this.offset = offset;
@@ -124,8 +127,9 @@ public class BerInputStream {
      *
      * Allocates initial buffer of default size
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.346 -0500", hash_original_method = "43063225C34584E29FE6185CE8AAB05D", hash_generated_method = "5B27F14D1A097ACF1D8099A8852C2B0F")
-    public BerInputStream(InputStream in) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.821 -0500", hash_original_method = "43063225C34584E29FE6185CE8AAB05D", hash_generated_method = "5B27F14D1A097ACF1D8099A8852C2B0F")
+    
+public BerInputStream(InputStream in) throws IOException {
         this(in, BUF_INCREASE_SIZE);
     }
 
@@ -134,8 +138,9 @@ public class BerInputStream {
      *
      * @param initialSize the internal buffer initial size
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.347 -0500", hash_original_method = "ED7F15B5071BF063BB4017E313468A57", hash_generated_method = "D5D72AC315056B38568B3C9B6CCCE6B0")
-    public BerInputStream(InputStream in, int initialSize) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.824 -0500", hash_original_method = "ED7F15B5071BF063BB4017E313468A57", hash_generated_method = "D5D72AC315056B38568B3C9B6CCCE6B0")
+    
+public BerInputStream(InputStream in, int initialSize) throws IOException {
         this.in = in;
         buffer = new byte[initialSize];
 
@@ -161,8 +166,9 @@ public class BerInputStream {
      * @param encoded a new bytes array to be decoded
      * @throws IOException if an error occurs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.348 -0500", hash_original_method = "4CCBB4621387969DDD8BDCB7ADDE8473", hash_generated_method = "8F69CBE71464DCC55756BC94777E36CD")
-    public final void reset(byte[] encoded) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.826 -0500", hash_original_method = "4CCBB4621387969DDD8BDCB7ADDE8473", hash_generated_method = "8F69CBE71464DCC55756BC94777E36CD")
+    
+public final void reset(byte[] encoded) throws IOException {
         buffer = encoded;
         next();
     }
@@ -174,8 +180,9 @@ public class BerInputStream {
      * @return next decoded tag
      * @throws IOException if error occured
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.349 -0500", hash_original_method = "E21A3F5A1E5C42E0733DFCD7E2B1A37B", hash_generated_method = "F242D0BB1D05951AAF636A0347CCA641")
-    public int next() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.829 -0500", hash_original_method = "E21A3F5A1E5C42E0733DFCD7E2B1A37B", hash_generated_method = "F242D0BB1D05951AAF636A0347CCA641")
+    
+public int next() throws IOException {
         tagOffset = offset;
 
         // read tag
@@ -214,8 +221,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 bitstring type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.351 -0500", hash_original_method = "A15B72AB03BE363B2B31FA8E7C1F64A3", hash_generated_method = "BC24E837C6B5DC7579AF418877B8F41A")
-    public void readBitString() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.834 -0500", hash_original_method = "A15B72AB03BE363B2B31FA8E7C1F64A3", hash_generated_method = "BC24E837C6B5DC7579AF418877B8F41A")
+    
+public void readBitString() throws IOException {
         if (tag == ASN1Constants.TAG_BITSTRING) {
 
             if (length == 0) {
@@ -245,8 +253,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 Enumerated type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.352 -0500", hash_original_method = "70271B544C5D122FB5ABE2DE9A460926", hash_generated_method = "2C7F5A6016FB2375F5ECCDF33662112A")
-    public void readEnumerated() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.837 -0500", hash_original_method = "70271B544C5D122FB5ABE2DE9A460926", hash_generated_method = "2C7F5A6016FB2375F5ECCDF33662112A")
+    
+public void readEnumerated() throws IOException {
         if (tag != ASN1Constants.TAG_ENUM) {
             throw expected("enumerated");
         }
@@ -276,8 +285,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 boolean type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.353 -0500", hash_original_method = "13F2651D91961A81EAE79BEA9D5230AF", hash_generated_method = "F96484BD6430558F4E312AE6332A922F")
-    public void readBoolean() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.840 -0500", hash_original_method = "13F2651D91961A81EAE79BEA9D5230AF", hash_generated_method = "F96484BD6430558F4E312AE6332A922F")
+    
+public void readBoolean() throws IOException {
         if (tag != ASN1Constants.TAG_BOOLEAN) {
             throw expected("boolean");
         }
@@ -295,8 +305,9 @@ public class BerInputStream {
      *
      * @throws IOException if error occured
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.355 -0500", hash_original_method = "1A3161CCB7646B7891B929A5396BF673", hash_generated_method = "A3365AF0BC0474D9A717D764CF6C5240")
-    public void readGeneralizedTime() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.847 -0500", hash_original_method = "1A3161CCB7646B7891B929A5396BF673", hash_generated_method = "A3365AF0BC0474D9A717D764CF6C5240")
+    
+public void readGeneralizedTime() throws IOException {
         if (tag == ASN1Constants.TAG_GENERALIZEDTIME) {
             // FIXME: any other optimizations?
             readContent();
@@ -358,8 +369,9 @@ public class BerInputStream {
      *
      * @throws IOException if an I/O error occurs or the end of the stream is reached
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.357 -0500", hash_original_method = "D1E9408574A13A490CB1D3EF3A359E97", hash_generated_method = "9A6122537C22D78D35FE6D79FCF7903D")
-    public void readUTCTime() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.850 -0500", hash_original_method = "D1E9408574A13A490CB1D3EF3A359E97", hash_generated_method = "9A6122537C22D78D35FE6D79FCF7903D")
+    
+public void readUTCTime() throws IOException {
         if (tag == ASN1Constants.TAG_UTCTIME) {
             switch (length) {
             case ASN1UTCTime.UTC_HM:
@@ -413,8 +425,9 @@ public class BerInputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.358 -0500", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "BF4901166FF4288F10D96DDB30749C00")
-    private int strToInt(int off, int count) throws ASN1Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.852 -0500", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "BF4901166FF4288F10D96DDB30749C00")
+    
+private int strToInt(int off, int count) throws ASN1Exception {
         int result = 0;
         for (int i = off, end = off + count; i < end; i++) {
             int c = buffer[i] - 48;
@@ -429,8 +442,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 Integer type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.359 -0500", hash_original_method = "8E0BB334F5FA3F917B6C3297724E29A6", hash_generated_method = "F12DA633716B414DEB1D1B8126ED0973")
-    public void readInteger() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.856 -0500", hash_original_method = "8E0BB334F5FA3F917B6C3297724E29A6", hash_generated_method = "F12DA633716B414DEB1D1B8126ED0973")
+    
+public void readInteger() throws IOException {
         if (tag != ASN1Constants.TAG_INTEGER) {
             throw expected("integer");
         }
@@ -457,8 +471,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 Octetstring type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.359 -0500", hash_original_method = "FF10597CCF521EBE62B89D95947AA842", hash_generated_method = "C08A570AB37737F096BEEA638CE020CD")
-    public void readOctetString() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.858 -0500", hash_original_method = "FF10597CCF521EBE62B89D95947AA842", hash_generated_method = "C08A570AB37737F096BEEA638CE020CD")
+    
+public void readOctetString() throws IOException {
         if (tag == ASN1Constants.TAG_OCTETSTRING) {
             readContent();
         } else if (tag == ASN1Constants.TAG_C_OCTETSTRING) {
@@ -468,16 +483,18 @@ public class BerInputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.361 -0500", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "98D15EB49171CF1D1DF9A8863A93D604")
-    private ASN1Exception expected(String what) throws ASN1Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.860 -0500", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "98D15EB49171CF1D1DF9A8863A93D604")
+    
+private ASN1Exception expected(String what) throws ASN1Exception {
         throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
     }
 
     /**
      * Decodes ASN.1 ObjectIdentifier type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.362 -0500", hash_original_method = "1DFB0A727BF9534907B350DDA9E1A15B", hash_generated_method = "92AFDADAC888175B664EA1D35DE74759")
-    public void readOID() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.865 -0500", hash_original_method = "1DFB0A727BF9534907B350DDA9E1A15B", hash_generated_method = "92AFDADAC888175B664EA1D35DE74759")
+    
+public void readOID() throws IOException {
         if (tag != ASN1Constants.TAG_OID) {
             throw expected("OID");
         }
@@ -505,8 +522,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 Sequence type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.363 -0500", hash_original_method = "97688987A014CB8C0C54BAB32FA72A4F", hash_generated_method = "56E445559C692A12AD7C40B5297E4C77")
-    public void readSequence(ASN1Sequence sequence) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.869 -0500", hash_original_method = "97688987A014CB8C0C54BAB32FA72A4F", hash_generated_method = "56E445559C692A12AD7C40B5297E4C77")
+    
+public void readSequence(ASN1Sequence sequence) throws IOException {
         if (tag != ASN1Constants.TAG_C_SEQUENCE) {
             throw expected("sequence");
         }
@@ -585,8 +603,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 SequenceOf type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.364 -0500", hash_original_method = "48BA5600C2E0D1ED619B576E3555D97D", hash_generated_method = "0CC713B470916D3231056DE79519FD81")
-    public void readSequenceOf(ASN1SequenceOf sequenceOf) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.871 -0500", hash_original_method = "48BA5600C2E0D1ED619B576E3555D97D", hash_generated_method = "0CC713B470916D3231056DE79519FD81")
+    
+public void readSequenceOf(ASN1SequenceOf sequenceOf) throws IOException {
         if (tag != ASN1Constants.TAG_C_SEQUENCEOF) {
             throw expected("sequenceOf");
         }
@@ -597,8 +616,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 Set type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.365 -0500", hash_original_method = "51B09D41A46E89A1CD0754E5C1F0D1B8", hash_generated_method = "4DB41399A5FE1C6CA2B074D6BDF7F6D9")
-    public void readSet(ASN1Set set) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.873 -0500", hash_original_method = "51B09D41A46E89A1CD0754E5C1F0D1B8", hash_generated_method = "4DB41399A5FE1C6CA2B074D6BDF7F6D9")
+    
+public void readSet(ASN1Set set) throws IOException {
         if (tag != ASN1Constants.TAG_C_SET) {
             throw expected("set");
         }
@@ -609,8 +629,9 @@ public class BerInputStream {
     /**
      * Decodes ASN.1 SetOf type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.366 -0500", hash_original_method = "8593963787440F0A1F5CC05E2CC3EB6D", hash_generated_method = "16077805191F7D77C37AE6EE44605C7C")
-    public void readSetOf(ASN1SetOf setOf) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.876 -0500", hash_original_method = "8593963787440F0A1F5CC05E2CC3EB6D", hash_generated_method = "16077805191F7D77C37AE6EE44605C7C")
+    
+public void readSetOf(ASN1SetOf setOf) throws IOException {
         if (tag != ASN1Constants.TAG_C_SETOF) {
             throw expected("setOf");
         }
@@ -618,8 +639,9 @@ public class BerInputStream {
         decodeValueCollection(setOf);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.367 -0500", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "B9C167807FCDB2A0145E6F7A34AB8F20")
-    private void decodeValueCollection(ASN1ValueCollection collection) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.878 -0500", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "B9C167807FCDB2A0145E6F7A34AB8F20")
+    
+private void decodeValueCollection(ASN1ValueCollection collection) throws IOException {
         int begOffset = offset;
         int endOffset = begOffset + length;
 
@@ -655,8 +677,9 @@ public class BerInputStream {
      *
      * @throws IOException if an I/O error occurs or the end of the stream is reached
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.368 -0500", hash_original_method = "2E006816EDCCACEA53589D73DD63B701", hash_generated_method = "6079A4EA9337F722AA40E9EFA0393ECC")
-    public void readString(ASN1StringType type) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.881 -0500", hash_original_method = "2E006816EDCCACEA53589D73DD63B701", hash_generated_method = "6079A4EA9337F722AA40E9EFA0393ECC")
+    
+public void readString(ASN1StringType type) throws IOException {
         if (tag == type.id) {
             readContent();
         } else if (tag == type.constrId) {
@@ -671,8 +694,9 @@ public class BerInputStream {
      *
      * MUST be invoked after decoding corresponding ASN.1 notation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.368 -0500", hash_original_method = "34E54E473055277C13E19CBB4B194845", hash_generated_method = "9F7D27206220B1C6BB0A3D2077D8922B")
-    public byte[] getEncoded() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.883 -0500", hash_original_method = "34E54E473055277C13E19CBB4B194845", hash_generated_method = "9F7D27206220B1C6BB0A3D2077D8922B")
+    
+public byte[] getEncoded() {
         byte[] encoded = new byte[offset - tagOffset];
         System.arraycopy(buffer, tagOffset, encoded, 0, encoded.length);
         return encoded;
@@ -681,56 +705,63 @@ public class BerInputStream {
     /**
      * Returns internal buffer used for decoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.369 -0500", hash_original_method = "6B125A4F0D6B27C0C7AD41FB42F4DE53", hash_generated_method = "C7AA0F3765AE0D7530A2123ADC8CD16C")
-    public final byte[] getBuffer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.885 -0500", hash_original_method = "6B125A4F0D6B27C0C7AD41FB42F4DE53", hash_generated_method = "C7AA0F3765AE0D7530A2123ADC8CD16C")
+    
+public final byte[] getBuffer() {
         return buffer;
     }
 
     /**
      * Returns length of the current content for decoding
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.370 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "457BD045D11BE603E9FA82675B77CCA1")
-    public final int getLength() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.887 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "457BD045D11BE603E9FA82675B77CCA1")
+    
+public final int getLength() {
         return length;
     }
 
     /**
      * Returns the current offset
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.371 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "55949A0CABF96E769EA6A463034457D4")
-    public final int getOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.889 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "55949A0CABF96E769EA6A463034457D4")
+    
+public final int getOffset() {
         return offset;
     }
 
     /**
      * Returns end offset for the current encoded type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.372 -0500", hash_original_method = "1367D9753B97C5C3A102B7D6550881B9", hash_generated_method = "1302397FD0CD46F574A94D04F7233E3D")
-    public final int getEndOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.892 -0500", hash_original_method = "1367D9753B97C5C3A102B7D6550881B9", hash_generated_method = "1302397FD0CD46F574A94D04F7233E3D")
+    
+public final int getEndOffset() {
         return offset + length;
     }
 
     /**
      * Returns start offset for the current encoded type
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.373 -0500", hash_original_method = "1FDDE163F1BBA6CDA778E0FD08E430DE", hash_generated_method = "37CD9E2F6EB7780DBCCB9488B3F60BC8")
-    public final int getTagOffset() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.894 -0500", hash_original_method = "1FDDE163F1BBA6CDA778E0FD08E430DE", hash_generated_method = "37CD9E2F6EB7780DBCCB9488B3F60BC8")
+    
+public final int getTagOffset() {
         return tagOffset;
     }
 
     /**
      * Sets verify mode.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.375 -0500", hash_original_method = "E5C1E507EA76A704FAE5F4AC771876E5", hash_generated_method = "14563CAD6B795428AAB3BBE9E533A583")
-    public final void setVerify() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.898 -0500", hash_original_method = "E5C1E507EA76A704FAE5F4AC771876E5", hash_generated_method = "14563CAD6B795428AAB3BBE9E533A583")
+    
+public final void setVerify() {
         isVerify = true;
     }
 
     /**
      * Reads the next encoded byte from the encoded input stream.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.377 -0500", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "D4439C1BC1A6C37C21C21979D42281B9")
-    protected int read() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.903 -0500", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "D4439C1BC1A6C37C21C21979D42281B9")
+    
+protected int read() throws IOException {
         if (offset == buffer.length) {
             throw new ASN1Exception("Unexpected end of encoding");
         }
@@ -753,8 +784,9 @@ public class BerInputStream {
      * Reads the next encoded content from the encoded input stream.
      * The method MUST be used for reading a primitive encoded content.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.378 -0500", hash_original_method = "73ADE766083E21B57FB910CFDB1C7433", hash_generated_method = "91229CCB0E4F2ABB90EF56194A1717B7")
-    public void readContent() throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.905 -0500", hash_original_method = "73ADE766083E21B57FB910CFDB1C7433", hash_generated_method = "91229CCB0E4F2ABB90EF56194A1717B7")
+    
+public void readContent() throws IOException {
         if (offset + length > buffer.length) {
             throw new ASN1Exception("Unexpected end of encoding");
         }
@@ -785,8 +817,9 @@ public class BerInputStream {
      * Reallocates the buffer in order to make it
      * exactly the size of data it contains
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.379 -0500", hash_original_method = "DCB4E4732715D068A4BB6AF51135E41B", hash_generated_method = "E7066A332B9B947C96E6CE4759DE1E6C")
-    public void compactBuffer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.909 -0500", hash_original_method = "DCB4E4732715D068A4BB6AF51135E41B", hash_generated_method = "E7066A332B9B947C96E6CE4759DE1E6C")
+    
+public void compactBuffer() {
         if (offset != buffer.length) {
             byte[] newBuffer = new byte[offset];
             // restore buffer content
@@ -796,8 +829,9 @@ public class BerInputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.381 -0500", hash_original_method = "AFFB1C62116A7F4F1AC3586F8D79C157", hash_generated_method = "B774AA0E95A529D00C7B293D7701E1C1")
-    public void put(Object key, Object entry) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.913 -0500", hash_original_method = "AFFB1C62116A7F4F1AC3586F8D79C157", hash_generated_method = "B774AA0E95A529D00C7B293D7701E1C1")
+    
+public void put(Object key, Object entry) {
         if (pool == null) {
             pool = new Object[2][10];
         }
@@ -821,8 +855,9 @@ public class BerInputStream {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.382 -0500", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "7E6E220E3DBFA6208B9C98B1EDDD7533")
-    public Object get(Object key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.915 -0500", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "7E6E220E3DBFA6208B9C98B1EDDD7533")
+    
+public Object get(Object key) {
         if (pool == null) {
             return null;
         }

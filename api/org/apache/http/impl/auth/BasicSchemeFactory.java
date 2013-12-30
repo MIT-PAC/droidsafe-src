@@ -18,8 +18,9 @@ public class BasicSchemeFactory implements AuthSchemeFactory {
         //Synthesized constructor
     }    
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.049 -0500", hash_original_method = "4F0A9DA7F5CA512F8942F95AB4C9F660", hash_generated_method = "587ACB88ED6FEB18D41A94492800664B")
-    public AuthScheme newInstance(final HttpParams params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.496 -0500", hash_original_method = "4F0A9DA7F5CA512F8942F95AB4C9F660", hash_generated_method = "587ACB88ED6FEB18D41A94492800664B")
+    
+public AuthScheme newInstance(final HttpParams params) {
         return new BasicScheme();
     }
 

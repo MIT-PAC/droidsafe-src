@@ -26,8 +26,9 @@ public class DdmRegister {
      * so that we don't have a race that causes us to drop packets before
      * we finish here.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.081 -0500", hash_original_method = "0DBD2DB13D23998CD61361463D21566E", hash_generated_method = "E33EB1237E6138E6794C576FE6A01A09")
-    public static void registerHandlers() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.504 -0500", hash_original_method = "0DBD2DB13D23998CD61361463D21566E", hash_generated_method = "E33EB1237E6138E6794C576FE6A01A09")
+    
+public static void registerHandlers() {
         if (false)
             Log.v("ddm", "Registering DDM message handlers");
         DdmHandleHello.register();
@@ -40,8 +41,9 @@ public class DdmRegister {
         DdmServer.registrationComplete();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.080 -0500", hash_original_method = "7B8C628EED4FBAEB3F2321039DB7D59A", hash_generated_method = "BD6F90C15B5A507D2DACDA65C5C77EF3")
-    private DdmRegister() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:21.502 -0500", hash_original_method = "7B8C628EED4FBAEB3F2321039DB7D59A", hash_generated_method = "BD6F90C15B5A507D2DACDA65C5C77EF3")
+    
+private DdmRegister() {}
 
     
 }

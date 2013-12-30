@@ -13,13 +13,13 @@ import java.net.SocketException;
 
 
 public class AudioStream extends RtpStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.719 -0500", hash_original_field = "D7D3A6F306950CEA4B6FC85D0247F3C1", hash_generated_field = "48FE1FD1A45DD00365BBA4B7AFE1C228")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.050 -0500", hash_original_field = "D7D3A6F306950CEA4B6FC85D0247F3C1", hash_generated_field = "48FE1FD1A45DD00365BBA4B7AFE1C228")
 
     private AudioCodec mCodec;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.720 -0500", hash_original_field = "BBF38444A5F65E088584B6E688C4174B", hash_generated_field = "AAAC9649291EA7E9AF23C6AFE907EAE5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.052 -0500", hash_original_field = "BBF38444A5F65E088584B6E688C4174B", hash_generated_field = "AAAC9649291EA7E9AF23C6AFE907EAE5")
 
     private int mDtmfType = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.720 -0500", hash_original_field = "751B610DA2A5D206C7B5EF0637C4DB48", hash_generated_field = "240D951663574AC277AC31BCA3E190DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.055 -0500", hash_original_field = "751B610DA2A5D206C7B5EF0637C4DB48", hash_generated_field = "240D951663574AC277AC31BCA3E190DC")
 
     private AudioGroup mGroup;
 
@@ -31,8 +31,9 @@ public class AudioStream extends RtpStream {
      * @throws SocketException if the address cannot be bound or a problem
      *     occurs during binding.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.721 -0500", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "E546AB87BEEBEDF71AF41D13671F26D0")
-    public AudioStream(InetAddress address) throws SocketException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.057 -0500", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "E546AB87BEEBEDF71AF41D13671F26D0")
+    
+public AudioStream(InetAddress address) throws SocketException {
         super(address);
     }
 
@@ -40,17 +41,19 @@ public class AudioStream extends RtpStream {
      * Returns {@code true} if the stream has already joined an
      * {@link AudioGroup}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.722 -0500", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "7B21EB749E29507A4027BA11C4E55BF9")
-    @Override
-public final boolean isBusy() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.060 -0500", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "7B21EB749E29507A4027BA11C4E55BF9")
+    
+@Override
+    public final boolean isBusy() {
         return mGroup != null;
     }
 
     /**
      * Returns the joined {@link AudioGroup}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.723 -0500", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "13763D327C25270880CF36A0BD0A059D")
-    public AudioGroup getGroup() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.062 -0500", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "13763D327C25270880CF36A0BD0A059D")
+    
+public AudioGroup getGroup() {
         return mGroup;
     }
 
@@ -63,8 +66,9 @@ public final boolean isBusy() {
      * @throws IllegalStateException if the stream is not properly configured.
      * @see AudioGroup
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.724 -0500", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "29ED583CFA904E738FF127CFB9F0B721")
-    public void join(AudioGroup group) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.064 -0500", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "29ED583CFA904E738FF127CFB9F0B721")
+    
+public void join(AudioGroup group) {
         synchronized (this) {
             if (mGroup == group) {
                 return;
@@ -85,8 +89,9 @@ public final boolean isBusy() {
      *
      * @see #setCodec(AudioCodec)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.724 -0500", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "5487DAF43AFC33675BBC0738CAC2EA16")
-    public AudioCodec getCodec() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.066 -0500", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "5487DAF43AFC33675BBC0738CAC2EA16")
+    
+public AudioCodec getCodec() {
         return mCodec;
     }
 
@@ -97,8 +102,9 @@ public final boolean isBusy() {
      * @throws IllegalArgumentException if its type is used by DTMF.
      * @throws IllegalStateException if the stream is busy.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.725 -0500", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "36115B45816A017DE46648F643A7705B")
-    public void setCodec(AudioCodec codec) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.068 -0500", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "36115B45816A017DE46648F643A7705B")
+    
+public void setCodec(AudioCodec codec) {
         if (isBusy()) {
             throw new IllegalStateException("Busy");
         }
@@ -114,8 +120,9 @@ public final boolean isBusy() {
      *
      * @see #setDtmfType(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.726 -0500", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "3C0067CBF059856A8FA81892062A2D81")
-    public int getDtmfType() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.071 -0500", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "3C0067CBF059856A8FA81892062A2D81")
+    
+public int getDtmfType() {
         return mDtmfType;
     }
 
@@ -133,8 +140,9 @@ public final boolean isBusy() {
      * @throws IllegalStateException if the stream is busy.
      * @see AudioGroup#sendDtmf(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.727 -0500", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "069DE761EB980DB42ECB53D4DC66D0C6")
-    public void setDtmfType(int type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.073 -0500", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "069DE761EB980DB42ECB53D4DC66D0C6")
+    
+public void setDtmfType(int type) {
         if (isBusy()) {
             throw new IllegalStateException("Busy");
         }

@@ -28,7 +28,7 @@ public class RegionIterator {
     private static boolean nativeNext(int native_iter, Rect r) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.433 -0500", hash_original_field = "3718B7AC5E828F6E59131B9828863051", hash_generated_field = "E1D7CD06343707E8A73E705F1CEC05A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.013 -0500", hash_original_field = "3718B7AC5E828F6E59131B9828863051", hash_generated_field = "E1D7CD06343707E8A73E705F1CEC05A1")
 
     
     private  int mNativeIter;
@@ -40,8 +40,9 @@ public class RegionIterator {
      *
      * @param region the region that will be iterated
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.426 -0500", hash_original_method = "8221B1C759F7AE45DFBE3F2918777459", hash_generated_method = "32463E99A7706C050DBDE46DC7BF00CC")
-    public RegionIterator(Region region) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.994 -0500", hash_original_method = "8221B1C759F7AE45DFBE3F2918777459", hash_generated_method = "32463E99A7706C050DBDE46DC7BF00CC")
+    
+public RegionIterator(Region region) {
         mNativeIter = nativeConstructor(region.ni());
     }
 
@@ -50,16 +51,18 @@ public class RegionIterator {
      * this returns false and r is unchanged. If there is at least one more,
      * this returns true and r is set to that rectangle.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.427 -0500", hash_original_method = "93D64F5EF378037039049B9C8BD2BE17", hash_generated_method = "242BD38E13C711DF2EE3EE4F074FB23D")
-    public final boolean next(Rect r) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.996 -0500", hash_original_method = "93D64F5EF378037039049B9C8BD2BE17", hash_generated_method = "242BD38E13C711DF2EE3EE4F074FB23D")
+    
+public final boolean next(Rect r) {
         if (r == null) {
             throw new NullPointerException("The Rect must be provided");
         }
         return nativeNext(mNativeIter, r);
     }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.428 -0500", hash_original_method = "ED5A48D85C90AAF769D53509399DCB2D", hash_generated_method = "A408DD68206E064D4D1E1D3E0B3A0A3D")
-    protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.999 -0500", hash_original_method = "ED5A48D85C90AAF769D53509399DCB2D", hash_generated_method = "A408DD68206E064D4D1E1D3E0B3A0A3D")
+    
+protected void finalize() throws Throwable {
         nativeDestructor(mNativeIter);
     }
 

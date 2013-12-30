@@ -19,8 +19,9 @@ class CaseMapper {
      * if nothing changes. We need 'value', 'offset', and 'count' because they're not otherwise
      * accessible.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.345 -0500", hash_original_method = "D4C35157D70C69AB7944CFDC18FEF0BE", hash_generated_method = "1CEA631C42C9FC4BF01F41A7F2D3B794")
-    public static String toLowerCase(Locale locale, String s, char[] value, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.715 -0500", hash_original_method = "D4C35157D70C69AB7944CFDC18FEF0BE", hash_generated_method = "1CEA631C42C9FC4BF01F41A7F2D3B794")
+    
+public static String toLowerCase(Locale locale, String s, char[] value, int offset, int count) {
         // Punt hard cases to ICU4C.
         String languageCode = locale.getLanguage();
         if (languageCode.equals("tr") || languageCode.equals("az") || languageCode.equals("lt")) {
@@ -57,8 +58,9 @@ class CaseMapper {
      * sequence, and 'index' is not followed by a sequence consisting of an ignorable sequence and
      * then a cased letter.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.346 -0500", hash_original_method = "8C80F4924B4B7C7CE3A9E179D5335CDB", hash_generated_method = "D757BE4E0A61F0F646B8230728FC3E74")
-    private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.718 -0500", hash_original_method = "8C80F4924B4B7C7CE3A9E179D5335CDB", hash_generated_method = "D757BE4E0A61F0F646B8230728FC3E74")
+    
+private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
         // TODO: we don't skip case-ignorable sequences like we should.
         // TODO: we should add a more direct way to test for a cased letter.
         if (index <= offset) {
@@ -85,8 +87,9 @@ class CaseMapper {
      * are used, the third character in the table is \u0000.
      * @return the index into the upperValues table, or -1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.347 -0500", hash_original_method = "13DD8DB959754AD57AB3077389D7ADB3", hash_generated_method = "60ED6C262BC16DB52818D9B130F3CC52")
-    private static int upperIndex(int ch) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.722 -0500", hash_original_method = "13DD8DB959754AD57AB3077389D7ADB3", hash_generated_method = "60ED6C262BC16DB52818D9B130F3CC52")
+    
+private static int upperIndex(int ch) {
         int index = -1;
         if (ch >= 0xdf) {
             if (ch <= 0x587) {
@@ -118,8 +121,9 @@ class CaseMapper {
         return index;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.349 -0500", hash_original_method = "867C8C9A0E37EB6F0277B29B28D35D4B", hash_generated_method = "814246820FE174442CF362C31F6358A1")
-    public static String toUpperCase(Locale locale, String s, char[] value, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.725 -0500", hash_original_method = "867C8C9A0E37EB6F0277B29B28D35D4B", hash_generated_method = "814246820FE174442CF362C31F6358A1")
+    
+public static String toUpperCase(Locale locale, String s, char[] value, int offset, int count) {
         String languageCode = locale.getLanguage();
         if (languageCode.equals("tr") || languageCode.equals("az") || languageCode.equals("lt")) {
             return ICU.toUpperCase(s, locale.toString());
@@ -177,20 +181,20 @@ class CaseMapper {
         }
         return output.length == i || output.length - i < 8 ? new String(0, i, output) : new String(output, 0, i);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.339 -0500", hash_original_field = "A57B5918C8E4836EB41EDEAA7DC8DAAD", hash_generated_field = "959CFDBA5964AC38BE7B78D3E1B17110")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.698 -0500", hash_original_field = "A57B5918C8E4836EB41EDEAA7DC8DAAD", hash_generated_field = "959CFDBA5964AC38BE7B78D3E1B17110")
 
     private static final char[] upperValues = "SS\u0000\u02bcN\u0000J\u030c\u0000\u0399\u0308\u0301\u03a5\u0308\u0301\u0535\u0552\u0000H\u0331\u0000T\u0308\u0000W\u030a\u0000Y\u030a\u0000A\u02be\u0000\u03a5\u0313\u0000\u03a5\u0313\u0300\u03a5\u0313\u0301\u03a5\u0313\u0342\u1f08\u0399\u0000\u1f09\u0399\u0000\u1f0a\u0399\u0000\u1f0b\u0399\u0000\u1f0c\u0399\u0000\u1f0d\u0399\u0000\u1f0e\u0399\u0000\u1f0f\u0399\u0000\u1f08\u0399\u0000\u1f09\u0399\u0000\u1f0a\u0399\u0000\u1f0b\u0399\u0000\u1f0c\u0399\u0000\u1f0d\u0399\u0000\u1f0e\u0399\u0000\u1f0f\u0399\u0000\u1f28\u0399\u0000\u1f29\u0399\u0000\u1f2a\u0399\u0000\u1f2b\u0399\u0000\u1f2c\u0399\u0000\u1f2d\u0399\u0000\u1f2e\u0399\u0000\u1f2f\u0399\u0000\u1f28\u0399\u0000\u1f29\u0399\u0000\u1f2a\u0399\u0000\u1f2b\u0399\u0000\u1f2c\u0399\u0000\u1f2d\u0399\u0000\u1f2e\u0399\u0000\u1f2f\u0399\u0000\u1f68\u0399\u0000\u1f69\u0399\u0000\u1f6a\u0399\u0000\u1f6b\u0399\u0000\u1f6c\u0399\u0000\u1f6d\u0399\u0000\u1f6e\u0399\u0000\u1f6f\u0399\u0000\u1f68\u0399\u0000\u1f69\u0399\u0000\u1f6a\u0399\u0000\u1f6b\u0399\u0000\u1f6c\u0399\u0000\u1f6d\u0399\u0000\u1f6e\u0399\u0000\u1f6f\u0399\u0000\u1fba\u0399\u0000\u0391\u0399\u0000\u0386\u0399\u0000\u0391\u0342\u0000\u0391\u0342\u0399\u0391\u0399\u0000\u1fca\u0399\u0000\u0397\u0399\u0000\u0389\u0399\u0000\u0397\u0342\u0000\u0397\u0342\u0399\u0397\u0399\u0000\u0399\u0308\u0300\u0399\u0308\u0301\u0399\u0342\u0000\u0399\u0308\u0342\u03a5\u0308\u0300\u03a5\u0308\u0301\u03a1\u0313\u0000\u03a5\u0342\u0000\u03a5\u0308\u0342\u1ffa\u0399\u0000\u03a9\u0399\u0000\u038f\u0399\u0000\u03a9\u0342\u0000\u03a9\u0342\u0399\u03a9\u0399\u0000FF\u0000FI\u0000FL\u0000FFIFFLST\u0000ST\u0000\u0544\u0546\u0000\u0544\u0535\u0000\u0544\u053b\u0000\u054e\u0546\u0000\u0544\u053d\u0000".toCharArray();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.340 -0500", hash_original_field = "55D00EB8CA5BF6C43A96F14BF3B536A1", hash_generated_field = "522A0BB1483CA812FFD5784CBB94B075")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.701 -0500", hash_original_field = "55D00EB8CA5BF6C43A96F14BF3B536A1", hash_generated_field = "522A0BB1483CA812FFD5784CBB94B075")
 
     private static final char[] upperValues2 = "\u000b\u0000\f\u0000\r\u0000\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>\u0000\u0000?@A\u0000BC\u0000\u0000\u0000\u0000D\u0000\u0000\u0000\u0000\u0000EFG\u0000HI\u0000\u0000\u0000\u0000J\u0000\u0000\u0000\u0000\u0000KL\u0000\u0000MN\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000OPQ\u0000RS\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TUV\u0000WX\u0000\u0000\u0000\u0000Y".toCharArray();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.341 -0500", hash_original_field = "B9A3ECBBC7653E79A27AC334647343CE", hash_generated_field = "137BEBA58F305CAEF4643F39E4943C5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.704 -0500", hash_original_field = "B9A3ECBBC7653E79A27AC334647343CE", hash_generated_field = "137BEBA58F305CAEF4643F39E4943C5E")
 
 
     private static final char LATIN_CAPITAL_I_WITH_DOT = '\u0130';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.342 -0500", hash_original_field = "193AC28434EEAC1AA658F646BB77DEBB", hash_generated_field = "1AC73BFA60585BBDB30ED9BBC3C30FA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.706 -0500", hash_original_field = "193AC28434EEAC1AA658F646BB77DEBB", hash_generated_field = "1AC73BFA60585BBDB30ED9BBC3C30FA0")
 
     private static final char GREEK_CAPITAL_SIGMA = '\u03a3';
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.343 -0500", hash_original_field = "12FD707F58C7EA4205A7C2D34BDC49C4", hash_generated_field = "75F099A6259439D89B60E3A33431F2BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.709 -0500", hash_original_field = "12FD707F58C7EA4205A7C2D34BDC49C4", hash_generated_field = "75F099A6259439D89B60E3A33431F2BF")
 
     private static final char GREEK_SMALL_FINAL_SIGMA = '\u03c2';
 
@@ -199,8 +203,9 @@ class CaseMapper {
      * this class should be changed so that you instantiate it with the String and its value,
      * offset, and count fields.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:23.344 -0500", hash_original_method = "8FD2C0B10363E6DF4E4A890BB3EDCD79", hash_generated_method = "FD9119837CB1AEA2F8EE59FC469298E9")
-    private CaseMapper() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.711 -0500", hash_original_method = "8FD2C0B10363E6DF4E4A890BB3EDCD79", hash_generated_method = "FD9119837CB1AEA2F8EE59FC469298E9")
+    
+private CaseMapper() {
     }
 }
 

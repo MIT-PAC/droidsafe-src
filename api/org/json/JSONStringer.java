@@ -12,23 +12,25 @@ import java.util.List;
 
 
 public class JSONStringer {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.288 -0500", hash_original_field = "9554BB4AB1E316BAC076E8B4D17E52B3", hash_generated_field = "A0CBD6F499FC0AC1E6545290B568BB70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.875 -0500", hash_original_field = "9554BB4AB1E316BAC076E8B4D17E52B3", hash_generated_field = "A0CBD6F499FC0AC1E6545290B568BB70")
 
     final StringBuilder out = new StringBuilder();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.290 -0500", hash_original_field = "03EBC1DED9EC27569647EC83C19CE188", hash_generated_field = "28EC373715B6F8CAC037841941695683")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.879 -0500", hash_original_field = "03EBC1DED9EC27569647EC83C19CE188", hash_generated_field = "28EC373715B6F8CAC037841941695683")
 
     private final List<Scope> stack = new ArrayList<Scope>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.291 -0500", hash_original_field = "F000C6E98B2D56207FC8F266161FDDAE", hash_generated_field = "7D7A545AD595A13E474956B04BBDC653")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.882 -0500", hash_original_field = "F000C6E98B2D56207FC8F266161FDDAE", hash_generated_field = "7D7A545AD595A13E474956B04BBDC653")
 
     private  String indent;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.292 -0500", hash_original_method = "98D853100F79BF96F83BA7B441C56113", hash_generated_method = "842E6284FCF12AC824A60F0618E2AA25")
-    public JSONStringer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.884 -0500", hash_original_method = "98D853100F79BF96F83BA7B441C56113", hash_generated_method = "842E6284FCF12AC824A60F0618E2AA25")
+    
+public JSONStringer() {
         indent = null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.292 -0500", hash_original_method = "3DA6CD526A78C194327021A156DBFACA", hash_generated_method = "3DA6CD526A78C194327021A156DBFACA")
-    JSONStringer(int indentSpaces) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.886 -0500", hash_original_method = "3DA6CD526A78C194327021A156DBFACA", hash_generated_method = "3DA6CD526A78C194327021A156DBFACA")
+    
+JSONStringer(int indentSpaces) {
         char[] indentChars = new char[indentSpaces];
         Arrays.fill(indentChars, ' ');
         indent = new String(indentChars);
@@ -40,8 +42,9 @@ public class JSONStringer {
      *
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.293 -0500", hash_original_method = "2E37A32AF13C3DB4BD8A6EB72023C7E4", hash_generated_method = "58C99E276A55D8F7D3AE52FB8031873D")
-    public JSONStringer array() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.888 -0500", hash_original_method = "2E37A32AF13C3DB4BD8A6EB72023C7E4", hash_generated_method = "58C99E276A55D8F7D3AE52FB8031873D")
+    
+public JSONStringer array() throws JSONException {
         return open(Scope.EMPTY_ARRAY, "[");
     }
 
@@ -50,8 +53,9 @@ public class JSONStringer {
      *
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.294 -0500", hash_original_method = "6A2E08939F192DB9BEF6B9CE1D1800F8", hash_generated_method = "39A4C997697F55BFCE6668965317B68A")
-    public JSONStringer endArray() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.891 -0500", hash_original_method = "6A2E08939F192DB9BEF6B9CE1D1800F8", hash_generated_method = "39A4C997697F55BFCE6668965317B68A")
+    
+public JSONStringer endArray() throws JSONException {
         return close(Scope.EMPTY_ARRAY, Scope.NONEMPTY_ARRAY, "]");
     }
 
@@ -61,8 +65,9 @@ public class JSONStringer {
      *
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.295 -0500", hash_original_method = "CFE0E3CA762AC926F745749CF2134248", hash_generated_method = "1E5F361A76B398BAA875949F32A2F5C6")
-    public JSONStringer object() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.893 -0500", hash_original_method = "CFE0E3CA762AC926F745749CF2134248", hash_generated_method = "1E5F361A76B398BAA875949F32A2F5C6")
+    
+public JSONStringer object() throws JSONException {
         return open(Scope.EMPTY_OBJECT, "{");
     }
 
@@ -71,8 +76,9 @@ public class JSONStringer {
      *
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.296 -0500", hash_original_method = "04277D36A4D54D9CF9D1FF565E2D8229", hash_generated_method = "FB26E8F3B483A05A2AB71E2679FC20F2")
-    public JSONStringer endObject() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.895 -0500", hash_original_method = "04277D36A4D54D9CF9D1FF565E2D8229", hash_generated_method = "FB26E8F3B483A05A2AB71E2679FC20F2")
+    
+public JSONStringer endObject() throws JSONException {
         return close(Scope.EMPTY_OBJECT, Scope.NONEMPTY_OBJECT, "}");
     }
 
@@ -80,8 +86,9 @@ public class JSONStringer {
      * Enters a new scope by appending any necessary whitespace and the given
      * bracket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.296 -0500", hash_original_method = "FE9B399F97E79B5140A06EB88BCEBC31", hash_generated_method = "FE9B399F97E79B5140A06EB88BCEBC31")
-    JSONStringer open(Scope empty, String openBracket) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.897 -0500", hash_original_method = "FE9B399F97E79B5140A06EB88BCEBC31", hash_generated_method = "FE9B399F97E79B5140A06EB88BCEBC31")
+    
+JSONStringer open(Scope empty, String openBracket) throws JSONException {
         if (stack.isEmpty() && out.length() > 0) {
             throw new JSONException("Nesting problem: multiple top-level roots");
         }
@@ -95,8 +102,9 @@ public class JSONStringer {
      * Closes the current scope by appending any necessary whitespace and the
      * given bracket.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.297 -0500", hash_original_method = "6B42F025815F6D5CF3C9CA43230A22B6", hash_generated_method = "6B42F025815F6D5CF3C9CA43230A22B6")
-    JSONStringer close(Scope empty, Scope nonempty, String closeBracket) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.900 -0500", hash_original_method = "6B42F025815F6D5CF3C9CA43230A22B6", hash_generated_method = "6B42F025815F6D5CF3C9CA43230A22B6")
+    
+JSONStringer close(Scope empty, Scope nonempty, String closeBracket) throws JSONException {
         Scope context = peek();
         if (context != nonempty && context != empty) {
             throw new JSONException("Nesting problem");
@@ -113,8 +121,9 @@ public class JSONStringer {
     /**
      * Returns the value on the top of the stack.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.298 -0500", hash_original_method = "8F2C7ADB42C2C89CD99F5BA7F29697D3", hash_generated_method = "41778C0E8D4ACCEABECB6CD9DAF58067")
-    private Scope peek() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.903 -0500", hash_original_method = "8F2C7ADB42C2C89CD99F5BA7F29697D3", hash_generated_method = "41778C0E8D4ACCEABECB6CD9DAF58067")
+    
+private Scope peek() throws JSONException {
         if (stack.isEmpty()) {
             throw new JSONException("Nesting problem");
         }
@@ -124,8 +133,9 @@ public class JSONStringer {
     /**
      * Replace the value on the top of the stack with the given value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.299 -0500", hash_original_method = "06C25D9275C46608400AACFE7B687C39", hash_generated_method = "F6FEC691A089DA01633F8C77882C744D")
-    private void replaceTop(Scope topOfStack) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.905 -0500", hash_original_method = "06C25D9275C46608400AACFE7B687C39", hash_generated_method = "F6FEC691A089DA01633F8C77882C744D")
+    
+private void replaceTop(Scope topOfStack) {
         stack.set(stack.size() - 1, topOfStack);
     }
 
@@ -137,8 +147,9 @@ public class JSONStringer {
      *     or {@link Double#isInfinite() infinities}.
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.300 -0500", hash_original_method = "71F86DA89D5C1CA3A74E1957819F40E1", hash_generated_method = "8641BB4A098E3400D15415ECE199D078")
-    public JSONStringer value(Object value) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.908 -0500", hash_original_method = "71F86DA89D5C1CA3A74E1957819F40E1", hash_generated_method = "8641BB4A098E3400D15415ECE199D078")
+    
+public JSONStringer value(Object value) throws JSONException {
         if (stack.isEmpty()) {
             throw new JSONException("Nesting problem");
         }
@@ -174,8 +185,9 @@ public class JSONStringer {
      *
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.301 -0500", hash_original_method = "FCFB4EBC72F92C82B8A5BB74120390AB", hash_generated_method = "5A47643B3B96288E3B6B5EF58A891F71")
-    public JSONStringer value(boolean value) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.910 -0500", hash_original_method = "FCFB4EBC72F92C82B8A5BB74120390AB", hash_generated_method = "5A47643B3B96288E3B6B5EF58A891F71")
+    
+public JSONStringer value(boolean value) throws JSONException {
         if (stack.isEmpty()) {
             throw new JSONException("Nesting problem");
         }
@@ -191,8 +203,9 @@ public class JSONStringer {
      *     {@link Double#isInfinite() infinities}.
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.302 -0500", hash_original_method = "B92957EDC8605AA2DADE9F77E64B9066", hash_generated_method = "E24D20CB87777A53B425F6762AC951B6")
-    public JSONStringer value(double value) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.912 -0500", hash_original_method = "B92957EDC8605AA2DADE9F77E64B9066", hash_generated_method = "E24D20CB87777A53B425F6762AC951B6")
+    
+public JSONStringer value(double value) throws JSONException {
         if (stack.isEmpty()) {
             throw new JSONException("Nesting problem");
         }
@@ -206,8 +219,9 @@ public class JSONStringer {
      *
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.302 -0500", hash_original_method = "9F8BADDEDC1CE205B7B8CDF7A0DB9A85", hash_generated_method = "6F17948D9125C197706FFF8403D3B9F3")
-    public JSONStringer value(long value) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.914 -0500", hash_original_method = "9F8BADDEDC1CE205B7B8CDF7A0DB9A85", hash_generated_method = "6F17948D9125C197706FFF8403D3B9F3")
+    
+public JSONStringer value(long value) throws JSONException {
         if (stack.isEmpty()) {
             throw new JSONException("Nesting problem");
         }
@@ -216,8 +230,9 @@ public class JSONStringer {
         return this;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.303 -0500", hash_original_method = "E6F73466C6FDC5C4F374E57C86CB98DF", hash_generated_method = "8B59663161522EDC93DCA494C2899DF8")
-    private void string(String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.917 -0500", hash_original_method = "E6F73466C6FDC5C4F374E57C86CB98DF", hash_generated_method = "8B59663161522EDC93DCA494C2899DF8")
+    
+private void string(String value) {
         out.append("\"");
         for (int i = 0, length = value.length(); i < length; i++) {
             char c = value.charAt(i);
@@ -268,8 +283,9 @@ public class JSONStringer {
         out.append("\"");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.304 -0500", hash_original_method = "A1C4E39B6594D26F11F448F86F922EBA", hash_generated_method = "DFCA45D977E86FFB6D1A5152AF9391A1")
-    private void newline() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.920 -0500", hash_original_method = "A1C4E39B6594D26F11F448F86F922EBA", hash_generated_method = "DFCA45D977E86FFB6D1A5152AF9391A1")
+    
+private void newline() {
         if (indent == null) {
             return;
         }
@@ -286,8 +302,9 @@ public class JSONStringer {
      * @param name the name of the forthcoming value. May not be null.
      * @return this stringer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.305 -0500", hash_original_method = "473489656459EE056EBCFF443DF4BB5C", hash_generated_method = "45060C32A54FC5AA9554F1AC32B91A6A")
-    public JSONStringer key(String name) throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.922 -0500", hash_original_method = "473489656459EE056EBCFF443DF4BB5C", hash_generated_method = "45060C32A54FC5AA9554F1AC32B91A6A")
+    
+public JSONStringer key(String name) throws JSONException {
         if (name == null) {
             throw new JSONException("Names must be non-null");
         }
@@ -300,8 +317,9 @@ public class JSONStringer {
      * Inserts any necessary separators and whitespace before a name. Also
      * adjusts the stack to expect the key's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.306 -0500", hash_original_method = "2432D2D31ED521C760D918E6DCE1C6CE", hash_generated_method = "EFBF8EEE61202CEEA55EB02BE50D9FAB")
-    private void beforeKey() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.924 -0500", hash_original_method = "2432D2D31ED521C760D918E6DCE1C6CE", hash_generated_method = "EFBF8EEE61202CEEA55EB02BE50D9FAB")
+    
+private void beforeKey() throws JSONException {
         Scope context = peek();
         if (context == Scope.NONEMPTY_OBJECT) { // first in object
             out.append(',');
@@ -317,8 +335,9 @@ public class JSONStringer {
      * inline array, or inline object. Also adjusts the stack to expect either a
      * closing bracket or another element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.307 -0500", hash_original_method = "9CA1703B701EBBFA9C513149EAF6F304", hash_generated_method = "6E4181A1A4AC2C5E6956D940DF347FA6")
-    private void beforeValue() throws JSONException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.927 -0500", hash_original_method = "9CA1703B701EBBFA9C513149EAF6F304", hash_generated_method = "6E4181A1A4AC2C5E6956D940DF347FA6")
+    
+private void beforeValue() throws JSONException {
         if (stack.isEmpty()) {
             return;
         }
@@ -348,9 +367,9 @@ public class JSONStringer {
      * of {@link Object#toString}, this method returns null if the stringer
      * contains no data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.308 -0500", hash_original_method = "84F418CD08C16D699E3DC2920B2AB795", hash_generated_method = "320EA7E88D5C5D1897AC412B38C46602")
-    @Override
-public String toString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.929 -0500", hash_original_method = "84F418CD08C16D699E3DC2920B2AB795", hash_generated_method = "320EA7E88D5C5D1897AC412B38C46602")
+    
+@Override public String toString() {
         return out.length() == 0 ? null : out.toString();
     }
 

@@ -26,24 +26,27 @@ public class WebChromeClient {
      * @param newProgress Current page loading progress, represented by
      *                    an integer between 0 and 100.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.810 -0500", hash_original_method = "0356D3C5779031E83EBAA5536F22FD2C", hash_generated_method = "F09CF8F720B5C6D2391332AF1DC461DC")
-    public void onProgressChanged(WebView view, int newProgress) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.800 -0500", hash_original_method = "0356D3C5779031E83EBAA5536F22FD2C", hash_generated_method = "F09CF8F720B5C6D2391332AF1DC461DC")
+    
+public void onProgressChanged(WebView view, int newProgress) {}
 
     /**
      * Notify the host application of a change in the document title.
      * @param view The WebView that initiated the callback.
      * @param title A String containing the new title of the document.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.810 -0500", hash_original_method = "EF8501574F8D969A2FEBAA77F34054B1", hash_generated_method = "253CC99CAD3667E9CF9B4110EFFEBAEE")
-    public void onReceivedTitle(WebView view, String title) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.802 -0500", hash_original_method = "EF8501574F8D969A2FEBAA77F34054B1", hash_generated_method = "253CC99CAD3667E9CF9B4110EFFEBAEE")
+    
+public void onReceivedTitle(WebView view, String title) {}
 
     /**
      * Notify the host application of a new favicon for the current page.
      * @param view The WebView that initiated the callback.
      * @param icon A Bitmap containing the favicon for the current page.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.811 -0500", hash_original_method = "29596704FB7D5BB460F59F26BE233C70", hash_generated_method = "463A6E62876CE8CAAD42E04C8A17E972")
-    public void onReceivedIcon(WebView view, Bitmap icon) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.804 -0500", hash_original_method = "29596704FB7D5BB460F59F26BE233C70", hash_generated_method = "463A6E62876CE8CAAD42E04C8A17E972")
+    
+public void onReceivedIcon(WebView view, Bitmap icon) {}
 
     /**
      * Notify the host application of the url for an apple-touch-icon.
@@ -51,8 +54,9 @@ public class WebChromeClient {
      * @param url The icon url.
      * @param precomposed True if the url is for a precomposed touch icon.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.812 -0500", hash_original_method = "A4C5B5257D00BF3A62B0EECD068EB4AE", hash_generated_method = "F9C9650D9FDBC0152D222BB81E92226D")
-    public void onReceivedTouchIconUrl(WebView view, String url,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.806 -0500", hash_original_method = "A4C5B5257D00BF3A62B0EECD068EB4AE", hash_generated_method = "F9C9650D9FDBC0152D222BB81E92226D")
+    
+public void onReceivedTouchIconUrl(WebView view, String url,
             boolean precomposed) {}
 
     /**
@@ -62,8 +66,9 @@ public class WebChromeClient {
      * @param callback is the callback to be invoked if and when the view
      * is dismissed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.814 -0500", hash_original_method = "77F78B4AA1FEBCA4548885095C178085", hash_generated_method = "61CE41DD4C726758B1889714A730D32B")
-    public void onShowCustomView(View view, CustomViewCallback callback) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.810 -0500", hash_original_method = "77F78B4AA1FEBCA4548885095C178085", hash_generated_method = "61CE41DD4C726758B1889714A730D32B")
+    
+public void onShowCustomView(View view, CustomViewCallback callback) {}
 
     /**
      * Notify the host application that the current page would
@@ -74,16 +79,18 @@ public class WebChromeClient {
      * @param callback is the callback to be invoked if and when the view
      * is dismissed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.815 -0500", hash_original_method = "42AC916863A44836B06C58A8705D2934", hash_generated_method = "D20DBD63E20D98CCB1530E007DCC6F50")
-    public void onShowCustomView(View view, int requestedOrientation,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.813 -0500", hash_original_method = "42AC916863A44836B06C58A8705D2934", hash_generated_method = "D20DBD63E20D98CCB1530E007DCC6F50")
+    
+public void onShowCustomView(View view, int requestedOrientation,
             CustomViewCallback callback) {}
     
     /**
      * Notify the host application that the current page would
      * like to hide its custom view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.815 -0500", hash_original_method = "3C82DC078459A71064D67069FEC24583", hash_generated_method = "33ABEF40DB53BF4FE9CE9893C5C6D534")
-    public void onHideCustomView() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.815 -0500", hash_original_method = "3C82DC078459A71064D67069FEC24583", hash_generated_method = "33ABEF40DB53BF4FE9CE9893C5C6D534")
+    
+public void onHideCustomView() {}
 
     /**
      * Request the host application to create a new window. If the host
@@ -111,8 +118,9 @@ public class WebChromeClient {
      *         false from this method but also sending resultMsg will result in
      *         undefined behavior.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.816 -0500", hash_original_method = "0F7608F947A0ECBD179808AAF0AFEB9B", hash_generated_method = "A81D6C615CBA76B288222AED880EAAE5")
-    public boolean onCreateWindow(WebView view, boolean isDialog,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.818 -0500", hash_original_method = "0F7608F947A0ECBD179808AAF0AFEB9B", hash_generated_method = "A81D6C615CBA76B288222AED880EAAE5")
+    
+public boolean onCreateWindow(WebView view, boolean isDialog,
             boolean isUserGesture, Message resultMsg) {
         return false;
     }
@@ -123,8 +131,9 @@ public class WebChromeClient {
      * WebView be displayed.
      * @param view The WebView that needs to be focused.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.817 -0500", hash_original_method = "9D3C2A06B7A580B802B062ACCF072DA0", hash_generated_method = "42667F2871C13EB578F688498F592237")
-    public void onRequestFocus(WebView view) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.820 -0500", hash_original_method = "9D3C2A06B7A580B802B062ACCF072DA0", hash_generated_method = "42667F2871C13EB578F688498F592237")
+    
+public void onRequestFocus(WebView view) {}
 
     /**
      * Notify the host application to close the given WebView and remove it
@@ -133,8 +142,9 @@ public class WebChromeClient {
      * in javascript.
      * @param window The WebView that needs to be closed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.818 -0500", hash_original_method = "20C36406AC14D1B2BB4595DEF25401D6", hash_generated_method = "E57BEA599A95FAEE9649D62A68769698")
-    public void onCloseWindow(WebView window) {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.822 -0500", hash_original_method = "20C36406AC14D1B2BB4595DEF25401D6", hash_generated_method = "E57BEA599A95FAEE9649D62A68769698")
+    
+public void onCloseWindow(WebView window) {}
 
     /**
      * Tell the client to display a javascript alert dialog.  If the client
@@ -146,8 +156,9 @@ public class WebChromeClient {
      * @param result A JsResult to confirm that the user hit enter.
      * @return boolean Whether the client will handle the alert dialog.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.819 -0500", hash_original_method = "B665260C93890B7DFFFEE826876C181C", hash_generated_method = "826D2BD1A94E35260E9B910D8DDA837B")
-    public boolean onJsAlert(WebView view, String url, String message,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.824 -0500", hash_original_method = "B665260C93890B7DFFFEE826876C181C", hash_generated_method = "826D2BD1A94E35260E9B910D8DDA837B")
+    
+public boolean onJsAlert(WebView view, String url, String message,
             JsResult result) {
         return false;
     }
@@ -165,8 +176,9 @@ public class WebChromeClient {
      *               javascript.
      * @return boolean Whether the client will handle the confirm dialog.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.819 -0500", hash_original_method = "96B1179CA869CC7F0C650459C80E91A1", hash_generated_method = "11D2278236205A06CB2240D52CBEA8FF")
-    public boolean onJsConfirm(WebView view, String url, String message,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.826 -0500", hash_original_method = "96B1179CA869CC7F0C650459C80E91A1", hash_generated_method = "11D2278236205A06CB2240D52CBEA8FF")
+    
+public boolean onJsConfirm(WebView view, String url, String message,
             JsResult result) {
         return false;
     }
@@ -185,8 +197,9 @@ public class WebChromeClient {
      *               javascript.
      * @return boolean Whether the client will handle the prompt dialog.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.821 -0500", hash_original_method = "B0F8165C36C1E06488928BD9B36CF34F", hash_generated_method = "95BF2AF331C13B0A9B81AEB063331D96")
-    public boolean onJsPrompt(WebView view, String url, String message,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.828 -0500", hash_original_method = "B0F8165C36C1E06488928BD9B36CF34F", hash_generated_method = "95BF2AF331C13B0A9B81AEB063331D96")
+    
+public boolean onJsPrompt(WebView view, String url, String message,
             String defaultValue, JsPromptResult result) {
         return false;
     }
@@ -207,8 +220,9 @@ public class WebChromeClient {
      *               javascript.
      * @return boolean Whether the client will handle the confirm dialog.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.821 -0500", hash_original_method = "9A70F346469CE5ADB362459FFD66F0CC", hash_generated_method = "EC9FE14DDF092F72789D5D4C1F5F2940")
-    public boolean onJsBeforeUnload(WebView view, String url, String message,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.831 -0500", hash_original_method = "9A70F346469CE5ADB362459FFD66F0CC", hash_generated_method = "EC9FE14DDF092F72789D5D4C1F5F2940")
+    
+public boolean onJsBeforeUnload(WebView view, String url, String message,
             JsResult result) {
         return false;
     }
@@ -225,8 +239,9 @@ public class WebChromeClient {
     *     quota is available. This callback must always be executed at some
     *     point to ensure that the sleeping WebCore thread is woken up.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.822 -0500", hash_original_method = "E698A9F452C6783F3C6DB7E7A071CA1D", hash_generated_method = "58611049F5E2E7358DBECA32CF854676")
-    public void onExceededDatabaseQuota(String url, String databaseIdentifier,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.833 -0500", hash_original_method = "E698A9F452C6783F3C6DB7E7A071CA1D", hash_generated_method = "58611049F5E2E7358DBECA32CF854676")
+    
+public void onExceededDatabaseQuota(String url, String databaseIdentifier,
         long currentQuota, long estimatedSize, long totalUsedQuota,
         WebStorage.QuotaUpdater quotaUpdater) {
         // This default implementation passes the current quota back to WebCore.
@@ -243,8 +258,9 @@ public class WebChromeClient {
     * app cache size is available. This callback must always be executed at
     * some point to ensure that the sleeping WebCore thread is woken up.
     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.823 -0500", hash_original_method = "EC4B1817B796D6243C1BADFF5A19DD19", hash_generated_method = "10A4AB035751E3FF3BCDD295F76115A5")
-    public void onReachedMaxAppCacheSize(long spaceNeeded, long totalUsedQuota,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.835 -0500", hash_original_method = "EC4B1817B796D6243C1BADFF5A19DD19", hash_generated_method = "10A4AB035751E3FF3BCDD295F76115A5")
+    
+public void onReachedMaxAppCacheSize(long spaceNeeded, long totalUsedQuota,
             WebStorage.QuotaUpdater quotaUpdater) {
         quotaUpdater.updateQuota(0);
     }
@@ -253,15 +269,17 @@ public class WebChromeClient {
      * Instructs the client to show a prompt to ask the user to set the
      * Geolocation permission state for the specified origin.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.824 -0500", hash_original_method = "98993092A89284EC0BBF79A8D8B73F2B", hash_generated_method = "CEA9FD44D03DA3ED879B3D0FD49F2933")
-    public void onGeolocationPermissionsShowPrompt(String origin,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.837 -0500", hash_original_method = "98993092A89284EC0BBF79A8D8B73F2B", hash_generated_method = "CEA9FD44D03DA3ED879B3D0FD49F2933")
+    
+public void onGeolocationPermissionsShowPrompt(String origin,
             GeolocationPermissions.Callback callback) {}
 
     /**
      * Instructs the client to hide the Geolocation permissions prompt.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.824 -0500", hash_original_method = "C2C3AAB43EA40B6144BCEFE67B905422", hash_generated_method = "224992FD7C53F117A90A55C6DC481ED1")
-    public void onGeolocationPermissionsHidePrompt() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.839 -0500", hash_original_method = "C2C3AAB43EA40B6144BCEFE67B905422", hash_generated_method = "224992FD7C53F117A90A55C6DC481ED1")
+    
+public void onGeolocationPermissionsHidePrompt() {}
 
     /**
      * Tell the client that a JavaScript execution timeout has occured. And the
@@ -273,8 +291,9 @@ public class WebChromeClient {
      * point.
      * @return boolean Whether the JavaScript execution should be interrupted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.825 -0500", hash_original_method = "D3576F706DC2F920D86267B1909BCF87", hash_generated_method = "485FE48F316E8CB871E7B2629200D66A")
-    public boolean onJsTimeout() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.841 -0500", hash_original_method = "D3576F706DC2F920D86267B1909BCF87", hash_generated_method = "485FE48F316E8CB871E7B2629200D66A")
+    
+public boolean onJsTimeout() {
         return true;
     }
 
@@ -287,9 +306,10 @@ public class WebChromeClient {
      * @deprecated Use {@link #onConsoleMessage(ConsoleMessage) onConsoleMessage(ConsoleMessage)}
      *      instead.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.826 -0500", hash_original_method = "79CD152A32E05A12E47F3ADA435EA3CF", hash_generated_method = "9DAB520727D50962DA40DC8ED2E74DC5")
-    @Deprecated
-public void onConsoleMessage(String message, int lineNumber, String sourceID) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.844 -0500", hash_original_method = "79CD152A32E05A12E47F3ADA435EA3CF", hash_generated_method = "9DAB520727D50962DA40DC8ED2E74DC5")
+    
+@Deprecated
+    public void onConsoleMessage(String message, int lineNumber, String sourceID) { }
 
     /**
      * Report a JavaScript console message to the host application. The ChromeClient
@@ -297,8 +317,9 @@ public void onConsoleMessage(String message, int lineNumber, String sourceID) { 
      * @param consoleMessage Object containing details of the console message.
      * @return true if the message is handled by the client.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.827 -0500", hash_original_method = "CFDCDEC28BDAF7613A605474C11A52D7", hash_generated_method = "5DB993C5A074F511FB12DDDEDA4E9887")
-    public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.846 -0500", hash_original_method = "CFDCDEC28BDAF7613A605474C11A52D7", hash_generated_method = "5DB993C5A074F511FB12DDDEDA4E9887")
+    
+public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
         // Call the old version of this function for backwards compatability.
         onConsoleMessage(consoleMessage.message(), consoleMessage.lineNumber(),
                 consoleMessage.sourceId());
@@ -314,8 +335,9 @@ public void onConsoleMessage(String message, int lineNumber, String sourceID) { 
      * @return Bitmap The image to use as a default poster, or null if no such image is
      * available.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.827 -0500", hash_original_method = "B12C654EAF6D1EF1BD2CB65AEE47A82B", hash_generated_method = "70527A5E20D719C3A209832D5B5500F1")
-    public Bitmap getDefaultVideoPoster() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.848 -0500", hash_original_method = "B12C654EAF6D1EF1BD2CB65AEE47A82B", hash_generated_method = "70527A5E20D719C3A209832D5B5500F1")
+    
+public Bitmap getDefaultVideoPoster() {
         return null;
     }
 
@@ -327,15 +349,17 @@ public void onConsoleMessage(String message, int lineNumber, String sourceID) { 
      *
      * @return View The View to be displayed whilst the video is loading.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.828 -0500", hash_original_method = "72F535BEAD962B4F42D879A83B63BF5A", hash_generated_method = "BB4FDE2E472D0D28BB1092AD2DBC70AA")
-    public View getVideoLoadingProgressView() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.850 -0500", hash_original_method = "72F535BEAD962B4F42D879A83B63BF5A", hash_generated_method = "BB4FDE2E472D0D28BB1092AD2DBC70AA")
+    
+public View getVideoLoadingProgressView() {
         return null;
     }
 
     /** Obtains a list of all visited history items, used for link coloring
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.829 -0500", hash_original_method = "15B2ED72F970B566935619473880B5EF", hash_generated_method = "F94A1DEF2C06E3AB0E076A88208C00E4")
-    public void getVisitedHistory(ValueCallback<String[]> callback) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.852 -0500", hash_original_method = "15B2ED72F970B566935619473880B5EF", hash_generated_method = "F94A1DEF2C06E3AB0E076A88208C00E4")
+    
+public void getVisitedHistory(ValueCallback<String[]> callback) {
     }
 
     /**
@@ -346,8 +370,9 @@ public void onConsoleMessage(String message, int lineNumber, String sourceID) { 
      *         associated with this file picker.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.830 -0500", hash_original_method = "DA085B71ADFBAF37C9145F2BAEC7CA78", hash_generated_method = "4F320BAB6CADA1B82FF3F3CA0E6B9B42")
-    public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.854 -0500", hash_original_method = "DA085B71ADFBAF37C9145F2BAEC7CA78", hash_generated_method = "4F320BAB6CADA1B82FF3F3CA0E6B9B42")
+    
+public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType) {
         uploadFile.onReceiveValue(null);
     }
 
@@ -356,8 +381,9 @@ public void onConsoleMessage(String message, int lineNumber, String sourceID) { 
      * i.e. has specified the fullscreen-web-app-capable meta tag.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.830 -0500", hash_original_method = "BB19EC4B0210D5A42E9ED0382D14771D", hash_generated_method = "91C01A3277D8FEE6B17AB6375485A9CA")
-    public void setInstallableWebApp() { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.856 -0500", hash_original_method = "BB19EC4B0210D5A42E9ED0382D14771D", hash_generated_method = "91C01A3277D8FEE6B17AB6375485A9CA")
+    
+public void setInstallableWebApp() { }
 
     /**
      * Tell the client that the page being viewed has an autofillable
@@ -367,8 +393,9 @@ public void onConsoleMessage(String message, int lineNumber, String sourceID) { 
      *      now autofill using that new profile.
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:27.831 -0500", hash_original_method = "681C2C146739845C582C6BB934543E3C", hash_generated_method = "8030A326DDD2D807CCC2A93B47490A89")
-    public void setupAutoFill(Message msg) { }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.858 -0500", hash_original_method = "681C2C146739845C582C6BB934543E3C", hash_generated_method = "8030A326DDD2D807CCC2A93B47490A89")
+    
+public void setupAutoFill(Message msg) { }
 
     
     public interface CustomViewCallback {

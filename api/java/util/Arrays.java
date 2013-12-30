@@ -30,8 +30,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.013 -0500", hash_original_method = "AF653A9E2629865B65E27F3E8EFBF9CD", hash_generated_method = "DE4F969DFC1A4EF3B3F02E88F44DA323")
-    public static int binarySearch(byte[] array, byte value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.952 -0500", hash_original_method = "AF653A9E2629865B65E27F3E8EFBF9CD", hash_generated_method = "DE4F969DFC1A4EF3B3F02E88F44DA323")
+    
+public static int binarySearch(byte[] array, byte value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -51,8 +52,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.014 -0500", hash_original_method = "B5911E4390B2ECBA2CAD1A2FC1492249", hash_generated_method = "3AD525A409ECF3A129B43AEF5EA39F01")
-    public static int binarySearch(byte[] array, int startIndex, int endIndex, byte value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.954 -0500", hash_original_method = "B5911E4390B2ECBA2CAD1A2FC1492249", hash_generated_method = "3AD525A409ECF3A129B43AEF5EA39F01")
+    
+public static int binarySearch(byte[] array, int startIndex, int endIndex, byte value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -82,8 +84,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.016 -0500", hash_original_method = "9CC86BD32DF5EB04FF2B752A6A05E065", hash_generated_method = "41159CBC40193F82CBD306E185C5BDC8")
-    public static int binarySearch(char[] array, char value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.957 -0500", hash_original_method = "9CC86BD32DF5EB04FF2B752A6A05E065", hash_generated_method = "41159CBC40193F82CBD306E185C5BDC8")
+    
+public static int binarySearch(char[] array, char value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -103,8 +106,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.017 -0500", hash_original_method = "AEEEC8BFBB077FAE42FCA03B1FA50755", hash_generated_method = "88FBE3D733B22B88825DCA30F44A0AF7")
-    public static int binarySearch(char[] array, int startIndex, int endIndex, char value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.959 -0500", hash_original_method = "AEEEC8BFBB077FAE42FCA03B1FA50755", hash_generated_method = "88FBE3D733B22B88825DCA30F44A0AF7")
+    
+public static int binarySearch(char[] array, int startIndex, int endIndex, char value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -134,8 +138,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.018 -0500", hash_original_method = "66D7F0846D72EFE08F25F15E2339BFFE", hash_generated_method = "BE1771EA0F006179C18C142A18A33FD6")
-    public static int binarySearch(double[] array, double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.962 -0500", hash_original_method = "66D7F0846D72EFE08F25F15E2339BFFE", hash_generated_method = "BE1771EA0F006179C18C142A18A33FD6")
+    
+public static int binarySearch(double[] array, double value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -155,8 +160,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.019 -0500", hash_original_method = "DFA533AB240C3C67D07C47863082135D", hash_generated_method = "B16A80B1E06EF59960692D56C560EDC2")
-    public static int binarySearch(double[] array, int startIndex, int endIndex, double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.964 -0500", hash_original_method = "DFA533AB240C3C67D07C47863082135D", hash_generated_method = "B16A80B1E06EF59960692D56C560EDC2")
+    
+public static int binarySearch(double[] array, int startIndex, int endIndex, double value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -197,8 +203,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.020 -0500", hash_original_method = "73828DC617856FC9A203FC462E1B8678", hash_generated_method = "A1A5C483C3A39E63749127E427F88451")
-    public static int binarySearch(float[] array, float value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.968 -0500", hash_original_method = "73828DC617856FC9A203FC462E1B8678", hash_generated_method = "A1A5C483C3A39E63749127E427F88451")
+    
+public static int binarySearch(float[] array, float value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -218,8 +225,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.021 -0500", hash_original_method = "AF7118C80FB68E58015CBBEDE5BFCF3D", hash_generated_method = "D95A313B367A7EB51CCC64AD63645A97")
-    public static int binarySearch(float[] array, int startIndex, int endIndex, float value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.971 -0500", hash_original_method = "AF7118C80FB68E58015CBBEDE5BFCF3D", hash_generated_method = "D95A313B367A7EB51CCC64AD63645A97")
+    
+public static int binarySearch(float[] array, int startIndex, int endIndex, float value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -260,8 +268,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.021 -0500", hash_original_method = "10FAE7826DE6C7FA92370FA2DBE898D1", hash_generated_method = "9271C14F7C01A2A7226F67441954C6B7")
-    public static int binarySearch(int[] array, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.973 -0500", hash_original_method = "10FAE7826DE6C7FA92370FA2DBE898D1", hash_generated_method = "9271C14F7C01A2A7226F67441954C6B7")
+    
+public static int binarySearch(int[] array, int value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -281,8 +290,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.022 -0500", hash_original_method = "01050E2BB1B59C59137C6D948F115373", hash_generated_method = "4436BF8F5518276E310254322B95FEA2")
-    public static int binarySearch(int[] array, int startIndex, int endIndex, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.976 -0500", hash_original_method = "01050E2BB1B59C59137C6D948F115373", hash_generated_method = "4436BF8F5518276E310254322B95FEA2")
+    
+public static int binarySearch(int[] array, int startIndex, int endIndex, int value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -312,8 +322,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.023 -0500", hash_original_method = "1E3F02592E9C9ED40FFDCAF3EF0E0C2B", hash_generated_method = "939A83A3FEDD02B1DF191D3461079495")
-    public static int binarySearch(long[] array, long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.979 -0500", hash_original_method = "1E3F02592E9C9ED40FFDCAF3EF0E0C2B", hash_generated_method = "939A83A3FEDD02B1DF191D3461079495")
+    
+public static int binarySearch(long[] array, long value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -333,8 +344,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.024 -0500", hash_original_method = "76252A64BDCCB1FCE9F78F94C438C4DB", hash_generated_method = "A06BFC9BF6FAC780F5C3AC81C0A0435E")
-    public static int binarySearch(long[] array, int startIndex, int endIndex, long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.981 -0500", hash_original_method = "76252A64BDCCB1FCE9F78F94C438C4DB", hash_generated_method = "A06BFC9BF6FAC780F5C3AC81C0A0435E")
+    
+public static int binarySearch(long[] array, int startIndex, int endIndex, long value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -367,8 +379,9 @@ public class Arrays {
      *         if an element in the array or the search element does not
      *         implement {@code Comparable}, or cannot be compared to each other.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.025 -0500", hash_original_method = "E3D417998982E06151FF39AAEE4DA490", hash_generated_method = "BC31C7F295E0D9CC49849A154320934A")
-    public static int binarySearch(Object[] array, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.984 -0500", hash_original_method = "E3D417998982E06151FF39AAEE4DA490", hash_generated_method = "BC31C7F295E0D9CC49849A154320934A")
+    
+public static int binarySearch(Object[] array, Object value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -391,8 +404,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.026 -0500", hash_original_method = "AC62DCBBB079682E75E581145CFFC517", hash_generated_method = "0D4F4FD8200844E664D81F6F376B3F17")
-    public static int binarySearch(Object[] array, int startIndex, int endIndex, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.987 -0500", hash_original_method = "AC62DCBBB079682E75E581145CFFC517", hash_generated_method = "0D4F4FD8200844E664D81F6F376B3F17")
+    
+public static int binarySearch(Object[] array, int startIndex, int endIndex, Object value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -453,8 +467,9 @@ public class Arrays {
      * @return the non-negative index of the element, or a negative index which
      *         is {@code -index - 1} where the element would be inserted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.029 -0500", hash_original_method = "1B11741F9AA29C21BB23748721F87958", hash_generated_method = "76D58326E2A244119B66D9C6A61C43CA")
-    public static int binarySearch(short[] array, short value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.001 -0500", hash_original_method = "1B11741F9AA29C21BB23748721F87958", hash_generated_method = "76D58326E2A244119B66D9C6A61C43CA")
+    
+public static int binarySearch(short[] array, short value) {
         return binarySearch(array, 0, array.length, value);
     }
 
@@ -474,8 +489,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException if {@code startIndex < 0 || endIndex > array.length}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.030 -0500", hash_original_method = "CBB47C186DC83A7CE83F653A8FA49FBE", hash_generated_method = "7709DF7B430676D3582FEBA314A48C7A")
-    public static int binarySearch(short[] array, int startIndex, int endIndex, short value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.004 -0500", hash_original_method = "CBB47C186DC83A7CE83F653A8FA49FBE", hash_generated_method = "7709DF7B430676D3582FEBA314A48C7A")
+    
+public static int binarySearch(short[] array, int startIndex, int endIndex, short value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
         int hi = endIndex - 1;
@@ -495,8 +511,9 @@ public class Arrays {
         return ~lo;  // value not present
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.030 -0500", hash_original_method = "23AA60D248EBBCA086D18D3DB48A4C87", hash_generated_method = "7F187F0E88CA844AD6CFCB5A2601752E")
-    private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.007 -0500", hash_original_method = "23AA60D248EBBCA086D18D3DB48A4C87", hash_generated_method = "7F187F0E88CA844AD6CFCB5A2601752E")
+    
+private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
         if (startIndex > endIndex) {
             throw new IllegalArgumentException();
         }
@@ -513,8 +530,9 @@ public class Arrays {
      * @param value
      *            the {@code byte} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.031 -0500", hash_original_method = "B36EFEED8A01C5AB548445C2A30D3515", hash_generated_method = "AB254B7381DE3B17EA718AC261CF38C6")
-    public static void fill(byte[] array, byte value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.009 -0500", hash_original_method = "B36EFEED8A01C5AB548445C2A30D3515", hash_generated_method = "AB254B7381DE3B17EA718AC261CF38C6")
+    
+public static void fill(byte[] array, byte value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -536,8 +554,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.032 -0500", hash_original_method = "9FD1A2E2343A7342F7CA850BC8948EC8", hash_generated_method = "AF3A54E7FF041881C4F9E8B06CF87E9A")
-    public static void fill(byte[] array, int start, int end, byte value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.013 -0500", hash_original_method = "9FD1A2E2343A7342F7CA850BC8948EC8", hash_generated_method = "AF3A54E7FF041881C4F9E8B06CF87E9A")
+    
+public static void fill(byte[] array, int start, int end, byte value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -552,8 +571,9 @@ public class Arrays {
      * @param value
      *            the {@code short} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.033 -0500", hash_original_method = "0C56D37E9DF08871E792A0F50E2C2D13", hash_generated_method = "1CF19802A5E86A6D8957B67EF29CF63E")
-    public static void fill(short[] array, short value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.015 -0500", hash_original_method = "0C56D37E9DF08871E792A0F50E2C2D13", hash_generated_method = "1CF19802A5E86A6D8957B67EF29CF63E")
+    
+public static void fill(short[] array, short value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -575,8 +595,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.034 -0500", hash_original_method = "9C63A043347A5856E259C40D0B092C8E", hash_generated_method = "406FE9C9ADC52D37C46B04541FF580EB")
-    public static void fill(short[] array, int start, int end, short value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.019 -0500", hash_original_method = "9C63A043347A5856E259C40D0B092C8E", hash_generated_method = "406FE9C9ADC52D37C46B04541FF580EB")
+    
+public static void fill(short[] array, int start, int end, short value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -591,8 +612,9 @@ public class Arrays {
      * @param value
      *            the {@code char} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.035 -0500", hash_original_method = "9B0DDD6C675DEF6700311B055DE9E01B", hash_generated_method = "A9299B19BB59DB39888BE5B675AC053F")
-    public static void fill(char[] array, char value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.021 -0500", hash_original_method = "9B0DDD6C675DEF6700311B055DE9E01B", hash_generated_method = "A9299B19BB59DB39888BE5B675AC053F")
+    
+public static void fill(char[] array, char value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -614,8 +636,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.036 -0500", hash_original_method = "E9EBA1A345E6EC087EE2D65CFFC68545", hash_generated_method = "509B6A515B76550498F8ACB94D6F9894")
-    public static void fill(char[] array, int start, int end, char value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.024 -0500", hash_original_method = "E9EBA1A345E6EC087EE2D65CFFC68545", hash_generated_method = "509B6A515B76550498F8ACB94D6F9894")
+    
+public static void fill(char[] array, int start, int end, char value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -630,8 +653,9 @@ public class Arrays {
      * @param value
      *            the {@code int} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.036 -0500", hash_original_method = "1729B4B42F76884BCE9F1EB6E36424D7", hash_generated_method = "1141C52690BF47076EA68141B6C22013")
-    public static void fill(int[] array, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.026 -0500", hash_original_method = "1729B4B42F76884BCE9F1EB6E36424D7", hash_generated_method = "1141C52690BF47076EA68141B6C22013")
+    
+public static void fill(int[] array, int value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -653,8 +677,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.037 -0500", hash_original_method = "CF4D8222D8388EE49D3DF4DFFECBAFE7", hash_generated_method = "48266E6E7D0F6013222BC8FE364E303A")
-    public static void fill(int[] array, int start, int end, int value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.029 -0500", hash_original_method = "CF4D8222D8388EE49D3DF4DFFECBAFE7", hash_generated_method = "48266E6E7D0F6013222BC8FE364E303A")
+    
+public static void fill(int[] array, int start, int end, int value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -669,8 +694,9 @@ public class Arrays {
      * @param value
      *            the {@code long} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.038 -0500", hash_original_method = "8C25963DC1F5FD75F75FC8C46F2D8080", hash_generated_method = "2AECEAB147DF1422DFD870892004A44E")
-    public static void fill(long[] array, long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.032 -0500", hash_original_method = "8C25963DC1F5FD75F75FC8C46F2D8080", hash_generated_method = "2AECEAB147DF1422DFD870892004A44E")
+    
+public static void fill(long[] array, long value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -692,8 +718,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.039 -0500", hash_original_method = "A7E5E6D8B0352E19D2CAFB651CA3375F", hash_generated_method = "6CBDC8D77E8A0CBB5C04485ADF00FF9B")
-    public static void fill(long[] array, int start, int end, long value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.035 -0500", hash_original_method = "A7E5E6D8B0352E19D2CAFB651CA3375F", hash_generated_method = "6CBDC8D77E8A0CBB5C04485ADF00FF9B")
+    
+public static void fill(long[] array, int start, int end, long value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -708,8 +735,9 @@ public class Arrays {
      * @param value
      *            the {@code float} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.040 -0500", hash_original_method = "22CFEAA69588357DEEA1E52F95A64CA9", hash_generated_method = "50C71A9774937CB4C96DFB7BD77C5D4C")
-    public static void fill(float[] array, float value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.037 -0500", hash_original_method = "22CFEAA69588357DEEA1E52F95A64CA9", hash_generated_method = "50C71A9774937CB4C96DFB7BD77C5D4C")
+    
+public static void fill(float[] array, float value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -731,8 +759,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.041 -0500", hash_original_method = "E2DD3866058120BA248E0EBF124B1A36", hash_generated_method = "D16830E2241A31CF3EA28FD7BB070D36")
-    public static void fill(float[] array, int start, int end, float value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.040 -0500", hash_original_method = "E2DD3866058120BA248E0EBF124B1A36", hash_generated_method = "D16830E2241A31CF3EA28FD7BB070D36")
+    
+public static void fill(float[] array, int start, int end, float value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -747,8 +776,9 @@ public class Arrays {
      * @param value
      *            the {@code double} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.042 -0500", hash_original_method = "DB9408C548BB70BC9C2AC261FCDA28D9", hash_generated_method = "1962DC9CA9457658A119FC983749DA2B")
-    public static void fill(double[] array, double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.043 -0500", hash_original_method = "DB9408C548BB70BC9C2AC261FCDA28D9", hash_generated_method = "1962DC9CA9457658A119FC983749DA2B")
+    
+public static void fill(double[] array, double value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -770,8 +800,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.043 -0500", hash_original_method = "24E580167A377C75EF9FE74DA27231DA", hash_generated_method = "D2CDCE8985EEA64376528B973FDA20A4")
-    public static void fill(double[] array, int start, int end, double value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.045 -0500", hash_original_method = "24E580167A377C75EF9FE74DA27231DA", hash_generated_method = "D2CDCE8985EEA64376528B973FDA20A4")
+    
+public static void fill(double[] array, int start, int end, double value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -786,8 +817,9 @@ public class Arrays {
      * @param value
      *            the {@code boolean} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.043 -0500", hash_original_method = "EF04E7E51A80342C344C8D19A9D97259", hash_generated_method = "D719B9A16FA27CBCE051E6C690CA6ED2")
-    public static void fill(boolean[] array, boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.048 -0500", hash_original_method = "EF04E7E51A80342C344C8D19A9D97259", hash_generated_method = "D719B9A16FA27CBCE051E6C690CA6ED2")
+    
+public static void fill(boolean[] array, boolean value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -809,8 +841,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.044 -0500", hash_original_method = "9CD6B8DA260D9BA7ACF3634EA114A1DD", hash_generated_method = "ACBDA07FB96BD213D87D2BDC60BC03D5")
-    public static void fill(boolean[] array, int start, int end, boolean value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.051 -0500", hash_original_method = "9CD6B8DA260D9BA7ACF3634EA114A1DD", hash_generated_method = "ACBDA07FB96BD213D87D2BDC60BC03D5")
+    
+public static void fill(boolean[] array, int start, int end, boolean value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -825,8 +858,9 @@ public class Arrays {
      * @param value
      *            the {@code Object} element.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.046 -0500", hash_original_method = "61F6C031C06541C0A8BB46124B7DF1B0", hash_generated_method = "57B271DD17C53D9174EA5A7D77C69ED2")
-    public static void fill(Object[] array, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.053 -0500", hash_original_method = "61F6C031C06541C0A8BB46124B7DF1B0", hash_generated_method = "57B271DD17C53D9174EA5A7D77C69ED2")
+    
+public static void fill(Object[] array, Object value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
         }
@@ -848,8 +882,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.046 -0500", hash_original_method = "79F0F9E2337864B3A25E38841319137B", hash_generated_method = "760DF7690E0B7EAD9ECBC86BAD1DE27E")
-    public static void fill(Object[] array, int start, int end, Object value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.057 -0500", hash_original_method = "79F0F9E2337864B3A25E38841319137B", hash_generated_method = "760DF7690E0B7EAD9ECBC86BAD1DE27E")
+    
+public static void fill(Object[] array, int start, int end, Object value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
             array[i] = value;
@@ -872,8 +907,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.047 -0500", hash_original_method = "2546D08E367F39B87276798E74E5F7C9", hash_generated_method = "00051D1655FE12959069B8F525587189")
-    public static int hashCode(boolean[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.059 -0500", hash_original_method = "2546D08E367F39B87276798E74E5F7C9", hash_generated_method = "00051D1655FE12959069B8F525587189")
+    
+public static int hashCode(boolean[] array) {
         if (array == null) {
             return 0;
         }
@@ -901,8 +937,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.048 -0500", hash_original_method = "4247337C364D75C5775B90327E437E02", hash_generated_method = "0BEC61F994FE038277AD159E5D89638A")
-    public static int hashCode(int[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.062 -0500", hash_original_method = "4247337C364D75C5775B90327E437E02", hash_generated_method = "0BEC61F994FE038277AD159E5D89638A")
+    
+public static int hashCode(int[] array) {
         if (array == null) {
             return 0;
         }
@@ -930,8 +967,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.049 -0500", hash_original_method = "8996E0EE964DF7503EEB7546D0171BC8", hash_generated_method = "AB9A3B29C14E7CCFC8495554194F9027")
-    public static int hashCode(short[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.065 -0500", hash_original_method = "8996E0EE964DF7503EEB7546D0171BC8", hash_generated_method = "AB9A3B29C14E7CCFC8495554194F9027")
+    
+public static int hashCode(short[] array) {
         if (array == null) {
             return 0;
         }
@@ -959,8 +997,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.050 -0500", hash_original_method = "CF34292E59B04B6D44737BA18E98D31E", hash_generated_method = "5FBD419EC781AB625F5BEF4EC626A4D4")
-    public static int hashCode(char[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.067 -0500", hash_original_method = "CF34292E59B04B6D44737BA18E98D31E", hash_generated_method = "5FBD419EC781AB625F5BEF4EC626A4D4")
+    
+public static int hashCode(char[] array) {
         if (array == null) {
             return 0;
         }
@@ -988,8 +1027,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.051 -0500", hash_original_method = "0DAB329A34E0F771BA53A47F3CC85A85", hash_generated_method = "5805F59538A9AEDF8872D1309351E66B")
-    public static int hashCode(byte[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.070 -0500", hash_original_method = "0DAB329A34E0F771BA53A47F3CC85A85", hash_generated_method = "5805F59538A9AEDF8872D1309351E66B")
+    
+public static int hashCode(byte[] array) {
         if (array == null) {
             return 0;
         }
@@ -1017,8 +1057,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.051 -0500", hash_original_method = "1372B3AF5C4A871F1477E5CFF59AA36C", hash_generated_method = "9CA54337B3E9C5DFEB8838774B750786")
-    public static int hashCode(long[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.073 -0500", hash_original_method = "1372B3AF5C4A871F1477E5CFF59AA36C", hash_generated_method = "9CA54337B3E9C5DFEB8838774B750786")
+    
+public static int hashCode(long[] array) {
         if (array == null) {
             return 0;
         }
@@ -1050,8 +1091,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.052 -0500", hash_original_method = "5F64F0D4801047CFA52A927D58D47DFF", hash_generated_method = "6F5D187377794140851817D70864923D")
-    public static int hashCode(float[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.075 -0500", hash_original_method = "5F64F0D4801047CFA52A927D58D47DFF", hash_generated_method = "6F5D187377794140851817D70864923D")
+    
+public static int hashCode(float[] array) {
         if (array == null) {
             return 0;
         }
@@ -1082,8 +1124,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.053 -0500", hash_original_method = "2ED6EC211AB050CE988E9C1E614165FC", hash_generated_method = "198F9BF7ED49B5620E43B09D449E0429")
-    public static int hashCode(double[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.078 -0500", hash_original_method = "2ED6EC211AB050CE988E9C1E614165FC", hash_generated_method = "198F9BF7ED49B5620E43B09D449E0429")
+    
+public static int hashCode(double[] array) {
         if (array == null) {
             return 0;
         }
@@ -1120,8 +1163,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.054 -0500", hash_original_method = "179A8ECB8B9B61393E365C3DEC772A71", hash_generated_method = "1734914FAD1C698620650083D46C7152")
-    public static int hashCode(Object[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.081 -0500", hash_original_method = "179A8ECB8B9B61393E365C3DEC772A71", hash_generated_method = "1734914FAD1C698620650083D46C7152")
+    
+public static int hashCode(Object[] array) {
         if (array == null) {
             return 0;
         }
@@ -1166,8 +1210,9 @@ public class Arrays {
      *            the array whose hash code to compute.
      * @return the hash code for {@code array}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.055 -0500", hash_original_method = "DB95657D7B9BFF04F8AE75CCE334956B", hash_generated_method = "CE577603315572D2578507DB9ABC5061")
-    public static int deepHashCode(Object[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.084 -0500", hash_original_method = "DB95657D7B9BFF04F8AE75CCE334956B", hash_generated_method = "CE577603315572D2578507DB9ABC5061")
+    
+public static int deepHashCode(Object[] array) {
         if (array == null) {
             return 0;
         }
@@ -1179,8 +1224,9 @@ public class Arrays {
         return hashCode;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.056 -0500", hash_original_method = "3E4FA1262DE5E7DDD13BA987FBBE3E7F", hash_generated_method = "6510DA308E7BBBA71DF7D5D62B38A290")
-    private static int deepHashCodeElement(Object element) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.087 -0500", hash_original_method = "3E4FA1262DE5E7DDD13BA987FBBE3E7F", hash_generated_method = "6510DA308E7BBBA71DF7D5D62B38A290")
+    
+private static int deepHashCodeElement(Object element) {
         Class<?> cl;
         if (element == null) {
             return 0;
@@ -1233,8 +1279,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.057 -0500", hash_original_method = "36525CF04D56B3E594DA28B5E31D5D17", hash_generated_method = "9E66340CD089F626729C874183CC494A")
-    public static boolean equals(byte[] array1, byte[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.090 -0500", hash_original_method = "36525CF04D56B3E594DA28B5E31D5D17", hash_generated_method = "9E66340CD089F626729C874183CC494A")
+    
+public static boolean equals(byte[] array1, byte[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1260,8 +1307,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.058 -0500", hash_original_method = "734A4379046AFFEB9A4187E967041454", hash_generated_method = "4A3E227C5FF338AD6ED94C32D38C4F5B")
-    public static boolean equals(short[] array1, short[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.093 -0500", hash_original_method = "734A4379046AFFEB9A4187E967041454", hash_generated_method = "4A3E227C5FF338AD6ED94C32D38C4F5B")
+    
+public static boolean equals(short[] array1, short[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1287,8 +1335,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.059 -0500", hash_original_method = "90AE32A316C2C8D81F960E0C17378875", hash_generated_method = "FD6CEFEAFF4B3525D8AD491A42D7B3D0")
-    public static boolean equals(char[] array1, char[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.096 -0500", hash_original_method = "90AE32A316C2C8D81F960E0C17378875", hash_generated_method = "FD6CEFEAFF4B3525D8AD491A42D7B3D0")
+    
+public static boolean equals(char[] array1, char[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1314,8 +1363,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.060 -0500", hash_original_method = "85B9524033BC9A85EE51FE1FEA6AF837", hash_generated_method = "CEF27A2E6A9145AC480E41CF5E9BDF23")
-    public static boolean equals(int[] array1, int[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.098 -0500", hash_original_method = "85B9524033BC9A85EE51FE1FEA6AF837", hash_generated_method = "CEF27A2E6A9145AC480E41CF5E9BDF23")
+    
+public static boolean equals(int[] array1, int[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1341,8 +1391,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.061 -0500", hash_original_method = "1E6C155141A1111F03DCDEAF3678F678", hash_generated_method = "E853A16D932FDC9525B58F2A0F907CD7")
-    public static boolean equals(long[] array1, long[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.101 -0500", hash_original_method = "1E6C155141A1111F03DCDEAF3678F678", hash_generated_method = "E853A16D932FDC9525B58F2A0F907CD7")
+    
+public static boolean equals(long[] array1, long[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1370,8 +1421,9 @@ public class Arrays {
      *         equal, {@code false} otherwise.
      * @see Float#equals(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.062 -0500", hash_original_method = "153C3E9C5F203E79F5BF280F155C0AB0", hash_generated_method = "03C85F91D2C5A42823F86B81962DDED2")
-    public static boolean equals(float[] array1, float[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.104 -0500", hash_original_method = "153C3E9C5F203E79F5BF280F155C0AB0", hash_generated_method = "03C85F91D2C5A42823F86B81962DDED2")
+    
+public static boolean equals(float[] array1, float[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1400,8 +1452,9 @@ public class Arrays {
      *         equal, {@code false} otherwise.
      * @see Double#equals(Object)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.063 -0500", hash_original_method = "C791C08846C114648457D3C0AD73339F", hash_generated_method = "AB8BBF1E4C36D7A38FB5B6C8304F0C39")
-    public static boolean equals(double[] array1, double[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.107 -0500", hash_original_method = "C791C08846C114648457D3C0AD73339F", hash_generated_method = "AB8BBF1E4C36D7A38FB5B6C8304F0C39")
+    
+public static boolean equals(double[] array1, double[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1428,8 +1481,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.064 -0500", hash_original_method = "418DF30233826B8D5F2BA83471599105", hash_generated_method = "D53850AD9234427781A798821AD9FA19")
-    public static boolean equals(boolean[] array1, boolean[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.110 -0500", hash_original_method = "418DF30233826B8D5F2BA83471599105", hash_generated_method = "D53850AD9234427781A798821AD9FA19")
+    
+public static boolean equals(boolean[] array1, boolean[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1455,8 +1509,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal according to {@code equals()}, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.065 -0500", hash_original_method = "2BBB55550A5654C183C70F6E6AB7077D", hash_generated_method = "7B58E80526BDD8137E3E9C883F497646")
-    public static boolean equals(Object[] array1, Object[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.113 -0500", hash_original_method = "2BBB55550A5654C183C70F6E6AB7077D", hash_generated_method = "7B58E80526BDD8137E3E9C883F497646")
+    
+public static boolean equals(Object[] array1, Object[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1508,8 +1563,9 @@ public class Arrays {
      *         same length and the elements at each index in the two arrays are
      *         equal according to {@code equals()}, {@code false} otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.066 -0500", hash_original_method = "BBDCB0D2AFB3FB09B2E81D11AD378107", hash_generated_method = "4FF602F398122F00281AB6E439B5CC4B")
-    public static boolean deepEquals(Object[] array1, Object[] array2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.116 -0500", hash_original_method = "BBDCB0D2AFB3FB09B2E81D11AD378107", hash_generated_method = "4FF602F398122F00281AB6E439B5CC4B")
+    
+public static boolean deepEquals(Object[] array1, Object[] array2) {
         if (array1 == array2) {
             return true;
         }
@@ -1526,8 +1582,9 @@ public class Arrays {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.067 -0500", hash_original_method = "F5AFF1E198BE400B38C78ACAF40C1324", hash_generated_method = "08A112BE00421BC6113D571222164CF8")
-    private static boolean deepEqualsElements(Object e1, Object e2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.119 -0500", hash_original_method = "F5AFF1E198BE400B38C78ACAF40C1324", hash_generated_method = "08A112BE00421BC6113D571222164CF8")
+    
+private static boolean deepEqualsElements(Object e1, Object e2) {
         Class<?> cl1, cl2;
 
         if (e1 == e2) {
@@ -1586,8 +1643,9 @@ public class Arrays {
      * @param array
      *            the {@code byte} array to be sorted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.068 -0500", hash_original_method = "E5BF1B41F12B83B703EDEDC6C20A8D2E", hash_generated_method = "10F8E2945ED87E2DEC22E9498B408452")
-    public static void sort(byte[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.121 -0500", hash_original_method = "E5BF1B41F12B83B703EDEDC6C20A8D2E", hash_generated_method = "10F8E2945ED87E2DEC22E9498B408452")
+    
+public static void sort(byte[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1605,8 +1663,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.069 -0500", hash_original_method = "C91BF707E87558E2399AB2AABB697A59", hash_generated_method = "46294595859D7DA9E01CD79B48D0F31D")
-    public static void sort(byte[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.124 -0500", hash_original_method = "C91BF707E87558E2399AB2AABB697A59", hash_generated_method = "46294595859D7DA9E01CD79B48D0F31D")
+    
+public static void sort(byte[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1616,8 +1675,9 @@ public class Arrays {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.070 -0500", hash_original_method = "F4478C2D8B136FFA51B672714176E1DA", hash_generated_method = "01BC072697969B831885D7A03C404D43")
-    public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.127 -0500", hash_original_method = "F4478C2D8B136FFA51B672714176E1DA", hash_generated_method = "01BC072697969B831885D7A03C404D43")
+    
+public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
         if ((offset | count) < 0 || offset > arrayLength || arrayLength - offset < count) {
             throw new ArrayIndexOutOfBoundsException(arrayLength, offset,
                     count);
@@ -1630,8 +1690,9 @@ public class Arrays {
      *
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.070 -0500", hash_original_method = "E4D2FA815A47A76C3AC4F451E8832ED4", hash_generated_method = "DA96F57F4DE904C94DA4A9CC39A04E62")
-    public static void checkStartAndEnd(int len, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.130 -0500", hash_original_method = "E4D2FA815A47A76C3AC4F451E8832ED4", hash_generated_method = "DA96F57F4DE904C94DA4A9CC39A04E62")
+    
+public static void checkStartAndEnd(int len, int start, int end) {
         if (start < 0 || end > len) {
             throw new ArrayIndexOutOfBoundsException("start < 0 || end > len."
                     + " start=" + start + ", end=" + end + ", len=" + len);
@@ -1647,8 +1708,9 @@ public class Arrays {
      * @param array
      *            the {@code char} array to be sorted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.071 -0500", hash_original_method = "49FEABF0AD0150DE31C3D1B1392EC32F", hash_generated_method = "C2AC3C6088B13DD2017B67031689708B")
-    public static void sort(char[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.133 -0500", hash_original_method = "49FEABF0AD0150DE31C3D1B1392EC32F", hash_generated_method = "C2AC3C6088B13DD2017B67031689708B")
+    
+public static void sort(char[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1666,8 +1728,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.072 -0500", hash_original_method = "371BFA4DC1A016D782A781EAD4A3EDE2", hash_generated_method = "1C0A82A26D31EE8C406869302E86ACAA")
-    public static void sort(char[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.135 -0500", hash_original_method = "371BFA4DC1A016D782A781EAD4A3EDE2", hash_generated_method = "1C0A82A26D31EE8C406869302E86ACAA")
+    
+public static void sort(char[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1678,8 +1741,9 @@ public class Arrays {
      *            the {@code double} array to be sorted.
      * @see #sort(double[], int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.073 -0500", hash_original_method = "84A18C4D53BD41C8D2778E79004BC913", hash_generated_method = "77EF985B7D756EB16928287D57DF5D07")
-    public static void sort(double[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.137 -0500", hash_original_method = "84A18C4D53BD41C8D2778E79004BC913", hash_generated_method = "77EF985B7D756EB16928287D57DF5D07")
+    
+public static void sort(double[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1699,8 +1763,9 @@ public class Arrays {
      *                if {@code start < 0} or {@code end > array.length}.
      * @see Double#compareTo(Double)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.074 -0500", hash_original_method = "854A1C6650DA6DBAB9B14EA7DEF38592", hash_generated_method = "2A6FDDC8429443748543CCA6946C086B")
-    public static void sort(double[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.140 -0500", hash_original_method = "854A1C6650DA6DBAB9B14EA7DEF38592", hash_generated_method = "2A6FDDC8429443748543CCA6946C086B")
+    
+public static void sort(double[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1711,8 +1776,9 @@ public class Arrays {
      *            the {@code float} array to be sorted.
      * @see #sort(float[], int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.075 -0500", hash_original_method = "16C65FF0357F4E9D1D50699F331D8839", hash_generated_method = "D95D8F45336F14A82A0DA6D9E33416D0")
-    public static void sort(float[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.142 -0500", hash_original_method = "16C65FF0357F4E9D1D50699F331D8839", hash_generated_method = "D95D8F45336F14A82A0DA6D9E33416D0")
+    
+public static void sort(float[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1732,8 +1798,9 @@ public class Arrays {
      *                if {@code start < 0} or {@code end > array.length}.
      * @see Float#compareTo(Float)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.075 -0500", hash_original_method = "AF6D58E0B54A03BD8558812B1E476809", hash_generated_method = "CFC5DD12E904BD82308FCAD44210EBB4")
-    public static void sort(float[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.145 -0500", hash_original_method = "AF6D58E0B54A03BD8558812B1E476809", hash_generated_method = "CFC5DD12E904BD82308FCAD44210EBB4")
+    
+public static void sort(float[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1743,8 +1810,9 @@ public class Arrays {
      * @param array
      *            the {@code int} array to be sorted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.076 -0500", hash_original_method = "D747170A7F04B613231E2142802ABE4F", hash_generated_method = "06E36CF176CAA6C02E3009ABCB7C47D7")
-    public static void sort(int[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.148 -0500", hash_original_method = "D747170A7F04B613231E2142802ABE4F", hash_generated_method = "06E36CF176CAA6C02E3009ABCB7C47D7")
+    
+public static void sort(int[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1762,8 +1830,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.077 -0500", hash_original_method = "0D7CECF6C48A29B817D7C281772463C0", hash_generated_method = "EEA5A91DD76296BEF0E6F5D639F41BA4")
-    public static void sort(int[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.150 -0500", hash_original_method = "0D7CECF6C48A29B817D7C281772463C0", hash_generated_method = "EEA5A91DD76296BEF0E6F5D639F41BA4")
+    
+public static void sort(int[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1773,8 +1842,9 @@ public class Arrays {
      * @param array
      *            the {@code long} array to be sorted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.078 -0500", hash_original_method = "E8E6CFFD56A04D652E5CCA11D468DE7D", hash_generated_method = "479C8E951B583B43B17A63B224C3E23F")
-    public static void sort(long[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.153 -0500", hash_original_method = "E8E6CFFD56A04D652E5CCA11D468DE7D", hash_generated_method = "479C8E951B583B43B17A63B224C3E23F")
+    
+public static void sort(long[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1792,8 +1862,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.079 -0500", hash_original_method = "B4C5BDF3B63061452DED86E729A4379E", hash_generated_method = "E437A036D13E6AAE362166992D5D101B")
-    public static void sort(long[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.156 -0500", hash_original_method = "B4C5BDF3B63061452DED86E729A4379E", hash_generated_method = "E437A036D13E6AAE362166992D5D101B")
+    
+public static void sort(long[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1803,8 +1874,9 @@ public class Arrays {
      * @param array
      *            the {@code short} array to be sorted.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.080 -0500", hash_original_method = "2ABBA9721E6AA886F8B6CBB3EA3C6907", hash_generated_method = "DA076D4E62F231F8C5B69BFC1874CA6D")
-    public static void sort(short[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.159 -0500", hash_original_method = "2ABBA9721E6AA886F8B6CBB3EA3C6907", hash_generated_method = "DA076D4E62F231F8C5B69BFC1874CA6D")
+    
+public static void sort(short[] array) {
         DualPivotQuicksort.sort(array);
     }
 
@@ -1822,8 +1894,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.081 -0500", hash_original_method = "3DD87F91095A169C1E58894EFACAD9BC", hash_generated_method = "30733AE96453ACC928BA06D939F82551")
-    public static void sort(short[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.161 -0500", hash_original_method = "3DD87F91095A169C1E58894EFACAD9BC", hash_generated_method = "30733AE96453ACC928BA06D939F82551")
+    
+public static void sort(short[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
@@ -1873,8 +1946,9 @@ public class Arrays {
      *                or if some elements cannot be compared to each other.
      * @see #sort(Object[], int, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.082 -0500", hash_original_method = "E4A046EBA329CB34ADB8348C19056859", hash_generated_method = "BA8A5F1F03DB979CE61190FBA9296E46")
-    public static void sort(Object[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.164 -0500", hash_original_method = "E4A046EBA329CB34ADB8348C19056859", hash_generated_method = "BA8A5F1F03DB979CE61190FBA9296E46")
+    
+public static void sort(Object[] array) {
         ComparableTimSort.sort(array);
     }
 
@@ -1898,8 +1972,9 @@ public class Arrays {
      * @throws ArrayIndexOutOfBoundsException
      *                if {@code start < 0} or {@code end > array.length}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.083 -0500", hash_original_method = "4B0605E013E4E76992C5E6D06D85AB36", hash_generated_method = "D575D1FCB553A41729CC20B346E26273")
-    public static void sort(Object[] array, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.166 -0500", hash_original_method = "4B0605E013E4E76992C5E6D06D85AB36", hash_generated_method = "D575D1FCB553A41729CC20B346E26273")
+    
+public static void sort(Object[] array, int start, int end) {
         ComparableTimSort.sort(array, start, end);
     }
 
@@ -1927,8 +2002,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.085 -0500", hash_original_method = "DF1A9D37DEA1814BE0A1BBD9C33C2E61", hash_generated_method = "622402968FDF43F5F4A3D6EBA98237B6")
-    public static String toString(boolean[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.173 -0500", hash_original_method = "DF1A9D37DEA1814BE0A1BBD9C33C2E61", hash_generated_method = "622402968FDF43F5F4A3D6EBA98237B6")
+    
+public static String toString(boolean[] array) {
         if (array == null) {
             return "null";
         }
@@ -1958,8 +2034,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.086 -0500", hash_original_method = "497D7FD68D9DA1C21B948995B9C08123", hash_generated_method = "80B737CED8CABD4D5836ABBCA3038F3C")
-    public static String toString(byte[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.176 -0500", hash_original_method = "497D7FD68D9DA1C21B948995B9C08123", hash_generated_method = "80B737CED8CABD4D5836ABBCA3038F3C")
+    
+public static String toString(byte[] array) {
         if (array == null) {
             return "null";
         }
@@ -1989,8 +2066,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.087 -0500", hash_original_method = "0BD927898618E317DB698CC7205B2AB8", hash_generated_method = "6367B5C0721BBA2E45C089433B36ADE6")
-    public static String toString(char[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.179 -0500", hash_original_method = "0BD927898618E317DB698CC7205B2AB8", hash_generated_method = "6367B5C0721BBA2E45C089433B36ADE6")
+    
+public static String toString(char[] array) {
         if (array == null) {
             return "null";
         }
@@ -2020,8 +2098,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.088 -0500", hash_original_method = "954F4473C971E06E4D851CD45B56DB41", hash_generated_method = "E4DD420CCF21B174899357A65A0EF6B2")
-    public static String toString(double[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.182 -0500", hash_original_method = "954F4473C971E06E4D851CD45B56DB41", hash_generated_method = "E4DD420CCF21B174899357A65A0EF6B2")
+    
+public static String toString(double[] array) {
         if (array == null) {
             return "null";
         }
@@ -2051,8 +2130,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.089 -0500", hash_original_method = "05E92F8279F4AF4E4104C1FBFFCB09A5", hash_generated_method = "E519F131B1DB021D46D87168DA13DA08")
-    public static String toString(float[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.185 -0500", hash_original_method = "05E92F8279F4AF4E4104C1FBFFCB09A5", hash_generated_method = "E519F131B1DB021D46D87168DA13DA08")
+    
+public static String toString(float[] array) {
         if (array == null) {
             return "null";
         }
@@ -2082,8 +2162,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.091 -0500", hash_original_method = "A82D8AB8B553305192C164EB5888E1A5", hash_generated_method = "C77FC40DF01FB300C98F2C0D47064706")
-    public static String toString(int[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.187 -0500", hash_original_method = "A82D8AB8B553305192C164EB5888E1A5", hash_generated_method = "C77FC40DF01FB300C98F2C0D47064706")
+    
+public static String toString(int[] array) {
         if (array == null) {
             return "null";
         }
@@ -2113,8 +2194,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.091 -0500", hash_original_method = "0BBBC9C5E8C44EFE67C0ED27FFEEE9BA", hash_generated_method = "2B7ADE6FB0D2B44E4B4C3C142370C8C7")
-    public static String toString(long[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.190 -0500", hash_original_method = "0BBBC9C5E8C44EFE67C0ED27FFEEE9BA", hash_generated_method = "2B7ADE6FB0D2B44E4B4C3C142370C8C7")
+    
+public static String toString(long[] array) {
         if (array == null) {
             return "null";
         }
@@ -2144,8 +2226,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.092 -0500", hash_original_method = "2A705CB7132FDFA84D44B25A472815FB", hash_generated_method = "F2E8E036F014D440E81326985210AC11")
-    public static String toString(short[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.193 -0500", hash_original_method = "2A705CB7132FDFA84D44B25A472815FB", hash_generated_method = "F2E8E036F014D440E81326985210AC11")
+    
+public static String toString(short[] array) {
         if (array == null) {
             return "null";
         }
@@ -2175,8 +2258,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.093 -0500", hash_original_method = "4659354346ED12C20B39DE6F57548D0B", hash_generated_method = "01D32014C4AD9B493003B0C1B46CED8F")
-    public static String toString(Object[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.196 -0500", hash_original_method = "4659354346ED12C20B39DE6F57548D0B", hash_generated_method = "01D32014C4AD9B493003B0C1B46CED8F")
+    
+public static String toString(Object[] array) {
         if (array == null) {
             return "null";
         }
@@ -2211,8 +2295,9 @@ public class Arrays {
      * @return the {@code String} representation of {@code array}.
      * @since 1.5
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.094 -0500", hash_original_method = "A9E20A49559B5F7B4C63C87BC2AD7AEE", hash_generated_method = "93C22C3DF112D64A0D6BB5ED30948BB7")
-    public static String deepToString(Object[] array) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.199 -0500", hash_original_method = "A9E20A49559B5F7B4C63C87BC2AD7AEE", hash_generated_method = "93C22C3DF112D64A0D6BB5ED30948BB7")
+    
+public static String deepToString(Object[] array) {
         // Special case null to prevent NPE
         if (array == null) {
             return "null";
@@ -2237,8 +2322,9 @@ public class Arrays {
      * @return the result.
      * @see #deepToString(Object[])
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.095 -0500", hash_original_method = "775EF6CABB5AD5EA80F9890FB88BA9F1", hash_generated_method = "F4DC3300895E0BC3A1750F138EB6375F")
-    private static void deepToStringImpl(Object[] array, Object[] origArrays,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.204 -0500", hash_original_method = "775EF6CABB5AD5EA80F9890FB88BA9F1", hash_generated_method = "F4DC3300895E0BC3A1750F138EB6375F")
+    
+private static void deepToStringImpl(Object[] array, Object[] origArrays,
             StringBuilder sb) {
         if (array == null) {
             sb.append("null");
@@ -2320,8 +2406,9 @@ public class Arrays {
      * @return A value of {@code true} if {@code array} is an
      *         element in {@code origArrays}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.096 -0500", hash_original_method = "A2425CE786319C2459A6785F99986BBA", hash_generated_method = "8FDF15EC344C672839A8351DECEC37E7")
-    private static boolean deepToStringImplContains(Object[] origArrays,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.206 -0500", hash_original_method = "A2425CE786319C2459A6785F99986BBA", hash_generated_method = "8FDF15EC344C672839A8351DECEC37E7")
+    
+private static boolean deepToStringImplContains(Object[] origArrays,
             Object array) {
         if (origArrays == null || origArrays.length == 0) {
             return false;
@@ -2346,8 +2433,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.097 -0500", hash_original_method = "EEFE4CF8E72C2451CD6574BC42EEF616", hash_generated_method = "80FB277279A07A1BE58ACB083AE0166F")
-    public static boolean[] copyOf(boolean[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.209 -0500", hash_original_method = "EEFE4CF8E72C2451CD6574BC42EEF616", hash_generated_method = "80FB277279A07A1BE58ACB083AE0166F")
+    
+public static boolean[] copyOf(boolean[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2366,8 +2454,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.098 -0500", hash_original_method = "9ECE64D6C44CCCD3CA2F4FAD7A67037A", hash_generated_method = "68975492B4B8C3482F024332FBAC1B64")
-    public static byte[] copyOf(byte[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.211 -0500", hash_original_method = "9ECE64D6C44CCCD3CA2F4FAD7A67037A", hash_generated_method = "68975492B4B8C3482F024332FBAC1B64")
+    
+public static byte[] copyOf(byte[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2386,8 +2475,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.099 -0500", hash_original_method = "BEEFDE40BF0B812C3EC81F5AA7FF19C2", hash_generated_method = "A9B78EA0B359E7A52A91D91BADC7D1D4")
-    public static char[] copyOf(char[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.214 -0500", hash_original_method = "BEEFDE40BF0B812C3EC81F5AA7FF19C2", hash_generated_method = "A9B78EA0B359E7A52A91D91BADC7D1D4")
+    
+public static char[] copyOf(char[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2406,8 +2496,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.099 -0500", hash_original_method = "0344866F84B86AB5E9951BBEBE8DF7CF", hash_generated_method = "29D05D4ABCCFC48B4AC3D23A39A60A4F")
-    public static double[] copyOf(double[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.217 -0500", hash_original_method = "0344866F84B86AB5E9951BBEBE8DF7CF", hash_generated_method = "29D05D4ABCCFC48B4AC3D23A39A60A4F")
+    
+public static double[] copyOf(double[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2426,8 +2517,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.100 -0500", hash_original_method = "274DB8BA8EB7DE2FB860E7A8F4EB4CC5", hash_generated_method = "4B37021DD915AA40FBA77AED500139D5")
-    public static float[] copyOf(float[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.219 -0500", hash_original_method = "274DB8BA8EB7DE2FB860E7A8F4EB4CC5", hash_generated_method = "4B37021DD915AA40FBA77AED500139D5")
+    
+public static float[] copyOf(float[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2446,8 +2538,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.101 -0500", hash_original_method = "410F54B03DF6190A84943E9E1D03989F", hash_generated_method = "3D9F4FE87F8C2297E41DFECC3C8577A4")
-    public static int[] copyOf(int[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.222 -0500", hash_original_method = "410F54B03DF6190A84943E9E1D03989F", hash_generated_method = "3D9F4FE87F8C2297E41DFECC3C8577A4")
+    
+public static int[] copyOf(int[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2466,8 +2559,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.102 -0500", hash_original_method = "3343CDB162AFA47FA49580605A57EDA3", hash_generated_method = "2A191A2B3DB991AC86CA0C3E75588B58")
-    public static long[] copyOf(long[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.225 -0500", hash_original_method = "3343CDB162AFA47FA49580605A57EDA3", hash_generated_method = "2A191A2B3DB991AC86CA0C3E75588B58")
+    
+public static long[] copyOf(long[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2486,8 +2580,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.103 -0500", hash_original_method = "DD9D7EA34F4A6424E4EB64114A9DD79C", hash_generated_method = "D2B56992E2A35D3C87F53536C09F94A6")
-    public static short[] copyOf(short[] original, int newLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.227 -0500", hash_original_method = "DD9D7EA34F4A6424E4EB64114A9DD79C", hash_generated_method = "D2B56992E2A35D3C87F53536C09F94A6")
+    
+public static short[] copyOf(short[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -2530,8 +2625,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.106 -0500", hash_original_method = "F502B9EC75335D4F5735070162DD7C3C", hash_generated_method = "4E25A19B709CDFDA3155D74A7EC6F6C9")
-    public static boolean[] copyOfRange(boolean[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.234 -0500", hash_original_method = "F502B9EC75335D4F5735070162DD7C3C", hash_generated_method = "4E25A19B709CDFDA3155D74A7EC6F6C9")
+    
+public static boolean[] copyOfRange(boolean[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2561,8 +2657,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.107 -0500", hash_original_method = "8F0CC874ECACCB04EB7CA2CFC3E48655", hash_generated_method = "05BB15D077B8441F3559723A5D6087AD")
-    public static byte[] copyOfRange(byte[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.238 -0500", hash_original_method = "8F0CC874ECACCB04EB7CA2CFC3E48655", hash_generated_method = "05BB15D077B8441F3559723A5D6087AD")
+    
+public static byte[] copyOfRange(byte[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2592,8 +2689,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.108 -0500", hash_original_method = "91CE694A0D2E577C530BE629F92B8EF0", hash_generated_method = "B16AB5F5FFF9B0CF11239BEB6B6B10EC")
-    public static char[] copyOfRange(char[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.241 -0500", hash_original_method = "91CE694A0D2E577C530BE629F92B8EF0", hash_generated_method = "B16AB5F5FFF9B0CF11239BEB6B6B10EC")
+    
+public static char[] copyOfRange(char[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2623,8 +2721,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.109 -0500", hash_original_method = "7933ED1507BF980E20F5A9C8C4695C51", hash_generated_method = "133B58F008D57286686B0D8F944842C8")
-    public static double[] copyOfRange(double[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.244 -0500", hash_original_method = "7933ED1507BF980E20F5A9C8C4695C51", hash_generated_method = "133B58F008D57286686B0D8F944842C8")
+    
+public static double[] copyOfRange(double[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2654,8 +2753,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.110 -0500", hash_original_method = "01867581602B5B044213DAECE2F1D1A8", hash_generated_method = "A49D9C4950BDE090192F8BDA156A6471")
-    public static float[] copyOfRange(float[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.247 -0500", hash_original_method = "01867581602B5B044213DAECE2F1D1A8", hash_generated_method = "A49D9C4950BDE090192F8BDA156A6471")
+    
+public static float[] copyOfRange(float[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2685,8 +2785,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.111 -0500", hash_original_method = "7B36D32E8B026BA3BC24987851E5FB75", hash_generated_method = "C0DAD15D215B7C170326DE9C95A801D5")
-    public static int[] copyOfRange(int[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.249 -0500", hash_original_method = "7B36D32E8B026BA3BC24987851E5FB75", hash_generated_method = "C0DAD15D215B7C170326DE9C95A801D5")
+    
+public static int[] copyOfRange(int[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2716,8 +2817,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.111 -0500", hash_original_method = "A34132FCEEB936A432F684C9C10320B5", hash_generated_method = "F1BCB638233CBB2A04705ADDC85AAB59")
-    public static long[] copyOfRange(long[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.252 -0500", hash_original_method = "A34132FCEEB936A432F684C9C10320B5", hash_generated_method = "F1BCB638233CBB2A04705ADDC85AAB59")
+    
+public static long[] copyOfRange(long[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2747,8 +2849,9 @@ public class Arrays {
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.112 -0500", hash_original_method = "BA02812AC7ABCCE3BD17A25110563368", hash_generated_method = "1CF2C11C3DB834451A65152365A5B5A8")
-    public static short[] copyOfRange(short[] original, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:40.255 -0500", hash_original_method = "BA02812AC7ABCCE3BD17A25110563368", hash_generated_method = "1CF2C11C3DB834451A65152365A5B5A8")
+    
+public static short[] copyOfRange(short[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
         }
@@ -2799,33 +2902,36 @@ public class Arrays {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.012 -0500", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "A63BB04A5147B5B0A5900847E1C19F14")
-    private Arrays() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.946 -0500", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "A63BB04A5147B5B0A5900847E1C19F14")
+    
+private Arrays() {
         /* empty */
     }
 
     
     private static class ArrayList<E> extends AbstractList<E> implements List<E>, Serializable, RandomAccess {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.001 -0500", hash_original_field = "88450D1E537FF5060CA945C92FA2CB31", hash_generated_field = "534D9DD3A0BE09C3AE46777ECEF6E48A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.914 -0500", hash_original_field = "88450D1E537FF5060CA945C92FA2CB31", hash_generated_field = "534D9DD3A0BE09C3AE46777ECEF6E48A")
 
 
         private static final long serialVersionUID = -2764017481108945198L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.002 -0500", hash_original_field = "9B72AFAEA0DBD2010A596B38D379CD5B", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.917 -0500", hash_original_field = "9B72AFAEA0DBD2010A596B38D379CD5B", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
 
 
         private  E[] a;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.003 -0500", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "28401D48F15218543E5E002CE4B26D15")
-        ArrayList(E[] storage) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.920 -0500", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "28401D48F15218543E5E002CE4B26D15")
+        
+ArrayList(E[] storage) {
             if (storage == null) {
                 throw new NullPointerException();
             }
             a = storage;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.004 -0500", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "009E3274DDF9A4476E9FB92EBEBFD44C")
-        @Override
-public boolean contains(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.923 -0500", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "009E3274DDF9A4476E9FB92EBEBFD44C")
+        
+@Override
+        public boolean contains(Object object) {
             if (object != null) {
                 for (E element : a) {
                     if (object.equals(element)) {
@@ -2868,9 +2974,10 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             //}
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.006 -0500", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "4B7EC43DED547E35769F36AFEEF9AD5D")
-        @Override
-public int indexOf(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.928 -0500", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "4B7EC43DED547E35769F36AFEEF9AD5D")
+        
+@Override
+        public int indexOf(Object object) {
             if (object != null) {
                 for (int i = 0; i < a.length; i++) {
                     if (object.equals(a[i])) {
@@ -2887,9 +2994,10 @@ public int indexOf(Object object) {
             return -1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.007 -0500", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "B78E3C2101055DD1CC048E1DF3243AAB")
-        @Override
-public int lastIndexOf(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.931 -0500", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "B78E3C2101055DD1CC048E1DF3243AAB")
+        
+@Override
+        public int lastIndexOf(Object object) {
             if (object != null) {
                 for (int i = a.length - 1; i >= 0; i--) {
                     if (object.equals(a[i])) {
@@ -2906,23 +3014,26 @@ public int lastIndexOf(Object object) {
             return -1;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.008 -0500", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "041DFDF040EDA958588DB53691C01A94")
-        @Override
-public E set(int location, E object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.934 -0500", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "041DFDF040EDA958588DB53691C01A94")
+        
+@Override
+        public E set(int location, E object) {
             E result = a[location];
             a[location] = object;
             return result;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.009 -0500", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "4144419ED260D453601649A3D8DBB6F5")
-        @Override
-public int size() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.936 -0500", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "4144419ED260D453601649A3D8DBB6F5")
+        
+@Override
+        public int size() {
             return a.length;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:52.009 -0500", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "041C09F1BF277D3B146122548FB25910")
-        @Override
-public Object[] toArray() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.939 -0500", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "041C09F1BF277D3B146122548FB25910")
+        
+@Override
+        public Object[] toArray() {
             return a.clone();
         }
 

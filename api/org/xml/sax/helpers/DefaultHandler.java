@@ -54,8 +54,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.EntityResolver#resolveEntity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.736 -0500", hash_original_method = "9EAB8438172711193BA945D78BF156AE", hash_generated_method = "6079F24DCCF84F8A2034CB9B0484C6F5")
-    public InputSource resolveEntity (String publicId, String systemId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.132 -0500", hash_original_method = "9EAB8438172711193BA945D78BF156AE", hash_generated_method = "6079F24DCCF84F8A2034CB9B0484C6F5")
+    
+public InputSource resolveEntity (String publicId, String systemId)
     throws IOException, SAXException
     {
     return null;
@@ -83,8 +84,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.DTDHandler#notationDecl
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.737 -0500", hash_original_method = "E183481C16DEC5D87834DCD30C3A4B47", hash_generated_method = "ABC3A129BCCCAFA25078A7742DEAC82A")
-    public void notationDecl (String name, String publicId, String systemId)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.135 -0500", hash_original_method = "E183481C16DEC5D87834DCD30C3A4B47", hash_generated_method = "ABC3A129BCCCAFA25078A7742DEAC82A")
+    
+public void notationDecl (String name, String publicId, String systemId)
     throws SAXException
     {
     // no op
@@ -107,8 +109,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.DTDHandler#unparsedEntityDecl
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.738 -0500", hash_original_method = "A4218B7445EF8022439A8D7DC57F2FF7", hash_generated_method = "39EA436AC2CA313C3173E04B950DFC15")
-    public void unparsedEntityDecl (String name, String publicId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.137 -0500", hash_original_method = "A4218B7445EF8022439A8D7DC57F2FF7", hash_generated_method = "39EA436AC2CA313C3173E04B950DFC15")
+    
+public void unparsedEntityDecl (String name, String publicId,
                     String systemId, String notationName)
     throws SAXException
     {
@@ -133,8 +136,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      * @see org.xml.sax.ContentHandler#setDocumentLocator
      * @see org.xml.sax.Locator
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.739 -0500", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "9BA8507971680553E082ED561F93A7C5")
-    public void setDocumentLocator (Locator locator)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.140 -0500", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "9BA8507971680553E082ED561F93A7C5")
+    
+public void setDocumentLocator (Locator locator)
     {
     // no op
     }
@@ -152,8 +156,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#startDocument
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.739 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "3955D568D23D91849FC2AFF57016EC23")
-    public void startDocument ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.142 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "3955D568D23D91849FC2AFF57016EC23")
+    
+public void startDocument ()
     throws SAXException
     {
     // no op
@@ -172,8 +177,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#endDocument
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.740 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "2E393C8D7D82B97D34D7D61966B266D5")
-    public void endDocument ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.144 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "2E393C8D7D82B97D34D7D61966B266D5")
+    
+public void endDocument ()
     throws SAXException
     {
     // no op
@@ -193,8 +199,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#startPrefixMapping
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.741 -0500", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "E318F5A382F6DD3A6D9B9ED0A805C948")
-    public void startPrefixMapping (String prefix, String uri)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.147 -0500", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "E318F5A382F6DD3A6D9B9ED0A805C948")
+    
+public void startPrefixMapping (String prefix, String uri)
     throws SAXException
     {
     // no op
@@ -213,8 +220,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#endPrefixMapping
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.742 -0500", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "12507F578F76F1D4B4C4275405456B5F")
-    public void endPrefixMapping (String prefix)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.149 -0500", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "12507F578F76F1D4B4C4275405456B5F")
+    
+public void endPrefixMapping (String prefix)
     throws SAXException
     {
     // no op
@@ -244,8 +252,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#startElement
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.743 -0500", hash_original_method = "4370BBADFC324ACBBC533D016E5331B9", hash_generated_method = "A43BCFB3590903ED462CCADA0953A76D")
-    public void startElement (String uri, String localName,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.151 -0500", hash_original_method = "4370BBADFC324ACBBC533D016E5331B9", hash_generated_method = "A43BCFB3590903ED462CCADA0953A76D")
+    
+public void startElement (String uri, String localName,
                   String qName, Attributes attributes)
     throws SAXException
     {
@@ -273,8 +282,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#endElement
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.743 -0500", hash_original_method = "D1BB65E44FB06EB911D3CDAFED8D37CD", hash_generated_method = "0BCE982FF5852BF7039A7416E6F1C03A")
-    public void endElement (String uri, String localName, String qName)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.153 -0500", hash_original_method = "D1BB65E44FB06EB911D3CDAFED8D37CD", hash_generated_method = "0BCE982FF5852BF7039A7416E6F1C03A")
+    
+public void endElement (String uri, String localName, String qName)
     throws SAXException
     {
     // no op
@@ -297,8 +307,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#characters
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.744 -0500", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "D16272D013A1528940CEA00C0F124898")
-    public void characters (char ch[], int start, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.156 -0500", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "D16272D013A1528940CEA00C0F124898")
+    
+public void characters (char ch[], int start, int length)
     throws SAXException
     {
     // no op
@@ -321,8 +332,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#ignorableWhitespace
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.745 -0500", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "D8858A88BA20CC0A6A20C0B768D5BE33")
-    public void ignorableWhitespace (char ch[], int start, int length)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.158 -0500", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "D8858A88BA20CC0A6A20C0B768D5BE33")
+    
+public void ignorableWhitespace (char ch[], int start, int length)
     throws SAXException
     {
     // no op
@@ -344,8 +356,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#processingInstruction
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.746 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "E7A100FD0C93F22A1CE30CA6639AC7DE")
-    public void processingInstruction (String target, String data)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.161 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "E7A100FD0C93F22A1CE30CA6639AC7DE")
+    
+public void processingInstruction (String target, String data)
     throws SAXException
     {
     // no op
@@ -365,8 +378,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#processingInstruction
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.747 -0500", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "5C21F38AD3AF8C855A3835FBFBE5B603")
-    public void skippedEntity (String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.163 -0500", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "5C21F38AD3AF8C855A3835FBFBE5B603")
+    
+public void skippedEntity (String name)
     throws SAXException
     {
     // no op
@@ -393,8 +407,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      * @see org.xml.sax.ErrorHandler#warning
      * @see org.xml.sax.SAXParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.748 -0500", hash_original_method = "2057473EBAC4D7FF54AEDE0043F741F4", hash_generated_method = "30BA8887E7A010663223CDC747054835")
-    public void warning (SAXParseException e)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.165 -0500", hash_original_method = "2057473EBAC4D7FF54AEDE0043F741F4", hash_generated_method = "30BA8887E7A010663223CDC747054835")
+    
+public void warning (SAXParseException e)
     throws SAXException
     {
     // no op
@@ -415,8 +430,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      * @see org.xml.sax.ErrorHandler#warning
      * @see org.xml.sax.SAXParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.748 -0500", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "CACE9FD48F5BBAC46481DE007E53B3CB")
-    public void error (SAXParseException e)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.168 -0500", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "CACE9FD48F5BBAC46481DE007E53B3CB")
+    
+public void error (SAXParseException e)
     throws SAXException
     {
     // no op
@@ -440,8 +456,9 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
      * @see org.xml.sax.ErrorHandler#fatalError
      * @see org.xml.sax.SAXParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.749 -0500", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "8BE9290E5A78003CD3400FC7458B6660")
-    public void fatalError (SAXParseException e)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.170 -0500", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "8BE9290E5A78003CD3400FC7458B6660")
+    
+public void fatalError (SAXParseException e)
     throws SAXException
     {
     throw e;

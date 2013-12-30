@@ -21,7 +21,7 @@ import java.util.Locale;
 
 
 class DefaultHostnameVerifier implements HostnameVerifier {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.541 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "3A751CA92898755F652261390A3F7AD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.377 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "3A751CA92898755F652261390A3F7AD7")
 
     private static final String[] BAD_COUNTRY_2LDS =
           { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
@@ -34,8 +34,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.543 -0500", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "B33EAEBE68C1BC2E1DE35493554FC6DD")
-    public final boolean verify(String host, SSLSession session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.380 -0500", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "B33EAEBE68C1BC2E1DE35493554FC6DD")
+    
+public final boolean verify(String host, SSLSession session) {
         Certificate[] certs;
         try {
             certs = session.getPeerCertificates();
@@ -72,8 +73,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
      * @param cn a certificate CN or DNS subject alt. Either a literal name or
      *     a wildcard of the form "*.google.com".
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.543 -0500", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "7AFF45F57CB221839AF43D1350782560")
-    private boolean matches(String hostName, String cn) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.383 -0500", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "7AFF45F57CB221839AF43D1350782560")
+    
+private boolean matches(String hostName, String cn) {
         if (cn == null) {
             return false;
         }
@@ -96,8 +98,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.545 -0500", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "C59675BD211D3F135E1AEBBEAF5E91B2")
-    private boolean acceptableCountryWildcard(String cn) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.385 -0500", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "C59675BD211D3F135E1AEBBEAF5E91B2")
+    
+private boolean acceptableCountryWildcard(String cn) {
         int cnLen = cn.length();
         if (cnLen >= 7 && cnLen <= 9) {
             // Look for the '.' in the 3rd-last position:
@@ -112,8 +115,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.546 -0500", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "A2DE3C6C397202048AE943C2CFF7C4C4")
-    private String getFirstCn(X509Certificate cert) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.388 -0500", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "A2DE3C6C397202048AE943C2CFF7C4C4")
+    
+private String getFirstCn(X509Certificate cert) {
         /*
          * Sebastian Hauer's original StrictSSLProtocolSocketFactory used
          * getName() and had the following comment:
@@ -156,8 +160,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
      * <p>(Or maybe the version of OpenSSL I'm using to test isn't storing the
      * international characters correctly in the SubjectAlts?).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.546 -0500", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "163755B59EEC94F6B2CD5A45CFBB27D5")
-    private List<String> getDNSSubjectAlts(X509Certificate cert) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.391 -0500", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "163755B59EEC94F6B2CD5A45CFBB27D5")
+    
+private List<String> getDNSSubjectAlts(X509Certificate cert) {
         Collection<List<?>> subjectAlternativeNames;
         try {
             subjectAlternativeNames = cert.getSubjectAlternativeNames();

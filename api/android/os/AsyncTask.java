@@ -28,14 +28,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 public abstract class AsyncTask<Params, Progress, Result> {
 
     /** @hide Used to force static handler to be created. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.373 -0500", hash_original_method = "85B7E9920F04AD03DB055D36153974ED", hash_generated_method = "8717D9EFB6DC73C1619EB6E1EBC30550")
-    public static void init() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.236 -0500", hash_original_method = "85B7E9920F04AD03DB055D36153974ED", hash_generated_method = "8717D9EFB6DC73C1619EB6E1EBC30550")
+    
+public static void init() {
         sHandler.getLooper();
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.374 -0500", hash_original_method = "B027C147EDCD8E49898D40178E159A21", hash_generated_method = "58070820B0D447663D6A5F11B97A69F4")
-    public static void setDefaultExecutor(Executor exec) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.239 -0500", hash_original_method = "B027C147EDCD8E49898D40178E159A21", hash_generated_method = "58070820B0D447663D6A5F11B97A69F4")
+    
+public static void setDefaultExecutor(Executor exec) {
         sDefaultExecutor = exec;
     }
 
@@ -43,23 +45,23 @@ public abstract class AsyncTask<Params, Progress, Result> {
     public static void execute(Runnable runnable) {
     	runnable.run();
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.351 -0500", hash_original_field = "528CFAB5DE877B703E7DACCBAA67819D", hash_generated_field = "1621B971276E6C94E07DE79B5D168C87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.175 -0500", hash_original_field = "528CFAB5DE877B703E7DACCBAA67819D", hash_generated_field = "1621B971276E6C94E07DE79B5D168C87")
 
     private static final String LOG_TAG = "AsyncTask";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.352 -0500", hash_original_field = "2BAA5AA0839D150C1EAC64CF8DA3B700", hash_generated_field = "CF0740E21C8B02D30E2E5C3E17F1896F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.177 -0500", hash_original_field = "2BAA5AA0839D150C1EAC64CF8DA3B700", hash_generated_field = "CF0740E21C8B02D30E2E5C3E17F1896F")
 
 
     private static final int CORE_POOL_SIZE = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.353 -0500", hash_original_field = "B9B71D1929EF9C441A1A5A7BA21D4B6B", hash_generated_field = "68EE0E4A694BDFD732EDA8B1D33337CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.180 -0500", hash_original_field = "B9B71D1929EF9C441A1A5A7BA21D4B6B", hash_generated_field = "68EE0E4A694BDFD732EDA8B1D33337CD")
 
     private static final int MAXIMUM_POOL_SIZE = 128;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.354 -0500", hash_original_field = "BC25ECD11BC142C44EAFCE42CC08FE92", hash_generated_field = "874374A7281CFF977630F5545E6B2AEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.182 -0500", hash_original_field = "BC25ECD11BC142C44EAFCE42CC08FE92", hash_generated_field = "874374A7281CFF977630F5545E6B2AEF")
 
     private static final int KEEP_ALIVE = 1;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.861 -0400", hash_original_field = "CE50E0B18A35D10A1792CE5C702A9A23", hash_generated_field = "EFD974F406D7D4004DF1FB489A6EC4A2")
 
     private static final ThreadFactory sThreadFactory = new ThreadFactory() {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.355 -0500", hash_original_field = "09935F89874D8393BB7419189C0F2C7D", hash_generated_field = "53BD2EF82B0D2291D1219E89FB31ADA8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.185 -0500", hash_original_field = "09935F89874D8393BB7419189C0F2C7D", hash_generated_field = "53BD2EF82B0D2291D1219E89FB31ADA8")
 
         private final AtomicInteger mCount = new AtomicInteger(1);
         
@@ -76,39 +78,39 @@ public abstract class AsyncTask<Params, Progress, Result> {
 
         
 };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.358 -0500", hash_original_field = "61D62BF500D3B6901E7BB17A2CC28BFF", hash_generated_field = "7AD4AF9308A3B3C68CAA0C63DB5A78BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.193 -0500", hash_original_field = "61D62BF500D3B6901E7BB17A2CC28BFF", hash_generated_field = "7AD4AF9308A3B3C68CAA0C63DB5A78BD")
 
 
     private static final BlockingQueue<Runnable> sPoolWorkQueue =
             new LinkedBlockingQueue<Runnable>(10);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.359 -0500", hash_original_field = "7C639E3ED45F8FE1035F0CAC5A7CD2B9", hash_generated_field = "36170CD50FC27C086EA38F1C050DEB00")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.195 -0500", hash_original_field = "7C639E3ED45F8FE1035F0CAC5A7CD2B9", hash_generated_field = "36170CD50FC27C086EA38F1C050DEB00")
 
     public static final Executor THREAD_POOL_EXECUTOR
             = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE,
                     TimeUnit.SECONDS, sPoolWorkQueue, sThreadFactory);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.359 -0500", hash_original_field = "37E455483B80A96F20121EB91E356F2C", hash_generated_field = "7E466585D02C6A4723DB3DC0EB68409E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.197 -0500", hash_original_field = "37E455483B80A96F20121EB91E356F2C", hash_generated_field = "7E466585D02C6A4723DB3DC0EB68409E")
 
     public static final Executor SERIAL_EXECUTOR = new SerialExecutor();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.360 -0500", hash_original_field = "8766B25B73C4AF5D1C7E12B1D51A48A2", hash_generated_field = "7C8C89B7EC349B108F0ED9BCFCF0D4AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.200 -0500", hash_original_field = "8766B25B73C4AF5D1C7E12B1D51A48A2", hash_generated_field = "7C8C89B7EC349B108F0ED9BCFCF0D4AD")
 
 
     private static final int MESSAGE_POST_RESULT = 0x1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.361 -0500", hash_original_field = "65BE0A0CD963BEECA4B2113C826E13DB", hash_generated_field = "A378167BD77B73C746FF0D775F9CDF82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.202 -0500", hash_original_field = "65BE0A0CD963BEECA4B2113C826E13DB", hash_generated_field = "A378167BD77B73C746FF0D775F9CDF82")
 
     private static final int MESSAGE_POST_PROGRESS = 0x2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.362 -0500", hash_original_field = "2256EA44468B264C40F577DBC9D102F2", hash_generated_field = "4481C8AC52C6328405964555E7F1E170")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.204 -0500", hash_original_field = "2256EA44468B264C40F577DBC9D102F2", hash_generated_field = "4481C8AC52C6328405964555E7F1E170")
 
 
     private static final InternalHandler sHandler = new InternalHandler();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.363 -0500", hash_original_field = "DC6621AC9E5AE0C8738F83372BAA6647", hash_generated_field = "D10EB867669B9665863D7E252CF6C534")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.207 -0500", hash_original_field = "DC6621AC9E5AE0C8738F83372BAA6647", hash_generated_field = "D10EB867669B9665863D7E252CF6C534")
 
 
     private static volatile Executor sDefaultExecutor = SERIAL_EXECUTOR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.365 -0500", hash_original_field = "8B185CE7701C09CB4813EAF3DCF94EB3", hash_generated_field = "0C1891F28AC7C3B6ED5CCBBABEAFE2C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.214 -0500", hash_original_field = "8B185CE7701C09CB4813EAF3DCF94EB3", hash_generated_field = "0C1891F28AC7C3B6ED5CCBBABEAFE2C8")
 
 
     private volatile Status mStatus = Status.PENDING;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.366 -0500", hash_original_field = "364A0BD4E8BE9C781E802F7A26AF1462", hash_generated_field = "D8B55EE6C63AA30A6FA811119BF88197")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.216 -0500", hash_original_field = "364A0BD4E8BE9C781E802F7A26AF1462", hash_generated_field = "D8B55EE6C63AA30A6FA811119BF88197")
 
     
     private final AtomicBoolean mTaskInvoked = new AtomicBoolean();
@@ -123,16 +125,18 @@ public abstract class AsyncTask<Params, Progress, Result> {
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.379 -0500", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "B892F3B62337C7FA8F4DB2B283CECB48")
-    private void postResultIfNotInvoked(Result result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.250 -0500", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "B892F3B62337C7FA8F4DB2B283CECB48")
+    
+private void postResultIfNotInvoked(Result result) {
         final boolean wasTaskInvoked = mTaskInvoked.get();
         if (!wasTaskInvoked) {
             postResult(result);
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.379 -0500", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "602FBAA8201076CF27A77C6A020DD7E3")
-    private Result postResult(Result result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.253 -0500", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "602FBAA8201076CF27A77C6A020DD7E3")
+    
+private Result postResult(Result result) {
         Message message = sHandler.obtainMessage(MESSAGE_POST_RESULT,
                 new AsyncTaskResult<Result>(this, result));
         message.sendToTarget();
@@ -144,8 +148,9 @@ public abstract class AsyncTask<Params, Progress, Result> {
      *
      * @return The current status.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.380 -0500", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "43A258D3633FEB76DAF4ECCF46B59AF2")
-    public final Status getStatus() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.255 -0500", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "43A258D3633FEB76DAF4ECCF46B59AF2")
+    
+public final Status getStatus() {
         return mStatus;
     }
 
@@ -165,8 +170,9 @@ public abstract class AsyncTask<Params, Progress, Result> {
      * @see #onPostExecute
      * @see #publishProgress
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.381 -0500", hash_original_method = "050FF2806404EDD55751088E715072CB", hash_generated_method = "1DABA09C2EFA51EF8D9CEC44618A8740")
-    protected abstract Result doInBackground(Params... params);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.257 -0500", hash_original_method = "050FF2806404EDD55751088E715072CB", hash_generated_method = "1DABA09C2EFA51EF8D9CEC44618A8740")
+    
+protected abstract Result doInBackground(Params... params);
 
     /**
      * Runs on the UI thread before {@link #doInBackground}.
@@ -174,16 +180,17 @@ public abstract class AsyncTask<Params, Progress, Result> {
      * @see #onPostExecute
      * @see #doInBackground
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.382 -0500", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "19E203C96602819786512F2B26D8C26C")
-    protected void onPreExecute() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.259 -0500", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "19E203C96602819786512F2B26D8C26C")
+    
+protected void onPreExecute() {
     }
 
     
     private static class SerialExecutor implements Executor {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.367 -0500", hash_original_field = "70DD1576CBB92EC9C206AE2C6ABB3DB6", hash_generated_field = "261CC8077C41EBB868A3FC32621980AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.219 -0500", hash_original_field = "70DD1576CBB92EC9C206AE2C6ABB3DB6", hash_generated_field = "261CC8077C41EBB868A3FC32621980AF")
 
         final ArrayDeque<Runnable> mTasks = new ArrayDeque<Runnable>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.368 -0500", hash_original_field = "C695A68C51ACBA3E4D3915B59F291FEB", hash_generated_field = "C695A68C51ACBA3E4D3915B59F291FEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.221 -0500", hash_original_field = "C695A68C51ACBA3E4D3915B59F291FEB", hash_generated_field = "C695A68C51ACBA3E4D3915B59F291FEB")
 
         Runnable mActive;
         
@@ -194,8 +201,9 @@ public abstract class AsyncTask<Params, Progress, Result> {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.370 -0500", hash_original_method = "7659AD0BA1D4D745C5BB94FD1DAE3D8A", hash_generated_method = "ED70B71C467DD2C88A554AF70E9E2EFE")
-        public synchronized void execute(final Runnable r) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.227 -0500", hash_original_method = "7659AD0BA1D4D745C5BB94FD1DAE3D8A", hash_generated_method = "ED70B71C467DD2C88A554AF70E9E2EFE")
+        
+public synchronized void execute(final Runnable r) {
             mTasks.offer(new Runnable() {
                 public void run() {
                     try {
@@ -210,8 +218,9 @@ public abstract class AsyncTask<Params, Progress, Result> {
             }
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.371 -0500", hash_original_method = "F246C1002CD359817FA3C3F9B99415C3", hash_generated_method = "7508EB235846525C263AF3CB87C62F3D")
-        protected synchronized void scheduleNext() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.229 -0500", hash_original_method = "F246C1002CD359817FA3C3F9B99415C3", hash_generated_method = "7508EB235846525C263AF3CB87C62F3D")
+        
+protected synchronized void scheduleNext() {
             if ((mActive = mTasks.poll()) != null) {
                 THREAD_POOL_EXECUTOR.execute(mActive);
             }
@@ -237,10 +246,11 @@ public abstract class AsyncTask<Params, Progress, Result> {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.394 -0500", hash_original_method = "921E33E8D8BBA9CD431C8BC69654B3A4", hash_generated_method = "FFEA0DC46482681EBB493D95E9326E90")
-        @SuppressWarnings({"unchecked", "RawUseOfParameterizedType"})
-@Override
-public void handleMessage(Message msg) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.293 -0500", hash_original_method = "921E33E8D8BBA9CD431C8BC69654B3A4", hash_generated_method = "FFEA0DC46482681EBB493D95E9326E90")
+        
+@SuppressWarnings({"unchecked", "RawUseOfParameterizedType"})
+        @Override
+        public void handleMessage(Message msg) {
             AsyncTaskResult result = (AsyncTaskResult) msg.obj;
             switch (msg.what) {
                 case MESSAGE_POST_RESULT:
@@ -259,7 +269,7 @@ public void handleMessage(Message msg) {
 
     
     private static abstract class WorkerRunnable<Params, Result> implements Callable<Result> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.396 -0500", hash_original_field = "3458C32F6AB59FD27DC8D66D0781D783", hash_generated_field = "3458C32F6AB59FD27DC8D66D0781D783")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.298 -0500", hash_original_field = "3458C32F6AB59FD27DC8D66D0781D783", hash_generated_field = "3458C32F6AB59FD27DC8D66D0781D783")
 
         Params[] mParams;
         
@@ -276,15 +286,16 @@ public void handleMessage(Message msg) {
 
     
     private static class AsyncTaskResult<Data> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.397 -0500", hash_original_field = "DF2220D9D1A3CC6FD22A416585822610", hash_generated_field = "DF2220D9D1A3CC6FD22A416585822610")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.302 -0500", hash_original_field = "DF2220D9D1A3CC6FD22A416585822610", hash_generated_field = "DF2220D9D1A3CC6FD22A416585822610")
 
          AsyncTask mTask;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.398 -0500", hash_original_field = "F9DF2CD3BD472144E91B572BDD352920", hash_generated_field = "F9DF2CD3BD472144E91B572BDD352920")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.304 -0500", hash_original_field = "F9DF2CD3BD472144E91B572BDD352920", hash_generated_field = "F9DF2CD3BD472144E91B572BDD352920")
 
          Data[] mData;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.400 -0500", hash_original_method = "4090B8C552F02AD1AD16D083FA97D251", hash_generated_method = "4090B8C552F02AD1AD16D083FA97D251")
-        AsyncTaskResult(AsyncTask task, Data... data) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.307 -0500", hash_original_method = "4090B8C552F02AD1AD16D083FA97D251", hash_generated_method = "4090B8C552F02AD1AD16D083FA97D251")
+        
+AsyncTaskResult(AsyncTask task, Data... data) {
             mTask = task;
             mData = data;
         }
@@ -304,9 +315,10 @@ public void handleMessage(Message msg) {
      * @see #doInBackground
      * @see #onCancelled(Object) 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.383 -0500", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "AD609ADA895A3E153D035F81FAEF3E1A")
-    @SuppressWarnings({"UnusedDeclaration"})
-protected void onPostExecute(Result result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.261 -0500", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "AD609ADA895A3E153D035F81FAEF3E1A")
+    
+@SuppressWarnings({"UnusedDeclaration"})
+    protected void onPostExecute(Result result) {
     }
 
     /**
@@ -318,9 +330,10 @@ protected void onPostExecute(Result result) {
      * @see #publishProgress
      * @see #doInBackground
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.383 -0500", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "A730193FC2E19B8CA66C41764F3098FF")
-    @SuppressWarnings({"UnusedDeclaration"})
-protected void onProgressUpdate(Progress... values) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.264 -0500", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "A730193FC2E19B8CA66C41764F3098FF")
+    
+@SuppressWarnings({"UnusedDeclaration"})
+    protected void onProgressUpdate(Progress... values) {
     }
 
     /**
@@ -337,9 +350,10 @@ protected void onProgressUpdate(Progress... values) {
      * @see #cancel(boolean)
      * @see #isCancelled()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.384 -0500", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "7E43458B6C54753F6FA513FCA2BB81E3")
-    @SuppressWarnings({"UnusedParameters"})
-protected void onCancelled(Result result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.266 -0500", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "7E43458B6C54753F6FA513FCA2BB81E3")
+    
+@SuppressWarnings({"UnusedParameters"})
+    protected void onCancelled(Result result) {
         onCancelled();
     }    
     
@@ -355,8 +369,9 @@ protected void onCancelled(Result result) {
      * @see #cancel(boolean)
      * @see #isCancelled()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.385 -0500", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "D07A2E6060CD99151CC30F4F6E6B6769")
-    protected void onCancelled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.268 -0500", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "D07A2E6060CD99151CC30F4F6E6B6769")
+    
+protected void onCancelled() {
     }
 
     
@@ -423,8 +438,9 @@ protected void onCancelled(Result result) {
      * @throws IllegalStateException If {@link #getStatus()} returns either
      *         {@link AsyncTask.Status#RUNNING} or {@link AsyncTask.Status#FINISHED}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.389 -0500", hash_original_method = "C6B4FDC12FE10CD7E1E7DDF258371598", hash_generated_method = "C9C181AC8660B884EFC53DDD4FDD03CB")
-    public final AsyncTask<Params, Progress, Result> execute(Params... params) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.279 -0500", hash_original_method = "C6B4FDC12FE10CD7E1E7DDF258371598", hash_generated_method = "C9C181AC8660B884EFC53DDD4FDD03CB")
+    
+public final AsyncTask<Params, Progress, Result> execute(Params... params) {
         return executeOnExecutor(sDefaultExecutor, params);
     }
 
@@ -486,16 +502,18 @@ switch(mStatus){
      * @see #onProgressUpdate
      * @see #doInBackground
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.392 -0500", hash_original_method = "0B5FDDD22527F2F69D5D9DE9D9A2B1C6", hash_generated_method = "D6162B4EF4179E6560EB9178786EC120")
-    protected final void publishProgress(Progress... values) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.287 -0500", hash_original_method = "0B5FDDD22527F2F69D5D9DE9D9A2B1C6", hash_generated_method = "D6162B4EF4179E6560EB9178786EC120")
+    
+protected final void publishProgress(Progress... values) {
         if (!isCancelled()) {
             sHandler.obtainMessage(MESSAGE_POST_PROGRESS,
                     new AsyncTaskResult<Progress>(this, values)).sendToTarget();
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.393 -0500", hash_original_method = "14AF9B49F1E9643B41861D03798B3831", hash_generated_method = "8F31C3EAE93F9501ED89483BC6EC48A8")
-    private void finish(Result result) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.290 -0500", hash_original_method = "14AF9B49F1E9643B41861D03798B3831", hash_generated_method = "8F31C3EAE93F9501ED89483BC6EC48A8")
+    
+private void finish(Result result) {
         if (isCancelled()) {
             onCancelled(result);
         } else {

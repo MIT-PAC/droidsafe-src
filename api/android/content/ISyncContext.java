@@ -10,15 +10,16 @@ public interface ISyncContext extends android.os.IInterface
 
 public static abstract class Stub extends android.os.Binder implements android.content.ISyncContext
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.439 -0500", hash_original_field = "750F8FF8A07EE9E57F1D09C67CBDDDDD", hash_generated_field = "B6511B39D7D617AB77E74960F074FE61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.780 -0500", hash_original_field = "750F8FF8A07EE9E57F1D09C67CBDDDDD", hash_generated_field = "B6511B39D7D617AB77E74960F074FE61")
 
 private static final java.lang.String DESCRIPTOR = "android.content.ISyncContext";
 /**
  * Cast an IBinder object into an android.content.ISyncContext interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.441 -0500", hash_original_method = "6B9F9357019921313D5213EBE974E203", hash_generated_method = "673759FF69CB3E067802566AD717E2A4")
-        public static android.content.ISyncContext asInterface(android.os.IBinder obj)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.785 -0500", hash_original_method = "6B9F9357019921313D5213EBE974E203", hash_generated_method = "673759FF69CB3E067802566AD717E2A4")
+        
+public static android.content.ISyncContext asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -29,35 +30,39 @@ return ((android.content.ISyncContext)iin);
 }
 return new android.content.ISyncContext.Stub.Proxy(obj);
 }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.450 -0500", hash_original_field = "0556766F4A41B6653EC76E7F881D0FF0", hash_generated_field = "6F9141096CD2A4AA8963DC541FD66C67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.810 -0500", hash_original_field = "0556766F4A41B6653EC76E7F881D0FF0", hash_generated_field = "6F9141096CD2A4AA8963DC541FD66C67")
 
 static final int TRANSACTION_sendHeartbeat = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.451 -0500", hash_original_field = "4DEFF38EE94F52338F5D8F3991749201", hash_generated_field = "2C9F45B725431AAF19CC93BEE1D02966")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.812 -0500", hash_original_field = "4DEFF38EE94F52338F5D8F3991749201", hash_generated_field = "2C9F45B725431AAF19CC93BEE1D02966")
 
 static final int TRANSACTION_onFinished = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.440 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
-        public Stub()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.783 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        
+public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 private static class Proxy implements android.content.ISyncContext
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.444 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.793 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
 
 private android.os.IBinder mRemote;
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.445 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
-            Proxy(android.os.IBinder remote)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.796 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
+            
+Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.446 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
-            public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.798 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
+            
+public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.447 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
-            public java.lang.String getInterfaceDescriptor()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.801 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+            
+public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -66,8 +71,9 @@ return DESCRIPTOR;
      * downloads or sends records to/from the server, this may be called after each record
      * is downloaded or uploaded.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.448 -0500", hash_original_method = "F372DEE281E107F9E309C757BF04D930", hash_generated_method = "8C831E73AAC18FBBE1A08F84876D2860")
-            public void sendHeartbeat() throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.803 -0500", hash_original_method = "F372DEE281E107F9E309C757BF04D930", hash_generated_method = "8C831E73AAC18FBBE1A08F84876D2860")
+            
+public void sendHeartbeat() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -85,8 +91,9 @@ _data.recycle();
      * Signal that the corresponding sync session is completed.
      * @param result information about this sync session
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.449 -0500", hash_original_method = "B16C40DC742FC03CBA1ACF3F5157FBA1", hash_generated_method = "4400C3403E465A1847B645CEFCAD372B")
-            public void onFinished(android.content.SyncResult result) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.806 -0500", hash_original_method = "B16C40DC742FC03CBA1ACF3F5157FBA1", hash_generated_method = "4400C3403E465A1847B645CEFCAD372B")
+            
+public void onFinished(android.content.SyncResult result) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -108,14 +115,15 @@ _data.recycle();
 }
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.442 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
-        public android.os.IBinder asBinder()
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.787 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+        
+public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:10.443 -0500", hash_original_method = "960D1C5CDBADBFA7E918971261D277CE", hash_generated_method = "0561F6762175793139F9C4C96AEB43D6")
-        @Override
-public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.790 -0500", hash_original_method = "960D1C5CDBADBFA7E918971261D277CE", hash_generated_method = "0561F6762175793139F9C4C96AEB43D6")
+        
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {

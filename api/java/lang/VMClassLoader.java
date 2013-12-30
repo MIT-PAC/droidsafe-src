@@ -25,8 +25,9 @@ class VMClassLoader {
      * We assume that the bootclasspath can't change once the VM has
      * started.  This assumption seems to be supported by the spec.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.384 -0500", hash_original_method = "AF486A7D7E964EDE4DDBB83EBC604A43", hash_generated_method = "6271D690045E117ED2B73930093ED883")
-    static URL getResource(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.660 -0500", hash_original_method = "AF486A7D7E964EDE4DDBB83EBC604A43", hash_generated_method = "6271D690045E117ED2B73930093ED883")
+    
+static URL getResource(String name) {
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
             String urlStr = getBootClassPathResource(name, i);
@@ -45,8 +46,9 @@ class VMClassLoader {
     /*
      * Get an enumeration with all matching resources.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.385 -0500", hash_original_method = "41BB43040C33BB8F9D26EFBD637FF5E0", hash_generated_method = "BA6F8EFE5770630EF076EF012F1DAE80")
-    static List<URL> getResources(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.663 -0500", hash_original_method = "41BB43040C33BB8F9D26EFBD637FF5E0", hash_generated_method = "BA6F8EFE5770630EF076EF012F1DAE80")
+    
+static List<URL> getResources(String name) {
         ArrayList<URL> list = new ArrayList<URL>();
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {

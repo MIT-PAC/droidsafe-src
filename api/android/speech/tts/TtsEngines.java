@@ -45,8 +45,9 @@ public class TtsEngines {
      * Varies from {@link String#split} in that it will always return an array
      * of length 3 with non null values.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.036 -0500", hash_original_method = "B09C6ED471CCD53457CEEA51CF63BCB5", hash_generated_method = "F487C9923E03CD6803D56EDAFBC6D59D")
-    public static String[] parseLocalePref(String pref) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.356 -0500", hash_original_method = "B09C6ED471CCD53457CEEA51CF63BCB5", hash_generated_method = "F487C9923E03CD6803D56EDAFBC6D59D")
+    
+public static String[] parseLocalePref(String pref) {
         String[] returnVal = new String[] { "", "", ""};
         if (!TextUtils.isEmpty(pref)) {
             String[] split = pref.split(LOCALE_DELIMITER);
@@ -65,8 +66,9 @@ public class TtsEngines {
      * so forth. Returns null if the list is empty, malformed or if there is no engine
      * specific preference in the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.039 -0500", hash_original_method = "2F5267EC7682EE18BF8989544D09D313", hash_generated_method = "8C0495090EE1A298FA0AE3AAC4D915A7")
-    private static String parseEnginePrefFromList(String prefValue, String engineName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.364 -0500", hash_original_method = "2F5267EC7682EE18BF8989544D09D313", hash_generated_method = "8C0495090EE1A298FA0AE3AAC4D915A7")
+    
+private static String parseEnginePrefFromList(String prefValue, String engineName) {
         if (TextUtils.isEmpty(prefValue)) {
             return null;
         }
@@ -84,26 +86,27 @@ public class TtsEngines {
 
         return null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.017 -0500", hash_original_field = "7136B137E99652FD014DFC963177D071", hash_generated_field = "C4D788B9A30DB979B4B514CACCF1BB4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.306 -0500", hash_original_field = "7136B137E99652FD014DFC963177D071", hash_generated_field = "C4D788B9A30DB979B4B514CACCF1BB4B")
 
     private static final String TAG = "TtsEngines";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.018 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.309 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
     private static final boolean DBG = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.019 -0500", hash_original_field = "F1F93309F8E75D7CDA845D47EAE38B84", hash_generated_field = "187C46D90E30A2E475FC964C28714A03")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.311 -0500", hash_original_field = "F1F93309F8E75D7CDA845D47EAE38B84", hash_generated_field = "187C46D90E30A2E475FC964C28714A03")
 
 
     private static final String LOCALE_DELIMITER = "-";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.027 -0500", hash_original_field = "F29860D3044F1EF29EC8009E2AF8D3F3", hash_generated_field = "FD63E60582DCF4480EDEA7A7945C3DEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.335 -0500", hash_original_field = "F29860D3044F1EF29EC8009E2AF8D3F3", hash_generated_field = "FD63E60582DCF4480EDEA7A7945C3DEB")
 
     private static final String XML_TAG_NAME = "tts-engine";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.020 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.313 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
 
     private  Context mContext;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.021 -0500", hash_original_method = "E276758190DBE13181DF9330ABF915FA", hash_generated_method = "03D4420E3B52249F14797891D0B79B0B")
-    public TtsEngines(Context ctx) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.316 -0500", hash_original_method = "E276758190DBE13181DF9330ABF915FA", hash_generated_method = "03D4420E3B52249F14797891D0B79B0B")
+    
+public TtsEngines(Context ctx) {
         mContext = ctx;
     }
 
@@ -112,8 +115,9 @@ public class TtsEngines {
      *         is available on the device, the default is returned. Otherwise,
      *         the highest ranked engine is returned as per {@link EngineInfoComparator}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.021 -0500", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "4BA4F2F70C1D0F3413201B1629743251")
-    public String getDefaultEngine() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.319 -0500", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "4BA4F2F70C1D0F3413201B1629743251")
+    
+public String getDefaultEngine() {
         String engine = getString(mContext.getContentResolver(),
                 Settings.Secure.TTS_DEFAULT_SYNTH);
         return isEngineInstalled(engine) ? engine : getHighestRankedEngineName();
@@ -123,8 +127,9 @@ public class TtsEngines {
      * @return the package name of the highest ranked system engine, {@code null}
      *         if no TTS engines were present in the system image.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.022 -0500", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "A0A5C91EB98676D24A30E75581A275B5")
-    public String getHighestRankedEngineName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.321 -0500", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "A0A5C91EB98676D24A30E75581A275B5")
+    
+public String getHighestRankedEngineName() {
         final List<EngineInfo> engines = getEngines();
 
         if (engines.size() > 0 && engines.get(0).system) {
@@ -138,8 +143,9 @@ public class TtsEngines {
      * Returns the engine info for a given engine name. Note that engines are
      * identified by their package name.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.023 -0500", hash_original_method = "A5DBD894AAA6A5E1130078152956054E", hash_generated_method = "A4DBEFB358B478A6551B2129A59F03D4")
-    public EngineInfo getEngineInfo(String packageName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.323 -0500", hash_original_method = "A5DBD894AAA6A5E1130078152956054E", hash_generated_method = "A4DBEFB358B478A6551B2129A59F03D4")
+    
+public EngineInfo getEngineInfo(String packageName) {
         PackageManager pm = mContext.getPackageManager();
         Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
         intent.setPackage(packageName);
@@ -160,8 +166,9 @@ public class TtsEngines {
      *
      * @return A list of engine info objects. The list can be empty, but never {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.024 -0500", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "D5ED98CF1D32E4C22E8559F1DE73DABF")
-    public List<EngineInfo> getEngines() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.326 -0500", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "D5ED98CF1D32E4C22E8559F1DE73DABF")
+    
+public List<EngineInfo> getEngines() {
         PackageManager pm = mContext.getPackageManager();
         Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
         List<ResolveInfo> resolveInfos =
@@ -181,8 +188,9 @@ public class TtsEngines {
         return engines;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.025 -0500", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "29329F0285EF0138ECFEC7C464DA9AD0")
-    private boolean isSystemEngine(ServiceInfo info) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.328 -0500", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "29329F0285EF0138ECFEC7C464DA9AD0")
+    
+private boolean isSystemEngine(ServiceInfo info) {
         final ApplicationInfo appInfo = info.applicationInfo;
         return appInfo != null && (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
     }
@@ -190,8 +198,9 @@ public class TtsEngines {
     /**
      * @return true if a given engine is installed on the system.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.025 -0500", hash_original_method = "6576B103C8DDCA7E7096DC36C32D66CE", hash_generated_method = "9DB0BF7EAD5C0BA21EDE5D5C614317D0")
-    public boolean isEngineInstalled(String engine) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.330 -0500", hash_original_method = "6576B103C8DDCA7E7096DC36C32D66CE", hash_generated_method = "9DB0BF7EAD5C0BA21EDE5D5C614317D0")
+    
+public boolean isEngineInstalled(String engine) {
         if (engine == null) {
             return false;
         }
@@ -202,8 +211,9 @@ public class TtsEngines {
     /**
      * @return an intent that can launch the settings activity for a given tts engine.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.026 -0500", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "BC93E349D01BD4E6582A8A24E1D8D6CE")
-    public Intent getSettingsIntent(String engine) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.332 -0500", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "BC93E349D01BD4E6582A8A24E1D8D6CE")
+    
+public Intent getSettingsIntent(String engine) {
         PackageManager pm = mContext.getPackageManager();
         Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
         intent.setPackage(engine);
@@ -227,8 +237,9 @@ public class TtsEngines {
         return null;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.028 -0500", hash_original_method = "9D4652ECD9FA23521B324D3DE279FEF6", hash_generated_method = "C218BF58374FB23848B15C54290813A9")
-    private String settingsActivityFromServiceInfo(ServiceInfo si, PackageManager pm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.338 -0500", hash_original_method = "9D4652ECD9FA23521B324D3DE279FEF6", hash_generated_method = "C218BF58374FB23848B15C54290813A9")
+    
+private String settingsActivityFromServiceInfo(ServiceInfo si, PackageManager pm) {
         XmlResourceParser parser = null;
         try {
             parser = si.loadXmlMetaData(pm, TextToSpeech.Engine.SERVICE_META_DATA);
@@ -276,8 +287,9 @@ public class TtsEngines {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.030 -0500", hash_original_method = "AAFB3DF5C9862013F914C97CA1EC4890", hash_generated_method = "07AD94BED25D0DD2157B3E8D64A66409")
-    private EngineInfo getEngineInfo(ResolveInfo resolve, PackageManager pm) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.341 -0500", hash_original_method = "AAFB3DF5C9862013F914C97CA1EC4890", hash_generated_method = "07AD94BED25D0DD2157B3E8D64A66409")
+    
+private EngineInfo getEngineInfo(ResolveInfo resolve, PackageManager pm) {
         ServiceInfo service = resolve.serviceInfo;
         if (service != null) {
             EngineInfo engine = new EngineInfo();
@@ -305,8 +317,9 @@ public class TtsEngines {
      * @return the locale string preference for this engine. Will be non null
      *         and non empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.035 -0500", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "ECB39A856209F10C9247485E724483BD")
-    public String getLocalePrefForEngine(String engineName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.353 -0500", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "ECB39A856209F10C9247485E724483BD")
+    
+public String getLocalePrefForEngine(String engineName) {
         String locale = parseEnginePrefFromList(
                 getString(mContext.getContentResolver(), Settings.Secure.TTS_DEFAULT_LOCALE),
                 engineName);
@@ -323,21 +336,23 @@ public class TtsEngines {
 
     
     private static class EngineInfoComparator implements Comparator<EngineInfo> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.033 -0500", hash_original_field = "E0DE08AA64E04B0EC8D9439B823C00DF", hash_generated_field = "0CA244E03083D2D3306A1733CBDEDA51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.346 -0500", hash_original_field = "E0DE08AA64E04B0EC8D9439B823C00DF", hash_generated_field = "0CA244E03083D2D3306A1733CBDEDA51")
 
 
         static EngineInfoComparator INSTANCE = new EngineInfoComparator();
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.032 -0500", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "A5F988DF903195CFB8B4DE0BB7877772")
-        private EngineInfoComparator() { }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.344 -0500", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "A5F988DF903195CFB8B4DE0BB7877772")
+        
+private EngineInfoComparator() { }
 
         /**
          * Engines that are a part of the system image are always lesser
          * than those that are not. Within system engines / non system engines
          * the engines are sorted in order of their declared priority.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.034 -0500", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "EC5B8CE311535EBE2BDBBE66475CBE8D")
-        @Override
-public int compare(EngineInfo lhs, EngineInfo rhs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.349 -0500", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "EC5B8CE311535EBE2BDBBE66475CBE8D")
+        
+@Override
+        public int compare(EngineInfo lhs, EngineInfo rhs) {
             if (lhs.system && !rhs.system) {
                 return -1;
             } else if (rhs.system && !lhs.system) {
@@ -360,8 +375,9 @@ public int compare(EngineInfo lhs, EngineInfo rhs) {
      *         {@link Settings.Secure#TTS_DEFAULT_VARIANT}. If no such locale is set,
      *         then return the default phone locale.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.037 -0500", hash_original_method = "610702C4AF37E3C5EE6AAD794DF1E7DF", hash_generated_method = "5ABFE07DD948844F6E4589909F8D8DA1")
-    private String getV1Locale() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.358 -0500", hash_original_method = "610702C4AF37E3C5EE6AAD794DF1E7DF", hash_generated_method = "5ABFE07DD948844F6E4589909F8D8DA1")
+    
+private String getV1Locale() {
         final ContentResolver cr = mContext.getContentResolver();
 
         final String lang = Settings.Secure.getString(cr, Settings.Secure.TTS_DEFAULT_LANG);
@@ -386,8 +402,9 @@ public int compare(EngineInfo lhs, EngineInfo rhs) {
         return v1Locale;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.038 -0500", hash_original_method = "DCEE8BF4C9B6F52F0B0F667E0393B18E", hash_generated_method = "173E058DBECEFB809F68A169B26653CB")
-    private String getDefaultLocale() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.361 -0500", hash_original_method = "DCEE8BF4C9B6F52F0B0F667E0393B18E", hash_generated_method = "173E058DBECEFB809F68A169B26653CB")
+    
+private String getDefaultLocale() {
         final Locale locale = Locale.getDefault();
 
         // Note that the default locale might have an empty variant
@@ -414,8 +431,9 @@ public int compare(EngineInfo lhs, EngineInfo rhs) {
         return defaultLocale;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.040 -0500", hash_original_method = "9D847C860A473B48E829C1EE33625F6B", hash_generated_method = "F69B3596A9FA4C27A22C922F21A2DB9C")
-    public synchronized void updateLocalePrefForEngine(String name, String newLocale) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.366 -0500", hash_original_method = "9D847C860A473B48E829C1EE33625F6B", hash_generated_method = "F69B3596A9FA4C27A22C922F21A2DB9C")
+    
+public synchronized void updateLocalePrefForEngine(String name, String newLocale) {
         final String prefList = Settings.Secure.getString(mContext.getContentResolver(),
                 Settings.Secure.TTS_DEFAULT_LOCALE);
         if (DBG) {
@@ -437,8 +455,9 @@ public int compare(EngineInfo lhs, EngineInfo rhs) {
      * each of which are delimited by a colon. If no value exists for the given key,
      * the kay value pair are appended to the end of the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:46.041 -0500", hash_original_method = "00BF6BD14B34E2134A0C0EF2661B3919", hash_generated_method = "83C61D7B6607B61814DDCCE16B2683BE")
-    private String updateValueInCommaSeparatedList(String list, String key,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.369 -0500", hash_original_method = "00BF6BD14B34E2134A0C0EF2661B3919", hash_generated_method = "83C61D7B6607B61814DDCCE16B2683BE")
+    
+private String updateValueInCommaSeparatedList(String list, String key,
             String newValue) {
         StringBuilder newPrefList = new StringBuilder();
         if (TextUtils.isEmpty(list)) {

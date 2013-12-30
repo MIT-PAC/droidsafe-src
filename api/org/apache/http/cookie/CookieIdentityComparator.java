@@ -11,7 +11,7 @@ import java.util.Comparator;
 
 
 public class CookieIdentityComparator implements Serializable, Comparator<Cookie> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.711 -0500", hash_original_field = "E373645DFE2FDC39F894931394DAEC93", hash_generated_field = "D3FD79FDAFB7FA673E2878DF81465E57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.247 -0500", hash_original_field = "E373645DFE2FDC39F894931394DAEC93", hash_generated_field = "D3FD79FDAFB7FA673E2878DF81465E57")
 
 
     private static final long serialVersionUID = 4466565437490631532L;
@@ -22,8 +22,9 @@ public class CookieIdentityComparator implements Serializable, Comparator<Cookie
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.712 -0500", hash_original_method = "74E51A596EC4BD1E3C9EC5F43F5A06D0", hash_generated_method = "CA5FBB7B3879E9736CF1F1254D32F1AA")
-    public int compare(final Cookie c1, final Cookie c2) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.250 -0500", hash_original_method = "74E51A596EC4BD1E3C9EC5F43F5A06D0", hash_generated_method = "CA5FBB7B3879E9736CF1F1254D32F1AA")
+    
+public int compare(final Cookie c1, final Cookie c2) {
         int res = c1.getName().compareTo(c2.getName());
         if (res == 0) {
             // do not differentiate empty and null domains 

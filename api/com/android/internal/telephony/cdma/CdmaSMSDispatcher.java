@@ -40,8 +40,9 @@ import com.android.internal.telephony.cdma.sms.UserData;
 
 final class CdmaSMSDispatcher extends SMSDispatcher {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.546 -0500", hash_original_method = "1910D6A77440317C1CCBAEDFB419E5C5", hash_generated_method = "D07CC08874D7F5CA9E49CF869CE487D5")
-    private static int resultToCause(int rc) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.341 -0500", hash_original_method = "1910D6A77440317C1CCBAEDFB419E5C5", hash_generated_method = "D07CC08874D7F5CA9E49CF869CE487D5")
+    
+private static int resultToCause(int rc) {
         switch (rc) {
         case Activity.RESULT_OK:
         case Intents.RESULT_SMS_HANDLED:
@@ -68,8 +69,9 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
      * @return True if OrigPdu is OmaDM Push Message which has duplicate ports.
      *         False if OrigPdu is NOT OmaDM Push Message which has duplicate ports.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.547 -0500", hash_original_method = "FE2EE888E133A219C2FC6A0924C277B1", hash_generated_method = "C2CC0D8C5F45F369D2FCB8EF49695423")
-    private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.344 -0500", hash_original_method = "FE2EE888E133A219C2FC6A0924C277B1", hash_generated_method = "C2CC0D8C5F45F369D2FCB8EF49695423")
+    
+private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
         index += 4;
         byte[] omaPdu = new byte[origPdu.length - index];
         System.arraycopy(origPdu, index, omaPdu, 0, omaPdu.length);
@@ -95,43 +97,47 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
         }
         return false;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.530 -0500", hash_original_field = "91E5D4DF9FADDEF1B8ABF3F4138685DE", hash_generated_field = "E679783596AFAE58531AA760F376FE87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.287 -0500", hash_original_field = "91E5D4DF9FADDEF1B8ABF3F4138685DE", hash_generated_field = "E679783596AFAE58531AA760F376FE87")
 
     private static final String TAG = "CDMA";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.531 -0500", hash_original_field = "47C852A77D625BE73455A026DF48D288", hash_generated_field = "32AEC3A3AE4EA72117A81D9C026D630A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.293 -0500", hash_original_field = "47C852A77D625BE73455A026DF48D288", hash_generated_field = "32AEC3A3AE4EA72117A81D9C026D630A")
 
 
     private byte[] mLastDispatchedSmsFingerprint;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.531 -0500", hash_original_field = "B76F814FCCFEE314B57473F94B0F19E8", hash_generated_field = "238150EEC26DEB25A5C3E3E164D32D3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.297 -0500", hash_original_field = "B76F814FCCFEE314B57473F94B0F19E8", hash_generated_field = "238150EEC26DEB25A5C3E3E164D32D3E")
 
     private byte[] mLastAcknowledgedSmsFingerprint;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.532 -0500", hash_original_field = "AC0951C6CF85D304C5A20BD51A762880", hash_generated_field = "4B29A4BC6301E562FA9789ADCA210E6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.300 -0500", hash_original_field = "AC0951C6CF85D304C5A20BD51A762880", hash_generated_field = "4B29A4BC6301E562FA9789ADCA210E6D")
 
 
     private final boolean mCheckForDuplicatePortsInOmadmWapPush = Resources.getSystem().getBoolean(
             com.android.internal.R.bool.config_duplicate_port_omadm_wappush);
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.533 -0500", hash_original_method = "2E2EEE07B541CA6772FE9654DB0B546E", hash_generated_method = "2E2EEE07B541CA6772FE9654DB0B546E")
-    CdmaSMSDispatcher(CDMAPhone phone, SmsStorageMonitor storageMonitor,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.303 -0500", hash_original_method = "2E2EEE07B541CA6772FE9654DB0B546E", hash_generated_method = "2E2EEE07B541CA6772FE9654DB0B546E")
+    
+CdmaSMSDispatcher(CDMAPhone phone, SmsStorageMonitor storageMonitor,
             SmsUsageMonitor usageMonitor) {
         super(phone, storageMonitor, usageMonitor);
         mCm.setOnNewCdmaSms(this, EVENT_NEW_SMS, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.534 -0500", hash_original_method = "6D5F69086FA9BAB54819022B7E1C6EB4", hash_generated_method = "05E862D62210D583273D4E9B0D70C4B0")
-    @Override
-public void dispose() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.307 -0500", hash_original_method = "6D5F69086FA9BAB54819022B7E1C6EB4", hash_generated_method = "05E862D62210D583273D4E9B0D70C4B0")
+    
+@Override
+    public void dispose() {
         mCm.unSetOnNewCdmaSms(this);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.535 -0500", hash_original_method = "77401C8F23584A16465C2C7060977D74", hash_generated_method = "93DF60DDAC92EB100A9B814E3AD7E1D5")
-    @Override
-protected String getFormat() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.309 -0500", hash_original_method = "77401C8F23584A16465C2C7060977D74", hash_generated_method = "93DF60DDAC92EB100A9B814E3AD7E1D5")
+    
+@Override
+    protected String getFormat() {
         return android.telephony.SmsMessage.FORMAT_3GPP2;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.536 -0500", hash_original_method = "D8F9BF94E3CE828F06F15D06BD41575B", hash_generated_method = "9095C774A2A52536F74416C7040CBFD9")
-    private void handleCdmaStatusReport(SmsMessage sms) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.312 -0500", hash_original_method = "D8F9BF94E3CE828F06F15D06BD41575B", hash_generated_method = "9095C774A2A52536F74416C7040CBFD9")
+    
+private void handleCdmaStatusReport(SmsMessage sms) {
         for (int i = 0, count = deliveryPendingList.size(); i < count; i++) {
             SmsTracker tracker = deliveryPendingList.get(i);
             if (tracker.mMessageRef == sms.messageRef) {
@@ -150,9 +156,10 @@ protected String getFormat() {
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.538 -0500", hash_original_method = "AEF7CF36D035C3FD2F985EB9DE02C895", hash_generated_method = "6FD2399E76215B7C25EBD82B78BA70A3")
-    @Override
-public int dispatchMessage(SmsMessageBase smsb) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.316 -0500", hash_original_method = "AEF7CF36D035C3FD2F985EB9DE02C895", hash_generated_method = "6FD2399E76215B7C25EBD82B78BA70A3")
+    
+@Override
+    public int dispatchMessage(SmsMessageBase smsb) {
 
         // If sms is null, means there was a parsing error.
         if (smsb == null) {
@@ -248,8 +255,9 @@ public int dispatchMessage(SmsMessageBase smsb) {
      *         {@link Activity#RESULT_OK} if the message has been broadcast
      *         to applications
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.539 -0500", hash_original_method = "7B6C844E67A0CC9BDD3E050A8ACE8852", hash_generated_method = "75305BFFFD74A8F7A8CA4190E9D9C1C4")
-    protected int processCdmaWapPdu(byte[] pdu, int referenceNumber, String address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.319 -0500", hash_original_method = "7B6C844E67A0CC9BDD3E050A8ACE8852", hash_generated_method = "75305BFFFD74A8F7A8CA4190E9D9C1C4")
+    
+protected int processCdmaWapPdu(byte[] pdu, int referenceNumber, String address) {
         int index = 0;
 
         int msgType = (0xFF & pdu[index++]);
@@ -297,9 +305,10 @@ public int dispatchMessage(SmsMessageBase smsb) {
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.540 -0500", hash_original_method = "1C79B20542F5EA033BD01F30A8B0455D", hash_generated_method = "088FC0FA4AA78EE8BBFD4A9B4B8BFF34")
-    @Override
-protected void sendData(String destAddr, String scAddr, int destPort,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.322 -0500", hash_original_method = "1C79B20542F5EA033BD01F30A8B0455D", hash_generated_method = "088FC0FA4AA78EE8BBFD4A9B4B8BFF34")
+    
+@Override
+    protected void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
         SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(
                 scAddr, destAddr, destPort, data, (deliveryIntent != null));
@@ -307,9 +316,10 @@ protected void sendData(String destAddr, String scAddr, int destPort,
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.541 -0500", hash_original_method = "5D58764547BE2148EE8A5F6EEE636061", hash_generated_method = "78403D8F2B658532FF115D9B485FE73D")
-    @Override
-protected void sendText(String destAddr, String scAddr, String text,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.324 -0500", hash_original_method = "5D58764547BE2148EE8A5F6EEE636061", hash_generated_method = "78403D8F2B658532FF115D9B485FE73D")
+    
+@Override
+    protected void sendText(String destAddr, String scAddr, String text,
             PendingIntent sentIntent, PendingIntent deliveryIntent) {
         SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(
                 scAddr, destAddr, text, (deliveryIntent != null), null);
@@ -317,17 +327,19 @@ protected void sendText(String destAddr, String scAddr, String text,
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.542 -0500", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "AF8E472D5EF143D29E4D51C66A6C4604")
-    @Override
-protected TextEncodingDetails calculateLength(CharSequence messageBody,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.326 -0500", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "AF8E472D5EF143D29E4D51C66A6C4604")
+    
+@Override
+    protected TextEncodingDetails calculateLength(CharSequence messageBody,
             boolean use7bitOnly) {
         return SmsMessage.calculateLength(messageBody, use7bitOnly);
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.543 -0500", hash_original_method = "77E27619E0BAA0675283D74233CDEF70", hash_generated_method = "454259F045ED6B58DA1B3A4660B15C3E")
-    @Override
-protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.329 -0500", hash_original_method = "77E27619E0BAA0675283D74233CDEF70", hash_generated_method = "454259F045ED6B58DA1B3A4660B15C3E")
+    
+@Override
+    protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
             String message, SmsHeader smsHeader, int encoding,
             PendingIntent sentIntent, PendingIntent deliveryIntent, boolean lastPart) {
         UserData uData = new UserData();
@@ -350,8 +362,9 @@ protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
         sendSubmitPdu(submitPdu, sentIntent, deliveryIntent);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.544 -0500", hash_original_method = "DEF3D00017A9EC7ED64C2C82C9EF5E11", hash_generated_method = "31186D212D1E9F1E3F824979565A86DE")
-    protected void sendSubmitPdu(SmsMessage.SubmitPdu pdu,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.332 -0500", hash_original_method = "DEF3D00017A9EC7ED64C2C82C9EF5E11", hash_generated_method = "31186D212D1E9F1E3F824979565A86DE")
+    
+protected void sendSubmitPdu(SmsMessage.SubmitPdu pdu,
             PendingIntent sentIntent, PendingIntent deliveryIntent) {
         if (SystemProperties.getBoolean(TelephonyProperties.PROPERTY_INECM_MODE, false)) {
             if (sentIntent != null) {
@@ -368,9 +381,10 @@ protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.544 -0500", hash_original_method = "B01C05D91305560949593CF3FA30240C", hash_generated_method = "01A986B463BB350E08A8A510ACEECBC0")
-    @Override
-protected void sendSms(SmsTracker tracker) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.335 -0500", hash_original_method = "B01C05D91305560949593CF3FA30240C", hash_generated_method = "01A986B463BB350E08A8A510ACEECBC0")
+    
+@Override
+    protected void sendSms(SmsTracker tracker) {
         HashMap<String, Object> map = tracker.mData;
 
         // byte smsc[] = (byte[]) map.get("smsc");  // unused for CDMA
@@ -381,9 +395,10 @@ protected void sendSms(SmsTracker tracker) {
     }
 
     /** {@inheritDoc} */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:21.545 -0500", hash_original_method = "8A630C8BC501F81DB51344181E02B8CE", hash_generated_method = "14F19D72242FFF99F98C63C380E6B1F1")
-    @Override
-protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.338 -0500", hash_original_method = "8A630C8BC501F81DB51344181E02B8CE", hash_generated_method = "14F19D72242FFF99F98C63C380E6B1F1")
+    
+@Override
+    protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
         String inEcm=SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
         if (inEcm.equals("true")) {
             return;

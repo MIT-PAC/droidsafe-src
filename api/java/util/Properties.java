@@ -38,15 +38,15 @@ import org.xml.sax.SAXParseException;
 
 
 public class Properties extends Hashtable<Object, Object> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.393 -0500", hash_original_field = "BA688B944BBA15F59D0A59A7FE9F7ACD", hash_generated_field = "B9B3DC636549D3041EBFB366A6464B2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.643 -0500", hash_original_field = "BA688B944BBA15F59D0A59A7FE9F7ACD", hash_generated_field = "B9B3DC636549D3041EBFB366A6464B2E")
 
 
     private static final long serialVersionUID = 4112578634029874840L;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.395 -0500", hash_original_field = "394FA6EC18447760AEBCB3606F9106F9", hash_generated_field = "6EB68577AA63C8CE23A5572AC9077D85")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.647 -0500", hash_original_field = "394FA6EC18447760AEBCB3606F9106F9", hash_generated_field = "6EB68577AA63C8CE23A5572AC9077D85")
 
 
     private static final String PROP_DTD_NAME = "http://java.sun.com/dtd/properties.dtd";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.396 -0500", hash_original_field = "3B34675D0BD1B6C926F86DE4D2BA9D9C", hash_generated_field = "12D66A953921A104006A54797CCD01D0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.650 -0500", hash_original_field = "3B34675D0BD1B6C926F86DE4D2BA9D9C", hash_generated_field = "12D66A953921A104006A54797CCD01D0")
 
 
     private static final String PROP_DTD = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -73,19 +73,20 @@ public class Properties extends Hashtable<Object, Object> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.438 -0400", hash_original_field = "2244D293D67AF3EF08FD93F9C1A68030", hash_generated_field = "BB2FAFE0C6AEB56E9A6250AD961B8C45")
 
     private static final int IGNORE = 5;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.394 -0500", hash_original_field = "CEC094AA6BF918752009818D630EB1FD", hash_generated_field = "FD91B16F92409AD1E464978ACF6CCD28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.645 -0500", hash_original_field = "CEC094AA6BF918752009818D630EB1FD", hash_generated_field = "FD91B16F92409AD1E464978ACF6CCD28")
 
 
     private transient DocumentBuilder builder = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.397 -0500", hash_original_field = "ED6F441B204B59837D765FE7BF823FA6", hash_generated_field = "FFB6C63B9AE394F9A7BA81EBAD128C5B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.652 -0500", hash_original_field = "ED6F441B204B59837D765FE7BF823FA6", hash_generated_field = "FFB6C63B9AE394F9A7BA81EBAD128C5B")
 
     protected Properties defaults;
 
     /**
      * Constructs a new {@code Properties} object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.399 -0500", hash_original_method = "15BC7402B615AC640D692CA8D591C86A", hash_generated_method = "7795BAC062AED72B959D89678A199367")
-    public Properties() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.658 -0500", hash_original_method = "15BC7402B615AC640D692CA8D591C86A", hash_generated_method = "7795BAC062AED72B959D89678A199367")
+    
+public Properties() {
     }
 
     /**
@@ -95,13 +96,15 @@ public class Properties extends Hashtable<Object, Object> {
      * @param properties
      *            the default {@code Properties}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.400 -0500", hash_original_method = "5F2D706A0CAB1895C5A727D855C46322", hash_generated_method = "6B25AC4C2F6728C40E756CFE46A2AEED")
-    public Properties(Properties properties) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.661 -0500", hash_original_method = "5F2D706A0CAB1895C5A727D855C46322", hash_generated_method = "6B25AC4C2F6728C40E756CFE46A2AEED")
+    
+public Properties(Properties properties) {
         defaults = properties;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.401 -0500", hash_original_method = "8670FB32C289DA514C35A14528148A6D", hash_generated_method = "AD797BDA8958849190F0E26D2B0F2B59")
-    private void dumpString(StringBuilder buffer, String string, boolean key) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.664 -0500", hash_original_method = "8670FB32C289DA514C35A14528148A6D", hash_generated_method = "AD797BDA8958849190F0E26D2B0F2B59")
+    
+private void dumpString(StringBuilder buffer, String string, boolean key) {
         int i = 0;
         if (!key && i < string.length() && string.charAt(i) == ' ') {
             buffer.append("\\ ");
@@ -150,8 +153,9 @@ public class Properties extends Hashtable<Object, Object> {
      *            the name of the property to find.
      * @return the named property value, or {@code null} if it can't be found.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.401 -0500", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "FE43F53EBFA7D65B5C53EC5509BBE58A")
-    public String getProperty(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.666 -0500", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "FE43F53EBFA7D65B5C53EC5509BBE58A")
+    
+public String getProperty(String name) {
         Object result = super.get(name);
         String property = result instanceof String ? (String) result : null;
         if (property == null && defaults != null) {
@@ -172,8 +176,9 @@ public class Properties extends Hashtable<Object, Object> {
      *            the default value.
      * @return the named property value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.402 -0500", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "C6113C6A35092CBD196D8546F6153BFC")
-    public String getProperty(String name, String defaultValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.668 -0500", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "C6113C6A35092CBD196D8546F6153BFC")
+    
+public String getProperty(String name, String defaultValue) {
         Object result = super.get(name);
         String property = result instanceof String ? (String) result : null;
         if (property == null && defaults != null) {
@@ -189,8 +194,9 @@ public class Properties extends Hashtable<Object, Object> {
      * Lists the mappings in this {@code Properties} to {@code out} in a human-readable form.
      * Note that values are truncated to 37 characters, so this method is rarely useful.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.403 -0500", hash_original_method = "C9FDCBF4B35B89B1D79FB5B2779CDC77", hash_generated_method = "27BBBF78C9C7B66CC25786B094817EAF")
-    public void list(PrintStream out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.670 -0500", hash_original_method = "C9FDCBF4B35B89B1D79FB5B2779CDC77", hash_generated_method = "27BBBF78C9C7B66CC25786B094817EAF")
+    
+public void list(PrintStream out) {
         listToAppendable(out);
     }
 
@@ -198,13 +204,15 @@ public class Properties extends Hashtable<Object, Object> {
      * Lists the mappings in this {@code Properties} to {@code out} in a human-readable form.
      * Note that values are truncated to 37 characters, so this method is rarely useful.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.404 -0500", hash_original_method = "2577CE734D2D6BD05EB3CE3808D03445", hash_generated_method = "1FA778C7F4AB37BE4F17095F5BD082BA")
-    public void list(PrintWriter out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.672 -0500", hash_original_method = "2577CE734D2D6BD05EB3CE3808D03445", hash_generated_method = "1FA778C7F4AB37BE4F17095F5BD082BA")
+    
+public void list(PrintWriter out) {
         listToAppendable(out);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.405 -0500", hash_original_method = "68CAE489B2B77D788FAF807067B604BA", hash_generated_method = "ABEBE0DA40E4B91C3DFCF5DB4AF1855C")
-    private void listToAppendable(Appendable out) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.676 -0500", hash_original_method = "68CAE489B2B77D788FAF807067B604BA", hash_generated_method = "ABEBE0DA40E4B91C3DFCF5DB4AF1855C")
+    
+private void listToAppendable(Appendable out) {
         try {
             if (out == null) {
                 throw new NullPointerException("out == null");
@@ -244,8 +252,9 @@ public class Properties extends Hashtable<Object, Object> {
      * @param in the {@code InputStream}
      * @throws IOException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.406 -0500", hash_original_method = "B8EDE929B09671D07A2F603EF776CD24", hash_generated_method = "ABC75A374DCCE012A8512AE368C0A34C")
-    public synchronized void load(InputStream in) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.679 -0500", hash_original_method = "B8EDE929B09671D07A2F603EF776CD24", hash_generated_method = "ABC75A374DCCE012A8512AE368C0A34C")
+    
+public synchronized void load(InputStream in) throws IOException {
         if (in == null) {
             throw new NullPointerException();
         }
@@ -277,9 +286,10 @@ public class Properties extends Hashtable<Object, Object> {
      * @throws IOException
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.408 -0500", hash_original_method = "3CECE8DDCAF4401F719C3D407BA79CAE", hash_generated_method = "D0BF6D33A4A91FE458CF6CCAAAA791D1")
-    @SuppressWarnings("fallthrough")
-public synchronized void load(Reader in) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.684 -0500", hash_original_method = "3CECE8DDCAF4401F719C3D407BA79CAE", hash_generated_method = "D0BF6D33A4A91FE458CF6CCAAAA791D1")
+    
+@SuppressWarnings("fallthrough")
+    public synchronized void load(Reader in) throws IOException {
         if (in == null) {
             throw new NullPointerException();
         }
@@ -444,8 +454,9 @@ public synchronized void load(Reader in) throws IOException {
     /**
      * Returns all of the property names (keys) in this {@code Properties} object.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.409 -0500", hash_original_method = "1BF2C237B8DD3958FB1B8B5C0AE1938E", hash_generated_method = "DF74DE310FA8CC69912084B9A763044F")
-    public Enumeration<?> propertyNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.687 -0500", hash_original_method = "1BF2C237B8DD3958FB1B8B5C0AE1938E", hash_generated_method = "DF74DE310FA8CC69912084B9A763044F")
+    
+public Enumeration<?> propertyNames() {
         Hashtable<Object, Object> selected = new Hashtable<Object, Object>();
         selectProperties(selected, false);
         return selected.keys();
@@ -458,8 +469,9 @@ public synchronized void load(Reader in) throws IOException {
      * @return a set of keys in the property list
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.410 -0500", hash_original_method = "3F48821B050A70D7E4FF424CB7AEEF4F", hash_generated_method = "4A180296BFD4FFE6723C6460EBAAC04D")
-    public Set<String> stringPropertyNames() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.689 -0500", hash_original_method = "3F48821B050A70D7E4FF424CB7AEEF4F", hash_generated_method = "4A180296BFD4FFE6723C6460EBAAC04D")
+    
+public Set<String> stringPropertyNames() {
         Hashtable<String, Object> stringProperties = new Hashtable<String, Object>();
         selectProperties(stringProperties, true);
         return Collections.unmodifiableSet(stringProperties.keySet());
@@ -517,9 +529,10 @@ public synchronized void load(Reader in) throws IOException {
      *             writing -- use {@link #store} instead for better exception
      *             handling.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.412 -0500", hash_original_method = "4460892848C3864FEFFB544B0F6CDF7A", hash_generated_method = "1BF756A007554B5ED33DCC871BAE1B22")
-    @Deprecated
-public void save(OutputStream out, String comment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.694 -0500", hash_original_method = "4460892848C3864FEFFB544B0F6CDF7A", hash_generated_method = "1BF756A007554B5ED33DCC871BAE1B22")
+    
+@Deprecated
+    public void save(OutputStream out, String comment) {
         try {
             store(out, comment);
         } catch (IOException e) {
@@ -536,8 +549,9 @@ public void save(OutputStream out, String comment) {
      *            the value.
      * @return the old value mapped to the key, or {@code null}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.413 -0500", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "56F4E85497B4F5EC660B941BA40CCE46")
-    public Object setProperty(String name, String value) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.696 -0500", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "56F4E85497B4F5EC660B941BA40CCE46")
+    
+public Object setProperty(String name, String value) {
         return put(name, value);
     }
 
@@ -550,8 +564,9 @@ public void save(OutputStream out, String comment) {
      * @throws IOException
      * @throws ClassCastException if a key or value is not a string
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.414 -0500", hash_original_method = "97010F07EC41CFBEB746B7A1A80A2C1A", hash_generated_method = "646D9E8375B20D6B807EFFBEEE3722CD")
-    public synchronized void store(OutputStream out, String comment) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.699 -0500", hash_original_method = "97010F07EC41CFBEB746B7A1A80A2C1A", hash_generated_method = "646D9E8375B20D6B807EFFBEEE3722CD")
+    
+public synchronized void store(OutputStream out, String comment) throws IOException {
         store(new OutputStreamWriter(out, "ISO-8859-1"), comment);
     }
 
@@ -565,8 +580,9 @@ public void save(OutputStream out, String comment) {
      * @throws ClassCastException if a key or value is not a string
      * @since 1.6
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.415 -0500", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "525ADF1180D463C4ACA782A1639904CB")
-    public synchronized void store(Writer writer, String comment) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.702 -0500", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "525ADF1180D463C4ACA782A1639904CB")
+    
+public synchronized void store(Writer writer, String comment) throws IOException {
         if (comment != null) {
             writer.write("#");
             writer.write(comment);
@@ -615,24 +631,28 @@ public void save(OutputStream out, String comment) {
                 throw varD7D5CC05F351C45F26A7F84C2C962F04_883337655;
             } //End block
             builder.setErrorHandler(new ErrorHandler() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.416 -0500", hash_original_method = "A780B405018C6E806DD90859BE935681", hash_generated_method = "5DADC32ECCFAECCD4F18AF4B73111C38")
-                public void warning(SAXParseException e) throws SAXException {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.705 -0500", hash_original_method = "A780B405018C6E806DD90859BE935681", hash_generated_method = "5DADC32ECCFAECCD4F18AF4B73111C38")
+                
+public void warning(SAXParseException e) throws SAXException {
                     throw e;
                 }
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.417 -0500", hash_original_method = "1BA627FA566198BCA8957A882673AC06", hash_generated_method = "D10193ADE3BD34266E46CB7EF385B5B4")
-                public void error(SAXParseException e) throws SAXException {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.708 -0500", hash_original_method = "1BA627FA566198BCA8957A882673AC06", hash_generated_method = "D10193ADE3BD34266E46CB7EF385B5B4")
+                
+public void error(SAXParseException e) throws SAXException {
                     throw e;
                 }
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.418 -0500", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "8BE9290E5A78003CD3400FC7458B6660")
-                public void fatalError(SAXParseException e) throws SAXException {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.711 -0500", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "8BE9290E5A78003CD3400FC7458B6660")
+                
+public void fatalError(SAXParseException e) throws SAXException {
                     throw e;
                 }
 });
             builder.setEntityResolver(new EntityResolver() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.419 -0500", hash_original_method = "7B6D510D74072B007F41B0B5792E868F", hash_generated_method = "6BFCF27FC3FC55DC302EBDECB3B9D81A")
-                public InputSource resolveEntity(String publicId,
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.714 -0500", hash_original_method = "7B6D510D74072B007F41B0B5792E868F", hash_generated_method = "6BFCF27FC3FC55DC302EBDECB3B9D81A")
+                
+public InputSource resolveEntity(String publicId,
                         String systemId) throws SAXException, IOException {
                     if (systemId.equals(PROP_DTD_NAME)) {
                         InputSource result = new InputSource(new StringReader(
@@ -694,8 +714,9 @@ for(int i = 0;i < entriesListLength;i++)
      * @param comment the comment to add. If null, no comment is added.
      * @throws IOException if an error occurs during writing to the output.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.421 -0500", hash_original_method = "CF08828D5EA0BDD9B2ACD5D46AA8D14C", hash_generated_method = "01C07DD124F02978143E065FA8AE7B2B")
-    public void storeToXML(OutputStream os, String comment) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.720 -0500", hash_original_method = "CF08828D5EA0BDD9B2ACD5D46AA8D14C", hash_generated_method = "01C07DD124F02978143E065FA8AE7B2B")
+    
+public void storeToXML(OutputStream os, String comment) throws IOException {
         storeToXML(os, comment, "UTF-8");
     }
 
@@ -717,8 +738,9 @@ for(int i = 0;i < entriesListLength;i++)
      *            write into the {@code OutputStream}.
      * @throws IOException if an error occurs during writing to the output.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.423 -0500", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "314055A6A376FFCBC591266AF54683BD")
-    public synchronized void storeToXML(OutputStream os, String comment,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.724 -0500", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "314055A6A376FFCBC591266AF54683BD")
+    
+public synchronized void storeToXML(OutputStream os, String comment,
             String encoding) throws IOException {
 
         if (os == null || encoding == null) {
@@ -777,8 +799,9 @@ for(int i = 0;i < entriesListLength;i++)
         printStream.flush();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:53.424 -0500", hash_original_method = "C245FBB3FF946795FFB47FE71F12C3B1", hash_generated_method = "E762A0C9495B2E72FE293E3B09EADF7B")
-    private String substitutePredefinedEntries(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.726 -0500", hash_original_method = "C245FBB3FF946795FFB47FE71F12C3B1", hash_generated_method = "E762A0C9495B2E72FE293E3B09EADF7B")
+    
+private String substitutePredefinedEntries(String s) {
         // substitution for predefined character entities to use them safely in XML.
         s = s.replaceAll("&", "&amp;");
         s = s.replaceAll("<", "&lt;");

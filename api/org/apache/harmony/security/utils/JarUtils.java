@@ -47,8 +47,9 @@ public class JarUtils {
      * @throws IOException - if some errors occurs during reading from the stream
      * @throws GeneralSecurityException - if signature verification process fails
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.030 -0500", hash_original_method = "BD120DD25E8222693A9ADBDDB2DA9384", hash_generated_method = "65442D82859A19E4CC821E815E314D2D")
-    public static Certificate[] verifySignature(InputStream signature, InputStream
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.564 -0500", hash_original_method = "BD120DD25E8222693A9ADBDDB2DA9384", hash_generated_method = "65442D82859A19E4CC821E815E314D2D")
+    
+public static Certificate[] verifySignature(InputStream signature, InputStream
             signatureBlock) throws IOException, GeneralSecurityException {
 
         BerInputStream bis = new BerInputStream(signatureBlock);
@@ -160,8 +161,9 @@ public class JarUtils {
         return createChain(certs[issuerSertIndex], certs);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.031 -0500", hash_original_method = "00820D9D1C06D03E9E9086299A341619", hash_generated_method = "66AC70C53AC724CC98DD695C82DCBF2F")
-    private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.568 -0500", hash_original_method = "00820D9D1C06D03E9E9086299A341619", hash_generated_method = "66AC70C53AC724CC98DD695C82DCBF2F")
+    
+private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
         LinkedList chain = new LinkedList();
         chain.add(0, signer);
 
@@ -188,8 +190,9 @@ public class JarUtils {
         return (X509Certificate[])chain.toArray(new X509Certificate[count]);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.032 -0500", hash_original_method = "34EEBCFB9983630620133DA22BDE2B4B", hash_generated_method = "6F2C72488FF3B4FA0C845C18D07D3371")
-    private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.570 -0500", hash_original_method = "34EEBCFB9983630620133DA22BDE2B4B", hash_generated_method = "6F2C72488FF3B4FA0C845C18D07D3371")
+    
+private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
         for (int i = 0; i < candidates.length; i++) {
             if (issuer.equals(candidates[i].getSubjectDN())) {
                 return candidates[i];
@@ -197,7 +200,7 @@ public class JarUtils {
         }
         return null;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.028 -0500", hash_original_field = "66B21D9EF5D555CE9FAF254DD5F9C14A", hash_generated_field = "7B3EEB03E75670F328FA64ED3D57A29C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.560 -0500", hash_original_field = "66B21D9EF5D555CE9FAF254DD5F9C14A", hash_generated_field = "7B3EEB03E75670F328FA64ED3D57A29C")
 
     // http://www.ietf.org/rfc/rfc2985.txt
     private static final int[] MESSAGE_DIGEST_OID =

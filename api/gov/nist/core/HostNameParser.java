@@ -13,8 +13,9 @@ import java.text.ParseException;
 
 public class HostNameParser extends ParserCore {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.111 -0500", hash_original_method = "EB0B7695FD3D54C01F52A45ED2BF86CB", hash_generated_method = "5D22F3B0214204297E1DD81EA4BEAD19")
-    public static void main(String args[]) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.855 -0500", hash_original_method = "EB0B7695FD3D54C01F52A45ED2BF86CB", hash_generated_method = "5D22F3B0214204297E1DD81EA4BEAD19")
+    
+public static void main(String args[]) throws ParseException {
         String hostNames[] =
             {
                 "foo.bar.com:1234",
@@ -37,15 +38,15 @@ public class HostNameParser extends ParserCore {
         }
 
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.099 -0500", hash_original_field = "93C1F819930F720D3DF784B64C8AD0F4", hash_generated_field = "4B5B85298DF145B841626211C3E3FFCD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.824 -0500", hash_original_field = "93C1F819930F720D3DF784B64C8AD0F4", hash_generated_field = "4B5B85298DF145B841626211C3E3FFCD")
 
     private static LexerCore Lexer;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.103 -0500", hash_original_field = "3A31B7167ACF593B24415A4E036B3AF1", hash_generated_field = "3EE0A4DA75CB4D9B776B1D397345B183")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.836 -0500", hash_original_field = "3A31B7167ACF593B24415A4E036B3AF1", hash_generated_field = "3EE0A4DA75CB4D9B776B1D397345B183")
 
 
     private static final char[] VALID_DOMAIN_LABEL_CHAR =
         new char[] {LexerCore.ALPHADIGIT_VALID_CHARS, '-', '.'};
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.100 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "3E9B266CA60C47190F73E82D7973FA1A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.827 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "3E9B266CA60C47190F73E82D7973FA1A")
 
 
     /**
@@ -58,8 +59,9 @@ public class HostNameParser extends ParserCore {
      */
     private boolean stripAddressScopeZones = false;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.101 -0500", hash_original_method = "BDF66B8A6A6E733FD4317463FD36B54D", hash_generated_method = "C6EFAC638D7E34F358FE21F95DACE118")
-    public HostNameParser(String hname) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.830 -0500", hash_original_method = "BDF66B8A6A6E733FD4317463FD36B54D", hash_generated_method = "C6EFAC638D7E34F358FE21F95DACE118")
+    
+public HostNameParser(String hname) {
         this.lexer = new LexerCore("charLexer", hname);
 
         stripAddressScopeZones
@@ -69,16 +71,18 @@ public class HostNameParser extends ParserCore {
     /**
      * The lexer is initialized with the buffer.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.102 -0500", hash_original_method = "DE9D0F52F3286ED66509E4F5CE87141D", hash_generated_method = "DA85C1A6164964624C791245B33DAFE2")
-    public HostNameParser(LexerCore lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.833 -0500", hash_original_method = "DE9D0F52F3286ED66509E4F5CE87141D", hash_generated_method = "DA85C1A6164964624C791245B33DAFE2")
+    
+public HostNameParser(LexerCore lexer) {
         this.lexer = lexer;
         lexer.selectLexer("charLexer");
 
         stripAddressScopeZones
             = Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.103 -0500", hash_original_method = "4DE693D4586CFA412C55EF35C3691C08", hash_generated_method = "160D2C4FDAFBFBEB0551BD9F21B07CB4")
-    protected void consumeDomainLabel() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.838 -0500", hash_original_method = "4DE693D4586CFA412C55EF35C3691C08", hash_generated_method = "160D2C4FDAFBFBEB0551BD9F21B07CB4")
+    
+protected void consumeDomainLabel() throws ParseException {
         if (debug)
             dbg_enter("domainLabel");
         try {
@@ -89,8 +93,9 @@ public class HostNameParser extends ParserCore {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.106 -0500", hash_original_method = "12990E16E23A1648F6B6EE2410C75196", hash_generated_method = "E797D7AE7CF254B070B641AAD54F121A")
-    protected String ipv6Reference() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.842 -0500", hash_original_method = "12990E16E23A1648F6B6EE2410C75196", hash_generated_method = "E797D7AE7CF254B070B641AAD54F121A")
+    
+protected String ipv6Reference() throws ParseException {
         StringBuffer retval = new StringBuffer();
         if (debug)
             dbg_enter("ipv6Reference");
@@ -165,8 +170,9 @@ public class HostNameParser extends ParserCore {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.107 -0500", hash_original_method = "59E4521A394425B7E70180091A99EC01", hash_generated_method = "E902C37DAFF48B623E57513A92B9A6C5")
-    public Host host() throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.845 -0500", hash_original_method = "59E4521A394425B7E70180091A99EC01", hash_generated_method = "E902C37DAFF48B623E57513A92B9A6C5")
+    
+public Host host() throws ParseException {
         if (debug)
             dbg_enter("host");
         try {
@@ -216,8 +222,9 @@ public class HostNameParser extends ParserCore {
      * @return true if the host part of <tt>uriHeader</tt> could be an IPv6
      * address (i.e. contains at least two colons) and false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.108 -0500", hash_original_method = "9EB0AD05F46BCDC3EFC8C7DBA5311E53", hash_generated_method = "5625D4078D53703423DD1E3DB811FD93")
-    private boolean isIPv6Address(String uriHeader)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.848 -0500", hash_original_method = "9EB0AD05F46BCDC3EFC8C7DBA5311E53", hash_generated_method = "5625D4078D53703423DD1E3DB811FD93")
+    
+private boolean isIPv6Address(String uriHeader)
     {
         // approximately detect the end the host part.
         //first check if we have an uri param
@@ -257,8 +264,9 @@ public class HostNameParser extends ParserCore {
      * @return
      * @throws ParseException
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.109 -0500", hash_original_method = "E96E49B49C2326325B1DB743C3D726B3", hash_generated_method = "2242ED01989DEB572508493F2D887498")
-    public HostPort hostPort( boolean allowWS ) throws ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.852 -0500", hash_original_method = "E96E49B49C2326325B1DB743C3D726B3", hash_generated_method = "2242ED01989DEB572508493F2D887498")
+    
+public HostPort hostPort( boolean allowWS ) throws ParseException {
         if (debug)
             dbg_enter("hostPort");
         try {

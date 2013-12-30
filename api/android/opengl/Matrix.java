@@ -33,8 +33,9 @@ public class Matrix {
      * @param m the input array
      * @param mOffset an offset into m where the matrix is stored.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.379 -0500", hash_original_method = "66DFA4DCECB08CE2162787D379089FCC", hash_generated_method = "79941489EA54B7BC193B1E6CF20E913B")
-    public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.998 -0500", hash_original_method = "66DFA4DCECB08CE2162787D379089FCC", hash_generated_method = "79941489EA54B7BC193B1E6CF20E913B")
+    
+public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
             int mOffset) {
         for (int i = 0; i < 4; i++) {
             int mBase = i * 4 + mOffset;
@@ -55,8 +56,9 @@ public class Matrix {
      * @param mOffset an offset into m where the matrix is stored.
      * @return true if the matrix could be inverted, false if it could not.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.382 -0500", hash_original_method = "1B6721CDE2ACB08F36930EE6F2223D82", hash_generated_method = "9C4816941FFBE11092DD2C5B2DA9AF83")
-    public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.003 -0500", hash_original_method = "1B6721CDE2ACB08F36930EE6F2223D82", hash_generated_method = "9C4816941FFBE11092DD2C5B2DA9AF83")
+    
+public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
             int mOffset) {
         // Invert a 4 x 4 matrix using Cramer's Rule
 
@@ -190,8 +192,9 @@ public class Matrix {
      * @param near
      * @param far
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.383 -0500", hash_original_method = "9787BFCD9D5823D1A5657457A23F3565", hash_generated_method = "12A7B14EF93BB6FE3B723AEAAD02B355")
-    public static void orthoM(float[] m, int mOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.007 -0500", hash_original_method = "9787BFCD9D5823D1A5657457A23F3565", hash_generated_method = "12A7B14EF93BB6FE3B723AEAAD02B355")
+    
+public static void orthoM(float[] m, int mOffset,
         float left, float right, float bottom, float top,
         float near, float far) {
         if (left == right) {
@@ -245,8 +248,9 @@ public class Matrix {
      * @param far
      */
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.384 -0500", hash_original_method = "948CDA9103045E9BE6D88842B3422809", hash_generated_method = "459765111653B911E4242E3A8D73653D")
-    public static void frustumM(float[] m, int offset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.011 -0500", hash_original_method = "948CDA9103045E9BE6D88842B3422809", hash_generated_method = "459765111653B911E4242E3A8D73653D")
+    
+public static void frustumM(float[] m, int offset,
             float left, float right, float bottom, float top,
             float near, float far) {
         if (left == right) {
@@ -302,8 +306,9 @@ public class Matrix {
      * @param zNear
      * @param zFar
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.385 -0500", hash_original_method = "A3A1BFF318009D261F31253190C9BB1C", hash_generated_method = "471E923A5B67253BC389AD639B81DCDC")
-    public static void perspectiveM(float[] m, int offset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.015 -0500", hash_original_method = "A3A1BFF318009D261F31253190C9BB1C", hash_generated_method = "471E923A5B67253BC389AD639B81DCDC")
+    
+public static void perspectiveM(float[] m, int offset,
           float fovy, float aspect, float zNear, float zFar) {
         float f = 1.0f / (float) Math.tan(fovy * (Math.PI / 360.0));
         float rangeReciprocal = 1.0f / (zNear - zFar);
@@ -337,8 +342,9 @@ public class Matrix {
      * @param z z coordinate of a vector
      * @return the length of a vector
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.386 -0500", hash_original_method = "53E7CA549C97F6BFF49C614C4416CFEE", hash_generated_method = "4EAFC3CE254F643436A6C74B81651199")
-    public static float length(float x, float y, float z) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.017 -0500", hash_original_method = "53E7CA549C97F6BFF49C614C4416CFEE", hash_generated_method = "4EAFC3CE254F643436A6C74B81651199")
+    
+public static float length(float x, float y, float z) {
         return (float) Math.sqrt(x * x + y * y + z * z);
     }
 
@@ -347,8 +353,9 @@ public class Matrix {
      * @param sm returns the result
      * @param smOffset index into sm where the result matrix starts
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.387 -0500", hash_original_method = "DB27B09118DDFEFAD7162035800A953E", hash_generated_method = "40285225095494248FB4953CF3A8BF53")
-    public static void setIdentityM(float[] sm, int smOffset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.020 -0500", hash_original_method = "DB27B09118DDFEFAD7162035800A953E", hash_generated_method = "40285225095494248FB4953CF3A8BF53")
+    
+public static void setIdentityM(float[] sm, int smOffset) {
         for (int i=0 ; i<16 ; i++) {
             sm[smOffset + i] = 0;
         }
@@ -367,8 +374,9 @@ public class Matrix {
      * @param y scale factor y
      * @param z scale factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.388 -0500", hash_original_method = "4EC419240BFE2C77CEA52FEAD03950B4", hash_generated_method = "1CF802A9363264A910B48D0AEDA119CA")
-    public static void scaleM(float[] sm, int smOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.023 -0500", hash_original_method = "4EC419240BFE2C77CEA52FEAD03950B4", hash_generated_method = "1CF802A9363264A910B48D0AEDA119CA")
+    
+public static void scaleM(float[] sm, int smOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -389,8 +397,9 @@ public class Matrix {
      * @param y scale factor y
      * @param z scale factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.389 -0500", hash_original_method = "16F064CAB0DDFBE8E594C269928942D4", hash_generated_method = "1CF4E43AAA489B4CF0D3BF2F7D9D5FD5")
-    public static void scaleM(float[] m, int mOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.026 -0500", hash_original_method = "16F064CAB0DDFBE8E594C269928942D4", hash_generated_method = "1CF4E43AAA489B4CF0D3BF2F7D9D5FD5")
+    
+public static void scaleM(float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
             int mi = mOffset + i;
@@ -410,8 +419,9 @@ public class Matrix {
      * @param y translation factor y
      * @param z translation factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.390 -0500", hash_original_method = "01E50CA685DCCC4E2CB4A3BAE1B534F6", hash_generated_method = "914ADD5D47AA4D78109C5A27EDEADBA9")
-    public static void translateM(float[] tm, int tmOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.029 -0500", hash_original_method = "01E50CA685DCCC4E2CB4A3BAE1B534F6", hash_generated_method = "914ADD5D47AA4D78109C5A27EDEADBA9")
+    
+public static void translateM(float[] tm, int tmOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<12 ; i++) {
@@ -433,8 +443,9 @@ public class Matrix {
      * @param y translation factor y
      * @param z translation factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.391 -0500", hash_original_method = "F6B39D6DC4A22DAD5E2F42A19BD8984E", hash_generated_method = "831EB332539CEABDF7F91BDE12A154DF")
-    public static void translateM(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.031 -0500", hash_original_method = "F6B39D6DC4A22DAD5E2F42A19BD8984E", hash_generated_method = "831EB332539CEABDF7F91BDE12A154DF")
+    
+public static void translateM(
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -454,8 +465,9 @@ public class Matrix {
      * @param y scale factor y
      * @param z scale factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.392 -0500", hash_original_method = "755A094F5792355E420BC146FA28DD03", hash_generated_method = "21D7F203C1D8E51B70F1C8A82D0623DF")
-    public static void rotateM(float[] rm, int rmOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.034 -0500", hash_original_method = "755A094F5792355E420BC146FA28DD03", hash_generated_method = "21D7F203C1D8E51B70F1C8A82D0623DF")
+    
+public static void rotateM(float[] rm, int rmOffset,
             float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
@@ -474,8 +486,9 @@ public class Matrix {
      * @param y scale factor y
      * @param z scale factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.393 -0500", hash_original_method = "B0AC1B0603102B940D17087AB5193035", hash_generated_method = "147D0003AAD209C31501151FD8316616")
-    public static void rotateM(float[] m, int mOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.037 -0500", hash_original_method = "B0AC1B0603102B940D17087AB5193035", hash_generated_method = "147D0003AAD209C31501151FD8316616")
+    
+public static void rotateM(float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
             setRotateM(sTemp, 0, a, x, y, z);
@@ -493,8 +506,9 @@ public class Matrix {
      * @param y scale factor y
      * @param z scale factor z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.395 -0500", hash_original_method = "4AA376E2BF601132BE4BA0B00CFD24B2", hash_generated_method = "5BC8F59C9ED99A339A3210A9285377AB")
-    public static void setRotateM(float[] rm, int rmOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.041 -0500", hash_original_method = "4AA376E2BF601132BE4BA0B00CFD24B2", hash_generated_method = "5BC8F59C9ED99A339A3210A9285377AB")
+    
+public static void setRotateM(float[] rm, int rmOffset,
             float a, float x, float y, float z) {
         rm[rmOffset + 3] = 0;
         rm[rmOffset + 7] = 0;
@@ -559,8 +573,9 @@ public class Matrix {
      * @param y angle of rotation, in degrees
      * @param z angle of rotation, in degrees
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.396 -0500", hash_original_method = "10483E70236858867FE7E63B8ACC4A4C", hash_generated_method = "35E1BD463AB68A8B50294F48077B0D25")
-    public static void setRotateEulerM(float[] rm, int rmOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.045 -0500", hash_original_method = "10483E70236858867FE7E63B8ACC4A4C", hash_generated_method = "35E1BD463AB68A8B50294F48077B0D25")
+    
+public static void setRotateEulerM(float[] rm, int rmOffset,
             float x, float y, float z) {
         x *= (float) (Math.PI / 180.0f);
         y *= (float) (Math.PI / 180.0f);
@@ -611,8 +626,9 @@ public class Matrix {
      * @param upY up vector Y
      * @param upZ up vector Z
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.397 -0500", hash_original_method = "C940ABA55E004E12B0A61D7C913D04B9", hash_generated_method = "3A613BFCDC67CC5A981A42D78BAF40DB")
-    public static void setLookAtM(float[] rm, int rmOffset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.048 -0500", hash_original_method = "C940ABA55E004E12B0A61D7C913D04B9", hash_generated_method = "3A613BFCDC67CC5A981A42D78BAF40DB")
+    
+public static void setLookAtM(float[] rm, int rmOffset,
             float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,
             float upZ) {
@@ -668,7 +684,7 @@ public class Matrix {
 
         translateM(rm, rmOffset, -eyeX, -eyeY, -eyeZ);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.376 -0500", hash_original_field = "AF5340D78742C44364A51FC33709F43B", hash_generated_field = "F1D85FF4C7CB26B2D7C4969F6AF71DCC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.985 -0500", hash_original_field = "AF5340D78742C44364A51FC33709F43B", hash_generated_field = "F1D85FF4C7CB26B2D7C4969F6AF71DCC")
 
     private final static float[] sTemp = new float[32];
     

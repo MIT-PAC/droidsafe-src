@@ -20,8 +20,9 @@ public class PathClassLoader extends BaseDexClassLoader {
      * defaults to {@code ":"} on Android
      * @param parent the parent class loader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:44.065 -0500", hash_original_method = "6258BA858F35AE5BE1B00C9FC6B3D2A7", hash_generated_method = "D3E5C8A167A9807D5075B86756577666")
-    public PathClassLoader(String dexPath, ClassLoader parent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.651 -0500", hash_original_method = "6258BA858F35AE5BE1B00C9FC6B3D2A7", hash_generated_method = "D3E5C8A167A9807D5075B86756577666")
+    
+public PathClassLoader(String dexPath, ClassLoader parent) {
         super(dexPath, null, null, parent);
     }
 
@@ -47,8 +48,9 @@ public class PathClassLoader extends BaseDexClassLoader {
      * {@code null}
      * @param parent the parent class loader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:44.066 -0500", hash_original_method = "48893E9E3C874E5568FFBA369F8C7532", hash_generated_method = "2634023FE461F3A1581961719B5FE539")
-    public PathClassLoader(String dexPath, String libraryPath,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.653 -0500", hash_original_method = "48893E9E3C874E5568FFBA369F8C7532", hash_generated_method = "2634023FE461F3A1581961719B5FE539")
+    
+public PathClassLoader(String dexPath, String libraryPath,
             ClassLoader parent) {
         super(dexPath, null, libraryPath, parent);
     }

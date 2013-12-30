@@ -66,10 +66,10 @@ import org.bouncycastle.x509.X509V2AttributeCertificate;
 
 
 public class PEMReader extends PemReader {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.102 -0500", hash_original_field = "9B1CD2D518DEAD091777D6CB81C5816E", hash_generated_field = "1B324848B9CCB600B6F9F412146CB5D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.361 -0500", hash_original_field = "9B1CD2D518DEAD091777D6CB81C5816E", hash_generated_field = "1B324848B9CCB600B6F9F412146CB5D6")
 
     private final Map parsers = new HashMap();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.103 -0500", hash_original_field = "75C5E5F13C2720237139D3675B80F4E6", hash_generated_field = "7A318D1FC589B8A927004A5BBE837049")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.363 -0500", hash_original_field = "75C5E5F13C2720237139D3675B80F4E6", hash_generated_field = "7A318D1FC589B8A927004A5BBE837049")
 
 
     private PasswordFinder pFinder;
@@ -80,8 +80,9 @@ public class PEMReader extends PemReader {
      *
      * @param reader the Reader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.104 -0500", hash_original_method = "2732903E834E35077990228D3EC5372C", hash_generated_method = "874B62147D53C021C6F32B5DF2CF4549")
-    public PEMReader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.366 -0500", hash_original_method = "2732903E834E35077990228D3EC5372C", hash_generated_method = "874B62147D53C021C6F32B5DF2CF4549")
+    
+public PEMReader(
         Reader reader)
     {
         this(reader, null, "BC");
@@ -93,8 +94,9 @@ public class PEMReader extends PemReader {
      * @param reader  the Reader
      * @param pFinder the password finder
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.105 -0500", hash_original_method = "264D7373D1280C46B7B3C63F3DA0F057", hash_generated_method = "0BBF51B5D4A1AFD777DF9DF211414B13")
-    public PEMReader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.369 -0500", hash_original_method = "264D7373D1280C46B7B3C63F3DA0F057", hash_generated_method = "0BBF51B5D4A1AFD777DF9DF211414B13")
+    
+public PEMReader(
         Reader reader,
         PasswordFinder pFinder)
     {
@@ -108,8 +110,9 @@ public class PEMReader extends PemReader {
      * @param pFinder  the password finder
      * @param provider the cryptography provider to use
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.106 -0500", hash_original_method = "F26FB5757482F756B15ADBECFFA22920", hash_generated_method = "866E2D88D33729E33FBF0566E77B7956")
-    public PEMReader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.371 -0500", hash_original_method = "F26FB5757482F756B15ADBECFFA22920", hash_generated_method = "866E2D88D33729E33FBF0566E77B7956")
+    
+public PEMReader(
         Reader reader,
         PasswordFinder pFinder,
         String provider)
@@ -126,8 +129,9 @@ public class PEMReader extends PemReader {
      * @param symProvider  provider to use for symmetric operations
      * @param asymProvider provider to use for asymmetric (public/private key) operations
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.107 -0500", hash_original_method = "CEFEBB919AD354EB1A0A7FBF2E2E3ECF", hash_generated_method = "1D6284387BD85B0E08A4B494D5BEC91A")
-    public PEMReader(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.374 -0500", hash_original_method = "CEFEBB919AD354EB1A0A7FBF2E2E3ECF", hash_generated_method = "1D6284387BD85B0E08A4B494D5BEC91A")
+    
+public PEMReader(
         Reader reader,
         PasswordFinder pFinder,
         String symProvider,
@@ -154,8 +158,9 @@ public class PEMReader extends PemReader {
         parsers.put("PRIVATE KEY", new PrivateKeyParser(asymProvider));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.108 -0500", hash_original_method = "127E22226D67F5F9289AA2863D2E5AFD", hash_generated_method = "E7B4598E68D943668CA5499F2933BCA8")
-    public Object readObject()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.377 -0500", hash_original_method = "127E22226D67F5F9289AA2863D2E5AFD", hash_generated_method = "E7B4598E68D943668CA5499F2933BCA8")
+    
+public Object readObject()
         throws IOException
     {
         PemObject obj = readPemObject();
@@ -178,12 +183,13 @@ public class PEMReader extends PemReader {
 
     
     private abstract class KeyPairParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.109 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "AFDE0FC943DF429CC56BE81349BC4014")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.380 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "AFDE0FC943DF429CC56BE81349BC4014")
 
         protected String provider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.110 -0500", hash_original_method = "D97A7462FC5E95C470F1E84C9A4F9D7B", hash_generated_method = "F8C46D382714D6BC9EE642A403775A5A")
-        public KeyPairParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.383 -0500", hash_original_method = "D97A7462FC5E95C470F1E84C9A4F9D7B", hash_generated_method = "F8C46D382714D6BC9EE642A403775A5A")
+        
+public KeyPairParser(String provider)
         {
             this.provider = provider;
         }
@@ -191,8 +197,9 @@ public class PEMReader extends PemReader {
         /**
          * Read a Key Pair
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.111 -0500", hash_original_method = "D2B938CFC8BBB876E5EB510A00C9CCB3", hash_generated_method = "424654138E7F0D121A69909EF97DBEFA")
-        protected ASN1Sequence readKeyPair(
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.387 -0500", hash_original_method = "D2B938CFC8BBB876E5EB510A00C9CCB3", hash_generated_method = "424654138E7F0D121A69909EF97DBEFA")
+        
+protected ASN1Sequence readKeyPair(
             PemObject obj)
             throws IOException
         {
@@ -274,14 +281,16 @@ public class PEMReader extends PemReader {
 
     
     private class DSAKeyPairParser extends KeyPairParser {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.113 -0500", hash_original_method = "ADBD617F929757840A0FD32FA3C710F1", hash_generated_method = "5DE1123A8D868D13C61FFB66BA6883C1")
-        public DSAKeyPairParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.392 -0500", hash_original_method = "ADBD617F929757840A0FD32FA3C710F1", hash_generated_method = "5DE1123A8D868D13C61FFB66BA6883C1")
+        
+public DSAKeyPairParser(String provider)
         {
             super(provider);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.114 -0500", hash_original_method = "ADE2E96FAD316F0BCF76F4FEB2795A67", hash_generated_method = "487B04015C51652D46919394D99D2075")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.395 -0500", hash_original_method = "ADE2E96FAD316F0BCF76F4FEB2795A67", hash_generated_method = "487B04015C51652D46919394D99D2075")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -330,14 +339,16 @@ public class PEMReader extends PemReader {
 
     
     private class ECDSAKeyPairParser extends KeyPairParser {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.117 -0500", hash_original_method = "3D5918BC33C2E8750A0F79CF102B6DFC", hash_generated_method = "FC6CB8564356E7B70EFBC5E495CF5A60")
-        public ECDSAKeyPairParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.400 -0500", hash_original_method = "3D5918BC33C2E8750A0F79CF102B6DFC", hash_generated_method = "FC6CB8564356E7B70EFBC5E495CF5A60")
+        
+public ECDSAKeyPairParser(String provider)
         {
             super(provider);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.118 -0500", hash_original_method = "C19C67ADBE6E6117AD29F18C950B281B", hash_generated_method = "318147FC558244690A9888F2218B1B56")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.403 -0500", hash_original_method = "C19C67ADBE6E6117AD29F18C950B281B", hash_generated_method = "318147FC558244690A9888F2218B1B56")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -377,14 +388,16 @@ public class PEMReader extends PemReader {
 
     
     private class RSAKeyPairParser extends KeyPairParser {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.120 -0500", hash_original_method = "77B6A791758EAFC47A0B2DE5F4E18FED", hash_generated_method = "46B4C2C7A3D7DE2ED540B58D362D44E3")
-        public RSAKeyPairParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.408 -0500", hash_original_method = "77B6A791758EAFC47A0B2DE5F4E18FED", hash_generated_method = "46B4C2C7A3D7DE2ED540B58D362D44E3")
+        
+public RSAKeyPairParser(String provider)
         {
             super(provider);
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.121 -0500", hash_original_method = "C48B53F279450A4E2A5829BDF7A98326", hash_generated_method = "40F4F96513AEBCB1B6AC6A8FC560295B")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.412 -0500", hash_original_method = "C48B53F279450A4E2A5829BDF7A98326", hash_generated_method = "40F4F96513AEBCB1B6AC6A8FC560295B")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -439,18 +452,20 @@ public class PEMReader extends PemReader {
 
     
     private class PublicKeyParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.123 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.416 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.124 -0500", hash_original_method = "0B170982AEB3AA2304D2A6B36AB698F1", hash_generated_method = "3315DCC7E4C58C58B29D54F0DE196036")
-        public PublicKeyParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.419 -0500", hash_original_method = "0B170982AEB3AA2304D2A6B36AB698F1", hash_generated_method = "3315DCC7E4C58C58B29D54F0DE196036")
+        
+public PublicKeyParser(String provider)
         {
             this.provider = provider;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.125 -0500", hash_original_method = "5FFFDE03CF0C93B31D80B463283D2455", hash_generated_method = "CD0022AFE0FF8DA75BD93E11F944523D")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.421 -0500", hash_original_method = "5FFFDE03CF0C93B31D80B463283D2455", hash_generated_method = "CD0022AFE0FF8DA75BD93E11F944523D")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             KeySpec keySpec = new X509EncodedKeySpec(obj.getContent());
@@ -487,18 +502,20 @@ public class PEMReader extends PemReader {
 
     
     private class RSAPublicKeyParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.126 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.426 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.127 -0500", hash_original_method = "43B57D7EBB5BEFFE4B105714BFD44A53", hash_generated_method = "F85D61DE0903DABC00822B4CEEDD59CB")
-        public RSAPublicKeyParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.429 -0500", hash_original_method = "43B57D7EBB5BEFFE4B105714BFD44A53", hash_generated_method = "F85D61DE0903DABC00822B4CEEDD59CB")
+        
+public RSAPublicKeyParser(String provider)
         {
             this.provider = provider;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.128 -0500", hash_original_method = "2B7340E6F342A11B50254F4EBFCAD61E", hash_generated_method = "CFDB245EA0A9C0E3EDDA62CEBEC1B15B")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.432 -0500", hash_original_method = "2B7340E6F342A11B50254F4EBFCAD61E", hash_generated_method = "CFDB245EA0A9C0E3EDDA62CEBEC1B15B")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -536,12 +553,13 @@ public class PEMReader extends PemReader {
 
     
     private class X509CertificateParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.130 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.436 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.131 -0500", hash_original_method = "A94C5E4D766266E16A102DAB21BC091D", hash_generated_method = "027336EF1FCF3AD4ABA53400BBD00565")
-        public X509CertificateParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.439 -0500", hash_original_method = "A94C5E4D766266E16A102DAB21BC091D", hash_generated_method = "027336EF1FCF3AD4ABA53400BBD00565")
+        
+public X509CertificateParser(String provider)
         {
             this.provider = provider;
         }
@@ -552,8 +570,9 @@ public class PEMReader extends PemReader {
          * @return the X509Certificate
          * @throws IOException if an I/O error occured
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.132 -0500", hash_original_method = "E970ED81058B7D7B34834ED92B99A71B", hash_generated_method = "F807A53F2862992E0847ADBEAEAD50F3")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.442 -0500", hash_original_method = "E970ED81058B7D7B34834ED92B99A71B", hash_generated_method = "F807A53F2862992E0847ADBEAEAD50F3")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
@@ -577,12 +596,13 @@ public class PEMReader extends PemReader {
 
     
     private class X509CRLParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.133 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.446 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.134 -0500", hash_original_method = "E353A700BDAAD44A8DB485E4FB446A3F", hash_generated_method = "6A07270B8654B9B2FA04A120ECC2DEDE")
-        public X509CRLParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.449 -0500", hash_original_method = "E353A700BDAAD44A8DB485E4FB446A3F", hash_generated_method = "6A07270B8654B9B2FA04A120ECC2DEDE")
+        
+public X509CRLParser(String provider)
         {
             this.provider = provider;
         }
@@ -593,8 +613,9 @@ public class PEMReader extends PemReader {
          * @return the X509Certificate
          * @throws IOException if an I/O error occured
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.135 -0500", hash_original_method = "FC6031BD5FB1B476FDF70740E2B2704D", hash_generated_method = "4A36EA2E1CF5F8C9F0C14493D39E6A3A")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.452 -0500", hash_original_method = "FC6031BD5FB1B476FDF70740E2B2704D", hash_generated_method = "4A36EA2E1CF5F8C9F0C14493D39E6A3A")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
@@ -630,8 +651,9 @@ public class PEMReader extends PemReader {
          * @return the certificate request.
          * @throws IOException if an I/O error occured
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.137 -0500", hash_original_method = "CDCCA4D777F3AF625C0928D23D03AC75", hash_generated_method = "B4A77407821EC07A865080265F744865")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.457 -0500", hash_original_method = "CDCCA4D777F3AF625C0928D23D03AC75", hash_generated_method = "B4A77407821EC07A865080265F744865")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -663,8 +685,9 @@ public class PEMReader extends PemReader {
          * @return the X509Certificate
          * @throws IOException if an I/O error occured
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.139 -0500", hash_original_method = "349205E9CFEFFD40FE2D93E7DAF8E867", hash_generated_method = "D8B4D1F60CD4A49FD451D41BAE0D9EB6")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.461 -0500", hash_original_method = "349205E9CFEFFD40FE2D93E7DAF8E867", hash_generated_method = "D8B4D1F60CD4A49FD451D41BAE0D9EB6")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -691,8 +714,9 @@ public class PEMReader extends PemReader {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.140 -0500", hash_original_method = "C751E950E815D18D55C97B4D94E88025", hash_generated_method = "91DF4FCE1261ABC12FEDDA47562DBD6B")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.465 -0500", hash_original_method = "C751E950E815D18D55C97B4D94E88025", hash_generated_method = "91DF4FCE1261ABC12FEDDA47562DBD6B")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             return new X509V2AttributeCertificate(obj.getContent());
@@ -710,8 +734,9 @@ public class PEMReader extends PemReader {
         {
             //Synthesized constructor
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.142 -0500", hash_original_method = "76529322BBA013222CE8C144A2985A3B", hash_generated_method = "D1DCA3A13E434F18A9E36F1625C33347")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.471 -0500", hash_original_method = "76529322BBA013222CE8C144A2985A3B", hash_generated_method = "D1DCA3A13E434F18A9E36F1625C33347")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -743,15 +768,16 @@ public class PEMReader extends PemReader {
 
     
     private class EncryptedPrivateKeyParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.144 -0500", hash_original_field = "9BA4AFAAF50A40E3743CD384237FD874", hash_generated_field = "7250E15B2C636F0751D5B7C0DD47B256")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.475 -0500", hash_original_field = "9BA4AFAAF50A40E3743CD384237FD874", hash_generated_field = "7250E15B2C636F0751D5B7C0DD47B256")
 
         private String symProvider;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.145 -0500", hash_original_field = "DCA3883F62A97A4D3520EFAE3870D858", hash_generated_field = "0F549A2B688E81487E68FB3369A216E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.477 -0500", hash_original_field = "DCA3883F62A97A4D3520EFAE3870D858", hash_generated_field = "0F549A2B688E81487E68FB3369A216E4")
 
         private String asymProvider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.146 -0500", hash_original_method = "E8D8629FC61D2C1E41CC63DCCA2261A4", hash_generated_method = "B65A5CE8FFAC4A3ED445D30D40B67CBB")
-        public EncryptedPrivateKeyParser(String symProvider, String asymProvider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.481 -0500", hash_original_method = "E8D8629FC61D2C1E41CC63DCCA2261A4", hash_generated_method = "B65A5CE8FFAC4A3ED445D30D40B67CBB")
+        
+public EncryptedPrivateKeyParser(String symProvider, String asymProvider)
         {
             this.symProvider = symProvider;
             this.asymProvider = asymProvider;
@@ -763,8 +789,9 @@ public class PEMReader extends PemReader {
          * @return the X509Certificate
          * @throws IOException if an I/O error occured
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.148 -0500", hash_original_method = "B158B358DBE9E580DC539CC61ABD0BEA", hash_generated_method = "C47E3BBBC709FD56F3EC8334F23C2758")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.485 -0500", hash_original_method = "B158B358DBE9E580DC539CC61ABD0BEA", hash_generated_method = "C47E3BBBC709FD56F3EC8334F23C2758")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try
@@ -866,18 +893,20 @@ public class PEMReader extends PemReader {
 
     
     private class PrivateKeyParser implements PemObjectParser {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.150 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.491 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.151 -0500", hash_original_method = "0877761703B26434F32E47C53A29AE74", hash_generated_method = "802A668420942984C1CC115E54B34B68")
-        public PrivateKeyParser(String provider)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.494 -0500", hash_original_method = "0877761703B26434F32E47C53A29AE74", hash_generated_method = "802A668420942984C1CC115E54B34B68")
+        
+public PrivateKeyParser(String provider)
         {
             this.provider = provider;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.152 -0500", hash_original_method = "2553B1C8B63939D2139C3EAA36C566E7", hash_generated_method = "E940A6EEFA95A38A762E20D5E2F53DC9")
-        public Object parseObject(PemObject obj)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.497 -0500", hash_original_method = "2553B1C8B63939D2139C3EAA36C566E7", hash_generated_method = "E940A6EEFA95A38A762E20D5E2F53DC9")
+        
+public Object parseObject(PemObject obj)
             throws IOException
         {
             try

@@ -41,8 +41,9 @@ public abstract class LogFactory {
      * that LogFactory.release(contextClassLoader) is called whenever a 
      * webapp is undeployed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.905 -0500", hash_original_method = "99E3A91D3C10CF72291E25D8500DEBBE", hash_generated_method = "1382044792DAC3A0FD246B154CBA0A69")
-    private static final Hashtable createFactoryStore() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.237 -0500", hash_original_method = "99E3A91D3C10CF72291E25D8500DEBBE", hash_generated_method = "1382044792DAC3A0FD246B154CBA0A69")
+    
+private static final Hashtable createFactoryStore() {
         Hashtable result = null;
         String storeImplementationClass 
             = System.getProperty(HASHTABLE_IMPLEMENTATION_PROPERTY);
@@ -106,8 +107,9 @@ public abstract class LogFactory {
      * @exception LogConfigurationException if the implementation class is not
      *  available or cannot be instantiated.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.907 -0500", hash_original_method = "33FF688455A61CB525147A185CEE209C", hash_generated_method = "3DB104B438DA7DCEE194F35F16677826")
-    public static LogFactory getFactory() throws LogConfigurationException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.243 -0500", hash_original_method = "33FF688455A61CB525147A185CEE209C", hash_generated_method = "3DB104B438DA7DCEE194F35F16677826")
+    
+public static LogFactory getFactory() throws LogConfigurationException {
         // Identify the class loader we will be using
         ClassLoader contextClassLoader = getContextClassLoader();
 
@@ -368,8 +370,9 @@ public abstract class LogFactory {
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.908 -0500", hash_original_method = "91375CC7DDE12AA338C602727C25174F", hash_generated_method = "044821AC2AA898B0076D21ECC71EC87A")
-    public static Log getLog(Class clazz)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.246 -0500", hash_original_method = "91375CC7DDE12AA338C602727C25174F", hash_generated_method = "044821AC2AA898B0076D21ECC71EC87A")
+    
+public static Log getLog(Class clazz)
         throws LogConfigurationException {
 
         // BEGIN android-added
@@ -393,8 +396,9 @@ public abstract class LogFactory {
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.909 -0500", hash_original_method = "9CDE1AF86C53A03FEBBCD488EAA5D64F", hash_generated_method = "101A139828661B07F82A7885866E2F7A")
-    public static Log getLog(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.248 -0500", hash_original_method = "9CDE1AF86C53A03FEBBCD488EAA5D64F", hash_generated_method = "101A139828661B07F82A7885866E2F7A")
+    
+public static Log getLog(String name)
         throws LogConfigurationException {
 
         // BEGIN android-added
@@ -415,8 +419,9 @@ public abstract class LogFactory {
      *
      * @param classLoader ClassLoader for which to release the LogFactory
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.910 -0500", hash_original_method = "86FE8ACF686D2196BF5667851791DCBD", hash_generated_method = "30F3227BE72810D5F6D025615EB03C0D")
-    public static void release(ClassLoader classLoader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.251 -0500", hash_original_method = "86FE8ACF686D2196BF5667851791DCBD", hash_generated_method = "30F3227BE72810D5F6D025615EB03C0D")
+    
+public static void release(ClassLoader classLoader) {
 
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for classloader " + objectId(classLoader));
@@ -447,8 +452,9 @@ public abstract class LogFactory {
      * Dangling references to objects in that class loader would prevent
      * garbage collection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.911 -0500", hash_original_method = "462BCFC7F269930E40A4FCD6393CDC72", hash_generated_method = "B438EBAF3C3BEB2F7E7382237E095269")
-    public static void releaseAll() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.254 -0500", hash_original_method = "462BCFC7F269930E40A4FCD6393CDC72", hash_generated_method = "B438EBAF3C3BEB2F7E7382237E095269")
+    
+public static void releaseAll() {
 
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for all classloaders.");
@@ -494,8 +500,9 @@ public abstract class LogFactory {
      * 
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.912 -0500", hash_original_method = "BB3F6B78143DB6D0ADEC7F433E59252E", hash_generated_method = "D8624905AC94843F4FEF503B26E292EE")
-    protected static ClassLoader getClassLoader(Class clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.256 -0500", hash_original_method = "BB3F6B78143DB6D0ADEC7F433E59252E", hash_generated_method = "D8624905AC94843F4FEF503B26E292EE")
+    
+protected static ClassLoader getClassLoader(Class clazz) {
         try {
             return clazz.getClassLoader();
         } catch(SecurityException ex) {
@@ -526,8 +533,9 @@ public abstract class LogFactory {
      * @throws SecurityException if the current java security policy doesn't
      * allow this class to access the context classloader.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.914 -0500", hash_original_method = "7256493EBAA0CD15571FBFA48D348BB6", hash_generated_method = "2E0B3E0B30DDC2E2195A8055D9CC2DBC")
-    protected static ClassLoader getContextClassLoader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.262 -0500", hash_original_method = "7256493EBAA0CD15571FBFA48D348BB6", hash_generated_method = "2E0B3E0B30DDC2E2195A8055D9CC2DBC")
+    
+protected static ClassLoader getContextClassLoader()
         throws LogConfigurationException {
 
         return (ClassLoader)AccessController.doPrivileged(
@@ -560,8 +568,9 @@ public abstract class LogFactory {
      * current call stack. 
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.915 -0500", hash_original_method = "3AF672CB82A96AB2C340076756939FD9", hash_generated_method = "07E0FCDE8FA0307D1485229931A2840A")
-    protected static ClassLoader directGetContextClassLoader()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.265 -0500", hash_original_method = "3AF672CB82A96AB2C340076756939FD9", hash_generated_method = "07E0FCDE8FA0307D1485229931A2840A")
+    
+protected static ClassLoader directGetContextClassLoader()
         throws LogConfigurationException
     {
         ClassLoader classLoader = null;
@@ -640,8 +649,9 @@ public abstract class LogFactory {
      * one has previously been created, or null if this is the first time
      * we have seen this particular classloader.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.916 -0500", hash_original_method = "A56069BFC3164E04069C579E1352C071", hash_generated_method = "C6257C81B9805CB643698CCD873C5C26")
-    private static LogFactory getCachedFactory(ClassLoader contextClassLoader)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.267 -0500", hash_original_method = "A56069BFC3164E04069C579E1352C071", hash_generated_method = "C6257C81B9805CB643698CCD873C5C26")
+    
+private static LogFactory getCachedFactory(ClassLoader contextClassLoader)
     {
         LogFactory factory = null;
 
@@ -668,8 +678,9 @@ public abstract class LogFactory {
      *
      * @param factory should be the factory to cache. This should never be null.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.916 -0500", hash_original_method = "70047EA0D2501A673893EF14AF73F944", hash_generated_method = "BE9AC6CFF1A525FB6D155E729F9356AF")
-    private static void cacheFactory(ClassLoader classLoader, LogFactory factory)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.270 -0500", hash_original_method = "70047EA0D2501A673893EF14AF73F944", hash_generated_method = "BE9AC6CFF1A525FB6D155E729F9356AF")
+    
+private static void cacheFactory(ClassLoader classLoader, LogFactory factory)
     {
         // Ideally we would assert(factory != null) here. However reporting
         // errors from within a logging implementation is a little tricky!
@@ -728,8 +739,9 @@ public abstract class LogFactory {
      *  cannot be created
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.919 -0500", hash_original_method = "3C92C15D8716C4492FE58B34AC4039A4", hash_generated_method = "CA7D8B094C93A5A7E96B76FDACAAE197")
-    protected static LogFactory newFactory(final String factoryClass,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.276 -0500", hash_original_method = "3C92C15D8716C4492FE58B34AC4039A4", hash_generated_method = "CA7D8B094C93A5A7E96B76FDACAAE197")
+    
+protected static LogFactory newFactory(final String factoryClass,
                                            final ClassLoader classLoader,
                                            final ClassLoader contextClassLoader)
         throws LogConfigurationException
@@ -776,8 +788,9 @@ public abstract class LogFactory {
      * this. Anyway, it's here just in case, though the "managed class loader"
      * value output to the diagnostics will not report the correct value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.919 -0500", hash_original_method = "92B08F82D4447E8C4BFC572942D5BA89", hash_generated_method = "5B31D345E6F789CEB3F306D029BF81BD")
-    protected static LogFactory newFactory(final String factoryClass,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.279 -0500", hash_original_method = "92B08F82D4447E8C4BFC572942D5BA89", hash_generated_method = "5B31D345E6F789CEB3F306D029BF81BD")
+    
+protected static LogFactory newFactory(final String factoryClass,
                                            final ClassLoader classLoader) {
 	    return newFactory(factoryClass, classLoader, null);
     }
@@ -795,8 +808,9 @@ public abstract class LogFactory {
      * @return either a LogFactory object or a LogConfigurationException object.
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.921 -0500", hash_original_method = "1CC93C4114E498627BCA082B19335D5F", hash_generated_method = "94F3947077CFB19F3E506E84BF030F83")
-    protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.284 -0500", hash_original_method = "1CC93C4114E498627BCA082B19335D5F", hash_generated_method = "94F3947077CFB19F3E506E84BF030F83")
+    
+protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
 
         // This will be used to diagnose bad configurations
         // and allow a useful message to be sent to the user
@@ -969,8 +983,9 @@ public abstract class LogFactory {
      * <code>LogFactory</code> when that class is loaded via the same
      * classloader that loaded the <code>logFactoryClass</code>.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.923 -0500", hash_original_method = "9E9B3F33140C2FD522BF5D0E76D4CFF1", hash_generated_method = "1A62B6752C21BD03839E0B0B6F746EB5")
-    private static boolean implementsLogFactory(Class logFactoryClass) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.287 -0500", hash_original_method = "9E9B3F33140C2FD522BF5D0E76D4CFF1", hash_generated_method = "1A62B6752C21BD03839E0B0B6F746EB5")
+    
+private static boolean implementsLogFactory(Class logFactoryClass) {
         boolean implementsLogFactory = false;
         if (logFactoryClass != null) {
             try {
@@ -1030,8 +1045,9 @@ public abstract class LogFactory {
      * been granted permission for that operation. In this case, we need to 
      * run the operation using an AccessController.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.925 -0500", hash_original_method = "0498E2FA4E88B0B584C1C528E3B901A8", hash_generated_method = "B4858C8F544596DF2C1D8AF938F467DC")
-    private static InputStream getResourceAsStream(final ClassLoader loader,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.292 -0500", hash_original_method = "0498E2FA4E88B0B584C1C528E3B901A8", hash_generated_method = "B4858C8F544596DF2C1D8AF938F467DC")
+    
+private static InputStream getResourceAsStream(final ClassLoader loader,
                                                    final String name)
     {
         return (InputStream)AccessController.doPrivileged(
@@ -1059,8 +1075,9 @@ public abstract class LogFactory {
      * hasMoreElements method returns false (ie an "empty" enumeration).
      * If resources could not be listed for some reason, null is returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.927 -0500", hash_original_method = "A2F29F4C35DC94060573F2DA357EEBF8", hash_generated_method = "C5ADB01290D2354FF391E1783A86EF4C")
-    private static Enumeration getResources(final ClassLoader loader,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.299 -0500", hash_original_method = "A2F29F4C35DC94060573F2DA357EEBF8", hash_generated_method = "C5ADB01290D2354FF391E1783A86EF4C")
+    
+private static Enumeration getResources(final ClassLoader loader,
             final String name)
     {
         PrivilegedAction action = 
@@ -1099,8 +1116,9 @@ public abstract class LogFactory {
      * <p>
      * Null is returned if the URL cannot be opened.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.929 -0500", hash_original_method = "71E2C0704554AE9E687BED49AB0F5251", hash_generated_method = "9D53EC50F5D78282410DAE4996DE9F10")
-    private static Properties getProperties(final URL url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.305 -0500", hash_original_method = "71E2C0704554AE9E687BED49AB0F5251", hash_generated_method = "9D53EC50F5D78282410DAE4996DE9F10")
+    
+private static Properties getProperties(final URL url) {
         PrivilegedAction action = 
             new PrivilegedAction() {
                 public Object run() {
@@ -1143,8 +1161,9 @@ public abstract class LogFactory {
      * webapps. Webapps can also use explicit priorities to override a configuration
      * file in the shared classpath if needed. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.930 -0500", hash_original_method = "7DE9F3F0C3643EF9168BBA0425C15953", hash_generated_method = "8C2EDDBC3FE50A6648874505FBBE5C85")
-    private static final Properties getConfigurationFile(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.309 -0500", hash_original_method = "7DE9F3F0C3643EF9168BBA0425C15953", hash_generated_method = "8C2EDDBC3FE50A6648874505FBBE5C85")
+    
+private static final Properties getConfigurationFile(
             ClassLoader classLoader, String fileName) {
 
         Properties props = null;
@@ -1235,8 +1254,9 @@ public abstract class LogFactory {
      * output by setting the system property named {@link #DIAGNOSTICS_DEST_PROPERTY} to
      * a filename, or the special values STDOUT or STDERR. 
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.931 -0500", hash_original_method = "BB706202832664F36987A29B6723E314", hash_generated_method = "572798DAC5565ADBAB50961C38124BF7")
-    private static void initDiagnostics() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.312 -0500", hash_original_method = "BB706202832664F36987A29B6723E314", hash_generated_method = "572798DAC5565ADBAB50961C38124BF7")
+    
+private static void initDiagnostics() {
         String dest;
     	try {
     	    dest = System.getProperty(DIAGNOSTICS_DEST_PROPERTY);
@@ -1296,8 +1316,9 @@ public abstract class LogFactory {
      * @return true if calls to logDiagnostic will have any effect.
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.932 -0500", hash_original_method = "ECB5C3B5CB855729F51EA9DA0FE1F709", hash_generated_method = "AB011A018E3B404B4D21F064623D0A42")
-    protected static boolean isDiagnosticsEnabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.314 -0500", hash_original_method = "ECB5C3B5CB855729F51EA9DA0FE1F709", hash_generated_method = "AB011A018E3B404B4D21F064623D0A42")
+    
+protected static boolean isDiagnosticsEnabled() {
         return diagnosticsStream != null;
     }
 
@@ -1319,8 +1340,9 @@ public abstract class LogFactory {
      * 
      * @param msg is the diagnostic message to be output.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.933 -0500", hash_original_method = "236FA7D434741B1A7CF02D845E091B05", hash_generated_method = "5D6EBC1AA6B4939FB9BB8311FA342699")
-    private static final void logDiagnostic(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.317 -0500", hash_original_method = "236FA7D434741B1A7CF02D845E091B05", hash_generated_method = "5D6EBC1AA6B4939FB9BB8311FA342699")
+    
+private static final void logDiagnostic(String msg) {
         if (diagnosticsStream != null) {
             diagnosticsStream.print(diagnosticPrefix);
             diagnosticsStream.println(msg);
@@ -1334,8 +1356,9 @@ public abstract class LogFactory {
      * @param msg is the diagnostic message to be output.
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.934 -0500", hash_original_method = "075757868D9F05D5BCB9F5AF64703AEB", hash_generated_method = "DDC4768F4C15EC5CEA03AD7277AA6403")
-    protected static final void logRawDiagnostic(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.319 -0500", hash_original_method = "075757868D9F05D5BCB9F5AF64703AEB", hash_generated_method = "DDC4768F4C15EC5CEA03AD7277AA6403")
+    
+protected static final void logRawDiagnostic(String msg) {
         if (diagnosticsStream != null) {
             diagnosticsStream.println(msg);
             diagnosticsStream.flush();
@@ -1359,8 +1382,9 @@ public abstract class LogFactory {
      * @param clazz is the class whose classloader + tree are to be
      * output.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.935 -0500", hash_original_method = "E38F65D38D4D4B93D1A623DA076AB427", hash_generated_method = "B75AF62EB3787E7C63E2F853C1B93F8C")
-    private static void logClassLoaderEnvironment(Class clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.322 -0500", hash_original_method = "E38F65D38D4D4B93D1A623DA076AB427", hash_generated_method = "B75AF62EB3787E7C63E2F853C1B93F8C")
+    
+private static void logClassLoaderEnvironment(Class clazz) {
         if (!isDiagnosticsEnabled()) {
             return;
         }
@@ -1397,8 +1421,9 @@ public abstract class LogFactory {
      * @param prefix 
      * @param classLoader
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.936 -0500", hash_original_method = "319AE7233CD27CBEA6DD860B25C7C22F", hash_generated_method = "FD4600DB6D8CFB08BF6C0AE2DAA3D58B")
-    private static void logHierarchy(String prefix, ClassLoader classLoader) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.325 -0500", hash_original_method = "319AE7233CD27CBEA6DD860B25C7C22F", hash_generated_method = "FD4600DB6D8CFB08BF6C0AE2DAA3D58B")
+    
+private static void logHierarchy(String prefix, ClassLoader classLoader) {
         if (!isDiagnosticsEnabled()) {
             return;
         }
@@ -1452,15 +1477,16 @@ public abstract class LogFactory {
      * @return a string of form classname@hashcode, or "null" if param o is null.
      * @since 1.1
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.937 -0500", hash_original_method = "292B7DCBCC7BDB4A508EA54DA0D8814E", hash_generated_method = "C2216A916252A9D3C3FCA262EADE2095")
-    public static String objectId(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.328 -0500", hash_original_method = "292B7DCBCC7BDB4A508EA54DA0D8814E", hash_generated_method = "C2216A916252A9D3C3FCA262EADE2095")
+    
+public static String objectId(Object o) {
         if (o == null) {
             return "null";
         } else {
             return o.getClass().getName() + "@" + System.identityHashCode(o);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.887 -0500", hash_original_field = "F2B914B72B6C791BFE4F04E459705519", hash_generated_field = "D39AFAD27EED39D02E35F26FB5566E86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.180 -0500", hash_original_field = "F2B914B72B6C791BFE4F04E459705519", hash_generated_field = "D39AFAD27EED39D02E35F26FB5566E86")
 
 
     /**
@@ -1469,47 +1495,47 @@ public abstract class LogFactory {
      * is a floating-point number; higher values take priority over lower values.
      */
     public static final String PRIORITY_KEY = "priority";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.888 -0500", hash_original_field = "EA65387D8CE020B6FCFE47C1F6BD853A", hash_generated_field = "BA01E062102B079BBF63D15DBC3413CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.183 -0500", hash_original_field = "EA65387D8CE020B6FCFE47C1F6BD853A", hash_generated_field = "BA01E062102B079BBF63D15DBC3413CC")
 
     public static final String TCCL_KEY = "use_tccl";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.888 -0500", hash_original_field = "F321625E044214FC9D7BB20444763920", hash_generated_field = "11D26AB77645C1028DCD1B23280DFF25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.185 -0500", hash_original_field = "F321625E044214FC9D7BB20444763920", hash_generated_field = "11D26AB77645C1028DCD1B23280DFF25")
 
     public static final String FACTORY_PROPERTY =
         "org.apache.commons.logging.LogFactory";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.889 -0500", hash_original_field = "AA636AA6DD85F557D515DDBAA1E7F6DE", hash_generated_field = "F345A9589B47EE896ADF27E2B65BF2CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.188 -0500", hash_original_field = "AA636AA6DD85F557D515DDBAA1E7F6DE", hash_generated_field = "F345A9589B47EE896ADF27E2B65BF2CA")
 
     public static final String FACTORY_DEFAULT =
         "org.apache.commons.logging.impl.LogFactoryImpl";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.890 -0500", hash_original_field = "82DA8AC3CABB85377945756531886020", hash_generated_field = "B4211EE3317940F3DF5F8CBEDEE45D44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.192 -0500", hash_original_field = "82DA8AC3CABB85377945756531886020", hash_generated_field = "B4211EE3317940F3DF5F8CBEDEE45D44")
 
     public static final String FACTORY_PROPERTIES =
         "commons-logging.properties";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.891 -0500", hash_original_field = "19CAF8D678720A49F9AE17E62879C664", hash_generated_field = "097B030A4686AB60D9E88B759DEB8807")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.194 -0500", hash_original_field = "19CAF8D678720A49F9AE17E62879C664", hash_generated_field = "097B030A4686AB60D9E88B759DEB8807")
 
     protected static final String SERVICE_ID =
         "META-INF/services/org.apache.commons.logging.LogFactory";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.892 -0500", hash_original_field = "E337B5F62BEE17C82F47F8CA94B78B4F", hash_generated_field = "6A8778658C9B0B4DE94213091D0DE3B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.197 -0500", hash_original_field = "E337B5F62BEE17C82F47F8CA94B78B4F", hash_generated_field = "6A8778658C9B0B4DE94213091D0DE3B3")
 
     public static final String DIAGNOSTICS_DEST_PROPERTY =
         "org.apache.commons.logging.diagnostics.dest";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.892 -0500", hash_original_field = "F1327D35B5494F9D0A710F56F7D54B61", hash_generated_field = "502D4A8426F2D567358D7FA7868419EB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.199 -0500", hash_original_field = "F1327D35B5494F9D0A710F56F7D54B61", hash_generated_field = "502D4A8426F2D567358D7FA7868419EB")
 
     private static PrintStream diagnosticsStream = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.893 -0500", hash_original_field = "F9B1BC72E6214E8224C6F6C21C66489A", hash_generated_field = "50207E8543E2F4B02545B1FC7108DCA6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.201 -0500", hash_original_field = "F9B1BC72E6214E8224C6F6C21C66489A", hash_generated_field = "50207E8543E2F4B02545B1FC7108DCA6")
 
     private static String diagnosticPrefix;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.894 -0500", hash_original_field = "BA8444F748143AB174653AB404269F7E", hash_generated_field = "D6581D8C069D3D0B5FC9CCEC021029A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.204 -0500", hash_original_field = "BA8444F748143AB174653AB404269F7E", hash_generated_field = "D6581D8C069D3D0B5FC9CCEC021029A7")
 
     public static final String HASHTABLE_IMPLEMENTATION_PROPERTY =
         "org.apache.commons.logging.LogFactory.HashtableImpl";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.895 -0500", hash_original_field = "994861C31CD9B4A7200F02B8D9E12BB0", hash_generated_field = "3F8062920D2835FF30BF3946833B7D74")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.208 -0500", hash_original_field = "994861C31CD9B4A7200F02B8D9E12BB0", hash_generated_field = "3F8062920D2835FF30BF3946833B7D74")
 
     private static final String WEAK_HASHTABLE_CLASSNAME = 
         "org.apache.commons.logging.impl.WeakHashtable";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.896 -0500", hash_original_field = "DBEAA857754828E731DF8A1311E0C4F0", hash_generated_field = "59780F9C7686D986D4425308AC009E0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.210 -0500", hash_original_field = "DBEAA857754828E731DF8A1311E0C4F0", hash_generated_field = "59780F9C7686D986D4425308AC009E0C")
 
     private static ClassLoader thisClassLoader;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.903 -0500", hash_original_field = "E39DFF69014CBC33B78403839A43A4BD", hash_generated_field = "0DD8D5F36915FC414889E9F489834DBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.232 -0500", hash_original_field = "E39DFF69014CBC33B78403839A43A4BD", hash_generated_field = "0DD8D5F36915FC414889E9F489834DBF")
 
 
 
@@ -1518,7 +1544,7 @@ public abstract class LogFactory {
      * the <code>ClassLoader</code> with which it was created.
      */
     protected static Hashtable factories = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.904 -0500", hash_original_field = "73719A90D2704AAFF5EAB74BC7EC69A3", hash_generated_field = "D7891BCD06A51439A7F138B7BA8EB96E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.234 -0500", hash_original_field = "73719A90D2704AAFF5EAB74BC7EC69A3", hash_generated_field = "D7891BCD06A51439A7F138B7BA8EB96E")
 
     protected static LogFactory nullClassLoaderFactory = null;
     
@@ -1528,8 +1554,9 @@ public abstract class LogFactory {
     /**
      * Protected constructor that is not available for public use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.896 -0500", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "60F099FEF67CE9E15E6D08D1618F5B3A")
-    protected LogFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.213 -0500", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "60F099FEF67CE9E15E6D08D1618F5B3A")
+    
+protected LogFactory() {
     }
     
     // --------------------------------------------------------- Public Methods
@@ -1541,8 +1568,9 @@ public abstract class LogFactory {
      *
      * @param name Name of the attribute to return
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.897 -0500", hash_original_method = "FCC4022F9438D02A03EAF9E0461B0B3B", hash_generated_method = "9607117A4C58FE37636FB3C445473F6C")
-    public abstract Object getAttribute(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.215 -0500", hash_original_method = "FCC4022F9438D02A03EAF9E0461B0B3B", hash_generated_method = "9607117A4C58FE37636FB3C445473F6C")
+    
+public abstract Object getAttribute(String name);
 
 
     /**
@@ -1550,8 +1578,9 @@ public abstract class LogFactory {
      * configuration attributes.  If there are no such attributes, a zero
      * length array is returned.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.898 -0500", hash_original_method = "B483E463AD782788123AFB164C362A6B", hash_generated_method = "31D18C91D6F792C33F89EF815037FEE0")
-    public abstract String[] getAttributeNames();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.217 -0500", hash_original_method = "B483E463AD782788123AFB164C362A6B", hash_generated_method = "31D18C91D6F792C33F89EF815037FEE0")
+    
+public abstract String[] getAttributeNames();
 
 
     /**
@@ -1563,8 +1592,9 @@ public abstract class LogFactory {
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.899 -0500", hash_original_method = "F4C3B8BB2CEF85EE0F12ADFC26E0DE54", hash_generated_method = "69F22EA425FE790B5B6947FF5AF247DA")
-    public abstract Log getInstance(Class clazz)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.220 -0500", hash_original_method = "F4C3B8BB2CEF85EE0F12ADFC26E0DE54", hash_generated_method = "69F22EA425FE790B5B6947FF5AF247DA")
+    
+public abstract Log getInstance(Class clazz)
         throws LogConfigurationException;
 
 
@@ -1585,8 +1615,9 @@ public abstract class LogFactory {
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.899 -0500", hash_original_method = "C15C7EE976772EFCE731ED8180CFFC13", hash_generated_method = "E6B297E296FDBE84568CEE36B2D70207")
-    public abstract Log getInstance(String name)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.222 -0500", hash_original_method = "C15C7EE976772EFCE731ED8180CFFC13", hash_generated_method = "E6B297E296FDBE84568CEE36B2D70207")
+    
+public abstract Log getInstance(String name)
         throws LogConfigurationException;
 
 
@@ -1597,8 +1628,9 @@ public abstract class LogFactory {
      * throwing away a ClassLoader.  Dangling references to objects in that
      * class loader would prevent garbage collection.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.901 -0500", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "6DFA7D15E7B71D240B8AE9B1CDC7676A")
-    public abstract void release();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.224 -0500", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "6DFA7D15E7B71D240B8AE9B1CDC7676A")
+    
+public abstract void release();
 
 
     /**
@@ -1607,8 +1639,9 @@ public abstract class LogFactory {
      *
      * @param name Name of the attribute to remove
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.901 -0500", hash_original_method = "F2B1C6370498677CAD1FF1E7C1667F22", hash_generated_method = "9E20905C9741F4DC53902FA8DF269B39")
-    public abstract void removeAttribute(String name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.227 -0500", hash_original_method = "F2B1C6370498677CAD1FF1E7C1667F22", hash_generated_method = "9E20905C9741F4DC53902FA8DF269B39")
+    
+public abstract void removeAttribute(String name);
 
 
     /**
@@ -1620,8 +1653,9 @@ public abstract class LogFactory {
      * @param value Value of the attribute to set, or <code>null</code>
      *  to remove any setting for this attribute
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.902 -0500", hash_original_method = "1F863C3C4F056307A6C164B0CC924493", hash_generated_method = "AFB2A798D58B4DB15FE29BA9093D5023")
-    public abstract void setAttribute(String name, Object value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.229 -0500", hash_original_method = "1F863C3C4F056307A6C164B0CC924493", hash_generated_method = "AFB2A798D58B4DB15FE29BA9093D5023")
+    
+public abstract void setAttribute(String name, Object value);
     static {
         thisClassLoader = getClassLoader(LogFactory.class);
         initDiagnostics();

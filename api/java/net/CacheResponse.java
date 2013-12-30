@@ -30,8 +30,9 @@ public abstract class CacheResponse {
      *             if an I/O error is encountered while retrieving the response
      *             body.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.179 -0500", hash_original_method = "4FE527F26D4DC9AF0C47E9AE29A33E83", hash_generated_method = "342BF8230112C2AD119F694144CAB4F2")
-    public abstract InputStream getBody() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.049 -0500", hash_original_method = "4FE527F26D4DC9AF0C47E9AE29A33E83", hash_generated_method = "342BF8230112C2AD119F694144CAB4F2")
+    
+public abstract InputStream getBody() throws IOException;
 
     /**
      * Returns an immutable {@code Map} which contains the response headers
@@ -46,8 +47,9 @@ public abstract class CacheResponse {
      *             if an I/O error is encountered while retrieving the response
      *             headers.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.181 -0500", hash_original_method = "573CBFDFD5653531FB0C0AE5FEE8D961", hash_generated_method = "5A04DA33FF0AE30B4D87CD23D93A6522")
-    public abstract Map<String, List<String>> getHeaders() throws IOException;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.051 -0500", hash_original_method = "573CBFDFD5653531FB0C0AE5FEE8D961", hash_generated_method = "5A04DA33FF0AE30B4D87CD23D93A6522")
+    
+public abstract Map<String, List<String>> getHeaders() throws IOException;
 
     
 }

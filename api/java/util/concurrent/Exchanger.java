@@ -19,8 +19,9 @@ public class Exchanger<V> {
      * @param slot the slot it is waiting in
      * @return true if successfully cancelled
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.094 -0500", hash_original_method = "B32071C09A97DFFF75EFFCE89615F3EB", hash_generated_method = "61FD94E30A48F185E47B147315A3A09A")
-    private static boolean tryCancel(Node node, Slot slot) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.295 -0500", hash_original_method = "B32071C09A97DFFF75EFFCE89615F3EB", hash_generated_method = "61FD94E30A48F185E47B147315A3A09A")
+    
+private static boolean tryCancel(Node node, Slot slot) {
         if (!node.compareAndSet(null, CANCEL))
             return false;
         if (slot.get() == node) // pre-check to minimize contention
@@ -39,8 +40,9 @@ public class Exchanger<V> {
      * @param node the waiting node
      * @return on success, the hole; on failure, CANCEL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.095 -0500", hash_original_method = "CB278E99E24B4E735DC62BFED6C8971E", hash_generated_method = "7C09908AD80CEF2B2706D012825CE5C7")
-    private static Object spinWait(Node node, Slot slot) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.298 -0500", hash_original_method = "CB278E99E24B4E735DC62BFED6C8971E", hash_generated_method = "7C09908AD80CEF2B2706D012825CE5C7")
+    
+private static Object spinWait(Node node, Slot slot) {
         int spins = SPINS;
         for (;;) {
             Object v = node.get();
@@ -70,8 +72,9 @@ public class Exchanger<V> {
      * @param node the waiting node
      * @return on success, the hole; on failure, CANCEL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.096 -0500", hash_original_method = "4A9417958994593B8563D558E999EFC3", hash_generated_method = "452593542D6F488C7C8A4B5BED4615B3")
-    private static Object await(Node node, Slot slot) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.301 -0500", hash_original_method = "4A9417958994593B8563D558E999EFC3", hash_generated_method = "452593542D6F488C7C8A4B5BED4615B3")
+    
+private static Object await(Node node, Slot slot) {
         Thread w = Thread.currentThread();
         int spins = SPINS;
         for (;;) {
@@ -88,50 +91,51 @@ public class Exchanger<V> {
                 LockSupport.park(node);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.074 -0500", hash_original_field = "75EA46F781370128B90C88B0C6C4F82B", hash_generated_field = "1914937029C009DA607D29A4480902A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.238 -0500", hash_original_field = "75EA46F781370128B90C88B0C6C4F82B", hash_generated_field = "1914937029C009DA607D29A4480902A4")
 
 
     /** The number of CPUs, for sizing and spin control */
     private static final int NCPU = Runtime.getRuntime().availableProcessors();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.076 -0500", hash_original_field = "658001A3F32BFA905BFADA170C70835F", hash_generated_field = "E87A8F05D56205E03FD465D71DDC4E64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.241 -0500", hash_original_field = "658001A3F32BFA905BFADA170C70835F", hash_generated_field = "E87A8F05D56205E03FD465D71DDC4E64")
 
     private static final int CAPACITY = 32;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.076 -0500", hash_original_field = "490AEE0E797EC12921D65510D2246EF8", hash_generated_field = "19CBB79F5BAC3C02E55420AC3E96D83F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.244 -0500", hash_original_field = "490AEE0E797EC12921D65510D2246EF8", hash_generated_field = "19CBB79F5BAC3C02E55420AC3E96D83F")
 
     private static final int FULL =
         Math.max(0, Math.min(CAPACITY, NCPU / 2) - 1);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.077 -0500", hash_original_field = "A79899B0496423503C40E0DB439585BC", hash_generated_field = "DD5CFF62634AED5D259CB7E2ADD5133B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.254 -0500", hash_original_field = "A79899B0496423503C40E0DB439585BC", hash_generated_field = "DD5CFF62634AED5D259CB7E2ADD5133B")
 
     private static final int SPINS = (NCPU == 1) ? 0 : 2000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.078 -0500", hash_original_field = "A1D76156212CB35F4354BE922ECF1337", hash_generated_field = "76DBAB4631B1B171678A47C88BDDACA5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.257 -0500", hash_original_field = "A1D76156212CB35F4354BE922ECF1337", hash_generated_field = "76DBAB4631B1B171678A47C88BDDACA5")
 
     private static final int TIMED_SPINS = SPINS / 20;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.079 -0500", hash_original_field = "33C4533570ECDEC04E31CD62F398FAA0", hash_generated_field = "3B0C3CB8323B5C5F4FF4411ED327CEBB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.260 -0500", hash_original_field = "33C4533570ECDEC04E31CD62F398FAA0", hash_generated_field = "3B0C3CB8323B5C5F4FF4411ED327CEBB")
 
     private static final Object CANCEL = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.080 -0500", hash_original_field = "48EA6DDAF5010A87C48D3E20E00C1EFD", hash_generated_field = "C3444CF75E87B7410DAF194724DC011B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.263 -0500", hash_original_field = "48EA6DDAF5010A87C48D3E20E00C1EFD", hash_generated_field = "C3444CF75E87B7410DAF194724DC011B")
 
     private static final Object NULL_ITEM = new Object();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.089 -0500", hash_original_field = "7BF435916F51C391155FF09EF03DE51E", hash_generated_field = "A4DE78C80A44A9FFB485B1FA97067F63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.281 -0500", hash_original_field = "7BF435916F51C391155FF09EF03DE51E", hash_generated_field = "A4DE78C80A44A9FFB485B1FA97067F63")
 
     private volatile Slot[] arena = new Slot[CAPACITY];
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.090 -0500", hash_original_field = "9FCE23DBEF09FBDEB8B4170F4CDBBBED", hash_generated_field = "C753B28A7DF93AEB959426A931313902")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.283 -0500", hash_original_field = "9FCE23DBEF09FBDEB8B4170F4CDBBBED", hash_generated_field = "C753B28A7DF93AEB959426A931313902")
 
     private final AtomicInteger max = new AtomicInteger();
 
     /**
      * Creates a new Exchanger.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.099 -0500", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "F3DE1CB784C5627EDBD69D821D89A075")
-    public Exchanger() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.309 -0500", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "F3DE1CB784C5627EDBD69D821D89A075")
+    
+public Exchanger() {
     }
 
     
     private static final class Node extends AtomicReference<Object> {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.082 -0500", hash_original_field = "CF812EE2AD9BC4EAA8B11FCCEDAE3ADB", hash_generated_field = "534A9EAE4E6170E4619513891411852D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.266 -0500", hash_original_field = "CF812EE2AD9BC4EAA8B11FCCEDAE3ADB", hash_generated_field = "534A9EAE4E6170E4619513891411852D")
 
         public  Object item;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.083 -0500", hash_original_field = "4DB9CE87B9CCE3428476BDB51EBE9EF1", hash_generated_field = "CD33F33C6B06BD5F7A2A693861D1129D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.269 -0500", hash_original_field = "4DB9CE87B9CCE3428476BDB51EBE9EF1", hash_generated_field = "CD33F33C6B06BD5F7A2A693861D1129D")
 
         public volatile Thread waiter;
 
@@ -139,8 +143,9 @@ public class Exchanger<V> {
          * Creates node with given item and empty hole.
          * @param item the item
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.084 -0500", hash_original_method = "8076C86F5BED3901532DF78458E5A05E", hash_generated_method = "8E524DAF36E4E0F50709434963804CC6")
-        public Node(Object item) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.272 -0500", hash_original_method = "8076C86F5BED3901532DF78458E5A05E", hash_generated_method = "8E524DAF36E4E0F50709434963804CC6")
+        
+public Node(Object item) {
             this.item = item;
         }
 
@@ -217,8 +222,9 @@ public class Exchanger<V> {
      * @param nanos if timed, the maximum wait time
      * @return the other thread's item, or CANCEL if interrupted or timed out
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.091 -0500", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F999AB1DA8ED0568D23A16ABFD90AFE4")
-    private Object doExchange(Object item, boolean timed, long nanos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.288 -0500", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F999AB1DA8ED0568D23A16ABFD90AFE4")
+    
+private Object doExchange(Object item, boolean timed, long nanos) {
         Node me = new Node(item);                 // Create in case occupying
         int index = hashIndex();                  // Index of current slot
         int fails = 0;                            // Number of CAS failures
@@ -282,8 +288,9 @@ public class Exchanger<V> {
      *
      * @return a per-thread-random index, 0 <= index < max
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.092 -0500", hash_original_method = "81A7A8FE33AEB39DC2465115E332A8B2", hash_generated_method = "E307B358374E191481F8EF8CDC8D99E6")
-    private final int hashIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.290 -0500", hash_original_method = "81A7A8FE33AEB39DC2465115E332A8B2", hash_generated_method = "E307B358374E191481F8EF8CDC8D99E6")
+    
+private final int hashIndex() {
         long id = Thread.currentThread().getId();
         int hash = (((int)(id ^ (id >>> 32))) ^ 0x811c9dc5) * 0x01000193;
 
@@ -305,8 +312,9 @@ public class Exchanger<V> {
      *
      * @param index the index to add slot at
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.093 -0500", hash_original_method = "710CA77564EC78E634B8090E5C600333", hash_generated_method = "F86F43D6D2A26E9F7B2A2BE42B2598B8")
-    private void createSlot(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.293 -0500", hash_original_method = "710CA77564EC78E634B8090E5C600333", hash_generated_method = "F86F43D6D2A26E9F7B2A2BE42B2598B8")
+    
+private void createSlot(int index) {
         // Create slot outside of lock to narrow sync region
         Slot newSlot = new Slot();
         Slot[] a = arena;
@@ -325,8 +333,9 @@ public class Exchanger<V> {
      * @param nanos the wait time
      * @return on success, the hole; on failure, CANCEL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.097 -0500", hash_original_method = "B05B09390509B455A836B09E2A65E5D4", hash_generated_method = "B303ADC082E4C769878DBBA7904F78F9")
-    private Object awaitNanos(Node node, Slot slot, long nanos) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.304 -0500", hash_original_method = "B05B09390509B455A836B09E2A65E5D4", hash_generated_method = "B303ADC082E4C769878DBBA7904F78F9")
+    
+private Object awaitNanos(Node node, Slot slot, long nanos) {
         int spins = TIMED_SPINS;
         long lastTime = 0;
         Thread w = null;
@@ -369,8 +378,9 @@ public class Exchanger<V> {
      * @param node the waiting node
      * @return another thread's item, or CANCEL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.098 -0500", hash_original_method = "968A2928C62BC7FCD22DA53EF68519F2", hash_generated_method = "A1337444E5DDD8166BCC5747E4B6D72D")
-    private Object scanOnTimeout(Node node) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.307 -0500", hash_original_method = "968A2928C62BC7FCD22DA53EF68519F2", hash_generated_method = "A1337444E5DDD8166BCC5747E4B6D72D")
+    
+private Object scanOnTimeout(Node node) {
         Object y;
         for (int j = arena.length - 1; j >= 0; --j) {
             Slot slot = arena[j];
@@ -422,8 +432,9 @@ public class Exchanger<V> {
      * @throws InterruptedException if the current thread was
      *         interrupted while waiting
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.100 -0500", hash_original_method = "01BD898C994460F5196927F0C5114F9E", hash_generated_method = "43B9B19E5F9A3C4248EA65E9663E2CE1")
-    public V exchange(V x) throws InterruptedException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.312 -0500", hash_original_method = "01BD898C994460F5196927F0C5114F9E", hash_generated_method = "43B9B19E5F9A3C4248EA65E9663E2CE1")
+    
+public V exchange(V x) throws InterruptedException {
         if (!Thread.interrupted()) {
             Object v = doExchange((x == null) ? NULL_ITEM : x, false, 0);
             if (v == NULL_ITEM)
@@ -477,8 +488,9 @@ public class Exchanger<V> {
      * @throws TimeoutException if the specified waiting time elapses
      *         before another thread enters the exchange
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.101 -0500", hash_original_method = "32FED615BD7111CFC755561A988F29C6", hash_generated_method = "353387BCE1C0F5CE7848F502F5F2B44A")
-    public V exchange(V x, long timeout, TimeUnit unit)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.316 -0500", hash_original_method = "32FED615BD7111CFC755561A988F29C6", hash_generated_method = "353387BCE1C0F5CE7848F502F5F2B44A")
+    
+public V exchange(V x, long timeout, TimeUnit unit)
         throws InterruptedException, TimeoutException {
         if (!Thread.interrupted()) {
             Object v = doExchange((x == null) ? NULL_ITEM : x,

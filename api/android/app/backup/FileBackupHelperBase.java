@@ -22,8 +22,9 @@ class FileBackupHelperBase {
      * Check the parameters so the native code doesn't have to throw all the exceptions
      * since it's easier to do that from Java.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.565 -0500", hash_original_method = "4DFB8B26593004F05B46C7B55CA3A1AC", hash_generated_method = "CFB6CD05ABDFFC658AA0528C1C95A53B")
-    static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutput data,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.041 -0500", hash_original_method = "4DFB8B26593004F05B46C7B55CA3A1AC", hash_generated_method = "CFB6CD05ABDFFC658AA0528C1C95A53B")
+    
+static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState, String[] files, String[] keys) {
         if (files.length == 0) {
             return;
@@ -83,28 +84,30 @@ class FileBackupHelperBase {
     private static int writeSnapshot_native(int ptr, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.560 -0500", hash_original_field = "73DA84C3D73901EAFDC64078A17B6EFD", hash_generated_field = "61E475B8BF147749B9941333719C84D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.028 -0500", hash_original_field = "73DA84C3D73901EAFDC64078A17B6EFD", hash_generated_field = "61E475B8BF147749B9941333719C84D8")
 
     private static final String TAG = "FileBackupHelperBase";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.561 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "42C21A18FB5976D4C67962413781C35D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.030 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "42C21A18FB5976D4C67962413781C35D")
 
 
     int mPtr;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.562 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.032 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
 
     Context mContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.562 -0500", hash_original_field = "F8EEE799FD3188D16B81A657741F0DBD", hash_generated_field = "F8EEE799FD3188D16B81A657741F0DBD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.034 -0500", hash_original_field = "F8EEE799FD3188D16B81A657741F0DBD", hash_generated_field = "F8EEE799FD3188D16B81A657741F0DBD")
 
     boolean mExceptionLogged;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.563 -0500", hash_original_method = "BB23E98A032BF11653E210F5716EBC1E", hash_generated_method = "BB23E98A032BF11653E210F5716EBC1E")
-    FileBackupHelperBase(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.036 -0500", hash_original_method = "BB23E98A032BF11653E210F5716EBC1E", hash_generated_method = "BB23E98A032BF11653E210F5716EBC1E")
+    
+FileBackupHelperBase(Context context) {
         mPtr = ctor();
         mContext = context;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.564 -0500", hash_original_method = "E8F55F8C7A408972FDF45764F997EF73", hash_generated_method = "512AC6E27F8A455866918D89C96F4571")
-    protected void finalize() throws Throwable {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.038 -0500", hash_original_method = "E8F55F8C7A408972FDF45764F997EF73", hash_generated_method = "512AC6E27F8A455866918D89C96F4571")
+    
+protected void finalize() throws Throwable {
         try {
             dtor(mPtr);
         } finally {
@@ -112,8 +115,9 @@ class FileBackupHelperBase {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.566 -0500", hash_original_method = "A480CB5B709E68610E22FE65F3C016D5", hash_generated_method = "0BB232A35E1C683E8A062AD38D60A20D")
-    boolean writeFile(File f, BackupDataInputStream in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.043 -0500", hash_original_method = "A480CB5B709E68610E22FE65F3C016D5", hash_generated_method = "0BB232A35E1C683E8A062AD38D60A20D")
+    
+boolean writeFile(File f, BackupDataInputStream in) {
         int result = -1;
 
         // Create the enclosing directory.
@@ -133,14 +137,16 @@ class FileBackupHelperBase {
         return (result == 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.567 -0500", hash_original_method = "2A62291A9AE3A671BAC15E3191D32511", hash_generated_method = "28B9531644FE5B2C583FA07E375C1A23")
-    public void writeNewStateDescription(ParcelFileDescriptor fd) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.045 -0500", hash_original_method = "2A62291A9AE3A671BAC15E3191D32511", hash_generated_method = "28B9531644FE5B2C583FA07E375C1A23")
+    
+public void writeNewStateDescription(ParcelFileDescriptor fd) {
         int result = writeSnapshot_native(mPtr, fd.getFileDescriptor());
         // TODO: Do something with the error.
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:22.568 -0500", hash_original_method = "13360827BDB81EDC3014ECA5973B3541", hash_generated_method = "13360827BDB81EDC3014ECA5973B3541")
-    boolean isKeyInList(String key, String[] list) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.047 -0500", hash_original_method = "13360827BDB81EDC3014ECA5973B3541", hash_generated_method = "13360827BDB81EDC3014ECA5973B3541")
+    
+boolean isKeyInList(String key, String[] list) {
         for (String s: list) {
             if (s.equals(key)) {
                 return true;

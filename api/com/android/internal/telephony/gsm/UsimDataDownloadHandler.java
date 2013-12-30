@@ -32,8 +32,9 @@ public class UsimDataDownloadHandler extends Handler {
      * @param tpduLength the length of the TPDU from the SMS-PP message
      * @return the number of bytes to allocate for the envelope command
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.028 -0500", hash_original_method = "8E06EDD4AB6FEF826893E1C60C4B92E0", hash_generated_method = "619B5414EB99F1F8961CE461B6A9B802")
-    private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.485 -0500", hash_original_method = "8E06EDD4AB6FEF826893E1C60C4B92E0", hash_generated_method = "619B5414EB99F1F8961CE461B6A9B802")
+    
+private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
         // Add 4 bytes for device identities TLV + 1 byte for SMS TPDU tag byte
         int length = tpduLength + 5;
         // Add 1 byte for TPDU length, or 2 bytes if length > 127
@@ -51,36 +52,38 @@ public class UsimDataDownloadHandler extends Handler {
      * @param dcs the TP-Data-Coding-Scheme field from the original download SMS
      * @return true if the DCS specifies 7 bit encoding; false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.031 -0500", hash_original_method = "6AC69FAB0F79D0D17493B5AE3A868686", hash_generated_method = "4039ABFF0D42614771CF6ADECC95A827")
-    private static boolean is7bitDcs(int dcs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.494 -0500", hash_original_method = "6AC69FAB0F79D0D17493B5AE3A868686", hash_generated_method = "4039ABFF0D42614771CF6ADECC95A827")
+    
+private static boolean is7bitDcs(int dcs) {
         // See 3GPP TS 23.038 section 4
         return ((dcs & 0x8C) == 0x00) || ((dcs & 0xF4) == 0xF0);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.019 -0500", hash_original_field = "E8D518FC09A35A8324CE61F8B3A5EE68", hash_generated_field = "B2E07BF7BD34CBD8ED21A89747D9D3D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.452 -0500", hash_original_field = "E8D518FC09A35A8324CE61F8B3A5EE68", hash_generated_field = "B2E07BF7BD34CBD8ED21A89747D9D3D2")
 
     private static final String TAG = "UsimDataDownloadHandler";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.020 -0500", hash_original_field = "230DDA02485771E392DB0CD8616521DD", hash_generated_field = "A92B4C35F8E20622970FFC8EF6375C2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.456 -0500", hash_original_field = "230DDA02485771E392DB0CD8616521DD", hash_generated_field = "A92B4C35F8E20622970FFC8EF6375C2B")
 
     private static final int BER_SMS_PP_DOWNLOAD_TAG      = 0xd1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.021 -0500", hash_original_field = "60C9B4D7334D5174AAEECF0D21B3C28F", hash_generated_field = "B0B4E321690DD56DB0A3650FB64A8E74")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.460 -0500", hash_original_field = "60C9B4D7334D5174AAEECF0D21B3C28F", hash_generated_field = "B0B4E321690DD56DB0A3650FB64A8E74")
 
     private static final int DEV_ID_UICC        = 0x81;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.021 -0500", hash_original_field = "B5C3D8418ABB4B3F2C746403102418EB", hash_generated_field = "A4537B62A3FF2B04B6AE0CFC11651C24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.462 -0500", hash_original_field = "B5C3D8418ABB4B3F2C746403102418EB", hash_generated_field = "A4537B62A3FF2B04B6AE0CFC11651C24")
 
     private static final int DEV_ID_NETWORK     = 0x83;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.022 -0500", hash_original_field = "35596610FBD3332C0041EE2D97DA0B11", hash_generated_field = "2D105F45E630980C460A44407CEAD8C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.465 -0500", hash_original_field = "35596610FBD3332C0041EE2D97DA0B11", hash_generated_field = "2D105F45E630980C460A44407CEAD8C4")
 
     private static final int EVENT_START_DATA_DOWNLOAD = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.023 -0500", hash_original_field = "F7AA238BB7A05B905287C8A8BD491367", hash_generated_field = "F607F76513DC72A51732EF8C2B9ADF36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.468 -0500", hash_original_field = "F7AA238BB7A05B905287C8A8BD491367", hash_generated_field = "F607F76513DC72A51732EF8C2B9ADF36")
 
     private static final int EVENT_SEND_ENVELOPE_RESPONSE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.024 -0500", hash_original_field = "E21447DC33A25D2D4C7CF7D97EC4FA16", hash_generated_field = "BA1337E4728FB9F6BD795CF7696F04DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.471 -0500", hash_original_field = "E21447DC33A25D2D4C7CF7D97EC4FA16", hash_generated_field = "BA1337E4728FB9F6BD795CF7696F04DE")
 
 
     private  CommandsInterface mCI;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.025 -0500", hash_original_method = "2BD8C1E6CB98C9A3BA971F52113C7C15", hash_generated_method = "33FE76F42A6CC5E011BA3D6F81B073B5")
-    public UsimDataDownloadHandler(CommandsInterface commandsInterface) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.474 -0500", hash_original_method = "2BD8C1E6CB98C9A3BA971F52113C7C15", hash_generated_method = "33FE76F42A6CC5E011BA3D6F81B073B5")
+    
+public UsimDataDownloadHandler(CommandsInterface commandsInterface) {
         mCI = commandsInterface;
     }
 
@@ -91,8 +94,9 @@ public class UsimDataDownloadHandler extends Handler {
      * @param smsMessage the message to process
      * @return Activity.RESULT_OK on success; Intents.RESULT_SMS_GENERIC_ERROR on failure
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.026 -0500", hash_original_method = "59837CA7040CC62FF3A3565A11425127", hash_generated_method = "885A3F0ED409E93D0630E978F4CF01F0")
-    public int startDataDownload(SmsMessage smsMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.477 -0500", hash_original_method = "59837CA7040CC62FF3A3565A11425127", hash_generated_method = "885A3F0ED409E93D0630E978F4CF01F0")
+    
+public int startDataDownload(SmsMessage smsMessage) {
         if (sendMessage(obtainMessage(EVENT_START_DATA_DOWNLOAD, smsMessage))) {
             return Activity.RESULT_OK;  // we will send SMS ACK/ERROR based on UICC response
         } else {
@@ -101,8 +105,9 @@ public class UsimDataDownloadHandler extends Handler {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.028 -0500", hash_original_method = "B0FB1A5BEF9BBCC367C24989F3FA51BD", hash_generated_method = "8BC3F49B49EF9CA50B42AEC5AB2E0E63")
-    private void handleDataDownload(SmsMessage smsMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.482 -0500", hash_original_method = "B0FB1A5BEF9BBCC367C24989F3FA51BD", hash_generated_method = "8BC3F49B49EF9CA50B42AEC5AB2E0E63")
+    
+private void handleDataDownload(SmsMessage smsMessage) {
         int dcs = smsMessage.getDataCodingScheme();
         int pid = smsMessage.getProtocolIdentifier();
         byte[] pdu = smsMessage.getPdu();           // includes SC address
@@ -167,8 +172,9 @@ public class UsimDataDownloadHandler extends Handler {
      * @param response UICC response encoded as hexadecimal digits. First two bytes are the
      *  UICC SW1 and SW2 status bytes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.030 -0500", hash_original_method = "4D0156FCE32C3B62D3099FB0908581D6", hash_generated_method = "1B3832723BC3034606D499CCE41B0CA4")
-    private void sendSmsAckForEnvelopeResponse(IccIoResult response, int dcs, int pid) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.489 -0500", hash_original_method = "4D0156FCE32C3B62D3099FB0908581D6", hash_generated_method = "1B3832723BC3034606D499CCE41B0CA4")
+    
+private void sendSmsAckForEnvelopeResponse(IccIoResult response, int dcs, int pid) {
         int sw1 = response.sw1;
         int sw2 = response.sw2;
 
@@ -229,8 +235,9 @@ public class UsimDataDownloadHandler extends Handler {
                 IccUtils.bytesToHexString(smsAckPdu), null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.031 -0500", hash_original_method = "906B533055E100DFA749FD0587281F55", hash_generated_method = "007D4DD9D3C9DC7502F5A6EA63BC10C0")
-    private void acknowledgeSmsWithError(int cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.491 -0500", hash_original_method = "906B533055E100DFA749FD0587281F55", hash_generated_method = "007D4DD9D3C9DC7502F5A6EA63BC10C0")
+    
+private void acknowledgeSmsWithError(int cause) {
         mCI.acknowledgeLastIncomingGsmSms(false, cause, null);
     }
 
@@ -239,9 +246,10 @@ public class UsimDataDownloadHandler extends Handler {
      *
      * @param msg the message to handle
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:09.032 -0500", hash_original_method = "3D458ABE064DFE8DA418A778447E394C", hash_generated_method = "A6014E5EB851F86E973CE76A92443A99")
-    @Override
-public void handleMessage(Message msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.497 -0500", hash_original_method = "3D458ABE064DFE8DA418A778447E394C", hash_generated_method = "A6014E5EB851F86E973CE76A92443A99")
+    
+@Override
+    public void handleMessage(Message msg) {
         switch (msg.what) {
             case EVENT_START_DATA_DOWNLOAD:
                 handleDataDownload((SmsMessage) msg.obj);

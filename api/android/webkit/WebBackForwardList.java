@@ -24,24 +24,25 @@ public class WebBackForwardList implements Cloneable, Serializable {
     @DSModeled(DSC.SAFE)
     private static void nativeClose(int nativeFrame) {
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.059 -0500", hash_original_field = "9D5DB06DCD458CB1FB573ED28600B2B5", hash_generated_field = "0311A696B59887F86EF6109DBE0484CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.270 -0500", hash_original_field = "9D5DB06DCD458CB1FB573ED28600B2B5", hash_generated_field = "0311A696B59887F86EF6109DBE0484CC")
 
     private int mCurrentIndex;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.059 -0500", hash_original_field = "40ED77F9A03483BB034F43A6145E6409", hash_generated_field = "65483EDB69D85E829A0A1D4D7EF789CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.272 -0500", hash_original_field = "40ED77F9A03483BB034F43A6145E6409", hash_generated_field = "65483EDB69D85E829A0A1D4D7EF789CD")
 
     private ArrayList<WebHistoryItem> mArray;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.060 -0500", hash_original_field = "33A24E98767714B41BED5DB7EE47997B", hash_generated_field = "602E0BBCBCA5B94178C21F3474243E08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.274 -0500", hash_original_field = "33A24E98767714B41BED5DB7EE47997B", hash_generated_field = "602E0BBCBCA5B94178C21F3474243E08")
 
     private boolean mClearPending;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.061 -0500", hash_original_field = "C50B804397335F4C59F495D6A5AAA565", hash_generated_field = "62789CA10670C708EA4D387AB18C5F89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.276 -0500", hash_original_field = "C50B804397335F4C59F495D6A5AAA565", hash_generated_field = "62789CA10670C708EA4D387AB18C5F89")
 
     private  CallbackProxy mCallbackProxy;
 
     /**
      * Construct a back/forward list used by clients of WebView.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.062 -0500", hash_original_method = "E1648D2B4FFD2451814681FC87C9187A", hash_generated_method = "E1648D2B4FFD2451814681FC87C9187A")
-    WebBackForwardList(CallbackProxy proxy) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.279 -0500", hash_original_method = "E1648D2B4FFD2451814681FC87C9187A", hash_generated_method = "E1648D2B4FFD2451814681FC87C9187A")
+    
+WebBackForwardList(CallbackProxy proxy) {
         mCurrentIndex = -1;
         mArray = new ArrayList<WebHistoryItem>();
         mCallbackProxy = proxy;
@@ -52,8 +53,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * empty.
      * @return The current history item.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.063 -0500", hash_original_method = "5230E69659F0505E7D194D2488C74C74", hash_generated_method = "7BBFD33178DD994229AB40FFBC0234D8")
-    public synchronized WebHistoryItem getCurrentItem() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.281 -0500", hash_original_method = "5230E69659F0505E7D194D2488C74C74", hash_generated_method = "7BBFD33178DD994229AB40FFBC0234D8")
+    
+public synchronized WebHistoryItem getCurrentItem() {
         return getItemAtIndex(mCurrentIndex);
     }
 
@@ -62,8 +64,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * directly index into the array list.
      * @return The current index from 0...n or -1 if the list is empty.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.063 -0500", hash_original_method = "2A2A2AA161DBB8DEEC2045188BE5DE03", hash_generated_method = "F1A964DC93D525D9D154ED9C80DA7010")
-    public synchronized int getCurrentIndex() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.283 -0500", hash_original_method = "2A2A2AA161DBB8DEEC2045188BE5DE03", hash_generated_method = "F1A964DC93D525D9D154ED9C80DA7010")
+    
+public synchronized int getCurrentIndex() {
         return mCurrentIndex;
     }
 
@@ -72,8 +75,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * where 0 is the first item and n is the last item.
      * @param index The index to retrieve.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.064 -0500", hash_original_method = "D9B5D5CD50BAA8A173683EE2BD19F40F", hash_generated_method = "64C8E288184E57DD901465A7263B0696")
-    public synchronized WebHistoryItem getItemAtIndex(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.285 -0500", hash_original_method = "D9B5D5CD50BAA8A173683EE2BD19F40F", hash_generated_method = "64C8E288184E57DD901465A7263B0696")
+    
+public synchronized WebHistoryItem getItemAtIndex(int index) {
         if (index < 0 || index >= getSize()) {
             return null;
         }
@@ -84,8 +88,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * Get the total size of the back/forward list.
      * @return The size of the list.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.065 -0500", hash_original_method = "7A631E875D902776AD0C3E21989EE281", hash_generated_method = "84328E53B827C13AB004DCEC859664E4")
-    public synchronized int getSize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.287 -0500", hash_original_method = "7A631E875D902776AD0C3E21989EE281", hash_generated_method = "84328E53B827C13AB004DCEC859664E4")
+    
+public synchronized int getSize() {
         return mArray.size();
     }
 
@@ -93,8 +98,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * Mark the back/forward list as having a pending clear. This is used on the
      * UI side to mark the list as being invalid during the clearHistory method.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.066 -0500", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "265426AB37C57F06AF49BB0D5D845350")
-    synchronized void setClearPending() {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.289 -0500", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "265426AB37C57F06AF49BB0D5D845350")
+    
+synchronized void setClearPending() {
         mClearPending = true;
     }
 
@@ -102,8 +108,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * Return the status of the clear flag. This is used on the UI side to
      * determine if the list is valid for checking things like canGoBack.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.067 -0500", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "51544C5429B725FF54BB957B856943E7")
-    synchronized boolean getClearPending() {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.291 -0500", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "51544C5429B725FF54BB957B856943E7")
+    
+synchronized boolean getClearPending() {
         return mClearPending;
     }
 
@@ -114,8 +121,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * reading the array or the current index.
      * @param item A new history item.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.067 -0500", hash_original_method = "CF7A7A96F9B6499845E300F4AB5BE8D8", hash_generated_method = "B826C2CCAE61A684F8C94C27EC0AF85A")
-    synchronized void addHistoryItem(WebHistoryItem item) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.293 -0500", hash_original_method = "CF7A7A96F9B6499845E300F4AB5BE8D8", hash_generated_method = "B826C2CCAE61A684F8C94C27EC0AF85A")
+    
+synchronized void addHistoryItem(WebHistoryItem item) {
         // Update the current position because we are going to add the new item
         // in that slot.
         ++mCurrentIndex;
@@ -138,8 +146,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
     /**
      * Clear the back/forward list. Called from the WebCore thread.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.068 -0500", hash_original_method = "86E2ECBC2C9AC2A7DC658CB964CA32CA", hash_generated_method = "D00D082CF22D68D1D1DBD6A8B53C3AC4")
-    synchronized void close(int nativeFrame) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.296 -0500", hash_original_method = "86E2ECBC2C9AC2A7DC658CB964CA32CA", hash_generated_method = "D00D082CF22D68D1D1DBD6A8B53C3AC4")
+    
+synchronized void close(int nativeFrame) {
         // Clear the array first because nativeClose will call addHistoryItem
         // with the current item.
         mArray.clear();
@@ -150,8 +159,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
     }
 
     /* Remove the item at the given index. Called by JNI only. */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.069 -0500", hash_original_method = "7D1DAF4A518C34619CF3BEB7A8646574", hash_generated_method = "06282ECD6E28461C500CF1554CF9B53E")
-    private synchronized void removeHistoryItem(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.299 -0500", hash_original_method = "7D1DAF4A518C34619CF3BEB7A8646574", hash_generated_method = "06282ECD6E28461C500CF1554CF9B53E")
+    
+private synchronized void removeHistoryItem(int index) {
         // XXX: This is a special case. Since the callback is only triggered
         // when removing the first item, we can assert that the index is 0.
         // This lets us change the current index without having to query the
@@ -170,8 +180,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * WebView. This creates a copy that should never be modified by any of the
      * webkit package classes.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.070 -0500", hash_original_method = "26B3CB37F20A0B53C2CE3E9A4CAEEB23", hash_generated_method = "65C35583B33AC219F8D79447C6A677D0")
-    protected synchronized WebBackForwardList clone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.301 -0500", hash_original_method = "26B3CB37F20A0B53C2CE3E9A4CAEEB23", hash_generated_method = "65C35583B33AC219F8D79447C6A677D0")
+    
+protected synchronized WebBackForwardList clone() {
         WebBackForwardList l = new WebBackForwardList(null);
         if (mClearPending) {
             // If a clear is pending, return a copy with only the current item.
@@ -192,8 +203,9 @@ public class WebBackForwardList implements Cloneable, Serializable {
      * Set the new history index.
      * @param newIndex The new history index.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:29.071 -0500", hash_original_method = "CB94BF4CFE461E0C4E4AA1BED49D9ED0", hash_generated_method = "7B34BBDF79729C158A1F3FEBD86E5361")
-    synchronized void setCurrentIndex(int newIndex) {
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.304 -0500", hash_original_method = "CB94BF4CFE461E0C4E4AA1BED49D9ED0", hash_generated_method = "7B34BBDF79729C158A1F3FEBD86E5361")
+    
+synchronized void setCurrentIndex(int newIndex) {
         mCurrentIndex = newIndex;
         if (mCallbackProxy != null) {
             mCallbackProxy.onIndexChanged(getItemAtIndex(newIndex), newIndex);

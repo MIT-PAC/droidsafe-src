@@ -31,8 +31,9 @@ import org.apache.http.conn.util.InetAddressUtils;
 
 public abstract class AbstractVerifier implements X509HostnameVerifier {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.602 -0500", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "4C7676112EF7BD2FF22BD50093232E1B")
-    public static boolean acceptableCountryWildcard(String cn) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.010 -0500", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "4C7676112EF7BD2FF22BD50093232E1B")
+    
+public static boolean acceptableCountryWildcard(String cn) {
         int cnLen = cn.length();
         if(cnLen >= 7 && cnLen <= 9) {
             // Look for the '.' in the 3rd-last position:
@@ -47,8 +48,9 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         return true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.603 -0500", hash_original_method = "C25ECD7D454DB4AB3277245C5D270567", hash_generated_method = "657A26BB04447AE8348C0B39BD6AB467")
-    public static String[] getCNs(X509Certificate cert) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.012 -0500", hash_original_method = "C25ECD7D454DB4AB3277245C5D270567", hash_generated_method = "657A26BB04447AE8348C0B39BD6AB467")
+    
+public static String[] getCNs(X509Certificate cert) {
         LinkedList<String> cnList = new LinkedList<String>();
         /*
           Sebastian Hauer's original StrictSSLProtocolSocketFactory used
@@ -105,8 +107,9 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
      * @param cert X509Certificate
      * @return Array of SubjectALT DNS names stored in the certificate.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.604 -0500", hash_original_method = "65DFD545582BECEFB6B5BE93EC963DC7", hash_generated_method = "02924B578253271BF7E3344A6F4C2C76")
-    public static String[] getDNSSubjectAlts(X509Certificate cert) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.015 -0500", hash_original_method = "65DFD545582BECEFB6B5BE93EC963DC7", hash_generated_method = "02924B578253271BF7E3344A6F4C2C76")
+    
+public static String[] getDNSSubjectAlts(X509Certificate cert) {
         LinkedList<String> subjectAltList = new LinkedList<String>();
         Collection<List<?>> c = null;
         try {
@@ -141,8 +144,9 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
      * @param s  string to count dots from
      * @return  number of dots
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.605 -0500", hash_original_method = "F5358000AB2CB66DCBE7F5DC5E9D5F44", hash_generated_method = "40AC061B700F4A8012C70DB31E3D9265")
-    public static int countDots(final String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.018 -0500", hash_original_method = "F5358000AB2CB66DCBE7F5DC5E9D5F44", hash_generated_method = "40AC061B700F4A8012C70DB31E3D9265")
+    
+public static int countDots(final String s) {
         int count = 0;
         for(int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '.') {
@@ -151,19 +155,21 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         }
         return count;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.596 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "6968AEDC2C31A50F6ADB7A7EFEF7EBAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.989 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "6968AEDC2C31A50F6ADB7A7EFEF7EBAD")
 
     private final static String[] BAD_COUNTRY_2LDS =
           { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.597 -0500", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B66C7E209ED5CE42E8339DFC872489A0")
-    public AbstractVerifier() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.992 -0500", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B66C7E209ED5CE42E8339DFC872489A0")
+    
+public AbstractVerifier() {
         super();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.598 -0500", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "6EAC65B866A8D55090436D580183D886")
-    public final void verify(String host, SSLSocket ssl)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.994 -0500", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "6EAC65B866A8D55090436D580183D886")
+    
+public final void verify(String host, SSLSocket ssl)
           throws IOException {
         if(host == null) {
             throw new NullPointerException("host to verify is null");
@@ -175,8 +181,9 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         verify(host, x509);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.599 -0500", hash_original_method = "43EDB91BF0A5D9A44DF28C7ADED9E98C", hash_generated_method = "346143B88B685D59D9303400EA70C4F4")
-    public final boolean verify(String host, SSLSession session) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.999 -0500", hash_original_method = "43EDB91BF0A5D9A44DF28C7ADED9E98C", hash_generated_method = "346143B88B685D59D9303400EA70C4F4")
+    
+public final boolean verify(String host, SSLSession session) {
         try {
             Certificate[] certs = session.getPeerCertificates();
             X509Certificate x509 = (X509Certificate) certs[0];
@@ -188,16 +195,18 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.600 -0500", hash_original_method = "08CBAD509C26DA74CD541E0020FFDCD1", hash_generated_method = "0A0F16A7026622D99EE14E93572A0AB4")
-    public final void verify(String host, X509Certificate cert)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.003 -0500", hash_original_method = "08CBAD509C26DA74CD541E0020FFDCD1", hash_generated_method = "0A0F16A7026622D99EE14E93572A0AB4")
+    
+public final void verify(String host, X509Certificate cert)
           throws SSLException {
         String[] cns = getCNs(cert);
         String[] subjectAlts = getDNSSubjectAlts(cert);
         verify(host, cns, subjectAlts);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.601 -0500", hash_original_method = "9A07FB90ABAE18EA37F4E80ACC04FEE0", hash_generated_method = "767856918877AB081D22E7F4716B6958")
-    public final void verify(final String host, final String[] cns,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.007 -0500", hash_original_method = "9A07FB90ABAE18EA37F4E80ACC04FEE0", hash_generated_method = "767856918877AB081D22E7F4716B6958")
+    
+public final void verify(final String host, final String[] cns,
                              final String[] subjectAlts,
                              final boolean strictWithSubDomains)
           throws SSLException {

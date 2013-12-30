@@ -23,10 +23,10 @@ import org.bouncycastle.math.ec.ECPoint;
 
 
 public class ECDSASigner implements ECConstants, DSA {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.875 -0500", hash_original_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6", hash_generated_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.994 -0500", hash_original_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6", hash_generated_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6")
 
     ECKeyParameters key;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.876 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.996 -0500", hash_original_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
 
 
     SecureRandom    random;
@@ -37,8 +37,9 @@ public class ECDSASigner implements ECConstants, DSA {
         //Synthesized constructor
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.877 -0500", hash_original_method = "7C8BB5DB49DEBEADD4F3AE9B9DC1372A", hash_generated_method = "88EC3284FBB4741014395966666AB541")
-    public void init(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.999 -0500", hash_original_method = "7C8BB5DB49DEBEADD4F3AE9B9DC1372A", hash_generated_method = "88EC3284FBB4741014395966666AB541")
+    
+public void init(
         boolean                 forSigning,
         CipherParameters        param)
     {
@@ -71,8 +72,9 @@ public class ECDSASigner implements ECConstants, DSA {
      *
      * @param message the message that will be verified later.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.877 -0500", hash_original_method = "FB5DF316F460707F8207D2FB11462865", hash_generated_method = "1E12FE92F1A6015CF45623C67A4786B3")
-    public BigInteger[] generateSignature(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.001 -0500", hash_original_method = "FB5DF316F460707F8207D2FB11462865", hash_generated_method = "1E12FE92F1A6015CF45623C67A4786B3")
+    
+public BigInteger[] generateSignature(
         byte[] message)
     {
         BigInteger n = key.getParameters().getN();
@@ -123,8 +125,9 @@ public class ECDSASigner implements ECConstants, DSA {
      * the passed in message (for standard DSA the message should be
      * a SHA-1 hash of the real message to be verified).
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.878 -0500", hash_original_method = "16EB9D1F1ED26940A9147EEAE266AF00", hash_generated_method = "319815EF84D49A0963FB89C5F675344D")
-    public boolean verifySignature(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.004 -0500", hash_original_method = "16EB9D1F1ED26940A9147EEAE266AF00", hash_generated_method = "319815EF84D49A0963FB89C5F675344D")
+    
+public boolean verifySignature(
         byte[]      message,
         BigInteger  r,
         BigInteger  s)
@@ -159,8 +162,9 @@ public class ECDSASigner implements ECConstants, DSA {
         return v.equals(r);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.879 -0500", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "DB253561ABCDFC0B002646CAA76B0434")
-    private BigInteger calculateE(BigInteger n, byte[] message)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.007 -0500", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "DB253561ABCDFC0B002646CAA76B0434")
+    
+private BigInteger calculateE(BigInteger n, byte[] message)
     {  
         if (n.bitLength() > message.length * 8)
         {

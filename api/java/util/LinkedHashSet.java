@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 
 public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, Serializable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:50.834 -0500", hash_original_field = "A3A620E6BD10FB5E1B95C7C0FE237122", hash_generated_field = "9AC03C289FA70340AC8107CAE1966D0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.288 -0500", hash_original_field = "A3A620E6BD10FB5E1B95C7C0FE237122", hash_generated_field = "9AC03C289FA70340AC8107CAE1966D0A")
 
 
     private static final long serialVersionUID = -2851667679971038690L;

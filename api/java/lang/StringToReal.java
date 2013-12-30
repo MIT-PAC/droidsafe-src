@@ -24,8 +24,9 @@ final class StringToReal {
         return DSUtils.UNKNOWN_FLOAT;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.213 -0500", hash_original_method = "A702FCC630766BC818EED71038E1F86B", hash_generated_method = "9CB60A6EB8F810F62B75FEF194266678")
-    private static NumberFormatException invalidReal(String s, boolean isDouble) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.958 -0500", hash_original_method = "A702FCC630766BC818EED71038E1F86B", hash_generated_method = "9CB60A6EB8F810F62B75FEF194266678")
+    
+private static NumberFormatException invalidReal(String s, boolean isDouble) {
         throw new NumberFormatException("Invalid " + (isDouble ? "double" : "float") + ": \"" + s + "\"");
     }
 
@@ -36,8 +37,9 @@ final class StringToReal {
      * taking the positive integer the String represents and multiplying by 10
      * raised to the power of the of the exponent.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.215 -0500", hash_original_method = "B867FADDD04B9C54EFA439F8C65B2912", hash_generated_method = "2AEA6912E716FBBF2B1EB5A0793C0439")
-    private static StringExponentPair initialParse(String s, int length, boolean isDouble) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.964 -0500", hash_original_method = "B867FADDD04B9C54EFA439F8C65B2912", hash_generated_method = "2AEA6912E716FBBF2B1EB5A0793C0439")
+    
+private static StringExponentPair initialParse(String s, int length, boolean isDouble) {
         StringExponentPair result = new StringExponentPair();
         if (length == 0) {
             throw invalidReal(s, isDouble);
@@ -173,8 +175,9 @@ final class StringToReal {
     }
 
     // Parses "+Nan", "NaN", "-Nan", "+Infinity", "Infinity", and "-Infinity", case-insensitively.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.216 -0500", hash_original_method = "C3B0EB4C3A7AB8C70DFA65D2731C2433", hash_generated_method = "9B518F4A12033630F3E4F76CC37006FD")
-    private static float parseName(String name, boolean isDouble) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.967 -0500", hash_original_method = "C3B0EB4C3A7AB8C70DFA65D2731C2433", hash_generated_method = "9B518F4A12033630F3E4F76CC37006FD")
+    
+private static float parseName(String name, boolean isDouble) {
         // Explicit sign?
         boolean negative = false;
         int i = 0;
@@ -208,8 +211,9 @@ final class StringToReal {
      * @exception NumberFormatException
      *                if the String doesn't represent a double
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.217 -0500", hash_original_method = "E57D4562AEDEAB80F792BC05E60E369F", hash_generated_method = "D002B6E4C939C115DC173C4803445A35")
-    public static double parseDouble(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.970 -0500", hash_original_method = "E57D4562AEDEAB80F792BC05E60E369F", hash_generated_method = "D002B6E4C939C115DC173C4803445A35")
+    
+public static double parseDouble(String s) {
         s = s.trim();
         int length = s.length();
 
@@ -250,8 +254,9 @@ final class StringToReal {
      * @exception NumberFormatException
      *                if the String doesn't represent a float
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.219 -0500", hash_original_method = "F4AB8400AD0DFE9B5884DACBEFD7642E", hash_generated_method = "63E41CADB6CCBE345B7915745BC2D9E4")
-    public static float parseFloat(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.973 -0500", hash_original_method = "F4AB8400AD0DFE9B5884DACBEFD7642E", hash_generated_method = "63E41CADB6CCBE345B7915745BC2D9E4")
+    
+public static float parseFloat(String s) {
         s = s.trim();
         int length = s.length();
 
@@ -290,19 +295,19 @@ final class StringToReal {
 
     
     private static final class StringExponentPair {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.205 -0500", hash_original_field = "6F3CB884E38CB76988A52AA9FBE92CE9", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.932 -0500", hash_original_field = "6F3CB884E38CB76988A52AA9FBE92CE9", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
 
         String s;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.205 -0500", hash_original_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC", hash_generated_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.935 -0500", hash_original_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC", hash_generated_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC")
 
         long e;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.206 -0500", hash_original_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F", hash_generated_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.937 -0500", hash_original_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F", hash_generated_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F")
 
         boolean negative;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.207 -0500", hash_original_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A", hash_generated_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.940 -0500", hash_original_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A", hash_generated_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A")
 
         boolean infinity;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.208 -0500", hash_original_field = "8B6B687B2003A0D3B71E98348C954562", hash_generated_field = "8B6B687B2003A0D3B71E98348C954562")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.942 -0500", hash_original_field = "8B6B687B2003A0D3B71E98348C954562", hash_generated_field = "8B6B687B2003A0D3B71E98348C954562")
 
         boolean zero;
         
@@ -313,8 +318,9 @@ final class StringToReal {
             //Synthesized constructor
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.208 -0500", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "D07775A3D58E6A208D82CA2F641CE123")
-        public float specialValue() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.945 -0500", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "D07775A3D58E6A208D82CA2F641CE123")
+        
+public float specialValue() {
             if (infinity) {
                 return negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
             }

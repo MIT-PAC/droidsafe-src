@@ -18,37 +18,37 @@ import android.test.mock.MockApplication;
 
 
 public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.057 -0500", hash_original_field = "637B9F6ABC3AC96EB3EB7681C795A33D", hash_generated_field = "637B9F6ABC3AC96EB3EB7681C795A33D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.719 -0500", hash_original_field = "637B9F6ABC3AC96EB3EB7681C795A33D", hash_generated_field = "637B9F6ABC3AC96EB3EB7681C795A33D")
 
 
     Class<T> mServiceClass;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.058 -0500", hash_original_field = "A498D7B6B951074CC260EAF09122A9CD", hash_generated_field = "F1477828250C5BEBE602BC5EA1713A2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.721 -0500", hash_original_field = "A498D7B6B951074CC260EAF09122A9CD", hash_generated_field = "F1477828250C5BEBE602BC5EA1713A2E")
 
 
     private Context mSystemContext;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.059 -0500", hash_original_field = "218A10E2C368F2E85F83EE2065C292CD", hash_generated_field = "53FA3553B85F7414D1C5F2C302FDEBF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.723 -0500", hash_original_field = "218A10E2C368F2E85F83EE2065C292CD", hash_generated_field = "53FA3553B85F7414D1C5F2C302FDEBF9")
 
     private Application mApplication;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.061 -0500", hash_original_field = "D5DD3370A40719D6C8921E040B521347", hash_generated_field = "F3295512C5A15A7E1E4BE8A38300F691")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.728 -0500", hash_original_field = "D5DD3370A40719D6C8921E040B521347", hash_generated_field = "F3295512C5A15A7E1E4BE8A38300F691")
 
 
     private T mService;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.062 -0500", hash_original_field = "1AAEAF813350788F55F485D0196E29B9", hash_generated_field = "BDC91FBBED9ED66C312CB510184D92A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.730 -0500", hash_original_field = "1AAEAF813350788F55F485D0196E29B9", hash_generated_field = "BDC91FBBED9ED66C312CB510184D92A5")
 
     private boolean mServiceAttached = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.062 -0500", hash_original_field = "71B93BCFC2F9BB624E0DA713D6B31FD1", hash_generated_field = "F0F3484542642FB72C170742CF175167")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.732 -0500", hash_original_field = "71B93BCFC2F9BB624E0DA713D6B31FD1", hash_generated_field = "F0F3484542642FB72C170742CF175167")
 
     private boolean mServiceCreated = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.063 -0500", hash_original_field = "34817A7D2152C87472A77F06846AFCA5", hash_generated_field = "6B66D148B1E37EBE59F99F9D0E5A992C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.734 -0500", hash_original_field = "34817A7D2152C87472A77F06846AFCA5", hash_generated_field = "6B66D148B1E37EBE59F99F9D0E5A992C")
 
     private boolean mServiceStarted = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.064 -0500", hash_original_field = "C80AF23627BF972C19DB697F2D1ACDAC", hash_generated_field = "912B0BEA2990419429548895171B2F0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.736 -0500", hash_original_field = "C80AF23627BF972C19DB697F2D1ACDAC", hash_generated_field = "912B0BEA2990419429548895171B2F0A")
 
     private boolean mServiceBound = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.064 -0500", hash_original_field = "2B79ADB4AEA0A332867DAEC28EC65830", hash_generated_field = "05A1A5A41A6AA7DC7317478E19978B0B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.739 -0500", hash_original_field = "2B79ADB4AEA0A332867DAEC28EC65830", hash_generated_field = "05A1A5A41A6AA7DC7317478E19978B0B")
 
     private Intent mServiceIntent = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.065 -0500", hash_original_field = "D402B19E1F66ACD65561917C597DE874", hash_generated_field = "A4722B4D674B9B46CA8EAF04E1307521")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.741 -0500", hash_original_field = "D402B19E1F66ACD65561917C597DE874", hash_generated_field = "A4722B4D674B9B46CA8EAF04E1307521")
 
     private int mServiceId;
 
@@ -56,8 +56,9 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
      * Constructor
      * @param serviceClass The type of the service under test.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.060 -0500", hash_original_method = "1F3B37EA8E1B8B1054B69DFECCE45A51", hash_generated_method = "0292640FE4A888F14DF5A3C2F07067F7")
-    public ServiceTestCase(Class<T> serviceClass) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.726 -0500", hash_original_method = "1F3B37EA8E1B8B1054B69DFECCE45A51", hash_generated_method = "0292640FE4A888F14DF5A3C2F07067F7")
+    
+public ServiceTestCase(Class<T> serviceClass) {
         mServiceClass = serviceClass;
     }
 
@@ -65,8 +66,9 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
      * @return An instance of the service under test. This instance is created automatically when
      * a test calls {@link #startService} or {@link #bindService}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.066 -0500", hash_original_method = "E1B67BA0E23B118C6146D406450E84BD", hash_generated_method = "D2BE854C197539A382A491CCD9CB443B")
-    public T getService() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.743 -0500", hash_original_method = "E1B67BA0E23B118C6146D406450E84BD", hash_generated_method = "D2BE854C197539A382A491CCD9CB443B")
+    
+public T getService() {
         return mService;
     }
 
@@ -77,9 +79,10 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
      * must call <code>super.setUp()</code> as the first statement in your override. The method is
      * called before each test method is executed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.067 -0500", hash_original_method = "268090C8258F440561CAD8495BE839CE", hash_generated_method = "6D0C77DF5834722E9A6B7123388BBBB7")
-    @Override
-protected void setUp() throws Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.745 -0500", hash_original_method = "268090C8258F440561CAD8495BE839CE", hash_generated_method = "6D0C77DF5834722E9A6B7123388BBBB7")
+    
+@Override
+    protected void setUp() throws Exception {
         super.setUp();
 
         // get the real context, before the individual tests have a chance to muck with it
@@ -94,8 +97,9 @@ protected void setUp() throws Exception {
      * If you need to call {@link AndroidTestCase#setContext(Context) setContext()} or
      * {@link #setApplication setApplication()}, do so before calling this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.068 -0500", hash_original_method = "896172C51C066B5F037A8F2C24487B23", hash_generated_method = "9BB432343D030E0D556118988BEB204F")
-    protected void setupService() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.748 -0500", hash_original_method = "896172C51C066B5F037A8F2C24487B23", hash_generated_method = "9BB432343D030E0D556118988BEB204F")
+    
+protected void setupService() {
         mService = null;
         try {
             mService = mServiceClass.newInstance();
@@ -130,8 +134,9 @@ protected void setUp() throws Exception {
      * @param intent An Intent that identifies a service, of the same form as the Intent passed to
      * {@link android.content.Context#startService(Intent) Context.startService(Intent)}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.068 -0500", hash_original_method = "21E4CB4FCD74533F799D23D47E90F5B7", hash_generated_method = "8217A23948FCB7AE9E6211E346B434AD")
-    protected void startService(Intent intent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.751 -0500", hash_original_method = "21E4CB4FCD74533F799D23D47E90F5B7", hash_generated_method = "8217A23948FCB7AE9E6211E346B434AD")
+    
+protected void startService(Intent intent) {
         if (!mServiceAttached) {
             setupService();
         }
@@ -176,8 +181,9 @@ protected void setUp() throws Exception {
      * @return An object whose type is a subclass of IBinder, for making further calls into
      * the service.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.069 -0500", hash_original_method = "9243E940E5DBFB4305A53445C0DB5EAA", hash_generated_method = "A60C0B913FB7CC29AD6CCCB238C387D8")
-    protected IBinder bindService(Intent intent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.753 -0500", hash_original_method = "9243E940E5DBFB4305A53445C0DB5EAA", hash_generated_method = "A60C0B913FB7CC29AD6CCCB238C387D8")
+    
+protected IBinder bindService(Intent intent) {
         if (!mServiceAttached) {
             setupService();
         }
@@ -200,8 +206,9 @@ protected void setUp() throws Exception {
      * calls onDestroy().  Ordinarily this is called automatically (by {@link #tearDown}, but
      * you can call it directly from your test in order to check for proper shutdown behavior.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.070 -0500", hash_original_method = "7A2B90C413225D42DADFD4030FEDB024", hash_generated_method = "BF624E7A4C800DFA5052B7CB78E42026")
-    protected void shutdownService() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.756 -0500", hash_original_method = "7A2B90C413225D42DADFD4030FEDB024", hash_generated_method = "BF624E7A4C800DFA5052B7CB78E42026")
+    
+protected void shutdownService() {
         if (mServiceStarted) {
             mService.stopSelf();
             mServiceStarted = false;
@@ -227,9 +234,10 @@ protected void setUp() throws Exception {
      *
      * @throws Exception
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.071 -0500", hash_original_method = "87D1D2444773B04D6FA2D1565794C0F5", hash_generated_method = "2B5FD71D725A8C7BA746FC6FE649BBBD")
-    @Override
-protected void tearDown() throws Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.758 -0500", hash_original_method = "87D1D2444773B04D6FA2D1565794C0F5", hash_generated_method = "2B5FD71D725A8C7BA746FC6FE649BBBD")
+    
+@Override
+    protected void tearDown() throws Exception {
         shutdownService();
         mService = null;
 
@@ -249,8 +257,9 @@ protected void tearDown() throws Exception {
      *
      * @see #getApplication()
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.072 -0500", hash_original_method = "3567B69292EF80C03794348A9036011F", hash_generated_method = "64B4492B599B80D70C5BD23FB18CE2CA")
-    public void setApplication(Application application) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.760 -0500", hash_original_method = "3567B69292EF80C03794348A9036011F", hash_generated_method = "64B4492B599B80D70C5BD23FB18CE2CA")
+    
+public void setApplication(Application application) {
         mApplication = application;
     }
 
@@ -261,8 +270,9 @@ protected void tearDown() throws Exception {
      *
      * @see #setApplication
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.072 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "AA8B5B758D7C79A3ABAA1916A3765C04")
-    public Application getApplication() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.762 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "AA8B5B758D7C79A3ABAA1916A3765C04")
+    
+public Application getApplication() {
         return mApplication;
     }
 
@@ -272,8 +282,9 @@ protected void tearDown() throws Exception {
      *
      * @return A normal system context.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.073 -0500", hash_original_method = "20F2DC85F18376CDF1A7B2B9DA0C85A8", hash_generated_method = "EDE6FE1DA7D7647283DD2EFD3401C1D3")
-    public Context getSystemContext() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.764 -0500", hash_original_method = "20F2DC85F18376CDF1A7B2B9DA0C85A8", hash_generated_method = "EDE6FE1DA7D7647283DD2EFD3401C1D3")
+    
+public Context getSystemContext() {
         return mSystemContext;
     }
 
@@ -284,8 +295,9 @@ protected void tearDown() throws Exception {
      *
      * @throws Exception
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.074 -0500", hash_original_method = "109B8E506FBC3D7FBEA1E1B742558961", hash_generated_method = "038CE595F8A5B99AF8DF5423ED353DE8")
-    public void testServiceTestCaseSetUpProperly() throws Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.766 -0500", hash_original_method = "109B8E506FBC3D7FBEA1E1B742558961", hash_generated_method = "038CE595F8A5B99AF8DF5423ED353DE8")
+    
+public void testServiceTestCaseSetUpProperly() throws Exception {
         setupService();
         assertNotNull("service should be launched successfully", mService);
     }

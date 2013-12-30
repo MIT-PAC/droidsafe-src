@@ -32,9 +32,10 @@ public class FileHandler extends URLStreamHandler {
      *            URL The URL to which the connection is pointing to
      *
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.234 -0500", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "E3EDDDAF09AFFD3D0D388E24CA868D38")
-    @Override
-public URLConnection openConnection(URL url) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.294 -0500", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "E3EDDDAF09AFFD3D0D388E24CA868D38")
+    
+@Override
+    public URLConnection openConnection(URL url) throws IOException {
         return openConnection(url, null);
     }
 
@@ -55,9 +56,10 @@ public URLConnection openConnection(URL url) throws IOException {
      * @throws UnsupportedOperationException
      *             if the protocol handler doesn't support this method.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.235 -0500", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "130B732D567D20D7C7A1B763509FA203")
-    @Override
-public URLConnection openConnection(URL url, Proxy proxy) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.297 -0500", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "130B732D567D20D7C7A1B763509FA203")
+    
+@Override
+    public URLConnection openConnection(URL url, Proxy proxy) throws IOException {
         if (url == null) {
             throw new IllegalArgumentException("url == null");
         }
@@ -89,9 +91,10 @@ public URLConnection openConnection(URL url, Proxy proxy) throws IOException {
      * @see java.net.URLStreamHandler#toExternalForm(URL)
      * @see java.net.URL
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.235 -0500", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "C12CAABAF7BDF9DF44CAFF756EE456D1")
-    @Override
-protected void parseURL(URL url, String spec, int start, int end) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.300 -0500", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "C12CAABAF7BDF9DF44CAFF756EE456D1")
+    
+@Override
+    protected void parseURL(URL url, String spec, int start, int end) {
         if (end < start) {
             return;
         }

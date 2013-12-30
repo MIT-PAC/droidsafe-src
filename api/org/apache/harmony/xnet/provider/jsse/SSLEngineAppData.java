@@ -14,22 +14,24 @@ import javax.net.ssl.SSLException;
 
 
 public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.Appendable {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.316 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.803 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
 
     byte[] buffer;
 
     /**
      * Constructor
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.317 -0500", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "1BA161F1DDD021955650564C16242D36")
-    protected SSLEngineAppData() {}
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.806 -0500", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "1BA161F1DDD021955650564C16242D36")
+    
+protected SSLEngineAppData() {}
 
     /**
      * Stores received data. The source data is not cloned,
      * just the array reference is remembered into the buffer field.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.318 -0500", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "4E7BB90CD6FCB70AE2C45964E3FC6C49")
-    public void append(byte[] src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.808 -0500", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "4E7BB90CD6FCB70AE2C45964E3FC6C49")
+    
+public void append(byte[] src) {
         if (buffer != null) {
             throw new AlertException(
                 AlertProtocol.INTERNAL_ERROR,
@@ -42,8 +44,9 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
      * Places the data from the buffer into the array of destination
      * ByteBuffer objects.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.319 -0500", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "4002D46B7AD683EE775D89C25FEC1BD4")
-    protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.810 -0500", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "4002D46B7AD683EE775D89C25FEC1BD4")
+    
+protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
         if (buffer == null) {
             return 0;
         }

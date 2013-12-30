@@ -27,8 +27,9 @@ public final class NdefFormatable extends BasicTagTechnology {
      * @param tag an NDEF formatable tag
      * @return NDEF formatable object
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.062 -0500", hash_original_method = "EF1F12BA68C994020F7EF7C36B8754C4", hash_generated_method = "B8F9B487131DCE7A6B920461F97E95FD")
-    public static NdefFormatable get(Tag tag) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.188 -0500", hash_original_method = "EF1F12BA68C994020F7EF7C36B8754C4", hash_generated_method = "B8F9B487131DCE7A6B920461F97E95FD")
+    
+public static NdefFormatable get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NDEF_FORMATABLE)) return null;
         try {
             return new NdefFormatable(tag);
@@ -36,7 +37,7 @@ public final class NdefFormatable extends BasicTagTechnology {
             return null;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.062 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.186 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
 
     private static final String TAG = "NFC";
 
@@ -44,8 +45,9 @@ public final class NdefFormatable extends BasicTagTechnology {
      * Internal constructor, to be used by NfcAdapter
      * @hide
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.063 -0500", hash_original_method = "074BAD8FDA859E71D091A9807C3BD3AB", hash_generated_method = "6FF42EDF47B5C8EF91C9A35FB4EBFD46")
-    public NdefFormatable(Tag tag) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.191 -0500", hash_original_method = "074BAD8FDA859E71D091A9807C3BD3AB", hash_generated_method = "6FF42EDF47B5C8EF91C9A35FB4EBFD46")
+    
+public NdefFormatable(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NDEF_FORMATABLE);
     }
 
@@ -67,8 +69,9 @@ public final class NdefFormatable extends BasicTagTechnology {
      * @throws IOException if there is an I/O failure, or the operation is canceled
      * @throws FormatException if the NDEF Message to write is malformed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.064 -0500", hash_original_method = "6CDCACAEC64FFB65AEDACBA4B44913A4", hash_generated_method = "AD2D9E37F64FA5FAD595176604ED2654")
-    public void format(NdefMessage firstMessage) throws IOException, FormatException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.193 -0500", hash_original_method = "6CDCACAEC64FFB65AEDACBA4B44913A4", hash_generated_method = "AD2D9E37F64FA5FAD595176604ED2654")
+    
+public void format(NdefMessage firstMessage) throws IOException, FormatException {
         format(firstMessage, false);
     }
 
@@ -90,13 +93,15 @@ public final class NdefFormatable extends BasicTagTechnology {
      * @throws IOException if there is an I/O failure, or the operation is canceled
      * @throws FormatException if the NDEF Message to write is malformed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.065 -0500", hash_original_method = "2D5D7133932920FB3E992CFF7D090021", hash_generated_method = "4F02B7CE5D76CCCB9D004D18F5973DE9")
-    public void formatReadOnly(NdefMessage firstMessage) throws IOException, FormatException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.195 -0500", hash_original_method = "2D5D7133932920FB3E992CFF7D090021", hash_generated_method = "4F02B7CE5D76CCCB9D004D18F5973DE9")
+    
+public void formatReadOnly(NdefMessage firstMessage) throws IOException, FormatException {
         format(firstMessage, true);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.067 -0500", hash_original_method = "E299B2177763F767A596EAE082378EB1", hash_generated_method = "D2414BB445035CA6912CCB5166D49870")
-    void format(NdefMessage firstMessage, boolean makeReadOnly) throws IOException,
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.198 -0500", hash_original_method = "E299B2177763F767A596EAE082378EB1", hash_generated_method = "D2414BB445035CA6912CCB5166D49870")
+    
+void format(NdefMessage firstMessage, boolean makeReadOnly) throws IOException,
             FormatException {
         checkConnected();
 

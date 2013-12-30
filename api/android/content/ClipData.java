@@ -32,8 +32,9 @@ public class ClipData implements Parcelable {
      * @param text The actual text in the clip.
      * @return Returns a new ClipData containing the specified data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.478 -0500", hash_original_method = "6CB00F4121B4A367251983F994C76576", hash_generated_method = "1E4CE54ECA8AC843024EDE9ABED5CE43")
-    static public ClipData newPlainText(CharSequence label, CharSequence text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.666 -0500", hash_original_method = "6CB00F4121B4A367251983F994C76576", hash_generated_method = "1E4CE54ECA8AC843024EDE9ABED5CE43")
+    
+static public ClipData newPlainText(CharSequence label, CharSequence text) {
         Item item = new Item(text);
         return new ClipData(label, MIMETYPES_TEXT_PLAIN, item);
     }
@@ -46,8 +47,9 @@ public class ClipData implements Parcelable {
      * @param intent The actual Intent in the clip.
      * @return Returns a new ClipData containing the specified data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.479 -0500", hash_original_method = "4E92BB296FD3CDEF44C04DC9305DF09F", hash_generated_method = "616324D254BCF2C43662D8927D30FA51")
-    static public ClipData newIntent(CharSequence label, Intent intent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.669 -0500", hash_original_method = "4E92BB296FD3CDEF44C04DC9305DF09F", hash_generated_method = "616324D254BCF2C43662D8927D30FA51")
+    
+static public ClipData newIntent(CharSequence label, Intent intent) {
         Item item = new Item(intent);
         return new ClipData(label, MIMETYPES_TEXT_INTENT, item);
     }
@@ -63,8 +65,9 @@ public class ClipData implements Parcelable {
      * @param uri The URI in the clip.
      * @return Returns a new ClipData containing the specified data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.480 -0500", hash_original_method = "C11B990F3F58DC47FD386C0AEFA978D2", hash_generated_method = "083E3C3CE214A8DD083306D88FED7A3D")
-    static public ClipData newUri(ContentResolver resolver, CharSequence label,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.672 -0500", hash_original_method = "C11B990F3F58DC47FD386C0AEFA978D2", hash_generated_method = "083E3C3CE214A8DD083306D88FED7A3D")
+    
+static public ClipData newUri(ContentResolver resolver, CharSequence label,
             Uri uri) {
         Item item = new Item(uri);
         String[] mimeTypes = null;
@@ -104,20 +107,21 @@ public class ClipData implements Parcelable {
      * @param uri The URI in the clip.
      * @return Returns a new ClipData containing the specified data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.481 -0500", hash_original_method = "155F3F7B153F5EA8333C8D51E7A66990", hash_generated_method = "8A56D48CAE45BA842C91F0F5ADE2C28E")
-    static public ClipData newRawUri(CharSequence label, Uri uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.675 -0500", hash_original_method = "155F3F7B153F5EA8333C8D51E7A66990", hash_generated_method = "8A56D48CAE45BA842C91F0F5ADE2C28E")
+    
+static public ClipData newRawUri(CharSequence label, Uri uri) {
         Item item = new Item(uri);
         return new ClipData(label, MIMETYPES_TEXT_URILIST, item);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.460 -0500", hash_original_field = "93ADEF570C485E7E754F5B0EE93F4C0E", hash_generated_field = "FFD278290163FA53346E9B463D548F25")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.618 -0500", hash_original_field = "93ADEF570C485E7E754F5B0EE93F4C0E", hash_generated_field = "FFD278290163FA53346E9B463D548F25")
 
     static final String[] MIMETYPES_TEXT_PLAIN = new String[] {
         ClipDescription.MIMETYPE_TEXT_PLAIN };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.460 -0500", hash_original_field = "0BACA1185BA8E8D498CEC40FE4292101", hash_generated_field = "0081E14CF2E7DA589C4FFF459050BDC6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.620 -0500", hash_original_field = "0BACA1185BA8E8D498CEC40FE4292101", hash_generated_field = "0081E14CF2E7DA589C4FFF459050BDC6")
 
     static final String[] MIMETYPES_TEXT_URILIST = new String[] {
         ClipDescription.MIMETYPE_TEXT_URILIST };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.461 -0500", hash_original_field = "6178C0C9B9EAA00A8F5FA4D872E5BDF4", hash_generated_field = "DD2F391B9027C3620AF732A9D8A52B0F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.622 -0500", hash_original_field = "6178C0C9B9EAA00A8F5FA4D872E5BDF4", hash_generated_field = "DD2F391B9027C3620AF732A9D8A52B0F")
 
     static final String[] MIMETYPES_TEXT_INTENT = new String[] {
         ClipDescription.MIMETYPE_TEXT_INTENT };
@@ -126,25 +130,27 @@ public class ClipData implements Parcelable {
     public static final Parcelable.Creator<ClipData> CREATOR =
         new Parcelable.Creator<ClipData>() {
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.489 -0500", hash_original_method = "E9B77AA38C2D4F67ACBCF421C777825E", hash_generated_method = "3DC0675F011A5E949860AC49DFD80659")
-        public ClipData createFromParcel(Parcel source) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.696 -0500", hash_original_method = "E9B77AA38C2D4F67ACBCF421C777825E", hash_generated_method = "3DC0675F011A5E949860AC49DFD80659")
+        
+public ClipData createFromParcel(Parcel source) {
                 return new ClipData(source);
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.490 -0500", hash_original_method = "4F6E120BA30B443AED50CCA81CAD8061", hash_generated_method = "D04E3634FC4EEEE34D8E82E19FDE35E2")
-        public ClipData[] newArray(int size) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.698 -0500", hash_original_method = "4F6E120BA30B443AED50CCA81CAD8061", hash_generated_method = "D04E3634FC4EEEE34D8E82E19FDE35E2")
+        
+public ClipData[] newArray(int size) {
                 return new ClipData[size];
             }
         };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.462 -0500", hash_original_field = "BD054FDEC655C28C2D1BA2544910FE2F", hash_generated_field = "BD054FDEC655C28C2D1BA2544910FE2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.624 -0500", hash_original_field = "BD054FDEC655C28C2D1BA2544910FE2F", hash_generated_field = "BD054FDEC655C28C2D1BA2544910FE2F")
 
 
      ClipDescription mClipDescription;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.463 -0500", hash_original_field = "EC076BF50357690C1FC8AB2DC0D41329", hash_generated_field = "EC076BF50357690C1FC8AB2DC0D41329")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.627 -0500", hash_original_field = "EC076BF50357690C1FC8AB2DC0D41329", hash_generated_field = "EC076BF50357690C1FC8AB2DC0D41329")
 
     
      Bitmap mIcon;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.463 -0500", hash_original_field = "C06D30D4FE5B15243361075EF8FC091A", hash_generated_field = "642CB554EA43ABB4F05AD892541D7330")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.629 -0500", hash_original_field = "C06D30D4FE5B15243361075EF8FC091A", hash_generated_field = "642CB554EA43ABB4F05AD892541D7330")
 
 
     final ArrayList<Item> mItems = new ArrayList<Item>();
@@ -156,8 +162,9 @@ public class ClipData implements Parcelable {
      * @param mimeTypes An array of MIME types this data is available as.
      * @param item The contents of the first item in the clip.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.476 -0500", hash_original_method = "EBF505A176A1691C0AFF349A48F88B72", hash_generated_method = "4C7AAE0C723F6C19972FBE1B2122D173")
-    public ClipData(CharSequence label, String[] mimeTypes, Item item) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.662 -0500", hash_original_method = "EBF505A176A1691C0AFF349A48F88B72", hash_generated_method = "4C7AAE0C723F6C19972FBE1B2122D173")
+    
+public ClipData(CharSequence label, String[] mimeTypes, Item item) {
         mClipDescription = new ClipDescription(label, mimeTypes);
         if (item == null) {
             throw new NullPointerException("item is null");
@@ -172,8 +179,9 @@ public class ClipData implements Parcelable {
      * @param description The ClipDescription describing the clip contents.
      * @param item The contents of the first item in the clip.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.477 -0500", hash_original_method = "07F73711C3AF49FFEB328A8FE4F43045", hash_generated_method = "1B390410608A03DC0D9E987E9EB27ABB")
-    public ClipData(ClipDescription description, Item item) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.664 -0500", hash_original_method = "07F73711C3AF49FFEB328A8FE4F43045", hash_generated_method = "1B390410608A03DC0D9E987E9EB27ABB")
+    
+public ClipData(ClipDescription description, Item item) {
         mClipDescription = description;
         if (item == null) {
             throw new NullPointerException("item is null");
@@ -182,8 +190,9 @@ public class ClipData implements Parcelable {
         mItems.add(item);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.488 -0500", hash_original_method = "58D4E89221B1347651A83B7DDCBD7718", hash_generated_method = "58D4E89221B1347651A83B7DDCBD7718")
-    ClipData(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.693 -0500", hash_original_method = "58D4E89221B1347651A83B7DDCBD7718", hash_generated_method = "58D4E89221B1347651A83B7DDCBD7718")
+    
+ClipData(Parcel in) {
         mClipDescription = new ClipDescription(in);
         if (in.readInt() != 0) {
             mIcon = Bitmap.CREATOR.createFromParcel(in);
@@ -203,16 +212,18 @@ public class ClipData implements Parcelable {
      * Return the {@link ClipDescription} associated with this data, describing
      * what it contains.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.482 -0500", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "E6CC842A9FBA72E929DACF15D1422EBF")
-    public ClipDescription getDescription() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.677 -0500", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "E6CC842A9FBA72E929DACF15D1422EBF")
+    
+public ClipDescription getDescription() {
         return mClipDescription;
     }
     
     /**
      * Add a new Item to the overall ClipData container.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.482 -0500", hash_original_method = "150F076539D3E4866582D984173D26A6", hash_generated_method = "A531D84ECA17241A3D1AF6850F807E56")
-    public void addItem(Item item) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.679 -0500", hash_original_method = "150F076539D3E4866582D984173D26A6", hash_generated_method = "A531D84ECA17241A3D1AF6850F807E56")
+    
+public void addItem(Item item) {
         if (item == null) {
             throw new NullPointerException("item is null");
         }
@@ -220,28 +231,30 @@ public class ClipData implements Parcelable {
     }
 
     /** @hide */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.483 -0500", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "61B9B78324D83593E0914ECCCBD6EC01")
-    public Bitmap getIcon() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.680 -0500", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "61B9B78324D83593E0914ECCCBD6EC01")
+    
+public Bitmap getIcon() {
         return mIcon;
     }
 
     
     public static class Item {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.465 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.631 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
 
          CharSequence mText;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.466 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "1811495D939DB843870F6315E04555CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.633 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "1811495D939DB843870F6315E04555CC")
 
          Intent mIntent;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.467 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "49226456B4CE4E55A779249DE3DC63D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.635 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "49226456B4CE4E55A779249DE3DC63D4")
 
          Uri mUri;
 
         /**
          * Create an Item consisting of a single block of (possibly styled) text.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.468 -0500", hash_original_method = "4A009EFCCF51C2EA640445D87C84D900", hash_generated_method = "CEE34EAF88E6FC7D89B93DC2D9F3A4BD")
-        public Item(CharSequence text) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.638 -0500", hash_original_method = "4A009EFCCF51C2EA640445D87C84D900", hash_generated_method = "CEE34EAF88E6FC7D89B93DC2D9F3A4BD")
+        
+public Item(CharSequence text) {
             mText = text;
             mIntent = null;
             mUri = null;
@@ -250,8 +263,9 @@ public class ClipData implements Parcelable {
         /**
          * Create an Item consisting of an arbitrary Intent.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.469 -0500", hash_original_method = "11EC393E75756EFF910C83D0B79625D8", hash_generated_method = "72AE5EEDB6F9FA7CC8AC78AEB9736027")
-        public Item(Intent intent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.641 -0500", hash_original_method = "11EC393E75756EFF910C83D0B79625D8", hash_generated_method = "72AE5EEDB6F9FA7CC8AC78AEB9736027")
+        
+public Item(Intent intent) {
             mText = null;
             mIntent = intent;
             mUri = null;
@@ -260,8 +274,9 @@ public class ClipData implements Parcelable {
         /**
          * Create an Item consisting of an arbitrary URI.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.470 -0500", hash_original_method = "C0C0DA6EE7D207BF80500DD7F8FC5437", hash_generated_method = "4A60D11061AA1D64F4A2230CC4D37412")
-        public Item(Uri uri) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.643 -0500", hash_original_method = "C0C0DA6EE7D207BF80500DD7F8FC5437", hash_generated_method = "4A60D11061AA1D64F4A2230CC4D37412")
+        
+public Item(Uri uri) {
             mText = null;
             mIntent = null;
             mUri = uri;
@@ -271,8 +286,9 @@ public class ClipData implements Parcelable {
          * Create a complex Item, containing multiple representations of
          * text, intent, and/or URI.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.471 -0500", hash_original_method = "40EC9D6AF0E3564A5C6CD681E96DEE48", hash_generated_method = "DEF1BD49A4BA49D733C760E1419668C9")
-        public Item(CharSequence text, Intent intent, Uri uri) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.647 -0500", hash_original_method = "40EC9D6AF0E3564A5C6CD681E96DEE48", hash_generated_method = "DEF1BD49A4BA49D733C760E1419668C9")
+        
+public Item(CharSequence text, Intent intent, Uri uri) {
             mText = text;
             mIntent = intent;
             mUri = uri;
@@ -281,24 +297,27 @@ public class ClipData implements Parcelable {
         /**
          * Retrieve the raw text contained in this Item.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.471 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
-        public CharSequence getText() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.649 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
+        
+public CharSequence getText() {
             return mText;
         }
 
         /**
          * Retrieve the raw Intent contained in this Item.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.472 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
-        public Intent getIntent() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.651 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
+        
+public Intent getIntent() {
             return mIntent;
         }
 
         /**
          * Retrieve the raw URI contained in this Item.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.473 -0500", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "A1B996311564AA1668AF8C1FC49818A0")
-        public Uri getUri() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.654 -0500", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "A1B996311564AA1668AF8C1FC49818A0")
+        
+public Uri getUri() {
             return mUri;
         }
 
@@ -324,8 +343,9 @@ public class ClipData implements Parcelable {
          * @return Returns the item's textual representation.
          */
 //BEGIN_INCLUDE(coerceToText)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.474 -0500", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "DEFCF0170A8A578D98974249E132B756")
-        public CharSequence coerceToText(Context context) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.657 -0500", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "DEFCF0170A8A578D98974249E132B756")
+        
+public CharSequence coerceToText(Context context) {
             // If this Item has an explicit textual value, simply return that.
             if (mText != null) {
                 return mText;
@@ -393,8 +413,9 @@ public class ClipData implements Parcelable {
     /**
      * Return the number of items in the clip data.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.484 -0500", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "5D1AD865251A7873FAFBCD6D25363BA0")
-    public int getItemCount() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.683 -0500", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "5D1AD865251A7873FAFBCD6D25363BA0")
+    
+public int getItemCount() {
         return mItems.size();
     }
 
@@ -402,20 +423,23 @@ public class ClipData implements Parcelable {
      * Return a single item inside of the clip data.  The index can range
      * from 0 to {@link #getItemCount()}-1.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.485 -0500", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "4F5CD9E17BCB4FF586B31D0FC9D3644C")
-    public Item getItemAt(int index) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.684 -0500", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "4F5CD9E17BCB4FF586B31D0FC9D3644C")
+    
+public Item getItemAt(int index) {
         return mItems.get(index);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.486 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
-    @Override
-public int describeContents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.687 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
+    
+@Override
+    public int describeContents() {
         return 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:01.487 -0500", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "3BDF0ABBB8CE40B99C35CF9571816F8F")
-    @Override
-public void writeToParcel(Parcel dest, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.690 -0500", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "3BDF0ABBB8CE40B99C35CF9571816F8F")
+    
+@Override
+    public void writeToParcel(Parcel dest, int flags) {
         mClipDescription.writeToParcel(dest, flags);
         if (mIcon != null) {
             dest.writeInt(1);

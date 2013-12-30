@@ -57,8 +57,9 @@ import com.android.internal.telephony.TelephonyProperties;
 
 final class GsmServiceStateTracker extends ServiceStateTracker {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.345 -0500", hash_original_method = "44F3B84D65DA92E5C60AFFA193D2001B", hash_generated_method = "289EB8DAE8C0C12E22131068C4AD92E8")
-    private static int twoDigitsAt(String s, int offset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.770 -0500", hash_original_method = "44F3B84D65DA92E5C60AFFA193D2001B", hash_generated_method = "289EB8DAE8C0C12E22131068C4AD92E8")
+    
+private static int twoDigitsAt(String s, int offset) {
         int a, b;
 
         a = Character.digit(s.charAt(offset), 10);
@@ -76,8 +77,9 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
      * Provides the name of the algorithmic time zone for the specified
      * offset.  Taken from TimeZone.java.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.348 -0500", hash_original_method = "373B413D23312B4F586E9709CD9454D3", hash_generated_method = "4885D96B2E3A8FE3ADAF1F0D12C568CC")
-    private static String displayNameFor(int off) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.780 -0500", hash_original_method = "373B413D23312B4F586E9709CD9454D3", hash_generated_method = "4885D96B2E3A8FE3ADAF1F0D12C568CC")
+    
+private static String displayNameFor(int off) {
         off = off / 1000 / 60;
 
         char[] buf = new char[9];
@@ -106,139 +108,140 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         return new String(buf);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.361 -0500", hash_original_method = "EFB0A206AD54A96675C1A4594B55DCEF", hash_generated_method = "0159960090AFF387605731755E7C2327")
-    private static void sloge(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.815 -0500", hash_original_method = "EFB0A206AD54A96675C1A4594B55DCEF", hash_generated_method = "0159960090AFF387605731755E7C2327")
+    
+private static void sloge(String s) {
         Log.e(LOG_TAG, "[GsmSST] " + s);
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.282 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.588 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
     static final String LOG_TAG = "GSM";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.283 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "3860CF443CF1EC2A1FAD1F55FBF8A7F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.590 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "3860CF443CF1EC2A1FAD1F55FBF8A7F5")
 
     static final boolean DBG = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.305 -0500", hash_original_field = "0F876ACCEEC633A27C8C9455ACA51A42", hash_generated_field = "3E784668308EA1C4770734C39504B13F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.654 -0500", hash_original_field = "0F876ACCEEC633A27C8C9455ACA51A42", hash_generated_field = "3E784668308EA1C4770734C39504B13F")
 
     private static final String WAKELOCK_TAG = "ServiceStateTracker";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.308 -0500", hash_original_field = "CD8623FD90A7024AF28C6B3221113ED6", hash_generated_field = "4A5D9F03FAE9E50AE63B4C35022FAF17")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.663 -0500", hash_original_field = "CD8623FD90A7024AF28C6B3221113ED6", hash_generated_field = "4A5D9F03FAE9E50AE63B4C35022FAF17")
 
     static final int DEFAULT_GPRS_CHECK_PERIOD_MILLIS = 60 * 1000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.309 -0500", hash_original_field = "75F833547C132ED63BFA8C4DCBA26B4D", hash_generated_field = "3591FCEB08077E36696EAEB77DBB3180")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.666 -0500", hash_original_field = "75F833547C132ED63BFA8C4DCBA26B4D", hash_generated_field = "3591FCEB08077E36696EAEB77DBB3180")
 
     static final int PS_ENABLED = 1001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.309 -0500", hash_original_field = "CDA7B20B36034EDE1CD9AC04BAD72BEC", hash_generated_field = "8C26EED9E7268BEDBBAF04F084560166")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.668 -0500", hash_original_field = "CDA7B20B36034EDE1CD9AC04BAD72BEC", hash_generated_field = "8C26EED9E7268BEDBBAF04F084560166")
 
     static final int PS_DISABLED = 1002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.310 -0500", hash_original_field = "A1AAC2DC95CCC44850ED3FB85EA04960", hash_generated_field = "B2781F5CE66230CC973402FB9B2889B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.670 -0500", hash_original_field = "A1AAC2DC95CCC44850ED3FB85EA04960", hash_generated_field = "B2781F5CE66230CC973402FB9B2889B2")
 
     static final int CS_ENABLED = 1003;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.311 -0500", hash_original_field = "49ADF54D164D5C923400B087336AED56", hash_generated_field = "D51C56159F181C83643165D845D52483")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.673 -0500", hash_original_field = "49ADF54D164D5C923400B087336AED56", hash_generated_field = "D51C56159F181C83643165D845D52483")
 
     static final int CS_DISABLED = 1004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.312 -0500", hash_original_field = "66F1AE95BB8C6751509EF63493D8A684", hash_generated_field = "C31DA0EA8EA157BEB2FE7CB33DF402A6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.675 -0500", hash_original_field = "66F1AE95BB8C6751509EF63493D8A684", hash_generated_field = "C31DA0EA8EA157BEB2FE7CB33DF402A6")
 
     static final int CS_NORMAL_ENABLED = 1005;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.313 -0500", hash_original_field = "BEBD2FA32946C5A8BF0DA7656C71FF3E", hash_generated_field = "F9B78C4A6E79981FE3F71480BC07396C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.677 -0500", hash_original_field = "BEBD2FA32946C5A8BF0DA7656C71FF3E", hash_generated_field = "F9B78C4A6E79981FE3F71480BC07396C")
 
     static final int CS_EMERGENCY_ENABLED = 1006;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.313 -0500", hash_original_field = "4AC213E3C6742CEE226FC0CB90B61092", hash_generated_field = "DE5A1C9C370E4A134E0B624298F21FBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.680 -0500", hash_original_field = "4AC213E3C6742CEE226FC0CB90B61092", hash_generated_field = "DE5A1C9C370E4A134E0B624298F21FBF")
 
 
     /** Notification id. */
     static final int PS_NOTIFICATION = 888;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.314 -0500", hash_original_field = "C669C8F2DF4796DE8E7F9F320259B28F", hash_generated_field = "EBBCDE09A71FA16B42C4199ACB2E765C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.683 -0500", hash_original_field = "C669C8F2DF4796DE8E7F9F320259B28F", hash_generated_field = "EBBCDE09A71FA16B42C4199ACB2E765C")
 
     static final int CS_NOTIFICATION = 999;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.284 -0500", hash_original_field = "690DC9441FA6BD04E0472B4DF9E035F8", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.592 -0500", hash_original_field = "690DC9441FA6BD04E0472B4DF9E035F8", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
 
 
     GSMPhone phone;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.284 -0500", hash_original_field = "6501E6CCC6A627167D828A01CEBF7711", hash_generated_field = "6501E6CCC6A627167D828A01CEBF7711")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.595 -0500", hash_original_field = "6501E6CCC6A627167D828A01CEBF7711", hash_generated_field = "6501E6CCC6A627167D828A01CEBF7711")
 
     GsmCellLocation cellLoc;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.285 -0500", hash_original_field = "B261F7AD66455AA0C3F3A08229915B3D", hash_generated_field = "B261F7AD66455AA0C3F3A08229915B3D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.597 -0500", hash_original_field = "B261F7AD66455AA0C3F3A08229915B3D", hash_generated_field = "B261F7AD66455AA0C3F3A08229915B3D")
 
     GsmCellLocation newCellLoc;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.285 -0500", hash_original_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E", hash_generated_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.599 -0500", hash_original_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E", hash_generated_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E")
 
     int mPreferredNetworkType;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.286 -0500", hash_original_field = "83055EAFAFB668214C2B6EC078B7B3E2", hash_generated_field = "07B777CC7BF8F0F7679AC97DE6B0C153")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.602 -0500", hash_original_field = "83055EAFAFB668214C2B6EC078B7B3E2", hash_generated_field = "07B777CC7BF8F0F7679AC97DE6B0C153")
 
 
     private int gprsState = ServiceState.STATE_OUT_OF_SERVICE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.287 -0500", hash_original_field = "C6527E6281F4752368634BFD36ACDDC3", hash_generated_field = "7035A3B0948B79A30C2C00DECE9F4570")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.604 -0500", hash_original_field = "C6527E6281F4752368634BFD36ACDDC3", hash_generated_field = "7035A3B0948B79A30C2C00DECE9F4570")
 
     private int newGPRSState = ServiceState.STATE_OUT_OF_SERVICE;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.288 -0500", hash_original_field = "DDB3AB1A1FF0690F730C60629E29B319", hash_generated_field = "5F1A31BADD427D5DFCB23ECFD73B8B95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.606 -0500", hash_original_field = "DDB3AB1A1FF0690F730C60629E29B319", hash_generated_field = "5F1A31BADD427D5DFCB23ECFD73B8B95")
 
     private int mMaxDataCalls = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.288 -0500", hash_original_field = "EC00539F8E7522B43D2503246976F845", hash_generated_field = "D1E578B67E4CC593BE870B60F03AA83C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.609 -0500", hash_original_field = "EC00539F8E7522B43D2503246976F845", hash_generated_field = "D1E578B67E4CC593BE870B60F03AA83C")
 
     private int mNewMaxDataCalls = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.289 -0500", hash_original_field = "DF25BB449AB9C7CD7F3D1B531B784018", hash_generated_field = "981E84B4948A11F540AE3C83118D725F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.611 -0500", hash_original_field = "DF25BB449AB9C7CD7F3D1B531B784018", hash_generated_field = "981E84B4948A11F540AE3C83118D725F")
 
     private int mReasonDataDenied = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.290 -0500", hash_original_field = "1488F6DF258F2CA22181E5C877D5DB15", hash_generated_field = "3DCB78EC6066191396204C4D07EB7548")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.613 -0500", hash_original_field = "1488F6DF258F2CA22181E5C877D5DB15", hash_generated_field = "3DCB78EC6066191396204C4D07EB7548")
 
     private int mNewReasonDataDenied = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.291 -0500", hash_original_field = "07954A684167F148A8914FA007493141", hash_generated_field = "0E48791EFF44078585E96EA7C7ED6E26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.615 -0500", hash_original_field = "07954A684167F148A8914FA007493141", hash_generated_field = "0E48791EFF44078585E96EA7C7ED6E26")
 
     private boolean mGsmRoaming = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.291 -0500", hash_original_field = "2A29EE37081AF6083572102F6A3576C0", hash_generated_field = "4F72E8DCBAFD6C5A4FC303F5B439CC14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.617 -0500", hash_original_field = "2A29EE37081AF6083572102F6A3576C0", hash_generated_field = "4F72E8DCBAFD6C5A4FC303F5B439CC14")
 
     private boolean mDataRoaming = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.292 -0500", hash_original_field = "A3D827A01022E81367E4D61DCB3324E6", hash_generated_field = "A81A887211F7F6A8BF5C317C7E4646E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.619 -0500", hash_original_field = "A3D827A01022E81367E4D61DCB3324E6", hash_generated_field = "A81A887211F7F6A8BF5C317C7E4646E5")
 
     private boolean mEmergencyOnly = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.293 -0500", hash_original_field = "94B5B9AC89B232E32297041934866E02", hash_generated_field = "2D2C0A8AA7022D57AB24C477C9212676")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.622 -0500", hash_original_field = "94B5B9AC89B232E32297041934866E02", hash_generated_field = "2D2C0A8AA7022D57AB24C477C9212676")
 
     private boolean mNeedFixZone = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.293 -0500", hash_original_field = "DC1A5CAE762F1B565AB4AF08E4221FD7", hash_generated_field = "C126894205DFD14FA38D307801001C6F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.624 -0500", hash_original_field = "DC1A5CAE762F1B565AB4AF08E4221FD7", hash_generated_field = "C126894205DFD14FA38D307801001C6F")
 
     private int mZoneOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.295 -0500", hash_original_field = "1DBF7B28B2EC0A77610B942EE7357647", hash_generated_field = "63800483D80F5CB684E683BC24E0A820")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.627 -0500", hash_original_field = "1DBF7B28B2EC0A77610B942EE7357647", hash_generated_field = "63800483D80F5CB684E683BC24E0A820")
 
     private boolean mZoneDst;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.296 -0500", hash_original_field = "D1947C20B8C2350EE6EF3BB9DCA678E9", hash_generated_field = "7498B22AB24D6B5E081FF2DDE0FD21C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.629 -0500", hash_original_field = "D1947C20B8C2350EE6EF3BB9DCA678E9", hash_generated_field = "7498B22AB24D6B5E081FF2DDE0FD21C8")
 
     private long mZoneTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.297 -0500", hash_original_field = "287A0704804B91F0A9E2C49E33166DCA", hash_generated_field = "C304726703E30667C2FAD4B6BFDDEB63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.631 -0500", hash_original_field = "287A0704804B91F0A9E2C49E33166DCA", hash_generated_field = "C304726703E30667C2FAD4B6BFDDEB63")
 
     private boolean mGotCountryCode = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.298 -0500", hash_original_field = "00C84AE608A40C700303777F958158E6", hash_generated_field = "CC964D293F1703643DB273FCC0901562")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.633 -0500", hash_original_field = "00C84AE608A40C700303777F958158E6", hash_generated_field = "CC964D293F1703643DB273FCC0901562")
 
     private ContentResolver cr;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.298 -0500", hash_original_field = "30A17FCDED9983DC17E4B0241936D019", hash_generated_field = "30A17FCDED9983DC17E4B0241936D019")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.635 -0500", hash_original_field = "30A17FCDED9983DC17E4B0241936D019", hash_generated_field = "30A17FCDED9983DC17E4B0241936D019")
 
 
     String mSavedTimeZone;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.299 -0500", hash_original_field = "56DFA99AB6C2048EFF6A2B28FFEF5620", hash_generated_field = "56DFA99AB6C2048EFF6A2B28FFEF5620")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.637 -0500", hash_original_field = "56DFA99AB6C2048EFF6A2B28FFEF5620", hash_generated_field = "56DFA99AB6C2048EFF6A2B28FFEF5620")
 
     long mSavedTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.300 -0500", hash_original_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300", hash_generated_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.639 -0500", hash_original_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300", hash_generated_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300")
 
     long mSavedAtTime;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.301 -0500", hash_original_field = "9CDA950D3E6C0B00B91E478170316CB0", hash_generated_field = "1929EEEAE2485E3C7781EBAA0F354C99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.642 -0500", hash_original_field = "9CDA950D3E6C0B00B91E478170316CB0", hash_generated_field = "1929EEEAE2485E3C7781EBAA0F354C99")
 
     private boolean mNeedToRegForSimLoaded;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.301 -0500", hash_original_field = "4741178B9883215ED364D9345759060E", hash_generated_field = "EA9A1384C97DE38DCF8B990AF3F83712")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.645 -0500", hash_original_field = "4741178B9883215ED364D9345759060E", hash_generated_field = "EA9A1384C97DE38DCF8B990AF3F83712")
 
     private boolean mStartedGprsRegCheck = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.302 -0500", hash_original_field = "4DEBE88A90630CF11FE82B08E744C70F", hash_generated_field = "69E634E61A627800AF487B771D6ECAD0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.647 -0500", hash_original_field = "4DEBE88A90630CF11FE82B08E744C70F", hash_generated_field = "69E634E61A627800AF487B771D6ECAD0")
 
     private boolean mReportedGprsNoReg = false;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.303 -0500", hash_original_field = "FA5D660465A99620D3F6AE3CFEC3CC66", hash_generated_field = "74FBA8E8F4402404F407A6E0DBC8943E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.649 -0500", hash_original_field = "FA5D660465A99620D3F6AE3CFEC3CC66", hash_generated_field = "74FBA8E8F4402404F407A6E0DBC8943E")
 
     private Notification mNotification;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.304 -0500", hash_original_field = "87068C2348540A5517D7F6F40E0F6E43", hash_generated_field = "C0FF63B0998195CF037A71BFC5C5B113")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.652 -0500", hash_original_field = "87068C2348540A5517D7F6F40E0F6E43", hash_generated_field = "C0FF63B0998195CF037A71BFC5C5B113")
 
     private PowerManager.WakeLock mWakeLock;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.305 -0500", hash_original_field = "9B68494A8CFDE41414863EA11005311E", hash_generated_field = "D741E5B3B277519D91E4FE02D3FAFF01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.656 -0500", hash_original_field = "9B68494A8CFDE41414863EA11005311E", hash_generated_field = "D741E5B3B277519D91E4FE02D3FAFF01")
 
     private String curSpn = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.306 -0500", hash_original_field = "DE59F64D212208232A5A13DE21480683", hash_generated_field = "9047898EE9FB6E0F59121E370CC3C8CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.658 -0500", hash_original_field = "DE59F64D212208232A5A13DE21480683", hash_generated_field = "9047898EE9FB6E0F59121E370CC3C8CF")
 
     private String curPlmn = null;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.307 -0500", hash_original_field = "A37A0CB2A2859DB5EA569A667B536F0E", hash_generated_field = "E51B211F12EB3D4199E57F38674CC690")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.660 -0500", hash_original_field = "A37A0CB2A2859DB5EA569A667B536F0E", hash_generated_field = "E51B211F12EB3D4199E57F38674CC690")
 
     private int curSpnRule = 0;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_field = "AB74790817CE8598B3B84738E53E435A", hash_generated_field = "829A6BC80DDB03BAE60150DE88BC0EA8")
@@ -300,8 +303,9 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         
 };
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.321 -0500", hash_original_method = "89B681C68F2C3DCA55179D15C34AC4AC", hash_generated_method = "C1F060AC8BDDA375DAFD697B629DA3CB")
-    public GsmServiceStateTracker(GSMPhone phone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.704 -0500", hash_original_method = "89B681C68F2C3DCA55179D15C34AC4AC", hash_generated_method = "C1F060AC8BDDA375DAFD697B629DA3CB")
+    
+public GsmServiceStateTracker(GSMPhone phone) {
         super();
 
         this.phone = phone;
@@ -351,8 +355,9 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         phone.notifyOtaspChanged(OTASP_NOT_NEEDED);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.321 -0500", hash_original_method = "D8900B5121A238BBC317864D0A18F1DD", hash_generated_method = "86AC7EEAC51DB924BE9E1C41F85E166F")
-    public void dispose() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.706 -0500", hash_original_method = "D8900B5121A238BBC317864D0A18F1DD", hash_generated_method = "86AC7EEAC51DB924BE9E1C41F85E166F")
+    
+public void dispose() {
         // Unregister for all events.
         cm.unregisterForAvailable(this);
         cm.unregisterForRadioStateChanged(this);
@@ -367,19 +372,22 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         cr.unregisterContentObserver(this.mAutoTimeZoneObserver);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.322 -0500", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "E743B6DABD28108918049040079C2592")
-    protected void finalize() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.708 -0500", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "E743B6DABD28108918049040079C2592")
+    
+protected void finalize() {
         if(DBG) log("finalize");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.323 -0500", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "7FA214E5FB8E9E7053C952EA5299E35F")
-    @Override
-protected Phone getPhone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.711 -0500", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "7FA214E5FB8E9E7053C952EA5299E35F")
+    
+@Override
+    protected Phone getPhone() {
         return phone;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.326 -0500", hash_original_method = "8D6E3CD042747DF0CD652F21C9ED2A0B", hash_generated_method = "0E2A36178E18E7355EF62C3EF6C318DE")
-    public void handleMessage (Message msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.716 -0500", hash_original_method = "8D6E3CD042747DF0CD652F21C9ED2A0B", hash_generated_method = "0E2A36178E18E7355EF62C3EF6C318DE")
+    
+public void handleMessage (Message msg) {
         AsyncResult ar;
         int[] ints;
         String[] strings;
@@ -580,8 +588,9 @@ protected Phone getPhone() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.327 -0500", hash_original_method = "BC2E3346E1E8D048BB892FC104E776BC", hash_generated_method = "16D9EBDA8A61AC7512F1D264965BE0EF")
-    protected void setPowerStateToDesired() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.719 -0500", hash_original_method = "BC2E3346E1E8D048BB892FC104E776BC", hash_generated_method = "16D9EBDA8A61AC7512F1D264965BE0EF")
+    
+protected void setPowerStateToDesired() {
         // If we want it on and it's off, turn it on
         if (mDesiredPowerState
             && cm.getRadioState() == CommandsInterface.RadioState.RADIO_OFF) {
@@ -593,9 +602,10 @@ protected Phone getPhone() {
         } // Otherwise, we're in the desired state
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.328 -0500", hash_original_method = "E3C7A91B3D91C3ACB7BE5D936C3A4029", hash_generated_method = "A6422AA58BF6DBC7227B32CAF4C70C2F")
-    @Override
-protected void hangupAndPowerOff() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.721 -0500", hash_original_method = "E3C7A91B3D91C3ACB7BE5D936C3A4029", hash_generated_method = "A6422AA58BF6DBC7227B32CAF4C70C2F")
+    
+@Override
+    protected void hangupAndPowerOff() {
         // hang up all active voice calls
         if (phone.isInCall()) {
             phone.mCT.ringingCall.hangupIfAlive();
@@ -606,8 +616,9 @@ protected void hangupAndPowerOff() {
         cm.setRadioPower(false, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.329 -0500", hash_original_method = "12AE11DB9489E0514D18AAE66522FB76", hash_generated_method = "C5E081E142C86616EF80FBD347E31ED2")
-    protected void updateSpnDisplay() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.725 -0500", hash_original_method = "12AE11DB9489E0514D18AAE66522FB76", hash_generated_method = "C5E081E142C86616EF80FBD347E31ED2")
+    
+protected void updateSpnDisplay() {
         int rule = phone.mIccRecords.getDisplayRule(ss.getOperatorNumeric());
         String spn = phone.mIccRecords.getServiceProviderName();
         String plmn = ss.getOperatorAlphaLong();
@@ -649,8 +660,9 @@ protected void hangupAndPowerOff() {
     /**
      * Handle the result of one of the pollState()-related requests
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.330 -0500", hash_original_method = "715C325B720DBA72DF5B4684F1B692D5", hash_generated_method = "4053ED92DB11E8B700AA5900D7934C14")
-    protected void handlePollStateResult (int what, AsyncResult ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.730 -0500", hash_original_method = "715C325B720DBA72DF5B4684F1B692D5", hash_generated_method = "4053ED92DB11E8B700AA5900D7934C14")
+    
+protected void handlePollStateResult (int what, AsyncResult ar) {
         int ints[];
         String states[];
 
@@ -796,8 +808,9 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.331 -0500", hash_original_method = "76DE4C6A99E85827FF76DDCBD0A680F0", hash_generated_method = "B0C2C0B0D952C99CD3EDED61001AC9FE")
-    private void setSignalStrengthDefaultValues() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.733 -0500", hash_original_method = "76DE4C6A99E85827FF76DDCBD0A680F0", hash_generated_method = "B0C2C0B0D952C99CD3EDED61001AC9FE")
+    
+private void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, true);
     }
 
@@ -809,8 +822,9 @@ protected void hangupAndPowerOff() {
      * and start over again if the radio notifies us that some
      * event has changed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.332 -0500", hash_original_method = "4A9AA9B5E92E73D941CD4914D7782EA3", hash_generated_method = "02A627D0945B97FDD67839EED2C6B3C8")
-    private void pollState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.736 -0500", hash_original_method = "4A9AA9B5E92E73D941CD4914D7782EA3", hash_generated_method = "02A627D0945B97FDD67839EED2C6B3C8")
+    
+private void pollState() {
         pollingContext = new int[1];
         pollingContext[0] = 0;
 
@@ -873,8 +887,9 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.335 -0500", hash_original_method = "9E4E42BAC69A7F7033D249A5EA2291CC", hash_generated_method = "58AB0E35886E80503849C8A24499D7A6")
-    private void pollStateDone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.742 -0500", hash_original_method = "9E4E42BAC69A7F7033D249A5EA2291CC", hash_generated_method = "58AB0E35886E80503849C8A24499D7A6")
+    
+private void pollStateDone() {
         if (DBG) {
             log("Poll ServiceState done: " +
                 " oldSS=[" + ss + "] newSS=[" + newSS +
@@ -1086,8 +1101,9 @@ protected void hangupAndPowerOff() {
      * @param serviceState for voice registration state, i.e. CREG in GSM
      * @return false if device only register to voice but not gprs
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.336 -0500", hash_original_method = "FF36AACCF1BD8DBC263BCA1FAF3CB26B", hash_generated_method = "D26E463E937B7643E724811284B0AD7C")
-    private boolean isGprsConsistent(int gprsState, int serviceState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.744 -0500", hash_original_method = "FF36AACCF1BD8DBC263BCA1FAF3CB26B", hash_generated_method = "D26E463E937B7643E724811284B0AD7C")
+    
+private boolean isGprsConsistent(int gprsState, int serviceState) {
         return !((serviceState == ServiceState.STATE_IN_SERVICE) &&
                 (gprsState != ServiceState.STATE_IN_SERVICE));
     }
@@ -1095,8 +1111,9 @@ protected void hangupAndPowerOff() {
     /**
      * Returns a TimeZone object based only on parameters from the NITZ string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.337 -0500", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BAD67707D674CDAD94F26509AB9FCB24")
-    private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.747 -0500", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BAD67707D674CDAD94F26509AB9FCB24")
+    
+private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
         TimeZone guess = findTimeZone(offset, dst, when);
         if (guess == null) {
             // Couldn't find a proper timezone.  Perhaps the DST data is wrong.
@@ -1106,8 +1123,9 @@ protected void hangupAndPowerOff() {
         return guess;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.338 -0500", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "049809E0CCBF5A32DA8C3BF574D8B5BF")
-    private TimeZone findTimeZone(int offset, boolean dst, long when) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.749 -0500", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "049809E0CCBF5A32DA8C3BF574D8B5BF")
+    
+private TimeZone findTimeZone(int offset, boolean dst, long when) {
         int rawOffset = offset;
         if (dst) {
             rawOffset -= 3600000;
@@ -1127,8 +1145,9 @@ protected void hangupAndPowerOff() {
         return guess;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.339 -0500", hash_original_method = "C454880D3BFCEEC9D9AA3258CF5DFAC4", hash_generated_method = "5C3439222E25E97699CF35046A0E3D45")
-    private void queueNextSignalStrengthPoll() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.751 -0500", hash_original_method = "C454880D3BFCEEC9D9AA3258CF5DFAC4", hash_generated_method = "5C3439222E25E97699CF35046A0E3D45")
+    
+private void queueNextSignalStrengthPoll() {
         if (dontPollSignalStrength || (cm.getRadioState().isCdma())) {
             // The radio is telling us about signal strength changes
             // we don't have to ask it
@@ -1150,8 +1169,9 @@ protected void hangupAndPowerOff() {
      *  Send signal-strength-changed notification if changed.
      *  Called both for solicited and unsolicited signal strength updates.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.340 -0500", hash_original_method = "313D4989F4A5423E3CAD270FA74FCE9F", hash_generated_method = "D82190EFFD443E9437BE5E85D9A18C7A")
-    private void onSignalStrengthResult(AsyncResult ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.754 -0500", hash_original_method = "313D4989F4A5423E3CAD270FA74FCE9F", hash_generated_method = "D82190EFFD443E9437BE5E85D9A18C7A")
+    
+private void onSignalStrengthResult(AsyncResult ar) {
         SignalStrength oldSignalStrength = mSignalStrength;
         int rssi = 99;
         int lteSignalStrength = -1;
@@ -1202,8 +1222,9 @@ protected void hangupAndPowerOff() {
      *
      * @param ar an int value of RIL_RESTRICTED_STATE_*
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.341 -0500", hash_original_method = "F4F35E6AADE0C2C218C2CEC9E86259B9", hash_generated_method = "550227B2DCC771FDF8535ACBAB7BE67A")
-    private void onRestrictedStateChanged(AsyncResult ar) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.759 -0500", hash_original_method = "F4F35E6AADE0C2C218C2CEC9E86259B9", hash_generated_method = "550227B2DCC771FDF8535ACBAB7BE67A")
+    
+private void onRestrictedStateChanged(AsyncResult ar) {
         RestrictedState newRs = new RestrictedState();
 
         if (DBG) log("onRestrictedStateChanged: E rs "+ mRestrictedState);
@@ -1293,8 +1314,9 @@ protected void hangupAndPowerOff() {
     }
 
     /** code is registration state 0-5 from TS 27.007 7.2 */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.342 -0500", hash_original_method = "224D5C409E7F86CE5414891CFB70A981", hash_generated_method = "178E85B2327E05C49F9EEB00F2AE391D")
-    private int regCodeToServiceState(int code) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.761 -0500", hash_original_method = "224D5C409E7F86CE5414891CFB70A981", hash_generated_method = "178E85B2327E05C49F9EEB00F2AE391D")
+    
+private int regCodeToServiceState(int code) {
         switch (code) {
             case 0:
             case 2: // 2 is "searching"
@@ -1324,8 +1346,9 @@ protected void hangupAndPowerOff() {
      * code is registration state 0-5 from TS 27.007 7.2
      * returns true if registered roam, false otherwise
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.343 -0500", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "6C0E3EFDD2ACA49FF7AF90314964240F")
-    private boolean regCodeIsRoaming (int code) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.764 -0500", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "6C0E3EFDD2ACA49FF7AF90314964240F")
+    
+private boolean regCodeIsRoaming (int code) {
         // 5 is  "in service -- roam"
         return 5 == code;
     }
@@ -1337,8 +1360,9 @@ protected void hangupAndPowerOff() {
      * @param s ServiceState hold current ons
      * @return true for roaming state set
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.344 -0500", hash_original_method = "A83CC5F0F34C62E2D3BC7866CECAC756", hash_generated_method = "3F7E094A08799DF950B6F0CB23A74E6A")
-    private boolean isRoamingBetweenOperators(boolean gsmRoaming, ServiceState s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.767 -0500", hash_original_method = "A83CC5F0F34C62E2D3BC7866CECAC756", hash_generated_method = "3F7E094A08799DF950B6F0CB23A74E6A")
+    
+private boolean isRoamingBetweenOperators(boolean gsmRoaming, ServiceState s) {
         String spn = SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, "empty");
 
         String onsl = s.getOperatorAlphaLong();
@@ -1365,13 +1389,15 @@ protected void hangupAndPowerOff() {
      * @return The current GPRS state. IN_SERVICE is the same as "attached"
      * and OUT_OF_SERVICE is the same as detached.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.345 -0500", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "462522C9E25E239E090C32F4DC1CCDBD")
-    int getCurrentGprsState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.772 -0500", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "462522C9E25E239E090C32F4DC1CCDBD")
+    
+int getCurrentGprsState() {
         return gprsState;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.346 -0500", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "068649D7EB132587836305BEE0BFD86C")
-    public int getCurrentDataConnectionState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.774 -0500", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "068649D7EB132587836305BEE0BFD86C")
+    
+public int getCurrentDataConnectionState() {
         return gprsState;
     }
 
@@ -1379,16 +1405,18 @@ protected void hangupAndPowerOff() {
      * @return true if phone is camping on a technology (eg UMTS)
      * that could support voice and data simultaneously.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.347 -0500", hash_original_method = "35025CCE5222CF7AFA718FFADECE80EF", hash_generated_method = "1ABD74EF19B1AAA1607A42C87F1E5122")
-    public boolean isConcurrentVoiceAndDataAllowed() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.777 -0500", hash_original_method = "35025CCE5222CF7AFA718FFADECE80EF", hash_generated_method = "1ABD74EF19B1AAA1607A42C87F1E5122")
+    
+public boolean isConcurrentVoiceAndDataAllowed() {
         return (mRadioTechnology >= ServiceState.RADIO_TECHNOLOGY_UMTS);
     }
 
     /**
      * nitzReceiveTime is time_t that the NITZ time was posted
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.350 -0500", hash_original_method = "D8515350C34B3E7CC6A83CEBE4C1FE6C", hash_generated_method = "EB85272759649CA4DF27A1F46F285181")
-    private void setTimeFromNITZString (String nitz, long nitzReceiveTime) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.784 -0500", hash_original_method = "D8515350C34B3E7CC6A83CEBE4C1FE6C", hash_generated_method = "EB85272759649CA4DF27A1F46F285181")
+    
+private void setTimeFromNITZString (String nitz, long nitzReceiveTime) {
         // "yy/mm/dd,hh:mm:ss(+/-)tz"
         // tz is in number of quarter-hours
 
@@ -1551,8 +1579,9 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.351 -0500", hash_original_method = "10C2AC47FB9B2FA38284A276FBC39461", hash_generated_method = "8ADDF76F8C0FD6C596A9D8D444C83D54")
-    private boolean getAutoTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.787 -0500", hash_original_method = "10C2AC47FB9B2FA38284A276FBC39461", hash_generated_method = "8ADDF76F8C0FD6C596A9D8D444C83D54")
+    
+private boolean getAutoTime() {
         try {
             return Settings.System.getInt(phone.getContext().getContentResolver(),
                     Settings.System.AUTO_TIME) > 0;
@@ -1561,8 +1590,9 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.352 -0500", hash_original_method = "46367736BD7DFDD485A94174DBA3ECD3", hash_generated_method = "D91C3E2D093F8D30DA1517385B483242")
-    private boolean getAutoTimeZone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.789 -0500", hash_original_method = "46367736BD7DFDD485A94174DBA3ECD3", hash_generated_method = "D91C3E2D093F8D30DA1517385B483242")
+    
+private boolean getAutoTimeZone() {
         try {
             return Settings.System.getInt(phone.getContext().getContentResolver(),
                     Settings.System.AUTO_TIME_ZONE) > 0;
@@ -1571,13 +1601,15 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.353 -0500", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "95607A7DB8A17A71A53B4FD9E4217C6A")
-    private void saveNitzTimeZone(String zoneId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.792 -0500", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "95607A7DB8A17A71A53B4FD9E4217C6A")
+    
+private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.353 -0500", hash_original_method = "BBC081DF5E9AA5E0F675E4C4D97D41FA", hash_generated_method = "991AD641863713BBD57D3BA11477491D")
-    private void saveNitzTime(long time) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.794 -0500", hash_original_method = "BBC081DF5E9AA5E0F675E4C4D97D41FA", hash_generated_method = "991AD641863713BBD57D3BA11477491D")
+    
+private void saveNitzTime(long time) {
         mSavedTime = time;
         mSavedAtTime = SystemClock.elapsedRealtime();
     }
@@ -1588,8 +1620,9 @@ protected void hangupAndPowerOff() {
      *
      * @param zoneId timezone set by carrier
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.354 -0500", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "0B5EAB3B98BE4495A7BB1CF24837488F")
-    private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.796 -0500", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "0B5EAB3B98BE4495A7BB1CF24837488F")
+    
+private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
         AlarmManager alarm =
             (AlarmManager) phone.getContext().getSystemService(Context.ALARM_SERVICE);
         alarm.setTimeZone(zoneId);
@@ -1605,8 +1638,9 @@ protected void hangupAndPowerOff() {
      *
      * @param time time set by network
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.356 -0500", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "292B45AEF44DD01DD907E884EEAFFEA9")
-    private void setAndBroadcastNetworkSetTime(long time) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.798 -0500", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "292B45AEF44DD01DD907E884EEAFFEA9")
+    
+private void setAndBroadcastNetworkSetTime(long time) {
         SystemClock.setCurrentTimeMillis(time);
         Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIME);
         intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
@@ -1614,8 +1648,9 @@ protected void hangupAndPowerOff() {
         phone.getContext().sendStickyBroadcast(intent);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.356 -0500", hash_original_method = "2770201C4A137564A500CEEFB3D4E467", hash_generated_method = "BD31AE8FE7648A5A40E8ED9BAC6BD7D1")
-    private void revertToNitzTime() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.802 -0500", hash_original_method = "2770201C4A137564A500CEEFB3D4E467", hash_generated_method = "BD31AE8FE7648A5A40E8ED9BAC6BD7D1")
+    
+private void revertToNitzTime() {
         if (Settings.System.getInt(phone.getContext().getContentResolver(),
                 Settings.System.AUTO_TIME, 0) == 0) {
             return;
@@ -1630,8 +1665,9 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.357 -0500", hash_original_method = "846FA792EAB8BB56C921A6228BC9EB73", hash_generated_method = "2087E0E4FA941D0A68247B4C15D57B8E")
-    private void revertToNitzTimeZone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.805 -0500", hash_original_method = "846FA792EAB8BB56C921A6228BC9EB73", hash_generated_method = "2087E0E4FA941D0A68247B4C15D57B8E")
+    
+private void revertToNitzTimeZone() {
         if (Settings.System.getInt(phone.getContext().getContentResolver(),
                 Settings.System.AUTO_TIME_ZONE, 0) == 0) {
             return;
@@ -1647,8 +1683,9 @@ protected void hangupAndPowerOff() {
      *
      * @param notifyType is one state of PS/CS_*_ENABLE/DISABLE
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.358 -0500", hash_original_method = "90EFCD7762032B11006E493EA631CF1F", hash_generated_method = "14DB405E9125015CFEA0258141800650")
-    private void setNotification(int notifyType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.808 -0500", hash_original_method = "90EFCD7762032B11006E493EA631CF1F", hash_generated_method = "14DB405E9125015CFEA0258141800650")
+    
+private void setNotification(int notifyType) {
 
         if (DBG) log("setNotification: create notification " + notifyType);
         Context context = phone.getContext();
@@ -1704,15 +1741,17 @@ protected void hangupAndPowerOff() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.359 -0500", hash_original_method = "4109BBDDE3BB927415F4177275F054A2", hash_generated_method = "1F831F8FD4D8F89A199E81418065E539")
-    @Override
-protected void log(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.811 -0500", hash_original_method = "4109BBDDE3BB927415F4177275F054A2", hash_generated_method = "1F831F8FD4D8F89A199E81418065E539")
+    
+@Override
+    protected void log(String s) {
         Log.d(LOG_TAG, "[GsmSST] " + s);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.360 -0500", hash_original_method = "E8A9D45B999B20E24B18F0E2F50C667F", hash_generated_method = "1E3A6A09B26348AED637A46775607049")
-    @Override
-protected void loge(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.813 -0500", hash_original_method = "E8A9D45B999B20E24B18F0E2F50C667F", hash_generated_method = "1E3A6A09B26348AED637A46775607049")
+    
+@Override
+    protected void loge(String s) {
         Log.e(LOG_TAG, "[GsmSST] " + s);
     }
 }
